@@ -1,5 +1,5 @@
 name: Magento 2 Developer's Guide
 markdown: kramdown
 pygments: true
-baseurl: /devdocs/guides/test_m2devgde-jekyll/Test
+baseurl: /guides/test_m2devgde-jekyll/Test
 description: Magento 2 Developer's Guide
