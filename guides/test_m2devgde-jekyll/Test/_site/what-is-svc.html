@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>What is the Magento 2 Service Framework?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Magento 2 Developer's Guide">
+   <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/hc.css" rel="stylesheet">
+  <link href="/css/main.css" rel="stylesheet">
+
+<!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif] d-->
+    </head>
+    <body>
+<!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+ -->      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Magento 2 Developer's Guide</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <li><a href="/svc-how-to-use.html">How a Client Uses a Service</a></li>
+          <li><a href="/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
+         <!--  <li><a href="/links.html">Links</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+       <!-- Sidebar -->
+	   
+	   
+       <div id="sidebar-wrapper">
+	   <div class="logo">
+	   <a href="/"><img src="images/magento-logo-m.png"></a>
+	   </div>
+        <ul class="sidebar-nav">
+          <li class="sidebar-brand"><h1 class="brand">Contents</h1><!-- <h3>Magento 2 Developer's Guide</h3> --></li>
+          <hr />
+          <li><a href="/svc-how-to-use.html">How a Client Uses a Service</a></li>
+		  <li><a href="/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
+         <!--  <li><a href="/links.html">Links</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li> -->
+          <hr />
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+<h1>What is the Magento 2 Service Framework?</h1>
+
+<p>Magento 2 uses the service framework to define and expose extensible features.</p>
+
+<p>A service:</p>
+
+<ul>
+<li>Is a functional abstraction that represents the business features available to other parts of an application or Magento. </li>
+<li>Represents a boundary that encapsulates the business logic a module exposes without revealing any of the details of how that functionality is implemented. </li>
+</ul>
+
+<p>The following figure shows how this concept works:</p>
+
+<p><img src="images/services-and-logic.png" alt="The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic"></p>
+
+<p>Services provide a consistent interface and behavior, regardless of the type of client making the request. This means that creating a customer works the same way, regardless of whether the customer is created from a web service or from a web page. It also means that customizations to the customer creation logic manifest themselves consistently from one page to the next and from one client to the next.</p>
+
+<p>Using services interfaces, an integrator can more easily interact with Magento 2 using APIs instead of overloading classes as was necessary in earlier Magento versions. Because you&#39;re not overloading classes, and because service interfaces are versioned, there are fewer chances of conflicts with other applications and fewer chances of issues during upgrade.</p>
+
+<p>The following figure provides a high-level view:</p>
+
+<p><img src="images/services_overview.png" alt="How clients use the services framework"></p>
+
+    <footer>
+       <p class="text-muted credit">For more information, contact <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">the Magento 2 documentation team</a>.</p>
+    </footer>
+ <!-- Bootstrap core JavaScript-->
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/hc.js"></script>
+</body>
+
+</html>
+

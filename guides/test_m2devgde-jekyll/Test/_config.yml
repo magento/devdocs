@@ -1,0 +1,5 @@
+name: Magento 2 Developer's Guide
+markdown: redcarpet
+pygments: true
+baseurl: /pages/stevjohnson/devdocs_jekyll-test/
+description: Magento 2 Developer's Guide
