@@ -7,7 +7,7 @@ May 12, 2014, we'll expand it.
 
 What we have here now: <a href="http://magento.github.io/devdocs/guides/m2devgde/V1.0.0.0/Default.htm" target="_blank">Magento 2 Developer's Guide</a>
 
-Where's the rest of it? Still on the <a href="http://wiki.magento.com" target="_blank">Magento public wiki</a>. 
+Where's the rest of it? Still on the <a href="https://wiki.magento.com/display/MAGE2DOC/Magento+2+Product+Documentation" target="_blank">Magento public wiki</a>. 
 
 Please look around, send us comments, [let us know](mailto:DL-Magento-Doc-Feedback@ebay.com) how you think we're doing.
 We're here to serve _you_ so let us hear from you.
