@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-browse-sequence-path="" data-mc-toc-path="" data-mc-ignored-words="versioned">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>What is the Magento 2 Service Framework?</title>
+        <link href="../Resources/Stylesheets/Magento-2.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <h1><a name="aanchor0"></a>
+            <MadCap:concept term="service-general" />What is the Magento 2 Service Framework?</h1>
+        <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/V1.0.0.0/svcs-framework/svc-what-is.htm" target="_blank"><i>Help us improve this page</i> <img src="../Resources/Images/newWindow_16x16.gif" class="Inline" style="width: 16;height: 16;" /></a>
+        </p>
+        <p>Magento 2 uses the service framework to define and expose extensible features. </p>
+        <p>A <i>service</i>:</p>
+        <ul>
+            <li value="1">Is a functional abstraction that represents the business features available to other parts of an application or Magento. </li>
+            <li value="2">Represents a boundary that encapsulates the business logic a module exposes without revealing any of the details of how that functionality is implemented. </li>
+        </ul>
+        <p>The following figure shows how this concept works:</p>
+        <p>
+            <img src="../Resources/Images/services-and-logic.png" title="Services and business logic" alt="The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic" />
+        </p>
+        <p>Services provide a consistent interface and behavior, regardless of the type of client making the request. This means that creating a customer works the same way, regardless of whether the customer is created from a web service or from a web page. It also means that customizations to the customer creation logic manifest themselves consistently from one page to the next and from one client to the next.</p>
+        <p>Using services interfaces, an integrator can more easily interact with Magento 2 using APIs instead of overloading classes as was necessary in earlier Magento versions. Because you're not overloading classes, and because service interfaces are versioned, there are fewer chances of conflicts with other applications and fewer chances of issues during upgrade.</p>
+        <p><a class="MCHelpControl MCHelpControl-Concept conceptLink" data-mc-concepts="service-how;webapi-general" href="javascript:void(0);" data-mc-topics="How a Client Uses a Service|svc-how-to-use.htm||Understanding the Properties and Responsibilities of a Service|svc-props.htm||What Can You Do With Services?|svc-what-can-do.htm||What is the WebAPI&#160;Framework?|../webapi/what-is-webapi.htm"><span class="MCHelpControl-ConceptHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="Concept Link Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>
