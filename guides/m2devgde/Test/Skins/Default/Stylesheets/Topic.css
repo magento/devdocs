@@ -1,0 +1,601 @@
+/*<meta />*/
+
+/* Prevents Safari in landscape orientation from zooming in on text*/
+
+body
+{
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Css to prevent Chrome's automatic border around active fields*/
+
+*:focus
+{
+	outline: none;
+}
+
+/* Default css class for hiding element*/
+
+.hidden
+{
+	display: none;
+}
+
+/* Topic Popup */
+
+.MCTopicPopup
+{
+	text-decoration: none;
+}
+
+.MCTopicPopupHotSpot
+{
+	cursor: pointer;
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+
+.MCTopicPopup_Open.MCTopicPopupHotSpot
+{
+	
+}
+
+.MCTopicPopup_Closed.MCTopicPopupHotSpot
+{
+	
+}
+
+.MCTopicPopupContainer
+{
+	background-color: #FFFFFF;
+	padding: 10px;
+	position: fixed;
+	top: 100px;
+	left: 100px;
+	right: 100px;
+	bottom: 100px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 4px 10px #333333;
+	-moz-box-shadow: 0 4px 10px #333333;
+	box-shadow: 0 4px 10px #333333;
+	filter: alpha( opacity = 0 );
+	opacity: 0.0;
+	z-index: 10001;
+}
+
+.MCTopicPopupBody
+{
+	width: 100%;
+	border: none;
+}
+
+/**/
+/* Thumbnail Popup */
+
+.MCPopupThumbnailLink
+{
+	
+}
+
+.MCPopupThumbnail
+{
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.MCPopupContainer
+{
+	background-color: #FFFFFF;
+	border: solid 1px #000000;
+	padding: 10px;
+	position: absolute;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	z-index: 10001;
+}
+
+.MCPopupContainer2
+{
+	background-color: #FFFFFF;
+	border: solid 1px #000000;
+	padding: 10px;
+	position: absolute;
+	cursor: pointer;
+	-moz-box-shadow: 2px 2px 8px #FFFFFF;
+	-webkit-box-shadow: 2px 2px 8px #FFFFFF;
+	box-shadow: 2px 2px 8px #FFFFFF;
+}
+
+.MCPopupFullImage
+{
+	width: 0px;
+	height: 0px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+/**/
+/* HelpControl */
+
+.MCHelpControl_Image_Icon
+{
+	border: none;
+}
+
+.MCHelpControl span
+{
+	background: url("Images/help-control.png") no-repeat left center;
+	padding-left: 18px;
+}
+
+a.MCHelpControl
+{
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/**/
+/* Dialog */
+
+.MCDialog
+{
+	display: none;
+	width: 400px;
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	padding: 6px;
+	background-color: #000000;
+	border: 1px solid #000000;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	-webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+	filter: alpha( opacity = 0 );
+	opacity: 0.0;
+	z-index: 10001;
+}
+
+.MCDialogHeader
+{
+	margin: 0 0 4px;
+	padding: 5px 0 5px 5px;
+	color: #FFFFFF;
+	font-size: 15px;
+	font-family: Helvetica;
+}
+
+.MCDialogClose
+{
+	color: #FFFFFF;
+	font-family: tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 12px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	width: 20px;
+	height: 18px;
+	padding-top: 2px;
+	margin-top: -2px;
+	background-color: #999999;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.MCDialogBody
+{
+	color: #555555;
+	padding: 10px;
+	background-color: #FFFFFF;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+/**/
+
+a.glossaryTerm
+{
+	text-decoration: none;
+}
+
+/**/
+
+#ios-wrapper
+{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.img_off
+{
+	display: none;
+}
+
+.MCHelpControl-ConceptHotSpot_
+{
+	background-position: left;
+}
+
+.MCHelpControl-Concept .MCHelpControl-ConceptHotSpot_
+{
+	background-image: url('ConceptLink.gif');
+	padding-left: 5px;
+	padding-right: 0px;
+	background-position: left;
+}
+
+.link-list-popup
+{
+	font-family: 'OpenSansRegular';
+	margin-bottom: 25px;
+	font-size: 80%;
+	color: #383838;
+	border: solid 1px #808080;
+	background-color: #dadada;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.link-list-popup ul li
+{
+	font-family: inherit;
+	padding: 2px;
+	color: #1a5879;
+	font-size: 100%;
+	background-color: Transparent;
+}
+
+.link-list-popup ul li:hover
+{
+	color: #383838;
+	background-color: #E5EFF7;
+}
+
+.MCHelpControlList
+{
+	font-size: 75%;
+	color: #383838;
+	border: solid 1px #c0c0c0;
+}
+
+.MCHelpControlListItem
+{
+	
+}
+
+.MCHelpControlListItem a
+{
+	
+}
+
+.MCHelpControlListItem a:link
+{
+	
+}
+
+.MCConceptLinkControlListItem a:link
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:link
+{
+	
+}
+
+.MCRelatedTopicsControlListItem a:link
+{
+	
+}
+
+.MCHelpControlListItem a:visited
+{
+	
+}
+
+.MCConceptLinkControlListItem a:visited
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:visited
+{
+	
+}
+
+.MCRelatedTopicsControlListItem a:visited
+{
+	
+}
+
+.MCHelpControlListItem a:focus
+{
+	
+}
+
+.MCConceptLinkControlListItem a:focus
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:focus
+{
+	
+}
+
+.MCRelatedTopicsControlListItem a:focus
+{
+	
+}
+
+.MCHelpControlListItem a:hover
+{
+	
+}
+
+.MCConceptLinkControlListItem a:hover
+{
+	
+}
+
+.MCKeywordLinkControlListItem a:hover
+{
+	
+}
+
+.MCRelatedTopicsControlListItem a:hover
+{
+	
+}
+
+.MCConceptLinkControlList
+{
+	border: solid 1px #808080;
+	font-size: 0.75%;
+}
+
+.MCConceptLinkControlListItem
+{
+	font-size: 75%;
+}
+
+.MCConceptLinkControlListItem a
+{
+	font-size: 75%;
+}
+
+.MCKeywordLinkControlList
+{
+	
+}
+
+.MCKeywordLinkControlListItem
+{
+	
+}
+
+.MCKeywordLinkControlListItem a
+{
+	
+}
+
+.MCRelatedTopicsControlList
+{
+	
+}
+
+.MCRelatedTopicsControlListItem
+{
+	
+}
+
+.MCRelatedTopicsControlListItem a
+{
+	
+}
+
+.conceptLink
+{
+	font-size: 110%;
+	font-weight: normal;
+	color: #1a5879;
+}
+
+.conceptLink:link
+{
+	font-size: 110%;
+	font-weight: normal;
+	color: #1a5879;
+}
+
+.dropDown
+{
+	margin-top: 18px;
+	margin-right: 0px;
+	padding-right: 0px;
+}
+
+.dropDownHotspot
+{
+	text-decoration: none;
+}
+
+.dropDownHotspot:link
+{
+	text-decoration: none;
+}
+
+.MCDropDownHotSpot_
+{
+	background-position: left;
+}
+
+.MCDropDown_Open .MCDropDownHotSpot_
+{
+	background-image: url('minus.png');
+	padding-left: 2px;
+	padding-right: 0px;
+}
+
+.MCDropDown_Closed .MCDropDownHotSpot_
+{
+	background-image: url('plus.png');
+	padding-left: 2px;
+	padding-right: 0px;
+}
+
+.dropDownHead
+{
+	margin-top: 10px;
+	font-size: 15pt;
+	font-weight: bold;
+	page-break-after: avoid;
+	orphans: 3;
+	widows: 3;
+	font-family: 'OpenSansRegular';
+	color: #ef672f;
+	text-decoration: none;
+}
+
+table.AutoNumber_p_Number1
+{
+	left: 18px;
+	width: 100%;
+	vertical-align: top;
+	orphans: 2;
+	widows: 2;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 1.12em;
+	margin-bottom: 1.12em;
+}
+
+td.AutoNumber_p_Number1
+{
+	left: 18px;
+	vertical-align: top;
+	orphans: 2;
+	widows: 2;
+	line-height: normal;
+}
+
+.glossaryTerm
+{
+	font-weight: normal;
+	font-style: italic;
+	color: #1a5879;
+	font-size: 100%;
+	font-family: Georgia;
+}
+
+.glossaryTerm:link
+{
+	font-weight: normal;
+	font-style: italic;
+	color: #1a5879;
+	font-size: 100%;
+	font-family: Georgia;
+}
+
+.glossaryTerm.glossaryTermPopup
+{
+	font-weight: normal;
+	color: #1a5879;
+}
+
+.glossaryTerm.glossaryTermPopup:link
+{
+	font-weight: normal;
+	color: #1a5879;
+}
+
+.MCTextPopupHotSpot_.MCTextPopupHotSpot_Popup
+{
+	background-position: right;
+}
+
+.MCTextPopup_Open.MCTextPopupHotSpot_.MCTextPopupHotSpot_Popup
+{
+	background-image: url('ExpandingOpen.gif');
+	padding-right: 17px;
+	padding-left: 0px;
+}
+
+.MCTextPopup_Closed.MCTextPopupHotSpot_.MCTextPopupHotSpot_Popup
+{
+	background-image: url('ExpandingClosed.gif');
+	padding-right: 16px;
+	padding-left: 0px;
+}
+
+.popupBody
+{
+	color: #383838;
+	font-family: 'OpenSansRegular';
+	background-color: #f9f2e1;
+	font-weight: normal;
+	font: Arial;
+	margin-right: 0px;
+	font-size: 120%;
+	border: solid 1px #000000;
+	margin: 0px;
+	padding: 5px;
+}
+
+.MCTextPopupHotSpot_
+{
+	background-position: right;
+}
+
+.MCTextPopup_Open.MCTextPopupHotSpot_
+{
+	background-image: url('ExpandingOpen.gif');
+	padding-right: 17px;
+	padding-left: 0px;
+}
+
+.MCTextPopup_Closed.MCTextPopupHotSpot_
+{
+	background-image: url('ExpandingClosed.gif');
+	padding-right: 16px;
+	padding-left: 0px;
+}
+
+.xref
+{
+	color: #1a5879;
+	text-decoration: underline;
+}
+
+.MCWebHelpFramesetLink a
+{
+	color: #0000ee;
+	font-family: 'Open Sans';
+	font-size: 11pt;
+}
+
+.MCWebHelpFramesetLink.MCWebHelpFramesetLinkTop a
+{
+	
+}
+
+.MCWebHelpFramesetLink.MCWebHelpFramesetLinkBottom a
+{
+	
+}
+
