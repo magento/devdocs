@@ -1,0 +1,394 @@
+/* MadCap Table Style: */
+
+/*<meta Version="7" />*/
+
+mcTableStyle
+{
+	name: KBTable2;
+	border-collapse: collapse;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	max-id: 3;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+mcTableColumnStyle
+{
+	span: 1;
+	separator-style: none;
+	separator-width: 1px;
+	name: Column1;
+	id: 0;
+}
+
+mcTableHeadStyle
+{
+	span: 1;
+	separator-style: none;
+	separator-width: 1px;
+	name: Header1;
+	id: 2;
+	text-align: left;
+}
+
+mcTableBodyStyle
+{
+	span: 1;
+	separator-style: none;
+	separator-width: 1px;
+	name: Body1;
+	id: 1;
+}
+
+mcTableFootStyle
+{
+	span: 1;
+	separator-style: none;
+	separator-width: 1px;
+	name: Footer1;
+	id: 3;
+}
+
+
+/* Cell Styles: */
+ 
+.TableStyle-KBTable2
+{
+	border-collapse: collapse;
+	border-left-style: none;
+	border-left-width: 1px;
+	border-right-style: none;
+	border-right-width: 1px;
+	border-top-style: none;
+	border-top-width: 1px;
+	border-bottom-style: none;
+	border-bottom-width: 1px;
+	margin-left: 0px;
+	margin-right: 0px;
+	border-spacing: 0px 0px;
+}
+
+.TableStyle-KBTable2 .Column-Column1
+{
+	
+}
+
+.TableStyle-KBTable2 .Head-Header1
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadI-Column1-Header1
+{
+	text-align: left;
+}
+
+.TableStyle-KBTable2 .HeadI-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadE-Column1-Header1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+}
+
+.TableStyle-KBTable2 .HeadE-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadF-Column1-Header1
+{
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+}
+
+.TableStyle-KBTable2 .HeadF-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadH-Column1-Header1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+	text-align: left;
+}
+
+.TableStyle-KBTable2 .HeadH-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadD-Column1-Header1
+{
+	text-align: left;
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+}
+
+.TableStyle-KBTable2 .HeadD-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadC-Column1-Header1
+{
+	text-align: left;
+}
+
+.TableStyle-KBTable2 .HeadC-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadB-Column1-Header1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+	text-align: left;
+}
+
+.TableStyle-KBTable2 .HeadB-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadA-Column1-Header1
+{
+	text-align: left;
+}
+
+.TableStyle-KBTable2 .HeadA-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .HeadG-Column1-Header1
+{
+	text-align: left;
+}
+
+.TableStyle-KBTable2 .HeadG-Column1-Header1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .Foot-Footer1
+{
+	
+}
+
+.TableStyle-KBTable2 .FootI-Column1-Footer1
+{
+	
+}
+
+.TableStyle-KBTable2 .FootI-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootE-Column1-Footer1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+	border-top-width: 1px;
+	border-top-style: none;
+}
+
+.TableStyle-KBTable2 .FootE-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootF-Column1-Footer1
+{
+	border-top-width: 1px;
+	border-top-style: none;
+}
+
+.TableStyle-KBTable2 .FootF-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootH-Column1-Footer1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+}
+
+.TableStyle-KBTable2 .FootH-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootD-Column1-Footer1
+{
+	border-top-width: 1px;
+	border-top-style: none;
+}
+
+.TableStyle-KBTable2 .FootD-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootC-Column1-Footer1
+{
+	
+}
+
+.TableStyle-KBTable2 .FootC-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootB-Column1-Footer1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+}
+
+.TableStyle-KBTable2 .FootB-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootA-Column1-Footer1
+{
+	
+}
+
+.TableStyle-KBTable2 .FootA-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .FootG-Column1-Footer1
+{
+	
+}
+
+.TableStyle-KBTable2 .FootG-Column1-Footer1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .Body-Body1
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyI-Column1-Body1
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyI-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyE-Column1-Body1
+{
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+	border-right-width: 1px;
+	border-right-style: none;
+}
+
+.TableStyle-KBTable2 .BodyE-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyF-Column1-Body1
+{
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+}
+
+.TableStyle-KBTable2 .BodyF-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyH-Column1-Body1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+}
+
+.TableStyle-KBTable2 .BodyH-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyD-Column1-Body1
+{
+	border-bottom-width: 1px;
+	border-bottom-style: none;
+}
+
+.TableStyle-KBTable2 .BodyD-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyC-Column1-Body1
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyC-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyB-Column1-Body1
+{
+	border-right-width: 1px;
+	border-right-style: none;
+}
+
+.TableStyle-KBTable2 .BodyB-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyA-Column1-Body1
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyA-Column1-Body1 p
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyG-Column1-Body1
+{
+	
+}
+
+.TableStyle-KBTable2 .BodyG-Column1-Body1 p
+{
+	
+}
+
+
