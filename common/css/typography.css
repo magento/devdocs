@@ -1,76 +1,76 @@
 @font-face {
   font-family: 'OpenSansBold';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBold-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBold-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBold-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBold-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBold-webfont.svg#open_sansbold') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBold-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBold-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBold-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBold-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBold-webfont.svg#open_sansbold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansBoldItalic';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBoldItalic-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBoldItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBoldItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansBoldItalic-webfont.svg#open_sansbold_italic') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBoldItalic-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBoldItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBoldItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansBoldItalic-webfont.svg#open_sansbold_italic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansExtraBold';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBold-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBold-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBold-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBold-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBold-webfont.svg#open_sansextrabold') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBold-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBold-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBold-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBold-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBold-webfont.svg#open_sansextrabold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansExtraBoldItalic';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBoldItalic-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBoldItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBoldItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansExtraBoldItalic-webfont.svg#open_sansextrabold_italic') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBoldItalic-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBoldItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBoldItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansExtraBoldItalic-webfont.svg#open_sansextrabold_italic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansItalic';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansItalic-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansItalic-webfont.svg#open_sansitalic') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansItalic-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansItalic-webfont.svg#open_sansitalic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansLight';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLight-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLight-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLight-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLight-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLight-webfont.svg#open_sanslight') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLight-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLight-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLight-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLight-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLight-webfont.svg#open_sanslight') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansLightItalic';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLightItalic-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLightItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLightItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLightItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansLightItalic-webfont.svg#open_sanslight_italic') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLightItalic-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLightItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLightItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLightItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansLightItalic-webfont.svg#open_sanslight_italic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansRegular';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansRegular-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansRegular-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansRegular-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansRegular-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansRegular-webfont.svg#open_sansregular') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansRegular-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansRegular-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansRegular-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansRegular-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansRegular-webfont.svg#open_sansregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansSemiBold';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBold-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBold-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBold-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBold-webfont.svg#open_sanssemibold') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBold-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBold-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBold-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBold-webfont.svg#open_sanssemibold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'OpenSansSemiBoldItalic';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBoldItalic-webfont.eot');
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBoldItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBoldItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/common/fonts/OpenSansSemiBoldItalic-webfont.svg#open_sanssemibold_italic') format('svg');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBoldItalic-webfont.eot');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBoldItalic-webfont.eot?#iefix') format('embedded-opentype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBoldItalic-webfont.woff') format('woff'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBoldItalic-webfont.ttf') format('truetype'), url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/OpenSansSemiBoldItalic-webfont.svg#open_sanssemibold_italic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'ChronicleDisplayRoman';
-  src: url('https://github.com/magento/devdocs/tree/master/common/fonts/ChronicleDisp-Roman.otf');
+  src: url('https://github.com/magento/devdocs/tree/master/guides/m2devgde/V1.0.0.0/Content/Resources/Stylesheets/fonts/ChronicleDisp-Roman.otf');
   font-style: normal;
   font-weight: normal;
 }
