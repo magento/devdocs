@@ -1,1 +1,0 @@
-define({numchunks:1,prefix:'Glossary_Chunk',terms:[{t:'API configuration',c:0},{t:'extension',c:0},{t:'integration',c:0},{t:'Integration configuration',c:0},{t:'module',c:0},{t:'package',c:0},{t:'plug-in',c:0},{t:'service framework',c:0}]});

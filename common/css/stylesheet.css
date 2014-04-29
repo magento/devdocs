@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	 background-color: #ffffff;  margin: 0 auto; font-size:15px; font: 15px/22px Helvetica, Arial, sans-serif; color:#5A5A5A; font-weight:normal; width:1024px;
+	 background-color: #ffffff;  margin: 0 auto; font-size:15px; font: OpenSansRegular; color:#31302b; font-weight:normal; width:1024px;
 	}
 
 /* containers */
@@ -44,13 +44,13 @@ h1, h2 { font-weight:100; margin:30px 0 10px 0; }
 
 h3, h4, h5 { font-weight:100; color:#444444; margin:25px 0 2px 0; }
 
-h1 { font: 32px/42px 'TitilliumText22LBold', Helvetica, sans-serif; letter-spacing: 0; }
+h1 { font: 32px/42px 'OpenSansSemiBold', Helvetica, sans-serif; letter-spacing: 0; }
 	
-h2 { font: 26px/38px 'TitilliumText22LRegular', Helvetica, sans-serif; color:#f47027; }
+h2 { font: 26px/38px 'OpenSansSemiBold', Helvetica, sans-serif; color:#f47027; }
 	
-h3 { font: 23px/36px 'TitilliumText22LRegular', Helvetica, sans-serif; letter-spacing: 0;}
+h3 { font: 23px/36px 'OpenSansSemiBold', Helvetica, sans-serif; letter-spacing: 0;}
 		
-h4 { font: 18px/27px 'TitilliumText22LRegular', Helvetica, sans-serif; letter-spacing: 0; }
+h4 { font: 18px/27px 'OpenSansSemiBold', Helvetica, sans-serif; letter-spacing: 0; }
 	
 h5 { font: 14px/21px 'TitilliumText22LThin', Helvetica, sans-serif; letter-spacing: 0; font-weight:bold; margin-top:25px; }
 
