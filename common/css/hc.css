@@ -1,5 +1,53 @@
 @import url('typography.css');
 
+/* TEST */
+
+#years, #months, #posts{
+    cursor:pointer;
+}
+.archive_year {
+margin-left: 1em;
+font-weight: bold;
+cursor: pointer;
+}
+.archive_month {
+margin-left: 1em;
+margin-top: 0;
+margin-bottom: 1em;
+list-style-type: circle;
+cursor: pointer;
+}
+.archive_posts {
+margin-left: 1em;
+margin-top: 0;
+margin-bottom: 1em;
+list-style: square url('http://www.webbossuk.com/admin/images/reply-arrow.png');
+cursor: pointer;
+}
+
+/* ul {
+    list-style: round inside none;
+} */
+
+ul 
+{
+	list-style: round inside none;
+    margin-left: 1em;
+}
+
+ul li
+{
+	margin-bottom: 6px;
+}
+
+ol { list-style: decimal outside none;
+    margin-left: 1em;
+ }
+ 
+ol li
+{
+	margin-bottom: 6px;
+}
 
 body
 {
@@ -8,7 +56,7 @@ body
   background-color:#f0f0f0;
   width:100%;
   border-top:solid #EF672F;
-  border-width:4px
+  border-width:4px;
 }
 
 h1,h2,h3,h4,h5,h6
@@ -41,7 +89,8 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover
 p
 {
   font-family:'OpenSansRegular', sans-serif;
-  font-weight:200
+  font-weight:200;
+  margin-top:12px;
 }
 
 /* .posts
@@ -228,11 +277,6 @@ blockquote
   margin-right:-40px;
   padding-left:40px;
   background:#f3f3f7
-}
-
-ul,ol
-{
-  
 }
 
 pre
