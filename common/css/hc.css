@@ -179,6 +179,18 @@ p
   text-shadow:1px 1px #fff
 }
 
+.sidebar-toc 
+{
+  list-style-type:none;
+  line-height:normal;
+  font-family:'OpenSansRegular';
+  font-size: 12pt;
+  color:#31302b;
+  margin-bottom:6pt;
+  margin-left:1em;
+  text-shadow:1px 1px #fff
+}
+
 .sidebar-nav li a
 {
   color:#0000FF;
