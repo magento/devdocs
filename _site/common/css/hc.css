@@ -25,6 +25,15 @@ list-style: square url('http://www.webbossuk.com/admin/images/reply-arrow.png');
 cursor: pointer;
 }
 
+/* EXPANDABLE TOC */
+
+#expand-toc{
+    cursor:pointer;
+}
+
+
+
+
 /* ul {
     list-style: round inside none;
 } */
@@ -244,7 +253,9 @@ p
   color:#6c7077;
   font-family:OpenSansRegular;
   font-size:16pt;
-  text-shadow:1px 1px #fff
+  text-shadow:1px 1px #fff;
+  margin-bottom:1em;
+  margin-top:2em;
 }
 
 /* .brand:hover

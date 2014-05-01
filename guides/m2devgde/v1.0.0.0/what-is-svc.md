@@ -3,7 +3,7 @@ layout: howtom2devgde
 title: What is the Magento 2 Service Framework?
 ---
 
-# What is the Magento 2 Service Framework?
+<h1 id="what-is">What is the Magento 2 Service Framework?</h1>
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p>
 
@@ -22,5 +22,10 @@ Services provide a consistent interface and behavior, regardless of the type of 
 
 Using services interfaces, an integrator can more easily interact with Magento 2 using APIs instead of overloading classes as was necessary in earlier Magento versions. Because you're not overloading classes, and because service interfaces are versioned, there are fewer chances of conflicts with other applications and fewer chances of issues during upgrade.
 
+<h2 id="second">Head 2</h2>
+<p>TBD</p>
 
+<h3 id="third">Head 3</h3>
+<p>TBD</p>
 
+<h1 id="turd">Head 1</h1>

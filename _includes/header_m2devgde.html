@@ -8,8 +8,10 @@
    <link href="{{ site.baseurl }}/common/css/bootstrap.min.css" rel="stylesheet">
   <link href="{{ site.baseurl }}/common/css/hc.css" rel="stylesheet">
   <link href="{{ site.baseurl }}/common/css/main.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}/common/css/jquery.toc.css" rel="stylesheet">
   <script src="{{ site.baseurl }}/common/js/jquery-1.11.0.min.js"></script>
   <script src="{{ site.baseurl }}/common/js/test.js"></script>
+  <script src="{{ site.baseurl }}/common/js/jquery.toc.js"></script>
 
 
 <!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -53,18 +55,9 @@
 	   
        <div id="sidebar-wrapper">
 	   <div class="logo">
-	   <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/common/images/magento-logo-m.png"></a>
-	   </div>
-        <ul class="sidebar-toc">
-          <li class="sidebar-brand"><h1 class="brand">Contents</h1><!-- <h3>{{ site.description }}</h3> --></li>
-          <hr />
-          <li><a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svc-how-to-use.html">How a Client Uses a Service</a></li>
-          <li><a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/what-is-svc.html">What is the Magento 2 Service Framework?</a></li></li>
-         <!--  <li><a href="{{ site.baseurl }}/links.html">Links</a></li>
-          <li><a href="{{ site.baseurl }}/projects.html">Projects</a></li>
-          <li><a href="{{ site.baseurl }}/about.html">About</a></li> -->
-          <hr />
-       </ul>
+	   <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/common/images/magento-logo-m.png"></a></div>
+	   <h1 class="brand">Contents</h1>
+ 	   <div tocfrom="h1, h2, h3, h4" toctemplate="default:nonum:collapsible"/></div>
      </div>
 
 
