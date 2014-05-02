@@ -1,39 +1,22 @@
 @import url('typography.css');
 
-/* TEST */
-
-#years, #months, #posts{
-    cursor:pointer;
-}
-.archive_year {
-margin-left: 1em;
-font-weight: bold;
-cursor: pointer;
-}
-.archive_month {
-margin-left: 1em;
-margin-top: 0;
-margin-bottom: 1em;
-list-style-type: circle;
-cursor: pointer;
-}
-.archive_posts {
-margin-left: 1em;
-margin-top: 0;
-margin-bottom: 1em;
-list-style: square url('http://www.webbossuk.com/admin/images/reply-arrow.png');
-cursor: pointer;
-}
-
-/* EXPANDABLE TOC */
-
+/*
 #expand-toc{
     cursor:pointer;
 }
+*/
 
-
-
-
+.toc ul
+{
+  list-style-type:none;
+  line-height:normal;
+  font-family:'OpenSansRegular';
+  font-size: 12pt;
+  color:#31302b;
+  margin-bottom:6pt;
+  margin-left:1em;
+  text-shadow:1px 1px #fff;
+}
 /* ul {
     list-style: round inside none;
 } */
@@ -47,7 +30,11 @@ ul
 ul li
 {
 	margin-bottom: 6px;
+	
 }
+
+
+
 
 ol { list-style: decimal outside none;
     margin-left: 1em;
@@ -159,7 +146,7 @@ p
   margin-top:-4px;
   border-top:solid #EF672F;
   transition:all .4s ease 0;
-  border-width:4px
+  border-width:4px;
 }
 
 .logo
@@ -188,17 +175,6 @@ p
   text-shadow:1px 1px #fff
 }
 
-.sidebar-toc 
-{
-  list-style-type:none;
-  line-height:normal;
-  font-family:'OpenSansRegular';
-  font-size: 12pt;
-  color:#31302b;
-  margin-bottom:6pt;
-  margin-left:1em;
-  text-shadow:1px 1px #fff
-}
 
 .sidebar-nav li a
 {
@@ -513,7 +489,7 @@ time
   border-radius:.5em
 }
 
-#self
+/* #self
 {
   -moz-border-radius:100px;
   -webkit-border-radius:100px;
@@ -526,7 +502,7 @@ time
 #disqus_thread
 {
   margin-top:100px
-}
+} */
 
 .recent-posts
 {

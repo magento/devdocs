@@ -4,6 +4,11 @@
 .tmplDefault, .tmplDefault ol {
 	counter-reset: item;
 	list-style: none;
+	font-family:'OpenSansRegular';
+	font-size: 12pt;
+	color:#31302b;
+	margin-bottom:6pt;
+	margin-left:1em;
 }
 
 .tmplDefault a:before {
@@ -19,8 +24,13 @@ ol.tmplDefault, .tmplDefault ol {
 }
 
 ol.tmplDefault {
-	margin: 1em 0px;
-}
+	margin-left:.65em;
+	padding-left: -12px ;
+    text-indent: -6px ;
+	margin-bottom:6pt;
+/* 	margin-left:1em;
+ *//* 	margin: 1em 0px;
+ */}
 
 .tmplDefault li {
 	padding: 0px;
