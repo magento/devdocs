@@ -103,56 +103,34 @@
 
   <div class ="container">
  -->
-<h1 id="how-a-client-uses-a-service">How a Client Uses a Service</h1>
+<h1 id="what-is-integration">What is an Integration?</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+<p>Help us improve this page </p>
 
-<p>Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so developers can simply acquire an instance of the service and invoke the appropriate method directly. You can also use web services REST and SOAP calls.</p>
+<p>All third-party systems integrating with Magento must be authenticated and authorized to access Magento resources securely. To make both procedures easier, we changed the workflow for authorizing the API calls. You can now authorize your third-party system using either secure, cloud-based key exchange or by creating the keys locally on the merchant’s Magento system.</p>
 
-<h2 id="method-1-dependency-injection">Method 1: Dependency Injection</h2>
+<p>Integrating with Magento requires you to define access rights that control what information your third-party system needs from the merchant’s Magento instance. If you want to establish more control over the data accessible for the external systems, you can do so using configuration files.</p>
 
-<p>To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.</p>
+<p>Here we discuss how to create a new integration, configure it, specify the access rights for different user roles, restrict access to the resources using configuration files, and authorization workflow in Magento 2.</p>
 
-<p>Because a service call typically accepts one or more primitive types (or Service Data Objects), you might have to convert or extract before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.scm.corp.ebay.com/magento2/magento2/blob/develop/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
+<h2 id="audience">Intended Audience</h2>
 
-<p>For example, if you know a customer’s ID and want to get data about the customer, here’s what you do:</p>
+<p>This page is intended to be used by third-party developers who want to extend Magento’s functionality by creating integrations.</p>
 
-<ol>
-  <li>
-    <p>Search the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method <code>(public function getCustomer($customerId);)</code></p>
-  </li>
-  <li>
-    <p>Notice in the comment <code>@return \Magento\Customer\Service\V1\Data\Customer</code>.</p>
-  </li>
-  <li>
-    <p>Get the details about the response from the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">data object</a>.</p>
-  </li>
-</ol>
+<p>If you’re a merchant who wants to activate an integration, see Activating an Integration instead.</p>
 
-<p>Service methods complete in one of two ways:</p>
+<h2 id="create-integration">Choosing How to Create Your Integration</h2>
+
+<p>You have the following options to create your integration:</p>
 
 <ul>
   <li>
-    <p>Return a response, which can be:</p>
-
-    <p>Null if no data is returned</p>
-
-    <p>Array</p>
-
-    <p>Primitive type (such as an ID)</p>
-
-    <p>Service Data Object. A Service Data Object will hold only primitives or other Service Data Objects and so on. In this case, it is up to the client to use the data returned in whatever way is appropriate.</p>
+    <p>Creating the integration using the Magento Admin, which you might prefer if you aren’t comfortable creating configuration files. For more information, see Manually Creating an Integration Using the Magento Admin.</p>
   </li>
   <li>
-    <p>Throw an exception</p>
-
-    <p>An exception should be handled according to logic associated with the method invocation and the error received. Most of the time, the client logs only the details of the root exception and reports the error to the user in an appropriate way.</p>
+    <p>Automatically creating the integration by providing it as an extension package. For more information, see Creating an Integration Automatically.</p>
   </li>
 </ul>
-
-<h2 id="method-2-web-services">Method 2: Web Services</h2>
-
-<p><em>This section not done yet</em></p>
 
 
     <footer>

@@ -103,56 +103,53 @@
 
   <div class ="container">
  -->
-<h1 id="how-a-client-uses-a-service">How a Client Uses a Service</h1>
+<h1 id="code-integration">Coding Your Integration</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+<p>Help us improve this page </p>
 
-<p>Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so developers can simply acquire an instance of the service and invoke the appropriate method directly. You can also use web services REST and SOAP calls.</p>
+<p>This topic discusses how to code your integration with Magento. Eventually, you will be able to market your integration as an extension on Magento Connect; however, it’s not possible to do that now for Magento 2 integrations.</p>
 
-<h2 id="method-1-dependency-injection">Method 1: Dependency Injection</h2>
+<p><em>Note</em>: Throughout this guide, the term <em>integration configuration</em> is used to mean the integration’s <code>[your magento install dir]/app/code/vendor/module/etc/config.xml</code> and the term <em>API configuration</em> is used to mean the integration’s <code>[your magento install dir]/app/code/vendor/module/etc/integration/api.xml</code></p>
 
-<p>To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.</p>
+<h2 id="code-step1">Step 1: Creating data scripts</h2>
 
-<p>Because a service call typically accepts one or more primitive types (or Service Data Objects), you might have to convert or extract before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.scm.corp.ebay.com/magento2/magento2/blob/develop/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
+<p>Creating and updating an integration module are triggered by data setup scripts. You must add the following code to your integration’s <code>[your magento install dir]/app/code/vendor/module/etc/di.xml</code> file of the corresponding module for the data setup script:</p>
 
-<p>For example, if you know a customer’s ID and want to get data about the customer, here’s what you do:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/9750817.js"></script>
 
-<ol>
-  <li>
-    <p>Search the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method <code>(public function getCustomer($customerId);)</code></p>
-  </li>
-  <li>
-    <p>Notice in the comment <code>@return \Magento\Customer\Service\V1\Data\Customer</code>.</p>
-  </li>
-  <li>
-    <p>Get the details about the response from the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">data object</a>.</p>
-  </li>
-</ol>
+<p>After that, the <code>[vendor]/[module]/data/[module_setup]/[data-install-version].php</code> class is used to initiate processing of the integration configuration file.</p>
 
-<p>Service methods complete in one of two ways:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/9750864.js"></script>
 
-<ul>
-  <li>
-    <p>Return a response, which can be:</p>
+<p>This creates a new integration is created or updates an existing integration.</p>
 
-    <p>Null if no data is returned</p>
+<h2 id="code-step2">Step 2: Creating the configuration and API configuration files</h2>
 
-    <p>Array</p>
+<p>An integration requires the integration configuration and API configuration files.</p>
 
-    <p>Primitive type (such as an ID)</p>
+<p>Configuration files should follow the general requirements for configuration files and be placed in the <code>[vendor]/[module]/etc/integration directory. The validation schema for these files should be placed in the </code>[vendor]/[module]/Integration/etc/integration/config.xsd<code> (configuration file) and in </code>[vendor]/[module]/etc/integration/api.xsd` (API configuration file).</p>
 
-    <p>Service Data Object. A Service Data Object will hold only primitives or other Service Data Objects and so on. In this case, it is up to the client to use the data returned in whatever way is appropriate.</p>
-  </li>
-  <li>
-    <p>Throw an exception</p>
+<p>Sample <code>config.xml</code>:</p>
 
-    <p>An exception should be handled according to logic associated with the method invocation and the error received. Most of the time, the client logs only the details of the root exception and reports the error to the user in an appropriate way.</p>
-  </li>
-</ul>
+<script src="https://gist.github.com/xcomSteveJohnson/9752169.js"></script>
 
-<h2 id="method-2-web-services">Method 2: Web Services</h2>
+<p>The validation schema for <code>config.xml</code> is <code>Integration/etc/integration/config.xsd</code></p>
 
-<p><em>This section not done yet</em></p>
+<script src="https://gist.github.com/xcomSteveJohnson/9752169.js"></script>
+
+<p>Sample <code>api.xml</code>:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/9752191.js"></script>
+
+<p>All integration identifiers (specified by <code>&lt;integration name=</code>) reference an appropriate entity in the integration’s <code>config.xml</code>.</p>
+
+<h2 id="code-step3">Step 3: Assigning API configurations to the newly created integration module</h2>
+
+<p>Magento’s <code>/app/code/Magento/Webapi/Model/Plugin/Setup.php</code> plug-in passes an integration’s name from this file, creates permissions due to information in the integration API file, and associates the API with your integration.</p>
+
+<p>A snippet follows:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/9752298.js"></script>
 
 
     <footer>

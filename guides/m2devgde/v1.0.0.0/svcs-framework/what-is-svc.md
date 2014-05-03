@@ -1,5 +1,5 @@
 ---
-layout: howtom2devgde_chapters
+layout: default_m2devgde
 title: What is the Magento 2 Service Framework?
 ---
 
