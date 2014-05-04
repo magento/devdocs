@@ -1,5 +1,5 @@
 ---
-layout: default_m2devgde
+layout: howtom2devgde_chapters
 title: Accessing Magento Objects Using REST
 ---
 
@@ -19,7 +19,7 @@ This section discusses how to make an HTTP GET call to the getCustomer method.
 
 2.	Find the desired call; for example, 
 
-```xml
+```
 <route url="/V1/customerAccounts/:customerId/customer" method="GET">
 <service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="getCustomer" />
 ```

@@ -1,5 +1,5 @@
 ---
-layout: default_m2devgde
+layout: howtom2devgde_chapters
 title: Understanding the Properties and Responsibilities of a Service
 ---
 
