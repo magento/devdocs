@@ -103,57 +103,51 @@
 
   <div class ="container">
  -->
-<h1 id="how-a-client-uses-a-service">How a Client Uses a Service</h1>
+<h1 id="what-is">Accessing Magento Objects Using REST</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+<h2 id="rest-call">How to Make a REST Call</h2>
 
-<p>Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so developers can simply acquire an instance of the service and invoke the appropriate method directly. You can also use web services REST and SOAP calls.</p>
+<p>All REST calls for the Customer service are contained in ~webapi.xml~; however, inputs and return values are defined in their respective interfaces.</p>
 
-<h2 id="method-1-dependency-injection">Method 1: Dependency Injection</h2>
+<p>To make a REST call for the Customer service:</p>
 
-<p>To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.</p>
+<h3 id="rest-call-step1">Step 1: Look up the call in webapi.xml:</h3>
 
-<p>Because a service call typically accepts one or more primitive types (or Service Data Objects), you might have to convert or extract before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.scm.corp.ebay.com/magento2/magento2/blob/develop/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
-
-<p>For example, if you know a customer’s ID and want to get data about the customer, here’s what you do:</p>
+<p>This section discusses how to make an HTTP GET call to the getCustomer method.</p>
 
 <ol>
   <li>
-    <p>Search the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method <code>(public function getCustomer($customerId);)</code></p>
+    <p>Open <code>webapi.xml</code>.</p>
   </li>
   <li>
-    <p>Notice in the comment <code>@return \Magento\Customer\Service\V1\Data\Customer</code>.</p>
-  </li>
-  <li>
-    <p>Get the details about the response from the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">data object</a>.</p>
+    <p>Find the desired call; for example, </p>
   </li>
 </ol>
 
-<p>Service methods complete in one of two ways:</p>
+<p><code>xml
+&lt;route url="/V1/customerAccounts/:customerId/customer" method="GET"&gt;
+&lt;service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="getCustomer" /&gt;
+</code></p>
 
-<ul>
-  <li>
-    <p>Return a response, which can be:</p>
+<ol>
+  <li>The route url specifies the URL of the REST call.</li>
+</ol>
 
-    <p>Null if no data is returned</p>
+<p>In this example, <code>GET /V1/customerAccounts/:customerId/customer</code></p>
 
-    <p>Array</p>
+<p><em>Note</em>: Any value prefixed by a colon character is a required input. In the preceding example, <code>:customerId</code> indicates you must provide the customer ID.</p>
 
-    <p>Primitive type (such as an ID)</p>
+<p><em>Note</em>: Some REST calls have no route; for these cases, use the Base URL only.</p>
 
-    <p>Service Data Object. A Service Data Object will hold only primitives or other Service Data Objects and so on. In this case, it is up to the client to use the data returned in whatever way is appropriate.</p>
-  </li>
-  <li>
-    <p>Throw an exception</p>
+<h3 id="rest-call-step2">Step 2: Find the response object</h3>
 
-    <p>An exception should be handled according to logic associated with the method invocation and the error received. Most of the time, the client logs only the details of the root exception and reports the error to the user in an appropriate way.</p>
-  </li>
-</ul>
+<p>The return object is specified in the class named by the service class definition from <code>webapi.xml</code>.</p>
 
-<h2 id="method-2-web-services">Method 2: Web Services</h2>
+<p>Continuing the preceding example, the <code>Magento\Customer\Service\V1\CustomerAccountServiceInterface\getCustomer</code> method specifies the return object as follows:</p>
 
-<p><em>This section not done yet</em></p>
+<script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
 
+<p>In this case, the return object is Customer.php.</p>
 
     <footer>
        <p class="text-muted credit">Copyright &copy; 2014 Magento, Inc. (an eBay, Inc. company). All Rights Reserved.<br />
