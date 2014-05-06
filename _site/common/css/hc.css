@@ -94,6 +94,12 @@ p
   margin-top:12px;
 }
 
+.back p
+{
+	margin-left:12px;
+    text-indent: -10px ;
+}
+
 /* .posts
 {
   font-size:20px;
@@ -516,6 +522,11 @@ td {
 img
 {
   max-width:100%;
+}
+
+img.prev
+{
+	vertical-align:top;
 }
 
 #article
