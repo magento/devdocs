@@ -3,7 +3,7 @@ layout: howtom2devgde_chapters
 title: How a Client Uses a Service
 ---
 
-# How a Client Uses a Service
+<h1 id="how-client-uses-svc">How a Client Uses a Service</h1>
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p>
 

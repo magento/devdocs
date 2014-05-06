@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>What is an Integration?</title>
+  <title>Maintaining an Integration</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Magento 2 Developer's Guide">
    <link href="/common/css/bootstrap.min.css" rel="stylesheet">
@@ -64,35 +64,31 @@
      <div class="container">
 
 
-<h1 id="what-is-integration">What is an Integration?</h1>
+<h1 id="integration-maintain">Maintaining an Integration</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/what-is-integration.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/integration-maintain.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
 
-<p>All third-party systems integrating with Magento must be authenticated and authorized to access Magento resources securely. To make both procedures easier, we changed the workflow for authorizing the API calls. You can now authorize your third-party system using either secure, cloud-based key exchange or by creating the keys locally on the merchant’s Magento system.</p>
+<p>Only integrations created manually using the Magento Admin can be edited; integrations created automatically from configuration files are not editable.</p>
 
-<p>Integrating with Magento requires you to define access rights that control what information your third-party system needs from the merchant’s Magento instance. If you want to establish more control over the data accessible for the external systems, you can do so using configuration files.</p>
+<p>To edit or delete an integration:</p>
 
-<p>Here we discuss how to create a new integration, configure it, specify the access rights for different user roles, restrict access to the resources using configuration files, and authorization workflow in Magento 2.</p>
-
-<h2 id="audience">Intended Audience</h2>
-
-<p>This page is intended to be used by third-party developers who want to extend Magento’s functionality by creating integrations.</p>
-
-<p>If you’re a merchant who wants to activate an integration, see Activating an Integration instead.</p>
-
-<h2 id="create-integration">Choosing How to Create Your Integration</h2>
-
-<p>You have the following options to create your integration:</p>
-
-<ul>
+<ol>
   <li>
-    <p>Creating the integration using the Magento Admin, which you might prefer if you aren’t comfortable creating configuration files. For more information, see Manually Creating an Integration Using the Magento Admin.</p>
+    <p>Log in to the Magento Admin as an administrator.</p>
   </li>
   <li>
-    <p>Automatically creating the integration by providing it as an extension package. For more information, see Creating an Integration Automatically.</p>
+    <p>Click <strong>System</strong> &gt; <strong>Integrations</strong>.</p>
   </li>
-</ul>
-
+  <li>
+    <p>To edit the integration, click <img src="/common/images/integration_pencil.png" alt="Click the pencil icon to edit an integration" /> next to the integration to edit.</p>
+  </li>
+  <li>
+    <p>To delete the integration, click <img src="/common/images/integration_trash.png" alt="Click the trash can icon to delete an integration" />.</p>
+  </li>
+  <li>
+    <p>Save your changes.</p>
+  </li>
+</ol>
 
     <footer>
        <p class="text-muted credit">Copyright &copy; 2014 Magento, Inc. (an eBay, Inc. company). All Rights Reserved.<br />
