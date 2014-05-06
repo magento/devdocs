@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Accessing Magento Objects Using REST</title>
+  <title>What Is the WebAPI Framework?</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Magento 2 Developer's Guide">
    <link href="/common/css/bootstrap.min.css" rel="stylesheet">
@@ -65,53 +65,11 @@
      <div class="container">
 
 
-<h1 id="what-is">Accessing Magento Objects Using REST</h1>
+<h1 id="webapi-whatis">What Is the WebAPI Framework?</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/rest/rest-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
 
-<h2 id="rest-call">How to Make a REST Call</h2>
-
-<p>All REST calls for the Customer service are contained in ~webapi.xml~; however, inputs and return values are defined in their respective interfaces.</p>
-
-<p>To make a REST call for the Customer service:</p>
-
-<h3 id="rest-call-step1">Step 1: Look up the call in webapi.xml:</h3>
-
-<p>This section discusses how to make an HTTP GET call to the getCustomer method.</p>
-
-<ol>
-  <li>
-    <p>Open <code>webapi.xml</code>.</p>
-  </li>
-  <li>
-    <p>Find the desired call; for example, </p>
-  </li>
-</ol>
-
-<p><code>
-&lt;route url="/V1/customerAccounts/:customerId/customer" method="GET"&gt;
-&lt;service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="getCustomer" /&gt;
-</code></p>
-
-<ol>
-  <li>The route url specifies the URL of the REST call.</li>
-</ol>
-
-<p>In this example, <code>GET /V1/customerAccounts/:customerId/customer</code></p>
-
-<p><em>Note</em>: Any value prefixed by a colon character is a required input. In the preceding example, <code>:customerId</code> indicates you must provide the customer ID.</p>
-
-<p><em>Note</em>: Some REST calls have no route; for these cases, use the Base URL only.</p>
-
-<h3 id="rest-call-step2">Step 2: Find the response object</h3>
-
-<p>The return object is specified in the class named by the service class definition from <code>webapi.xml</code>.</p>
-
-<p>Continuing the preceding example, the <code>Magento\Customer\Service\V1\CustomerAccountServiceInterface\getCustomer</code> method specifies the return object as follows:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
-
-<p>In this case, the return object is Customer.php.</p>
+<p>The Web API Framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.</p>
 
     <footer>
        <p class="text-muted credit">Copyright &copy; 2014 Magento, Inc. (an eBay, Inc. company). All Rights Reserved.<br />

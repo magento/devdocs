@@ -5,7 +5,7 @@ title: What is an Integration?
 
 <h1 id="what-is-integration">What is an Integration?</h1>
 
-Help us improve this page 
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/what-is-integration.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p> 
 
 All third-party systems integrating with Magento must be authenticated and authorized to access Magento resources securely. To make both procedures easier, we changed the workflow for authorizing the API calls. You can now authorize your third-party system using either secure, cloud-based key exchange or by creating the keys locally on the merchant's Magento system.
 

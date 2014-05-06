@@ -41,9 +41,6 @@ ul li
 	
 }
 
-
-
-
 ol { list-style: decimal outside none;
     margin-left: 1em;
  }
@@ -300,6 +297,65 @@ tt
   font-size: 11pt;
   color:#31302b;
 }
+
+/* TABLE */
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+	color:#f7f3eb;
+	cell-padding-left: 8px;
+	cell-padding-right: 8px;
+	cell-padding-top: 8px;
+	cell-padding-bottom: 8px;
+}
+table td, table th, table tr, table tr th {
+	padding:8px;}
+
+table .odd {
+    background-color: #f7f3eb; 
+    border-bottom: medium none;
+}
+table .even {
+    border-bottom: medium none;
+}
+table th {	
+    border: #cac3b4 1px solid;
+    color: #444444;
+    padding: 5px;
+    vertical-align: top;
+}
+table .table-headings th {
+	background-color: #f7f3eb;
+    border:1px solid #cac3b4;
+	color: #31302b;
+    font-weight: bold;
+    padding: 10px;
+    vertical-align: top;
+	font-size:15px;
+}
+table tr {
+    border-color: transparent #ffffff;
+    border-left: 1px solid #cac3b4;
+    border-right: 1px solid #cac3b4;
+    border-style: solid;
+    border-width: 1px;
+    color: #31302b;
+    vertical-align: top;
+}
+
+tr.even {
+    border-bottom: medium none;
+}
+tr.even, tr.odd {
+    padding: 0.1em 0.6em;
+}
+td {
+    border:1px solid #cac3b4;
+    color: #31302b;
+}
+
 
 #social-wrapper
 {
