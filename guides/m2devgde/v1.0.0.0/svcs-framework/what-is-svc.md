@@ -21,11 +21,3 @@ The following figure shows how this concept works:
 Services provide a consistent interface and behavior, regardless of the type of client making the request. This means that creating a customer works the same way, regardless of whether the customer is created from a web service or from a web page. It also means that customizations to the customer creation logic manifest themselves consistently from one page to the next and from one client to the next.
 
 Using services interfaces, an integrator can more easily interact with Magento 2 using APIs instead of overloading classes as was necessary in earlier Magento versions. Because you're not overloading classes, and because service interfaces are versioned, there are fewer chances of conflicts with other applications and fewer chances of issues during upgrade.
-
-<h2 id="second">Head 2</h2>
-<p>TBD</p>
-
-<h3 id="third">Head 3</h3>
-<p>TBD</p>
-
-<h1 id="turd">Head 1</h1>
