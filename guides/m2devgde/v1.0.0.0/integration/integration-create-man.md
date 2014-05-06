@@ -27,7 +27,35 @@ To create a new integration:
 	
 4.  Enter the following information:
 
-	TBD
+	<table>
+	<tbody>
+		<tr class="table-headings">
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+	<tr class="even">
+		<td>Name</td>
+		<td>Enter a globally unique name for the integration.</td>
+	</tr>
+	<tr class="odd">
+		<td>Email</td>
+		<td>Enter a contact e-mail address.</td>
+	</tr>
+	<tr class="even">
+		<td>Name</td>
+		<td>Enter a globally unique name for the integration.</td>
+	</tr>
+	<tr class="odd">
+		<td>Callback URL</td>
+		<td>If you use OAuth for token exchange, enter a URL to use in the oauth_callback parameter in your authentication request. This field is optional; however, if you choose to use OAuth, Magento strongly recommends the URL use HTTPS.</td>
+	</tr>
+	<tr class="even">
+		<td>Identity Link URL</td>
+		<td>Enter a URL to which the Magento merchant goes to securely retrieve the access token and access token secret. This field is optional; you can provide this information to the merchant in another way. Magento strongly recommends you use HTTPS for this URL.</td>
+	</tr>
+	</tbody>
+	</table>
+
 
 5. Click the **API** tab.
 
