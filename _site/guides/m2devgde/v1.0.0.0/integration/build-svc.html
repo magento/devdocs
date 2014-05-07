@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>What is the Magento 2 Service Framework?</title>
+  <title>Basics of Building a Service</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Magento 2 Developer's Guide">
    <link href="/common/css/bootstrap.min.css" rel="stylesheet">
@@ -65,26 +65,61 @@
      <div class="container">
 
 
-<h1 id="what-is">What is the Magento 2 Service Framework?</h1>
+<h1 id="basics-of-building-a-service">Basics of Building a Service</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
 
-<p>Magento 2 uses the service framework to define and expose extensible features.</p>
+<p>A <em>service</em> is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code–typically one or more interfaces, classes, and methods. To review the properties of a service, see TBD.</p>
 
-<p>A service:</p>
+<p>The code that uses a service should depend on the interface rather than on the service implementation to enable the use of a different implementation if needed.</p>
+
+<h2 id="about-the-service-interface">About the Service Interface</h2>
+
+<p>Some important characteristics of a service interface:</p>
 
 <ul>
-  <li>Is a functional abstraction that represents the business features available to other parts of an application or Magento. </li>
-  <li>Represents a boundary that encapsulates the business logic a module exposes without revealing any of the details of how that functionality is implemented. </li>
+  <li>
+    <p>The methods must be annotated to describe the types of input, which are used to generate contracts for the WebAPI framework. </p>
+
+    <p>Input arguments can be scalar types, arrays or objects. If objects are used, they should be implemented as <a href="#About Service Data Objects">Service Data Objects</a>.</p>
+  </li>
+  <li>
+    <p>The metods must be annotated to describe the types of the output, which are used to generate contracts for WebAPI framework. </p>
+
+    <p>Output argument can be scalar types, arrays or objects. If objects are used, they should be implemented as <a href="#About Service Data Objects">Service Data Objects</a>.</p>
+  </li>
+  <li>
+    <p>Every interface must be versioned and the version must be a suffix of the interface name.</p>
+
+    <p>Versions must be numbered V1, V2, and so on.</p>
+  </li>
 </ul>
 
-<p>The following figure shows how this concept works:</p>
+<p>To see an example of a Customer service interface, see <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a> on the Magento 2 github.</p>
 
-<p><img src="/common/images/services-and-logic.png" alt="The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic" /></p>
+<h2 id="about-service-data-objects">About Service Data Objects</h2>
 
-<p>Services provide a consistent interface and behavior, regardless of the type of client making the request. This means that creating a customer works the same way, regardless of whether the customer is created from a web service or from a web page. It also means that customizations to the customer creation logic manifest themselves consistently from one page to the next and from one client to the next.</p>
+<p>a
+b</p>
 
-<p>Using services interfaces, an integrator can more easily interact with Magento 2 using APIs instead of overloading classes as was necessary in earlier Magento versions. Because you’re not overloading classes, and because service interfaces are versioned, there are fewer chances of conflicts with other applications and fewer chances of issues during upgrade.</p>
+<p>c</p>
+
+<p>d</p>
+
+<p>e</p>
+
+<p>gf</p>
+
+<p>r</p>
+
+<p>a</p>
+
+<p>a</p>
+
+<p>a</p>
+
+<p>a</p>
+
 
     <footer>
        <p class="text-muted credit">Copyright &copy; 2014 Magento, Inc. (an eBay, Inc. company). All Rights Reserved.<br />

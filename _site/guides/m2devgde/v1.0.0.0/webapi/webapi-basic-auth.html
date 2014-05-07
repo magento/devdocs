@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>What is the Magento 2 Service Framework?</title>
+  <title>Authorizing WebAPI Requests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Magento 2 Developer's Guide">
    <link href="/common/css/bootstrap.min.css" rel="stylesheet">
@@ -65,26 +65,58 @@
      <div class="container">
 
 
-<h1 id="what-is">What is the Magento 2 Service Framework?</h1>
+<h1 id="authorizing-webapi-requests">Authorizing WebAPI Requests</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
 
-<p>Magento 2 uses the service framework to define and expose extensible features.</p>
+<p><strong>Note</strong>: The <code>AuthorizationV1Interface</code> interface discussed in this topic is not implemented yet.</p>
 
-<p>A service:</p>
+<p>This topic provides basic information about how to authorize WebAPI requests.</p>
 
-<ul>
-  <li>Is a functional abstraction that represents the business features available to other parts of an application or Magento. </li>
-  <li>Represents a boundary that encapsulates the business logic a module exposes without revealing any of the details of how that functionality is implemented. </li>
-</ul>
+<p>When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to TBD.</p>
 
-<p>The following figure shows how this concept works:</p>
+<p>Service developers declare the list of permissions required in the integration’s <code>webapi.xml</code>. This is discussed in more detail in TBD.</p>
 
-<p><img src="/common/images/services-and-logic.png" alt="The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic" /></p>
+<p><strong>Note</strong>: The WebAPI framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.</p>
 
-<p>Services provide a consistent interface and behavior, regardless of the type of client making the request. This means that creating a customer works the same way, regardless of whether the customer is created from a web service or from a web page. It also means that customizations to the customer creation logic manifest themselves consistently from one page to the next and from one client to the next.</p>
+<p>The following table shows what we expect <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Authz/Service/AuthorizationV1Interface.php" target="_blank">AuthorizationV1Interface</a> methods to perform. <em>(<code>AuthorizationV1Interface</code> is not implemented yet.)</em> </p>
 
-<p>Using services interfaces, an integrator can more easily interact with Magento 2 using APIs instead of overloading classes as was necessary in earlier Magento versions. Because you’re not overloading classes, and because service interfaces are versioned, there are fewer chances of conflicts with other applications and fewer chances of issues during upgrade.</p>
+<table>
+	<tbody>
+		<tr class="table-headings">
+			<th>Method</th>
+			<th>Expected function</th>
+		</tr>
+	<tr class="even">
+		<td>grantPermissions()</td>
+		<td>Stores custom permissions.</td>
+	</tr>
+	<tr class="odd">
+		<td>grantAllPermissions()</td>
+		<td>Stores permissions to all available resources.</td>
+	</tr>
+	<tr class="even">
+		<td>getAllowedResources()</td>
+		<td>Gets the names of permissions for rendering in the Magento Admin.</td>
+	</tr>
+	<tr class="odd">
+		<td>removePermissions()</td>
+		<td>Removes all ACL-related entities on integration removal.</td>
+	</tr>
+</tbody>
+</table>
+
+<h2 id="authorization-checking-in-rest-calls">Authorization Checking in REST Calls</h2>
+
+<p>REST resources are speicifed in <code>webapi.xml</code> by <code>route</code> objects. A snippet follows:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/13436bc6c977f82e2a8f.js"></script>
+
+<p>When a client requests access to the <code>/V1/testmodule1</code> route, the resources it requires must be checked: <code>Magento_TestModule1::resource1</code> and <code>Magento_TestModule1::resource2</code>.</p>
+
+<p>The authorization checks are performed by the <code>dispatch</code> method in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/Rest.php" target="_blank">\Magento\Webapi\Controller\Rest</a>.</p>
+
+<p>For the call to succeed, <em>all</em> resources must be authorized; otherwise, an authorization exception is thrown.</p>
 
     <footer>
        <p class="text-muted credit">Copyright &copy; 2014 Magento, Inc. (an eBay, Inc. company). All Rights Reserved.<br />
