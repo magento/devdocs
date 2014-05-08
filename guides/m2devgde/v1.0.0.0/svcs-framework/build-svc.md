@@ -7,7 +7,7 @@ title: Basics of Building a Service
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p>
 
-A _service_ is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code--typically one or more interfaces, classes, and methods. To review the properties of a service, see TBD.
+A _service_ is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/svc-props.html">Understanding the Properties and Responsibilities of a Service</a>.
 
 The code that uses a service should depend on the interface rather than on the service implementation to enable the use of a different implementation if needed.
 
@@ -45,7 +45,7 @@ Service data objects are:
 
 	If data is set in client code, service data objects can be returned to the client to use the data or can passed to the service to consume the data. 
 	
-*	Reside in a namespace that reflects the version of service data (same as the service itself).
+*	Located in a namespace that reflects the version of service data (same as the service itself).
 
 ### Implementing a Service Data Object
 
@@ -55,7 +55,7 @@ General rules for implementing a service data object:
 
 *	A service data object typically has no PHP interface.
 
-*	A service data object must have getters which clearly describes all the data which data object can contain.
+*	A service data object must have getters that clearly describe all data that the data object can contain.
 
 *	Annotations in the code must clearly describe the parameters and outputs of all methods.
 
@@ -80,3 +80,15 @@ Note the following:
 *	A data object builder should be used to construct the service data object.
 
 *	Setters should rely on the method `_set` provided for convenience in the `\Magento\Framework\Service\Data\AbstractObjectBuilder` class. _This class is not currently in the Magento 2 public github repository._
+
+#### Related Topics:
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Understanding the Properties and Responsibilities of a Service</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the WebAPI Framework?</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing WebAPI Requests</a>

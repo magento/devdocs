@@ -50,3 +50,15 @@ For comparison, the Customer module's `webapi.xml` can be found <a href="https:/
 Your `webapi.xml` must be validated by an `app/code/_Vendor_/Webapi/etc/webapi.xsd`. For reference, <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/etc/webapi.xsd" target="_blank">here</a> is the `webapi.xsd` for the Customer module.
 
 Your module can use this one or you can create a customized validation.
+
+#### Related Topics:
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing WebAPI Requests</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Understanding the Properties and Responsibilities of a Service</a>
