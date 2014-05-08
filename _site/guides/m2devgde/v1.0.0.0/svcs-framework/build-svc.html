@@ -10,15 +10,14 @@
   <link href="/common/css/main.css" rel="stylesheet">
   <link href="/common/css/jquery.toc.css" rel="stylesheet">
   <script src="/common/js/jquery-1.11.0.min.js"></script>
-<!--   <script src="/common/js/test.js"></script>
- -->  <script src="/common/js/jquery.toc.js"></script>
+  <script src="/common/js/jquery.toc.js"></script>
 
 
 <!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
  -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-      <![endif] d-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
     </head>
     <body>
 <!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
@@ -59,6 +58,7 @@
 	   <p class="brand">Contents</p>
  	   <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
 	   <div class="back"><p class="back"><a href="/guides/m2devgde/v1.0.0.0/index.html"><img class="prev" src="/common/images/prev-arrow.png">Back to the Magento 2 Developer's Guide</a></p></div>
+
 		</div>
 
 
@@ -69,7 +69,7 @@
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
 
-<p>A <em>service</em> is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code–typically one or more interfaces, classes, and methods. To review the properties of a service, see TBD.</p>
+<p>A <em>service</em> is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code—typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="/guides/m2devgde/v1.0.0.0/svcs-framework/svc-props.html">Understanding the Properties and Responsibilities of a Service</a>.</p>
 
 <p>The code that uses a service should depend on the interface rather than on the service implementation to enable the use of a different implementation if needed.</p>
 
@@ -118,7 +118,7 @@
     <p>If data is set in client code, service data objects can be returned to the client to use the data or can passed to the service to consume the data. </p>
   </li>
   <li>
-    <p>Reside in a namespace that reflects the version of service data (same as the service itself).</p>
+    <p>Located in a namespace that reflects the version of service data (same as the service itself).</p>
   </li>
 </ul>
 
@@ -134,7 +134,7 @@
     <p>A service data object typically has no PHP interface.</p>
   </li>
   <li>
-    <p>A service data object must have getters which clearly describes all the data which data object can contain.</p>
+    <p>A service data object must have getters that clearly describe all data that the data object can contain.</p>
   </li>
   <li>
     <p>Annotations in the code must clearly describe the parameters and outputs of all methods.</p>
@@ -170,16 +170,36 @@
   </li>
 </ul>
 
+<h4 id="related-topics">Related Topics:</h4>
+
+<ul>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Understanding the Properties and Responsibilities of a Service</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the WebAPI Framework?</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing WebAPI Requests</a></p>
+  </li>
+</ul>
+
     <footer>
-       <p class="text-muted credit">Copyright &copy; 2014 Magento, Inc. (an eBay, Inc. company). All Rights Reserved.<br />
+       <p class="text-muted credit">&copy; 2014 MAGENTO, INC. ALL RIGHTS RESERVED.<br />
 	   For more information, contact <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">the Magento 2 documentation team</a>.</p>
 	   
     </footer>
  <!-- Bootstrap core JavaScript-->
-    <script src="/js/jquery-1.10.2.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/hc.js"></script>
+    <script src="/common/js/jquery-1.10.2.min.js"></script>
+    <script src="/common/js/bootstrap.min.js"></script>
+    <script src="/common/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/common/js/hc.js"></script>
 </body>
 
 </html>

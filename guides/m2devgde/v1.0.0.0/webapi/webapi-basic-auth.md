@@ -56,3 +56,9 @@ When a client requests access to the `/V1/testmodule1` route, the resources it r
 The authorization checks are performed by the `dispatch` method in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/Rest.php" target="_blank">\Magento\Webapi\Controller\Rest</a>.
 
 For the call to succeed, _all_ resources must be authorized; otherwise, an authorization exception is thrown.
+
+#### Related Topics:
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
+
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the WebAPI Framework?</a>
