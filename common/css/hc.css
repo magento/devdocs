@@ -149,6 +149,7 @@ p
   margin-left:-250px;
   left:250px;
   width:25%;
+  padding-right:7px;
   background:#f7f3eb;
   position:fixed;
   height:100%;
@@ -244,6 +245,7 @@ p
   text-shadow:1px 1px #fff;
   margin-bottom:1em;
   margin-top:2em;
+  margin-left:15px;
 }
 
 /* .brand:hover
