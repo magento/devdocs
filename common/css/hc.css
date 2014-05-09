@@ -153,8 +153,8 @@ p
   background:#f7f3eb;
   position:fixed;
   height:100%;
-  overflow:auto;
-/* overflow-y:auto; */
+/*   overflow:auto; 
+ *//* overflow-y:auto; */
   z-index:1000;
   margin-top:-4px;
   border-top:solid #EF672F;
