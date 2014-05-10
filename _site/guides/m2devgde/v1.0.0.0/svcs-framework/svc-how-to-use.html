@@ -69,13 +69,13 @@
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
 
-<p>Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so developers can simply acquire an instance of the service and invoke the appropriate method directly. You can also use web services REST and SOAP calls.</p>
+<p>Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so developers can simply acquire an instance of the service and invoke the appropriate method directly. You can also access services using REST and SOAP calls.</p>
 
 <h2 id="method-1-dependency-injection">Method 1: Dependency Injection</h2>
 
 <p>To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.</p>
 
-<p>Because a service call typically accepts one or more primitive types (or Service Data Objects), you might have to convert or extract before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
+<p>Because a service call typically accepts one or more primitive types (or <a href="/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects">service data objects</a>), you might have to convert or extract before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
 
 <p>For example, if you know a customer’s ID and want to get data about the customer, here’s what you do:</p>
 
