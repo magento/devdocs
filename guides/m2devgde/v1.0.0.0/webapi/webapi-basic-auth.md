@@ -1,21 +1,21 @@
 ---
 layout: howtom2devgde_chapters
-title: Authorizing WebAPI Requests
+title: Authorizing Web API Requests
 ---
 
-# Authorizing WebAPI Requests
+# Authorizing Web API Requests
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p>
 
 **Note**: The `AuthorizationV1Interface` interface discussed in this topic is not implemented yet.
 
-This topic provides basic information about how to authorize WebAPI requests.
+This topic provides basic information about how to authorize Web API requests.
 
 When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to TBD.
 
 Service developers declare the list of permissions required in the integration's `webapi.xml`. This is discussed in more detail in TBD.
 
-**Note**: The WebAPI framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.
+**Note**: The Web API framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.
 
 The following table shows what we expect <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Authz/Service/AuthorizationV1Interface.php" target="_blank">AuthorizationV1Interface</a> methods to perform. _(`AuthorizationV1Interface` is not implemented yet.)_ 
 
@@ -61,4 +61,4 @@ For the call to succeed, _all_ resources must be authorized; otherwise, an autho
 
 *	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the WebAPI Framework?</a>
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
