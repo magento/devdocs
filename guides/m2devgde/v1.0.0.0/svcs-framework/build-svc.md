@@ -65,7 +65,7 @@ General rules for implementing a service data object:
 
 ### Sample Service Data Object
 
-Here is a sample service data object:
+Here is a sample service data object <tt>some text to delete</tt>:
 
 <script src="https://gist.github.com/xcomSteveJohnson/6193ba94d58b7ee3b7c7.js"></script>
 

@@ -297,13 +297,35 @@ pre
   font-family:"Courier New";
   font-size: 11pt;
   color:#31302b;
-  background:#f5f5f8
+  background-color:#f8f8ff
+}
+
+code,
+kbd,
+pre,
+tt,
+samp {
+  font-family: monospace, serif;
+  font-size: 11pt;
+}
+
+code {
+  padding: 2px 4px;
+  color:#31302b;
+  font-size: 90%;
+  /* color: #c7254e; */
+  white-space: nowrap;
+  /* background-color: blue; */
+  background-color:#f8f8ff;
+  border-radius: 4px;
 }
 
 tt
 {
-  font-family:"Courier New";
+  padding: 2px 4px;
+  color:#31302b;
   font-size: 11pt;
+  background-color:#f8f8ff;
   color:#31302b;
 }
 
