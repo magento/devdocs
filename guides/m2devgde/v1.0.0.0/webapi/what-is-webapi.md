@@ -13,11 +13,11 @@ Although REST and SOAP use different payloads and routing, they use the same aut
 
 ## Exposing a Service Using REST or SOAP
 
-A Magento service can be exposed using REST only or using both SOAP and REST. In othe words, you cannot expose a service using SOAP without exposing it using REST. 
+A Magento service can be exposed using REST only or using both SOAP and REST. In other words, you cannot expose a service using SOAP without exposing it using REST. 
 
 ### Configuring webapi.xml
 
-To start, you must configure your service using `app/code/_Vendor_/_Module_/etc/webapi.xml`. Each REST API call must have a corresponding `<rest route>` in `webapi.xml`. In other words, to access a method using REST, the method must have a `<rest route>` in `webapi.xml`; otherwise, the method cannot be accssed.
+To start, you must configure your service using `app/code/_Vendor_/_Module_/etc/webapi.xml`. Each REST API call must have a corresponding `<rest route>` in `webapi.xml`. In other words, to access a method using REST, the method must have a `<rest route>` in `webapi.xml`; otherwise, the method cannot be accessed.
 
 If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the `secure = true` attribute. Attempting to access a `secure` route using non-secure means results in an exception.
 

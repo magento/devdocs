@@ -19,7 +19,7 @@ Some important characteristics of a service interface:
 	
 	Input arguments can be scalar types, arrays or objects. If objects are used, they should be implemented as [Service Data Objects](#about-service-data-objects).
 
-*	The metods must be annotated to describe the types of the output, which are used to generate contracts for Web API framework. 
+*	The methods must be annotated to describe the types of the output, which are used to generate contracts for Web API framework. 
 
 	Output argument can be scalar types, arrays or objects. If objects are used, they should be implemented as [Service Data Objects](#about-service-data-objects).
 

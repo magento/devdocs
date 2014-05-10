@@ -21,10 +21,10 @@ This section discusses how to make an HTTP GET call to the getCustomer method.
 
 2.	Find the desired call; for example, 
 
-```
+<code>
 <route url="/V1/customerAccounts/:customerId/customer" method="GET">
 <service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="getCustomer" />
-```
+</code>
 	
 3.	The route url specifies the URL of the REST call.
 
