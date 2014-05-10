@@ -13,7 +13,7 @@ Before interacting with a service, you must be familiar with the service interfa
 
 To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.
 
-Because a service call typically accepts one or more primitive types (or Service Data Objects), you might have to convert or extract before calling the service. For an example, see `public function getInputData` in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this WebAPI class</a>.
+Because a service call typically accepts one or more primitive types (or Service Data Objects), you might have to convert or extract before calling the service. For an example, see `public function getInputData` in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
 
 For example, if you know a customer's ID and want to get data about the customer, here's what you do:
 
@@ -43,7 +43,7 @@ Service methods complete in one of two ways:
 
 Any service that has an `app/code/_Vendor_/_Module_/etc/webapi.xml` can be accessed using REST and SOAP. (Additional tasks, not discussed here, are required to access services using SOAP.)
 
-To set up a service so it can be accessed using REST, see [What is the WebAPI Framework?]({{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html)
+To set up a service so it can be accessed using REST, see [What is the Web API Framework?]({{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html)
 
 #### Related Topics:
 
@@ -51,4 +51,4 @@ To set up a service so it can be accessed using REST, see [What is the WebAPI Fr
 
 *	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the WebAPI Framework?</a>
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

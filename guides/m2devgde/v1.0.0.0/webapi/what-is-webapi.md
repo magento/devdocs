@@ -1,9 +1,9 @@
 ---
 layout: howtom2devgde_chapters
-title: What Is the WebAPI Framework?
+title: What Is the Web API Framework?
 ---
 
-<h1 id="webapi-whatis">What Is the WebAPI Framework?</h1>
+<h1 id="webapi-whatis">What Is the Web API Framework?</h1>
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p>
 
@@ -53,7 +53,7 @@ Your module can use this one or you can create a customized validation.
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing WebAPI Requests</a>
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
 
 *	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
 

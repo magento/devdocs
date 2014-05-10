@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Authorizing WebAPI Requests</title>
+  <title>Authorizing Web API Requests</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Magento 2 Developer's Guide">
    <link href="/common/css/bootstrap.min.css" rel="stylesheet">
@@ -65,19 +65,19 @@
      <div class="container">
 
 
-<h1 id="authorizing-webapi-requests">Authorizing WebAPI Requests</h1>
+<h1 id="authorizing-web-api-requests">Authorizing Web API Requests</h1>
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
 
 <p><strong>Note</strong>: The <code>AuthorizationV1Interface</code> interface discussed in this topic is not implemented yet.</p>
 
-<p>This topic provides basic information about how to authorize WebAPI requests.</p>
+<p>This topic provides basic information about how to authorize Web API requests.</p>
 
 <p>When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to TBD.</p>
 
 <p>Service developers declare the list of permissions required in the integration’s <code>webapi.xml</code>. This is discussed in more detail in TBD.</p>
 
-<p><strong>Note</strong>: The WebAPI framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.</p>
+<p><strong>Note</strong>: The Web API framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.</p>
 
 <p>The following table shows what we expect <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Authz/Service/AuthorizationV1Interface.php" target="_blank">AuthorizationV1Interface</a> methods to perform. <em>(<code>AuthorizationV1Interface</code> is not implemented yet.)</em> </p>
 
@@ -125,7 +125,7 @@
     <p><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a></p>
   </li>
   <li>
-    <p><a href="/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the WebAPI Framework?</a></p>
+    <p><a href="/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a></p>
   </li>
 </ul>
 

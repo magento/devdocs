@@ -15,11 +15,11 @@ The code that uses a service should depend on the interface rather than on the s
 
 Some important characteristics of a service interface:
 
-*	The methods must be annotated to describe the types of input, which are used to generate contracts for the WebAPI framework. 
+*	The methods must be annotated to describe the types of input, which are used to generate contracts for the Web API framework. 
 	
 	Input arguments can be scalar types, arrays or objects. If objects are used, they should be implemented as [Service Data Objects](#about-service-data-objects).
 
-*	The metods must be annotated to describe the types of the output, which are used to generate contracts for WebAPI framework. 
+*	The metods must be annotated to describe the types of the output, which are used to generate contracts for Web API framework. 
 
 	Output argument can be scalar types, arrays or objects. If objects are used, they should be implemented as [Service Data Objects](#about-service-data-objects).
 
@@ -89,6 +89,6 @@ Note the following:
 
 *	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Understanding the Properties and Responsibilities of a Service</a>
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the WebAPI Framework?</a>
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing WebAPI Requests</a>
+*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
