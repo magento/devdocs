@@ -5,7 +5,7 @@ title: Manually Creating an Integration Using the Magento Admin
 
 <h1 id="integration-manual-create">Manually Creating an Integration Using the Magento Admin</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/integration-create-man.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/integration-create-man.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Creating a new integration manually implies that the administrative user previously contacted the third-party system's developers and got all necessary information.
 
@@ -17,13 +17,13 @@ To create a new integration:
 
 	The Integrations page displays, as shown in the following figure.
 
-	![Click **System** > **Integrations** to start]({{ site.baseurl }}/common/images/integration.png)
+	![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
 
-3.	Click ![Click the plus icon to add an integration]({{ site.baseurl }}/common/images/integration_plus.png).
+3.	Click ![Click the plus icon to add an integration]({{ site.baseurl }}common/images/integration_plus.png).
 
 	The New Integration page displays as shown in the following figure.
 	
-	![Integration information consists of a unique name, optional e-mail address, and identity information]({{ site.baseurl }}/common/images/integration_new_info.png)
+	![Integration information consists of a unique name, optional e-mail address, and identity information]({{ site.baseurl }}common/images/integration_new_info.png)
 	
 4.  Enter the following information:
 
@@ -61,7 +61,7 @@ To create a new integration:
 
 	The API tab page displays as the following figure shows.
 
-	![Select which resources to grant on the API tab page]({{ site.baseurl }}/common/images/integration_roleResources.png)
+	![Select which resources to grant on the API tab page]({{ site.baseurl }}common/images/integration_roleResources.png)
 	
 	Defining the access to right resources for the third-party systems is critical for effective and secure work of your online store. There are two ways of how you can limit the access to your store for the third-party systems or some user roles:
 
