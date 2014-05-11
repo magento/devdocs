@@ -5,7 +5,7 @@ title: Coding Your Integration
 
 <h1 id="code-integration">Coding Your Integration</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/integration-code.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}/common/images/newWindow.gif"/></p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/integration-code.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 This topic discusses how to code your integration with Magento. Eventually, you will be able to market your integration as an extension on Magento Connect; however, it's not possible to do that now for Magento 2 integrations.
 
@@ -27,7 +27,7 @@ This creates a new integration is created or updates an existing integration.
 
 An integration requires the integration configuration and API configuration files.
 
-Configuration files should follow the general requirements for configuration files and be placed in the `[Vendor]/[Module]/etc/integration` directory. The validation schema for these files should be placed in the `[vendor]/[module]/Integration/etc/integration/config.xsd` (configuration file) and in `[vendor]/[module]/etc/integration/api.xsd` (API configuration file).
+Configuration files should follow the general requirements for configuration files and be placed in the `[Vendor]/[Module]/etc/integration` directory. The validation schema for these files should be placed in the `[Vendor]/[Module]/Integration/etc/integration/config.xsd` (configuration file) and in `[vendor]/[module]/etc/integration/api.xsd` (API configuration file).
 
 Sample `config.xml`:
 
