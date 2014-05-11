@@ -3,9 +3,9 @@ layout: howtom2devgde_chapters
 title: What is the Magento 2 Service Framework?
 ---
 
-<h1 id="what-is">What is the Magento 2 Service Framework?</h1>
+<h1 id="what-is">What is the Magento 2 Service Framework?</h1> 
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Magento 2 uses the service framework to define and expose extensible features.
 
