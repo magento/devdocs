@@ -11,9 +11,9 @@ title: Authorizing Web API Requests
 
 This topic provides basic information about how to authorize Web API requests.
 
-When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to [What is the Web API Framework?]({{ site.baseurl }}/guides/m2devgde/v1.0.0.0/integration/integration-auth.html)).
+When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to [What is the Web API Framework?]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/integration/integration-auth.html)).
 
-Service developers declare the list of permissions required in the integration's `webapi.xml`. This is discussed in more detail in [What is the Web API Framework?]({{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html)).
+Service developers declare the list of permissions required in the integration's `webapi.xml`. This is discussed in more detail in [What is the Web API Framework?]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html)).
 
 **Note**: The Web API framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.
 
@@ -59,6 +59,6 @@ For the call to succeed, _all_ resources must be authorized; otherwise, an autho
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

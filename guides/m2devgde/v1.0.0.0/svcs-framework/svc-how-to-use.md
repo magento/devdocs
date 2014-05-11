@@ -13,7 +13,7 @@ Before interacting with a service, you must be familiar with the service interfa
 
 To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.
 
-Because a service call typically accepts one or more primitive types (or [service data objects]({{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects)), you might have to convert or extract before calling the service. For an example, see `public function getInputData` in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
+Because a service call typically accepts one or more primitive types (or [service data objects]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects)), you might have to convert or extract before calling the service. For an example, see `public function getInputData` in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
 
 For example, if you know a customer's ID and want to get data about the customer, here's what you do:
 
@@ -33,7 +33,7 @@ Service methods complete in one of two ways:
 	
     Primitive type (such as an ID)
 	
-    [Service data object]({{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on. In this case, it is up to the client to use the data returned in whatever way is appropriate.
+    [Service data object]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on. In this case, it is up to the client to use the data returned in whatever way is appropriate.
  
  *  Throw an exception
 
@@ -43,10 +43,10 @@ Service methods complete in one of two ways:
 
 Any service that has an `app/code/[Vendor]/[Module]/etc/webapi.xml` can be accessed using REST and SOAP. (Additional tasks, not discussed here, are required to access services using SOAP.)
 
-To set up a service so it can be accessed using REST, see [What is the Web API Framework?]({{ site.baseurl }}/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html)
+To set up a service so it can be accessed using REST, see [What is the Web API Framework?]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html)
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
 
-*	<a href="{{ site.baseurl }}/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
