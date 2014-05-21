@@ -1,1 +1,3 @@
 Hi, I'm a new file
+
+Second line
