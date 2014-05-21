@@ -4,10 +4,18 @@ This page discusses how to install the MTF.
 
 ## Contents
 
+*	[Introduction](#introduction)
 *	[Prerequisites](#prerequisites)
 *	[Installation Procedure](#installation-procedure)
-*	[Configuring the MTF](#configuring-the-mtf)
+*	[Google Chrome Prerequisite](#google-chrome-prerequisite)
+*	[Quick Configuration for localhost](#quick-configuration-for-localhost)
+*	[Configuration Details](#configuration-details)
+*	[Configuration Reference](#configuration-reference)
 *	[Next Steps](#next-steps)
+
+## Introduction
+
+The Magento Test Framework (MTF) enables you to run thorough and accurate tests of your Magento installation. This guide discusses how to install and configure MTF. [Using the Magento Test Framework (MTF)](using.md) discusses how to set up and run tests.
 
 ## Prerequisites
 
@@ -32,6 +40,8 @@ Other prerequisites:
 *	Web drivers are downloaded for your browser, unless you use Firefox browser, which does not require additional drivers.
 
 ## Installation Procedure
+
+1.  Get the MTF code from <a href="https://github.com/magento/mtf" target="_blank">https://github.com/magento/mtf</a>.
 
 1.	Download the composer as discussed in http://getcomposer.org/doc/00-intro.md#installation-nix and http://getcomposer.org/doc/00-intro.md#installation-windows. 
 
@@ -67,15 +77,11 @@ Other prerequisites:
 	
 	The generator creates generated directories containing factories for pages, blocks, handlers, fixtures and repositories.
 	
-## Configuring the MTF
-
-This section discusses how to configure the MTF. 
-
-### Google Chrome Prerequisite
+## Google Chrome Prerequisite
 
 If you run your tests in the Google Chrome web browser, the value of `browserName` to `chrome` in `[your Magento install dir]/dev/tests/functional/config/server.yml`.
 
-### Quick Setup for localhost
+## Quick Configuration for localhost
 
 To run the MTF tests on localhost:
 
@@ -94,7 +100,27 @@ To run the MTF tests on localhost:
 	
 3.  Run PHPUnit tests from `[your Magento install dir]/dev/tests/functional/vendor/bin`
 
-### Configuration Reference
+## Configuration Details
+
+This section discusses how to:
+
+*	Specify the test context using fixtures
+*	Apply the test context using handlers
+*	Set the constraints and their sequence for your tests
+*	Isolate the tests
+*	Run UI-specific tests using page and block objects
+
+MTF has several features to assist you with the preceding tasks:
+
+*	Global configuration files (`Module\Test\etc\global`), which help to configure and generate various testing entities for a module, namely:
+	*	`fixture.xml` to create fixture structure, repositories, and handlers
+	*	`constraint.xml` to create constraints
+	*	`page.xml` to create page objects
+*	Generators (`utils\generate`), which generate fixtures, handlers, page objects, repositories, and constraints.
+*	Data sets (`methodName.csv`), which help to avoid using nested data sets in fixtures as well as link the test data and behavior to constraints.
+
+
+## Configuration Reference
 
 This section provides a detailed reference for all MTF configuration options. All files discussed in this section are located in `[your Magento install dir]/dev/tests/functional/config` and `[your Magento install dir]/dev/tests/functional/utils/config`
 

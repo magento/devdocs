@@ -2,6 +2,23 @@
 
 This page discusses how to use the MTF.
 
+## Contents
+
+*	[Introduction](#introduction)
+*	[Prerequisites](#prerequisites)
+
+## Introduction
+
+This page discusses how to use the MTF to use the following in your tests:
+
+*	Fixtures: Create context or preconditions for your tests.
+*	Handlers: Transfer the preconditions from the fixtures.
+*	Constraints: Make sure your tests attained the intended results.
+*	Isolation management and strategies: Verify your tests are accurate by isolating a test, case, or suite.
+*	Page and block objects: Create pages and blocks for the user interface (UI) testing
+
+In this guide, the term _group_ means a collection of entities (tests, fixtures, pages, blocks, constraints, or handlers) that all belong to the same logical Magento module. MTF groups should have the same names as the corresponding modules in Magento code. An entity can use the entities from other modules.
+
 ## Prerequisites
 
 *	Install and configure the MTF as discussed in [Installing and Configuring the Magento Test Framework (MTF)](install.md).
