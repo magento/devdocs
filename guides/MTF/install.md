@@ -119,6 +119,96 @@ MTF has several features to assist you with the preceding tasks:
 *	Generators (`utils\generate`), which generate fixtures, handlers, page objects, repositories, and constraints.
 *	Data sets (`methodName.csv`), which help to avoid using nested data sets in fixtures as well as link the test data and behavior to constraints.
 
+### Working With Fixtures
+
+Fixtures enable you to create the preconditions for your tests separately from the tests themselves. Fixtures serve to set the context or environment for a test.
+
+To create a fixture class, you must specify its structure and values. Basically, creating a fixture includes the following steps:
+
+1.	Define the structure for a fixture in fixture configuration (`.xml`) file.
+2.	Run the generator to generate a fixture class with the defined structure.
+3.	Define the values for a fixture.
+
+#### Defining the Structure for a Fixture
+
+There are two ways to the create structure for a fixture:
+
+*	Individually using `[fixtureName].xml` 
+*	Globally using `fixture.xml` 
+
+To use `[fixtureName].xml`, you must specify a fixture's details in `Module\Test\etc\global\fixture.xml`. A fixture based on `[fixtureName].xml` inherits the latter's name.
+
+Creating `[fixtureName].xml` files for a module and entering the structure manually can be time-consuming. To facilitate this task, MTF gets the structure for fixtures from the database automatically using `Module\Test\etc\global\fixture.xml`. You need only list all the fixtures you need for a module in this file and specify the necessary parameters. 
+
+<a href="https://gist.github.com/xcomSteveJohnson/fcd123106ec941c14852" target="_blank">Sample fixture.xml</a>
+
+Following is a list of required parameters (depending on the fixture, additional parameters might be necessary):
+
+*	Fixture name (`catalogProductSimple`) in the preceding sample
+*	Module name for which a fixture is created (`Magento_Catalog` in the preceding sample)
+*	`type` parameter, which can have a value of either `eav` or `flat` 
+*	`entity_type`, which defines the type of an entity in the Magento code
+*	`collection`, which specifies where the structure data is to be taken
+
+After you list all necessary fixtures, run the generator as discussed in the next section. Individual configuration files (`[fixtureName].xml`) and fixture classes are generated automatically.
+
+#### Using the Fixture Generator
+
+The fixture generator (`utils\generate\fixture`) creates the fixture class from fixture configuration file. If you specified the configurations for fixtures globally (that is, in `fixture.xml`), the generator creates an individual configuration file for each declared fixture along with corresponding fixture classes. 
+
+The generator creates only one fixture class from each individual configuration file; that is, after a fixture is created, the generator ignores this fixture's configuration file. To change a fixture's structure, delete this fixture class, make the necessary changes in its configuration file, and run the generator.
+
+**Tip**: If you generated fixture classes from `fixture.xml` and need to adjust the structure of a newly created fixture, delete the fixture class, make changes in fixture's individual configuration file, and run the generator again.
+
+#### Settings Values for a Fixture
+
+This section discusses how to set values for a fixture. 
+
+**Note**: You can skip this section if you're generating fixtures using `fixture.xml` because it uses the default data set.
+
+You can set values for a fixture in any of the following ways:
+
+*	Repository class when you need several data sets for your fixture, but these data sets are not numerous and more general.
+*	Data set (`[methodname].csv`) when you need specific data for a fixture. Data from `[methodname].csv` takes precedence over the repository.
+
+The repository class should share the name with a fixture its configuration file. The data from the repository class is passed by a constructor `InjectableFixture::getDataFromRepository()` to a fixture class.
+
+<a href="https://gist.github.com/xcomSteveJohnson/90fd36e7fa0f8042c12c" target="_blank">Sample repository class</a>.
+
+##### Using the Repository Generator
+
+A repository can be generated automatically from `Module\Test\etc\global\fixture.xml`.
+
+Run the repository regenerator (`utils\generate\repository`) from the command line. The resulting repository class contains the values available in the database.
+
+#### Using InjectableFixture
+
+The `InjectableFixture` class ensures transferring data from application to MTF. All fixture classes in the MTF extend `InjectableFixture`.
+
+The `InjectableFixture` class has the following methods:
+
+*	`persist()`: Public method that passes a fixture's data to the tested system.
+*	`getData()`: Public method that retrieves data from the fixture to an array.
+*	`getDataFieldConfig()`: Public method that retrieves data field configurations.
+*	`getDataConfig()`: Public method that retrieves data configurations.
+*	`getDataFromRepository()`: Public method that retrieves the values from a repository class.
+*	`getDataByPath()`: Protected method that retrieves data as chain of keys.
+*	`getDataByKey()`: Protected method that retrieves data by its key.
+*	`_applyPlaceholders()`: Protected method that applies a placeholder for each data element in a fixture.
+
+### Transferring the Test Conditions by Handlers
+
+After you specify the preconditions for a test, you must decide how these preconditions should be transferred for testing purposes. By using different types of handlers, you can specify the best way of transferring data from the fixtures.
+
+In the MTF, there are two default types of handlers:
+
+*	The curl handler passes the preconditions using direct HTTP calls to the server according to the headless principle.
+*	The UI handler passes preconditions to the user interface using a web browser.
+
+You can create other handlers if necessary. To make them available in the MTF, declare them in the object manager (`Mtf\ObjectManagerFactory`). <a href="https://gist.github.com/xcomSteveJohnson/ab70e51d80f5d40bab5b" target="_blank">Example</a>
+
+
+
 
 ## Configuration Reference
 
