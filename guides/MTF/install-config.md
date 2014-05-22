@@ -122,7 +122,7 @@ For more information, see:
 *	`backend_user_credentials` defines the Magento Admin administrator user name and password.
 *	`backend_login_url` defines the Magento Admin login URL.
 
-#### handler.yml
+#### handler.yml 
 
 Responsible for specifying additional settings for different types of handlers. <a href="https://gist.github.com/xcomSteveJohnson/3808faba2cb24281d035" target="_blank">Sample</a>.
 
