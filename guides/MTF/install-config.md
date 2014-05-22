@@ -42,7 +42,7 @@ Other prerequisites:
 	
 	**Note**: `composer.json` is an integral part of every Magento installation. This file contains information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from separate repository.
 
-2. Run Composer from magento2/dev/tests/functional directory using _either of_ the following commands:
+2. Run Composer from the `magento2/dev/tests/functional` directory using _either of_ the following commands:
 
 	```
 	composer install
@@ -66,7 +66,7 @@ Other prerequisites:
 	php utils/generate.php (for Magento 1)
 	```
 	
-	**Note**: The generator tool is used to create factories for fixtures, handlers, repositories, page objects, and block objects. After the MTF is initialized, the factories are pre-generated to facilitate creating and running the tests.
+	**Note**: The generator tool creates factories for fixtures, handlers, repositories, page objects, and block objects. After the MTF is initialized, the factories are pre-generated to facilitate creating and running the tests.
 	
 	The generator creates generated directories containing factories for pages, blocks, handlers, fixtures and repositories.
 	
@@ -115,8 +115,15 @@ For more information, see:
 
 #### application.yml
 
-<a href="https://gist.github.com/xcomSteveJohnson/0b21ada7c68230d5a872" target="_blank">Sample</a>.
+Sample:
 
+```yml
+reopen_browser_on: testCase # test|testCase
+backend_user_credentials:
+    login: 'admin'
+    password: '123123q'
+backend_login_url: admin/auth/login
+```
 
 *	`reopen_browser_on` defines whether a browser should be reopened before every test or before every test case. Default behavior is for browser to open before every test case.
 *	`backend_user_credentials` defines the Magento Admin administrator user name and password.
