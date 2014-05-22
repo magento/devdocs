@@ -90,7 +90,6 @@ selenium:
         platform: ANY
 ```
 
-
 ### Specifying Your Magento URLs
 
 Specify your storefront and Magento Admin URLs in `phpunit.xml`:
