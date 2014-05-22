@@ -258,7 +258,7 @@ testCase: none
 test: none
 ```
 
-You can specify the isolation strategy on the individual level for every test, case, or suite if necessary. To set a strategy for a test, case, or suitee, specify `@isolation before`, `@isolation after`, or `@isolation both` annotation(s).
+You can specify the isolation strategy on the individual level for every test, case, or suite if necessary. To set a strategy for a test, case, or suite, specify `@isolation before`, `@isolation after`, or `@isolation both` annotation(s).
 
 **Note**: A strategy specified on a scope level overwrites a strategy that is set globally.
 
@@ -336,7 +336,7 @@ To create a page object:
 	
 3.	Specify the necessary blocks for each page in the individual configuration file (`[pageName].xml`).
 4.	Delete the page classes created automatically at step 2 of this scenario.
-5.	Run the generator (`utils\generate\pag`e). This creates the page classes containing the blocks you specified.
+5.	Run the generator (`utils\generate\page'). This creates the page classes containing the blocks you specified.
 
 
 
