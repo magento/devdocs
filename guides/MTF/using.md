@@ -6,6 +6,9 @@ This page discusses how to use the MTF.
 
 *	[Introduction](#introduction)
 *	[Prerequisites](#prerequisites)
+*	[Tips for Creating Your Tests](#tips-for-creating-your-tests)
+*	[Starting Selenium](#starting-selenium)
+*	[Starting the Tests](#starting-the-tests)
 
 ## Introduction
 
@@ -28,6 +31,18 @@ In this guide, the term _group_ means a collection of entities (tests, fixtures,
 	Whenever code changes in Magento 2, there is a chance that the MTF vendor code had to be updated. Although rare, changes in Object Manager for example could cause an update to be required.
 
 	Do this by running `composer update` from `dev/tests/functional`
+	
+## Tips for Creating Your Tests
+
+We recommend the following:
+
+1.	Create a group and corresponding directories for your test.
+2.	Create a fixture and a handler for transferring a fixture.
+3.	Create the necessary blocks and pages for a test.
+4.	Create the constraints and data sets based on these constraints.
+5.	Optionally create isolation scripts and specify your isolation strategy. 
+6.	Write a test.
+
 
 ## Starting Selenium
 

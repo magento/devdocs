@@ -258,93 +258,85 @@ testCase: none
 test: none
 ```
 
-You can specify the isolation strategy on the individual level for every test, case, or suite if necessary. To set a strategy for a test, case, or suitee, specify `@isolation before`, `@isolation after`, or `@isolation bot`h annotation(s) in a PHPDoc.
+You can specify the isolation strategy on the individual level for every test, case, or suite if necessary. To set a strategy for a test, case, or suitee, specify `@isolation before`, `@isolation after`, or `@isolation both` annotation(s).
 
 **Note**: A strategy specified on a scope level overwrites a strategy that is set globally.
 
-#### Specifying a Strategy for a Test Suite
+#### Specifying an Isolation Strategy for a Test Suite
 
-Use the `@isolation` annotation at the test suite level to set the strategy for a suite. In the following example, the isolation script runs before and after a suite.
+Use the `@isolation` annotation at the test suite level to set the isolation strategy for a suite. In the following example, the isolation script runs before and after a suite. <a href="https://gist.github.com/xcomSteveJohnson/b9262cdff79c29e8901c" target="_blank">Sample</a>
 
-```
-/**
- * @isolation both
- */
-class IsolationSuite extends \PHPUnit_Framework_TestSuite
-{
-    public static function suite()
-    {
-        $suite = new self();
-        $suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest1');
-        $suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest2');
-        $suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest3');
-        return $suite;
-    }
-}
-```
+#### Specifying an Isolation Strategy for a Test Case
 
-#### Specifying Strategy for a Test Case
+Use the `@isolation` annotation at the test case level to set the isolation strategy for a case. In the following example, the isolation script runs before a case. <a href="https://gist.github.com/xcomSteveJohnson/5a33048991cb01883da6" target="_blank">Sample</a>
 
-Use the `@isolation` annotation on the test case level to set strategy for a case. In the following example, the isolation script runs before a case.
+#### Specifying an Isolation Strategy for a Test
 
-```
-/**
- * @isolation before
- */
-class IsolationTest extends Isolation
-{
-    public static function setUpBeforeClass()
-    {
-        self::_login();
-    }
- 
-    public function test1()
-    {
-        $this->_deleteProduct();
-    }
- 
-    public function test2()
-    {
-        $this->_deleteProduct();
-    }
- 
-    public function test3()
-    {
-        $this->_deleteProduct();
-    }
-}
-```
+Use the `@isolation` annotation at the test level to set the isolation strategy for a test. In the following example, the isolation script runs after test2. <a href="https://gist.github.com/xcomSteveJohnson/2cc67af38cda9a7ee4d9" target="_blank">Sample</a>
 
-#### Specifying Strategy for a Test
+#### Specifying an Isolation Strategy for Every Test in a Test Case
 
-Use @isolation annotation on the test level to set strategy for a test. In the following example, the isolation script will be run after the test2.
+Use the `@isolation` annotation at the case level to set an isolation strategy for every test in a case. In the following example, the isolation script runs before every test in a case. <a href="https://gist.github.com/xcomSteveJohnson/77aacf282788f1ee99a7" target="_blank">Sample</a>
 
-class IsolationTest extends Isolation
-{
-    public static function setUpBeforeClass()
-    {
-        self::_login();
-    }
- 
-    public function test1()
-    {
-        $this->_deleteProduct();
-    }
- 
-    /**
-     * @isolation after
-     */
-    public function test2()
-    {
-        $this->_deleteProduct();
-    }
- 
-    public function test3()
-    {
-        $this->_deleteProduct();
-    }
-}
+#### Specifying an Isolation Strategy for Every Test Case in a Suite
 
+Use the `@isolation testCase` annotation at the suite level to set an isolation strategy for every case in a suite. In the following example, the isolation script runs before and after every case in a suite. <a href="https://gist.github.com/xcomSteveJohnson/15b877e33bf1865ed0bb" target="_blank">Sample</a>
+
+#### Specifying an Isolation Strategy for Every Test in a Suite
+
+Use the `@isolation test` annotation at the suite level to set strategy for every test in a suite. In the following example, the isolation script runs before and after every test in a suite. <a href="https://gist.github.com/xcomSteveJohnson/e5c6a12c50f2a4a99fda" target="_blank">Sample</a>
+
+#### Specifying Different Isolation Strategies for Different Scopes in a Suite
+
+Use the `@isolation test` and `@isolation testCase` annotations at the suite level to set the isolation strategy correspondingly for every test and every case in a suite. In the following example, the isolation script runs before and after every test in a suite and before every case in a suite. <a href="https://gist.github.com/xcomSteveJohnson/d72e76b19c7bb1b6995c" target="_blank">Sample</a>
+
+When changing isolation strategies on the individual level, consider the following:
+
+*	An isolation script is not executed twice in a row. For example, if you set the _before_ strategy for a test case and for the first test in this case, the isolation script runs just once, before a test case.
+*	If you set the _after_ strategy for the last test in a suite, the isolation script does not execute because it is redundant.
+
+### Using Page and Block Objects for UI-Specific Test
+
+The MTF page object and block object patterns avoid unnecessary duplication of code and make tests easier to support. To create the pages for your tests, we recommend creating block objects first. After that you can create the page objects and assign the necessary blocks to them. 
+
+You must create block objects manually but page objects can be generated automatically.
+
+#### Exploring a Block Object
+
+The block object defines the business logic. The block object can contain other block objects provided this inclusion reflects Magento logic. For example, you can include the Widget block object into the Left Panel block object or Right Panel block object.
+
+The block object also contains commands such as `submit` or `verify`. The only commands detached to a separate abstract block are `fill` and `verify`. 
+
+The Form block object executes simple operation, such as filling in a field. To execute more complicated operations, such as fill in the product details by switching between different tabs, use the hierarchy of the Form block objects.
+
+To define the correspondence between the fields in a block and data in a fixture, use the mapping tool. Mapping should be defined in `[blockName].xml`.
+
+<a href="https://gist.github.com/xcomSteveJohnson/f3b1805036aedb7031d6" target="_blank">Sample block object</a>
+
+#### Exploring a Page Object
+
+The page object contains the following main elements:
+
+*	The URL of the target page, to execute the `open()` abstract method. The URL is formed based on `const MCA` parameter.
+*	`const MCA` parameter, which identifies a page and is used by a generator of a page. The page object is named by its MCA.
+*	The blocks with which the page object can work
+
+The page object opens itself and returns its own blocks.
+
+<a href="https://gist.github.com/xcomSteveJohnson/7aa95287667b09fa37d1" target="_blank">Sample page object</a>
+
+#### Creating a Page Object
+
+To create a page object:
+
+1.	List all pages you need in your global page configuration file (`Module\Test\etc\global\page.xml`). You must specify the name, MCA, area, and corresponding class for each page.
+2.	Run the generator (`utils\generate\page`). The page class and individual configuration file (`[pageName].xml`) are generated for each page.
+
+    **Note**: Page classes created at this point do not contain the necessary blocks. The individual page configuration file (`[pageName].xml`) contains the test blocks to facilitate entering the block object information.
+	
+3.	Specify the necessary blocks for each page in the individual configuration file (`[pageName].xml`).
+4.	Delete the page classes created automatically at step 2 of this scenario.
+5.	Run the generator (`utils\generate\pag`e). This creates the page classes containing the blocks you specified.
 
 
 
