@@ -7,6 +7,7 @@ This page discusses how to install the MTF.
 *	[Prerequisites](#prerequisites)
 *	[Installation Procedure](#installation-procedure)
 *	[Configuring the MTF](#configuring-the-mtf)
+*	[Configuration File Reference](#configuration-file-reference)
 *	[Next Steps](#next-steps)
 
 ## Prerequisites
@@ -15,31 +16,33 @@ You can use the MTF on Windows, Mac OS, Ubuntu, or CentOS.
 
 Other prerequisites:
 
-*	PHP: You must enable the openssl extension to download files via https.
+*	PHP: You must enable the `openssl` extension to download files using HTTPS.
 
-*	Magento 2 is installed and configured to not use the secret URL key. Click **Stores** > **Configuration** > **Advanced** > **Admin** > **Security**. Set **Add Secret Key to URLs** to **No**.
+*	Java shoujld be in your system PATH. We recommend using the latest update to Java 1.7.
 
-*	If you install Magento 2 using publication tool, use a command like the following: 
-
-	```
-	php -f dev/build/publication/../extruder.php -- -v -w "./" -l dev/build/publication/extruder/common.txt -l dev/build/publication/extruder/dev_build_ee.txt
-	```
+	To see your current Java version, enter `java -version` at the command line. If Java is not recognized, make sure it's in your system PATH.
 	
-*	Git is installed,
+	For general information, see the <a href="http://www.java.com/en/download/help/index_installing.xml" target="_blank">installing Java help page</a>.
 	
-	Windows only: Add Git to your system PATH variable or run composer from Git bash.
+	Another resource is the <a href="http://www.java.com/en/download/help/java_update.xml" target="_blank">using Java help page</a>.
 
-*	Web drivers are downloaded for your browser, unless you use Firefox browser, which does not require additional drivers.
+*	Magento 2 is installed and configured to not use the secret URL key. Log in to the Magento Admin as an administrator and click **Stores** > **Configuration** > **Advanced** > **Admin** > **Security**. Set **Add Secret Key to URLs** to **No**.
+
+*	Git is installed
+	
+	Windows only: Add Git to your system PATH variable or run Composer from the Git bash shell.
+
+*	If you use a web browser other than Firefox, you must get <a href="http://docs.seleniumhq.org/download/" target="_blank">web browser drivers</a> that are compatible with Selenium. 
 
 ## Installation Procedure
 
-1.	Download the composer as discussed in http://getcomposer.org/doc/00-intro.md#installation-nix and http://getcomposer.org/doc/00-intro.md#installation-windows. 
+1.	Download the Composer as discussed in http://getcomposer.org/doc/00-intro.md#installation-nix and http://getcomposer.org/doc/00-intro.md#installation-windows. 
 
-	If composer hasn't been install globally, `composer.phar` should be put into the directory where `composer.json` is located (typically `[your Magento install dir]/dev/tests/functional`). 
+	If Composer hasn't been install globally, `composer.phar` should be put into the directory where `composer.json` is located (typically `[your Magento install dir]/dev/tests/functional`). 
 	
 	**Note**: `composer.json` is an integral part of every Magento installation. This file contains information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from separate repository.
 
-2. Run composer from magento2/dev/tests/functional directory using _either of_ the following commands:
+2. Run Composer from magento2/dev/tests/functional directory using _either of_ the following commands:
 
 	```
 	composer install
@@ -71,32 +74,35 @@ Other prerequisites:
 
 This section discusses how to configure the MTF. 
 
-### Google Chrome Prerequisite
+### Non-Firefox Browser Prerequisite
 
-If you run your tests in the Google Chrome web browser, the value of `browserName` to `chrome` in `[your Magento install dir]/dev/tests/functional/config/server.yml`.
+If you run your tests in the Google Chrome web browser, the value of `browserName` to `chrome` in `[your Magento install dir]/dev/tests/functional/config/server.yml`. A sample follows:
 
-### Quick Setup for localhost
+```yml
+selenium:
+    browser: 'Mozilla Firefox'
+    browserName: 'firefox'
+    host: 'localhost'
+    port: 4444
+    seleniumServerRequestsTimeout: 90
+    sessionStrategy: shared
+    desiredCapabilities:
+        platform: ANY
+```
 
-To run the MTF tests on localhost:
 
-1. Specify your storefront and Magento Admin URLs in `phpunit.xml`:
+### Specifying Your Magento URLs
+
+Specify your storefront and Magento Admin URLs in `phpunit.xml`:
 
 	```
 	<env name="app_frontend_url" value="http://localhost/magento2/index.php/"/>
 	<env name="app_backend_url" value="http://localhost/magento2/index.php/backend/"/>
 	```
 	
-2. Run the Selenium server from `vendor/netwing/selenium-server-standalone`:
+## Configuration File Reference
 
-	<ul>
-	<li>Chrome browser: <tt>java -jar [path to your Selenium dir]/selenium-server.jar -Dwebdriver.chrome.driver=[path to your Chrome driver]/chromedriver.exe</tt></li>
-	<li>All other browsers: <tt>java -jar [path to your Selenium dir]/selenium-server.jar</tt></li></ul>
-	
-3.  Run PHPUnit tests from `[your Magento install dir]/dev/tests/functional/vendor/bin`
-
-### Configuration Reference
-
-This section provides a detailed reference for all MTF configuration options. All files discussed in this section are located in `[your Magento install dir]/dev/tests/functional/config` and `[your Magento install dir]/dev/tests/functional/utils/config`
+This section provides information about MTF configuration files. All files discussed in this section are located in `[your Magento install dir]/dev/tests/functional/config` and `[your Magento install dir]/dev/tests/functional/utils/config`
 
 For more information, see:
 
@@ -155,4 +161,4 @@ Specifies the groups of tests for which fabrics should be created. Create this f
 
 ## Next Steps
 
-Start using the MTF as discussed in [Using the Magento Test Framework (MTF)](using.md).
+Start running as discussed in [Running the Magento Test Framework (MTF)](running.md).
