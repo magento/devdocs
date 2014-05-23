@@ -54,11 +54,11 @@ For more information about web browser support, see <a href="http://docs.seleniu
 
 ## Installation Procedure
 
-1.	Download the Composer as discussed in http://getcomposer.org/doc/00-intro.md#installation-nix and http://getcomposer.org/doc/00-intro.md#installation-windows. 
+1.	Download the Composer as discussed in either the <a href="http://getcomposer.org/doc/00-intro.md#installation-nix" target="_blank">UNIX install page</a> or the <a href="http://getcomposer.org/doc/00-intro.md#installation-windows" target="_blank">Windows install page</a>. 
 
 	If Composer hasn't been install globally, `composer.phar` should be put into the directory where `composer.json` is located (typically `[your Magento install dir]/dev/tests/functional`). 
 	
-	**Note**: `composer.json` is an integral part of every Magento installation. This file contains information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from separate repository.
+	**Note**: `composer.json` is an integral part of every Magento installation. This file contains information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from a separate repository.
 
 2. Run Composer from the `magento2/dev/tests/functional` directory using _either of_ the following commands:
 
@@ -80,8 +80,7 @@ For more information about web browser support, see <a href="http://docs.seleniu
 3.	Run the generator from `[your Magento install dir]/dev/tests/functional/utils/generate/factory.php` or `[your Magento install dir]/dev/tests/functional/utils/generate.php`
 
 	```
-	php utils/generate/factory.php (for Magento 2)
-	php utils/generate.php (for Magento 1)
+	php utils/generate/factory.php
 	```
 	
 	**Note**: The generator tool creates factories for fixtures, handlers, repositories, page objects, and block objects. After the MTF is initialized, the factories are pre-generated to facilitate creating and running the tests.
@@ -94,12 +93,12 @@ This section discusses how to configure the MTF.
 
 ### Non-Firefox Browser Prerequisite
 
-If you run your tests in the Google Chrome web browser, the value of `browserName` to `chrome` in `[your Magento install dir]/dev/tests/functional/config/server.yml`. A sample follows:
+If you run your tests using a web browser _other than_ Firefox, change the value of `browserName` in `[your Magento install dir]/dev/tests/functional/config/server.yml`. A sample follows:
 
 ```yml
 selenium:
-    browser: 'Mozilla Firefox'
-    browserName: 'firefox'
+    browser: 'Google Chrome'
+    browserName: 'chrome'
     host: 'localhost'
     port: 4444
     seleniumServerRequestsTimeout: 90
@@ -150,7 +149,9 @@ backend_login_url: admin/auth/login
 
 #### handler.yml 
 
-Responsible for specifying additional settings for different types of handlers. Sample:
+Responsible for specifying additional settings for different types of handlers. 
+
+Sample:
 
 ```yml
 ui:
@@ -180,14 +181,17 @@ Your _isolation strategy_ determines when a system should return to its initial 
 
 #### server.yml
 
-Allows changing Selenium server configurations. 
+Specify the Selenium web browser (if not Firefox) and other options. For a list of valid `browserName` values, see:
+
+*	<a href="http://selenium.googlecode.com/svn/trunk/docs/api/py/_modules/selenium/webdriver/common/desired_capabilities.html" target="_blank">Selenium source code</a> 
+*	<a href="http://stackoverflow.com/questions/2569977/list-of-selenium-rc-browser-launchers" target="_blank">This article on stackoverflow</a>
 
 Sample:
 
 ```yml
 selenium:
-    browser: 'Mozilla Firefox'
-    browserName: 'firefox'
+    browser: 'Google Chrome'
+    browserName: 'chrome'
     host: 'localhost'
     port: 4444
     seleniumServerRequestsTimeout: 90

@@ -4,9 +4,10 @@ This page discusses how to run tests using the MTF.
 
 ## Prerequisites 
 
-*	Install and configure the MTF as discussed in [Installing and Configuring the Magento Test Framework (MTF)](install.md).
-*	Make sure your Magento 2 code is up-to-date.
-*	If Magento 2 code changed, update Composer dependencies
+*	Install and configure the MTF as discussed in [Installing and Configuring the Magento Test Framework (MTF)](install-config.md).
+*	Make sure your <a href="https://github.com/magento/magento2" target="_blank">Magento 2 code</a> is up-to-date.
+
+	If Magento 2 code changed, update Composer dependencies
 
 	Whenever code changes in Magento 2, there is a chance that the MTF vendor code had to be updated. Although rare, changes in Object Manager for example could cause an update to be required.
 
