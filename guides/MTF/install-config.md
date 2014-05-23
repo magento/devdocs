@@ -60,7 +60,7 @@ For more information about web browser support, see <a href="http://docs.seleniu
 	
 	**Note**: `composer.json` contains dependency information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from a separate repository.
 
-2. Run Composer from the `magento2/dev/tests/functional` directory using _either of_ the following commands:
+2. Run Composer from the `[your Magento install dir]/dev/tests/functional` directory using _either of_ the following commands:
 
 	```
 	composer install
