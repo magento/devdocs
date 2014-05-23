@@ -11,7 +11,7 @@ This page discusses how to run tests using the MTF.
 
 	Whenever code changes in Magento 2, there is a chance that the MTF vendor code had to be updated. Although rare, changes in Object Manager for example could cause an update to be required.
 
-	Do this by running `composer update` from `dev/tests/functional`
+	To update Composer, change to the `dev/tests/functional` directory and run `composer update` 
 
 ## Starting Selenium
 

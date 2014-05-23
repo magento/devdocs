@@ -22,7 +22,9 @@ You can use the MTF on Windows, Mac OS, Ubuntu, or CentOS.
 
 *	PHP: You must enable the `openssl` extension to download files using HTTPS.
 
-*	Java should be in your system PATH. We recommend using the latest update to Java 1.7.
+*	<a href="https://code.google.com/p/selenium/source/browse/README.md#112" target="_blank">Java version 1.6 or later</a> is required; we recommend the latest update to Java 1.7.
+
+	Also, the `java` and `jar` executables must be in your system PATH. 
 
 	To see your current Java version, enter `java -version` at the command line. If Java is not recognized, make sure it's in your system PATH.
 	
