@@ -56,9 +56,9 @@ For more information about web browser support, see <a href="http://docs.seleniu
 
 1.	Download the Composer as discussed in either the <a href="http://getcomposer.org/doc/00-intro.md#installation-nix" target="_blank">UNIX install page</a> or the <a href="http://getcomposer.org/doc/00-intro.md#installation-windows" target="_blank">Windows install page</a>. 
 
-	If Composer hasn't been install globally, `composer.phar` should be put into the directory where `composer.json` is located (typically `[your Magento install dir]/dev/tests/functional`). 
+	If you can't run `composer` from a command line, you must copy `composer.phar` into the directory where `composer.json` is located (typically `[your Magento install dir]/dev/tests/functional`). 
 	
-	**Note**: `composer.json` is an integral part of every Magento installation. This file contains information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from a separate repository.
+	**Note**: `composer.json` contains dependency information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from a separate repository.
 
 2. Run Composer from the `magento2/dev/tests/functional` directory using _either of_ the following commands:
 
