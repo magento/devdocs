@@ -2,7 +2,7 @@
 
 This page discusses advanced options for writing your own MTF tests. You don't need to do this to run tests already configured with the MTF as discussed in [Running the Magento Test Framework (MTF)](running.md).
 
-This page discusses how to:
+Advanced options include:
 
 *	Specify the test context using fixtures
 *	Apply the test context using handlers
@@ -21,7 +21,11 @@ MTF has several features to assist you with the preceding tasks:
 
 ## Contents
 
-TBD
+*	[Working With Fixtures](#working-with-fixtures)
+*	[Transferring Test Conditions Using Handlers](#transferring-test-conditions-using-handlers)
+*	[Defining Constraints for Tests](#defining-constratints-for-tests)
+*	[Isolating Tests](#isolating-tests)
+*	[Using Page and Block Objects for UI-Specific Test](#using-page-and-block-objects-for-ui-specific-tests)
 
 ## Working With Fixtures
 
@@ -98,7 +102,7 @@ The `InjectableFixture` class has the following methods:
 *	`getDataByKey()`: Protected method that retrieves data by its key.
 *	`_applyPlaceholders()`: Protected method that applies a placeholder for each data element in a fixture.
 
-## Transferring the Test Conditions by Handlers
+## Transferring Test Conditions Using Handlers
 
 After you specify the preconditions for a test, you must decide how these preconditions should be transferred for testing purposes. By using different types of handlers, you can specify the best way of transferring data from the fixtures.
 
@@ -134,7 +138,7 @@ After all constraints are ready, you must list them along with data and behavior
 
 The sequence of the constraints should be logical. For example, if you test the scenario on creating a new product in the Magento Admin, first list the constraint for the `You saved the product` message and then for the product page. 
 
-## Isolating the Test
+## Isolating Tests
 
 When running your tests, you might need to return to a known state to verify the accuracy of the test results.
 
@@ -199,7 +203,7 @@ When changing isolation strategies on the individual level, consider the followi
 *	An isolation script is not executed twice in a row. For example, if you set the _before_ strategy for a test case and for the first test in this case, the isolation script runs just once, before a test case.
 *	If you set the _after_ strategy for the last test in a suite, the isolation script does not execute because it is redundant.
 
-## Using Page and Block Objects for UI-Specific Test
+## Using Page and Block Objects for UI-Specific Tests
 
 The MTF page object and block object patterns avoid unnecessary duplication of code and make tests easier to support. To create the pages for your tests, we recommend creating block objects first. After that you can create the page objects and assign the necessary blocks to them. 
 

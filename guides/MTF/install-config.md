@@ -12,27 +12,45 @@ This page discusses how to install the MTF.
 
 ## Prerequisites
 
+This section discusses prerequisites for using the MTF.
+
+### Supported Operating Systems
+
 You can use the MTF on Windows, Mac OS, Ubuntu, or CentOS.
 
-Other prerequisites:
+### Required Software
 
 *	PHP: You must enable the `openssl` extension to download files using HTTPS.
 
-*	Java shoujld be in your system PATH. We recommend using the latest update to Java 1.7.
+*	Java should be in your system PATH. We recommend using the latest update to Java 1.7.
 
 	To see your current Java version, enter `java -version` at the command line. If Java is not recognized, make sure it's in your system PATH.
 	
 	For general information, see the <a href="http://www.java.com/en/download/help/index_installing.xml" target="_blank">installing Java help page</a>.
 	
 	Another resource is the <a href="http://www.java.com/en/download/help/java_update.xml" target="_blank">using Java help page</a>.
-
-*	Magento 2 is installed and configured to not use the secret URL key. Log in to the Magento Admin as an administrator and click **Stores** > **Configuration** > **Advanced** > **Admin** > **Security**. Set **Add Secret Key to URLs** to **No**.
-
-*	Git is installed
 	
-	Windows only: Add Git to your system PATH variable or run Composer from the Git bash shell.
+### Magento 2 Configuration
 
-*	If you use a web browser other than Firefox, you must get <a href="http://docs.seleniumhq.org/download/" target="_blank">web browser drivers</a> that are compatible with Selenium. 
+<a href="https://github.com/magento/magento2" target="_blank">Magento 2</a> must be installed and configured to not use the secret URL key. 
+
+1.	Log in to the Magento Admin as an administrator.
+
+2.	Click **Stores** > **Configuration** > **Advanced** > **Admin** > **Security**. 
+
+3.	Set **Add Secret Key to URLs** to **No**.
+
+### Git
+
+Git must be installed.
+	
+For Windows only: Add Git to your system PATH variable or run Composer from the Git bash shell.
+
+### Web Browser
+
+If you use a web browser other than Firefox, you must get <a href="http://docs.seleniumhq.org/download/" target="_blank">web browser drivers</a> that are compatible with Selenium. 
+
+For more information about web browser support, see <a href="http://docs.seleniumhq.org/docs/01_introducing_selenium.jsp#supported-browsers-and-platforms" target="_blank">the Selenium documentation</a>.
 
 ## Installation Procedure
 
@@ -90,6 +108,8 @@ selenium:
         platform: ANY
 ```
 
+For more information about web browser support, see <a href="http://docs.seleniumhq.org/docs/01_introducing_selenium.jsp#supported-browsers-and-platforms" target="_blank">the Selenium documentation</a>.
+
 ### Specifying Your Magento URLs
 
 Specify your storefront and Magento Admin URLs in `phpunit.xml`:
@@ -130,11 +150,26 @@ backend_login_url: admin/auth/login
 
 #### handler.yml 
 
-Responsible for specifying additional settings for different types of handlers. <a href="https://gist.github.com/xcomSteveJohnson/3808faba2cb24281d035" target="_blank">Sample</a>.
+Responsible for specifying additional settings for different types of handlers. Sample:
+
+```yml
+ui:
+curl:
+direct:
+```
 
 #### isolation.yml
 
-Responsible for specifying the isolation strategies for tests, cases, and suites. <a href="https://gist.github.com/xcomSteveJohnson/6b7207ba3f55da33a01b" target="_blank">Sample</a>.
+Responsible for specifying the isolation strategies for tests, cases, and suites. 
+
+Sample:
+
+```yml
+reset_url_path: dev/tests/mtf/isolation.php
+testSuite: none
+testCase: none
+test: none
+```
 
 Your _isolation strategy_ determines when a system should return to its initial state. Isolation strategy can apply to any scope; that is, to a test, case, or suite. There are four isolation strategies available in the MTF:
 
@@ -145,11 +180,46 @@ Your _isolation strategy_ determines when a system should return to its initial 
 
 #### server.yml
 
-Allows changing Selenium server configurations. <a href="https://gist.github.com/xcomSteveJohnson/302b66ddf9b29cf85a8d" target="_blank">Sample</a>.
+Allows changing Selenium server configurations. 
+
+Sample:
+
+```yml
+selenium:
+    browser: 'Mozilla Firefox'
+    browserName: 'firefox'
+    host: 'localhost'
+    port: 4444
+    seleniumServerRequestsTimeout: 90
+    sessionStrategy: shared
+    desiredCapabilities:
+        platform: ANY
+```
 
 #### generator_config.yml
 
-Allows changing Selenium server configurations. <a href="https://gist.github.com/xcomSteveJohnson/132a24ec3fffe44b7fcc" target="_blank">Sample</a>.
+Allows changing Selenium server configurations. 
+
+Sample:
+
+```yml
+# Generator running options, in case "generate_specified_modules" is set to "yes" then specified file is used
+generate_specified_modules: no
+specified_modules: dev\tests\mtf\utils\config\ee_modules.yml
+ 
+# Fallback path configurations
+tests_fallback:
+    1:
+        path: tests/design
+        namespace: Magento\Plushe
+    2:
+        path: tests/app
+ 
+# Handler priority configuration
+handler_fallback:
+    1: Curl
+    2: Ui
+```
 
 *	Set `generate_specified_modules` to `yes` or `no` to create the fabrics for the tests from the specified modules. Disabled (set to `no`) by default which means the fabrics will be created for all modules of tests. Setting to `yes` means that only modules specified by `specified_modules` will be analyzed and have the fabrics created for them. The rest of tests will most likely fail due to absence of fabrics for them.
 
@@ -163,8 +233,17 @@ Allows changing Selenium server configurations. <a href="https://gist.github.com
 
 Specifies the groups of tests for which fabrics should be created. Create this file only if `generate_specified_modules` parameter is set to `yes` in `[your Magento install dir]/dev/tests/functional/utils/config/generator_config.yml`. By default, the file is empty. 
 
-<a href="https://gist.github.com/xcomSteveJohnson/f7a527b7e454f01ab06f" target="_blank">Sample</a>.
+Sample:
+
+```yml
+- Magento_Backend
+- Magento_Catalog
+- Magento_Customer
+```
 
 ## Next Steps
 
-Start running as discussed in [Running the Magento Test Framework (MTF)](running.md).
+You can do either of the following:
+
+*	Start running as discussed in [Running the Magento Test Framework (MTF)](running.md).
+*	Create your own MTF tests as discussed in [Writing Magento Test Framework (MTF) Tests](writing.md). This is an advanced topic that isn't necessary for many developers.
