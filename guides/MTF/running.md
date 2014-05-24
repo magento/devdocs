@@ -2,34 +2,31 @@
 
 This page discusses how to run tests using the MTF.
 
-## Prerequisites 
+## Prerequisite
 
-*	Install and configure the MTF as discussed in [Installing and Configuring the Magento Test Framework (MTF)](install-config.md).
-*	Make sure your <a href="https://github.com/magento/magento2" target="_blank">Magento 2 code</a> is up-to-date.
+Install and configure the MTF as discussed in [Installing and Configuring the Magento Test Framework (MTF)](install-config.md).
 
-	If Magento 2 code changed, update Composer dependencies
+## Running MTF
 
-	Whenever code changes in Magento 2, there is a chance that the MTF vendor code had to be updated. Although rare, changes in Object Manager for example could cause an update to be required.
+1.	Make sure your <a href="https://github.com/magento/magento2" target="_blank">Magento 2 code</a> is up-to-date.
+	
+2.	Change to the `dev/tests/functional` directory and run `composer update` 
 
-	To update Composer, change to the `dev/tests/functional` directory and run `composer update` 
+	`composer update` updates any dependencies that otherwise prevent tests from running successfully. 
 
-## Starting Selenium
+3.	Start Selenium (which should have been downloaded for you by Composer). Selenium can be found under the `dev/tests/functional/vendor/netwing/selenium-server-standalone` directory.
 
-Start Selenium (which should have been downloaded for you by Composer). Selenium can be found under the `dev/tests/functional/vendor/netwing/selenium-server-standalone` directory.
+	Example of starting Selenium:
 
-Example of starting Selenium:
+	```
+	java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.39.0.jar
+	```
 
-```
-java -jar vendor/netwing/selenium-server-standalone/selenium-server-standalone-2.39.0.jar
-```
+3.	Start your tests using PHPUnit. This can be done using your IDE or the command line.
 
-## Starting the Tests
+	Example using the command line:
 
-Start your tests using PHPUnit. This can be done using your IDE or the command line.
-
-Example using the command line:
-
-```
-cd dev/tests/functional
-phpunit
-```
+	```
+	cd dev/tests/functional
+	phpunit
+	```
