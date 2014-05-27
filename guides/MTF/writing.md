@@ -1,6 +1,8 @@
 # Writing Magento Test Framework (MTF) Tests
 
-This page discusses advanced options for writing your own MTF tests. You don't need to do this to run tests already configured with the MTF as discussed in [Running the Magento Test Framework (MTF)](running.md).
+This page discusses advanced options for writing your own MTF tests. Writing MTF tests is an advanced topic and you should use this information _only_ if you're an experienced Magento developer who needs to write their own tests.
+
+You don't need to do this to run tests already configured with the MTF as discussed in [Running the Magento Test Framework (MTF)](running).
 
 Advanced options include:
 
@@ -33,7 +35,7 @@ Fixtures enable you to create the preconditions for your tests separately from t
 
 To create a fixture class, you must specify its structure and values. Basically, creating a fixture includes the following steps:
 
-1.	Define the structure for a fixture in fixture configuration (`.xml`) file.
+1.	Define the structure for a fixture in a fixture configuration (`.xml`) file.
 2.	Run the generator to generate a fixture class with the defined structure.
 3.	Define the values for a fixture.
 
@@ -46,7 +48,7 @@ There are two ways to the create structure for a fixture:
 
 To use `[fixtureName].xml`, you must specify a fixture's details in `Module\Test\etc\global\fixture.xml`. A fixture based on `[fixtureName].xml` inherits the latter's name.
 
-Creating `[fixtureName].xml` files for a module and entering the structure manually can be time-consuming. To facilitate this task, MTF gets the structure for fixtures from the database automatically using `Module\Test\etc\global\fixture.xml`. You need only list all the fixtures you need for a module in this file and specify the necessary parameters. 
+Creating a `[fixtureName].xml` for a module and entering the structure manually can be time-consuming. To facilitate this task, MTF gets the structure for fixtures from the database automatically using `Module\Test\etc\global\fixture.xml`. You need only list all the fixtures you need for a module in this file and specify the necessary parameters. 
 
 <a href="https://gist.github.com/xcomSteveJohnson/fcd123106ec941c14852" target="_blank">Sample fixture.xml</a>
 
@@ -62,13 +64,13 @@ After you list all necessary fixtures, run the generator as discussed in the nex
 
 ### Using the Fixture Generator
 
-The fixture generator (`utils\generate\fixture`) creates the fixture class from fixture configuration file. If you specified the configurations for fixtures globally (that is, in `fixture.xml`), the generator creates an individual configuration file for each declared fixture along with corresponding fixture classes. 
+The fixture generator (`utils\generate\fixture`) creates the fixture class from the fixture configuration file. If you specified the configurations for fixtures globally (that is, in `fixture.xml`), the generator creates an individual configuration file for each declared fixture along with corresponding fixture classes. 
 
 The generator creates only one fixture class from each individual configuration file; that is, after a fixture is created, the generator ignores this fixture's configuration file. To change a fixture's structure, delete this fixture class, make the necessary changes in its configuration file, and run the generator.
 
-**Tip**: If you generated fixture classes from `fixture.xml` and need to adjust the structure of a newly created fixture, delete the fixture class, make changes in fixture's individual configuration file, and run the generator again.
+**Tip**: If you generated fixture classes from `fixture.xml` and need to adjust the structure of a newly created fixture, delete the fixture class, make changes in the fixture's individual configuration file, and run the generator again.
 
-### Settings Values for a Fixture
+### Setting Values for a Fixture
 
 This section discusses how to set values for a fixture. 
 
@@ -85,11 +87,11 @@ The repository class should share the name with a fixture its configuration file
 
 A repository can be generated automatically from `Module\Test\etc\global\fixture.xml`.
 
-Run the repository regenerator (`utils\generate\repository`) from the command line. The resulting repository class contains the values available in the database.
+Run the repository generator (`utils\generate\repository`) from the command line. The resulting repository class contains the values available in the database.
 
 ### Using InjectableFixture
 
-The `InjectableFixture` class ensures transferring data from application to MTF. All fixture classes in the MTF extend `InjectableFixture`.
+The `InjectableFixture` class transfers data from the application to the MTF. All fixture classes in the MTF extend `InjectableFixture`.
 
 The `InjectableFixture` class has the following methods:
 
@@ -111,7 +113,32 @@ In the MTF, there are two default types of handlers:
 *	The curl handler passes the preconditions using direct HTTP calls to the server according to the headless principle.
 *	The UI handler passes preconditions to the user interface using a web browser.
 
-You can create other handlers if necessary. To make them available in the MTF, declare them in the object manager (`Mtf\ObjectManagerFactory`). <a href="https://gist.github.com/xcomSteveJohnson/ab70e51d80f5d40bab5b" target="_blank">Sample</a>
+You can create other handlers if necessary. To make them available in the MTF, declare them in the object manager (`Mtf\ObjectManagerFactory`) as follows:
+
+```php
+/**
+* Configure Object Manager
+* This method is static to have the ability to configure multiple instances of Object manager when needed
+*
+* @param MagentoObjectManager $objectManager
+*/
+public static function configure(MagentoObjectManager $objectManager)
+{
+$objectManager->configure(
+$objectManager->get('Mtf\ObjectManager\ConfigLoader\Primary')->load()
+);
+$objectManager->configure(
+$objectManager->get('Mtf\ObjectManager\ConfigLoader\Module')->load()
+);
+$objectManager->configure(
+$objectManager->get('Mtf\ObjectManager\ConfigLoader\Module')->load('ui')
+);
+$objectManager->configure(
+$objectManager->get('Mtf\ObjectManager\ConfigLoader\Module')->load('curl')
+);
+}
+}
+```
 
 The latest handler in the list has the highest priority.
 
@@ -142,13 +169,19 @@ The sequence of the constraints should be logical. For example, if you test the 
 
 When running your tests, you might need to return to a known state to verify the accuracy of the test results.
 
-Isolation test management enables you to isolate a single test, test case, or test suite from other tests, so the tests, cases, and suites do not influence each other. Specially developed isolation scripts return the Magento instance to its initial state for a test, case, or suite.
+Isolation test management enables you to isolate a single test, test case, or test suite from other tests, so they don't influence each other. Specially developed isolation scripts return the Magento instance to its initial state for a test, case, or suite.
 
-An MTF isolation script is provided for Magento CE and EE. However, you can edit a script as necessary. <a href="https://gist.github.com/xcomSteveJohnson/f30d447d126f806f0a12" target="_blank">Sample</a>
+An MTF isolation script is provided for Magento CE and EE. You can edit it as necessary:
+
+```php
+<?php
+exec('mysql -umagento -pmagento -e"DROP DATABASE magento; CREATE DATABASE magento CHARACTER SET utf8;"');
+exec('mysql -umagento -pmagento magento < /var/www/magento/magento.dump.sql');
+```
 
 ### Isolation Strategies
 
-You can specify when to return to a known state using the isolation strategies. Your isolation strategy can apply to any scope; that is, to a test, case, or suite. MTF provides the following isolation strategies:
+You can specify when to return to a known state using _isolation strategies_. Your isolation strategy can apply to any scope; that is, to a test, case, or suite. MTF provides the following isolation strategies:
 
 *	`none`: Default strategy; implies that the isolation script should not be run either before or after any test, case, or suite.
 *	`before`: Run the isolation script before a test, case, or suite.
@@ -180,23 +213,106 @@ Use the `@isolation` annotation at the test case level to set the isolation stra
 
 ### Specifying an Isolation Strategy for a Test
 
-Use the `@isolation` annotation at the test level to set the isolation strategy for a test. In the following example, the isolation script runs after test2. <a href="https://gist.github.com/xcomSteveJohnson/2cc67af38cda9a7ee4d9" target="_blank">Sample</a>
+Use the `@isolation` annotation at the test level to set the isolation strategy for a test. In the following example, the isolation script runs after test2. 
+
+```php
+/**
+* @isolation both
+*/
+class IsolationSuite extends \PHPUnit_Framework_TestSuite
+{
+public static function suite()
+{
+$suite = new self();
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest1');
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest2');
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest3');
+return $suite;
+}
+}
+```
 
 ### Specifying an Isolation Strategy for Every Test in a Test Case
 
-Use the `@isolation` annotation at the case level to set an isolation strategy for every test in a case. In the following example, the isolation script runs before every test in a case. <a href="https://gist.github.com/xcomSteveJohnson/77aacf282788f1ee99a7" target="_blank">Sample</a>
+Use the `@isolation` annotation at the case level to set an isolation strategy for every test in a case. In the following example, the isolation script runs before every test in a case.
+
+```php
+/**
+* @isolation test before
+*/
+class IsolationTest extends Isolation
+{
+public static function setUpBeforeClass()
+{
+self::_login();
+}
+public function test1()
+{
+$this->_deleteProduct();
+}
+public function test2()
+{
+$this->_deleteProduct();
+}
+public function test3()
+{
+$this->_deleteProduct();
+}
+}
+```
 
 ### Specifying an Isolation Strategy for Every Test Case in a Suite
 
-Use the `@isolation testCase` annotation at the suite level to set an isolation strategy for every case in a suite. In the following example, the isolation script runs before and after every case in a suite. <a href="https://gist.github.com/xcomSteveJohnson/15b877e33bf1865ed0bb" target="_blank">Sample</a>
+Use the `@isolation testCase` annotation at the suite level to set an isolation strategy for every case in a suite. In the following example, the isolation script runs before and after every case in a suite. 
+
+```php
+/**
+* @isolation testCase both
+*/
+class IsolationSuite extends \PHPUnit_Framework_TestSuite
+{
+public static function suite()
+{
+$suite = new self();
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest1');
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest2');
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest3');
+return $suite;
+}
+}
+```
 
 ### Specifying an Isolation Strategy for Every Test in a Suite
 
-Use the `@isolation test` annotation at the suite level to set strategy for every test in a suite. In the following example, the isolation script runs before and after every test in a suite. <a href="https://gist.github.com/xcomSteveJohnson/e5c6a12c50f2a4a99fda" target="_blank">Sample</a>
+Use the `@isolation test` annotation at the suite level to set strategy for every test in a suite. In the following example, the isolation script runs before and after every test in a suite. 
+
+```php
+/**
+* @isolation test both
+*/
+class IsolationSuite extends \PHPUnit_Framework_TestSuite
+{
+public static function suite()
+{
+$suite = new self();
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest1');
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest2');
+$suite->addTestSuite('Mtf\TestCase\Functional\IsolationTest3');
+return $suite;
+}
+}
+```
 
 ### Specifying Different Isolation Strategies for Different Scopes in a Suite
 
-Use the `@isolation test` and `@isolation testCase` annotations at the suite level to set the isolation strategy correspondingly for every test and every case in a suite. In the following example, the isolation script runs before and after every test in a suite and before every case in a suite. <a href="https://gist.github.com/xcomSteveJohnson/d72e76b19c7bb1b6995c" target="_blank">Sample</a>
+Use the `@isolation test` and `@isolation testCase` annotations at the suite level to set the isolation strategy correspondingly for every test and every case in a suite. In the following example, the isolation script runs before and after every test in a suite and before every case in a suite. 
+
+```php
+/**
+* @isolation test both
+* @isolation testCase before
+*/
+```
 
 When changing isolation strategies on the individual level, consider the following:
 
@@ -243,7 +359,8 @@ To create a page object:
     **Note**: Page classes created at this point do not contain the necessary blocks. The individual page configuration file (`[pageName].xml`) contains the test blocks to facilitate entering the block object information.
 	
 3.	Specify the necessary blocks for each page in the individual configuration file (`[pageName].xml`).
-4.	Delete the page classes created automatically at step 2 of this scenario.
+4.	Delete the page classes created automatically in step 2.
 5.	Run the generator (`utils\generate\page'). This creates the page classes containing the blocks you specified.
+
 
 
