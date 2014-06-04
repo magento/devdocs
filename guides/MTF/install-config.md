@@ -66,11 +66,11 @@ For more information about web browser support, see <a href="http://docs.seleniu
 	composer install
 	```
 	
-	**Note**: `composer.json` contains dependency information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from a separate repository.
-	
 	If you cannot run `composer` from the command line, do the following:
 	
 	a.	Copy `composer.phar` into the directory where `composer.json` is located (typically `[your Magento install dir]/dev/tests/functional`). 
+	
+	**Note**: `composer.json` contains dependency information and settings for PHPUnit, Selenium server, libraries, and so on required to start MTF. It also checks MTF out from a separate repository.
 	
 	b.	Run Composer as follows:
 	
