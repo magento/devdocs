@@ -8,7 +8,7 @@ This page discusses how to install the MTF.
 *	[Installation Procedure](#installation-procedure)
 *	[Configuring the MTF](#configuring-the-mtf)
 *	[Configuration File Reference](#configuration-file-reference)
-*	[Next Steps](#next-steps)
+*	[Next Step](#next-step)
 
 ## Prerequisites
 
@@ -258,7 +258,4 @@ Sample:
 
 ## Next Steps
 
-You can do either of the following:
-
-*	Start running as discussed in [Running the Magento Test Framework (MTF)](running.md).
-*	Create your own MTF tests as discussed in [Writing Magento Test Framework (MTF) Tests](writing.md). This is an advanced topic that isn't necessary for many developers.
+Start running as discussed in [Running the Magento Test Framework (MTF)](running.md).
