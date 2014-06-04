@@ -6,7 +6,7 @@ This page discusses how to run tests using the MTF.
 
 Install and configure the MTF as discussed in [Installing and Configuring the Magento Test Framework (MTF)](install-config.md).
 
-## Running MTF
+## Running MTF 
 
 1.	Make sure your <a href="https://github.com/magento/magento2" target="_blank">Magento 2 code</a> is up-to-date.
 	

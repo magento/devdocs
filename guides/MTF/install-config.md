@@ -216,7 +216,7 @@ selenium:
 Allows changing Selenium server configurations. 
 
 Sample:
-
+ 
 ```yml
 # Generator running options, in case "generate_specified_modules" is set to "yes" then specified file is used
 generate_specified_modules: no
