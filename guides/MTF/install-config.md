@@ -56,7 +56,9 @@ For more information about web browser support, see <a href="http://docs.seleniu
 
 ## Installation Procedure
 
-1.	Download the Composer as discussed in either the <a href="http://getcomposer.org/doc/00-intro.md#installation-nix" target="_blank">UNIX install page</a> or the <a href="http://getcomposer.org/doc/00-intro.md#installation-windows" target="_blank">Windows install page</a>. 
+1.	Download Composer for <a href="http://getcomposer.org/doc/00-intro.md#installation-nix" target="_blank">UNIX</a> or <a href="http://getcomposer.org/doc/00-intro.md#installation-windows" target="_blank">Windows</a>. 
+
+2.	Follow the instructions on that page to install Composer.
 
 2.	Run Composer from the `[your Magento install dir]/dev/tests/functional` directory as follows:
 
