@@ -139,8 +139,6 @@ For more information, see:
 *	[handler.yml](#handleryml)
 *	[isolation.yml](#isolationyml)
 *	[server.yml](#serveryml)
-*	[generator_config.yml](#generator_configyml)
-*	[ee_modules.yml](#ee_modulesyml)
 
 #### application.yml
 
@@ -209,51 +207,6 @@ selenium:
     sessionStrategy: shared
     desiredCapabilities:
         platform: ANY
-```
-
-#### generator_config.yml
-
-Allows changing Selenium server configurations. 
-
-Sample:
- 
-```yml
-# Generator running options, in case "generate_specified_modules" is set to "yes" then specified file is used
-generate_specified_modules: no
-specified_modules: dev\tests\mtf\utils\config\ee_modules.yml
- 
-# Fallback path configurations
-tests_fallback:
-    1:
-        path: tests/design
-        namespace: Magento\Plushe
-    2:
-        path: tests/app
- 
-# Handler priority configuration
-handler_fallback:
-    1: Curl
-    2: Ui
-```
-
-*	Set `generate_specified_modules` to `yes` or `no` to create the fabrics for the tests from the specified modules. Disabled (set to `no`) by default which means the fabrics will be created for all modules of tests. Setting to `yes` means that only modules specified by `specified_modules` will be analyzed and have the fabrics created for them. The rest of tests will most likely fail due to absence of fabrics for them.
-
-*	Set `specified_modules` to define a file containing the list of test modules. Default value is `dev\tests\mtf\utils\config\ee_modules.yml`
-
-*	Set `tests_fallback` to specify themes priorities; in other words, what theme displays on the storefront. Default value is `Plushe`
-
-*	Set `handler_fallback` to define the priority of using the handlers.
-
-#### ee_modules.yml
-
-Specifies the groups of tests for which fabrics should be created. Create this file only if `generate_specified_modules` parameter is set to `yes` in `[your Magento install dir]/dev/tests/functional/utils/config/generator_config.yml`. By default, the file is empty. 
-
-Sample:
-
-```yml
-- Magento_Backend
-- Magento_Catalog
-- Magento_Customer
 ```
 
 ## Next Steps
