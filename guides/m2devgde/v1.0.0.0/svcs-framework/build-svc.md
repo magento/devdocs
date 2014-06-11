@@ -7,7 +7,7 @@ title: Basics of Building a Service
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-A _service_ is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Understanding the Properties and Responsibilities of a Service</a>.
+A _service_ is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a>.
 
 The code that uses a service should depend on the interface rather than on the service implementation to enable the use of a different implementation if needed.
 
@@ -19,9 +19,9 @@ Some important characteristics of a service interface:
 	
 	Input arguments can be scalar types, arrays or objects. If objects are used, they should be implemented as [service data objects](#about-service-data-objects).
 
-*	The metods must be annotated to describe the types of the output that are used to generate contracts for Web API framework. 
+*	The methods must be annotated to describe the types of the output that are used to generate contracts for Web API framework. 
 
-	Output argument can be scalar types, arrays or objects. If objects are used, they should be implemented as [service data objects](#about-service-data-objects).
+	Output arguments can be scalar types, arrays or objects. Objects should be implemented as [service data objects](#about-service-data-objects).
 
 *	Every interface must be versioned. 
 
@@ -89,7 +89,7 @@ Note the following:
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
 
-*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Understanding the Properties and Responsibilities of a Service</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a>
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
 

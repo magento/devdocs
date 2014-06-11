@@ -1,9 +1,9 @@
 ---
 layout: howtom2devgde_chapters
-title: Understanding the Properties and Responsibilities of a Service
+title: Interacting With and Overriding Services
 ---
 
-<h1 id="what-is">Understanding the Properties and Responsibilities of a Service</h1>
+# Interacting With and Overriding Services
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
@@ -23,7 +23,7 @@ Although services are abstractions of business logic, not every such abstraction
 
 	Services also need to be versioned to support graceful evolution of the interface and to prevent conflicts with other modules and applications that might require a different version of the same service.
 
-<h2 id="svc-components">Components of a Service</h2>
+## Components of a Service
 
 A service is comprised of:
 
@@ -31,13 +31,13 @@ A service is comprised of:
 
 *  A class that implements the interface
 
-	The class has logic that fulfills the contract of the interface. The service class typically delegates much of this responsibility to other components, like Models and Helpers, to do the work, making the service class relatively "thin".
+	The class has logic that fulfills the contract of the interface. The service class typically delegates much of this responsibility to other components, like models and helpers, to do the work, making the service class relatively "thin".
 
-<h2 id="svc-web-svc">How Services Relate to Web Services</h2>
+## How Services Relate to Web Services
 
 Magento 2 services are analogous to, but not synonymous with, web services. You can expose Magento 2 services as web services using the Web API Framework by managing routing specifics. The framework itself handles authentication and authorization, as well as handling serialization and deserialization.
 
-<h2 id="svc-resp">Understanding Service Responsibilities</h2>
+## Understanding Service Responsibilities
 
 Services are responsible for:
 
@@ -51,7 +51,7 @@ Services are responsible for:
 
 *  Constructing the response
 
-	Business logic should be implemented by the model layer whenever possible. The circumstance in which a service class should enforce business rules is when the business logic is split among multiple Models and doesn't make sense to put in any one Model.
+	Business logic should be implemented by the model layer whenever possible. The circumstance in which a service class should enforce business rules is when the business logic is split among multiple models and doesn't make sense to put in any one model.
 
 Services are _not_ responsible for:
 
@@ -59,7 +59,7 @@ Services are _not_ responsible for:
 
 *  Operation-level authorization logic
 
-#### Related Topics:
+#### Related Topics
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
 

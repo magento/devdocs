@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Magento 2 Developer's Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Magento 2 Developer's Guide">
+   <link href="/common/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/common/css/hc.css" rel="stylesheet">
+  <link href="/common/css/main.css" rel="stylesheet">
+  <link href="/common/css/jquery.toc.css" rel="stylesheet">
+  <script src="/common/js/jquery-1.11.0.min.js"></script>
+<!--   <script src="/common/js/test.js"></script>
+ -->  <script src="/common/js/jquery.toc.js"></script>
+
+
+<!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+    </head>
+    <body>
+<!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+ -->      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Magento 2 Developer's Guide</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <!-- <li><a href="/guides/m2devgde/svc-how-to-use.html">How a Client Uses a Service</a></li>
+          <li><a href="/guides/m2devgde/what-is-svc.html">What is the Magento 2 Service Framework?</a></li> -->
+         <!--  <li><a href="/links.html">Links</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+       <!-- Sidebar -->
+	   
+	   
+       <div id="sidebar-wrapper">
+	   <div class="logo">
+	   <a href="/"><img src="/common/images/magento-logo-m.png"></a></div>
+	   <p class="brand">Contents</p>
+ 	   <div class="toc">
+	   <p class="toc">Magento 2 Service Framework</p>
+	   <ul class="toc"><li><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
+	   <li><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a></li>
+	   <li><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></li>
+	   <li><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a></li></ul>
+	   <p class="toc">Magento Web API Framework</p>
+	   <ul class="toc"><li><a href="/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What is the Web API Framework?</a></li>
+	   <li><a href="/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a></li>
+	   <li><a href="/guides/m2devgde/v1.0.0.0/rest/rest-overview.html">Accessing Magento Objects Using REST</a></li></ul>
+	   <p class="toc">Magento 2 Service Integrations</p>
+	   <ul class="toc"><li><a href="/guides/m2devgde/v1.0.0.0/integration/what-is-integration.html">What is an Integration?</a></li>
+	   <li><a href="/guides/m2devgde/v1.0.0.0/integration/integration-auth.html">Understanding Integration Authorization</a></li>
+	   <li><a href="/guides/m2devgde/v1.0.0.0/integration/integration-code.html">Coding Your Integration</a>
+	   <p class="toc">Creating Your Integration</p>
+	   <ul><li><a href="/guides/m2devgde/v1.0.0.0/integration/integration-create-man.html">Manually Creating an Integration Using the Magento Admin</a></li>
+	   </ul>
+	   </li>
+	   <p class="toc">Activating and Maintaining an Integration</p>
+	   <ul><li><a href="/guides/m2devgde/v1.0.0.0/integration/integration-maintain.html">Maintaining an Integration</a></li>
+	   </ul>
+	   </li>
+	   
+	   </ul></div>
+	   </div>
+	   
+
+
+
+
+     <div class="container">
+
+
+<!--     </div>
+    <style>
+    .showcase-wrapper {background-image: url("//images/showcase.jpg");}
+    </style>
+    <div class="showcase-wrapper sticky">
+    <div class="showcase-text">
+        <span class="badge lazy"><smaller>FRESHLY MINTED</smaller></span><br>Magento.com Site Manual<br>
+    </div>
+</div>
+    <div class="container">
+
+
+</div>
+<div class="container">
+ <div id="welcome-greeting">
+  <h1>Your Guide to Infinite Possibilities</h1>
+  <h2>This is the Magento.com site guide, where you'll find all the instructions you need to be a productive member of the Magento society.</h2> <hr />
+
+      </div>
+  </div>
+
+  <div class ="container">
+ -->
+  <div class ="container">
+<h1>Welcome to the Magento 2 Developer's Guide</h1>
+<p>Welcome to the Magento 2 Developer's Guide. Currently, we have a subset of the Magento 2 services framework documentation but we're working hard to move more content here in the near future.</p>
+<p>You can find public documentation not directly related to services on the <a href="https://wiki.magento.com/display/MAGE2DOC/Magento+2+Product+Documentation" target="_blank">Magento 2 public wiki</a>.</p>
+<p>Please start with <a href="/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></p>
+
+<h2>Magento Wants Your Feedback</h2>
+<p>Magento is constantly looking for ways to improve. You can help by providing feedback. Every page on this site has a link that enables you to fork or to open issues. Please use it!</p>
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/index.html" target="_blank">Help us improve this page</a>&nbsp;<img src="/common/images/newWindow.gif"/></p>
+
+
+  </div>
+
+  <!-- <div class="recent-posts">
+  <h1>Recent Posts</h1>
+
+    <ul class="homepage-posts most-recent">
+    <li><span><h4><a href="/jekyll/testing/2013/12/08/What-is-this-anyway.html">What is this, anyway?</a>&nbsp;<span class="badge"><smaller>FRESH</smaller></span><time class="pull-right">08 Dec 2013</h4></time></span></h4></span></li>
+    </ul>
+
+
+    <ul class="homepage-posts">
+ 	  <li><span><h4><a href="/2013/12/04/Samples.html">Samples</a><time class="pull-right">04 Dec 2013</h4></time></span></h4></span></li>
+    </ul>
+
+    <ul class="homepage-posts">
+ 	  <li><span><h4><a href="/jekyll/update/2013/11/08/welcome-to-jekyll.html">Welcome to Jekyll!</a><time class="pull-right">08 Nov 2013</h4></time></span></h4></span></li>
+    </ul>
+
+    <ul>
+      <a href="/list.html">View More...</a>
+</ul>
+  	</div> -->
+
+
+    <footer>
+       <p class="text-muted credit">&copy; 2014 MAGENTO, INC. ALL RIGHTS RESERVED.<br />
+	   For more information, contact <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">the Magento 2 documentation team</a>.</p>
+	   
+    </footer>
+ <!-- Bootstrap core JavaScript-->
+    <script src="//common/js/jquery-1.10.2.min.js"></script>
+    <script src="//common/js/bootstrap.min.js"></script>
+    <script src="//common/js/bootstrap.js"></script>
+    <script type="text/javascript" src="//common/js/hc.js"></script>
+</body>
+
+</html>
+
