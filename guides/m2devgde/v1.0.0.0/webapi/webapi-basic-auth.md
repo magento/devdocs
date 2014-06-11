@@ -3,7 +3,7 @@ layout: howtom2devgde_chapters
 title: Authorizing Web API Requests
 ---
 
-# Authorizing Web API Requests
+# Authorizing Web API Requests 
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
