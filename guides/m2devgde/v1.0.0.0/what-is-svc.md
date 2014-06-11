@@ -9,7 +9,7 @@ title: What is the Magento 2 Service Framework?
 
 Magento 2 uses the service framework to define and expose extensible features. The service framework (also referred to as the *service layer*) is between the presentation layer and business logic as the following figure shows:
 
-![The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic]({{ site.baseurl }}/common/images/service-layer_block-diagram.png)
+<img src="![The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic]{{ site.baseurl }}/common/images/service-layer_block-diagram.png"/>
 
 The service layer:
 
