@@ -7,9 +7,21 @@ title: Basics of Building a Service
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-A _service_ is basically a contract between code that uses the service and an integration that implements the service. The service itself is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a>.
+A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a>.
 
-The code that uses a service should depend on the interface rather than on the service implementation to enable the use of a different implementation if needed.
+The code that uses a service should depend on the interface rather than on the service implementation. Doing so enables you to use a different implementation if needed.
+
+## Terms Used
+
+Terminology frequently used in this guide:
+
+*	Module: The PHP code that defines your application's business logic. The module code must be in subdirectories of `[your Magento install dir]/app/code/[module name]`.
+*	Integration: A module's authorized data transactions. For example, a module might get customer data from an external database. The transaction requires authentication using OAuth.
+*	Extension: A tested module that is marketed to other merchants on Magento Connect. (Currently, Magento 2 modules cannot be loaded in Magento Connect.)
+
+One extension can contain multiple modules.
+
+One module can expose zero or more services. (In other words, *module* is a more generic term than *service*. A module doesn't have to expose a service at all.)
 
 ## About the Service Interface
 
@@ -30,6 +42,27 @@ Some important characteristics of a service interface:
 	Versions must be numbered V1, V2, and so on.
 	
 To see an example of a Customer service interface, see <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a>.
+
+## Exposing a Service as a REST or SOAP API
+
+To expose a service as a REST or SOAP API, you must:
+
+*	Create a `[your Magento install dir]/app/code/[module name]/etc/webapi.xml` that defines a route URL, HTTP methods supported, and the Magento resources the method must access.
+
+	Sample:
+	
+	```php
+	<route url="/V1/customerAccounts/isEmailAvailable" method="PUT">
+        <service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="isEmailAvailable"/>
+        <resources>
+            <resource ref="Magento_Customer::manage"/>
+        </resources>
+    </route>
+	```
+	
+	(<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)
+	
+*	Create a service data object that defines any data required to pass between the service and its clients.
 
 ## About Service Data Objects
 

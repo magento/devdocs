@@ -15,6 +15,13 @@ The service layer:
 
  * Is a functional abstraction that represents the business features available to other parts of an application or Magento. 
  * Represents a boundary that encapsulates the business logic a module exposes without revealing any of the details about how that functionality is implemented. 
+ 
+A service is:
+
+*  	An interface definition (<a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">example</a>)
+*  	A class that implements the interface
+
+	The service class typically delegates some of the business logic to other components like models and helpers, making the service class relatively "thin".
 
 ## Benefits of the Service Layer
 
