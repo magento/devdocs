@@ -13,7 +13,7 @@ Although REST and SOAP use different payloads and routing, they use the same aut
 
 ## Exposing a Service Using REST or SOAP
 
-A Magento service can be exposed using REST only or using both SOAP and REST. In othe words, you cannot expose a service using SOAP without exposing it using REST. 
+A Magento service can be exposed using REST only or using both SOAP and REST. In othe words, you cannot expose a service using SOAP without also exposing it using REST. 
 
 ### Configuring webapi.xml
 
