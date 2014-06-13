@@ -2,5 +2,5 @@ name: Magento 2 Developer's Guide
 markdown: kramdown
 pygments: true
 highlighter: pygments 
-baseurl: /Magento/devdocs_internal/
+baseurl: /Magento/devdocs_internal/blob/gh-pages/
 description: Magento 2 Developer's Guide
