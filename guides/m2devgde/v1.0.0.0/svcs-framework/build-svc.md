@@ -16,8 +16,8 @@ The code that uses a service should depend on the interface rather than on the s
 Terminology frequently used in this guide:
 
 *	Module: The PHP code that defines your application's business logic. The module code must be in subdirectories of `[your Magento install dir]/app/code/[module name]`.
-*	Integration: A module's authorized data transactions. For example, a module might get customer data from an external database. The transaction requires authentication using OAuth.
-*	Extension: A tested module that is marketed to other merchants on Magento Connect. (Currently, Magento 2 modules cannot be loaded in Magento Connect.)
+*	Integration: A module's authorized data transactions. For example, a module might get customer data from an external database. The transaction requires OAuth.
+*	Extension: A tested module that is marketed to other merchants on Magento Connect. (*Not currently available*.)
 
 One extension can contain multiple modules.
 

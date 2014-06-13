@@ -7,7 +7,7 @@ title: What is the Magento 2 Service Framework?
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-Magento 2 uses the service framework to define and expose extensible features. The service framework (also referred to as the *service layer*) is between the presentation layer and business logic as the following figure shows:
+The Magento 2 service framework defines and exposes extensible features. The service framework (also referred to as the *service layer*) is between the presentation layer and business logic as the following figure shows:
 
 ![The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic]({{ site.baseurl }}common/images/service-layer_block-diagram.png "The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic")
 
@@ -18,10 +18,10 @@ The service layer:
  
 A service is:
 
-*  	An interface definition (<a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">example</a>)
-*  	A class that implements the interface
+*  	An interface definition (<a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">examples</a>)
+*  	A class that implements the interface (<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountService.php" target="_blank">example</a>)
 
-	The service class typically delegates some of the business logic to other components like models and helpers, making the service class relatively "thin".
+	The service class typically delegates some business logic to other components like models and helpers, making the service class relatively "thin".
 
 ## Benefits of the Service Layer
 

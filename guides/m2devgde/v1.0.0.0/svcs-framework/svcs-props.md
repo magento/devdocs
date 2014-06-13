@@ -7,9 +7,9 @@ title: Interacting With and Overriding Services
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-A service interface is a *single entry point* to the business logic encapsulated by the service. In other words, to override business login in an interface&mdash;or the interface itself&mdash;is much easier than in Magento 1.x.
+A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, to override business login in an interface&mdash;or the interface itself&mdash;is much easier than in Magento 1.x.
 
-For example, the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">interface</a> has more than 20 public methods. To override Customer business logic, simply override methods on the interface or the interface itself. It's much simpler than before. For details, see TBD.
+For example, the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">interface</a> has more than 20 public methods. To override Customer business logic, simply override methods on the interface or the interface itself. It's much simpler than before. For details, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
 
 ## Service Design
 
