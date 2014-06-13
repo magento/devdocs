@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Accessing Magento Objects Using REST</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Magento 2 Developer's Guide">
+   <link href="/common/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/common/css/hc.css" rel="stylesheet">
+  <link href="/common/css/main.css" rel="stylesheet">
+  <link href="/common/css/jquery.toc.css" rel="stylesheet">
+  <script src="/common/js/jquery-1.11.0.min.js"></script>
+  <script src="/common/js/jquery.toc.js"></script>
+
+
+<!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+    </head>
+    <body>
+<!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+ -->      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Magento 2 Developer's Guide</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          <!-- <li><a href="/guides/m2devgde/svc-how-to-use.html">How a Client Uses a Service</a></li>
+          <li><a href="/guides/m2devgde/what-is-svc.html">What is the Magento 2 Service Framework?</a></li> -->
+         <!--  <li><a href="/links.html">Links</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/about.html">About</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+       <!-- Sidebar -->
+	   
+	   
+       <div id="sidebar-wrapper">
+	   <div class="logo">
+	   <a href="/"><img src="/common/images/magento-logo-m.png"></a></div>
+	   <p class="brand">Contents</p>
+ 	   <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
+	   <div class="back"><p class="back"><a href="/guides/m2devgde/v1.0.0.0/index.html"><img class="prev" src="/common/images/prev-arrow.png">Back to the Magento 2 Developer's Guide</a></p></div>
+
+		</div>
+
+
+     <div class="container">
+
+
+<h1 id="what-is">Accessing Magento Objects Using REST</h1>
+
+<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/rest/rest-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="/common/images/newWindow.gif" /></p>
+
+<h2 id="rest-call">How to Make a REST Call</h2>
+
+<p>All REST calls for the Customer service are contained in ~webapi.xml~; however, inputs and return values are defined in their respective interfaces.</p>
+
+<p>To make a REST call for the Customer service:</p>
+
+<h3 id="rest-call-step1">Step 1: Look up the call in webapi.xml:</h3>
+
+<p>This section discusses how to make an HTTP GET call to the getCustomer method.</p>
+
+<ol>
+  <li>
+    <p>Open <code>webapi.xml</code>.</p>
+  </li>
+  <li>
+    <p>Find the desired call; for example, </p>
+  </li>
+</ol>
+
+<p><code>
+<route url="/V1/customerAccounts/:customerId/customer" method="GET">
+<service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="getCustomer"></service>
+&lt;/code&gt;</route></code></p>
+
+<ol>
+  <li>The route url specifies the URL of the REST call.</li>
+</ol>
+
+<p>In this example, <code>GET /V1/customerAccounts/:customerId/customer</code></p>
+
+<p><em>Note</em>: Any value prefixed by a colon character is a required input. In the preceding example, <code>:customerId</code> indicates you must provide the customer ID.</p>
+
+<p><em>Note</em>: Some REST calls have no route; for these cases, use the Base URL only.</p>
+
+<h3 id="rest-call-step2">Step 2: Find the response object</h3>
+
+<p>The return object is specified in the class named by the service class definition from <code>webapi.xml</code>.</p>
+
+<p>Continuing the preceding example, the <code>Magento\Customer\Service\V1\CustomerAccountServiceInterface\getCustomer</code> method specifies the return object as follows:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
+
+<p>In this case, the return object is Customer.php.</p>
+
+<h4 id="related-topics">Related Topics:</h4>
+
+<ul>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html">What Is the Web API Framework?</a></p>
+  </li>
+</ul>
+
+    <footer>
+       <p class="text-muted credit">&copy; 2014 MAGENTO, INC. ALL RIGHTS RESERVED.<br />
+	   For more information, contact <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">the Magento 2 documentation team</a>.</p>
+	   
+    </footer>
+ <!-- Bootstrap core JavaScript-->
+    <script src="//common/js/jquery-1.10.2.min.js"></script>
+    <script src="//common/js/bootstrap.min.js"></script>
+    <script src="//common/js/bootstrap.js"></script>
+    <script type="text/javascript" src="//common/js/hc.js"></script>
+</body>
+
+</html>
+

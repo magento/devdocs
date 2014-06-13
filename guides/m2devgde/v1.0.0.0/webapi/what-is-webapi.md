@@ -13,7 +13,7 @@ Although REST and SOAP use different payloads and routing, they use the same aut
 
 ## Exposing a Service Using REST or SOAP
 
-A Magento service can be exposed using REST only or using both SOAP and REST. In othe words, you cannot expose a service using SOAP without exposing it using REST. 
+A Magento service can be exposed using REST only or using both SOAP and REST. In othe words, you cannot expose a service using SOAP without also exposing it using REST. 
 
 ### Configuring webapi.xml
 
@@ -61,4 +61,4 @@ Your module can use `webapi.xsd` or you can create a customized validation.
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
 
-*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Understanding the Properties and Responsibilities of a Service</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a>
