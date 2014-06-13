@@ -49,14 +49,14 @@ To expose a service as a REST or SOAP API, you must:
 
 	Sample:
 	
-	<pre>
+	```php
 	<route url="/V1/customerAccounts/isEmailAvailable" method="PUT">
         <service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="isEmailAvailable"/>
         <resources>
             <resource ref="Magento_Customer::manage"/>
         </resources>
     </route>
-	</pre>
+	```
 	
 	(<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)
 	
