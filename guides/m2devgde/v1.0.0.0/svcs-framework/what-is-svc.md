@@ -33,4 +33,7 @@ Benefits include:
  
 ## Related Topics
 
-*	
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-props.html">Interacting With and Overriding Services</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>
