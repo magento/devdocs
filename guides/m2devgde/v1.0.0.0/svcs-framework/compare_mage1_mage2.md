@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Services Use Case: Magento 1 and Magento 2 Side-By-Side
+title: Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side
 ---
 
 # Services Use Case: Magento 1 and Magento 2 Side-By-Side
