@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Understanding Integration Authorization
+title: Understanding Integration Authorization 
 ---
 
 <h1 id="what-is-integration">Understanding Integration Authorization</h1>

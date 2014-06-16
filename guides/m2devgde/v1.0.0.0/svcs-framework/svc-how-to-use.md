@@ -19,7 +19,7 @@ For example, if you know a customer's ID and want to get data about the customer
 
 1. Search the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method `(public function getCustomer($customerId);)`
 
-2. 	Notice in the comment `@return \Magento\Customer\Service\V1\Data\Customer`.
+2. 	Notice in the comment `@return \Magento\Customer\Service\V1\Data\Customer`. This is the *data object*.
 
 3. Get the details about the response from the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">data object</a>.
 
@@ -45,8 +45,8 @@ Any service that has an `app/code/[Vendor]/[Module]/etc/webapi.xml` can be acces
 
 To set up a service so it can be accessed using REST, see [What is the Web API Framework?]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.html)
 
-#### Related Topics:
+#### Related Topics
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
-
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>
