@@ -5,7 +5,7 @@ title: What is the Magento 2 Service Framework?
  
 # What is the Magento 2 Service Framework?
 
-<p><a href="https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master/guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 The Magento 2 service framework defines and exposes extensible features. The service framework (also referred to as the *service layer*) is between the presentation layer and business logic as the following figure shows:
 
