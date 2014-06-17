@@ -5,7 +5,7 @@ title: How a Client Uses a Service
 
 <h1 id="how-client-uses-svc">How a Client Uses a Service</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master/guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so you can simply acquire an instance of the service and invoke a method directly. You can also access services using REST and SOAP calls.
 
