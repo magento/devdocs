@@ -5,7 +5,7 @@ title: Basics of Building a Service
  
 # Basics of Building a Service 
 
-<p><a href="https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master/guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a>.
 

@@ -5,7 +5,7 @@ title: Maintaining an Integration
 
 <h1 id="integration-maintain">Maintaining an Integration</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/integration/integration-maintain.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p> 
+<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/integration/integration-maintain.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p> 
 
 Only integrations created manually using the Magento Admin can be edited; integrations created automatically from configuration files are not editable.
 

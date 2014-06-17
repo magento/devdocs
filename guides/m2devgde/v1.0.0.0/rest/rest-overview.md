@@ -5,7 +5,7 @@ title: Accessing Magento Objects Using REST
 
 <h1 id="what-is">Accessing Magento Objects Using REST</h1>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/rest/rest-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/rest/rest-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="rest-call">How to Make a REST Call</h2>
 
