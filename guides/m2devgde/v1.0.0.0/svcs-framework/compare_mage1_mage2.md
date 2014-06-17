@@ -2,7 +2,7 @@
 layout: howtom2devgde_chapters
 title: Services Use Case&mdash;Magento 1 and Magento 2 Side By Side 
 ---
-
+ 
 # Services Use Case&mdash;Magento 1 and Magento 2 Side By Side
 
 <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>

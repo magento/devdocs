@@ -1,7 +1,7 @@
 ---
 layout: howtom2devgde_chapters
 title: How a Client Uses a Service
----
+--- 
 
 <h1 id="how-client-uses-svc">How a Client Uses a Service</h1>
 
