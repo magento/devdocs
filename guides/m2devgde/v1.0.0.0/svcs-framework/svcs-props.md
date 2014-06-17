@@ -24,7 +24,7 @@ The interfaces and methods should be use-case-oriented. That is, a service's met
 
 Because services can also be easily exposed as REST or SOAP, you can use a single API call to provide and return a rich data structure (rather than requiring many smaller calls with simpler, shallower APIs). This way, a single web service request and response completes an entire operation. The goal also is for a single call to be stateless and atomic, simplifying application design.
 
-The REST API accepts and returns JSON; the SOAP API accepts and returns XML. Because the data has to be serialized and deserialized, we place restrictions on the data types that can be used. These are referred to as <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php">service data objects</a> and they are immutable.
+The REST API accepts and returns JSON or XML; the SOAP API accepts and returns XML. Because the data has to be serialized and deserialized, we place restrictions on the data types that can be used. These are referred to as <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php">service data objects</a> and they are immutable.
 
 <a href="#" target="_blank">More detail</a>
 
