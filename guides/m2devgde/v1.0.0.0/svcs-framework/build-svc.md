@@ -39,6 +39,8 @@ Some important characteristics of a service interface:
 
 *	The namespace must use the version number as a suffix. (For example, `Magento\Customer\Service\V1`).
 
+*	You *cannot* use aliases in services interfaces or in service data objects because doing so causes invalid WSDL to be generated.
+
 To see an example of a Customer service interface, see <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a>.
 
 ## Exposing a Service as a REST or SOAP API
