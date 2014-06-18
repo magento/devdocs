@@ -18,10 +18,15 @@ The service layer:
  
 A service is:
 
-*  	An interface definition (<a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">examples</a>)
-*  	A class that implements the interface (<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountService.php" target="_blank">example</a>)
+*  	An interface definition
+
+	<a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">All Customer services interfaces</a>. 
+	
+*  	A class that implements the interface 
 
 	The service class typically delegates some business logic to other components like models and helpers, making the service class relatively "thin".
+
+	<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountService.php" target="_blank">Here</a> is a class that implements the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CusomterAccountServiceInterface</a>.
 
 ## Benefits of the Service Layer
 

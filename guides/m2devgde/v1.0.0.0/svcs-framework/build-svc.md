@@ -16,7 +16,7 @@ The code that uses a service should depend on the interface rather than on the s
 Terminology frequently used in this guide:
 
 *	Module: The PHP code that defines your application's business logic. The module code must be in subdirectories of `[your Magento install dir]/app/code/[module name]`.
-*	Integration: A third-party application that requires authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be delivered as an extension) must agree to allow the integration to access those resources.
+*	Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a module or extension) must agree to allow the integration to access those resources.
 *	Extension: A tested module that is marketed to other merchants on Magento Connect. (*Not currently available*.)
 
 One extension can contain multiple modules.
