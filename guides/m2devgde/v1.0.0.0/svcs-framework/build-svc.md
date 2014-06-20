@@ -87,14 +87,11 @@ Service data objects are:
 General rules for implementing a service data object:
 
 *	The service data object class must reside in the `[module namespace]\Service\Data\V[xx]` namespace.
-
 *	A service data object must have getters that clearly describe all data that the data object can contain.
-
 *	Annotations in the code must clearly describe the parameters and outputs of all methods.
-
-*	Getters should rely on the `_get` method provided for convenience in the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> class.
-
-*	A service data object should extend <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObject`</a> or any of its children. 
+*	Getters should rely on the `_get` method provided for convenience in the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObject`</a> class.
+*	A service data object should extend <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> or any of its children. 
+*	Setters should rely on the `_set` method provided for convenience in the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> class.
 
 ### Sample Service Data Object
 
