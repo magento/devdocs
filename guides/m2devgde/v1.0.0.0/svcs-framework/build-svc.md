@@ -33,11 +33,11 @@ Some important characteristics of a service interface:
 
 *	The methods must be annotated to describe the types of the output that are used to generate contracts for Web API framework. 
 
-	Output arguments can be scalar types, arrays or objects. Objects should be implemented as [service data objects](#about-service-data-objects).
+	Output arguments must be scalar types, arrays or service data objects. Objects should be implemented as [service data objects](#about-service-data-objects).
 
-*	Every interface must be versioned and numbered like V1, V2, and so on. 
+*	Every interface should be versioned and numbered like V1, V2, and so on. 
 
-*	The namespace must use the version number as a suffix. (For example, `Magento\Customer\Service\V1`).
+*	The namespace should use the version number as a suffix. (For example, `Magento\Customer\Service\V1`).
 
 *	You *cannot* use aliases in services interfaces or in service data objects because doing so causes WSDL generaton to fail.
 
@@ -66,7 +66,7 @@ To expose a service as a REST or SOAP API, you must:
 
 ## About Service Data Objects
 
-A _service data object_ carries data to and from service methods. Service data objects differ from _business objects_ or _data access objects_ in that a service data object stores and retrieves only its own data (accessors and mutators). 
+A _service data object_ carries data to and from service methods. Service data objects differ from _business objects_ or _data access objects_ in that a service data object stores and retrieves only its own data. 
 
 Service data objects define the interface that can be used by PHP clients to understand what data is available from the service. The service data object carries data from the service's response to PHP clients and, in the same way, PHP clients use service data objects to pass data to the service or to exchange data with other clients.
 
@@ -87,8 +87,6 @@ Service data objects are:
 General rules for implementing a service data object:
 
 *	The service data object class must reside in the `[module namespace]\Service\Data\V[xx]` namespace.
-
-*	A service data object typically has no PHP interface.
 
 *	A service data object must have getters that clearly describe all data that the data object can contain.
 
