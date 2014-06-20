@@ -1,15 +1,15 @@
 ---
 layout: howtom2devgde_chapters
-title: Interacting With and Overriding Services
+title: Interacting With Services
 ---
  
-# Interacting With and Overriding Services
+# Interacting With Services
 
 <p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, to override business login in an interface&mdash;or the interface itself&mdash;is much easier than in Magento 1.x.
+A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, overriding business login in an interface is much easier than in Magento 1.x.
 
-For example, the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">interface</a> has more than 20 public methods. To override Customer business logic, simply override methods on the interface or the interface itself. It's much simpler than before. For details, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
+For example, interfaces of the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, simply override methods on the interface or the interface itself. It's much simpler than before. For details, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
 
 ## Service Design
 
@@ -25,6 +25,8 @@ The interfaces and methods should be use-case-oriented. That is, a service's met
 Because services can also be easily exposed as REST or SOAP, you can use a single API call to provide and return a rich data structure (rather than requiring many smaller calls with simpler, shallower APIs). This way, a single web service request and response completes an entire operation. The goal also is for a single call to be stateless and atomic, simplifying application design.
 
 The REST API accepts and returns JSON or XML; the SOAP API accepts and returns XML. Because the data has to be serialized and deserialized, we place restrictions on the data types that can be used. These are referred to as <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php">service data objects</a> and they are immutable.
+
+Service data objects inherit from the <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Service/Data" target="_blank">Magento framework's base service data objects classes</a>.
 
 <a href="#" target="_blank">More detail</a>
 
@@ -64,9 +66,19 @@ A service is responsible for:
 
 A service is _not_ responsible for:
 
-*  Formatting data for the user
+*  	Formatting data for the user
 
-*  Operation-level authorization logic
+	Formatting data is the responsibility of service data objects.
+
+*  	Operation-level authorization logic (that is, determining the Magento resources to which the caller needs authenticated access)
+
+	Authorization is performed in the Web API framework based on the caller's role and the minimum resource permissions needed by the exposed API 
+	
+	The caller's role is established (by the token or session OD) in the Web API framework
+	
+	Resources are specified in the module's `webapi.xml`
+	
+	For more information about how this works, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
 
 #### Related Topics
 
