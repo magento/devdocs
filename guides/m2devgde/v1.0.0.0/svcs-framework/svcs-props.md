@@ -9,7 +9,7 @@ title: Interacting With Services
 
 A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, overriding business login in an interface is much easier than in Magento 1.x.
 
-For example, interfaces of the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, simply override methods on the interface or the interface itself. It's much simpler than before. For details, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
+For example, interfaces of the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, override methods on the interface. It's much simpler than before. For details, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
 
 ## Service Design
 
@@ -42,7 +42,7 @@ Properties of a useful service:
 
 *  	Stateless
 
-	Every service method must be independent and stateless, meaning that the inputs define the behavior of the request, not data that is saved on the service instance from a previous request. To clarify, services can use persistent data; service class members cannot change from one request to another.
+	Each service method must also be independent and <a href="http://en.wikipedia.org/wiki/Stateless_protocol">stateless</a>, meaning that a service should not maintain any session information between requests. However, a service *can* persist other information between requests, such as the entities that are being created as a result of the request.
 
 *  	Versioned
 

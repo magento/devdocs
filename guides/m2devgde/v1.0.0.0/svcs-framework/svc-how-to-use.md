@@ -41,19 +41,13 @@ Service methods complete in one of two ways:
 	
 ### References For Dependency Injection
 
-*Dependency injection* is a technique used in object-oriented programming where the constructor of an object has arguments for the service objects it needs, and those service objects are passed in by the creator of the instance. Because this concept might be new to PHP developers, we recommend the following references:
+*Dependency injection* is a technique used in object-oriented programming. When working with Magento software, dependency injection means you define a constructor dependency on the service you need. From there, you can use the instance you receive to invoke whatever methods you need directly. Because this concept might be new to PHP developers, we recommend the following references:
 
+*	<a href="https://wiki.magento.com/display/MAGE2DOC/Using+Dependency+Injection" target="_blank">Magento 2 Dependency Injection</a>
 *	<a href="http://magento-quickies.alanstorm.com/post/66355728727/instantiating-and-injecting-helpers-in-magento-2" target="_blank">Instantiating and Injecting Helpers in Magento 2 by Alan Storm</a>
-
 *	<a href="http://magento-quickies.alanstorm.com/post/68129858943/magento-2-injecting-interfaces" target="_blank">Magento 2: Injecting Interfaces by Alan Storm</a>
-
 *	<a href="http://www.youtube.com/watch?v=RlfLCWKxHJ0" target="_blank">Video&mdash;The Clean Code Talks: Don't Look For Things!</a>
-
 *	<a href="http://www.youtube.com/watch?v=-FRm3VPhseI" target="_blank">Video&mdash;The Clean Code Talks: Global State and Singletons</a>
-
-*	<a href="http://stackoverflow.com/questions/2255771/how-can-i-use-dependency-injection-in-simple-php-functions-and-should-i-bothe" target="_blank">stackoverflow article</a>
-
-*	<a href="http://fabien.potencier.org/article/11/what-is-dependency-injection" target="_blank">What is Dependency Injection? by Fabien Potencier</a>
 
 
 ## Method 2: Web Services
