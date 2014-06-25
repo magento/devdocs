@@ -5,7 +5,7 @@ title: What Is the Web API Framework?
 
 <h1 id="webapi-whatis">What Is the Web API Framework?</h1>
 
-<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/webapi/what-is-webapi.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 The Web API Framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.
 
@@ -54,11 +54,7 @@ Your module can use `webapi.xsd` or you can create a customized validation.
 #### Related Topics:
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
-
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
-
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
-
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-
-*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With and Overriding Services</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With Services</a>

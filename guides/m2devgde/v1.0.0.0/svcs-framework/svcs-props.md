@@ -5,7 +5,7 @@ title: Interacting With Services
  
 # Interacting With Services
 
-<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, overriding business login in an interface is much easier than in Magento 1.x.
 

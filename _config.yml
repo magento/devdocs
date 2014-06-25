@@ -3,4 +3,5 @@ markdown: kramdown
 highlighter: pygments
 baseurl: /pages/Magento/devdocs_internal/
 description: Magento 2 Developer's Guide
-url: https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master/
+githuburl: https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master/
+namediffgde: Magento 2 Other Guide

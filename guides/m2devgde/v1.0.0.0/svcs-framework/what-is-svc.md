@@ -5,7 +5,7 @@ title: What is the Magento 2 Service Framework?
  
 # What is the Magento 2 Service Framework?
 
-<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 The Magento 2 service framework defines and exposes extensible features. The service framework (also referred to as the *service layer*) is between the presentation layer and business logic as the following figure shows:
 
@@ -43,4 +43,5 @@ Benefits include:
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-props.html">Interacting With Services</a>
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer from an External Source</a>

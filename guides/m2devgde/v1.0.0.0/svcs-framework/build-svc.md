@@ -5,7 +5,7 @@ title: Basics of Building a Service
  
 # Basics of Building a Service 
 
-<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.html">Interacting With Services</a>.
 
@@ -78,7 +78,7 @@ Service data objects are:
 
 *	Constructed using a data object builder. Data is set on the service data objects by the service or by client code.
 
-	If data is set in client code, service data objects can be returned to the client to use the data or can passed to the service to consume the data. 
+	If data is set in client code, service data objects can be returned to the client to use the data or the data can be passed to the service to consume the data. 
 	
 *	Located in a namespace that reflects the version of service data (same as the service itself). For example, `Magento\Customer\Service\V1\Data`
 
