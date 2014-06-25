@@ -5,7 +5,7 @@ title: Services Use Case&mdash;Creating a Customer from an External Source
  
 # Services Use Case&mdash;Creating a Customer from an External Source
 
-<p><a href="{{ site.url }}guides/m2devgde/v1.0.0.0/svcs-framework/svc_create-customer-use-case.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc_create-customer-use-case.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Say you want to create customer records in Magento from an external source like Salesforce, Facebook, PayPal, or Google. How does the Magento service framework help you do that?
 
