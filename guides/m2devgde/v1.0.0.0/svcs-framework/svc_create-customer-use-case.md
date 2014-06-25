@@ -17,7 +17,7 @@ Before you think about writing your own service, you should look at an existing 
 
 *	Models
 
-	Models interact with resurces to do things like get objects, set passwords, and perform authentication. Customer service models have more than 70 public methods, including `public function loadByEmail($customerEmail)` in <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Model/Customer.php" target="_blank">Customer</a>, which gets a customer record using their e-mail address.
+	Models interact with resources to do things like get objects, set passwords, and perform authentication. Customer service models have more than 70 public methods, including `public function loadByEmail($customerEmail)` in <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Model/Customer.php" target="_blank">Customer</a>, which gets a customer record using their e-mail address.
 	
 	One advantage of using a service is your client code doesn't interact directly with the model at all; the service does that for you.
 
@@ -51,7 +51,7 @@ Create a customer record as follows:
 	
 	Dependency injection passes (injects) dependencies to an object instead of the object pulling the dependencies from the environment. In other words, instead of objects configuring themselves, the objects are configured by an external entity. For more information, see <a href="https://wiki.magento.com/display/MAGE2DOC/Using+Dependency+Injection" target="_blank">Using Dependency Injection</a>.
 	
-	Constructor dependency injection uses a constructor to declare the dependencies; in the preceding example, dependencies are delcared on:
+	Constructor dependency injection uses a constructor to declare the dependencies; in the preceding example, dependencies are declared on:
 	
 	*	The `customerAccount` method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.
 	*	The `customerDetailsBldr` method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerDetailsBuilder.php" target="_blank">CustomerDetailsBuilder</a> data object builder.
