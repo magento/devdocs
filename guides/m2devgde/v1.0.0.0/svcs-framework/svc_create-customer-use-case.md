@@ -33,7 +33,7 @@ Before you think about writing your own service, you should look at an existing 
 
 	Builders have the setters you can use to set data values in the service data object before sending them to the service to be consumed. For example, <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> has a `setFirstname` method you can use to set a customer's first name. You can get the first name using the `getFirstname` method in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer data object</a>.
 
-## Creating the Customer Record
+## Creating the Customer Record 
 
 Create a customer record as follows:
 
