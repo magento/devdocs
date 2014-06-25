@@ -78,7 +78,7 @@ Service data objects are:
 
 *	Constructed using a data object builder. Data is set on the service data objects by the service or by client code.
 
-	If data is set in client code, service data objects can be returned to the client to use the data or can passed to the service to consume the data. 
+	If data is set in client code, service data objects can be returned to the client to use the data or the data can be passed to the service to consume the data. 
 	
 *	Located in a namespace that reflects the version of service data (same as the service itself). For example, `Magento\Customer\Service\V1\Data`
 
