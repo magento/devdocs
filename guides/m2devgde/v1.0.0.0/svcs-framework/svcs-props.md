@@ -1,65 +1,86 @@
 ---
 layout: howtom2devgde_chapters
-title: Understanding the Properties and Responsibilities of a Service
+title: Interacting With Services
 ---
+ 
+# Interacting With Services
 
-<h1 id="what-is">Understanding the Properties and Responsibilities of a Service</h1>
+<p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/v1.0.0.0/svcs-framework/svcs-props.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, overriding business login in an interface is much easier than in Magento 1.x.
 
-Although services are abstractions of business logic, not every such abstraction is a service. Following are examples of properties of a useful service:
+For example, interfaces of the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, override methods on the interface. It's much simpler than before. For details, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
 
-* Simple data structures
+## Service Design
+
+A service is a set of PHP interfaces, data types for holding data to be passed across the service layer, and implementations of those interfaces. 
+
+The interfaces and methods should be use-case-oriented. That is, a service's methods should provide logical business operations such as:
+
+*	Create an order
+*	Add items to a shopping cart
+*	Create a new customer account
+*	Compute shipping costs
+
+Because services can also be easily exposed as REST or SOAP, you can use a single API call to provide and return a rich data structure (rather than requiring many smaller calls with simpler, shallower APIs). This way, a single web service request and response completes an entire operation. The goal also is for a single call to be stateless and atomic, simplifying application design.
+
+The REST API accepts and returns JSON or XML; the SOAP API accepts and returns XML. Because the data has to be serialized and deserialized, we place restrictions on the data types that can be used. These are referred to as <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php">service data objects</a> and they are immutable.
+
+Service data objects inherit from the <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Service/Data" target="_blank">Magento framework's base service data objects classes</a>.
+
+<a href="#" target="_blank">More detail</a>
+
+## Service Properties
+
+Properties of a useful service:
+
+*	Simple data structures
 
 	The inputs and outputs of every service interface are simple value objects.
 
-*  Data structures used for transferring data to the service shouldn't contain any complex logic.
+* 	Data structures used for transferring data to the service shouldn't contain any complex logic.
 
-*  Stateless
+*  	Stateless
 
-	Every service method must be independent and stateless, meaning that the inputs define the behavior of the request, not data that is saved on the service instance from a previous request. To clarify, services can use persistent data; service class members cannot change from one request to another.
+	Each service method must also be independent and <a href="http://en.wikipedia.org/wiki/Stateless_protocol">stateless</a>, meaning that a service should not maintain any session information between requests. However, a service *can* persist other information between requests, such as the entities that are being created as a result of the request.
 
-*  Versioned
+*  	Versioned
 
 	Services also need to be versioned to support graceful evolution of the interface and to prevent conflicts with other modules and applications that might require a different version of the same service.
 
-<h2 id="svc-components">Components of a Service</h2>
+## Understanding Service Responsibilities
 
-A service is comprised of:
+A service is responsible for:
 
-*  An interface that defines the service
+*  	Validating input
 
-*  A class that implements the interface
+*  	Loading the models that are required to implement the business logic based on the inputs
 
-	The class has logic that fulfills the contract of the interface. The service class typically delegates much of this responsibility to other components, like Models and Helpers, to do the work, making the service class relatively "thin".
+*  	Invoking any instance-specific authorization logic (which might be implemented in the model)
 
-<h2 id="svc-web-svc">How Services Relate to Web Services</h2>
+* 	Invoking the requested business logic on the models
 
-Magento 2 services are analogous to, but not synonymous with, web services. You can expose Magento 2 services as web services using the Web API Framework by managing routing specifics. The framework itself handles authentication and authorization, as well as handling serialization and deserialization.
+*  	Constructing the response
 
-<h2 id="svc-resp">Understanding Service Responsibilities</h2>
+	Business logic should be implemented by a model whenever possible. The circumstance in which a service class should enforce business rules is when the business logic is split among multiple models and doesn't make sense to put in any one model.
 
-Services are responsible for:
+A service is _not_ responsible for:
 
-*  Validating input
+*  	Formatting data for the user
 
-*  Loading the models that are required to implement the business logic based on the inputs
+	Formatting data is the responsibility of service data objects.
 
-*  Invoking any instance-specific authorization logic (which might be implemented in the model)
+*  	Operation-level authorization logic (that is, determining the Magento resources to which the caller needs authenticated access)
 
-*  Invoking the requested business logic on the models
+	Authorization is performed in the Web API framework based on the caller's role and the minimum resource permissions needed by the exposed API 
+	
+	The caller's role is established (by the token or session OD) in the Web API framework
+	
+	Resources are specified in the module's `webapi.xml`
+	
+	For more information about how this works, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
 
-*  Constructing the response
-
-	Business logic should be implemented by the model layer whenever possible. The circumstance in which a service class should enforce business rules is when the business logic is split among multiple Models and doesn't make sense to put in any one Model.
-
-Services are _not_ responsible for:
-
-*  Formatting data for the user
-
-*  Operation-level authorization logic
-
-#### Related Topics:
+#### Related Topics
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
 
