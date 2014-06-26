@@ -305,17 +305,17 @@ kbd,
 pre,
 tt,
 samp {
-  font-family: monospace, serif;
+  font-family: "Courier New";
   font-size: 11pt;
 }
 
 code {
   padding: 2px 4px;
   color:#31302b;
-  font-size: 90%;
+  /* font-size: 90%; */
   /* color: #c7254e; */
-  white-space: nowrap;
-  /* background-color: blue; */
+/*   white-space: nowrap;  */  
+/* background-color: blue; */
   background-color:#f8f8ff;
   border-radius: 4px;
 }
