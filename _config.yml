@@ -1,5 +1,6 @@
 name: Magento 2 Developer's Guide
 markdown: kramdown
-pygments: true
+highlighter: pygments
 baseurl: /
 description: Magento 2 Developer's Guide
+githuburl: http://devdocs.magento.com
