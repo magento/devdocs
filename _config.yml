@@ -3,4 +3,4 @@ markdown: kramdown
 highlighter: pygments
 baseurl: /
 description: Magento 2 Developer's Guide
-githuburl: http://devdocs.magento.com/blob/master/guides/
+githuburl: http://devdocs.magento.com/blob/master/
