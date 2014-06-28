@@ -37,31 +37,37 @@ Before you think about writing your own service, you should look at an existing 
 
 Create a customer record as follows:
 
-1.	Locate the `createCustomer` method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>. 
+<div id="accordion">
+  <h3>Step 1</h3>
+  <div><p>Locate the `createCustomer` method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</p>
 
-	Notice the code comments also:
+	<p>Notice the code comments also:</p>
 
 	<script src="https://gist.github.com/xcomSteveJohnson/398aa808d3986351b972.js"></script>
 	
-	This is the interface your client code interacts with. 
+	<p>This is the interface your client code interacts with. </p></div>
+	
+	<h3>Step 2</h3>
 
-2.	In your client code, declare a constructor dependency:
+<div><p>In your client code, declare a constructor dependency:</p>
 
 	<script src="https://gist.github.com/xcomSteveJohnson/4b9a08174a6aaa83a4e8.js"></script>
 	
-	Dependency injection passes (injects) dependencies to an object instead of the object pulling the dependencies from the environment. In other words, instead of objects configuring themselves, the objects are configured by an external entity. For more information, see <a href="https://wiki.magento.com/display/MAGE2DOC/Using+Dependency+Injection" target="_blank">Using Dependency Injection</a>.
+	<p>Dependency injection passes (injects) dependencies to an object instead of the object pulling the dependencies from the environment. In other words, instead of objects configuring themselves, the objects are configured by an external entity. For more information, see <a href="https://wiki.magento.com/display/MAGE2DOC/Using+Dependency+Injection" target="_blank">Using Dependency Injection</a>.</p>
 	
-	Constructor dependency injection uses a constructor to declare the dependencies. In dependencies in the preceding example are named:
+	<p>Constructor dependency injection uses a constructor to declare the dependencies. In dependencies in the preceding example are named:</p>
 	
-	*	`$customerAccountService`, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.
-	*	`$customerDetailsBuilder`, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerDetailsBuilder.php" target="_blank">CustomerDetailsBuilder</a> data object builder.
-	*	`$customerBuilder`, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> CustomerBuilder data object builder.
-	
-3.	In your client code, create the customer record.
+	<ul><li><tt>$customerAccountService</tt>, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</li>
+	<li><tt>$customerDetailsBuilder</tt>, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerDetailsBuilder.php" target="_blank">CustomerDetailsBuilder</a> data object builder.</li>
+	<li><tt>$customerBuilder</tt>, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> CustomerBuilder data object builder.</li></ul>
+</div>	
+<h3>Step 3</h3>
+<div><p>In your client code, create the customer record.</p>
 
 	<script src="https://gist.github.com/xcomSteveJohnson/d9c51387caa8f7f8d15f.js"></script>
 	
-	This code uses the dependencies declared in step 2 to create a customer record.
+<p>This code uses the dependencies declared in step 2 to create a customer record.</p>
+</div></div>
 	
 ## Summary
 
