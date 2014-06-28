@@ -38,7 +38,7 @@ Before you think about writing your own service, you should look at an existing 
 Create a customer record as follows:
 
 <div id="accordion">
-  <h3>Step 1: Locate the <tt>createCustomer</tt> method</h3>
+  <h3>Step 1: Locate the createCustomer method</h3>
   <div><p>Locate the <tt>createCustomer</tt> method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</p>
 
 	<p>Notice the code comments also:</p>
@@ -47,7 +47,7 @@ Create a customer record as follows:
 	
 	<p>This is the interface your client code interacts with. </p></div>
 	
-	<h3>Step 2</h3>
+	<h3>Step 2: Declare a constructor dependency</h3>
 
 <div><p>In your client code, declare a constructor dependency:</p>
 
