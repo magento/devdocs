@@ -9,9 +9,17 @@
   <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
   <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
   <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet">
-  <script src="{{ site.baseurl }}common/js/jquery-1.11.0.min.js"></script>
-<!--   <script src="{{ site.baseurl }}common/js/test.js"></script>
- -->  <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
+<link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
+<script src="{{ site.baseurl }}common/js/jquery-1.11.0.min.js"></script>
+<script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
+ <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
+<script>
+  $(function() {
+    $( "#accordion" ).accordion();
+	$( ".selector" ).accordion({ collapsible: true });
+  });
+  
+  </script>
 
 
 <!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
