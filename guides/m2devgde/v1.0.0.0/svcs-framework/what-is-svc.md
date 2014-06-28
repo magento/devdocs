@@ -2,8 +2,19 @@
 layout: howtom2devgde
 title: What is the Magento 2 Service Framework?
 ---
+
  
 # What is the Magento 2 Service Framework?
+
+<!-- <div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist"> -->
+
+<div id="accordion">
+  <h3>Test 1</h3>
+  <div>Content 1</div>
+
+  <h3>Test2</h3>
+  <div>Content 2</div>
+</div>
 
 <p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
