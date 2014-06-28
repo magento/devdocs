@@ -38,8 +38,8 @@ Before you think about writing your own service, you should look at an existing 
 Create a customer record as follows:
 
 <div id="accordion">
-  <h3>Step 1</h3>
-  <div><p>Locate the `createCustomer` method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</p>
+  <h3>Step 1: Locate the <tt>createCustomer</tt> method</h3>
+  <div><p>Locate the <tt>createCustomer</tt> method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</p>
 
 	<p>Notice the code comments also:</p>
 
