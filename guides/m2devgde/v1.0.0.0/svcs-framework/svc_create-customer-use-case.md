@@ -58,10 +58,10 @@ Create a customer record as follows:
 	<p>Constructor dependency injection uses a constructor to declare the dependencies. In dependencies in the preceding example are named:</p>
 	
 	<ul><li><tt>$customerAccountService</tt>, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</li>
-	<li><tt>$customerDetailsBuilder</tt>, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerDetailsBuilder.php" target="_blank">CustomerDetailsBuilder</a> data object builder.</li>
-	<li><tt>$customerBuilder</tt>, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> CustomerBuilder data object builder.</li></ul>
+	<li><tt>$customerDetailsBuilder</tt>, a dependency on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerDetailsBuilder.php" target="_blank">CustomerDetailsBuilder</a> service data object builder.</li>
+	<li><tt>$customerBuilder</tt>, a dependency on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> service data object builder.</li></ul>
 </div>	
-<h3>Step 3</h3>
+<h3>Step 3: Create the customer record</h3>
 <div><p>In your client code, create the customer record.</p>
 
 	<script src="https://gist.github.com/xcomSteveJohnson/d9c51387caa8f7f8d15f.js"></script>
@@ -73,10 +73,9 @@ Create a customer record as follows:
 
 The preceding section showed how to:
 
-*	Create a customer record.
-*	Create addresses for the customer.
-*	Set up a password reset token.
-*	Send the customer a welcome e-mail with a link to reset their password.
+*	Create a customer record. The `createCustomer` call also sets a default password for the customer.
+*	Create an address for the customer.
+*	Specified the address as the default shipping and billing address.
 
 #### Related Topics
 
