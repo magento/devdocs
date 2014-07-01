@@ -61,4 +61,4 @@ To set up a service so it can be accessed using REST, see [What is the Web API F
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html">Basics of Building a Service</a>
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
-*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer from an External Source</a>
+*	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
