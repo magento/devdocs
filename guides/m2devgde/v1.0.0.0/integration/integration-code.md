@@ -17,7 +17,7 @@ Creating and updating an integration module are triggered by data setup scripts.
 
 <script src="https://gist.github.com/xcomSteveJohnson/9750817.js"></script>
 
-After that, the `[Vendor]/[Module]/data/[module]_setup]/data-install-[version].php` class is used to initiate processing of the integration configuration file. (Upgrade scripts work the same way; for an example, see <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/data/customer_setup/data-upgrade-1.6.2.0.1-1.6.2.0.2.php" target="_blank">app/code/Magento/Customer/data/customer_setup/data-upgrade-1.6.2.0.1-1.6.2.0.2.php</a>.)
+After that, the `[Vendor]/[Module]/data/[module]_setup]/data-install-[version].php` class is used to initiate processing of the integration configuration file. (Upgrade scripts work the same way; for an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/data/customer_setup/data-upgrade-1.6.2.0.1-1.6.2.0.2.php" target="_blank">app/code/Magento/Customer/data/customer_setup/data-upgrade-1.6.2.0.1-1.6.2.0.2.php</a>.)
 
 <script src="https://gist.github.com/xcomSteveJohnson/9750864.js"></script>
 

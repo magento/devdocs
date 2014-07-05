@@ -31,7 +31,7 @@ In this `webapi.xml`:
 
 *   The first route is accessible only by secure HTTP POST calls to `/V1/customers/me`
 
-*   The first route calls the `getCustomer` method of <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>
+*   The first route calls the `getCustomer` method of <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>
 
 * 	`<resource ref>` means that the caller must be authorized to call `Magento_Customer::customer_self`
 
@@ -39,15 +39,15 @@ In this `webapi.xml`:
 
 *	The parameter `id` is required
 
-*	This second route also calls the 'getCustomer' method of <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>
+*	This second route also calls the 'getCustomer' method of <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>
 
 *	The caller must be authorized to call `Magento_Customer::read` 
 
-For comparison, refer to Customer's <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.
+For comparison, refer to Customer's <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.
 
 ### Sample webapi.xsd
 
-Your `webapi.xml` must be validated by an `app/code/_Vendor_/Webapi/etc/webapi.xsd`. For comparision see Customer's, <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/etc/webapi.xsd" target="_blank">webapi.xsd</a>.
+Your `webapi.xml` must be validated by an `app/code/_Vendor_/Webapi/etc/webapi.xsd`. For comparision see Customer's, <a href="{{ site.mage2000url }}app/code/Magento/Webapi/etc/webapi.xsd" target="_blank">webapi.xsd</a>.
 
 Your module can use `webapi.xsd` or you can create a customized validation.
 

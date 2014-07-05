@@ -28,7 +28,7 @@ A service is:
 
 	The service class typically delegates some business logic to other components like models and helpers, making the service class relatively "thin".
 
-	<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountService.php" target="_blank">Here</a> is a class that implements the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CusomterAccountServiceInterface</a>.
+	<a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountService.php" target="_blank">Here</a> is a class that implements the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CusomterAccountServiceInterface</a>.
 
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects">Service data objects</a> that serialize, deserialize, and format data.	
 	
@@ -37,7 +37,7 @@ A service is:
 Benefits include:
 
 <ul><li>Enables you to move business logic out of templates, which reduces the size of templates and makes customization easier.</li>
-<li>Enables all business logic to be easily made available to external applications as web services by creating <tt>webapi.xml</tt> (<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/webapi.xml" target="_blank">sample</a>).</li>
+<li>Enables all business logic to be easily made available to external applications as web services by creating <tt>webapi.xml</tt> (<a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">sample</a>).</li>
 <li>Services are versioned, which provides a way for them to be backward-compatible. We recommend, for example, that when you provide V2 of a service you enable V1 of the service to function after upgrading Magento software.</li></ul>
  
 ## Related Topics

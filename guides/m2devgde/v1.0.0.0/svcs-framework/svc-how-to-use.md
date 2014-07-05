@@ -13,15 +13,15 @@ Before interacting with a service, you must be familiar with the service interfa
 
 To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.
 
-Because a service call typically accepts one or more primitive types or [service data objects]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects), you might have to convert or extract them before calling the service. For an example, see `public function getInputData` in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
+Because a service call typically accepts one or more primitive types or [service data objects]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects), you might have to convert or extract them before calling the service. For an example, see `public function getInputData` in <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
 
 For example, if you know a customer's ID and want to get data about the customer, here's what you do:
 
-1. Search the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method `(public function getCustomer($customerId);)`
+1. Search the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method `(public function getCustomer($customerId);)`
 
 2. 	Notice in the comment `@return \Magento\Customer\Service\V1\Data\Customer`. This is the *service data object*.
 
-3. Get the details about the response from the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">service data object</a>.
+3. Get the details about the response from the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">service data object</a>.
 
 Service methods complete in one of two ways:
 

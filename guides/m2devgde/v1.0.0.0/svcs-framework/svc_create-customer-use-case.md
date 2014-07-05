@@ -23,15 +23,15 @@ Before you think about writing your own service, you should look at an existing 
 
 *	Interfaces
 
-	Clients interact with services using methods on their interfaces, as discussed in [What is the Magento 2 Service Framework?](what-is-svc.html). Customer service interfaces have more than 20 public methods, including public function `createCustomer()` in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.
+	Clients interact with services using methods on their interfaces, as discussed in [What is the Magento 2 Service Framework?](what-is-svc.html). Customer service interfaces have more than 20 public methods, including public function `createCustomer()` in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>, which creates a customer record.
 
 *	Service data objects
 
-	Service data objects send data to and from interfaces. Service data objects are "read-only", meaning they have getters but not setters. The Customer service has several service data objects, including <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer</a>, which returns customer data.
+	Service data objects send data to and from interfaces. Service data objects are "read-only", meaning they have getters but not setters. The Customer service has several service data objects, including <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer</a>, which returns customer data.
 	
 *	Service data object builders
 
-	Builders have the setters you can use to set data values in the service data object before sending them to the service to be consumed. For example, <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> has a `setFirstname` method you can use to set a customer's first name. You can get the first name using the `getFirstname` method in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer data object</a>.
+	Builders have the setters you can use to set data values in the service data object before sending them to the service to be consumed. For example, <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> has a `setFirstname` method you can use to set a customer's first name. You can get the first name using the `getFirstname` method in <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">Customer data object</a>.
 
 ## Creating the Customer Record 
 
@@ -39,7 +39,7 @@ Create a customer record as follows:
 
 <div id="accordion">
   <h3>Step 1: Locate the createCustomer method</h3>
-  <div><p>Locate the <tt>createCustomer</tt> method on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</p>
+  <div><p>Locate the <tt>createCustomer</tt> method on the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</p>
 
 	<p>Notice the code comments also:</p>
 
@@ -57,9 +57,9 @@ Create a customer record as follows:
 	
 	<p>Constructor dependency injection uses a constructor to declare the dependencies. In dependencies in the preceding example are named:</p>
 	
-	<ul><li><tt>$customerAccountService</tt>, a dependency on <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</li>
-	<li><tt>$customerDetailsBuilder</tt>, a dependency on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerDetailsBuilder.php" target="_blank">CustomerDetailsBuilder</a> service data object builder.</li>
-	<li><tt>$customerBuilder</tt>, a dependency on the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> service data object builder.</li></ul>
+	<ul><li><tt>$customerAccountService</tt>, a dependency on <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CustomerAccountServiceInterface</a>.</li>
+	<li><tt>$customerDetailsBuilder</tt>, a dependency on the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerDetailsBuilder.php" target="_blank">CustomerDetailsBuilder</a> service data object builder.</li>
+	<li><tt>$customerBuilder</tt>, a dependency on the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerBuilder.php" target="_blank">CustomerBuilder</a> service data object builder.</li></ul>
 </div>	
 <h3>Step 3: Create the customer record</h3>
 <div><p>In your client code, create the customer record.</p>
