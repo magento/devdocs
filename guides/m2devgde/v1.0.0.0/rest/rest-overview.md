@@ -40,7 +40,7 @@ To make a REST call for the Customer service:
 <p>Continuing the preceding example, the <tt>createCustomer()</tt> method on the <tt>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</tt> specifies the data service object as follows:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
 <p>In this case, the service object is <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerDetails.php" target="_blank">\Magento\Customer\Service\V1\Data\CustomerDetails</a>.</p>
-<p><strong>Note</strong>: To use <tt>CustomerDetails</tt> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <tt>customer_details</tt>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <tt>customer_details</tt> must specify a <a href="http://www.json.com/" target="_blank">JSON array</a>.</p>
+<p><strong>Note</strong>: To use <tt>CustomerDetails</tt> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <tt>customer_details</tt>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <tt>customer_details</tt> must specify a <a href="http://www.json.com/" target="_blank">JSON</a>.</p>
 </div>
 
 <h3>Step 3: Find getters on service data objects</h3>
@@ -60,7 +60,7 @@ To make a REST call for the Customer service:
 </li>
 <li>Pass an <a href="http://tools.ietf.org/html/rfc5849#section-3.4" target="_blank">OAuth 1.0a Authorization</a> header using <a href="http://tools.ietf.org/html/rfc5849#section-4.1" target="_blank">RSA-SHA1 encryption</a>.</li>
 <li>Pass a <tt>Content-Type: application/json</tt> header.</tt></li>
-<li>Pass a JSON or XML array containing the data.</li></ol>
+<li>Pass JSON or XML containing the data.</li></ol>
 <p>For a step-by-step example, see <a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.</p>
 </div>
 </div>
