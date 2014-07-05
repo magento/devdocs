@@ -42,7 +42,7 @@ ul li
 }
 
 ol { list-style: decimal outside none;
-    margin-left: 1em;
+    margin-left: 1.5em;
  }
  
 ol li
@@ -54,10 +54,12 @@ body
 {
   color:#31302b;
   font-family:'OpenSansRegular';
+  font-size: 12pt;
   background-color:#f0f0f0;
   width:100%;
   border-top:solid #EF672F;
   border-width:4px;
+  margin-left: 1.5em;
 }
 
 /* h1,h2,h3,h4,h5,h6
@@ -90,6 +92,7 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover
 p
 {
   font-family:'OpenSansRegular', sans-serif;
+  font-size: 12pt;
   font-weight:400;
   margin-top:12px;
 }
