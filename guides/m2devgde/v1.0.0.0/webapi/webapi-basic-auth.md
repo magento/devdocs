@@ -17,7 +17,7 @@ Service developers declare the list of permissions required in the integration's
 
 **Note**: The Web API framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.
 
-The following table shows what we expect <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Authz/Service/AuthorizationV1Interface.php" target="_blank">AuthorizationV1Interface</a> methods to perform. _(`AuthorizationV1Interface` is not implemented yet.)_ 
+The following table shows what we expect <a href="{{ site.mage2000url }}app/code/Magento/Authz/Service/AuthorizationV1Interface.php" target="_blank">AuthorizationV1Interface</a> methods to perform. _(`AuthorizationV1Interface` is not implemented yet.)_ 
 
 <table>
 	<tbody>
@@ -53,7 +53,7 @@ REST resources are speicifed in `webapi.xml` by `route` objects. A snippet follo
 
 When a client requests access to the `/V1/testmodule1` route, the resources it requires must be checked: `Magento_TestModule1::resource1` and `Magento_TestModule1::resource2`.
 
-The authorization checks are performed by the `dispatch` method in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/Rest.php" target="_blank">\Magento\Webapi\Controller\Rest</a>.
+The authorization checks are performed by the `dispatch` method in <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/Rest.php" target="_blank">\Magento\Webapi\Controller\Rest</a>.
 
 For the call to succeed, _all_ resources must be authorized; otherwise, an authorization exception is thrown.
 

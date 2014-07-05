@@ -41,7 +41,7 @@ Some important characteristics of a service interface:
 
 *	You *cannot* use aliases in services interfaces or in service data objects because doing so causes WSDL generation to fail.
 
-To see an example of a Customer service interface, see <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a>.
+To see an example of a Customer service interface, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a>.
 
 ## Exposing a Service as a REST or SOAP API
 
@@ -60,7 +60,7 @@ To expose a service as a REST or SOAP API, you must:
     </route>
 	```
 	
-	(<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)
+	(<a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)
 	
 2.	Create a service data object that defines any data required to pass between the service and its clients. See the next section.
 
@@ -89,9 +89,9 @@ General rules for implementing a service data object:
 *	The service data object class must reside in the `[module namespace]\Service\Data\V[xx]` namespace.
 *	A service data object must have getters that clearly describe all data that the data object can contain.
 *	Annotations in the code must clearly describe the parameters and outputs of all methods.
-*	Getters should rely on the `_get` method provided for convenience in the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObject`</a> class.
-*	A service data object should extend <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> or any of its children. 
-*	Setters should rely on the `_set` method provided for convenience in the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> class.
+*	Getters should rely on the `_get` method provided for convenience in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObject`</a> class.
+*	A service data object should extend <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> or any of its children. 
+*	Setters should rely on the `_set` method provided for convenience in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank">`\Magento\Framework\Service\Data\AbstractObjectBuilder`</a> class.
 
 ### Sample Service Data Object
 
