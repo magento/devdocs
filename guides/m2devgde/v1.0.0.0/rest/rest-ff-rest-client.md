@@ -101,7 +101,49 @@ The Integration Tokens for Extensions dialog box displays the authorization cred
 <h2>Step 9: Getting started with the Firefox REST Client</h2>
 <div><p>Now you can start building the REST call using the Firefox REST Client as follows:</p>
 <ol><li>Start the Firefox web browser and the Firefox REST Client.</li>
-<li>
+<li>From the <strong>Method</strong> list, click <strong>POST</strong>.</li>
+<li>In the <strong>URL</strong> field, enter the following:<br>
+<tt>https://[your Magento host or IP]/[your Magento base install dir]/rest/default/V1/customerAccounts</tt><br>
+The following figure shows an example.<br>
+<img src="{{ site.baseurl }}common/images/rest_ff-rest-initial-url.png"></li></ol>
+<p><strong>Note</strong>: Remember that <tt>/V1/customerAccounts</tt> is the REST route from step 2.</p>
+</div>
+
+<h2>Step 10: Setting up authorization for your REST call</h2>
+<div>
+<p>Before you continue, make sure you have the following for the integration you created in step 8:</p>
+<ul><li>Consumer Key</li>
+<li>Consumer Secret</li>
+<li>Access Token</li>
+<li>Access Token Secret</li></ul>
+<p>In the Firefox REST Client:</p>
+<ol><li>Click <strong>Authentication</strong> > <strong>OAuth</strong>.</li>
+<li>Enter your OAuth credentials.<br>
+The following figure shows an example.<br>
+<img src="{{ site.baseurl }}common/images/rest_oauth-creds.png"></li>
+<li>Optionally select the <strong>Remember the setting</strong> check box to avoid having to enter the credentials in future REST calls.</li>
+<li>Click <strong>Insert</strong> > <strong>as header</strong>.</li>
+<li>Click <strong>Yes, please</strong> at the confirmation dialog box.</li></ol>
+</div>
+
+<h2>Step 11: Complete the REST call</h2>
+<div>
+<p>Now you have your <tt>Authorization</tt> header set, you must set one more header for Magento 2 to accept the REST call: <tt>Content-Type: application/json</tt>, add the request body, and send the request.</p>
+<p>To complete your REST call:</p>
+<ol><li>Click <strong>Headers</strong> > <strong>Custom Header</strong>.</li>
+<li>In the <strong>Name</strong> field, enter <tt>Content-Type</tt>.</li>
+<li>In the <strong>Value</strong> field, enter <tt>application/json</tt>.</li>
+<li>Click <strong>Okay</strong>.<br>
+The Firefox REST Client should now look like the following:<br>
+<img src="{{ site.baseurl }}common/images/rest_client-with-headers.png"></li>
+<li>In the <strong>Body</strong> field, enter your JSON data to create the customer.<br>
+An example follows:<br>
+<script src="https://gist.github.com/xcomSteveJohnson/3901c6cf9d41964bd319.js"></script></li>
+<li>Click <strong>Send</strong>.</li></ol>
+<p>If the REST call succeeded, the <strong>Response Headers</strong> tab page at the bottom should show <tt>200 OK</tt> on the first line.</p>
+<p>If the REST call failed, click the <strong>Response Body (Raw)</strong> tab page to display the XML data you get back from Magento.</p>
+<p>Following is sample raw data from a successful REST call:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/fed484b41f9fbdd46331.js"></script>
 
 </div>
 
