@@ -17,23 +17,20 @@ Because a service call typically accepts one or more primitive types or [service
 
 For example, if you know a customer's ID and want to get data about the customer, here's what you do:
 
-1. Search the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method `(public function getCustomer($customerId);)`
+1. 	Search the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method `(public function getCustomer($customerId);)`
 
 2. 	Notice in the comment `@return \Magento\Customer\Service\V1\Data\Customer`. This is the *service data object*.
 
-3. Get the details about the response from the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">service data object</a>.
+3. 	Get the details about the response from the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">service data object</a>.
 
 Service methods complete in one of two ways:
 
  *  Return a response, which can be:
 
-    Null if no data is returned
-	
-    Array
-	
-    Primitive type (such as an ID)
-	
-    [Service data object]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on. 
+    *	Null if no data is returned
+	*	Array
+	*	Primitive type (such as an ID)
+	*	[Service data object]({{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on. 
  
  *  Throw an exception
 
