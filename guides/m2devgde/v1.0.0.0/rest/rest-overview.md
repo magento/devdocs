@@ -26,7 +26,7 @@ To make a REST call for the Customer service:
     &lt;resources>
         &lt;resource ref="anonymous"/>
     &lt;/resources>
-&lt;/route>
+&lt;/route> 
 </pre></li></ol>
 <p>The <tt>route url</tt> specifies the URI of the REST call. (Step 4 shows the entire URL.)</p>
 <p>In this example, the URI is <tt>POST /V1/customerAccounts</tt></p>

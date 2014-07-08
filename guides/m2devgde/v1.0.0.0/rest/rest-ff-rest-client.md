@@ -92,7 +92,7 @@ The following figure shows an example.<br>
 <img src="{{ site.baseurl }}common/images/rest_create-integration1.png" alt="Click an integration's activate text to allow it to access defined resources"></li>
 <li>At the confirmation dialog box, click <strong>Allow</strong>.<br>
 The Integration Tokens for Extensions dialog box displays the authorization credentials you'll need for the REST call. You can view these credentials at any time by logging in to the Magento Admin and editing the integration.</li></ol>
-</div>
+</div> 
 
 <h2>Step 8: Getting started with the Firefox REST Client</h2>
 <div><p>Now you can start building the REST call using the Firefox REST Client as follows:</p>
