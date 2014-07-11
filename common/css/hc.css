@@ -924,3 +924,18 @@ time
 }
 
 }
+
+#accordion_related-topics {
+margin-top: 2em;
+
+}
+
+#accordion_related-topics  .ui-accordion-header-icon {
+background-image: url("images/ui-icons_454545_256x240.png");
+background-position: -16px -128px; 
+}
+
+#accordion_related-topics  .ui-accordion-header-active {
+background-image: url("images/ui-icons_454545_256x240.png");
+background-position: -12px -128px; 
+}

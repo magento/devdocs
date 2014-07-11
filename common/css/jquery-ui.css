@@ -95,6 +95,7 @@
 	min-height: 0; /* support: IE7 */
 	font-size: 100%;
 }
+
 .ui-accordion .ui-accordion-icons {
 	padding-left: 2.2em;
 }
@@ -107,11 +108,13 @@
 	top: 50%;
 	margin-top: -8px;
 }
+
 .ui-accordion .ui-accordion-content {
 	padding: 1em 2.2em;
 	border-top: 0;
 	overflow: auto;
 }
+
 .ui-autocomplete {
 	position: absolute;
 	top: 0;
