@@ -930,12 +930,36 @@ margin-top: 2em;
 
 }
 
+
+
+/* SRJ - the following doesn't work. The expand/collapse icon is always +, never
+changes to -, needs more work
+
 #accordion_related-topics  .ui-accordion-header-icon {
 background-image: url("images/ui-icons_454545_256x240.png");
 background-position: -16px -128px; 
+
 }
 
-#accordion_related-topics  .ui-accordion-header-active {
+#accordion_related-topics  .ui-accordion-header-icon.ui-icon.ui-icon.minus {
+background-image: url("images/ui-icons_454545_256x240.png");
+background-position: -48px -128px; 
+
+} */
+
+/* SRJ backups following. Experimenting with getting Related Topics expand icon to change from + to - */
+
+/* .ui-icon-minus { background-position: -48px -128px; } */
+
+
+/* #accordion_related-topics  .ui-accordion-header-icon {
+background-image: url("images/ui-icons_454545_256x240.png");
+background-position: -16px -128px; 
+
+}
+ */
+/* #accordion_related-topics  .span.ui-accordion-header-icon {
 background-image: url("images/ui-icons_454545_256x240.png");
 background-position: -12px -128px; 
-}
+
+} */
