@@ -94,7 +94,7 @@ The following figure shows an example.<br>
 The Integration Tokens for Extensions dialog box displays the authorization credentials you'll need for the REST call. You can view these credentials at any time by logging in to the Magento Admin and editing the integration.</li></ol>
 </div> 
 
-<h2>Step 8: Getting started with the Firefox REST Client</h2>
+<h2>Step 8: Get started with the Firefox REST Client</h2>
 <div><p>Now you can start building the REST call using the Firefox REST Client as follows:</p>
 <ol><li>Start the Firefox web browser and the Firefox REST Client.</li>
 <li>From the <strong>Method</strong> list, click <strong>POST</strong>.</li>
@@ -105,7 +105,7 @@ The following figure shows an example.<br>
 <p><strong>Note</strong>: Remember that <tt>/V1/customerAccounts</tt> is the REST route from step 2.</p>
 </div>
 
-<h2>Step 9: Setting up authorization for your REST call</h2>
+<h2>Step 9: Set up authorization for your REST call</h2>
 <div>
 <p>Before you continue, make sure you have the following for the integration you created in step 8:</p>
 <ul><li>Consumer Key</li>
