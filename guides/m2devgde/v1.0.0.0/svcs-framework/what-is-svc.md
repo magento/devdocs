@@ -47,3 +47,7 @@ Benefits include:
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
 *	<a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
+
+Bad link:
+
+<a href="{{ site.baseurl }}guides/m2devde/v1.0.0.0/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
