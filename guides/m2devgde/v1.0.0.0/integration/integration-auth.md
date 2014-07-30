@@ -26,5 +26,4 @@ The presentation layer defines resources in the `acl.xml` file, and retrieves th
 
 <script src="https://gist.github.com/xcomSteveJohnson/9750491.js"></script>
 
-This is a bad link: <a href="http://screw.you/">bad link</a>
 
