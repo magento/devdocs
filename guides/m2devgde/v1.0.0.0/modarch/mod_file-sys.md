@@ -1,5 +1,5 @@
 ---
-layout: howtom2devgde_chapters_other
+layout: howtom2devgde_chapters
 title: Modular File System
 ---
  
