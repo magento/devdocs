@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }}</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ site.description }}">
+
+   <!-- <link href="{{ site.baseurl }}common/css/bootstrap.min.css" rel="stylesheet"> -->
+   <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet">
+
+<script src="{{ site.baseurl }}common/js/jquery1.10.js"></script>
+
+ <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
+   <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
+  <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
+
+<script>
+      $(function() {
+        $( "#accordion" ).accordion({
+          collapsible: true,
+          active: false,
+		  heightStyle: "content"
+        });
+      });
+</script>
+<script>
+ $(function() {
+	$( "#accordion2" ).accordion({
+       active: false,
+       collapsible: true,
+	   heightStyle: "content"
+     });
+ });
+</script>
+<script>
+ $(function() {
+	$( "#accordion_related-topics" ).accordion({
+       active: false,
+       collapsible: true,
+	   heightStyle: "content"
+     });
+ });
+</script>      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">{{ site.namem2fedg }}</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          
+           <!-- <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
+	   <div class="back"><p class="back"><a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/index.html"><img class="prev" src="{{ site.baseurl }}common/images/prev-arrow.png">Back to the Magento 2 Developer's Guide</a></p> -->
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+
+
+       <!-- Sidebar -->
+	   
+	   
+       <div id="sidebar-wrapper">
+	   <div class="logo">
+	   <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a></div>
+	   <p class="brand">Contents</p>
+ 	   <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
+	   <div class="back"><p class="back"><a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/index.html"><img class="prev" src="{{ site.baseurl }}common/images/prev-arrow.png">Back to the Magento 2 Other Guide</a></p></div>
+
+		</div>
+
+
+     <div class="container">
+
