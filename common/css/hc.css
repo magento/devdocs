@@ -155,11 +155,12 @@ p
 .container-frontdoor a
 {
   border-bottom:none;
-  text-decoration:none
+  text-decoration:none;
 }
 
 .logo-frontdoor {
 margin-left: -10em;
+padding-right: 2em;
 }
 
 #wrapper
