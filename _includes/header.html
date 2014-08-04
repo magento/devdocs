@@ -24,76 +24,51 @@
  -->      <!-- <div id = "wrapper"> -->
  
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+      <div class="container-frontdoor">
         <div class="navbar-header"> 
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">{{ site.name }}</a>
+          </button> -->
+		  <div class="logo-frontdoor">
+          <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
+		  </div>
         </div>
+		
+		
+		<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./">Default</a></li>
+              <li><a href="../navbar-static-top/">Static top</a></li>
+              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul> -->
+          </div>
         
         </div> --><!--/.navbar-collapse -->
       </div>
     </div>
 
 
-<div class="jumbotron">
-      <div class="container">
-        <!-- <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button> -->
-          <!-- <p class="navbar-brand">{{ site.name }}</p> -->
-        <!-- </div> -->
-		
-        <!-- <div class="navbar-collapse collapse"> -->
-		
-		<h1>Welcome to the Magento Developer Documentation Home Page</h1>
-		<p>You can find all of your Magento developer documentation here. For the time being, there is some additional material on our <a href="https://wiki.magento.com/display/MAGE2DOC/Magento+2+Product+Documentation" target="_blank">Magento 2 public wiki</a> but this site is more up-to-date.</p>
-		</div></div>
-		<div class="container">
-		<div class="row">
-			<div class="col-md-4">
-			<h2>Magento Extension Documentation</h2>
-			<p>This guide is a joke.</p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-			</div>
-			
-			<div class="col-md-4">
-			<h2>Magento Frontend Documentation</h2>
-			<p>TBD</p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-			</div>
-			
-			<div class="col-md-4">
-			<h2>Magento Some Other Documentation</h2>
-			<p>TBD</p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-			</div>
-			
-			<div class="col-md-4">
-			<h2>Magento Some Other Documentation 2</h2>
-			<p>TBD</p>
-			<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-			</div>
-			</div>
-			
-			<hr>
-		
-        <!-- <ul class="nav navbar-nav">
-          <li class="sidebar-brand"><li><a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/index.html">Developer's Guide</a></li>
-		 <li class="sidebar-brand"><li><a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/index.html">Magento 2 Frontend Developer's Guide</a></li></ul> -->
-          
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+
 
 
 
@@ -117,5 +92,5 @@
 
 
 
-     <div class="container">
-
+<!--      <div class="container">
+ -->

@@ -140,6 +140,28 @@ p
   text-decoration:none
 }
 
+/* SRJ - container overrides */
+
+.container-frontdoor
+{
+  width:80%;
+  padding-right:0;
+  padding-top:30px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-frontdoor a
+{
+  border-bottom:none;
+  text-decoration:none
+}
+
+.logo-frontdoor {
+margin-left: -10em;
+}
+
 #wrapper
 {
   padding-left:250px;
