@@ -9,7 +9,7 @@ _Update_: We're moving our content from another github. Please be patient.
 
 Where's the rest of it? Still on the <a href="https://wiki.magento.com/display/MAGE2DOC/Magento+2+Product+Documentation" target="_blank">Magento public wiki</a>. 
 
-Please look around, send us comments, [let us know](mailto:DL-Magento-Doc-Feedback@ebay.com) how you think we're doing.
+Look around, send us comments, [let us know](mailto:DL-Magento-Doc-Feedback@ebay.com) how you think we're doing.
 We're here to serve _you_ so let us hear from you.
 
 <p>&mdash;Magento documentation team</p>
