@@ -1006,6 +1006,13 @@ div.content-spacer {
 padding-top: 5em;
 }
 
+/* SRJ - reducing left margin for left TOC */
+@media (min-width: 768px) {
+  .bs-docs-sidebar {
+    padding-left: 1px;
+  }
+
+
 /* SRJ - the following doesn't work. The expand/collapse icon is always +, never
 changes to -, needs more work
 
