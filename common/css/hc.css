@@ -1002,6 +1002,10 @@ div.navbar-fixed-bottom>a:hover {
 color: #fff;
 }
 
+div.content-spacer {
+padding-top: 5em;
+}
+
 /* SRJ - the following doesn't work. The expand/collapse icon is always +, never
 changes to -, needs more work
 

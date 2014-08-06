@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ page.title }}</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ site.description }}">
@@ -11,7 +12,7 @@
   <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
   <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet">
 
-<script src="{{ site.baseurl }}common/js/jquery1.10.js"></script>
+<script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script>
 
  <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
    <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
@@ -44,10 +45,59 @@
 	   heightStyle: "content"
      });
  });
-</script>      <div id = "wrapper">
+</script>  </head>    <!-- <div id = "wrapper"> -->
 
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-frontdoor">
+        <div class="navbar-header"> 
+          <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button> -->
+		  <div class="logo-frontdoor">
+          <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
+		  </div>
+        </div>
+		</div>
 
-<div class="navbar navbar-default" role="navigation">
+<div class="navbar-collapse collapse">
+			<div class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>  -->
+            </ul></div>
+			
+			<div class="col-sm-3 col-md-3 pull-right">
+          <form class="navbar-form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+          </form>
+		  </div>
+		  </div>
+		  </div>
+		  
+		  
+		  
+<!-- <div class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -58,29 +108,141 @@
           </button>
           <p class="navbar-brand">{{ site.namem2fedg }}</p>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse"> -->
           
            <!-- <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
 	   <div class="back"><p class="back"><a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/index.html"><img class="prev" src="{{ site.baseurl }}common/images/prev-arrow.png">Back to the Magento 2 Developer's Guide</a></p> -->
           
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+        <!-- </div> --><!--/.nav-collapse -->
+      <!-- </div>
+    </div> -->
 
 
 
        <!-- Sidebar -->
 	   
 	   
-       <div id="sidebar-wrapper">
+       <!-- <div id="sidebar-wrapper">
 	   <div class="logo">
 	   <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a></div>
 	   <p class="brand">Contents</p>
  	   <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
 	   <div class="back"><p class="back"><a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/index.html"><img class="prev" src="{{ site.baseurl }}common/images/prev-arrow.png">Back to the Magento 2 Frontend Developer's Guide</a></p></div>
 
-		</div>
+		</div> -->
+
+	
+     <div class="content-spacer">
+	 <!-- <div class="container"> -->
+     <div class="container bs-docs-container">
+	 <div class="row">
+     
+	 
+	 <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+            <ul class="nav bs-docs-sidenav">
+
+                <li class="active">
+  <a href="#js-overview">Overview</a>
+  <ul class="nav">
+    <li class=""><a href="#js-individual-compiled">Individual or compiled</a></li>
+    <li class=""><a href="#js-data-attrs">Data attributes</a></li>
+    <li class=""><a href="#js-programmatic-api">Programmatic API</a></li>
+    <li class=""><a href="#js-noconflict">No conflict</a></li>
+    <li class=""><a href="#js-events">Events</a></li>
+    <li class=""><a href="#callout-third-party-libs">Third-party libraries</a></li>
+  </ul>
+</li>
+<li class=""><a href="#transitions">Transitions</a></li>
+<li class="">
+  <a href="#modals">Modal</a>
+  <ul class="nav">
+    <li class=""><a href="#modals-examples">Examples</a></li>
+    <li class=""><a href="#modals-sizes">Sizes</a></li>
+    <li class=""><a href="#modals-remove-animation">Remove animation</a></li>
+    <li class=""><a href="#modals-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#dropdowns">Dropdown</a>
+  <ul class="nav">
+    <li><a href="#dropdowns-examples">Examples</a></li>
+    <li class=""><a href="#dropdowns-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#scrollspy">Scrollspy</a>
+  <ul class="nav">
+    <li><a href="#scrollspy-examples">Examples</a></li>
+    <li class=""><a href="#scrollspy-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#tabs">Tab</a>
+  <ul class="nav">
+    <li class=""><a href="#tabs-examples">Examples</a></li>
+    <li class=""><a href="#tabs-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#tooltips">Tooltip</a>
+  <ul class="nav">
+    <li><a href="#tooltips-examples">Examples</a></li>
+    <li class=""><a href="#tooltips-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#popovers">Popover</a>
+  <ul class="nav">
+    <li class=""><a href="#popovers-examples">Examples</a></li>
+    <li class=""><a href="#popovers-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#alerts">Alert</a>
+  <ul class="nav">
+    <li><a href="#alerts-examples">Examples</a></li>
+    <li class=""><a href="#alerts-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#buttons">Button</a>
+  <ul class="nav">
+    <li class=""><a href="#buttons-examples">Examples</a></li>
+    <li><a href="#buttons-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#collapse">Collapse</a>
+  <ul class="nav">
+    <li class=""><a href="#collapse-examples">Examples</a></li>
+    <li class=""><a href="#collapse-usage">Usage</a></li>
+  </ul>
+</li>
+<li class="">
+  <a href="#carousel">Carousel</a>
+  <ul class="nav">
+    <li class=""><a href="#carousel-examples">Examples</a></li>
+    <li class=""><a href="#carousel-usage">Usage</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#affix">Affix</a>
+  <ul class="nav">
+    <li><a href="#affix-examples">Examples</a></li>
+    <li><a href="#affix-usage">Usage</a></li>
+  </ul>
+</li>
 
 
-     <div class="container">
+            </ul>
+            <a class="back-to-top" href="#top">
+              Back to top
+            </a>
 
+            <a href="#" class="bs-docs-theme-toggle">
+              Preview theme
+            </a>
+
+          </div>
+        </div>
