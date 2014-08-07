@@ -6,6 +6,16 @@
 }
 */
 
+/* SRJ Jumbotron CSS */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 2em;
+  padding-bottom: 7em;
+  /* padding-top: 50px;
+  padding-bottom: 20px; */
+}
+
 .toc ul
 {
   list-style-type:none;
@@ -31,7 +41,7 @@
 
 ul 
 {
-	list-style: round inside none;
+	/* list-style: round inside none; */
     margin-left: 1em;
 }
 
@@ -55,9 +65,9 @@ body
   color:#31302b;
   font-family:'OpenSansRegular';
   font-size: 12pt;
-  background-color:#f0f0f0;
+  /* background-color:#f0f0f0; */
   width:100%;
-  border-top:solid #EF672F;
+  /* border-top:solid #EF672F; */
   border-width:4px;
   margin-left: 1.5em;
 }
@@ -130,15 +140,38 @@ p
   text-decoration:none
 }
 
+/* SRJ - container overrides */
+
+.container-frontdoor
+{
+  width:80%;
+  padding-right:0;
+  padding-top:30px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-frontdoor a
+{
+  border-bottom:none;
+  text-decoration:none;
+}
+
+.logo-frontdoor {
+margin-left: -10em;
+padding-right: 2em;
+}
+
 #wrapper
 {
   padding-left:250px;
   transition:all .5s ease 0
 }
 
-.navbar 
+/* .navbar 
 {
-  display: none;
+  display: none; */
 }
 
 .navbar a 
@@ -466,7 +499,7 @@ td {
 {
   font-size:3em;
   font-weight:700;
-  color:#2d4440;
+  color:#2d4440; 
   transition:all .5s ease 0
 }
 
@@ -490,14 +523,14 @@ td {
   bottom:0;
   width:100%;
   font-size:8pt;
-  text-shadow:1px 1px #fff;
-  padding-left:20px;
+  /* text-shadow:1px 1px #fff; */
+  padding-left:200px;
   margin-bottom:0;
   padding-bottom:5px;
   padding-top:5px;
-  margin-top:40px;
+  margin-top:10px;
   z-index:1;
-  color:#31302b
+  color:#777;
   font-family: 'OpenSansRegular';
 }
 
@@ -930,6 +963,54 @@ margin-top: 2em;
 
 }
 
+/* SRJ - future override for the navbar banner */
+
+.navbar-inverse {
+background-color: #222;
+border-color: #080808;
+}
+
+/* SRJ - Overrides for font sizes in Jumbotron */
+
+div.col-md-4>h2 {
+font-size: 14pt;
+}
+
+div.col-md-4>p {
+font-size: 12pt;
+}
+
+/* SRJ - override for navbar footer */
+
+.navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  width: 100%;
+  min-height: 25px;
+  padding-bottom: 1em;
+  z-index: 1030;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+div.navbar-fixed-bottom>a {
+color: #fff;
+}
+
+div.navbar-fixed-bottom>a:hover {
+color: #fff;
+}
+
+div.content-spacer {
+padding-top: 5em;
+}
+
+/* SRJ - reducing left margin for left TOC */
+@media (min-width: 768px) {
+  .bs-docs-sidebar {
+    padding-left: 1px;
+  }
 
 
 /* SRJ - the following doesn't work. The expand/collapse icon is always +, never

@@ -1,54 +1,84 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="{{ site.description }}">
    <!-- <link href="{{ site.baseurl }}common/css/bootstrap.min.css" rel="stylesheet"> -->
    <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
   <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}common/js/jquery-1.11.1.min.js" rel="stylesheet">
+    <link href="{{ site.baseurl }}common/js/bootstrap.min.js" rel="stylesheet">
+	    <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
 
 
-<!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
- -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
-  <![endif]-->
-    </head>
-    <body>
-<!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
- -->      <div id = "wrapper">
-
-
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-frontdoor">
+        <div class="navbar-header"> 
+          <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
-          <p class="navbar-brand">{{ site.name }}</p>
+          </button> -->
+		  <div class="logo-frontdoor">
+          <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
+		  </div>
         </div>
-        <div class="navbar-collapse collapse">
-         <ul class="nav navbar-nav">
-          <li class="sidebar-brand"><li><a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/index.html">Developer's Guide</a></li>
-		 <li class="sidebar-brand"><li><a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/index.html">Magento 2 Frontend Developer's Guide</a></li></ul>
-          
-          </ul>
-        </div><!--/.nav-collapse -->
+		
+		
+		<div class="navbar-collapse collapse">
+			<div class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <!-- <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>  -->
+            </ul></div>
+			
+			<div class="col-sm-3 col-md-3 pull-right">
+          <form class="navbar-form" role="search">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                </div>
+            </div>
+          </form>
+		</div>
+            <!-- <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="./">Default</a></li>
+              <li><a href="../navbar-static-top/">Static top</a></li>
+              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+            </ul> -->
+          </div>
+        
+        </div> --><!--/.navbar-collapse -->
       </div>
     </div>
+
+
+
 
 
 
        <!-- Sidebar -->
 	   
 	   
-       <div id="sidebar-wrapper">
+      <!--  <div id="sidebar-wrapper">
 	   <div class="logo">
 	   <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
 	   </div>
@@ -61,9 +91,9 @@
          
           <hr />
        </ul>
-     </div>
+     </div> -->
 
 
 
-     <div class="container">
-
+<!--      <div class="container">
+ -->
