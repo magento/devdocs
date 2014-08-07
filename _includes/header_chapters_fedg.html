@@ -11,15 +11,17 @@
    <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
    <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
   <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet">
+  <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
+  <!-- <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet"> -->
 
 <script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script>
 
  <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
+ <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
    <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
    <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
   <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
+    
 
 <script>
       $(function() {
@@ -139,8 +141,47 @@
 	 
 	 <div class="row">
         <div class="col-xs-6 col-lg-4">
+		<div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
 		<h4>TOC</h4>
-		<ul><li>Something</li></ul></div>
+		<ul class="nav bs-docs-sidenav">
+		<li>
+  <a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/fedg-overview.html">Overview</a>
+  <ul class="nav">
+    <li><a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/fedg-overview.html#fedg-topic1">Topic 1</a></li>
+    <li><a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/fedg-overview.html#fedg-topic2">Topic 2</a></li>
+    <li><a href="#js-data-attrs">Topic</a></li>
+    <li><a href="#js-data-attrs">Topic</a></li>
+    
+  </ul>
+</li>
+
+                <li>
+  <a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-overview.html">Using Cascading Style Sheets (CSS) With Magento 2</a>
+  <ul class="nav">
+    <li><a href="{{ site.baseurl }}guides/m2fedg/1.0.0.0/css-preprocess.html">CSS Preprocessing</a></li>
+    <li><a href="#js-data-attrs">Topic</a></li>
+    <li><a href="#js-data-attrs">Topic</a></li>
+    
+  </ul>
+</li>
+<li>
+  <a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/magento-ui-lib.html">Layout</a>
+  <ul class="nav">
+    <li><a href="#modals-examples">Examples</a></li>
+    <li><a href="#modals-sizes">Sizes</a></li>
+    <li><a href="#modals-remove-animation">Remove animation</a></li>
+    <li><a href="#modals-usage">Usage</a></li>
+  </ul>
+</li>
+
+		</li>
+		</ul>
+
+          </div>
+		
+		</div>
+		
+				
 		<div class="col-xs-12 col-sm-6 col-lg-8">
 
       <!-- </div> -->

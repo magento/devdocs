@@ -41,7 +41,7 @@ body {
 
 ul 
 {
-	list-style: round inside none;
+	/* list-style: round inside none; */
     margin-left: 1em;
 }
 
