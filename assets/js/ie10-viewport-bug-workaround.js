@@ -7,7 +7,7 @@
  
 // See the Getting Started docs for more information:
 // http://getbootstrap.com/getting-started/#support-ie10-width
-
+ 
 (function () {
   'use strict';
   if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
