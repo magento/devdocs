@@ -17,8 +17,9 @@ This guide discusses the following widgets:
 *	Tabs widget: Implements tabs as a single content area with multiple panels, each associated with a header in a list. This is a customized jQuery UI Tabs widget.
 
 
-
-
-
 #### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/javascript/jQuery-widget-calendar.html">Using the Calendar jQuery Widget</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/javascript/jQuery-widget-loader.html">Using the Loader jQuery Widget</a>
+*	
 
