@@ -37,8 +37,9 @@ The default dialog and translation form look like the following:
 The translateInline widget has the following options:
 
 *	<a href="#fedg_translate-widget_opt_ajaxUrl">ajaxUrl</a>
-*	TBD
-*	TBD
+*	<a href="#fedg_translate-widget_opt_area">area</a>
+*	<a href="#fedg_translate-widget_opt_translateForm">translateForm</a>
+*	<a href="#fedg_translate-widget_opt_dialog">dialog</a>
 
 <h4 id="fedg_translate-widget_opt_ajaxUrl">ajaxUrl</h4>
 
@@ -80,7 +81,86 @@ An object that contains the translation form template and the data for this temp
 		
 		**Default value**: `Please refresh the page to see your changes after submitting this form`.
 		
+<h4 id="fedg_translate-widget_opt_dialog">dialog</h4>
+
+Specifies options for the jQuery UI translation dialog box. 
+
+**Type**: Object
+
+*	`dialog.modal`
 	
+	If set to `true`, specifies a modal dialog box.
+		
+	**Type**: Boolean   
+	**Default value**: `true`
+
+*	`dialog.dialogClass`
+		
+	Adds the the specified class names to the dialog box. Space-delimited for more than one class; for example, `dialog dialog2`
+		
+	**Type**: String 
+		
+	**Default value**: `dialog` 
+ 
+*	`dialog.width` 
+
+	The width of the dialog box in pixels. 
+	
+	**Type**: Positive integer 
+	
+	**Default value**: 650 
+
+*	`dialog.height`
+  
+	The height of the dialog box in pixels. 
+
+	**Type**: Positive integer 
+	
+	**Default value**: 650
+	
+*	`dialog.title`
+
+	The title of the dialog box.
+
+	**Type**:  String 
+	
+	**Default value**: `Translate`
+
+*	`dialog.zIndex`
+  
+	The starting <a href="http://en.wikipedia.org/wiki/Z-index" target="_blank">z-index</a> for the dialog box.
+	
+	**Type**: Integer
+
+	**Default value**: 2100 
+
+*	`dialog.buttons`
+  
+	Specifies which buttons should display on the translation form as key-value pairs, where a `key` is the text of the button.   
+	
+	**Default value**:
+	
+	<pre>[{
+		text: 'Submit',
+		'class': 'form-button button'
+	},
+	{
+		text: 'Close',
+		'class': 'form-button button'
+	}]</pre>
+	
+<h2 id="fedg_widget_translateinline_customize">Customizing the translateInline Widget</h2>
+
+By changing widget options, you can customize translateInline components and behavior. 
+
+For example, you can change the templates for the edit trigger and translation form, or the translation dialog box properties (size and modal behavior). 
+
+An example follows:
+
+<script src="https://gist.github.com/xcomSteveJohnson/4c100b4a78c2a91d9b18.js"></script>
+
+The preceding sample dialog box is non-modal inline that displays for translatable items similar to the following: 
+
 
 
 #### Related Topics:
