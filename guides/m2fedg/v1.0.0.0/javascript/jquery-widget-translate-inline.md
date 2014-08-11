@@ -161,6 +161,14 @@ An example follows:
 
 The preceding sample dialog box is non-modal inline that displays for translatable items similar to the following: 
 
+![Default inline translation control is a book icon]({{ site.baseurl }}common/images/widget_translateinline_customize1.png)
+
+The translation form displays as follows:
+
+![Default inline translation control is a book icon]({{ site.baseurl }}common/images/widget_translateinline_customize2.png)
+
+
+
 
 
 #### Related Topics:
