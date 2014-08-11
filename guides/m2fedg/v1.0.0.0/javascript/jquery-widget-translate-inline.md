@@ -24,7 +24,63 @@ To initialize translateInline:
 
 <script src="https://gist.github.com/xcomSteveJohnson/8d3fc4e87110d345dccf.js"></script>
 
-The default edit trigger looks like this:
+The default edit control looks like the following:
+
+![Default inline translation control is a book icon]({{ site.baseurl }}common/images/widget_translateinline_default-control.png)
+
+The default dialog and translation form look like the following: 
+
+![Default inline translation form]({{ site.baseurl }}common/images/widget_translateinline_default-form.png)
+
+<h2 id="fedg_translate-widget_opt">translateInline Options</h2>
+
+The translateInline widget has the following options:
+
+*	<a href="#fedg_translate-widget_opt_ajaxUrl">ajaxUrl</a>
+*	TBD
+*	TBD
+
+<h4 id="fedg_translate-widget_opt_ajaxUrl">ajaxUrl</h4>
+
+URL for Ajax request for saving the translation. 
+
+**Type**: String
+
+<h4 id="fedg_translate-widget_opt_area">area</h4>
+
+The application area for which the widget is used; typically, `adminhtml` or `frontend`. 
+
+**Type**: String
+
+<h4 id="fedg_translate-widget_opt_translateForm">translateForm</h4>
+
+An object that contains the translation form template and the data for this template. 
+
+**Type**: Object
+
+*	`translateForm.template`
+
+	HTML wrapper for the output; can be a DOM element selector. 
+	
+	**Default value**: `#translate-form-template`
+	
+*	`translateForm.data` 
+
+	An object that contains the data for the translation form template, stored in the following options: 
+	
+	*	`translateForm.data.id`&mdash;Translation form ID. 
+
+		**Type**: String 
+		
+		**Default value**: `translate-inline-form` 
+
+	*	`translateForm.data.message`&mdash;The text of the message displayed in the bottom of the translation form. 
+	
+		**Type**: String 
+		
+		**Default value**: `Please refresh the page to see your changes after submitting this form`.
+		
+	
 
 
 #### Related Topics:
