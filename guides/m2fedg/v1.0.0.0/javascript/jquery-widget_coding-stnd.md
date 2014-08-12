@@ -102,16 +102,14 @@ $.widget('mage.accordion', $.ui.accordion, {
 	</tbody>
 </table>
 </div>
+</div>
 
 <h2 id="fedg_widget-coding-stnd_instant">jQuery Widget Instantiation and Resources</h2>
-
-<h3>You must use the <a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget</h3>
-
-
-<h3>Verbosity is generally encouraged</h3>
+<p>You must use the <a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget</p>
+<div id="accordion2">
+<h3>Additional JavaScript files used as resources by a widget</h3>
 <div>
-<p>Widget names should be as verbose as needed to fully describe their purpose and behavior.</p>
-
+<p>Additional JavaScript files used as resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head></code> block.</p>
 <table>
 	<tbody>
 		<tr class="table-headings">
@@ -119,27 +117,157 @@ $.widget('mage.accordion', $.ui.accordion, {
 			<th>Incorrect</th>
 		</tr>
 	<tr class="even">
-		<td><pre>(function($) {
-   "use strict";
- 
-   $.widget('mage.advancedEventTrigger', $.ui.button, {
-      // ... My custom code ...
-   });
-}) (jQuery);</pre></td>
-		<td><pre>(function($) {
-   "use strict";
- 
-   $.widget('ui.button', $.ui.button, {
-      // ... My custom code ...
-   });
-}) (jQuery);</pre></td>
+		<td><pre>
+(function($) {
+    "use strict";
+    $.mage.components({
+        validation: [
+            '<?php echo $this->getViewFileUrl('jquery/jquery.validate.js') ?>',
+            '<?php echo $this->getViewFileUrl('mage/translate.js') ?>',
+            '<?php echo $this->getViewFileUrl('mage/validation.js') ?>',
+            '<?php echo $this->getViewFileUrl('mage/backend/validation.js') ?>'
+        ] /* ... */
+    });
+})(jQuery);</pre></td>
+		<td><pre>&lt;layout>
+    &lt;default>
+        &lt;block type="Mage_Adminhtml_Block_Page" name="root" output="1" template="admin/page.phtml">
+            &lt;block type="Mage_Adminhtml_Block_Page_Head" name="head" as="head" template="page/head.phtml">
+                &lt;action method="addJs">&lt;file>jquery/jquery.validate.js&lt;/file>&lt;/action>
+                &lt;action method="addJs">&lt;file>mage/translate.js&lt;/file>&lt;/action>
+                &lt;action method="addJs">&lt;file>mage/validation.js&lt;/file>&lt;/action>
+                &lt;action method="addJs">&lt;file>mage/backend/validation.js&lt;/file>&lt;/action>
+                ...
+            &lt;/block>
+        &lt;/block>
+    &lt;/default>
+&lt;/layout></pre></td>
 	</tr>
 	
 	</tbody>
 </table>
 </div>
 
+<h3>You must use <code>$.mage.extend()</code> to extend an existing set of widget resources</h3>
+<div>
+<table>
+	<tbody>
+		<tr class="table-headings">
+			<th>Correct</th>
+			<th>Incorrect</th>
+		</tr>
+	<tr class="even">
+		<td><pre>
+&lt;script type="text/javascript">
+(function($) {
+    $.mage
+        .extend('myForm', 'form',
+            '&lt;?php echo $this->getViewFileUrl('Enterprise_Cms::page/js/form.js') ?>')
+        .extend('validation', 'validation',
+            '&lt;?php echo $this->getViewFileUrl('Enterprise_Cms::page/js/validation.js') ?>');
+})(jQuery);
+&lt;/script></pre></td>
+		<td><pre>&lt;layout>
+    &lt;default>
+        &lt;block type="Mage_Adminhtml_Block_Page" name="root" output="1" template="admin/page.phtml">
+            &lt;block type="Mage_Adminhtml_Block_Page_Head" name="head" as="head" template="page/head.phtml">
+                &lt;action method="addJs">&lt;file>Enterprise_Cms::page/js/form.js&lt;/file>&lt;/action>
+                &lt;action method="addJs">&lt;file>Enterprise_Cms::page/js/validation.js&lt;/file>&lt;/action>
+            &lt;/block>
+        &lt;/block>
+    &lt;/default>
+&lt;/layout></pre></td>
+	</tr>
+	
+	</tbody>
+</table>
 </div>
+
+<h3>You must instantiate widgets using the <code>data-mage-init</code> attribute</h3>
+<div>
+<p><strong>Note</strong>: You can use the <code>.mage()</code> plugin to instantiate widgets that use callback methods.</p>
+<p>Benefits:</p>
+<ul><li>You leverage benefits of <code>$.mage.extend()</code> and <code>$.mage.components()</code></li>
+<li>Using <code>data-mage-init</code> minimizes inline JavaScript code footprint.</li>
+<li>You can modify widget initialization parameters.</li></ul>
+<table>
+	<tbody>
+		<tr class="table-headings">
+			<th>Correct</th>
+			<th>Incorrect</th>
+		</tr>
+	<tr class="even">
+		<td><pre>&lt;form data-mage-init="{form:[], validation:{ignore:':hidden'}}">&lt;/form></pre>
+		<pre>&lt;script type="text/javascript">
+(function($) {
+    $('selector').mage('dialog', {
+        close: function(e) {
+            $(this).dialog('destroy');
+        }
+    });
+})(jQuery);
+&lt;/script></pre></td>
+		<td><pre>&lt;script type="text/javascript">
+(function($) {
+    $('[data-role="form"]')
+        .form()
+        .validation({
+            ignore: ':hidden'
+        });
+})(jQuery);
+&lt;/script></pre></td>
+	</tr>
+	
+	</tbody>
+</table>
+</div>
+
+<h3>Methods and widgets must not be declared using inline JavaScript</h3>
+<div>
+<p><strong>Note</strong>: Callback methods may be declared inline.</p>
+<table>
+	<tbody>
+		<tr class="table-headings">
+			<th>Correct</th>
+			<th>Incorrect</th>
+		</tr>
+	<tr class="even"><td>
+		<pre>$('selector').mage('dialog', {
+    close: function(e) {
+        $(this).dialog('destroy');
+    }
+});</pre>
+<pre>$('selector').mage('dialog').on('dialogclose', {
+    $(this).dialog('destroy');
+});</pre>
+<pre>$.widget('mage.dialog', $.ui.dialog, {
+    close: function() {
+        this.destroy();
+    }
+});</pre>
+<pre>&lt;script type="text/javascript">
+(function($) {
+    $.mage
+        .extend('dialog', 'dialog',
+            '&lt;?php echo $this->getViewFileUrl('Enterprise_\*Module\*::page/js/dialog.js') ?>')
+})(jQuery);
+</script></pre></td>
+		<td><pre>$('selector').dialog();
+$('selector')
+    .find('.ui-dialog-titlebar-close')
+    .on('click', function() {
+        $('selector').dialog('destroy');
+    });</pre></li></ul></td>
+	</tr>
+	
+	</tbody>
+</table>
+</div>
+</div>
+
+<h2 id="fedg_widget-coding-stnd_devgde">jQuery Widget Development Guidelines</h2>
+
+
 
 
 
