@@ -83,14 +83,16 @@ $.widget('mage.accordion', $.ui.accordion, {
 			<th>Incorrect</th>
 		</tr>
 	<tr class="even">
-		<td><pre>(function($) {
+		<td><pre>// Declaration of the frontend.advancedEventTrigger widget
+(function($) {
    "use strict";
  
    $.widget('mage.advancedEventTrigger', $.ui.button, {
       // ... My custom code ...
    });
 }) (jQuery);</pre></td>
-		<td><pre>(function($) {
+		<td><pre>// Declaration of the ui.button widget
+(function($) {
    "use strict";
  
    $.widget('ui.button', $.ui.button, {
@@ -117,31 +119,8 @@ $.widget('mage.accordion', $.ui.accordion, {
 			<th>Incorrect</th>
 		</tr>
 	<tr class="even">
-		<td><pre>
-(function($) {
-    "use strict";
-    $.mage.components({
-        validation: [
-            '<?php echo $this->getViewFileUrl('jquery/jquery.validate.js') ?>',
-            '<?php echo $this->getViewFileUrl('mage/translate.js') ?>',
-            '<?php echo $this->getViewFileUrl('mage/validation.js') ?>',
-            '<?php echo $this->getViewFileUrl('mage/backend/validation.js') ?>'
-        ] /* ... */
-    });
-})(jQuery);</pre></td>
-		<td><pre>&lt;layout>
-    &lt;default>
-        &lt;block type="Mage_Adminhtml_Block_Page" name="root" output="1" template="admin/page.phtml">
-            &lt;block type="Mage_Adminhtml_Block_Page_Head" name="head" as="head" template="page/head.phtml">
-                &lt;action method="addJs">&lt;file>jquery/jquery.validate.js&lt;/file>&lt;/action>
-                &lt;action method="addJs">&lt;file>mage/translate.js&lt;/file>&lt;/action>
-                &lt;action method="addJs">&lt;file>mage/validation.js&lt;/file>&lt;/action>
-                &lt;action method="addJs">&lt;file>mage/backend/validation.js&lt;/file>&lt;/action>
-                ...
-            &lt;/block>
-        &lt;/block>
-    &lt;/default>
-&lt;/layout></pre></td>
+		<td><script src="https://gist.github.com/xcomSteveJohnson/9a700d4f220ce06e3bc7.js"></script></pre></td>
+		<td><script src="https://gist.github.com/xcomSteveJohnson/10019eab65d68b85cbb3.js"></script></pre></td>
 	</tr>
 	
 	</tbody>
@@ -157,26 +136,8 @@ $.widget('mage.accordion', $.ui.accordion, {
 			<th>Incorrect</th>
 		</tr>
 	<tr class="even">
-		<td><pre>
-&lt;script type="text/javascript">
-(function($) {
-    $.mage
-        .extend('myForm', 'form',
-            '&lt;?php echo $this->getViewFileUrl('Enterprise_Cms::page/js/form.js') ?>')
-        .extend('validation', 'validation',
-            '&lt;?php echo $this->getViewFileUrl('Enterprise_Cms::page/js/validation.js') ?>');
-})(jQuery);
-&lt;/script></pre></td>
-		<td><pre>&lt;layout>
-    &lt;default>
-        &lt;block type="Mage_Adminhtml_Block_Page" name="root" output="1" template="admin/page.phtml">
-            &lt;block type="Mage_Adminhtml_Block_Page_Head" name="head" as="head" template="page/head.phtml">
-                &lt;action method="addJs">&lt;file>Enterprise_Cms::page/js/form.js&lt;/file>&lt;/action>
-                &lt;action method="addJs">&lt;file>Enterprise_Cms::page/js/validation.js&lt;/file>&lt;/action>
-            &lt;/block>
-        &lt;/block>
-    &lt;/default>
-&lt;/layout></pre></td>
+		<td><script src="https://gist.github.com/xcomSteveJohnson/05f55b091bdf0dbd31ba.js"></script></pre></td>
+		<td><script src="https://gist.github.com/xcomSteveJohnson/5ebd41ec54beae23b178.js"></script></td>
 	</tr>
 	
 	</tbody>
@@ -197,8 +158,10 @@ $.widget('mage.accordion', $.ui.accordion, {
 			<th>Incorrect</th>
 		</tr>
 	<tr class="even">
-		<td><pre>&lt;form data-mage-init="{form:[], validation:{ignore:':hidden'}}">&lt;/form></pre>
-		<pre>&lt;script type="text/javascript">
+		<td><pre>// Widget initialization using the data-mage-init attribute
+&lt;form data-mage-init="{form:[], validation:{ignore:':hidden'}}">&lt;/form></pre>
+		<pre>// Widget initialization using the mage plugin
+&lt;script type="text/javascript">
 (function($) {
     $('selector').mage('dialog', {
         close: function(e) {
@@ -207,7 +170,8 @@ $.widget('mage.accordion', $.ui.accordion, {
     });
 })(jQuery);
 &lt;/script></pre></td>
-		<td><pre>&lt;script type="text/javascript">
+		<td><pre>// Widget initialization without using the mage plugin
+&lt;script type="text/javascript">
 (function($) {
     $('[data-role="form"]')
         .form()
@@ -232,27 +196,32 @@ $.widget('mage.accordion', $.ui.accordion, {
 			<th>Incorrect</th>
 		</tr>
 	<tr class="even"><td>
-		<pre>$('selector').mage('dialog', {
+		<pre>// Widget initialization and configuration
+$('selector').mage('dialog', {
     close: function(e) {
         $(this).dialog('destroy');
     }
 });</pre>
-<pre>$('selector').mage('dialog').on('dialogclose', {
+<pre>// Widget initialization and binding event handlers
+$('selector').mage('dialog').on('dialogclose', {
     $(this).dialog('destroy');
 });</pre>
-<pre>$.widget('mage.dialog', $.ui.dialog, {
+<pre>// Extension for widget in a JavaScript file
+$.widget('mage.dialog', $.ui.dialog, {
     close: function() {
         this.destroy();
     }
 });</pre>
-<pre>&lt;script type="text/javascript">
+<pre>// Extension of widget resources 
+&lt;script type="text/javascript">
 (function($) {
     $.mage
         .extend('dialog', 'dialog',
             '&lt;?php echo $this->getViewFileUrl('Enterprise_\*Module\*::page/js/dialog.js') ?>')
 })(jQuery);
 </script></pre></td>
-		<td><pre>$('selector').dialog();
+		<td><pre>// Initialization
+$('selector').dialog();
 $('selector')
     .find('.ui-dialog-titlebar-close')
     .on('click', function() {
@@ -294,7 +263,7 @@ $.widget('mage.validation', $.ui.sortable, {
     .find('form')
     .mage('validation');</pre>
 </td>
-		<td><pre>// Widget "dialog" that is 
+		<td><pre>// Widget named 'dialog' that is 
 // responsible for opening content in 
 // an interactive overlay and 
 // validating the form fields.
@@ -365,7 +334,7 @@ $('selector').mage('nonModalDialog');</pre></td>
 			<th>Incorrect</th>
 		</tr>
 	<tr class="even"><td>
-		<pre>//HTML structure
+		<pre>// HTML structure
 		&lt;body>
     ...
     &lt;button data-mage-init="{button: {event: 'save', target:'[data-role=edit-form]'}}" />
@@ -447,109 +416,16 @@ $.widget("mage.form", {
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
-	<tr class="even"><td>
-		<pre>//HTML structure
-		&lt;div data-role="tabs" data-mage-init="{tabs: []}">
-    ...
-    &lt;form data-role="validation" data-mage-init="{form: [], validation: []}">
-        ...
-    &lt;/form>
-&lt;/div></pre>
-<pre>// Declaration of the backend.tabs widget
-/*
- * Extension for backend.tabs - Attach event handlers to listen events
- *     'fieldchnaged' and 'highlight.validate' from widgets located inside tabs DOM element
- */
-$.widget('mage.tabs', $.backend.tabs, {
-    /* ... */
-    _bind: function() {
-        this._super();
-        this._on({
-            'fieldchanged': this._onContentChange,
-            'highlight.validate': this._onInvalid
-        })
-    },
-    /* ... */
-});</pre>
-<pre>// Declaration of the backend.validation widget
-$.widget('mage.validation', {
-    /* ... */
-    _validate: function() {
-        $.each(this._getFields, function(index, field) {
-            if(!this._valid(field)) {
-                $(field).trigger('highlight.validation');
-            }
-        });
-    },
-    /* ... */
-});</pre>
-<pre>// Declaration of the backend.form widget
-$.widget('mage.form', {
-    /* ... */
-    _changesObserver: function(e) {
-        if(this._isChanged(e.target)) {
-            $(e.target).trigger('fieldchanged');
-        }
-    },
-    _bind: function() {
-        this._on(this.element.find(':input'), {
-            'focus blur focusin focusout': this._changesObserver
-        });
-    }
-});</pre>
+	<tr class="even"><td><script src="https://gist.github.com/xcomSteveJohnson/0282dcddf7edaee397d1.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/680ebeb53852f9159da1.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/17c95f543f4db511705d.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/7377734ade1d4ee8cdef.js"></script>
 </td>
-	<td><pre>// HTML structure
-&lt;div data-role="tabs" data-mage-init="{tabs: []}">
-    ...
-    &lt;form data-role="validation" data-mage-init="{form: [], validation: []}">
-        ...
-    &lt;/form>
-&lt;/div></pre>
-<pre>Declaration of the backend.tabs widget
-/*
- * Extension for backend.tabs - Add additional methods to show icons
- *     inside tab when content is changed or invalid
- */
-$.widget('mage.tabs', $.backend.tabs, {
-    /* ... */
-    showChangedIcon: function(tab) {
-        /* ... */
-    },
-    showValidationIcon: function(tab) {
-        /* ... */
-    },
-    /* ... */
-});</pre>
-<pre>// Declaration of the backend.validation widget
-$.widget('mage.validation', {
-    /* ... */
-    _validate: function() {
-        $.each(this._getFields, function(index, field) {
-            if(!this._valid(field)) {
-                $(field).closest('[data-role="tabs"]')
-                    .tabs('showValidationIcon', $(field).closest('data-role="tab-panel"').index());
-            }
-        })
- 
-    },
-    /* ... */
-});</pre>
-<pre>// Declaration of the backend.form widget
-$.widget('mage.form', {
-    /* ... */
-    _changesObserver: function(e) {
-            if(this._isChanged(e.target)) {
-                $(e.target).closest('[data-role="tabs"]')
-                    .tabs('showChangedIcon', $(e.target).closest('data-role="tab-panel"').index());
-            }
-        },
-    _bind: function() {
-        this._on(this.element.find(':input'), {
-            'focus blur focusin focusout': this._changesObserver
- 
-        });
-    }
-});</pre></td>
+	<td><script src="https://gist.github.com/xcomSteveJohnson/00e6f6cebc2c09b82081.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/071067a91e8a76edf882.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/04d705c90fcf9e982f26.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/b16371c02db00c1751ed.js"></script>	
+	</td>
 	</tr>
 	
 	</tbody>
@@ -565,64 +441,13 @@ $.widget('mage.form', {
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
-	<tr class="even"><td>
-		<pre>// Declaration of the backend.notificationDialog widget
-		$.widget('mage.notificationDialog', $.ui.dialog, {
-    /* ... */
-    _create: function() {
-        this._super();
-        this.element.append(this._renderNotification());
-        this.open();
-    }
-});</pre>
-<pre>// Declaration of the backend.form widget
-$.widget('mage.form', {
-    /* ... */
-    _submit: function() {
-        this._rollback();
-        this._beforeSubmit();
-        this.element.trigger('submit');
-    }
-});</pre>
-<pre>// Declaration of widget backend.validation
-$.widget('mage.validation', {
-    /* ... */
-    _bind: function() {
-        this._on({
-            submit: this.validate
-        })
-    }
-});</pre>
-<pre>// Initialization
-$('form').mage('form').mage('validation');</pre>
+	<tr class="even"><td><script src="https://gist.github.com/xcomSteveJohnson/8a8cb05f2ff980849e5a.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/956c8f2cd794e1e4790f.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/b7c41b2f5484070b6cde.js"></script>
+	<script src="https://gist.github.com/xcomSteveJohnson/c80c339f2176973f2947.js"></script>
 </td>
-	<td><pre>// Declaration of the backend.notificationDialog widget
-$.widget('mage.notificationlDialog', {
-    /* ... */
-    _create: function() {
-        this.element.append(this._renderNotification());
-        this.element
-            .mage('dialog')
-            .dialog('open');
-    }
-});</pre>
-<pre>Declaration of the backend.form widget
-$.widget('mage.form', {
-    /* ... */
-    _create: function() {
-         this._bind();
-         this.element.mage('validation');
-    },
-    _submit: function() {
-        this._rollback();
-        this._beforeSubmit();
-        if (this.element.validation('validate')) {
-            this.element.submit();
-        }
-    }
-});</pre>
-<pre>// Initialization
-$('form').mage('form');</pre>
+	<td><script src="https://gist.github.com/xcomSteveJohnson/136eaab18300b104b987.js"></script>
+	
 </td>
 	</tr>
 	
@@ -748,7 +573,7 @@ $.widget('mage.accordion', {
 </table>
 </div>
 
-<h3>A widget's element selection should start with this.element</h3>
+<h3>A widget's element selection should start with <code>this.element</code></h3>
 <div>
 <table>
 	<tbody>
@@ -767,9 +592,9 @@ $.widget('mage.accordion', {
 </table>
 </div>
 
-<h3>Widgets must not interact with certain DOM-elements</h3>
+<h3>Widgets must not interact with certain DOM elements</h3>
 <div>
-<p>Widgets must not interact with DOM-elements that can be selected with <code>this.element.parent()</code>, <code>this.element.parents('selector')</code>, or <code>this.element.closest('selector')</code>.</p>
+<p>Widgets must not interact with DOM elements that can be selected with <code>this.element.parent()</code>, <code>this.element.parents('selector')</code>, or <code>this.element.closest('selector')</code>.</p>
 <p>Benefit: Reduced number of widget conflicts because widgets interact only with their child elements.</p>
 <table>
 	<tbody>
@@ -827,7 +652,7 @@ $.widget('mage.accordion', {
 </table>
 </div>
 
-<h3>If an immediate state change is required, the change must be processed by the _setOption method</h3>
+<h3>If an immediate state change is required, the change must be processed by the <code>_setOption</code> method</h3>
 <div>
 <table>
 	<tbody>
@@ -857,7 +682,9 @@ $('selector')
     .menu('open')
     .addClass('ui-state-active');</pre>
 </td>
-	<td><pre>// Call the 'open' method on the menu widget without using the public widgets API
+	<td><pre>// Call the 'open' method on the 
+// menu widget without using the public 
+// widgets API
 var menuInstance = $('selector').data('menu');
 menuInstance.open();
 menuInstance.element.addClass('ui-state-active');
@@ -898,7 +725,7 @@ menuInstance.element.addClass('ui-state-active');
 <script src="https://gist.github.com/xcomSteveJohnson/b9e1fb5a78fe88e510db.js"></script>
 </div>
 
-<h3>All event handlers must be bound by the _bind() method</h3>
+<h3>All event handlers must be bound by the <code>_bind()</code> method</h3>
 <div>
 <p>Benefit: All widget event handlers are bound in one place (by the <code>_bind</code> method), which makes it easy to find what events the widget reacts on.</p>
 <table>
@@ -939,5 +766,7 @@ menuInstance.element.addClass('ui-state-active');
 
 </div>
 
-
+<h4>Related Topics:</h4>
+<ul><li><a href="http://api.jqueryui.com/jQuery.widget" target="_blank">jQuery UI widget documentation</a></li>
+<li><a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/javascript/js-mage-plugin.html">Using the Magento Mage JavaScript Plug-In<a></li></ul>
 
