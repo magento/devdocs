@@ -1,16 +1,43 @@
----
+ï»¿---
 layout: howtom2devgde_chapters_fedg
 title: Overriding a Layout
 ---
  
-<h1 id="layout_override">{{ page.title }}</h1>
+<h1 id="fedg_layout_override">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/m2fedg/v1.0.0.0/layout/layout-override.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="fedg_using-ui-lib_overview">Overview of the Magento 2 UI Library</h2>
+<h2 id="fedg_layout_override_overview">Overview of Overriding a Layout</h2>
+
+Not all layout customizations can be performed by extending existing layouts.  If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the base or parent theme’s file.
+
+Layout files with instructions that override the base or parent theme files are referred to as *overriding layout files*.
+
+Examples of customizations that involve overriding layouts:
+
+*	Suppressing method invocation.
+
+	**Note**: Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.
+	
+*	Modifying method arguments.
+*	Cancelling block/container removal using the remove directive.
+*	Setting XML attributes of blocks and containers.
+
+	**Note**: Overriding is not needed to change the `htmlClass` of a container when `htmlClass` is defined in the original container. In this case, it is better to avoid changing the class (that is, renaming it). Instead, you should target CSS rules to the original class.
+	
+*	Removing block arguments.
+*	Modifying and suppressing handles inclusion.
+*	Removing all handle instructions by declaring an overriding layout file with the empty handle.
+
+<h2 id="fedg_layout_override_howto">How to Override a Layout</h2>
+
+This section discusses how to override:
+
+*	Base layout
+*	Theme layout
 
 
-
+ 
 
 #### Related Topics:
 
