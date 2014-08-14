@@ -36,8 +36,53 @@ This section discusses how to override:
 *	Base layout
 *	Theme layout
 
+<h3 id="fedg_layout_override_base">Overriding Base Layouts</h3>
 
- 
+To add an overriding base layout file (to override a base layout provided by the module):
 
+1.	Create a layout file following the layout files conventions.
+2.	Put it according to the location convention, that is:
+
+<pre>__app/design/[area]/[your theme path]
+  |__/[your namespace]_[your module]
+    |__/layout
+      |__/override
+        |--[ name1 ].xml
+        |--[ name2 ].xml</pre>
+
+Where:
+
+`[your theme path] is a path to the theme relative to the themes directory.
+`[area] is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
+
+<h3 id="fedg_layout_override_theme">Overriding Theme Layouts</h3>
+
+To add an overriding theme file (to override parent layout):
+
+1.	Create a layout file following the layout files conventions.
+2.	Put it according to location convention, that is:
+
+<pre>__app/design/area]/[your theme path]
+  |__/[your namespace]_[your module]
+    |__/layout
+      |__/override
+        |__/[parent _theme ]
+          |--[ name1 ].xml
+          |--[ name1 ].xml</pre>
+
+Where:
+
+`[parent_theme]` is the code of the theme the new layout file belongs to. The parent theme can be a direct or indirect ancestor; that is, parent, grandparent, and so on.
+
+<h2 id="layout_override_bad">Avoiding Layout Customization Mistakes</h2>
+
+Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. Magento strongly recommends you not make the following changes:
+
+*	Changing block name or alias. The name of a block should not be changed, as well as the alias of a block remaining in the same parent element.
+*	Changing handle inheritance. For example, you should not change the page type parent handle.
+
+
+		  
+		  
 #### Related Topics:
 
