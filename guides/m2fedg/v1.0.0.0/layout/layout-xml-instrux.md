@@ -304,10 +304,9 @@ Attributes:
 </table>
 
 <h2 id="fedg_layout_xml-instruc_others">All Other XML Instructions</h2>
-
+<div id="accordion">
 This section discusses all other XML instructions you can use in a layout.
 
-<div id="accordion">
 <h3>Include CSS files in a page head block (browsers other than Internet Explorer)</h3>
 <div>
 <p>Examples:</p>
@@ -315,7 +314,7 @@ This section discusses all other XML instructions you can use in a layout.
 <script src="https://gist.github.com/xcomSteveJohnson/77721ca37bf9842003e0.js"></script>
 <p>To use this code, replace the following:</p>
 <ul><li>the file name <code>css/styles.css</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-<li>the block name <code>css-styles-css</code> in <code>&lt;block name=""/> to make it more relevant to your customization. This name should be unique.</li></ul>
+<li>the block name <code>css-styles-css</code> in <code>&lt;block name=""/></code> to make it more relevant to your customization. This name should be unique.</li></ul>
 </div>
 
 <h3>Include CSS files in a page head block (Internet Explorer only)</h3>
@@ -325,12 +324,185 @@ This section discusses all other XML instructions you can use in a layout.
 
 <p>To use this code, replace the following:</p>
 <ul><li>the file name <code>css/styles.css</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-<li>the block name <code>css-styles-ie</code> in <code>&lt;block name=""/></code> to make it more relevant to your customization. This name should be unique.</li>
+<li>the block name <code>css-styles-ie</code> in <code>&lt;block name=""/></code> to match the name of your CSS. This name should be unique.</li>
 <li>IE version restriction parameter in <code>&lt;argument name="properties">&lt;item name="ie_condition">&lt;/item>&lt;/argument></code></li></ul>
-
 </div>
 
+<h3>Reference an external CSS file in a page head block</h3>
+<div>
+<p>Example:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/eee1dbf762e112e2ef54.js"></script>
+<p>To use this code, replace the following:</p>
+<ul><li>the link <code>http://fonts.googleapis.com/css?family=Alegreya+Sans</code> in <code>&lt;argument name="url">&lt;/argument></code></li>
+<li>the block name <code>google-font</code> in <code>&lt;block name=""/></code> to match the name of your block. This name should be unique.</li></ul>
 </div>
+
+<h3>Include JavaScript files in a page head block (browsers other than Internet Explorer)</h3>
+<div>
+<p>Example:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/0ac8690ce1552903ac06.js"></script>
+<p>To use this code, replace the following:</p>
+<ul><li>the file name <code>js/script.js</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
+<li>the block name <code>js-head-js</code> in <code>&lt;block name=""/></code> to match the name of your JavaScript file. This name should be unique.</li></ul>
+</div>
+
+<h3>Include JavaScript files in a page head block (Internet Explorer only)</h3>
+<div>
+<p>Example:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/f269219cc9b66a151c10.js"></script>
+<p>To use this code, replace the following:</p>
+<ul><li>the file name <code>js/scrip-ie.js</code> in <code>&lt;argument>&lt;argument/></code></li>
+<li>the block name <code>js-selectivizr-js</code> in <code>&lt;block name=""/></code> to match the name of your JavaScript file.</li>
+<li>IE version restriction parameter in <code>&lt;argument name="properties">&lt;item name="ie_condition">&lt;/item>&lt;/argument></code></li></ul>
+</div>
+
+<h3>Apply a CSS class to a block</h3>
+<div>
+<p>You can use the following example for any block that has the <code>css_class</code> property.</p>
+<p>Example:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/5e7fefddf7689824ec44.js"></script>
+<p>To use this code, replace the following:</p>
+<ul><li>the name of the block <code>footer_links</code> in <code>&lt;referenceBlock name=""></code></li>
+<li>the name of the CSS class <code>links</code> in <code>&lt;argument name="css_class">&lt;/argument></code></li></ul>
+</div>
+
+<h3>Remove a block</h3>
+<div>
+<p>Example:</p>
+<pre>&lt;remove name="footer_links"/></pre>
+<p>Replace <code>footer_links</code> with the name of the block to remove.</p>
+</div>
+
+<h3>Move a block to another block</h3>
+<div>
+<p>Example:</p>
+<pre>&lt;move element="footer_links" destination="top.links" /></pre>
+<p>To use this code:</p>
+<ul><li>replace <code>footer _links</code> in <code>&lt;move element=""/></code> with the name of the block to move</li>
+<li>replace <code>top.links</code> in <code>&lt;move destination=""/></code> with the name of the destination block</li>
+<li>use <code>before</code> and <code>after</code> to order the elements</li></ul>
+</div>
+
+<h3>Ordering blocks</h3>
+<div>
+<p>The following examples show how to:</p>
+<ul><li>Place a block before all other blocks</li>
+<li>Place a block after a particular block</li></ul>
+<p>The examples are basically interchangeable; for example, if you use the dash character with <code>after</code>, the block is ordered after all other blocks. For more information, see TBD.</p>
+<p>Examples:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/1a7904f730e62050a918.js"></script>
+<p>To use these examples, replace the value of <code>before</code> or <code>after</code> with either dash (before or after all other blocks) or with the name of an existing block.</p>
+</div>
+
+<h3>Set the template used by a block</h3>
+<div>
+<p>Example:</p>
+<pre>&lt;block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/></pre>
+<p>To use this code, replace the block class, name, and path to the template.</p>
+</div>
+
+<h3>Specify a page handle</h3>
+<div>
+<p>Example:</p>
+<pre>&lt;update handle="page_two_columns_left"/></pre>
+<p>To use this code, replace the <code>page_two_columns_left</code> in <code>&lt;update handle=""/></code> with one of the following:</p>
+<ul><li><code>page_empty</code>&mdash;Empty page, used mostly for Ajax responses</code></li>
+<li><code>page_one_column</code>&mdash;One-column design, used mostly for mobile devices</li>
+<li><code>page_two_columns_left</code>&mdash;Left-sided, two-column design</li>
+<li><code>page_two_columns_right</code>&mdash;Right-sided, two-column design</li>
+<li><code>page_three_columns</code>&mdash;Three-column design</li></ul>
+</div>
+
+<h3>Create a new container</h3>
+<div>
+<p>Example:</p>
+<pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
+<p>Replace the values with your own. For more information, see the earlier sections in this topic.</p>
+</div>
+</div>
+
+<h2 id="fedg_xml-instrux_before-after">Using the before And after Attributes</h2>
+
+To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the layout attributes `before` and `after`.
+
+These optional attributes can be used in layout XML files to control the order of elements in their common parent.
+
+An example of a layout declaration with before and after usage follows:
+
+<script src="https://gist.github.com/xcomSteveJohnson/a88b5c8c4e53682e2596.js"></script>
+
+The following table shows possible attribute values:
+
+<table>
+	<tbody>
+		<tr class="table-headings">
+			<th>Attribute</th>
+			<th>Value</th>
+			<th>Description</th>
+		</tr>
+
+	<tr class="even">
+		<td>before</td>
+		<td>-</td>
+		<td>The block displays before all other elements in its parent node.</td>
+	</tr>
+		<tr class="odd">
+		<td>before</td>
+		<td>[element name]</td>
+		<td>The block displays before the named element.</td>
+	</tr>
+	<tr class="even">
+		<td>before</td>
+		<td>empty value or [element name] is absent</td>
+		<td>Use the value of <code>after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+	</tr>
+	<tr class="even">
+		<td>after</td>
+		<td>-</td>
+		<td>The block displays after all other elements in its parent node.</td>
+	</tr>
+		<tr class="odd">
+		<td>after</td>
+		<td>[element name]</td>
+		<td>The block displays after the named element.</td>
+	</tr>
+	<tr class="even">
+		<td>after</td>
+		<td>empty value or [element name] is absent</td>
+		<td>Use the value of <code>before</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+	</tr>
+	
+	</tbody>
+</table>
+
+Examples:
+
+<table>
+	<tbody>
+		<tr class="table-headings">
+			<th>Situation</th>
+			<th>Result</th>
+		</tr>
+
+	<tr class="even">
+		<td>Both <code>before</code> and <code>after</code> attributes are present</td>
+		<td><code>after</code> takes precedence.</td>
+	</tr>
+	<tr class="odd">
+		<td>Both <code>before</code> and <code>after</code> attributes are absent or empty</td>
+		<td>The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements.</td>
+	</tr>
+	<tr class="even">
+		<td>Several elements have <code>before</code> or <code>after</code> set to dash</td>
+		<td>All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
+	</tr>
+	<tr class="odd">
+		<td>The <code>before</code> or <code>after</code> attribute's value refers to an element that is not located in the parent node of the element being defined.</td>
+		<td>The element displays at a random location that doesn't violate requirements for the correctly positioned elements.</td>
+	</tr>
+	</tbody>
+</table>
+
 
 <h4>Related Topics:</h4>
 
