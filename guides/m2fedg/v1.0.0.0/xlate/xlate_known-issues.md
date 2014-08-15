@@ -10,6 +10,6 @@ title: Known Translation Issues, Workarounds, and Improvements
 <h2 id="fedg_jq-widget-coding-stnd_overview">About Magento jQuery Coding Standards</h2>
 
 
-**** Related Topics:
+#### Related Topics:
 
 
