@@ -71,12 +71,10 @@ Desktop:
 
 ![Viewing a product catalog page on a desktop device using the Blank responsive theme.]({{ site.baseurl }}common/images/rwd_blank_desktop.png)
 
-
-
-
-
-
-
 #### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/rwd/rwd_using-blocks.html">Using Blocks in Your Responsive Design</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>	
 
 
