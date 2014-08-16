@@ -52,8 +52,8 @@ To add an overriding base layout file (to override a base layout provided by the
 
 Where:
 
-`[your theme path] is a path to the theme relative to the themes directory.
-`[area] is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
+`[your theme path]` is a path to the theme relative to the themes directory.
+`[area]` is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
 
 <h3 id="fedg_layout_override_theme">Overriding Theme Layouts</h3>
 
@@ -67,7 +67,7 @@ To add an overriding theme file (to override parent layout):
     |__/layout
       |__/override
         |__/[parent _theme ]
-          |--[ name1 ].xml
+          |--[ name1 ].xml  
           |--[ name1 ].xml</pre>
 
 Where:
@@ -82,7 +82,5 @@ Although the layout overriding mechanism provides great customization flexibilit
 *	Changing handle inheritance. For example, you should not change the page type parent handle.
 
 
-		  
-		  
 #### Related Topics:
 

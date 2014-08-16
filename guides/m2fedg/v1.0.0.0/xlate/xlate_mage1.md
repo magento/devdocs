@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters_fedg
 title: How Translation Works in Magento 1.x
 ---
@@ -35,7 +35,7 @@ In XML files, the conventional `translate` and `module` attributes indicate the 
 
 `translate` indicates a child node that contains the phrase, and `module` indicates the context of a module. The context indicates a kind of namespace for this phrase.
 
-<h2 id="fedg_xlate_csv">CSV Dictionaries</h2>
+<h2 id="fedg_xlate_csv_mage1">CSV Dictionaries</h2>
 
 The dictionaries are located in the source code in the files `app/locale/[locale]/[your namespace]_[your module].csv`. It's a two-column, comma-separated values (CSV), such as `app/locale/en_US/Mage_Checkout.csv`:
 
@@ -61,14 +61,14 @@ For Magento to recognize a dictionary, you must declare it in the module configu
 
 A similar CSV dictionary can be found in a theme by a conventional name that doesn't need to be declared in `config.xml`, such as `app/design/frontend/default/modern/locale/en_US/translate.csv`. This dictionary would match phrases found in theme `.phtml` or `.xml` files.
 
-<h2 id="fedg_xlate_dict">About Translation Dictionaries</h2>
+<h2 id="fedg_xlate_dict_mage1">About Translation Dictionaries</h2>
 
 Translation dictionaries are also stored in the database in the `core_translate` table:
 
 <table>
 	<tbody>
 		<tr class="table-headings">
-			<th>key_id</th>
+			<th>key_id</th> 
 			<th>string</th>
 			<th>store_id</th>
 			<th>translate</th>
@@ -86,8 +86,35 @@ Translation dictionaries are also stored in the database in the `core_translate`
 	</tbody> 
 </table>
 
+The relevant fields are:
 
+*	`string`&mdash;the original phrase in the default locale (`en_US`). It can also contains the optional module context (`Mage_Core::`)
+*	`translate`&mdash;the translation phrase
+*	`locale`&mdash;language identifier
+
+<h2 id="fedg_xlate_phrase_mage1">How Magento 1.x Translates Phrases</h2>
+
+To translate a phrase, you use a *context* that consists of the following variables:
+
+*	Application context: current locale, application area, theme, store view
+*	Invocation context (arguments of `__())`: module context, the string literal
+ 
+Based on the context, Magento 1.x first attempts to load the translated phrase from cache. If it is not there, the dictionary is built by combining the following:
+
+*	Merge CSV dictionaries of all active modules
+*	Merge CSV dictionaries of the active theme
+*	Load dictionary from the database for the current store view
+ 
+Finally, the phrase is replaced if a match is found in the dictionary. Otherwise, the original value displays.
+
+<h2 id="fedg_xlate_inline_mage1">Using Magento 1.x Inline Translation</h2>
+
+Magento 1.x's Inline Translation tool enables you to edit phrases in-line. After you edit the phrases, they are stored in the database dictionaries.
+
+Out of the box, this tool is the only mechanism to edit database dictionaries.
+
+The only relation of this mechanism to translations is that it is coupled to the invocation of `__()` calls. In other words, in-line translation logic is incorporated into the `__()` method because it happens to provide a layer of indirection.
 
 #### Related Topics:
 
-
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/xlate/xlate_mage2.html">Magento 2 Translation, Known Issues, and Workarounds</a>

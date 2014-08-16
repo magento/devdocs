@@ -1010,7 +1010,14 @@ padding-top: 5em;
 @media (min-width: 768px) {
   .bs-docs-sidebar {
     padding-left: 1px;
-  }
+  }}
+  
+/* SRJ - dd override */
+dd {
+	margin-left: 1em;
+	padding-bottom: 20px;
+	line-height: normal;
+}
 
 
 /* SRJ - the following doesn't work. The expand/collapse icon is always +, never
