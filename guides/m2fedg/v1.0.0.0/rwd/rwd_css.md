@@ -29,9 +29,23 @@ CSS snippet:
 
 <h2 id="fedg_rwd_ex">CSS Examples From the Blank Theme</h2>
 
-To change the position of elements depending on the screen width, you need to redefine the styles which control their behavior. The following example shows how the 2 columns with left bar layout of a category page is rearranged from the mobile to the desktop version in the Blank theme.
+To change the position of elements depending on the screen width, you need to redefine the styles which control their behavior. The following example compares a two-column display for mobile and desktop viewports.
 
-Mobile version: Columns in the two-columns with left bar layout are located one after the other as you can see it in the following figure.
+Mobile version: The following figure shows the main and sidebar columns defined one after the other.
+
+![In the mobile viewport, the columns display one on top of the other.]({{ site.baseurl }}common/images/rwd_css_resp_mobile.png)
+
+Desktop version: After the breakpoint of 768px is reached, the page uses CSS provided in the `@media` query to display the same columns side by side.
+
+CSS snippet:
+
+<script src="https://gist.github.com/xcomSteveJohnson/787060623b87ef506bc0.js"></script>
+
+How it displays in a desktop browser:
+
+![In the desktop viewport, the columns display side by side.]({{ site.baseurl }}common/images/rwd_css_resp_desktop.png)
+
+
 
 
 
