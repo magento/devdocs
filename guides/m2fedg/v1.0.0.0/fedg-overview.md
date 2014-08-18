@@ -9,23 +9,7 @@ title: Overview of Magento 2 Frontend Development
 
 <h5>Contents</h5>
 
-<div tocfrom="h2, h3, h4" toctemplate="modern:nonum"></div>
-
 <h2 id="fedg-overview-introduction">Introduction</h2>
-
-This guide discusses how to change the look and feel of your Magento storefront (sometimes referred to as the *front end* or *frontend*). 
-
-<h3>Head3</h3>
-
-TBD
-
-<h4>Head4</h4>
-
-TBD
-
-<h2>Head2</h2>
-
-TBD 
 
 There are four levels of customization you can apply to your site, where the levels require different development skills:
 
