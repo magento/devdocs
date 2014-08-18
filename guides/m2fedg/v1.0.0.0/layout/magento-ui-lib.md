@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using the Magento 2 UI Library
+title: Magento 2 UI library
 ---
  
 <h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
@@ -119,5 +119,5 @@ You can find more information on the Magento UI library specific mixins and the 
 
 
 
-#### Related Topics:
+<h2 class="heading2">Related Topics:</h2>
 
