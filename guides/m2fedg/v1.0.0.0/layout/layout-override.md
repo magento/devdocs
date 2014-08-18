@@ -9,10 +9,10 @@ title: Overriding a Layout
 
 <h2 id="fedg_layout_override_overview">Overview of Overriding a Layout</h2>
 
-Not all layout customizations can be performed by extending existing layouts.  If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the base or parent theme’s file.
+Not all layout customizations can be performed by extending existing layouts.  If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the base or parent theme's file.
 
 Layout files with instructions that override the base or parent theme files are referred to as *overriding layout files*.
-
+ 
 Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
@@ -76,7 +76,7 @@ Where:
 
 <h2 id="layout_override_bad">Avoiding Layout Customization Mistakes</h2>
 
-Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. Magento strongly recommends you not make the following changes:
+Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:
 
 *	Changing block name or alias. The name of a block should not be changed, as well as the alias of a block remaining in the same parent element.
 *	Changing handle inheritance. For example, you should not change the page type parent handle.

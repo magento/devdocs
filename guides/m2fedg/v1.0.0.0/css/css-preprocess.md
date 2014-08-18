@@ -26,7 +26,7 @@ For example, if you need to change the color of some page element, you can do th
 
 Magento 2 provides LESS preprocessor out of the box. It is located in your <code>[Magento install dir]/lib/internal/Magento/Framework/Css/PreProcessor</code>.
 
-We chose the LESS preprocessor was chosen for the following reasons: 
+We chose the LESS preprocessor was chosen for the following reasons:  
 
 *	A built-in compilation in Magento to support multi-level theme inheritance and Magento publisher behavior.
 *	Possible to use the client-side LESS.js compiler, which is the easiest way to get started and is good for developing with LESS.
@@ -63,7 +63,7 @@ Example before and after processing:
 			<th>After</th>
 		</tr>
 	<tr class="even">
-		<td><pre>//@magento_import "<some_id>";</pre></td>
+		<td><pre>//@magento_import "[id]";</pre></td>
 		<td><pre>@import "path/to/dir1/some_file";
 @import "path/to/file/file1.less";
 @import "path/to/file/file2.less";</pre></td>
@@ -71,10 +71,10 @@ Example before and after processing:
 	</tbody>
 </table>
 
-<p>Keep the following in mind:</p>
+Keep the following in mind:
 
-<ul><li><code>@magento_import</code> must contain the file path. You can omit the file extension.</li>
-<li>The file path can be written with either single or double quotes.</li></ul>
+*	<code>@magento_import</code> must contain the file path. You can omit the file extension.
+*	The file path can be written with either single or double quotes.
 
 <p>Example:</p>
 
@@ -83,17 +83,19 @@ Example before and after processing:
 
 <h2 id="fedg_css-preprocess_less-example">Example of Using LESS</h2>
 
-<p>Let's have a look at how LESS preprocessing actually works:</p>
-<ol><li>The LESS preprocessor checks if the requested CSS file is found. If the CSS file is found, LESS preprocessor stops its execution. Otherwise, continue with the next step. </li>
-<li>The LESS preprocessor changes the extension of the requested file to .less and tries to find the file with Magento fallback mechanism. In case less is not found, LESS preprocessor stops its execution. Otherwise, continue with the next step.</li>
-<li>The LESS preprocessor reads LESS file contents and resolves <code>@magento_import</code> and default LESS import instructions. Imported files are processed recursively.</li>
-<li>The LESS preprocessor resolves all paths in LESS files to absolute paths in the system using fallback mechanism. All files resolved by LESS preprocessor are copied to var/temp/less/ directory with unique file path  that covers all the system aspects such as theme, locale, area and so on.</li>
-<li>To compile LESS sources files into CSS, the Magento LESS preprocessor uses the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Css/PreProcessor/AdapterInterface.php" target="_blank">LESS PHP adapter</a>. The LESS PHP adapter works with the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Css/PreProcessor/Adapter/Oyejorge.php" target="_blank">Oyejorge LESS parser</a> that is compatible with less.js version 1.7 version. The generated CSS file is located in the same directory the compilation was executed. </li></ol>
+Here's how LESS preprocessing actually works:
+
+1.	The LESS preprocessor checks if the requested CSS file is found. If the CSS file is found, LESS preprocessor stops its execution. Otherwise, continue with the next step. 
+2.	The LESS preprocessor changes the extension of the requested file to .less and tries to find the file with Magento fallback mechanism. In case less is not found, LESS preprocessor stops its execution. Otherwise, continue with the next step.
+3.	The LESS preprocessor reads LESS file contents and resolves <code>@magento_import</code> and default LESS import instructions. Imported files are processed recursively.
+4.	The LESS preprocessor resolves all paths in LESS files to absolute paths in the system using fallback mechanism. All files resolved by LESS preprocessor are copied to var/temp/less/ directory with unique file path  that covers all the system aspects such as theme, locale, area and so on.
+5.	To compile LESS sources files into CSS, the Magento LESS preprocessor uses the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Css/PreProcessor/AdapterInterface.php" target="_blank">LESS PHP adapter</a>. The LESS PHP adapter works with the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Css/PreProcessor/Adapter/Oyejorge.php" target="_blank">Oyejorge LESS parser</a> that is compatible with less.js version 1.7 version. The generated CSS file is located in the same directory the compilation was executed. 
 
 <h2 id="fedg_css-preprocess-url-resolver">About the CSS URL Resolver</h2>
 <p>The CSS URL Resolver looks for links in CSS content (that is, links to images, fonts, backgrounds, and so on).</p>
-<p>When links are found, the CSS URL Resolver publishes them. After that, CSS URL Resolver replaces old links with URLs to the published files. </p>
+<p>When links are found, the CSS URL Resolver publishes them. After that, the CSS URL Resolver replaces the old links with URLs to the published files. </p>
 <p>Example:</p>
+
 <table>
 	<tbody>
 		<tr class="table-headings">
@@ -101,25 +103,11 @@ Example before and after processing:
 			<th>After</th>
 		</tr>
 	<tr class="even">
-		<td><pre>/*file in relation to root*/
-@import url("../import.css");
- 
-.zoom.lightbox .gallery.control.next:before {
-                ...
-/*file in relation to module*/
-background-image: url('Magento_Customer::images/module-background-file.png');
-}</pre></td>
-		<td><pre>/* converted url example */
-@import url("http://your_domain/pub/.../import.css");
-  
-.zoom.lightbox .gallery.control.next:before {
-                ...
-/* converted url example */
-background-image: url('http://your_domain/pub/.../images/module-background-file.png');
-}</pre></td>
+		<td><script src="https://gist.github.com/xcomSteveJohnson/00b91311155da6aa95fc.js"></script></td>
+		<td><script src="https://gist.github.com/xcomSteveJohnson/840d2750624894c44f9a.js"></script></td>
 	</tr>
 	</tbody>
 </table>
 
-<h4>Related Topics:</h4>
+#### Related Topics:
 

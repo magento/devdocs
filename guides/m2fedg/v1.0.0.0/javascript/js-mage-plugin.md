@@ -242,7 +242,6 @@ When the `contentUpdated` event is triggered, it goes up to the `<body>` node, a
         $(this).html(html).trigger('contentUpdated');
     });
 })(jQuery);</pre>
-})(jQuery);</pre>
 
 
 #### Related Topics:
