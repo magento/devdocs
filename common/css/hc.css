@@ -1078,7 +1078,7 @@ a.button:visited {color:white;}
 a.button:active  {color:white;}
 
 a.ext1:link    {color:blue;}
-a.ext1:visited {color:darkblue;}
+a.ext1:visited {color:blue;}
 a.ext1:hover   {color:darkorange;}
 
 blockquote.codesample {
