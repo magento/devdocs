@@ -6,7 +6,11 @@ title: Magento 2 Customer Service
  <div class="container">
 
       <div class="blog-header">
+<<<<<<< HEAD
         <h1 class="heading1">Customer service</h1>
+=======
+        <h1 class="heading1 blog-title">Customer service</h1>
+>>>>>>> Update gh-pages branch
                 <p class="blog-description">Use customer account service objects to create and manage customers.</p>
       </div>
 
@@ -32,7 +36,11 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
+<<<<<<< HEAD
 <table class="docutils field-list" frame="void" rules="none"  width="400">
+=======
+<dl><dt><table class="docutils field-list" frame="void" rules="none"  width="400">
+>>>>>>> Update gh-pages branch
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -43,8 +51,14 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
+<<<<<<< HEAD
 </table>
 <p/>
+=======
+</table></dt>
+<dd><p></p></dd>
+<dt>
+>>>>>>> Update gh-pages branch
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -57,7 +71,13 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
 <p/>
+=======
+</dt>
+<dd><p></p></dd>
+<dt>
+>>>>>>> Update gh-pages branch
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -70,6 +90,12 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
+=======
+</dt>
+<dd></dd>
+</dl>
+>>>>>>> Update gh-pages branch
            
           </div><!-- /.blog-post -->
 
@@ -82,7 +108,11 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
+<<<<<<< HEAD
 <table class="docutils field-list" frame="void" rules="none"  width="400">
+=======
+<dl><dt><table class="docutils field-list" frame="void" rules="none"  width="400">
+>>>>>>> Update gh-pages branch
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -93,7 +123,13 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
+<<<<<<< HEAD
 </table>
+=======
+</table></dt>
+<dd><p></p></dd>
+<dt>
+>>>>>>> Update gh-pages branch
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -106,6 +142,12 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
+=======
+</dt>
+<dd><p></p></dd>
+<dt>
+>>>>>>> Update gh-pages branch
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -118,6 +160,12 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
+=======
+</dt>
+<dd></dd>
+</dl>
+>>>>>>> Update gh-pages branch
            
           </div><!-- /.blog-post -->
           <div class="blog-post">
@@ -129,7 +177,11 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
+<<<<<<< HEAD
 <table class="docutils field-list" frame="void" rules="none"  width="400">
+=======
+<dl><dt><table class="docutils field-list" frame="void" rules="none"  width="400">
+>>>>>>> Update gh-pages branch
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -140,7 +192,13 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
+<<<<<<< HEAD
 </table>
+=======
+</table></dt>
+<dd><p></p></dd>
+<dt>
+>>>>>>> Update gh-pages branch
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -153,7 +211,13 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
 
+=======
+</dt>
+<dd><p></p></dd>
+<dt>
+>>>>>>> Update gh-pages branch
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -166,6 +230,12 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
+=======
+</dt>
+<dd></dd>
+</dl>
+>>>>>>> Update gh-pages branch
            
           </div><!-- /.blog-post -->
 
