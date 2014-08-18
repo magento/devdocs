@@ -12,6 +12,7 @@
 body {
   padding-top: 2em;
   padding-bottom: 7em;
+  background-color:white;
   /* padding-top: 50px;
   padding-bottom: 20px; */
 }
@@ -132,7 +133,8 @@ p
 {
   width:80%;
   padding-right:0;
-  padding-top:30px
+  padding-top:30px;
+  background-color:white;
 }
 
 .container a
