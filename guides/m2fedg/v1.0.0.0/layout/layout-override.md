@@ -66,9 +66,9 @@ To add an overriding theme file (to override parent layout):
   |__/[your namespace]_[your module]
     |__/layout
       |__/override
-        |__/[parent _theme ]
-          |--[ name1 ].xml  
-          |--[ name1 ].xml</pre>
+        |__/[parent _theme]
+          |--[name1].xml  
+          |--[name2].xml</pre>
 
 Where:
 
