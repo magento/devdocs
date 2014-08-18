@@ -131,4 +131,3 @@ Following is an illustration of how layout processing would look for two modules
 *	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-override.html">Overriding a Page Layout</a>
 *	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
 *	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-extend.html">Extending a Page Layout</a>
-*	
