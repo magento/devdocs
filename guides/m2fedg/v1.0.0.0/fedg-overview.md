@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento 2 Front-end Development
+title: Overview of Magento 2 Frontend Development
 ---
  
 <h1 id="fedg-overview">Overview of Magento 2 Frontend Development </h1>
