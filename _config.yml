@@ -4,7 +4,7 @@ highlighter: pygments
 encoding: utf-8
 baseurl: /pages/difleming/devdocs_internal/
 description: Magento Developer Documentation
-githuburl: https://github.scm.corp.ebay.com/difleming/devdocs_internal/tree/master/
+githuburl: https://github.scm.corp.ebay.com/difleming/devdocs_internal/
 namem2fedg: Magento 2 Frontend Developer's Guide
 namem2devgde: Magento 2 Developer's Guide
 namem2apiref: Magento 2 API Reference
