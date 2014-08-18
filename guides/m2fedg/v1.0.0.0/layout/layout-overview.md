@@ -1,6 +1,6 @@
 ﻿---
 layout: howtom2devgde_chapters_fedg
-title: Introduction to Magento 2 Theming
+title: Introduction to Magento 2 Theming 
 ---
  
 <h1 id="layout_intro">{{ page.title }}</h1>
