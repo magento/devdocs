@@ -1,15 +1,17 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento 2 Front-end Development
+title: Overview of Magento 2 Frontend Development
 ---
  
-<h1 id="fedg-overview">{{ page.title }}</h1>
+<h1 id="fedg-overview">Overview of Magento 2 Frontend Development </h1>
 
 <p><a href="{{ site.githuburl }}guides/m2fedg/v1.0.0.0/overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="fedg-overview-introduction">Introduction</h2>
+<h2 id="fedg-topic1">Topic 1</h2>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 
-This guide discusses how to change the look and feel of your Magento storefront (sometimes referred to as the *front end* or *frontend*).  
+<h2 id="fedg-topic2">Topic 2</h2>
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.  
 
 There are four levels of customization you can apply to your site, where the levels require different development skills:
 

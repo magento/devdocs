@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento 2 Cascading Style Sheets (CSS) 
+title: Using Cascading Style Sheets (CSS) with Magento 2 
 ---
  
 <h1 id="fedg_css-overview">{{ page.title }}</h1>

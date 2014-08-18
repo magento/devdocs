@@ -1067,9 +1067,15 @@ h2.heading2 {
     
 } 
 
-a:link    {color:white;}
-a:visited {color:white;}
-a:active  {color:white;}
+h3.heading3 {
+    color: gray;
+    font-size: 14pt;
+    
+} 
+
+a.button:link    {color:white;}
+a.button:visited {color:white;}
+a.button:active  {color:white;}
 
 a.ext1:link    {color:blue;}
 a.ext1:visited {color:darkblue;}
