@@ -6,7 +6,7 @@ title: Magento 2 Customer Service
  <div class="container">
 
       <div class="blog-header">
-        <h1 class="heading1 blog-title">Customer service</h1>
+        <h1 class="heading1">Customer service</h1>
                 <p class="blog-description">Use customer account service objects to create and manage customers.</p>
       </div>
 
@@ -32,7 +32,7 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
-<dl><dt><table class="docutils field-list" frame="void" rules="none"  width="400">
+<table class="docutils field-list" frame="void" rules="none"  width="400">
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -43,9 +43,8 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
-</table></dt>
-<dd><p></p></dd>
-<dt>
+</table>
+<p/>
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -58,9 +57,7 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-</dt>
-<dd><p></p></dd>
-<dt>
+<p/>
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -73,9 +70,6 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-</dt>
-<dd></dd>
-</dl>
            
           </div><!-- /.blog-post -->
 
@@ -88,7 +82,7 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
-<dl><dt><table class="docutils field-list" frame="void" rules="none"  width="400">
+<table class="docutils field-list" frame="void" rules="none"  width="400">
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -99,9 +93,7 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
-</table></dt>
-<dd><p></p></dd>
-<dt>
+</table>
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -114,9 +106,6 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-</dt>
-<dd><p></p></dd>
-<dt>
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -129,9 +118,6 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-</dt>
-<dd></dd>
-</dl>
            
           </div><!-- /.blog-post -->
           <div class="blog-post">
@@ -143,7 +129,7 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
-<dl><dt><table class="docutils field-list" frame="void" rules="none"  width="400">
+<table class="docutils field-list" frame="void" rules="none"  width="400">
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -154,9 +140,7 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
-</table></dt>
-<dd><p></p></dd>
-<dt>
+</table>
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -169,9 +153,7 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-</dt>
-<dd><p></p></dd>
-<dt>
+
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -184,9 +166,6 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-</dt>
-<dd></dd>
-</dl>
            
           </div><!-- /.blog-post -->
 

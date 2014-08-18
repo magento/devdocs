@@ -1,14 +1,14 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento 2 UI library
+title: Using the Magento 2 UI Library
 ---
  
-<h1 class="heading1">The Magento 2 UI library</h1>
+# Using the Magento 2 UI Library
 
 <p><a href="{{ site.githuburl }}guides/m2fedg/v1.0.0.0/css/magento-ui-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 
 
 
-<h2 class="heading2">Related Topics:</h2>
+#### Related Topics:
 
