@@ -6,10 +6,14 @@ title: Magento 2 Customer Service
  <div class="container">
 
       <div class="blog-header">
+<<<<<<< HEAD
 
         <h1 class="heading1">Customer service</h1>
 
 
+=======
+        <h1 class="heading1">Customer service</h1>
+>>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
                 <p class="blog-description">Use customer account service objects to create and manage customers.</p>
       </div>
 
@@ -35,10 +39,14 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
+<<<<<<< HEAD
 
 
 <table class="docutils field-list" frame="void" rules="none"  width="400">
 
+=======
+<table class="docutils field-list" frame="void" rules="none"  width="400">
+>>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -49,6 +57,7 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
+<<<<<<< HEAD
 
 </table>
 <p/>
@@ -56,6 +65,10 @@ title: Magento 2 Customer Service
 </table>
 <p/>
 
+=======
+</table>
+<p/>
+>>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -68,10 +81,14 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
+<<<<<<< HEAD
 
 <p/>
 
 
+=======
+<p/>
+>>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -125,7 +142,7 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-<p/>
+
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -178,7 +195,7 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-<p/>
+
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
