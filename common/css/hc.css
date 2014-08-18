@@ -12,6 +12,7 @@
 body {
   padding-top: 2em;
   padding-bottom: 7em;
+  background-color:white;
   /* padding-top: 50px;
   padding-bottom: 20px; */
 }
@@ -96,7 +97,8 @@ h1 a,h2 a,h3 a,h4 a
 
 h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover
 {
-  color:#29598c
+  /* color:#29598c */
+   color:gray
 }
 
 p
@@ -131,7 +133,8 @@ p
 {
   width:80%;
   padding-right:0;
-  padding-top:30px
+  padding-top:30px;
+  background-color:white;
 }
 
 .container a
@@ -1003,7 +1006,7 @@ color: #fff;
 }
 
 div.content-spacer {
-padding-top: 5em;
+padding-top: 2em;
 }
 
 /* SRJ - reducing left margin for left TOC */
@@ -1051,3 +1054,68 @@ background-image: url("images/ui-icons_454545_256x240.png");
 background-position: -12px -128px; 
 
 } */
+
+h1.heading1 {
+    color: darkorange;
+    font-size: 26pt;
+    
+} 
+
+h2.heading2 {
+    color: black;
+    font-size: 18pt;
+    
+} 
+
+h3.heading3 {
+    color: gray;
+    font-size: 14pt;
+    
+} 
+
+a.button:link    {color:white;}
+a.button:visited {color:white;}
+a.button:active  {color:white;}
+
+a.ext1:link    {color:blue;}
+a.ext1:visited {color:blue;}
+a.ext1:hover   {color:darkorange;}
+
+blockquote.codesample {
+    border-top: 4px solid #6AB0DE;
+    border-right: none;
+    border-left: none;
+    margin-left: 20px;
+    margin-right: -10px;
+    padding-left: 40px;
+    background: none repeat scroll 0% 0% #e4f1f9;
+}
+
+/* 
+.btn-lg, .btn-group-lg > .btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+    
+}
+
+.btn-primary {
+    color: #FFF;
+    background-color: #428BCA;
+    border-color: #357EBD;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0px;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+}
+ */
