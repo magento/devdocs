@@ -1,3 +1,4 @@
 _site
 ignore
 /guides/m2devgde/v1.0.0.0/test
+/_config.yml
