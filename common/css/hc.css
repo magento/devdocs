@@ -1055,13 +1055,13 @@ background-position: -12px -128px;
 
 } */
 
-h1.heading1 {
-    color: darkorange;
-    font-size: 26pt;
+/* div.h1-frontpage {
+    align: center;
+	padding-left: 1em;
     
-} 
+}  */
 
-h2.heading2 {
+/* h2.heading2 {
     color: black;
     font-size: 18pt;
     
@@ -1071,7 +1071,7 @@ h3.heading3 {
     color: gray;
     font-size: 14pt;
     
-} 
+} */ 
 
 a.button:link    {color:white;}
 a.button:visited {color:white;}
