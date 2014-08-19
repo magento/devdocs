@@ -1022,6 +1022,13 @@ dd {
 	line-height: normal;
 }
 
+/* SRJ - get rid of text decoration for TOC */
+
+ul.nav a {
+	border-bottom: none;
+} 
+
+
 
 /* SRJ - the following doesn't work. The expand/collapse icon is always +, never
 changes to -, needs more work
