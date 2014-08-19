@@ -6,14 +6,8 @@ title: Magento 2 Customer Service
  <div class="container">
 
       <div class="blog-header">
-<<<<<<< HEAD
 
-        <h1 class="heading1">Customer service</h1>
-
-
-=======
-        <h1 class="heading1">Customer service</h1>
->>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
+        <h1>Customer service</h1>
                 <p class="blog-description">Use customer account service objects to create and manage customers.</p>
       </div>
 
@@ -39,14 +33,8 @@ title: Magento 2 Customer Service
               <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
               \Magento\Framework\Event\ManagerInterface $eventManager, ...)</p>
             </blockquote> <!-- /.blockquote -->
-<<<<<<< HEAD
-
 
 <table class="docutils field-list" frame="void" rules="none"  width="400">
-
-=======
-<table class="docutils field-list" frame="void" rules="none"  width="400">
->>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
 <colgroup><col width="25%" class="field-name">
 <col  width="75%" class="field-body">
 </colgroup><tbody valign="top">
@@ -57,18 +45,10 @@ title: Magento 2 Customer Service
 </td>
 </tr>
 </tbody>
-<<<<<<< HEAD
 
 </table>
 <p/>
 
-</table>
-<p/>
-
-=======
-</table>
-<p/>
->>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -81,14 +61,9 @@ title: Magento 2 Customer Service
 </tr>
 </tbody>
 </table>
-<<<<<<< HEAD
 
 <p/>
 
-
-=======
-<p/>
->>>>>>> d832b3f04d0e735f08a70b8e6e2d1d531971025a
 <table class="docutils field-list" frame="void" rules="none" width="400">
 <colgroup><col  width="25%" class="field-name">
 <col  width="75%" class="field-body">
@@ -107,7 +82,7 @@ title: Magento 2 Customer Service
 
         <div class="blog-post">
 
-<h2 id="create-customer" class="heading2">createCustomer()</h2>
+<h2 id="create-customer">createCustomer()</h2>
 <p class="blog-description">Creates a customer service data object.</p>
 
 <blockquote class="codesample">
@@ -160,7 +135,7 @@ title: Magento 2 Customer Service
           </div><!-- /.blog-post -->
           <div class="blog-post">
 
-<h2 id="resend-confirmation" class="heading2">resendConfirmation()</h2>
+<h2 id="resend-confirmation">resendConfirmation()</h2>
 <p class="blog-description">Resends a confirmation email to a customer.</p>
 
 <blockquote class="codesample">
@@ -222,7 +197,7 @@ title: Magento 2 Customer Service
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
          
           <div class="sidebar-module">
-            <h2 class="heading2">Methods</h2>
+            <h2>Methods</h2>
             <ol class="list-unstyled">
 
               <li><a class="ext1" href="#construct">__construct()</a></li>    
