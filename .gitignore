@@ -1,3 +1,15 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Config and output files #
+###########################
 _site
 ignore
 /guides/m2devgde/v1.0.0.0/test
