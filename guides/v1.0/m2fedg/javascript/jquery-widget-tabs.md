@@ -3,7 +3,7 @@ layout: howtom2devgde_chapters_fedg
 title: Using the Tabs jQuery Widget
 ---
  
-<h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
+<h1 id="fedg_jquery_tabs">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/javascript/jquery-plugin-tabs.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
@@ -123,3 +123,8 @@ The tabs widget is subscribed to the following events:
 
 #### Related Topics:
 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-loader.html">Using the Loader jQuery Widget</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	

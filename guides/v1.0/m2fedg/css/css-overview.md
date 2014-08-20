@@ -5,7 +5,7 @@ title: Using Cascading Style Sheets (CSS) with Magento 2
  
 <h1 id="fedg_css-overview">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/css/css-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/css/css-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 You can customize Magento themes by using CSS to add your own images and fonts. 
 
@@ -21,7 +21,7 @@ You can customize Magento themes in the following ways:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-themes.html">Using CSS in Themes</a>
-*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>
+*	<a href="{{ site.baseurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
+*	<a href="{{ site.baseurl }}m2fedg/css/css-themes.html">Using CSS in Themes</a>
+*	<a href="{{ site.baseurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.baseurl }}m2fedg/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>

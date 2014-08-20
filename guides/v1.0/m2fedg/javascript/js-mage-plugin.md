@@ -165,10 +165,20 @@ In the handler function, you can modify the following:
 	*	`this.args`&mdash;Property for accesing scalar arguments. Example of changing such an argument: `this.args[1] = false`
 	*	`this.name`&mdash;Component name
 	*	`this.resources`&mdash;List of resources required for that component.
+	
+See the following sections for more information:
+
+*	<a href="#fedg_js-mage_init-data_mod">Example of Modifying Options</a>
+*	<a href="#fedg_js-mage_init-data_substitut">Substituting Components</a>
 
 <h3 id="fedg_js-mage_init-data_mod">Example of Modifying Options</h3>
 
-This section provides some examples of modifying options.
+The following sections provide some examples of modifying options:
+
+*	<a href="#fedg_js-mage_init-data_mod_all">Changing Initialization Options for All Instances of a Given Type</a>
+*	<a href="#fedg_js-mage_init-data_mod_el">Changing Initialization Options for a Particular Element</a>
+*	<a href="#fedg_js-mage_init-data_mod_args">Modifying Arguments</a>
+*	<a href="#fedg_js-mage_init-data_stop">Stopping a Component from Initializing</a>
 
 <h4 id="fedg_js-mage_init-data_mod_all">Changing Initialization Options for All Instances of a Given Type</h4>
 
@@ -210,8 +220,8 @@ Example:
 
 You can substitute components in the following ways:
 
-*	Declare a new component
-*	Modify the component's resources.
+*	<a href="#fedg_js-mage_init-data_substitut_new">Substituting a Component by Declaring a New One</a>
+*	<a href="#fedg_js-mage_init-data_resource">Substituting a Component by Modifying a List of Resources</a>
 
 <h4 id="fedg_js-mage_init-data_substitut_new">Substituting a Component by Declaring a New One</h4>
 
@@ -253,3 +263,5 @@ When the `contentUpdated` event is triggered, it goes up to the `<body>` node, a
 
 #### Related Topics:
 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>

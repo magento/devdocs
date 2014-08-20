@@ -1,9 +1,9 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using the Loader jQuery Widget
+title: Using the jQuery Loader Widget
 ---
  
-<h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
+<h1 id="fedg_jquery_loader">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/javascript/jquery-plugin-loader.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
@@ -69,6 +69,11 @@ The loader widget is automatically subscribed to the `ajaxSend` and `ajaxComplet
 
 To enable the loader for an Ajax request, set the `showLoader` Ajax call option to `true`.
 
+See the following sections for more information:
+
+*	<a href="#fedg_loader_details_block-part">Using the Loader to Block Page Content</a>
+*	<a href="#fedg_loader_details_non-ajax">Using Loader for Ajax and Non-Ajax Calls</a>
+
 <h3 id="fedg_loader_details_block-part">Using the Loader to Block Page Content</h3>
 
 The loader can be used to lock all page content, or only lock certain forms or certain blocks. Specify the elements to be blocked using the `loaderContext` Ajax call option. 
@@ -98,3 +103,8 @@ Where `this.element` is the element on which the loader is dependent.
 
 #### Related Topics:
 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	

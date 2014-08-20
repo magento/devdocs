@@ -3,7 +3,7 @@ layout: howtom2devgde_chapters_fedg
 title: Using the Calendar jQuery Widget
 ---
  
-<h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
+<h1 id="fedg_jquery-calendar-widget">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/javascript/jquery-plugin-calendar.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
@@ -11,7 +11,7 @@ title: Using the Calendar jQuery Widget
 
 The Calendar widget is a customized <a href="http://api.jQueryui.com/datepicker/" target="_blank">jQuery UI Datepicker widget</a> that enables you to select a data using a pop-up or an in-line calendar. Calendar is also responsible for:
 
-*	Merging global configuration with the options which are passed from PHP when Calendar is initialized.
+*	Merging the <a href="#fedg_calendar_config">global configuration</a> with the options that are passed from PHP when Calendar is initialized.
 *	Taking into account server time zone offset.
 *	Converting date and time formats to avoid inconsistency in Zend Date format and Datepicker format.
 *	Making the calendar initialization easier.
@@ -59,4 +59,10 @@ Calendar widget options, methods, and events mostly coincide with the <a href="h
 
 
 #### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-loader.html">Using the jQuery Loader Widget</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
 
