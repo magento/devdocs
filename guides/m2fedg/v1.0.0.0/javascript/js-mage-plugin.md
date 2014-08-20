@@ -162,7 +162,7 @@ In the handler function, you can modify the following:
 
 *	Passed arguments (for the case of scalar argument(s) see next entry)
 *	Properties:
-	*	`this.args`&mdash;Property for accesing scalar arguments. Example of changing such an argument: this.args[1] = false
+	*	`this.args`&mdash;Property for accesing scalar arguments. Example of changing such an argument: `this.args[1] = false`
 	*	`this.name`&mdash;Component name
 	*	`this.resources`&mdash;List of resources required for that component.
 
