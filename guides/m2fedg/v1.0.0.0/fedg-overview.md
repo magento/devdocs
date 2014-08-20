@@ -1,14 +1,11 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: howtom2devgde_chapters_fedg 
 title: Overview of Magento 2 Frontend Development
 ---
  
 <h1 id="fedg-overview">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/m2fedg/v1.0.0.0/overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h4>Contents</h4>
-
 
 <h2 id="fedg-overview-introduction">Introduction</h2>
 
@@ -23,6 +20,8 @@ There are four levels of customization you can apply to your site, where the lev
 *	The next level of sophistication is to make structural changes to your site by moving functionality between places on a page or to completely different pages.  This is achieved using the Magento layout engine.  No PHP coding is required to make layout changes, but the layout engine is moderately sophisticated.
 *	Finally, you can develop new modules to add new custom functionality to your site or to extend functionality provided by existing Magento or third party modules.  This third level of customization is not addressed in this guide.  
 	Refer to the Developers' Guide for details on how to develop new modules.  This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.
+	
+**Note**: There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento 2 development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a WYSIWYG mode. We?d like to clarify that to meet higher priority objectives, the VDE will *not* be part of the initial Magento 2 release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.
 
 <h2 id="fedg-intended-audience">Intended Audience</h2>
 
@@ -32,14 +31,14 @@ This guide is intended for frontend developers who want to understand the way fr
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
-*	Internet Explorer 9+ (Windows)
+*	Internet Explorer 9 or later (Windows)
 *	Mozilla Firefox Latest, Latest-1 (any operating system)
 *	Google Chrome Latest, Latest-1 (any operating system)
-*	Apple Safari 5+ (Mac OS)
-*	Apple Safari Mobile for iPad, iPad Mini, iPad with Retina Display (iOS 6+), for Desktop Frontend
-*	Apple Safari Mobile for iPhone 4, iPhone 4S, iPhone 5 (iOS 6+), for Mobile Frontend
+*	Apple Safari 5 or later (Mac OS)
+*	Apple Safari Mobile for iPad, iPad Mini, iPad with Retina Display (iOS 6 or later), for Desktop Frontend
+*	Apple Safari Mobile for iPhone 4, iPhone 4S, iPhone 5 (iOS 6 or later), for Mobile Frontend
 
-To be able to understand this guide, you must have at least basic knowledge of:
+To be able to understand this guide, you must have basic knowledge of:
 
 *	CSS and CSS 3
 *	HTML and HTML 5
@@ -49,4 +48,13 @@ To be able to understand this guide, you must have at least basic knowledge of:
 
 
 #### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-overview.html">Introduction to Magento 2 Theming</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-xml-instrux.html">Introduction to Magento 2 Theming</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2 </a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/javascript/js-mage-plugin.html">Using the Magento Mage JavaScript Plug-In</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/xlate/xlate_overview.html">Translating Magento 2</a>
 
