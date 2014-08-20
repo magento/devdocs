@@ -24,7 +24,10 @@ Using Mage plugin decreases the amount of inline JavaScript by loading only the 
 
 <h2 id="fedg_js-mage_declare">Declaring Components</h2>
 
-You can declare components for an entire Magento area or for specific pages as discussed in the sections that follow.
+You can declare components for an entire Magento area or for specific pages as discussed in the sections that follow:
+
+*	<a href="#fedg_js-mage_declare-area">Declaring Components for Application Areas</a>
+*	<a href="#fedg_js-mage_declare-page">Declaring Components for Specific Pages</a>
 
 <h3 id="fedg_js-mage_declare-area">Declaring Components for Application Areas</h3>
 
@@ -64,7 +67,11 @@ Example:
 	
 <h2 id="fedg_js-mage_widgets">Instantiating Widgets</h2>
 
-This section discusses different ways to instantiate widgets.
+This section discusses different ways to instantiate widgets:
+
+*	<a href="#fedg_js-mage_widgets_typ">Typical Widget Instantiation</a>
+*	<a href="#fedg_js-mage_widgets_mage">Instantiating Widgets Using the Mage Plug-In</a>
+*	<a href="#fedg_js-mage_widgets_dataattrib">Instantiating Widgets Using the data Attribute</a>
 
 <h3 id="fedg_js-mage_widgets_typ">Typical Widget Instantiation</h3>
 

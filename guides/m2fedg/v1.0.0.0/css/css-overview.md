@@ -21,9 +21,8 @@ You can customize Magento themes in the following ways:
 
 #### Related Topics:
 
-*	{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-themes.html">Understanding Magento 2 CSS Preprocessing</a>
-*	{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-preprocess.html">Using CSS in Themes</a>
-*	{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-themes.html">Using CSS in Themes</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>
 
