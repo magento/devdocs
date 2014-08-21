@@ -7,28 +7,34 @@ title: Introduction to Magento 2 Theming
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="layout_">Overview of Magento 2 Themes</h2>
+<h2 id="layout_overview">Overview of Magento 2 Themes</h2>
+
+To customize a theme layout for your store, you can:
+
+*	<a href="{{ site.baseurl }}guides/v1.0/fedg/layout/layout-extend.html">Extend</a> a parent layout.
+*	<a href="{{ site.baseurl }}guides/v1.0/fedg/layout/layout-override.html">Override</a> it using a custom theme. 
+
+To perform either task, you must use <a href="{{ site.baseurl }}guides/v1.0/fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are additional directives that render your store layout according to your configuration.  
+
+**Important**: Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_overview_layouts">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend base layouts or override them. 
+
+Magento layouts can be provided by modules and by design themes. To change the appearance of your storefront, you need only to provide additional layout instructions that are merged with the existing layouts. When Magento processes layout files, it merges them with other layouts or overrides them. Layout files with such instructions are called *extending layout files*. 
+
+**Note**: Unlike previous versions of Magento, there is no need to duplicate the layout instructions that are left unchanged. 
+
+Finally, you can also override a theme layout completely. Layout files with such instructions are called *overriding layout files*. These files override base layouts or parent theme layouts. 
+
+<h3 id="layout_overview_blocks">About Blocks and Containers</h3>
 
 Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into *layers*, including the *view layer*.
 
-The view layer is responsible for representing the data for display on a web browser. To that end, the *page layout* is a page structure, represented by hierarchy of elements which can be of two types: 
-
-*	Blocks 
-*	Containers
+The view layer is responsible for representing the data for display on a web browser. To that end, the *page layout* is a page structure, represented by hierarchy of <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">blocks and containers</a>.
 
 Technically, the layout is defined in the `.xml` layout files (layouts and layout updates) that contain element declarations and element manipulation instructions. To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed.
 
-Each Magento module has a set of default layouts (base layout files) that can be extended or overridden by theme layouts.
+<h3 id="layout_overview_layouts">About Default Layouts</h3>
 
-Magento layouts can be introduced by modules and by design themes. When Magento processes layout files, it merges them with other layouts or overrides them.
-
-**Important**: Although you can edit any layout file, Magento strongly recommends you not modify base layouts; instead, perform all customizations in theme layout files, which can either extend base layouts or override them.
-
-To change the appearance of your storefront, you need only to provide additional layout instructions, which will be merged with the existing layouts. 
-
-**Note**: Unlike previous versions of Magento, there is no need to duplicate the layout instructions that are left unchanged. Layout files with such instructions are referred to as *extending layout files*. This is the preferable option for layout customization.
-
-This topic discusses in detail about the types of layout files, conventions for their naming, their content and location in the file system, and the way layout files are processed.
+Each Magento module has a set of default layouts (referred to as *base layout files*) that can be extended or overridden by theme layouts.
 
 <h2 id="layout_terms">Terms Used</h2>
 
