@@ -11,7 +11,7 @@ title: Overriding a Layout
 
 Not all layout customizations can be performed by extending existing layouts.  If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the base or parent theme's file.
 
-Layout files with instructions that override the base or parent theme files are referred to as *overriding layout files*.
+Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
  
 Examples of customizations that involve overriding layouts:
 
@@ -72,7 +72,7 @@ To add an overriding theme file (to override parent layout):
 
 Where:
 
-`[parent_theme]` is the code of the theme the new layout file belongs to. The parent theme can be a direct or indirect ancestor; that is, parent, grandparent, and so on.
+`[parent_theme]` is the code of the theme the new layout file belongs to. The parent theme can be a direct or indirect parent; that is, parent, grandparent, and so on.
 
 <h2 id="layout_override_bad">Avoiding Layout Customization Mistakes</h2>
 
