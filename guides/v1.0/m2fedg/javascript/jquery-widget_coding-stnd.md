@@ -5,7 +5,7 @@ title: Magento jQuery Widget Coding Standards
  
 <h1 id="fedg_jq_widget_stnd">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2fedg/javascript/jquery-widget-coding-stnd.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/javascript/jquery-widget_coding-stnd.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_jq-widget-coding-stnd_overview">About Magento jQuery Coding Standards</h2>
 
