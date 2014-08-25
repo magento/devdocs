@@ -24,15 +24,20 @@ In the example presented in this topic, these will be referred to as `< referenc
 
 <h2 id="fedg_layout_xml-instruc_ex">XML Instruction Examples</h2>
 
-This section discusses common XML instructions you can use to customize your layout.
+This section discusses the following common XML instructions you can use to customize your layout:
 
-<h3 id="fedg_layout_xml-instruc_ex_block">&lt;block> Instruction</h3>
+*	<a href="#fedg_layout_xml-instruc_ex_block">&lt;block></a>
+*	<a href="#fedg_layout_xml-instruc_ex_cont">&lt;container></a>
+*	<a href="#fedg_layout_xml-instruc_ex_act">&lt;action></a>
+*	<a href="#fedg_layout_xml-instruc_ex_rem">&lt;remove></a>
+*	<a href="#fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></a>
+*	<a href="#fedg_layout_xml-instruc_ex_mv">&lt;move></a>
 
-A block is a unit of page output that renders some distinctive content, such as a piece of information, a user interface element, or anything visible to the user.
+<h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
-The `<block>` instruction defines a block.
+A <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">block</a> represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
 
-`<block>` instruction attributes:
+The `<block>` instruction defines a block. Attributes:
 
 <table>
 	<tbody>
@@ -56,19 +61,19 @@ The `<block>` instruction defines a block.
 	</tr>
 	<tr class="even">
 		<td>before</td>
-		<td>Used to position the block before an element with the name specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. TBD See HIDDEN Elements Sorting with "before" and "after" Attributes for details.</td>
+		<td>Used to position the block before an element whose name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
 	<tr class="odd">
 		<td>after</td>
-		<td>Used to position the block after an element with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. TBD See HIDDEN Elements Sorting with "before" and "after" Attributes for details.</td>
+		<td>Used to position the block after an element with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
 	<tr class="even">
 		<td>template</td>
-		<td>A template that represents the functionality of the block in which this attribute is assigned.</td>
+		<td>A template that represents the functionality of the block to which this attribute is assigned.</td>
 		<td>template file name</td>
 		<td>no</td>
 	</tr>
@@ -81,12 +86,12 @@ The `<block>` instruction defines a block.
 	<tr class="even">
 		<td>output</td>
 		<td>Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
-		<td>Any value except obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
+		<td>Any value except the obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
 		<td>no</td>
 	</tr>
 	<tr class="odd">
 		<td>cacheable</td>
-		<td>Defines whether a block element is to be cached. This can be used for development purposes and to make needed elements of the page dynamic.	</td>
+		<td>Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic.	</td>
 		<td><code>true</code> or <code>false</code></td>
 		<td>no</td>
 	</tr>
@@ -94,11 +99,11 @@ The `<block>` instruction defines a block.
 	</tbody>
 </table>
 
-<h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container> Instruction</h3>
+<h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container></h3>
 
-A container is structural unit of layout. The purpose of containers is to contain other layout elements&mdash;such as blocks and containers&mdash;and to render child elements during view output generation.
+A <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">container</a> is structure only; it has no additional content. A container contains other layout elements&mdash;such as blocks and containers&mdash;and it renders child elements during view output generation.
 
-The `<container>` instruction defines a container.
+The `<container>` instruction defines a container. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
 
 `<container>` instruction attributes:
 
@@ -124,13 +129,13 @@ The `<container>` instruction defines a container.
 	</tr>
 	<tr class="even">
 		<td>before</td>
-		<td>Used to position the container before a block with the name specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. TBD See HIDDEN Elements Sorting with "before" and "after" Attributes for details.</td>
+		<td>Used to position the container before a block with the name specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
 	<tr class="odd">
 		<td>after</td>
-		<td>Used to position the container after a block with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. TBD See HIDDEN Elements Sorting with "before" and "after" Attributes for details.</td>
+		<td>Used to position the container after a block with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
@@ -143,7 +148,7 @@ The `<container>` instruction defines a container.
 	<tr class="odd">
 		<td>output</td>
 		<td>Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
-		<td>Any value except obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
+		<td>Any value except the obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
 		<td>no</td>
 	</tr>
 	<tr class="even">
@@ -168,15 +173,13 @@ The `<container>` instruction defines a container.
 	</tbody>
 </table>
 
-A `<container>` element can be empty or have arbitrary set of `<container>` and `<block>` elements.
-
 Sample declaration in layout:
 
 <script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script>
 
-<h3 id="fedg_layout_xml-instruc_ex_act">&lt;action> Instruction</h3>
+<h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
 
-The `<action>` instruction is used to call the public methods of the block API. It is used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
+The `<action>` instruction calls public methods on the block API. It is used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
 
 <script src="https://gist.github.com/xcomSteveJohnson/4dd7ea5d2ea1bd546ccb.js"></script>
 
@@ -184,7 +187,7 @@ The `<action>` instruction is used to call the public methods of the block API. 
 
 In the preceding example, the value of `<arg1>` is passed as the first argument and `<arg2>` values are passed as `array('one', 'two')`. The list of all available methods depends on the block implementation (for example, the public method of the block class). 
 
-Action attribute:
+`<action>` attribute:
 
 <table>
 	<tbody>
@@ -203,11 +206,11 @@ Action attribute:
 	</tbody>
 </table>
 
-<h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove> Instruction</h3>
+<h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove></h3>
 
 The `<remove>` instruction enables you to ignore some layout instructions when generating a layout. 
 
-Removal will work even if the `<remove>` instruction emerges in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a `<remove>` instruction, they will not be generated.
+Removal works even if the `<remove>` instruction occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a `<remove>` instruction, the named elements are not generated.
 
 However, it is possible to create a new element after the layout is generated using `Mage_Core_Model_Layout::createElement()` or `createBlock()`.
 
@@ -230,7 +233,7 @@ However, it is possible to create a new element after the layout is generated us
 	</tbody>
 </table>
 
-If there is a `<remove>` instruction with the `name` attribute `specified_name`, the following instructions are ignored:
+If there is a `<remove>` instruction with the `name` attribute `[specified_name]`, the following instructions are ignored:
 
 *	`<block class="Magento\Module\Block\Class" name="name.specified"/>`
 *	`<container name="name.specified"/>`
@@ -246,13 +249,13 @@ Result:
 
 <script src="https://gist.github.com/xcomSteveJohnson/d0b5ccf6d5dad7796536.js"></script>
 
-<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer> Instructions</h3>
+<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></h3>
 
 `<referenceBlock>` and `<referenceContainer>` cause updates in `<referenceBlock>` to apply to the corresponding  `<block>` or `<container>`.
 
 For example, you must target the reference to a block by using the name `attribute`. This attribute targets the `<block>` tag's `name` attribute. If you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
 
-<h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move> Instruction</h3>
+<h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 
 `<move>` sets the declared element (block or container) as a child of another element in the specified order.
 
@@ -383,12 +386,12 @@ This section discusses all other XML instructions you can use in a layout.
 <li>use <code>before</code> and <code>after</code> to order the elements</li></ul>
 </div>
 
-<h3>Ordering blocks</h3>
+<h3 id="fedg_xml-instrux_order-block">Ordering blocks</h3>
 <div>
 <p>The following examples show how to:</p>
 <ul><li>Place a block before all other blocks</li>
 <li>Place a block after a particular block</li></ul>
-<p>The examples are basically interchangeable; for example, if you use the dash character with <code>after</code>, the block is ordered after all other blocks. For more information, see TBD.</p>
+<p>The examples are basically interchangeable; for example, if you use the dash character with <code>after</code>, the block is ordered after all other blocks. For more information, see <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a>.</p>
 <p>Examples:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/1a7904f730e62050a918.js"></script>
 <p>To use these examples, replace the value of <code>before</code> or <code>after</code> with either dash (before or after all other blocks) or with the name of an existing block.</p>
@@ -443,7 +446,7 @@ The following table shows possible attribute values:
 
 	<tr class="even">
 		<td>before</td>
-		<td>-</td>
+		<td>Dash (-)</td>
 		<td>The block displays before all other elements in its parent node.</td>
 	</tr>
 		<tr class="odd">
@@ -493,7 +496,7 @@ Examples:
 		<td>The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements.</td>
 	</tr>
 	<tr class="even">
-		<td>Several elements have <code>before</code> or <code>after</code> set to dash</td>
+		<td>Several elements have <code>before</code> or <code>after</code> set to dash (-)</td>
 		<td>All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
 	</tr>
 	<tr class="odd">
@@ -504,5 +507,10 @@ Examples:
 </table>
 
 
-<h4>Related Topics:</h4>
+#### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Layout</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Layout</a>
 

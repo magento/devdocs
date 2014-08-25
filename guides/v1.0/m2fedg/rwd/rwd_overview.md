@@ -11,17 +11,17 @@ title: Magento 2 Responsive Web Design
 
 Simply put, <a href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as *viewports*) without maintaining completely separate style sheets for each.
 
-Magento 2 ships with a Blank responsive theme and these topics discuss how to use CSS, JavaScript, and predefined blocks to build a responsive design from there. TBD cross-refs
+Magento 2 ships with a Blank responsive theme and these topics discuss how to use <a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-overview.html">CSS</a>, <a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_using-blocks.html">predefined blocks</a> to build a responsive design from there. TBD cross-refs
 
 <h3 id="fedg_rwd_terms">Terms Used</h3>
 
 Responsive web design
 
-:	(Also referred to as *responsive design*)&mdash;a web design approach aimed at creating sites with an optimal viewing experience for all screen sizes. This means that a responsive web site is easy for reading and has navigation with a minimum of resizing, panning, and scrolling across a wide range of devices, from desktop computers to mobile phones.
+:	(Also referred to as *responsive design*)&mdash;a web design approach aimed at creating sites with an optimal viewing experience for all screen sizes. This means that a responsive web site is easy for reading and has navigation with a minimum of resizing, panning, and scrolling across a wide range of devices&mdash;from desktop computers to mobile phones.
 
 Viewport
 
-:	The viewing region or screen size to which your responsive design is implemented.
+:	The viewing region or screen size for which your responsive design is implemented.
 
 Breakpoint
 

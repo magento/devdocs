@@ -3,13 +3,13 @@ layout: howtom2devgde_chapters_fedg
 title: Using XML to Manage Your Page Markup
 ---
  
-<h1 id="layout_markup">{{ page.title }}</h1>
+<h1 id="layout_xml-markup">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-xml-manage.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="layout_markup_overview">About This Topic</h2>
 
-This topic provides several specific examples examples of extending a page layout using merging layout files. See one of the following sections for more information:
+This topic provides the following specific examples of extending a page layout using merging layout files:
 
 *	<a href="#layout_markup_bad">Avoiding Layout Customization Mistakes</a>
 *	<a href="#layout_markup_start">Getting Started</a>

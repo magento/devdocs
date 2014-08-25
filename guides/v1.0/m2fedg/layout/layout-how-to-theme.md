@@ -9,7 +9,7 @@ title: How To Create a Theme
 
 <h2 id="layout_theme_how-to_overview">Overview of Creating a Theme</h2>
 
-This topic discusses how to start with the Magento 2 Blank theme and add to it a logo and some images. You can take the theme you created here and expand it further.
+This topic discusses how to start with the Magento 2 Blank theme and add to it a logo and some images. You can take the theme you create here and expand it further.
 
 <h2 id="layout_theme_how-to_dirs">Setting Up Your Custom Theme Directory Structure</h2>
 
@@ -18,6 +18,8 @@ To create the directory structure for your common theme:
 1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the web server user.)
 
 2.	Change to `[your Magento install dir]/app/[area]`, where `[area]` is typically `frontend`.
+
+	Centos example: `cd /var/www/html/magento2/app/frontend`
 
 3.	Create a new directory named according to your vendor name (for example, `ExampleCorp`).
 
@@ -28,11 +30,11 @@ To create the directory structure for your common theme:
 	<pre>app/design/[area]/
 				├── [vendorName]/
 						├──...[newTheme]/
-						│   │   │   ├── ...</pre> 
+							├── ...</pre> 
 
 <h2 id="fedg_layout_theme_how-to_declare">Declaring Your Theme</h2>
 
-After you create a folder for your theme, you need to create `theme.xml` containing the theme declaration and name, version, and parent theme name (if your theme inherits another theme).
+After you create a directory for your theme, you must create `theme.xml` containing the theme declaration and name, version, and parent theme name (if your theme inherits from another theme).
 
 Add or copy from an existing `theme.xml` to your theme directory `app/design/[area]/[your vendor name]/[your theme name]` and add to it the following:
 
@@ -44,7 +46,7 @@ A sample follows.
 
 ![Logging in to the Magento Admin enables you to see your new theme under Content > Design > Themes.]({{ site.baseurl }}common/images/layout_theme_new_admin.png)
 
-<h2 id="fedg_layout_theme_how-to-images">Optionally Adding Images to your Theme</h2>
+<h2 id="fedg_layout_theme_how-to-images">Optionally Adding Images To Your Theme</h2>
 
 To add your own theme images, add `app/design/[area]/[vendorName]/[themeName]/etc/view.xml` that contains configuration of all product image sizes used in the storefront.
 
@@ -57,9 +59,9 @@ Use the following steps:
 	<pre>cd [your Magento install dir]
 	mkdir -p app/design/[area]/[vendorName]/[themeName]/etc</pre>
 
-2.	Copy `view.xml` from the `etc` folder of an existing theme (for example, from the Blank theme) to your theme's `etc` directory. 
+2.	Copy `view.xml` from the `etc` directory of an existing theme (for example, from the Blank theme) to your theme's `etc` directory. 
 
-3.	Configure all storefront product image sizes your `view.xml` file. 
+3.	Configure all storefront product image sizes in `view.xml`. 
 
 	For example, you can make the category grid view product images square by specifying a size of 250 x 250 pixels. 
 	
@@ -69,7 +71,7 @@ Use the following steps:
 	
 <h2 id="fedg_theme_how-to_static">Creating Directories for Static Files and Images</h2>
 
-This section discusses how to add a folder for images. You can use the same procedure to add directories for other types of static files, such as CSS, fonts, and JavaScript.
+This section discusses how to add a directory for images. You can use the same procedure to add directories for other types of static files, such as CSS, fonts, and JavaScript.
 
 In this section, the directory contains your store's logo.
 
@@ -94,12 +96,12 @@ In this section, the directory contains your store's logo.
 
 To preview your theme:
 
-1.	og in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the web server user.)
+1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the web server user.)
 
 1.	Enter the following commands:
 
 	<pre>cd [your Magento install dir]
-	mkdir app/design/[area]/[vendorName]/[themeName]/media</pre>
+	mkdir -p app/design/[area]/[vendorName]/[themeName]/media</pre>
 	
 2.	Add a `preview.jpg` file to the directory. 
 
@@ -131,9 +133,11 @@ At this point your theme file structure looks as follows:
 			│   │   │   ├── logo.png</pre>
 
 
-
-
-
-	
 #### Related Topics:
 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Layout</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Layout</a>

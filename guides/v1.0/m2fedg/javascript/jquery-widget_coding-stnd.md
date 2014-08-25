@@ -3,7 +3,7 @@ layout: howtom2devgde_chapters_fedg
 title: Magento jQuery Widget Coding Standards
 ---
  
-<h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
+<h1 id="fedg_jq_widget_stnd">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/javascript/jquery-widget-coding-stnd.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 

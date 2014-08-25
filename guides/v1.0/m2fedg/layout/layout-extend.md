@@ -7,13 +7,9 @@ title: Extending a Page Layout
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-extend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="fedg_layout_extend_overview">Overview of Page Layout Extension</h2>
+<h2 id="fedg_layout_extend_merge">Creating a Theme Merging File</h2>
 
-When customizing a layout, you can provide layout files in addition to existing files. In these layout files you need to add layout instructions which Magento will merge with existing layouts. Layout instructions that are left unchanged are not duplicated.
-
-Extending layouts is the preferable option for layout customization.
-
-<h2 id="fedg_layout_extend_add">Adding New Files to a Layout</h2>
+Rather than copy extensive layout code and modify what you want to change, in Magento 2 you must only create a *theme merging file* that contains the changes you want.
 
 To add a theme merging file:
 
@@ -48,6 +44,11 @@ Magento merges layout files as follows:
 2.	Replaces the base URL placeholders in the result.
 
 
-
 #### Related Topics:
 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Page Layout</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
