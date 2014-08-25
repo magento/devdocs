@@ -18,7 +18,25 @@ title: Magento 2 PHP API Guide
     <li>Get customer attributes, such as confirmation status, can update, can delete, and is customer in store.</li>
     <li>Validate a token in a reset password link.</li>
     <li>Send and resend email to a customer.</li></ul>
-
+    
+   
+  <div class="bs-callout bs-callout-info" id="info">
+    <h4>Note</h4>
+    <p>This is a note.</p>
+  </div>
+   <div class="bs-callout bs-callout-info" id="info">
+  <span class="glyphicon glyphicon-info-sign"></span>
+          <span class="glyphicon-class">
+  <p>This is a note with an image.</p></span>
+  </div>
+    <div class="bs-callout bs-callout-warning" id="warning">
+    <h4>Warning</h4>
+    <p>This is a warning.</p>
+  </div>
+  <div class="bs-callout bs-callout-danger" id="danger">
+    <h4>Danger</h4>
+    <p>This is a danger warning.</p>
+  </div>
 <div class="blog-post">
 
 <h2 id="php-api-overview">Overview</h2>
