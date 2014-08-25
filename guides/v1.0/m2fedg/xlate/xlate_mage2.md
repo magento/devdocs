@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento 2 Translation, Known Issues, and Workarounds
+title: How Translation Works in Magento 2
 ---
  
 <h1 id="fedg_xlate_mage2">{{ page.title }}</h1>
