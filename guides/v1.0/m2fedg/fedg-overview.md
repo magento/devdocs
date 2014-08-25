@@ -7,6 +7,21 @@ title: Overview of Magento 2 Frontend Development
 
 <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
+<h2>Temporary Note/Tip/Important Experiment</h2>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" /><h4>Note</h4>
+<span class="glyphicon-class">
+  <p>This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. </p></span>
+  </div>
+  
+  <div class="bs-callout bs-callout-warning" id="warning">
+    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" /><h4>Important</h4>
+	<span class="glyphicon-class">
+    <p>This is important. This is important. This is important. This is important. This is important. This is important. This is important. This is important. This is important. This is important. </p></span>
+  </div>
+ 
+
 <h2 id="fedg-overview-introduction">Introduction</h2>
 
 There are four levels of customization you can apply to your site, where the levels require different development skills:
