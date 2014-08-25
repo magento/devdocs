@@ -11,10 +11,10 @@ title: Introduction to Magento 2 Theming
 
 To customize a theme layout for your store, you can:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/fedg/layout/layout-extend.html">Extend</a> a parent layout.
-*	<a href="{{ site.baseurl }}guides/v1.0/fedg/layout/layout-override.html">Override</a> it using a custom theme. 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extend</a> a parent layout.
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Override</a> it using a custom theme. 
 
-To perform either task, you must use <a href="{{ site.baseurl }}guides/v1.0/fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration.  
+To perform either task, you must use <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration.  
 
 **Important**: Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_overview_layouts">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend default layouts or override them. 
 
@@ -56,11 +56,11 @@ Default layout
 
 Extending layout
 
-:	Layouts with instructions to override selected elements of a default layout. Magento merges the extending layout with the default or parent layout, overriding the elements you want to change. For more information, see <a href="{{ site.baseurl }}guides/v1.0/fedg/layout-extend.html">Extending a Page Layout</a>.
+:	Layouts with instructions to override selected elements of a default layout. Magento merges the extending layout with the default or parent layout, overriding the elements you want to change. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout-extend.html">Extending a Page Layout</a>.
 
 Overriding layout
 
-:	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.baseurl }}guides/v1.0/fedg/layout-override.html">Overriding a Page Layout</a>.
+:	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout-override.html">Overriding a Page Layout</a>.
 
 <h2 id="layout_types">Understanding Layout File Types</h2>
 
@@ -132,7 +132,7 @@ The Magento software:
 	
 	c. For all themes except the parent theme, replaces overridden theme layouts. 
 	
-1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.baseurl }}guides/v1.0/fedg/layout-extend.html">Extending a Page Layout</a>.
+1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout-extend.html">Extending a Page Layout</a>.
 
 **Note**: Layout files that belong to inactive modules or modules with disabled output are ignored.
 
