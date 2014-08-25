@@ -5,7 +5,7 @@ title: How To Create a Theme
  
 <h1 id="layout_theme_how-to">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/layout/layout-how-to-theme.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="layout_theme_how-to_overview">Overview of Creating a Theme</h2>
 

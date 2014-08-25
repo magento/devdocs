@@ -5,7 +5,7 @@ title: How Translation Works in Magento 1.x
  
 <h1 id="fedg_xlate_mage1">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/xlate/xlate_mage1.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/xlate/xlate_mage1.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_xlate_mage1_overview">Overview of Translations in Magento 1.x</h2>
 

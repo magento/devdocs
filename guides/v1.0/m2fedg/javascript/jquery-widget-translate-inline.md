@@ -5,7 +5,7 @@ title: Using the jQuery TranslateInline Widget
  
 <h1 id="fedg_jquery_xlate">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/javascript/jquery-plugin-translate-inline.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/javascript/jquery-plugin-translate-inline.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_translate-widget_overview">About the TranslateInline Widget</h2>
 

@@ -5,7 +5,7 @@ title: Using CSS in Themes
  
 <h1 id="fedg_css-in-themes">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/css/css-themes.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/css/css-themes.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_css-in-themes_overview">Overview of CSS in Themes</h2>
 

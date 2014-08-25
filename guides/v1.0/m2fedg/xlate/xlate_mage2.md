@@ -5,7 +5,7 @@ title: Magento 2 Translation, Known Issues, and Workarounds
  
 <h1 id="fedg_xlate_mage2">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/xlate/xlate_mage2.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/xlate/xlate_mage2.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_xlate_mage2_overview">About Magento 2 Translations</h2>
 

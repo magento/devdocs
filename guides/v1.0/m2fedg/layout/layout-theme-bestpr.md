@@ -5,7 +5,7 @@ title: Best Practices for Theme Design
  
 <h1 id="layout_theme_bestpr">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/layout/layout-theme-bestpr.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="layout_theme_bestpr_rwd">Using Responsive Web Design</h2>
 

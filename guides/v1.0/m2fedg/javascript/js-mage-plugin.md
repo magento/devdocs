@@ -5,7 +5,7 @@ title: Using the Magento Mage JavaScript Plug-In
  
 <h1 id="fedg_js-mage">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/javascript/js-mage-plugin.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/javascript/js-mage-plugin.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_js-mage_overview">Overview of the Mage Plug-In</h2>
 

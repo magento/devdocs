@@ -5,7 +5,7 @@ title: Overview of Magento 2 Frontend Development
  
 <h1 id="fedg-overview">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2fedg/overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg-overview-introduction">Introduction</h2>
 

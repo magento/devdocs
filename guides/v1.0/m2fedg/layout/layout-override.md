@@ -5,7 +5,7 @@ title: Overriding a Layout
  
 <h1 id="fedg_layout_override">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-override.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/layout/layout-override.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_layout_override_overview">Overview of Overriding a Layout</h2>
 
@@ -48,7 +48,7 @@ This section discusses how to override:
 
 To add an overriding default layout file (to override a default layout provided by the module):
 
-1.	Create a layout file following our <a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-overview#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.githuburl }}m2fedg/layout/layout-overview#layout_conventions">layout file conventions</a>.
 2.	Put it according to the location convention, that is:
 
 <pre>__app/design/[area]/[your theme path]

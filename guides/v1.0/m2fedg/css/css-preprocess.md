@@ -5,7 +5,7 @@ title: Understanding Magento 2 CSS Preprocessing
  
 <h1 id="fedg_css-preprocess-overview">Understanding Magento 2 CSS Preprocessing</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/css/css-preprocess.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/css/css-preprocess.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 This article discusses a list of preprocessors defined for CSS. By default, Magento publishes CSS as well as other view static files under the <code>[your Magento install dir]/pub</code> directory. The  publishing mechanism (or publisher) is responsible for finding and publishing these files. 
 

@@ -5,7 +5,7 @@ title: Extending a Page Layout
  
 <h1 id="layout_extend">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-extend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/layout/layout-extend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_layout_extend_merge">Creating a Theme Merging File</h2>
 
@@ -13,7 +13,7 @@ Rather than copy extensive layout code and modify what you want to change, in Ma
 
 To add a theme merging file:
 
-1.	Create a layout file following our <a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-overview#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.githuburl }}m2fedg/layout/layout-overview#layout_conventions">layout file conventions</a>.
 2.	Place the theme merging file according to our location conventions; that is:
 
 <pre>__app/design/[area]/[theme path]

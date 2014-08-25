@@ -5,7 +5,7 @@ title: Using XML Instructions In Your Theme
  
 <h1 id="fedg_layout_xml-instruct">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2fedg/layout/layout-xml-instrux.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_layout_xml-instruc_overview">Overview of XML Instructions</h2>
 
