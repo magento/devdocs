@@ -9,11 +9,9 @@ title: Translating Magento 2
 
 <h2 id="fedg_xlate_overview">Overview of Magento Translations</h2>
 
-The Magento 2 translation mechanism is considerably different from the <a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_mage1.html#fedg_xlate_mage1">Magento 1.x</a> mechanism.
+In Magento 2, our primary goal when redesigning translation was to reduce global code coupling and dependencies. We determined that the <a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_mage1.html#fedg_xlate_mage1">Magento 1.x</a> module context is detrimental for the developer (and translator) and not valuable for the user; therefore, we eliminated the module context for translating phrases.
 
-Our primary goal is to reduce global code coupling and dependencies. The module's context was deemed detrimental for the developer (and translator) and not that valuable for the user; therefore, we eliminated the module context for translating phrases.
-
-Our secondary goal is to provide good solutions to the following:
+Our secondary goal is to provide solutions to the following:
 
 *	Translation&mdash;translating a phrase to a different language without changing its meaning. 
 
@@ -26,14 +24,15 @@ Our secondary goal is to provide good solutions to the following:
 *	Placeholder substitution&mdash;Substituting defined values. 
 
 	For example, changing `Product '%s' has been added to the shopping cart` to `Product 'Multimeter-2000'` has been added to the shopping cart
+	
 
 <h2 id="fedg_xlate_mage2_phrase">Using the Magento 2 Phrase Class</h2>
 
 Magento 2 translations start with the abstract <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Phrase.php" target="_blank">\Magento\Phrase</a> class. 
 
-This class implements the pattern `Replace Data Value with Object`, which basically replaces the string literal with an instance of this class, which has the `__toString()` method.
+This class implements the pattern `Replace Data Value with Object`, which basically replaces the string literal with an instance of `\Magento\Phrase` so you can use the `__toString()` method.
 
-The layer of indirection that existed earlier in Magento 1.x is now encapsulated in the Magento 2 Phrase class.
+The layer of indirection that existed earlier in Magento 1.x is now encapsulated in the `\Magento\Phrase` class.
 
 To translate a phrase, create an instance of the class as follows:
 
@@ -48,7 +47,7 @@ Note the difference in format of Magento 2 placeholders `%1, $2` compared to the
 
 <h3 id="fedg_xlate_mage2_phrase_render">Rendering Phrases</h3>
 
-To render a translated phrase, you code should look like the following:
+To render a translated phrase, your code should look like the following:
 
 <script src="https://gist.github.com/xcomSteveJohnson/a59b30ed46e2cbf0a631.js"></script>
 
@@ -62,9 +61,9 @@ Initialize the `\Magento\Phrase` class as follows:
 
 	\Magento\Phrase::setRenderer($this->_objectManager->get('Magento\Phrase\RendererInterface'));
 	
-The object manager and dependency injection framework do all the legwork to provide the implementation behind the interface&mdash;stacking the composition of renderers.
+The object manager and dependency injection framework do all the work to provide the implementation behind the interface&mdash;stacking the composition of renderers.
 
-Because you use a global function `__()` and a static interface, some rearrangements have to be made in unit tests. For convenience of assertions and fixtures, in unit tests use only the `Placeholder` renderer instead of `Composite`:
+Because you use a global function `__()` and a static interface, you must rearrange some things in your tests. For convenience of assertions and fixtures, in unit tests use only the `Placeholder` renderer instead of `Composite`:
 
 	\Magento\Phrase::setRenderer(new \Magento\Phrase\Renderer\Placeholder());
 
@@ -76,7 +75,7 @@ In some XML files, the only thing that changed was removing the module context, 
 
 <h2 id="fedg_xlate_dict">Using Translation Dictionary Tools</h2>
 
-Magento developer tools include a static code analysis tool that generates a CSV dictionary from Magento source code. The tool searches for any occurrences of `__()` in PHP files and translate attributes in XML files, and extracts literals for the dictionary.
+Magento developer tools include a static code analysis tool that generates a comma-seprated value (CSV) dictionary from Magento source code. The tool searches for any occurrences of `__()` in PHP files and translate attributes in XML files, and extracts literals for the dictionary.
 
 The tool is available <a href="https://github.com/magento/magento2/tree/master/dev/tools/Magento/Tools/I18n" target="_blank">here</a>. It is intended for translators or extension developers who wish to provide language packs for the entire Magento application or a given module or theme. 
 

@@ -128,7 +128,7 @@ Before processing, Magento sorts layout files according to the following criteri
 
 <h3 id="layout_processing_how">How the Magento Software Processes Layouts</h3>
 
-The Magento software:
+The Magento software: 
 
 1.	Collects all default layouts from modules. The order is determined by module dependencies and by alphabetical order of module names.
 2.	Determines the sequence of inherited themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
