@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters_fedg
 title: Introduction to Magento 2 Theming  
 ---
@@ -19,7 +19,7 @@ To perform either task, you must use <a href="{{ site.baseurl }}guides/v1.0/m2fe
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
 	<span class="glyphicon-class">
-    <p>Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_overview_layouts">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend default layouts or override them. </p></span>
+    <p>Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_terms">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend default layouts or override them. </p></span>
   </div>
 
 Magento layouts can be provided by modules and by design themes. To change the appearance of your storefront, you need only to provide additional layout instructions. When Magento processes layout files, it merges them with other layouts or overrides them. Layout files with such instructions are called *extending layout files*. 
@@ -128,7 +128,7 @@ Before processing, Magento sorts layout files according to the following criteri
 
 <h3 id="layout_processing_how">How the Magento Software Processes Layouts</h3>
 
-The Magento software: 
+The Magento software:  
 
 1.	Collects all default layouts from modules. The order is determined by module dependencies and by alphabetical order of module names.
 2.	Determines the sequence of inherited themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
@@ -140,7 +140,7 @@ The Magento software:
 	
 	c. For all themes except the parent theme, replaces overridden theme layouts. 
 	
-1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout-extend.html">Extending a Page Layout</a>.
+1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />

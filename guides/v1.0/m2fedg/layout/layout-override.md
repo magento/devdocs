@@ -56,7 +56,7 @@ This section discusses how to override:
 
 To add an overriding default layout file (to override a default layout provided by the module):
 
-1.	Create a layout file following our <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-overview#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-overview.html#layout_conventions">layout file conventions</a>.
 2.	Put it according to the location convention, that is:
 
 <pre>__app/design/[area]/[your theme path]
