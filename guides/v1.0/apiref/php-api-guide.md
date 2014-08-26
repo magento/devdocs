@@ -2,13 +2,49 @@
 layout: apiref_main
 title: Magento 2 PHP API Guide
 ---
+
 <div class="container">
-   <div class="blog-header">
-      <h1 id="php-api-guide">{{ page.title }}</h1>
-   </div>
-   <div class="row">
-      <div class="col-sm-8 blog-main">
-         <p>Use the methods on customer account service objects to:</p>
+	<div class="jumbotron">
+       <h1 id="php-api-guide">{{ page.title }}</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-3" id="myScrollspy">
+         <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix">          
+               <li>
+                  <a href="#php-api-overview">Overview</a>
+                  <ul class="nav">
+                     <li><a href="#subtopic1">Subtopic 1</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#php-api-audience">Audience</a>
+                  <ul class="nav">
+                     <li><a href="#subtopic2">Subtopic 2</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#php-api-prereqs">Prerequisites</a>
+                  <ul class="nav">
+                     <li><a href="#subtopic3">Subtopic 3</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#php-api-topic1">Topic 1</a>
+                  <ul class="nav">
+                     <li><a href="#subtopic4">Subtopic 4</a></li>
+                  </ul>
+               </li>
+            </ul>
+            <a class="back-to-top" href="#top">
+            Top
+            </a>
+             <a class="bs-docs-theme-toggle" href="#">Previous</a>
+             <a class="bs-docs-theme-toggle" href="#">Next</a>
+         </div>
+        </div>
+        <div class="col-xs-9">
+        <p>Use the methods on customer account service objects to:</p>
          <ul>
             <li>Create a customer with a password or hashed password.</li>
             <li>Update, show information for, show details for, and delete a customer account.</li>
@@ -30,45 +66,22 @@ title: Magento 2 PHP API Guide
                <p>This is important.</p>
             </span>
          </div>
-         <div class="blog-post">
             <h2 id="php-api-overview">Overview</h2>
             <p>Overview of everything.</p>
-            <h3>Subtopic</h3>
+            <h3 id="subtopic1">Subtopic 1</h3>
             <p>Subtopic.</p>
-         </div>
-         <div class="blog-post">
             <h2 id="php-api-audience">Audience</h2>
             <p>This guide is for PHP API developers who want to change the world.</p>
-            <h3>Subtopic</h3>
+            <h3 id="subtopic2">Subtopic 2</h3>
             <p>Subtopic.</p>
-         </div>
-         <div class="blog-post">
             <h2 id="php-api-prereqs">Prerequisites</h2>
             <p>Install a bunch of stuff.</p>
-            <h3>Subtopic</h3>
+            <h3 id="subtopic3">Subtopic 3</h3>
             <p>Subtopic.</p>
-         </div>
-         <div class="blog-post">
             <h2 id="php-api-topic1">Topic 1</h2>
             <p>Topic 1.</p>
+            <h3 id="subtopic4">Subtopic 4</h3>
+            <p>Subtopic.</p>
          </div>
-         <!-- /.blog-post -->
-         <ul class="pager">
-            <li><a class="ext1" href="#">Previous</a></li>
-            <li><a class="ext1" href="#">Next</a></li>
-         </ul>
-      </div>
-      <!-- /.blog-main -->
-      <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-         <div id="toc" class="sidebar-module">
-            <h2>Contents</h2>
-            <ol class="list-unstyled">
-               <li><a class="ext1" href="#php-api-overview">Overview</a></li>
-               <li><a class="ext1" href="#php-api-audience">Audience</a></li>
-               <li><a class="ext1" href="#php-api-prereqs">Prerequisites</a></li>
-               <li><a class="ext1" href="#php-api-topic1">Topic 1</a></li>
-            </ol>
-         </div>
-      </div>
-   </div>
+    </div>
 </div>
