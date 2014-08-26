@@ -63,7 +63,7 @@ Example before and after processing:
 			<th>After</th>
 		</tr>
 	<tr class="even">
-		<td><pre>//@magento_import "[id]";</pre></td>
+		<td><pre>//@magento_import "[id]";</pre></td> 
 		<td><pre>@import "path/to/dir1/some_file";
 @import "path/to/file/file1.less";
 @import "path/to/file/file2.less";</pre></td>
