@@ -43,7 +43,11 @@ The tabs widget has the following options:
 
 The Magento tabs widget has the same options as the <a href="http://api.jqueryui.com/tabs/" target="_blank">jQuery UI tabs widget</a>, plus several custom options that are discussed in the sections that follow.
 
-**Note**: Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p></span>
+</div>
 
 <h4 id="fedg_tabs_options-spinner">spinner</h4>
 
@@ -111,7 +115,11 @@ shadowTabsShadow tabs load in the background.
 
 The Magento tabs widget has the same events and methods as the <a href="http://api.jqueryui.com/tabs/" target="_blank">jQuery UI tabs widget</a>, plus custom events that are discussed in this section.
 
-**Note**: Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p></span>
+</div>
 
 The tabs widget is subscribed to the following events:
 

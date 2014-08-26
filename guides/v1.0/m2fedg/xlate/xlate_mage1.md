@@ -9,11 +9,11 @@ title: How Translation Works in Magento 1.x
 
 <h2 id="fedg_xlate_mage1_overview">Overview of Translations in Magento 1.x</h2>
 
-Magento 1.x can present the user interface in different languages without modifying the actual application source code because Magento 1.x translates system messages, error messages, and labels for display in the UI. Some messages display in logs for a system administrator or a developer and these messages don't need to be translated. 
+Magento 1.x translates system messages, error messages, and labels for display in the Magento Admin Panel and storefront without modifying Magento source code. (Messages that display in logs don't need to be translated.) 
 
-By convention, in the source code, the labels and system messages for UI are expressed in the English locale (`en_US`).
+By convention, in the source code, the labels and system messages for UI are expressed in the US English locale (`en_US`).
 
-To replace these phrases different languages when the source code is interpreted, Magento has a layer of indirection that enables translation by providing dictionary files that contain phrases from `en_US` translated into a different language. The dictionary packages in other languages either ship with Magento code out of the box or are provided by the community.
+To replace these phrases with different languages when the source code is interpreted, Magento has a layer of indirection that specifies dictionary files that contain phrases from `en_US` translated into a different language. The dictionary packages in other languages either ship with Magento code out of the box or are provided by the community.
 
 You can customize the result using the Inline Translation Tool in the Magento Admin Panel.
 
@@ -29,7 +29,7 @@ Use the following in PHTML templates:
 
 	$this->__('The product %s has been removed from comparison list.', $helper->escapeHtml($product->getName())
 	
-In XML files, the conventional `translate` and `module` attributes indicate the contents of a node must be translated, as the following example shows:
+In XML files, the conventional `translate` and `module` attributes indicate the contents of a node that must be translated, as the following example shows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/c22321284b4022f16189.js"></script>
 
@@ -46,7 +46,7 @@ The dictionaries are located in the source code in the files `app/locale/[locale
 	"Address","Address"
 	"Address %s of %s","Address %s of %s"
 
-When translated to another language, the dictionary is going to be in a different directory and the second column will have the same phrases, but in a different language. In this case, German, as found in the file app/locale/de_DE/Mage_Checkout.csv:
+The dictionary that contains translated phrases is located in a different directory. The second column has the same phrases in a different language. The following example from German can be found in the file `[your Magento install dir]/app/locale/de_DE/Mage_Checkout.csv`:
 
 	"Add to Cart","Zum Warenkobrn hinzufügen"
 	"Add to Compare","Hinzufügen um zu vergleichen"
@@ -55,7 +55,7 @@ When translated to another language, the dictionary is going to be in a differen
 	"Address","Adresse"
 	"Address %s of %s","Adresse %s von %s"
 
-For Magento to recognize a dictionary, you must declare it in the module configuration; for example, in `app/code/core/Mage/Catalog/etc/config.xml`. A sample follows:
+For the Magento software to recognize a dictionary, you must declare it in the module configuration; for example, in `app/code/core/Mage/Catalog/etc/config.xml`. A sample follows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/47d1ee0c247287633f41.js"></script>
 

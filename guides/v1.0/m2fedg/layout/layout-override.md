@@ -17,14 +17,22 @@ Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
 
-	**Note**: Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.
+	<div class="bs-callout bs-callout-info" id="info">
+	<img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+	<span class="glyphicon-class">
+		<p>Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.</p></span>
+	</div>
 	
 *	Modifying method arguments.
 *	Cancelling block/container removal using the remove directive.
 *	Setting XML attributes of blocks and containers.
 
-	**Note**: Overriding is not needed to change the `htmlClass` of a container when `htmlClass` is defined in the original container. In this case, it is better to avoid renaming the class). Instead, you should target CSS rules to the original class.
-	
+	<div class="bs-callout bs-callout-info" id="info">
+	<img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+	<span class="glyphicon-class">
+		<p>Overriding is not needed to change the <code>htmlClass</code> of a container when <code>htmlClass</code> is defined in the original container. In this case, it is better to avoid renaming the class). Instead, you should target CSS rules to the original class.</p></span>
+	</div>
+
 *	Removing block arguments.
 *	Modifying and suppressing handles inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.

@@ -1,4 +1,4 @@
----
+﻿---
 layout: howtom2devgde_chapters_fedg
 title: Introduction to Magento 2 Theming  
 ---
@@ -11,16 +11,24 @@ title: Introduction to Magento 2 Theming
 
 To customize a theme layout for your store, you can:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extend</a> a parent layout.
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Override</a> it using a custom theme. 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extend</a> a parent layout. 
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Override</a> a parent layout using a custom theme. 
 
 To perform either task, you must use <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration.  
 
-**Important**: Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_overview_layouts">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend default layouts or override them. 
+  <div class="bs-callout bs-callout-warning" id="warning">
+    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
+	<span class="glyphicon-class">
+    <p>Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_overview_layouts">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend default layouts or override them. </p></span>
+  </div>
 
-Magento layouts can be provided by modules and by design themes. To change the appearance of your storefront, you need only to provide additional layout instructions that are merged with the existing layouts. When Magento processes layout files, it merges them with other layouts or overrides them. Layout files with such instructions are called *extending layout files*. 
+Magento layouts can be provided by modules and by design themes. To change the appearance of your storefront, you need only to provide additional layout instructions. When Magento processes layout files, it merges them with other layouts or overrides them. Layout files with such instructions are called *extending layout files*. 
 
-**Note**: Unlike previous versions of Magento, there is no need to duplicate any layout instructions that are left unchanged. 
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Unlike previous versions of Magento, there is no need to duplicate any layout instructions that are left unchanged. </p></span>
+</div>
 
 Finally, you can also override a theme layout completely. Layout files with such instructions are called *overriding layout files*. These files override default layouts or parent theme layouts. 
 
@@ -32,20 +40,16 @@ The view layer is responsible for representing the data for display on a web bro
 
 Technically, the layout is defined in the `.xml` layout files (layouts and layout updates) that contain element declarations and element manipulation instructions. To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Understanding Layout File Types</a>.
 
-<h3 id="layout_overview_layouts">About Default Layouts</h3>
-
-Each Magento module has a set of default layouts that can be extended or overridden by theme layouts.
-
 <h2 id="layout_terms">Terms Used</h2>
 
 Layout handle
 
-:	A uniquely identified set of layout instructions that the application uses to determine what to do with the updates nested by it.
+:	A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.
 
 	There are three kinds of layout handles:
 	
-	*	Page type layout handles&mdash;Synonyms of the page type identifiers. Correspond to "full action names" of controller actions, for example, `catalog_product_view`
-	*	Page layout handles&mdash;Identify specific pages. Correspond to controller actions with parameters that identify specific pages, for example, `catalog_product_view_type_simple_id_128`
+	*	Page type layout handles&mdash;Synonyms of the page type identifiers. Correspond to "full action names" of controller actions; for example, `catalog_product_view`
+	*	Page layout handles&mdash;Identify specific pages. Correspond to controller actions with parameters that identify specific pages; for example, `catalog_product_view_type_simple_id_128`
 	*	Arbitrary handles&mdash;Do not correspond to any page type, but other handles use them by inclusion.
 	
 Default layout
@@ -56,11 +60,11 @@ Default layout
 
 Extending layout
 
-:	Layouts with instructions to override selected elements of a default layout. Magento merges the extending layout with the default or parent layout, overriding the elements you want to change. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout-extend.html">Extending a Page Layout</a>.
+:	Layouts with instructions to override selected elements of a default layout. Magento merges the extending layout with the default or parent layout, overriding the elements you want to change. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>.
 
 Overriding layout
 
-:	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout-override.html">Overriding a Page Layout</a>.
+:	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Page Layout</a>.
 
 <h2 id="layout_types">Understanding Layout File Types</h2>
 
@@ -107,7 +111,11 @@ Magento automatically detects layout files located conventionally. No configurat
 
 <h2 id="layout_processing">Understanding Layout File Processing</h2>
 
-This section discusses how Magento processes layout files.
+For more information about how Magento processes layout files, see the following sections:
+
+*	<a href="#layout_processing_ordering">Ordering Layout Files</a>
+*	<a href="#layout_processing_how">How the Magento Software Processes Layouts</a>
+*	<a href="#layout_process_ex">Example of Layout Processing</a>
 
 <h3 id="layout_processing_ordering">Ordering Layout Files</h3>
 
@@ -134,7 +142,11 @@ The Magento software:
 	
 1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout-extend.html">Extending a Page Layout</a>.
 
-**Note**: Layout files that belong to inactive modules or modules with disabled output are ignored.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p></span>
+</div>
 
 <h3 id="layout_process_ex">Example of Layout Processing</h3>
 
@@ -151,3 +163,5 @@ Following is an illustration of how layout processing works for two modules and 
 *	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
 *	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
 *	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Page Layout</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_overview.html">Translating Magento 2</a>
+

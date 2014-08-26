@@ -7,21 +7,6 @@ title: Overview of Magento 2 Frontend Development
 
 <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2>Temporary Note/Tip/Important Experiment</h2>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" /><h4>Note</h4>
-<span class="glyphicon-class">
-  <p>This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. This is a note with an image. </p></span>
-  </div>
-  
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" /><h4>Important</h4>
-	<span class="glyphicon-class">
-    <p>This is important. This is important. This is important. This is important. This is important. This is important. This is important. This is important. This is important. This is important. </p></span>
-  </div>
- 
-
 <h2 id="fedg-overview-introduction">Introduction</h2>
 
 There are four levels of customization you can apply to your site, where the levels require different development skills:
@@ -36,7 +21,11 @@ There are four levels of customization you can apply to your site, where the lev
 *	Finally, you can develop new modules to add new custom functionality to your site or to extend functionality provided by existing Magento or third party modules.  This third level of customization is not addressed in this guide.  
 	Refer to the Developers' Guide for details on how to develop new modules.  This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.
 	
-**Note**: There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento 2 development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a WYSIWYG mode. We?d like to clarify that to meet higher priority objectives, the VDE will *not* be part of the initial Magento 2 release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento 2 development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a WYSIWYG mode. We?d like to clarify that to meet higher priority objectives, the VDE will *not* be part of the initial Magento 2 release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p></span>
+</div>
 
 <h2 id="fedg-intended-audience">Intended Audience</h2>
 

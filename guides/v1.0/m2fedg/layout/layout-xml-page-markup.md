@@ -29,7 +29,11 @@ Although the layout overriding mechanism provides great customization flexibilit
 
 <h2 id="layout_markup_start">Getting Started</h2>
 
-**Note**: Because you can break other code and prevent successful upgrades, Magento strongly recommends you *not* change default layout files. 
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Because you can break other code and prevent successful upgrades, Magento strongly recommends you <em>not</em> change default layout files. </p></span>
+</div>
 
 To customize properly, add a theme merging file such as `app/design/frontend/[your theme]/Mage_CatalogSearch/layout/catalogsearch_result_index.xml`, with the following content:
 

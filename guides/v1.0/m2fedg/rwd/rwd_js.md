@@ -7,9 +7,7 @@ title: Using JavaScript in Your Responsive Design
 
 <p><a href="{{ site.githuburl }}m2fedg/rwd/rwd_overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="fedg_rwd_js_overview">Overview of Blank Theme Javascript</h2>
-
-The Blank theme responsive design relocates certain elements on the page. To implement this relocation, the Blank theme includes the following JavaScript files:
+The Blank theme uses the following JavaScript to responsively relocate page elements by viewport:
 
 <pre>
 ├── app/design/frontend/Magento/blank/js/
@@ -17,6 +15,12 @@ The Blank theme responsive design relocates certain elements on the page. To imp
     ├── navigation-menu.js
 ├── pub/lib/
     ├── matchMedia.js</pre>
+	
+See one of the following sections for more information
+
+*	<a href="#fedg_rwd_js_matchmedia">Using matchMedia.js</a>
+*	<a href="#fedg_rwd_js_resp">Using responsive.js</a>
+*	<a href="#fedg_rwd_js_nav">Using navigation-menu.js</a>
 	
 <h2 id="fedg_rwd_js_matchmedia">Using matchMedia.js</h2>
 
@@ -34,13 +38,17 @@ The `mediaCheck` call follows:
 
 In `responsive.js`, you can see how the following elements are toggled from the mobile to the desktop version.
 
-*	The link to the shopping cart: In the desktop version, clicking the link runs JavaScript and opens the mini shopping cart list (a drop-down list that contains links to customer's items in the shopping cart). 
+*	The link to the shopping cart: For the desktop viewport, clicking the link runs JavaScript and opens the mini shopping cart list (a drop-down list that contains links to customer's items in the shopping cart). 
 
-	In the mobile version, clicking the link opens the shopping cart page. This different behavior of the same block in the desktop and mobile versions depends on separate JavaScript widgets which are responsible for managing its behavior based on the screen size. With the specified breakpoint, `matchMedia.js` controls which JavaScript widget is applied to the block when the screen size is a desktop or a mobile device.
+	For the mobile viewport, clicking the link opens the shopping cart page. 
 	
-*	Checkout progress: For the mobile version, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps, and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.
+	The behavior of the same block in the desktop and mobile viewports results from separate JavaScript widgets that are responsible for managing the block's behavior based on the viewport. 
+	
+	With the specified breakpoint, `matchMedia.js` controls which JavaScript widget is applied to the block when the screen size is a desktop or a mobile device.
+	
+*	Checkout progress: For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps, and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.
 
-*	Product image zoom on product page: This element is switched off for the mobile version and is switched on for the desktop version.
+*	Product image zoom on product page: This element is switched off for the mobile viewport and is switched on for the desktop viewport.
 
 A sample checkout page follows:
 
@@ -48,15 +56,18 @@ A sample checkout page follows:
 
 <h2 id="fedg_rwd_js_nav">Using navigation-menu.js</h2>
 
-Responsible for rearranging navigation and header links for the desktop and mobile viewports. 
+Responsible for rearranging navigation and header links for the desktop and mobile viewports. See one of the following sections for more information:
+
+*	<a href="#fedg_rwd_js_nav_mobile">Mobile Navigation</a>
+*	<a href="#fedg_rwd_js_nav_desktop">Desktop Navigation</a>
 
 <h3 id="fedg_rwd_js_nav_mobile">Mobile Navigation</h3>
 
 In a mobile viewport, `navigation-menu.js` copies the existing navigation menu `<nav class="navigation">`, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag `<div class="page wrapper">`. 
 
-`navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings (language switcher, currency switcher) block to the mobile navigation. 
+`navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings block (language switcher, currency switcher) to the mobile navigation. 
 
-Then, the mobile navigation moves left. It slides from the left side when the navigation menu button is clicked.
+The mobile navigation moves left and it slides from the left side when the navigation menu button is clicked.
 
 Sample HTML:
 
@@ -85,15 +96,12 @@ When you add a new theme, you include them in your responsive theme layout as fo
 <script src="https://gist.github.com/xcomSteveJohnson/1f24ae464c0f1727899a.js"></script>
 
 
-
-
-
-
-
-
-
-
-
 #### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>
+
 
 

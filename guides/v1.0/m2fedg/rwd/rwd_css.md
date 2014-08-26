@@ -29,7 +29,7 @@ CSS snippet:
 
 <h2 id="fedg_rwd_ex">CSS Examples From the Blank Theme</h2>
 
-To change the position of elements depending on the screen width, you need to redefine the styles which control their behavior. The following example compares a two-column display for mobile and desktop viewports.
+To change the position of elements depending on the screen width, you must redefine which styles control their behavior. The following example compares a two-column display for mobile and desktop viewports.
 
 Mobile version: The following figure shows the main and sidebar columns defined one after the other.
 
@@ -45,11 +45,11 @@ How it displays in a desktop browser:
 
 ![In the desktop viewport, the columns display side by side.]({{ site.baseurl }}common/images/rwd_css_resp_desktop.png)
 
-
-
-
-
-
 #### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
 
 

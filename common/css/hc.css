@@ -1031,9 +1031,12 @@ ul.nav a {
 /* SRJ - selectors to add left padding for p inside note/tip/important divs */
 
 span.glyphicon-class>p {
+	margin-top: 0;
 	margin-left: 4em;
 	}
 	
+/* SRJ - decided not to include the word "Note", etc but leaving in case that comes back
+
 div#info.bs-callout>h4 {
 	margin-top: -1px;
 	margin-left: 2.5em;
@@ -1043,6 +1046,7 @@ div#warning.bs-callout>h4 {
 	margin-top: -1px;
 	margin-left: 2.5em;
 	}
+ */
 
 /* SRJ - the following doesn't work. The expand/collapse icon is always +, never
 changes to -, needs more work

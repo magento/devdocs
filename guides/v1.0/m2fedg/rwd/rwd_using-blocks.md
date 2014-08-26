@@ -62,9 +62,13 @@ Desktop image:
 
 ![The same responsive image is set to 57% the container width on a desktop device.]({{ site.baseurl }}common/images/rwd_images_desktop.png)
 
-
-
-
 #### Related Topics:
+
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+
 
 
