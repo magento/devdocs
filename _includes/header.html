@@ -1,127 +1,56 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <title>{{ page.title }}</title>
-     <meta name="description" content="{{ site.description }}">
-  <link href="{{ site.baseurl }}common/css/jquery.tocify.css" type="text/css" rel="stylesheet" />
-  <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
-   <link href="{{ site.baseurl }}common/css/jumbotron.css" rel="stylesheet">
-
-
-  <!~~ <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet"> ~~>
-<!--   <script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script> -->
-  <!-- <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script> -->
-  <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
-  <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
-  <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
-  <script src="{{ site.baseurl }}assets/js/ie10-viewport-bug-workaround.js"></script>
-  <script src="{{ site.baseurl }}common/js/jquery-1.7.2.min.js"></script>
-  <script src="{{ site.baseurl }}common/js/jquery-ui-1.9.1.custom.min.js"></script>
-  <script src="{{ site.baseurl }}common/js/jquery.tocify.min.js""></script>
-  <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
-
-
-   <!--  Custom styles for this template    <link href="{{ site.baseurl }}common/css/jumbotron.css" rel="stylesheet"> -->
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="{{ site.baseurl }}common/css/assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="{{ site.baseurl }}common/css/assets/js/ie10-viewport-bug-workaround.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>{{ page.title }}</title>
+      <meta name="description" content="{{ site.description }}">
+      <link href="{{ site.baseurl }}common/css/jquery.tocify.css" type="text/css" rel="stylesheet" />
+      <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/jumbotron.css" rel="stylesheet">
+      <!~~ 
+      <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet">
+      ~~>
+      <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
+      <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
+      <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
+      <script src="{{ site.baseurl }}assets/js/ie10-viewport-bug-workaround.js"></script>
+      <script src="{{ site.baseurl }}common/js/jquery-1.7.2.min.js"></script>
+      <script src="{{ site.baseurl }}common/js/jquery-ui-1.9.1.custom.min.js"></script>
+      <script src="{{ site.baseurl }}common/js/jquery.tocify.min.js""></script>
+      <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
+      <script src="{{ site.baseurl }}common/css/assets/js/ie-emulation-modes-warning.js"></script>
+      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+      <script src="{{ site.baseurl }}common/css/assets/js/ie10-viewport-bug-workaround.js"></script>
+   </head>
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-frontdoor">
-        <div class="navbar-header"> 
-          <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button> -->
-		  <div class="logo-frontdoor">
-          <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
-		  </div>
-        </div>
-		
-		
-		<div class="navbar-collapse collapse">
-			<div class="nav navbar-nav">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li>
-              <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>  -->
-            </ul></div>
-			
-			<div class="col-sm-3 col-md-3 pull-right">
-          <form class="navbar-form" role="search">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
+         <div class="navbar-header">
+            <div class="logo-frontdoor">
+               <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
             </div>
-          </form>
-		</div>
-            <!-- <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default</a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-            </ul> -->
-          </div>
-        
-        </div> --><!--/.navbar-collapse -->
+         </div>
+         <div class="navbar-collapse collapse">
+            <div class="nav navbar-nav">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+               </ul>
+            </div>
+            <div class="col-sm-3 col-md-3 pull-right">
+               <form class="navbar-form" role="search">
+                  <div class="input-group">
+                     <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+                     <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
       </div>
-    </div>
-
-
-
-
-
-
-       <!-- Sidebar -->
-	   
-	   
-      <!--  <div id="sidebar-wrapper">
-	   <div class="logo">
-	   <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
-	   </div>
-        <ul class="sidebar-nav">
-          <p class="brand">Guides</p>
-          <hr />
-          <li class="sidebar-brand"><li><a href="{{ site.baseurl }}guides/v1.0/m2devgde/index.html">Magento 2 Developer's Guide</a></li>
-		  <li class="sidebar-brand"><li><a href="{{ site.baseurl }}guides/v1.0/m2fedg/index.html">Magento 2 Frontend Developer's Guide</a></li></ul>
-
-         
-          <hr />
-       </ul>
-     </div> -->
-
-
-
-<!--      <div class="container">
- -->
+   </div>
