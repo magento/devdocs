@@ -20,22 +20,16 @@ title: Magento 2 PHP API Guide
     <li>Send and resend email to a customer.</li></ul>
     
    
-  <div class="bs-callout bs-callout-info" id="info">
-    <h4>Note</h4>
-    <p>This is a note.</p>
+ <div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>This is a note. </p></span>
   </div>
-   <div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon glyphicon-info-sign"></span>
-          <span class="glyphicon-class">
-  <p>This is a note with an image.</p></span>
-  </div>
-    <div class="bs-callout bs-callout-warning" id="warning">
-    <h4>Warning</h4>
-    <p>This is a warning.</p>
-  </div>
-  <div class="bs-callout bs-callout-danger" id="danger">
-    <h4>Danger</h4>
-    <p>This is a danger warning.</p>
+  
+  <div class="bs-callout bs-callout-warning" id="warning">
+    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
+	<span class="glyphicon-class">
+    <p>This is important. </p></span>
   </div>
 <div class="blog-post">
 

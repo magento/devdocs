@@ -39,7 +39,7 @@ For example, you can include a style sheet by adding the following block of code
 
 `<argument name="file">` specifies the path to the stylesheet file that you include in your theme.
 
-The `<arguments>` node can contain additional attributes, such as conditional comments for Internet Explorer. To learn more about conditionals, see <a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>.
+The `<arguments>` node can contain additional attributes, such as conditional comments for Internet Explorer. To learn more about conditionals, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>.
 
 <script src="https://gist.github.com/xcomSteveJohnson/a39c112adc67b86bd376.js"></script>
 
@@ -48,7 +48,7 @@ The preceding example shows how to specify an Internet Explorer 9-specific style
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
-*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2</a>
-*	<a href="{{ site.baseurl }}guides/m2fedg/v1.0.0.0/layout/layout-overview.html">Introduction to Magento 2 Theming</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2</a>
+*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-overview.html">Introduction to Magento 2 Theming</a>
 
