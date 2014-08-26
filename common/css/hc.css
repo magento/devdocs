@@ -155,11 +155,13 @@ p
 
 .bs-callout-info {
    /*  border-left-color: #0B92BC; */
-    border-left-color: #0B97C1;
+    /* border-left-color: #0B97C1; */
+    border-left-color: #2097c1;
 }
 
 .bs-callout-warning {
-    border-left-color: #EF672F;
+/*     border-left-color: #EF672F;
+ */    border-left-color: #f16f3b;
 }
 
 /* SRJ - container overrides */
