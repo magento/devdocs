@@ -54,19 +54,34 @@ title: Magento 2 PHP API Guide
             <li>Validate a token in a reset password link.</li>
             <li>Send and resend email to a customer.</li>
          </ul>
-         <div class="bs-callout bs-callout-info" id="info">
-            <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-            <span class="glyphicon-class">
-               <p>This is a note.</p>
-            </span>
-         </div>
-         <div class="bs-callout bs-callout-warning" id="warning">
-            <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-            <span class="glyphicon-class">
-               <p>This is important.</p>
-            </span>
-         </div>
-            <h2 id="php-api-overview">Overview</h2>
+        <div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>This is a note. </p></span>
+  </div>
+  
+  <div class="bs-callout bs-callout-warning" id="warning">
+    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
+	<span class="glyphicon-class">
+    <p>This is important. </p></span>
+  </div>
+  
+<div class="bs-callout bs-callout-warning" id="warning">
+  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>This is a tip. </p></span>
+</div>
+
+<div class="bs-callout bs-callout-danger" id="danger">
+  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>This is a caution. Use this only in very limited circumstances when discussing:
+  <ul class="note"><li>Data loss</li>
+  <li>Financial loss</li>
+  <li>Legal liability</li></ul></p></span>
+</div>
+           <!-- 
+ <h2 id="php-api-overview">Overview</h2>
             <p>Overview of everything.</p>
             <h3 id="subtopic1">Subtopic 1</h3>
             <p>Subtopic.</p>
@@ -82,6 +97,7 @@ title: Magento 2 PHP API Guide
             <p>Topic 1.</p>
             <h3 id="subtopic4">Subtopic 4</h3>
             <p>Subtopic.</p>
+ -->
          </div>
     </div>
 </div>
