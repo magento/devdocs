@@ -2,10 +2,10 @@ name: Magento Developer Documentation
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
-baseurl: /pages/stevjohnson/devdocs_internal/
+baseurl: /pages/Magento/devdocs_internal/
 gdeurl: /guides/v1.0/
 description: Magento 2 Developer's Guide
-githuburl: https://github.scm.corp.ebay.com/stevjohnson/devdocs_internal/tree/master/guides/v1.0/
+githuburl: https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master/guides/v1.0/
 namem2fedg: Magento 2 Frontend Developer's Guide
 namem2devgde: Magento 2 Developer's Guide
 namem2apiref: Magento 2 API Reference
