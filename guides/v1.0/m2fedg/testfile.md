@@ -9,13 +9,7 @@ title: This is Only a Test
 
 <h2>Test</h2>
 
-This is a test section, yo.
-
-Don't take any guff from these swine.
-
-What we have here is failure to communicate.
-
-Edit in master upstream, yo.
+Edit in fork, yo.
 
 
 <div class="bs-callout bs-callout-info" id="info">
