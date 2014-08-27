@@ -11,6 +11,8 @@ title: This is Only a Test
 
 Edit in fork, yo.
 
+This sheer edit be in the master.
+
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
