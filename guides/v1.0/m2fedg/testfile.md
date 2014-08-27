@@ -13,9 +13,9 @@ This is a test section, yo.
 
 Don't take any guff from these swine.
 
-Edit made in master upstream.
-
 What we have here is failure to communicate.
+
+Edit in master upstream, yo.
 
 
 <div class="bs-callout bs-callout-info" id="info">
