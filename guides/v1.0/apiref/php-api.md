@@ -4,7 +4,9 @@ title: Magento 2 PHP API
 ---
  
  <div class="container">
-   <h1 class="heading1">Magento 2 PHP API</h1>
+
+      <div class="blog-header">
+        <h1>Magento 2 PHP API</h1>
         <p>Description of this page.</p>
       </div>
 
