@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters_fedg
 title: This is Only a Test
 ---
@@ -8,6 +8,8 @@ title: This is Only a Test
 <p><a href="{{ site.githuburl }}m2fedg/css/css-preprocess.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2>Test</h2>
+
+This is a test section, yo.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
