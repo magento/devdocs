@@ -15,6 +15,9 @@ Don't take any guff from these swine.
 
 What we have here is failure to communicate.
 
+Edit in master upstream, yo.
+
+
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
