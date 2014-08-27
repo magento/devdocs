@@ -4,16 +4,31 @@ title: Magento 2 Customer Service
 ---
  
  <div class="container">
-
-      <div class="blog-header">
-
-        <h1>Customer service</h1>
-                <p class="blog-description">Use customer account service objects to create and manage customers.</p>
-      </div>
-
-      <div class="row">
-
-        <div class="col-sm-8 blog-main">
+	<div class="jumbotron">
+       <h1 id="php-api-service">{{ page.title }}</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-3" id="myScrollspy">
+         <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix">          
+               <li>
+                  <a href="#construct">__construct()</a>
+               </li>
+               <li>
+                  <a href="#create-customer">createCustomer()</a>
+               </li>
+               <li>
+                  <a href="#resend-confirmation">resendConfirmation()</a>
+               </li>
+            </ul>
+            <a class="back-to-top" href="#top">
+            Top
+            </a>
+             <a class="bs-docs-theme-toggle" href="#">Previous</a>
+             <a class="bs-docs-theme-toggle" href="#">Next</a>
+         </div>
+        </div>
+        <div class="col-xs-9">
 <p>Use the methods on customer account service objects to:</p>
 <ul>
     <li>Create a customer with a password or hashed password.</li>
@@ -24,7 +39,7 @@ title: Magento 2 Customer Service
     <li>Validate a token in a reset password link.</li>
     <li>Send and resend email to a customer.</li></ul>
 
-<div class="blog-post">
+
 
 <h2 id="construct" class="heading2">__construct()</h2>
 <p class="blog-description">Constructs a customer service data object.</p>
@@ -77,10 +92,6 @@ title: Magento 2 Customer Service
 </tbody>
 </table>
 
-           
-          </div><!-- /.blog-post -->
-
-        <div class="blog-post">
 
 <h2 id="create-customer">createCustomer()</h2>
 <p class="blog-description">Creates a customer service data object.</p>
@@ -131,10 +142,6 @@ title: Magento 2 Customer Service
 </tbody>
 </table>
 
-           
-          </div><!-- /.blog-post -->
-          <div class="blog-post">
-
 <h2 id="resend-confirmation">resendConfirmation()</h2>
 <p class="blog-description">Resends a confirmation email to a customer.</p>
 
@@ -184,32 +191,31 @@ title: Magento 2 Customer Service
 </tbody>
 </table>
 
+           </div>
+          <!-- 
+  <h2 id="php-api-overview">Overview</h2>
+            <p>Overview of everything.</p>
+            <h3 id="subtopic1">Subtopic 1</h3>
+            <p>Subtopic.</p>
+            <h2 id="php-api-audience">Audience</h2>
+            <p>This guide is for PHP API developers who want to change the world.</p>
+            <h3 id="subtopic2">Subtopic 2</h3>
+            <p>Subtopic.</p>
+            <h2 id="php-api-prereqs">Prerequisites</h2>
+            <p>Install a bunch of stuff.</p>
+            <h3 id="subtopic3">Subtopic 3</h3>
+            <p>Subtopic.</p>
+            <h2 id="php-api-topic1">Topic 1</h2>
+            <p>Topic 1.</p>
+            <h3 id="subtopic4">Subtopic 4</h3>
+            <p>Subtopic.</p>
+ -->
+         </div>
+    </div>
+</div>
+
            
-          </div><!-- /.blog-post -->
-
-          <ul class="pager">
-            <li><a class="ext1" href="#">Previous</a></li>
-            <li><a class="ext1" href="#">Next</a></li>
-          </ul>
-
-        </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-         
-          <div class="sidebar-module">
-            <h2>Methods</h2>
-            <ol class="list-unstyled">
-
-              <li><a class="ext1" href="#construct">__construct()</a></li>    
-                <li><a class="ext1" href="#create-customer">createCustomer()</a></li>
-                <li><a class="ext1" href="#resend-confirmation">resendConfirmation()</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
-      </div><!-- /.row -->
-
-    </div><!-- /.container -->
-
-
+           
+           
+     
 
