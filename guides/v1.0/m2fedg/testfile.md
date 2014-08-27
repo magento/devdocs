@@ -9,7 +9,7 @@ title: This is Only a Test
 
 <h2>Test</h2>
 
-This is a test section.
+This is a test section, yo.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
