@@ -49,6 +49,22 @@ body {
     width: 100%;
     border-width: 4px;
     margin-left: 1.5em;
+    position: relative;
+}
+
+.affix {
+  width: inherit; //helped keep the content the same size on fluid layouts
+  position: fixed;
+  top: 50px;  //height of the nav
+}
+.affix-bottom {
+  width: inherit;
+  position: absolute;
+  top: auto;
+  bottom: 200px;  //height of the footer
+}
+.affix-top {
+ width: inherit; 
 }
 
 /* Containers */
@@ -135,6 +151,16 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover {
 h1.heading1 {
     margin-bottom: 12px;
     font-size: 36px;
+}
+
+h2.heading2 {
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+h4.heading4 {
+    margin-bottom: 6px;
+    font-size: 18px;
 }
 
 /* Logos */
