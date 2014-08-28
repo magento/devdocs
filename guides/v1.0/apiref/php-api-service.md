@@ -1,16 +1,16 @@
 ---
-layout: apiref_main
+layout: default
 title: Magento 2 Customer Service
 ---
  
 <div class="container">
    <div class="jumbotron">
-      <h1 id="php-api-service">{{ page.title }}</h1>
+      <h1 class="heading1" id="php-api-service">{{ page.title }}</h1>
    </div>
    <div class="row">
       <div class="col-xs-3" id="myScrollspy">
          <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
-            <ul class="nav nav-tabs nav-stacked toc-sidebar" data-spy="affix">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix">
                <li>
                   <a href="#construct">__construct()</a>
                </li>
@@ -39,7 +39,7 @@ title: Magento 2 Customer Service
             <li>Validate a token in a reset password link.</li>
             <li>Send and resend email to a customer.</li>
          </ul>
-         <h2 id="construct" class="heading2">__construct()</h2>
+         <h2 id="construct">__construct()</h2>
          <p class="blog-description">Constructs a customer service data object.</p>
          <blockquote class="codesample">
             <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
@@ -225,6 +225,7 @@ title: Magento 2 Customer Service
       </div>
    </div>
 </div>
+
            
            
            
