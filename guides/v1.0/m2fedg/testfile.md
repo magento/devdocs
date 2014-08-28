@@ -13,6 +13,8 @@ Edit in fork, yo.
 
 This sheer edit be in the master.
 
+Accept no substituteskies from the fork
+
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
