@@ -15,6 +15,8 @@ This sheer edit be in the master.
 
 Accept no substituteskies from the fork
 
+One more from the master
+
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
