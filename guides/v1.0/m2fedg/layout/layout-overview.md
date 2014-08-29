@@ -11,10 +11,10 @@ title: Introduction to Magento 2 Theming
 
 To customize a theme layout for your store, you can:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extend</a> a parent layout. 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Override</a> a parent layout using a custom theme. 
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extend</a> a parent layout. 
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Override</a> a parent layout using a custom theme. 
 
-To perform either task, you must use <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration.  
+To perform either task, you must use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration.  
 
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
@@ -36,7 +36,7 @@ Finally, you can also override a theme layout completely. Layout files with such
 
 Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into *layers*, including the *view layer*.
 
-The view layer is responsible for representing the data for display on a web browser. To that end, your *page layout* is defined by a page structure that is in turn represented by hierarchy of <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">blocks and containers</a>.
+The view layer is responsible for representing the data for display on a web browser. To that end, your *page layout* is defined by a page structure that is in turn represented by hierarchy of <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">blocks and containers</a>.
 
 Technically, the layout is defined in the `.xml` layout files (layouts and layout updates) that contain element declarations and element manipulation instructions. To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Understanding Layout File Types</a>.
 
@@ -60,11 +60,11 @@ Default layout
 
 Extending layout
 
-:	Layouts with instructions to override selected elements of a default layout. Magento merges the extending layout with the default or parent layout, overriding the elements you want to change. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>.
+:	Layouts with instructions to override selected elements of a default layout. Magento merges the extending layout with the default or parent layout, overriding the elements you want to change. For more information, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Page Layout</a>.
 
 Overriding layout
 
-:	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Page Layout</a>.
+:	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Page Layout</a>.
 
 <h2 id="layout_types">Understanding Layout File Types</h2>
 
@@ -140,7 +140,7 @@ The Magento software:
 	
 	c. For all themes except the parent theme, replaces overridden theme layouts. 
 	
-1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>.
+1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Page Layout</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
@@ -157,11 +157,11 @@ Following is an illustration of how layout processing works for two modules and 
 	
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Page Layout</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_overview.html">Translating Magento 2</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Page Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/xlate/xlate_overview.html">Translating Magento 2</a>
 

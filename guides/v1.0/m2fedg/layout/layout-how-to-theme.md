@@ -135,9 +135,9 @@ At this point your theme file structure looks as follows:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Layout</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Layout</a>

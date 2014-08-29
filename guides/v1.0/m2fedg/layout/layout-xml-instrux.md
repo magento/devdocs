@@ -35,7 +35,7 @@ This section discusses the following common XML instructions you can use to cust
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
-A <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">block</a> represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
+A <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">block</a> represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
 
 The `<block>` instruction defines a block. Attributes:
 
@@ -101,7 +101,7 @@ The `<block>` instruction defines a block. Attributes:
 
 <h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container></h3>
 
-A <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">container</a> is structure only; it has no additional content. A container contains other layout elements&mdash;such as blocks and containers&mdash;and it renders child elements during view output generation.
+A <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">container</a> is structure only; it has no additional content. A container contains other layout elements&mdash;such as blocks and containers&mdash;and it renders child elements during view output generation.
 
 The `<container>` instruction defines a container. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
 
@@ -509,8 +509,8 @@ Examples:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Layout</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Layout</a>
 

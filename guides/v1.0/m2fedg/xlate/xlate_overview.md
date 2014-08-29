@@ -9,7 +9,7 @@ title: Translating Magento 2
 
 <h2 id="fedg_xlate_overview">Overview of Magento Translations</h2>
 
-In Magento 2, our primary goal when redesigning translation was to reduce global code coupling and dependencies. We determined that the <a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_mage1.html#fedg_xlate_mage1">Magento 1.x</a> module context is detrimental for the developer (and translator) and not valuable for the user; therefore, we eliminated the module context for translating phrases.
+In Magento 2, our primary goal when redesigning translation was to reduce global code coupling and dependencies. We determined that the <a href="{{ site.gdeurl }}m2fedg/xlate/xlate_mage1.html#fedg_xlate_mage1">Magento 1.x</a> module context is detrimental for the developer (and translator) and not valuable for the user; therefore, we eliminated the module context for translating phrases.
 
 Our secondary goal is to provide solutions to the following:
 
@@ -43,7 +43,7 @@ To simplify usage and reduce the impact on the existing code base, use the globa
 
 	__('Value for "%1" is invalid: %2', $code, $error);
 	
-Note the difference in format of Magento 2 placeholders `%1, $2` compared to the <a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_mage1.html#fedg_xlate_source">Magento 1.x placeholder `%s`</a>.
+Note the difference in format of Magento 2 placeholders `%1, $2` compared to the <a href="{{ site.gdeurl }}m2fedg/xlate/xlate_mage1.html#fedg_xlate_source">Magento 1.x placeholder `%s`</a>.
 
 <h3 id="fedg_xlate_mage2_phrase_render">Rendering Phrases</h3>
 
@@ -116,8 +116,8 @@ When translation CSV files are merged, if a phrase defined by one module is alre
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_mage1.html">How Translation Works in Magento 1.x</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_known-issues.html">Known Translation Issues and Workarounds</a>
+*	<a href="{{ site.gdeurl }}m2fedg/xlate/xlate_mage1.html">How Translation Works in Magento 1.x</a>
+*	<a href="{{ site.gdeurl }}m2fedg/xlate/xlate_known-issues.html">Known Translation Issues and Workarounds</a>
 	
 
 

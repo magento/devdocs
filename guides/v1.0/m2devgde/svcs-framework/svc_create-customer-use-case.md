@@ -79,6 +79,6 @@ The preceding section showed how to:
 
 #### Related Topics
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a>

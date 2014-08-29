@@ -112,7 +112,7 @@ Here's how LESS preprocessing actually works:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-themes.html">Using CSS in Themes</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-overview.html">Introduction to Magento 2 Theming </a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-themes.html">Using CSS in Themes</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-overview.html">Introduction to Magento 2 Theming </a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
 

@@ -9,8 +9,8 @@ title: Magento JavaScript Coding Standards and Best Practices
 
 The following topics discuss Magento standards and recommendations for coding JavaScript and jQuery.
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/js-coding-style.html">Magento JavaScript Coding Style Guidelines</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget_coding-stnd.html">Magento jQuery Widget Coding Standards</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/js-coding-style.html">Magento JavaScript Coding Style Guidelines</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget_coding-stnd.html">Magento jQuery Widget Coding Standards</a>
 
 
 

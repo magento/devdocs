@@ -117,4 +117,4 @@ The only relation of this mechanism to translations is that it is coupled to the
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_mage2.html">Magento 2 Translation, Known Issues, and Workarounds</a>
+*	<a href="{{ site.gdeurl }}m2fedg/xlate/xlate_mage2.html">Magento 2 Translation, Known Issues, and Workarounds</a>

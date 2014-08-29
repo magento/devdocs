@@ -127,8 +127,8 @@ You can find more information on the Magento UI library specific mixins and the 
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2</a>
 

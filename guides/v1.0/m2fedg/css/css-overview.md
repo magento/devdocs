@@ -9,7 +9,7 @@ title: Using Cascading Style Sheets (CSS) with Magento 2
 
 You can customize Magento themes by using CSS to add your own images and fonts. 
 
-We recommend against using CSS visibility properties to hide Magento blocks and content. If you want to add or remove blocks in Magento, use <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">XML instructions</a> instead.
+We recommend against using CSS visibility properties to hide Magento blocks and content. If you want to add or remove blocks in Magento, use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML instructions</a> instead.
 
 You can customize Magento themes in the following ways:
 
@@ -21,7 +21,7 @@ You can customize Magento themes in the following ways:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-themes.html">Using CSS in Themes</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-themes.html">Using CSS in Themes</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>

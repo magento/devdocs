@@ -9,7 +9,7 @@ title: Overriding a Layout
 
 <h2 id="fedg_layout_override_overview">Overview of Overriding a Layout</h2>
 
-Not all layout customizations can be performed by <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
+Not all layout customizations can be performed by <a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
 
 Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
  
@@ -56,7 +56,7 @@ This section discusses how to override:
 
 To add an overriding default layout file (to override a default layout provided by the module):
 
-1.	Create a layout file following our <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-overview.html#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.gdeurl }}m2fedg/layout/layout-overview.html#layout_conventions">layout file conventions</a>.
 2.	Put it according to the location convention, that is:
 
 <pre>__app/design/[area]/[your theme path]
@@ -95,9 +95,9 @@ Where:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>

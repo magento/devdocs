@@ -13,7 +13,7 @@ Rather than copy extensive layout code and modify what you want to change, in Ma
 
 To add a theme merging file:
 
-1.	Create a layout file following our <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-overview.html#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.gdeurl }}m2fedg/layout/layout-overview.html#layout_conventions">layout file conventions</a>.
 2.	Place the theme merging file according to our location conventions; that is:
 
 <pre>__app/design/[area]/[theme path]
@@ -46,9 +46,9 @@ Magento merges layout files as follows:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-override.html">Overriding a Page Layout</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Page Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>

@@ -53,11 +53,11 @@ To be able to understand this guide, you must have basic knowledge of:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-overview.html">Introduction to Magento 2 Theming</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2 </a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/js-mage-plugin.html">Using the Magento Mage JavaScript Plug-In</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/xlate/xlate_overview.html">Translating Magento 2</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-overview.html">Introduction to Magento 2 Theming</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2 </a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/js-mage-plugin.html">Using the Magento Mage JavaScript Plug-In</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/xlate/xlate_overview.html">Translating Magento 2</a>
 

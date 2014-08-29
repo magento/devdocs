@@ -103,8 +103,8 @@ Where `this.element` is the element on which the loader is dependent.
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
