@@ -53,8 +53,8 @@ Your module can use `webapi.xsd` or you can create a customized validation.
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a>
+*	<a href="{{ site.gdeurl }}m2devgde/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
+*	<a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a>

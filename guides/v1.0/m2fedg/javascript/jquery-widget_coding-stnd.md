@@ -107,7 +107,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 </div>
 
 <h2 id="fedg_widget-coding-stnd_instant">jQuery Widget Instantiation and Resources</h2>
-<p>You must use the <a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget</p>
+<p>You must use the <a href="{{ site.gdeurl }}m2fedg/javascript/js-mage-plugin.html" target="_blank">Mage plug-in</a> to instantiate a widget or define resources for a widget</p>
 <div id="accordion2">
 <h3>Additional JavaScript files used as resources by a widget</h3>
 <div>
@@ -768,5 +768,5 @@ menuInstance.element.addClass('ui-state-active');
 
 <h4>Related Topics:</h4>
 <ul><li><a href="http://api.jqueryui.com/jQuery.widget" target="_blank">jQuery UI widget documentation</a></li>
-<li><a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/js-mage-plugin.html">Using the Magento Mage JavaScript Plug-In<a></li></ul>
+<li><a href="{{ site.gdeurl }}m2fedg/javascript/js-mage-plugin.html">Using the Magento Mage JavaScript Plug-In<a></li></ul>
 

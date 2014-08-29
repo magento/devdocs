@@ -63,9 +63,9 @@ Calendar widget options, methods, and events mostly coincide with the <a href="h
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-loader.html">Using the jQuery Loader Widget</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-loader.html">Using the jQuery Loader Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
 

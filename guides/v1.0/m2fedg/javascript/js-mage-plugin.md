@@ -263,5 +263,5 @@ When the `contentUpdated` event is triggered, it goes up to the `<body>` node, a
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>

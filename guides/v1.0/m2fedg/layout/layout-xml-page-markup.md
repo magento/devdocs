@@ -100,7 +100,7 @@ Where:
 
 <h3 id="layout_markup_css_change">Changing JavaScript or CSS Links</h3>
 
-To change a link, <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html#fedg_layout_xml-instruc_ex_rem">remove it</a> then add the new one.
+To change a link, <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html#fedg_layout_xml-instruc_ex_rem">remove it</a> then add the new one.
 
 <h3 id="layout_markup_css_remove">Removing JavaScript or CSS</h3>
 
@@ -124,7 +124,7 @@ To change it, make a customization similar to the following in a theme merging f
 
 <h2 id="layout_markup_replace_elements">Replacing Elements</h2>
 
-To replace an element, <a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html#fedg_layout_xml-instruc_ex_rem">remove it</a> and add a new one.
+To replace an element, <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html#fedg_layout_xml-instruc_ex_rem">remove it</a> and add a new one.
 
 <h2 id="layout_markup_modify-block">Modifying Block Arguments</h2>
 
@@ -147,6 +147,6 @@ To set a page title using the `setTitle()` method, make a customization similar 
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>

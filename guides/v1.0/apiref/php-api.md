@@ -62,13 +62,13 @@ title: Magento 2 PHP API
          <h2 id="services">Services</h2>
          <p>Use the following services:</p>
           <ul> 
-               <li><a href="{{ site.baseurl }}guides/v1.0/apiref/php-api-service.html">Bundle</a></li>
-               <li><a href="{{ site.baseurl }}guides/v1.0/apiref/php-api-service.html">Catalog</a></li>
-               <li><a href="{{ site.baseurl }}guides/v1.0/apiref/php-api-service.html">Catalog inventory</a></li>
-               <li><a href="{{ site.baseurl }}guides/v1.0/apiref/php-api-service.html">Catalog URL rewrite</a></li>
-               <li><a href="{{ site.baseurl }}guides/v1.0/apiref/php-api-service.html">Checkout</a></li>
-               <li><a href="{{ site.baseurl }}guides/v1.0/apiref/php-api-service.html">CMS URL rewrite</a></li>
-               <li><a href="{{ site.baseurl }}guides/v1.0/apiref/php-api-service.html">Customer</a></li>
+               <li><a href="{{ site.gdeurl }}apiref/php-api-service.html">Bundle</a></li>
+               <li><a href="{{ site.gdeurl }}apiref/php-api-service.html">Catalog</a></li>
+               <li><a href="{{ site.gdeurl }}apiref/php-api-service.html">Catalog inventory</a></li>
+               <li><a href="{{ site.gdeurl }}apiref/php-api-service.html">Catalog URL rewrite</a></li>
+               <li><a href="{{ site.gdeurl }}apiref/php-api-service.html">Checkout</a></li>
+               <li><a href="{{ site.gdeurl }}apiref/php-api-service.html">CMS URL rewrite</a></li>
+               <li><a href="{{ site.gdeurl }}apiref/php-api-service.html">Customer</a></li>
             </ul>
       </div>
    </div>

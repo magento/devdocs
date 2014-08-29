@@ -11,7 +11,7 @@ title: Magento 2 Responsive Web Design
 
 Simply put, <a href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as *viewports*) without maintaining completely separate style sheets for each.
 
-Magento 2 ships with a Blank responsive theme and these topics discuss how to use <a href="{{ site.baseurl }}guides/v1.0/m2fedg/css/css-overview.html">CSS</a>, <a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_using-blocks.html">predefined blocks</a> to build a responsive design from there. 
+Magento 2 ships with a Blank responsive theme and these topics discuss how to use <a href="{{ site.gdeurl }}m2fedg/css/css-overview.html">CSS</a>, <a href="{{ site.gdeurl }}m2fedg/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.gdeurl }}m2fedg/rwd/rwd_using-blocks.html">predefined blocks</a> to build a responsive design from there. 
 
 <h3 id="fedg_rwd_terms">Terms Used</h3>
 
@@ -71,8 +71,8 @@ Desktop:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_using-blocks.html">Using Blocks in Your Responsive Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_using-blocks.html">Using Blocks in Your Responsive Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>	
 
 

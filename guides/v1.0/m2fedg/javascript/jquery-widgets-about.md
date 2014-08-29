@@ -19,9 +19,9 @@ This guide discusses the following widgets:
 
 #### Related Topics:
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-loader.html">Using the Loader jQuery Widget</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2fedg/javascript/jquery-widget-translate-inline.html">Using the TranslateInline jQuery Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-loader.html">Using the Loader jQuery Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">Using the TranslateInline jQuery Widget</a>
 
 

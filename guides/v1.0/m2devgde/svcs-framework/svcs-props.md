@@ -9,7 +9,7 @@ title: Interacting With Services
 
 A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, overriding business login in an interface is much easier than in Magento 1.x.
 
-For example, interfaces of the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, override methods on the interface. It's much simpler than before. For details, see <a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
+For example, interfaces of the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, override methods on the interface. It's much simpler than before. For details, see <a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
 
 ## Service Design
 
@@ -78,14 +78,14 @@ A service is _not_ responsible for:
 	
 	Resources are specified in the module's `webapi.xml`
 	
-	For more information about how this works, see <a href="{{ site.baseurl }}guides/v1.0/m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
+	For more information about how this works, see <a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
 
 #### Related Topics
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
+*	<a href="{{ site.gdeurl }}m2devgde/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

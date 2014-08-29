@@ -30,7 +30,7 @@ A service is:
 
 	<a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountService.php" target="_blank">Here</a> is a class that implements the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CusomterAccountServiceInterface</a>.
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/build-svc.html#about-service-data-objects">Service data objects</a> that serialize, deserialize, and format data.	
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html#about-service-data-objects">Service data objects</a> that serialize, deserialize, and format data.	
 	
 ## Benefits of the Service Layer
 
@@ -42,9 +42,9 @@ Benefits include:
  
 ## Related Topics
 
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
-*	<a href="{{ site.baseurl }}guides/v1.0/m2devgde/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
+*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
 
