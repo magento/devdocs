@@ -5,17 +5,16 @@ title: Magento 2 PHP API Guide
 
 <div class="container">
    <div class="jumbotron">
-      <h1 class="heading1" id="php-api-guide">{{ page.title }}</h1>
+      <h1 class="heading1" id="php-api-services">{{ page.title }}</h1>
    </div>
    <div class="row">
-      <div class="col-xs-3" id="myScrollspy">
-         <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
-            <ul class="nav nav-tabs nav-stacked" data-spy="affix">
-               <li>
-                  <a href="#php-api-overview">Overview</a>
-                  <ul class="nav">
-                     <li><a href="#subtopic1">Subtopic 1</a></li>
-                  </ul>
+      <div class="col-xs-3">
+         <div class="api-sidebar" data-offset-bottom="0" data-offset-top="80" data-spy="affix">
+            <ul class="nav api-sidenav">
+               <li><a href="#overview">Overview</a></li>
+               <ul class="nav active">
+                  <li><a href="#subtopic1">Subtopic 1</a></li>
+               </ul>
                </li>
                <li>
                   <a href="#php-api-audience">Audience</a>
@@ -83,22 +82,23 @@ title: Magento 2 PHP API Guide
                </ul>
             </span>
          </div>
-         <h2 id="php-api-overview">Overview</h2>
+         <h2 class="heading2" id="php-api-overview">Overview</h2>
          <p>Overview of everything.</p>
-         <h3 id="subtopic1">Subtopic 1</h3>
+         <h3 class="heading3" id="subtopic1">Subtopic 1</h3>
          <p>Subtopic.</p>
-         <h2 id="php-api-audience">Audience</h2>
+         <h2 class="heading2" id="php-api-audience">Audience</h2>
          <p>This guide is for PHP API developers who want to change the world.</p>
-         <h3 id="subtopic2">Subtopic 2</h3>
+         <h3 class="heading3" id="subtopic2">Subtopic 2</h3>
          <p>Subtopic.</p>
-         <h2 id="php-api-prereqs">Prerequisites</h2>
+         <h2 class="heading2" id="php-api-prereqs">Prerequisites</h2>
          <p>Install a bunch of stuff.</p>
-         <h3 id="subtopic3">Subtopic 3</h3>
+         <h3 class="heading3" id="subtopic3">Subtopic 3</h3>
          <p>Subtopic.</p>
-         <h2 id="php-api-topic1">Topic 1</h2>
+         <h2 class="heading2" id="php-api-topic1">Topic 1</h2>
          <p>Topic 1.</p>
-         <h3 id="subtopic4">Subtopic 4</h3>
+         <h3 class="heading3" id="subtopic4">Subtopic 4</h3>
          <p>Subtopic.</p>
       </div>
    </div>
 </div>
+

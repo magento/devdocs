@@ -1,31 +1,45 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>{{ page.title }}</title>
-      <meta name="description" content="{{ site.description }}">
-      <link href="{{ site.baseurl }}common/css/jquery.tocify.css" type="text/css" rel="stylesheet" />
-      <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/jumbotron.css" rel="stylesheet">
-      <!~~ 
-      <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet">
-      ~~>
-      <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
-      <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
-      <script src="{{ site.baseurl }}assets/js/ie10-viewport-bug-workaround.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery-1.7.2.min.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery-ui-1.9.1.custom.min.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery.tocify.min.js""></script>
-      <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
-      <script src="{{ site.baseurl }}common/css/assets/js/ie-emulation-modes-warning.js"></script>
-      <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-      <script src="{{ site.baseurl }}common/css/assets/js/ie10-viewport-bug-workaround.js"></script>
-   </head>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <title>{{ page.title }}</title>
+   <meta name="description" content="{{ site.description }}">
+   <!-- 
+<link href="{{ site.baseurl }}common/css/jquery.tocify.css" type="text/css" rel="stylesheet" />
+   <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
+ -->
+   <link href="{{ site.baseurl }}common/css/bootstrap.min.css" rel="stylesheet">
+   <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
+   <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
+   <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
+
+   <link href="{{ site.baseurl }}common/css/jumbotron.css" rel="stylesheet">
+   <link href="{{ site.baseurl }}assets/css/docs.min.css" rel="stylesheet">
+   <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}common/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+  <!-- 
+ <!~~ 
+   <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet">
+   ~~>
+ -->
+ 
+<!-- 
+ <link rel="stylesheet" href={{ site.baseurl }}common/css/reset.css"> <!~~ CSS reset ~~>
+	<link rel="stylesheet" href={{ site.baseurl }}common/css/style.css"> <!~~ Resource style ~~>
+	<script src="{{ site.baseurl }}common/js/modernizr.js"></script> <!~~ Modernizr ~~>
+ -->
+   <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
+   <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
+   <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
+   <script src="{{ site.baseurl }}assets/js/ie10-viewport-bug-workaround.js"></script>
+   <script src="{{ site.baseurl }}common/js/jquery-1.7.2.min.js"></script>
+   <script src="{{ site.baseurl }}common/js/jquery-ui-1.9.1.custom.min.js"></script>
+   <script src="{{ site.baseurl }}common/js/jquery.tocify.min.js""></script>
+   <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
+   <script src="{{ site.baseurl }}common/css/assets/js/ie-emulation-modes-warning.js"></script>
+   <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+   <script src="{{ site.baseurl }}common/css/assets/js/ie10-viewport-bug-workaround.js"></script>
+</head>
    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-frontdoor">
          <div class="navbar-header">
