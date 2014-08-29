@@ -51,20 +51,129 @@ body {
     margin-left: 1.5em;
     position: relative;
 }
+/* toc style */
+.cd-main-content {
+  /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
+  min-height: 100%;
+  z-index: 2;
+  transition-property: transform;
+  transition-duration: 0.4s;
+}
+.cd-main-content.lateral-menu-is-open {
+  transform: translateX(-260px);
+}
 
-.affix {
-  width: inherit; //helped keep the content the same size on fluid layouts
-  position: fixed;
-  top: 50px;  //height of the nav
+/*
+ * Side navigation
+ *
+ * Scrollspy and affixed enhanced navigation to highlight sections and secondary
+ * sections of docs content.
+ *
+ * Informed by bootstrap 3.0 site
+ */
+
+/* By default it's not affixed in mobile views, so undo that */
+.api-sidebar.affix {
+    position: static;
 }
-.affix-bottom {
-  width: inherit;
-  position: absolute;
-  top: auto;
-  bottom: 200px;  //height of the footer
+
+/* First level of nav */
+.api-sidenav {
+    margin-top: 20px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    width: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-shadow: 0 1px 0 #fff;
+    background-color: #EEE;
+    border-radius: 5px;
+    /*margin-top: 30px;*/
 }
-.affix-top {
- width: inherit; 
+
+/* All levels of nav */
+.api-sidebar .nav > li > a {
+    display: block;
+    color: black;
+    padding: 5px 20px;
+    font-size: 12px;
+}
+
+.api-sidebar .nav > li > a:hover,
+.api-sidebar .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #E0E4E6;
+}
+
+.api-sidebar .nav > .active > a,
+.api-sidebar .nav > .active:hover > a,
+.api-sidebar .nav > .active:focus > a {
+    font-weight: bold;
+    color: #cf2f19;
+    background-color: transparent;
+    border-right: 2px solid #cf2f19;
+}
+
+/* Nav: second level (shown on .active) */
+.api-sidebar .nav .nav {
+    margin-bottom: 8px;
+}
+
+.api-sidebar .nav .nav > li > a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+
+/* Show and affix the side nav when space allows it */
+@media (min-width: 992px) {
+    .api-sidebar .nav > .active > ul {
+        display: block;
+    }
+
+    /* Widen the fixed sidebar */
+    .api-sidebar.affix,
+    .api-sidebar.affix-bottom {
+        width: 213px;
+    }
+
+    .api-sidebar.affix {
+        position: fixed; /* Undo the static from mobile first approach */
+        top: 20px;
+    }
+
+    .api-sidebar.affix-bottom {
+        position: absolute; /* Undo the static from mobile first approach */
+    }
+
+    .api-sidebar.affix-bottom .api-sidenav,
+    .api-sidebar.affix .api-sidenav {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+.nav > li.divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+
+@media (min-width: 1200px) {
+    /* Widen the fixed sidebar again */
+    .api-sidebar.affix-bottom,
+    .api-sidebar.affix {
+        width: 263px;
+    }
+}
+
+/* @end */
+
+
+.rowtop {
+    margin-top: 75px;
 }
 
 /* Containers */
@@ -149,17 +258,22 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover {
 }
 
 h1.heading1 {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     font-size: 36px;
 }
 
 h2.heading2 {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-size: 28px;
 }
 
+h3.heading3 {
+    margin-bottom: 4px;
+    font-size: 22px;
+}
+
 h4.heading4 {
-    margin-bottom: 6px;
+    margin-bottom: 2px;
     font-size: 18px;
 }
 
@@ -407,7 +521,7 @@ ul.note>li {
 }
 
 .bs-docs-sidebar .nav > li > a {
-    color: white;
+    color: darkgray;
 }
 
 span.glyphicon-class>p {
@@ -443,12 +557,6 @@ h1 a,h2 a,h3 a,h4 a
 {
   color:#428fe0
 } */
-
-
-
-
-
-
 
 /* .posts
 {
