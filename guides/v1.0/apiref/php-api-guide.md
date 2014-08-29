@@ -8,13 +8,14 @@ title: Magento 2 PHP API Guide
       <h1 class="heading1" id="php-api-services">{{ page.title }}</h1>
    </div>
    <div class="row">
-      <div class="col-xs-3">
+      <div class="col-xs-3 panel-group" id="accordion">
          <div class="api-sidebar" data-offset-bottom="0" data-offset-top="80" data-spy="affix">
             <ul class="nav api-sidenav">
-               <li><a href="#overview">Overview</a></li>
-               <ul class="nav active">
-                  <li><a href="#subtopic1">Subtopic 1</a></li>
-               </ul>
+               <li data-toggle="collapse" data-target="#sub1">
+                  <a href="#overview">Overview</a>
+                  <ul class="nav active">
+                     <li id="sub1" class="collapse"><a href="#subtopic1">Subtopic 1</a></li>
+                  </ul>
                </li>
                <li>
                   <a href="#php-api-audience">Audience</a>
@@ -101,4 +102,14 @@ title: Magento 2 PHP API Guide
       </div>
    </div>
 </div>
+<script type="text/javascript">
+   $(function () { $('#collapseFour').collapse({
+      toggle: false
+   })});
+   $(function () { $('#collapseTwo').collapse('show')});
+   $(function () { $('#collapseThree').collapse('toggle')});
+   $(function () { $('#collapseOne').collapse('hide')});
+</script>
+
+
 
