@@ -9,9 +9,15 @@ title: Using Blocks in Your Responsive Design
 
 <h2 id="fedg_rwd_blocks_overview">Overview of Blocks in a Responsive Design</h2>
 
-This topic presents examples of the typical sequence of blocks on a page for both desktop and mobile versions of the responsive Blank theme, as well as common requirements for table markup responsiveness (HTML and CSS). There is also information about the specific form attributes you have to use to make form elements responsive on mobile devices.
+This topic discusses:
+
+*	Examples of the typical sequence of blocks on a page for both desktop and mobile versions of the responsive Blank theme
+*	HTML and CSS requirements for responsive tables
+	Specific form attributes you must use to make form elements responsive on mobile devices
 
 In the Blank theme, the breakpoint is at a 768px viewport.
+
+For more information about blocks, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>.
 
 <h2 id="fedg_rwd_resp-table-class">Implementing Responsive Tables</h2>
 
@@ -65,6 +71,7 @@ Desktop image:
 #### Related Topics:
 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
 *	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>
 *	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
