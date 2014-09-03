@@ -70,7 +70,7 @@ Desktop image:
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Overview of Containers and Blocks</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
 *	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>
 *	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>

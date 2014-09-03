@@ -53,6 +53,7 @@ Layout
 Theme layout
 
 :	Layouts for themes which can extend the default layout (these are referred to as <a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">extending theme files</a> and override default layouts or parent themes (<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">overriding theme files</a>).
+
 Layout handle
 
 :	A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.
@@ -112,13 +113,13 @@ To be processed correctly, all layout files must meet the following requirements
 
 *	A single layout file always declares a single layout handle and defines layout instructions for that layout handle.
 *	The layout file name defines the name of the layout handle.
-*	The layout file is located according to convention ('app/code/[vendor name]/[module name]/view/frontend/layout'); for example:
+*	The layout file is located according to convention (`app/code/[vendor name]/[module name]/view/frontend/layout`); for example:
 
 	<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a>
 
 `checkout_cart_index.xml` defines several handles, including `checkout_cart_item_renderers`. 
 
-Magento automatically detects layout files located according to convention. No configuration needs to be implemented to involve a layout file into execution.
+Magento automatically detects layout files located according to convention. 
 
 <h2 id="layout_processing">Layout File Processing</h2>
 
@@ -168,7 +169,7 @@ Following is an illustration of how layout processing works for two modules and 
 	
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Overview of Containers and Blocks</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
