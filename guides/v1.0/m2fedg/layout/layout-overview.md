@@ -84,7 +84,7 @@ Magento supports the following types of layouts:
 
 *	Default layouts&mdash;Layout files provided by Magento. Do not change these files unless they are in your custom module. 
 
-	Example: <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" target="_blank">app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml</a>
+	Example: <a href="{{ site.mage2000url }}blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" target="_blank">app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml</a>
 	
 	Following is where you create layout files for your namespace and module:
 	
@@ -97,7 +97,7 @@ Magento supports the following types of layouts:
 			   
 *	Theme layouts&mdash;Layout files for themes. Theme layouts can extend the default layout (these are referred to as *extending theme files*) and override default layouts or parent theme layouts (referred to as *overriding default layouts* or *overriding theme layouts*). 
 
-	Example: <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">app/design/frontend/magento_plushe/Magento_Checkout/layput/checkout_cart_index.xml</a>
+	Example: <a href="{{ site.mage2000url }}blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">app/design/frontend/magento_plushe/Magento_Checkout/layput/checkout_cart_index.xml</a>
 
 	<pre>__app/design/[area]/[path to your theme]
   |__/[your namespace]/[your module]
@@ -115,7 +115,7 @@ To be processed correctly, all layout files must meet the following requirements
 *	The layout file name defines the name of the layout handle.
 *	The layout file is located according to convention (`app/code/[vendor name]/[module name]/view/frontend/layout`); for example:
 
-	<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a>
+	<a href="{{ site.mage2000url }}blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a>
 
 `checkout_cart_index.xml` defines several handles, including `checkout_cart_item_renderers`. 
 

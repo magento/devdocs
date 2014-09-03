@@ -9,17 +9,17 @@ title: Modular File System
 
 ## Introduction
 
-The <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`. 
+The <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`. 
 
 ## Understanding the Structure of the Magento File System
 
 The main components of the Magento file system are:
 
-*	The <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem.php" target="_blank">Framework/Filesystem.php class</a>, which retrieves objects from a directory with read or write access rights.
+*	The <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem.php" target="_blank">Framework/Filesystem.php class</a>, which retrieves objects from a directory with read or write access rights.
 *	The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem.php" target="_blank">Framework/App/Filesystem.php class</a>, which retrieves the path of files on the Magento file system.
 *	The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/DirectoryList.php" target="_blank">DirectoryList.php</a> class, which stores directory configurations.
-*	Classes in <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem/Directory" target="_blank">the Directory directory</a>, which facilitate the handling of directories.
-*	Classes in <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem/Driver" target="_blank">the Driver directory</a>, which perform all operations with the file system.
+*	Classes in <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem/Directory" target="_blank">the Directory directory</a>, which facilitate the handling of directories.
+*	Classes in <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem/Driver" target="_blank">the Driver directory</a>, which perform all operations with the file system.
 
 ## Managing the File System
 

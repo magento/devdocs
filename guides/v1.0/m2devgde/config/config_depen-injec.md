@@ -29,7 +29,7 @@ The benefit of constructor dependency injection is that the object is immutable.
 
 (A second type of depedency injection, *method injection*, is discussed later in this topic.)
 
-The <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment. It's a separate object to avoid having to repeat the same code over and over again.
+The <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment. It's a separate object to avoid having to repeat the same code over and over again.
 
 ## Terms Used
 
@@ -50,7 +50,7 @@ The Magento software uses class constructor signatures to retrieve information a
 
 ### Dependency Injection Type Configurations
 
-Dependency injection is configuration-based; configurations are validated by <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
+Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
 
 Object manager configurations can be specified at three levels:
 
@@ -58,7 +58,7 @@ Object manager configurations can be specified at three levels:
 *	Global configurations for a module (`[your module directory]/etc/di.xml`)
 *	Area-specific configurations for a module (`[your module directory]/etc/[your area code]/di.xml`)
 
-	The area-specific configurations fall into the application areas' configurations (`frontend`, `adminhtml`, and so on). For example, here is the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
+	The area-specific configurations fall into the application areas' configurations (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2000url }}blob/master/app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
 	
 	The application area-specific configurations are loaded separately as necessary.
 
