@@ -293,7 +293,7 @@ h4.heading4 {
 
 /* SRJ - get rid of line in middle of logo */
 
-.logo-frontdoor>a {
+.logo-frontdoor a {
 
 	border-bottom: none;
 	}
