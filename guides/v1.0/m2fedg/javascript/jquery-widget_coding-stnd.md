@@ -146,7 +146,13 @@ $.widget('mage.accordion', $.ui.accordion, {
 
 <h3>You must instantiate widgets using the <code>data-mage-init</code> attribute</h3>
 <div>
-<p><strong>Note</strong>: You can use the <code>.mage()</code> plugin to instantiate widgets that use callback methods.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>You can use the <code>.mage()</code> plugin to instantiate widgets that use callback methods.</p></span>
+  </div>
+  
+
 <p>Benefits:</p>
 <ul><li>You leverage benefits of <code>$.mage.extend()</code> and <code>$.mage.components()</code></li>
 <li>Using <code>data-mage-init</code> minimizes inline JavaScript code footprint.</li>
@@ -188,7 +194,12 @@ $.widget('mage.accordion', $.ui.accordion, {
 
 <h3>Methods and widgets must not be declared using inline JavaScript</h3>
 <div>
-<p><strong>Note</strong>: Callback methods may be declared inline.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>You can declare callback methods inline.</p></span>
+  </div>
+
 <table>
 	<tbody>
 		<tr class="table-headings">

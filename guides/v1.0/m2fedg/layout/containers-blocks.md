@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Understanding Containers and Blocks
+title: Overview of Containers and Blocks
 ---
  
 <h1 id="fedg_layout_containers-blocks">{{ page.title }}</h1>

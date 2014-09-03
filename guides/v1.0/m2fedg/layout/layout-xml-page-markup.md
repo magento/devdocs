@@ -52,7 +52,7 @@ You have the following choices:
 
 <h2 id="layout_markup_columns">Changing Columns in a Layout</h2>
 
-This section discusses how to override the base the layout defined by the `Mage_CatalogSearch` module from two columns to three columns. You can find the original layout <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/CatalogSearch/view/frontend/layout/catalogsearch_result_index.xml" target="_blank">here</a>.
+This section discusses how to override the base the layout defined by the `Mage_CatalogSearch` module from two columns to three columns. You can find the original layout <a href="{{ site.mage2000url }}blob/master/app/code/Magento/CatalogSearch/view/frontend/layout/catalogsearch_result_index.xml" target="_blank">here</a>.
 
 The base template uses `<update handle="page_two_columns_left"/>` to define the number of columns on the page.
 

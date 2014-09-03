@@ -9,7 +9,7 @@ title: Interacting With Services
 
 A service interface is a *single entry point* to the business logic encapsulated by the service. Therefore, overriding business login in an interface is much easier than in Magento 1.x.
 
-For example, interfaces of the Customer <a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, override methods on the interface. It's much simpler than before. For details, see <a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
+For example, interfaces of the Customer <a href="{{ site.mage2000url }}tree/master/app/code/Magento/Customer/Service/V1" target="_blank">module</a> has more than 20 public methods. To override Customer business logic, override methods on the interface. It's much simpler than before. For details, see <a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case: Magento 1 and Magento 2 Side-By-Side</a>.
 
 ## Service Design
 
@@ -26,7 +26,7 @@ Because services can also be easily exposed as REST or SOAP, you can use a singl
 
 The REST API accepts and returns JSON or XML; the SOAP API accepts and returns XML. Because the data has to be serialized and deserialized, we place restrictions on the data types that can be used. These are referred to as <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php">service data objects</a> and they are immutable.
 
-Service data objects inherit from the <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Service/Data" target="_blank">Magento framework's base service data objects classes</a>.
+Service data objects inherit from the <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Service/Data" target="_blank">Magento framework's base service data objects classes</a>.
 
 <a href="#" target="_blank">More detail</a>
 

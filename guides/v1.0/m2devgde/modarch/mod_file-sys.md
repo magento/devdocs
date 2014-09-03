@@ -9,17 +9,17 @@ title: Modular File System
 
 ## Introduction
 
-The <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`. 
+The <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`. 
 
 ## Understanding the Structure of the Magento File System
 
 The main components of the Magento file system are:
 
-*	The <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem.php" target="_blank">Framework/Filesystem.php class</a>, which retrieves objects from a directory with read or write access rights.
+*	The <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem.php" target="_blank">Framework/Filesystem.php class</a>, which retrieves objects from a directory with read or write access rights.
 *	The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem.php" target="_blank">Framework/App/Filesystem.php class</a>, which retrieves the path of files on the Magento file system.
 *	The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/DirectoryList.php" target="_blank">DirectoryList.php</a> class, which stores directory configurations.
-*	Classes in <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem/Directory" target="_blank">the Directory directory</a>, which facilitate the handling of directories.
-*	Classes in <a href="https://github.com/magento/magento2/tree/master/lib/internal/Magento/Framework/Filesystem/Driver" target="_blank">the Driver directory</a>, which perform all operations with the file system.
+*	Classes in <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem/Directory" target="_blank">the Directory directory</a>, which facilitate the handling of directories.
+*	Classes in <a href="{{ site.mage2000url }}tree/master/lib/internal/Magento/Framework/Filesystem/Driver" target="_blank">the Driver directory</a>, which perform all operations with the file system.
 
 ## Managing the File System
 
@@ -29,12 +29,17 @@ The `Magento\Framework\Filesystem` class is an entry point to the file system. T
 *	Create an instance of a directory with permission to write using the `getDirectoryWrite()` method
 *	Retrieve the URI of a directory using the `getUri()` method
 
-**Note**: Not to be confused with `Magento\Framework\Filesystem`, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem.php" target="_blank">Magento\Framework\App\Filesystem class</a> enables you to get the absolute path to files on the Magento file system similar to the following:
 
-<pre>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Not to be confused with <code>Magento\Framework\Filesystem</code>, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem.php" target="_blank">Magento\Framework\App\Filesystem class</a> enables you to get the absolute path to files on the Magento file system similar to the following:</p>
+  <pre>
 $filesystem = $objectManager->get('Magento\Framework\App\Filesystem');
 $absolutePathToVarDirectory = $filesystem->getPath(Filesystem::VAR_DIR);
 </pre>
+  </span>
+  </div>
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/DirectoryList.php" target="_blank">Magento\Framework\Filesystem\DirectoryList</a> class defines the default settings for primary and system directories.
 
@@ -53,7 +58,11 @@ In the preceding example:
 *	`allow_create_dirs` specifies whether the child directories can be created for a directory. If the key of this parameter is set to `false` (`0`), you can create only the files for a directory.
 *	`permissions` specifies the UNIX file system permissions given to a child directory or a file.
 
-**Note**: Only module and public directories can be changed using `config.xml`.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Only module and public directories can be changed using <code>config.xml</code>.</p></span>
+  </div>
 
 To verify whether or not existing directories have read or write access, use the `createAndVerifyDirectories()` method of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList/Verification.php" target="_blank">Magento\Filesystem\DirectoryList\Verification</a> class.
 

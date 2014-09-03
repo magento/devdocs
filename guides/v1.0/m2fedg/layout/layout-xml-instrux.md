@@ -386,7 +386,7 @@ This section discusses all other XML instructions you can use in a layout.
 <li>use <code>before</code> and <code>after</code> to order the elements</li></ul>
 </div>
 
-<h3 id="fedg_xml-instrux_order-block">Ordering blocks</h3>
+<h3 id="fedg_xml-instrux_order-block">Order blocks</h3>
 <div>
 <p>The following examples show how to:</p>
 <ul><li>Place a block before all other blocks</li>
@@ -461,7 +461,7 @@ The following table shows possible attribute values:
 	</tr>
 	<tr class="even">
 		<td>after</td>
-		<td>-</td>
+		<td>Dash (-)</td>
 		<td>The block displays after all other elements in its parent node.</td>
 	</tr>
 		<tr class="odd">

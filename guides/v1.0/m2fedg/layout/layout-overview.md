@@ -14,7 +14,7 @@ To customize a theme layout for your store, you can:
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extend</a> a parent layout. 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Override</a> a parent layout using a custom theme. 
 
-To perform either task, you must use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration.  
+To perform either task, you must use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration. No PHP coding is required to work with themes.
 
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
@@ -38,9 +38,21 @@ Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%
 
 The view layer is responsible for representing the data for display on a web browser. To that end, your *page layout* is defined by a page structure that is in turn represented by hierarchy of <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">blocks and containers</a>.
 
-Technically, the layout is defined in the `.xml` layout files (layouts and layout updates) that contain element declarations and element manipulation instructions. To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Understanding Layout File Types</a>.
+Before you start to work on your theme, you must understand the following terms:
 
-<h2 id="layout_terms">Terms Used</h2>
+Theme
+
+:	Any combination of layout, template, locale, and styles that create the visual experience of your storefront. 
+
+Layout
+
+:	Defined in `.xml` layout files that contain element declarations and element manipulation instructions. A layout file can either define a particular layout or it can update another layout. 
+
+	To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Layout File Types</a>.
+
+Theme layout
+
+:	Layouts for themes which can extend the default layout (these are referred to as <a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">extending theme files</a> and override default layouts or parent themes (<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">overriding theme files</a>).
 
 Layout handle
 
@@ -66,13 +78,13 @@ Overriding layout
 
 :	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Page Layout</a>.
 
-<h2 id="layout_types">Understanding Layout File Types</h2>
+<h2 id="layout_types">Layout File Types</h2>
 
-Magento supports two types of layouts:
+Magento supports the following types of layouts:
 
-*	Default layouts&mdash;Layout files introduced by Magento modules. It is not recommended to change these files, unless it is your custom module. 
+*	Default layouts&mdash;Layout files provided by Magento. Do not change these files unless they are in your custom module. 
 
-	Example: <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" target="_blank">app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml</a>
+	Example: <a href="{{ site.mage2000url }}blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" target="_blank">app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml</a>
 	
 	Following is where you create layout files for your namespace and module:
 	
@@ -85,7 +97,7 @@ Magento supports two types of layouts:
 			   
 *	Theme layouts&mdash;Layout files for themes. Theme layouts can extend the default layout (these are referred to as *extending theme files*) and override default layouts or parent theme layouts (referred to as *overriding default layouts* or *overriding theme layouts*). 
 
-	Example: <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">app/design/frontend/magento_plushe/Magento_Checkout/layput/checkout_cart_index.xml</a>
+	Example: <a href="{{ site.mage2000url }}blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">app/design/frontend/magento_plushe/Magento_Checkout/layput/checkout_cart_index.xml</a>
 
 	<pre>__app/design/[area]/[path to your theme]
   |__/[your namespace]/[your module]
@@ -95,21 +107,21 @@ Magento supports two types of layouts:
 			|__/override/base/
 				|--[layout1].xml</pre>
 			   
-<h2 id="layout_conventions">Understanding Layout File Conventions</h2>
+<h2 id="layout_conventions">Layout File Conventions</h2>
 
 To be processed correctly, all layout files must meet the following requirements:
 
 *	A single layout file always declares a single layout handle and defines layout instructions for that layout handle.
 *	The layout file name defines the name of the layout handle.
-*	The layout file is located conventionally.
+*	The layout file is located according to convention (`app/code/[vendor name]/[module name]/view/frontend/layout`); for example:
 
-<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a>
+	<a href="{{ site.mage2000url }}blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a>
 
 `checkout_cart_index.xml` defines several handles, including `checkout_cart_item_renderers`. 
 
-Magento automatically detects layout files located conventionally. No configuration needs to be implemented to involve a layout file into execution.
+Magento automatically detects layout files located according to convention. 
 
-<h2 id="layout_processing">Understanding Layout File Processing</h2>
+<h2 id="layout_processing">Layout File Processing</h2>
 
 For more information about how Magento processes layout files, see the following sections:
 
@@ -119,14 +131,14 @@ For more information about how Magento processes layout files, see the following
 
 <h3 id="layout_processing_ordering">Ordering Layout Files</h3>
 
-Before processing, Magento sorts layout files according to the following criteria:
+Magento processes layout files in the following precedence order:
 
 *	Files from different modules:
 	*	By module dependencies, that is, dependent module after modules on which it depends
 	*	Alphabetically by module names, if module dependencies are not defined
 *	Files in the same module load alphabetically by file name
 
-<h3 id="layout_processing_how">How the Magento Software Processes Layouts</h3>
+<h3 id="layout_processing_how">Layout Process Flow</h3>
 
 The Magento software:  
 
@@ -148,7 +160,7 @@ The Magento software:
   <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p></span>
 </div>
 
-<h3 id="layout_process_ex">Example of Layout Processing</h3>
+<h3 id="layout_process_ex">Layout Processing Example</h3>
 
 Following is an illustration of how layout processing works for two modules and two themes:
 
@@ -157,7 +169,7 @@ Following is an illustration of how layout processing works for two modules and 
 	
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Understanding Containers and Blocks</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Overview of Containers and Blocks</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
