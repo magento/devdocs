@@ -14,7 +14,7 @@ To customize a theme layout for your store, you can:
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extend</a> a parent layout. 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Override</a> a parent layout using a custom theme. 
 
-To perform either task, you must use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration.  
+To perform either task, you must use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML instructions</a>, which are directives that render your store layout according to your configuration. No PHP coding is required to work with themes.
 
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
@@ -46,12 +46,13 @@ Theme
 
 Layout
 
-:	Technically, the layout is defined in the `.xml` layout files (layouts and layout updates) that contain element declarations and element manipulation instructions. To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Understanding Layout File Types</a>.
+:	Defined in `.xml` layout files that contain element declarations and element manipulation instructions. A layout file can either define a particular layout or it can update another layout. 
+
+	To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Layout File Types</a>.
 
 Theme layout
 
-:	Layouts for themes which can extend the default layout (these are referred to as *extending theme files*) and override default layouts or parent themes (*overriding theme files*).
-
+:	Layouts for themes which can extend the default layout (these are referred to as <a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">extending theme files</a> and override default layouts or parent themes (<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">overriding theme files</a>).
 Layout handle
 
 :	A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.
