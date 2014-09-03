@@ -38,7 +38,7 @@ Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%
 
 The view layer is responsible for representing the data for display on a web browser. To that end, your *page layout* is defined by a page structure that is in turn represented by hierarchy of <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">blocks and containers</a>.
 
-<h3 id="layout_overview-terms">Terms Used</h3>
+Before you start to work on your theme, you must understand the following terms:
 
 Theme
 
@@ -80,7 +80,7 @@ Overriding layout
 
 Magento supports the following types of layouts:
 
-*	Default layouts&mdash;Layout files introduced by Magento modules. Do not change these files unless they are in your custom module. 
+*	Default layouts&mdash;Layout files provided by Magento. Do not change these files unless they are in your custom module. 
 
 	Example: <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" target="_blank">app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml</a>
 	
@@ -111,15 +111,15 @@ To be processed correctly, all layout files must meet the following requirements
 
 *	A single layout file always declares a single layout handle and defines layout instructions for that layout handle.
 *	The layout file name defines the name of the layout handle.
-*	The layout file is located conventionally.
+*	The layout file is located according to convention ('app/code/[vendor name]/[module name]/view/frontend/layout'); for example:
 
-<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a>
+	<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a>
 
 `checkout_cart_index.xml` defines several handles, including `checkout_cart_item_renderers`. 
 
-Magento automatically detects layout files located conventionally. No configuration needs to be implemented to involve a layout file into execution.
+Magento automatically detects layout files located according to convention. No configuration needs to be implemented to involve a layout file into execution.
 
-<h2 id="layout_processing">Understanding Layout File Processing</h2>
+<h2 id="layout_processing">Layout File Processing</h2>
 
 For more information about how Magento processes layout files, see the following sections:
 
@@ -129,14 +129,14 @@ For more information about how Magento processes layout files, see the following
 
 <h3 id="layout_processing_ordering">Ordering Layout Files</h3>
 
-Before processing, Magento sorts layout files according to the following criteria:
+Magento processes layout files in the following precedence order:
 
 *	Files from different modules:
 	*	By module dependencies, that is, dependent module after modules on which it depends
 	*	Alphabetically by module names, if module dependencies are not defined
 *	Files in the same module load alphabetically by file name
 
-<h3 id="layout_processing_how">How the Magento Software Processes Layouts</h3>
+<h3 id="layout_processing_how">Layout Process Flow</h3>
 
 The Magento software:  
 
@@ -158,7 +158,7 @@ The Magento software:
   <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p></span>
 </div>
 
-<h3 id="layout_process_ex">Example of Layout Processing</h3>
+<h3 id="layout_process_ex">Layout Processing Example</h3>
 
 Following is an illustration of how layout processing works for two modules and two themes:
 
