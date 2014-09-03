@@ -17,7 +17,7 @@ This topic discusses:
 
 In the Blank theme, the breakpoint is at a 768px viewport.
 
-For more information about blocks, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>.
+For more information about XML instructions related to blocks, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html#fedg_layout_xml-instruc_ex_block">&lt;block&lt;/></a>.
 
 <h2 id="fedg_rwd_resp-table-class">Implementing Responsive Tables</h2>
 

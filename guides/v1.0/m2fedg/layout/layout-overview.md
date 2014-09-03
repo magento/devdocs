@@ -38,9 +38,19 @@ Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%
 
 The view layer is responsible for representing the data for display on a web browser. To that end, your *page layout* is defined by a page structure that is in turn represented by hierarchy of <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">blocks and containers</a>.
 
-Technically, the layout is defined in the `.xml` layout files (layouts and layout updates) that contain element declarations and element manipulation instructions. To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Understanding Layout File Types</a>.
+<h3 id="layout_overview-terms">Terms Used</h3>
 
-<h2 id="layout_terms">Terms Used</h2>
+Theme
+
+:	Any combination of layout, template, locale, and styles that create the visual experience of your storefront. 
+
+Layout
+
+:	Technically, the layout is defined in the `.xml` layout files (layouts and layout updates) that contain element declarations and element manipulation instructions. To create a compatible, scalable, and easily supported Magento customization, you must know how layout files are organized and processed. For more information, see <a href="#layout_types">Understanding Layout File Types</a>.
+
+Theme layout
+
+:	Layouts for themes which can extend the default layout (these are referred to as *extending theme files*) and override default layouts or parent themes (*overriding theme files*).
 
 Layout handle
 
@@ -66,11 +76,11 @@ Overriding layout
 
 :	Alternative to extending a layout; meaning, to completely change a default layout, you can override its behavior, including moving or removing blocks; modifying method arguments; removing all layout handle instructions; and setting XML attributes of blocks and containers. For more information, see <a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Page Layout</a>.
 
-<h2 id="layout_types">Understanding Layout File Types</h2>
+<h2 id="layout_types">Layout File Types</h2>
 
-Magento supports two types of layouts:
+Magento supports the following types of layouts:
 
-*	Default layouts&mdash;Layout files introduced by Magento modules. It is not recommended to change these files, unless it is your custom module. 
+*	Default layouts&mdash;Layout files introduced by Magento modules. Do not change these files unless they are in your custom module. 
 
 	Example: <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" target="_blank">app/code/Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml</a>
 	
@@ -95,7 +105,7 @@ Magento supports two types of layouts:
 			|__/override/base/
 				|--[layout1].xml</pre>
 			   
-<h2 id="layout_conventions">Understanding Layout File Conventions</h2>
+<h2 id="layout_conventions">Layout File Conventions</h2>
 
 To be processed correctly, all layout files must meet the following requirements:
 
