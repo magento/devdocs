@@ -1,10 +1,13 @@
 ---
-layout: default-test
+layout: default
 title: Magento 2 PHP API Guide
 ---
- 
+
+<body>
+<body>
 <div class="container bs-docs-container">
    <div class="row">
+   <div id="toc"></div>
     <div class="jumbotron">
             <h1 class="heading1" id="php-api-services">{{ page.title }}</h1>
          </div>
@@ -43,6 +46,7 @@ title: Magento 2 PHP API Guide
       </div>
       <div class="col-xs-3">
          <div style="" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+         <div class="toc" id="toc"><p>Does this work?</p></div>
             <ul class="nav bs-docs-sidenav">
                <li class="active">
                   <a href="#php-api-overview">Overview</a>
@@ -68,6 +72,7 @@ title: Magento 2 PHP API Guide
                   </ul>
                </li>
             </ul>
+
             <a class="back-to-top" href="#top">
             Back to top
             </a>
@@ -76,8 +81,13 @@ title: Magento 2 PHP API Guide
             </a>
          </div>
       </div>
+
    </div>
 </div>
+<script type="text/javascript">
+$('#toc').toc();
+</script>
+</body>
 
 
 
