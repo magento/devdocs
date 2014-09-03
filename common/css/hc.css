@@ -63,6 +63,14 @@ body {
   transform: translateX(-260px);
 }
 
+/* SRJ - reviewer question */
+
+p.q 	{
+	font-size: 15pt;
+	color: red;
+	}
+	
+
 /*
  * Side navigation
  *
@@ -282,6 +290,13 @@ h4.heading4 {
     margin-left: 0em;
     padding-right: 2em;
 }
+
+/* SRJ - get rid of line in middle of logo */
+
+logo-frontdoor>a {
+
+	border-bottom: none;
+	}
 
 .logo {
     background-color: #31302b;

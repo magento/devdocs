@@ -9,6 +9,8 @@ title: Overview of Containers and Blocks
 
 The basic components of Magento page design are blocks and containers. Simply put, containers contain blocks, other containers, and other layout elements.
 
+<p class="q">This is a reviewer question.</p>
+
 A *container* exists for the sole purpose of assigning content structure to a page. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.
 
 The following figure shows an example:
