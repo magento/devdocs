@@ -19,7 +19,7 @@ You don't need to do any coding in this example.
 </div>
 
 <h2>Step 2: Look up the call in webapi.xml</h2>
-<div><p>This section discusses how to make an HTTP POST call to the <tt>createCustomer()</tt> method.</p>
+<div><p>This section discusses how to make an HTTP POST call to the <code>createCustomer()</code> method.</p>
 <ol><li>Open <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.</li>
 <li><p>Find the desired call; for example,</p> 
 <pre>
@@ -30,37 +30,50 @@ You don't need to do any coding in this example.
     &lt;/resources>
 &lt;/route>
 </pre></li></ol>
-<p>The <tt>route url</tt> specifies the URI of the REST call. (Step 10 shows the entire URL.)</p>
-<p>In this example, the URI is <tt>POST /V1/customerAccounts</tt></p>
-<p><strong>Note</strong>: Any value prefixed by a colon character is a required input.</p>
-<p><strong>Note</strong>: Some REST calls have no route; for these cases, use the Base URL only.</p>
+<p>The <code>route url</code> specifies the URI of the REST call. (Step 10 shows the entire URL.)</p>
+<p>In this example, the URI is <code>POST /V1/customerAccounts</code></p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <ul class="note"><li>Any value prefixed by a colon character is a required input.</li>
+  <li>Some REST calls have no route; for these cases, use the Base URL only.</li></ul></span>
+  </div>
+
 </div>
 
 <h2>Step 3: Find the service data object</h2>
 <div>
-<p>The service data object tells you what data to pass in to the REST API. The service data object is specified by the service interface method named by <tt>service class</tt> in <tt>webapi.xml</tt>.</p>
-<p>Continuing the preceding example, the <tt>createCustomer()</tt> method on the <tt>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</tt> specifies the data service object as follows:</p>
+<p>The service data object tells you what data to pass in to the REST API. The service data object is specified by the service interface method named by <code>service class</code> in <code>webapi.xml</code>.</p>
+<p>Continuing the preceding example, the <code>createCustomer()</code> method on the <code>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code> specifies the data service object as follows:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
 <p>In this case, the service object is <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerDetails.php" target="_blank">\Magento\Customer\Service\V1\Data\CustomerDetails</a>.</p>
-<p><strong>Note</strong>: To use <tt>customerDetails</tt> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <tt>customer_details</tt>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <tt>customer_details</tt> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>To use <code>customerDetails</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p></span>
+  </div>
 </div>
 
 <h2>Step 4: Find getters on CustomerDetails</h2>
 <div>
 <p>Getters on service data objects enable you to find what data is required to execute the action (in this case, create a customer).</p>
-<p>There are two getters on <tt>CustomerDetails</tt>:</p>
-<ul><li><p><tt>getAddresses()</tt>, which returns data defined by the service data object <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a></p>
-<p>Note that the <tt>@return</tt> specifies <tt>\Magento\Customer\Service\V1\Data\Address[]|null</tt>, which means that null values are accepted (in other words, you don't have to pass any data in).</p></li>
-<li><tt>getCustomer()</tt>, which returns data defined by <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a>.</li></ul>
-<p><strong>Note</strong>: To use <tt>getAddresses</tt> and <tt>getCustomer</tt> as JSON or XML values, remove <tt>get</tt> and convert the remainder of the string to lowercase separated by underscores. In this case,</p>
-<ul><li><tt>getCustomer</tt> becomes <tt>customer</tt></li>
-<li><tt>getAddresses</tt> becomes <tt>addresses</tt></li></ul>
+<p>There are two getters on <code>CustomerDetails</code>:</p>
+<ul><li><p><code>getAddresses()</code>, which returns data defined by the service data object <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a></p>
+<p>Note that the <code>@return</code> specifies <code>\Magento\Customer\Service\V1\Data\Address[]|null</code>, which means that null values are accepted (in other words, you don't have to pass any data in).</p></li>
+<li><code>getCustomer()</code>, which returns data defined by <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a>.</li></ul>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+<p>To use <code>getAddresses</code> and <code>getCustomer</code> as JSON or XML values, remove <code>get</code> and convert the remainder of the string to lowercase separated by underscores. In this case,</p>
+  <ul class="note"><li><code>getCustomer</code> becomes <code>customer</code></li>
+<li><code>getAddresses</code> becomes <code>addresses</code></li></ul></span>
+  </div>
 </div>
 
 <h2>Step 5: Find getters on Address and Customer</h2>
 <div>
-<p><a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a> and <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a> have several getters, all of which are optional. Each getter has <tt>@return</tt> that tells you the data type.</p>
-<p>Pick a few values to create your customer record; remember to use the same rules in step 3 (that is, remove <tt>get</tt>, convert everything to lowercase, and separate camel case letters with underscores).</p>
+<p><a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a> and <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a> have several getters, all of which are optional. Each getter has <code>@return</code> that tells you the data type.</p>
+<p>Pick a few values to create your customer record; remember to use the same rules in step 3 (that is, remove <code>get</code>, convert everything to lowercase, and separate camel case letters with underscores).</p>
 </div>
 
 <h2>Step 6: Construct the JSON object</h2>
@@ -70,7 +83,7 @@ You don't need to do any coding in this example.
 </div>
 
 <h2>Step 7: Create and activate the integration</h2>
-<div><p>For OAuth 1.0a authorization to work, you must create an integration that optionally has access to customer resources. (Although the <tt>createCustomer</tt> method can authenticate anonymously, it's good practice to grant access to customer objects anyway.)</p>
+<div><p>For OAuth 1.0a authorization to work, you must create an integration that optionally has access to customer resources. (Although the <code>createCustomer</code> method can authenticate anonymously, it's good practice to grant access to customer objects anyway.)</p>
 <p>The integration also provides the following OAuth 1.0a authorization details:</p>
 <ul><li>Consumer key</li>
 <li>Consumer secret</li>
@@ -99,10 +112,14 @@ The Integration Tokens for Extensions dialog box displays the authorization cred
 <ol><li>Start the Firefox web browser and the Firefox REST Client.</li>
 <li>From the <strong>Method</strong> list, click <strong>POST</strong>.</li>
 <li>In the <strong>URL</strong> field, enter the following:<br>
-<tt>https://[your Magento host or IP]/[your Magento base install dir]/rest/default/V1/customerAccounts</tt><br>
+<code>https://[your Magento host or IP]/[your Magento base install dir]/rest/default/V1/customerAccounts</code><br>
 The following figure shows an example.<br>
 <img src="{{ site.baseurl }}common/images/rest_ff-rest-initial-url.png"></li></ol>
-<p><strong>Note</strong>: Remember that <tt>/V1/customerAccounts</tt> is the REST route from step 2.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Remember that <code>/V1/customerAccounts</code> is the REST route from step 2.</p></span>
+  </div>
 </div>
 
 <h2>Step 9: Set up authorization for your REST call</h2>
@@ -124,11 +141,11 @@ The following figure shows an example.<br>
 
 <h2>Step 10: Complete the REST call</h2>
 <div>
-<p>Now that you have your <tt>Authorization</tt> header set, you must set one more headers for Magento 2 to accept the REST call: <tt>Content-Type: application/json</tt>. Finally, add the request body and send the request.</p>
+<p>Now that you have your <code>Authorization</code> header set, you must set one more headers for Magento 2 to accept the REST call: <code>Content-Type: application/json</code>. Finally, add the request body and send the request.</p>
 <p>To complete your REST call:</p>
 <ol><li>Click <strong>Headers</strong> > <strong>Custom Header</strong>.</li>
-<li>In the <strong>Name</strong> field, enter <tt>Content-Type</tt>.</li>
-<li>In the <strong>Value</strong> field, enter <tt>application/json</tt>.</li>
+<li>In the <strong>Name</strong> field, enter <code>Content-Type</code>.</li>
+<li>In the <strong>Value</strong> field, enter <code>application/json</code>.</li>
 <li>Click <strong>Okay</strong>.<br>
 The Firefox REST Client should now look like the following:<br>
 <img src="{{ site.baseurl }}common/images/rest_client-with-headers.png"></li>
@@ -136,7 +153,7 @@ The Firefox REST Client should now look like the following:<br>
 An example follows:<br>
 <script src="https://gist.github.com/xcomSteveJohnson/3901c6cf9d41964bd319.js"></script></li>
 <li>Click <strong>Send</strong>.</li></ol>
-<p>If the REST call succeeded, the <strong>Response Headers</strong> tab page at the bottom should show <tt>200 OK</tt> on the first line.</p>
+<p>If the REST call succeeded, the <strong>Response Headers</strong> tab page at the bottom should show <code>200 OK</code> on the first line.</p>
 <p>If the REST call failed, click the <strong>Response Body (Raw)</strong> tab page to display the XML data you get back from Magento.</p>
 <p>Following is sample raw data from a successful REST call:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/fed484b41f9fbdd46331.js"></script>

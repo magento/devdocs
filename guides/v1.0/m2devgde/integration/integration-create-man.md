@@ -74,8 +74,12 @@ To create a new integration:
 	Roles are organized hierarchically; granting access to a parent also grants access to children unless you choose not to do so. Select the check box next to each item that your integration needs access. Leave the check box cleared for any resource to which your integration does not need access.
 
 	Each resource in the ACL tree grants access to something. For instance, for an administrative user this could mean viewing or placing an order, viewing or changing the product details, viewing or creating CMS blocks, banners, or pages, and so on.
-
-	**Note**: ACLs across Magento can contain different sets of resources. That is, in some cases the ACL can be shortened for usability and security reasons.
+	
+	<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>ACLs across Magento can contain different sets of resources. That is, in some cases the ACL can be shortened for usability and security reasons.</p></span>
+  </div>
 	
 6.  In the API section, specify which Magento resources the third-party system can have access.
 

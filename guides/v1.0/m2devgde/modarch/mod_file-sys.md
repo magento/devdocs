@@ -29,12 +29,17 @@ The `Magento\Framework\Filesystem` class is an entry point to the file system. T
 *	Create an instance of a directory with permission to write using the `getDirectoryWrite()` method
 *	Retrieve the URI of a directory using the `getUri()` method
 
-**Note**: Not to be confused with `Magento\Framework\Filesystem`, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem.php" target="_blank">Magento\Framework\App\Filesystem class</a> enables you to get the absolute path to files on the Magento file system similar to the following:
 
-<pre>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Not to be confused with <code>Magento\Framework\Filesystem</code>, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem.php" target="_blank">Magento\Framework\App\Filesystem class</a> enables you to get the absolute path to files on the Magento file system similar to the following:</p>
+  <pre>
 $filesystem = $objectManager->get('Magento\Framework\App\Filesystem');
 $absolutePathToVarDirectory = $filesystem->getPath(Filesystem::VAR_DIR);
 </pre>
+  </span>
+  </div>
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/DirectoryList.php" target="_blank">Magento\Framework\Filesystem\DirectoryList</a> class defines the default settings for primary and system directories.
 
@@ -53,7 +58,11 @@ In the preceding example:
 *	`allow_create_dirs` specifies whether the child directories can be created for a directory. If the key of this parameter is set to `false` (`0`), you can create only the files for a directory.
 *	`permissions` specifies the UNIX file system permissions given to a child directory or a file.
 
-**Note**: Only module and public directories can be changed using `config.xml`.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Only module and public directories can be changed using <code>config.xml</code>.</p></span>
+  </div>
 
 To verify whether or not existing directories have read or write access, use the `createAndVerifyDirectories()` method of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList/Verification.php" target="_blank">Magento\Filesystem\DirectoryList\Verification</a> class.
 

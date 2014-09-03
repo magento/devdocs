@@ -30,8 +30,11 @@ The class name for Internet Explorer is `ie`. USe the following classes to overr
 *	`.lt-ie9` (Internet Explorer 9 or earlier)
 *	`.lt-ie10` (Internet Explorer 10 or earlier)
 
-**Note**: HeadJS supports class names for various browsers, but in the configuration used in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about using similar overrides for other browsers.
-
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>HeadJS supports class names for various browsers, but in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about using similar overrides for other browsers.</p></span>
+  </div>
 	
 #### Related Topics:
 
