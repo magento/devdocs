@@ -1,4 +1,4 @@
-name: Magento Developer Documentation
+﻿name: Magento Developer Documentation
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
@@ -9,4 +9,4 @@ githuburl: https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master
 namem2fedg: Magento 2 Frontend Developer's Guide
 namem2devgde: Magento 2 Developer's Guide
 namem2apiref: Magento 2 API Reference
-mage2000url: {{ site.mage2000url }}
+mage2000url: https://github.com/magento/magento2
