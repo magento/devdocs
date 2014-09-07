@@ -64,6 +64,10 @@ Layout handle
 	*	Page layout handles&mdash;Identify specific pages. Correspond to controller actions with parameters that identify specific pages; for example, `catalog_product_view_type_simple_id_128`
 	*	Arbitrary handles&mdash;Do not correspond to any page type, but other handles use them by inclusion.
 	
+Base layout
+
+:	Layout provided by Magento that contains view files common for all areas (that is, common view files for `adminhtml`, `frontend`, and any other Magento areas). Each area also has its own default layout.
+	
 Default layout
 
 :	Layout provided by Magento, extension provider, or in-house developer. A default layout defines the default look and feel of the storefront. Unlike earlier versions of Magento, you should not change the default layout directly and you do not have to copy the default layout to start developing a custom layout.
