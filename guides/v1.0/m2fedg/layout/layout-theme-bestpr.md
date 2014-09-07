@@ -17,11 +17,11 @@ There are also scripts like <a href="http://headjs.com" target="_blank">HeadJS</
 
 <h2 id="layout_theme_bestpr_browser">Solving Browser-Specific Issues</h2>
 
-Internet Explorer has the most CSS combatility or behavior issues of all modern web browsers. Before responsive web design, to make CSS work in Internet Explorer, you could use a separate `styles-ie.css` that contained extra styles and instructions. In Magento 2 we use <a href="http://headjs.com" target="_blank">HeadJS</a>, a script that detects the browser type and assigns the corresponding value to the class attribute of the `<html>` tag. 
+Internet Explorer has the most CSS compatibility or behavior issues of all modern web browsers. Before responsive web design, to make CSS work in Internet Explorer, you could use a separate `styles-ie.css` that contained extra styles and instructions. In Magento 2 we use <a href="http://headjs.com" target="_blank">HeadJS</a>, a script that detects the browser type and assigns the corresponding value to the class attribute of the `<html>` tag. 
 
 Now the browser-specific overrides for all browsers can be done in `style.css` using the corresponding classes.
 
-The class name for Internet Explorer is `ie`. USe the following classes to override CSS behavior for Internet Explorer:
+The class name for Internet Explorer is `ie`. Use the following classes to override CSS behavior for Internet Explorer:
 
 *	`.ie` (all versions of Internet Explorer)
 *	`.gt-ie6` (Internet Explorer 6 or later)

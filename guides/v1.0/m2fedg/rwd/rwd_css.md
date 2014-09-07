@@ -9,7 +9,7 @@ title: Using CSS in Your Responsive Design
 
 <h2 id="fedg_rwd_css_break">Using Breakpoints</h2>
 
-Responsive design uses <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">CSS3 media queries</a> (an extension of the `@media` rule) to adapt the layout to the viewingport. 
+Responsive design uses <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">CSS3 media queries</a> (an extension of the `@media` rule) to adapt the layout to the viewport. 
 
 Breakpoints are used in the CSS code to set up a viewport at which the design switches from the mobile to the desktop version.
 

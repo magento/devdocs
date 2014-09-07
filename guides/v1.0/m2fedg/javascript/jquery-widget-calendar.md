@@ -41,7 +41,7 @@ The calendar widget's *global configuration* is a set of default options that ar
 *	Calendar pop-up mode
 *	Server time zone offset
 
-Global configuration for Calendar is stored in a jQuery object as a hash of properties. Having global configuration set enables you to specify one time all translations and default options, and use it for all instances of Calendar, and it enables usage of inline translatation for the calendar. During initialization, the calendar widget merges the hash of options from the global configuration, and the options which are transferred from PHP, and then passes the merged options to Datepicker. 
+Global configuration for Calendar is stored in a jQuery object as a hash of properties. Having global configuration set enables you to specify one time all translations and default options, and use it for all instances of Calendar, and it enables usage of inline translation for the calendar. During initialization, the calendar widget merges the hash of options from the global configuration, and the options which are transferred from PHP, and then passes the merged options to Datepicker. 
 
 <pre>(function( $ ) {
 $.extend(true, $, {

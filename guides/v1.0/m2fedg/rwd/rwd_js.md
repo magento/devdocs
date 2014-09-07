@@ -7,9 +7,9 @@ title: Using JavaScript in Your Responsive Design
 
 <p><a href="{{ site.githuburl }}m2fedg/rwd/rwd_overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-To enable pages to load, we excluded JavaScript from the page head block and integrated Magento 2 with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses anychronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
+To enable pages to load, we excluded JavaScript from the page head block and integrated Magento 2 with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
 
-For an example of how to include JavaScript in your responsive theme, see <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">boostrap.js</a>.
+For an example of how to include JavaScript in your responsive theme, see <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>.
 
 The Blank theme uses the following JavaScript to responsively relocate page elements by viewport:
 
