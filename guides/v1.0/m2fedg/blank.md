@@ -13,6 +13,6 @@ title: Blank Page
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the old wiki to markdow. Or maybe this topic isn't written yet. Check back later.</p></span>
+  <p>Please be patient with us while we map topics from the old wiki to markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
 </div>
 
