@@ -199,7 +199,7 @@ In the preceding example, the value of `<arg1>` is passed as the first argument 
 		</tr>
 	<tr class="even">
 		<td>method</td>
-		<td>Name of the public method of the block class this instruction is located in that is called during the block generation.</td>
+		<td>Name of the public method of the block class this instruction is located in that is called during block generation.</td>
 		<td>block method name</td>
 		<td>yes</td>
 	</tr>

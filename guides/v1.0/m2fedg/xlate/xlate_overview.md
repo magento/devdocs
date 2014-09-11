@@ -75,7 +75,7 @@ In some XML files, the only thing that changed was removing the module context, 
 
 <h2 id="fedg_xlate_dict">Using Translation Dictionary Tools</h2>
 
-Magento developer tools include a static code analysis tool that generates a comma-seprated value (CSV) dictionary from Magento source code. The tool searches for any occurrences of `__()` in PHP files and translate attributes in XML files, and extracts literals for the dictionary.
+Magento developer tools include a static code analysis tool that generates a comma-separated value (CSV) dictionary from Magento source code. The tool searches for any occurrences of `__()` in PHP files and translate attributes in XML files, and extracts literals for the dictionary.
 
 The tool is available <a href="{{ site.mage2000url }}tree/master/dev/tools/Magento/Tools/I18n" target="_blank">here</a>. It is intended for translators or extension developers who wish to provide language packs for the entire Magento application or a given module or theme. 
 

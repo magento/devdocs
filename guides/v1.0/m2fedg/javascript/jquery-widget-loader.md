@@ -13,7 +13,7 @@ The Loader widget blocks some or all page content when an Ajax request is being 
 
 The loader source is `[your Magento install dir]/pub/lib/mage/loader.js`.
 
-<h2 id="fedg_loader_init">Initalizing the Loader Widget</h2>
+<h2 id="fedg_loader_init">Initializing the Loader Widget</h2>
 
 Example:
 

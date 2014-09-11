@@ -7,15 +7,19 @@ title: Using JavaScript in Your Responsive Design
 
 <p><a href="{{ site.githuburl }}m2fedg/rwd/rwd_overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
+To enable pages to load, we excluded JavaScript from the page head block and integrated Magento 2 with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
+
+For an example of how to include JavaScript in your responsive theme, see <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>.
+
 The Blank theme uses the following JavaScript to responsively relocate page elements by viewport:
 
 <pre>
-├── app/design/frontend/Magento/blank/js/
+├── app/design/frontend/Magento/blank/web/js/
     ├── responsive.js
     ├── navigation-menu.js
-├── pub/lib/
+├── lib/web/
     ├── matchMedia.js</pre>
-	
+
 See one of the following sections for more information
 
 *	<a href="#fedg_rwd_js_matchmedia">Using matchMedia.js</a>
@@ -24,13 +28,13 @@ See one of the following sections for more information
 	
 <h2 id="fedg_rwd_js_matchmedia">Using matchMedia.js</h2>
 
-`matchMedia.js` enables you to manipulate JavaScript for the desktop or mobile viewports. In the Blank theme, `responsive.js` toggles the behavior when the screen size reaches the breakpoint of 768px.
+<a href="https://github.com/magento/magento2/blob/master/lib/web/matchMedia.js" target="_blank">matchMedia.js</a> enables you to manipulate JavaScript for the desktop or mobile viewports. In the Blank theme, `responsive.js` toggles the behavior when the screen size reaches the breakpoint of 768px.
 
-`/pub/lib/matchMedia.js` can be used in any theme.
+`matchMedia.js` can be used in any theme.
 
 <h2 id="fedg_rwd_js_resp">Using responsive.js</h2>
 
-`responsive.js` implements specific responsive functions for the Blank theme. This file also contains a call of the `mediaCheck` anonymous function from `matchMedia.js`, which is responsible for reaching breakpoints.
+<a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank">responsive.js</a> implements specific responsive functions for the Blank theme. This file also contains a call of the `mediaCheck` anonymous function from `matchMedia.js`, which is responsible for reaching breakpoints.
 
 The `mediaCheck` call follows:
 
@@ -63,7 +67,7 @@ Responsible for rearranging navigation and header links for the desktop and mobi
 
 <h3 id="fedg_rwd_js_nav_mobile">Mobile Navigation</h3>
 
-In a mobile viewport, `navigation-menu.js` copies the existing navigation menu `<nav class="navigation">`, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag `<div class="page wrapper">`. 
+In a mobile viewport, <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/navigation-menu.js" target="_blank">navigation-menu.js</a> copies the existing navigation menu `<nav class="navigation">`, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag `<div class="page wrapper">`. 
 
 `navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings block (language switcher, currency switcher) to the mobile navigation. 
 

@@ -13,7 +13,7 @@ Magento 2 system uses the <a href="http://jqueryui.com/widget/" target="_blank">
 
 The key words "must", "must not", "required", "shall", "shall not", "should", "should not", "recommended", "may", and "optional" in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a>. 
 
-All jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the <a href="http://jqueryui.com/widget/" target="_blank">jQuery UI Widget Factory</a>. The factory provides a flexible base for building complex, stateful plugins with a consistent API. It is designed not only for plug-ins that are part of jQuery UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
+All jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the <a href="http://jqueryui.com/widget/" target="_blank">jQuery UI Widget Factory</a>. The factory provides a flexible base for building complex, stateful plug-ins with a consistent API. It is designed not only for plug-ins that are part of jQuery UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
 
 For more information, see the <a href="http://api.jqueryui.com/jQuery.widget/" target="_blank">jQuery Widget API documentation</a>.
 
@@ -149,7 +149,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>You can use the <code>.mage()</code> plugin to instantiate widgets that use callback methods.</p></span>
+  <p>You can use the <code>.mage()</code> plug-in to instantiate widgets that use callback methods.</p></span>
   </div>
   
 
@@ -166,7 +166,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 	<tr class="even">
 		<td><pre>// Widget initialization using the data-mage-init attribute
 &lt;form data-mage-init="{form:[], validation:{ignore:':hidden'}}">&lt;/form></pre>
-		<pre>// Widget initialization using the mage plugin
+		<pre>// Widget initialization using the mage plug-in
 &lt;script type="text/javascript">
 (function($) {
     $('selector').mage('dialog', {
@@ -176,7 +176,7 @@ $.widget('mage.accordion', $.ui.accordion, {
     });
 })(jQuery);
 &lt;/script></pre></td>
-		<td><pre>// Widget initialization without using the mage plugin
+		<td><pre>// Widget initialization without using the mage plug-in
 &lt;script type="text/javascript">
 (function($) {
     $('[data-role="form"]')

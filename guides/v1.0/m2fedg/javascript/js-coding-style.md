@@ -81,7 +81,7 @@ Examples of acceptable function names:
 
 For object-oriented programming, accessors for instances or static variables should always have the `get` or `set` prefix. In design patterns (such as the singleton or factory patterns) implementation method names should contain the pattern name where practical to provide the better behavior description.
 
-Methods that return certain status flags or other boolean values should have the `has` or `is` prefix, instead of `get`.
+Methods that return certain status flags or other Boolean values should have the `has` or `is` prefix, instead of `get`.
 
 For object methods that are declared with the "private" or "protected" modifier, the method name should start with underscore (`_`). This is the only acceptable use of an underscore in a method name. Public methods should never contain an underscore.
 
@@ -113,7 +113,7 @@ Filenames should be all lowercase to avoid confusion on case-sensitive platforms
 
 *Wrong*: `dialog_popup_base_features.js`
 
-*Correct*: `dialog-popup-base-seatures.js`
+*Correct*: `dialog-popup-base-features.js`
 
 <h2 id="fedg_js-coding_codestyle">Code Style</h2>
 
