@@ -1,0 +1,3 @@
+At Magento, we care about community involvement. That's why, starting today, we're doing some preliminary testing about how to properly service community requests in our public GitHub repository.
+
+You'll notice some activity here for the next few days. 
