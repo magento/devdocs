@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Magento 2 PHP API Guide
+title: Magento 2 API Guide
 ---
 
 <body>
@@ -45,7 +45,7 @@ title: Magento 2 PHP API Guide
          <div class="col-xs-3">
             <div style="" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
                <div class="toc" id="toc">
-                  <p>Does this work?</p>
+                  <p>Contents</p>
                </div>
                <ul class="nav bs-docs-sidenav">
                   <li class="active">
