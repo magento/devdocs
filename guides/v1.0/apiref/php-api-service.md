@@ -3,32 +3,15 @@ layout: default
 title: Magento 2 Customer Service
 ---
  
-<div class="container">
-   <div class="jumbotron">
-      <h1 class="heading1" id="php-api-service">{{ page.title }}</h1>
-   </div>
-   <div class="row">
-      <div class="col-xs-3" id="myScrollspy">
-         <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm" role="complementary">
-            <ul class="nav nav-tabs nav-stacked" data-spy="affix">
-               <li>
-                  <a href="#construct">__construct()</a>
-               </li>
-               <li>
-                  <a href="#create-customer">createCustomer()</a>
-               </li>
-               <li>
-                  <a href="#resend-confirmation">resendConfirmation()</a>
-               </li>
-            </ul>
-            <a class="back-to-top" href="#top">
-            Top
-            </a>
-            <a class="bs-docs-theme-toggle" href="#">Previous</a>
-            <a class="bs-docs-theme-toggle" href="#">Next</a>
+<body>
+   <div class="container bs-docs-container">
+      <div class="row">
+         <div id="toc"></div>
+         <div class="jumbotron">
+            <h1 class="heading1" id="php-api-ref">{{ page.title }}</h1>
          </div>
-      </div>
-      <div class="col-xs-9">
+         <div class="col-xs-9" role="main">
+            <div class="bs-docs-section">
          <p>Use the methods on customer account service objects to:</p>
          <ul>
             <li>Create a customer with a password or hashed password.</li>
@@ -224,10 +207,47 @@ title: Magento 2 Customer Service
             </tbody>
          </table>
       </div>
+         </div>
+         <div class="col-xs-3">
+            <div style="" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+               <div class="toc" id="toc">
+                  <p>Methods</p>
+               </div>
+               <ul class="nav bs-docs-sidenav">
+                  <li class="active">
+                     <a href="#construct">_construct()</a>
+                     <ul class="nav">
+                        <li class=""><a href="#subtopic1">Subtopic 1</a></li>
+                        <li class=""><a href="#subtopic1a">Subtopic 1a</a></li>
+                     </ul>
+                  </li>
+                  <li class="">
+                     <a href="#create-customer">create_customer()</a>
+                     <ul class="nav">
+                        <li class=""><a href="#subtopic2">Subtopic 2</a></li>
+                     </ul>
+                  </li>
+                  <li class="">
+                     <a href="#resend-confirmation">resendConfirmation()</a>
+                     <ul class="nav">
+                        <li class=""><a href="#subtopic3">Subtopic 3</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <a class="back-to-top" href="#top">
+               Back to top
+               </a>
+               <a href="#" class="bs-docs-theme-toggle">
+               Preview theme
+               </a>
+            </div>
+         </div>
+      </div>
    </div>
-</div>
-
-           
+   <script type="text/javascript">
+      $('#toc').toc();
+   </script>
+</body>
            
            
      

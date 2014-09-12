@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Magento 2 PHP API Guide
+title: Magento 2 API Guide
 ---
 
 <div class="container">
