@@ -17,7 +17,7 @@ To make a REST call for the Customer service:
 
 <div id="accordion">
 <h3>Step 1: Look up the call in webapi.xml</h3>
-<div><p>This section discusses how to make an HTTP POST call to create a customer using the <tt>createCustomer()</tt> method.</p>
+<div><p>This section discusses how to make an HTTP POST call to create a customer using the <code>createCustomer()</code> method.</p>
 <ol><li>Open <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.</li>
 <li><p>Find the desired call; for example,</p> 
 <pre>
@@ -28,25 +28,34 @@ To make a REST call for the Customer service:
     &lt;/resources>
 &lt;/route> 
 </pre></li></ol>
-<p>The <tt>route url</tt> specifies the URI of the REST call. (Step 4 shows the entire URL.)</p>
-<p>In this example, the URI is <tt>POST /V1/customerAccounts</tt></p>
-<p><strong>Note</strong>: Any value prefixed by a colon character is a required input.</p>
-<p><strong>Note</strong>: Some REST calls have no route; for these, use the Base URL only.</p>
+<p>The <code>route url</code> specifies the URI of the REST call. (Step 4 shows the entire URL.)</p>
+<p>In this example, the URI is <code>POST /V1/customerAccounts</code></p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <ul class="note"><li>Any value prefixed by a colon character is a required input.</li>
+  <li>Some REST calls have no route; for these, use the Base URL only.</li></ul></span>
+  </div>
 </div>
 
 <h3>Step 2: Find the service data object</h3>
 <div>
-<p>The service data object tells you what data to pass in to the REST API. The service data object is specified by the service interface method named by <tt>service class</tt> in <tt>webapi.xml</tt>.</p>
-<p>Continuing the preceding example, the <tt>createCustomer()</tt> method on the <tt>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</tt> specifies the data service object as follows:</p>
+<p>The service data object tells you what data to pass in to the REST API. The service data object is specified by the service interface method named by <code>service class</code> in <code>webapi.xml</code>.</p>
+<p>Continuing the preceding example, the <code>createCustomer()</code> method on the <code>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code> specifies the data service object as follows:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
 <p>In this case, the data service object is <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerDetails.php" target="_blank">\Magento\Customer\Service\V1\Data\CustomerDetails</a>.</p>
-<p><strong>Note</strong>: To use <tt>CustomerDetails</tt> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <tt>customer_details</tt>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <tt>customer_details</tt> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>To use <code>CustomerDetails</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p></span>
+  </div>
+
 </div>
 
 <h3>Step 3: Find getters on service data objects</h3>
 <div>
 <p>Getters on service data objects enable you to find what data is required to execute the action. Use them as follows:</p>
-<ol><li>Find all the getters on the service data object and determine from the <tt>@return</tt> comments to which other service data objects they refer.</li>
+<ol><li>Find all the getters on the service data object and determine from the <code>@return</code> comments to which other service data objects they refer.</li>
 <li>Locate those service data objects and getters on those objects.</li>
 <li>Comments in the getters specify the data type for each object.</li></ol>
 </div>
@@ -55,11 +64,11 @@ To make a REST call for the Customer service:
 <div>
 <p>Now that you have the URL and the data, you can execute your REST call as follows:</p>
 <ol><li>Create the REST URL as follows:
-<ul><li>Start with <tt>https://[your Magento host or IP]/[your Magento base install dir]/rest/default</tt></li>
+<ul><li>Start with <code>https://[your Magento host or IP]/[your Magento base install dir]/rest/default</code></li>
 <li>Append the REST URI you found in step 1.</li></ul>
 </li>
 <li>Pass an <a href="http://tools.ietf.org/html/rfc5849#section-3.4" target="_blank">OAuth 1.0a Authorization</a> header using <a href="http://tools.ietf.org/html/rfc5849#section-4.1" target="_blank">RSA-SHA1 encryption</a>.</li>
-<li>Pass a <tt>Content-Type: application/json</tt> header.</tt></li>
+<li>Pass a <code>Content-Type: application/json</code> header.</code></li>
 <li>Pass JSON or XML containing the data.</li></ol>
 <p>For a step-by-step example, see <a href="{{ site.gdeurl }}m2devgde/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.</p>
 </div>

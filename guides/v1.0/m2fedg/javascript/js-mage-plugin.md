@@ -20,7 +20,7 @@ Using the Mage plug-in, you can:
 *	Manage the order in which components initialize.
 *	Initialize components using the data attribute of a DOM element.
 
-Using Mage plugin decreases the amount of inline JavaScript by loading only the necessary components for a page.
+Using Mage plug-in decreases the amount of inline JavaScript by loading only the necessary components for a page.
 
 <h2 id="fedg_js-mage_declare">Declaring Components</h2>
 
@@ -124,11 +124,11 @@ Using chaining:
 
 <pre>&lt;input data-mage-init="{datepicker: {showButtonPanel: true}, draggable: {axis: 'y'}}" /></pre>
 
-<h2 id="fedg_js-mage_widgets_plugin">Instantiating Plugins</h2>
+<h2 id="fedg_js-mage_widgets_plugin">Instantiating Plug-Ins</h2>
 
 Unlike widgets, plug-ins do not not have a strict structure; plug-in constructors accept more than one argument. 
 
-Generally, plugins are instantiated like this:
+Generally, plug-ins are instantiated like this:
 
 <pre>jQuery('#someElement').myPlugin(options, {width: '70px'}, true);</pre>
 
@@ -150,7 +150,7 @@ To instantiate a plug-in using the data attribute, use the following syntax:
 
 You can use the `$.mage.onInit()` helper method to customize initialization data.
 
-`$.mage.onInit()` accepts the folowing parameters:
+`$.mage.onInit()` accepts the following parameters:
 
 *	`component`&mdash;Name of the component to be customized. 
 *	`selector`&mdash;(Optional.) Specify to customize a particular element (in other words, not all components of a certain type).
@@ -162,7 +162,7 @@ In the handler function, you can modify the following:
 
 *	Passed arguments (for the case of scalar argument(s) see next entry)
 *	Properties:
-	*	`this.args`&mdash;Property for accesing scalar arguments. Example of changing such an argument: `this.args[1] = false`
+	*	`this.args`&mdash;Property for accessing scalar arguments. Example of changing such an argument: `this.args[1] = false`
 	*	`this.name`&mdash;Component name
 	*	`this.resources`&mdash;List of resources required for that component.
 	

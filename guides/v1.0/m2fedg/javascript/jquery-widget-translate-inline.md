@@ -18,7 +18,7 @@ To implement these, translateInline uses editTrigger and dialog widgets as auxil
 
 TranslateInline source is `[your Magento install dir]/pub/lib/mage/translate-inline.js`.
 
-<h2 id="fedg_translate-widget_init">Initializating the translateInline Widget</h2>
+<h2 id="fedg_translate-widget_init">Initializing the translateInline Widget</h2>
 
 To initialize translateInline:
 

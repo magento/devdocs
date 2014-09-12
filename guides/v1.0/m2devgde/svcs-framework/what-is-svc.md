@@ -22,7 +22,7 @@ A service is:
 
 *  	An interface definition
 
-	<a href="https://github.com/magento/magento2/tree/master/app/code/Magento/Customer/Service/V1" target="_blank">All Customer services interfaces</a>. 
+	<a href="{{ site.mage2000url }}tree/master/app/code/Magento/Customer/Service/V1" target="_blank">All Customer services interfaces</a>. 
 	
 *  	A class that implements the interface 
 

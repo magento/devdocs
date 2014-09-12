@@ -17,11 +17,11 @@ There are also scripts like <a href="http://headjs.com" target="_blank">HeadJS</
 
 <h2 id="layout_theme_bestpr_browser">Solving Browser-Specific Issues</h2>
 
-Internet Explorer has the most CSS combatility or behavior issues of all modern web browsers. Before responsive web design, to make CSS work in Internet Explorer, you could use a separate `styles-ie.css` that contained extra styles and instructions. In Magento 2 we use <a href="http://headjs.com" target="_blank">HeadJS</a>, a script that detects the browser type and assigns the corresponding value to the class attribute of the `<html>` tag. 
+Internet Explorer has the most CSS compatibility or behavior issues of all modern web browsers. Before responsive web design, to make CSS work in Internet Explorer, you could use a separate `styles-ie.css` that contained extra styles and instructions. In Magento 2 we use <a href="http://headjs.com" target="_blank">HeadJS</a>, a script that detects the browser type and assigns the corresponding value to the class attribute of the `<html>` tag. 
 
 Now the browser-specific overrides for all browsers can be done in `style.css` using the corresponding classes.
 
-The class name for Internet Explorer is `ie`. USe the following classes to override CSS behavior for Internet Explorer:
+The class name for Internet Explorer is `ie`. Use the following classes to override CSS behavior for Internet Explorer:
 
 *	`.ie` (all versions of Internet Explorer)
 *	`.gt-ie6` (Internet Explorer 6 or later)
@@ -30,8 +30,11 @@ The class name for Internet Explorer is `ie`. USe the following classes to overr
 *	`.lt-ie9` (Internet Explorer 9 or earlier)
 *	`.lt-ie10` (Internet Explorer 10 or earlier)
 
-**Note**: HeadJS supports class names for various browsers, but in the configuration used in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about using similar overrides for other browsers.
-
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>HeadJS supports class names for various browsers, but in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about using similar overrides for other browsers.</p></span>
+  </div>
 	
 #### Related Topics:
 

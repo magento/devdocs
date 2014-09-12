@@ -63,6 +63,14 @@ body {
   transform: translateX(-260px);
 }
 
+/* SRJ - reviewer question */
+
+p.q 	{
+	font-size: 15pt;
+	color: red;
+	}
+	
+
 /*
  * Side navigation
  *
@@ -283,6 +291,12 @@ h4.heading4 {
     padding-right: 2em;
 }
 
+/* SRJ - get rid of line in middle of logo */
+
+/* .logo-frontdoor>a {
+	border-bottom: none;
+	}
+ */
 .logo {
     background-color: #31302b;
 }
@@ -335,7 +349,8 @@ p {
 
 .navbar a {
     text-decoration: none;
-    border-bottom: 1px #b1b1b1 solid;
+    /* border-bottom: 1px #b1b1b1 solid; */
+	border-bottom: none;
 }
 
 #sidebar-wrapper {
@@ -427,6 +442,54 @@ ul.note>li {
     .bs-docs-sidebar {
         padding-left: 1px;
     }
+}
+
+/* SRJ - top nav drop-down */
+
+.dropdown-menu>li
+{	position:relative;
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+	cursor:pointer;
+}
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    display:none;
+    margin-top: -1px;
+	border-top-left-radius:0;
+	border-bottom-left-radius:0;
+	border-left-color:#fff;
+	box-shadow:none;
+}
+.right-caret:after
+ {	content:"";
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid orange;
+    display: inline-block;
+    height: 0;
+    opacity: 0.8;
+    vertical-align: middle;
+    width: 0;
+	margin-left:5px;
+}
+.left-caret:after
+{	content:"";
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-right: 4px solid orange;
+    display: inline-block;
+    height: 0;
+    opacity: 0.8;
+    vertical-align: middle;
+    width: 0;
+	margin-left:5px;
 }
 
 @media (max-width:767px) {

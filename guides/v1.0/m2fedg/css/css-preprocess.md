@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters_fedg
 title: Understanding Magento 2 CSS Preprocessing
 ---
@@ -89,7 +89,7 @@ Here's how LESS preprocessing actually works:
 2.	The LESS preprocessor changes the extension of the requested file to `.less` and tries to find the file using the Magento fallback mechanism. If the `.less` file is not found, LESS preprocessor stops its execution. Otherwise, continue with the next step.
 3.	The LESS preprocessor reads LESS file contents and resolves <code>@magento_import</code> and default LESS import instructions. Imported files are processed recursively.
 4.	The LESS preprocessor resolves all paths in `.less` files to absolute paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to `var/temp/less/` with a unique file path that covers theme, locale, area, and so on.
-5.	To compile LESS sources files into CSS, the Magento LESS preprocessor uses the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Css/PreProcessor/AdapterInterface.php" target="_blank">LESS PHP adapter</a>. The LESS PHP adapter works with the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Css/PreProcessor/Adapter/Oyejorge.php" target="_blank">Oyejorge LESS parser</a> that is compatible with `less.js` version 1.7. 
+5.	To compile LESS sources files into CSS, the Magento LESS preprocessor uses the <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Css/PreProcessor/AdapterInterface.php" target="_blank">LESS PHP adapter</a>. The LESS PHP adapter works with the <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Css/PreProcessor/Adapter/Oyejorge.php" target="_blank">Oyejorge LESS parser</a> that is compatible with `less.js` version 1.7. 
 6.  The generated CSS file is located in the same directory in which compilation was executed. 
 
 <h2 id="fedg_css-preprocess-url-resolver">About the CSS URL Resolver</h2>

@@ -28,7 +28,7 @@ Our secondary goal is to provide solutions to the following:
 
 <h2 id="fedg_xlate_mage2_phrase">Using the Magento 2 Phrase Class</h2>
 
-Magento 2 translations start with the abstract <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Phrase.php" target="_blank">\Magento\Phrase</a> class. 
+Magento 2 translations start with the abstract <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Phrase.php" target="_blank">\Magento\Phrase</a> class. 
 
 This class implements the pattern `Replace Data Value with Object`, which basically replaces the string literal with an instance of `\Magento\Phrase` so you can use the `__toString()` method.
 
@@ -53,7 +53,7 @@ To render a translated phrase, your code should look like the following:
 
 Although using a static setter in bootstrap has a number of issues and contradicts the principle of dependency injection, it works well in client code.
 
-Behind the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Phrase/RendererInterface.php" target="_blank">\Magento\Phrase\RendererInterface</a>, there is a composite pattern implemented as <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Phrase/Renderer/Composite.php" target="_blank">\Magento\Phrase\Renderer\Composite</a>. It stacks multiple renderers. Each has single responsibility: one for translating, another for placeholder replacement, and so on.
+Behind the <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Phrase/RendererInterface.php" target="_blank">\Magento\Phrase\RendererInterface</a>, there is a composite pattern implemented as <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Phrase/Renderer/Composite.php" target="_blank">\Magento\Phrase\Renderer\Composite</a>. It stacks multiple renderers. Each has single responsibility: one for translating, another for placeholder replacement, and so on.
 
 <h3 id="fedg_xlate_mage2_render_init">Initializing the Environment for Rendering</h3>
 
@@ -75,9 +75,9 @@ In some XML files, the only thing that changed was removing the module context, 
 
 <h2 id="fedg_xlate_dict">Using Translation Dictionary Tools</h2>
 
-Magento developer tools include a static code analysis tool that generates a comma-seprated value (CSV) dictionary from Magento source code. The tool searches for any occurrences of `__()` in PHP files and translate attributes in XML files, and extracts literals for the dictionary.
+Magento developer tools include a static code analysis tool that generates a comma-separated value (CSV) dictionary from Magento source code. The tool searches for any occurrences of `__()` in PHP files and translate attributes in XML files, and extracts literals for the dictionary.
 
-The tool is available <a href="https://github.com/magento/magento2/tree/master/dev/tools/Magento/Tools/I18n" target="_blank">here</a>. It is intended for translators or extension developers who wish to provide language packs for the entire Magento application or a given module or theme. 
+The tool is available <a href="{{ site.mage2000url }}tree/master/dev/tools/Magento/Tools/I18n" target="_blank">here</a>. It is intended for translators or extension developers who wish to provide language packs for the entire Magento application or a given module or theme. 
 
 <h2 id="fedg_xlate_dict">Translation Dictionaries</h2>
 

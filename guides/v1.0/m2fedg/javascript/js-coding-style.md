@@ -33,9 +33,13 @@ Following are Magento's formatting guidelines.
 
 Source code line length must not exceed 120 characters. Recommended line length is 80 characters.
 
-**Note**: If a comment line contains an example command or a literal URL longer than 120 characters, that line may be longer than 120 characters for ease of cutting and pasting.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <ul class="note"><li>If a comment line contains an example command or a literal URL longer than 120 characters, that line can be longer than 120 characters for ease of cutting and pasting.</li>\
+  <li>Do not be concerned about header guards that exceed 120 characters.</li></ul></span>
+  </div>
 
-**Note**: You do not need to be concerned about header guards that exceed 120 characters.
 
 <h3 id="fedg_js-coding-format_indent">Indentation</h3>
 
@@ -45,7 +49,11 @@ Indentation should consist of four spaces. Tabs are not allowed.
 
 Line termination follows the UNIX text file convention. Lines must end with a single linefeed (LF) character. Linefeed characters are represented as ordinal 10, or hexadecimal (0x0A)
 
-**Note**: Do *not* use carriage returns (CR) as is the convention in Apple OS's (0x0D) or the carriage return&ndash;linefeed combination (CRLF) as is standard for the Windows OS (0x0D, 0x0A).
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Do <em>not</em> use carriage returns (CR) as is the convention in Apple OS's (0x0D) or the carriage return&ndash;linefeed combination (CRLF) as is standard for the Windows OS (0x0D, 0x0A).</p></span>
+  </div>
 
 <h3 id="fedg_js-coding-format_eof">End Of File</h3>
 
@@ -73,7 +81,7 @@ Examples of acceptable function names:
 
 For object-oriented programming, accessors for instances or static variables should always have the `get` or `set` prefix. In design patterns (such as the singleton or factory patterns) implementation method names should contain the pattern name where practical to provide the better behavior description.
 
-Methods that return certain status flags or other boolean values should have the `has` or `is` prefix, instead of `get`.
+Methods that return certain status flags or other Boolean values should have the `has` or `is` prefix, instead of `get`.
 
 For object methods that are declared with the "private" or "protected" modifier, the method name should start with underscore (`_`). This is the only acceptable use of an underscore in a method name. Public methods should never contain an underscore.
 
@@ -105,7 +113,7 @@ Filenames should be all lowercase to avoid confusion on case-sensitive platforms
 
 *Wrong*: `dialog_popup_base_features.js`
 
-*Correct*: `dialog-popup-base-seatures.js`
+*Correct*: `dialog-popup-base-features.js`
 
 <h2 id="fedg_js-coding_codestyle">Code Style</h2>
 
@@ -140,13 +148,17 @@ Long identifiers or values present problems for aligned initialization lists, so
     lengthyName: 2
 };</pre>
 
-**Note**: The following is *incorrect*:
 
-<pre>WRONG_Object.prototype = {
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>The following is *incorrect*:</p>
+  <pre>WRONG_Object.prototype = {
     a          : 0,
     b          : 1,
     lengthyName: 2
-};</pre>
+};</pre></span>
+  </div>
 
 <h3 id="fedg_js-coding_codestyle_funcargs">Function Arguments</h3>
 
@@ -168,16 +180,20 @@ When declaring an anonymous function in the list of arguments for a function cal
 
 Use Array and Object literals instead of Array and Object constructors.
 
-**Note**: The following example is *incorrect* because array constructors are error-prone due to their arguments. Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.
-
-<script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
-
 The following example is *correct*. Always use the more readable array literal:
 
 <pre>var a = [x1, x2, x3];
 var a2 = [x1, x2];
 var a3 = [x1];
 var a4 = [];</pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>The following example is <em>incorrect</em> because array constructors are error-prone due to their arguments. Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.</p>
+  <script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
+  </span>
+  </div>
 
 Object constructors don't have the same problems, but for readability and consistency object literals should be used.
 
