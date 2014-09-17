@@ -9,8 +9,6 @@ title: Understanding Integration Authorization
 
 Hello! Hello!
 
-Hello!
-
 There are two ways to authenticate the third-party system with Magento:
 
 *  (Preferred) Using a secure, cloud-based OAuth workflow
