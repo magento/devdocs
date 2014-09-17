@@ -1,0 +1,5 @@
+At Magento, we care about the developer experience so we're about to start testing how we'll interact with you on GitHub.
+
+We'll be doing some pull requests over the next few days.
+
+Thanks to you, we're building a better Magento.
