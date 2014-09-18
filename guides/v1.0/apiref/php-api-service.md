@@ -2,11 +2,10 @@
 layout: default
 title: Magento 2 Customer Service
 ---
- 
+
 <body>
    <div class="container bs-docs-container">
       <div class="row">
-         <div id="toc"></div>
          <div class="jumbotron">
             <h1 class="heading1" id="php-api-ref">{{ page.title }}</h1>
          </div>
@@ -26,7 +25,7 @@ title: Magento 2 Customer Service
          <h2 id="construct">__construct()</h2>
          <p class="blog-description">Constructs a customer service data object.</p>
          <blockquote class="codesample">
-            <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
+            <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
                \Magento\Framework\Event\ManagerInterface $eventManager, ...)
             </p>
          </blockquote>
@@ -87,7 +86,7 @@ title: Magento 2 Customer Service
          <h2 id="create-customer">createCustomer()</h2>
          <p class="blog-description">Creates a customer service data object.</p>
          <blockquote class="codesample">
-            <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
+            <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
                \Magento\Framework\Event\ManagerInterface $eventManager, ...)
             </p>
          </blockquote>
@@ -148,7 +147,7 @@ title: Magento 2 Customer Service
          <h2 id="resend-confirmation">resendConfirmation()</h2>
          <p class="blog-description">Resends a confirmation email to a customer.</p>
          <blockquote class="codesample">
-            <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory, 
+            <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
                \Magento\Framework\Event\ManagerInterface $eventManager, ...)
             </p>
          </blockquote>
@@ -209,31 +208,8 @@ title: Magento 2 Customer Service
       </div>
          </div>
          <div class="col-xs-3">
-            <div style="" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
-               <div class="toc" id="toc">
-                  <p>Methods</p>
+            <div style="" id="category" class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
                </div>
-               <ul class="nav bs-docs-sidenav">
-                  <li class="active">
-                     <a href="#construct">_construct()</a>
-                     <ul class="nav">
-                        <li class=""><a href="#subtopic1">Subtopic 1</a></li>
-                        <li class=""><a href="#subtopic1a">Subtopic 1a</a></li>
-                     </ul>
-                  </li>
-                  <li class="">
-                     <a href="#create-customer">create_customer()</a>
-                     <ul class="nav">
-                        <li class=""><a href="#subtopic2">Subtopic 2</a></li>
-                     </ul>
-                  </li>
-                  <li class="">
-                     <a href="#resend-confirmation">resendConfirmation()</a>
-                     <ul class="nav">
-                        <li class=""><a href="#subtopic3">Subtopic 3</a></li>
-                     </ul>
-                  </li>
-               </ul>
                <a class="back-to-top" href="#top">
                Back to top
                </a>
@@ -244,11 +220,9 @@ title: Magento 2 Customer Service
          </div>
       </div>
    </div>
-   <script type="text/javascript">
-      $('#toc').toc();
-   </script>
 </body>
-           
-           
-     
+
+
+
+
 
