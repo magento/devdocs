@@ -196,4 +196,203 @@ ol.tmplDefault {
 /* TEMPLATE: bootstrap3.list */
 .list-group.toc li {
 	cursor: pointer;
+=======
+/* Decimal numbering: 1.3.2 etc. */
+
+/* TEMPLATE: default */
+.tmplDefault, .tmplDefault ol {
+	counter-reset: item;
+	list-style: none;
+	font-family:'OpenSansRegular';
+	font-size: 12pt;
+	color:#31302b;
+	margin-bottom:6pt;
+	margin-left:1em;
+}
+
+.tmplDefault a:before {
+	content: counters(item, ".");
+	counter-increment: item;
+	color: inherit;
+	padding-right: 0.5em;
+}
+
+ol.tmplDefault, .tmplDefault ol {
+	padding: 0px;
+	margin: 0px;
+}
+
+ol.tmplDefault {
+	margin-left:.65em;
+	padding-left: -12px ;
+    text-indent: -6px ;
+	margin-bottom:6pt;
+/* 	margin-left:1em;
+ *//* 	margin: 1em 0px;
+ */}
+
+.tmplDefault li {
+	padding: 0px;
+}
+
+.tmplDefault li li {
+	padding-left: 2em;
+}
+
+.tmplDefault li.tocActiveParent {
+}
+
+.tmplDefault a {
+	padding: 0px 0.5em;
+	display: block;
+}
+
+.tmplDefault li.tocActive {
+}
+
+.tmplDefault a.tocActive {
+	background-color: #EEE;
+	color: inherit;
+	text-decoration: none;
+}
+/* Feature: collapsible */
+.toc.collapsibleFeat > li ol {
+	display: none;
+}
+
+.toc.collapsibleFeat li.tocActiveParent > ol,
+.toc.collapsibleFeat li.tocActive > ol {
+	display: block;
+}
+
+/* Feature: list-styles */
+.alphaFeat li a:before {
+	text-transform: none;
+	content: counter(item, upper-alpha);
+}
+.alphaFeat li li a:before {
+	content: counter(item, lower-alpha);
+}
+.romanFeat li a:before {
+	text-transform: none;
+	content: counter(item, upper-roman);
+}
+.romanFeat li li a:before {
+	content: counter(item, lower-roman);
+}
+.discFeat a:before {
+	content: counter(item, disc);
+}
+.squareFeat a:before {
+	content: counter(item, square);
+}
+
+.nonumFeat a:before {
+	/* content: "\00a0\00a0"; nbsp \00a0\00a0 */
+	content: "\200B";
+}
+
+.mixedFeat li a:before {
+	text-transform: none;
+	content: counters(decimal);
+}
+.mixedFeat li li a:before {
+	text-transform: none;
+	content: counter(item, lower-alpha);
+}
+
+.mixedFeat li li li a:before {
+	text-transform: none;
+	content: counter(item, lower-roman);
+}
+
+.mixedFeat li li li a:before {
+	text-transform: none;
+	content: counter(item, disc);
+}
+
+
+
+/* TEMPLATE: elegant */
+.tmplElegant a:before {
+	color: gray;
+}
+
+.tmplElegant > li  {
+	margin-bottom: 1em;
+	position: relative;
+}
+
+.tmplElegant > li > a {
+	font-size: 1.6em;
+	margin-left: 1.4em;
+	padding: 0 0.2em;
+}
+
+.tmplElegant > li > a:before {
+	color: white;
+	background-color: silver;
+	font-weight:bold;
+	width: 1.3em;
+	text-align: center;
+	padding: 0px;
+	position: absolute;
+	left: 0px;
+}
+
+.tmplElegant > li > ol {
+	border-top: 1px solid silver;
+	margin-top: 0em;
+	padding-top: 0.6em;
+}
+
+.tmplElegant > li > ol > li {
+	padding-left: 0;
+}
+
+/* TEMPLATE: modern */
+.tmplModern a:before {
+	color: gray;
+}
+
+.tmplModern a.tocActive {
+	background-color: #428BCA;
+	color: white;
+}
+
+.tmplModern a.tocActive:before {
+	color: white;
+}
+
+.tmplModern > li  {
+	margin-bottom: 1em;
+}
+
+.tmplModern > li > a {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.tmplModern > li > ol {
+	margin-top: 0.2em;
+	padding-top: 0.6em;
+}
+
+/* TEMPLATE: simple */
+
+.tmplSimple, .tmplSimple ol {
+	list-style: circle outside none;
+}
+
+.tmplSimple li.tocActive {
+	list-style: disc outside none;
+}
+
+.tmplSimple a.tocActive {
+	color: inherit;
+}
+
+/* TEMPLATE: bootstrap3.list */
+.list-group.toc li {
+	cursor: pointer;
 }
