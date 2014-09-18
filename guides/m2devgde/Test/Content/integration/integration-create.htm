@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="Default.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-browse-sequence-path="What is an Integration?" data-mc-toc-path="Magento Integrations">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Creating Your Integration</title>
+        <link href="../Resources/Stylesheets/Magento-2.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <h1><a name="aanchor11"></a>
+            <MadCap:concept term="integration-general" />Creating Your Integration</h1>
+        <p><a href="https://github.com/magento/devdocs/blob/master/guides/m2devgde/Test/Content/integration/integration-create.htm" target="_blank"><i>Help us improve this page</i> <img src="../Resources/Images/newWindow_16x16.gif" class="Inline" style="width: 16;height: 16;" /></a>
+        </p>
+        <p>In Magento 2, eachconnection to your third-party system is referred to as an <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" alt="Closed" data-mc-alt2="Open">integration<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>Set of properties that enable Magento to share authorized objects with a third-party application.</span></a>. The name of an integration must be unique in each Magento instance. Otherwise, an integration created earlier will be overwritten by an integration with the same name created later. That is, if a new automatically created integration has the same name as an existing manually created integration, the first overwrites the second.</p>
+        <p>To create the integration, you need:</p>
+        <ul>
+            <li value="1">A globally unique integration name</li>
+            <li value="2">Contact e-mail</li>
+            <li value="3">OAuth callback URL (omit if you're not using OAuth).</li>
+            <li value="4">Identity verification URL (URL to which merchants log in securely to get their access token and secret). Omit if you're not setting up such a system.</li>
+        </ul>
+        <p>You can create an integration in any of the following ways:</p>
+        <ul>
+            <li value="1">Manually using the Magento Admin</li>
+            <li value="2">Automatically by providing the merchant with a <a href="javascript:void(0);" class="MCTextPopup MCTextPopupHotSpot MCTextPopup_Open glossaryTerm MCTextPopupHotSpot_" alt="Closed" data-mc-alt2="Open">package<span class="MCTextPopupBody popupBody"><span class="MCTextPopupArrow"></span>A compressed module that can be extracted on another Magento system. Packages are typically provided as .tgz or .tar files.</span></a></li>
+        </ul>
+        <p><a class="MCHelpControl MCHelpControl-Concept conceptLink" data-mc-concepts="integration-create-auto;integration-create-manual;integration-code" href="javascript:void(0);" data-mc-topics="Coding Your Integration|integration-code.htm||Creating an Integration Automatically|integration-create-auto.htm||Manually Creating an Integration Using the Magento Admin|integration-create-man.htm"><span class="MCHelpControl-ConceptHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" alt="Concept Link Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>
