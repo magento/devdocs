@@ -3,7 +3,7 @@ layout: howtom2devgde_chapters
 title: Services Use Case&mdash;Magento 1 and Magento 2 Side By Side 
 ---
  
-# Services Use Case&mdash;Magento 1 and Magento 2 Side By Side
+<h1 id="svcs-use-case-mage1">Services Use Case&mdash;Magento 1 and Magento 2 Side By Side</h1>
 
 <p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/compare_mage1_mage2.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
@@ -34,7 +34,7 @@ Magento 2 implementation:
 
 Both implementations:
 
-*	Use a template and two blocks
+*	Use one template and two blocks
 *	Return the address object as HTML
 
 However, the similarities end there. The following table shows the key differences between the implementations:
@@ -74,7 +74,7 @@ Magento 2 implementation:
 
 <p><img src="{{ site.baseurl }}common/images/services_service-interaction_checkout-reg_mage2.png"/></p>
 
-### Discussion of Register During Checkout Example
+### Discussion of the Register During Checkout Example
 
 These two implementations both start with the controller calling the <tt>saveOrder</tt> method on the Onepage class, then Onepage calling <tt>submitOrder</tt> on the Quote class.
 
