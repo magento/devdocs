@@ -9,13 +9,13 @@ title: Accessing Magento Objects Using REST
 
 <h2 id="rest-call">How to Make a REST Call</h2>
 
-All REST calls for the Customer service are contained in ~webapi.xml~; however, inputs and return values are defined in their respective interfaces.
+All REST calls for the Customer service are contained in `webapi.xml`; however, inputs and return values are defined in their respective service interfaces.
 
 To make a REST call for the Customer service:
 
 <h3 id="rest-call-step1">Step 1: Look up the call in webapi.xml:</h3>
 
-This section discusses how to make an HTTP GET call to the getCustomer method.
+This section uses as an example how to make an HTTP GET call to the getCustomer method.
 
 1.	Open `webapi.xml`.
 
@@ -32,7 +32,7 @@ In this example, `GET /V1/customerAccounts/:customerId/customer`
 
 *Note*: Any value prefixed by a colon character is a required input. In the preceding example, `:customerId` indicates you must provide the customer ID.
 
-*Note*: Some REST calls have no route; for these cases, use the Base URL only.
+*Note*: Some REST calls have no route; for these calls, use the Base URL only.
 
 <h3 id="rest-call-step2">Step 2: Find the response object</h3>
 
