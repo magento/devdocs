@@ -7,7 +7,7 @@ title: Using Cascading Style Sheets (CSS) with Magento 2
 
 <p><a href="{{ site.githuburl }}m2fedg/css/css-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-Hello!
+Hello! Hello!
 
 You can customize Magento themes by using CSS to add your own images and fonts. 
 
