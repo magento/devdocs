@@ -19,6 +19,12 @@ title: Blank Page
 
 Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
 
+### General Markdown Authoring Tips
+
+*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
+*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
+*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
+
 ### Note, Tip, Important, Caution
 
 There is an example of Note in the first section.
