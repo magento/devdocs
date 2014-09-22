@@ -1,15 +1,15 @@
 ---
 layout: howtom2devgde_chapters
-title: Configuring Caching
+title: Module Error Handling and Bootstrapping
 ---
  
-<h1 id="m2devgde-cache">{{ page.title }}</h1>
+<h1 id="m2devgde-err-boot">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/arch/caching.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2devgde/arch/mod_err-boot.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-cache-intro">Introduction to Caching</h2> 
+<h2 id="m2devgde-errboot-intro">Introduction to Error Handling and Bootstrapping</h2> 
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Configuring+Caching
+Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Modularity%3A+Exploring+Changes+in+functions.php
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />

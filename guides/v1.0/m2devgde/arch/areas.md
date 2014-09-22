@@ -5,7 +5,7 @@ title: Using Magento 2 Areas
  
 <h1 id="m2devgde-area">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2devgde/arch/areas.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-area-intro">Introduction to Areas</h2> 
 

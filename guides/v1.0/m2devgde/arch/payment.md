@@ -1,15 +1,17 @@
 ---
 layout: howtom2devgde_chapters
-title: Configuring Caching
+title: Payment Modules
 ---
  
-<h1 id="m2devgde-cache">{{ page.title }}</h1>
+<h1 id="m2devgde-pymt">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/arch/caching.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2devgde/arch/payment.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-cache-intro">Introduction to Caching</h2> 
+<h2 id="m2devgde-pymt">Placeholder</h2> 
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Configuring+Caching
+I'm not sure this is a topic.
+
+Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Payment+Modules
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />

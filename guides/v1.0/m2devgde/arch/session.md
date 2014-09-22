@@ -1,15 +1,17 @@
 ---
 layout: howtom2devgde_chapters
-title: Configuring Caching
+title: Session
 ---
  
-<h1 id="m2devgde-cache">{{ page.title }}</h1>
+<h1 id="m2devgde-session">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/arch/caching.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}m2devgde/arch/session.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-cache-intro">Introduction to Caching</h2> 
+<h2 id="m2devgde-errboot-intro">Placeholder</h2> 
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Configuring+Caching
+This isn't a topic, it belongs somewhere else.
+
+Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Modularity%3A+Exploring+Changes+in+the+Session+Feature
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />

@@ -5,7 +5,7 @@ title: Modular File System
  
 # Modular File System 
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2othergde/modarch/mod_file-sys.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/m2devgde/arch/mod_file-sys.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 ## Introduction
 
