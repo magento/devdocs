@@ -1264,6 +1264,10 @@ time {
     margin-top: 2em;
 }
 
+/* SRJ - make links in horizontal nav white */
+
+.navbar-inverse .navbar-nav>li>a{color:#fff}
+
 /* Extra stuff */  
 
 

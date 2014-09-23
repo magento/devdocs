@@ -10,7 +10,9 @@
   <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
   <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
   <!-- <link href="{{ site.baseurl }}common/css/NestedAccordion.css" rel="stylesheet"> -->
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript" src="http://malsup.github.com/chili-1.7.pack.js"></script>
+<script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
   <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
   <!-- <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet"> -->
   <script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script>
@@ -18,7 +20,7 @@
   <script src="{{ site.baseurl }}common/js/jquery.NestedAccordion.js"></script>
   <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
   <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
-  <script src="{{ site.baseurl }}assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="{{ site.baseurl }}common/js/ie10-viewport-bug-workaround.js"></script>
   <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
     
 
@@ -86,24 +88,10 @@
      });
  });
  
- // Horizontal TOC nav
- $(function(){
-	$(".dropdown-menu > li > a.trigger").on("click",function(e){
-		var current=$(this).next();
-		var grandparent=$(this).parent().parent();
-		if($(this).hasClass('left-caret')||$(this).hasClass('right-caret'))
-			$(this).toggleClass('right-caret left-caret');
-		grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
-		grandparent.find(".sub-menu:visible").not(current).hide();
-		current.toggle();
-		e.stopPropagation();
-	});
-	$(".dropdown-menu > li > a:not(.trigger)").on("click",function(){
-		var root=$(this).closest('.dropdown');
-		root.find('.left-caret').toggleClass('right-caret left-caret');
-		root.find('.sub-menu:visible').hide();
-	});
-});
+
+    
+});  
+
 </script>
 </head>    <!-- <div id = "wrapper"> -->
 
@@ -120,9 +108,7 @@
 			<div class="nav navbar-nav">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Contents</a></li>
-              <!-- <li><a href="#">Link</a></li>
-              <li><a href="#">Link</a></li> -->
-              <li class="dropdown">
+			  <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Create a <br>Theme<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="{{ site.gdeurl }}m2fedg/layout/layout-overview.html">Introduction to Magento 2 Theming</a></li>
@@ -145,7 +131,7 @@
 					<li><a href="{{ site.gdeurl }}m2fedg/blank.html">Adding Folders and Logos</a></li></ul>
 					
 				  <li><a href="{{ site.gdeurl }}m2fedg/blank.html">Recommended Reading</a></li></ul></li>
-					
+				
 						
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Customize a <br>Theme <br>(Layout)<span class="caret"></span></a>
@@ -305,6 +291,7 @@
 					<li><a href="{{ site.gdeurl }}m2fedg/blank.html">Recommended Reading</a></li>
 					</ul></li>
 				              </li> 
+							  
             </ul> </div>
 			
 			<div class="col-sm-3 col-md-3 pull-right">
