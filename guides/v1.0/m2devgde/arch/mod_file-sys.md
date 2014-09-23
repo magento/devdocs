@@ -1,6 +1,6 @@
----
+﻿---
 layout: howtom2devgde_chapters
-title: Modular File System
+title: The Magento Modular File System
 ---
  
 # Modular File System 
