@@ -1,4 +1,4 @@
----
+﻿---
 layout: howtom2devgde_chapters
 title: Using Magento 2 Areas
 ---
