@@ -1,4 +1,4 @@
----
+﻿---
 layout: howtom2devgde_chapters
 title: How Magento Calculates Prices
 ---

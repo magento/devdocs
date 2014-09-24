@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters_fedg 
 title: Overview of Magento 2 Frontend Development
 ---

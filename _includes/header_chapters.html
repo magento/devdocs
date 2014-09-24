@@ -72,26 +72,24 @@
 	   heightStyle: "content"
      });
  });
-  
-   $(function() {
-	$( "#toc" ).accordiontoc({
-       event: "hover",
-	   initShow : "#current"
-       
-     });
- });
- 
-   $(function() {
-	$( "#accordiontoc2" ).accordiontoc({
-       event: "hover",
-	   initShow : "#current"
-     });
- });
- 
-
-    
-});  
-
+  // Horizontal TOC nav
+ $(function(){
+	$(".dropdown-menu > li > a.trigger").on("click",function(e){
+		var current=$(this).next();
+		var grandparent=$(this).parent().parent();
+		if($(this).hasClass('left-caret')||$(this).hasClass('right-caret'))
+			$(this).toggleClass('right-caret left-caret');
+		grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
+		grandparent.find(".sub-menu:visible").not(current).hide();
+		current.toggle();
+		e.stopPropagation();
+	});
+	$(".dropdown-menu > li > a:not(.trigger)").on("click",function(){
+		var root=$(this).closest('.dropdown');
+		root.find('.left-caret').toggleClass('right-caret left-caret');
+		root.find('.sub-menu:visible').hide();
+	});
+});
 </script>
 </head>    <!-- <div id = "wrapper"> -->
 
@@ -115,8 +113,8 @@
 				  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_file-sys.html">The Magento Modular File System</a></li>
 				  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_depend.html">Magento 2 Module Dependencies</a></li>
 				  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_err-boot.html">Module Error Handling and Bootstrapping</a></li></ul></li>
-						
-                <li class="dropdown">
+				  
+				<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuring<span class="caret"></span></a>
 				<ul class="dropdown-menu">
                   <li><a href="{{ site.gdeurl }}m2devgde/config/config-files.html">Working With Configuration Files</a></li>
@@ -148,9 +146,26 @@
                 
 				<ul class="dropdown-menu">
                   <li><a href="{{ site.gdeurl }}m2devgde/arch/payment.html">Payment Modules</a></li>
-				  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_file-sys.html">The Magento Modular File System</a></li>
-				  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_depend.html">Magento 2 Module Dependencies</a></li>
-				  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_err-boot.html">Module Error Handling and Bootstrapping</a></li></ul></li> 
+                  <li><a href="{{ site.gdeurl }}m2devgde/index-cache/caching.html">Configuring Caching</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/index-cache/indexing.html">Working With Indexing</a></li>
+				  <li><a class="trigger right-caret">View Layer</a>
+				  <ul class="dropdown-menu sub-menu">
+					<li><a href="{{ site.gdeurl }}m2devgde/view/view-lib.html">Using the Magento 2 View Library</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/view/xml-schema-layout.html">Using XML Schema For Your Layout</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/view/design-abstract.html">Using Design Abstractions</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/view/static-process.html">How Magento 2 Processes Static Files</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/view/template-engine.html">Working With the Template Engine</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/view/page-type.html">Using Page Types</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/view/page-assets.html">Working With Page Assets</a></li>				
+					
+					</ul>
+					<li><a class="trigger right-caret">Pricing</a>
+				  <ul class="dropdown-menu sub-menu">
+					<li><a href="{{ site.gdeurl }}m2devgde/behavior/price-calc.html">How Magento Calculates Prices</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/behavior/price-render.html">How Magento Renders Prices</a></li>
+					<li><a href="{{ site.gdeurl }}m2devgde/behavior/pricing.html">Using the Pricing Library</a></li>
+				</ul>
+				  </ul></li></li> 
 							  
             </ul> </div>
 			

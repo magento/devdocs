@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters
 title: Magento 2 Code Demarcation Standard
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters
 title: This Topic Needs a New Name
 ---
