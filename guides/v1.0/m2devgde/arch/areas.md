@@ -9,6 +9,8 @@ title: Using Magento 2 Areas
 
 <h2 id="m2devgde-area-intro">Introduction to Areas</h2> 
 
+Hello Hello
+
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Introducing+Areas
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -60,7 +62,7 @@ HTML table:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Magento 1</th>
 			<th>Magento 2</th>
 		</tr>

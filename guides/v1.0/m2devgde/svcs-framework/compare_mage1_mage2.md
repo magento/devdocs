@@ -41,7 +41,7 @@ However, the similarities end there. The following table shows the key differenc
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Magento 1</th>
 			<th>Magento 2</th>
 		</tr>
@@ -82,7 +82,7 @@ From that point they are different, as the following table shows:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Magento 1</th>
 			<th>Magento 2</th>
 		</tr>

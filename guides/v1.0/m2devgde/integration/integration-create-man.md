@@ -29,7 +29,7 @@ To create a new integration:
 
 	<table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Option</th>
 			<th>Description</th>
 		</tr>

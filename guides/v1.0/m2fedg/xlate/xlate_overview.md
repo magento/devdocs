@@ -85,7 +85,7 @@ The following table shows where Magento 1.x and Magento 2 translation dictionari
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Magento 1.x location</th>
 			<th>Magento 2 location</th>
 		</tr>
