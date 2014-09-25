@@ -41,7 +41,7 @@ The `<block>` instruction defines a block. Attributes:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Attribute</th>
 			<th>Description</th>
 			<th>Values</th>
@@ -109,7 +109,7 @@ The `<container>` instruction defines a container. It can be empty or it can con
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Attribute</th>
 			<th>Description</th>
 			<th>Values</th>
@@ -191,7 +191,7 @@ In the preceding example, the value of `<arg1>` is passed as the first argument 
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Attribute</th>
 			<th>Description</th>
 			<th>Values</th>
@@ -218,7 +218,7 @@ However, it is possible to create a new element after the layout is generated us
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Attribute</th>
 			<th>Description</th>
 			<th>Values</th>
@@ -273,7 +273,7 @@ Attributes:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Attribute</th>
 			<th>Description</th>
 			<th>Values</th>
@@ -438,7 +438,7 @@ The following table shows possible attribute values:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Attribute</th>
 			<th>Value</th>
 			<th>Description</th>
@@ -482,7 +482,7 @@ Examples:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Situation</th>
 			<th>Result</th>
 		</tr>

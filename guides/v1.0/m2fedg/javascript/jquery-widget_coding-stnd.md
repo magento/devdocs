@@ -25,7 +25,7 @@ For more information, see the <a href="http://api.jqueryui.com/jQuery.widget/" t
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -51,7 +51,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -78,7 +78,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -114,7 +114,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 <p>Additional JavaScript files used as resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head></code> block.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -131,7 +131,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -159,7 +159,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 <li>You can modify widget initialization parameters.</li></ul>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -202,7 +202,7 @@ $.widget('mage.accordion', $.ui.accordion, {
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -254,7 +254,7 @@ $('selector')
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -296,7 +296,7 @@ $.widget('mage.dialog', {
 <p><strong>Benefit</strong>: Widgets become configurable and reusable.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -340,7 +340,7 @@ $('selector').mage('nonModalDialog');</pre></td>
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -423,7 +423,7 @@ $.widget("mage.form", {
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -448,7 +448,7 @@ $.widget("mage.form", {
 <p>About the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> principle. We recommended against instantiating a widget or calling a widget's methods inside another widget.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -471,7 +471,7 @@ $.widget("mage.form", {
 <p>Example: Unlike the <code>mage.topShoppingCart</code> widget, the <code>mage.dropdown widget</code> can be used in many other scenarios.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -490,7 +490,7 @@ $.widget("mage.form", {
 <p>Place all such widgets under the <code>[your Magento install dir]/pub/lib/[your company]/[author]</code> directory.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -519,7 +519,7 @@ $.widget("mage.form", {
 <p>You must locate all of these under the <code>[your Magento install dir]/app/code/[Namespace]/[Module]/view/[area]/js</code> directory.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -555,7 +555,7 @@ $.widget("mage.form", {
 <p>Widget properties names should not start with underscore because those properties would not be accessible using the jQuery Widget Factory public API.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -588,7 +588,7 @@ $.widget('mage.accordion', {
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -609,7 +609,7 @@ $.widget('mage.accordion', {
 <p>Benefit: Reduced number of widget conflicts because widgets interact only with their child elements.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -629,7 +629,7 @@ $.widget('mage.accordion', {
 <p>If there is no default value for an option by design, a <code>null</code> value must be used.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -648,7 +648,7 @@ $.widget('mage.accordion', {
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -667,7 +667,7 @@ $.widget('mage.accordion', {
 <div>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -684,7 +684,7 @@ $.widget('mage.accordion', {
 <p>Benefit: The public widget API enables using chaining for widget methods.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -713,7 +713,7 @@ menuInstance.element.addClass('ui-state-active');
 <p>The widget factory automatically fires the <code>_create()</code> and <code>_init()</code> methods during initialization, in that order. The widget factory prevents multiple instantiations on the same element, which is why <code>_create()</code> is called only once for each widget instance, whereas <code>_init()</code> is called each time the widget is called without arguments.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -741,7 +741,7 @@ menuInstance.element.addClass('ui-state-active');
 <p>Benefit: All widget event handlers are bound in one place (by the <code>_bind</code> method), which makes it easy to find what events the widget reacts on.</p>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>
@@ -762,7 +762,7 @@ menuInstance.element.addClass('ui-state-active');
 <li>Event handlers are automatically namespaced and cleaned up on destruction.</li></ul>
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Correct</th>
 			<th>Incorrect</th>
 		</tr>

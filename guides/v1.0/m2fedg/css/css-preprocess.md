@@ -58,7 +58,7 @@ Example before and after processing:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Before</th>
 			<th>After</th>
 		</tr>
@@ -99,7 +99,7 @@ Here's how LESS preprocessing actually works:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Before</th>
 			<th>After</th>
 		</tr>

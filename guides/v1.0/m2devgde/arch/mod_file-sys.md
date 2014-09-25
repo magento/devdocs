@@ -128,7 +128,7 @@ You can perform the following actions:
 
 <table>
 	<tbody>
-	<tr class="table-headings">
+	<tr>
 			<th>Method name</th>
 			<th>Purpose</th>
 		</tr>
@@ -189,7 +189,7 @@ You can perform the following actions:
 
 <table>
 	<tbody>
-	<tr class="table-headings">
+	<tr>
 			<th>Method name</th>
 			<th>Purpose</th>
 		</tr>

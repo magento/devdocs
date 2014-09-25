@@ -58,7 +58,7 @@ HTML table:
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Magento 1</th>
 			<th>Magento 2</th>
 		</tr>

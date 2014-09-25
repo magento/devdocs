@@ -67,7 +67,7 @@ Translation dictionaries are also stored in the database in the `core_translate`
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>key_id</th> 
 			<th>string</th>
 			<th>store_id</th>

@@ -29,7 +29,7 @@ The following table shows what we expect <a href="{{ site.mage2000url }}app/code
 
 <table>
 	<tbody>
-		<tr class="table-headings">
+		<tr>
 			<th>Method</th>
 			<th>Expected function</th>
 		</tr>
