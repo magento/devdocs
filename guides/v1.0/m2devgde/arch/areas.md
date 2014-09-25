@@ -9,7 +9,7 @@ title: Using Magento 2 Areas
 
 <h2 id="m2devgde-area-intro">Introduction to Areas</h2> 
 
-Hello
+Hello Hello
 
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Introducing+Areas
 
