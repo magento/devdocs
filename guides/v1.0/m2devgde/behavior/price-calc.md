@@ -1,4 +1,4 @@
-﻿---
+---
 layout: howtom2devgde_chapters
 title: How Magento Calculates Prices
 ---
@@ -81,9 +81,11 @@ HTML table:
 
 ### Images
 
-You can use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
+Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
 
-You can also use a title tag to provide a mouseover tooltip.
+To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
+
+You can also use a title tag to provide a mouseover tooltip; this is recommended for accessiblity (screen readers and so on).You can also use a title tag to provide a mouseover tooltip.
 
 HTML example:
 
