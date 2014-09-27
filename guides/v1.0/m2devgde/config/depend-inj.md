@@ -1,13 +1,13 @@
 ---
 layout: howtom2devgde_chapters
-title: Dependency Injection
+title: Using Dependency Injection
 ---
  
-# Dependency Injection 
+<h1 id="m2devgde-dep-inj">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2devgde/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-## Introduction
+<h2 id="dep-inj-intro">Introduction</h2>
 
 Dependency injection in Magento 2 is the alternative to the `Mage` class used in Magento 1. With dependency injection, an object does not need to locate an object or value on which it depends. Instead, a PHP class declares its dependencies in a constructor&mdash;a process referred to as *constructor dependency injection*.
 
@@ -31,12 +31,15 @@ The benefit of constructor dependency injection is that the object is immutable.
 
 The <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment. It's a separate object to avoid having to repeat the same code over and over again.
 
-## Terms Used
-
 This page uses the following terms:
 
-*	Factory: An object that creates the objects of a specific type. Unlike business objects, a factory can be dependent on the object manager.
-*	Proxy: An object that implements the same interface as the proxied (original) object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
+Factory 
+
+	: Object that creates the objects of a specific type. Unlike business objects, a factory can be dependent on the object manager.
+	
+Proxy
+
+	: Object that implements the same interface as the proxied (original) object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
 
 ## Using Dependency Injection in Your Module
 
