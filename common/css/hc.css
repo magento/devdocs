@@ -69,7 +69,7 @@ p.q 	{
 	font-size: 15pt;
 	color: red;
 	}
-	
+
 
 /*
  * Side navigation
@@ -193,7 +193,7 @@ p.q 	{
     background-color: white;
 }
 
-/* 
+/*
 .container h1 {
     margin-bottom: 12px;
     font-size: 36px;
@@ -265,22 +265,23 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover {
     color: gray;
 }
 
-h1.heading1 {
+h1.api1 {
     margin-bottom: 8px;
     font-size: 36px;
 }
 
-h2.heading2 {
+h2.api2 {
     margin-bottom: 6px;
-    font-size: 28px;
+    font-size: 30px;
 }
 
-h3.heading3 {
+h3.api3 {
     margin-bottom: 4px;
-    font-size: 22px;
+    font-size: 24px;
+    background-color: #F2F2F2;
 }
 
-h4.heading4 {
+h4.api4 {
     margin-bottom: 2px;
     font-size: 18px;
 }
@@ -374,7 +375,7 @@ p {
 
 ul.nav a {
     border-bottom: none;
-} 
+}
 
 /* Unordered lists */
 ul {
@@ -435,7 +436,7 @@ ul.note>li {
     margin-left: 4em;
 }
 
-/* Media mark-ups */	
+/* Media mark-ups */
 
 /* SRJ - reducing left margin for left TOC */
 @media (min-width: 768px) {
@@ -448,7 +449,7 @@ ul.note>li {
 
 .dropdown-menu>li
 {	position:relative;
-	-webkit-user-select: none; /* Chrome/Safari */        
+	-webkit-user-select: none; /* Chrome/Safari */
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	/* Rules below not implemented in browsers yet */
@@ -595,7 +596,7 @@ span.glyphicon-class>p {
 .bs-callout {
     padding-bottom: 40px;
 }
-	
+
 
 
 
@@ -644,7 +645,7 @@ h1 a,h2 a,h3 a,h4 a
     transition: all .5s ease 0;
 }
 
-/* .navbar 
+/* .navbar
 {
   display: none; */
 }
@@ -1268,7 +1269,7 @@ time {
 
 .navbar-inverse .navbar-nav>li>a{color:#fff}
 
-/* Extra stuff */  
+/* Extra stuff */
 
 
 
@@ -1277,14 +1278,14 @@ time {
 
 
 
-	
+
 /* SRJ - decided not to include the word "Note", etc but leaving in case that comes back
 
 div#info.bs-callout>h4 {
 	margin-top: -1px;
 	margin-left: 2.5em;
 	}
-	
+
 div#warning.bs-callout>h4 {
 	margin-top: -1px;
 	margin-left: 2.5em;
@@ -1296,13 +1297,13 @@ changes to -, needs more work
 
 #accordion_related-topics  .ui-accordion-header-icon {
 background-image: url("images/ui-icons_454545_256x240.png");
-background-position: -16px -128px; 
+background-position: -16px -128px;
 
 }
 
 #accordion_related-topics  .ui-accordion-header-icon.ui-icon.ui-icon.minus {
 background-image: url("images/ui-icons_454545_256x240.png");
-background-position: -48px -128px; 
+background-position: -48px -128px;
 
 } */
 
@@ -1313,33 +1314,12 @@ background-position: -48px -128px;
 
 /* #accordion_related-topics  .ui-accordion-header-icon {
 background-image: url("images/ui-icons_454545_256x240.png");
-background-position: -16px -128px; 
+background-position: -16px -128px;
 
 }
  */
-/* #accordion_related-topics  .span.ui-accordion-header-icon {
-background-image: url("images/ui-icons_454545_256x240.png");
-background-position: -12px -128px; 
 
-} */
 
-/* div.h1-frontpage {
-    align: center;
-	padding-left: 1em;
-    
-}  */
-
-/* h2.heading2 {
-    color: black;
-    font-size: 18pt;
-    
-} 
-
-h3.heading3 {
-    color: gray;
-    font-size: 14pt;
-    
-} */ 
 
 
 

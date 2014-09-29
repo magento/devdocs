@@ -35,13 +35,13 @@ This page uses the following terms:
 
 Factory 
 
-	: Object that creates the objects of a specific type. Unlike business objects, a factory can be dependent on the object manager.
+:	Object that creates the objects of a specific type. Unlike business objects, a factory can be dependent on the object manager.
 	
 Proxy
 
-	: Object that implements the same interface as the proxied (original) object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
+:	Object that implements the same interface as the proxied (original) object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
 
-## Using Dependency Injection in Your Module
+<h2 id="dep-inj-mod">Using Dependency Injection in Your Module</h2>
 
 The object manager needs the following configurations:
 
@@ -51,11 +51,11 @@ The object manager needs the following configurations:
 
 The Magento software uses class constructor signatures to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object. The Magento software reads constructors using reflection and we recommend you use the Magento compiler tool to pre-compiled class definitions for better performance.
 
-### Dependency Injection Type Configurations
+<h3 id="dep-inj-mod-config">Dependency Injection Type Configurations</h3>
 
 Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
 
-Object manager configurations can be specified at three levels:
+Object manager configurations can be specified at any of the following levels:
 
 *	Global configurations for a module (`app/etc/di/*.xml`)
 *	Global configurations for a module (`[your module directory]/etc/di.xml`)
@@ -64,9 +64,6 @@ Object manager configurations can be specified at three levels:
 	The area-specific configurations fall into the application areas' configurations (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2000url }}blob/master/app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
 	
 	The application area-specific configurations are loaded separately as necessary.
-
-
-
 
 #### Related Topics:
 
