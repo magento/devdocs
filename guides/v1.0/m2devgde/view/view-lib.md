@@ -9,6 +9,8 @@ title: Using the Magento 2 View Library
 
 <h2 id="m2devgde-viewlib-intro">Introduction to Page Types</h2> 
 
+HELLOOOOOO
+
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Magento_View+Library
 
 <div class="bs-callout bs-callout-info" id="info">
