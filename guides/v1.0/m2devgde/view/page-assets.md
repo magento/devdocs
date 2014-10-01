@@ -102,12 +102,12 @@ For example, a particular theme might extend or override files of its parent the
 
 This section discusses the following ways to work with view assets:
 
-*	TBD
-*	TBD
+*	<a href="#m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</a>
+*	<a href="#m2devgde-page-assets-api">Manipulating Assets Using the APIs</a>
 
 <h3 id="m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</h3>
 
-Although manipulating assets using the API is possible, the intended way for frontend developers is to register assets on a page using layout XML instructions. It's preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
+Although manipulating assets using the API is possible, the intended way for frontend developers is to register assets on a page using <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">layout XML instructions</a>. It's preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
 
 Expand one of the following sections for more information:
 
@@ -158,4 +158,35 @@ Give the flag a value:
 
 <script src="https://gist.github.com/xcomSteveJohnson/3ad3919afba7f689faff.js"></script>
 
+<h3 id="m2devgde-page-assets-api">Manipulating Assets Using the APIs</h3>
 
+The Magento system uses _asset collections_ to process view assets. An asset collection is an object responsible for aggregating multiple assets and passing them to the page rendering subsystem. 
+
+That is why when you use PHP to work with assets, we recommended you add assets to an asset collection and then manipulate them as collection members. 
+
+The following classes implement Magento asset collections: 
+
+*	<a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>&mdash;a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.
+*	<a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>&mdash;an extended collection that also implements asset grouping by properties (for example by content type)
+
+Asset collections enable the following:
+
+*	Adding and removing assets
+*	Determining whether an asset is registered in a collection
+*	Getting all assets
+*	Getting assets of a specified group (for collections implemented by `GroupedCollection`)
+*	Getting groups (for collections implemented by `GroupedCollection`)
+
+To add an asset to a collection, use the following code:
+
+<script src="https://gist.github.com/xcomSteveJohnson/f12c706d876f1a64a363.js"></script>
+
+For example, to add a local JavaScript or CSS file to the page output:
+
+<script src="https://gist.github.com/xcomSteveJohnson/e292aca8a49fdab644fc.js"></script>
+
+#### Related Topics
+
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	TBD
+	
