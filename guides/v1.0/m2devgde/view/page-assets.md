@@ -118,7 +118,44 @@ Expand one of the following sections for more information:
 <strong>Rendered HTML Output</strong>
 <script src="https://gist.github.com/xcomSteveJohnson/d87ce5934b80a56c7292.js"></script>
 </div>
+<h3>CSS assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/5c8dc5e2eb1229c63406.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/118d51c5af7d371f809a.js"></script>
+</div>
+<h3>RSS feed assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/6617872c0698ea1f5d07.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/72fa732d12600dacb7bf.js"></script>
+</div>
 </div>
 
+<h4 id="m2devgde-page-assets-static-manip-xml-brows">Manipulating Browser Matching Using Layout XML</h4>
+
+Use _browser matching_ to change the behavior of JavaScript and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using layout instructions to set using a CSS file only when a page is loaded in Internet Explorer:
+
+Layout instructions:
+
+<script src="https://gist.github.com/xcomSteveJohnson/b55a26d292d849551090.js"></script>
+
+Rendered HTML:
+
+<script src="https://gist.github.com/xcomSteveJohnson/f69e6fedd2a205f01186.js"></script>
+
+<h4 id="m2devgde-page-assets-static-manip-xml-cond">Using Conditional Rendering</h4>
+
+Sometimes the decision of whether or not to link a resource depends on other actions that might happen (or not happen). To do that, associated a flag name with the resource. The flag name defines whether to perform rendering or not. 
+
+Magento sets the flag value when it executes.
+
+Define the flag value dependency:
+
+<script src="https://gist.github.com/xcomSteveJohnson/f7c0e61f62062867d43e.js"></script>
+
+Give the flag a value:
+
+<script src="https://gist.github.com/xcomSteveJohnson/3ad3919afba7f689faff.js"></script>
 
 
