@@ -9,98 +9,184 @@ title: Working With Page Assets
 
 <h2 id="m2devgde-page-assets-intro">Introduction to Page Assets</h2> 
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Page+Resources+%28Assets%29+Implementation
+An _asset_ is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using `<head/>`, `<img/>`, `<object/>` elements.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
+This topic discusses how to work with Magento 2 page assets (particularly interfaces and classes). The article is mostly aimed at developers 
+who have solid experience with PHP and are familiar with <a href="{{ site.gdeurl }}m2devgde/view/xml-schema-layout.html">Magento XML layouts</a>.
+
+<h2 id="m2devgde-page-assets-interf">Using Asset Interfaces</h2>
+
+An asset is a reference to a certain resource linked to an HTML page. An asset is not a file itself; it's a set of information about the file. Magento 2 has the following types of assets:
+
+*	Asset&mdash;a basic definition of an asset that consists of:
+
+	*	URL to the asset
+	*	Content type of the asset
+
+*	Local asset&mdash;an extended definition that, in addition to the preceding also provides information about:
+
+	*	Source file&mdash;an absolute path to the asset file in the local file system.
+	*	Relative path&mdash;a relative path to the asset file.
+	
+*	Mergeable asset&mdash;a "marker" abstraction for local assets, indicating that their contents may be merged
+
+These types are represented as interfaces in the 
+<a href="{{ site.mage2000url}}lib/internal/Magento/Framework/View" target="_blank">Magento/Framework/View</a> library: 
+
+<p><img src="{{ site.baseurl }}common/images/view_asset-interfaces.png" alt="Asset interfaces"></p>
+
+The classes implementing the interfaces are responsible for:
+
+*	Remote: Implements an asset for which there is only URL and content type information. Used for rendering included RSS feeds, for example.
+*	File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.
+
+<h2 id="m2devgde-page-assets-imp">Implementing Assets</h2>
+
+This section discusses the following topics:
+
+*	<a href="#m2devgde-page-assets-imp-no-info">Assets with No Remote or Local Information</a>
+*	<a href="#m2devgde-page-assets-imp-local">Local Assets</a>
+*	<a href="#m2devgde-page-assets-imp-context">Context Implementations</a>
+
+<h3 id="m2devgde-page-assets-imp-no-info">Assets with No Remote or Local Information</h3>
+
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/Remote.php" target="_blank">\Magento\Framework\View\Asset\Remote</a> represents resources for which only the URL and content type are known, and which might reside in the local file system, or on a remote server. The class diagram for this asset implementation follows:
+
+<p><img src="{{ site.baseurl }}common/images/view_asset-interface_no-local.png" alt="Assets with no remote or local information"></p>
+
+It accepts URL and `content-type` in the constructor and serves only as a value object. 
+
+<h3 id="m2devgde-page-assets-imp-local">Local Assets</h3>
+
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant "file path". 
+
+This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to CSS files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.
+
+Its asset class diagram follows:
+
+<p><img src="{{ site.baseurl }}common/images/view_asset-interface_local.png" alt="Local asset interface"></p>
+
+`File` specifics: 
+
+*	`File` accepts scalar data in the constructor and is immutable, but requires an instance of "source" for lazy loading of content or a source file.
+*	The `$context` argument in the constructor is a value object necessary for generating URLs. Tt contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.
+
+<h3 id="m2devgde-page-assets-imp-context">Context Implementations</h3>
+
+Magento 2 supports the following implementations of context for the Asset\File object:
+
+*	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path. 
+
+	Using this context and, for example, a "media" base URL, this asset generates the following URL:
+	
+	<pre>http://example.com/pub/media/arbitrary_path/product/placeholder.jpg</pre>
+	
+*	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File/FallbackContext.php" target="_blank">\Magento\Framework\View\Asset\File\FallbackContext</a>: Extended implementation used for static view files that are subject to view files fallback. 
+
+	The URLs generated with this kind of context include fully qualified information necessary for files fallback:
+	
+	<pre>http://example.com/pub/static/frontend/magento_theme/en_US/Magento_Catalog/product/placeholder.jpg
+http://example.com/pub/static/frontend/magento_theme/en_US/css/styles.css</pre>
+
+	The difference between the preceding URLs is that the first asset has a module context and in the second does not.
+	
+<h2 id="m2devgde-page-assets-static-view">Using Page Assets and Static View Files</h2>
+
+According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the storefront without modification are _static view files_.
+
+Like all Magento 2 view files, static view files are located using the fallback mechanism. This mechanism implements inheritance of files from one directory to others. In this way, we enable you to extend or override view files of existing components with new components. 
+
+For example, a particular theme might extend or override files of its parent theme, all themes generally override module view files, and so on.
+
+<h2 id="m2devgde-page-assets-static-manip">Manipulating Page Assets</h2>
+
+This section discusses the following ways to work with view assets:
+
+*	<a href="#m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</a>
+*	<a href="#m2devgde-page-assets-api">Manipulating Assets Using the APIs</a>
+
+<h3 id="m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</h3>
+
+Although manipulating assets using the API is possible, the intended way for frontend developers is to register assets on a page using <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">layout XML instructions</a>. It's preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
+
+Expand one of the following sections for more information:
+
+<div id="accordion">
+<h3>JavaScript assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/82a10d4d61de9d832fcb.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/d87ce5934b80a56c7292.js"></script>
+</div>
+<h3>CSS assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/5c8dc5e2eb1229c63406.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/118d51c5af7d371f809a.js"></script>
+</div>
+<h3>RSS feed assets</h3>
+<div><strong>Layout instructions</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/6617872c0698ea1f5d07.js"></script>
+<strong>Rendered HTML Output</strong>
+<script src="https://gist.github.com/xcomSteveJohnson/72fa732d12600dacb7bf.js"></script>
+</div>
 </div>
 
-<h2 id="help">Helpful Aids for Writers</h2>
+<h4 id="m2devgde-page-assets-static-manip-xml-brows">Manipulating Browser Matching Using Layout XML</h4>
 
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
+Use _browser matching_ to change the behavior of JavaScript and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using layout instructions to set using a CSS file only when a page is loaded in Internet Explorer:
 
-### General Markdown Authoring Tips
+Layout instructions:
 
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
+<script src="https://gist.github.com/xcomSteveJohnson/b55a26d292d849551090.js"></script>
 
-### Note, Tip, Important, Caution
+Rendered HTML:
 
-There is an example of Note in the first section.
+<script src="https://gist.github.com/xcomSteveJohnson/f69e6fedd2a205f01186.js"></script>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
+<h4 id="m2devgde-page-assets-static-manip-xml-cond">Using Conditional Rendering</h4>
 
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
+Sometimes the decision of whether or not to link a resource depends on other actions that might happen (or not happen). To do that, associated a flag name with the resource. The flag name defines whether to perform rendering or not. 
 
-### Tables
+Magento sets the flag value when it executes.
 
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
+Define the flag value dependency:
 
-HTML table:
+<script src="https://gist.github.com/xcomSteveJohnson/f7c0e61f62062867d43e.js"></script>
 
-<table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
-</table>
+Give the flag a value:
 
-### Images
+<script src="https://gist.github.com/xcomSteveJohnson/3ad3919afba7f689faff.js"></script>
 
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
+<h3 id="m2devgde-page-assets-api">Manipulating Assets Using the APIs</h3>
 
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
+The Magento system uses _asset collections_ to process view assets. An asset collection is an object responsible for aggregating multiple assets and passing them to the page rendering subsystem. 
 
-You can also use a title tag to provide a mouseover tooltip.
+That is why when you use PHP to work with assets, we recommended you add assets to an asset collection and then manipulate them as collection members. 
 
-HTML example:
+The following classes implement Magento asset collections: 
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
+*	<a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>&mdash;a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.
+*	<a href="{{ site.mage2000url" }}lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>&mdash;an extended collection that also implements asset grouping by properties (for example by content type)
 
-Markdown example using an alt tag:
+Asset collections enable the following:
 
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
+*	Adding and removing assets
+*	Determining whether an asset is registered in a collection
+*	Getting all assets
+*	Getting assets of a specified group (for collections implemented by `GroupedCollection`)
+*	Getting groups (for collections implemented by `GroupedCollection`)
 
-### Cross-References
+To add an asset to a collection, use the following code:
 
-All cross-references should look like the following:
+<script src="https://gist.github.com/xcomSteveJohnson/f12c706d876f1a64a363.js"></script>
 
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
+For example, to add a local JavaScript or CSS file to the page output:
 
+<script src="https://gist.github.com/xcomSteveJohnson/e292aca8a49fdab644fc.js"></script>
+
+#### Related Topics
+
+*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+*	TBD
+	
