@@ -25,6 +25,29 @@ For example, `page_three_column` is a design abstraction which defines a three-c
 
 <p><img src="{{ site.baseurl }}common/images/view_da.png" alt="Three column layout"></p>
 
+The other example is a `customer_account` design abstraction which adds menu items in the left side navigation column. The abstraction is used in layouts of the My Account section pages on the store front:
+
+<p><img src="{{ site.baseurl }}common/images/view_da3.png" alt="My Account section on the storefront"></p>
+
+The `app/code/Magento/Customer/view/frontend/layout/customer_account.xml` file is a design abstraction. The file belongs to the `Customer` module, so it defines only the links which relate to this module (see comments in the code):
+
+*code_block*
+
+Other links in the navigation column are added by layout files of other relevant modules. For example, the Gift Card link is added by the `app/code/Magento/GiftCardAccount/view/frontend/layout/customer_account.xml`. When a page is being rendered all `customer_account` layouts are merged, and the pages where the `customer_account` design abstraction is used contain the elements from all `customer_account.xml` files.
+
+For details about how layout files are processed refer to XML Layouts for Frontend.
+
+<h2 id="m2devgde-design-abstract-declare">Declaring Design Abstractions</h2>
+
+
+According to the layout naming convention, the name of a layout file corresponds to the layout handle it defines.
+To declare a layout file as a design abstraction, you need to set the layout handle (the root XML node of a file which represents a handle) attributes as follows:
+<layout label="{your_custom_value}" design_abstraction="custom" />
+Note, that while you can put any string as label value, for the design_abstraction attribute custom is a mandatory value.
+The label specified here is used for identifying a design abstraction during widget creation.
+If you look at the <layout> node of the customer_account.xml discussed in the previous section, you can see it is being declared a design abstraction:
+
+
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Design+Abstractions
 
 <div class="bs-callout bs-callout-info" id="info">
