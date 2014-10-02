@@ -9,6 +9,45 @@ title: Using Design Abstractions
 
 <h2 id="m2devgde-design-abstract-intro">Introduction to Design Abstractions</h2> 
 
+
+A design abstraction is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type providing business users the ability to customize design for certain type of pages. In particular design abstractions are used in the widget creation to define the types of pages where a widget can be displayed.
+
+For example, there is a design abstraction defining a two-column page layout. So when creating a widget, you can select it to be displayed on all pages with two-column page layout. This article describes how design abstractions are declared, called in layout files, and used in widget creation in the Admin panel. This information is a practical reference for the frontend developers working with layouts, and is also useful for the wider audience of server-side and frontend developers who want to understand in depth how the layout concept is implemented in Magento 2.
+
+
+<h2 id="m2devgde-design-abstract-what">What Are Design Abstractions?</h2>
+
+Each design abstraction is a uniquely identified set of layout instructions, so design abstractions are one of the types of layout handles.
+
+The "look and feel" defined in design abstractions might be determined by the purpose of pages or merely by design requirements.
+
+For example, `page_three_column` is a design abstraction which defines a three-column layout for a page. Which can illustrated like this:
+
+<p><img src="{{ site.baseurl }}common/images/view_da.png" alt="Three column layout"></p>
+
+The other example is a `customer_account` design abstraction which adds menu items in the left side navigation column. The abstraction is used in layouts of the My Account section pages on the store front:
+
+<p><img src="{{ site.baseurl }}common/images/view_da3.png" alt="My Account section on the storefront"></p>
+
+The `app/code/Magento/Customer/view/frontend/layout/customer_account.xml` file is a design abstraction. The file belongs to the `Customer` module, so it defines only the links which relate to this module (see comments in the code):
+
+*code_block*
+
+Other links in the navigation column are added by layout files of other relevant modules. For example, the Gift Card link is added by the `app/code/Magento/GiftCardAccount/view/frontend/layout/customer_account.xml`. When a page is being rendered all `customer_account` layouts are merged, and the pages where the `customer_account` design abstraction is used contain the elements from all `customer_account.xml` files.
+
+For details about how layout files are processed refer to XML Layouts for Frontend.
+
+<h2 id="m2devgde-design-abstract-declare">Declaring Design Abstractions</h2>
+
+
+According to the layout naming convention, the name of a layout file corresponds to the layout handle it defines.
+To declare a layout file as a design abstraction, you need to set the layout handle (the root XML node of a file which represents a handle) attributes as follows:
+<layout label="{your_custom_value}" design_abstraction="custom" />
+Note, that while you can put any string as label value, for the design_abstraction attribute custom is a mandatory value.
+The label specified here is used for identifying a design abstraction during widget creation.
+If you look at the <layout> node of the customer_account.xml discussed in the previous section, you can see it is being declared a design abstraction:
+
+
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Design+Abstractions
 
 <div class="bs-callout bs-callout-info" id="info">
