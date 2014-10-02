@@ -9,6 +9,8 @@ title: Configuring Caching
 
 <h2 id="m2devgde-cache-intro">Introduction to Caching</h2> 
 
+hello
+
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Configuring+Caching
 
 <div class="bs-callout bs-callout-info" id="info">
