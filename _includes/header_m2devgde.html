@@ -1,114 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ site.description }}">
-  <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
-  <!-- <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet"> -->
-  <script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script>
-  <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
-  <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
-  <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
-  <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
-  <script src="{{ site.baseurl }}assets/js/ie10-viewport-bug-workaround.js"></script>
-  <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
-
-
-<!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
- -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
-  <![endif]-->
-    </head>
-    <body>
-<!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
- -->      <div id = "wrapper">
-
-
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <p class="navbar-brand">{{ site.name }}</p>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-          <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
-		  	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></li>
-			   	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/webapi/what-is-webapi.html">What is the Web API Framework?</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/integration/what-is-integration.html">What is an Integration?</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-auth.html">Understanding Integration Authorization</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-code.html">Coding Your Integration</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+   <head>
+      <meta charset="utf-8">
+      <title>{{ page.title }}</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="{{ site.description }}">
+      <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
+      <!-- <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet"> -->
+      <script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script>
+      <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
+      <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
+      <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
+      <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
+      <script src="{{ site.baseurl }}assets/js/ie10-viewport-bug-workaround.js"></script>
+      <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
+      <!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+         -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+      <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+      <![endif]-->
+   </head>
+   <body>
+      <!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+         -->
+      <div id = "wrapper">
+      <div class="navbar navbar-default" role="navigation">
+         <div class="container">
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+               <p class="navbar-brand">{{ site.name }}</p>
+            </div>
+            <div class="navbar-collapse collapse">
+               <ul class="nav navbar-nav">
+                  <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/webapi/what-is-webapi.html">What is the Web API Framework?</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/integration/what-is-integration.html">What is an Integration?</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-auth.html">Understanding Integration Authorization</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-code.html">Coding Your Integration</a></li>
+               </ul>
+            </div>
+            <!--/.nav-collapse -->
+         </div>
       </div>
-    </div>
-
-
-
-       <!-- Sidebar -->
-	   
-	   
-       <div id="sidebar-wrapper">
-	   <div class="logo">
-	   <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a></div>
-	   <p class="brand">Contents</p>
- 	   <div class="toc">
-	   <p class="toc">Magento 2 Service Framework</p>
-	   <ul class="toc"><li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
-	   	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side By Side</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a></li>
-	   </ul>
-	   <p class="toc">Magento Web API Framework</p>
-	   <ul class="toc"><li><a href="{{ site.gdeurl }}m2devgde/webapi/what-is-webapi.html">What is the Web API Framework?</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a></li></ul>
-	   <p class="toc">Magento 2 Integrations</p>
-	   <ul class="toc"><li><a href="{{ site.gdeurl }}m2devgde/integration/what-is-integration.html">What is an Integration?</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-auth.html">Understanding Integration Authorization</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-code.html">Coding Your Integration</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-auth.html">Understanding Integration Authorization</a></li>
-	   </ul>
-	   <p class="toc">Creating Your Integration</p>
-	   <ul><li><a href="{{ site.gdeurl }}m2devgde/integration/integration-create-man.html">Manually Creating an Integration Using the Magento Admin</a></li></ul>
-	   </li>
-	   <p class="toc">Maintaining an Integration</p>
-	   <ul>	   <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-maintain.html">Maintaining an Integration</a></li></ul>
-	   </li>
-	   <p class="toc">Other Content</p>
-	   <ul><li><a href="{{ site.gdeurl }}m2devgde/config/config_depen-injec.html">Dependency Injection</a></li>
-	   <li><a href="{{ site.gdeurl }}m2devgde/modarch/mod_file-sys.html">Modular File System</a></li>
-	   </ul>
-	   </ul>
-	   </li>
-	   
-	   </ul></div>
-	   </div>
-	    
-
-
-
-
-     <div class="container">
-
+      <!-- Sidebar -->
+      <div id="sidebar-wrapper">
+         <div class="logo">
+            <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
+         </div>
+         <p class="brand">Contents</p>
+         <div class="toc">
+            <p class="toc">Magento 2 Service Framework</p>
+            <ul class="toc">
+               <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side By Side</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a></li>
+            </ul>
+            <p class="toc">Magento Web API Framework</p>
+            <ul class="toc">
+               <li><a href="{{ site.gdeurl }}m2devgde/webapi/what-is-webapi.html">What is the Web API Framework?</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a></li>
+            </ul>
+            <p class="toc">Magento 2 Integrations</p>
+            <ul class="toc">
+               <li><a href="{{ site.gdeurl }}m2devgde/integration/what-is-integration.html">What is an Integration?</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-auth.html">Understanding Integration Authorization</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-code.html">Coding Your Integration</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-auth.html">Understanding Integration Authorization</a></li>
+            </ul>
+            <p class="toc">Creating Your Integration</p>
+            <ul>
+               <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-create-man.html">Manually Creating an Integration Using the Magento Admin</a></li>
+            </ul>
+            </li>
+            <p class="toc">Maintaining an Integration</p>
+            <ul>
+               <li><a href="{{ site.gdeurl }}m2devgde/integration/integration-maintain.html">Maintaining an Integration</a></li>
+            </ul>
+            </li>
+            <p class="toc">Other Content</p>
+            <ul>
+               <li><a href="{{ site.gdeurl }}m2devgde/config/config_depen-injec.html">Dependency Injection</a></li>
+               <li><a href="{{ site.gdeurl }}m2devgde/modarch/mod_file-sys.html">Modular File System</a></li>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+         </div>
+      </div>
+    <div class="container">
