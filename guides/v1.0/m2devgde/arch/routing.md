@@ -104,9 +104,9 @@ class Account extends \Magento\App\Action\Action
 Routing is processed in the following way:
 
 * Modules provide information on their routers through the `routerList` parameter of `Magento\App\RouterList` type in `di.xml` file.
-* FrontController obtains active routers and checks whether a request can be processed.
+* `FrontController` obtains active routers and checks whether a request can be processed.
 * If a request cannot be processed by any router, the default router is used.
-* If a request can be processed by a router, the latter finds a route with matching frontName and looks through corresponding modules. If a module has matching controller and action names, a router instantiates this controller.
+* If a request can be processed by a router, the router finds a route with matching `frontName` and looks through corresponding modules. If a module has matching controller and action names, a router instantiates this controller.
 
 The `dispatch()` method of the `Magento\App\Action\Action` class requests an instance and returns its response.
 
