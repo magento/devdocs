@@ -96,7 +96,25 @@ title: Configuration files
    Your new <code>events.xml</code> file is automatically collected from your extension and merged with the <code>events.xml</code> files for other Magento extensions.
 </p>
 <h2>Create a configuration type</h2>
-<p>To create new configuration type, you create the new XML configuration file, the XSD schema that will validate it at loading, and a new loader. For example to introduce an adapter for some new search server that will allow every extension to be configure how its entities are indexed in that server. You create a new loader,a new XSD schema, and whatever other classes are needed for your new type to work. After you have created this machinery, create your configuration file and name it appropriately. For example, <code>search.xml</code>. This file is read and validated against your schema. If any other extension declares a <code>search.xml</code> file, it is merged with your file when it loads.</p>
+<p>To create new configuration type, create:
+
+<ul>
+<li>The XML configuration file</li>
+<li>The XSD schema that validates it at loading</li>
+<li>A loader</li>
+</ul>
+
+For example to introduce an adapter for a new search server that enables extensions to configure how its entities are indexed in that server, create:
+
+<ul>
+<li>A loader.</li>
+<li>An XSD schema.</li>
+<li>Any other classes that are required for your new type to work.</li>
+<li>An appropriately named configuration file. For example, <code>search.xml</code>. This file is read and validated against your schema.</li>
+</ul>
+
+If any other extension declares a <code>search.xml</code> file, it is merged with your file when it loads.</p>
+
 <p>To add a configuration type to the file system, use the default implementation of the <code>\Magento\Config\ReaderInterface</code>, which is <code>Magento\Config\Reader\Filesystem</code>. Extend from the default implementation and provide the following parameters:</p>
 <ul>
    <li>
@@ -116,13 +134,11 @@ title: Configuration files
    </li>
    <li>
       <p><code>$idAttributes</code>. An array that contains the ID attributes of a node.
-      For example, to merge the XML files:
+      For example, to merge the XML files:</p>
       <blockquote><pre>array(
     '&lt;/path/to/node>' => '&lt;identifierAttributeName>',
     '&lt;/path/to/other/node>' => '&lt;identifierAttributeName>',
 }</pre></blockquote>
-
-</p>
    </li>
    <li>
       <p><code>$defaultScope</code>. Defines the configuration scope to be read by default. The default value for this parameter is global scope.</p>

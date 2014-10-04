@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Data Types Schema
+title: Data types schema
 ---
 
 <h1 id="m2devgde-data-type-schema">{{ page.title }}</h1>
