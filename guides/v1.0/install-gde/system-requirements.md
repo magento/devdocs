@@ -30,8 +30,7 @@ Before you install Magento 2, make sure your system meets or exceeds the followi
 	
 *	<a href="http://dev.mysql.com/doc/refman/5.5/en/installing.html" target="_blank">MySQL 5.5</a> or later
 *	Mail Transfer Agent (MTA) or an SMTP server
-*	Optional but recommended:
+*	Optional but recommended: 
 
 	*	<a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later
-    *	PHPUnit (as a command-line tool) 3.7 or later
-	*	<a href="http://lucene.apache.org/solr/downloads.html" target="_blank">Apache Solr 4.x</a>
+    *	PHPUnit (as a command-line tool) 3.7 or later 
