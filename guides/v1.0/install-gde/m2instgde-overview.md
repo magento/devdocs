@@ -11,7 +11,4 @@ This guide discusses how to install Magento and extension using Composer.
 
 Following are the major topics in this guide:
 
-*	<a href="{{ site.gdeurl }}m2devgde/tbd/TBD.html">TBD</a>
-*	<a href="{{ site.gdeurl }}m2devgde/tbd/TBD.html">TBD</a>
-*	<a href="{{ site.gdeurl }}m2devgde/tbd/TBD.html">TBD</a>
-*	<a href="{{ site.gdeurl }}m2devgde/tbd/TBD.html">TBD</a>
+*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 System Requirements</a>

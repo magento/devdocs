@@ -10,9 +10,9 @@
       <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
       <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
       <!-- <link href="{{ site.baseurl }}common/css/NestedAccordion.css" rel="stylesheet"> -->
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+     <!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
       <script type="text/javascript" src="http://malsup.github.com/chili-1.7.pack.js"></script>
-      <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script>
+      <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script> -->
       <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
       <!-- <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet"> -->
       <script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script>
@@ -22,12 +22,12 @@
       <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
       <script src="{{ site.baseurl }}common/js/ie10-viewport-bug-workaround.js"></script>
       <!-- Include required JS files -->
-      <script type="text/javascript" src="{{ site.baseurl }}common/js/shCore.js"/>
-      <script type="text/javascript" src="{{ site.baseurl }}common/js/shBrushXml.js"/>
+      <!-- <script type="text/javascript" src="{{ site.baseurl }}common/js/shCore.js"/>
+      <script type="text/javascript" src="{{ site.baseurl }}common/js/shBrushXml.js"/> -->
       <!-- Include *at least* the core style and default theme -->
-      <link href="{{ site.baseurl }}common/css/shCore.css" rel="stylesheet" type="text/css"/>
+      <!-- <link href="{{ site.baseurl }}common/css/shCore.css" rel="stylesheet" type="text/css"/>
       <link href="{{ site.baseurl }}common/css/shThemeDefault.css" rel="stylesheet" type="text/css"/>
-      <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
+      <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet"> -->
       <script>
          $(function() {
            $( "#accordion" ).accordion({
@@ -76,6 +76,20 @@
          heightStyle: "content"
          });
          });
+   $(function() {
+	$( "#toc" ).accordiontoc({
+       event: "hover",
+	   initShow : "#current"
+       
+     });
+ });
+ 
+   $(function() {
+	$( "#accordiontoc2" ).accordiontoc({
+       event: "hover",
+	   initShow : "#current"
+     });
+ });
          // Horizontal TOC nav
          $(function(){
          $(".dropdown-menu > li > a.trigger").on("click",function(e){
@@ -97,7 +111,7 @@
       </script>
    </head>
    <!-- <div id = "wrapper"> -->
-   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-frontdoor">
          <div class="navbar-header">
             <div class="logo-frontdoor">
@@ -158,8 +172,7 @@
                   <li><a href="{{ site.gdeurl }}m2devgde/arch/routing.html">Routing</a></li>
                   <li><a href="{{ site.gdeurl }}m2devgde/index-cache/caching.html">Configuring Caching</a></li>
                   <li><a href="{{ site.gdeurl }}m2devgde/index-cache/indexing.html">Working With Indexing</a></li>
-                  <li>
-                     <a class="trigger right-caret">View Layer</a>
+                  <li><a class="trigger right-caret">View Layer</a>
                      <ul class="dropdown-menu sub-menu">
                         <li><a href="{{ site.gdeurl }}m2devgde/view/view-lib.html">Using the Magento 2 View Library</a></li>
                         <li><a href="{{ site.gdeurl }}m2devgde/view/xml-schema-layout.html">Using XML Schema For Your Layout</a></li>
@@ -168,18 +181,17 @@
                         <li><a href="{{ site.gdeurl }}m2devgde/view/template-engine.html">Working With the Template Engine</a></li>
                         <li><a href="{{ site.gdeurl }}m2devgde/view/page-type.html">Using Page Types</a></li>
                         <li><a href="{{ site.gdeurl }}m2devgde/view/page-assets.html">Working With Page Assets</a></li>
-                     </ul>
-                  <li>
-                     <a class="trigger right-caret">Pricing</a>
+                     </ul></li>
+                  <li><a class="trigger right-caret">Pricing</a>
                      <ul class="dropdown-menu sub-menu">
                         <li><a href="{{ site.gdeurl }}m2devgde/behavior/price-calc.html">How Magento Calculates Prices</a></li>
                         <li><a href="{{ site.gdeurl }}m2devgde/behavior/price-render.html">How Magento Renders Prices</a></li>
                         <li><a href="{{ site.gdeurl }}m2devgde/behavior/pricing.html">Using the Pricing Library</a></li>
-                     </ul>
+                     </ul></li>
                </ul>
-            </li>
-            </li>
-            </ul>
+            
+            
+           
          </div>
          <div class="col-sm-3 col-md-3 pull-right">
             <form class="navbar-form" role="search">
