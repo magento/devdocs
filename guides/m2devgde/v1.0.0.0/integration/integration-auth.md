@@ -9,7 +9,7 @@ title: Understanding Integration Authorization
 
 Hello
 
-There are two ways to authenticate the third-party system with Magento:
+You can authenticate a third-party system with Magento in any of the following ways:
 
 *  (Preferred) Using a secure, cloud-based OAuth workflow
 
