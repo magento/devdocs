@@ -107,7 +107,7 @@ The cache frontend interface is API to the cache storage. When this interface is
 *	Manipulating an individual cache entry, including validating its existence, loading, saving, and removing cache.
 *	Manipulating the subset of the cache entries, for instance, batch cache cleaning.
 
-We use the <a href="http://www.phpdesignpatterns.com/design-patterns/pattern-decorator/" target="_blank">decorator</a> and proxy patterns in implementation of the cache frontend interface. For instance, these patterns can be used for
+We use the <a href="http://www.php5dp.com/php-decorator-design-pattern-accessorizing-your-classes/" target="_blank">decorator</a> and proxy patterns in implementation of the cache frontend interface. For instance, these patterns can be used for
 
 *	Segmentation by the cache tag
 *	Profiling
