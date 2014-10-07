@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Magento 2 System Requirements
+title: Magento 2 system requirements
 ---
 
 <h1 id="instgde-sys-req">{{ page.title }}</h1>
