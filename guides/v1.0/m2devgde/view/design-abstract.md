@@ -31,7 +31,51 @@ The other example is a `customer_account` design abstraction which adds menu ite
 
 The `app/code/Magento/Customer/view/frontend/layout/customer_account.xml` file is a design abstraction. The file belongs to the `Customer` module, so it defines only the links which relate to this module (see comments in the code):
 
-*code_block*
+<pre>
+&lt;?xml&nbsp;version=&quot;1.0&quot;?&gt;
+&lt;!--
+/**
+&nbsp;*&nbsp;{license_notice}
+&nbsp;*
+&nbsp;*&nbsp;@copyright&nbsp;&nbsp;&nbsp;{copyright}
+&nbsp;*&nbsp;@license&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{license_link}
+&nbsp;*/
+--&gt;
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;label=&quot;Customer&nbsp;My&nbsp;Account&nbsp;(All&nbsp;Pages)&quot;&nbsp;design_abstraction=&quot;custom&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;page_two_columns_left&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;root&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;addBodyClass&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;account&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;left&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Links&quot;&nbsp;name=&quot;customer_account_navigation&quot;&nbsp;before=&quot;-&quot;&nbsp;template=&quot;Magento_Customer::account/navigation.phtml&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Add&nbsp;the&nbsp;Account&nbsp;Dashboard&nbsp;link&nbsp;in&nbsp;the&nbsp;left-side&nbsp;navigation&nbsp;column--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Link\Current&quot;&nbsp;name=&quot;customer-account-navigation-account-link&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Account&nbsp;Dashboard&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;path&quot;&nbsp;xsi:type=&quot;string&quot;&gt;customer/account&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Add&nbsp;the&nbsp;Account&nbsp;Information&nbsp;link&nbsp;in&nbsp;the&nbsp;left-side&nbsp;navigation&nbsp;column--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Link\Current&quot;&nbsp;name=&quot;customer-account-navigation-account-edit-link&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Account&nbsp;Information&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;path&quot;&nbsp;xsi:type=&quot;string&quot;&gt;customer/account/edit&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Add&nbsp;the&nbsp;Address&nbsp;Book&nbsp;link&nbsp;in&nbsp;the&nbsp;left-side&nbsp;navigation&nbsp;column--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Link\Current&quot;&nbsp;name=&quot;customer-account-navigation-address-link&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Address&nbsp;Book&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;path&quot;&nbsp;xsi:type=&quot;string&quot;&gt;customer/address&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;catalog.compare.sidebar&quot;&nbsp;destination=&quot;left&quot;/&gt;
+&lt;/layout&gt;
+</pre>
 
 Other links in the navigation column are added by layout files of other relevant modules. For example, the Gift Card link is added by the `app/code/Magento/GiftCardAccount/view/frontend/layout/customer_account.xml`. When a page is being rendered all `customer_account` layouts are merged, and the pages where the `customer_account` design abstraction is used contain the elements from all `customer_account.xml` files.
 
@@ -42,104 +86,62 @@ For details about how layout files are processed refer to XML Layouts for Fronte
 
 According to the layout naming convention, the name of a layout file corresponds to the layout handle it defines.
 To declare a layout file as a design abstraction, you need to set the layout handle (the root XML node of a file which represents a handle) attributes as follows:
-<layout label="{your_custom_value}" design_abstraction="custom" />
-Note, that while you can put any string as label value, for the design_abstraction attribute custom is a mandatory value.
-The label specified here is used for identifying a design abstraction during widget creation.
-If you look at the <layout> node of the customer_account.xml discussed in the previous section, you can see it is being declared a design abstraction:
+
+<code>&lt;layout&nbsp;label=&quot;{your_custom_value}&quot;&nbsp;design_abstraction=&quot;custom&quot;&nbsp;/&gt;</code>
+
+Note, that while you can put any string as label value, for the <code>design_abstraction</code> attribute <code>"custom"</code> is a mandatory value.
+The label specified here is used for <a href="#m2devgde-design-abstract-widget">identifying a design abstraction during widget creation</a>.
+If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_account.xml</code> discussed in the previous section, you can see it is being declared a design abstraction:
+<pre>
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;label=&quot;Customer&nbsp;My&nbsp;Account&nbsp;(All&nbsp;Pages)&quot;&nbsp;design_abstraction=&quot;custom&quot;&gt;
+</pre>
 
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Design+Abstractions
+<h2 id="m2devgde-design-abstract-use">Using Design Abstractions</h2>
+To use a design abstraction in a layout file, insert the following code:
+<pre>
+&lt;update&nbsp;handle=&quot;design_abstraction_name&quot;/&gt;
+</pre>
+Where <code>design_abstraction_name</code> is the name of the design abstraction layout file.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
+Example:
 
-<h2 id="help">Helpful Aids for Writers</h2>
+To complete the <code>customer_account.xml</code> design abstraction example, look at the customer_account_index.xml layout file which uses the customer_account design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page in defined directly, while the left-hand navigation menu is defined by the <code>customer_account.xml</code> layout files:
 
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
+<b><code>app\code\Magento\Customer\view\frontend\layout\customer_acccount_index.xml</code></b>
+<pre>
+&lt;?xml&nbsp;version=&quot;1.0&quot;?&gt;
+&lt;!--
+/**
+&nbsp;*&nbsp;{license_notice}
+&nbsp;*
+&nbsp;*&nbsp;@copyright&nbsp;&nbsp;&nbsp;{copyright}
+&nbsp;*&nbsp;@license&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{license_link}
+&nbsp;*/
+--&gt;
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--Call&nbsp;the&nbsp;customer_account.xml&nbsp;design&nbsp;abstraction--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;customer_account&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;page.main.title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setPageTitle&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;translate=&quot;true&quot;&nbsp;name=&quot;title&quot;&nbsp;xsi:type=&quot;string&quot;&gt;My&nbsp;Dashboard&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;content&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\Dashboard\Hello&quot;&nbsp;name=&quot;customer_account_dashboard_hello&quot;&nbsp;as=&quot;hello&quot;&nbsp;template=&quot;account/dashboard/hello.phtml&quot;&nbsp;cacheable=&quot;false&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Template&quot;&nbsp;name=&quot;customer_account_dashboard_top&quot;&nbsp;as=&quot;top&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\Dashboard\Info&quot;&nbsp;name=&quot;customer_account_dashboard_info&quot;&nbsp;as=&quot;info&quot;&nbsp;template=&quot;account/dashboard/info.phtml&quot;&nbsp;cacheable=&quot;false&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\Dashboard\Address&quot;&nbsp;name=&quot;customer_account_dashboard_address&quot;&nbsp;as=&quot;address&quot;&nbsp;template=&quot;account/dashboard/address.phtml&quot;&nbsp;cacheable=&quot;false&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
+&lt;/layout&gt;
+</pre>
 
-### General Markdown Authoring Tips
+<h3 id="m2devgde-design-abstract-widget">Using Design Abstractions in Widget Creation</h3>
+Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design theme. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.
 
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
+<img src="{{ site.baseurl }}common/images/view_da4.png" alt="Specifying page type">
 
-### Note, Tip, Important, Caution
+Then in the **Page** drop-down list there are available layouts or, in other words, design abstractions. Among others, there is the **Customer My Account (All Pages) **option, which corresponds to the customer_account design abstraction.
 
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
-
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
-
-### Tables
-
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
-
-HTML table:
-
-<table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
-</table>
-
-### Images
-
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
-
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
-
-You can also use a title tag to provide a mouseover tooltip.
-
-HTML example:
-
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
-
-Markdown example using an alt tag:
-
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
-
-### Cross-References
-
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
+<img src="{{ site.baseurl }}common/images/view_da5.png" alt="Specifying page">
 
