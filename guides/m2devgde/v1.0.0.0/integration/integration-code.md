@@ -9,7 +9,7 @@ title: Coding Your Integration
 
 This topic discusses how to code your integration with Magento. Eventually, you will be able to market your integration as an extension on Magento Connect; however, it's not possible to do that now for Magento 2 integrations.
 
-Hello
+Hello Goodbye
 
 **Note**: Throughout this guide, the term _integration configuration_ is used to mean the integration's `[your magento install dir]/app/code/vendor/module/etc/config.xml` and the term _API configuration_ is used to mean the integration's `[your magento install dir]/app/code/vendor/module/etc/integration/api.xml`
 
