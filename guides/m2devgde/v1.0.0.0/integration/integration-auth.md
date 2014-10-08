@@ -7,7 +7,7 @@ title: Understanding Integration Authorization
 
 <p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/integration/integration-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-Hello!
+Hello! Goodbye
 
 You can authenticate an integrated third-party system with Magento in any of the following ways:
 
