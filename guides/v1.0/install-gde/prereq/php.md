@@ -45,7 +45,9 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 
 <h3 id="instgde-prereq-php-install-centos-ext">Install required PHP extensions on CentOS</h3>
 
-TBD
+Enter the following command to install required PHP extensions:
+
+'yum -y --enablerepo=remi install php-intl'
 
 <h2 id="instgde-prereq-php-install-ubuntu">PHP 5.4 on Ubuntu</h2>
 

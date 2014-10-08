@@ -58,22 +58,42 @@ To clone the Magento 2 GitHub repository:
 	
 3.	Wait for the repository to clone on your server.
 
-4.	After the clone is complete, enter the following commands to set ownership of all Magento 2 files and directories to the web server user:
+<h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
 
-	Change to the Magento 2 directory:
-	
-		<pre>cd magento2</pre>
+After the clone is complete, set ownership of all Magento 2 files and directories and make sure they are writable by that user.
 
-	Find the web server user:
-	
-	Ubuntu: <code>grep User /etc/apache2/apache2.conf</code>
-	
-	CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code>
+Typically, Magento 2 files and directories should be owned by the web server user; however, the choice of user is up to you. The important thing is that the owner of the Magento 2 file system must have write access to all files and directories.
 
-	Set ownership:
+We recommend setting the permissions as follows:
+
+*	All directories have 700 permissions `(drwx------)`.
+
+	700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.
+
+*	All files have 600 permissions `(-rw-------)`.
+
+	600 permissions mean the owner can read and write but other users have no permissions.
+
+Assuming the web server user owns the Magento 2 file system, use the following steps:
+
+1.	Change to the Magento 2 directory:
 	
-	<code>chown -R [your web server user name]</code>
+	<pre>cd magento2</pre>
+
+2.	Find the web server user:
+	
+	*	Ubuntu: <code>grep User /etc/apache2/apache2.conf</code>	
+	*	CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code>
+
+3.	Set ownership:
+	
+	<code>chown -R [your web server user name] .</code>
 		
 	For example,
 		
-	<code>chown -R apache</code>
+	<code>chown -R apache .</code>
+	
+4.	Set permissions:
+
+	<pre>find . -type d -exec chmod 700 {} \;
+find . -type f -exec chmod 600 {} \;</pre>
