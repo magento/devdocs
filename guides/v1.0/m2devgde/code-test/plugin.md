@@ -1,15 +1,15 @@
-﻿---
-layout: howtom2devgde_chapters
-title: Using Plug-Ins
 ---
- 
-<h1 id="m2devgde-plugins">{{ page.title }}</h1>
+layout: howtom2devgde_chapters
+title: Magento 2 PHP Coding Standards and Practices
+---
 
-<p><a href="{{ site.githuburl }}m2devgde/code-test/plugin.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<h1 id="m2devgde-stnd_coding">{{ page.title }}</h1>
 
-<h2 id="m2devgde-plugins">Introduction to Plug-Ins</h2> 
+<p><a href="{{ site.githuburl }}m2devgde/code-test/stnd_coding.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Using+Interception
+<h2 id="m2devgde-code-coding-intro">Introduction to Magento 2 PHP Coding Standards</h2>
+
+Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Magento+PHP+Coding+Standards+and+Practices
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
@@ -36,7 +36,7 @@ There is an example of Note in the first section.
 	<span class="glyphicon-class">
     <p>This is important. </p></span>
   </div>
-  
+
 <div class="bs-callout bs-callout-warning" id="warning">
   <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">

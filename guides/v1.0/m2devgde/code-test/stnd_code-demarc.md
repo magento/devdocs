@@ -1,106 +1,458 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 Code Demarcation Standard
+title: Magento 2 code demarcation standard
 ---
- 
+
 <h1 id="m2devgde-stnd_code-demarc">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/code-test/stnd_code-demarc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+Magento 2 core developers must follow the Magento code demarcation standard.
 
-<h2 id="m2devgde-code-demarc-intro">Introduction to Magento 2 Code Demarcation Standards</h2> 
+These standards are recommended for third-party Magento 2 developers.
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Magento+Code+Demarcation+Standard
+Some parts of Magento 2 code might not comply with the standard, but we are working to gradually improve this.
+
+The standard was developed in the scope of our efforts to ensure the following:
+
+* Decouple visual (CSS) layer from the functional (JavaScript) layer.
+* Decouple functional (JavaScript) layer from the markup (HTML).
+* Reinstate emphasis on using of jQuery templates.
+* Reinstate emphasis on decoupling HTML, CSS and JS from PHP classes.
+
+Interpret the keywords "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" as described in RFC 2119.
+
+<h2>Semantics</h2>
+
+<p><b>You must create non-user-oriented string literals from unabbreviated English words concatenated with a hyphen (<code>-</code>).</b></p>
+
+* Helps simplify and unify naming conventions that are used to apply visual styles to page elements.
+
+<p><b>Acceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;section id="some-id">
+   &lt;p> ... &lt;/p>
+   &lt;p> ... &lt;/p>
+&lt;/div>
+&lt;a href="#some-id">Scroll to text</a>
+</pre>
+</blockquote>
+
+<p><b>Unacceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;section id="загаловок">
+   &lt;p> ... &lt;/p>
+   &lt;p> ... &lt;/p>
+&lt;/div>
+&lt;section id="some_id">
+   &lt;p> ... &lt;/p>
+   &lt;p> ... &lt;/p>
+&lt;/div>
+&lt;a href="#some_id">Scroll to text&lt;/a>
+</pre>
+</blockquote>
+
+<p><b>Semantic representation may rely on ID attribute.</b></p>
+
+* Forces engineers to think about reusable page components instead of unique singleton components.
+* Reduces long-term maintenance efforts.
+
+<p><b>Acceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;ul>
+   &lt;li class="first" role="button" aria-pressed="false" aria-controls="some-id">button 1&lt;/li>
+   &lt;li role="button" aria-pressed="false" aria-controls="some-id">button 2&lt;/li>
+   &lt;li role="button" aria-pressed="true" aria-controls="some-id">button 3&lt;/li>
+&lt;/ul>
+&lt;div>
+   &lt;label for="some-id">Enter text&lt;/label>
+   &lt;textarea id="some-id">&lt;/textarea>
+&lt;/div>
+&lt;a href="#some-id">Scroll to text</a>
+</pre>
+</blockquote>
+
+<p><b>Unacceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;ul id="my-special-menu">
+   &lt;li id="buttonId1" class="first" role="button">button 1&lt;/li>
+   &lt;li id="buttonId2" role="button">button 2&lt;/li>
+   &lt;li id="buttonId3" role="button">button 3&lt;/li>
+&lt;/ul>
+</pre>
+</blockquote>
+
+<p>JavaScript file</p>
+<blockquote>
+<pre>
+$('#my-special-menu').on('click','li[id^="button"]', function() { ... })
+</pre>
+</blockquote>
+
+<p>CSS file</p>
+<blockquote>
+<pre>
+#my-special-menu { ... }
+#my-special-menu > li { ... }
+</pre>
+</blockquote>
+
+<h2>Code demarcation</h2>
+
+<p><b>Visual representation must rely on only form element type attributes, HTML tags, CSS classes, or pseudo-classes.</b></p>
+
+* Enforces clean, strict separation between visual and business logic layers.
+* Allows frontend and backend teams to work independently.
+* Allows changing look and feel without affecting business functionality, and vice versa.
+* Enables frontend teams to clean up old styles quickly and easily when refactoring.
+
+<p><b>Acceptable:</b></p>
+<p>CSS file</p>
+<blockquote>
+<pre>
+section h1 { ... }
+ul > li.first { ... }
+.caution { ... }  // Actions such as delete, remove, which remove data from the site.
+.caution.link { ... } // if custom styles are needed
+.caution.button { ... } // if custom styles are needed
+form .field.password { ... }
+form input[type="password"] { ... }
+section.content { ... }
+nav li { ... }
+nav li.active { ... }
+</pre>
+</blockquote>
+
+<p><b>Unacceptable:</b></p>
+<p>CSS file</p>
+<blockquote>
+<pre>
+#header { ... }
+[data-action="delete"] { ... }
+form input[name="password"] { ... }
+section[role="main"] { ... }
+[role="menu] [role="menuitem"] { ... }
+[role="menu] [role="menuitem"].active { ... }
+</pre>
+</blockquote>
+
+<p><b>You must not hard-code CSS styles in JavaScript files.</b></p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
+  <p>Exception: CSS attributes where values must be calculated beyond the CSS/LESS code.</p></span>
 </div>
 
-<h2 id="help">Helpful Aids for Writers</h2>
+* Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.
+* Improves style extendibility.
+* Reduces long-term maintenance efforts by containing CSS styles in a single place.
 
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
+<p><b>Acceptable:</b></p>
 
-### General Markdown Authoring Tips
+<p>JavaScript widget file</p>
+<blockquote>
+<pre>
+...
+   options: {
+      hOffset: 0,
+      myCustomElement: '[data-container="my-custom-element"]'
+   }
+...
+   this.element.toggleClass('hidden');
+...
+   this.options.hOffset = /* calculation based on dimensions of some DOM elements within a widget */
+   this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'})
+...
+</pre>
+</blockquote>
 
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
+<p><b>Unacceptable:</b></p>
+<p>JavaScript file</p>
+<blockquote>
+<pre>
+this.element.on('click', function() {
+  if ($(this).is(':visible')) {
+    $(this).css({ visibility: 'hidden' });
+  } else {
+    $(this).css({ visibility: 'visible' });
+  }
+});
+</pre>
+</blockquote>
 
-### Note, Tip, Important, Caution
+<p><b>You must not use inline CSS styles inside HTML tags.</b></p>
 
-There is an example of Note in the first section.
+* Improves style extensibility allowing engineers to overload styles easier by toggling classes.
+* Enforces clean, strict separation between visual presentation and markup.
+* Enables frontend teams quickly and easily clean up old styles.
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
+<p><b>Acceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;div class="no-display"> ... &lt;/div>
+</pre>
+</blockquote>
 
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
+<p><b>Unacceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;div style="display: none;"> ... &lt;/div>
+</pre>
+</blockquote>
 
-### Tables
 
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
+<h2>Business logic and JavaScript</h2>
 
-HTML table:
+<p><b>Business logic must rely on only the form, form element name attributes, or data attributes.</b></p>
 
-<table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
-</table>
+* Enforces clean, strict separation between visual and business logic layers.
+* Allows frontend and backend teams to work independently.
+* Allows changing business logic without affecting styling and vice versa.
 
-### Images
+<p><b>Acceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;div data-mage-init="{myWidget: [option1: 'hi']}">&lt;/div>
+</pre>
+</blockquote>
 
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
+<p>JavaScript file</p>
+<blockquote>
+<pre>
+...
+this.element.find('[data-action="delete"]').on( ... );
+this.element.on('click', '[data-action="delete"]', function() { ... });
+...
+// Globally initialized widgets
+$('[data-role="tooltip]').tooltip();  //Globally for ALL tooltip elements
+...
+</pre>
+</blockquote>
 
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
+<p><b>Unacceptable:</b></p>
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;div id="my-widget">&lt;/div>
+</pre>
+</blockquote>
 
-You can also use a title tag to provide a mouseover tooltip; this is recommended for accessiblity (screen readers and so on).You can also use a title tag to provide a mouseover tooltip.
+<p>JavaScript file</p>
+<blockquote>
+<pre>
+$('#my-widget').doSomething();
+$('.parent').on('click', '.button', function() { ... });
+$('form').validate();
+$('[role="menu"]').navigation();
+</pre>
+</blockquote>
 
-HTML example:
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
+<p><b>You must not select DOM elements based on HTML structure.</b></p>
 
-Markdown example using an alt tag:
+* Allows frontend teams to modify markup and themes without affecting business logic.
 
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
+<p><b>Acceptable:</b></p>
+<p>JavaScript file</p>
+<blockquote>
+<pre>
+this.element.find('[data-action="edit"]');
+this.elements.closest('[data-container]');
+</pre>
+</blockquote>
 
-### Cross-References
+<p><b>Unacceptable:</b></p>
+<p>JavaScript file</p>
+<blockquote>
+<pre>
+this.element.children().children().html('hello world');
+this.element.parent().find('[data-action="edit"]').data('entity_id');
+</pre>
+</blockquote>
 
-All cross-references should look like the following:
+<p><b>You must use jQuery templates to insert recurring markup into DOM structure.</b></p>
 
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
+* Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.
+* Reduces long-term maintenance efforts by having markup code stored in one place.
+* Simplifies frontend debugging efforts.
+
+<p><b>You must not hard-code inline JavaScript in PHP classes.</b></p>
+
+* Reduces long term maintenance by having frontend business logic stored in one place.
+* Reduces the number of files to be modified.
+
+<p><b>Acceptable:</b></p>
+
+<p>PHP file</p>
+
+<blockquote>
+<pre>
+...
+public function getSelectorOptions()
+{
+    return $selectorOptions;
+}
+...
+</pre>
+</blockquote>
+
+<p>PHTML template</p>
+
+<blockquote>
+<pre>
+...
+&lt;div data-mage-init="{treeSuggest: [&lt;?php echo $this->getSelectorOptions(); ?>]}">&lt;/div>
+...
+</pre>
+</blockquote>
+
+<p><b>Unacceptable:</b></p>
+<p>PHP file</p>
+<blockquote>
+<pre>
+...
+public function getAfterElementHtml()
+{
+return &lt;&lt;&lt;HTML
+    &lt;script>
+        jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
+    &lt;/script>
+...
+</pre>
+</blockquote>
+
+<p>PHTML file</p>
+
+<blockquote>
+<pre>
+&lt;?php echo $this->getAfterElementHtml(); ?>
+</pre>
+</blockquote>
+
+<h2>PHTML templates and PHP files</h2>
+
+<p><b>You must not hard-code inline CSS styles in PHP classes.</b></p>
+
+* Reduces long-term maintenance efforts by having styles stored in one place.
+* Simplifies debugging and reduces number of files to be modified.
+* Makes styles more extensible and easier to override when needed.
+
+<p><b>Acceptable:</b></p>
+<p>PHP file</p>
+<blockquote>
+<pre>...
+   $fieldset->addField('new_category_parent', 'text', array(
+      'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+      'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+      'required' => true,
+      'class'    => 'parent category',
+   ));
+...
+</pre>
+</blockquote>
+
+<p><b>Unacceptable:</b></p>
+<p>PHP file</p>
+<blockquote>
+<pre>...
+   $fieldset->addField('new_category_parent', 'text', array(
+      'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+      'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+      'required' => true,
+      'style'    => 'border: 1px solid #ccc;',
+   ));
+...
+</pre>
+</blockquote>
+
+<p><b>You must not hard-code inline JavaScript in PHP classes.</b></p>
+
+* Reduces long term maintenance by having frontend business logic stored in one place.
+* Reduces the number of files to be modified.
+
+<p><b>Acceptable:</b></p>
+<p>PHP file</p>
+<blockquote>
+<pre>
+...
+public function getSelectorOptions()
+{
+    return $selectorOptions;
+}
+...
+</pre>
+</blockquote>
+
+<p>PHTML template</p>
+<blockquote>
+<pre>
+...
+&lt;div data-mage-init="{treeSuggest: [&lt;?php echo $this->getSelectorOptions(); ?>]}">&lt;/div>
+...
+</pre>
+</blockquote>
+
+<p><b>Unacceptable:</b></p>
+
+<p>PHP file</p>
+
+<blockquote>
+<pre>
+...
+public function getAfterElementHtml()
+{
+return &lt;&lt;&lt;HTML
+    &lt;script>
+        jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
+    &lt;/script>
+...
+</pre>
+</blockquote>
+
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;?php echo $this->getAfterElementHtml(); ?>
+</pre>
+</blockquote>
+
+<p><b>You must not hard-code HTML markup (used in the &lt;BODY> tag) in PHP classes.</b></p>
+
+* Reduces long-term maintenance efforts by having markup stored in one place.
+* Reduces the number of files to be modified.
+
+<p><b>Acceptable:</b></p>
+<p>PHP file</p>
+<blockquote>
+<pre>
+public function getAttributeName($element) {
+   return ($element->getExtType() === 'multiple') ? $element->getId() . '_checkbox' : NULL;
+}
+
+public function getAttributeId($element) {
+   return $element->getId();
+}
+</pre>
+</blockquote>
+
+<p>PHTML file</p>
+<blockquote>
+<pre>
+&lt;span class="attribute-change-checkbox">
+    &lt;label>
+        &lt;input type="checkbox" &lt;?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element).'"' : NULL; ?> data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />&lt;?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>&lt;/label>
+&lt;/span>
+&lt;!--jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements.-->
+</pre>
+</blockquote>
 
