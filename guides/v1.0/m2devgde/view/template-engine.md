@@ -7,100 +7,244 @@ title: Working With the Template Engine
 
 <p><a href="{{ site.githuburl }}m2devgde/view/template-engine.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-temp-eng">Introduction to the Magento 2 Template Engine</h2> 
+<h2 id="m2devgde-temp-eng-over">Overview</h2> 
+A template engine is a mechanism for rendering HTML output from templates associated with page layout blocks. The Magento template rendering subsystem can support multiple template engines, including the default PHP-based engine for processing PHTML templates.
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Template+Engines
+This article describes the design of the Magento template rendering subsystem and the implementation of the default template engine, and provides instructions on how to add a custom engine to support templates other than PHTML. 
 
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
+<h2 id="m2devgde-temp-eng-role">Role of the Magento Template Engine in Rendering HTML Output</h2> 
+A template engine is invoked during page layout processing. Any page layout is a hierarchy of containers, which are placeholders for content, and blocks, which actually generate content.  Each block corresponds to a certain Magento PHP class. 
 
-<h2 id="help">Helpful Aids for Writers</h2>
+All block classes are inherited from either <code>Magento\Framework\View\Element\AbstractBlock</code> or <code>Magento\Framework\View\Element\Template</code> (which in its turn is inherited from <code>AbstractBlock</code>).
 
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
+The difference between these two classes is that the <code>Template</code> class has methods required to work with templates and allows initiating a template engine to generate HTML content based on a template, while <code>AbstractBlock</code> has no methods for working with templates, and provides only displaying the hard-coded HTML content:
 
-### General Markdown Authoring Tips
+<p><img src="{{ site.baseurl }}common/images/view_te2.png" alt="Blocks class diagram"></p>
 
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
+The AbstractBlock class implements the main {code}toHtml()</code> method, which is called by all blocks when it is necessary to generate the HTML output.
+The sequence of execution of {code}toHtml()</code> depends on whether the HTML content was previously cached:
+Case 1: HTML was previously cached:
+Load the cached HTML content.
+Perform the HTML content post-processing defined in <code>_afterToHtml()</code>.
+Case 2: HTML was not previously cached:
+Perform the preparatory tasks defined <code>in _beforeToHtml()</code>.
+Generate the HTML content. Here is where the template engine is invoked for blocks with templates: if a block class is inherited from the <code>Template</code> class, and has a predefined or dynamically obtained  template name, then generating the HTML content is performed by calling <code>Tempalte:: fetchView()</code> which initiates the template engine, calls the <code>render()</code> method, and returns the HTML content for subsequent processing by <code>AbstractBlock::toHtml()</code>.
+Cache the generated HTML.
+Perform the HTML content post-processing defined in <code>_afterToHtml()</code>.
 
-### Note, Tip, Important, Caution
+Schematically, a template engine performs the following (Case 2, step 2):
 
-There is an example of Note in the first section.
+<p><img src="{{ site.baseurl }}common/images/view_te4.png" alt="toHtml() execution flow"></p>
 
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
+The same process, with more technical details:
 
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
+<p><img src="{{ site.baseurl }}common/images/view_te5.png" alt="toHtml() execution flow more details"></p>
 
-### Tables
+<h3 id="m2devgde-temp-eng-invoke">Invoking a PHTML Block from a PHTML Block</h3>
 
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
+The following diagram illustrates the actions executed when a PHTML block is invoked from a PHTML block by a <code>getChildHtml</code> call.
 
-HTML table:
+<p><img src="{{ site.baseurl }}common/images/view_te6.png" alt="Diagram: actions executed when a PHTML block is invoked from a PHTML block by a getChildHtml call"></p>
 
+Example of a <code>getChildHtml</code> call:
+
+<code>
+&lt;?php&nbsp;echo&nbsp;$this-&gt;getChildHtml('product_type_data')&nbsp;?&gt;
+</code>
+
+
+<h3 id="m2devgde-temp-eng-temp">Template Rendering</h3>
+
+Template files rendering is performed by <code>\Magento\Framework\View\TemplateEngine\Php</code>:
+<p><img src="{{ site.baseurl }}common/images/view_te7.png" alt="template rendering flow diagram"></p>
+
+<h2 id="m2devgde-temp-eng-resources">Template Engine Resources</h2>
+<h3 id="m2devgde-temp-eng-temp">Template Engine File Structure</h3>
+All template engine files are stored in the <code>View</code> library:
+<pre>
+_lib/Magento/View
+&nbsp;|--TemplateEngineFactory.php
+&nbsp;|--TemplateEngineInterface.php
+&nbsp;|--TemplateEnginePool.php
+&nbsp;|_/Element
+&nbsp;&nbsp;&nbsp;|--AbstractBlock.php
+&nbsp;&nbsp;&nbsp;|--Template.php
+&nbsp;|_/TemplateEngine
+&nbsp;&nbsp;&nbsp;|--Php.php
+</pre>
+
+The default engine for working with templates is the <code>Magento\Framework\View\TemplateEngine\Php</code> class. 
+
+<h3 id="m2devgde-temp-eng-basic">Basic Classes</h3>
+The class diagram of the basic classes implementing the template rendering subsystem:
+<p><img src="{{ site.baseurl }}common/images/view_te8.png" alt="template rendering diagram of classes"></p>
+
+<h3 id="m2devgde-temp-eng-desc">Class Description</h3>
+<h4 id="m2devgde-temp-eng-class-temp"><code>Magento\Framework\View\Element\Template</code></h4>
+The <code>Magento\Framework\View\Element\Template</code> class is the starting point for template rendering. To initiate the rendering process, <code>Template::fetchView()</code> is invoked with the name of the template file. It starts by extracting the template file extension and passing it to <code>Magento\Framework\View\TemplateEngineFactory</code>. On receiving an instance of <code>Magento\Framework\View\TemplateEngineInterface</code>, it calls the <code>render()</code> method and passes the rendered output to the caller.
 <table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>fetchView($fileName)</code>
+      </td>
+      <td>Retrieve the block view from the file (template). </td>
+    </tr>
+    <tr>
+      <td>
+        <code>getTemplateFile() </code>
+      </td>
+      <td>Get the absolute path to the template. </td>
+    </tr>
+    <tr>
+      <td>
+        <code>setTemplate($template) </code>
+      </td>
+      <td>Set a path to the template used for generating the block output. </td>
+    </tr>
+    <tr>
+      <td>
+        <code>getTemplate() </code>
+      </td>
+      <td>Get relevant path to the template. </td>
+    </tr>
+  </tbody>
 </table>
 
-### Images
+<h4 id="m2devgde-temp-eng-class-tef"><code>Magento\Framework\View\TemplateEngineFactory</code></h4>
 
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
+<code>TemplateEngineFactory::create()</code> receives the file extension, and constructs an instance of <code>Magento\Framework\View\TemplateEngineInterface</code> that implements the appropriate template engine.
 
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
+<table>
+<tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>create($name)</code>
+      </td>
+      <td>Retrieve a template engine instance by its unique name.</td>
+    </tr>
+  </tbody>
+</table>
 
-You can also use a title tag to provide a mouseover tooltip.
+<h4 id="m2devgde-temp-eng-class-tep"><code>Magento\Framework\View\TemplateEnginePool</code></h4>
 
-HTML example:
+This class maintains the list of all template engines available in the system. It uses the template engine factory to construct a template engine instance upon the first request.
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>get($name)</code>
+      </td>
+      <td>Retrieve a template engine instance by its unique name.</td>
+    </tr>
+  </tbody>
+</table>
+<h4 id="m2devgde-temp-eng-class-tei">
+  <code>Magento\Framework\View\TemplateEngineInterface</code>
+</h4>
+This interface defines the <code>render()</code>method. The resulting markup generated by the template engine is not sent directly to the output buffer, but it is returned to the caller.
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <pre>
+render(&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\Magento\Framework\View\Element\BlockInterface&nbsp;$block,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$templateFile,&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;$dictionary&nbsp;=&nbsp;array()&nbsp;
+&nbsp;)
+</pre>
+      </td>
+      <td>
+        <br/>Render the specified template in the context of a particular block and with the data provided in<code>$vars</code>.</td>
+    </tr>
+  </tbody>
+</table>
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
+<h4 id="m2devgde-temp-eng-class-php">
+  <code>Magento\Framework\View\TemplateEngine\Php</code>
+</h4>
+Implements <code>Magento\Framework\View\TemplateEngineInterface</code>,handles PHTML files, which use PHP as a templating language. In its <code>render()</code> implementation, it invokes <code>include()</code> to execute the PHP code contained in the template file. This means that PHP code in a template file must be written assuming that it will not be included to the template's associated block class.</p>
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+<pre>
+render(&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BlockInterface&nbsp;$block,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$fileName,&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array&nbsp;$dictionary&nbsp;=&nbsp;array())&nbsp;
+      </pre>
+      </td>
+      <td>Include the specified PHTML template using the given block as <code>$this</code> reference, though only public methods will be accessible. </td>
+    </tr>
+  </tbody>
+</table>
 
-Markdown example using an alt tag:
+<h2 id="m2devgde-temp-eng-class-cust">Customizing the Template Rendering Subsystem</h2>
+The Magento template rendering subsystem supports the following:
 
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
+* Your module can introduce a new template engine.
+* You can use PHTML templates together with other kinds of templates.
+* You can embed any block to other blocks regardless of the underlying template engine.
 
-### Cross-References
+<h2>Adding a New Template Engine</h2>
+To add support for a new template engine:
 
-All cross-references should look like the following:
+1. Save the template engine code base in your Magento instance directory. 
+2. Create a new implementation of <code>Magento\Framework\View\TemplateEngineInterface</code>. This class is used to initialize the underlying template engine, and must also implement the <code>render()</code> function responsible for invoking the template engine on the given template file.
+3. Register a newly introduced engine class through the DI configuration to process template files of a certain type as follows:
+<pre>
+&lt;config&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;Magento\Framework\View\TemplateEngineFactory&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param&nbsp;name=&quot;engines&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;array&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;key=&quot;{template_extension}&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;{engine_class}&lt;/value&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/array&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
+&lt;/config&gt;
+</pre>
 
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
+Where:
+
+* <code>{template_extension}</code> is the type of template files, which are to be processed by the template engine. For example, phtml
+* <code>{engine_class}</code> is the name of the class that implements a template engine
+
+Example of a DI configuration file:
+<pre>
+&lt;config&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;Magento\Framework\View\TemplateEngineFactory&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;param&nbsp;name=&quot;engines&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;array&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;key=&quot;phtml&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;Magento\Framework\View\TemplateEngine\Php&lt;/value&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/array&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/param&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
+&nbsp;&lt;/config&gt;
+</pre>
 
