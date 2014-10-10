@@ -52,3 +52,9 @@ Enter the following command to install required PHP extensions:
 <h2 id="instgde-prereq-php-install-ubuntu">PHP 5.4 on Ubuntu</h2>
 
 TBD
+
+<h2 id="instgide-prereq-timezone">Setting the PHP timezone (all operating systems)</h2>
+
+'PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
+
+TBD

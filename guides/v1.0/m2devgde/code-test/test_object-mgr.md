@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Use the Object Manager Helper
+title: Object Manager Helper
 ---
 
 <h1 id="m2devgde-objmgrhelper">{{ page.title }}</h1>

@@ -17,7 +17,7 @@ TBD
 
 Following are the major topics in this guide:
 
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 System Requirements (R)</a>
+*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements (R)</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento 2 (R)</a>
 
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions (R)</a>
