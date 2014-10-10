@@ -1,106 +1,447 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 PHP Coding Standards and Practices
+title: Magento 2 PHP coding standards and practices
 ---
- 
+
 <h1 id="m2devgde-stnd_coding">{{ page.title }}</h1>
-
 <p><a href="{{ site.githuburl }}m2devgde/code-test/stnd_coding.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h2 id="m2devgde-code-coding-intro">Introduction to Magento 2 PHP Coding Standards</h2> 
-
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Magento+PHP+Coding+Standards+and+Practices
-
+<p>The Magento 2 development team has adopted the <a href="http://framework.zend.com/manual/1.12/en/coding-standard.overview.html">Zend Framework Coding Standard for PHP</a>, with a few exceptions.</p>
+<p>In addition, a specific list of "best practices" has been implemented as requirements.</p>
+<p>Where possible, these standards and requirements are enforced using Automated Static Code Analysis Tests.</p>
+<p>Standards and requirements which cannot be automatically validated must be applied through rigorous code review.</p>
+<p>These standards are enforced for the core development team and are highly recommended for all developers implementing extensions and customizations for the Magento 2 product.
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
+   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+   <span class="glyphicon-class">
+      <p>The numbering in these lists is static and should be used to reference specific standards when communicating with the Magento 2 development team.</p>
+   </span>
 </div>
-
-<h2 id="help">Helpful Aids for Writers</h2>
-
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
-
-### General Markdown Authoring Tips
-
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
-
-### Note, Tip, Important, Caution
-
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
-
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
-
-### Tables
-
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
-
-HTML table:
-
+<h2 id="m2devgde-zend">Zend framework coding standards</h2>
+<p>Magento 2 has adopted the Zend Framework Coding Standard for PHP. Specifically, Magento 2 has the standards
+   listed in the following table.
+</p>
+<p>Where possible, these standards are enforced using PHP_CodeSniffer.</p>
+<h3 id="php-file-formatting">PHP file formatting</h3>
+<p>&nbsp;</p>
 <table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Standard</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>1.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">General</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>1.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">Indentation</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>1.3</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">Maximum Line Length</a></td>
+         <td>PHP_CodeSniffer</td>
+      </tr>
+      <tr>
+         <td>1.4</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">Line Termination</a></td>
+         <td>PHP_CodeSniffer</td>
+      </tr>
+   </tbody>
 </table>
 
-### Images
+<h3 id="naming-conventions">Naming conventions</h3>
+<p>&nbsp;</p>
+<table>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Standard</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>2.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Class Names</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>2.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Abstract Class Names</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>2.3</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Interface Names</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>2.4</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">File Names</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>2.5</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Function and Method Names</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>2.6</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Variable Names</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>2.7</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Constant Names</a></td>
+         <td>PHP_CodeSniffer</td>
+      </tr>
+   </tbody>
+</table>
 
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
+<h3 id="coding-style">Coding style</h3>
+<p>&nbsp;</p>
+<table>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Standard</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>3.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">PHP Code Demarcation</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>3.2.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">String Literals</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.2.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">String Literals Containing Apostrophes</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.2.3</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Variable Substitution</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.2.4</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">String Concatenation</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.3.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Numerically Indexed Arrays</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.3.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Associative Arrays</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.4.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Class Declaration</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>3.4.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Class Member Variables</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.5.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Function and Method Declaration</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>3.5.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Function and Method Usage</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>3.6.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">If/Else/Elseif Statements</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>3.6.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Switch Statements</a></td>
+         <td>No</td>
+      </tr>
+      <tr>
+         <td>3.7.1</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation - Format</a></td>
+         <td>PHP_CodeSniffer (partially)</td>
+      </tr>
+      <tr>
+         <td>3.7.2</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation - Files</a></td>
+         <td>No. See the following exceptions.</td>
+      </tr>
+      <tr>
+         <td>3.7.3</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation - Classes</a></td>
+         <td>No. See the following exceptions.</td>
+      </tr>
+      <tr>
+         <td>3.7.4</td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation Functions</a></td>
+         <td>No</td>
+      </tr>
+   </tbody>
+</table>
 
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
+<h3 id="doc-blocks">Magento coding standard for documentation blocks</h3>
+<p>For details about inline documentation standard see <a href="https://wiki.magento.com/display/MAGE2DOC/Magento+Coding+Standard+for+Documentation+Blocks">Magento Coding Standard for Documentation Blocks</a>.</p>
+<h2>Exceptions to Zend Framework Coding Standards</h2>
+<p>Magento 2 PHP Coding Standards deviate from the Zend Framework Coding Standards in a few specific areas.</p>
+<h3 id="best-practices">Best practices</h3>
+<p>To ensure the code in Magento 2 is well-structured, readable, and easy to maintain, the Magento 2 team has adopted the following recommended best practices as requirements.</p>
+<p>Extension developers are strongly encouraged to adhere to these best practices as well.</p>
+<p><a href="http://phpmd.org/">PHPMD - PHP Mess Detector</a> is used to analyze the source code and identify potential problems.</p>
 
-You can also use a title tag to provide a mouseover tooltip; this is recommended for accessiblity (screen readers and so on).You can also use a title tag to provide a mouseover tooltip.
+<h3 id="code-size">Code size rules</h3>
+<p>&nbsp;</p>
+<table>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Standard</th>
+         <th>Threshold</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>4.1</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Manage Cyclomatic Complexity</a></td>
+         <td>10 decision points per method</td>
+         <td>PHP Mess Detector (PHPMD)</td>
+      </tr>
+      <tr>
+         <td>4.2</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Manage NPath Complexity</a></td>
+         <td>200 acyclic execution paths per method</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>4.3</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Avoid Excessive Method Length</a></td>
+         <td>100 lines of code per method</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>4.4</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Avoid Excessive Class Length</a></td>
+         <td>1000 lines of code per class</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>4.5</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Avoid Excessive Parameter Lists</a></td>
+         <td>10 parameters per object</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>4.6</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Avoid Excessive Public Count</a></td>
+         <td>45 methods/attributes per class</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>4.7</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Avoid Too Many Fields</a></td>
+         <td>15 fields per class</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>4.8</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Avoid Too Many Methods</a></td>
+         <td>50 methods per class</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>4.9</td>
+         <td><a href="http://phpmd.org/rules/index.html#code-size-rules">Avoid Excessive Class Complexity</a></td>
+         <td>100 WMC per class</td>
+         <td>PHPMD</td>
+      </tr>
+   </tbody>
+</table>
 
-HTML example:
+<h3 id="design">Design</h3>
+<p>&nbsp;</p>
+<table>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Practice</th>
+         <th>Threshold</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>5.1</td>
+         <td><a href="http://phpmd.org/rules/design.html#couplingbetweenobjects">
+            Avoid Exit Expressions</a></td>
+         <td>Never recommended in regular code</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>5.2</td>
+         <td><a href="http://phpmd.org/rules/design.html#couplingbetweenobjects">Avoid Eval Expressions</a></td>
+         <td>Never recommended</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>5.3</td>
+         <td><a href="http://phpmd.org/rules/design.html#couplingbetweenobjects">Avoid Go to Statements</a></td>
+         <td>Never recommended</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>5.4</td>
+         <td><a href="http://phpmd.org/rules/design.html#couplingbetweenobjects">Manage Number of Children</a></td>
+         <td>15 child classes per class</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>5.5</td>
+         <td><a href="http://phpmd.org/rules/design.html#couplingbetweenobjects">Manage Depth of Inheritance</a></td>
+         <td>6 parent classes per class</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>5.6</td>
+         <td><a href="http://phpmd.org/rules/design.html#couplingbetweenobjects">Manage Coupling between Objects</a></td>
+         <td>13 dependencies per class</td>
+         <td>PHPMD</td>
+      </tr>
+   </tbody>
+</table>
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
+<h3 id="naming-conventions">Naming</h3>
+<p>&nbsp;</p>
+<table>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Practice</th>
+         <th>Threshold</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>6.1</td>
+         <td><a href="http://phpmd.org/rules/index.html#naming-rules">Avoid Short Variables</a></td>
+         <td>3 characters per variable, property or parameter name</td>
+         <td>PHPMD</td>
+               </tr>
+      <tr>
+      <td>6.2</td>
+      <td><a href="http://phpmd.org/rules/index.html#naming-rules">Avoid Long Variables</a></td>
+      <td>20 characters per variable, property or parameter name</td>
+      <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>6.3</td>
+         <td><a href="http://phpmd.org/rules/index.html#naming-rules">Avoid Short Method Names</a></td>
+         <td>3 characters per method name</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>6.4</td>
+         <td><a href="http://phpmd.org/rules/index.html#naming-rules">Avoid Constructors with Name as Enclosing Class</a></td>
+         <td>Never recommended</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>6.5</td>
+         <td><a href="http://phpmd.org/rules/index.html#naming-rules">Follow Constant Naming Conventions</a></td>
+         <td>Should always be defined in uppercase</td>
+         <td>PHPMD</td>
+      </tr>
+   </tbody>
+</table>
 
-Markdown example using an alt tag:
+<h3 id="unused-code">Unused code</h3>
+<p>&nbsp;</p>
+<table>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Practice</th>
+         <th>Threshold</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>7.1</td>
+         <td><a href="http://phpmd.org/rules/unusedcode.html#unusedprivatefield">Avoid Unused Private Fields</a></td>
+         <td>Never recommended</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>7.2</td>
+         <td><a href="http://phpmd.org/rules/unusedcode.html#unusedprivatefield">Avoid Unused Local Variables</a></td>
+         <td>Never recommended</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>7.3</td>
+         <td><a href="http://phpmd.org/rules/unusedcode.html#unusedprivatefield">Avoid Unused Private Methods</a></td>
+         <td>Never recommended</td>
+         <td>PHPMD</td>
+      </tr>
+      <tr>
+         <td>7.4</td>
+         <td><a href="http://phpmd.org/rules/unusedcode.html#unusedprivatefield">Avoid Unused Formal Parameters</a></td>
+         <td>Never recommended</td>
+         <td>PHPMD</td>
+      </tr>
+   </tbody>
+</table>
 
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
-
-### Cross-References
-
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
+<h3 id="code-duplicates">Code duplicates</h3>
+<p>&nbsp;</p>
+<table>
+   <thead>
+      <tr>
+         <th>Number</th>
+         <th>Practice</th>
+         <th>Threshold</th>
+         <th>Automatically validated</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>8.1</td>
+         <td><a href="https://github.com/sebastianbergmann/phpcpd">Avoid duplicated code</a></td>
+         <td>5 lines (or more)</td>
+         <td>phpcpd</td>
+      </tr>
+      <tr>
+         <td>8.2</td>
+         <td><a href="https://github.com/sebastianbergmann/phpcpd">
+            Avoid duplicated tokens</a></td>
+         <td>70 tokens (or more)</td>
+         <td>phpcpd</td>
+      </tr>
+   </tbody>
+</table>
 

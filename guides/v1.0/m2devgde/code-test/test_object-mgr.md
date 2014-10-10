@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Use the Object Manager Helper
+title: Object Manager Helper
 ---
 
 <h1 id="m2devgde-objmgrhelper">{{ page.title }}</h1>
@@ -31,13 +31,13 @@ title: Use the Object Manager Helper
    <li>Create collection instances that contain specified elements.</li>
 </ul>
 <p>The following table describes the methods:</p>
-<table>
+<table style="width:100%">
    <colgroup>
       <col width="50%">
       <col width="50%">
    </colgroup>
    <thead>
-      <tr>
+       <tr style="background-color:lightgray">
          <th>Method description</th>
          <th>Usage</th>
       </tr>
