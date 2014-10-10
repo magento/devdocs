@@ -122,11 +122,11 @@ Contents
 Overview
 --------
 
-An independent View layer domain - the View component was created to eliminate
+An independent view layer domain, the View component was created to eliminate
 global dependencies
-from `Magento_Core`, `Magento_Backend`, `Magento_Adminhtml` and `Magento_Page` modules
-for HTML content rendering. So that all application modules perform rendering
-using the VIew component, and remain independent from each other.
+on `Magento_Core`, `Magento_Backend`, `Magento_Adminhtml` and `Magento_Page` modules
+for HTML content rendering. All application modules perform rendering using the
+View component, and remain independent from each other.
 
 The View component is represented
 as `Magento\Framework\View` library: `magento2/lib/Magento/Framework/View`.
@@ -157,9 +157,7 @@ The `Magento\Framework\View` library has the following components:
 
     -   Theme
 
--   Layout.  
-      
-    
+-   Layout.
 
 `Magento\Framework\View` Library Dependencies
 ---------------------------------------------
