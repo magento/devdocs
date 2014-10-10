@@ -13,3 +13,7 @@ Problem: Cannot run 'composer install'
 
 *	Copy `composer.phar` to the Magento 2 `setup` directory
 *	Cd to composer install dir and enter `mv composer.phar /usr/local/bin/composer`
+
+Problem: Error during install: `PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
+
+Solution: 

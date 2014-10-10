@@ -120,6 +120,46 @@ For example, if Base URL is http://www.example.com and Admin Path is `admin`, th
 		<td>Yes</td>
 	</tr>
 	<tr>
+		<td>admin_firstname</td>
+		<td>Magento administrator user's first name.</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>admin_lastname</td>
+		<td>Magento administrator user's last name.</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>admin_email</td>
+		<td>Magento administrator user's e-mail address.</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>admin_username</td>
+		<td>Magento administrator user name.</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>admin_password</td>
+		<td>Magento administrator user password.</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>language</td>
+		<td>Enter the language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php -f setup/index.php help languages</code> from the <code>setup</code> directory.)</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>currency</td>
+		<td>Enter the default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php -f setup/index.php help currencies</code> from the <code>setup</code> directory.)</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
+		<td>time zone</td>
+		<td>Enter the default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php -f setup/index.php help timezones</code> from the <code>setup</code> directory.)</td>
+		<td>Yes</td>
+	</tr>
+	<tr>
 		<td>use_secure</td>
 		<td><p>Enter <code>1</code> to enable the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
 		<p>Enter <code>0</code> if you do not use SSL. In this case, all other secure URL options are assumed to also be <code>0</code>.</p></td>
@@ -136,13 +176,13 @@ For example, if Base URL is http://www.example.com and Admin Path is `admin`, th
 		<td>use_secure_admin</td>
 		<td><p>Enter <code>1</code> to use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
 		<p>Enter <code>0</code> if you do not use SSL with the Admin.</p></td>
-		<td>Yes</td>
+		<td>No</td>
 	</tr>
 	<tr>
 		<td>admin_use_security_key</td>
 		<td><p>Enter <code>1</code> to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>.</p>
 		<p>Enter <code>0</code> to not use the key.</p></td>
-		<td>Yes</td>
+		<td>No</td>
 	</tr>
 	<tr>
 		<td>session_save</td>
