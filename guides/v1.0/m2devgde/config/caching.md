@@ -1,19 +1,25 @@
 ---
 layout: howtom2devgde_chapters
-title: Configuring Caching
+title: Caching
 ---
- 
+
 <h1 id="m2devgde-cache">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/arch/caching.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-cache-intro">Introduction to Caching</h2>
+<h2 id="m2devgde-cache-intro">Overview</h2>
 
-In Magento 2 we split the functionality into several layers depending on role of each component: the system-level components went to **framework layer**, the business-logic components went to **application layer**, and components responsible for contact between a client and service provider went to **service layer**. According to a new approach, we call a logical group in the application layer _a module_ and a logical group in the framework layer _a library_.
+In Magento 2, the functionality was split into several layers depending on role of each component:
 
+* The system-level components went to **framework layer**
+* The business-logic components went to **application layer**
+* The components responsible for contact between a client and service provider went to **service layer**
 
-Moving some features to framework layer is to facilitate decreasing the module dependencies. Features moved to the library depend only on the framework components and abstractions and do not depend on modules in the application layer.
+A logical group in the application layer is _a module_ and a logical group in the framework layer is _a library_.
 
+Moving some features to framework layer is to facilitate decreasing the module dependencies.
+
+Features moved to the library depend only on the framework components and abstractions and do not depend on modules in the application layer.
 
 To adjust the system to our new approach, we moved some elements out of the modules to libraries. In particular:
 
@@ -25,25 +31,26 @@ To adjust the system to our new approach, we moved some elements out of the modu
 1.	Cache
 1.	CAPTCHA
 
+This article describes the changes in the Cache functionality.
 
-This article describes the changes in the Cache functionality. 
-
-<h2 id="m2devgde-cache-explore">Exploring Changes in Cache</h2>
+<h2 id="m2devgde-cache-explore">Cache changes</h2>
 
 Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.
 
-<h3 id="m2devgde-cache-configuring">Configuring Cache</h3>
+<h2 id="m2devgde-cache-configuring">Configure the cache</h2>
 
-The primary configurations for cache are made in
+Make the primary configurations for cache in:
 
 *	DI configuration files (`app/etc/di.xml` or `app/etc/*/di.xml`) to define the preconfigured cache settings.
 *	Deployment configuration files (`app/etc/local.xml`) to tweak the application during the deployment as necessary.
 
-Configuring cache involves setting up the <a href="#m2devgde-cache-frontend">cache frontend</a> and <a href="#m2devgde-cache-backend">cache backend</a>. Thus, you will need to specify the cache frontend configuration, attach the cache types to the cache frontend, and set up the cache backend for the cache frontend.
+Configuring the cache involves setting up the <a href="#m2devgde-cache-frontend">cache frontend</a> and <a href="#m2devgde-cache-backend">cache backend</a>. Thus, you will need to specify the cache frontend configuration, attach the cache types to the cache frontend, and set up the cache backend for the cache frontend.
 
-System uses <a href="#m2devgde-cache-frontend">cache frontend</a> for all caching operations. Use `di.xml` file of a module to make the settings for the cache frontend:
+System uses <a href="#m2devgde-cache-frontend">cache frontend</a> for all caching operations.
 
-<pre>&lt;type&nbsp;name=&quot;Magento\App\Cache\Frontend\Pool&quot;&gt;
+Use `di.xml` file of a module to make the settings for the cache frontend:
+
+<blockquote><pre>&lt;type&nbsp;name=&quot;Magento\App\Cache\Frontend\Pool&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;frontendSettings&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;%cache_frontend_id%&quot;&nbsp;xsi:type=&quot;string&quot;&gt;
@@ -52,7 +59,7 @@ System uses <a href="#m2devgde-cache-frontend">cache frontend</a> for all cachin
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/argument&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/type&gt;</pre>
+&lt;/type&gt;</pre></blockquote>
 
 These settings should contain a unique _identifier_, so the cache frontend could be easily retrieved from the pool.
 
@@ -60,11 +67,11 @@ The custom settings will override the default settings for the parts of the appl
 
 If necessary, you can prohibit saving new cache entities into the storage via <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Cache\Core</a> class:
 
-<pre>$options['disable_save'] = true;</pre>
+<blockquote><pre>$options['disable_save'] = true;</pre></blockquote>
 
 As a result, new cache entities will not be saved, but the previously saved cache will be still available.
 
-<h3 id="m2devgde-cache-type">Exploring the Cache Type</h3>
+<h3 id="m2devgde-cache-type">Cache type</h3>
 
 Cache type unites the cached data based on their functional role. Cache type serves to facilitate handling the cache, for instance, you can execute operations not to the whole cache, but to its part assigned to the same cache type. You can manage the cache divided into the types via the **Cache Management** page in the admin panel or via the programming interface in the run-time.
 
@@ -72,35 +79,35 @@ Tag scope component provides mechanism behind a cache type.
 
 To create a new cache type:
 
-<pre>class %Namespace%_%Module%_Model_Cache_Type extends \Magento\Cache\Frontend\Decorator\TagScope
+<blockquote><pre>class %Namespace%_%Module%_Model_Cache_Type extends \Magento\Cache\Frontend\Decorator\TagScope
 {
     public function __construct(\Magento\App\Cache\Type\FrontendPool $cacheFrontendPool)
     {
         parent::__construct($cacheFrontendPool->get('%cache_type_id%'), '%cache_type_tag%');
     }
-}</pre>
+}</pre></blockquote>
 
-You will need to specify the following parameters:
+You must specify the following parameters:
 
 *	`Namespace_Module` defines the name of a module that uses a cache type. A module can use several cache types and a cache type can be used in several modules.
 *	`%cache_type_id%` defines unique identifier of a cache type.
 *	`%cache_type_tag%` defines unique tag to be used in the cache type scoping.
 
-Then you will need to make configurations of the grid on the **Cache Management** page or a new cache type. These configurations are taken from modules, that is, from `{Namespace}/{Module}/etc/cache.xml` file:
+Then you must make configurations of the grid on the **Cache Management** page or a new cache type. These configurations are taken from modules, that is, from `{Namespace}/{Module}/etc/cache.xml` file:
 
-<pre>&lt;config&gt;
+<blockquote><pre>&lt;config&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;%cache_type_id%&quot;&nbsp;instance=&quot;%cacheInstanceName%&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;%cache_type_label%&lt;/label&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;%cache_type_description%&lt;/description&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
-&lt;/config&gt;</pre>
+&lt;/config&gt;</pre></blockquote>
 
-You will need to specify the following parameters:
+You must specify the following parameters:
 
 *	`%cache_type_label%` defines the text name (label) that will display in the **Cache Type** column of the grid.
 *	`%cache_type_description%` defines the text that will display in the **Description** column of the grid.
 
-<h3 id="m2devgde-cache-frontend">Exploring Cache Frontend</h3>
+<h3 id="m2devgde-cache-frontend">Cache frontend</h3>
 
 The cache frontend interface is API to the cache storage. When this interface is used, the cache does not appear in the client code. The frontend interface serves for
 
@@ -117,16 +124,16 @@ We use the <a href="http://www.php5dp.com/php-decorator-design-pattern-accessori
 
 Use <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Cache\Frontend\Decorator\TagScope</a> component to handle the isolation of the cache segments:
 
-<pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
- 
+<blockquote><pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
+
 $cacheFrontendOne = new \Magento\Cache\Frontend\Decorator\TagScope($cacheFrontend, 'cache_segment_one_tag');
 $cacheFrontendTwo = new \Magento\Cache\Frontend\Decorator\TagScope($cacheFrontend, 'cache_segment_two_tag');
- 
+
 $cacheFrontendOne->save('example_data_one', 'example_id_one');
 $cacheFrontendTwo->save('example_data_two', 'example_id_two');
- 
+
 // erase 'example_data_one', but not 'example_data_two'
-$cacheFrontendOne->clean();</pre>
+$cacheFrontendOne->clean();</pre></blockquote>
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Cache\Frontend\Decorator\TagScope</a> component serves to associate a cache entry with a cache type and restrict the cache operations, as necessary, for a cache type.
 
@@ -139,29 +146,29 @@ For **profiling the cache** we use <a href="{{ site.mage2000url }}lib/internal/M
 1.	Profiler tag `backend_type`: `<backend_type_name>`. `backend_type_name` defines name of Zend backend class; it may retrieve the prefix of the class name passed to the constructor.
 
 To enable the cache profiling in the run-time:
-<pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
- 
+<blockquote><pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
+
 if (\Magento\Profiler::isEnabled()) {
     $cacheFrontend = new Magento\Cache\Frontend\Decorator\Profiler($cacheFrontend);
 }
- 
+
 $cacheFrontend->save('example_data', 'example_id'); // corresponds to 'cache_save' profiler timer
 $cachedData = $cacheFrontend->load('example_id');   // corresponds to 'cache_load' profiler timer
-$cacheFrontend->remove('example_id');               // corresponds to 'cache_remove' profiler timer</pre>
+$cacheFrontend->remove('example_id');               // corresponds to 'cache_remove' profiler timer</pre></blockquote>
 
 Some **decorator methods** influence several objects, while others influence a single method. This diversity may lead to duplication of the decorated methods. To address this problem, we use <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/Bare.php" target="_blank">Magento\Cache\Frontend\Decorator\Bare</a> class. This decorator does not attach any additional responsibility to a decorated subject. Use this class, if you need to create decorators that imply only the individual actions:
 
-<pre>namespace Magento\Cache\Frontend\Decorator;
- 
+<blockquote><pre>namespace Magento\Cache\Frontend\Decorator;
+
 class SuccessfulSave extends \Magento\Cache\Frontend\Decorator\Bare
 {
     public function save($data, $id, array $tags = array(), $lifeTime = null)
     {
         return true;
     }
-}</pre>
+}</pre></blockquote>
 
-<h3 id="m2devgde-cache-backend">Exploring Cache Backend</h3>
+<h3 id="m2devgde-cache-backend">Cache backend</h3>
 
 For the cache backend you can use any class that implements `Zend_Cache_Backend_Interface` or its extended interface - `Zend_Cache_Backend_ExtendedInterface`. By default, Magento uses four classes for the cache backend:
 
@@ -174,19 +181,19 @@ To modify the behavior of the cache backend, use the <a href="http://www.phpdesi
 
 To configure the cache backend's decorator in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Cache\Core</a> class:</p>
 
-<pre>$options['backend_decorators']&nbsp;=&gt;&nbsp;array(
+<blockquote><pre>$options['backend_decorators']&nbsp;=&gt;&nbsp;array(
 &nbsp;&nbsp;&nbsp;&nbsp;array(
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'class'&nbsp;=&gt;&nbsp;'&lt;decorator_class&gt;',
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['options'&nbsp;=&gt;&nbsp;&lt;decorator_options&gt;],
 &nbsp;&nbsp;&nbsp;&nbsp;),
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 );
-</pre>
+</pre></blockquote>
 
-You will need to specify the following parameters:
+You must specify the following parameters:
 
 *	`<decorator_class>` defines the name of a class extending <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Decorator/AbstractDecorator.php" target="_blank">Magento\Cache\Backend\Decorator\AbstractDecorator</a>.
-*	`<decorator_options>` retrieves an array of arbitrary options to be passed to the constructor during creation of a decorator. 
+*	`<decorator_options>` retrieves an array of arbitrary options to be passed to the constructor during creation of a decorator.
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Decorator/Compression.php" target="_blank">Magento\Cache\Backend\Decorator\Compression</a> class is used to compresses the data before saving them to the cache backend. The data string, which consists of more symbol than specified in `compression_threshold` parameter, will be compressed. You can distinguish the compressed data by the `compression_prefix`.
 
@@ -199,7 +206,7 @@ Magento also uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.b
 
 To configure the two-level cache with the memcache as fast backend and file system as slow backend cache use `app/etc/local.xml`:
 
-<pre>&lt;config&gt;
+<blockquote><pre>&lt;config&gt;
 ....
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;cache&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;frontend&nbsp;name=&quot;default&quot;&gt;
@@ -228,11 +235,11 @@ To configure the two-level cache with the memcache as fast backend and file syst
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/frontend&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/cache&gt;
 &lt;/config&gt;
-</pre>
+</pre></blockquote>
 
 Alternatively, you can configure the two-level cache with the memcache as fast backend and file system as slow backend cache via `di.xml`. For instance, in `app/etc/di.xml` file:
 
-<pre>&lt;config&nbsp;&gt;
+<blockquote><pre>&lt;config&nbsp;&gt;
 ....
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;Magento\App\Cache\Frontend\Pool&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
@@ -264,7 +271,7 @@ Alternatively, you can configure the two-level cache with the memcache as fast b
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/argument&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
-&lt;/config&gt;</pre>
+&lt;/config&gt;</pre></blockquote>
 
 
 
