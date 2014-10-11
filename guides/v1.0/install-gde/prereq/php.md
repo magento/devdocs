@@ -7,7 +7,7 @@ title: Install PHP 5.4 and required extensions
 
 <p><a href="{{ site.githuburl }}install-gde/prereq/php.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="instgde-php-prereq-contents">Contents</h2>
+<h4 id="instgde-php-prereq-contents">Contents</h4>
 
 *	<a href="#instgde-prereq-php-install-centos">PHP 5.4 on CentOS</a>
 *	<a href="#instgde-prereq-php-install-ubuntu">PHP 5.4 on Ubuntu</a>
@@ -61,6 +61,6 @@ TBD
 
 <h2 id="instgde-prereq-timezone">Setting the PHP timezone (all operating systems)</h2>
 
-'PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
+`PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
 
 TBD
