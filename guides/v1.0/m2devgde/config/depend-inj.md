@@ -7,15 +7,33 @@ title: Dependency injection
 
 <p><a href="{{ site.githuburl }}m2devgde/config/depend-inj.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
+<h4>Contents</h4>
+
+See one of the following sections:
+
+*	<a href="#dep-inj-intro">Introduction</a>
+*	<a href="#dep-inj-mod">How to use dependency injection</a>
+*	<a href="#dep-inj-mod-config">Dependency injection type configurations</a>
+*	<a href="#dep-inj-map">Interface preferences</a>
+*	<a href="#dep-inj-compile">Definition compiler tool</a>
+
 <h2 id="dep-inj-intro">Introduction</h2>
 
-Dependency injection in Magento 2 is the alternative to the `Mage` class used in Magento 1. With dependency injection, an object does not need to locate an object or value on which it depends. Instead, a PHP class declares its dependencies in a constructor&mdash;a process referred to as *constructor dependency injection*.
+<p class="q">Reviewer: Is the content in <a href="https://wiki.corp.x.com/display/MAGE2/Magento+2+DI+Overview#Magento2DIOverview-DIinMagento2" target="_blank">this wiki page</a> current and correct? If so I will use it here. A comment at the bottom of the page indicates that some information is outdated.</p>
+
+Dependency injection is used in Magento 2 as an alternative to the `Mage` class used in Magento 1. With dependency injection, an object does not need to locate an object or value on which it depends. Instead, a PHP class declares its dependencies in a constructor&mdash;a process referred to as *constructor dependency injection*.
+
+A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult. 
+
+In simple terms, if ModuleA needs to access some functionality in ModuleB, then ModuleA is dependent on ModuleB. ModuleA consumes the service offered by ModuleB, so ModuleA is the consumer and ModuleB is the dependent.
 
 The following example defines a constructor dependency on `SomeServiceInterface`:
 
 <script src="https://gist.github.com/xcomSteveJohnson/dce474ab88e085062df0.js"></script>
 
 The benefit of constructor dependency injection is that the object is immutable.
+
+<p class="q">Reviewer: Is method injection valid and is it in fact mentioned in this topic?</p>
 
 (A second type of dependency injection, *method injection*, is discussed later in this topic.)
 
@@ -31,7 +49,7 @@ Proxy
 
 :	Object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
 
-<h2 id="dep-inj-mod">How to use dependency injection in your module</h2>
+<h2 id="dep-inj-mod">How to use dependency injection</h2>
 
 The object manager needs the following configurations:
 
@@ -78,7 +96,7 @@ See one of the following sections for more information:
 *	<a href="#dep-inj-map">Interface preferences</a>	
 *	<a href="#dep-inj-compile">Definition compiler tool</a>
 
-<h2 id="dep-inj-mod-type">Type configurations</h2>
+<h3 id="dep-inj-mod-type">Type configurations</h3>
 
 <p class="q">Reviewer: The following sentence makes no sense, please clarify</p>
 
