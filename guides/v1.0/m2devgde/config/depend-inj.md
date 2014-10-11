@@ -31,9 +31,9 @@ Proxy
 
 :	Object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
 
-<h2 id="dep-inj-mod">Using Dependency Injection in Your Module</h2>
+<h2 id="dep-inj-mod">How to use dependency injection in your module</h2>
 
-The object manager needs the following configurations: TBD CROSS REFS
+The object manager needs the following configurations:
 
 *	Class definitions for retrieving the types and numbers of class dependencies
 *	Instance configurations for retrieving how the objects are instantiated and for defining their lifecycle
@@ -41,7 +41,22 @@ The object manager needs the following configurations: TBD CROSS REFS
 
 Magento uses class constructor signatures to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.
 
-Magento reads constructors using reflection and we recommend you use the Magento compiler tool (TBD) to pre-compile class definitions for better performance.
+Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">defintion compiler tool</pre> to pre-compile class definitions for better performance.
+
+The parameters specified for a class type are inherited by its descendant classes.
+
+To define the interface preferences for the object manager, use `app/etc/di/*.xml`, `[your module dir]/etc/{areaCode}/di.xml`, and `[your module dir]/etc/di.xml` files depending on the level. 
+
+For example, to set the interface preferences for the Magento Admin, use `app/code/core/Magento/Backend/etc/adminhtml/di.xml` as follows:
+
+<pre>&lt;config>
+    &lt;preference for="Magento_Core_Model_UrlInterface" type="Magento_Backend_Model_Url" />
+&lt;/config>
+</pre>
+
+Note that configurations specified at the area level will override the global configurations. You can also specify the sharebility of the object's `di.xml` configuration file as follows:
+
+<script src="https://gist.github.com/xcomSteveJohnson/f66e46702da03ec264eb.js"></script>
 
 <h2 id="dep-inj-mod-config">Dependency injection type configurations</h2>
 
@@ -59,11 +74,11 @@ Object manager configurations can be specified at any of the following levels:
 
 See one of the following sections for more information:
 
-*	TBD	
-*	TBD	
-*	TBD	
+*	<a href="#dep-inj-mod-type">Type configurations</a>	
+*	<a href="#dep-inj-map">Interface preferences</a>	
+*	<a href="#dep-inj-compile">Definition compiler tool</a>
 
-<h2 id="dep-inj-mod-type">Dependency injection type configurations</h2>
+<h2 id="dep-inj-mod-type">Type configurations</h2>
 
 <p class="q">Reviewer: The following sentence makes no sense, please clarify</p>
 
@@ -71,9 +86,8 @@ A type configuration specifies the parameters that must be used to instantiate a
 
 See one of the following sections for more information:
 
-*	TBD
-*	TBD
-*	TBD
+*	<a href="#dep-inj-mod-type-type">Specify types</a>
+*	<a href="#dep-inj-mod-type-args">Arguments</a>
 
 <h3 id="dep-inj-mod-type-type">Specify types</h3>
 	
@@ -160,7 +174,8 @@ translate="true">{someValue}&lt;/argument></pre></td>
 			<th>Possible values</th>
 		</tr>
 	<tr>
-		<td><pre>&lt;argument xsi:type="boolean">{boolValue}&lt;/argument></pre></td>
+		<td><pre>&lt;argument xsi:type="boolean">
+{boolValue}&lt;/argument></pre></td>
 		<td><code>boolValue</code> value is converted to <code>bool</code></td>
 		<td>Truth value discussed in the following table.</td>
 	</tr>
@@ -233,7 +248,8 @@ translate="true">{someValue}&lt;/argument></pre></td>
 			<th>Possible values</th>
 		</tr>
 	<tr>
-		<td><pre>&lt;argument xsi:type="number">{numericValue}&lt;/argument></pre></td>
+		<td><pre>&lt;argument xsi:type="number">
+{numericValue}&lt;/argument></pre></td>
 		<td><code>numericValue</code> as-is</td>
 		<td>Integer, float, or <a href="http://us3.php.net/is_numeric" target="_blank">numeric string</a>.</td>
 	</tr>
@@ -249,7 +265,8 @@ translate="true">{someValue}&lt;/argument></pre></td>
 			<th>Possible values</th>
 		</tr>
 	<tr>
-		<td><pre>&lt;argument xsi:type="init_parameter">{Constant::NAME}&lt;/argument></pre></td>
+		<td><pre>&lt;argument xsi:type="init_parameter">
+{Constant::NAME}&lt;/argument></pre></td>
 		<td>Global application argument represented by 
 <code>Constant::NAME</code> looked up and passed as argument.</td>
 		<td>Constant the containing name of a global argument.</td>
@@ -266,7 +283,8 @@ translate="true">{someValue}&lt;/argument></pre></td>
 			<th>Possible values</th>
 		</tr>
 	<tr>
-		<td><pre>&lt;argument xsi:type="const">{Constant::NAME}&lt;/argument></pre></td>
+		<td><pre>&lt;argument xsi:type="const">
+{Constant::NAME}&lt;/argument></pre></td>
 		<td><code>Constant::NAME</code> passed as argument.</td>
 		<td>Any constant name.</td>
 	</tr>
@@ -274,7 +292,7 @@ translate="true">{someValue}&lt;/argument></pre></td>
 </table>
 
 <table>
-<caption>Null</caption>
+<caption>null</caption>
 	<tbody>
 		<tr>
 			<th>Node format</th>
@@ -299,7 +317,8 @@ translate="true">{someValue}&lt;/argument></pre></td>
 		</tr>
 	<tr>
 		<td><pre>&lt;argument xsi:type="array">
-&lt;item key="someItem" xsi:type="string">someVal&lt;/item>
+&lt;item key="someItem" 
+xsi:type="string">someVal&lt;/item>
 &lt;/argument></pre></td>
 		<td>Array with elemens corresponding to the items passed as argument. Array can contain an infinite number of items. Each item can be any type as argument, including an array itself, or an object type.</td>
 		<td>n/a</td>
@@ -312,12 +331,135 @@ Sample:
 <script src="https://gist.github.com/xcomSteveJohnson/24ffa1426734520f58a1.js"></script>
 
 <p class="q">Reviewer: I had a hard time figuring out what this meant. Please review carefully. Original wording: "During merging, arguments with the same name are completely replaced, if their type is different, and are overridden, if their type is same."</p>
-<p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the type is the same, the arguments are overridden.
+<p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the type is the same, the arguments are overridden.</p>
 
 </div>
 </div>
 
+<div id="accordion2">
 <h4 id="dep-inj-mod-type-args-config-inher">Parameter configuration inheritance</h4>
+<div>
+
+<p class="q">Reviewer: The term 'supertype' should be defined.</p>
+
+Parameters configured for a class type are automatically configured for all of its descendants. Any descendant can override parameters configured for the supertype:
+
+<script src="https://gist.github.com/xcomSteveJohnson/8ef9264be06fba085a03.js"></script>
+
+The preceding example configures all instances of `Magento\Core\Block\Context` and its children to retrieve and instance of `Magento\Core\Model\Url`, but `Magento\Backend\Block\Context` overrides this and retrieves `Magento\Backend\Model\Url`.
+</div>
+</div>
+
+<h3 id="dep-inj-mod-type-life-mgmt">Lifecycle management</h3>
+
+<p class="q">Reviewer: This section seems to come out of nowhere and has no connection to the preceding topics in this section. Please clarify. Source: <a href="https://wiki.corp.x.com/display/MAGE2/Magento+Dependency+Injection#MagentoDependencyInjection-LifetimeManagement">https://wiki.corp.x.com/display/MAGE2/Magento+Dependency+Injection#MagentoDependencyInjection-LifetimeManagement</a>.</p>
+<p class="q">Also, the wiki uses three terms that are not defined: lifetime, lifecycle, and lifestyle. I removed the term 'lifestyle' because it is too anthropomorphic. I use 'lifecycle' throughout because 'lifetime' implies TTL or something similar.</p>
+
+The object manager creates objects and manages the lifecycle of objects:
+
+*	`singleton`&mdash;One instance of class is created during application run. This is the default.
+*	`transient`&mdash;A new instance is created every time the class is requested.
+
+The preceding lifecycles can be configured as:
+
+*	`argument`&mdash;Defines the lifecycle for the argument only.
+*	`type`&mdash;A convenience configuration that defines the lifecycle for all instances of the specified type.
+
+Example:
+
+<script src="https://gist.github.com/xcomSteveJohnson/76cab1f42021975b0531.js"></script>
+
+The preceding example configures `Magento\Filesystem` as not shared so that all clients get separate instances of it. 
+
+Every instance of `Magento\Filesystem` gets a separate instance of the adapter.
+
+<h3 id="dep-inj-mod-type-inject">Injectables and non-injectables</h3>
+
+<p class="q">Reviewer: Code "injection" has the connotation of a malicious attack. Are you sure this is the term you want to use?</p>
+
+Injectable
+
+:	Data object with a singleton lifecycle, typically global system services and value objects. Injectables have no identity and thus do not require a user's input or persisted data to create. These objects can be created by the object manager when necessary. 
+
+	Examples of injectables: database adapter, WebService adapter, layout model, and so on.
+
+Non-injectable
+
+:	Data object with a transient lifecycle. Non-injectables are data objects or primitive values that have an identity. Non-injectables **cannot** be created by the object manager because it requires interaction with a user (that is, additional information from user-provided arguments). 
+
+	Non-injectables cannot be requested in a constructor. Examples of non-injectables include product, order, cart items, users, and so on. Use a factory to create this type of object.
+
+<p class="q">Reviewer: Requires a code sample.</p>
+
+Use the following guidelines:
+
+*	Injectables can ask for other injectables in a constructor, but not non-injectables.
+*	If a business function of an injectable object produces non-injectables, the function must ask for their factory in a constructor (because factories are injectable).
+*	If a business function of an injectable performs some actions on a non-injectable, the function must receive it as method argument.
+
+Do not push injectables to non-injectables because it violates the <a href="http://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> and requires additional lookup during object unserialization.
+
+<h3 id="dep-inj-mod-type-fact">Factories</h3>
+
+Use factories to create the non-injectable objects; that is, a factory facilitates creating an object using another object. When an object needs to create another object, it declares a dependency on a factory of the object it creates. 
+
+Typically, a factory is simple. If the object manager encounters a non-existing factory in runtime mode or using the compiler, the object is generated. More complicated factories that make decision which implementation to instantiate based on incoming parameters must be written manually.
+
+A factory depends on the object manager, but an object itself does not. Unlike other objects, factories are allowed to depend on the object manager. An example follows:
+
+<script src="https://gist.github.com/xcomSteveJohnson/10555b3e62813a507961.js"></script>
+
+<p class="q">Reviewer: This code sample lacks a description. The description must explain how it shows an object depending on the object manager, the object it creates, and how you know it is non-injectable.</p>
+
+<h3 id="dep-inj-mod-type-proxy">Proxies</h3>
+
+Use a proxy to lazy load optional constructor arguments. Example:
+
+<script src="https://gist.github.com/xcomSteveJohnson/34fa1044eac4b02780bb.js"></script>
+
+To use the preceding sample, substitute an existing class with a proxy using the configuration file as follows:
+
+<script src="https://gist.github.com/xcomSteveJohnson/5e114199f6ddda27528d.js"></script>
+
+<h2 id="dep-inj-map">Interface preferences</h2>
+
+In any object-oriented application, all constructor signatures contain interface names in parameter type hints. This does not give the object manager enough information to instantiate an object. 
+
+*Interface preferences* are used to map default implementations to interfaces for the object manager in `di` subnode as follows:
+
+*	Mapping interface preferences in the global area using `app/etc/di/config.xml`:
+
+	<script src="https://gist.github.com/xcomSteveJohnson/f146b684cd3a5ccf19e3.js"></script>
+	
+*	Mapping interface preferences in the Admin area using `app/code/core/Magento/Backend/etc/adminhtml/di.xml`:
+
+	<script src="https://gist.github.com/xcomSteveJohnson/95eae2001613857a8d42.js"></script>
+	
+In the preceding examples, `Magento\Core\Model\Url` is declared as the default implementation for `Magento\Core\Model\UrlInterface` in the global area. 
+
+`Magento\Backend\Model\Url` is set as the default implementation for the Admin area (`adminhtml`). 
+
+When the object manager encounters `Magento\Core\Model\UrlInterface`, it provides the default implementation for specified area.
+
+<h2 id="dep-inj-compile">Definition compiler tool</h2>
+
+<p class="q">Reviewer: This section is meaningless without instructions on how to run the tool. Where are they? Shouldn't this move to that section and just point to it?</p>
+
+By default, class definitions are read using reflection. Because reflection is slow in PHP, we introduced the definition compiler.
+
+The defintion compiler does following:
+
+*	Generates all non-existing dependency injection service classes (proxies, factories and interceptors) declared in the code or in the configuration.
+*	Reads the definitions of all classes and stores them in fast format in `[definition dir path]/definitions.php`
+*	Reads public method information of configured plug-ins and stores it in `[definition dir path]/plugins.php`
+
+Configure `[definition dir path]` in `app/etc/local.xml` as follows:
+
+<script src="https://gist.github.com/xcomSteveJohnson/e01e71302c8796bf3c2b.js"></script>
+
+
+
+
 
 
 #### Related topics:
