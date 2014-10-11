@@ -52,30 +52,48 @@ You must specify these elements:
 
 <h2 id="plugin-intro">Prioritize plugins</h2>
 
-There are several conditions that influence how plugins apply to the same class/interface:
+Several conditions influence how plugins apply to the same class/interface:
 
-* Whether a listener method in a plugin should apply before, after, or around an original method. There are four ways to extend/modify an original method's behavior with the interception functionality:
-* * Changing the arguments of an original method via the before-listener
-* * Changing the values returned by an original method via the after-listener
-* * Changing both the arguments and returned values of an original method via the around-listener
-* * Overriding an original method (a conflicting change)
-
-Note: Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.
-
-The sort order of a plugin. This parameter defines in what order the plugins using the same type of listener and calling the same method are to be executed.
-
-If several plugins apply to the same original method, the following sequence is observed:
-
-* The before listener in a plugin with the highest priority (that is, with the smallest value of `sortOrder` argument).
-* The around listener in a plugin with the highest priority (that is, with the smallest value of `sortOrder` argument).
-* Other before listeners in plugins according to sort order specified for them (that is, from the smallest to the greatest value).
-* Other around listeners in plugins according to the sort order specified for them (that is, from the smallest to the greatest value).
-* The after listener in a plugin with the lowest priority (that is, with the greatest value of `sortOrder` argument).
-* Other after listeners in plugins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).
+<ul>
+   <li>
+      <p>Whether a listener method in a plugin should apply before, after, or around an original method.</p>
+      <p>Use one or more of the following methods to extend/modify an original method's behavior with the interception functionality:
+      <ul>
+         <li>Change the arguments of an original method through the before-listener.</li>
+         <li>Change the values returned by an original method through the after-listener.</li>
+         <li>Change both the arguments and returned values of an original method through the around-listener.</li>
+         <li>
+            <p>Override an original method (a conflicting change).
+            <div class="bs-callout bs-callout-info" id="info">
+               <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+               <span class="glyphicon-class">
+                  <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.</p>
+               </span>
+            </div>
+            </p>
+         </li>
+      </ul>
+   <li>
+      <p>The sort order of a plugin.</p>
+      <p>This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.</p>
+      <p>If several plugins apply to the same original method, the following sequence is observed:
+      <ul>
+         <li>The before listener in a plugin with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
+         <li>The around listener in a plugin with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
+         <li>Other before listeners in plugins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
+         <li>Other around listeners in plugins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
+         <li>The after listener in a plugin with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
+         <li>Other after listeners in plugins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
+      </ul>
+      </p>
+   </li>
+</ul>
 
 <h2 id="plugin-intro">Example plugins</h2>
 
-To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method. The before prefix should be added to the name of an original method. For example:
+<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.</p>
+<p>The before prefix should be added to the name of an original method.</p>
+<p>For example:</p>
 
 <blockquote>
 <pre>
@@ -83,7 +101,7 @@ namespace My\Module\Model\Product;
 
 class Plugin
 {
-    public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
+    public function beforeSetName(\Magento\Catalog\Model\Product <code>$subject</code>, $name)
     {
         return array('(' . $name . ')');
     }
@@ -91,7 +109,11 @@ class Plugin
 </pre>
 </blockquote>
 
-To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method. The after prefix should be added to the name of an original method. For example:
+<p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
+
+<p>The after prefix should be added to the name of an original method.</p>
+
+<p>For example:</p>
 
 <blockquote>
 <pre>
@@ -99,7 +121,7 @@ namespace My\Module\Model\Product;
 
 class Plugin
 {
-    public function afterGetName(\Magento\Catalog\Model\Product $subject, $result)
+    public function afterGetName(\Magento\Catalog\Model\Product <code>$subject</code>, $result)
     {
         return '|' . $result . '|';
     }
@@ -107,7 +129,11 @@ class Plugin
 </pre>
 </blockquote>
 
-To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method. The around prefix should be added to the name of an original method. For example:
+<p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
+
+<p>The around prefix should be added to the name of an original method.</p>
+
+<p>For example:</p>
 
 <blockquote>
 <pre>
@@ -115,10 +141,10 @@ namespace My\Module\Model\Product;
 
 class Plugin
 {
-    public function aroundSave(\Magento\Catalog\Model\Product $subject, \Closure $proceed)
+    public function aroundSave(\Magento\Catalog\Model\Product <code>$subject</code>, \Closure <code>$proceed</code>)
     {
         $this->doSmthBeforeProductIsSaved();
-        $returnValue = $proceed();
+        $returnValue = <code>$proceed</code>();
         if ($returnValue) {
             $this->postProductToFacebook();
         }
@@ -128,16 +154,25 @@ class Plugin
 </pre>
 </blockquote>
 
-The around-listener method will receive two parameters ($subject and $proceed) followed by the arguments belonging to an original method. $subject parameter will provide an access to all public methods of the original class. $proceed parameter will call the next plugin or method.
-## Configuration inheritance
+<p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>) followed by the arguments belonging to an original method.</p>
 
-The configuration inheritance implies that a plugin applied to a class or interface is derived by the classes/interfaces, which implement/inherit an original class/interface.
+<p>The <code>$subject</code> parameter provides access to all public methods of the original class.</p>
 
-You can use the configuration inheritance to implement AOP-like functionality with plugins, for instance, to observe the same methods of all models.
+<p>The <code>$proceed</code> parameter calls the next plugin or method.</p>
 
-You can override the plugins defined in the global scope by changing di.xml file of an area.
+<h2 id="config-inheritance">Configuration inheritance</h2>
+
+<p>The configuration inheritance implies that a plugin applied to a class or interface is derived by the classes/interfaces, which implement/inherit an original class/interface.</p>
+
+<p>You can use the configuration inheritance to implement AOP-like functionality with plugins, for instance, to observe the same methods of all models.</p>
+
+<p>You can override the plugins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
+
 <h2 id="compiler-tool">The compiler tool</h2>
 
-Compiler tool will automatically generate the classes to manage your plugins. Compiler tool is also to be used to handle the performance slowdown caused by configuration inheritance.
+<p>The compiler tool automatically generates the classes to manage your plugins.</p>
+<p>The compiler tool also handles the performance slowdown caused by configuration inheritance.</p>
+
 <h2 id="generate-interceptions">Generate interceptions</h2>
-For details, see "Generating the Utility Classes.""
+
+<p>For details, see "Generating the Utility Classes."</p>
