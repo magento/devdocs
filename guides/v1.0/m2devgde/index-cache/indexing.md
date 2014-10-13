@@ -105,7 +105,7 @@ Reindexing flow is different for different type of reindex:
 
 Out of the box the Magento system has the following indexers implemented:
 
-table>
+<table>
 	<tbody>
 		<tr>
 			<th>Indexer Title</th>
@@ -164,7 +164,7 @@ Usage:  php -f {filename} -- [options]
    <indexer>     Comma separated indexer codes or value  "all" for all indexers
 </pre></blockquote>
 
-For `&lt;indexer>` use an indexer ID, as specified in the indexer configuration file.
+For `<indexer>` use an indexer ID, as specified in the indexer configuration file.
 
 
 <h2 id="m2devgde-indexing-custom">Adding a Custom Indexer</h2>
@@ -246,7 +246,7 @@ Example: The MView declaration of the Product Flat Date out of the box indexer.
  
  Let's imagine we decided to add functionality that pushes bestsellers to the top of a category listing. To implement this we would need to process "heavy weight" statistics about sales and change the product position accordingly. Here is where an indexer could help.
  
- Let's say that our functionality will reside in a new `&lt;Vendor>_Merchandizing` module (for details about module naming and location see Conventional Location of Custom Modules <p class="q">Reviewer: Not sure what link should be there, since I cannot find it on the website, only in wiki.</p>).
+ Let's say that our functionality will reside in a new `<Vendor>_Merchandizing` module (for details about module naming and location see Conventional Location of Custom Modules <p class="q">Reviewer: Not sure what link should be there, since I cannot find it on the website, only in wiki.</p>).
 
  First we need to write the appropriate code in the indexer class:
  
@@ -262,7 +262,7 @@ class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framew
  
 Then we need to declare the indexer:
 
- <blockquote><pre>Merchandizing/etc/indexer.xml
+<blockquote><pre>Merchandizing/etc/indexer.xml
 &lt;config&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd&quot;&gt;
 &lt;view&nbsp;id=&quot;&nbsp;merchandizing_popular_order&quot;&nbsp;class=&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;&nbsp;group=&quot;indexer&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;subscriptions&gt;
