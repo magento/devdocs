@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Install and configure MySQL
+title: Installing and configuring MySQL
 ---
 
 <h1 id="instgde-prereq-mysql">{{ page.title }}</h1>
