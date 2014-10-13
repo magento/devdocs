@@ -28,15 +28,15 @@ Our secondary goal is to provide solutions to the following:
 
 <h2 id="fedg_xlate_mage2_phrase">Using the Magento 2 Phrase Class</h2>
 
-Magento 2 translations start with the abstract <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Phrase.php" target="_blank">\Magento\Phrase</a> class. 
+Magento 2 translations start with the abstract <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">\Magento\Framework\Phrase</a> class. 
 
-This class implements the pattern `Replace Data Value with Object`, which basically replaces the string literal with an instance of `\Magento\Phrase` so you can use the `__toString()` method.
+This class implements the pattern `Replace Data Value with Object`, which basically replaces the string literal with an instance of `\Magento\Framework\Phrase` so you can use the `__toString()` method.
 
-The layer of indirection that existed earlier in Magento 1.x is now encapsulated in the `\Magento\Phrase` class.
+The layer of indirection that existed earlier in Magento 1.x is now encapsulated in the `\Magento\Framework\Phrase` class.
 
 To translate a phrase, create an instance of the class as follows:
 
-	`$message = new \Magento\Phrase('Value for "%1" is invalid: %2', array($code, $error));`
+	`$message = new \Magento\Framework\Phrase('Value for "%1" is invalid: %2', array($code, $error));`
 	$session->addError($message);
 	
 To simplify usage and reduce the impact on the existing code base, use the global function `__()` and its polymorphous interface. This serves as a shortcut to create a Phrase object:
@@ -53,19 +53,19 @@ To render a translated phrase, your code should look like the following:
 
 Although using a static setter in bootstrap has a number of issues and contradicts the principle of dependency injection, it works well in client code.
 
-Behind the <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Phrase/RendererInterface.php" target="_blank">\Magento\Phrase\RendererInterface</a>, there is a composite pattern implemented as <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Phrase/Renderer/Composite.php" target="_blank">\Magento\Phrase\Renderer\Composite</a>. It stacks multiple renderers. Each has single responsibility: one for translating, another for placeholder replacement, and so on.
+Behind the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase/RendererInterface.php" target="_blank">\Magento\Framework\Phrase\RendererInterface</a>, there is a composite pattern implemented as <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase/Renderer/Composite.php" target="_blank">\Magento\Framework\Phrase\Renderer\Composite</a>. It stacks multiple renderers. Each has single responsibility: one for translating, another for placeholder replacement, and so on.
 
 <h3 id="fedg_xlate_mage2_render_init">Initializing the Environment for Rendering</h3>
 
-Initialize the `\Magento\Phrase` class as follows:
+Initialize the `\Magento\Framework\Phrase` class as follows:
 
-	\Magento\Phrase::setRenderer($this->_objectManager->get('Magento\Phrase\RendererInterface'));
+	\Magento\Framework\Phrase::setRenderer($this->_objectManager->get('Magento\Phrase\RendererInterface'));
 	
 The object manager and dependency injection framework do all the work to provide the implementation behind the interface&mdash;stacking the composition of renderers.
 
 Because you use a global function `__()` and a static interface, you must rearrange some things in your tests. For convenience of assertions and fixtures, in unit tests use only the `Placeholder` renderer instead of `Composite`:
 
-	\Magento\Phrase::setRenderer(new \Magento\Phrase\Renderer\Placeholder());
+	\Magento\Framework\Phrase::setRenderer(new \Magento\Framework\Phrase\Renderer\Placeholder());
 
 <h2 id="fedg_xlate_xml-client">Implementing XML Client Code</h2>
 
