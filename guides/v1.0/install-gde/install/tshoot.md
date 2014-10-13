@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Troubleshoot your Magento 2 installation
+title: Troubleshooting your Magento 2 installation
 ---
 
 <h1 id="instgde-tshoot">{{ page.title }}</h1>
@@ -17,3 +17,19 @@ Problem: Cannot run 'composer install'
 Problem: Error during install: `PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
 
 Solution: 
+
+
+Problem: After install completes, error in browser
+
+
+Whoops, it looks like you have an invalid PHP version.
+
+Magento supports PHP 5.4.11 or newer. 
+
+Solution: Either upgrade PHP or restart Apache.
+
+
+Problem: Errors accssing the store or Admin after install indicating an error with the previous install (e.g., --base-url=localhost).
+
+Solution: Manually clear the cache and try again.
+

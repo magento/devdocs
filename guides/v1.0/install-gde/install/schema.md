@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Set up the database schema
+title: Setting up the database schema
 ---
 
 <h1 id="instgde-install-schema">{{ page.title }}</h1>

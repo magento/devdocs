@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Update Magento 2
+title: Updating Magento 2
 ---
 
 <h1 id="instgde-update">{{ page.title }}</h1>

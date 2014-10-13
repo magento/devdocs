@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Set security options
+title: Configuring security options
 ---
 
 <h1 id="instgde-prereq-security">{{ page.title }}</h1>
