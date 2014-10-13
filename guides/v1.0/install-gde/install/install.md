@@ -1,11 +1,21 @@
 ---
 layout: howtom2instgde_chapters
-title: Install Magento 2
+title: Installing and Reinstalling Magento 2
 ---
 
 <h1 id="instgde-install">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}install-gde/install/install.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+
+<h4>Contents</h4>
+
+See one of the following sections:
+
+*	<a href="#instgde-install-intro">Introduction to installing Magento 2</a>
+*	<a href="#instgde-install-prereq">Before you start your installation</a>
+*	<a href="#instgde-install-start">Getting started with your installation</a>
+*	<a href="#instgde-install-magento">Installing the Magento 2 software</a>
+*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento 2 software</a>
 
 <h2 id="instgde-install-intro">Introduction to installing Magento 2</h2>
 
@@ -39,7 +49,7 @@ After you complete the tasks discussed in the preceding section, update Composer
 	*	To install or update only users and administrators, see TBD
 	*	To only update existing Magento 2 components, see TBD
 	
-<h2 id="instgde-install-magento">Install the Magento 2 system software</h2>
+<h2 id="instgde-install-magento">Installing the Magento 2 software</h2>
 
 This section discusses how to run the command-line installer for Magento 2. Before you begin, you can run the following commands to find values for some required options:
 
@@ -210,4 +220,20 @@ For example, if Base URL is http://www.example.com and Admin Path is `admin`, th
 	
 	</tbody>
 </table>
+
+<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento 2 software</h2>
+
+This section discusses how to install the Magento 2 software after you installed it previously. You might do this in an development environment especialy to get all the latest code changes.
+
+To reinstall the Magento 2 software:
+
+1.	Optionally delete and re-create the database instance.
+2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
+3.	Enter the following commands in the order shown:
+
+	<pre>cd [your Magento install dir]/setup
+git pull
+composer install</pre>
+
+4.	Repeat the tasks discussed in <a href="#instgde-install-magento">Installing the Magento 2 software</a>.
 
