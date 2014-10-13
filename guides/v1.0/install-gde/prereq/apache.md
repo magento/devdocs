@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Install and configure Apache
+title: Installing and configuring Apache
 ---
 
 <h1 id="instgde-prereq-apache">{{ page.title }}</h1>

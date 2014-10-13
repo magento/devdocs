@@ -26,3 +26,10 @@ Whoops, it looks like you have an invalid PHP version.
 
 Magento supports PHP 5.4.11 or newer. 
 
+Solution: Either upgrade PHP or restart Apache.
+
+
+Problem: Errors accssing the store or Admin after install indicating an error with the previous install (e.g., --base-url=localhost).
+
+Solution: Manually clear the cache and try again.
+

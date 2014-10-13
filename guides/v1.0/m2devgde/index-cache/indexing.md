@@ -9,7 +9,7 @@ title: Working With Indexing
 
 <h2 id="m2devgde-indexing-intro">Introduction to Indexing</h2> 
 
-_Indexing_ is how the Magento system transforms data such as products, categories, and so on, to improve the performance of your web store. As data changes, the transformed data must be updated—or reindexed. 
+_Indexing_ is how the Magento system transforms data such as products, categories, and so on, to improve the performance of your web store. As data changes, the transformed data must be updated or reindexed. 
 
 The Magento system stores lots of merchant data (including catalog data, prices, users, stores, and so on) in database tables. Some of this data is a complex structure, for example a catalog product, which is linked to attributes, attribute sets, different scopes, related to catalog categories, and so on. So that when this data is requested, for example by a shopper navigating to a product page, the system needs to run a complex query with multiple joins. This can take a long time, possibly resulting in cart abandonment. To avoid it, you can transform the initial data to flat tables, which would boost the querying speed and therefore decreases the amount of time needed to display information to customers. This is what indexing is all about: transforming the data by creating index tables and keeping them up to date.  
 
@@ -145,7 +145,7 @@ Out of the box the Magento system has the following indexers implemented:
 	</tr>
 </table>
 
-<h2 id="m2devgde-indexing-commandline">Reference Information: Running Indexers From the Ñommand Line</h2>
+<h2 id="m2devgde-indexing-commandline">Reference Information: Running Indexers From the Command Line</h2>
 
 To work with indexers from the command line, use the following commands (f):
 
@@ -256,7 +256,7 @@ class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framew
     public function executeFull(); //Should take into account all placed orders in the system
     public function executeList($ids); //Works with a set of placed orders (mass actions and so on)
     public function executeRow($id); //Works in runtime for a single order using plugins
-    public function execute($ids); //Used by mview, allows you to process multiple placed orders in the “Update on schedule" mode
+    public function execute($ids); //Used by mview, allows you to process multiple placed orders in the "Update on schedule" mode
 }
 </pre></blockquote>
  

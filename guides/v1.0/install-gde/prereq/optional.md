@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Install optional software
+title: Installing optional software
 ---
 
 <h1 id="instgde-prereq-optional">{{ page.title }}</h1>

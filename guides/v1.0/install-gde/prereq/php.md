@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Install PHP 5.4 and required extensions
+title: Installing PHP 5.4 and required extensions
 ---
 
 <h1 id="instgde-prereq-php">{{ page.title }}</h1>
