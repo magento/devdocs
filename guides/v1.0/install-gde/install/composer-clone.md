@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Install Composer and clone the Magento 2 GitHub repository
+title: Installing Composer and cloning the Magento 2 GitHub repository
 ---
 
 <h1 id="instgde-prereq-compose-clone">{{ page.title }}</h1>
@@ -30,9 +30,11 @@ To install Composer:
 	
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
 
-<h2 id="instgde-prereq-compose-clone">Clone the Magento 2 GitHub repository</h2>
+<h2 id="instgde-prereq-compose-clone">Cloning the Magento 2 GitHub repository</h2>
 
 To clone the Magento 2 GitHub repository:
+
+1.	To clone the Magento 2 repository using secure shell (SSH), <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">generate SSH keys</a> and add the public key to GitHub.
 
 1.	Copy to the clipboard the Magento 2 GitHub repository SSH or HTTPS clone URL.
 
@@ -58,7 +60,7 @@ To clone the Magento 2 GitHub repository:
 	
 3.	Wait for the repository to clone on your server.
 
-<h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
+<h2 id="instgde-prereq-compose-access">Setting file system permissions and ownership</h2>
 
 After the clone is complete, set ownership of all Magento 2 files and directories and make sure they are writable by that user.
 
