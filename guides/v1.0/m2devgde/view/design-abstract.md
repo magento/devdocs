@@ -1,13 +1,13 @@
 ---
 layout: howtom2devgde_chapters
-title: Using Design Abstractions
+title: Design abstractions
 ---
- 
+
 <h1 id="m2devgde-design-abstract">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/view/design-abstract.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-design-abstract-intro">Introduction to Design Abstractions</h2> 
+<h2 id="m2devgde-design-abstract-intro">Overview</h2>
 
 
 A design abstraction is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type providing business users the ability to customize design for certain type of pages. In particular design abstractions are used in the widget creation to define the types of pages where a widget can be displayed.

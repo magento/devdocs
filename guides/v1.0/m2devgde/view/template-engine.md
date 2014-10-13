@@ -1,19 +1,19 @@
 ---
 layout: howtom2devgde_chapters
-title: Working With the Template Engine
+title: Template engine
 ---
- 
+
 <h1 id="m2devgde-temp-eng">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/view/template-engine.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-temp-eng-over">Overview</h2> 
+<h2 id="m2devgde-temp-eng-over">Overview</h2>
 A template engine is a mechanism for rendering HTML output from templates associated with page layout blocks. The Magento template rendering subsystem can support multiple template engines, including the default PHP-based engine for processing PHTML templates.
 
-This article describes the design of the Magento template rendering subsystem and the implementation of the default template engine, and provides instructions on how to add a custom engine to support templates other than PHTML. 
+This article describes the design of the Magento template rendering subsystem and the implementation of the default template engine, and provides instructions on how to add a custom engine to support templates other than PHTML.
 
-<h2 id="m2devgde-temp-eng-role">Role of the Magento Template Engine in Rendering HTML Output</h2> 
-A template engine is invoked during page layout processing. Any page layout is a hierarchy of containers, which are placeholders for content, and blocks, which actually generate content.  Each block corresponds to a certain Magento PHP class. 
+<h2 id="m2devgde-temp-eng-role">Role of the Magento Template Engine in Rendering HTML Output</h2>
+A template engine is invoked during page layout processing. Any page layout is a hierarchy of containers, which are placeholders for content, and blocks, which actually generate content.  Each block corresponds to a certain Magento PHP class.
 
 All block classes are inherited from either <code>Magento\Framework\View\Element\AbstractBlock</code> or <code>Magento\Framework\View\Element\Template</code> (which in its turn is inherited from <code>AbstractBlock</code>).
 
@@ -73,7 +73,7 @@ _lib/Magento/View
 &nbsp;&nbsp;&nbsp;|--Php.php
 </pre>
 
-The default engine for working with templates is the <code>Magento\Framework\View\TemplateEngine\Php</code> class. 
+The default engine for working with templates is the <code>Magento\Framework\View\TemplateEngine\Php</code> class.
 
 <h3 id="m2devgde-temp-eng-basic">Basic Classes</h3>
 The class diagram of the basic classes implementing the template rendering subsystem:
@@ -211,7 +211,7 @@ The Magento template rendering subsystem supports the following:
 <h2>Adding a New Template Engine</h2>
 To add support for a new template engine:
 
-1. Save the template engine code base in your Magento instance directory. 
+1. Save the template engine code base in your Magento instance directory.
 2. Create a new implementation of <code>Magento\Framework\View\TemplateEngineInterface</code>. This class is used to initialize the underlying template engine, and must also implement the <code>render()</code> function responsible for invoking the template engine on the given template file.
 3. Register a newly introduced engine class through the DI configuration to process template files of a certain type as follows:
 <pre>

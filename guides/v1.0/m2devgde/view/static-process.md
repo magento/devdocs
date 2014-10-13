@@ -1,106 +1,240 @@
 ---
 layout: howtom2devgde_chapters
-title: How Magento 2 Processes Static Files
+title: Static file processing
 ---
- 
+
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>
-
 <p><a href="{{ site.githuburl }}m2devgde/view/static-process.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<h2 id="m2devgde-static-proc-intro">Overview</h2>
+<p>When a browser loads a web page and requests a static view file such as a JavaScript, CSS, or image file, or another page asset,
+   the Magento system processes the requested file before it returns the file to the browser.
+</p>
+<p>This processing can include searching for a not-found file in additional locations, file merging, and file minification.</p>
+<p>Whenever a static view file is requested in the Magento application,
+   it uses the appropriate mechanisms for the file type and system configuration, as follows:
+</p>
+<dl>
+   <dt>View file fallback mechanism</dt>
+   <dd>
+      <p>When a view file is not found in the requested location, Magento uses rules to search for the file in additional locations.</p>
+      <p>The following diagram shows how Magento processes static view files:</p>
+      <p><img src="{{ site.baseurl }}common/images/Preprocesing_assets.png" alt="Static view files processing flow"></p>
+   </dd>
+   <dt>CSS files preprocessing</dt>
+   <dd>
+      <p>Magento generates CSS files from LESS files.</p>
+   </dd>
+   <dt>CSS and JavaScript file merging</dt>
+   <dd>
+      <p>Magento merges all CSS or JavaScript assets linked in the &lt;head> element of the page into a single files and replaces referenced files with a single reference.</p>
+   </dd>
+   <dt>JavaScript files minifying</dt>
+   <dd>
+      <p>Magento removes white spaces and comments.
+   </dd>
+</dl>
+<h2 id="example-fallback">Fallback mechanism example</h2>
+<p>This example illustrates the fallback mechanism.</p>
+<p>The <code>http://magento2.lh/pub/static/frontend/Magento/theme/en_GB/logo.gif</code> URL requests the <code>logo.gif</code> image file.</p>
+<p>The file is requested from Magento API as <code>logo.gif</code>:</p>
+<blockquote>
+   <pre>
+$this->getViewFileUrl('logo.gif');
+</pre>
+</blockquote>
+<p>The current system context is:</p>
 
-<h2 id="m2devgde-static-proc-intro">Introduction to Static File Processing</h2> 
+<table>
+   <tr>
+      <th>application area</th>
+      <td>frontend</td>
+   </tr>
+   <tr>
+      <th>theme</th>
+      <td><code>theme</code>, which inherits <code>parent_theme</code></td>
+   </tr>
+   <tr>
+      <th>language</th>
+      <td><code>en_GB</code></td>
+   </tr>
+</table>
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Static+View+Files+Processing
+<p>By using theme inheritance and view file fallback rules, the system searches in this order for these files:</p>
+<ol>
+   <li><code>app/design/frontend/theme/web/i18n/en_GB/logo.gif</code></li>
+   <li><code>app/design/frontend/theme/web/logo.gif</code></li>
+   <li><code>app/design/frontend/parent_theme/web/i18n/en_GB/logo.gif</code></li>
+   <li><code>app/design/frontend/parent_theme/web/logo.gif</code></li>
+</ol>
+<p>If the file is found, it is published in the following fully qualified location: <code>pub/static/frontend/theme/en_GB/logo.gif</code>.</p>
+<p>The path inside the <code>pub/static</code> directory coincides with initial path in the <code>app/design</code> directory.</p>
+<h2 id="publish-static-view-files">Static view file publication</h2>
+<p>Static files in their initial location might be not web accessible. To enable the Magento server to deliver static files, locate them in the public <code>pub/static</code> directory. The copy process is also known as <i>publication</i>.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40"/>
+<span class="glyphicon-class">
+ <p>Any files that you manuallly upload to the application, for example, product images, are always stored in <code>pub/media</code>.</p>
+ </span>
+</div>
+<p>The publication logic depends on the application mode:</p>
+<dl>
+   <dt>Default mode</dt>
+   <dd>Static files are published automatically when the requested file does not exist in the <code>pub/static</code> directory, or it exists but the original file was modified.</dd>
+   <dt>Production mode</dt>
+   <dd>To publish files, you must run the view files deployment tool. The script is located in <code>dev/tools/Magento/Tools/View/deploy.php</code>.</dd>
+   <dt>Developer mode</dt>
+   <dd>Files are not published. Though you can still run the deployment tool, all static view files are cached in the <code>pub/static</code> directory.
+   So, if a frontend developer changes any static view file, they must re-run the tool after each change.</dd>
+</dl>
+<h2 id="css-files">CSS file publication</h2>
+<p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
+<h3 id="merging-enabled">Merging enabled</h3>
+<p>If CSS merging is enabled in your Magento instance, a CSS file copied from <code>app/design/&lt;area>/&lt;vendor>/&lt;theme></code> to <code>pub/static</code> is also parsed for references to other static resources, such as images or other CSS files.</p>
+<p>To enable publication of these files, reference them in a CSS file, as follows:</p>
+<ul>
+   <li>Use the CSS <code>url()</code> directive to reference the file.</li>
+   <li>Use a relative path to reference the file. The system does not recognize absolute URLs or URIs.</li>
+</ul>
+<p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css/styles.css</code>,
+the identified references are published from following locations:</p>
 
+<table>
+<col width="50%">
+<col width="50%">
+   <thead>
+      <tr>
+         <th>Reference</th>
+         <th>Resulting file</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>url('../images/arrow.gif')</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/images/arrow.gif</code></td>
+      </tr>
+      <tr>
+         <td><code>url(../images/arrow.gif)</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/images/arrow.gif</code></td>
+      </tr>
+      <tr>
+         <td><code>url("callout.png")</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/css/callout.png</code></td>
+      </tr>
+      <tr>
+         <td><code>@include url('./styles-ie.css');</code></td>
+         <td><code>app/design/frontend/default/demo/css/styles-ie.css</code></td>
+      </tr>
+      <tr>
+         <td><code>@include './styles-ie.css';</code></td>
+         <td>N/A. The <code>@include</code> without <code>url()</code> is NOT recognized.</td>
+      </tr>
+      <tr>
+         <td><code>url("http://example.com/image.jpg")</code>
+            or <code>url("https://example.com/image.jpg")</code>
+         </td>
+         <td>N/A. Absolute URL.</td>
+      </tr>
+      <tr>
+         <td><code>url("/image.jpg")</code></td>
+         <td>N/A. Absolute URI.</td>
+      </tr>
+   </tbody>
+</table>
+
+<p>The referenced files can be located on different fallback levels, the publishing mechanism locates them recursively.</p>
+<h3 id="merging-disabled">Merging disabled</h3>
+<p>If CSS merging is disabled, CSS files are not parsed for references during the publication process.</p>
+<p>Instead, the server requests the resource as soon as it is displayed on a browser page.</p>
+<p>If the requested file is intended to be in the <code>pub/static</code> directory, the web server processes it and optionally, depending on the application mode, publishes it.</p>
+<h3 id="context-notation">Context notation in CSS file references</h3>
+<p>You can reference resources in CSS files relative to a theme or a certain module using scope notation.</p>
+<p>The resulting link to a resource in the published file is relative to the original CSS file.</p>
+<p>For example:</p>
+
+<table>
+   <col width="33%">
+   <col width="33%">
+   <col width="33%">
+   <thead>
+      <tr>
+         <th>Original CSS file</th>
+         <th>Reference with context notation</th>
+         <th>Resulting reference</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>css/one/two/file.css</code></td>
+         <td><code>url(Namespace_Module::images/image.gif)</code></td>
+         <td><code>url(../../../Namespace_Module/images/image.gif)</code></td>
+      </tr>
+      <tr>
+         <td><code>Namespace_OrigModule::css/one/two/file.css</code></td>
+         <td><code>url(Namespace_Module::images/image.gif)</code></td>
+         <td><code>url(../../../../Namespace_Module/images/image.gif)</code></td>
+      </tr>
+   </tbody>
+</table>
+
+<h2 id="static-view-files-url-resolution">URL resolution for static view files</h2>
+<p>The URL resolution mechanism builds URLs for static view files.</p>
+<p>The mechanism also performs file publishing, if the initial location is not web accessible.</p>
+<p>The following description of the URL resolution process illustrates the static view files processing from the prospective of the logic involved.</p>
+<p>A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and locale code. The URL path is generated from a file ID: an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.</p>
+<p>The following diagram illustrates how a URL to a static view file is generated:</p>
+<p><img src="{{ site.baseurl }}common/images/va_10.png" alt="Generate a URL to a static view file"></p>
+<p>The diagram uses these notations:</p>
+<ul>
+   <li><b>Client code</b>. Any client code that needs a URL to a static file.
+   Typically, a page template, but can be a layout XML or helper file.</li>
+   <li><b>AbstractBlock</b>. <code>\Magento\Framework\View\Element\AbstractBlock</code>.</li>
+   <li><b>AssetRepository</b>. <code>\Magento\Framework\View\Asset\Repository</code>.</li>
+   <li><b>AssetContext</b>. <code>\Magento\Framework\View\Asset\ContextInterface</code>.</li>
+   <li><b>Asset</b>. <code>\Magento\Framework\View\Asset\File</code>.</li>
+</ul>
+<p>To generate a URL for a static file, client code uses the <code>getUrl()</code> or <code>getUrlWithParams()</code> method of the asset repository.</p>
+<p>The asset repository is <code>\Magento\Framework\View\Asset\Repository</code>.</p>
+<p>The repository:</p>
+<ol>
+   <li>Determines all necessary parameters and context.</li>
+   <li>Creates a <code>\Magento\Framework\View\Asset\File</code> object.</li>
+   <li>Uses the <code>File::getUrl()</code> method to get the necessary URL to the static view file.</li>
+</ol>
+<p>If a client requests the URL, the web server handles it as a separate request:</p>
+<ul>
+<li>If the file already exists in the specified location in the <code>pub/static</code> directory, a web server returns it as-is, as a static resource.</li>
+<li>If the file does not exist in the specified location, an internal URL rewrite rule from <code>pub/static/.htaccess</code> routes the request to the <code>pub/static.php</code> entry point, which publishes the file to this location in <code>pub/static</code> and returns the file content.</li>
+<h3 id="example-url-resolution">URL resolution example</h3>
+<p>The context:</p>
+
+<table>
+   <tbody>
+      <tr>
+         <th>Current area</th>
+         <td>frontend</td>
+      </tr>
+      <tr>
+         <th>Current theme</th>
+         <td><code>Magento/blank</code></td>
+      </tr>
+      <tr>
+         <th>Current locale</th>
+         <td><code>en_US</code></td>
+      </tr>
+      <tr>
+         <th>Requested file</th>
+         <td><code>Magento_Catalog::images/product.gif</code></td>
+      </tr>
+      <tr>
+         <th>Public static directory base URL</th>
+         <td><code>http://magento.example.com/pub/static</code></td>
+      </tr>
+   </tbody>
+</table>
+
+<p>The generated URL is: <code>http://magento.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
-
-<h2 id="help">Helpful Aids for Writers</h2>
-
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
-
-### General Markdown Authoring Tips
-
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
-
-### Note, Tip, Important, Caution
-
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
-
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
-
-### Tables
-
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
-
-HTML table:
-
-<table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
-</table>
-
-### Images
-
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
-
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
-
-You can also use a title tag to provide a mouseover tooltip.
-
-HTML example:
-
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
-
-Markdown example using an alt tag:
-
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
-
-### Cross-References
-
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
-
+ <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>
+ </span></div>
