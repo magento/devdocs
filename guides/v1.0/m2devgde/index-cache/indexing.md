@@ -9,7 +9,7 @@ title: Working With Indexing
 
 <h2 id="m2devgde-indexing-intro">Introduction to Indexing</h2> 
 
-_Indexing_ is how the Magento system transforms data such as products, categories, and so on, to improve the performance of your web store. As data changes, the transformed data must be updated—or reindexed. 
+_Indexing_ is how the Magento system transforms data such as products, categories, and so on, to improve the performance of your web store. As data changes, the transformed data must be updated or reindexed. 
 
 The Magento system stores lots of merchant data (including catalog data, prices, users, stores, and so on) in database tables. Some of this data is a complex structure, for example a catalog product, which is linked to attributes, attribute sets, different scopes, related to catalog categories, and so on. So that when this data is requested, for example by a shopper navigating to a product page, the system needs to run a complex query with multiple joins. This can take a long time, possibly resulting in cart abandonment. To avoid it, you can transform the initial data to flat tables, which would boost the querying speed and therefore decreases the amount of time needed to display information to customers. This is what indexing is all about: transforming the data by creating index tables and keeping them up to date.  
 
@@ -38,7 +38,7 @@ The following components are involved in the indexing process:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td>`Magento_Indexer` module</td>
+		<td><code>Magento_Indexer</code> module</td>
 		<td><a href="{{ site.mage2000url }}app/code/Magento/Indexer" target="_blank">app/code/Magento/Indexer</a></td> 
 		<td>Implements:<ul>	
 <li>indexer declaration</li> 
@@ -47,18 +47,18 @@ The following components are involved in the indexing process:
 <li>indexer status</li></ul></td>
 	</tr>
 	<tr>
-		<td>`Magento\Framework\Mview` library</td>
+		<td><code>Magento\Framework\Mview</code> library</td>
 		<td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Mview" target="_blank">lib/internal/Magento/Framework/Mview</a></td> 
 		<td><ul>	
 <li>Allows tracking database changes for a certain entity (product, category and so on) and running change handler.</li> 
 <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing PHP code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
 	</tr>
-</table>
+</tbody></table>
 
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
 	<span class="glyphicon-class">
-    <p>`Magento_Indexer` replaces the old `Magento_Index` module, and all new development should use `Magento_Indexer`. </p></span>
+    <p><code>Magento_Indexer</code> replaces the old <code>Magento_Index</code> module, and all new development should use <code>Magento_Indexer</code>. </p></span>
   </div>
   
   
@@ -74,6 +74,15 @@ The type of reindex performed in each particular case depends on the type of cha
 
 A full reindex can be triggered manually using the <a href="#m2devgde-indexing-commandline">command line</a>.
 
+<h3 id="m2devgde-indexing-status">Indexer Status</h3>
+
+Depending on whether an index data is up to date, an indexer status value is one of the following:
+
+*	valid: data is synchronized, no reindex required
+*	invalid: the original data was changed, the index should be updated
+
+The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the Admin panel under **System > New Index Management** or manually using the <a href="#m2devgde-indexing-commandline">command line</a>.
+
 <h3 id="m2devgde-indexing-modes">Indexing Modes</h3>
 
 Reindexing can be performed in two modes: 
@@ -81,9 +90,9 @@ Reindexing can be performed in two modes:
 *	Update on save: index tables are updated right after the dictionary data is changed.
 *	Update on schedule: index tables are updated by cron jobs according to the configured schedule.
 
-You can set the running mode for indexers in the Admin panel under *System > New Index Management* or using the <a href="#m2devgde-indexing-commandline">command line</a>.
+You can set the running mode for indexers in the Admin panel under **System > New Index Management** or using the <a href="#m2devgde-indexing-commandline">command line</a>.
 
-For indexers to run in the "Update on schedule" mode, you need to configure cron on your server. Additionally you can configure cron schedule for indexers in the Admin panel under *Stores > Configuration > ADVANCED > System*.
+For indexers to run in the "Update on schedule" mode, you need to configure cron on your server. Additionally you can configure cron schedule for indexers in the Admin panel under **Stores > Configuration > ADVANCED > System**.
 
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
@@ -143,26 +152,25 @@ Out of the box the Magento system has the following indexers implemented:
 		<td><a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Indexer/Product/Category.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Category</a></td>
 		<td>Creates category/products association. Triggered when a product changes</td>
 	</tr>
-</table>
+</tbody></table>
 
-<h2 id="m2devgde-indexing-commandline">Reference Information: Running Indexers From the Ñommand Line</h2>
+<h2 id="m2devgde-indexing-commandline">Reference Information: Running Indexers From the command Line</h2>
 
 To work with indexers from the command line, use the following commands (f):
 
 <blockquote><pre>
-Usage:  php -f {filename} -- [options]
-  
-   --status <indexer>            Show Indexer(s) Status
-   --mode <indexer>              Show Indexer(s) Index Mode
-   --mode-realtime <indexer>     Set index mode type  "Update on Save"
-   --mode-schedule <indexer>     Set index mode type  "Update by Schedule"
-   --reindex <indexer>           Reindex Data
-   info                          Show allowed indexers
-   reindexall                    Reindex Data by all indexers
-   help                          This help
-  
-   <indexer>     Comma separated indexer codes or value  "all" for all indexers
-</pre></blockquote>
+Usage:&nbsp;&nbsp;php&nbsp;-f&nbsp;{filename}&nbsp;--&nbsp;[options]
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;--status&nbsp;&lt;indexer&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;Indexer(s)&nbsp;Status
+&nbsp;&nbsp;&nbsp;--mode&nbsp;&lt;indexer&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;Indexer(s)&nbsp;Index&nbsp;Mode
+&nbsp;&nbsp;&nbsp;--mode-realtime&nbsp;&lt;indexer&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;index&nbsp;mode&nbsp;type&nbsp;&nbsp;&quot;Update&nbsp;on&nbsp;Save&quot;
+&nbsp;&nbsp;&nbsp;--mode-schedule&nbsp;&lt;indexer&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set&nbsp;index&nbsp;mode&nbsp;type&nbsp;&nbsp;&quot;Update&nbsp;by&nbsp;Schedule&quot;
+&nbsp;&nbsp;&nbsp;--reindex&nbsp;&lt;indexer&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reindex&nbsp;Data
+&nbsp;&nbsp;&nbsp;info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show&nbsp;allowed&nbsp;indexers
+&nbsp;&nbsp;&nbsp;reindexall&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reindex&nbsp;Data&nbsp;by&nbsp;all&nbsp;indexers
+&nbsp;&nbsp;&nbsp;help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This&nbsp;help
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&lt;indexer&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comma&nbsp;separated&nbsp;indexer&nbsp;codes&nbsp;or&nbsp;value&nbsp;&nbsp;&quot;all&quot;&nbsp;for&nbsp;all&nbsp;indexers</pre></blockquote>
 
 For `<indexer>` use an indexer ID, as specified in the indexer configuration file.
 
@@ -189,7 +197,7 @@ Your custom indexer class should implement <a href="{{ site.mage2000url }}app/co
 
 <h3 id="m2devgde-indexing-customconfiguration">Indexer Configuration</h3>
 
-In the the etc directory of your module add the indexer.xml file where you declare the following:
+In the the `etc` directory of your module add `indexer.xml` file where you declare the following:
 
 *	indexer ID
 *	indexer class name 
@@ -199,7 +207,8 @@ In the the etc directory of your module add the indexer.xml file where you decla
 
 Example: The declaration of the Product Flat Date out of the box indexer.
 
-<blockquote><pre>app/code/Magento/Catalog/etc/indexer.xml
+
+<blockquote><pre><b><code>app/code/Magento/Catalog/etc/indexer.xml</code></b>
 &lt;config&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;indexer&nbsp;id=&quot;catalog_product_flat&quot;&nbsp;view_id=&quot;catalog_product_flat&quot;&nbsp;class=&quot;Magento\Catalog\Model\Indexer\Product\Flat&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&nbsp;translate=&quot;true&quot;&gt;Product&nbsp;Flat&nbsp;Data&lt;/title&gt;
@@ -212,7 +221,7 @@ All indexers related to a module can be declared in one file.
 
 <h3 id="m2devgde-indexing-mview">MView Configuration</h3>
 
-Add the the mview.xml configuration file in the etc module directory, where you declare the following:
+Add the the `mview.xml` configuration file in the `etc` module directory, where you declare the following:
 
 *	indexer view ID
 *	indexer class
@@ -221,7 +230,7 @@ Add the the mview.xml configuration file in the etc module directory, where you 
 
 Example: The MView declaration of the Product Flat Date out of the box indexer.
 
-<blockquote><pre>app/code/Magento/Catalog/etc/mview.xml
+<blockquote><pre><b><code>app/code/Magento/Catalog/etc/mview.xml</code></b>
 &lt;config&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;view&nbsp;id=&quot;catalog_product_flat&quot;&nbsp;class=&quot;Magento\Catalog\Model\Indexer\Product\Flat&quot;&nbsp;group=&quot;indexer&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;subscriptions&gt;
@@ -256,13 +265,24 @@ class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framew
     public function executeFull(); //Should take into account all placed orders in the system
     public function executeList($ids); //Works with a set of placed orders (mass actions and so on)
     public function executeRow($id); //Works in runtime for a single order using plugins
-    public function execute($ids); //Used by mview, allows you to process multiple placed orders in the “Update on schedule" mode
+    public function execute($ids); //Used by mview, allows you to process multiple placed orders in the "Update on schedule" mode
 }
 </pre></blockquote>
  
 Then we need to declare the indexer:
 
-<blockquote><pre>Merchandizing/etc/indexer.xml
+<blockquote><pre><b><code>Merchandizing/etc/indexer.xml</code></b>
+&lt;config&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd&quot;&gt;
+&lt;view&nbsp;id=&quot;&nbsp;merchandizing_popular_order&quot;&nbsp;class=&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;&nbsp;group=&quot;indexer&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;subscriptions&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&nbsp;name=&quot;sales_order_flat&quot;&nbsp;entity_column=&quot;order_id&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/subscriptions&gt;
+&lt;/view&gt;
+</pre></blockquote>
+
+And finally, we must declare our indexer view (`merchandizing_popular_order`) that tracks sales when the indexer is set to run  in the "Update on schedule" mode.
+
+<blockquote><pre><b><code>Merchandizing/etc/mview.xml</code></b>
 &lt;config&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd&quot;&gt;
 &lt;view&nbsp;id=&quot;&nbsp;merchandizing_popular_order&quot;&nbsp;class=&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;&nbsp;group=&quot;indexer&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;subscriptions&gt;
@@ -275,6 +295,6 @@ These settings launch `Vendor\Merchandizing\Model\Indexer\Popular::execute` meth
 
 Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.  
 
-The Popular Product indexer must appear in the list of indexers under *System > New Index Management (Index Management)*.
+The Popular Product indexer must appear in the list of indexers under **System > New Index Management (Index Management)**.
  
  
