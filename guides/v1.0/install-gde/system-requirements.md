@@ -34,3 +34,9 @@ Before you install Magento 2, make sure your system meets or exceeds the followi
 
 	*	<a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later
     *	PHPUnit (as a command-line tool) 3.7 or later 
+	
+
+	
+
+
+	

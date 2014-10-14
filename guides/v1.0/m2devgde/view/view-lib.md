@@ -1,11 +1,12 @@
 ---
-title: Using the View Library
+title: The Magento 2 view library
 layout: howtom2devgde_chapters
 ...
 
-{{ Magento\_View Library }}
+<h1 id="m2devgde-static-proc">{{ page.title }}</h1>
+<p><a href="{{ site.githuburl }}m2devgde/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2>Overview</h2>
+<h2 id="view-library-overview">Overview</h2>
 
 An independent view layer domain, the View component was created to eliminate
 global dependencies
@@ -16,13 +17,13 @@ View component, and remain independent from each other.
 The View component is represented
 as `Magento\Framework\View` library: `magento2/lib/Magento/Framework/View`.
 
-<h2>Using Magento\Framework\View Library</h2>
+<h2 id="framework-view-library">The Magento\Framework\View Library</h2>
 
 The View component contains contains basic classes, factories and interfaces
 used to implement HTML content rendering  for the frontend and backend
 application areas. 
 
-<h2>Magento\View Library Components</h2>
+<h2 id="library-components">Magento\View Library Components</h2>
 
 The `Magento\Framework\View` library has the following components:
 

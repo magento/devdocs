@@ -15,13 +15,74 @@ Before you install Magento, you must do all of the following:
 *	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
 *	Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.
 
-Magento _strongly _recommends you observe the following guidelines when you set up your Magento database:
+<h2 id="instgde-prereq-check">Prerequisite check</h2>
 
-*	Magento uses <a href="http://dev.mysql.com/doc/refman/5.0/en/triggers.html" target="_blank">MySQL database triggers</a> to improve database access during reindexing. Magento does not support any custom triggers in the Magento database because custom triggers can introduce incompatibilities with future Magento versions.
-*	Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.
-*	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.
+To check your system for prerequisites, enter the following commands:
 
-#### Related Topics
+*	PHP
+
+	`php -v`
+	
+	You must run PHP version 5.4.33 or later as the following result indicates:
+	
+	<pre>PHP 5.4.33 (cli) (built: Sep 20 2014 16:20:03)
+Copyright (c) 1997-2014 The PHP Group
+Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
+
+	To install or upgrade PHP, see <a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>.
+
+*	Apache
+
+	CentOS: `httpd -v`
+	
+	Ubuntu: TBD
+	
+	You must run Apache version 2.2 or later as the following result indicates:
+	
+	<pre>Server version: Apache/2.2.15 (Unix)
+Server built:   Jul 23 2014 14:17:29</pre>
+
+	To install or upgrade Apache, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>.
+
+*	MySQL
+
+	`mysql -u [database root user or database owner name] -p`
+	
+	For example:
+	
+	`mysql -u magento -p`
+	
+	You must run MySQL version 5.5 or later as the following result indicates:
+	
+	<pre>Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 78
+Server version: 5.5.40 MySQL Community Server (GPL) by Remi
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</pre>
+
+	Enter `exit` at the `mysql>` prompt to exit.
+	
+	To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>.
+	
+<h2>Next steps</h2>
+
+Either install required software discussed in the next section or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>.
+	
+#### Related topics
+
+*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling Magento 2</a>
+
+
 
 
 

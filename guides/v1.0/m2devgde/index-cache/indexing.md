@@ -297,4 +297,3 @@ Now when an order is placed, the Popular Products indexer calculates the sorting
 
 The Popular Product indexer must appear in the list of indexers under **System > New Index Management (Index Management)**.
  
- 

@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Install PHP 5.4 and required extensions
+title: Installing PHP 5.4 and required extensions
 ---
 
 <h1 id="instgde-prereq-php">{{ page.title }}</h1>
@@ -41,7 +41,7 @@ To upgrade to PHP 5.4, enter the following commands:
 <pre>cd /tmp
 rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-yum --enablerepo=remi install httpd php php-common</pre>
+yum -y --enablerepo=remi install httpd php php-common</pre>
 
 To verify PHP 5.4 is installed, enter `php -v`. The command displays results similar to the following:
 
@@ -64,3 +64,12 @@ TBD
 `PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
 
 TBD
+
+#### Related topics
+
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling Magento 2</a>

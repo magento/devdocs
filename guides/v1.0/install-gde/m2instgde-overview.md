@@ -17,22 +17,23 @@ TBD
 
 Following are the major topics in this guide:
 
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements (R)</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento 2 (R)</a>
+*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento 2</a>
 
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions (R)</a>
+	*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Setting security options</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-overview.html">Magento 2 installation options (R)</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-overview.html">Magento 2 installation options</a>
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento 2 GitHub repository (R)</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install.html">Install Magento 2 (R)</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/schema.html">Set up the database schema</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/admin-users.html">Create and update users and administrators</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/update.html">Update Magento 2</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling Magento 2</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/schema.html">Setting up the database schema</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/admin-users.html">Creating and updating users and administrators</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/update.html">Updating Magento 2</a>
 
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify your Magento 2 installation (R)</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify your Magento 2 installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/tshoot.html">Troubleshoot your Magento 2 installation</a>
 
