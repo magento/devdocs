@@ -214,5 +214,5 @@ To create custom language package:
 To create a translation for a module or a theme:
 
 1.	Run the <a href="#m2devgde-xlate-generatortool">dictionary generator tool</a> for a directory or a theme, for which you need to create a translation.
-1.	Make the necessary translations for a module or a theme. </li>
+1.	Make the necessary translations for a module or a theme. 
 1.	Run the <a href="#m2devgde-xlate-packtool">language pack tool</a> to upload a dictionary. Alternatively, upload a dictionary file to `i18n` folder of a module or a theme, for instance: `app/code/Vendor/CustomModule/i18n/fr_FR.csv`.
