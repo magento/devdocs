@@ -15,7 +15,9 @@ The Magento system stores lots of merchant data (including catalog data, prices,
 
 The Magento application contains several indexers out of the box, but you might want to add your own if your customization needs performing data searches, which are not optimized by the Magento default indexers.
 
-This articles contains a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer. It is aimed at backend developers and assumes readers are familiar with the Magento modular architecture and config implementation. <p class="q">Reviewer: Not sure what links should be there, since I cannot find at the the website the landing pages (for modular architecutre and configurations) existing in wiki.</p>
+This articles contains a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer. It is aimed at backend developers and assumes readers are familiar with the Magento modular architecture and config implementation. 
+
+<p class="q">Reviewer: Not sure what links should be there, since I cannot find at the the website the landing pages (for modular architecutre and configurations) existing in wiki.</p>
 
 
 <h2 id="m2devgde-indexing-terms">Terms Used</h2> 
@@ -177,7 +179,9 @@ For `<indexer>` use an indexer ID, as specified in the indexer configuration fil
 
 <h2 id="m2devgde-indexing-custom">Adding a Custom Indexer</h2>
 
-If you want to customize the Magento application, we highly recommend you not to modify the core Magento code, but to add your own module(s) <p class="q">Reviewer: Not sure what link should be there, since I cannot find it on the website, only in wiki.</p> instead. 
+If you want to customize the Magento application, we highly recommend you not to modify the core Magento code, but to add your own module(s) instead. 
+
+<p class="q">Reviewer: Not sure what link should be there, since I cannot find it on the website, only in wiki.</p> 
 
 To implement your own indexer, add the following code in your module:
 
@@ -255,7 +259,9 @@ Example: The MView declaration of the Product Flat Date out of the box indexer.
  
  Let's imagine we decided to add functionality that pushes bestsellers to the top of a category listing. To implement this we would need to process "heavy weight" statistics about sales and change the product position accordingly. Here is where an indexer could help.
  
- Let's say that our functionality will reside in a new `<Vendor>_Merchandizing` module (for details about module naming and location see Conventional Location of Custom Modules <p class="q">Reviewer: Not sure what link should be there, since I cannot find it on the website, only in wiki.</p>).
+ Let's say that our functionality will reside in a new `<Vendor>_Merchandizing` module (for details about module naming and location see Conventional Location of Custom Modules).
+ 
+ <p class="q">Reviewer: Not sure what link should be there, since I cannot find it on the website, only in wiki.</p>
 
  First we need to write the appropriate code in the indexer class:
  
