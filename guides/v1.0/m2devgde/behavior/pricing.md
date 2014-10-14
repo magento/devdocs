@@ -1,4 +1,4 @@
-﻿---
+---
 <p class="q"> Should I delete these?</p>
 layout: howtom2devgde_chapters
 title: Using the Pricing Library
