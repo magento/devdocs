@@ -1,13 +1,13 @@
 ---
 layout: howtom2devgde_chapters
-title: Using Page Types
+title: Page types
 ---
- 
+
 <h1 id="m2devgde-page-type">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/view/page-type.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-area-intro">Introduction to Page Types</h2> 
+<h2 id="m2devgde-area-intro">Overview</h2>
 
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Page+Types
 
@@ -36,7 +36,7 @@ There is an example of Note in the first section.
 	<span class="glyphicon-class">
     <p>This is important. </p></span>
   </div>
-  
+
 <div class="bs-callout bs-callout-warning" id="warning">
   <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">

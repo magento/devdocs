@@ -1,106 +1,360 @@
 ---
 layout: howtom2devgde_chapters
-title: Using XML Schema For Your Layout
+title: XML layouts and schemas
 ---
- 
+
 <h1 id="m2devgde-xml-layout">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}m2devgde/view/xml-schema-layout.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h2 id="m2devgde-xml-layout-intro">Introduction to Magento 2 XML Layout Schema</h2> 
-
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Magento+XML+Schema+For+Layout
-
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
-
-<h2 id="help">Helpful Aids for Writers</h2>
-
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
-
-### General Markdown Authoring Tips
-
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
-
-### Note, Tip, Important, Caution
-
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
-
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
-
-### Tables
-
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
-
-HTML table:
-
+<p><a href="{{ site.githuburl }}m2devgde/view/xml-schema-layout.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></code></li>
+<h2 id="m2devgde-xml-layout-intro">Overview</h2>
+<p>In Magento 2, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
+<p>The system uses the Magento XML schemas to validate these layouts.</p>
+<h2 id="xml-schemas">XML schemas</h2>
+<p>Magento 2 uses the following XML schemas to validate these layouts:</p>
 <table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
+   <tbody>
+      <tr style="background-color: lightgray">
+         <th>Schema</th>
+         <th>Validates</th>
+      </tr>
+      <tr>
+         <td><code>
+            app/code/Magento/Core/etc/layout_single.xsd</code>
+         </td>
+         <td>Individual layouts.</td>
+      </tr>
+      <tr>
+         <td><code>app/code/Magento/Core/etc/layouts.xsd</code></td>
+         <td>Individual layouts.</td>
+      </tr>
+      <tr>
+         <td><code>app/code/Magento/Core/etc/layout_merged.xsd</code></td>
+         <td>Merged layouts.</td>
+      </tr>
+   </tbody>
 </table>
-
-### Images
-
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
-
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
-
-You can also use a title tag to provide a mouseover tooltip.
-
-HTML example:
-
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
-
-Markdown example using an alt tag:
-
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
-
-### Cross-References
-
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
-
+<p>These layout-specific XML schemas might use additional universal XML schemas.</p>
+<h2 id="layout-elements">XML layout elements and structure</h2>
+<p>The following table lists the allowable XML layout elements.
+   The table reflects the correct structure for these elements.
+</p>
+<table style="width:135%">
+   <col width="33%">
+   <col width="33%">
+   <col width="33%">
+   <thead>
+      <tr>
+         <th>Description</th>
+         <th>Attributes</th>
+         <th>Children</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;layout&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Mandatory root element.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code></li>
+               <li><code>xsi:noNamespaceSchemaLocation="../../../../Core/etc/layout_single.xsd"</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;block></code></li>
+               <li><code>&lt;container></code></li>
+               <li><code>&lt;remove></code></li>
+               <li><code>&lt;move></code></li>
+               <li><code>&lt;update></code></li>
+               <li><code>&lt;referenceBlock></code></li>
+               <li><code>&lt;referenceContainer></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;block&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>A unit of a page output, which generates content. Each block corresponds to a Magento PHP class.
+               Instantiate each block one time only.
+            </p>
+            <p>If the cacheable attribute is set to false for one block on the page,
+               each request generates the whole page.
+            </p>
+         </td>
+         <td>
+            <ul>
+               <li><code>class="{block_class}"</code> (required)</li>
+               <li><code>name="{arbitrary_name}"</code> (unique)</li>
+               <li><code>as="{alias}"</code></li>
+               <li><code>before="{name_of_sibling}"</code></li>
+               <li><code>after=" {name_of_sibling}"</code></li>
+               <li><code>template="{block_template}"</code></li>
+               <li><code>group="{group_name}"</code></li>
+               <li><code>output="1|0"</code></li>
+               <li><code>acl="{resource_name}"</code> (the block is generated and its output is added to the rendered page if a user has permission for the resource)</li>
+               <li><code>ifconfig="{сonfig_path}"</code> (the element is rendered just in case the corresponding configuration flag is set for the current scope)</li>
+               <li><code>cacheable="true|false"</code></li>
+               <li><code>ttl="block_lifetime_for_Varnish_ESI_cache"</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;block></code></li>
+               <li><code>&lt;container></code></li>
+               <li><code>&lt;action></code></li>
+               <li><code>&lt;arguments></code></li>
+               <li><code>&lt;referenceBlock></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;container&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>A placeholder for blocks and other containers.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>name="{arbitrary_name}"</code> (unique)</li>
+               <li><code>as="{alias}"</code></li>
+               <li><code>before="{name_of_sibling}"</code></li>
+               <li><code>after="{name_of_sibling}"</code></li>
+               <li><code>group="{group_name}"</code></li>
+               <li><code>output="1|0"</code></li>
+               <li><code>htmlTag="{tag_to_wrap_in}"</code></li>
+               <li><code>htmlId="{id_of_wrapping_tag}"</code></li>
+               <li><code>htmlClass="{class_of_wrapping_tag}"</code></li>
+               <li><code>label="label_displayed_for_user}"</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;block></code></li>
+               <li><code>&lt;container></code></li>
+               <li><code>&lt;remove></code></li>
+               <li><code>&lt;move></code></li>
+               <li><code>&lt;referenceBlock></code></li>
+               <li><code>&lt;referenceContainer></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;update&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>The specified handle is "included" and executed recursively.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>handle="{name_of_handle_to_include}"</code></li>
+            </ul>
+         </td>
+         <td/>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;move&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Sets the declared element as a child to another element in the specified order.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>element="{name.of.an.element}"</code> (required)</li>
+               <li><code>destination="{name.of.destination.element}"</code> (required)</li>
+               <li><code>as="{new_alias}"</code></li>
+               <li><code>after="{name.of.element.after}"</code></li>
+               <li><code>before="{name.of.element.before}"</code></li>
+            </ul>
+         </td>
+         <td/>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;remove&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Removes the specified element.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>name="{name.of.an.element}"</code> (required)</li>
+            </ul>
+         </td>
+         <td/>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;action&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Invokes block method
+               Will become obsolete eventually. It is being gradually replaced with non-imperative layout instructions.
+            </p>
+         </td>
+         <td>
+            <ul>
+               <li><code>method="{block_class_method}"</code> (required)</li>
+               <li><code>ifconfig="{config_path}"</code> (The element is rendered just in case the corresponding configuration flag is set by specified path for current scope.)</li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;argument></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;referenceBlock&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Wraps layout instructions, that is they will be executed in the context of the specified block.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>name="{block_name}"</code> (required)</li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;block></code></li>
+               <li><code>&lt;container></code></li>
+               <li><code>&lt;remove></code></li>
+               <li><code>&lt;move></code></li>
+               <li><code>&lt;update></code></li>
+               <li><code>&lt;referenceBlock></code></li>
+               <li><code>&lt;referenceContainer></code></li>
+               <li><code>&lt;action></code></li>
+               <li><code>&lt;arguments></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;referenceContainer&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Wraps layout instructions, that is they will be executed in the context of the specified container.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>name="{container_name}"</code> (required)</li>
+               <li><code>htmlTag="{wrapping_tag}"</code></li>
+               <li><code>htmlClass="{class_of_wrapping_tag}"</code></li>
+               <li><code>htmlId="{id_of_wrapping_tag}"</code></li>
+               <li><code>label="{lable_to_be_displayed_for_admin_user}"</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;block></code></li>
+               <li><code>&lt;container></code></li>
+               <li><code>&lt;remove></code></li>
+               <li><code>&lt;move></code></li>
+               <li><code>&lt;update></code></li>
+               <li><code>&lt;referenceBlock></code></li>
+               <li><code>&lt;referenceContainer></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;arguments&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>A wrapper for arguments.</p>
+         </td>
+         <td/>
+         <td>
+            <ul>
+               <li><code>&lt;argument></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;argument&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Handles parameters that are injected into the parent block constructor during instantiation.
+               For more information about data types, see <a href="{{ site.gdeurl }}m2devgde/config/data-type-schema.html">Data Types Schema</a>.
+            </p>
+         </td>
+         <td>
+            <ul>
+               <li><code>name ="{ argument_name}"</code> (required, unique)</li>
+               <li><code>xsi:type =" string|boolean|object|number|null|array"</code></li>
+               <li><code>translate="true|false"</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;item></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;item&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Handles array items for array arguments type.</p>
+         </td>
+         <td>
+            <ul>
+               <li><code>name ="{ argument_name}"</code> (required, unique)</li>
+               <li><code>xsi:type =" string|boolean|object|number|null|array"</code></li>
+               <li><code>translate="true|false"</code></li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li><code>&lt;item></code></li>
+            </ul>
+         </td>
+      </tr>
+      <tr style="background-color: lightgray">
+         <th colspan="3"><code>&lt;updater&gt;</code></th>
+      </tr>
+      <tr>
+         <td>
+            <p>Changes argument value.</p>
+         </td>
+         <td/>
+         <td/>
+      </tr>
+   </tbody>
+</table>
+<h2 id="xml-validation">Validate XML layouts</h2>
+<p>Use the following tests
+   to validate new or changed layouts:
+</p>
+<table style="width:125%">
+   <col width="75%">
+   <col width="25%">
+   <thead>
+      <tr style="background-color: lightgray">
+         <th>Test</th>
+         <th>Validates</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><code>dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php</code></td>
+         <td>Layouts</td>
+      </tr>
+      <tr>
+      <td>
+         <code>dev/tests/integration/testsuite/Magento/Test/Integrity/Modular/LayoutFilesTest.php</code></td>
+         <td>Argument values correspond to required data types</td>
+      </tr>
+   </tbody>
+</table>
