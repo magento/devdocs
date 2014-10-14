@@ -99,3 +99,7 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 
 	<pre>find . -type d -exec chmod 700 {} \;
 find . -type f -exec chmod 600 {} \;</pre>
+
+<h2>Next step</h2>
+
+After completing the tasks discussed on this page, <a href="{{ site.gdeurl }}install-gde/install/install.html">install the Magento 2 software</a>.

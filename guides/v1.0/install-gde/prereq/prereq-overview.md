@@ -29,7 +29,7 @@ To check your system for prerequisites, enter the following commands:
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 
-	To install or upgrade PHP, see TBD.
+	To install or upgrade PHP, see <a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>.
 
 *	Apache
 
@@ -42,7 +42,7 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 	<pre>Server version: Apache/2.2.15 (Unix)
 Server built:   Jul 23 2014 14:17:29</pre>
 
-	To install or upgrade Apache, see TBD.
+	To install or upgrade Apache, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>.
 
 *	MySQL
 
@@ -65,9 +65,13 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</
 
 	Enter `exit` at the `mysql>` prompt to exit.
 	
-	To install or upgrade MySQL, see TBD.
+	To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>.
 	
-#### Related Topics
+<h2>Next steps</h2>
+
+Either install required software discussed in the next section or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>.
+	
+#### Related topics
 
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
@@ -75,8 +79,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling Magento 2</a>
+
 
 
 
