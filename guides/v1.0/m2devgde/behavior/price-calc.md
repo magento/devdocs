@@ -1,6 +1,8 @@
 ---
 layout: howtom2devgde_chapters
 title: How Magento Calculates Prices
+
+
 ---
  
 <h1 id="m2devgde-pricecalc">How Magento Calculates Prices</h1>
@@ -295,8 +297,182 @@ The flow can be illustrated as follows:
   </tbody>
 </table>
 
+<h3 id="m2devgde-pricecalc-absprice">AbstractPrice</h3>
 
-<p><a href="{{ site.githuburl }}m2devgde/behavior/price-calc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank"><code>Magento\Framework\Pricing\Price\AbstractPrice</code></a> is responsible for providing information about specific price type.
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>input params</th>
+      <th>Return value</th>
+      <th>Comment</th>
+    </tr>
+    <tr>
+      <td>
+        <code>getValue</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>float|boolean</code>
+      </td>
+      <td>Returns price value or <code>false</code> if price value cannot be returned.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getAmount</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>float</code>
+      </td>
+      <td>Gets amount object.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getCustomAmount</code>
+      </td>
+      <td>
+        <ul>
+          <li>
+            <p class="_mce_tagged_br">
+              <code>$amount : float = null</code>
+            </p>
+          </li>
+          <li>
+            <p class="_mce_tagged_br">
+              <code>$exclude : boolean|string = null</code>
+            </p>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <p>
+          <code>AmountInterface|boolean|float</code>
+        </p>
+      </td>
+      <td>Calculates custom amount excluding specified adjustments.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getPriceCode</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>AdjustmentInterface</code>
+      </td>
+      <td>Gets price code.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="m2devgde-pricecalc-abs-dep"><code>AbstractPrice</code> Dependencies</h4>
+<table>
+  <tbody>
+    <tr>
+      <th>Class / Interface</th>
+      <th>Comment</th>
+    </tr>
+    <tr>
+      <td>
+        <code>Magento\Framework\Pricing\Object\SaleableInterface</code>
+      </td>
+      <td>Saleable item (that is Product).</td>
+    </tr>
+    <tr>
+      <td>
+        <code>Magento\Framework\Pricing\Adjustment\CalculatorInterface</code>
+      </td>
+      <td>Adjustment calculator.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="m2devgde-pricecalc-abs-type">Price Types</h4>
+Every class implementing a price type should extend <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank"><code>Magento\Framework\Pricing\Price\AbstractPrice</code></a>.
+
+<h3 id="m2devgde-pricecalc-abs-priceinfo">PriceInfo</h3>
+<a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/PriceInfoInterface.php" target="_blank"><code>Magento\Framework\Pricing\PriceInfoInterface</code></a> holds prices and adjustments collections and provides access to them.
+
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>input params</th>
+      <th>Return value</th>
+      <th>Comment</th>
+    </tr>
+    <tr>
+      <td>
+        <code>getPrices</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>PriceInterface[]</code>
+      </td>
+      <td>Gets all prices.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getPrice</code>
+      </td>
+      <td>
+        <code>$priceCode : string</code>
+      </td>
+      <td>
+        <code>PriceInterface</code>
+      </td>
+      <td>Gets specific price.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getAdjustments</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>AdjustmentInterface[]</code>
+      </td>
+      <td>Gets all adjustments.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getAdjustment</code>
+      </td>
+      <td>
+        <code>$adjustmentCode : string</code>
+      </td>
+      <td>
+        <code>AdjustmentInterface</code>
+      </td>
+      <td>Gets specific adjustment.</td>
+    </tr>
+  </tbody>
+</table>
+<h4 id="m2devgde-pricecalc-prinfdep">Price Info Dependencies</h4>
+<table>
+  <tbody>
+    <tr>
+      <th>Class / Interface</th>
+      <th>Comment</th>
+    </tr>
+    <tr>
+      <td>
+        <code>Magento\Framework\Pricing\Adjustment\Collection</code>
+      </td>
+      <td>Adjustments collection.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>Magento\Framework\Pricing\Price\Collection</code>
+      </td>
+      <td>Prices collection.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
 
 <h2 id="m2devgde-pricecalc-intro">Introduction to the Magento Pricing Library</h2> 
 
