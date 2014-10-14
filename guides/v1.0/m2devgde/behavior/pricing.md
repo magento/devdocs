@@ -1,5 +1,4 @@
 ---
-<p class="q"> Should I delete these?</p>
 layout: howtom2devgde_chapters
 title: Using the Pricing Library
 ---
@@ -111,7 +110,7 @@ For example, the price configuration in the Catalog module <code>di.xml</code> l
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
 &lt;/virtualType&gt;
 </pre>
-To see the price type codes, navigate to the Default Price Types paragraph. <!--Link -->
+To see the price type codes, navigate to the <a href="#m2devgde-pricelib-def">Default Price Types paragraph</a>. 
 
 <h4 id="m2devgde-pricelib-adj">Specifying Adjustments to be Available for a Product</h4>
 

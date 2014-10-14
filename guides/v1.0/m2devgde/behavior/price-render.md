@@ -12,7 +12,7 @@ Price rendering process using the Pricing library can be illustrated as follows:
 <p><img src="{{ site.baseurl }}common/images/price_rend1.png" alt="Magento\Framework\Pricing\Render\RenderPool searches for renders based on SaleableItem type and PriceCode (createPriceRender, createAmountRender, and createAdjustmentRender methods"></p>
 
 <h2 id="m2devgde-pricerend-api">Price Rendering API</h2>
-<h3 id="m2devgde-pricerend-base rend">Base Renderer</h3>
+<h3 id="m2devgde-pricerend-base-rend">Base Renderer</h3>
 
 <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render.php" target="_blank"><code>Magento\Framework\Pricing\Render</code></a> extends <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank"><code>Magento\Framework\View\Element\AbstractBlock</code></a> and servers as an entry point.
 <table>
@@ -52,16 +52,16 @@ Price rendering process using the Pricing library can be illustrated as follows:
       <td>
         <ul>
           <li>
-            <code>$amount :Â AmountInterface</code>
+            <code>$amount : AmountInterface</code>
           </li>
           <li>
-            <code>$price :Â PriceInterfaceÂ </code>
+            <code>$price : PriceInterface</code>
           </li>
           <li>
-            <code>$saleableItem :Â SaleableInterface = nullÂ </code>
+            <code>$saleableItem :SaleableInterface = null</code>
           </li>
           <li>
-            <code>$arguments: array = []Â </code>
+            <code>$arguments: array = [] </code>
           </li>
         </ul>
       </td>
@@ -112,7 +112,7 @@ Adjustment Render extends Template and implements its behavior as well.
         <code>render</code>
       </td>
       <td>
-        <code>$html : string <br/> <code>$amountRender : AmountRenderInterfaceÂ <br/> <code>$arguments : array = [ ]</code> 
+        <code>$html : string <br/> <code>$amountRender : AmountRenderInterface <br/> <code>$arguments : array = [ ]</code> 
       </td>
       <td>
         <code>string</code>
@@ -130,7 +130,7 @@ Adjustment Render extends Template and implements its behavior as well.
       </td>
       <td colspan="1"></td>
       <td colspan="1">
-        Gets the code of the corresponding adjustment object
+        Gets the code of the corresponding adjustment object
       </td>
     </tr>
     <tr>
@@ -161,17 +161,17 @@ Adjustment Render extends Template and implements its behavior as well.
       </td>
       <td>-</td>
       <td>
-        <code>SaleableInterfaceÂ </code>
+        <code>SaleableInterface</code>
       </td>
       <td>Retrieves the current Saleable object</td>
     </tr>
     <tr>
       <td>
-        <code>getAdjustmentÂ </code>
+        <code>getAdjustment</code>
       </td>
       <td>-</td>
       <td>
-        <code>AdjustmentInterfaceÂ </code>
+        <code>AdjustmentInterface</code>
       </td>
       <td>Retrieves the current adjustment object</td>
     </tr>
@@ -193,7 +193,7 @@ Adjustment Render extends Template and implements its behavior as well.
   <code>AmountRenderInterface</code>
 </h3>
 <p>
-  <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php"> <code>Magento\Framework\Pricing\Render\AmountRenderInterface</code> </a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
+  <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php"> <code>Magento\Framework\Pricing\Render\AmountRenderInterface</code></a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
 <table>
   <tbody>
     <tr>
@@ -228,7 +228,7 @@ Adjustment Render extends Template and implements its behavior as well.
       </td>
       <td>-</td>
       <td>
-        <code>SaleableInterface</code>Â </td>
+        <code>SaleableInterface</code></td>
       <td>Retrieves the current Saleable object</td>
     </tr>
     <tr>
@@ -245,7 +245,7 @@ Adjustment Render extends Template and implements its behavior as well.
       <td>
         <code>convertAndFormatCurrency</code></td>
       <td>
-        <code>$amount : float <br/>$includeContainer : boolean = true <br/> $precision : integer = 2 <br/>$currency : string = null</code>
+        <code>$amount : float <br/>$includeContainer : boolean = true <br/> $precision : integer = 2 <br/>$currency : string = null</code>
       </td>
       <td>
         <code>string</code>
@@ -260,9 +260,9 @@ Adjustment Render extends Template and implements its behavior as well.
   <code>PriceBox</code>
 </h3>
   <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/PriceBox.php">
-    <code>Magento\Framework\Pricing\Render\PriceBox</code></a> is a main block that wraps all price rendering related content of particular Price Type.
+    <code>Magento\Framework\Pricing\Render\PriceBox</code></a> is a main block that wraps all price rendering related content of particular Price Type.
 
-This is a private class, it cannot be accessed from general layout blocks or templates.
+This is a private class, it cannot be accessed from general layout blocks or templates.
 <table>
   <tbody>
     <tr>
@@ -296,7 +296,7 @@ This is a private class, it cannot be accessed from general layout blocks or tem
         <code>getPriceId</code>
       </td>
       <td colspan="1">
-        <code>$defaultPrefix : string = null, </code> <br class="atl-forced-newline"/> <code> $defaultSuffix : string = null</code>
+        <code>$defaultPrefix : string = null, <br/> $defaultSuffix : string = null</code>
       </td>
       <td colspan="1">
         <code>string</code>
@@ -310,10 +310,10 @@ This is a private class, it cannot be accessed from general layout blocks or tem
         <code>getPriceType</code>
       </td>
       <td>
-        <code>$priceCode : string </code> <br class="atl-forced-newline"/> <code>$quantity : float=null</code>
+        <code>$priceCode : string </code> <br/> <code>$quantity : float=null</code>
       </td>
       <td>
-        <code>PriceInterface </code>
+        <code>PriceInterface</code>
       </td>
       <td>Gets Price object by Price Code</td>
     </tr>
@@ -322,7 +322,7 @@ This is a private class, it cannot be accessed from general layout blocks or tem
         <code>renderAmout</code>
       </td>
       <td>
-        <code>$amount : AmountInterface </code> <br class="atl-forced-newline"/> <code>$arguments :Â array = [] </code>
+        <code>$amount : AmountInterface<br/>$arguments : array = [] </code>
       </td>
       <td>
         <code>string</code>
