@@ -23,6 +23,7 @@ title: Catalog inventory service
          <div class="bs-docs-section">
             <p><a href="{{ site.githuburl }}api-guide/services/service-layer.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
             <h2 class="api2" id="catalog-inventory-overview">Overview</h2>
+            <p style="color:red">Most of this content will move to the API reference, but I'm keeping it here for the moment.</p>
             <p>Use the <code>CatalogInventory</code> service to get information about the inventory of a store.</p>
             <p>The <code>CatalogInventory</code> module provides these services:</p>
             <ul>
@@ -78,70 +79,49 @@ title: Catalog inventory service
             <h3 id="saveStockItem" class="api3">saveStockItem</h3>
              <blockquote><pre>saveStockItem($stockItem)</pre></blockquote>
             <p>Saves the changes made in the inventory data of a product.</p>
-            <h3 id="saveStockItemBySku" class="api3">saveStockItemBySku($productSku, Data\StockItemDetails $stockItemDetailsDo)</h3>
+            <h3 id="saveStockItemBySku" class="api3">saveStockItemBySku</h3>
+            <blockquote>
+            <pre>saveStockItemBySku($productSku, Data\StockItemDetails $stockItemDetailsDo)</pre></blockquote>
             <p>Saves the changes made in the inventory data of a product based on product's SKU.</p>
-            <h3 id="getMinSaleQty" class="api3">getMinSaleQty($productId)</h3>
-            <p>Defines a product's minimal quantity allowed to be added to the shopping cart.</p>
-            <h3 id="getMaxSaleQty" class="api3">getMaxSaleQty($productId)</h3>
-            <p>Defines a product's maximal quantity allowed to be added to the shopping cart.</p>
-            <h3 id="getEnableQtyIncrements" class="api3">getEnableQtyIncrements($productId)</h3>
+            <h3 id="getMinSaleQty" class="api3">getMinSaleQty</h3>
+            <blockquote><pre>getMinSaleQty($productId)</pre></blockquote>
+            <p>Defines the minimum product quantity that you can add to the shopping cart.</p>
+            <h3 id="getMaxSaleQty" class="api3">getMaxSaleQty</h3>
+            <blockquote><pre>getMaxSaleQty($productId)</pre></blockquote>
+            <p>Defines the maximum product quantity that you can add to the shopping cart.</p>
+            <h3 id="getEnableQtyIncrements" class="api3">getEnableQtyIncrements</h3>
+            <blockquote><pre>getEnableQtyIncrements($productId)</pre></blockquote>
             <p>Enables the quantity increments feature for a product.</p>
-            <h3 id="getQtyIncrements" class="api3">getQtyIncrements($productId)</h3>
-            <p>Defines the quantity increment of a product.</p>
-            <h3 id="getManageStock" class="api3">getManageStock($productId)</h3>
-            <p>Defines whether a product's stock should be managed, that is, quantity, stock status, and other characteristics are to be available for a product.</p>
-            <h3 id="suggestQty" class="api3">suggestQty($productId, $qty)</h3>
-            <p>Calculates what the quantity of a product is to be suggested to a buyer to add to the shopping cart considering the following parameters: minimum and maximum quantity allowed to be added to the cart, quantity increments.</p>
-            <h3 id="checkQuoteItemQty" class="api3">checkQuoteItemQty($productId, $qty, $summaryQty, $origQty = 0)</h3>
-            <p>Checks quantity of a product in a quote.</p>
-            <h3 id="verifyStock" class="api3">verifyStock($productId, $qty = null)</h3>
-            <p>Verifies whether there is enough quantity of a product in stock against the quantity requested by a buyer.</p>
-            <h3 id="verifyNotification" class="api3">verifyNotification($productId, $qty = null)</h3>
-            <p>Allows subscribing to the stock update (for the out-of-stock products).</p>
-            <h3 id="getIsInStock" class="api3">getIsInStock($productId)</h3>
-            <p>Checks whether a product is in stock.</p>
-            <h3 id="getStockQty" class="api3">getStockQty($productId)</h3>
-            <p>Checks the quantity of a product.</p>
-            <h3 id="isQty" class="api3">isQty($productTypeId)</h3>
-            <p>Defines whether the quantity of a product can be set manually. For instance, quantity can be specified manually for simple, downloadable, virtual products unlike the composite products. For the latters (except for bundle products with fixed price) the quantity is calculated based on quantity of options encapsulated in a composite product.</p>
-            <h3 id="getIsQtyTypeIds" class="api3">getIsQtyTypeIds($filter = null)</h3>
-            <p>Filters the products based on whether they can have their quantities set manually. Please refer to the previous method's description for details.</p>
-            <dl>
-               <dt><code>getStockItem($productId)</code></dt>
-               <dd>Gets inventory data for a product based on its ID.</dd>
-               <dt><code>getStockItemBySku($productSku)</code></dt>
-               <dd>Gets inventory data for a product based on its SKU.</dd>
-               <dt><code>saveStockItem($stockItem)</code></dt>
-               <dd>Saves the changes made in the inventory data of a product.</dd>
-               <dt><code>saveStockItemBySku($productSku, Data\StockItemDetails $stockItemDetailsDo)</code></dt>
-               <dd>Saves the changes made in the inventory data of a product based on product's SKU.</dd>
-               <dt><code>getMinSaleQty($productId)</code></dt>
-               <dd>Defines a product's minimal quantity allowed to be added to the shopping cart.</dd>
-               <dt><code>getMaxSaleQty($productId)</code></dt>
-               <dd>Defines a product's maximal quantity allowed to be added to the shopping cart.</dd>
-               <dt><code>getEnableQtyIncrements($productId)</code></dt>
-               <dd>Enables the quantity increments feature for a product.</dd>
-               <dt><code>getQtyIncrements($productId)</code></dt>
-               <dd>Defines the quantity increment of a product.</dd>
-               <dt><code>getManageStock($productId)</code></dt>
-               <dd>Defines whether a product's stock should be managed, that is, quantity, stock status, and other characteristics are to be available for a product.</dd>
-               <dt><code>suggestQty($productId, $qty)</code></dt>
-               <dd>Calculates what the quantity of a product is to be suggested to a buyer to add to the shopping cart considering the following parameters: minimum and maximum quantity allowed to be added to the cart, quantity increments.</dd>
-               <dt><code>checkQuoteItemQty($productId, $qty, $summaryQty, $origQty = 0)</code></dt>
-               <dd>Checks quantity of a product in a quote.</dd>
-               <dt><code>verifyStock($productId, $qty = null)</code></dt>
-               <dd>Verifies whether there is enough quantity of a product in stock against the quantity requested by a buyer.</dd>
-               <dt><code>verifyNotification($productId, $qty = null)</code></dt>
-               <dd>Allows subscribing to the stock update (for the out-of-stock products).</dd>
-               <dt><code>getIsInStock($productId)</code></dt>
-               <dd>Checks whether a product is in stock.</dd>
-               <dt><code>getStockQty($productId)</code></dt>
-               <dd>Checks the quantity of a product.</dd>
-               <dt><code>isQty($productTypeId)</code></dt>
-               <dd>Defines whether the quantity of a product can be set manually. For instance, quantity can be specified manually for simple, downloadable, virtual products unlike the composite products. For the latters (except for bundle products with fixed price) the quantity is calculated based on quantity of options encapsulated in a composite product.</dd>
-               <dt><code>getIsQtyTypeIds($filter = null)</code></dt>
-               <dd>Filters the products based on whether they can have their quantities set manually. Please refer to the previous method's description for details.</dd>
-            </dl>
+            <h3 id="getQtyIncrements" class="api3">getQtyIncrements</h3>
+            <blockquote><pre>getQtyIncrements($productId)</pre></blockquote>
+            <p>Defines the quantity increment value for a product.</p>
+            <h3 id="getManageStock" class="api3">getManageStock</h3>
+            <blockquote><pre>getManageStock($productId)</pre></blockquote>
+            <p>Defines whether stock for a product can be managed. That is, the quantity, stock status, and other characteristics are enabled for a product.</p>
+            <h3 id="suggestQty" class="api3">suggestQty</h3>
+            <blockquote><pre>suggestQty($productId, $qty)</pre></blockquote>
+            <p>Calculates the product quantity that a buyer is recommended to add to the shopping cart given the minimum and maximum quantity allowed in the cart and the quantity increments value.</p>
+            <h3 id="checkQuoteItemQty" class="api3">checkQuoteItemQty</h3>
+            <blockquote><pre>checkQuoteItemQty($productId, $qty, $summaryQty, $origQty = 0)</pre></blockquote>
+            <p>Gets the product quantity in a quote.</p>
+            <h3 id="verifyStock" class="api3">verifyStock</h3>
+            <blockquote><pre>verifyStock($productId, $qty = null)</pre></blockquote>
+            <p>Determines whether the in-stock product quantity can meet a request.</p>
+            <h3 id="verifyNotification" class="api3">verifyNotification</h3>            <blockquote><pre>verifyNotification($productId, $qty = null)</pre></blockquote>
+            <p>Subscribes to the out-of-stock product notification.</p>
+            <h3 id="getIsInStock" class="api3">getIsInStock</h3>
+            <blockquote><pre>getIsInStock($productId)</pre></blockquote>
+            <p>Determines whether a product is in stock.</p>
+            <h3 id="getStockQty" class="api3">getStockQty</h3>
+            <blockquote><pre>getStockQty($productId)</pre></blockquote>
+            <p>Gets the product quantity.</p>
+            <h3 id="isQty" class="api3">isQty</h3>
+            <blockquote><pre>isQty($productTypeId)</pre></blockquote>
+            <p>Defines whether the product quantity can be set manually. For instance, unlike for composite products, you can manually specify the quantity for simple, downloadable, virtual products. Except for bundled products with fixed price, the quantity is calculated based on quantity of options encapsulated in a composite product.</p>
+            <h3 id="getIsQtyTypeIds" class="api3">getIsQtyTypeIds</h3>
+            <blockquote><pre>getIsQtyTypeIds($filter = null)</pre></blockquote>
+            <p>Filters products based on whether their quantities can be set manually.</p>
+            
             <h2 id="rest-and-soap-catalog-inventory" class="api2">REST and SOAP API calls</h2>
             <p>The <code>CatalogInventory</code> module also enables you to make certain REST and SOAP API calls.</p>
             <h3 class="api3" id="data-by-sku">getStockItemBySku</h3>
