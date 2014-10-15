@@ -27,6 +27,7 @@ Before you install Magento 2, make sure your system meets or exceeds the followi
 	*	curl
 	*	gd2, ImageMagick 6.3.7 (or later) or both
 	*	soap
+	*	intl
 	
 *	<a href="http://dev.mysql.com/doc/refman/5.5/en/installing.html" target="_blank">MySQL 5.5</a> or later
 *	Mail Transfer Agent (MTA) or an SMTP server

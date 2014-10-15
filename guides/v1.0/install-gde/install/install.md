@@ -45,7 +45,7 @@ Before you begin, make sure that:
 
 After you complete the tasks discussed in the preceding section, update Composer and run the installer:
 
-1.	Log in to your Magento server as a user with <code>root</code> privileges.
+1.	Log in to your Magento server as a user with `root` privileges.
 2.	Change to the Magento 2 `setup` directory. For example,
 
 	`cd /var/www/html/magento2/setup`
