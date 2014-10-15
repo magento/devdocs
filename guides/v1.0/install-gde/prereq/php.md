@@ -13,6 +13,13 @@ title: Installing PHP 5.4 and required extensions
 *	<a href="#instgde-prereq-php-install-ubuntu">PHP 5.4 on Ubuntu</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone (all operating systems)</a>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <br><br><br><ul><li>Unless otherwise stated, you must run all commands on this page as a user with <code>root</code> privileges.</li>
+  <li>If you must install both Apache and PHP, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">install Apache</a> first.</li></ul></span>
+</div>
+
 <h2 id="instgde-prereq-php-install-centos">PHP 5.4 on CentOS</h2>
 
 This section discusses the following topics:
@@ -29,12 +36,6 @@ The following resources are also available:
 *	<a href="http://kb.parallels.com/en/115875" target="_blank">kb.parallels</a>
 *	<a href="http://stackoverflow.com/questions/21502656/upgrading-php-on-centos-6-5-final" target="_blank">stackoverflow</a>
 *	<a href="http://rpms.famillecollet.com/" target="_blank">remi repository</a>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Unless otherwise stated, you must run all commands on this page as a user with <code>root</code> privileges.</p></span>
-</div>
 
 To upgrade to PHP 5.4, enter the following commands:
 
@@ -53,15 +54,74 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 
 Enter the following command to install required PHP extensions:
 
-`yum -y --enablerepo=remi install php-intl`
+`yum -y --enablerepo=remi install php-xml php-intl`
 
 <h2 id="instgde-prereq-php-install-ubuntu">PHP 5.4 on Ubuntu</h2>
 
-TBD
+See one of the following sections:
+
+*	<a href="#instgde-prereq-php-ubuntu-install">Install PHP 5.4</a>
+*	<a href="#instgde-prereq-php-ubuntu-upgr">Upgrade to PHP 5.4</a>
+*	<a href="#instgde-prereq-php-ubuntu-ext">Install required PHP extensions</a>
+
+<h3 id="instgde-prereq-php-ubuntu-install">Install PHP 5.4</h3>
+
+Use the following instructions from <a href="http://askubuntu.com/questions/109404/how-do-i-install-latest-php-in-supported-ubuntu-versions-like-5-4-x-in-ubuntu-1" target="_blank">askubuntu</a>:
+
+<pre>add-apt-repository ppa:ondrej/php5-oldstable
+apt-get update
+apt-get upgrade
+apt-get install php5</pre>
+
+Verify the PHP version by entering `php -v`. Messages similar to the following should display:
+
+<pre>PHP 5.4.33-2+deb.sury.org~precise+1 (cli) (built: Sep 25 2014 09:06:25)
+Copyright (c) 1997-2014 The PHP Group
+Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
+
+<h3 id="instgde-prereq-php-ubuntu-upgr">Upgrade to PHP 5.4</h3>
+
+Use the instructions on <a href="http://phpave.com/upgrade-php-5-3-php-5-5-ubuntu-12-04-lts/" target="_blank">phpave</a>.
+
+After upgrading, verify the PHP version by entering `php -v`. Messages similar to the following should display:
+
+<pre>PHP 5.4.33-2+deb.sury.org~precise+1 (cli) (built: Sep 25 2014 09:06:25)
+Copyright (c) 1997-2014 The PHP Group
+Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
+
+<h3 id="instgde-prereq-php-ubuntu-ext">Install required PHP extensions</h3>
+
+<pre>apt-get install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl</pre>
 
 <h2 id="instgde-prereq-timezone">Setting the PHP timezone (all operating systems)</h2>
 
-`PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
+Before you install Magento, you might need to set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
+
+`PHP Warning:  date(): It is not safe to rely on the system's timezone settings.` [more messages follow]
+
+To set your time zone:
+
+1.	Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.
+2.	Locate `php.ini` by entering the following command:
+
+	`php -i | grep "Loaded Configuration File"`
+	
+	Typical locations follow:
+	
+	Ubuntu: `/etc/php5/cli/php.ini`
+	
+	CentOS: `/etc/php.ini`
+	
+3.	Open `php.ini` in a text editor.
+
+4.	Locate the followign setting and uncomment it if necessary:
+
+	`date.timezone =`
+	
+5.	Add the time zone setting you found in step 1.
+6.	Save your changes to `php.ini` and exit the text editor.
+	
+	
 
 TBD
 

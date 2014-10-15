@@ -20,9 +20,9 @@ Following are the major topics in this guide:
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento 2</a>
 
+	*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a> 
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Setting security options</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
 
