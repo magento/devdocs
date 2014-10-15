@@ -39,9 +39,10 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-<pre>php -f index.php install --db_host=localhost --db_name=magento 
+<pre>php -f index.php install --base_url=localhost 
+	--backend_frontname=admin 
+	--db_host=localhost --db_name=magento 
 	--db_user=magento --db_pass=magento 
-	--base_url=localhost --backend_frontname=admin 
 	--admin_firstname=Magento --admin_lastname=User 
 	--admin_email=user@example.com 	--admin_username=admin 
 	--admin_password=iamtheadmin --language=en_us 
@@ -69,16 +70,51 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-<pre>php -f index.php install --db_host=localhost --db_name=magento 
+<pre>php -f index.php install --base_url=http://www.example.com 
+	--backend_frontname=admin
+	--db_host=localhost --db_name=magento 
 	--db_user=magento --db_pass=magento 
-	--base_url=http://www.example.com --backend_frontname=admin 
 	--admin_firstname=Magento --admin_lastname=User 
 	--admin_email=user@example.com 	--admin_username=admin 
 	--admin_password=iamtheadmin --language=en_us 
 	--currency=USD --timezone=America/Chicago</pre>
 	
-<h2 id="instgde-install-samples-adv">Advanced Magento 2 installations</h2>
+<h2 id="instgde-install-samples-adv">Installing Magento with SSL and an encryption key</h2>
 
-The examples in this section use a combiantion of requred, optional, and advanced installation options.
+The following example installs Magento with the following options:
+
+*	Base URL is `https://www.example.com` and the path to the Magento Admin is `admin`; therefore:
+
+	Your storefront URL is `https://www.example.com` and you can access the Magento Admin at `https://www.example.com/admin`
+	
+*	The database server is on the same host as the web server.
+
+	The database name is `magento` and its password is `magento`
+	
+*	The Magento administrator has the following properties:
+
+	*	First and last name are is `Magento User`
+	*	User name is `admin` and the password is `iamtheadmin`
+	*	E-mail address is `user@example.com`
+
+*	Default language is `en_us` (U.S. English)
+*	Default currency is U.S. dollars
+*	Default time zone is U.S. Central (America/Chicago)
+*	SSL URLs are preferred
+*	Access the Magento Admin using SSL
+*	Specify an encryption key
+*	Use random keys in Admin URLs
+
+<pre>php -f index.php install --base_url=https://www.example.com 
+	--backend_frontname=admin
+	--db_host=localhost --db_name=magento 
+	--db_user=magento --db_pass=magento 
+	--admin_firstname=Magento --admin_lastname=User 
+	--admin_email=user@example.com 	--admin_username=admin 
+	--admin_password=iamtheadmin --language=en_us 
+	--currency=USD --timezone=America/Chicago
+	--use_secure=1 --base_secure_url=1
+	--use_secure_admin=1 --admin_use_security_key=1
+	--key=pRbu05tl7s7n4obk5ykW9nAZeIVaNMJy</pre>
 
 

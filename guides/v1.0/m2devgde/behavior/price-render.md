@@ -8,99 +8,330 @@ title: How Magento Renders Prices
 <p><a href="{{ site.githuburl }}m2devgde/behavior/price-render.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-pricerend-intro">Introduction to the Magento Price Rendering</h2> 
+Price rendering process using the Pricing library can be illustrated as follows:
+<p><img src="{{ site.baseurl }}common/images/price_rend1.png" alt="Magento\Framework\Pricing\Render\RenderPool searches for renders based on SaleableItem type and PriceCode (createPriceRender, createAmountRender, and createAdjustmentRender methods"></p>
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Price+Rendering
+<h2 id="m2devgde-pricerend-api">Price Rendering API</h2>
+<h3 id="m2devgde-pricerend-base-rend">Base Renderer</h3>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
-
-<h2 id="help">Helpful Aids for Writers</h2>
-
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
-
-### General Markdown Authoring Tips
-
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
-
-### Note, Tip, Important, Caution
-
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
-
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
-
-### Tables
-
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
-
-HTML table:
-
+<a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render.php" target="_blank"><code>Magento\Framework\Pricing\Render</code></a> extends <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank"><code>Magento\Framework\View\Element\AbstractBlock</code></a> and servers as an entry point.
 <table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Input params</th>
+      <th>Return value</th>
+      <th>Comment</th>
+    </tr>
+    <tr>
+      <td>
+        <code>render</code>
+      </td>
+      <td>
+        <ul>
+          <li>
+            <code>$priceCode : string</code>
+          </li>
+          <li>
+            <code>$saleableItem : SaleableInterface</code>
+          </li>
+          <li>
+            <code>$arguments : array = []</code>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>Renders price</td>
+    </tr>
+    <tr>
+      <td>
+        <code>renderAmount</code>
+      </td>
+      <td>
+        <ul>
+          <li>
+            <code>$amount : AmountInterface</code>
+          </li>
+          <li>
+            <code>$price : PriceInterface</code>
+          </li>
+          <li>
+            <code>$saleableItem :SaleableInterface = null</code>
+          </li>
+          <li>
+            <code>$arguments: array = [] </code>
+          </li>
+        </ul>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>Renders price amount</td>
+    </tr>
+  </tbody>
+</table>
+<h4 id="m2devgde-pricerend-baserend">
+<code>Base Render Dependencies</code>
+</h4>
+<table>
+  <tbody>
+    <tr>
+      <th>Class/Interface</th>
+      <th>Comment</th>
+    </tr>
+    <tr>
+      <td>
+        <code>Magento\View\Element\Template\Context</code>
+      </td>
+      <td>Template context</td>
+    </tr>
+    <tr>
+      <td>
+        <code>Magento\Pricing\Render\Layout</code>
+      </td>
+      <td>Pricing layout</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</h3>
+<a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank"><code>Magento\Framework\Pricing\Render\AdjustmentRenderInterface</code></a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.
+
+Adjustment Render extends Template and implements its behavior as well.
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Input params</th>
+      <th>Return value</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>render</code>
+      </td>
+      <td>
+        <code>$html : string <br/> <code>$amountRender : AmountRenderInterface <br/> <code>$arguments : array = [ ]</code> 
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>
+        Renders the adjustment
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>getAdjustmentCode</code>
+      </td>
+      <td colspan="1">
+        <code>string</code>
+      </td>
+      <td colspan="1"></td>
+      <td colspan="1">
+        Gets the code of the corresponding adjustment object
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>getPrice</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>PriceInteface</code>
+      </td>
+      <td>Retrieves the current Price object</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>getData</code>
+      </td>
+      <td colspan="1">-</td>
+      <td colspan="1">
+        <code>array</code>
+      </td>
+      <td colspan="1">
+        <span>Gets all rendering options</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>getSaleableItem</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>SaleableInterface</code>
+      </td>
+      <td>Retrieves the current Saleable object</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getAdjustment</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>AdjustmentInterface</code>
+      </td>
+      <td>Retrieves the current adjustment object</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>getAmountRender</code>
+      </td>
+      <td colspan="1">-</td>
+      <td colspan="1">
+        <code>AmountRenderInterface</code>
+      </td>
+      <td colspan="1">
+        Gets amount renderer instance
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="m2devgde-pricerend-amrendint"> 
+  <code>AmountRenderInterface</code>
+</h3>
+<p>
+  <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php"> <code>Magento\Framework\Pricing\Render\AmountRenderInterface</code></a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Input params</th>
+      <th>Return value</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>getAmount</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>AmountInterface</code>
+      </td>
+      <td>Retrieves the Amount object</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getPrice</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>PriceInteface</code>
+      </td>
+      <td>Retrieves the current Price object</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getSaleableItem</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>SaleableInterface</code></td>
+      <td>Retrieves the current Saleable object</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getDisplayValue</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>float</code>
+      </td>
+      <td>Retrieves the value from the Amount object</td>
+    </tr>
+    <tr>
+      <td>
+        <code>convertAndFormatCurrency</code></td>
+      <td>
+        <code>$amount : float <br/>$includeContainer : boolean = true <br/> $precision : integer = 2 <br/>$currency : string = null</code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>
+        Converts and format price value
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="m2devgde-pricerend-pricebox">
+  <code>PriceBox</code>
+</h3>
+  <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/PriceBox.php">
+    <code>Magento\Framework\Pricing\Render\PriceBox</code></a> is a main block that wraps all price rendering related content of particular Price Type.
+
+This is a private class, it cannot be accessed from general layout blocks or templates.
+<table>
+  <tbody>
+    <tr>
+      <th>Method</th>
+      <th>Input parameters</th>
+      <th>Return value</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code>getSaleableItem</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>SaleableInterface</code>
+      </td>
+      <td>Gets current Saleable Item object</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getPrice</code>
+      </td>
+      <td>-</td>
+      <td>
+        <code>PriceInterface</code>
+      </td>
+      <td>Gets current Price Object</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <code>getPriceId</code>
+      </td>
+      <td colspan="1">
+        <code>$defaultPrefix : string = null, <br/> $defaultSuffix : string = null</code>
+      </td>
+      <td colspan="1">
+        <code>string</code>
+      </td>
+      <td colspan="1">
+        Gets price container ID attribute for rendering
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>getPriceType</code>
+      </td>
+      <td>
+        <code>$priceCode : string </code> <br/> <code>$quantity : float=null</code>
+      </td>
+      <td>
+        <code>PriceInterface</code>
+      </td>
+      <td>Gets Price object by Price Code</td>
+    </tr>
+    <tr>
+      <td>
+        <code>renderAmout</code>
+      </td>
+      <td>
+        <code>$amount : AmountInterface<br/>$arguments : array = [] </code>
+      </td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>Retrieves amount HTML for given Amount object and arguments</td>
+    </tr>
+  </tbody>
 </table>
 
-### Images
 
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
 
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
-
-You can also use a title tag to provide a mouseover tooltip; this is recommended for accessiblity (screen readers and so on).You can also use a title tag to provide a mouseover tooltip.
-
-HTML example:
-
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
-
-Markdown example using an alt tag:
-
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
-
-### Cross-References
-
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
 

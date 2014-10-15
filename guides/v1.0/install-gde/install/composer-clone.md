@@ -21,7 +21,9 @@ TBD
 
 To install Composer:
 
-1.	Change to or create an empty directory on your Magento server.
+1.	Log in to your Magento server as a user with `root` privileges.
+
+1.	Change to or create an empty directory on the Magento server.
 
 2.	Enter the following commands:
 
@@ -29,6 +31,12 @@ To install Composer:
 	mv composer.phar /usr/local/bin/composer</pre>
 	
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
+	
+3.	Restart Apache:
+
+	Ubuntu: `service apache2 restart`
+	
+	CentOS: `service httpd restart`
 
 <h2 id="instgde-prereq-compose-clone">Cloning the Magento 2 GitHub repository</h2>
 
@@ -84,22 +92,25 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 
 2.	Find the web server user:
 	
-	*	Ubuntu: <code>grep User /etc/apache2/apache2.conf</code>	
-	*	CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code>
+	Ubuntu: `ps -ef | grep apache2`	
+	
+	CentOS: `grep User /etc/httpd/conf/httpd.conf`
 
 3.	Set ownership:
 	
 	<code>chown -R [your web server user name] .</code>
 		
-	For example,
+	Typical examples:
 		
-	<code>chown -R apache .</code>
+	CentOS: <code>chown -R apache .</code>
+	
+	Ubuntu: `chown -R www-data .`
 	
 4.	Set permissions:
 
 	<pre>find . -type d -exec chmod 700 {} \;
 find . -type f -exec chmod 600 {} \;</pre>
 
-<h2>Next step</h2>
+#### Next step
 
 After completing the tasks discussed on this page, <a href="{{ site.gdeurl }}install-gde/install/install.html">install the Magento 2 software</a>.

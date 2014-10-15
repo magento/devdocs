@@ -15,6 +15,20 @@ Before you install Magento, you must do all of the following:
 *	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
 *	Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.
 
+We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems.
+
+Enter the following commands as a user with `root` privileges:
+
+*	Ubuntu
+
+	apt-get update
+	apt-get upgrade
+	
+*	CentOS
+
+	yum -y update
+	yum -y upgrade
+
 <h2 id="instgde-prereq-check">Prerequisite check</h2>
 
 To check your system for prerequisites, enter the following commands:
@@ -35,7 +49,7 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 
 	CentOS: `httpd -v`
 	
-	Ubuntu: TBD
+	Ubuntu: `apache2 -v`
 	
 	You must run Apache version 2.2 or later as the following result indicates:
 	
