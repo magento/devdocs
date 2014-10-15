@@ -10,7 +10,7 @@ title: Installing and configuring Apache
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>Unless otherwise stated, you must run all commands on this page as a user with <code>root</code> privileges</p></span>
+  <p>You must run all commands on this page as a user with <code>root</code> privileges</p></span>
 </div>
 
 <h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
@@ -18,12 +18,26 @@ title: Installing and configuring Apache
 1.	Use the guidelines on the <a href="https://help.ubuntu.com/10.04/serverguide/httpd.html" target="_blank">Ubuntu site</a>. 
 2.	Enable <a href="http://askubuntu.com/questions/48362/how-to-enable-mod-rewrite-in-apache" target="_blank">server rewrites</a>.
 3.	Specify the type of directives that can be used in `.htaccess`. Magento uses `.htaccess` for redirects. <a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache documentation</a>.
+
+	<div class="bs-callout bs-callout-info" id="info">
+	<img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+	<span class="glyphicon-class">
+		<p>You must change the value of <code>Allow Override</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</span>
+	</div>
+	
 4.	Restart Apache: `service apache2 restart`
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
 
 1.	Use the guidelines on the <a href="http://httpd.apache.org/docs/2.4/platform/rpm.html" target="_blank">Apache site</a>. 
 2.	Enable <a href="http://unix.stackexchange.com/questions/57946/enable-apache-mod-rewrites-to-load-clean-urls" target="_blank">server rewrites</a>.
+
+	<div class="bs-callout bs-callout-info" id="info">
+	<img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+	<span class="glyphicon-class">
+		<p>You must change the value of <code>Allow Override</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory "/var/www/html"></code>.</span>
+	</div>
+	
 2.	Set the type of directives that can be used in `.htaccess`. Magento uses `.htaccess` for redirects. <a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache documentation</a>.
 
 

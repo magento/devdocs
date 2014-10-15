@@ -16,7 +16,7 @@ Cd to composer install dir and enter `mv composer.phar /usr/local/bin/composer`
 
 Problem: Error during install: `PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more]`
 
-Solution: 
+Solution: <a href="{{ site.gdeurl }}install-gde/prereq/php.html#instgde-prereq-timezone">Setting the PHP timezone (all operating systems)</a>
 
 
 Problem: After install completes, error in browser
@@ -50,6 +50,21 @@ Previous exception:
  exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.core_config_data' doesn't exist' in /var/www/magento2/lib/internal/Zend/Db/Statement/Pdo.php:228
 
  
- Problem: During `composer install`, this: Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
+Problem (omit from Readme): During `composer install`, this: Warning: The lock file is not up to date with the latest changes in composer.json. You may be getting outdated dependencies. Run update to update them.
  
  Solution: Run `composer update`
+ 
+
+Problem: After install, images and stylesheets do not load; site looks unconfigured. Possibly 404 on Admin
+
+Check the value of base_url
+
+Others:
+
+phpinfo.php to verify mod_rewrite loaded (however, does not mean it's working for Magento)
+
+Use a web browser inspector to check the path to static assets; verify path exists under Magento install dir. If not, verify that server rewrites enabled and working.
+
+
+
+
