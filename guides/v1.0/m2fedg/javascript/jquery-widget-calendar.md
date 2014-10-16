@@ -1,8 +1,8 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using the Calendar jQuery Widget
+title: jQuery calendar widget
 ---
- 
+
 <h1 id="fedg_jquery-calendar-widget">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2fedg/javascript/jquery-widget-calendar.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
@@ -41,7 +41,7 @@ The calendar widget's *global configuration* is a set of default options that ar
 *	Calendar pop-up mode
 *	Server time zone offset
 
-Global configuration for Calendar is stored in a jQuery object as a hash of properties. Having global configuration set enables you to specify one time all translations and default options, and use it for all instances of Calendar, and it enables usage of inline translation for the calendar. During initialization, the calendar widget merges the hash of options from the global configuration, and the options which are transferred from PHP, and then passes the merged options to Datepicker. 
+Global configuration for Calendar is stored in a jQuery object as a hash of properties. Having global configuration set enables you to specify one time all translations and default options, and use it for all instances of Calendar, and it enables usage of inline translation for the calendar. During initialization, the calendar widget merges the hash of options from the global configuration, and the options which are transferred from PHP, and then passes the merged options to Datepicker.
 
 <pre>(function( $ ) {
 $.extend(true, $, {
@@ -53,7 +53,7 @@ calendarConfig: {
 
 <h2 id="fedg_calendar_options">Calendar Widget Options, Methods, and Events</h2>
 
-Calendar widget options, methods, and events mostly coincide with the <a href="http://api.jqueryui.com/datepicker/" target="_blank">jQuery UI Datepicker options</a>. 
+Calendar widget options, methods, and events mostly coincide with the <a href="http://api.jqueryui.com/datepicker/" target="_blank">jQuery UI Datepicker options</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
@@ -61,11 +61,11 @@ Calendar widget options, methods, and events mostly coincide with the <a href="h
   <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p></span>
 </div>
 
-#### Related Topics:
+#### Related topics
 
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-loader.html">Using the jQuery Loader Widget</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-loader.html">jQuery Loader widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-tabs.html">jQuery Tabs widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-guidelines.html">jQuery widget coding guidelines</a>
 
