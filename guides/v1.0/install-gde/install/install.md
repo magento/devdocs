@@ -17,22 +17,6 @@ See one of the following sections:
 *	<a href="#instgde-install-magento">Installing the Magento 2 software</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento 2 software</a>
 
-<h2 id="instgde-install-intro">Introduction to installing Magento 2</h2>
-
-We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento 2 software. Composer enables us to manage Magento 2, extensions, and their dependencies.
-
-Composer provides you with the following advantages:
-
-*	Enables you to reuse third-party libraries without bundling them with source code
-*	Component-based architecture with robust dependency management
-*	Manages dependencies to reduce extension conflicts and compatibility issues
-*	Versioned dependencies
-*	<a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a>
-*	Supports PHP Framework Interoperability standards
-
-
-We'll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.
-
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
@@ -65,7 +49,23 @@ After you complete the tasks discussed in the preceding section, update Composer
 	
 <h2 id="instgde-install-magento">Installing the Magento 2 software</h2>
 
-This section discusses how to run the command-line installer for Magento 2. Before you begin, you can run the following commands to find values for some required options:
+This section discusses how to run the command-line installer for Magento 2. The installer is designed to be run multiple times if necessary so you can:
+
+*	Provide different values 
+
+	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options
+	
+*	Correct mistakes in previous installations
+*	Create additional Magento administrators
+*	Install Magento in a different database instance
+
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class"><p>The installer doesn't overwrite the Magento database if you install the Magento software in the same database instance.</span>
+</div>
+
+
+Before you begin, you can run the following commands to find values for some required options:
 
 <table>
 	<tbody>
@@ -86,26 +86,24 @@ This section discusses how to run the command-line installer for Magento 2. Befo
 		<td><code>php -f setup/index.php help currencies</code></td>
 	</tr>
 	</tbody>
-	</table>
-
-The format of the command follows:
+	</table>The format of the command follows:
 
 `php -f index.php install [--[installation option name]=[installation option value] ...`
 
-The following table discusses the meanings of installation option names and values. Some examples are provided in TBD.
+The following table discusses the meanings of installation option names and values. Some examples are provided in <a href="{{ site.gdeurl }}install-gde/install/install-samples.html">Sample installation commands</a>.
 
 <table>
 	<tbody>
 		<tr>
-			<th>Option</th>
-			<th>Description</th>
+			<th>Name</th>
+			<th>Value</th>
 			<th>Required?</th>
 		</tr>
 		<tr>
 		<td>base_url</td>
 		<td><p>Base URL to use to access the Magento Admin and your Magento storefront.</p>
 		<p>To run Magento on localhost, you can use either <code>http://localhost</code> or <code>http://127.0.0.1</code>.</p>
-		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) is required.</p></td>
+		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p></td>
 		<td>Yes</td>
 	</tr>
 	<tr>
@@ -237,6 +235,10 @@ Some customers have more than one Magento instance running on a server with all 
 	
 	</tbody>
 </table>
+
+<h3 id="instgde-install-ex">Sample installations</h3>
+
+For sample installation commands, see <a href="{{ site.gdeurl }}install-gde/install/install-samples.html">Sample installation commands</a>.
 
 <h2 id="instgde-install-magento-reinstall">Reinstalling the Magento 2 software</h2>
 

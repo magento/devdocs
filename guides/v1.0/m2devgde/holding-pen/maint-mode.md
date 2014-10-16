@@ -9,7 +9,7 @@ title: Maintenance mode
 
 <h2 id="m2devgde-maint-abt">Magento maintenance mode</h2>
 
-<p class="q">Reviewer: Given that the Magento file system is being reworked, all file system paths must be verified.</p>
+<p class="q">Reviewer: Given that the Magento file system is being reworked, all file system paths must be verified. I'm pretty sure the location of maintenance.mode is also changing because of Anton's installer rework.</p>
 
 This section discusses how to put your store offline when you perform maintenance. 
 

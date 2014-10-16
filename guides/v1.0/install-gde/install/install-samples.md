@@ -39,7 +39,7 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-<pre>php -f index.php install --base_url=localhost 
+<pre>php -f index.php install --base_url=http://localhost/
 	--backend_frontname=admin 
 	--db_host=localhost --db_name=magento 
 	--db_user=magento --db_pass=magento 
@@ -70,7 +70,7 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-<pre>php -f index.php install --base_url=http://www.example.com 
+<pre>php -f index.php install --base_url=http://www.example.com/
 	--backend_frontname=admin
 	--db_host=localhost --db_name=magento 
 	--db_user=magento --db_pass=magento 
@@ -105,7 +105,7 @@ The following example installs Magento with the following options:
 *	Specify an encryption key
 *	Use random keys in Admin URLs
 
-<pre>php -f index.php install --base_url=https://www.example.com 
+<pre>php -f index.php install --base_url=https://www.example.com/ 
 	--backend_frontname=admin
 	--db_host=localhost --db_name=magento 
 	--db_user=magento --db_pass=magento 

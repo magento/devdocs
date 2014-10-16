@@ -21,13 +21,15 @@ Enter the following commands as a user with `root` privileges:
 
 *	Ubuntu
 
-	apt-get update
-	apt-get upgrade
+	`apt-get update`
+	
+	`apt-get upgrade`
 	
 *	CentOS
 
-	yum -y update
-	yum -y upgrade
+	`yum -y update`
+	
+	`yum -y upgrade`
 
 <h2 id="instgde-prereq-check">Prerequisite check</h2>
 
@@ -81,9 +83,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</
 	
 	To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>.
 	
-<h2>Next steps</h2>
+#### Next step
 
-Either install required software discussed in the next section or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>.
+Either install prerequisite software or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>.
 	
 #### Related topics
 
