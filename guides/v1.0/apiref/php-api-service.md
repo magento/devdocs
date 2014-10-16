@@ -6,7 +6,7 @@ title: Magento 2 Customer Service
 <div class="container bs-docs-container">
    <div class="row">
       <div class="jumbotron">
-         <h1 class="heading1" id="php-api-ref">{{ page.title }}</h1>
+         <h1 class="api1" id="php-api-ref">{{ page.title }}</h1>
       </div>
       <div class="col-xs-3">
          <p><b>Contents</b></p>
@@ -32,7 +32,7 @@ title: Magento 2 Customer Service
                <li>Send and resend email to a customer.</li>
             </ul>
             <p>See if this works: <a href="{{ site.gdeurl }}m2fedg/layout/layout-overview.html">Introduction to Magento 2 Theming</a>.</p>
-            <h2 class="heading2" id="construct">__construct()</h2>
+            <h2 class="api2" id="construct">__construct()</h2>
             <p class="blog-description">Constructs a customer service data object.</p>
             <blockquote class="codesample">
                <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
@@ -93,7 +93,7 @@ title: Magento 2 Customer Service
                   </tr>
                </tbody>
             </table>
-            <h2 class="heading2" id="create-customer">createCustomer()</h2>
+            <h2 class="api2" id="create-customer">createCustomer()</h2>
             <p class="blog-description">Creates a customer service data object.</p>
             <blockquote class="codesample">
                <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
@@ -154,7 +154,7 @@ title: Magento 2 Customer Service
                   </tr>
                </tbody>
             </table>
-            <h2 class="heading2" id="resend-confirmation">resendConfirmation()</h2>
+            <h2 class="api2" id="resend-confirmation">resendConfirmation()</h2>
             <p class="blog-description">Resends a confirmation email to a customer.</p>
             <blockquote class="codesample">
                <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
