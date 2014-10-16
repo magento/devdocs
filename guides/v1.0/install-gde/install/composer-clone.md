@@ -9,21 +9,17 @@ title: Installing Composer and cloning the Magento 2 GitHub repository
 
 <h2 id="instgde-prereq-compose-intro">Introduction to installing Magento using Composer</h2>
 
-TBD
-
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>Unless otherwise stated, you must run all commands on this page as a user with <code>root</code> privileges.</p></span>
+  <p>You must run all commands on this page as a user with <code>root</code> privileges.</p></span>
 </div>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
 To install Composer:
 
-1.	Log in to your Magento server as a user with `root` privileges.
-
-1.	Change to or create an empty directory on the Magento server.
+1.	Change to or create an empty directory on your Magento server.
 
 2.	Enter the following commands:
 

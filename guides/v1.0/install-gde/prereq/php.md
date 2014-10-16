@@ -16,7 +16,7 @@ title: Installing PHP 5.4 and required extensions
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <br><br><br><ul><li>Unless otherwise stated, you must run all commands on this page as a user with <code>root</code> privileges.</li>
+  <br><br><br><ul><li>You must run all commands on this page as a user with <code>root</code> privileges.</li>
   <li>If you must install both Apache and PHP, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">install Apache</a> first.</li></ul></span>
 </div>
 
@@ -121,9 +121,6 @@ To set your time zone:
 5.	Add the time zone setting you found in step 1.
 6.	Save your changes to `php.ini` and exit the text editor.
 	
-	
-
-TBD
 
 #### Related topics
 
