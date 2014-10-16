@@ -56,13 +56,13 @@ Use the following table to verify you have the correct prerequisites to install 
 
 After verifying your prerequisites, perform the following tasks in order to prepare to install the Magento 2 software.
 
-1.	<a href="{{ site.gdeurl }}install-gde/composer-clone.html#instgde-prereq-compose-install">Installing Composer</a>
-2.	<a href="{{ site.gdeurl }}install-gde/composer-clone.html#instgde-prereq-compose-clone">Cloning the Magento 2 GitHub repository</a>
+1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Installing Composer</a>
+2.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Cloning the Magento 2 GitHub repository</a>
 	
 <h3>Step 3: Installing and verifying</h3>
 
-1.	<a href="{{ site.gdeurl }}install-gde/install.html">Installing and reinstalling the Magento 2 software</a>
-2.	<a href="{{ site.gdeurl }}install-gde/verify.html">Verifying the instalation</a>
+1.	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling the Magento 2 software</a>
+2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying the instalation</a>
 
 <h2 id="instgde-toc">Table of contents</h2>
 

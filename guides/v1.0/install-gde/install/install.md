@@ -49,7 +49,23 @@ After you complete the tasks discussed in the preceding section, update Composer
 	
 <h2 id="instgde-install-magento">Installing the Magento 2 software</h2>
 
-This section discusses how to run the command-line installer for Magento 2. Before you begin, you can run the following commands to find values for some required options:
+This section discusses how to run the command-line installer for Magento 2. The installer is designed to be run multiple times if necessary so you can:
+
+*	Provide different values 
+
+	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options
+	
+*	Correct mistakes in previous installations
+*	Create additional Magento administrators
+*	Install Magento in a different database instance
+
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class"><p>The installer doesn't overwrite the Magento database if you install the Magento software in the same database instance.</span>
+</div>
+
+
+Before you begin, you can run the following commands to find values for some required options:
 
 <table>
 	<tbody>
@@ -87,7 +103,7 @@ The following table discusses the meanings of installation option names and valu
 		<td>base_url</td>
 		<td><p>Base URL to use to access the Magento Admin and your Magento storefront.</p>
 		<p>To run Magento on localhost, you can use either <code>http://localhost</code> or <code>http://127.0.0.1</code>.</p>
-		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) is required.</p></td>
+		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p></td>
 		<td>Yes</td>
 	</tr>
 	<tr>
