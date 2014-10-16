@@ -1,15 +1,15 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using the Tabs jQuery Widget
+title: jQuery Tabs widget
 ---
- 
+
 <h1 id="fedg_jquery_tabs">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2fedg/javascript/jquery-widget-tabs.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_tabs-widget_overview">About the Tabs Widget</h2>
 
-The Magento tabs widget is a customization of the <a href="http://api.jqueryui.com/tabs/" target="_blank">jQuery UI tabs widget</a>, which implements tab pages as single content area with multiple panels, each associated with a header in a list. 
+The Magento tabs widget is a customization of the <a href="http://api.jqueryui.com/tabs/" target="_blank">jQuery UI tabs widget</a>, which implements tab pages as single content area with multiple panels, each associated with a header in a list.
 
 Specifically, the tabs widget implements the following:
 
@@ -25,8 +25,8 @@ The Tabs widget source is located in the `[your Magento install dir]/pub/lib/mag
 Example 1, where the first tab is active by default:
 
 <pre>$('#tabs').tabs();  </pre>
- 
-Example 2: 
+
+Example 2:
 
 <pre>$('#tabs').tabs({destination:'#edit_form'});  </pre>
 
@@ -51,64 +51,64 @@ The Magento tabs widget has the same options as the <a href="http://api.jqueryui
 
 <h4 id="fedg_tabs_options-spinner">spinner</h4>
 
-Whether a spinner is displayed on a tab when the tab content is loading using Ajax. 
+Whether a spinner is displayed on a tab when the tab content is loading using Ajax.
 
-**Type**: Boolean 
+**Type**: Boolean
 **Default value**: `false`
 
 <h4 id="fedg_tabs_options-destination">destination</h4>
- 
-All tabs in the Magento Admin specific behavior. When a page is rendered, all tab pages are in the tabs container, but on tabs initialization all tab pages should be moved to another container (form). `destination` is a selector of the element that specifies to which container the tab page will be moved. 
+
+All tabs in the Magento Admin specific behavior. When a page is rendered, all tab pages are in the tabs container, but on tabs initialization all tab pages should be moved to another container (form). `destination` is a selector of the element that specifies to which container the tab page will be moved.
 
 **Type**: String
 
 <h4 id="fedg_tabs_options-ajaxOptions">ajaxOptions</h4>
 
-Additional data for loading tabs content using Ajax. 
+Additional data for loading tabs content using Ajax.
 
-**Type**: Object 
-**Structure**: 
+**Type**: Object
+**Structure**:
 
-<pre>ajaxOptions: { 
-    / jQuery ajax setting / 
+<pre>ajaxOptions: {
+    / jQuery ajax setting /
 }</pre>
 
-**Default value**: 
+**Default value**:
 
-<pre>ajaxOptions: { 
-    data: { 
-        isAjax: true, 
-        form_key: typeof FORM_KEY !== 'undefined' ? FORM_KEY : null 
-    } 
+<pre>ajaxOptions: {
+    data: {
+        isAjax: true,
+        form_key: typeof FORM_KEY !== 'undefined' ? FORM_KEY : null
+    }
 }</pre>
 
 <h4 id="fedg_tabs_options-tabIdArgument">tabIdArgument</h4>
 
-The name of the argument (in the address line) to define active tab. 
+The name of the argument (in the address line) to define active tab.
 
-**Type**: String 
+**Type**: String
 **Default value**: `tab`
 
 <h4 id="fedg_tabs_options-tabsBlockPrefix">tabsBlockPrefix</h4>
 
-Prefix for tab ID's. 
+Prefix for tab ID's.
 
 **Type**: String
 
 <h4 id="fedg_tabs_options-shadowTabsShadow">shadowTabsShadow</h4>
 
-shadowTabsShadow tabs load in the background. 
+shadowTabsShadow tabs load in the background.
 
-**Type**: Object 
-**Structure**: 
+**Type**: Object
+**Structure**:
 
-<pre>shadowTabs: { 
-    {tabId}:[ 
-        {shadowTabId1}, 
-        {shadowTabId2}, 
-        ... 
-    ], 
-    ... 
+<pre>shadowTabs: {
+    {tabId}:[
+        {shadowTabId1},
+        {shadowTabId2},
+        ...
+    ],
+    ...
 }</pre>
 
 <h2 id="fedg_tabs_events-methods">Using Events and Methods</h2>
@@ -127,12 +127,12 @@ The tabs widget is subscribed to the following events:
 *	`highlight.validate`&mdash;Triggered by a field validation error. The tabs displays an error icon on the tab page.
 *	`focusin`&mdash;Used to open a tab with the first invalid field highlighted. When the event is triggered on a field in a hidden tab panel, the tabs widget opens this hidden panel.
 *	`beforeSubmit`&mdash;Listens for the `beforeSubmit` event and adds active tab ID to the event data.
- 
+
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-loader.html">Using the Loader jQuery Widget</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-calendar.html">jQuery Calendar widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-loader.html">jQuery Loader widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-guidelines.html">jQuery widget coding guidelines</a>

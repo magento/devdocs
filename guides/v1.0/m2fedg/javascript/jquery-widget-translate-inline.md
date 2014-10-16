@@ -1,20 +1,20 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using the jQuery TranslateInline Widget
+title: jQuery TranslateInline widget
 ---
- 
+
 <h1 id="fedg_jquery_xlate">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2fedg/javascript/jquery-widget-translate-inline.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_translate-widget_overview">About the TranslateInline Widget</h2>
 
-The TranslateInline widget enables users to provide translations for storefront page strings when browsing the pages. The translate inline functionality has the following UI elements: 
+The TranslateInline widget enables users to provide translations for storefront page strings when browsing the pages. The translate inline functionality has the following UI elements:
 
 *	Edit trigger, an element that activates the translation dialog box.
-*	Translation form, which displays in the translation dialog box. 
+*	Translation form, which displays in the translation dialog box.
 
-To implement these, translateInline uses editTrigger and dialog widgets as auxiliary components. You can customize the latter two using the options in translateInline itself.  
+To implement these, translateInline uses editTrigger and dialog widgets as auxiliary components. You can customize the latter two using the options in translateInline itself.
 
 TranslateInline source is `[your Magento install dir]/pub/lib/mage/translate-inline.js`.
 
@@ -28,7 +28,7 @@ The default edit control looks like the following:
 
 ![Default inline translation control is a book icon]({{ site.baseurl }}common/images/widget_translateinline_default-control.png)
 
-The default dialog and translation form look like the following: 
+The default dialog and translation form look like the following:
 
 ![Default inline translation form]({{ site.baseurl }}common/images/widget_translateinline_default-form.png)
 
@@ -43,103 +43,103 @@ The translateInline widget has the following options:
 
 <h4 id="fedg_translate-widget_opt_ajaxUrl">ajaxUrl</h4>
 
-URL for Ajax request for saving the translation. 
+URL for Ajax request for saving the translation.
 
 **Type**: String
 
 <h4 id="fedg_translate-widget_opt_area">area</h4>
 
-The application area for which the widget is used; typically, `adminhtml` or `frontend`. 
+The application area for which the widget is used; typically, `adminhtml` or `frontend`.
 
 **Type**: String
 
 <h4 id="fedg_translate-widget_opt_translateForm">translateForm</h4>
 
-An object that contains the translation form template and the data for this template. 
+An object that contains the translation form template and the data for this template.
 
 **Type**: Object
 
 *	`translateForm.template`
 
-	HTML wrapper for the output; can be a DOM element selector. 
-	
+	HTML wrapper for the output; can be a DOM element selector.
+
 	**Default value**: `#translate-form-template`
-	
-*	`translateForm.data` 
 
-	An object that contains the data for the translation form template, stored in the following options: 
-	
-	*	`translateForm.data.id`&mdash;Translation form ID. 
+*	`translateForm.data`
 
-		**Type**: String 
-		
-		**Default value**: `translate-inline-form` 
+	An object that contains the data for the translation form template, stored in the following options:
 
-	*	`translateForm.data.message`&mdash;The text of the message displayed in the bottom of the translation form. 
-	
-		**Type**: String 
-		
+	*	`translateForm.data.id`&mdash;Translation form ID.
+
+		**Type**: String
+
+		**Default value**: `translate-inline-form`
+
+	*	`translateForm.data.message`&mdash;The text of the message displayed in the bottom of the translation form.
+
+		**Type**: String
+
 		**Default value**: `Please refresh the page to see your changes after submitting this form`.
-		
+
 <h4 id="fedg_translate-widget_opt_dialog">dialog</h4>
 
-Specifies options for the jQuery UI translation dialog box. 
+Specifies options for the jQuery UI translation dialog box.
 
 **Type**: Object
 
 *	`dialog.modal`
-	
+
 	If set to `true`, specifies a modal dialog box.
-		
-	**Type**: Boolean   
+
+	**Type**: Boolean
 	**Default value**: `true`
 
 *	`dialog.dialogClass`
-		
-	Adds the the specified class names to the dialog box. Space-delimited for more than one class; for example, `dialog dialog2`
-		
-	**Type**: String 
-		
-	**Default value**: `dialog` 
- 
-*	`dialog.width` 
 
-	The width of the dialog box in pixels. 
-	
-	**Type**: Positive integer 
-	
-	**Default value**: 650 
+	Adds the the specified class names to the dialog box. Space-delimited for more than one class; for example, `dialog dialog2`
+
+	**Type**: String
+
+	**Default value**: `dialog`
+
+*	`dialog.width`
+
+	The width of the dialog box in pixels.
+
+	**Type**: Positive integer
+
+	**Default value**: 650
 
 *	`dialog.height`
-  
-	The height of the dialog box in pixels. 
 
-	**Type**: Positive integer 
-	
+	The height of the dialog box in pixels.
+
+	**Type**: Positive integer
+
 	**Default value**: 650
-	
+
 *	`dialog.title`
 
 	The title of the dialog box.
 
-	**Type**:  String 
-	
+	**Type**:  String
+
 	**Default value**: `Translate`
 
 *	`dialog.zIndex`
-  
+
 	The starting <a href="http://en.wikipedia.org/wiki/Z-index" target="_blank">z-index</a> for the dialog box.
-	
+
 	**Type**: Integer
 
-	**Default value**: 2100 
+	**Default value**: 2100
 
 *	`dialog.buttons`
-  
-	Specifies which buttons should display on the translation form as key-value pairs, where a `key` is the text of the button.   
-	
+
+	Specifies which buttons should display on the translation form as key-value pairs, where a `key` is the text of the button.
+
 	**Default value**:
-	
+
 	<pre>[{
 		text: 'Submit',
 		'class': 'form-button button'
@@ -148,18 +148,18 @@ Specifies options for the jQuery UI translation dialog box.
 		text: 'Close',
 		'class': 'form-button button'
 	}]</pre>
-	
+
 <h2 id="fedg_widget_translateinline_customize">Customizing the translateInline Widget</h2>
 
-By changing widget options, you can customize translateInline components and behavior. 
+By changing widget options, you can customize translateInline components and behavior.
 
-For example, you can change the templates for the edit trigger and translation form, or the translation dialog box properties (size and modal behavior). 
+For example, you can change the templates for the edit trigger and translation form, or the translation dialog box properties (size and modal behavior).
 
 An example follows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/4c100b4a78c2a91d9b18.js"></script>
 
-The preceding sample dialog box is non-modal inline that displays for translatable items similar to the following: 
+The preceding sample dialog box is non-modal inline that displays for translatable items similar to the following:
 
 ![Default inline translation control is a book icon]({{ site.baseurl }}common/images/widget_translateinline_customize1.png)
 
@@ -169,10 +169,10 @@ The translation form displays as follows:
 
 
 
-#### Related Topics:
+#### Related topics
 
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Using Magento jQuery Widgets</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-calendar.html">Using the Calendar jQuery Widget</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-tabs.html">Using the Tabs jQuery Widget</a>
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-translate-inline.html">Using the jQuery TranslateInline Widget</a>	
-*	<a href="{{ site.gdeurl }}m2fedg/javascript/magento-js-coding-stnds-abt.html">Magento JavaScript Coding Standards and Best Practices</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-calendar.html">jQuery Calendar widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-loader.html">jQuery Loader widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-tabs.html">jQuery Tabs widget</a>
+*	<a href="{{ site.gdeurl }}m2fedg/javascript/jquery-widget-guidelines.html">jQuery widget coding guidelines</a>
