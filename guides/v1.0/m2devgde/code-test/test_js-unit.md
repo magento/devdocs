@@ -1,106 +1,263 @@
 ---
 layout: howtom2devgde_chapters
-title: JavaScript Unit Test Implementation Guide
+title: JavaScript unit tests
 ---
- 
+
 <h1 id="m2devgde-test-jsunit">{{ page.title }}</h1>
-
 <p><a href="{{ site.githuburl }}m2devgde/code-test/test_js-unit.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<h2 id="m2devgde-js-unit-tests-intro">Overview</h2>
+<p>Magento JavaScript unit tests use the external <a href="#test-library">JsTestDriver test library</a>, are implemented through the external <a href="#jstestdriver-api">JsTestDriver API</a>, and have their own <a href="#framework">jsunit.requirejsUtil framework</a>.</p>
+<p>To run the automated JavaScript unit tests, you run the <a href="#process-overview">run_js_tests.php script</a> inside the PHP interpreter from the command line.</p>
+<p>When you run the PHP script, it reads <a href="#config-files">configuration files</a> in the <code>/dev/tests/js</code> directory. It also generates a <code>jsTestDriver.conf</code> YAML configuration file in the <code>/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests.</p>
+<p>After the PHP interpreter runs for the first time, you can run the unit tests from the <a href="#phpstorm">PhpStorm IDE</a>.</p>
+<h3 id="test-library">JsTestDriver test library</h3>
+<p>Magento JavaScript unit tests use the external <a href="https://code.google.com/p/js-test-driver/wiki/GettingStarted">JsTestDriver</a> library, which follows JUnit principles. The PHPUnit library also follows these principles.</p>
+<h3 id="jstestdriver-api">JsTestDriver API</h3>
+<p>The unit tests are implemented through the JsTestDriver API. Web developers should be familiar with this API and test structure.</p>
+<h3 id="framework">jsunit.requirejsUtil framework</h3>
+<p>The unit tests also have their own framework. The <code>framework/requirejs-util.js</code> file declares the <code>jsunit.requirejsUtil</code> framework object, which supports testing of <code>RequireJS</code> (AMD) modules.</p>
+<p>These modules actively call the global <code>define()</code> function immediately upon loading rather than passively declaring their classes or functions. <code>RequireJS</code> modules usually do not expose anything to the global state. Instead, the modules pass all declarations to the <code>define()</code> function.</p>
+<p>This organization enables testing of <code>RequireJS</code> modules without any additional testing framework support. <code>jsunit.requirejsUtil</code> intercepts all <code>define()</code> calls and can pass <code>RequireJS</code> modules to their corresponding tests.</p>
+<p>For example:</p>
+<p><b>dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js:</b></p>
+<blockquote>
+   <pre>
+var IdNormalizerTest = TestCase('IdNormalizerTest');
 
-<h2 id="m2devgde-objmgr-intro">Introduction to Magento JavaScript Unit Tests</h2> 
+IdNormalizerTest.prototype.setUp = function() {
+    var defineArgs = jsunit.requirejsUtil.getDefineArgsInScript('lib/web/mage/requirejs/plugin/id-normalizer.js');
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Javascript+Unit+Tests+Implementation+Guide
+    assertNotUndefined('There expected to be a define() call', defineArgs);
+    assertEquals('Wrong number of arguments in the define() call', 1, defineArgs.length);
 
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
+    this.normalizer = defineArgs[0]; // Now we have object to be tested
+};
+</pre>
+</blockquote>
+<h3 id="config-files">Configuration files</h3>
+<p>The <code>run_js_tests.php</code> script processes the <a href="jstestdrivephp">jsTestDriver.php.dist</a> and <a href="jstestdriverorderphp">jsTestDriverOrder.php</a> configuration files.
+   Both files reside in the <code>/dev/tests/js</code> directory.
+</p>
+<h4 id="jstestdrivephp">jsTestDriver.php.dist file</h4>
+<p>This file specifies the contents of the YAML configuration file used by JsTestDriver.
+   This file contains this PHP code:
+</p>
+<p><b>dev/tests/js/jsTestDriver.php.dist:</b></p>
+<blockquote>
+   <pre>
+&lt;?php
+return array(
+    'server' => 'http://localhost:9876',
+    'proxy' => array(array('matcher' => '/lib/web/*', 'server' => '%s/test/%s/lib/web/')),
+    'load' => array(
+        '/lib/web/globalize',
+        '/lib/web/jquery/ui',
+        '/lib/web/mage/localization',
+        '/lib/web/mage/validation',
+        '/lib/web/mage/components'),
+    'test' => array('/dev/tests/js/testsuite'),
+    'serve' => array('/lib/web/mage/calendar')
+);
+</pre>
+</blockquote>
+<p>For a description of these configuration parameters, see <a href="https://code.google.com/p/js-test-driver/wiki/ConfigurationFile">ConfigurationFile</a>.</p>
+<p>Briefly, these parameters are:</p>
+<ul>
+   <li>
+      <b>server</b>. The default location of the JsTestDriver server in the form: <code>http://&lt;hostname>:&lt;port></code>
+   </li>
+   <li>
+      <b>proxy</b>. Sets the JsTestDriver to behave as a proxy. The proxy parameter is an array of arrays that enables you to specify multiple matcher and server proxies.
+   </li>
+   <li>
+      <b>load</b>. Defines the list of files to load in the browser before any tests run.
+   </li>
+   <li>
+      <b>test</b>. Defines the list of test sources to run.
+   </li>
+   <li>
+      <b>serve</b>. Defines the list of static files to load by using the same domain as the JsTestDriver.
+   </li>
+</ul>
+<h4 id="jstestdriverorderphp">jsTestDriverOrder.php file</h4>
+<p>
+   This file specifies the order in which the JsTestDriver loads certain JavaScript files. This file contains this PHP code:
+</p>
+<p><b>dev/tests/js/jsTestDriverOrder.php:</b></p>
+<blockquote>
+   <pre>
+&lt;?php
+return array(
+    '/lib/web/globalize/globalize.js',
+    '/lib/web/jquery/jquery.js',
+    '/lib/web/jquery/ui/jquery-ui.js',
+    ...
+);
+</pre>
+</blockquote>
+<p>The array applies load ordering to the files specified by the <b>load</b> parameter in the <code>jsTestDriver.php</code> or <code>jsTestDriver.php.dist</code> file.</p>
+<h3 id="process-overview">run_js_tests.php script</h3>
+<p>To run the automated unit tests, you run the <a href="#process-overview">run_js_tests.php script</a> inside the PHP interpreter from the command line.</p>
+<p>To complete the unit tests, the PHP script completes this processing:</p>
+<ol>
 
-<h2 id="help">Helpful Aids for Writers</h2>
-
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
-
-### General Markdown Authoring Tips
-
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
-
-### Note, Tip, Important, Caution
-
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
-
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
-
-### Tables
-
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
-
-HTML table:
-
-<table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
-</table>
-
-### Images
-
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
-
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
-
-You can also use a title tag to provide a mouseover tooltip; this is recommended for accessiblity (screen readers and so on).You can also use a title tag to provide a mouseover tooltip.
-
-HTML example:
-
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
-
-Markdown example using an alt tag:
-
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
-
-### Cross-References
-
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
-
+   <li>
+      <p>The script looks for the <b>JsTestDriver</b> parameter value in a <code>jsTestDriver</code> configuration file in the <code>/dev/tests/js</code> directory.</p>
+      <p>If found, the script uses the custom <code>jsTestDriver.php</code> configuration file.</p>
+      <p>Otherwise, the script uses the default <code>jsTestDriver.php.dist</code> configuration file.</p>
+   </li>
+   <li>
+      <p>The script looks for the <b>Browser</b> parameter value in the <code>jsTestDriver</code> configuration file that it found.</p>
+      <p>If the parameter is not set in the configuration file, the script uses to the default browser location, as follows:</p>
+      <ul>
+         <li>
+            <p><b>64-bit Windows</b>. The location is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</p>
+         </li>
+         <li>
+            <p><b>Linux</b>. The script runs the <code>which firefox</code> command to determine the location of the Firefox executable in your PATH.</p>
+         </li>
+      </ul>
+   </li>
+   <li>
+      <p>If the script finds the browser executable and the <code>JsTestDriver.jar</code> file, it proceeds with the next step. Otherwise, the script fails.</p>
+   </li>
+   <li>
+      <p>The script determines the order in which the JsTestDriver loads certain JavaScript files through the <code>jsTestDriverOrder.php</code> configuration file in the <code>/dev/tests/js</code> directory.</p>
+   </li>
+</ol>
+<h2 id="test-prereqs">Prerequisites</h2>
+<p>On the system where you plan to run the unit tests, install:</p>
+<ul>
+   <li><b>PHP</b></p></li>
+   <li>
+      <p><b>The Firefox browser</b></p>
+      <p>On 64-bit Windows machines, the default installation directory is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</p>
+      <p>On Linux machines, locate the browser executable in your PATH.</p>
+   </li>
+   <li>
+      <p><b>The <code>JsTestDriver.jar</code> file</b></p>
+   </li>
+</ul>
+<h2 id="main-api">Configure unit tests</h2>
+<p>Configuration files are located in the <code>/dev/tests/js</code> directory.</p>
+<p>In a custom <code>jsTestDriver.php</code> configuration file or the default <code>jsTestDriver.php.dist</code> file, set these configuration parameters:</p>
+<dl>
+   <dt>Browser</dt>
+   <dd>
+      <p>Defines the file path to the executable for the browser.</p>
+      <p>If you do not set this value, the script uses to the default browser location, as follows:</p>
+      <ul>
+         <li>
+            <p><b>64-bit Windows</b>. The location is <code>C:\Program Files (x86)\Mozilla Firefox\firefox.exe</code>.</p>
+         </li>
+         <li>
+            <p><b>Linux</b>. The script runs the <code>which firefox</code> command to determine the location of the Firefox executable in your PATH.</p>
+         </li>
+      </ul>
+   </dd>
+   <dt>JsTestDriver</dt>
+   <dd>
+      <p>Required. Defines the file path to the <code>JsTestDriver.jar</code> file.</p>
+   </dd>
+</dl>
+<h2 id="run-js-unit-tests">Use JsTestDriver to run unit tests</h2>
+<p>To run the automated JavaScript tests, run the <code>run_js_tests.php</code> script inside the PHP interpreter from the command line:</p>
+<blockquote>
+   <pre>
+c:\git\magento2\dev\tests\js>php run_js_tests.php
+</pre>
+</blockquote>
+<p>Find the test results in individual <code>.xml</code> files in the <code>dev/tests/js/test-output</code> directory.</p>
+<p>The output of the PHP command resembles this output:</p>
+<p><b>JsTestDriver output:</b></p>
+<blockquote>
+   <pre>
+c:\git\magento2\dev\tests\js>php run_js_tests.php
+java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
+setting runnermode QUIET
+....................................
+Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
+  Firefox 15.0 Windows: Run 36 tests (Passed: 36; Fails: 0; Errors 0) (138.00 ms)
+  </pre>
+</blockquote>
+<p>On Linux, the X Server might generate one or more warning messages in the output:</p>
+<p><b>X Server warning messages on Linux:</b></p>
+<blockquote>
+<pre>
+FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
+</pre>
+</blockquote>
+<p>An X Server bug causes these benign messages, which you can ignore.</p>
+<p>When you run the PHP script, it reads two configuration files. It also generates a <code>jsTestDriver.conf</code> YAML configuration file in the <code>/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests.</p>
+<p>The contents of jsTestDriver.conf resembles this:</p>
+<p><b>Generated jsTestDriver.conf file:</b></p>
+<blockquote>
+<pre>
+server: http://localhost:9876
+proxy:
+  - {matcher: "/lib/web/*", server: "http://localhost:9876/test/C:/git/magento2/lib/web/"}
+  ...
+load:
+  - ../../../lib/web/globalize/globalize.js
+  ...
+test:
+  - ../../../dev/tests/js/testsuite/mage/calendar/calendar-test.js
+  ...
+serve:
+  - ../../../lib/web/mage/calendar/calendar.js
+  ...
+</pre>
+</blockquote>
+<p>After the PHP interpreter runs for the first time, you can <a href="#phpstorm">run the JavaScript unit tests from the PhpStorm IDE</a>.</p>
+<h2 id="phpstorm">Use PhpStorm to run unit tests</h2>
+<h3 id="install-plugin">Step 1. Install the JSTestDriver plugin</h3>
+<ol>
+   <li>In PhpStorm, open <b>Settings</b> and select <b>Plugins</b>.</li>
+   <li>Click <b>Browse Repositories...</b>.</li>
+   <li>Right-click <b>JSTestDriver Plugin</b> and select <b>Download and Install</b>.</li>
+   <li>Restart PhpStorm.</li>
+</ol>
+<h3 id="start-jstestdriver-server">Step 2. Start the JsTestDriver server</h3>
+<ol>
+   <li>At the bottom of the IDE, click <b>JsTestDriver Server</b>.</li>
+   <li>
+      <p>In the <b>JsTestDriver Server</b> panel, click the green right arrow to start the server.</p>
+      <p>The bar changes to yellow and reads <code>There are no captured browsers</code>.</p>
+   </li>
+</ol>
+<h3 id="run-configuration">Step 3. Create a run configuration</h3>
+<ol>
+<li>Enter a name for the run configuration.</li>
+<li>Select <b>Configuration File</b> and provide the location of the <code>jsTestDriver.conf</code> file generated by PHP.</li>
+<li>Select <b>Running in IDE</b>.</li>
+<li>
+   <p>Click <b>Test Connection</b>.</p>
+   <p>The <code>Connection to http://localhost:9876 is OK, no captured browsers</code> message appears.</p>
+</li>
+<h3 id="capture-browser">Step 4. Capture a browser</h3>
+<ol>
+   <li>
+      <p>In the <b>JsTestDriver Server</b> panel, click a browser icon.</p>
+      <p>The selected browser opens. In the browser, a green header shows the <code>Server: Waiting...</code> message.</p>
+      <p>The colored bar in the <b>JsTestDriver Server</b> panel turns green.</p>
+      <p>The <code>Ready to run tests</code> message appears.</p>
+   </li>
+   <li>
+      <p>To run the unit tests, select <b>Run Configuration</b> and click the <b>Run</b> icon.</p>
+      <p>A panel at the bottom of the IDE shows the test results.</p>
+   </li>
+   <li>
+      <p>Depending on whether you have changed one or more configuration files, complete the appropriate step to run the tests:</p>
+      <ul>
+         <li>
+            <p><b>No changed configuration files</b></p>
+            <p>Use PhpStorm to run the tests.</p>
+            <p>Before you can run the tests, click the red square icon in the <b>JsTestDriver Server</b> panel to stop the JsTestDriver server that runs in PhpStorm. You must also close the captured browser.</p>
+         </li>
+         <li>
+            <p><b>One or more changed configuration files</b></p>
+            <p>Use the PHP interpreter at the command line to regenerate the <code>jsTestDriver.conf</code> file and run the tests.</p>
+         </li>
+      </ul>
+   </li>
+</ol>
