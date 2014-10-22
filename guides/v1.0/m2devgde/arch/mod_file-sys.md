@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: The Magento Modular File System
+title: Magento modular file system
 ---
  
 <h1 id="m2devgde-mod-file-sys">{{ page.title }}</h1>
@@ -11,7 +11,7 @@ title: The Magento Modular File System
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem.php" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`. 
 
-<h2 id="mod-file-sys-struct">Understanding the Structure of the Magento File System</h2>
+<h2 id="mod-file-sys-struct">Magento file system structure</h2>
 
 The main components of the Magento file system are:
 
@@ -21,7 +21,7 @@ The main components of the Magento file system are:
 *	Classes in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory" target="_blank">the Directory directory</a>, which facilitate the handling of directories.
 *	Classes in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver" target="_blank">the Driver directory</a>, which perform all operations with the file system.
 
-<h2 id="mod-file-sys-manage">Managing the File System</h2>
+<h2 id="mod-file-sys-manage">Manage the file system</h2>
 
 The `Magento\Framework\Filesystem` class is an entry point to the file system. This class enables you to:
 
@@ -66,7 +66,7 @@ In the preceding example:
 
 To verify whether or not existing directories have read or write access, use the `createAndVerifyDirectories()` method of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList/Verification.php" target="_blank">Magento\Filesystem\DirectoryList\Verification</a> class.
 
-<h2 id="mod-file-sys-dirs">Exploring Directories</h2>
+<h2 id="mod-file-sys-dirs">Explore directories</h2>
 
 There are four types of directories in the Magento file system:
 
@@ -114,11 +114,11 @@ There are four types of directories in the Magento file system:
 
 The location of the application and public directories can be changed the same way as the location of the system directory; that is, using `config.xml`.
 
-<h2 id="mod-file-sys-diraccess">Accessing Directories</h2>
+<h2 id="mod-file-sys-diraccess">Access directories</h2>
 
 This section discusses read and write access to directories.
 
-<h3 id="mod-file-sys-diraccess-read">Getting Read Access to Directories</h3>
+<h3 id="mod-file-sys-diraccess-read">Get read access to directories</h3>
 
 Use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/ReadInterface.php" target="_blank">Magento\Framework\Filesystem\Directory\ReadInterface</a> to get read access to directories.
 
@@ -179,7 +179,7 @@ You can perform the following actions:
 	</tbody>
 	</table>
 
-<h3 id="mod-file-sys-diraccess-read">Getting Write Access to Directories</h3>
+<h3 id="mod-file-sys-diraccess-read">Get write access to directories</h3>
 
 Use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\WriteInterface</a> to get write access to directories.
 
@@ -233,13 +233,13 @@ You can perform the following actions:
 	</tbody>
 </table>
 	
-<h2 id="mod-file-sys-files">Handling Files</h2>
+<h2 id="mod-file-sys-files">Handle files</h2>
 
 You can access read-only and read-write files using `openFile()` method of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/ReadInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\ReadInterface</a> or <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\WriteInterface</a>, respectively. 
 
 Complementary interfaces: <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/ReadInterface.php" target="_blank">\Magento\Framework\Filesystem\File\ReadInterface</a> and <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/WriteInterface.php" target="_blank">\Magento\Framework\Filesystem\File\WriteInterface</a>.
 
-<h2 id="mod-file-sys-drivers">Concepts: Drivers</h2>
+<h2 id="mod-file-sys-drivers">Concepts: drivers</h2>
 
 Both files and directories use _drivers_ to perform operations like creating, copying, and deleting files and directories.
 
@@ -253,7 +253,7 @@ Following is a sample module's `config.xml` that specifies two drivers.
 
 <script src="https://gist.github.com/xcomSteveJohnson/41fda43194008c1717e4.js"></script>
 
-<h2 id="mod-file-sys-wrap">Wrapping the Operations</h2>
+<h2 id="mod-file-sys-wrap">Wrap operations</h2>
 
 A _wrapper_ can be used as an optional parameter in the methods to create or read a file. If a specific wrapper is not specified, the wrapper, if any, specified in the directory configuration's `config.xml` is used.
 
@@ -268,5 +268,5 @@ To register a wrapper:
 <script src="https://gist.github.com/xcomSteveJohnson/53b0f770e3be086c780c.js"></script>
 
 
-#### Related Topics:
+#### Related topics:
 
