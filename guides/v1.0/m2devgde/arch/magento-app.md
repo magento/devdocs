@@ -7,7 +7,8 @@ title: Magento\App component
 <p><a href="{{ site.githuburl }}m2devgde/view/RENAME.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="overview">Overview</h2>
 
-The Magento framework needs the `Magento\App` component to provide dependency injection and access to database and routing.
+To provide dependency injection and access to database and routing,
+the Magento framework needs the `Magento\App` component.
 
 Use the `Magento\App` component configure the Magento framework.
 

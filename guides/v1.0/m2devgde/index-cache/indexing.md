@@ -1,13 +1,13 @@
 ---
 layout: howtom2devgde_chapters
-title: Working With Indexing
+title: Indexing
 ---
  
 <h1 id="m2devgde-indexing">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/index-cache/indexing.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-indexing-intro">Introduction to Indexing</h2> 
+<h2 id="m2devgde-indexing-intro">Overview</h2> 
 
 _Indexing_ is how the Magento system transforms data such as products, categories, and so on, to improve the performance of your web store. As data changes, the transformed data must be updated or reindexed. 
 
@@ -18,7 +18,6 @@ The Magento application contains several indexers out of the box, but you might 
 This articles contains a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer. It is aimed at backend developers and assumes readers are familiar with the Magento modular architecture and config implementation. 
 
 <p class="q">Reviewer: Not sure what links should be there, since I cannot find at the the website the landing pages (for modular architecutre and configurations) existing in wiki.</p>
-
 
 <h2 id="m2devgde-indexing-terms">Terms Used</h2> 
 

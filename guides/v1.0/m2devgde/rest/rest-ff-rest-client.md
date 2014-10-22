@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: How-To&mdash;Using the Firefox REST Client to Create a Customer
+title: How-to&mdash;Use the Firefox REST client to create a customer
 ---
 
 # How-To&mdash;Using the Firefox REST Client to Create a Customer

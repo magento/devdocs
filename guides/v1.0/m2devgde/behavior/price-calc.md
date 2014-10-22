@@ -1,11 +1,9 @@
 ---
 layout: howtom2devgde_chapters
-title: How Magento Calculates Prices
-
-
+title: How Magento calculates prices
 ---
  
-<h1 id="m2devgde-pricecalc">How Magento Calculates Prices</h1>
+<h1 id="m2devgde-pricecalc">How Magento calculates prices</h1>
 
 <h2 id="m2devgde-pricecalc-intro">Introduction to the Magento Pricing Library</h2> 
 This article provides in-depth information about Magento price calculation logic implemented in the <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing" target="_blank"><code>Magento\Framework\Pricing</code></a> library.

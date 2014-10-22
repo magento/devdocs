@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Accessing Magento Objects Using REST
+title: Use REST to access Magento objects
 ---
 
 # Accessing Magento Objects Using REST
