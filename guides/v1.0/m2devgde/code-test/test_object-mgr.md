@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Object Manager Helper
+title: Object Manager helper
 ---
 
 <h1 id="m2devgde-objmgrhelper">{{ page.title }}</h1>
@@ -31,13 +31,13 @@ title: Object Manager Helper
    <li>Create collection instances that contain specified elements.</li>
 </ul>
 <p>The following table describes the methods:</p>
-<table style="width:100%">
+<table style="width:75%">
    <colgroup>
       <col width="50%">
       <col width="50%">
    </colgroup>
    <thead>
-       <tr style="background-color:lightgray">
+      <tr style="background-color:lightgray">
          <th>Method description</th>
          <th>Usage</th>
       </tr>
@@ -45,11 +45,16 @@ title: Object Manager Helper
    <tbody>
       <tr>
          <td>
-            <p>Creates mocks for all constructor dependencies, applies any specified custom mocks from $arguments array, and instantiates the required $className by using constructor with already existing mocks.</p>
-            <pre>public function getObject($className, array $arguments = array());</pre>
+            <p>Creates mocks for all constructor dependencies and applies any specified custom mocks from <code>$arguments</code> array.</p>
+            <p>Also, instantiates the required <code>$className</code> by using constructor with already existing mocks.</p>
+<pre>
+public function getObject($className,
+     array $arguments = array());
+</pre>
          </td>
          <td>
-            <pre>$objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
+<pre>
+$objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 
 // default constructor arguments
 $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool');
@@ -58,17 +63,23 @@ $scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool');
 $cacheMock = $this->getMock('\Magento\Cache\FrontendInterface');
 ...
 $arguments = array('cache' => $cacheMock);
-$scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool', $arguments);</pre>
+$scopePool = $objectManagerHelper->getObject('\Magento\App\Config\ScopePool',
+     $arguments);
+</pre>
          </td>
       </tr>
       <tr>
          <td>
             <p>Retrieves a collection instance with mocked getIterator method.</p>
-            <pre>public function getCollectionMock($className, array $data);</pre>
+<pre>
+public function getCollectionMock($className,
+     array $data);
+</pre>
             <p>The collection contains elements from the $data array.</p>
          </td>
          <td>
-            <pre>$objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
+<pre>
+$objectManagerHelper = new \Magento\TestFramework\Helper\ObjectManager($this);
 // Prepare mock for collection elements
 $option = $this->getMock(
     'Magento\Bundle\Model\Option',
@@ -77,16 +88,23 @@ $option = $this->getMock(
     '',
     false
 );
-$optionCollection = $this->objectManagerHelper->getCollectionMock('Magento\Bundle\Model\Resource\Option\Collection', array($options));</pre>
+$optionCollection =
+     $this->objectManagerHelper->getCollectionMock('Magento\Bundle\Model\Resource\Option\Collection',
+          array($options));
+</pre>
          </td>
       </tr>
       <tr>
          <td>
             <p>Lists dependency mocks for a specified class.</p>
-            <pre>public function getConstructArguments($className, array $arguments = array());</pre>
+<pre>
+public function getConstructArguments($className,
+     array $arguments = array());
+</pre>
             <p>In Magento 2.x, several tests introduced mocks for abstract models and blocks.</p>
          <td>
-            <pre>$attributeData = array(
+<pre>
+$attributeData = array(
     'store_label' => 'Test',
     'attribute_code' => 'test',
     'is_required' => 1,
@@ -108,7 +126,9 @@ $arguments = $objectManagerHelper->getConstructArguments(
 );
 
 /** @var $attribute \Magento\Eav\Model\Entity\Attribute\AbstractAttribute|\PHPUnit\Framework\MockObject\MockObject */
-$attribute = $this->getMockForAbstractClass($attributeClass, $arguments);</pre>
+$attribute = $this->getMockForAbstractClass($attributeClass,
+    $arguments);
+</pre>
          </td>
       </tr>
    </tbody>

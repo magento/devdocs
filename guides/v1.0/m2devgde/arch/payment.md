@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Payment Modules
+title: Payment modules
 ---
  
 <h1 id="m2devgde-pymt">{{ page.title }}</h1>
@@ -13,13 +13,13 @@ This article describes in general the functionality, and responsibilities of pay
 
 Please note that this article provides only payment module-specific recommendations.
 
-<h2 id="m2devgde-cache-implementation">Payments Implementation</h2>
+<h2 id="m2devgde-cache-implementation">Payments implementation</h2>
 
 In Magento 2.x, payment methods are structured follows: all abstract logic common for all payments methods in located in a separate module, and the implementations of particular methods are located in corresponding modules, grouped by payment gateway or by type. This enables you to easily configure the set of payment methods your store provides by disabling the modules for the solutions you are not interested in. 
 
 Next section gives an overview of all payment modules and recommendations on payment module disabling and enabling.
 
-<h2 id="m2devgde-cache-cautions">Payment Module Disabling and Enabling Cautions</h2>
+<h2 id="m2devgde-cache-cautions">Payment module disable and enable cautions</h2>
 
 If the business logic of your Magento store provides that you do not need some payment solutions, you can disable the corresponding modules. If required, you can later enable the modules (unless you deleted it from the code base).
 

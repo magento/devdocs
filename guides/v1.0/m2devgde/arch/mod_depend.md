@@ -1,13 +1,13 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 Module Dependencies
+title: Magento 2 module dependencies
 ---
  
 <h1 id="m2devgde-depen">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-moddep-intro">Introduction to Module Dependencies</h2> 
+<h2 id="m2devgde-moddep-intro">Overview</h2> 
 
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Understanding+Module+Dependencies
 
