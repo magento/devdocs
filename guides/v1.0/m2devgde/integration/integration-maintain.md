@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Maintaining an Integration
+title: Maintain an integration
 ---
 
 <h1 id="integration-maintain">Maintaining an Integration</h1>

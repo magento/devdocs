@@ -1,10 +1,10 @@
 ---
 layout: howtom2devgde_chapters
-title: Using the Pricing Library
+title: The pricing library
 ---
  
 <p><a href="{{ site.githuburl }}m2devgde/behavior/pricing.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-<h1 id="m2devgde-pricelib">Using the Pricing Library</h1>
+<h1 id="m2devgde-pricelib">The pricing library</h1>
 
 <h2 id="m2devgde-pricelib-intro">Overview</h2> 
 
