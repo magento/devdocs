@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Overview of Magento 2 Development
+title: Magento 2 development overview
 ---
 
 <h1 id="devgde-overview">{{ page.title }}</h1>

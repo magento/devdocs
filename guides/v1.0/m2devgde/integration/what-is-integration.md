@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: What is an Integration?
+title: What is an integration?
 ---
 
 <h1 id="what-is-integration">What is an Integration?</h1>
