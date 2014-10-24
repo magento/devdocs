@@ -19,8 +19,7 @@ You use *interception* to reduce conflicts among extensions that change the beha
 
 Interception ensures that conflicting extensions run without intervention in the system.
 
-
-<h2 id="plugin-intro">Limitations</h2>
+<h2 id="plugin-limit">Limitations</h2>
 
 You cannot use plugins for:
 
@@ -28,19 +27,11 @@ You cannot use plugins for:
 * Final methods.
 * Final classes.
 
-<h2 id="plugin-intro">Declare a plugin</h2>
+<h2 id="plugin-declare">Declare a plugin</h2>
 
 You declare a plugin for an object in the <code>di.xml</code> file for a module:
 
-<blockquote>
-<pre>
-&lt;config>
-    &lt;type name="{ObservedType}">
-        &lt;plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="true"/>
-    &lt;/type>
-&lt;/config>
-</pre>
-</blockquote>
+<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
 
 You must specify these elements:
 
@@ -50,7 +41,7 @@ You must specify these elements:
 * `plugin sortOrder`. The order in which plugins that call the same method are run.
 * `plugin disabled`. To disable a plugin, set this element to `true`.
 
-<h2 id="plugin-intro">Prioritize plugins</h2>
+<h2 id="plugin-priority">Prioritize plugins</h2>
 
 Several conditions influence how plugins apply to the same class/interface:
 
@@ -95,7 +86,7 @@ Several conditions influence how plugins apply to the same class/interface:
 <p>The before prefix should be added to the name of an original method.</p>
 <p>For example:</p>
 
-<blockquote>
+
 <pre>
 namespace My\Module\Model\Product;
 
@@ -107,7 +98,7 @@ class Plugin
     }
 }
 </pre>
-</blockquote>
+
 
 <p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
 
@@ -115,19 +106,8 @@ class Plugin
 
 <p>For example:</p>
 
-<blockquote>
-<pre>
-namespace My\Module\Model\Product;
+<script src="https://gist.github.com/xcomSteveJohnson/4a68a7c692536d520ffe.js"></script>
 
-class Plugin
-{
-    public function afterGetName(\Magento\Catalog\Model\Product <code>$subject</code>, $result)
-    {
-        return '|' . $result . '|';
-    }
-}
-</pre>
-</blockquote>
 
 <p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
 
@@ -135,24 +115,8 @@ class Plugin
 
 <p>For example:</p>
 
-<blockquote>
-<pre>
-namespace My\Module\Model\Product;
+<script src="https://gist.github.com/xcomSteveJohnson/8e25785abf1754c59ccb.js"></script>
 
-class Plugin
-{
-    public function aroundSave(\Magento\Catalog\Model\Product <code>$subject</code>, \Closure <code>$proceed</code>)
-    {
-        $this->doSmthBeforeProductIsSaved();
-        $returnValue = <code>$proceed</code>();
-        if ($returnValue) {
-            $this->postProductToFacebook();
-        }
-        return $returnValue;
-    }
-}
-</pre>
-</blockquote>
 
 <p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>) followed by the arguments belonging to an original method.</p>
 
@@ -169,10 +133,6 @@ class Plugin
 <p>You can override the plugins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
 
 <h2 id="compiler-tool">The compiler tool</h2>
-
+<p class="q">Reviewer: More information required. What is the compiler tool and how do I use it?</pre>
 <p>The compiler tool automatically generates the classes to manage your plugins.</p>
 <p>The compiler tool also handles the performance slowdown caused by configuration inheritance.</p>
-
-<h2 id="generate-interceptions">Generate interceptions</h2>
-
-<p>For details, see "Generating the Utility Classes."</p>

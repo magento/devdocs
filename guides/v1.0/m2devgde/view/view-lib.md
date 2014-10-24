@@ -14,16 +14,15 @@ on `Magento_Core`, `Magento_Backend`, `Magento_Adminhtml` and `Magento_Page
 for HTML content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.
 
-The View component is represented
-as `Magento\Framework\View` library: `magento2/lib/Magento/Framework/View`.
+Magento 2 View components are located in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View" target="_blank">lib/internal/Magento/Framework/View</a>.
 
 <h2 id="framework-view-library">The Magento\Framework\View Library</h2>
 
-The View component contains contains basic classes, factories and interfaces
+The View component basic classes, factories and interfaces
 used to implement HTML content rendering  for the frontend and backend
 application areas. 
 
-<h2 id="library-components">Magento\View Library Components</h2>
+<h2 id="library-components">Magento\View library components</h2>
 
 The `Magento\Framework\View` library has the following components:
 

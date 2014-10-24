@@ -22,21 +22,9 @@ Then, according to a route rule, controller is assigned to URL. Use the `routes.
 The routers information for the modules is described in `routerList` parameter of `Magento\App\RouterList` type in `di.xml` file.
 
 Each area has its own set of the routers. You configure a router, as follows:
-<blockquote>
-<pre>
-&lt;type name="Magento\App\RouterList">
-    &lt;arguments>
-         &lt;argument name="routerList" xsi:type="array">
-             &lt;item name="%routerName%" xsi:type="array">
-                 &lt;item name="instance" xsi:type="string">%instanceName%&lt;/item>
-                 &lt;item name="disable" xsi:type="boolean">false&lt;/item>
-                 &lt;item name="sortOrder" xsi:type="string">10&lt;/item>
-             &lt;/item>
-         &lt;/argument>
-     &lt;/arguments>
-&lt;/type>
-</pre>
-</blockquote>
+
+<script src="https://gist.github.com/xcomSteveJohnson/347fabf5747a615dc921.js"></script>
+
 `Magento\App\RouterList` model is injected into `FrontController`.
 
 You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
@@ -49,7 +37,7 @@ Configurations of the routes are stored in `routes.xml` in the scopes area.
 
 Only the standard frontend and backend routers use routes. Typically, the configuration for a route is in the following format:
 
-<blockquote>
+
 <pre>
 &lt;config>
     &lt;router id="%routerId%">
@@ -59,7 +47,7 @@ Only the standard frontend and backend routers use routes. Typically, the config
     &lt;/router>
 &lt;/config>
 </pre>
-</blockquote>
+
 
 To retrieve the configuration for route for an area by the specified router, use the `Magento\App\Route\Config`.
 
@@ -73,9 +61,9 @@ If you must reset a route and design, forward the request processing to another 
 
 `$this->_forward('other/controller/action')`
 
-To remove the controller action, forward to `noroute,` for instance, in `app/code/Company/SomeExtension/Controller/Account.php`:
+To remove the controller action, forward to `noroute`, for instance, in `app/code/Company/SomeExtension/Controller/Account.php`:
 
-<blockquote>
+
 <pre>
 namespace Company\SomeExtension\Controller;
 
@@ -97,7 +85,7 @@ class Account extends \Magento\App\Action\Action
     }
 }
 </pre>
-</blockquote>
+
 
 <h3>Routing processing</h3>
 
@@ -116,20 +104,9 @@ For this class, the `Magento\App` component ensures implementation of `Magento\A
 * `Magento\App\Arealist` class serves to configure the application areas through the `di.xml` file
 * `Magento\App\Area\FrontNameResolverInterface` class resolves the dynamic area's front names:
 
-<blockquote>
-<pre>
-&lt;type name="Magento\App\AreaList">
-    &lt;param name="areas">
-        &lt;value>
-            &lt;adminhtml>
-                &lt;frontNameResolver>Magento\Backend\App\Area\FrontNameResolver&lt;/frontNameResolver>
-                &lt;router>admin&lt;/router>
-            &lt;/adminhtml>
-        &lt;/value>
-    &lt;/param>
-&lt;/type>
-</pre>
-</blockquote>
+
+<script src="https://gist.github.com/xcomSteveJohnson/254da12747fdf6b4f3ab.js"></script>
+
 
 <h2>Default router</h2>
 
@@ -139,20 +116,7 @@ If a request cannot be processed by any router, the `Magento\App\Router\DefaultR
 
 You can extend it by adding description of a new instance in the DI configurations:
 
-<blockquote>
-<pre>
-&lt;type name="Magento\App\Router\NoRouteHandlerList">
-    &lt;param name="handlerClassesList">
-        &lt;value>
-            &lt;%handlerName%>
-                &lt;instance>%instanceName%&lt;/instance>
-                &lt;sortOrder>100&lt;/sortOrder>
-            &lt;/%handlerName%>
-        &lt;/value>
-    &lt;/param>
-&lt;/type>
-</pre>
-</blockquote>
+<script src="https://gist.github.com/xcomSteveJohnson/acf72884c0a7246aba66.js"></script>
 
 You must specify the following parameters:
 

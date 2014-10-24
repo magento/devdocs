@@ -59,7 +59,7 @@ The object manager needs the following configurations:
 
 Magento uses class constructor signatures to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.
 
-Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">defintion compiler tool</pre> to pre-compile class definitions for better performance.
+Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">defintion compiler tool</a> to pre-compile class definitions for better performance.
 
 The parameters specified for a class type are inherited by its descendant classes.
 
@@ -67,10 +67,7 @@ To define the interface preferences for the object manager, use `app/etc/di/*.xm
 
 For example, to set the interface preferences for the Magento Admin, use `app/code/core/Magento/Backend/etc/adminhtml/di.xml` as follows:
 
-<pre>&lt;config>
-    &lt;preference for="Magento_Core_Model_UrlInterface" type="Magento_Backend_Model_Url" />
-&lt;/config>
-</pre>
+<script src="https://gist.github.com/xcomSteveJohnson/a166ab469a52eeec9954.js"></script>
 
 Note that configurations specified at the area level will override the global configurations. You can also specify the sharebility of the object's `di.xml` configuration file as follows:
 

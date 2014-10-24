@@ -6,6 +6,9 @@ title: Data types schema
 <h1 id="m2devgde-data-type-schema">{{ page.title }}</h1>
 <p><a href="{{ site.githuburl }}m2devgde/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="overview">Overview</h2>
+<p class="q">Reviewer: I'm targeting this for removal from the Dev Guide. If you disagree, please provide a detailed answer why not. Why should this be a topic? Why would someone go to a guide to look for something like this? Wouldn't it be better to document the XSD in the XSD?</p>
+
+
 <p>The Magento application uses the <code>lib/internal/Magento/Framework/Data/etc/argument/types.xsd</code> XML schema to validate argument data types.</p>
 <h2 id="description">Description</h2>
 <p>This table describes the <code>lib/internal/Magento/Framework/Data/etc/argument/types.xsd</code> XML schema:</p>
@@ -85,5 +88,7 @@ title: Data types schema
       </tr>
    </tbody>
 </table>
-<h2 id="see-also">See also</h2>
-<p><a href="../view/xml-schema-layout.html" target="_blank"><em>XML Schema For Your Layout</em></a></p>
+
+#### Related topics
+
+<p><a href="../view/xml-schema-layout.html" target="_blank">XML Schema For Your Layout</a></p>
