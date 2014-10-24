@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Magento 2 API Guide
-
 ---
 
 <div class="container bs-docs-container">
