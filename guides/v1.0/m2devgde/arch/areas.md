@@ -18,14 +18,14 @@ Magento is divided into several conditional parts, which are not inter-dependent
 Usually, an area has the behavior and view components, which operate separately. However, an area can have only one component, for instance, the Cron area, which does not have the view component.
 In Magento there are six areas
 
-* Admin panel <!-- link -->
+* <a href="#m2devgde-area-admin">Admin panel</a>
 * Storefront(frontend): entry point for this area is <code>index.php</code> or <code>pub/index.php</code>
 * Crontab (crontab): entry point for this area is <code>pub/cron.php</code>
 * Install (install): entry point for this area is <code>dev/shell/install.php</code>, or <code>index.php</code> or <code>pub/index.php</code>
 * Web API REST (webapi_rest): entry point for this area is index.php or pub/index.php
 * Web API SOAP (webapi_soap): entry point for this area is index.php or pub/index.php
 If your extension works in several areas, you should ensure it has separate behavior and view components for each area.
-The third-party developer can add an area if necessary. <!--internal link -->
+The third-party developer can <a href="#m2devgde-area-add">add an area</a> if necessary. 
 
 <h2 id="m2devgde-area-use-in-md">Using Modules in Areas</h2>
 The resources visible and accessible in an area as well as area's behavior are defined by modules. The same module can influence several areas, for instance RMA [note: this module is available in EE only] module is represented partly in the admin panel area and partly in the storefront area.
@@ -122,14 +122,14 @@ The changes you make by using this method are temporal. For instance, in the exa
 <h2 id="m2devgde-area-add">Adding a New Area</h2>
 To add a new area:
 
-1. Declare unique code for a new area in configurations. <!-- internal link -->
-2. Add a router if necessary. <!-- internal link -->
-3. Add an abstract controller if necessary. <!-- internal link -->
+1. <a href="#m2devgde-area-nm">Declare</a> unique code for a new area in configurations.
+2. <a href="#m2devgde-area-add-rout">Add a router</a> if necessary. 
+3. <a href="#m2devgde-area-add-contr">Add an abstract controller</a> if necessary. 
 
 <h3 id="m2devgde-area-add-md">Area Module</h3>
 
 Each area declares itself in a module. All resources specific for an area are located in area's module as well.
-You can use an area's module to enable or disable an area. If this module is enabled, it injects an area's routers into general application's routing process. If this module is disabled, an area's routers <!--internal link --> are not loaded and, as a result, an area's resources and specific functionality are not available.
+You can use an area's module to enable or disable an area. If this module is enabled, it injects an area's routers into general application's routing process. If this module is disabled, <a href="#m2devgde-area-add-rout"> an area's routers</a> are not loaded and, as a result, an area's resources and specific functionality are not available.
 
 
 <div class="bs-callout bs-callout-warning" id="warning">
@@ -204,13 +204,13 @@ L-view
 <h2 id="m2devgde-area-admin">Understanding Admin Panel Area</h2>
 The admin panel area serves for managing the store. The code of this area is adminhtml. Respectively, adminhtml subdirectory contains the view resources and Adminhtml subdirectory contains the controllers of the admin panel area.
 
-You can extend the following parts of the admin panel area: <!--internal link -->
+You can extend the following parts of the admin panel area: 
 
-* The event observer mechanism
-* The access control list (ACL) rules
-* The navigation menu in the admin panel
-* The configuration menu in the admin panel
-* The layout update
+* <a href="#m2devgde-area-extend">The event observer mechanism</a>
+* <a href="#m2devgde-area-extend-acl">The access control list (ACL) rules</a>
+* <a href="#m2devgde-area-extend-menu">The navigation menu in the admin panel</a>
+* <a href="#m2devgde-area-extend-conf-menu">The configuration menu in the admin panel</a>
+* <a href="#m2devgde-area-layout">The layout update</a>
 
 After you extend the configuration or navigation menu, you will need to specify the routes for custom modules.
 
@@ -230,13 +230,13 @@ To apply additional filter to the data, you need first to define where to find a
 &lt;/config&gt;
 </pre>
 Then, implement the observer's listener:
-<code>
+<pre>
 public&nbsp;function&nbsp;yourMethodName(Varien_Event_Observer&nbsp;$observer)
 {
 &nbsp;&nbsp;&nbsp;&nbsp;$collection&nbsp;=&nbsp;$observer-&gt;getEvent()-&gt;getData('collection');
 &nbsp;&nbsp;&nbsp;&nbsp;$collection-&gt;addFieldToFilter('entity_id',&nbsp;array('nin'=&gt;$productId));
 }
-</code>
+</pre>
 <h3 id="m2devgde-area-extend-acl">Extending the ACL Rules</h3>
 If you need to limit access to some page or resource in the admin panel, use `acl.xml` file in a module, to which this page or resource belongs:
 <pre>
@@ -285,101 +285,24 @@ If you need to add some elements to the **Stores** > **Configuration** menu, add
 &lt;/config&gt;
 </pre>
 
-<h3></h3>
+<h3 id="m2devgde-area-def-rout">Defining Routes for Custom Modules</h3>
+After you customize or add some a module to the admin panel, you will need to ensure that route of this modules is coherent with the routes of the native Magento modules. To define a custom module's route, specify this route as fallback of standard admin panel's route in `routes.xml` file of a module. When specifying a route for a module, make sure that a route is unique.
+<pre>
+&lt;config&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;router&nbsp;id=&quot;admin&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;route&nbsp;id=&quot;adminhtml&quot;&nbsp;frontName=&quot;admin&quot;&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;module&nbsp;name=&quot;Magento_Backend&quot;/&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/route&gt;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/router&gt;
+&lt;/config&gt;
+</pre>
+By using before or after parameters you can assign correspondingly higher or lower priority in finding the controllers to a module.
 
-
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Introducing+Areas
-
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
-
-<h2 id="help">Helpful Aids for Writers</h2>
-
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
-
-### General Markdown Authoring Tips
-
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
-
-### Note, Tip, Important, Caution
-
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>This is important. </p></span>
-  </div>
-  
-<div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a tip. </p></span>
-</div>
-
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
-
-### Tables
-
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
-
-HTML table:
-
-<table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
-</table>
-
-### Images
-
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
-
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
-
-You can also use a title tag to provide a mouseover tooltip; this is recommended for accessiblity (screen readers and so on).
-
-HTML example:
-
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
-
-Markdown example using an alt tag:
-
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
-
-### Cross-References
-
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding Magento 2 CSS Preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
-
+<h3 id="m2devgde-area-layout">Layout Update</h3>
+The layout update is a set of hierarchical trees of tags, which define the location and nesting of the blocks on a page:
+<pre>
+&lt;{element}&nbsp;name=&quot;&lt;name&gt;&quot;&nbsp;output=&quot;1&quot;&nbsp;label=&quot;...&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;{element}&nbsp;name=&quot;&lt;name&gt;&quot;&nbsp;as=&quot;&lt;alias&gt;&quot;&nbsp;before=&quot;&lt;sibling_name&gt;&quot;&nbsp;after=&quot;&lt;sibling_name&gt;&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;{element}&nbsp;name=&quot;&lt;sibling_name&gt;&quot;&nbsp;template=&quot;...&quot;&nbsp;group=&quot;&lt;group_name&gt;&quot;/&gt;
+&lt;/{element}&gt;
+</pre>
