@@ -104,7 +104,7 @@ title: Configuration files
 <li>A loader</li>
 </ul>
 
-For example to introduce an adapter for a new search server that enables extensions to configure how its entities are indexed in that server, create:
+<p>For example to introduce an adapter for a new search server that enables extensions to configure how its entities are indexed in that server, create:</p>
 
 <ul>
 <li>A loader.</li>
@@ -135,10 +135,10 @@ If any other extension declares a <code>search.xml</code> file, it is merged wit
    <li>
       <p><code>$idAttributes</code>. An array that contains the ID attributes of a node.
       For example, to merge the XML files:</p>
-      <blockquote><pre>array(
-    '&lt;/path/to/node>' => '&lt;identifierAttributeName>',
+      <pre>array(
+    '&lt;/path/to/node>' => '&lt;identifierAttributeName>', 
     '&lt;/path/to/other/node>' => '&lt;identifierAttributeName>',
-}</pre></blockquote>
+}</pre>
    </li>
    <li>
       <p><code>$defaultScope</code>. Defines the configuration scope to be read by default. The default value for this parameter is global scope.</p>
@@ -155,14 +155,14 @@ If any other extension declares a <code>search.xml</code> file, it is merged wit
 <p>If you must use two XSD files for a single XML file, the names of the schemas should be recognizable and associated with the XML file.</p>
 <p>If you have an <code>events.xml</code> file and a first <code>events.xsd</code> file, the XSD files for the merged <code>events.xml</code> file could be named <code>events_merged.xsd</code>.</p>
 <p>To ensure validation of an XML file by appropriate XSD file, you must specify the relative path to the XSD file in the XML file. For example:</p>
-<blockquote>
+
 <pre>
 &lt;config
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:noNamespaceSchemaLocation="../../../../../lib/Magento/ObjectManager/etc/config.xsd"></pre>
-   </blockquote>
+   
 
-<p>IDEs can validate your configuration files at both run time and development time.</p>
+<p>IDEs can validate your configuration files at both runtime and development time.</p>
 <script type="text/xml">
    SyntaxHighlighter.all()
 </script>
