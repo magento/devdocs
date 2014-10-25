@@ -8,17 +8,19 @@ layout: howtom2devgde_chapters
 
 <h2 id="view-library-overview">Introduction to the view library</h2>
 
+<p class="q">Reviewer: Magento_Adminhtml and Magento_Page apparently aren't modules. What should the reference be?</p>
+
 An independent view layer domain, the View component was created to eliminate
 global dependencies
-on `Magento_Core`, `Magento_Backend`, `Magento_Adminhtml` and `Magento_Page` modules
+on `Magento\Core`, `Magento\Backend`, `Magento_Adminhtml` and `Magento_Page` modules
 for HTML content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.
 
 Magento 2 View components are located in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View" target="_blank">lib/internal/Magento/Framework/View</a>.
 
-The View component basic classes, factories and interfaces
+The View component basic classes, factories, and interfaces
 used to implement HTML content rendering  for the frontend and backend
-application areas. 
+areas. 
 
 <h2 id="library-components">Magento\View library components</h2>
 
@@ -67,19 +69,19 @@ libraries and modules, so it has multiple dependencies.
 -   <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager.php" target="_blank">\Magento\Framework\ObjectManager</a>
 -   <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php" target="_blank">\Magento\Framework\Profiler</a>
 
-`Magento\Framework\View` depends on <a href="{{ site.mage2000url }}tree/master/app/code/Magento/Core" target="_blank">Magento_Core</a>
+`Magento\Framework\View` depends on <a href="{{ site.mage2000url }}app/code/Magento/Core" target="_blank">Magento\Core</a>
 
 Basic Magento modules that interact with the` Magento\Framework\View` library
 are:
 
--   `Magento_Core`
--   <a href="{{ site.mage2000url }}tree/master/app/code/Magento/Theme" target="_blank">Magento_Theme</a>
--   <a href="{{ site.mage2000url }}tree/master/app/code/Magento/Backend" target="_blank">Magento_Backend</a>
+-   `Magento\Core`
+-   <a href="{{ site.mage2000url }}app/code/Magento/Theme" target="_blank">Magento_Theme</a>
+-   <a href="{{ site.mage2000url }}app/code/Magento/Backend" target="_blank">Magento\Backend</a>
 -   Magento_FullPageCache
 
 	<p class="q">Reviewer: Where is FullPageCache?</p>
 	
--   <a href="{{ site.mage2000url }}tree/master/app/code/Magento/Widget" target="_blank">Magento_Widget</a>
+-   <a href="{{ site.mage2000url }}app/code/Magento/Widget" target="_blank">Magento_Widget</a>
 
 In addition, a few other modules also use the `Magento\Framework\View` library
 in method calls, constructors of models, and helper classes.
