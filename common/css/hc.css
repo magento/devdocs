@@ -26,6 +26,7 @@ a.ext1:hover {
 }
 
 /* Blockquote for code sample */
+/*
 blockquote.codesample {
     border-top: 4px solid #6AB0DE;
     border-right: none;
@@ -34,6 +35,15 @@ blockquote.codesample {
     margin-right: -10px;
     padding-left: 40px;
     background: none repeat scroll 0% 0% #e4f1f9;
+}
+ */
+
+blockquote {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 /* Move down content because we have a fixed navbar that is 50px tall */
@@ -752,6 +762,7 @@ h1 a,h2 a,h3 a,h4 a
     margin: 0 0 0 20px;
 }
 
+/*
 blockquote {
     border-left: 2px solid #EF672F;
     border-right: 2px solid #EF672F;
@@ -760,6 +771,7 @@ blockquote {
     padding-left: 40px;
     background: #f3f3f7;
 }
+ */
 
 pre {
     font-family: "Courier New";
