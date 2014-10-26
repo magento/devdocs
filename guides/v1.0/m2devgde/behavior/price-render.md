@@ -7,14 +7,25 @@ title: How Magento renders prices
 
 <p><a href="{{ site.githuburl }}m2devgde/behavior/price-render.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-pricerend-intro">Introduction to the Magento Price Rendering</h2> 
-Price rendering process using the Pricing library can be illustrated as follows:
+<h2 id="m2devgde-pricerend-intro">Introduction to Magento price rendering</h2> 
+
+The Magento software renders prices using the Pricing library as follows:
+
 <p><img src="{{ site.baseurl }}common/images/price_rend1.png" alt="Magento\Framework\Pricing\Render\RenderPool searches for renders based on SaleableItem type and PriceCode (createPriceRender, createAmountRender, and createAdjustmentRender methods"></p>
 
 <h2 id="m2devgde-pricerend-api">Price Rendering API</h2>
+
+This section discusses the following APIs:
+
+*	<a href="#m2devgde-pricerend-base-rend">Base Renderer</a>
+*	<a href="#m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</a>
+*	<a href="#m2devgde-pricerend-amrendint">AmountRenderInterface</a>
+*	<a href="#m2devgde-pricerend-pricebox">PriceBox</a>
+
 <h3 id="m2devgde-pricerend-base-rend">Base Renderer</h3>
 
-<a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render.php" target="_blank"><code>Magento\Framework\Pricing\Render</code></a> extends <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank"><code>Magento\Framework\View\Element\AbstractBlock</code></a> and servers as an entry point.
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render.php" target="_blank">Magento\Framework\Pricing\Render</a> extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> and servers as an entry point.
+
 <table>
   <tbody>
     <tr>
@@ -72,9 +83,9 @@ Price rendering process using the Pricing library can be illustrated as follows:
     </tr>
   </tbody>
 </table>
-<h4 id="m2devgde-pricerend-baserend">
-<code>Base Render Dependencies</code>
-</h4>
+
+<h4 id="m2devgde-pricerend-baserend">Base Render dependencies</h4>
+
 <table>
   <tbody>
     <tr>
@@ -95,10 +106,15 @@ Price rendering process using the Pricing library can be illustrated as follows:
     </tr>
   </tbody>
 </table>
-<h3 id="m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</h3>
-<a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank"><code>Magento\Framework\Pricing\Render\AdjustmentRenderInterface</code></a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.
 
-Adjustment Render extends Template and implements its behavior as well.
+
+
+<h3 id="m2devgde-pricerend-adjrendint">AdjustmentRenderInterface</h3>
+
+<p><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render/AdjustmentRenderInterface.php" target="_blank">Magento\Framework\Pricing\Render\AdjustmentRenderInterface</a> is responsible for showing price adjustments according to the system configuration. It has a flexible internal config which allows specifying a separate template for each combination of price type and product type.</p>
+
+<p><code>AdjustmentRender</code> extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php" target="_blank">Magento\View\Element\Template</a> and implements its behavior as well.</p>
+
 <table>
   <tbody>
     <tr>
@@ -112,7 +128,7 @@ Adjustment Render extends Template and implements its behavior as well.
         <code>render</code>
       </td>
       <td>
-        <code>$html : string <br/> <code>$amountRender : AmountRenderInterface <br/> <code>$arguments : array = [ ]</code> 
+        <code>$html : string <br/> $amountRender : AmountRenderInterface <br/> $arguments : array = [ ]</code> 
       </td>
       <td>
         <code>string</code>
@@ -122,14 +138,14 @@ Adjustment Render extends Template and implements its behavior as well.
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>getAdjustmentCode</code>
       </td>
-      <td colspan="1">
+      <td>
         <code>string</code>
       </td>
-      <td colspan="1"></td>
-      <td colspan="1">
+      <td></td>
+      <td>
         Gets the code of the corresponding adjustment object
       </td>
     </tr>
@@ -144,14 +160,14 @@ Adjustment Render extends Template and implements its behavior as well.
       <td>Retrieves the current Price object</td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>getData</code>
       </td>
-      <td colspan="1">-</td>
-      <td colspan="1">
+      <td>-</td>
+      <td>
         <code>array</code>
       </td>
-      <td colspan="1">
+      <td>
         <span>Gets all rendering options</span>
       </td>
     </tr>
@@ -176,25 +192,25 @@ Adjustment Render extends Template and implements its behavior as well.
       <td>Retrieves the current adjustment object</td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>getAmountRender</code>
       </td>
-      <td colspan="1">-</td>
-      <td colspan="1">
+      <td>-</td>
+      <td>
         <code>AmountRenderInterface</code>
       </td>
-      <td colspan="1">
+      <td>
         Gets amount renderer instance
       </td>
     </tr>
   </tbody>
 </table>
-<h3 id="m2devgde-pricerend-amrendint"> 
-  <code>AmountRenderInterface</code>
-</h3>
-<p>
-  <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php"> <code>Magento\Framework\Pricing\Render\AmountRenderInterface</code></a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
-<table>
+
+<h3 id="m2devgde-pricerend-amrendint">AmountRenderInterface</h3>
+
+<p><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php">Magento\Framework\Pricing\Render\AmountRenderInterface</a> gets the Price Amount object from Price objects and represents the exact price value to be rendered.</p>
+
+  <table>
   <tbody>
     <tr>
       <th>Method</th>
@@ -256,11 +272,10 @@ Adjustment Render extends Template and implements its behavior as well.
     </tr>
   </tbody>
 </table>
-<h3 id="m2devgde-pricerend-pricebox">
-  <code>PriceBox</code>
-</h3>
-  <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/Pricing/Render/PriceBox.php">
-    <code>Magento\Framework\Pricing\Render\PriceBox</code></a> is a main block that wraps all price rendering related content of particular Price Type.
+
+<h3 id="m2devgde-pricerend-pricebox">PriceBox</h3>
+
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render/PriceBox.php" target="_blank">Magento\Framework\Pricing\Render\PriceBox</a> is a main block that wraps all price rendering related content of particular Price Type.
 
 This is a private class, it cannot be accessed from general layout blocks or templates.
 <table>

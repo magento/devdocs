@@ -7,7 +7,9 @@ title: Magento modular file system
 
 <p><a href="{{ site.githuburl }}guides/v1.0/m2devgde/arch/mod_file-sys.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="mod-file-sys-intro">Introduction</h2>
+<h2 id="mod-file-sys-intro">Introduction to the Magento 2 file system</h2>
+
+<p class="q">Reviewer: This information was outdated when I saw it. I did my best to update it in a limited time. Please read it very carefully and validate everything.</p>
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem.php" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`. 
 
@@ -43,6 +45,8 @@ $absolutePathToVarDirectory = $filesystem->getPath(Filesystem::VAR_DIR);
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/DirectoryList.php" target="_blank">Magento\Framework\Filesystem\DirectoryList</a> class defines the default settings for primary and system directories.
 
+<p class="q">Reviewer: DirectoryList/Configuration.php does not exist. Should this point instead to the DirectoryList class?</p>
+
 At the second phase of bootstrap, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList/Configuration.php" target="_blank">Magento\Framework\App\Filesystem\DirectoryList\Configuration</a> class retrieves data. Use the `configure()` method to add directories from configurations to the file system.
 
 You can configure the directories in the `system/filesystem/directory` node of <a href="{{ site.mage2000url }}app/code/Magento/Core/etc/config.xml" target="_blank">config.xml</a>. A snippet follows:
@@ -64,9 +68,13 @@ In the preceding example:
   <p>Only module and public directories can be changed using <code>config.xml</code>.</p></span>
   </div>
 
+<p class="q">Reviewer: DirectoryList/Verification.php does not exist. Should this point instead to the DirectoryList class?</p>
+
 To verify whether or not existing directories have read or write access, use the `createAndVerifyDirectories()` method of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Filesystem/DirectoryList/Verification.php" target="_blank">Magento\Filesystem\DirectoryList\Verification</a> class.
 
 <h2 id="mod-file-sys-dirs">Explore directories</h2>
+
+<p class="q">Reviewer: First, some of these directories don't exist (e.g., pub/upload). Second, the file system is being reworked. Please provide either updated directory paths or advice as to whether to hide this information until after directory rework is complete.</p>
 
 There are four types of directories in the Magento file system:
 
@@ -85,6 +93,9 @@ There are four types of directories in the Magento file system:
 	*	`[your Magento install dir]/var/di`
 	*	`[your Magento install dir]/var/generation`
 	*	`[your Magento install dir].app/etc`
+	
+	<p class="q">Reviewer: Magento\Framework\App\EntryPoint does not exist. Please clarify.</p>
+
 	
 	You can change the location of a system directory only when you use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/EntryPoint/EntryPoint.php" target="_blank">Magento\Framework\App\EntryPoint</a> class:
 	
@@ -246,7 +257,7 @@ Both files and directories use _drivers_ to perform operations like creating, co
 Following is the list of drivers available in Magento 2:
 
 *	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/File.php" target="_blank">\Magento\Framework\Filesystem\Driver\File</a> for file system operations (reading, writing, creating, copying, deleting, and so on the files and directories).
-*	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Http.php" target="_blank">\Magento\Framework\Filesystem\Driver\Http</a> and <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Https.php" target="_blank">\Magento\Framework\Filesystem\Driver</a> for HTTP and HTTPS operations, respectively.
+*	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Http.php" target="_blank">\Magento\Framework\Filesystem\Driver\Http</a> and <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Https.php" target="_blank">\Magento\Framework\Filesystem\Driver\Https</a> for HTTP and HTTPS operations, respectively.
 *	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Zlib.php" target="_blank">\Magento\Framework\Filesystem\Driver\Zlib</a> for archiving.
 
 Following is a sample module's `config.xml` that specifies two drivers.
@@ -260,6 +271,8 @@ A _wrapper_ can be used as an optional parameter in the methods to create or rea
 You can apply stream wrappers to the operations using the file system. If you want to use the stream wrapper, you must register if. If a wrapper is not registered, an operation will be passed as a PHP native function call.
 
 To register a wrapper:
+
+<p class="q">Reviewer: \Magento\Framework\Filesystem\WrapperInterface doesn't exist. Please clarify.</p>
 
 1.	Create a wrapper that implements <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/WrapperInterface.php" target="_blank">\Magento\Framework\Filesystem\WrapperInterface</a>.
 <script src="https://gist.github.com/xcomSteveJohnson/ac0a88ea47bb7316865f.js"></script>

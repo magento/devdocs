@@ -10,6 +10,8 @@ title: XML layouts and schemas
 <p>The system uses the Magento XML schemas to validate these layouts.</p>
 <h2 id="xml-schemas">XML schemas</h2>
 <p>Magento 2 uses the following XML schemas to validate these layouts:</p>
+
+<p class="q">Reviewer: The original topic mentioned 3 XSD files, two of which do not exist or have been renamed: layout_single.xsd, layouts.xsd, and layout_merged.xsd. I guessed that layout_single = layout_generic but I do not know the correct reference for layouts.xsd. Please provide this information.</p>
 <table>
    <tbody>
       <tr style="background-color: lightgray">
@@ -17,17 +19,16 @@ title: XML layouts and schemas
          <th>Validates</th>
       </tr>
       <tr>
-         <td><code>
-            app/code/Magento/Core/etc/layout_single.xsd</code>
+         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd" target="_blank">layout_generic.xsd</a></code>
          </td>
+         <td>Individual layouts</td>
+      </tr>
+      <tr>
+         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
          <td>Individual layouts.</td>
       </tr>
       <tr>
-         <td><code>app/code/Magento/Core/etc/layouts.xsd</code></td>
-         <td>Individual layouts.</td>
-      </tr>
-      <tr>
-         <td><code>app/code/Magento/Core/etc/layout_merged.xsd</code></td>
+         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layout_merged.xsd" target="_blank">layout_merged.xsd</a></td>
          <td>Merged layouts.</td>
       </tr>
    </tbody>
@@ -348,12 +349,12 @@ title: XML layouts and schemas
    </thead>
    <tbody>
       <tr>
-         <td><code>dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php</code></td>
+         <td><a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
          <td>Layouts</td>
       </tr>
       <tr>
       <td>
-         <code>dev/tests/integration/testsuite/Magento/Test/Integrity/Modular/LayoutFilesTest.php</code></td>
+         <a href="{{ site.mage2000url }}dev/tests/integration/testsuite/Magento/Test/Integrity/Modular/LayoutFilesTest.php" target="_blank">LayoutFilesTest.php</a></td>
          <td>Argument values correspond to required data types</td>
       </tr>
    </tbody>
