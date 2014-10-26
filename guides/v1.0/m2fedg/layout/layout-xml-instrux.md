@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using XML Instructions In Your Theme
+title: Using XML instructions in your theme
 ---
  
 <h1 id="fedg_layout_xml-instruct">{{ page.title }}</h1>
