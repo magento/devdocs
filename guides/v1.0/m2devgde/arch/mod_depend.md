@@ -1,14 +1,14 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 Module Dependencies
+title: Magento 2 module dependencies
 ---
  
 <h1 id="m2devgde-depen">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-moddep-term">Terms Used</h2>
 
+<h2 id="m2devgde-moddep-term">Terms Used</h2>
 
 *Framework layer*: Defines the role of an application component in Magento, defines standards for the interactions among components, and implements system-level request and response objects and routing.
 

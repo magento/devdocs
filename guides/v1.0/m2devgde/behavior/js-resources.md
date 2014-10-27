@@ -2,20 +2,18 @@
 layout: howtom2devgde_chapters
 title: JavaScript resources
 ---
- 
 
 <h1 id="m2devgde-js-resources">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/behavior/js-resources.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-
 <h2 id="m2devgde-js-resources-intro">Overview</h2>
 
 JavaScript (JS) is important for making your storefront dynamic and interactive. However, including JS into the page headers may slow down uploading of the pages. To address this problem, we excluded JS from the page headers. Moreover, we added ability to use <a href="http://requirejs.org" target="_blank">RequireJS library</a>. RequireJS speeds up loading of the pages (in particular, asynchronous loading is used) and facilitates specifying dependencies between JS resources in your store.
 
-<h2 id="m2devgde-js-resources-configuring">Exploring and Configuring JS Resources</h2>
+<h2 id="m2devgde-js-resources-configuring">Explore and configure JS resources</h2>
 
-You will need to specify and configure all JS resources used in modules and themes that you added or customized. To ensure correct work of themes and modules, do not edit the JS resources belonging to other modules and themes.
+You must specify and configure all JS resources used in modules and themes that you added or customized. To ensure correct work of themes and modules, do not edit the JS resources belonging to other modules and themes.
 
 JS resources can be specified at several levels:
 

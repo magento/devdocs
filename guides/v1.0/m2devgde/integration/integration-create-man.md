@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Manually Creating an Integration Using the Magento Admin
+title: Use Magento Admin to manually create an integration
 ---
 
 <h1 id="integration-manual-create">Manually Creating an Integration Using the Magento Admin</h1>

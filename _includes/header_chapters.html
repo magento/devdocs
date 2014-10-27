@@ -10,9 +10,9 @@
       <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
       <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
       <!-- <link href="{{ site.baseurl }}common/css/NestedAccordion.css" rel="stylesheet"> -->
-     <!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-      <script type="text/javascript" src="http://malsup.github.com/chili-1.7.pack.js"></script>
-      <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script> -->
+      <!--  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+         <script type="text/javascript" src="http://malsup.github.com/chili-1.7.pack.js"></script>
+         <script type="text/javascript" src="http://malsup.github.com/jquery.cycle.all.js"></script> -->
       <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
       <!-- <link href="{{ site.baseurl }}common/css/jquery.toc.css" rel="stylesheet"> -->
       <script src="{{ site.baseurl }}common/js/jquery-1.11.1.min.js"></script>
@@ -23,10 +23,10 @@
       <script src="{{ site.baseurl }}common/js/ie10-viewport-bug-workaround.js"></script>
       <!-- Include required JS files -->
       <!-- <script type="text/javascript" src="{{ site.baseurl }}common/js/shCore.js"/>
-      <script type="text/javascript" src="{{ site.baseurl }}common/js/shBrushXml.js"/> -->
+         <script type="text/javascript" src="{{ site.baseurl }}common/js/shBrushXml.js"/> -->
       <!-- Include *at least* the core style and default theme -->
       <!-- <link href="{{ site.baseurl }}common/css/shCore.css" rel="stylesheet" type="text/css"/>
-      <link href="{{ site.baseurl }}common/css/shThemeDefault.css" rel="stylesheet" type="text/css"/> -->
+         <link href="{{ site.baseurl }}common/css/shThemeDefault.css" rel="stylesheet" type="text/css"/> -->
       <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
       <script>
          $(function() {
@@ -76,20 +76,20 @@
          heightStyle: "content"
          });
          });
-   $(function() {
-	$( "#toc" ).accordiontoc({
-       event: "hover",
-	   initShow : "#current"
+         $(function() {
+         $( "#toc" ).accordiontoc({
+         event: "hover",
+         initShow : "#current"
 
-     });
- });
+         });
+         });
 
-   $(function() {
-	$( "#accordiontoc2" ).accordiontoc({
-       event: "hover",
-	   initShow : "#current"
-     });
- });
+         $(function() {
+         $( "#accordiontoc2" ).accordiontoc({
+         event: "hover",
+         initShow : "#current"
+         });
+         });
          // Horizontal TOC nav
          $(function(){
          $(".dropdown-menu > li > a.trigger").on("click",function(e){
@@ -111,145 +111,107 @@
       </script>
    </head>
    <!-- <div id = "wrapper"> -->
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-   <div class="container-frontdoor">
-      <div class="navbar-header">
-         <div class="logo-frontdoor">
-            <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
+   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-frontdoor">
+         <div class="navbar-header">
+            <div class="logo-frontdoor">
+               <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
+            </div>
+         </div>
+      </div>
+      <div class="navbar-collapse collapse">
+         <div class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="#">Contents</a></li>
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Architecture<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="{{ site.gdeurl }}m2devgde/arch/areas.html">Magento 2 areas</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_file-sys.html">Magento modular file system</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_depend.html">Magento 2 module dependencies</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/arch/magento-app.html">Magento\App component</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/holding-pen/bootstrap.html">Module bootstrapping</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/holding-pen/error-handling.html">Module error handling</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configure<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="{{ site.gdeurl }}m2devgde/config/config-files.html">Configuration files</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/config/depend-inj.html">Dependency injection</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/config/data-type-schema.html">Data types schema</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/config/plugins.html">Plugins</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/config/caching.html">Caching</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-web-api-calls.html">REST</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/soap/soap-web-api-calls.html">SOAP</a></li>
+                     <li>
+                        <a class="trigger right-caret">Coding standards</a>
+                        <ul class="dropdown-menu sub-menu">
+                           <li><a href="{{ site.gdeurl }}m2devgde/code-test/stnd_coding.html">Magento 2 PHP coding standards and practices</a></li>
+                           <li><a href="{{ site.gdeurl }}m2devgde/code-test/stnd_code-demarc.html">Magento 2 code demarcation standard</a></li>
+                           <li><a href="{{ site.gdeurl }}m2devgde/code-test/stnd_docblock.html">Magento 2 documentation block standards</a></li>
+                        </ul>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Test<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="{{ site.gdeurl }}m2devgde/code-test/test-automated.html">Magento automated tests</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/code-test/test_js-unit.html">JavaScript unit tests</a></li>
+                     <li><a href="{{ site.gdeurl }}m2devgde/code-test/test_object-mgr.html">Object Manager helper</a></li>
+                  </ul>
+            </ul>
+            </li>
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other<span class="caret"></span></a>
+               <ul class="dropdown-menu">
+                  <li><a href="{{ site.gdeurl }}m2devgde/arch/payment.html">Payment modules</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/arch/routing.html">Routing</a></li>
+                  <li><a href="{{ site.gdeurl }}m2devgde/index-cache/indexing.html">Indexing</a></li>
+                  <li>
+                     <a class="trigger right-caret">View layer</a>
+                     <ul class="dropdown-menu sub-menu">
+                        <li><a href="{{ site.gdeurl }}m2devgde/view/view-lib.html">The Magento 2 view library</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/view/xml-schema-layout.html">XML layouts and schemas</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/view/design-abstract.html">Design abstractions</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/view/static-process.html">Static file processing</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/view/template-engine.html">Template engine</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/view/page-type.html">Page types</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/view/page-assets.html">Page assets</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <a class="trigger right-caret">Pricing</a>
+                     <ul class="dropdown-menu sub-menu">
+                        <li><a href="{{ site.gdeurl }}m2devgde/behavior/price-calc.html">How Magento calculates prices</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/behavior/price-render.html">How Magento renders prices</a></li>
+                        <li><a href="{{ site.gdeurl }}m2devgde/behavior/pricing.html">The pricing library</a></li>
+                     </ul>
+                  </li>
+               </ul>
+         </div>
+         <div class="col-sm-3 col-md-3 pull-right">
+         <form class="navbar-form" role="search">
+         <div class="input-group">
+         <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+         <div class="input-group-btn">
+         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+         </div>
+         </div>
+         </form>
          </div>
       </div>
    </div>
-   <div class="navbar-collapse collapse">
-      <div class="nav navbar-nav">
-         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Contents</a></li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Architecture<span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                  <li><a href="{{ site.gdeurl }}m2devgde/arch/areas.html">Using Magento 2 Areas</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_file-sys.html">The Magento Modular File System</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_depend.html">Magento 2 Module Dependencies</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/arch/magento-app.html">The Magento\App component</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/arch/mod_err-boot.html">Module Error Handling and Bootstrapping</a></li>
-               </ul>
-            </li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Configure<span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                  <li><a href="{{ site.gdeurl }}m2devgde/config/config-files.html">Configuration files</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/config/depend-inj.html">Dependency injection</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/config/data-type-schema.html">Data types schema</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/config/plugins.html">Plugins</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/config/caching.html">Caching</a></li>
-               </ul>
-            </li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Code<span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                  <li><a href="{{ site.gdeurl }}m2devgde/rest/rest-web-api-calls.html">REST</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/soap/soap-web-api-calls.html">SOAP</a></li>
-                  <li>
-                     <a class="trigger right-caret">Coding standards</a>
-                     <ul class="dropdown-menu sub-menu">
-                        <li><a href="{{ site.gdeurl }}m2devgde/code-test/stnd_coding.html">Magento 2 PHP coding standards and practices</a></li>
-                        <li><a href="{{ site.gdeurl }}m2devgde/code-test/stnd_code-demarc.html">Magento 2 code demarcation standard</a></li>
-                        <li><a href="{{ site.gdeurl }}m2devgde/code-test/stnd_docblock.html">Magento 2 PHP documentation block standards</a></li>
-                     </ul>
-               </ul>
-            </li>
-            <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Test<span class="caret"></span></a>
-               <ul class="dropdown-menu">
-                  <li><a href="{{ site.gdeurl }}m2devgde/code-test/test_js-unit.html">JavaScript Unit Test Implementation Guide</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/code-test/test_js-unit-user.html">JavaScript Unit Test User Guide</a></li>
-                  <li><a href="{{ site.gdeurl }}m2devgde/code-test/test_object-mgr.html">Using the Object Manager Helper</a></li>
-               </ul>
-         </ul>
-         </li>
-         <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-               <li><a href="{{ site.gdeurl }}m2devgde/arch/payment.html">Payment Modules</a></li>
-               <li><a href="{{ site.gdeurl }}m2devgde/arch/routing.html">Routing</a></li>
-
-               <li><a href="{{ site.gdeurl }}m2devgde/index-cache/indexing.html">Working With Indexing</a></li>
-               <li>
-                  <a class="trigger right-caret">View layer</a>
-                  <ul class="dropdown-menu sub-menu">
-                     <li><a href="{{ site.gdeurl }}m2devgde/view/view-lib.html">The Magento 2 view library</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/view/xml-schema-layout.html">XML layouts and schemas</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/view/design-abstract.html">Design abstractions</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/view/static-process.html">Static file processing</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/view/template-engine.html">Template engine</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/view/page-type.html">Page types</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/view/page-assets.html">Page assets</a></li>
-                  </ul>
-               </li>
-               <li>
-                  <a class="trigger right-caret">Pricing</a>
-                  <ul class="dropdown-menu sub-menu">
-                     <li><a href="{{ site.gdeurl }}m2devgde/behavior/price-calc.html">How Magento Calculates Prices</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/behavior/price-render.html">How Magento Renders Prices</a></li>
-                     <li><a href="{{ site.gdeurl }}m2devgde/behavior/pricing.html">Using the Pricing Library</a></li>
-                  </ul>
-               </li>
-            </ul>
-      </div>
-      <div class="col-sm-3 col-md-3 pull-right">
-      <form class="navbar-form" role="search">
-      <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-      <div class="input-group-btn">
-      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-      </div>
-      </div>
-      </form>
-      </div>
-   </div>
-</div>
-<!-- <div class="navbar navbar-default" role="navigation">
+   <div class="content-spacer"></div>
    <div class="container">
-     <div class="navbar-header">
-       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-         <span class="sr-only">Toggle navigation</span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </button>
-       <p class="navbar-brand">{{ site.namem2fedg }}</p>
-     </div>
-     <div class="navbar-collapse collapse"> -->
-<!-- <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
-   <div class="back"><p class="back"><a href="{{ site.gdeurl }}m2devgde/index.html"><img class="prev" src="{{ site.baseurl }}common/images/prev-arrow.png">Back to the Magento 2 Developer's Guide</a></p> -->
-<!-- </div> --><!--/.nav-collapse -->
-<!-- </div>
-   </div> -->
-<!-- Sidebar -->
-<!-- <div id="sidebar-wrapper">
-   <div class="logo">
-   <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a></div>
-   <p class="brand">Contents</p>
-    <div tocfrom="h1, h2, h3" toctemplate="default:nonum:collapsible"/></div>
-   <div class="back"><p class="back"><a href="{{ site.gdeurl }}m2fedg/index.html"><img class="prev" src="{{ site.baseurl }}common/images/prev-arrow.png">Back to the Magento 2 Frontend Developer's Guide</a></p></div>
-
-   </div> -->
-<div class="content-spacer"></div>
-<div class="container">
-<div class="row">
-<div class="col-xs-6 col-lg-4">
-<div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
-<!-- <h4>Contents</h4>
-   <div id="toc"><ul class="accordiontoc">
-              <li><a href="{{ site.gdeurl }}m2fedg/fedg-overview.html" data-toggle="collapse" data-target="1">Magento 2 Frontend Development Overview</a>
-                     <ul><li><a href="{{ site.gdeurl }}m2fedg/fedg-overview.html#fedg-intended-audience">Intended Audience</a></li>
-   			<li><a href="{{ site.gdeurl }}m2fedg/fedg-overview.html#fedg-prereqs">Magento 2 Frontend Development Prerequisites</a></li></ul>
-   			</li>
-             </ul>
-     </li> ...
-   </ul></div> -->
-</div>
-</div>
-
-   <!-- </div> -->
+   <div class="row">
+   <div class="col-xs-6 col-lg-4">
+   <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix-top" role="complementary">
+   </div>
+   </div>
    <div class="col-xs-12 col-sm-6 col-lg-8">
-   <!-- </div> -->

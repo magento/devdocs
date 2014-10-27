@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Basics of Building a Service
+title: Service building basics
 ---
  
 # Basics of Building a Service 

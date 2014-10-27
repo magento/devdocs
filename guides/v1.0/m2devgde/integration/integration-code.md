@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Coding Your Integration
+title: Code your integration
 ---
 
 <h1 id="code-integration">Coding Your Integration</h1>
