@@ -1,30 +1,50 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using XML instructions in your theme
+title: Use XML in your theme
 ---
- 
+
 <h1 id="fedg_layout_xml-instruct">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2fedg/layout/layout-xml-instrux.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="fedg_layout_xml-instruc_overview">Overview of XML Instructions</h2>
+<h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
-You use XML instructions to manipulate page elements that are represented as containers and blocks. By referencing these containers and blocks, you can:
+Use XML tags to manipulate container and block elements in a page.
 
-*	Move a page element to another parent element 
+<p class="q">Reviewer: Previously, this read "XML tags," but I assume that means "XML tags" (based on the content of this topic). Is that right?</p>
+
+By referencing these containers and blocks, you can:
+
+<p class="q">Reviewer: What does it mean to "reference" containers and blocks by using XML tags?</p>
+
+*	Move a page element to another parent element
 *	Remove a page element
-*	Set page properties 
+*	Set page properties
 *	Change some properties of an existing container or block by referencing it
 
-The layout of a page is defined by a set of XML instructions that contain handles with attributes. These attributes set a design abstraction that is used by other XML files; for example, `default.xml` and `page_one_column.xml`, which in turn describe the abstraction for page the layout.
+To define the layout of a page, use a set of XML tags and attributes.
 
-The page layout abstraction includes the names of all containers, blocks, and columns that will be rendered on the page. To add a block with best selling products, for example, you must add a block of this class to a specific reference container. 
+<p class="q">Reviewer: The next several lines seem a bit jumbled - what's the important point here?</p>
 
-In the example presented in this topic, these will be referred to as `< referenceContainer name = "content">`. The design abstraction is aware of this block in the content of the page, so after we refresh the page; namely, the block that displays best selling products. This is also true for any custom HTML block that you want to add a page.
+These attributes set a design abstraction that other XML files can use.
 
-<h2 id="fedg_layout_xml-instruc_ex">XML Instruction Examples</h2>
+For example, `default.xml` and `page_one_column.xml`, in turn, describe the abstraction for the page layout.
 
-This section discusses the following common XML instructions you can use to customize your layout:
+The page layout abstraction includes the names of all containers, blocks, and columns that are rendered on the page.
+
+For example, to add a block with best-selling products, you must add a block of this class to a specific reference container.
+
+The following examples refer to these as <code>&lt; referenceContainer name = "content"></code>.
+
+The design abstraction is aware of this block in the context of the page.
+
+After you refresh the page, the block displays best-selling products.
+
+This is also true for any custom HTML block that you want to add a page.
+
+<h2 id="fedg_layout_xml-instruc_ex">Common XML tags</h2>
+
+Use the following common XML tags to customize your layout:
 
 *	<a href="#fedg_layout_xml-instruc_ex_block">&lt;block></a>
 *	<a href="#fedg_layout_xml-instruc_ex_cont">&lt;container></a>
@@ -35,9 +55,9 @@ This section discusses the following common XML instructions you can use to cust
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
-A <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">block</a> represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
+Defines a block.
 
-The `<block>` instruction defines a block. Attributes:
+<p><b>Details:</b> A <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">block</a> represents a page feature. Blocks employ templates to generate HTML. The HTML is inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
 
 <table>
 	<tbody>
@@ -61,13 +81,13 @@ The `<block>` instruction defines a block. Attributes:
 	</tr>
 	<tr class="even">
 		<td>before</td>
-		<td>Used to position the block before an element whose name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
+		<td>Used to position the block before an element whose name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
 	<tr class="odd">
 		<td>after</td>
-		<td>Used to position the block after an element with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
+		<td>Used to position the block after an element with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
@@ -95,17 +115,15 @@ The `<block>` instruction defines a block. Attributes:
 		<td><code>true</code> or <code>false</code></td>
 		<td>no</td>
 	</tr>
-	
+
 	</tbody>
 </table>
 
 <h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container></h3>
 
-A <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">container</a> is structure only; it has no additional content. A container contains other layout elements&mdash;such as blocks and containers&mdash;and it renders child elements during view output generation.
+A structure without content.
 
-The `<container>` instruction defines a container. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
-
-`<container>` instruction attributes:
+<p><b>Details:</b> A <a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">container</a> holds other layout elements, such as blocks and containers. It renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container></code> and <code>&lt;block></code> elements.
 
 <table>
 	<tbody>
@@ -129,13 +147,13 @@ The `<container>` instruction defines a container. It can be empty or it can con
 	</tr>
 	<tr class="even">
 		<td>before</td>
-		<td>Used to position the container before a block with the name specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
+		<td>Used to position the container before a block with the name specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
 	<tr class="odd">
 		<td>after</td>
-		<td>Used to position the container after a block with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a> for details.</td>
+		<td>Used to position the container after a block with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
 		<td>Possible values: element name or dash (-)</td>
 		<td>no</td>
 	</tr>
@@ -169,7 +187,7 @@ The `<container>` instruction defines a container. It can be empty or it can con
 		<td>Any valid HTML 5  <code>&lt;class></code> value</td>
 		<td>no</td>
 	</tr>
-	
+
 	</tbody>
 </table>
 
@@ -179,15 +197,15 @@ Sample declaration in layout:
 
 <h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
 
-The `<action>` instruction calls public methods on the block API. It is used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
+Calls public methods on the block API.
+
+<p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action></code> node must be located in the scope of the <code>&lt;block></code> node.</p>
 
 <script src="https://gist.github.com/xcomSteveJohnson/4dd7ea5d2ea1bd546ccb.js"></script>
 
-`<action>` child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under `<action>`, they are passed as one array. 
+<p><code>&lt;action></code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action></code>, they are passed as one array.</p>
 
-In the preceding example, the value of `<arg1>` is passed as the first argument and `<arg2>` values are passed as `array('one', 'two')`. The list of all available methods depends on the block implementation (for example, the public method of the block class). 
-
-`<action>` attribute:
+<p>In the previous example, the value of <code>&lt;arg1></code> is passed as the first argument and <code>&lt;arg2></code> values are passed as `array('one', 'two')`. The list of all available methods depends on the block implementation (for example, the public method of the block class).</p>
 
 <table>
 	<tbody>
@@ -199,7 +217,7 @@ In the preceding example, the value of `<arg1>` is passed as the first argument 
 		</tr>
 	<tr class="even">
 		<td>method</td>
-		<td>Name of the public method of the block class this instruction is located in that is called during block generation.</td>
+		<td>Name of the public method of the block class this tag is located in that is called during block generation.</td>
 		<td>block method name</td>
 		<td>yes</td>
 	</tr>
@@ -208,13 +226,11 @@ In the preceding example, the value of `<arg1>` is passed as the first argument 
 
 <h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove></h3>
 
-The `<remove>` instruction enables you to ignore some layout instructions when generating a layout. 
+Enables you to ignore some layout tags when generating a layout.
 
-Removal works even if the `<remove>` instruction occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a `<remove>` instruction, the named elements are not generated.
+<p><b>Details:</b> Removal works even if the <code>&lt;remove></code> tag occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a <code>&lt;remove></code> tag, the named elements are not generated.</p>
 
-However, it is possible to create a new element after the layout is generated using `Mage_Core_Model_Layout::createElement()` or `createBlock()`.
-
-`<remove>` attribute:
+<p>However, it is possible to create a new element after the layout is generated using <code>Mage_Core_Model_Layout::createElement()</code> or <code>createBlock()</code>.</p>
 
 <table>
 	<tbody>
@@ -233,43 +249,46 @@ However, it is possible to create a new element after the layout is generated us
 	</tbody>
 </table>
 
-If there is a `<remove>` instruction with the `name` attribute `[specified_name]`, the following instructions are ignored:
-
-*	`<block class="Magento\Module\Block\Class" name="name.specified"/>`
-*	`<container name="name.specified"/>`
-*	`<referenceBlock name="name.specified">...</referenceBlock>`
-*	`<move element="name.specified" destination="name.destination"/>`
-*	`<move element="name.element" destination="name.specified"/>`
-
-`<remove>` example: Layout update
+<p>If a <code>&lt;remove></code> tag has the <code>name</code> attribute <code>[specified_name]</code>, the following tags are ignored:</p>
+<ul>
+<li><code>&lt;block class="Magento\Module\Block\Class" name="name.specified"/></code></li>
+<li><code>&lt;container name="name.specified"/></code></li>
+<li><code>&lt;referenceBlock name="name.specified">...</referenceBlock></code></li>
+<li><code>&lt;move element="name.specified" destination="name.destination"/></code></li>
+<li><code>&lt;move element="name.element" destination="name.specified"/></code></li>
+</ul>
+<code>&lt;remove></code> example: Layout update
 
 <script src="https://gist.github.com/xcomSteveJohnson/1e74bc4258bf27f1e126.js"></script>
 
-Result: 
+Result:
 
 <script src="https://gist.github.com/xcomSteveJohnson/d0b5ccf6d5dad7796536.js"></script>
 
 <h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></h3>
 
-`<referenceBlock>` and `<referenceContainer>` cause updates in `<referenceBlock>` to apply to the corresponding  `<block>` or `<container>`.
+<p>Cause updates in <code>&lt;referenceBlock></code> to apply to the corresponding <code>&lt;block></code> or <code>&lt;container></code>.</p>
 
-For example, you must target the reference to a block by using the name `attribute`. This attribute targets the `<block>` tag's `name` attribute. If you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
+For example, you must target the reference to a block by name <code>attribute</code>.
+
+This attribute targets the <code>&lt;block></code> tag's <code>name</code> attribute.
+
+If you make a reference by <code>&lt;referenceBlock name="right"></code>, you're targeting the block <code>&lt;block name="right"></code>.
 
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 
-`<move>` sets the declared element (block or container) as a child of another element in the specified order.
+Sets the declared block or container element as a child of another element in the specified order.
 
 Example:
 
 <pre>&lt;move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/></pre>
 
-Keep the following information in mind when using the `<move>` instruction:
+<p>Keep the following information in mind when <code>&lt;move></code> tag:</p>
 
-*	`<move>` is skipped if the element to be moved is not defined.
-*	If the `as` attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the `name` attribute is used instead.
-*	During layout generation, the `<move>` instruction is processed before the `<remove>` instruction. This means if any elements are moved to the element scheduled for removal, they will be removed as well.
-
-Attributes:
+<ul><li><code>&lt;move></code> is skipped if the element to be moved is not defined.</li>
+<li>If the <code>as</code> attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the <code>name</code> attribute is used instead.</li>
+<li>During layout generation, the <code>&lt;move></code> tag is processed before the <code>&lt;remove></code> tag. This means if any elements are moved to the element scheduled for removal, they will be removed as well.</li>
+</ul>
 
 <table>
 	<tbody>
@@ -306,9 +325,10 @@ Attributes:
 	</tbody>
 </table>
 
-<h2 id="fedg_layout_xml-instruc_others">All Other XML Instructions</h2>
+<h2 id="fedg_layout_xml-instruc_others">Other XML tags</h2>
 <div id="accordion">
-This section discusses all other XML instructions you can use in a layout.
+
+You can use other XML tags in a layout.
 
 <h3>Include CSS files in a page head block (browsers other than Internet Explorer)</h3>
 <div>
@@ -391,7 +411,7 @@ This section discusses all other XML instructions you can use in a layout.
 <p>The following examples show how to:</p>
 <ul><li>Place a block before all other blocks</li>
 <li>Place a block after a particular block</li></ul>
-<p>The examples are basically interchangeable; for example, if you use the dash character with <code>after</code>, the block is ordered after all other blocks. For more information, see <a href="#fedg_xml-instrux_before-after">Using the before And after Attributes</a>.</p>
+<p>The examples are basically interchangeable; for example, if you use the dash character with <code>after</code>, the block is ordered after all other blocks. For more information, see <a href="#fedg_xml-instrux_before-after">before and after attributes</a>.</p>
 <p>Examples:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/1a7904f730e62050a918.js"></script>
 <p>To use these examples, replace the value of <code>before</code> or <code>after</code> with either dash (before or after all other blocks) or with the name of an existing block.</p>
@@ -424,17 +444,15 @@ This section discusses all other XML instructions you can use in a layout.
 </div>
 </div>
 
-<h2 id="fedg_xml-instrux_before-after">Using the before And after Attributes</h2>
+<h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
 
-To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the layout attributes `before` and `after`.
+<p>To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 
 These optional attributes can be used in layout XML files to control the order of elements in their common parent.
 
 An example of a layout declaration with before and after usage follows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/a88b5c8c4e53682e2596.js"></script>
-
-The following table shows possible attribute values:
 
 <table>
 	<tbody>
@@ -474,11 +492,11 @@ The following table shows possible attribute values:
 		<td>empty value or [element name] is absent</td>
 		<td>Use the value of <code>before</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
 	</tr>
-	
+
 	</tbody>
 </table>
 
-Examples:
+<h3 id="examples">Examples</h3>
 
 <table>
 	<tbody>
@@ -507,10 +525,11 @@ Examples:
 </table>
 
 
-#### Related Topics:
-
-*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
-*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
-*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Layout</a>
-*	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Layout</a>
+<h4 id="related-topics">Related topics</h4>
+<ul>
+<li><a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a></li>
+<li><a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a></li>
+<li><a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Layout</a></li>
+<li><a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Layout</a></li>
+</ul>
 
