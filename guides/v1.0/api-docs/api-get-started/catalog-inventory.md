@@ -21,7 +21,7 @@ title: Catalog inventory service
       </div>
       <div class="col-xs-9" role="main">
          <div class="bs-docs-section">
-            <p><a href="{{ site.githuburl }}api-guide/services/service-layer.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+            <p><a href="{{ site.githuburl }}api-guide-get-started/services/service-layer.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
             <h2 class="api2" id="catalog-inventory-overview">Overview</h2>
             <p style="color:red">Most of this content will move to the API reference, but I'm keeping it here for the moment.</p>
             <p>Use the <code>CatalogInventory</code> service to get information about the inventory of a store.</p>
@@ -121,7 +121,7 @@ title: Catalog inventory service
             <h3 id="getIsQtyTypeIds" class="api3">getIsQtyTypeIds</h3>
             <blockquote><pre>getIsQtyTypeIds($filter = null)</pre></blockquote>
             <p>Filters products based on whether their quantities can be set manually.</p>
-            
+
             <h2 id="rest-and-soap-catalog-inventory" class="api2">REST and SOAP API calls</h2>
             <p>The <code>CatalogInventory</code> module also enables you to make certain REST and SOAP API calls.</p>
             <h3 class="api3" id="data-by-sku">getStockItemBySku</h3>

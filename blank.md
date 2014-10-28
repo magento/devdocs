@@ -25,21 +25,33 @@ Writers, use information in this section to get started migrating content then d
 *	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
 *	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
 
-### Note, Tip, Important, Caution
+### Note, Important, Tip, and Caution
 
-There is an example of Note in the first section.
+#### Note
+
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>This is a note.</p></span>
+</div>
+
+#### Important
 
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
 	<span class="glyphicon-class">
-    <p>This is important. </p></span>
+    <p>This is important.</p></span>
   </div>
-  
+
+#### Tip
+
 <div class="bs-callout bs-callout-warning" id="warning">
   <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>This is a tip. </p></span>
+  <p>This is a tip.</p></span>
 </div>
+
+#### Caution
 
 <div class="bs-callout bs-callout-danger" id="danger">
   <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />

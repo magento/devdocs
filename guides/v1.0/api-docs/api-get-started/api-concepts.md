@@ -35,7 +35,7 @@ title: Programming concepts
             <h2 class="api2" id="api-types">Types of API</h2>
             <ul>
                <li>Directory structure</li>
-               <li>Configuration Files structure</li>
+               <li>Configuration files structure</li>
                <li>Events</li>
                <li>Client API</li>
                <li>Provider API (SPI)</li>
@@ -86,7 +86,7 @@ title: Programming concepts
             </table>
             <p>When an interface is a part of BOTH API and SPI, it can not be evolved. That is why mixing of API and SPI in one interface should be forbidden.</p>
             <h2 class="api2" id="limited-spi-and-api">Limited SPI and API</h2>
-            <p>To increase modularity, composablity and post-release evolution of Magento modules, their API and SPI should be decreased. Only important part (Service Layer) of module behavior must be explicitly published in SPI and API. All other interfaces must be declared module-private.</p>
+            <p>To increase modularity, composability and post-release evolution of Magento modules, their API and SPI should be decreased. Only important part (Service Layer) of module behavior must be explicitly published in SPI and API. All other interfaces must be declared module-private.</p>
             <h3 class="api3" id="public-api">Public API</h3>
             <p>Only explicitly published interfaces should be declared public API (accessible from other modules). This way module developer can write testable code, and have control on the size of his module public API.</p>
             <p>PHP does not have notion of package-private interfaces. So interfaces can be declared public with annotations (@API). If an interface is declared part of API, all it's implementations are automatically part of API. All interfaces and their implementations not marked as part of API, are considered module-private (accessible only from the module they're declared in). All classes that are part of API must be declared final, to prevent implicit publication to SPI.</p>
@@ -192,7 +192,7 @@ interface Magento_Authorization_PolicyInterface
 }
 </pre>
             </blockquote>
-            <p>Magento library/module can provide default implementation of spi interface.</p>
+            <p>Magento library/module can provide default implementation of SPI interface.</p>
             <p>This way, after the release new methods can be added to API interface, and existing removed from SPI interface. These changes will be backward compatible.</p>
             <h3 class="api3" id="extend-api-client">Extend Client API</h3>
             <p>After the release we can add new method to Client API
