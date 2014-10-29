@@ -161,5 +161,5 @@ interface Magento_AuthorizationInterface
     public function isAllowed($resource);
 }
 </pre>
-Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
+Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
 
