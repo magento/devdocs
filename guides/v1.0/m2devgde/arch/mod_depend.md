@@ -1,106 +1,165 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 module dependencies
+title: Magento 2 Understanding Module Dependencies
 ---
  
 <h1 id="m2devgde-depen">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-moddep-intro">Overview</h2> 
+<h2 id="m2devgde-moddep-intro">Terms Used</h2> 
 
-Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Understanding+Module+Dependencies
+* Framework layer: Defines the role of an application component in Magento, defines standards for the interactions among components, and implements system-level request and response objects and routing.
+* Application layer: Implements business logic. This layer is built on top of the framework layer.
+* Service layer: Provides a formal contract between a client and the service provider. This form of contact allows a service implementation to evolve without affecting the client.
+* Module: A logical group (that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget) in the application layer. A module is designed to work independently and to not intervene into work of other functionality.
+* Feature: A functionality or a capability allowing a system to perform better.
+* Library: A logical group in the framework layer.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Please be patient with us while we map topics from the Magento wiki to Markdown. Or maybe this topic isn't written yet. Check back later.</p></span>
-</div>
+## Introduction
+In Magento 2, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that
 
-<h2 id="help">Helpful Aids for Writers</h2>
+* Several modules cannot be responsible for one feature.
+* One module cannot be responsible for several features.
+* A module declares explicit dependency, if any, on another module.
+* Removing or disabling a module does not result in disabling other modules.
 
-Writers, use information in this section to get started migrating content then delete the section. You can find this same information <a href="https://github.corp.ebay.com/stevjohnson/internal-documentation/blob/master/markdown-samples/complex-examples.md" target="_blank">here</a>.
-
-### General Markdown Authoring Tips
-
-*	<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank">Daring Fireball</a>
-*	<a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown cheat sheet</a>
-*	<a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+2%2C+Markdown+Authoring+Tips" target="_blank">Internal wiki page</a>
-
-### Note, Tip, Important, Caution
-
-There is an example of Note in the first section.
-
-  <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
+<div class="bs-callout bs-callout-warning" id="warning">
+    <img src="{{ site.baseurl }} ../../common/images/icon_important.png" alt="note" width="40" align="left">
 	<span class="glyphicon-class">
-    <p>This is important. </p></span>
+    <p>When using Magento's modularity, you can lose historical information containing in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.
+     </p></span>
   </div>
+
+
+
+## Naming and Declaring a Module
+A module should be named according to Namespace_Module schema, where
+
+* Namespace is a name of a module's vendor
+* Module is a name assigned to a module by its vendor
+
+Typically, a module is located in `[root]/app/code/[Vendor]_[Module]`.
+
+A module should be declared in `[root]/app/code/[Vendor]_[Module]/etc/module.xml` file. To declare a module, the following information should be specified:
+
+* The name of a module, according to the naming rules
+* An element specifying whether a module is active
+* Dependency of a module on other modules, if any
+
+Declaration sample:
+
+<pre>
+&lt;config>
+    &lt;module name="Vendor_Module" version="2.0.0.0" active="true"/>    
+      &lt;depends>      
+        &lt;module name="Vendor_Module1"/>        
+      &lt;/depends>      
+    &lt;/modules>    
+&lt;/config>
+</pre>
+
+
+## Declaring Module Dependencies
+Module dependencies in Magento could be of two types: hard and soft dependencies.
+
+1. Hard dependency implies that a module cannot function without modules, on which it depends. Specifically:
+
+	* The module contains code that uses logic from another module directly, that is, the latter's instances, class constants, static methods, public class properties, interfaces, and traits.
+	* The module contains strings that include class names, method names, class constants, class properties, interfaces, and traits from another module.
+	* The module deserializes an object declared in another module.
+	* The module uses or modifies the database tables used by another module.
+
+2.  Soft dependency implies that a module can function without other modules, on which it depends. Specially:
+	* The module directly checks another module's availability.
+	* The module extends another module's configuration.
+	* The module extends another module's layout.
   
 <div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
+<img src="{{ site.baseurl }} ../../common/images/icon_important.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>This is a tip. </p></span>
+  <p>If a module uses the code from another module, it should declare the dependency explicitly.</p></span></div>
+
+All module dependencies are validated by Magento when modules are installed. If Magento detects an [inappropriate dependency](#Inappropriate Dependencies) — such as a circular — the modules installation will be terminated.
+
+If module dependencies pass validation, the modules will be installed in the following sequence: first, a module serving as dependency for another module will be installed, followed by the module dependent on it.
+
+### Understanding Inappropriate Dependencies
+
+The following dependencies are not allowed:
+
+* Circular dependencies (both direct and indirect)
+* Undeclared dependencies
+* Incorrect dependencies
+
+### Understanding Dependencies in Different Layers
+There are peculiarities of building the dependencies between the modules belonging to different layers.
+
+#### Understanding Dependencies in the Framework Layer
+Modules belonging to the framework layer can be used in the application layer via an explicit dependency.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }} ../../common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>In this case using <code>interfaces</code> is preferable to using <code>classes</code>. </p>
+  <p>You can build dependencies between classes in the framework layer even if they belong to different modules.</p></span>
 </div>
 
-<div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This is a caution. Use this only in very limited circumstances when discussing:
-  <ul class="note"><li>Data loss</li>
-  <li>Financial loss</li>
-  <li>Legal liability</li></ul></p></span>
-</div>
 
-### Tables
+#### Understanding Dependencies in the Application Layer
+Modules belonging to the application layer cannot be used in the framework layer.
 
-There is no good solution right now. Suggest you either use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#tables" target="_blank">Markdown tables</a> or HTML tables.
+You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only via the service layer or the service provider interface (SPI).
 
-HTML table:
+## Using API- and SPI-specific Interfaces
 
-<table>
-	<tbody>
-		<tr>
-			<th>Magento 1</th>
-			<th>Magento 2</th>
-		</tr>
-	<tr>
-		<td>The Address model contains both display and business logic.</td>
-		<td>The Address service has business logic only so interacting with it is simpler.</td>
-	</tr>
-	<tr>
-		<td>Sends a model back to the template. Because the model contains business logic, it's tempting process that logic in your templates. This can lead to confusing code that's hard to maintain.</td>
-		<td>Sends only data back to the template. </td>
-	</tr>
-	<tr>
-		<td>The model knows how to render itself so it has to send a <tt>render('html')</tt> call to the block to do that, which makes the coding more complex. </td>
-		<td>The data object is rendered by the renderer block. The roles of the renderer block and the model are separate from each other, easier to understand, and easier to implement.</td>
-	</tr>
-	</tbody>
-</table>
+<p class="q">Reviewer: Please validate this because it's probably changed since this was written.</p>
 
-### Images
+**NOTE: not sure this section belongs there.**
 
-Whether you add a new image or move an image from the wiki, you must store the image in `common/images` using a naming convention discussed <a href="https://wiki.corp.x.com/display/WRI/Markdown+Authoring+Part+1%2C+Getting+Started#MarkdownAuthoringPart1%2CGettingStarted-BestPracticesforNamingMarkdownFilesandImages" target="_blank">here</a>.
+To facilitate building correct dependencies between the modules, Magento 2 has the API-specific and SPI-specific interfaces.
 
-To embed the link in a page, use either <a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a> or HTML image links, it doesn't matter. Either way, you *should* add alt tags to your images to improve accessibility.
+Interfaces marked as API-specific can be used by other modules; and interfaces marked as SPI-specific can be implemented by other modules.
 
-You can also use a title tag to provide a mouseover tooltip; this is recommended for accessiblity (screen readers and so on).You can also use a title tag to provide a mouseover tooltip.
+To be considered API-specific, an interface should be declared with `@api` annotation:
 
-HTML example:
+<pre>/**
+ * @api
+ */
+interface RouterInterface
+{
+    public function match();
+}
+ 
+final class Mage_Core_Controller_Varien_Router_Base implements RouterInterface
+{
+    //...
+}</pre>
 
-<p><img src="{{ site.baseurl }}common/images/services_service-interaction_addr-book_mage1.png" alt="This is additional information that might help someone who uses a screen reader"></p>
+Thus, an interface and its implementations automatically become a part of API, unlike other elements, which remain module-private. All classes considered a part of API must be declared final to prevent the implicit use of them in the SPI.
 
-Markdown example using an alt tag:
+To be considered SPI-specific, an interface should be declared with `@spi` annotation:
 
-![Click **System** > **Integrations** to start]({{ site.baseurl }}common/images/integration.png)
+<pre>/**
+ * @spi
+ */
+interface RouterInterface
+{
+    public function match();
+}
+Thus, an interface is automatically becomes a part of SPI, while its implementations are part of neither the SPI nor the API. Other interfaces and their implementations, which are not marked as SPI-specific, remain module-private.
 
-### Cross-References
+The SPI-specific interfaces can be implemented by the third party developers and used in the dependency injection configurations.
 
-All cross-references should look like the following:
-
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding CSS preprocessing</a>
-*	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-* 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
+To be marked as both API- and SPI-specific, an interface should be declared with @api and @spi annotations:
+/**
+ * @api
+ * @spi
+ */
+interface Magento_AuthorizationInterface
+{
+    public function isAllowed($resource);
+}
+</pre>
+Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
 

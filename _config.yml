@@ -1,4 +1,4 @@
-﻿name: Magento Developer Documentation
+name: Magento Developer Documentation
 markdown: kramdown
 highlighter: pygments
 encoding: utf-8
@@ -11,3 +11,13 @@ namem2devgde: Magento 2 Developer's Guide
 namem2apiref: Magento 2 API Reference
 namem2install: Magento 2 Installation Guide
 mage2000url: https://github.com/magento/magento2/blob/master/
+
+
+
+
+
+
+
+
+
+
