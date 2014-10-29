@@ -39,5 +39,5 @@ The class name for Internet Explorer is `ie`. Use the following classes to overr
 #### Related Topics:
 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
-*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
-*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_overview.html">Magento 2 Responsive Web Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_overview.html">Responsive web design</a>

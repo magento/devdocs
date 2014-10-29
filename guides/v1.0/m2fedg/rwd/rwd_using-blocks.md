@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using Blocks in Your Responsive Design
+title: Blocks in a responsive design
 ---
  
 <h1 id="fedg_rwd_blocks">{{ page.title }}</h1>
@@ -72,8 +72,8 @@ Desktop image:
 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Overview of Containers and Blocks</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
-*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>
-*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">CSS in a responsive design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_js.html">JavaScript in a responsive design</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
 

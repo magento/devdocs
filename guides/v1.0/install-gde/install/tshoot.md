@@ -69,5 +69,8 @@ phpinfo.php to verify mod_rewrite loaded (however, does not mean it's working fo
 Use a web browser inspector to check the path to static assets; verify path exists under Magento install dir. If not, verify that server rewrites enabled and working.
 
 
+Problem: var/report exception using Magento (e.g., creating a simple product)
 
+Includes: a:4:{i:0;s:38:"No region found within the locale 'en'";i:1;s:10903:"#0 /var/www/magento2/lib/internal/Zend/Currency.php(101): Zend_Currency->setLocale(Object(Magento\Framework\Locale))
 
+Check the language setting (CASE SENSITIVE)
