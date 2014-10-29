@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using JavaScript in Your Responsive Design
+title: JavaScript in a responsive design
 ---
  
 <h1 id="fedg_rwd_js">{{ page.title }}</h1>
@@ -104,8 +104,8 @@ When you add a new theme, you include them in your responsive theme layout as fo
 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
-*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">CSS in a responsive design</a>
 
 
 

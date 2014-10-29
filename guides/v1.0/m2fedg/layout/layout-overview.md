@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Introduction to Magento 2 Theming  
+title: Magento 2 theming  
 ---
  
 <h1 id="layout_intro">{{ page.title }}</h1>
@@ -174,7 +174,7 @@ Following is an illustration of how layout processing works for two modules and 
 #### Related Topics:
 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Overview of Containers and Blocks</a>
-*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Magento 2 UI library</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-extend.html">Extending a Page Layout</a>
