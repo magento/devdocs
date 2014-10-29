@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Cascading Style Sheets (CSS)
+title: Cascading style sheets (CSS)
 ---
 
 <h1 id="fedg_css-overview">{{ page.title }}</h1>
@@ -11,7 +11,7 @@ You can use CSS to customize Magento themes. You can add your own images and fon
 
 Do not use CSS visibility properties to hide Magento blocks and content.
 
-To add or remove blocks in Magento, use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML instructions</a> instead.
+To add or remove blocks in Magento, use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">XML in themes</a> instead.
 
 You can customize Magento themes in these ways:
 
@@ -26,7 +26,7 @@ You can customize Magento themes in these ways:
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Magento 2 CSS preprocessing</a>
-*	<a href="{{ site.gdeurl }}m2fedg/css/css-themes.html">Using CSS in Themes</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">CSS preprocessing</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-themes.html">CSS in themes</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best practices for theme design</a>
 *	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_overview.html">Responsive web design</a>

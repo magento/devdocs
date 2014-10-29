@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento 2 Responsive Web Design
+title: Responsive web design
 ---
  
 <h1 id="fedg_rwd">{{ page.title }}</h1>
@@ -71,8 +71,8 @@ Desktop:
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_using-blocks.html">Using Blocks in Your Responsive Design</a>
-*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_js.html">Using JavaScript in Your Responsive Design</a>
-*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">Using CSS in Your Responsive Design</a>	
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_using-blocks.html">Blocks in a responsive design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_js.html">JavaScript in a responsive design</a>
+*	<a href="{{ site.gdeurl }}m2fedg/rwd/rwd_css.html">CSS in a responsive design</a>	
 
 
