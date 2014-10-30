@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-
+title: Introducing Areas
 ---
 
 <h1 id="m2devgde-area">{{ page.title }}</h1>
@@ -9,12 +9,11 @@ layout: howtom2devgde_chapters
 
 <h2 id="m2devgde-area-intro">Introduction</h2>
 
-Magento areas facilitate integrating with and extending Magento.
-
-As an integration/extension developer, you must understand what the areas serve and how to use modules in the areas.
+Magento areas facilitate integrating with and extending Magento. As an integration/extension developer, you must understand what the areas serve and how to use modules in the areas.
 
 This article describes areas and their practical use in Magento.
 
+<h2 id="m2devgde-area-use"> Using Areas in Magento</h2>
 Magento is divided into several conditional parts, which are not interdependent but use the same data. Each of these parts serves to delimit representation of the data to different user groups depending on the behavior logic of the system. These parts are called areas.
 
 Usually, an area has behavior and view components, which operate separately.
