@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 module dependencies
+title: Magento 2 Understanding Module Dependencies
 ---
  
 <h1 id="m2devgde-depen">{{ page.title }}</h1>
@@ -27,8 +27,9 @@ In Magento 2, all modules are partitioned into logical groups, each one of which
 * Removing or disabling a module does not result in disabling other modules.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
+<img src="{{ site.baseurl }} ../../common/images/icon_important.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
+
   <p>
 When using Magento's modularity, you can lose historical information containing in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module. </p></span>
 </div>
@@ -144,4 +145,5 @@ interface&nbsp;Magento_AuthorizationInterface
 }
 </pre>
 Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
+
 

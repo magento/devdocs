@@ -1,8 +1,8 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Extending a Page Layout
+title: Extending a Layout
 ---
- 
+
 <h1 id="layout_extend">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2fedg/layout/layout-extend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
@@ -21,7 +21,7 @@ To add a theme merging file:
    |__/layout
      |--&lt;layout1>.xml
      |--&lt;layout2>.xml</pre>
-	 
+
 Where:
 
 *	`[theme_path]` is a path to the theme relative to the themes directory
@@ -34,13 +34,13 @@ Magento merges layout files as follows:
 1.	For each layout file in the list:
 
 	a.	Loads layout handle declaration and layout instructions.
-	
+
 	b.	Appends to the result in the following format:
-	
+
 	<script src="https://gist.github.com/xcomSteveJohnson/6c2e7a15fba5d8f14fad.js"></script>
-	
+
 	Where a `handle ID` is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.
-	
+
 2.	Replaces the base URL placeholders in the result.
 
 
@@ -49,6 +49,6 @@ Magento merges layout files as follows:
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-override.html">Overriding a Page Layout</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Using the Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}m2fedg/layout/magento-ui-lib.html">Magento 2 UI Library</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-page-markup.html">Using XML to Manage Your Page Markup</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>

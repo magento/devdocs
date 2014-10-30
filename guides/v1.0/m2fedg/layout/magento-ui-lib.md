@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Using the Magento 2 UI Library
+title: Magento 2 UI library
 ---
  
 <h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
@@ -130,5 +130,5 @@ You can find more information on the Magento UI library specific mixins and the 
 *	<a href="{{ site.gdeurl }}m2fedg/layout/containers-blocks.html">Overview of Containers and Blocks</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-how-to-theme.html">How To Create a Theme</a>
 *	<a href="{{ site.gdeurl }}m2fedg/layout/layout-theme-bestpr.html">Best Practices for Theme Design</a>
-*	<a href="{{ site.gdeurl }}m2fedg/css/css-overview.html">Using Cascading Style Sheets (CSS) with Magento 2</a>
+*	<a href="{{ site.gdeurl }}m2fedg/css/css-overview.html">Cascading style sheets (CSS)</a>
 
