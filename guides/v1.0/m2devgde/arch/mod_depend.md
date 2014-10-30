@@ -52,24 +52,20 @@ A module should be named according to the Namespace_Module schema, where
 * Namespace is a name of a module's vendor
 * Module is a name assigned to a module by its vendor
 
-Typically, a module is located in `[root]/app/code/[Vendor]_[Module]`.
-
-A module should be declared in `[root]/app/code/[Vendor]_[Module]/etc/module.xml` file. To declare a module, the following information should be specified:
-
+Typically, a module is located in `[root]/app/code/[Namespace]/[Module]` directory.
+A module should be declared in `[root]/app/code/[Namespace]/[ModuleName]/etc/module.xml` file. To declare a module, the following information should be specified:
 * The name of a module, according to the naming rules
 * An element specifying whether a module is active
 * Dependency of a module on other modules, if any
-
 Declaration sample:
-
 <pre>
-&lt;config>
-    &lt;module name="Vendor_Module" version="2.0.0.0" active="true"/>    
-      &lt;depends>      
-        &lt;module name="Vendor_Module1"/>        
-      &lt;/depends>      
-    &lt;/modules>    
-&lt;/config>
+&lt;config&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;module&nbsp;name=&quot;Namespace_Module&quot;&nbsp;version=&quot;2.0.0.0&quot;&nbsp;active=&quot;true&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;depends&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;module&nbsp;name=&quot;Namespace_Module1&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/depends&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/modules&gt;
+&lt;/config&gt;
 </pre>
 
 
@@ -87,8 +83,9 @@ Module dependencies in Magento could be of two types: hard and soft dependencies
 	* The module directly checks another module's availability.
 	* The module extends another module's configuration.
 	* The module extends another module's layout.
-  
+
 <div class="bs-callout bs-callout-warning" id="warning">
+<<<<<<< HEAD
 <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" width="40" align="left">
  <span class="glyphicon-class">
 <p>If a module uses code from another module, it should declare the dependency explicitly.
@@ -136,50 +133,49 @@ You can build dependencies between classes in the application layer, but these c
 To facilitate building correct dependencies between the modules, Magento 2 has both API  (Application Programming Interface) and SPI (Service Provide Interface) interfaces.
 
 Interfaces marked as API-specific can be used by other modules; and interfaces marked as SPI-specific can be implemented by other modules.
-
 To be considered API-specific, an interface should be declared with `@api` annotation:
-
-<pre>/**
- * @api
- */
-interface RouterInterface
+<pre>
+/**
+&nbsp;*&nbsp;@api
+&nbsp;*/
+interface&nbsp;RouterInterface
 {
-    public function match();
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;match();
 }
- 
-final class Mage_Core_Controller_Varien_Router_Base implements RouterInterface
+&nbsp;
+final&nbsp;class&nbsp;Mage_Core_Controller_Varien_Router_Base&nbsp;implements&nbsp;RouterInterface
 {
-    //...
-}</pre>
-
-Thus, an interface and its implementations automatically become a part of API, unlike other elements, which remain module-private. All classes considered a part of API must be declared final to prevent the implicit use of them in the SPI.
-
-To be considered SPI-specific, an interface should be declared with `@spi` annotation:
-
-<pre>/**
- * @spi
- */
-interface RouterInterface
-{
-    public function match();
+&nbsp;&nbsp;&nbsp;&nbsp;//...
 }
 </pre>
+Thus, an interface and its implementations automatically become a part of API, unlike other elements, which remain module-private. All classes considered a part of API must be declared `final` to prevent the implicit use of them in the SPI.
 
+To be considered SPI-specific, an interface should be declared with `@spi` annotation:
+<pre>
+/**
+&nbsp;*&nbsp;@spi
+&nbsp;*/
+interface&nbsp;RouterInterface
+{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;match();
+}
+</pre>
 Thus, an interface is automatically becomes a part of SPI, while its implementations are part of neither the SPI nor the API. Other interfaces and their implementations, which are not marked as SPI-specific, remain module-private.
 
-The SPI-specific interfaces can be implemented by the third party developers and used in the dependency injection configurations.
+The SPI-specific interfaces can be implemented by the third party developers and used in the dependency injection configurations. <!-- ADDLINK -->
 
 To be marked as **both** API- and SPI-specific, an interface should be declared with  `@api`  **and** `@spi` annotations:
 
 <pre>
 /**
- * @api
- * @spi
- */
-interface Magento_AuthorizationInterface
+&nbsp;*&nbsp;@api
+&nbsp;*&nbsp;@spi
+&nbsp;*/
+interface&nbsp;Magento_AuthorizationInterface
 {
-    public function isAllowed($resource);
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;isAllowed($resource);
 }
 </pre>
-Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
+Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
+
 
