@@ -8,7 +8,7 @@ title: Translation
 Tanas:
 
 <div class="bs-callout bs-callout-warning" id="warning">
-<img src="{{ site.baseurl }} ../../common/images/icon_important.png" alt="note" align="left" width="40" />
+<img src="{{ site.baseurl }}../../common/images/icon_important.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
   <p>If a module uses the code from another module, it should declare the dependency explicitly.</p></span></div>
   
