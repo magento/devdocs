@@ -2,12 +2,12 @@
 layout: howtom2devgde_chapters
 title: Magento 2 module dependencies
 ---
- 
+
 <h1 id="m2devgde-depen">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-moddep-intro">Overview</h2> 
+<h2 id="m2devgde-moddep-intro">Overview</h2>
 
 Wiki reference: https://wiki.magento.com/display/MAGE2DOC/Understanding+Module+Dependencies
 
@@ -36,7 +36,7 @@ There is an example of Note in the first section.
 	<span class="glyphicon-class">
     <p>This is important. </p></span>
   </div>
-  
+
 <div class="bs-callout bs-callout-warning" id="warning">
   <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
@@ -99,8 +99,8 @@ Markdown example using an alt tag:
 
 All cross-references should look like the following:
 
-*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}m2fedg/css/css-preprocess.html">Understanding CSS preprocessing</a>
+*	Cross-reference to another topic in any of the guides: <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-preprocess.html">Understanding CSS preprocessing</a>
 *	Cross-reference to Magento 2 code in the public GitHub: <a href="{{ site.mage2000url }}blob/master/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a>
-*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}m2fedg/fedg-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+*	Cross-reference for the "help us improve this topic" link at the top of every page (only for pages you create yourself): <p><a href="{{ site.githuburl }}frontend-dev-guide/overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 * 	Cross-reference to an external site should, IMHO, include `target="_blank"` as in `<a href="http://daringfireball.net/projects/markdown/syntax#img" target="_blank">Markdown</a>`
 

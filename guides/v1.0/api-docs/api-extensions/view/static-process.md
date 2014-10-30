@@ -95,7 +95,7 @@ title: Static file processing
    <li>Use the CSS <code>url()</code> directive to reference the file.</li>
    <li>Use a relative path to reference the file. The system does not recognize absolute URLs or URIs.</li>
 </ul>
-<p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css/styles.css</code>,
+<p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css-topics/styles.css</code>,
 the identified references are published from following locations:</p>
 
 <p class="q">Reviewer: Again, please verify the /web/ directory path.</p>
@@ -120,7 +120,7 @@ the identified references are published from following locations:</p>
       </tr>
       <tr>
          <td><code>url("callout.png")</code></td>
-         <td><code>app/design/frontend/Magento/blank/web/css/callout.png</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/css-topics/callout.png</code></td>
       </tr>
       <tr>
          <td><code>@include url('./styles-ie.css');</code></td>
@@ -157,7 +157,7 @@ the identified references are published from following locations:</p>
 Example: <code>css/one/two/file.css</code>
 
 <table>
-   
+
    <thead>
       <tr>
          <th>Reference with context notation</th>
@@ -169,7 +169,7 @@ Example: <code>css/one/two/file.css</code>
          <td><code>url([Vendor name]_[Module name]::images/image.gif)</code></td>
 		 <td><code>url(../../../../[Vendor name]_[Module name]/images/image.gif)</code></td>
       </tr>
-      
+
    </tbody>
 </table>
 
@@ -192,7 +192,7 @@ Example: <code>[Vendor name]_[Module name]::css/one/two/file.css</code>
 		 <td><code>[Vendor name]_[Module name]::css/one/two/file.css</code></td>
 		 <td><code>url(../../../../[Vendor name]_[Module name]/images/image.gif)</code></td>
       </tr>
-      
+
    </tbody>
 </table>
 

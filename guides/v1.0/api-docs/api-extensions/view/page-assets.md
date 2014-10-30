@@ -107,7 +107,7 @@ This section discusses the following ways to work with view assets:
 
 <h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
 
-Although you can use the API to manipulate assets, frontend developers should use <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">layout XML instructions</a> to register assets.
+Although you can use the API to manipulate assets, frontend developers should use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml-instrux.html">layout XML instructions</a> to register assets.
 
 This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
 
@@ -189,5 +189,5 @@ For example, to add a local JavaScript or CSS file to the page output:
 
 #### Related topics
 
-* <a href="{{ site.gdeurl }}m2fedg/layout/layout-xml-instrux.html">Using XML Instructions In Your Theme</a>
+* <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml-instrux.html">XML in themes</a>
 * TBD
