@@ -31,7 +31,7 @@ title: Magento 2 Customer Service
                <li>Validate a token in a reset password link.</li>
                <li>Send and resend email to a customer.</li>
             </ul>
-            <p>See if this works: <a href="{{ site.gdeurl }}m2fedg/layout/layout-overview.html">Magento 2 theming</a>.</p>
+            <p>See if this works: <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-overview.html">Magento 2 theming</a>.</p>
             <h2 class="api2" id="construct">__construct()</h2>
             <p class="blog-description">Constructs a customer service data object.</p>
             <blockquote class="codesample">

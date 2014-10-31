@@ -159,7 +159,7 @@ class Magento_DesignEditor_Block_Toolbar_BreadcrumbsTest extends PHPUnit_Framewo
     protected function setUp()
     {
         $layoutUtility = new Magento_Core_Utility_Layout($this);
-        $pageTypesFixture = __DIR__ . '/../../../Core/Model/Layout/_files/_page_types.xml';
+        $pageTypesFixture = __DIR__ . '/../../../Core/Model/layouts/_files/_page_types.xml';
         $this->_block = new Magento_DesignEditor_Block_Toolbar_Breadcrumbs(
             array('template' => 'toolbar/breadcrumbs.phtml')
         );

@@ -19,16 +19,16 @@ title: XML layouts and schemas
          <th>Validates</th>
       </tr>
       <tr>
-         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd" target="_blank">layout_generic.xsd</a></code>
+         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/layouts/etc/layout_generic.xsd" target="_blank">layout_generic.xsd</a></code>
          </td>
          <td>Individual layouts</td>
       </tr>
       <tr>
-         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
+         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/layouts/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
          <td>Individual layouts.</td>
       </tr>
       <tr>
-         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layout_merged.xsd" target="_blank">layout_merged.xsd</a></td>
+         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/layouts/etc/layout_merged.xsd" target="_blank">layout_merged.xsd</a></td>
          <td>Merged layouts.</td>
       </tr>
    </tbody>
@@ -349,7 +349,7 @@ title: XML layouts and schemas
    </thead>
    <tbody>
       <tr>
-         <td><a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
+         <td><a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/layouts/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
          <td>Layouts</td>
       </tr>
       <tr>

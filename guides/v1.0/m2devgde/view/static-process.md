@@ -95,7 +95,7 @@ title: Static file processing
    <li>Use the CSS <code>url()</code> directive to reference the file.</li>
    <li>Use a relative path to reference the file. The system does not recognize absolute URLs or URIs.</li>
 </ul>
-<p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css/styles.css</code>,
+<p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css-topics/styles.css</code>,
 the identified references are published from following locations:</p>
 
 <p class="q">Reviewer: Again, please verify the /web/ directory path.</p>
@@ -120,11 +120,11 @@ the identified references are published from following locations:</p>
       </tr>
       <tr>
          <td><code>url("callout.png")</code></td>
-         <td><code>app/design/frontend/Magento/blank/web/css/callout.png</code></td>
+         <td><code>app/design/frontend/Magento/blank/web/css-topics/callout.png</code></td>
       </tr>
       <tr>
          <td><code>@include url('./styles-ie.css');</code></td>
-         <td><code>app/design/frontend/default/demo/css/styles-ie.css</code></td>
+         <td><code>app/design/frontend/default/demo/css-topics/styles-ie.css</code></td>
       </tr>
       <tr>
          <td><code>@include './styles-ie.css';</code></td>
@@ -154,7 +154,7 @@ the identified references are published from following locations:</p>
 <p>Examples follow:</p>
 <h4 id="merging-disabled-css1">CSS specified by path</h4>
 
-Example: <code>css/one/two/file.css</code>
+Example: <code>css-topics/one/two/file.css</code>
 
 <table>
    
@@ -175,7 +175,7 @@ Example: <code>css/one/two/file.css</code>
 
 <h4 id="merging-disabled-css1">CSS specified by module</h4>
 
-Example: <code>[Vendor name]_[Module name]::css/one/two/file.css</code>
+Example: <code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code>
 
 <table>
    <colgroup><col width="25%">
@@ -189,7 +189,7 @@ Example: <code>[Vendor name]_[Module name]::css/one/two/file.css</code>
    </thead>
    <tbody>
       <tr>
-		 <td><code>[Vendor name]_[Module name]::css/one/two/file.css</code></td>
+		 <td><code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code></td>
 		 <td><code>url(../../../../[Vendor name]_[Module name]/images/image.gif)</code></td>
       </tr>
       
