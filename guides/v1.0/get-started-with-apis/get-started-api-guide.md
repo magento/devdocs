@@ -21,7 +21,7 @@ title: Get Started with Magento APIs
       </div>
       <div class="col-xs-9" role="main">
          <div class="bs-docs-section">
-         <p><a href="{{ site.githuburl }}api-docs/api-get-started/api-concepts.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+         <p><a href="{{ site.githuburl }}get-started-with-apis/api-concepts.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
             <p>Use the methods on customer account service objects to:</p>
             <ul>
@@ -34,7 +34,7 @@ title: Get Started with Magento APIs
                <li>Send and resend email to a customer.</li>
             </ul>
             <h2 class="api2" id="api-overview">Overview</h2>
-            <p><a href="{{ site.gdeurl }}api-docs/api-get-started/api-concepts.html">Concepts</a>.</p>
+            <p><a href="{{ site.gdeurl }}get-started-with-apis/api-concepts.html">Concepts</a>.</p>
             <h3 class="api3" id="subtopic1">Subtopic 1</h3>
             <p>Subtopic.</p>
             <h3 class="api3" id="subtopic1a">Subtopic 1a</h3>
