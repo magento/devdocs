@@ -1,23 +1,23 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: JavaScript coding guidelines
+title: JavaScript coding standard
 ---
 
 <h1 id="fedg_js-code-bestpr">{{ page.title }}</h1>
 <p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/js-coding-bestpr.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="fedg_js-code-bestpr_overview">Overview</h2>
-<p>These guidelines define Magento requirements for code formatting and style for teams that develop JavaScript and jQuery code for Magento.</p>
-<p>These guidelines are based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>.</p>
+<p>These standard define Magento requirements for code formatting and style for teams that develop JavaScript and jQuery code for Magento.</p>
+<p>These standard are based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>.</p>
 <p>Use the <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
 <p>Magento 2 uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets">jQuery widgets</a>.
-   For jQuery widget coding guidelines, see <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-guidelines.html">jQuery widget coding guidelines</a>.
+   For jQuery widget coding standard, see <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-standard.html">jQuery widget coding standard</a>.
 </p>
-<p>Some parts of Magento code might not comply with these guidelines.</p>
-<p>These guidelines are optional for third-party Magento developers.</p>
+<p>Some parts of Magento code might not comply with these standard.</p>
+<p>These standard are optional for third-party Magento developers.</p>
 <h2 id="fedg_js-coding_JSHint">JSHint tool</h2>
 <p>Use <a href="http://www.JSHint.com" target="_blank">JSHint</a> to ensure the quality of your JavaScript code.</p>
 <p>JSHint is a community-driven tool that detects errors and potential problems in JavaScript code.</p>
-<p>Its flexibility enables you to customize it to your coding guidelines and expected code execution environment.</p>
+<p>Its flexibility enables you to customize it to your coding standard and expected code execution environment.</p>
 <p>jQuery core passes JSHint.</p>
 <h2 id="fedg_js-coding-format">Formatting</h2>
 <h3 id="fedg_js-coding_codestyle_anon">Anonymous functions</h3>

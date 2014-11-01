@@ -24,7 +24,7 @@ In Magento 2, all modules are partitioned into logical groups, each one of which
 
 Framework layer
 
-:	Defines the role of an application component in Magento, defines standards for the interactions among components, and implements system-level request and response objects and routing.
+:	Defines the role of an application component in Magento, defines standard for the interactions among components, and implements system-level request and response objects and routing.
 
 Application layer
 

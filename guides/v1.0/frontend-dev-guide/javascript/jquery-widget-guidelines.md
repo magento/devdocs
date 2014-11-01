@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: jQuery widget coding guidelines
+title: jQuery widget coding standard
 ---
 
 <h1 id="fedg_jq_widget_stnd">{{ page.title }}</h1>
@@ -255,7 +255,7 @@ $('selector')
       </table>
    </div>
 </div>
-<h2 id="fedg_widget-coding-stnd_devgde">Development guidelines</h2>
+<h2 id="fedg_widget-coding-stnd_devgde">Development standard</h2>
 <div id="accordion3">
    <h3>Widgets should comply with the <a href="http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" target="_blank">single responsibility principle</a>.</h3>
    <div>

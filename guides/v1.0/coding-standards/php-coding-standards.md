@@ -1,26 +1,26 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 PHP coding standards and practices
+title: PHP coding standards
 ---
 
 <h1 id="m2devgde-stnd_coding">{{ page.title }}</h1>
 <p><a href="{{ site.githuburl }}m2devgde/code-test/stnd_coding.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-<p>The Magento 2 development team has adopted the <a href="http://framework.zend.com/manual/1.12/en/coding-standard.overview.html">Zend Framework Coding Standard for PHP</a>, with a few exceptions.</p>
+<p>The Magento 2 development team has adopted the <a href="http://framework.zend.com/manual/1.12/en/coding-standards.overview.html">Zend Framework Coding Standard for PHP</a>, with a few exceptions.</p>
 <p>In addition, a specific list of "best practices" has been implemented as requirements.</p>
-<p>Where possible, these standards and requirements are enforced using Automated Static Code Analysis Tests.</p>
-<p>Standards and requirements which cannot be automatically validated must be applied through rigorous code review.</p>
-<p>These standards are enforced for the core development team and are highly recommended for all developers implementing extensions and customizations for the Magento 2 product.
+<p>Where possible, these standard and requirements are enforced using Automated Static Code Analysis Tests.</p>
+<p>standard and requirements which cannot be automatically validated must be applied through rigorous code review.</p>
+<p>These standard are enforced for the core development team and are highly recommended for all developers implementing extensions and customizations for the Magento 2 product.
 <div class="bs-callout bs-callout-info" id="info">
    <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
    <span class="glyphicon-class">
-      <p>The numbering in these lists is static and should be used to reference specific standards when communicating with the Magento 2 development team.</p>
+      <p>The numbering in these lists is static and should be used to reference specific standard when communicating with the Magento 2 development team.</p>
    </span>
 </div>
-<h2 id="m2devgde-zend">Zend framework coding standards</h2>
-<p>Magento 2 has adopted the Zend Framework Coding Standard for PHP. Specifically, Magento 2 has the standards
+<h2 id="m2devgde-zend">Zend framework coding standard</h2>
+<p>Magento 2 has adopted the Zend Framework Coding Standard for PHP. Specifically, Magento 2 has the standard
    listed in the following table.
 </p>
-<p>Where possible, these standards are enforced using PHP_CodeSniffer.</p>
+<p>Where possible, these standard are enforced using PHP_CodeSniffer.</p>
 <h3 id="php-file-formatting">PHP file formatting</h3>
 <p>&nbsp;</p>
 <table>
@@ -34,22 +34,22 @@ title: Magento 2 PHP coding standards and practices
    <tbody>
       <tr>
          <td>1.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">General</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.php-file-formatting.html">General</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>1.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">Indentation</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.php-file-formatting.html">Indentation</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>1.3</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">Maximum Line Length</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.php-file-formatting.html">Maximum Line Length</a></td>
          <td>PHP_CodeSniffer</td>
       </tr>
       <tr>
          <td>1.4</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html">Line Termination</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.php-file-formatting.html">Line Termination</a></td>
          <td>PHP_CodeSniffer</td>
       </tr>
    </tbody>
@@ -68,37 +68,37 @@ title: Magento 2 PHP coding standards and practices
    <tbody>
       <tr>
          <td>2.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Class Names</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.naming-conventions.html">Class Names</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>2.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Abstract Class Names</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.naming-conventions.html">Abstract Class Names</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>2.3</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Interface Names</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.naming-conventions.html">Interface Names</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>2.4</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">File Names</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.naming-conventions.html">File Names</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>2.5</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Function and Method Names</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.naming-conventions.html">Function and Method Names</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>2.6</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Variable Names</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.naming-conventions.html">Variable Names</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>2.7</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.naming-conventions.html">Constant Names</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.naming-conventions.html">Constant Names</a></td>
          <td>PHP_CodeSniffer</td>
       </tr>
    </tbody>
@@ -117,87 +117,87 @@ title: Magento 2 PHP coding standards and practices
    <tbody>
       <tr>
          <td>3.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">PHP Code Demarcation</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">PHP Code Demarcation</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>3.2.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">String Literals</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">String Literals</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.2.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">String Literals Containing Apostrophes</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">String Literals Containing Apostrophes</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.2.3</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Variable Substitution</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Variable Substitution</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.2.4</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">String Concatenation</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">String Concatenation</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.3.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Numerically Indexed Arrays</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Numerically Indexed Arrays</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.3.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Associative Arrays</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Associative Arrays</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.4.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Class Declaration</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Class Declaration</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>3.4.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Class Member Variables</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Class Member Variables</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.5.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Function and Method Declaration</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Function and Method Declaration</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>3.5.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Function and Method Usage</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Function and Method Usage</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>3.6.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">If/Else/Elseif Statements</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">If/Else/Elseif Statements</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>3.6.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Switch Statements</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Switch Statements</a></td>
          <td>No</td>
       </tr>
       <tr>
          <td>3.7.1</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation - Format</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Inline Documentation - Format</a></td>
          <td>PHP_CodeSniffer (partially)</td>
       </tr>
       <tr>
          <td>3.7.2</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation - Files</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Inline Documentation - Files</a></td>
          <td>No. See the following exceptions.</td>
       </tr>
       <tr>
          <td>3.7.3</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation - Classes</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Inline Documentation - Classes</a></td>
          <td>No. See the following exceptions.</td>
       </tr>
       <tr>
          <td>3.7.4</td>
-         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html">Inline Documentation Functions</a></td>
+         <td><a href="http://framework.zend.com/manual/1.12/en/coding-standards.coding-style.html">Inline Documentation Functions</a></td>
          <td>No</td>
       </tr>
    </tbody>
@@ -205,8 +205,8 @@ title: Magento 2 PHP coding standards and practices
 
 <h3 id="doc-blocks">Magento coding standard for documentation blocks</h3>
 <p>For details about inline documentation standard see <a href="https://wiki.magento.com/display/MAGE2DOC/Magento+Coding+Standard+for+Documentation+Blocks">Magento Coding Standard for Documentation Blocks</a>.</p>
-<h2>Exceptions to Zend Framework Coding Standards</h2>
-<p>Magento 2 PHP Coding Standards deviate from the Zend Framework Coding Standards in a few specific areas.</p>
+<h2>Exceptions to Zend Framework Coding standard</h2>
+<p>Magento 2 PHP Coding standard deviate from the Zend Framework Coding standard in a few specific areas.</p>
 <h3 id="best-practices">Best practices</h3>
 <p>To ensure the code in Magento 2 is well-structured, readable, and easy to maintain, the Magento 2 team has adopted the following recommended best practices as requirements.</p>
 <p>Extension developers are strongly encouraged to adhere to these best practices as well.</p>

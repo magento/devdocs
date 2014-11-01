@@ -62,7 +62,7 @@ To be able to understand this guide, you must have basic knowledge of:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-ui-lib.html">Magento 2 UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-coding-guidelines.html">JavaScript coding guidelines</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-coding-standards.html">JavaScript coding standard</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/localization/localization-overview.html">Magento 2 localization</a>
 

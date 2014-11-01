@@ -67,5 +67,5 @@ Calendar widget options, methods, and events mostly coincide with the <a href="h
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery Loader widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery Tabs widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-guidelines.html">jQuery widget coding guidelines</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-standard.html">jQuery widget coding standard</a>
 

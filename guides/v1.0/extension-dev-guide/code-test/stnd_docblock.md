@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 documentation block standards
+title: DocBlock standard
 ---
 
 <h1 id="m2devgde-stnd_DocBlock">{{ page.title }}</h1>
@@ -11,7 +11,7 @@ title: Magento 2 documentation block standards
 
 <p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.</p>
 <p>Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.</p>
-<p>Following these guidelines is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
+<p>Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the key words "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL."</p>
 
 
@@ -95,7 +95,7 @@ But if along with declaring class or function there must be another file with so
 <pre>
 &lt;?php
 /**
- * Magento integration testing framework bootstrap
+ * Magento integration Magento test framework (MTF) bootstrap
  *
  * ...
  */
@@ -105,7 +105,7 @@ require __DIR__ . '/../bootstrap.php';
 namespace Magento\Test;
 
 /**
- * Magento integration testing framework bootstrap
+ * Magento integration Magento test framework (MTF) bootstrap
  */
 class Bootstrap
 {
