@@ -17,7 +17,7 @@ title: JavaScript unit tests
 <h3 id="framework">jsunit.requirejsUtil framework</h3>
 <p>The unit tests also have their own framework. The <code>framework/requirejs-util.js</code> file declares the <code>jsunit.requirejsUtil</code> framework object, which supports testing of <code>RequireJS</code> (AMD) modules.</p>
 <p>These modules actively call the global <code>define()</code> function immediately upon loading rather than passively declaring their classes or functions. <code>RequireJS</code> modules usually do not expose anything to the global state. Instead, the modules pass all declarations to the <code>define()</code> function.</p>
-<p>This organization enables testing of <code>RequireJS</code> modules without any additional testing framework support. <code>jsunit.requirejsUtil</code> intercepts all <code>define()</code> calls and can pass <code>RequireJS</code> modules to their corresponding tests.</p>
+<p>This organization enables testing of <code>RequireJS</code> modules without any additional Magento test framework (MTF) support. <code>jsunit.requirejsUtil</code> intercepts all <code>define()</code> calls and can pass <code>RequireJS</code> modules to their corresponding tests.</p>
 <p>For example:</p>
 <p><b>dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js:</b></p>
 <blockquote>

@@ -87,7 +87,7 @@ As the rest of Magento, MTF uses the dependency injection (DI) and object manage
 
 **Tip**: virtualType argument should not be used in DI configurations for MTF.
 
-## MTF guidelines
+## MTF standard
 
 Here are some things you must know to test your installation:
 

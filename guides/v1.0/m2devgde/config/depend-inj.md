@@ -406,7 +406,7 @@ Non-injectable
 
 <p class="q">Reviewer: Requires a code sample.</p>
 
-Use the following guidelines:
+Use the following standard:
 
 *	Injectables can ask for other injectables in a constructor, but not non-injectables.
 *	If a business function of an injectable object produces non-injectables, the function must ask for their factory in a constructor (because factories are injectable).

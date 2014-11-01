@@ -135,4 +135,4 @@ The tabs widget is subscribed to the following events:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery Calendar widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery Loader widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-guidelines.html">jQuery widget coding guidelines</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-standard.html">jQuery widget coding standard</a>

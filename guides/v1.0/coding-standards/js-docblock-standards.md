@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento's JavaScript Doc Block Coding Standards
+title: JavaScript DocBlock standard
 ---
 
 <h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
@@ -9,8 +9,8 @@ title: Magento's JavaScript Doc Block Coding Standards
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 
-This article contains Magento requirements and conventions for adding JavaSrcipt code inline documentation. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these guidelines is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-These standards are a subset of <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
+This article contains Magento requirements and conventions for adding JavaSrcipt code inline documentation. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
+These standard are a subset of <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use the descriptions in <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the key words "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional."</p>
 

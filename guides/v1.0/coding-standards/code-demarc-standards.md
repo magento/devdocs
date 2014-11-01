@@ -1,13 +1,13 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 code demarcation standard
+title: Code demarcation standard
 ---
 
 <h1 id="m2devgde-stnd_code-demarc">{{ page.title }}</h1>
 
 Magento 2 core developers must follow the Magento code demarcation standard.
 
-These standards are recommended for third-party Magento 2 developers.
+These standard are recommended for third-party Magento 2 developers.
 
 Some parts of Magento 2 code might not comply with the standard, but we are working to gradually improve this.
 

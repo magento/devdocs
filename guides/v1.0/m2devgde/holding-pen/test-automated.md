@@ -9,7 +9,7 @@ title: Magento automated tests
 
 Automated tests are built into the Magento framework, enable developers to easily assess product reliability and performance, help developers avoid errors when they develop new or modify exist functionality, and provide measurable results. The Magento core team have adopted the requirements described here.
 
-All third-party developers are encouraged to conform to these guidelines to provide Magento-related products with similar quality.
+All third-party developers are encouraged to conform to these standard to provide Magento-related products with similar quality.
 
 Magento also provides the [batch test tool](#batch-tests-tool), which uses a script that contains the `sle` command to run a standardized collection of tests.
 

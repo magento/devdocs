@@ -12,7 +12,7 @@ title: Magento 2 UI library
 The Magento UI library is a flexible, modular Magento frontend library designed to assist Magento theme developers. It employs a set of mixins for base elements to ease frontend theme development and customization. The Magento UI library is:
 
 *	Built with a Leaner CSS (LESS) pre-processor
-*	Focused on web standards
+*	Focused on web standard
 *	Customizable
 *	Easy to maintain
 *	Responsive
