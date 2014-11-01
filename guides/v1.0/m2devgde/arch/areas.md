@@ -25,23 +25,16 @@ However, an area can have only one component, for instance, the `cron` area, whi
 
 The Magento areas are:
 
-<<<<<<< HEAD
-* <a href="#m2devgde-area-admin">Admin panel</a>
-* Storefront(frontend): entry point for this area is <code>index.php</code> or <code>pub/index.php</code>
-=======
 <p class="q">Reviewer: Please verify all of the following.</p>
 
 * Admin panel: entry point for this area is <code>index.php</code>
 * Storefront: entry point for this area is <code>index.php</code> or <code>pub/index.php</code>
->>>>>>> origin/devbeta
 * Crontab (crontab): entry point for this area is <code>pub/cron.php</code>
 * Install (install): entry point for this area is <code>setup/index.php</code>. `setup` contains `composer.json` that resolves dependencies and manages packages that comprise the Magento 2 software
 * Web API REST (webapi_rest): entry point for this area is `index.php` or `pub/index.php`
 * Web API SOAP (webapi_soap): entry point for this area is `index.php` or `pub/index.php`
 
 If your extension works in several areas, you should ensure it has separate behavior and view components for each area.
-<<<<<<< HEAD
-<<<<<<< HEAD
 The third-party developer can <a href="#m2devgde-area-add">add an area</a> if necessary. 
 
 <h2 id="m2devgde-area-use-in-md">Using Modules in Areas</h2>
@@ -188,7 +181,7 @@ Area's router is declared in `ModuleName/{area_code}/di.xml` file:
 </pre>
 
 <h3 id="m2devgde-area-add-contr">Area Controllers</h3>
-Area's abstract controller defines the behaviour of all actions of an area:
+Area's abstract controller defines the behavior of all actions of an area:
 <pre>
 abstract class ActionAbstract extends \Magento\App\Action\Action
 {
@@ -323,11 +316,3 @@ The layout update is a set of hierarchical trees of tags, which define the locat
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;{element}&nbsp;name=&quot;&lt;sibling_name&gt;&quot;&nbsp;template=&quot;...&quot;&nbsp;group=&quot;&lt;group_name&gt;&quot;/&gt;
 &lt;/{element}&gt;
 </pre>
-=======
-The third-party developer can add an area if necessary.
->>>>>>> origin/devbeta
-=======
-You can add a new area if needed as discussed in TBD.
-
-<p class="q">Reviewer: Are there instructions for creating a new area? If so, where?</p>
->>>>>>> origin/devbeta
