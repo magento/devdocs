@@ -15,7 +15,7 @@ The Magento system stores lots of merchant data (including catalog data, prices,
 
 The Magento application contains several indexers out of the box, but you might want to add your own if your customization needs performing data searches, which are not optimized by the Magento default indexers.
 
-This articles contains a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer. It is aimed at backend developers and assumes readers are familiar with the Magento modular architecture and config implementation. 
+This articles contains a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer. 
 
 <p class="q">Reviewer: Not sure what links should be there, since I cannot find at the the website the landing pages (for modular architecture and configurations) existing in wiki.</p>
 
@@ -270,7 +270,7 @@ Example: The MView declaration of the Product Flat Date out of the box indexer.
 
  First we need to write the appropriate code in the indexer class:
  
-<pre>Namespace Vendor\Merchandising\Model\Indexer;
+<pre>[Vendor name]\Merchandising\Model\Indexer;
 class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framework\Mview\ActionInterface
 {
     public function executeFull(); //Should take into account all placed orders in the system

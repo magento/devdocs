@@ -16,27 +16,27 @@ The translation functionality was changed to improve the localization and custom
 How you can benefit from translation feature in Magento
 
 *	You can translate any part of your store (that is, a module, theme) without influencing other parts.
-*	You can use the ready-to-use language packs prepared by other users or create your own.
+*	You can use the ready-to-use language packages prepared by other users or create your own.
 *	You can create localized version based on existing (aka parent) translations by using language inheritance feature. Thus, if you missed or omitted localizing some phrases/terms, parent translations will be used.
 *	You can customize you translations even further by creating more than one version of translation for the same language.
 
-Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packs</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.
+Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.
 
 Changes made:
 
-*	The language pack (`i18n` folder) can now be moved and saved to any directory of your extension. 
+*	The language package (`i18n` folder) can now be moved and saved to any directory of your extension. 
 *	The phrases for translation are embodied in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
-*	The translation tool has been divided into two tools: one for the dictionary generator and one for uploading the language pack.
+*	The translation tool has been divided into two tools: one for the dictionary generator and one for uploading the language package.
 *	The translation tool uses lazy loading.
 
 
-<h2 id="m2devgde-xlate-translating">Translating Magento by Yourself</h2>
+<h2 id="m2devgde-xlate-translating">Translating Magento by yourself</h2>
 
 Translating the names, titles and phrases used in Magento involves the following steps:
 
 1.	Generate a dictionary of your instance by using the <a href="#m2devgde-xlate-generatortool">dictionary generator tool</a>. 
 2.	Translate the terms.
-2.	Upload your new dictionary to Magento using the <a href="#m2devgde-xlate-packtool">language pack tool</a>.
+2.	Upload your new dictionary to Magento using the <a href="#m2devgde-xlate-packtool">language package tool</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
@@ -48,7 +48,7 @@ Inline translation via the Text Editor is a customization tool used in the store
 
 In the storefront, an inline translation of a phrase will overwrite the translation stated in a dictionary. However, inline translations are theme-specific, and will not apply if another theme is assigned.
 
-<h2 id="m2devgde-xlate-dictionaries">What Is a Dictionary?</h2>
+<h2 id="m2devgde-xlate-dictionaries">What is a dictionary?</h2>
 
 A dictionary is a .csv file containing names/titles/phrases used in Magento. Depending on your configurations, a dictionary can contain all phrases used in Magento or phrases belonging to specified modules/themes.
 
@@ -59,7 +59,7 @@ Typically, a dictionary contains three columns:
 
 *	Key. Contains the default/key meaning of a phrase (in en_US locale) and is used to assign a phrase's translation properly. Should not be changed.
 *	Translation. Contains the translated/customized variant of a phrase. This is the only column a translator should edit.
-*	Meta information. Retrieves the module(s) and theme(s) where a phrase is used. Should not be changed. You can opt to generate a dictionary without meta information for reference purposes only (refer to <a href="#m2devgde-xlate-generatortool">Using Dictionary Generator Tool</a> section for details).
+*	Meta information. Retrieves the module(s) and theme(s) where a phrase is used. Should not be changed. You can opt to generate a dictionary without meta information for reference purposes only (refer to <a href="#m2devgde-xlate-generatortool">Using the dictionary generator tool</a> section for details).
 
 Sample of a dictionary with meta information:
 
@@ -73,7 +73,7 @@ Dictionary files can be located in different parts of the code base and are asse
 
 Meta information in a dictionary file is necessary for defining where the translation of a phrase should be assigned. A dictionary file without the meta information must be uploaded manually to appropriate module. For example, if you create a new dictionary file for a custom/extension module, such file will not have the meta information. Thus,  to make a new dictionary available in a custom module, upload a dictionary file to `i18n` folder of this module, for instance: `app/code/{vendor}/CustomModule/i18n/fr_FR.csv`.
 
-<h3 id="m2devgde-xlate-generatortool">Using Dictionary Generator Tool</h3>
+<h3 id="m2devgde-xlate-generatortool">Using the dictionary generator tool</h3>
 
 The dictionary generator tool compiles a list of all phrases, names, and titles used in Magento, that is, a dictionary. The generator tool gathers phrases and terms throughout entire Magento, that is, from all supported file types.
 
@@ -89,7 +89,7 @@ For generating a dictionary, you should specify the following parameters:
 *	`-o|output` defines the name of the output file (a dictionary); by default, the output file (dictionary) is saved in the directory from which the script was launched. This parameter is optional.
 *	`-m|magento` defines whether a directory belongs to the root code base, that is, whether the meta information should be included into a dictionary; by default, the value is set to 'no'. The value can be set to 'yes' only for the Magento root directory, otherwise the parser will not be able to find the correct path. This parameter is optional.
 
-<h2 id="m2devgde-xlate-languagepack">Understanding Language Packs</h2>
+<h2 id="m2devgde-xlate-languagepack">Understanding Language Packages</h2>
 
 The language pack is a dictionary divided into separate module-specific files. You can download the ready-to-use language packs and customize them, even if you do not have a Magento instance installed.
 
