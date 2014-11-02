@@ -286,7 +286,7 @@ title: XML layouts and schemas
       <tr>
          <td>
             <p>Handles parameters that are injected into the parent block constructor during instantiation.
-               For more information about data types, see <a href="{{ site.gdeurl }}m2devgde/config/data-type-schema.html">Data Types Schema</a>.
+               For more information about data types, see <a href="{{ site.gdeurl }}config-guide/config/data-type-schema.html">Data Types Schema</a>.
             </p>
          </td>
          <td>

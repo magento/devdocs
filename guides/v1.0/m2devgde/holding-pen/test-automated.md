@@ -4,7 +4,7 @@ title: Magento automated tests
 ---
 
 <h1 id="m2devgde-test-jsunit">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/code-test/test_js-unit.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}extension-dev-guide/test/test_js-unit.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="m2devgde-js-unit-tests-intro">Overview</h2>
 
 Automated tests are built into the Magento framework, enable developers to easily assess product reliability and performance, help developers avoid errors when they develop new or modify exist functionality, and provide measurable results. The Magento core team have adopted the requirements described here.
@@ -373,7 +373,7 @@ When you open PHP files for which code has been run by PHPUnit, the covered and 
 
 <h2 id="customize-bootstrap">Customize test bootstrap settings</h2>
 
-Magento automated tests are supplied with the `phpunit.xml.dist` file, which provides default bootstrap settings for running tests. Users can copy it as `phpunit.xml` and edit it as detailed in [Configuration files]({{ site.githuburl }}m2devgde/config/config-files.html").
+Magento automated tests are supplied with the `phpunit.xml.dist` file, which provides default bootstrap settings for running tests. Users can copy it as `phpunit.xml` and edit it as detailed in [Configuration files]({{ site.githuburl }}config-guide/config/config-files.html").
 
 If you name the file something other than `phpunit.xml`, you must specify the file with the `-c` switch:
 
@@ -842,7 +842,7 @@ To facilitate this routine, you can use **\Magento\TestFramework\Helper\ObjectMa
 
 You can still provide your custom mocks if needed.
 
-<p>For information about ObjectManager helper class usage, see <a href="{{ site.gdeurl }}m2devgde/code-test/test_object-mgr.html">Object Manager helper</a>.</p>
+<p>For information about ObjectManager helper class usage, see <a href="{{ site.gdeurl }}extension-dev-guide/test/test_object-mgr.html">Object Manager helper</a>.</p>
 
 <h2 id="compatibility-tips">PHPUnit compatibility tips (v3.6)</h2>
 

@@ -5,7 +5,7 @@ title: DocBlock standard
 
 <h1 id="m2devgde-stnd_DocBlock">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/code-test/stnd_DocBlock.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}extension-dev-guide/test/stnd_DocBlock.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
 

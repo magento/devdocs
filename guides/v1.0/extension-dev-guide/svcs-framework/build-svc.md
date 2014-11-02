@@ -119,6 +119,6 @@ Note the following:
 
 *	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svcs-props.html">Interacting With Services</a>
 
-*	<a href="{{ site.gdeurl }}m2devgde/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
+*	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
 
-*	<a href="{{ site.gdeurl }}m2devgde/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
+*	<a href="{{ site.gdeurl }}get-started/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
