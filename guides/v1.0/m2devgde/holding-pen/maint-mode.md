@@ -23,7 +23,7 @@ To disable maintenance mode, delete or relocate the file.
 
 <h2 id="m2devgde-maint-enable">Create a list of allowed users</h2>
 
-You can optionally enable IP address-based access to the storefront while it's in maintenance mode. Enter a comma-separted list of IP addresses in `maintenance.flag` as follows:
+You can optionally enable IP address-based access to the storefront while it's in maintenance mode. Enter a comma-separated list of IP addresses in `maintenance.flag` as follows:
 
 <pre>127.0.0.1,10.249.15.100,192.168.1.1</pre>
 

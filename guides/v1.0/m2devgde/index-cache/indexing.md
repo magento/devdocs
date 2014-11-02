@@ -17,7 +17,7 @@ The Magento application contains several indexers out of the box, but you might 
 
 This articles contains a high level description of how indexing is implemented from a developer's point of view, and practical advice of how to add your own indexer. It is aimed at backend developers and assumes readers are familiar with the Magento modular architecture and config implementation. 
 
-<p class="q">Reviewer: Not sure what links should be there, since I cannot find at the the website the landing pages (for modular architecutre and configurations) existing in wiki.</p>
+<p class="q">Reviewer: Not sure what links should be there, since I cannot find at the the website the landing pages (for modular architecture and configurations) existing in wiki.</p>
 
 We use the following terms when talking about indexing:
 
@@ -264,13 +264,13 @@ Example: The MView declaration of the Product Flat Date out of the box indexer.
  
  Let's imagine we decided to add functionality that pushes bestsellers to the top of a category listing. To implement this we would need to process "heavy weight" statistics about sales and change the product position accordingly. Here is where an indexer could help.
  
- Let's say that our functionality will reside in a new `<Vendor>_Merchandizing` module (for details about module naming and location see Conventional Location of Custom Modules).
+ Let's say that our functionality will reside in a new `<Vendor>_Merchandising` module (for details about module naming and location see Conventional Location of Custom Modules).
  
  <p class="q">Reviewer: Not sure what link should be there, since I cannot find it on the website, only in wiki.</p>
 
  First we need to write the appropriate code in the indexer class:
  
-<pre>Namespace Vendor\Merchandizing\Model\Indexer;
+<pre>Namespace Vendor\Merchandising\Model\Indexer;
 class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framework\Mview\ActionInterface
 {
     public function executeFull(); //Should take into account all placed orders in the system
@@ -282,27 +282,27 @@ class Popular implements \Magento\Indexer\Model\ActionInterface, \Magento\Framew
  
 Then we need to declare the indexer:
 
-<pre><b><code>Merchandizing/etc/indexer.xml</code></b>
+<pre><b><code>Merchandising/etc/indexer.xml</code></b>
 &lt;config&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd&quot;&gt;
-&lt;view&nbsp;id=&quot;&nbsp;merchandizing_popular_order&quot;&nbsp;class=&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;&nbsp;group=&quot;indexer&quot;&gt;
+&lt;view&nbsp;id=&quot;&nbsp;merchandising_popular_order&quot;&nbsp;class=&quot;Vendor\Merchandising\Model\Indexer\Popular&quot;&nbsp;group=&quot;indexer&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;subscriptions&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&nbsp;name=&quot;sales_order_flat&quot;&nbsp;entity_column=&quot;order_id&quot;&nbsp;/&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/subscriptions&gt;
 &lt;/view&gt;
 </pre>
 
-And finally, we must declare our indexer view (`merchandizing_popular_order`) that tracks sales when the indexer is set to run  in the "Update on schedule" mode.
+And finally, we must declare our indexer view (`merchandising_popular_order`) that tracks sales when the indexer is set to run  in the "Update on schedule" mode.
 
-<pre><b><code>Merchandizing/etc/mview.xml</code></b>
+<pre><b><code>Merchandising/etc/mview.xml</code></b>
 &lt;config&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd&quot;&gt;
-&lt;view&nbsp;id=&quot;&nbsp;merchandizing_popular_order&quot;&nbsp;class=&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;&nbsp;group=&quot;indexer&quot;&gt;
+&lt;view&nbsp;id=&quot;&nbsp;merchandising_popular_order&quot;&nbsp;class=&quot;Vendor\Merchandising\Model\Indexer\Popular&quot;&nbsp;group=&quot;indexer&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;subscriptions&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&nbsp;name=&quot;sales_order_flat&quot;&nbsp;entity_column=&quot;order_id&quot;&nbsp;/&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/subscriptions&gt;
 &lt;/view&gt;
 </pre>
 
-These settings launch `Vendor\Merchandizing\Model\Indexer\Popular::execute` method every time an order is changed.
+These settings launch `Vendor\Merchandising\Model\Indexer\Popular::execute` method every time an order is changed.
 
 Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.  
 

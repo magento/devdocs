@@ -144,7 +144,7 @@ You can specify several parent packs if necessary. In such case, the parent pack
 
 <h4 id="m2devgde-xlate-inheritancework">Example: How Language Inheritance Works</h4>
 
-To understand how the language inheritance works, let us imagine we have a language pack that descends from two other packs and each of the latters also has parent and 'grand-parent' packs.
+To understand how the language inheritance works, let us imagine we have a language pack that descends from two other packs and each of the latter also has parent and 'grand-parent' packs.
 
 **If**
 

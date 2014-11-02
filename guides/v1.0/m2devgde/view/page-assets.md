@@ -69,7 +69,7 @@ Its asset class diagram follows:
 `File` specifics:
 
 * `File` accepts scalar data in the constructor and is immutable, but requires an instance of "source" for lazy loading of content or a source file.
-* The `$context` argument in the constructor is a value object necessary for generating URLs. Tt contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.
+* The `$context` argument in the constructor is a value object necessary for generating URLs. It contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.
 
 <h3 id="m2devgde-page-assets-imp-context">Context implementations</h3>
 

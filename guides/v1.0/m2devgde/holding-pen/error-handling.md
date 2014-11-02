@@ -29,7 +29,7 @@ There are several types of exceptions:
 	
 	If there is a generic exception in live mode, a unique report identifier is generated. An exception message and a stack trace are written as plain text to a file named by the report ID, which usually could be found in the `var/report` directory. 
 	
-	Your specified error report page contains a reference to the report displaye to the user.
+	Your specified error report page contains a reference to the report displayed to the user.
 
 <p class="q">Reviewer: I do not know what class handles bootstrap exceptions. Please clarify.</p>
 	

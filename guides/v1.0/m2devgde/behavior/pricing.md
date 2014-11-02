@@ -235,7 +235,7 @@ In the following table you can find the complete list of the price types impleme
         </p>
       </td>
       <td>
-        <p>Tier prices (different pricing for higher quantities). When renderd, the tier prices block is displayed.</p>
+        <p>Tier prices (different pricing for higher quantities). When rendered, the tier prices block is displayed.</p>
       </td>
     </tr>
     <tr>
