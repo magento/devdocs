@@ -5,7 +5,7 @@ title: Magento 2 areas
 
 <h1 id="m2devgde-area">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}architecture/arch/areas.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/areas/areas.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-area-intro">Introduction</h2>
 

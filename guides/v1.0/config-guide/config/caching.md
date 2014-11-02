@@ -5,7 +5,7 @@ title: Caching
 
 <h1 id="m2devgde-cache">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}architecture/arch/caching.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/modules/caching.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-cache-intro">Overview</h2>
 
