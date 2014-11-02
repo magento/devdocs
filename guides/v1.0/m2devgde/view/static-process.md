@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Static file processing
+title: Static file processing 
 ---
 
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>
@@ -73,7 +73,7 @@ title: Static file processing
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40"/>
 <span class="glyphicon-class">
- <p>Any files that you manuallly upload (for example, product images), are always stored in <code>pub/media</code>.</p>
+ <p>Any files that you manually upload (for example, product images), are always stored in <code>pub/media</code>.</p>
  </span>
 </div>
 <p>The publication logic depends on the application mode:</p>

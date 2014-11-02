@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: XML layouts and schemas
+title: XML layouts and schemas 
 ---
 
 <h1 id="m2devgde-xml-layout">{{ page.title }}</h1>

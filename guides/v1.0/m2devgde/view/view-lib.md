@@ -1,6 +1,6 @@
 ---
 title: The Magento 2 view library
-layout: howtom2devgde_chapters
+layout: howtom2devgde_chapters 
 ---
 
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>
@@ -19,7 +19,7 @@ View component, and remain independent from each other.
 Magento 2 View components are located in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View" target="_blank">lib/internal/Magento/Framework/View</a>.
 
 The View component basic classes, factories, and interfaces
-used to implement HTML content rendering  for the frontend and backend
+used to implement HTML content rendering  for the frontend and adminhtml (Admin)
 areas. 
 
 <h2 id="library-components">Magento\View library components</h2>

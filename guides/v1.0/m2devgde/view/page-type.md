@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Page types
+title: Page types 
 ---
 
 <h1 id="m2devgde-page-type">{{ page.title }}</h1>

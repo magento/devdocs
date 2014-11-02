@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Template engine
+title: Template engine 
 ---
 
 <h1 id="m2devgde-temp-eng">{{ page.title }}</h1>

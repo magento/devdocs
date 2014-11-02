@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Design abstractions
+title: Design abstractions 
 ---
 
 <h1 id="m2devgde-design-abstract">{{ page.title }}</h1>

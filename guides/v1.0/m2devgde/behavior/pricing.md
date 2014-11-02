@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: The pricing library
+title: The pricing library 
 ---
  
 <p><a href="{{ site.githuburl }}m2devgde/behavior/pricing.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
@@ -235,7 +235,7 @@ In the following table you can find the complete list of the price types impleme
         </p>
       </td>
       <td>
-        <p>Tier prices (different pricing for higher quantities). When renderd, the tier prices block is displayed.</p>
+        <p>Tier prices (different pricing for higher quantities). When rendered, the tier prices block is displayed.</p>
       </td>
     </tr>
     <tr>

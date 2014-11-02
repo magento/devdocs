@@ -1,7 +1,7 @@
 ---
 layout: howtom2devgde_chapters
 title: Module location
----
+--- 
  
 <h1 id="m2devgde-mod-loc">{{ page.title }}</h1>
 
