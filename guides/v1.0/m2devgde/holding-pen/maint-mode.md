@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Maintenance mode
+title: Maintenance mode 
 ---
  
 <h1 id="m2devgde-maint">{{ page.title }}</h1>

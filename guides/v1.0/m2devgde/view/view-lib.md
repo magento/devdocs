@@ -1,6 +1,6 @@
 ---
 title: The Magento 2 view library
-layout: howtom2devgde_chapters
+layout: howtom2devgde_chapters 
 ---
 
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>

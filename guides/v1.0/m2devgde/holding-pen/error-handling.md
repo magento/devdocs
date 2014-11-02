@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Module error handling
+title: Module error handling 
 ---
  
 <h1 id="m2devgde-err">{{ page.title }}</h1>

@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Static file processing
+title: Static file processing 
 ---
 
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>

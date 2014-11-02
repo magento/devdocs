@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Messages model
+title: Messages model 
 ---
  
 <h1 id="m2devgde-session">{{ page.title }}</h1>

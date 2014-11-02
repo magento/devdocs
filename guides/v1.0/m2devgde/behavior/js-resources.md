@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: JavaScript resources
+title: JavaScript resources 
 ---
 
 <h1 id="m2devgde-js-resources">{{ page.title }}</h1>

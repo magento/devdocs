@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Page assets
+title: Page assets 
 ---
 
 <h1 id="m2devgde-page-assets">{{ page.title }}</h1>

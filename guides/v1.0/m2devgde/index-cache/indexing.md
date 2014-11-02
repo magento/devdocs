@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Indexing
+title: Indexing 
 ---
  
 <h1 id="m2devgde-indexing">{{ page.title }}</h1>
