@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Magento 2 Frontend Development Overview
+title: Magento 2 Frontend Developer Guide
 ---
 
 <h1 id="overview">{{ page.title }}</h1>
