@@ -4,7 +4,7 @@ title: PHP coding standards
 ---
 
 <h1 id="m2devgde-stnd_coding">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/code-test/stnd_coding.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}coding-standards/php-coding-standards.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <p>The Magento 2 development team has adopted the <a href="http://framework.zend.com/manual/1.12/en/coding-standards.overview.html">Zend Framework Coding Standard for PHP</a>, with a few exceptions.</p>
 <p>In addition, a specific list of "best practices" has been implemented as requirements.</p>
 <p>Where possible, these standard and requirements are enforced using Automated Static Code Analysis Tests.</p>
