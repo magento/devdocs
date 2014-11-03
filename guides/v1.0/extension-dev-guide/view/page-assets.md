@@ -5,14 +5,14 @@ title: Page assets
 
 <h1 id="m2devgde-page-assets">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/view/page-assets.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/page-assets.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-page-assets-intro">Introduction to page assets</h2>
 
 An _asset_ is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using `<head/>`, `<img/>`, `<object/>` elements.
 
 This topic discusses how to work with Magento 2 page assets (particularly interfaces and classes). The article is mostly aimed at developers
-who have solid experience with PHP and are familiar with <a href="{{ site.gdeurl }}m2devgde/view/xml-schema-layout.html">Magento XML layouts</a>.
+who have solid experience with PHP and are familiar with <a href="{{ site.gdeurl }}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
 
 <h2 id="m2devgde-page-assets-interf">Asset interfaces</h2>
 

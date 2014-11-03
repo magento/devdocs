@@ -5,7 +5,7 @@ title: Design abstractions
 
 <h1 id="m2devgde-design-abstract">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/view/design-abstract.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/design-abstract.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-design-abstract-intro">Introduction to design abstractions</h2>
 

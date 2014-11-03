@@ -5,7 +5,7 @@ title: Use Magento Admin to manually create an integration
 
 <h1 id="integration-manual-create">Manually Creating an Integration Using the Magento Admin</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2devgde/integration/integration-create-man.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-create-man.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Creating a new integration manually implies that the administrative user previously contacted the third-party system's developers and got all necessary information.
 

@@ -4,7 +4,7 @@ title: XML layouts and schemas
 ---
 
 <h1 id="m2devgde-xml-layout">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/view/xml-schema-layout.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></code></li>
+<p><a href="{{ site.githuburl }}architecture/view/xml-schema-layout.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></code></li>
 <h2 id="m2devgde-xml-layout-intro">Overview</h2>
 <p>In Magento 2, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
 <p>The system uses the Magento XML schemas to validate these layouts.</p>

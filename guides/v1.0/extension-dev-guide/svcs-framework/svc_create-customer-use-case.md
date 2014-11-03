@@ -5,7 +5,7 @@ title: Services Use Case&mdash;Creating a Customer
  
 # Services Use Case&mdash;Creating a Customer
 
-<p><a href="{{ site.githuburl }}guides/v1.0/m2devgde/svcs-framework/svc_create-customer-use-case.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/architecture/svcs-framework/svc_create-customer-use-case.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 This topic discusses a simplified way to create customer records using a conceptualized client. We discuss how to get started by helping you examine service layer models and interfaces to get the mechanism you need; and how to use the data object builder and service data objects to send the data. After you read this topic, you should have a general idea of how to work with services.
 
@@ -79,6 +79,6 @@ The preceding section showed how to:
 
 #### Related Topics
 
-*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}architecture/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}architecture/svcs-framework/build-svc.html">Basics of Building a Service</a>
 *	<a href="{{ site.gdeurl }}get-started/rest/rest-overview.html">Accessing Magento Objects Using REST</a>

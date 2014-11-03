@@ -4,7 +4,7 @@ title: Static file processing
 ---
 
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/view/static-process.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/static-process.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="m2devgde-static-proc-intro">Overview</h2>
 <p>When a browser loads a web page and requests a static view file such as a JavaScript, CSS, image file, or another page asset,
    the Magento system processes the requested file before it returns the file to the browser.

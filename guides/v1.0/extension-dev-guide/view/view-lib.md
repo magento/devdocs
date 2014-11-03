@@ -4,7 +4,7 @@ layout: howtom2devgde_chapters
 ---
 
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="view-library-overview">Introduction to the view library</h2>
 

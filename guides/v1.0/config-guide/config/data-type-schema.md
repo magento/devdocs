@@ -4,7 +4,7 @@ title: Data types schema
 ---
 
 <h1 id="m2devgde-data-type-schema">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="overview">Overview</h2>
 <p class="q">Reviewer: I'm targeting this for removal from the Dev Guide. If you disagree, please provide a detailed answer why not. Why should this be a topic? Why would someone go to a guide to look for something like this? Wouldn't it be better to document the XSD in the XSD?</p>
 

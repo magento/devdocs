@@ -4,7 +4,7 @@ title: SOAP web API calls
 ---
 
 <h1 id="m2devgde-data-type-schema">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="formats">How to get a WSDL</h2>
 
 A WSDL file is generated only for services you request. This means that different clients may use different services and therefore use different WSDLs.

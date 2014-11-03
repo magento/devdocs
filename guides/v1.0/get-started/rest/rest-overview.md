@@ -78,7 +78,7 @@ To make a REST call for the Customer service:
 #### Related Topics:
 
 *	<a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>
-*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
-*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}architecture/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
+*	<a href="{{ site.gdeurl }}architecture/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}architecture/svcs-framework/build-svc.html">Basics of Building a Service</a>
 *	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

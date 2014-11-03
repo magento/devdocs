@@ -4,7 +4,7 @@ title: Routing
 ---
 
 <h1 id="m2devgde-magento-app">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}m2devgde/view/RENAME.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/RENAME.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="overview">Overview</h2>
 
 In Magento 2, a URL has the following format:
