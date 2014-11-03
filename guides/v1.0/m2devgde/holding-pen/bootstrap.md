@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Module bootstrapping
+title: Module bootstrapping 
 ---
  
 <h1 id="m2devgde-boot">{{ page.title }}</h1>

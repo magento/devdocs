@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento\App component
+title: Magento\App component 
 ---
 
 <h1 id="m2devgde-magento-app">{{ page.title }}</h1>

@@ -78,7 +78,7 @@ A service is _not_ responsible for:
 	
 	Resources are specified in the module's `webapi.xml`
 	
-	For more information about how this works, see <a href="{{ site.gdeurl }}m2devgde/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
+	For more information about how this works, see <a href="{{ site.gdeurl }}get-started/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
 
 #### Related Topics
 
@@ -88,4 +88,4 @@ A service is _not_ responsible for:
 
 *	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
 
-*	<a href="{{ site.gdeurl }}m2devgde/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
+*	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

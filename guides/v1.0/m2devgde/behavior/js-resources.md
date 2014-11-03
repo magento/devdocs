@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: JavaScript resources
+title: JavaScript resources  
 ---
 
 <h1 id="m2devgde-js-resources">{{ page.title }}</h1>
@@ -18,9 +18,9 @@ You must specify and configure all JS resources used in modules and themes that 
 JS resources can be specified at several levels:
 
 *	at the library level for all libraries in Magento code base (`lib/web`)
-*	at the module level for all libraries within a module (`app/code/{Namespace}/{Module}/view/{area}/web`)
-*	at the theme module level for all libraries within a theme (`app/design/{area}/{Vendor}/{theme}/{Namespace}_{Module}/web`)
-*	at the theme level for all libraries within a theme  (`app/design/{area}/{Vendor}/{theme}/web`). We do not recommend using this level to specify JS resources.
+*	at the module level for all libraries within a module (`app/code/[Vendor name]/[Module name]/view/{area}/web`)
+*	at the theme module level for all libraries within a theme (`app/design/{area}/[Vendor name]/{theme}/[Vendor name]_[Module name]/web`)
+*	at the theme level for all libraries within a theme  (`app/design/{area}/[Vendor name]/{theme}/web`). We do not recommend using this level to specify JS resources.
 
 We recommend specifying JS resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 
