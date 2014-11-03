@@ -7,7 +7,7 @@ title: What is the Magento 2 Service Framework?
 # What is the Magento 2 Service Framework?
 
 
-<p><a href="{{ site.githuburl }}guides/v1.0/architecture/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/svcs-framework/what-is-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 The Magento 2 service framework defines and exposes extensible features. The service framework (also referred to as the *service layer*) is between the presentation layer and business logic as the following figure shows:
 
@@ -30,7 +30,7 @@ A service is:
 
 	<a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountService.php" target="_blank">Here</a> is a class that implements the <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">CusomterAccountServiceInterface</a>.
 
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/build-svc.html#about-service-data-objects">Service data objects</a> that serialize, deserialize, and format data.	
+*	<a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/build-svc.html#about-service-data-objects">Service data objects</a> that serialize, deserialize, and format data.	
 	
 ## Benefits of the Service Layer
 
@@ -42,9 +42,9 @@ Benefits include:
  
 ## Related Topics
 
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/svcs-props.html">Interacting With Services</a>
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/build-svc.html">Basics of Building a Service</a>
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/svcs-props.html">Interacting With Services</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
 
