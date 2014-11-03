@@ -3,7 +3,7 @@ layout: howtom2devgde_chapters
 title: Maintain an integration
 ---
 
-<h1 id="integration-maintain">Maintaining an Integration</h1>
+<h1 id="integration-maintain">Maintain an integration</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-maintain.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p> 
 

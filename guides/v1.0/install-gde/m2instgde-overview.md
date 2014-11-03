@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Overview of installing Magento 2
+title: Installation and Upgrade Guide
 ---
 
 <h1 id="instgde-overview">{{ page.title }}</h1>

@@ -1,9 +1,9 @@
 ---
 layout: howtom2devgde_chapters
-title: Code your integration
+title: Code an integration
 ---
 
-<h1 id="code-integration">Coding Your Integration</h1>
+<h1 id="code-integration">Code an integration</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-code.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
