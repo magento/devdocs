@@ -21,6 +21,10 @@ a.ext1:visited {
     color: blue;
 }
 
+a.btn-visit:visited {
+    color: lightgray;
+}
+
 a.ext1:hover {
     color: darkorange;
 }
