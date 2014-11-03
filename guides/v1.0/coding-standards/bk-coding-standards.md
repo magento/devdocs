@@ -6,7 +6,7 @@ title: Magento Coding Standards
 <div class="container bs-docs-container">
    <div class="row">
       <div class="jumbotron">
-         <h1 class="api1" id="coding-standardss">{{ page.title }}</h1>
+         <h1 class="api1" id="coding-standards">{{ page.title }}</h1>
       </div>
       <div class="col-xs-3">
          <p><b>Contents</b></p>
@@ -21,7 +21,7 @@ title: Magento Coding Standards
       </div>
       <div class="col-xs-6" role="main">
          <div class="bs-docs-section">
-            <p><a href="{{ site.githuburl }}coding-standardss/coding-standardss.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+            <p><a href="{{ site.githuburl }}coding-standards/coding-standards.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
             <p>To code extensions, follow these standards:</p>
             <dl>
              <dt>

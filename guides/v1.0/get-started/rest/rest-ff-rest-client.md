@@ -166,9 +166,9 @@ An example follows:<br>
 <h4 id="svcs_rest_reltop">Related Topics</h4>
 <div>
 
-<ul><li><a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/svc-how-to-use.html">How a Client Uses a Service</a></li>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/build-svc.html">Basics of Building a Service</a></li>
+<ul><li><a href="{{ site.gdeurl }}extension-dev-guide/service-framework/what-is-svc.html">What is the service framework?</a></li>
+<li><a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svc-how-to-use.html">How a Client Uses a Service</a></li>
+<li><a href="{{ site.gdeurl }}extension-dev-guide/service-framework/build-svc.html">How to build a service</a></li>
 <li><a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a></li></ul>
 </div>
 </div>
