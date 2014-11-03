@@ -2,8 +2,7 @@
 layout: howtom2devgde_chapters
 title: Translation   
 ---
-  word
-  word
+
 <h1 id="m2devgde-xlate">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/holding-pen/xlate.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
