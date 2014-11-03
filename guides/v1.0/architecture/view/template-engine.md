@@ -5,7 +5,7 @@ title: Template engine
 
 <h1 id="m2devgde-temp-eng">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/view/template-engine.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/view/template-engine.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-temp-eng-over">Introduction to the Magento template engine</h2>
 A template engine is a mechanism for rendering HTML output from templates associated with page layout blocks. The Magento template rendering subsystem can support multiple template engines, including the default PHP-based engine for processing PHTML templates.

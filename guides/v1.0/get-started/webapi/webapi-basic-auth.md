@@ -15,7 +15,7 @@ title: Authorize web API requests
 
 This topic provides basic information about how to authorize Web API requests.
 
-When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to [What is the Web API Framework?]({{ site.gdeurl }}m2devgde/integration/integration-auth.html)).
+When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to [What is the Web API Framework?]({{ site.gdeurl }}config-guide/integration/integration-auth.html)).
 
 Service developers declare the list of permissions required in the integration's `webapi.xml`. This is discussed in more detail in [What is the Web API Framework?]({{ site.gdeurl }}get-started/webapi/what-is-webapi.html)).
 
@@ -67,6 +67,6 @@ For the call to succeed, _all_ resources must be authorized; otherwise, an autho
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}m2devgde/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}architecture/svcs-framework/build-svc.html">Basics of Building a Service</a>
 
 *	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
