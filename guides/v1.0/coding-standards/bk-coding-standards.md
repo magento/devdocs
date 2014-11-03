@@ -19,25 +19,25 @@ title: Magento Coding Standards
          Preview theme
          </a>
       </div>
-      <div class="col-xs-9" role="main">
+      <div class="col-xs-6" role="main">
          <div class="bs-docs-section">
             <p><a href="{{ site.githuburl }}coding-standardss/coding-standardss.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
             <p>To code extensions, follow these standards:</p>
             <dl>
              <dt>
-                  <p><a type="button" class="btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/code-demarc-standards.html">Code demarcation standard &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/code-demarc-standards.html">Code demarcation standard &raquo;</a></p>
                </dt>
                <dt>
-                    <p><a type="button" class="btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/php-coding-standards.html">PHP coding standards &raquo;</a></p>
+                    <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/php-coding-standards.html">PHP coding standards &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/js-coding-standards.html">JavaScript coding standards &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/js-coding-standards.html">JavaScript coding standards &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/docblock-standards.html">DocBlock standards &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/docblock-standards.html">DocBlock standards &raquo;</a></p>
                </dt>
                 <dt>
-                  <p><a type="button" class="btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/js-docblock-standards.html">JavaScript DocBlock standards &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}coding-standards/js-docblock-standards.html">JavaScript DocBlock standards &raquo;</a></p>
                </dt>
             </dl>
          </div>

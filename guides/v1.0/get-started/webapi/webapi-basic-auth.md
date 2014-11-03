@@ -67,6 +67,6 @@ For the call to succeed, _all_ resources must be authorized; otherwise, an autho
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/build-svc.html">Basics of Building a Service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/svcs-framework/build-svc.html">Basics of Building a Service</a>
 
 *	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

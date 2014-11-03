@@ -1,9 +1,9 @@
 ---
 layout: howtom2devgde_chapters
-title: Integration authorization 
+title: Integration authorization
 ---
 
-<h1 id="what-is-integration">Understanding Integration Authorization</h1>
+<h1 id="what-is-integration">Integration authorization</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
