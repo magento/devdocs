@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Translation  
+title: Translation   
 ---
  
 <h1 id="m2devgde-xlate">{{ page.title }}</h1>
