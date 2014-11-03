@@ -1,8 +1,8 @@
 ---
 layout: howtom2devgde_chapters
-title: How Magento calculates prices  
+title: How Magento calculates prices   
 ---
- 
+  
 <h1 id="m2devgde-pricecalc">{{ page.title }}</h1>
 
 <h2 id="m2devgde-pricecalc-intro">Introduction to the Magento pricing library</h2> 
