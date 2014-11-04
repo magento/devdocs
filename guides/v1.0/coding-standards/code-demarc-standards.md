@@ -64,9 +64,9 @@ Interpret the keywords "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SH
 <blockquote>
 <pre>
 &lt;ul>
-   &lt;li class="first" role="button" aria-pressed="false" aria-controls="some-id">button 1&lt;/li>
-   &lt;li role="button" aria-pressed="false" aria-controls="some-id">button 2&lt;/li>
-   &lt;li role="button" aria-pressed="true" aria-controls="some-id">button 3&lt;/li>
+   &lt;li class="first" type="button" aria-pressed="false" aria-controls="some-id">button 1&lt;/li>
+   &lt;li type="button" aria-pressed="false" aria-controls="some-id">button 2&lt;/li>
+   &lt;li type="button" aria-pressed="true" aria-controls="some-id">button 3&lt;/li>
 &lt;/ul>
 &lt;div>
    &lt;label for="some-id">Enter text&lt;/label>
@@ -81,9 +81,9 @@ Interpret the keywords "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SH
 <blockquote>
 <pre>
 &lt;ul id="my-special-menu">
-   &lt;li id="buttonId1" class="first" role="button">button 1&lt;/li>
-   &lt;li id="buttonId2" role="button">button 2&lt;/li>
-   &lt;li id="buttonId3" role="button">button 3&lt;/li>
+   &lt;li id="buttonId1" class="first" type="button">button 1&lt;/li>
+   &lt;li id="buttonId2" type="button">button 2&lt;/li>
+   &lt;li id="buttonId3" type="button">button 3&lt;/li>
 &lt;/ul>
 </pre>
 </blockquote>
