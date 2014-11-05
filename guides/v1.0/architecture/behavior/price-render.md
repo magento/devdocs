@@ -1,8 +1,8 @@
 ---
 layout: howtom2devgde_chapters
-title: How Magento renders prices  
+title: How Magento renders prices   
 ---
- 
+  
 <h1 id="m2devgde-pricerend">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}architecture/behavior/price-render.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
