@@ -8,11 +8,27 @@ title: Magento 2 Introduction to Modules
 <p><a href="{{ site.githuburl }}m2devgde/arch/____.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="arch-modules-overview">Overview</h2>
-ADD INTRO INFO HERE
+Magento is an application that is built up of several different types of components: themes, modules, and libraries.
+
+Themes and modules are the units of customization in Magento, themes for user experience and modules for business features. Both have a lifecycle allowing them to be installed, deleted, disabled, etc.
+Themes
+
+Themes allow you to customize the look-and-feel of the Magento application. Themes generally provide no new business features of their own, other than branding and user experience. They relate to each other through inheritance, allowing you to customize an existing theme by setting it as the parent and then defining any desired customizations in the new theme.
+
+Themes are located in the /app/themes folder of a Magento installation, and each theme contains a theme.xml file, which hold the name and version of that theme, as well as the name of the parent theme, if any. Themes are also divided by area, allowing you define themes that customize either the storefront or admin sections of the Magento application independently.
+Modules
+
+Modules, on the other hand, encapsulate a particular business feature or set of features. They can relate to and depend on each other in a variety of ways, but should be as independent as possible to maximum flexibility when customizing a site. And while modules primarily define new business features, or customizations to existing ones, they also define a default user interface for those features, which can be customized by themes.
+
+Modules live in the /app/modules folder of a Magento installation, in a directory with the following PSR-0 compliant format: /app/modules/<vendor>/<module_name>, e.g. the Customer module of Magento can be found at /app/modules/Magento/Customer. Inside of this folder, you will find all of the code and configuration related to this module, including the etc/module.xml file, which contains the name and version of the module, as well as any dependencies.
+Libraries
+
+Libraries consist of reusable logic that is often useful across multiple applications, including application frameworks. They don't provide any independent business features, but act as building blocks for modules and themes.
+
+Libraries are placed in the /lib folder and are also organized by vendor to be PSR-0 compliant.
+
 
 <h2 id="arch-modules-terms">Terms Used</h2>
-
-In Magento 2 we pay special attention to flexibility of the system. To achieve this goal, we implemented layers and modularity approach. Familiarize yourselves with main terms used before you start discovering the new approaches.
 
 Module
 
@@ -24,58 +40,14 @@ Application layer
 
 Modularity approach: Implies that every module encapsulates a feature and has minimum dependencies on other modules.
 
-This section briefs about main tools for working with modules in Magento 2, introduces the modules decoupling details, and describes some modules you might need when adjusting and extending your store.
+This section briefs about main tools for working with modules in Magento, introduces the modules decoupling details, and describes some modules you might need when adjusting and extending your online store.
 
-Please refer to following materials to customize the modules:
+<h2 id="AG-into-mods-specific">Specific Modules</h2>
 
-Understanding areas and modules' use in the areas
-
-Understanding dependencies between the modules in Magento
-
-Building dependencies by using thedependency injection
-
-Understanding conventional location of the custom modules and composite module names
-
-Adding new product type
-Exploring Modules Decoupling
-
-Modules decoupling in Magento 2 resulted in moving components to feature-specific modules and in moving events to the libraries. Thus, the decoupling affected not only the application layer, but the framework layer as well. The following modules were changed:
-Core Module
-
-Core module underwent more changes then other modules: some features were moved to the framework layer and became a part of the libraries; other features were encapsulated in separate modules and their dependencies on Core module were decreased or eliminated.
-
-The changes made in Core module can be divided into three groups:
-
-    Components and features moved from Core module to separate modules:
-        Store module
-        Magento\Module module
-        Functionality related to form key
-        Flag functionality
-        View-related component
-        Indexer module
-        Magento\Install module
-        Backend module
-    Components and features moved from Core module to libraries
-        Config library
-        URL library
-        Magento\Locale library
-        Components dependent only on the libraries
-        Model library
-        Db library
-        Library related logic from Magento\Core\Model\App
-        Cookie library
-        Data type processing components
-        functions.php
-        Message library
-    Components and features moved from Core module to both modules and libraries
-        Translation feature
-        Cache feature
-        Email feature
-        Session feature
 
 Checkout Module
 
-The Multishipping feature and the Terms and Conditions feature were moved from Checkout module to separate modules. Thus, the third-part developer can disable these functionalies without influencing other parts of the application. Also, the dependencies between decoupled modules and other modules were eliminated or made more explicit.
+: The Multishipping feature and the Terms and Conditions feature were moved from Checkout module to separate modules. Thus, the third-part developer can disable these functionalies without influencing other parts of the application. Also, the dependencies between decoupled modules and other modules were eliminated or made more explicit.
 Catalog Module
 
 Several features were moved out from Catalog module to separate modules. For instance, configurable product, grouped product, and layered navigation were encapsulated in separate modules.
