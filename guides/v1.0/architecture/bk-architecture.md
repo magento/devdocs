@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Magento 2 Architecture
+title: Magento Architecture
 ---
 
 <div class="container bs-docs-container">
@@ -23,11 +23,14 @@ title: Magento 2 Architecture
          <div class="bs-docs-section">
          <p><a href="{{ site.githuburl }}architecture/bk-architecture.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
            <dl>
+           <dt>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Introduction to Modules &raquo;</a></p>
+               </dt>
              <dt>
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/areas/areas.html">Areas &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">Modular file system &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">Modular File system &raquo;</a></p>
                </dt>
                <dt>
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies &raquo;</a></p>
