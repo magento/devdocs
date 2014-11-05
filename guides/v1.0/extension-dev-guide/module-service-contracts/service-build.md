@@ -5,9 +5,9 @@ title: Service building basics
  
 # How to build a service 
 
-<p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/service-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/services/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svcs-props.html">Service design</a>.
+A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.gdeurl }}extension-dev-guide/services/svcs-props.html">Service design</a>.
 
 The code that uses a service should depend on the interface rather than on the service implementation. Doing so enables you to use a different implementation if needed.
 
@@ -113,11 +113,11 @@ Note the following:
 
 #### Related Topics:
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/what-is-svc.html">What is the service framework?</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/what-is-svc.html">Service contracts</a>
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/svc-how-to-use.html">How a Client Uses a Service</a>
 
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svcs-props.html">Service design</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/svcs-props.html">Service design</a>
 
 *	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>
 
