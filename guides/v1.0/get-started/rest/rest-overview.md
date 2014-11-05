@@ -78,7 +78,7 @@ To make a REST call for the Customer service:
 #### Related Topics:
 
 *	<a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/what-is-svc.html">What is the service framework?</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/build-svc.html">How to build a service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/what-is-svc.html">Service contracts</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/build-svc.html">How to build a service</a>
 *	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

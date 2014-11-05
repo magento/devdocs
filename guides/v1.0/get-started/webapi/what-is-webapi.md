@@ -53,7 +53,7 @@ Your module can use `webapi.xsd` or you can create a customized validation.
 #### Related Topics:
 
 *	<a href="{{ site.gdeurl }}get-started/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/what-is-svc.html">What is the service framework?</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/what-is-svc.html">Service contracts</a>
 *	<a href="{{ site.gdeurl }}get-started/rest/rest-overview.html">Accessing Magento Objects Using REST</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svc-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svcs-props.html">Service design</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/svc-how-to-use.html">How a Client Uses a Service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/services/svcs-props.html">Service design</a>

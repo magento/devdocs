@@ -22,24 +22,46 @@ title: Extension Developer Guide
       <div class="col-xs-6" role="main">
          <div class="bs-docs-section">
          <p><a href="{{ site.githuburl }}extension-dev-guide/bk-extension-dev-guide.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+          <h2 id="module-services">Service contracts</h2>
            <dl>
                <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}extension-dev-guide/service-framework/service-overview.html">What is the service framework? &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-contracts.html">Service contracts &raquo;</a></p>
                </dt>
                 <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}extension-dev-guide/service-framework/service-compare-m1-m2.html">Service implementation comparison &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-compare-m1-m2.html">Service implementation comparison &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}extension-dev-guide/service-framework/service-design.html">Service design &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-interface-patterns-concepts.html">Service interface patterns and concepts &raquo;</a></p>
                </dt>
                <dt>
-                    <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}extension-dev-guide/service-framework/service-build.html">How to build a service &raquo;</a></p>
+                    <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}extension-dev-guide/service-framework/service-create-customer.html">Customer service example &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-create-example.html">Create a service - example &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}extension-dev-guide/service-framework/service-how-to-use.html">How to use a service &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Expose a service as a web service &raquo;</a></p>
+               </dt>
+            </dl>
+ <h2 id="module-services">Service contracts (old)</h2>
+           <dl>
+               <dt>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-contracts.html">Service contracts &raquo;</a></p>
+               </dt>
+                <dt>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-compare-m1-m2.html">Service implementation comparison &raquo;</a></p>
+               </dt>
+               <dt>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-interface-patterns-concepts.html">Service interface patterns and concepts &raquo;</a></p>
+               </dt>
+               <dt>
+                    <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
+               </dt>
+               <dt>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-create-example.html">Create a service - example &raquo;</a></p>
+               </dt>
+               <dt>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-to-web-service.html">Expose a service as a web service &raquo;</a></p>
                </dt>
             </dl>
          </div>
