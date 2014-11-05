@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Magento 2 Introduction to Modules
+title: Introduction to Modules
 ---
  
 <h1 id="m2arch-module-intro">{{ page.title }}</h1>
@@ -8,20 +8,26 @@ title: Magento 2 Introduction to Modules
 <p><a href="{{ site.githuburl }}m2devgde/arch/____.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="arch-modules-overview">Overview</h2>
-Magento is an application that is built up of several different types of components: themes, modules, and libraries.
+Magento is an application that is built  of several different types of components: themes, modules, libraries, and translation files.
 
 Themes and modules are the units of customization in Magento, themes for user experience and modules for business features. Both have a lifecycle allowing them to be installed, deleted, disabled, etc.
-Themes
+
+
+<h3 id="arch-modules-modules-defintion">Modules</h3>
+
+Modules encapsulate a particular business feature or set of features. They can relate to and depend on each other in a variety of ways, but should be as independent as possible to maximum flexibility when customizing a site. And while modules primarily define new business features, or customizations to existing ones, they also define a default user interface for those features, which can be customized by themes.
+
+A Module is a logical group--that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget. Module is a part of the application layer. A module is designed to work independently and not to intervene into work of other functionality.
+
+Modules live in the /app/modules folder of a Magento installation, in a directory with the following PSR-0 compliant format: /app/modules/<vendor>/<module_name>, e.g. the Customer module of Magento can be found at /app/modules/Magento/Customer. Inside of this folder, you will find all of the code and configuration related to this module, including the etc/module.xml file, which contains the name and version of the module, as well as any dependencies.
+
+<h3 id="arch-modules-themes-defintion">Themes</h3>
 
 Themes allow you to customize the look-and-feel of the Magento application. Themes generally provide no new business features of their own, other than branding and user experience. They relate to each other through inheritance, allowing you to customize an existing theme by setting it as the parent and then defining any desired customizations in the new theme.
 
 Themes are located in the /app/themes folder of a Magento installation, and each theme contains a theme.xml file, which hold the name and version of that theme, as well as the name of the parent theme, if any. Themes are also divided by area, allowing you define themes that customize either the storefront or admin sections of the Magento application independently.
-Modules
 
-Modules, on the other hand, encapsulate a particular business feature or set of features. They can relate to and depend on each other in a variety of ways, but should be as independent as possible to maximum flexibility when customizing a site. And while modules primarily define new business features, or customizations to existing ones, they also define a default user interface for those features, which can be customized by themes.
-
-Modules live in the /app/modules folder of a Magento installation, in a directory with the following PSR-0 compliant format: /app/modules/<vendor>/<module_name>, e.g. the Customer module of Magento can be found at /app/modules/Magento/Customer. Inside of this folder, you will find all of the code and configuration related to this module, including the etc/module.xml file, which contains the name and version of the module, as well as any dependencies.
-Libraries
+<h3 id="arch-modules-libraries-defintion">Libraries</h3>
 
 Libraries consist of reusable logic that is often useful across multiple applications, including application frameworks. They don't provide any independent business features, but act as building blocks for modules and themes.
 
@@ -29,10 +35,6 @@ Libraries are placed in the /lib folder and are also organized by vendor to be P
 
 
 <h2 id="arch-modules-terms">Terms Used</h2>
-
-Module
-
-:	A logical group (that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget). Module is a part of the application layer. A module is designed to work independently and not to intervene into work of other functionality.
 
 Application layer
 
