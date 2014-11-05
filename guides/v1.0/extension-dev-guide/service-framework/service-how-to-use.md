@@ -5,7 +5,7 @@ title: How a Client Uses a Service
 
 <h1 id="how-client-uses-svc">How a Client Uses a Service</h1>
 
-<p><a href="{{ site.githuburl }}guides/v1.0/architecture/svcs-framework/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/service-framework/svc-how-to-use.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so you can simply acquire an instance of the service and invoke a method directly. You can also access services using REST and SOAP calls.
 
@@ -13,7 +13,7 @@ Before interacting with a service, you must be familiar with the service interfa
 
 To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.
 
-Because a service call typically accepts one or more primitive types or [service data objects]({{ site.gdeurl }}architecture/svcs-framework/build-svc.html#about-service-data-objects), you might have to convert or extract them before calling the service. For an example, see `public function getInputData` in <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
+Because a service call typically accepts one or more primitive types or [service data objects]({{ site.gdeurl }}extension-dev-guide/service-framework/build-svc.html#about-service-data-objects), you might have to convert or extract them before calling the service. For an example, see `public function getInputData` in <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
 
 For example, if you know a customer's ID and want to get data about the customer, here's what you do:
 
@@ -30,7 +30,7 @@ Service methods complete in one of two ways:
     *	Null if no data is returned
 	*	Array
 	*	Primitive type (such as an ID)
-	*	[Service data object]({{ site.gdeurl }}architecture/svcs-framework/build-svc.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on. 
+	*	[Service data object]({{ site.gdeurl }}extension-dev-guide/service-framework/build-svc.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on. 
  
  *  Throw an exception
 
@@ -55,7 +55,7 @@ To set up a service so it can be accessed using REST, see [What is the Web API F
 
 #### Related Topics
 
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/what-is-svc.html">What is the Magento 2 Service Framework?</a>
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/build-svc.html">Basics of Building a Service</a>
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/compare_mage1_mage2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
-*	<a href="{{ site.gdeurl }}architecture/svcs-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/what-is-svc.html">What is the service framework?</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/build-svc.html">How to build a service</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/service-compare-m1-m2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
+*	<a href="{{ site.gdeurl }}extension-dev-guide/service-framework/svc_create-customer-use-case.html">Services Use Case&mdash;Creating a Customer</a>

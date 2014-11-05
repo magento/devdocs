@@ -23,7 +23,7 @@ If you're a merchant who wants to activate an integration, see Activating an Int
 
 You have the following options to create your integration:
 
-*  Creating the integration using the Magento Admin, which you might prefer if you aren't comfortable creating configuration files. For more information, see Manually Creating an Integration Using the Magento Admin.
+*  Creating the integration using the Magento Admin, which you might prefer if you aren't comfortable creating configuration files. For more information, see Use Magento Admin to create an integration.
 
 *  Automatically creating the integration by providing it as an extension package. For more information, see [Creating an Integration Automatically]({{ site.gdeurl }}config-guide/integration/integration-create-man.html)). 
 
