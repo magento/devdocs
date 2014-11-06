@@ -1,8 +1,8 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
 title: Magento 2 Understanding Module Dependencies
 ---
- 
+
 <h1 id="m2devgde-depen">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
@@ -20,7 +20,7 @@ In Magento 2, all modules are partitioned into logical groups, each one of which
 	<span class="glyphicon-class">
     <p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></span></div>
 
-<h3 id="m2devgde-moddep-terms">Terms Used</h3> 
+<h3 id="m2devgde-moddep-terms">Terms Used</h3>
 
 Framework layer
 

@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Page types 
+title: Page types
 ---
 
 <h1 id="m2devgde-page-type">{{ page.title }}</h1>
@@ -9,7 +9,7 @@ title: Page types
 
 <h2 id="m2devgde-pagetype-intro">Introduction to page types</h2>
 
-Page types are semantic abstractions of those controller actions which are used for page rendering. They help to qualify pages by context type, like Product View page, Shopping Cart page, and so on, providing business users the ability to customize page design. In particular page types are used in the widget creation  to define the pages where a widget can be displayed. 
+Page types are semantic abstractions of those controller actions which are used for page rendering. They help to qualify pages by context type, like Product View page, Shopping Cart page, and so on, providing business users the ability to customize page design. In particular page types are used in the widget creation  to define the pages where a widget can be displayed.
 
 Page types are defined for the frontend area only, that is for the store front pages.
 
@@ -20,7 +20,7 @@ For now page types are used only to qualify pages by context type during the wid
 As a framework convention, page types correspond to full action names.
 
 Full action names are mapped to the controller actions as follows:
- 
+
 <pre>[module]_[controller]_[action] -> Vendor\Module\Controller*\Controller::actionAction()</pre>
 
 where
@@ -36,7 +36,7 @@ For example,
 
 <h2 id="m2devgde-pagetype-handles">Page types and layout handles</h2>
 
-In Magento 2, full action names also used as identifiers for sets of layout instructions (layout handles): a controller action by default loads a layout handle which coincides with its full action name. This means that page types correspond to some of the layout handles. 
+In Magento, full action names also used as identifiers for sets of layout instructions (layout handles): a controller action by default loads a layout handle which coincides with its full action name. This means that page types correspond to some of the layout handles.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40"/>
@@ -47,7 +47,7 @@ In Magento 2, full action names also used as identifiers for sets of layout inst
 
 <h2 id="m2devgde-pagetype-declare">Page type declaration</h2>
 
-Page types for each module are declared in `page_types.xml`. The declaration is area-specific, so `page_types.xml` should reside among the frontend-specific resources of a module. 
+Page types for each module are declared in `page_types.xml`. The declaration is area-specific, so `page_types.xml` should reside among the frontend-specific resources of a module.
 
 `page_types.xml` is typically located in:
 
@@ -67,12 +67,12 @@ An example is shown in the previously referenced Customer module `page_types.xml
 
 <h2 id="m2devge-pagetype-widget">Page types in widget creation</h2>
 
-To create a widget, you must specify the pages on which it displays in the Magento Admin as follows: 
+To create a widget, you must specify the pages on which it displays in the Magento Admin as follows:
 
-1.	In the Magento Admin, click **Content** > **Frontend App**. 
-2.	After choosing to create a new widget instance, specify the widget type and the design theme. 
-3.	In the page for configuring other widget options, click **Add Layout Update**. You can now specify pages by clicking the corresponding layout handle names. 
-4.	If you choose **Specified Page**, a list of available page types displays, as the following figure shows. 
+1.	In the Magento Admin, click **Content** > **Frontend App**.
+2.	After choosing to create a new widget instance, specify the widget type and the design theme.
+3.	In the page for configuring other widget options, click **Add Layout Update**. You can now specify pages by clicking the corresponding layout handle names.
+4.	If you choose **Specified Page**, a list of available page types displays, as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/page_types_widget_specified-page.png">
 5.	The page types in this list correspond to certain layout handles as follows.
