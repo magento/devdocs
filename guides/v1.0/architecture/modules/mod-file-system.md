@@ -1,5 +1,5 @@
 ---
-layout: howtom2devgde_chapters
+layout: default-arch
 title: Magento modular file system
 ---
 
