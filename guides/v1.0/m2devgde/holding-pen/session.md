@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters
-title: Session
+title: Session 
 ---
  
 <h1 id="m2devgde-session">{{ page.title }}</h1>

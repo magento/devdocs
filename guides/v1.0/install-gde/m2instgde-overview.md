@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Overview of installing Magento 2
+title: Installation and Upgrade Guide
 ---
 
 <h1 id="instgde-overview">{{ page.title }}</h1>
@@ -20,7 +20,7 @@ Composer provides you with the following advantages:
 *	Manages dependencies to reduce extension conflicts and compatibility issues
 *	Versioned dependencies
 *	<a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a>
-*	Supports PHP Framework Interoperability standards
+*	Supports PHP Framework Interoperability standard
 
 We'll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.
 

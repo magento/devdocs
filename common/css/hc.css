@@ -21,6 +21,10 @@ a.ext1:visited {
     color: blue;
 }
 
+a.btn-visit:visited {
+    color: lightgray;
+}
+
 a.ext1:hover {
     color: darkorange;
 }
@@ -459,6 +463,7 @@ ul.note>li {
 
 .dropdown-menu>li
 {	position:relative;
+    vertical-align: text-top;
 	-webkit-user-select: none; /* Chrome/Safari */
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
@@ -847,7 +852,7 @@ table .table-headings th {
     color: #31302b;
     font-weight: bold;
     padding: 10px;
-    vertical-align: top;
+    vertical-align: middle;
     font-size: 15px;
 }
 
