@@ -1,6 +1,6 @@
 ---
-layout: howtom2devgde_chapters
-title: Design abstractions 
+layout: default-arch
+title: Design abstractions
 ---
 
 <h1 id="m2devgde-design-abstract">{{ page.title }}</h1>
@@ -33,7 +33,7 @@ The <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/layou
 
 <script src="https://gist.github.com/xcomSteveJohnson/08a75746da66ab83e81a.js"></script>
 
-Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layouts/customer_account.xml" target="_blank">this customer_account.xml</a>. 
+Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layouts/customer_account.xml" target="_blank">this customer_account.xml</a>.
 
 When a page is rendered, all `customer_account` layouts are merged, and the pages where the `customer_account` design abstraction is used contain the elements from all `customer_account.xml` files.
 

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default-arch
 title: Magento 2 Understanding Module Dependencies
 ---
 

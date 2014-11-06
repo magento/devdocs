@@ -1,8 +1,8 @@
 ---
-layout: howtom2devgde_chapters
+layout: default-arch
 title: Magento 2 Introduction to Modules
 ---
- 
+
 <h1 id="m2arch-module-intro">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/arch/____.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>

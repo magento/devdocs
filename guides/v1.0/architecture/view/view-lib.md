@@ -1,6 +1,6 @@
 ---
 title: Using the View Library
-layout: howtom2devgde_chapters
+layout: default-arch
 ...
 
 {{ Magento\_View Library }}
