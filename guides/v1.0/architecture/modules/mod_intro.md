@@ -5,7 +5,7 @@ title: Introduction to Modules
  
 <h1 id="m2arch-module-intro">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/arch/____.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/architecture/modules/mod_intro.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="arch-modules-overview">Overview</h2>
 Magento is an application that is built  of several different types of components: themes, modules, libraries, and translation files.
