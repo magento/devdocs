@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Magento 2 PHP API Reference
+title: PHP API Reference
 ---
 
 <div class="container bs-docs-container">

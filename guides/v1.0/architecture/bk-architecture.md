@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Magento 2 Architecture
+title: Magento Architecture
 ---
 
 <div class="container bs-docs-container">
