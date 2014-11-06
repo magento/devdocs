@@ -2,16 +2,16 @@
 layout: howtom2devgde_chapters
 title: Magento modular file system
 ---
- 
+
 <h1 id="m2devgde-mod-file-sys">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}guides/v1.0/architecture/modules/mod-file-system.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="mod-file-sys-intro">Introduction to the Magento 2 file system</h2>
+<h2 id="mod-file-sys-intro">Introduction to the Magento file system</h2>
 
 <p class="q">Reviewer: This information was outdated when I saw it. I did my best to update it in a limited time. Please read it very carefully and validate everything.</p>
 
-The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem.php" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`. 
+The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem.php" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`.
 
 <h2 id="mod-file-sys-struct">Magento file system structure</h2>
 
@@ -80,29 +80,29 @@ There are four types of directories in the Magento file system:
 
 *	Primary directories
 
-	Primary directories cannot be changed. They include: 
-	
+	Primary directories cannot be changed. They include:
+
 	*	Your Magento installation directory
 	*	`[your Magento install dir]/app/code`
 	*	`[your Magento install dir]/lib`
-	
+
 *	System directories
 
 	System directories include:
-	
+
 	*	`[your Magento install dir]/var/di`
 	*	`[your Magento install dir]/var/generation`
 	*	`[your Magento install dir].app/etc`
-	
+
 	<p class="q">Reviewer: Magento\Framework\App\EntryPoint does not exist. Please clarify.</p>
 
-	
+
 	You can change the location of a system directory only when you use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/EntryPoint/EntryPoint.php" target="_blank">Magento\Framework\App\EntryPoint</a> class:
-	
+
 *	Application directories
 
 	Application directories include:
-	
+
 	*	`[your Magento install dir]/app/code`
 	*	`[your Magento install dir]/app/design`
 	*	`[your Magento install dir]/var`
@@ -111,11 +111,11 @@ There are four types of directories in the Magento file system:
 	*	`[your Magento install dir]/var/log`
 	*	`[your Magento install dir]/var/session`
 	*	`sys_get_temp_dir()`
-	
+
 *	Public directories
 
 	Public directories include:
-	
+
 	*	`[your Magento install dir]/pub`
 	*	`[your Magento install dir]/pub/lib`
 	*	`[your Magento install dir]/pub/media`
@@ -133,7 +133,7 @@ This section discusses read and write access to directories.
 
 Use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/ReadInterface.php" target="_blank">Magento\Framework\Filesystem\Directory\ReadInterface</a> to get read access to directories.
 
-The `DirectoryRead` interface facilitates reading directories and getting <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/ReadInterface.php" target="_blank">\Magento\Framework\Filesystem\File\ReadInterface</a> instances. 
+The `DirectoryRead` interface facilitates reading directories and getting <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/ReadInterface.php" target="_blank">\Magento\Framework\Filesystem\File\ReadInterface</a> instances.
 
 You can perform the following actions:
 
@@ -194,7 +194,7 @@ You can perform the following actions:
 
 Use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\WriteInterface</a> to get write access to directories.
 
-`Directory\WriteInterface` facilitates writing to directories and getting <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/WriteInterface.php" target="_blank">Magento\Framework\Filesystem\File\WriteInterface</a> instances. 
+`Directory\WriteInterface` facilitates writing to directories and getting <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/WriteInterface.php" target="_blank">Magento\Framework\Filesystem\File\WriteInterface</a> instances.
 
 You can perform the following actions:
 
@@ -240,13 +240,13 @@ You can perform the following actions:
 		<td>writeFile()</td>
 		<td>Writes content to a file.</td>
 	</tr>
-	
+
 	</tbody>
 </table>
-	
+
 <h2 id="mod-file-sys-files">Handle files</h2>
 
-You can access read-only and read-write files using `openFile()` method of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/ReadInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\ReadInterface</a> or <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\WriteInterface</a>, respectively. 
+You can access read-only and read-write files using `openFile()` method of the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/ReadInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\ReadInterface</a> or <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php" target="_blank">\Magento\Framework\Filesystem\Directory\WriteInterface</a>, respectively.
 
 Complementary interfaces: <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/ReadInterface.php" target="_blank">\Magento\Framework\Filesystem\File\ReadInterface</a> and <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/File/WriteInterface.php" target="_blank">\Magento\Framework\Filesystem\File\WriteInterface</a>.
 

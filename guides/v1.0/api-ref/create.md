@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Magento 2 Customer Service
+title: Customer Service
 ---
 
 <div class="container bs-docs-container">
