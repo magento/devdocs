@@ -1,11 +1,6 @@
 ---
-<<<<<<< HEAD
-layout: howtom2devgde_chapters
-title: Introduction to Modules
-=======
 layout: default-arch
-title: Magento 2 Introduction to Modules
->>>>>>> origin/devbeta
+title: Introduction to Modules
 ---
 
 <h1 id="m2arch-module-intro">{{ page.title }}</h1>
@@ -16,7 +11,6 @@ title: Magento 2 Introduction to Modules
 Magento is an application that is built  of several different types of components: themes, modules, libraries, and translation files.
 
 Themes and modules are the units of customization in Magento, themes for user experience and modules for business features. Both have a lifecycle allowing them to be installed, deleted, disabled, etc.
-
 
 <h3 id="arch-modules-modules-defintion">Modules</h3>
 
