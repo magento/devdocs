@@ -31,10 +31,11 @@ You can add your store logo, which will be used on the storefront no matter what
 6. Upload the file.
 7. Click **Save Config**.
 
+If caching is enabled in your Magento Admin, after adding a logo you need to drop cache (Magento will notify you by showing a system message). Go to <b>System</b> > <b>Cache Management</b>, and refresh the cache types that are invalidated.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>If caching is enabled in your Magento Admin, after adding a logo you need to drop cache (Magento will notify you by showing a system message). Go to <b>System</b> > <b>Cache Management</b>, and refresh the cache types that are invalidated.</p></span>
+  <p>If you add a logo through the Admin panel, it is only stored in your store images directory, but not in your theme directory.</p></span>
 </div>
 
