@@ -25,7 +25,7 @@ title: Extension Developer Guide
           <h2 id="module-services">Service contracts</h2>
            <dl>
                <dt>
-                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-contracts.html">Service contracts &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-contracts.html">Module service contracts &raquo;</a></p>
                </dt>
                 <dt>
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-compare-m1-m2.html">Service implementation comparison &raquo;</a></p>

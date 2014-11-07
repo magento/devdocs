@@ -1,13 +1,13 @@
 ---
-layout: howtom2devgde_chapters
-title: Translation   
+layout: default-arch
+title: Translation
 ---
 
 <h1 id="m2devgde-xlate">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}m2devgde/holding-pen/xlate.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="m2devgde-xlate-intro">Introduction to Magento 2 translations</h2>
+<h2 id="m2devgde-xlate-intro">Introduction to Magento translations</h2>
 
 Magento's translation functionality enables you to customize and localize your store for multiple regions and markets.
 
@@ -24,7 +24,7 @@ Depending on your needs, you can use the existing <a href="#m2devgde-xlate-langu
 
 Changes made:
 
-*	The language package (`i18n` folder) can now be moved and saved to any directory of your extension. 
+*	The language package (`i18n` folder) can now be moved and saved to any directory of your extension.
 *	The phrases for translation are embodied in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
 *	The translation tool has been divided into two tools: one for the dictionary generator and one for uploading the language package.
 *	The translation tool uses lazy loading.
@@ -34,7 +34,7 @@ Changes made:
 
 Translating the names, titles and phrases used in Magento involves the following steps:
 
-1.	Generate a dictionary of your instance by using the <a href="#m2devgde-xlate-generatortool">dictionary generator tool</a>. 
+1.	Generate a dictionary of your instance by using the <a href="#m2devgde-xlate-generatortool">dictionary generator tool</a>.
 2.	Translate the terms.
 2.	Upload your new dictionary to Magento using the <a href="#m2devgde-xlate-packtool">language package tool</a>.
 
@@ -195,7 +195,7 @@ To invoke the language pack tool, specify the following parameters:
 *	`-l|locale` retrieves the locale of the target language of translation. This parameter is required.
 *	`-p|pack` defines the path where the language package is to be located. This parameter is required.
 *	`-m|mode` defines the save mode for a dictionary. Use `replace` to overwrite the old language pack with a new one (default option), or use `merge` to merge the old and new language packs. This parameter is optional.
-*	`-d|allow_duplicates` defines whether the duplicates in translation should be saved; by default, the value is set to 'no.' This parameter is optional. 
+*	`-d|allow_duplicates` defines whether the duplicates in translation should be saved; by default, the value is set to 'no.' This parameter is optional.
 
 <h2 id="m2devgde-xlate-howtos">How-to scenarios</h2>
 
@@ -214,5 +214,5 @@ To create custom language package:
 To create a translation for a module or a theme:
 
 1.	Run the <a href="#m2devgde-xlate-generatortool">dictionary generator tool</a> for a directory or a theme, for which you need to create a translation.
-1.	Make the necessary translations for a module or a theme. 
+1.	Make the necessary translations for a module or a theme.
 1.	Run the <a href="#m2devgde-xlate-packtool">language pack tool</a> to upload a dictionary. Alternatively, upload a dictionary file to `i18n` folder of a module or a theme, for instance: `app/code/Vendor/CustomModule/i18n/fr_FR.csv`.

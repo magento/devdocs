@@ -1,8 +1,8 @@
 ---
-layout: howtom2devgde_chapters
-title: JavaScript resources   
+layout: default-arch
+title: JavaScript resources
 ---
- 
+
 <h1 id="m2devgde-js-resources">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}architecture/behavior/js-resources.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
@@ -30,7 +30,7 @@ JS resources generated in Magento have IDs of two types:  RequireJS ID and Magen
 require(["jquery"], function($){
     // ...
 });
- 
+
 // Modular ID (Magento module: Magento_ConfigurableProduct, resource: js/configurable)
 require(["magento!Magento_ConfigurableProduct::js/configurable"], function(Configurable){
     // ...
@@ -48,7 +48,7 @@ When creating a new resource, you can select a plugin, on which your resources a
 <blockquote><pre>define([&ldquo;jquery&rdquo;],&nbsp;function($){
 &nbsp;&nbsp;//&nbsp;plugin&nbsp;code
 &nbsp;&nbsp;//&nbsp;where&nbsp;$&nbsp;==&nbsp;&ldquo;jquery&rdquo;
-})(jQuery);&nbsp; 
+})(jQuery);&nbsp;
 </pre></blockquote>
 
 <li>If you need a plugin to be used in various environments, specify it as follows:</li>
@@ -118,7 +118,7 @@ To make your configurations more precise and specific for different modules/them
 	<span class="glyphicon-class">
     <p>Dependencies between the modules/themes will be considered as well.</p></span>
   </div>
-  
+
 <li>Configurations at the theme module level for the ancestor themes.</li>
 
 <li>Configurations at the theme module level for a current theme.</li>

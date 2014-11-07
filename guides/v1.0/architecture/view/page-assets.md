@@ -1,6 +1,6 @@
 ---
-layout: howtom2devgde_chapters
-title: Page assets 
+layout: default-arch
+title: Page assets
 ---
 
 <h1 id="m2devgde-page-assets">{{ page.title }}</h1>
@@ -11,12 +11,12 @@ title: Page assets
 
 An _asset_ is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using `<head/>`, `<img/>`, `<object/>` elements.
 
-This topic discusses how to work with Magento 2 page assets (particularly interfaces and classes). The article is mostly aimed at developers
+This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
 who have solid experience with PHP and are familiar with <a href="{{ site.gdeurl }}architecture/view/xml-schema-layout.html">Magento XML layouts</a>.
 
 <h2 id="m2devgde-page-assets-interf">Asset interfaces</h2>
 
-An asset is a reference to a certain resource linked to an HTML page. An asset is not a file itself; it's a set of information about the file. Magento 2 has the following types of assets:
+An asset is a reference to a certain resource linked to an HTML page. An asset is not a file itself; it's a set of information about the file. Magento has the following types of assets:
 
 * Asset&mdash;a basic definition of an asset that consists of:
 
@@ -73,7 +73,7 @@ Its asset class diagram follows:
 
 <h3 id="m2devgde-page-assets-imp-context">Context implementations</h3>
 
-Magento 2 supports the following implementations of context for the Asset\File object:
+Magento supports the following implementations of context for the Asset\File object:
 
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path.
 
@@ -94,7 +94,7 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 
 According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the storefront without modification are _static view files_.
 
-Like all Magento 2 view files, static view files are located using the fallback mechanism. This mechanism implements inheritance of files from one directory to others. In this way, we enable you to extend or override view files of existing components with new components.
+Like all Magento view files, static view files are located using the fallback mechanism. This mechanism implements inheritance of files from one directory to others. In this way, we enable you to extend or override view files of existing components with new components.
 
 For example, a particular theme might extend or override files of its parent theme, all themes generally override module view files, and so on.
 

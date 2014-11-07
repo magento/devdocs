@@ -1,6 +1,6 @@
 ---
-layout: howtom2devgde_chapters
-title: Magento 2 areas
+layout: default-arch
+title: Areas
 ---
 
 <h1 id="m2devgde-area">{{ page.title }}</h1>
@@ -28,7 +28,7 @@ The Magento areas are:
 * Admin panel: entry point for this area is <code>index.php</code>
 * Storefront: entry point for this area is <code>index.php</code> or <code>pub/index.php</code>
 * Crontab (crontab): entry point for this area is <code>pub/cron.php</code>
-* Install (install): entry point for this area is <code>setup/index.php</code>. `setup` contains `composer.json` that resolves dependencies and manages packages that comprise the Magento 2 software
+* Install (install): entry point for this area is <code>setup/index.php</code>. `setup` contains `composer.json` that resolves dependencies and manages packages that comprise the Magento software
 * Web API REST (webapi_rest): entry point for this area is `index.php` or `pub/index.php`
 * Web API SOAP (webapi_soap): entry point for this area is `index.php` or `pub/index.php`
 
