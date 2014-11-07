@@ -1,5 +1,4 @@
 ---
-<<<<<<< HEAD
 layout: default
 title: Magento Architecture
 ---
