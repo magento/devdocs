@@ -27,11 +27,8 @@ title: Extension Developer Guide
                <dt>
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-contracts.html">Module service contracts &raquo;</a></p>
                </dt>
-                <dt>
-                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-compare-m1-m2.html">Service implementation comparison &raquo;</a></p>
-               </dt>
                <dt>
-                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-interface-patterns-concepts.html">Service interface patterns and concepts &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-interface-patterns-concepts.html">Components and patterns of a service contract &raquo;</a></p>
                </dt>
                <dt>
                     <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
@@ -52,7 +49,7 @@ title: Extension Developer Guide
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-compare-m1-m2.html">Service implementation comparison &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-interface-patterns-concepts.html">Service interface patterns and concepts &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-interface-patterns-concepts.html">Components and patterns of a service contract &raquo;</a></p>
                </dt>
                <dt>
                     <p><a href="{{ site.gdeurl }}extension-dev-guide/services/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
