@@ -22,33 +22,52 @@ title: Module service contracts
                      <p>Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
                   </li>
                   <li>
-                     <p>Merchants might find it difficult to upgrade Magento because any customized extensions that they own might not be compatible with the new version of Magento.</p>
-                     <p>In this situation, a merchant can either postpone the upgrade or obtain support from the extension developer. However, extensions can have dependencies on other extensions. Magento and third-party developers find it difficult to track and report these dependencies.</p>
+                     <p>Customized extensions that merchants own might not be compatible with new versions of Magento. Merchants might be reluctant to upgrade Magento.</p>
+                  </li>
+                  <li>
+                     <p>Customized extensions can have dependencies on other extensions. Magento and third-party developers find it difficult to track and report these dependencies.</p>
                   </li>
                </ul>
                <p>To address these issues, Magento 2 introduces <i>module service contracts</i>.</p>
                <h2 id="what-is-msc">What is a module service contract?</h2>
-               <p>A module service contract is a set of PHP interfaces, and possibly classes, that reside in a new <b>Api</b> directory for a module. For example, the service contract declared in the <b>Magento_Customer</b> module has the PHP namespace of <code>Magento\Customer\Api</code>.
-                  The interfaces in this namespace define agreements, or a contract, between clients and implementations of services.</p>
-                  <p>A module service contract provides:</p>
-               <ul>
-                  <li>A functional abstraction of available business features.</li>
-                  <li>Represents a boundary that encapsulates the business logic a module exposes without revealing any of the details about how that functionality is implemented.</li>
-               </ul>
-               <p>As shown in the diagram, a service contract is comprised of these components:</p>
+               <p>A module service contract is a set of PHP interfaces and possibly classes that provide a well-defined, stable API that other modules and third-party extensions can use. A module service contract is also an easy way to expose business logic through REST or SOAP interfaces.</p>
+               <p>The interfaces defined for a module service contract must reside in the <b>Api</b> directory for a module.
+                  For example, the service contract declared for the <b>Customer</b> module has the PHP <code>Magento\Customer\Api</code> namespace.
+                  The interfaces in this namespace define agreements, or a contract, between clients and implementations of services.
+               </p>
+               <p>Magento models can implement the interfaces defined by a
+                  module service contract.
+               </p>
+               <p>As shown in the diagram, a service contract includes:</p>
                <ul>
                   <li>Data interfaces</li>
                   <li>Repository interfaces</li>
-                  <li><p><b>Service interfaces</b>. The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic.</p></li>
+                  <li>
+                     <p><b>Service interfaces</b>. The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic.</p>
+                  </li>
                </ul>
                <p><img src="{{ site.baseurl }}common/images/High_Level_API_Design.png"/></p>
-                  <h2 id="benefits-msc">What are the benefits of service contracts?</h2>
-                  <p>The interfaces in a contract provide a well-defined, stable API that other modules and third-party extensions can implement.
-              If developers play by the service contract rules, Magento can guarantee compatibility between Magento versions and report system dependencies through <b>composer.json</b> files.</p>
-              <p>Module service contracts enable you to interact with modules across a system that encapsulates product business logic and data entities for a module. Service contracts preserve data integrity and provide module contracts that current Magento models can implement. Most importantly, these contracts ensure that the API is durable.
-                  Service contracts enhance the modularity of Magento. Service contracts also make it easy to expose business logic through REST or SOAP interfaces.
-               </p>
-               <p>Service contracts make it easier to upgrade Magento.</p>
+               <h2 id="benefits-msc">What are the benefits of service contracts?</h2>
+               <p>The interfaces in a module service contract provide a well-defined, durable API that other modules and third-party extensions can implement.</p>
+               <p>If developers play by service contract rules, service contracts enable Magento to:</p>
+               <ul>
+                  <li>
+                     <p>Guarantee compatibility among Magento versions, which makes it easier for merchants to upgrade Magento.</p>
+                  </li>
+                  <li>
+                     <p>Report system dependencies through <b>composer.json</b> files.</p>
+                  </li>
+                  <li>
+                     <p>Provide a functional abstraction of available business features.
+                     </p>
+                     <p>Module service contracts enable you to interact with modules across a system that encapsulates product business logic and data entities for a module.</p>
+                  <p>Enforce a boundary that encapsulates the business logic a module exposes without revealing any of the details about how that functionality is implemented.
+                     This solution is an abstraction of business operations and entities for a module to produces a durable API for client to rely upon.</p>
+                  </li>
+                  <li>Preserve data integrity and enhance the modularity of Magento.</li>
+                  <li>Make it easy to expose business logic through REST or SOAP interfaces.</li>
+               </ul>
+
                <h3 id="related-topics">Related topics</h3>
                <ul>
                   <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-design.html">Service design</a></li>
@@ -62,8 +81,6 @@ title: Module service contracts
       </div>
    </div>
 </div>
-
-
 
 
 
