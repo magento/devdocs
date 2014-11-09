@@ -30,7 +30,7 @@ title: Module service contracts
                </ul>
                <p>To address these issues, Magento 2 introduces <i>module service contracts</i>.</p>
                <h2 id="what-is-msc">What is a module service contract?</h2>
-               <p>A module service contract is a set of PHP interfaces and possibly classes that provide a well-defined, stable API that other modules and third-party extensions can use. A module service contract is also an easy way to expose business logic through REST or SOAP interfaces.</p>
+               <p>A module service contract is a set of PHP interfaces and possibly classes that provide a well-defined, durable API that other modules and third-party extensions can use. A module service contract is also an easy way to expose business logic through REST or SOAP interfaces.</p>
                <p>The interfaces defined for a module service contract must reside in the <b>Api</b> directory for a module.
                   For example, the service contract declared for the <b>Customer</b> module has the PHP <code>Magento\Customer\Api</code> namespace.
                   The interfaces in this namespace define agreements, or a contract, between clients and implementations of services.
@@ -49,7 +49,7 @@ title: Module service contracts
                <p><img src="{{ site.baseurl }}common/images/High_Level_API_Design.png"/></p>
                <h2 id="benefits-msc">What are the benefits of service contracts?</h2>
                <p>The interfaces in a module service contract provide a well-defined, durable API that other modules and third-party extensions can implement.</p>
-               <p>If developers play by service contract rules, service contracts enable Magento to:</p>
+               <p>If developers play by a set of service contract rules, service contracts enable Magento to:</p>
                <ul>
                   <li>
                      <p>Guarantee compatibility among Magento versions, which makes it easier for merchants to upgrade Magento.</p>
