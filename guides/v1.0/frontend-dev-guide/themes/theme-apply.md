@@ -19,6 +19,7 @@ To apply a newly added theme:
 5. Click **Save Config**.
 
 If caching is enabled in your Magento Admin, after applying the theme you need to drop cache (Magento will notify you by showing a system message). Go to **System** > **Cache Management**, and refresh the cache types that are invalidated.
+<!--ADDLINK-->
 
 <h2 id="theme-apply-logo">Add a Logo Through the Admin (Optional)</h2>
 You can add your store logo, which will be used on the storefront no matter what theme is applied. To do this :
@@ -32,6 +33,7 @@ You can add your store logo, which will be used on the storefront no matter what
 7. Click **Save Config**.
 
 If caching is enabled in your Magento Admin, after adding a logo you need to drop cache (Magento will notify you by showing a system message). Go to <b>System</b> > <b>Cache Management</b>, and refresh the cache types that are invalidated.
+<!--ADDLINK-->
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
