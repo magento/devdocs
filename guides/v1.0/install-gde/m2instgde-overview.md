@@ -1,6 +1,6 @@
 ---
 layout: howtom2instgde_chapters
-title: Installation and Upgrade Guide
+title: Installation Guide
 ---
 
 <h1 id="instgde-overview">{{ page.title }}</h1>
