@@ -14,57 +14,44 @@ title: Module service contracts
          </div>
          <div class="col-xs-9" role="main">
             <div class="bs-docs-section">
-               <p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/services/services.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+               <p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/module-service-contracts/service-contracts.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
                <h2 id="overview">Overview</h2>
-               <p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price:</p>
-               <ul>
-                  <li>
-                     <p>Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
-                  </li>
-                  <li>
-                     <p>Merchants might find it difficult to upgrade Magento because any customized extensions that they own might not be compatible with the new version of Magento.</p>
-                     <p>In this situation, a merchant can either postpone the upgrade or obtain support from the extension developer. However, extensions can have dependencies on other extensions. Magento and third-party developers find it difficult to track and report these dependencies.</p>
-                  </li>
-               </ul>
+               <p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price.</p>
+               <p>Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
+               <p>Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento.
+                  Also, Magento and third-party developers can find it difficult to track and report the dependencies that customized extensions have on other extensions.
+               </p>
                <p>To address these issues, Magento 2 introduces <i>module service contracts</i>.</p>
                <h2 id="what-is-msc">What is a module service contract?</h2>
-               <p>A module service contract is a set of PHP interfaces, and possibly classes, that reside in a new <b>Api</b> directory for a module. For example, the service contract declared in the <b>Magento_Customer</b> module has the PHP namespace of <code>Magento\Customer\Api</code>.
-                  The interfaces in this namespace define agreements, or a contract, between clients and implementations of services.</p>
-                  <p>A module service contract provides:</p>
-               <ul>
-                  <li>A functional abstraction of available business features.</li>
-                  <li>Represents a boundary that encapsulates the business logic a module exposes without revealing any of the details about how that functionality is implemented.</li>
-               </ul>
-               <p>As shown in the diagram, a service contract is comprised of these components:</p>
-               <ul>
-                  <li>Data interfaces</li>
-                  <li>Repository interfaces</li>
-                  <li><p><b>Service interfaces</b>. The service interface accepts requests from web pages and web services, meaning they do not need to know the details of business logic.</p></li>
-               </ul>
-               <p><img src="{{ site.baseurl }}common/images/High_Level_API_Design.png"/></p>
-                  <h2 id="benefits-msc">What are the benefits of service contracts?</h2>
-                  <p>The interfaces in a contract provide a well-defined, stable API that other modules and third-party extensions can implement.
-              If developers play by the service contract rules, Magento can guarantee compatibility between Magento versions and report system dependencies through <b>composer.json</b> files.</p>
-              <p>Module service contracts enable you to interact with modules across a system that encapsulates product business logic and data entities for a module. Service contracts preserve data integrity and provide module contracts that current Magento models can implement. Most importantly, these contracts ensure that the API is durable.
-                  Service contracts enhance the modularity of Magento. Service contracts also make it easy to expose business logic through REST or SOAP interfaces.
+               <p>A module service contract is a set of PHP interfaces that are defined for a module.
+                  A module service contract includes <a href="{{ site.gdeurl }}/extension-dev-guide/module-service-contracts/design-patterns.html#data-interfaces">data interfaces</a>, which preserve data integrity, and <a href="{{ site.gdeurl }}/extension-dev-guide/module-service-contracts/design-patterns.html#service-interfaces">service interfaces</a>, which hide business logic details from service requestors such as controllers, web services, and other modules.
                </p>
-               <p>Service contracts make it easier to upgrade Magento.</p>
+               <p>
+                  If developers define data and service interfaces according to a set of <a href="{{ site.gdeurl }}/extension-dev-guide/module-service-contracts/design-patterns.html">design patterns</a>, the result is a well-defined, durable API that other modules and third-party extensions can implement through Magento models and resource models.
+               </p>
+               <p><img src="{{ site.baseurl }}common/images/msc.jpg"/></p>
+               <h2 id="msc-benefits">Benefits</h2>
+               <p>Module service contracts enhance the modularity of Magento. They enable Magento and third-party developers to report system dependencies through <b>composer.json</b> files and, consequently, guarantee compatibility among Magento versions. This compatibility ensures that merchants can easily upgrade Magento.</p>
+               <p>These contracts ensure a well-defined, durable API that other modules and third-party extensions can implement. Also, these contracts make it easy to expose business logic through REST or SOAP web APIs.
+               </p>
+               <p>Data entities are a side benefit of service contracts.
+                  The database tables that normally support these entities can be complicated.
+                  For example, some attributes might be stored in an EAV table, so a set of MySQL database tables might define a single data entity.
+                  Data entities in a module service contract reveal a simpler data model than the data model in an underlying relational database schema.
+                  Eventually, you will be able to use different storage technologies for different data collections. For example, you could use a NoSQL database to replace product tables.
+               </p>
                <h3 id="related-topics">Related topics</h3>
                <ul>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-design.html">Service design</a></li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-build.html">How to build a service</a></li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-how-to-use.html">How a Client Uses a Service</a></li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-compare-m1-m2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a></li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-create-customer.html">Services Use Case&mdash;Creating a Customer</a></li>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/design-patterns.html">Design patterns</a></li>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers</a>
+                  </li>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-create-example.html">Create a service - example</a>
+                  </li>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Expose a service as a web service</a>
+                  </li>
                </ul>
             </div>
          </div>
       </div>
    </div>
 </div>
-
-
-
-
-
-
