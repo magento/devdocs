@@ -13,7 +13,7 @@ Rather than copy extensive layout code and modify what you want to change, in Ma
 
 To add a theme merging file:
 
-1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-overview.html#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-overview.html#layout_conventions">layout file conventions</a>.
 2.	Place the theme merging file according to our location conventions; that is:
 
 <pre>__app/design/[area]/[theme path]
@@ -48,7 +48,7 @@ Magento merges layout files as follows:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-ui-lib.html">Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI Library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml-instrux.html">XML in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
