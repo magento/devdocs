@@ -24,6 +24,9 @@ title: Magento Architecture
          <p><a href="{{ site.githuburl }}architecture/bk-architecture.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
            <dl>
            <dt>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_intro.html">What is Magento? &raquo;</a></p>
+               </dt>
+           <dt>
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Introduction to Modules &raquo;</a></p>
                </dt>
              <dt>
