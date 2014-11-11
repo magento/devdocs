@@ -11,7 +11,7 @@ You can use CSS to customize Magento themes. You can add your own images and fon
 
 Do not use CSS visibility properties to hide Magento blocks and content.
 
-To add or remove blocks in Magento, use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml-instrux.html">XML in themes</a> instead.
+To add or remove blocks in Magento, use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a> instead.
 
 You can customize Magento themes in these ways:
 
