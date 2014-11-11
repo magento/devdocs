@@ -126,8 +126,15 @@ In <code>GroupSearchResultsInterface</code>, it returns an array of <code>GroupI
 
                     <h3 id="related-topics">Related topics</h3>
                <ul>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-design.html">Service design</a></li>
-                          </ul>
+               <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-contracts.html">Module service contracts</a></li>
+
+               <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers</a>
+               </li>
+               <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-create-example.html">Create a service - example</a>
+               </li>
+               <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Expose a service as a web service</a>
+               </li>
+  </ul>
             </div>
          </div>
       </div>
