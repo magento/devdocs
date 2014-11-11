@@ -27,23 +27,18 @@ title: Magento Architecture
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_intro.html">What is Magento? &raquo;</a></p>
                </dt>
            <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Introduction to Modules &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Magento as a Modular System &raquo;</a></p>
                </dt>
              <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/areas/areas.html">Areas &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/areas/areas.html">Magento Framework &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">Modular File system &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">Magento File System &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies &raquo;</a></p>
+                    <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/payment.html">Commonly Used Terms &raquo;</a></p>
                </dt>
-               <dt>
-                    <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/payment.html">Payment modules &raquo;</a></p>
-               </dt>
-               <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/routing.html">Routing &raquo;</a></p>
-               </dt>
+             
             </dl>
          </div>
       </div>
