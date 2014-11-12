@@ -8,7 +8,9 @@ title: Create a theme (general information), draft
 <p><a href="{{ site.githuburl }}frontend-dev-guide/themes/theme-general.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="theme-gen-overview">Overview</h2>
-In Magento application a theme (design theme) is set of view files, like templates, layouts, styles, scripts, images, which determine the look and feel of your store.
+A theme is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images. 
+
+Themes are designed to override or customize view layer resources, provided initially by modules or libraries.<!--ADDLINK to Fallback--> Themes are implemented by different vendors (frontend developers) and intended to be distributed as additional packages for Magento system similar to other components.
 
 Out-of-the-box Magento application provides two design themes: Luma, as a demonstration theme, and Blank as a basis for custom theme creation.
 

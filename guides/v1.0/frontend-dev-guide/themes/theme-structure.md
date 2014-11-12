@@ -260,7 +260,7 @@ Let's have a closer look at each particular sub-directory.
 <h2 id="theme-structure-files">Theme files</h2>
 All theme files are stored under `app/design/<area>/<Vendor>/<theme>/`.
 
-All Magento theme files stored in the directories described earlier are divided into the following categories:
+Apart from the configuration file and theme metadata file, all theme files fall into the following two categories:
 
 * Public theme files (static view files)
 * Non-public theme files
