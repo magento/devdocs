@@ -18,10 +18,11 @@ To do this:
 3. Each of the selected cache types should have a red bar in the status area that reads DISABLED.
 <p><img src="{{ site.baseurl }}common/images/cache.png" alt="Cache types disabled"></p>
 
+
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-<p>Depending on what you are attempting to achieve, you may need to disable additional cache types or even manually delete cache files. If required for a certain task, the corresponding article of this Guide mentions it.</p></span>
+  <p>If you apply a theme not for the first time (say, you have first applied a custom My_theme, then changed to Blank, and then apply My_theme again, having customized it), you might need to clear manually the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory, where <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-structure.md">static files</a> theme are <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> to be web-accessible.</p></span>
 </div>
 
 
@@ -41,7 +42,7 @@ If caching is enabled in your Magento Admin, after applying the theme you need t
 <!--ADDLINK-->
 
 <h2 id="theme-apply-logo">Add a logo through the Admin (optional)</h2>
-You can add your store logo, which will be used on the storefront no matter what theme is applied. To do this :
+You can add your store logo, which will be used on the storefront no matter what theme is applied. To do this:
 
 1. In the Admin panel, go to **Stores** > **Configuration** > **Design**.
 2. In the **Scope** dropdown in the upper-left corner, select the store view where you want to apply the theme.
