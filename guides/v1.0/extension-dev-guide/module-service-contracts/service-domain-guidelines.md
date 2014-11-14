@@ -24,7 +24,7 @@ title: Guidelines for domain and service layers
                </li>
                <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-create-example.html">Create a service - example</a>
                </li>
-               <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Expose a service as a web service</a>
+               <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Configure services as web APIs</a>
                </li>
   </ul>
             </div>
