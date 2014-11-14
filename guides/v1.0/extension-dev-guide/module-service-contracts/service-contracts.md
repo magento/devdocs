@@ -32,7 +32,7 @@ title: Module service contracts
                <p><img src="{{ site.baseurl }}common/images/msc.jpg"/></p>
                <h2 id="msc-benefits">Benefits</h2>
                <p>Module service contracts enhance the modularity of Magento. They enable Magento and third-party developers to report system dependencies through <b>composer.json</b> files and, consequently, guarantee compatibility among Magento versions. This compatibility ensures that merchants can easily upgrade Magento.</p>
-               <p>These contracts ensure a well-defined, durable API that other modules and third-party extensions can implement. Also, these contracts make it easy to expose business logic through REST or SOAP web APIs.
+               <p>These contracts ensure a well-defined, durable API that other modules and third-party extensions can implement. Also, these contracts make it easy to <a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">expose services through REST or SOAP web APIs</a>.
                </p>
                <p>Data entities are a side benefit of service contracts.
                   The database tables that normally support these entities can be complicated.
@@ -47,7 +47,7 @@ title: Module service contracts
                   </li>
                   <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-create-example.html">Create a service - example</a>
                   </li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Expose a service as a web service</a>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Configure services as web APIs</a>
                   </li>
                </ul>
             </div>
