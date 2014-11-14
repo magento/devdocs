@@ -37,7 +37,7 @@ title: Extension Developer Guide
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-create-example.html">Create a service - example &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Expose a service as a web service &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Configure services as web APIs &raquo;</a></p>
                </dt>
             </dl>
          </div>
