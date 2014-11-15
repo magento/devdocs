@@ -6,7 +6,7 @@ title: Magento Architecture
 <div class="container bs-docs-container">
    <div class="row">
       <div class="jumbotron">
-         <h1 class="api1" id="api-services">{{ page.title }}</h1>
+         <h1 class="arch1" id="architecture">{{ page.title }}</h1>
                </div>
       <div class="col-xs-3">
          <p><b>Contents</b></p>
@@ -49,4 +49,4 @@ title: Magento Architecture
 
 <p><a href="{{ site.githuburl }}architecture/bk-architecture.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
-<h2 id="overview-introduction">Introduction</h2>
+

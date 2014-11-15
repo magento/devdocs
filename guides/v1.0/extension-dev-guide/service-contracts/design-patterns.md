@@ -14,17 +14,16 @@ title: Design patterns
          </div>
          <div class="col-xs-9" role="main">
             <div class="bs-docs-section">
-               <p><a href="{{ site.gdeurl }}/extension-dev-guide/module-service-contracts/design-patterns.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+               <p><a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/design-patterns.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
                <h2 id="what-is-a-design-pattern">What is a design pattern?</h2>
                <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a design pattern as a best practice with conditions.</p>
-               <p>Design patterns for module service contracts tell you:</p>
+               <p>Design patterns for Service contracts tell you:</p>
                <ul>
                   <li>
                      <p>Which types of interfaces to define</p>
                   </li>
                   <li>
                      <p>How and where to define data and service interfaces</p>
-                     <p class="q">Reviewer: Or do the design patterns instruct developers where the interfaces reside so that they can implement them?</p>
                   </li>
                   <li>
                      <p>How and where to implement those interfaces</p>
@@ -32,8 +31,7 @@ title: Design patterns
                </ul>
                <p>If additional patterns emerge, some of these functions might make their way into new patterns. For example, changing a password is never likely to be shared across data entities. Validation on the other hand might, so perhaps a new pattern will emerge to introduce AddressValidationInterface.</p>
                <h2 id="top-level-msc">Overview</h2>
-               <p>You must define the interfaces for a module service contract in the <b>Api</b> directory for a module. You can replace the implementation code in this directory.</p>
-               <p class="q">Reviewer: What does it mean to "replace the implementation code"?</p>
+               <p>You must define the interfaces for a module service contract in the <b>Api</b> directory for a module. You can substitute another implementation in this directory.</p>
                <p>For example, the interfaces in the <code>Magento\Customer\Api</code> namespace define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
                </p>
                <h2 id="data-interfaces">Data interfaces</h2>
@@ -41,7 +39,7 @@ title: Design patterns
                <p>Follow these design patterns to define data interfaces:</p>
                <ul>
                   <li>
-                     <p>To ensure immutable data objects, define only getters, and no setters, in a data interface.</p>
+                     <p>To ensure immutable data objects, define only getters and no setters in a data interface.</p>
                   </li>
                   <li>
                      <p>To populate a data interface, pass data in the constructor.</p>
@@ -54,10 +52,10 @@ title: Design patterns
                   </li>
                </ul>
                <h3 id="data-interface-builders">Data entity builders</h3>
-                 <p>A data entity builder is a class that has setter methods.
-                 Data entity builders are automatically generated for you. For example, the <b>CustomerBuilder</b> class with setter methods is created in the <b>var/generated/Magento/Customer/Api/Data</b> directory.
-                         You get a handle to builders through the dependency injection framework.
-                     </p>
+               <p>A data entity builder is a class that has setter methods.
+                  Data entity builders are automatically generated for you. For example, the <b>CustomerBuilder</b> class with setter methods is created in the <b>var/generated/Magento/Customer/Api/Data</b> directory.
+                  You get a handle to builders through the dependency injection framework.
+               </p>
                <p>To use a builder to create a data entity:</p>
                <ol>
                   <li>
@@ -66,7 +64,7 @@ title: Design patterns
                      </p>
                   </li>
                   <li>
-<p>Call a final <code>create()</code> method to return a new instance for you.</p>
+                     <p>Call a final <code>create()</code> method to return a new instance for you.</p>
                   </li>
                </ol>
                <p>You cannot modify a data entity instances, and doing so can be dangerous because some code, such as shared caches, relies on immutable data entities.</p>
@@ -132,23 +130,23 @@ $newCustomer = $this->customerBuilder->create();
                </ul>
                <p>An interface is defined per data entity so the get() method for example can return exactly the right type.</p>
                <h3 id="management-interfaces">Management interfaces</h3>
-               <p>Management interfaces contain various management functions that are not related to repositories. For example:</p>
+               <p>Management interfaces provide management functions that are not related to repositories. For example:</p>
                <ul>
                   <li>
-                     <p><code>AccountManagementInterface</code>: Contains methods like createAccount(), changePassword(), activate(), and isEmailAvailable().</p>
+                     <p><code>AccountManagementInterface</code>: Defines the <code>createAccount()</code>, <code>changePassword()</code>, <code>activate()</code>, and <code>isEmailAvailable()</code> methods.</p>
                   </li>
                   <li>
-                     <p><code>AddressManagementInterface</code>: Only has a validate() function to check an address is valid.</p>
+                     <p><code>AddressManagementInterface</code>: Defines the <code>validate()</code> function that validates an address.</p>
                   </li>
                </ul>
                <h3 id="related-topics">Related topics</h3>
                <ul>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-contracts.html">Module service contracts</a></li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers</a>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers</a>
                   </li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-create-example.html">Create a service - example</a>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.html">Create a service - example</a>
                   </li>
-                  <li><a href="{{ site.gdeurl }}extension-dev-guide/module-service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+                  <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
                   </li>
                </ul>
             </div>
@@ -156,5 +154,6 @@ $newCustomer = $this->customerBuilder->create();
       </div>
    </div>
 </div>
+
 
 
