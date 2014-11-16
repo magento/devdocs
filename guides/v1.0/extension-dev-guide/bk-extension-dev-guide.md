@@ -28,14 +28,18 @@ title: Extension Developer Guide
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts &raquo;</a></p>
                </dt>
                <dt>
-                  <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Design patterns &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns &raquo;</a></p>
                </dt>
-               <dt>
+               <!--
+<dt>
                     <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
                </dt>
-               <dt>
+ -->
+               <!--
+<dt>
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.html">Create a service - example &raquo;</a></p>
                </dt>
+ -->
                <dt>
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs &raquo;</a></p>
                </dt>
