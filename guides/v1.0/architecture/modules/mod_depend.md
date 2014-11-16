@@ -85,7 +85,6 @@ Module dependencies in Magento could be of two types: hard and soft dependencies
 	* The module extends another module's layout.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-<<<<<<< HEAD
 <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" width="40" align="left">
  <span class="glyphicon-class">
 <p>If a module uses code from another module, it should declare the dependency explicitly.
