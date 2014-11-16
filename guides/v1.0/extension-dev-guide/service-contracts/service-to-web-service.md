@@ -31,7 +31,8 @@ title: Configure services as web APIs
                </div>
                <p>To <a href="#configure-webapi">configure a web API</a>, you define XML elements and attributes in the <code>webapi.xml</code> XML configuration file for the module for the service.</p>
                <p>The <code>webapi.xml</code> file for your module specifies an XML schema file for validation. By default, this file is <code>app/code/&lt;VENDOR>/Webapi/etc/webapi.xsd</code>.
-Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
+                  Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.
+               </p>
                <h2 id="configure-webapi">Configure a web API</h2>
                <p>To configure a web API for a service, you define XML elements and attributes in the
                   <code>webapi.xml</code> file for the module for the service.
