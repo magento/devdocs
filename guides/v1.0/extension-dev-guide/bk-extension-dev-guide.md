@@ -22,8 +22,11 @@ title: Extension Developer Guide
       <div class="col-xs-6" role="main">
          <div class="bs-docs-section">
          <p><a href="{{ site.githuburl }}extension-dev-guide/bk-extension-dev-guide.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-          <h2 id="module-services">Service contracts</h2>
+         <h2 id="api-concepts">Concepts</h2>
            <dl>
+           <dt>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/api-concepts.html">API concepts &raquo;</a></p>
+               </dt>
                <dt>
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts &raquo;</a></p>
                </dt>
@@ -34,12 +37,15 @@ title: Extension Developer Guide
 <dt>
                     <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
                </dt>
+               </dl>
  -->
                <!--
 <dt>
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.html">Create a service - example &raquo;</a></p>
                </dt>
  -->
+ <h2 id="api-concepts">How to</h2>
+           <dl>
                <dt>
                   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs &raquo;</a></p>
                </dt>
