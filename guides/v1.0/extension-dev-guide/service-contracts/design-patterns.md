@@ -21,7 +21,8 @@ title: Service contract design patterns
                <h2 id="top-level-msc">Interface types and locations</h2>
                <p>A service contract must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
                <p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. To build data entities, you use builders. These builders are generated automatically when you set up dependency injection in the <b>di.xml</b> file. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a module.</p>
-               <p>Service interfaces include management, repository, and metadata interfaces.
+               <p>
+                  Service interfaces include management, repository, and metadata interfaces.
                   You must define the service interfaces for a service contract in the <b>Api</b> subdirectory for a module.<!--  You can substitute another implementation in this directory. -->
                </p>
                <!--
@@ -34,46 +35,64 @@ title: Service contract design patterns
                <p>To ensure immutable data objects, follow these design patterns for data interfaces:</p>
                <ul>
                   <li>
-                     <p>Define only constants and <i>getter</i>, or read, functions in a data interface.</p></li>
-                     <li><p>Do not define <i>setter</i>, or write, functions in a data interface.</p>
+                     <p>Define only constants and <i>getter</i>, or read, functions in a data interface.</p>
                   </li>
-                  <li><p>Getter functions must take no parameters.</p></li>
-                  <li><p>Getter functions can return only:</p>
-                  <ul><li>A simple type: Integer, floating point number, string, or boolean</li>
-                  <li>An array of a simple type</li>
-                  <li>Another data interface</li>
-                  </ul>
-                  <p>Getter functions cannot return mixed types.</p></li>
+                  <li>
+                     <p>Do not define <i>setter</i>, or write, functions in a data interface.</p>
+                  </li>
+                  <li>
+                     <p>Getter functions must take no parameters.</p>
+                  </li>
+                  <li>
+                     <p>Getter functions can return only:</p>
+                     <ul>
+                        <li>A simple type: Integer, floating point number, string, or boolean</li>
+                        <li>An array of a simple type</li>
+                        <li>Another data interface</li>
+                     </ul>
+                     <p>Getter functions cannot return mixed types.</p>
+                  </li>
                   <li>
                      <p>To populate a data interface, pass data in the constructor.</p>
-                  </li><li>
-                     <p>Because data interfaces include only getter functions, use <a href="#data-entity-builders">data entity builders</a> to create or modify data entities.</p>
-                      <div class="bs-callout bs-callout-info" id="info">
-                  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-                  <span class="glyphicon-class"><p>To modify the state of an entity, you create a new entity.</p></span></div>
                   </li>
-
+                  <li>
+                     <p>Because data interfaces include only getter functions, use <a href="#data-entity-builders">data entity builders</a> to create or modify data entities.</p>
+                     <div class="bs-callout bs-callout-info" id="info">
+                        <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+                        <span class="glyphicon-class">
+                           <p>To modify the state of an entity, you create a new entity.</p>
+                        </span>
+                     </div>
+                  </li>
                </ul>
                <h3 id="data-entity-builders">Data entity builders</h3>
                <p>A data entity builder is a class that provides setter functions that enable you to build data entities.</p>
                <p>You automatically generate and get a handle to builders through the dependency injection framework. After you set up dependency injection in the <b>di.xml</b> file, builders are automatically generated for defined dependencies.</p>
-               <p>For example, the <b>CustomerBuilder</b> class with setter functions is created in the <b>var/generated/Magento/Customer/Api/Data</b> directory.
-
+               <p class="q">Reviewer: Exactly how do settings in di.xml cause builders to be generated?</p>
+               <p>For example, the <code>CustomerBuilder</code> class with setter functions is automatically generated in the <b>var/generated/Magento/Customer/Api/Data</b> subdirectory.
                </p>
-               <p>To use a builder to create a data entity:</p>
+               <h4 id="build-data-entity">Build a data entity</h4>
+               <p>To use builder functions to build a data entity:</p>
                <ol>
-                  <li>
-                     <p>Use a builder
-                        to set properties.
-                     </p>
-                  </li>
-                  <li>
-                     <p>Call a final <b>create()</b> function to return a new instance for you.</p>
-                  </li>
+                  <li>Call setter functions to set attributes.</li>
+                  <li>Call the <code>final</code> <code>create()</code> function to return a new instance.</li>
                </ol>
+               <p>For example:</p>
+               <blockquote>
+                  <pre>
+$this->customerBuilder->setGroupId(CustomerGroupServiceInterface::NOT_LOGGED_IN_ID);
+$newCustomer = $this->customerBuilder->create();
+</pre>
+               </blockquote>
+               <h4 id="modify-data-entity">Modify a data entity</h4>
                <p>You cannot modify a data entity instances, and doing so can be dangerous because some code, such as shared caches, relies on immutable data entities.</p>
-               <p>Instead, each builder has a <b>populate($entity)</b> function that clones the attributes in one entity into a new entity.</p>
-               <p>Then, you can call the setter functions to change any attributes, and, finally, <b>create()</b> a new instance.</p>
+               <p>Instead, each builder has a <code>populate($entity)</code> function that clones entity attributes into a new entity.</p>
+               <p>To use builder functions to modify a data entity:</p>
+               <ol>
+                  <li>Call the <code>populate($entity)</code> function to clone attributes for a specified entity into a new entity.</li>
+                  <li>Call setter functions to change any attributes.</li>
+                  <li>Call the <code>final</code> <code>create()</code> function to create a new instance.</li>
+               </ol>
                <p>For example:</p>
                <blockquote>
                   <pre>
@@ -82,19 +101,25 @@ $this->customerBuilder->setGroupId(CustomerGroupServiceInterface::NOT_LOGGED_IN_
 $newCustomer = $this->customerBuilder->create();
 </pre>
                </blockquote>
-               <p>Also, you use the <b>populateWithArray($nameValuePairsArray)</b> function to populate an entity from a HTML form.</p>
+               <div class="bs-callout bs-callout-info" id="info">
+                  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+                  <span class="glyphicon-class">
+                     <p>To populate an entity from an HTML form, use the <code>populateWithArray($nameValuePairsArray)</code> function.</p>
+                  </span>
+               </div>
                <h3 id="search-results">Data search results interfaces</h3>
-               <p>When you pass search criteria to a <b>getList()</b> call, a search results interface is returned with the search results.</p>
-               <p>You must define one interface for each data entity for type hinting purposes. That is, <b>getItems()</b> in the
-                  <b>CustomerSearchResultsInterface</b> returns an array of <b>CustomerInterface</b> data entities.
-                  In <b>GroupSearchResultsInterface</b>, it returns an array of <b>GroupInterface</b> data entities.
+               <p>When you pass search criteria to a <code>getList()</code> call, a search results interface is returned with the search results.</p>
+               <p>You must define one interface for each data entity for type hinting purposes. That is, the <code>getItems()</code> function in the
+                  <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.
+                  In <code>GroupSearchResultsInterface</code>, the<code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
                </p>
-               <h3 id="validation-results">Validation results</h3>
                <h3 id="validation-rules">Validation rules</h3>
+               <p class="q">Reviewer: What are patterns for validation rules interfaces?</p>
+               <h3 id="validation-results">Validation results</h3>
+               <p class="q">Reviewer: What are patterns for validation results interfaces?</p>
                <h3 id="attribute-metadata">Attribute metadata</h3>
-               <p>Metadata interfaces provide information about what attributes are defined for an entity. This includes custom attributes which I will touch on below.</p>
-               <h3 id="getters">Getters</h3>
-               <p/>
+               <p>Metadata interfaces provide information about what attributes are defined for an entity. This includes custom attributes.</p>
+               <p class="q">Reviewer: What are patterns for attribute metadata interfaces?</p>
                <h2 id="service-interfaces">Service interfaces</h2>
                <p>Service interfaces include several interface subtypes:</p>
                <ul>
@@ -102,47 +127,91 @@ $newCustomer = $this->customerBuilder->create();
                   <li>Management interfaces</li>
                   <li>Metadata interfaces</li>
                </ul>
-               <p>Service interfaces are placed in the top-level <b>Api</b> directory.
-                  Previously defined <a href={{ site.gdeurl }}/guides/v1.0/coding-standards/bk-coding-standards.html">coding standards</a> should be followed, for example AccountManagmentInterface and AccountRepositoryInterface.
-               </p>
+               <p>For file names and coding standards, follow the defined <a href="{{ site.gdeurl }}coding-standards/php-coding-standards.html">PHP coding standards</a>.</p>
+               <p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
                <h3 id="repository-interfaces">Repository interfaces</h3>
                <p>Repository interfaces provide access to persistent data entities.</p>
-               <p>For example, persistent data entities for the Customer module include Customer, Address, and Group.</p>
-               <p>Repository interfaces for the Customer module are:</p>
+               <p>For example, persistent data entities for the Customer module include Customer, Address, and Group. Consequently, repository interfaces for the Customer module are:</p>
                <ul>
-                  <li>CustomerRepositoryInterface.php</li>
-                  <li>AddressRepositoryInterface</li>
-                  <li>GroupRepositoryInterface</li>
+                  <li><code>CustomerRepositoryInterface</code></li>
+                  <li><code>AddressRepositoryInterface</code></li>
+                  <li><code>GroupRepositoryInterface</code></li>
                </ul>
-               <p>Repository interfaces have the following functions:</p>
-               <ul>
-                  <li>
-                     <p><b>save(data entity interface)</b>: Creates a new record if no id present, otherwise updates an existing record with the specified id.</p>
-                  </li>
-                  <li>
-                     <p><b>get(id)</b>: Performs a database lookup by id and returns a data entity interface (such as CustomerInterface or AddressInterface).</p>
-                  </li>
-                  <li>
-                     <p><b>getList(search criteria)</b>: Performs a search for all data entities matching the search criteria and returns a search results interface to give access to the set of matches.</p>
-                  </li>
-                  <li>
-                     <p><b>delete(data entity interface)</b>: Deletes the specified entity (the key is in the entity).</p>
-                  </li>
-                  <li>
-                     <p><b>deleteById(id)</b>: Deletes the specified entity when you only have the key for the entity.</p>
-                  </li>
-               </ul>
-               <p>An interface is defined per data entity so the get() function for example can return exactly the right type.</p>
+               <p>Repository interfaces must provide these functions:</p>
+               <table style="width:100%">
+                  <tr bgcolor="lightgray">
+                     <th>Function</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><code>save(data entity interface)</code></p>
+                     </td>
+                     <td>
+                        <p>If an ID is not specified, creates a record.</p>
+                        <p>If an ID is specified, updates the record for the specified ID.</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><code>get(id)</code></p>
+                     </td>
+                     <td>
+                        <p>Performs a database lookup by ID.</p>
+                        <p>Returns a data entity interface, such as <code>CustomerInterface</code> or <code>AddressInterface</code>.</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><code>getList(search criteria)</code></p>
+                     </td>
+                     <td>
+                        <p>Performs a search for all data entities that match specified search criteria.</p>
+                        <p>Returns a search results interface that gives access to the set of matches.</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><code>delete(data entity interface)</code></p>
+                     </td>
+                     <td>
+                        <p>Deletes a specified entity. The entity contains the key (ID).</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><code>deleteById(id)</code></p>
+                     </td>
+                     <td>
+                        <p>Deletes a specified entity by key (ID).</p>
+                     </td>
+                  </tr>
+               </table>
+               <p>Each data entity has a corresponding interface. Consequently, the <code>get()</code> function in the corresponding interface, for example, can return the exact type.</p>
                <h3 id="management-interfaces">Management interfaces</h3>
                <p>Management interfaces provide management functions that are not related to repositories. For example:</p>
-               <ul>
-                  <li>
-                     <p><b>AccountManagementInterface</b>: Defines the <b>createAccount()</b>, <b>changePassword()</b>, <b>activate()</b>, and <b>isEmailAvailable()</b> functions.</p>
-                  </li>
-                  <li>
-                     <p><b>AddressManagementInterface</b>: Defines the <b>validate()</b> function that validates an address.</p>
-                  </li>
-               </ul>
+               <table style="width:100%">
+                  <tr bgcolor="lightgray">
+                     <th>Interface</th>
+                     <th>Description</th>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><code>AccountManagementInterface</code></p>
+                     </td>
+                     <td>
+                        <p>Defines the <code>createAccount()</code>, <code>changePassword()</code>, <code>activate()</code>, and <code>isEmailAvailable()</code> functions.</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td>
+                        <p><code>AddressManagementInterface</code></p>
+                     </td>
+                     <td>
+                        <p>Defines the <code>validate()</code> function that validates an address.</p>
+                     </td>
+                  </tr>
+               </table>
                <h3 id="related-topics">Related topics</h3>
                <ul>
                   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
@@ -158,6 +227,8 @@ $newCustomer = $this->customerBuilder->create();
       </div>
    </div>
 </div>
+
+
 
 
 
