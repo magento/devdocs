@@ -23,6 +23,7 @@ title: Configure services as web APIs
                </ul>
                <h2 id="overview-web-service">Overview</h2>
                <p>You can configure a REST web API and, optionally, a SOAP web API for a Magento service.</p>
+               <p class="q">Reviewer: I assume the following information tells developers how to configure a REST web API. How do they then configure a SOAP web API?</p>
                <div class="bs-callout bs-callout-info" id="info">
                   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
                   <span class="glyphicon-class">
@@ -37,6 +38,8 @@ title: Configure services as web APIs
                <p>To configure a web API for a service, you define XML elements and attributes in the
                   <code>webapi.xml</code> file for the module for the service.
                </p>
+                <p class="q">Reviewer: Is this information specifically for how to configure a REST web API?</p>
+
                <p>For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.</p>
                <h3 id="config-attributes">webapi.xml configuration options</h3>
                <p>To define the components of a web API, you set attributes on the following XML elements in the
