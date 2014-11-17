@@ -110,34 +110,67 @@
       </div>
       <div class="navbar-collapse collapse">
          <div class="nav navbar-nav">
+         <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                  <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">HOME</a>
+                 <ul class="dropdown-menu">
+                     <li><a href="{{ site.gdeurl }}architecture/bk-architecture.html">Architecture Guide </a></li>
+                        
+                  </ul>
+               </li>
+        
+               </ul>
             <ul class="nav navbar-nav">
                   <li class="dropdown">
                   <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">What is Magento?</a>
+               <ul class="dropdown-menu">
+                     <li><a href="{{ site.gdeurl }}architecture/arch_whatis.html">Overview and Architecture</a></li>
+                        
+                  </ul>
                </li>
+               
                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">How Magento code is organized</a>
+                  <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">How Magento Code is Organized</a>
                   <ul class="dropdown-menu">
-                     <li><a href="{{ site.gdeurl }}architecture/view/view-lib.html">Framework</a></li>
-                        <li class="dropdown">
-                  <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">Magento as a modular system</a>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">Magento as a Modular System</a>
                         <ul class="dropdown-menu">
                            <li><a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a></li>
-                           <li><a href="#">Themes</a></li>
                            <li><a href="#">Libraries</a></li>
-                           <li><a href="#">Translation files</a></li>
+                           <li><a href="#">Themes</a></li>
+                           <li><a href="#">Language Packages</a></li>
                         </ul>
                      </li>
-                     <li><a href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">File system</a></li>
+                     <li class="dropdown">
+                  <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">Magento Framework</a>
+                  <ul class="dropdown-menu">
+                    
                      <li><a href="{{ site.gdeurl }}architecture/areas/areas.html">Areas</a></li>
                      <li><a href="#">Blocks</a></li>
                      <li><a href="#">Web application architecture</a></li>
                      <li><a href="{{ site.gdeurl }}architecture/view/view-lib.html">View layer</a></li>
-                     <li><a href="{{ site.gdeurl }}architecture/view/view-lib.html">Magento Database</a></li>
+            
                   </ul>
                </li>
-                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">Additional Resources</a>
+               <li class="dropdown">
+                  <a href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">Magento File system</a>
                </li>
+            <li class="dropdown">
+                  <a href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">Magento Database</a>
+               </li>
+            
+            </ul>
+            </li>
+            <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                  <a href="#" class="dropdown-toggle trigger right-caret" data-toggle="dropdown">Additional Resources</a>
+                 
+               <ul class="dropdown-menu">
+                     <li><a href="{{ site.gdeurl }}architecture/arch_whatis.html">Magento Glossary</a></li>
+                     <li><a href="{{ site.baseurl }}index.html">Magento Documentation</a></li>       
+                        
+                  </ul>
+             </li>
+            
             </ul>
          </div>
          <div class="col-sm-3 col-md-3 pull-right">
