@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Get Started with Magento APIs
+title: Get Started with Magento web APIs
 ---
 
 <div class="container bs-docs-container">
@@ -43,8 +43,6 @@ title: Get Started with Magento APIs
                   <p><a  href="{{ site.gdeurl }}get-started/soap/soap-web-api-calls.html">SOAP web API calls</a></p>
                </li>
             </ul>
-
-
             <h2>The Components of an API Request</h2>
             <p>Each Magento web API call contains of a combination of the following elements:</p>
             <ul>
@@ -310,6 +308,7 @@ https://svcs.sandbox.paypal.com/AdaptiveAccounts/CreateAccount -d
       </div>
    </div>
 </div>
+
 
 
 
