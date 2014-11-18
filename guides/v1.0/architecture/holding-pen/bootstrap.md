@@ -5,7 +5,7 @@ title: Module bootstrapping
  
 <h1 id="m2devgde-boot">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/holding-pen/bootstrap.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/holding-pen/bootstrap.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-bootstrap">Boostrapping</h2>
 

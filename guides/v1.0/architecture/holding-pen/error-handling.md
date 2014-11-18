@@ -5,7 +5,7 @@ title: Module error handling
  
 <h1 id="m2devgde-err">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/holding-pen/error-handling.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/holding-pen/error-handling.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-err-errors">Error Handling</h2>
 

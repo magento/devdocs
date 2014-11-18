@@ -5,7 +5,7 @@ title: Translation
 
 <h1 id="m2devgde-xlate">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/holding-pen/xlate.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/holding-pen/xlate.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-xlate-intro">Introduction to Magento translations</h2>
 
