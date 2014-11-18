@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Get Started with Magento web APIs
+title: Get Started with Magento Web APIs
 ---
 
 <div class="container bs-docs-container">
@@ -25,10 +25,13 @@ title: Get Started with Magento web APIs
             <h2 id="web-api-access">Overview</h2>
             <p>The Magento web API framework enables Magento and third-party developers to <a  href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>. Developers can configure a REST web API and, optionally, a SOAP web API for a Magento service.</p>
             <p>Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.</p>
-            <p>This guide provides the following sections to get you up and running with the Magento web APIs:</p>
+            <p>Read the following sections to get up and running with the Magento web APIs:</p>
             <ul>
+            <li>
+                  <p><a href="#web-api-components">The components of a web API request</a></p>
+               </li>
                <li>
-                  <p><a  href="{{ site.gdeurl }}get-started/webapi/webapi-basic-auth.html">Authorize web API requests</a></p>
+                  <p><a  href="{{ site.gdeurl }}get-started/webapi/webapi-basic-auth.html">Authentication</a></p>
                </li>
                <li>
                   <p><a  href="{{ site.gdeurl }}get-started/rest/rest-overview.html">REST overview</a></p>
@@ -43,7 +46,7 @@ title: Get Started with Magento web APIs
                   <p><a  href="{{ site.gdeurl }}get-started/soap/soap-web-api-calls.html">SOAP web API calls</a></p>
                </li>
             </ul>
-            <h2>The Components of an API Request</h2>
+            <h2 id="web-api-components">The components of a web API request</h2>
             <p>Each Magento web API call contains of a combination of the following elements:</p>
             <ul>
                <li><a href="#credentials">API credentials</a></li>
@@ -52,7 +55,7 @@ title: Get Started with Magento web APIs
                <li><a href="#requestType">Request and response format types</a></li>
                <li><a href="#headers">HTTP headers</a></li>
             </ul>
-            <p>The following table gives an overview of these API call elements. See the sections that follow for more complete descriptions.</p>
+            <p>The following table gives an overview of these API call elements. See the sections that follow for complete descriptions.</p>
             <table class="table">
                <tbody>
                   <tr>
@@ -60,14 +63,14 @@ title: Get Started with Magento web APIs
                      <th>Description</th>
                   </tr>
                   <tr>
-                     <td>API Credentials</td>
+                     <td>API credentials</td>
                      <td>Many API calls require a set of values to authenticate you as the
-                        owner of a PayPal account. The Classic API credentials are assigned to
-                        your PayPal account and consist of an <em>API Username</em>, an <em>API Password</em>, and a <em>Signature</em>. Some API calls (such as those in the Adaptive APIs) also require an <em>AppID</em> value.
+                        owner of a Magento account. The Classic API credentials are assigned to
+                        your Magento account and consist of an <em>API Username</em>, an <em>API Password</em>, and a <em>Signature</em>. Some API calls (such as those in the Adaptive APIs) also require an <em>AppID</em> value.
                      </td>
                   </tr>
                   <tr>
-                     <td>Service Endpoint</td>
+                     <td>Service endpoint</td>
                      <td>An API request can be sent to either the Sandbox endpoint or the
                         Production endpoint. The endpoint you use depends on several conditions,
                         such as the API operation you're calling, the environment you're
@@ -75,64 +78,64 @@ title: Get Started with Magento web APIs
                      </td>
                   </tr>
                   <tr>
-                     <td>Call Payload</td>
-                     <td>Each PayPal API call has both required and optional input fields
+                     <td>Call payload</td>
+                     <td>Each Magento API call has both required and optional input fields
                         that detail the specifics of the request. Together, these input fields
                         are termed the <em>call payload</em>. For example, the Adaptive Payments <code>Pay</code> operation requires a transaction amount, which you specify via a required input field.
                      </td>
                   </tr>
                   <tr>
                      <td>Call Formats</td>
-                     <td>PayPal supports calls made using both SOAP and non-SOAP formats. In addition, call payloads can be formatted in JSON and NVP.</td>
+                     <td>Magento supports calls made using both SOAP and non-SOAP formats. In addition, call payloads can be formatted in JSON and NVP.</td>
                   </tr>
                   <tr>
                      <td>HTTP Headers</td>
-                     <td>PayPal API operations require you provide specific HTTP headers with
+                     <td>Magento API operations require you provide specific HTTP headers with
                         your requests. The headers specify authentication credentials, the call
                         request and response formats, and other information. For example, when
                         calling either the Adaptive Payments or Adaptive Accounts APIs, you need
-                        to specify your App ID in the <code>X-PAYPAL-APPLICATION-ID</code> header. You specify the format of the request and response using two separate headers, <code>X-PAYPAL-REQUEST-DATA-FORMAT</code> and <code>X-PAYPAL-RESPONSE-DATA-FORMAT</code>.
+                        to specify your App ID in the <code>X-Magento-APPLICATION-ID</code> header. You specify the format of the request and response using two separate headers, <code>X-Magento-REQUEST-DATA-FORMAT</code> and <code>X-Magento-RESPONSE-DATA-FORMAT</code>.
                      </td>
                   </tr>
                </tbody>
             </table>
             <a name="credentials"></a>
-            <h3>API Credentials</h3>
-            <p>You must provide a valid set of <em>API credentials</em> when making calls to PayPal API operations. This allows PayPal to verify the account that's making the calls.</p>
-            <p>PayPal Classic API credentials consist of an <em>API Username</em>, an <em>API Password</em>, and a <em>Signature</em>,
-               and PayPal generates a unique set of credentials for each eligible
-               PayPal account. Your Sandbox accounts and your live PayPal Business or
+            <h3>API credentials</h3>
+            <p>You must provide a valid set of <em>API credentials</em> when making calls to Magento API operations. This allows Magento to verify the account that's making the calls.</p>
+            <p>Magento Classic API credentials consist of an <em>API Username</em>, an <em>API Password</em>, and a <em>Signature</em>,
+               and Magento generates a unique set of credentials for each eligible
+               Magento account. Your Sandbox accounts and your live Magento Business or
                Premier accounts have different sets of API credentials, be sure to use
                the correct set when testing! On the Developer site, navigate to the <strong>Applications &gt; Sandbox accounts</strong> page to retrieve the API credentials for your Business test accounts.
             </p>
             <p>In addition to the Classic API credentials,  the Adaptive APIs also make use of an <em>AppID</em>
-               value. To obtain an AppID value for use in the PayPal production
-               environment, submit your application for review, as described in <a href="https://developer.paypal.com/docs/classic/lifecycle/goingLive/">Going Live with Your Application</a>. When testing your Adaptive API calls in the Sandbox, uses the static AppID value for the Sandbox:
+               value. To obtain an AppID value for use in the Magento production
+               environment, submit your application for review, as described in <a href="https://developer.Magento.com/docs/classic/lifecycle/goingLive/">Going Live with Your Application</a>. When testing your Adaptive API calls in the Sandbox, uses the static AppID value for the Sandbox:
             </p>
             <blockquote><code>APP-80W284485P519543T</code></blockquote>
-            <p>See <a href="https://developer.paypal.com/docs/classic/api/apiCredentials/">Creating and Managing Classic API Credentials</a> for more on how to generate and maintain the credentials needed to make calls to the live PayPal environment.</p>
+            <p>See <a href="https://developer.Magento.com/docs/classic/api/apiCredentials/">Creating and Managing Classic API Credentials</a> for more on how to generate and maintain the credentials needed to make calls to the live Magento environment.</p>
             <a name="endpoint"></a>
-            <h3>Service Endpoint</h3>
-            <p>An <em>endpoint</em> provides the URI of the server that  handles your request. Each PayPal service and operation has a unique endpoint. See the <a href="https://developer.paypal.com/docs/classic/api/endpoints/">PayPal Endpoints</a> page for a list of all the Classic API endpoints.</p>
+            <h3>Service endpoint</h3>
+            <p>An <em>endpoint</em> provides the URI of the server that  handles your request. Each Magento service and operation has a unique endpoint. See the <a href="https://developer.Magento.com/docs/classic/api/endpoints/">Magento Endpoints</a> page for a list of all the Classic API endpoints.</p>
             <p>For example, the Sandbox endpoint for the Adaptive Payments <code>pay</code> operation is as follows:</p>
-            <blockquote><code>https://svcs.sandbox.paypal.com/AdaptivePayments/Pay</code></blockquote>
+            <blockquote><code>https://svcs.sandbox.Magento.com/AdaptivePayments/Pay</code></blockquote>
             <p>Use the Sandbox endpoints during your application testing phase.
                After you've finished testing your application in the Sandbox, move to
                the production environment by updating the endpoints in your application
-               so your requests are directed to the correct PayPal production service
+               so your requests are directed to the correct Magento production service
                and operation.
             </p>
             <p>With this, if you're calling an Express Checkout operation with NVP formatting, test in the Sandbox with the following endpoint:</p>
-            <blockquote><code>https://api-3t.sandbox.paypal.com/nvp</code></blockquote>
+            <blockquote><code>https://api-3t.sandbox.Magento.com/nvp</code></blockquote>
             <p>Once your testing is complete, move your application into production by updating your endpoints to the following URI:</p>
-            <blockquote><code>https://api-3t.paypal.com/nvp</code></blockquote>
+            <blockquote><code>https://api-3t.Magento.com/nvp</code></blockquote>
             <p>Don't forget that to go live, you'll also need to update your API
-               credentials to those assigned to your live PayPal account (instead of
+               credentials to those assigned to your live Magento account (instead of
                those assigned to your virtual Sandbox accounts).
             </p>
             <a name="payload"></a>
-            <h3>Call Payload</h3>
-            <p>Each PayPal API call contains a <em>payload</em>, which is a unique set of input fields that you supply with the request. API operations have both <em>required</em> and <em>optional</em>
+            <h3>Call payload</h3>
+            <p>Each Magento API call contains a <em>payload</em>, which is a unique set of input fields that you supply with the request. API operations have both <em>required</em> and <em>optional</em>
                input fields. Although you can make a basic test call with only the
                required input fields, your production-level applications will likely
                make use of optional inputs.
@@ -165,7 +168,7 @@ title: Get Started with Magento web APIs
                </li>
             </ul>
             <p>The required fields denote the minimum set of parameters that you can
-               include in the payload of a PayPal API operation request. Below is an
+               include in the payload of a Magento API operation request. Below is an
                example of how this payload would be formatted using name-value pairs:
             </p>
             <pre>USER=&lt;<em><strong>Your_APIUsername</strong></em>&gt;&amp;
@@ -178,8 +181,8 @@ cancelUrl=http://www.example.com/cancel.html&amp;
 returnUrl=http://www.example.com/success.html
 </pre>
             <a name="requestType"></a>
-            <h3>Request and Response Format Types</h3>
-            <p>The PayPal Classic APIs support two types of request and response call formats: SOAP and non-SOAP</p>
+            <h3>Request and response format types</h3>
+            <p>The Magento web APIs support two types of request and response call formats: SOAP and non-SOAP</p>
             <p>When using SOAP, format the payload using XML within the SOAP envelope and supply any HTTP headers as part of the envelope.</p>
             <p>Non-SOAP formatted calls can make use of the following types of payload formats:</p>
             <dl>
@@ -190,15 +193,15 @@ returnUrl=http://www.example.com/success.html
                <li>JSON-RPC</li>
                <dd>JavaScript object notation (Adaptive APIs only)</dd>
             </dl>
-            <p>How you specify the format of your PayPal operation calls depends on
+            <p>How you specify the format of your Magento operation calls depends on
                the API you're using. For the Adaptive APIs (Adaptive Payments, Adaptive
                Accounts, and the Permissions Service), specify the request and
-               response formats in the HTTP headers. Other PayPal APIs require that you
+               response formats in the HTTP headers. Other Magento APIs require that you
                specify the call formats in the call payload.
             </p>
             <a name="headers"></a>
-            <h3>HTTP Headers</h3>
-            <p>PayPal has many services and some require that you specify a set of
+            <h3>HTTP headers</h3>
+            <p>Magento has many services and some require that you specify a set of
                HTTP Headers in your calls. For example, the Adaptive Payments and
                Adaptive Accounts APIs require the following set of HTTP headers:
             </p>
@@ -209,43 +212,43 @@ returnUrl=http://www.example.com/success.html
                      <th>Description</th>
                   </tr>
                   <tr>
-                     <td><code>X-PAYPAL-SECURITY-USERID</code></td>
+                     <td><code>X-Magento-SECURITY-USERID</code></td>
                      <td>The API user name. This is one of the API credentials assigned to your account.</td>
                   </tr>
                   <tr>
-                     <td><code>X-PAYPAL-SECURITY-PASSWORD</code></td>
+                     <td><code>X-Magento-SECURITY-PASSWORD</code></td>
                      <td>The API password. This is one of the API credentials assigned to your account.</td>
                   </tr>
                   <tr>
-                     <td><code>X-PAYPAL-SECURITY-SIGNATURE</code></td>
+                     <td><code>X-Magento-SECURITY-SIGNATURE</code></td>
                      <td>The API signature. This is one of the API credentials assigned to your account.</td>
                   </tr>
                   <tr>
-                     <td><code>X-PAYPAL-APPLICATION-ID</code></td>
+                     <td><code>X-Magento-APPLICATION-ID</code></td>
                      <td>The Sandbox contains a unique and static App ID
                         (APP-80W284485P519543T). When you move an application into production,
-                        PayPal assigns your application a custom App ID that you need to use to
+                        Magento assigns your application a custom App ID that you need to use to
                         key your application with the production servers.
                      </td>
                   </tr>
                   <tr>
-                     <td><code>X-PAYPAL-REQUEST-DATA-FORMAT</code></td>
+                     <td><code>X-Magento-REQUEST-DATA-FORMAT</code></td>
                      <td>The payload format for the request.</td>
                   </tr>
                   <tr>
-                     <td><code>X-PAYPAL-RESPONSE-DATA-FORMAT</code></td>
+                     <td><code>X-Magento-RESPONSE-DATA-FORMAT</code></td>
                      <td>The payload format for the response.</td>
                   </tr>
                </tbody>
             </table>
-            <p>Be aware that different PayPal APIs use different sets of HTTP
+            <p>Be aware that different Magento APIs use different sets of HTTP
                headers (and some don't use any at all). Refer to the Developer
-               documentation for the definitive list of HTTP headers for the PayPal
+               documentation for the definitive list of HTTP headers for the Magento
                operation(s) you plan to use.
             </p>
             <a name="call"></a>
-            <h2>Putting a Call Together</h2>
-            <p>To make a PayPal API call, put together all the components of the
+            <h2>Putting a call together</h2>
+            <p>To make a Magento API call, put together all the components of the
                call (as described just above) into a SOAP or non-SOAP object, and
                execute the call.
             </p>
@@ -256,22 +259,22 @@ returnUrl=http://www.example.com/success.html
             <pre>curl -s --insecure
 
 // API Credentials
--H "X-PAYPAL-SECURITY-USERID: <em><strong>Your_APIUsername</strong></em>"
--H "X-PAYPAL-SECURITY-PASSWORD: <em><strong>Your_APIPassword</strong></em>"
--H "X-PAYPAL-SECURITY-SIGNATURE: <em><strong>Your_Signature</strong></em>"
+-H "X-Magento-SECURITY-USERID: <em><strong>Your_APIUsername</strong></em>"
+-H "X-Magento-SECURITY-PASSWORD: <em><strong>Your_APIPassword</strong></em>"
+-H "X-Magento-SECURITY-SIGNATURE: <em><strong>Your_Signature</strong></em>"
 
 // Input and output formats
--H "X-PAYPAL-REQUEST-DATA-FORMAT: JSON"
--H "X-PAYPAL-RESPONSE-DATA-FORMAT: JSON"
+-H "X-Magento-REQUEST-DATA-FORMAT: JSON"
+-H "X-Magento-RESPONSE-DATA-FORMAT: JSON"
 
 // Static Sandbox AppID
--H "X-PAYPAL-APPLICATION-ID: APP-80W284485P519543T"
+-H "X-Magento-APPLICATION-ID: APP-80W284485P519543T"
 
--H "X-PAYPAL-DEVICE-IPADDRESS: 192.0.2.0"
--H "X-PAYPAL-SANDBOX-EMAIL-ADDRESS: <em><strong>Your_APICaller-emailAddress</strong></em>"
+-H "X-Magento-DEVICE-IPADDRESS: 192.0.2.0"
+-H "X-Magento-SANDBOX-EMAIL-ADDRESS: <em><strong>Your_APICaller-emailAddress</strong></em>"
 
 // Sandbox endpoint
-https://svcs.sandbox.paypal.com/AdaptiveAccounts/CreateAccount -d
+https://svcs.sandbox.Magento.com/AdaptiveAccounts/CreateAccount -d
 
 // Payload, formatted in JSON
 "{
