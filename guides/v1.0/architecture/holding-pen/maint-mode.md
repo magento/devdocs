@@ -5,7 +5,7 @@ title: Maintenance mode
  
 <h1 id="m2devgde-maint">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}m2devgde/holding-pen/maint-mode.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}architecture/holding-pen/maint-mode.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-maint-abt">Magento maintenance mode</h2>
 
