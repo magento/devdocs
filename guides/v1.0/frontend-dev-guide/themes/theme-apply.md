@@ -62,7 +62,7 @@ You might want to set a permanent store logo, do be displayed on the store front
 To add a permanent theme-independent logo:
 
 1. In the Admin panel, go to **Stores** > **Configuration** > **Design**.
-2. In the **Scope** dropdown in the upper-left corner, select the store view where you want to apply the theme.
+2. In the **Scope** dropdown in the upper-left corner, select the storeview.
 3. In the **Design** section of the General configuration, expand the **Header** tab.
 4. In the **Logo Image** field, click the button for browsing a file.
 5. Browse to the logo file saved in your file system.
@@ -74,7 +74,14 @@ The logo you add here is stored in the `/pub/media/logo/default/` directory.
 
 If caching is enabled in your Magento Admin panel, after adding a logo you need to drop cache (Magento will notify you by showing a system message). Go to <b>System</b> > <b>Cache Management</b>, and refresh the cache types that are invalidated.
 <!--ADDLINK-->
-To delete the permanent logo, go to the same location, select the check box next to the logo image, and click **Delete**. 
+
+
+<div class="bs-callout bs-callout-warning" id="warning">
+  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>To delete the permanent logo, go to the same location, select the check box next to the logo image, and click <b>Delete</b>.  </p></span>
+</div>
+
 
 
 

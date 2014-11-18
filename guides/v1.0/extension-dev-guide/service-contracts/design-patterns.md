@@ -44,7 +44,7 @@ title: Service contract design patterns
                      <p>Getter functions must take no parameters.</p>
                   </li>
                   <li>
-                     <p>Getter functions can return only:</p>
+                     <p>A getter function can return only one of these objects:</p>
                      <ul>
                         <li>A simple type: Integer, floating point number, string, or boolean</li>
                         <li>An array of a simple type</li>
@@ -60,7 +60,7 @@ title: Service contract design patterns
                      <div class="bs-callout bs-callout-info" id="info">
                         <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
                         <span class="glyphicon-class">
-                           <p>To modify the state of an entity, you create a new entity.</p>
+                           <p>You cannot modify data entity instances. Instead, you use builder functions to clone attributes for a specified entity into a new entity, change any attributes, and create a new instance.</p>
                         </span>
                      </div>
                   </li>
@@ -81,11 +81,12 @@ title: Service contract design patterns
                <blockquote>
                   <pre>
 $this->customerBuilder->setGroupId(CustomerGroupServiceInterface::NOT_LOGGED_IN_ID);
+...
 $newCustomer = $this->customerBuilder->create();
 </pre>
                </blockquote>
                <h4 id="modify-data-entity">Modify a data entity</h4>
-               <p>You cannot modify a data entity instances, and doing so can be dangerous because some code, such as shared caches, relies on immutable data entities.</p>
+               <p>You cannot modify data entity instances, and doing so can be dangerous because some code, such as shared caches, relies on immutable data entities.</p>
                <p>Instead, each builder has a <code>populate($entity)</code> function that clones entity attributes into a new entity.</p>
                <p>To use builder functions to modify a data entity:</p>
                <ol>
