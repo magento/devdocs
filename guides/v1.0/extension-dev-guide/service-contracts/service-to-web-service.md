@@ -22,24 +22,16 @@ title: Configure services as web APIs
                   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#validate-webapi">webapi.xsd XML schema file</a></li>
                </ul>
                <h2 id="overview-web-service">Overview</h2>
-               <p>You can configure a REST web API and, optionally, a SOAP web API for a Magento service.</p>
-               <p class="q">Reviewer: I assume the following information tells developers how to configure a REST web API. How do they then configure a SOAP web API?</p>
-               <div class="bs-callout bs-callout-info" id="info">
-                  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-                  <span class="glyphicon-class">
-                     <p>Before you can configure a SOAP web API for a service, you must configure a REST web API for that service.</p>
-                  </span>
-               </div>
+               <p>You can configure a Magento or third-party service as a web API.</p>
                <p>To <a href="#configure-webapi">configure a web API</a>, you define XML elements and attributes in the <code>webapi.xml</code> XML configuration file for the module for the service.</p>
                <p>The <code>webapi.xml</code> file for your module specifies an XML schema file for validation. By default, this file is <code>app/code/&lt;VENDOR>/Webapi/etc/webapi.xsd</code>.
                   Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.
                </p>
+               <p>Users can make REST or SOAP calls to access the web API.</p>
                <h2 id="configure-webapi">Configure a web API</h2>
                <p>To configure a web API for a service, you define XML elements and attributes in the
                   <code>webapi.xml</code> file for the module for the service.
                </p>
-                <p class="q">Reviewer: Is this information specifically for how to configure a REST web API?</p>
-
                <p>For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.</p>
                <h3 id="config-attributes">webapi.xml configuration options</h3>
                <p>To define the components of a web API, you set attributes on the following XML elements in the
@@ -235,11 +227,10 @@ title: Configure services as web APIs
                   </tr>
                </table>
                <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
-               <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation.</p>
-               <p>By default, this file is <code>app/code/&lt;VENDOR>/Webapi/etc/webapi.xsd</code>, as follows:</p>
+               <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
+               <p>The default <code>/Webapi/etc/webapi.xsd</code> XML schema file is:</p>
                <script src="https://github.corp.ebay.com/gist/difleming/b2b1aafbfbd9f54f3179.js"></script>
-               <p>Your module can use the default <code>webapi.xsd</code> file or you can create a customized XML schema file for validation.</p>
-               <h3 id="related-topics">Related topics</h3>
+                      <h3 id="related-topics">Related topics</h3>
                <ul>
                   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
                   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Design patterns</a></li>
