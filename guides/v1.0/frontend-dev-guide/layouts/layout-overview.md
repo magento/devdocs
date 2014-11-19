@@ -7,6 +7,19 @@ title: Magento 2 theming overview
 
 <p><a href="{{ site.githuburl }}frontend-dev-guide/layouts/layout-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
+
+Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into *layers*, including the *view layer*.
+
+The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements, which can be of two types: blocks and containers. Technically, layout is defined in the .xml layout files, which contain element declarations and element manipulation instructions. 
+
+There are three types of layout files:
+- Page layout: declares high-level page structure using only containers and operation with them: move, remove, update, referenceContainer.
+- Page configuration: "fills" the containers defined in a layout file by the particular functionality using blocks.
+- Generic layouts: a variation of page configuration used for pages loaded by AJAX requests.
+
+Each Magento module has a set of default layouts (base layout files), which can be extended or overridden by theme layouts.
+
+The view layer is responsible for representing the data
 <h2 id="layout_overview">Overview</h2>
 
 To customize a theme layout for your store, you can:
@@ -34,9 +47,7 @@ Finally, you can also override a theme layout completely. Layout files with such
 
 <h3 id="layout_overview_blocks">About blocks and containers</h3>
 
-Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into *layers*, including the *view layer*.
-
-The view layer is responsible for representing the data for display on a web browser. To that end, your *page layout* is defined by a page structure that is in turn represented by hierarchy of <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">blocks and containers</a>.
+ for display on a web browser. To that end, your *page layout* is defined by a page structure that is in turn represented by hierarchy of <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">blocks and containers</a>.
 
 Before you start to work on your theme, you must understand the following terms:
 
