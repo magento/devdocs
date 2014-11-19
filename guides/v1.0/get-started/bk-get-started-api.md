@@ -47,8 +47,11 @@ title: Get Started with Magento Web APIs
                </li>
             </ul>
             <h2 id="authentication">Authentication</h2>
-            <p>To make REST or SOAP web API calls, you must request an authentication token from the Magento token service. Depending on the type of user you are, you request an authentication token from one of these endpoints:</p>
-            <table style="width:100%">
+            <p>To make REST or SOAP web API calls, you must request an authentication token from the Magento token service. In exchange for valid credentials, the token service returns a unique authentication token.</p>
+            <p>When you make web API calls, you supply this token in the <b>Authorization</b> header. The authentication token never expires but it can be revoked.</p>
+            <h3 id="token-service-endpoints">Token service endpoints</h3>
+            <p>The endpoint to which you make the token request depends on the type of user you are:</p>
+            <table style="width:75%">
                <tr bgcolor="lightgray">
                   <th>User</th>
                   <th>Endpoint</th>
@@ -70,15 +73,13 @@ title: Get Started with Magento Web APIs
                   </td>
                </tr>
             </table>
-            <p>In exchange for valid credentials, the token service returns a unique authentication token.</p>
-            <p>When you make web API calls, you supply this token in the <b>Authorization</b> header. The authentication token never expires but it can be revoked.</p>
-            <h3 id="token-customer">Generating a token for customer (POST /V1/integration/customer/token)</h3>
-            <p>NOTE: The current behavior is to return a new token based for every login request irrespective of the device. There will be changes in the future to have a device specific token or a general purpose token if the request fails to identify the device.</p>
-            <p>Example of customer token request:</p>
+            <h3 id="token-request">Request an authentication token</h3>
+            <p>A new token is returned based for every login request irrespective of the device.</p>
+            <p>To request an authentication token:</p>
             <blockquote>
-			<pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" -H "Content-Type:application/json" -d '{"username":"test@example.com", "password":"123123q"}'</pre>
+			<pre>curl -X POST "https://magento.host/index.php/&lt;PROTOCOL&gt;/V1/integration/&lt;USER-TYPE&gt;/token" -H "Content-Type:application/json" -d '{"username":"test@example.com", "password":"123123q"}'</pre>
 			</blockquote>
-            NOTE : Content-Type:application/xml is also supported, example:
+            <p>NOTE : Content-Type:application/xml is also supported, example:</p>
             <blockquote>
 			<pre>&lt;login>
                &lt;username>test@xample.com&lt;/username>
@@ -86,34 +87,34 @@ title: Get Started with Magento Web APIs
             &lt;/login>
 			</pre>
 			</blockquote>
-            <p>Example of a successful response body with the token:
+            <p>Example of a successful response body with the token:</p>
             <pre>"asdf3hjklp5iuytre"</pre>
-            API request using customer token
-            The token obtained using the customer token request can now be used to make an API call. Note since this is a customer token, only resources with "self" permissions can be accessed.
-            curl -X GET "http://magento.ll/index.php/rest/V1/customer/me" -H "Authorization: Bearer asdf3hjklp5iuytre"
+           <p> API request using customer token</p>
+            <p>The token obtained using the customer token request can now be used to make an API call. Note since this is a customer token, only resources with "self" permissions can be accessed.</p>
+            <p>curl -X GET "http://magento.ll/index.php/rest/V1/customer/me" -H "Authorization: Bearer asdf3hjklp5iuytre"</p>
             <h3 id="token-customer">Generating a token for admin (POST /V1/integration/admin/token)</h3>
-            Similar steps apply to a device trying to provide admin access to Magneto. Token service performs few things:
-            verifies customer credentials based on login and password that was passed
-            Generate and register a unique token against the client
-            return long lived tokens to the mobile client. Tokens in theory never expire but we allow revocation.
-            NOTE: The current behavior is to return a new token based for every token request. This needs to be revisited to allow reuse of the current valid token.
-            Example of admin token request:
-            curl -X POST "https://magento.host/index.php/rest/V1/integration/admin/token" -H "Content-Type:application/json" -d '{"username":"test@example.com", "password":"123123q"}'
-            NOTE : Content-Type:application/xml is also supported, example:
+            <p>Similar steps apply to a device trying to provide admin access to Magneto. Token service performs few things:</p>
+            <p>verifies customer credentials based on login and password that was passed</p>
+            <p>Generate and register a unique token against the client</p>
+            <p>return long lived tokens to the mobile client. Tokens in theory never expire but we allow revocation.</p>
+            <p>NOTE: The current behavior is to return a new token based for every token request. This needs to be revisited to allow reuse of the current valid token.</p>
+            <p>Example of admin token request:
+            <p>curl -X POST "https://magento.host/index.php/rest/V1/integration/admin/token" -H "Content-Type:application/json" -d '{"username":"test@example.com", "password":"123123q"}'
+            <p>NOTE : Content-Type:application/xml is also supported, example:</p>
             <login>
                <username>admin@xample.com</username>
                <password>123123q</password>
-            </login>
-            Example of a successful response body with the token:
-            "vbnf3hjklp5iuytre"
-            API request using admin token
-            The token obtained using the admin token request can now be used to make an API call. If the admin is authenticated and authorized to access the particular resource, api request will be processed.
-            curl -X GET "http://magento.ll/index.php/rest/V1/customerAccounts/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"
-            Guest access
-            Webapi framework allows for accessing resources configured with anonymous permission in webapi config without any authentication. Users may choose to authenticate themselves when accessing these resources but its not needed.
-            Users that cannot be authenticated by the Webapi framework (via the existing Authentication mechanisms) are classified as Guest users.
-            ex. of webapi config :
-            <route url="/V1/customerAccounts" method="POST">
+            </login></p>
+            <p>Example of a successful response body with the token:</p>
+            <p>"vbnf3hjklp5iuytre"
+            <p>API request using admin token
+            <p>The token obtained using the admin token request can now be used to make an API call. If the admin is authenticated and authorized to access the particular resource, api request will be processed.
+            <p>curl -X GET "http://magento.ll/index.php/rest/V1/customerAccounts/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"
+            <p>Guest access
+            <p>Webapi framework allows for accessing resources configured with anonymous permission in webapi config without any authentication. Users may choose to authenticate themselves when accessing these resources but its not needed.
+            <p>Users that cannot be authenticated by the Webapi framework (via the existing Authentication mechanisms) are classified as Guest users.
+            <p>ex. of webapi config :
+            <p><route url="/V1/customerAccounts" method="POST">
                <service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="createCustomer"/>
                <resources>
                   <resource ref="anonymous"/>
