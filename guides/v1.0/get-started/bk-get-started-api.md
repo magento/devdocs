@@ -23,29 +23,102 @@ title: Get Started with Magento Web APIs
          <div class="bs-docs-section">
             <p><a href="{{ site.githuburl }}get-started-with-apis/bk-get-started-api.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
             <h2 id="web-api-access">Overview</h2>
-            <p>The Magento web API framework enables Magento and third-party developers to <a  href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>. Developers can configure a REST web API and, optionally, a SOAP web API for a Magento service.</p>
+            <p>The Magento web API framework enables Magento and third-party developers to <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>. Users can make REST or SOAP calls to access the web APIs.</p>
             <p>Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.</p>
             <p>Read the following sections to get up and running with the Magento web APIs:</p>
             <ul>
-            <li>
+               <li>
+                  <p><a href="#authentication">Authentication</a></p>
+               </li>
+               <li>
                   <p><a href="#web-api-components">The components of a web API request</a></p>
                </li>
                <li>
-                  <p><a  href="{{ site.gdeurl }}get-started/webapi/webapi-basic-auth.html">Authentication</a></p>
+                  <p><a href="{{ site.gdeurl }}get-started/rest/rest-overview.html">REST overview</a></p>
                </li>
                <li>
-                  <p><a  href="{{ site.gdeurl }}get-started/rest/rest-overview.html">REST overview</a></p>
+                  <p><a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">Firefox REST client</a></p>
                </li>
                <li>
-                  <p><a  href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">Firefox REST client</a></p>
+                  <p><a href="{{ site.gdeurl }}get-started/rest/rest-web-api-calls.html">REST web API calls</a></p>
                </li>
                <li>
-                  <p><a  href="{{ site.gdeurl }}get-started/rest/rest-web-api-calls.html">REST web API calls</a></p>
-               </li>
-               <li>
-                  <p><a  href="{{ site.gdeurl }}get-started/soap/soap-web-api-calls.html">SOAP web API calls</a></p>
+                  <p><a href="{{ site.gdeurl }}get-started/soap/soap-web-api-calls.html">SOAP web API calls</a></p>
                </li>
             </ul>
+            <h2 id="authentication">Authentication</h2>
+            <p>To make REST or SOAP web API calls, you must request an authentication token from the Magento token service. Depending on the type of user you are, you request an authentication token from one of these endpoints:</p>
+            <table style="width:100%">
+               <tr bgcolor="lightgray">
+                  <th>User</th>
+                  <th>Endpoint</th>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Customer</p>
+                  </td>
+                  <td>
+                <p>/V1/integration/customer/token</p>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <p>Admin</p>
+                  </td>
+                  <td>
+                     <p>/V1/integration/admin/token</p>
+                  </td>
+               </tr>
+            </table>
+            <p>In exchange for valid credentials, the token service returns a unique authentication token.</p>
+            <p>When you make web API calls, you supply this token in the <b>Authorization</b> header. The authentication token never expires but it can be revoked.</p>
+            <h3 id="token-customer">Generating a token for customer (POST /V1/integration/customer/token)</h3>
+            <p>NOTE: The current behavior is to return a new token based for every login request irrespective of the device. There will be changes in the future to have a device specific token or a general purpose token if the request fails to identify the device.</p>
+            <p>Example of customer token request:</p>
+            <blockquote>
+			<pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" -H "Content-Type:application/json" -d '{"username":"test@example.com", "password":"123123q"}'</pre>
+			</blockquote>
+            NOTE : Content-Type:application/xml is also supported, example:
+            <blockquote>
+			<pre>&lt;login>
+               &lt;username>test@xample.com&lt;/username>
+               &lt;password>123123q&lt;/password>
+            &lt;/login>
+			</pre>
+			</blockquote>
+            <p>Example of a successful response body with the token:
+            <pre>"asdf3hjklp5iuytre"</pre>
+            API request using customer token
+            The token obtained using the customer token request can now be used to make an API call. Note since this is a customer token, only resources with "self" permissions can be accessed.
+            curl -X GET "http://magento.ll/index.php/rest/V1/customer/me" -H "Authorization: Bearer asdf3hjklp5iuytre"
+            <h3 id="token-customer">Generating a token for admin (POST /V1/integration/admin/token)</h3>
+            Similar steps apply to a device trying to provide admin access to Magneto. Token service performs few things:
+            verifies customer credentials based on login and password that was passed
+            Generate and register a unique token against the client
+            return long lived tokens to the mobile client. Tokens in theory never expire but we allow revocation.
+            NOTE: The current behavior is to return a new token based for every token request. This needs to be revisited to allow reuse of the current valid token.
+            Example of admin token request:
+            curl -X POST "https://magento.host/index.php/rest/V1/integration/admin/token" -H "Content-Type:application/json" -d '{"username":"test@example.com", "password":"123123q"}'
+            NOTE : Content-Type:application/xml is also supported, example:
+            <login>
+               <username>admin@xample.com</username>
+               <password>123123q</password>
+            </login>
+            Example of a successful response body with the token:
+            "vbnf3hjklp5iuytre"
+            API request using admin token
+            The token obtained using the admin token request can now be used to make an API call. If the admin is authenticated and authorized to access the particular resource, api request will be processed.
+            curl -X GET "http://magento.ll/index.php/rest/V1/customerAccounts/2" -H "Authorization: Bearer vbnf3hjklp5iuytre"
+            Guest access
+            Webapi framework allows for accessing resources configured with anonymous permission in webapi config without any authentication. Users may choose to authenticate themselves when accessing these resources but its not needed.
+            Users that cannot be authenticated by the Webapi framework (via the existing Authentication mechanisms) are classified as Guest users.
+            ex. of webapi config :
+            <route url="/V1/customerAccounts" method="POST">
+               <service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="createCustomer"/>
+               <resources>
+                  <resource ref="anonymous"/>
+               </resources>
+            </route>
             <h2 id="web-api-components">The components of a web API request</h2>
             <p>Each Magento web API call contains of a combination of the following elements:</p>
             <ul>
