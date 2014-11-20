@@ -9,24 +9,26 @@ title: JavaScript resources
 
 <h2 id="m2devgde-js-resources-intro">Overview</h2>
 
-JavaScript (JS) is important for making your storefront dynamic and interactive. However, including JS into the page headers may slow down uploading of the pages. To address this problem, we excluded JS from the page headers. Moreover, we added ability to use <a href="http://requirejs.org" target="_blank">RequireJS library</a>. RequireJS speeds up loading of the pages (in particular, asynchronous loading is used) and facilitates specifying dependencies between JS resources in your store.
+JavaScript (JavaScript) is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScrip from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>. 
 
-<h2 id="m2devgde-js-resources-configuring">Explore and configure JS resources</h2>
+RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous or "lazy" JavaScript loading.
 
-You must specify and configure all JS resources used in modules and themes that you added or customized. To ensure correct work of themes and modules, do not edit the JS resources belonging to other modules and themes.
+<h2 id="m2devgde-js-resources-configuring">Explore and configure JavaScript resources</h2>
 
-JS resources can be specified at several levels:
+You must specify and configure all JavaScript resources used in modules and themes that you added or customized. To ensure correct work of themes and modules, do not edit the JavaScript resources belonging to other modules and themes.
 
-*	at the library level for all libraries in Magento code base (`lib/web`)
-*	at the module level for all libraries within a module (`app/code/[Vendor name]/[Module name]/view/{area}/web`)
-*	at the theme module level for all libraries within a theme (`app/design/{area}/[Vendor name]/{theme}/[Vendor name]_[Module name]/web`)
-*	at the theme level for all libraries within a theme  (`app/design/{area}/[Vendor name]/{theme}/web`). We do not recommend using this level to specify JS resources.
+JavaScript resources can be specified as follows:
 
-We recommend specifying JS resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
+*	Library level for all libraries in Magento code base (`lib/web`)
+*	Module level for all libraries in a module (`app/code/[Vendor name]/[Module name]/view/[area name]/web`)
+*	Theme for all libraries in a theme (`app/design/[area name]/[Vendor name]/[custom theme name]/[Vendor name]_[Module name]/web`)
+*	(_Not recommended_) All libraries in a theme  (`app/design/[area name]/[Vendor name]/[custom theme name]/web`). We do not recommend using this level to specify JavaScript resources.
 
-JS resources generated in Magento have IDs of two types:  RequireJS ID and Magento modular ID. For example JS resources for configurable product will have the following IDs:
+We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 
-<blockquote><pre>// Regular ID
+JavaScript resources generated in Magento have IDs of two types:  a RequireJS ID and a Magento modular ID. For example JavaScript resources for configurable product will have the following IDs:
+
+<pre>// Regular ID
 require(["jquery"], function($){
     // ...
 });
@@ -35,79 +37,70 @@ require(["jquery"], function($){
 require(["magento!Magento_ConfigurableProduct::js/configurable"], function(Configurable){
     // ...
 });
-</pre></blockquote>
+</pre>
 
-The modular ID has `magento!` prefix and is used for loading the JS modules. ID Normalizer plugin converts the modular IDs into the file paths, which are used by RequireJS to load the JS modules.
+The modular ID has `magento!` prefix and is used for loading the JavaScript modules. The ID Normalizer plugin converts the modular IDs into the file paths that are used by RequireJS to load the JavaScript modules.
 
-<h3 id="m2devgde-js-resources-dependencies">Specifying Dependencies between JS Resources</h3>
-Specifying all dependencies between JS resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.
+<h3 id="m2devgde-js-resources-dependencies">Specify dependencies between JavaScript resources</h3>
+Specifying all dependencies between JavaScript resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.
 
-When creating a new resource, you can select a plugin, on which your resources are to depend, from the <a href="https://github.com/magento/magento2/tree/master/lib/web/mage" target="_blank">ready-to-go plugin library</a> or write a plugin by yourself. Observe the following rules, when declaring a plugin:
+When creating a new resource, you can select a plugin, on which your resources are to depend, from the <a href="https://github.com/magento/magento2/tree/master/lib/web/mage" target="_blank">ready-to-go plugin library</a> or write a plugin by yourself. Observe the following rules when declaring a plugin:
 <ol>
-<li>To declare a plugin, use <code>define</code> function:</li>
-<blockquote><pre>define([&ldquo;jquery&rdquo;],&nbsp;function($){
+<li>To declare a plugin, use the <code>define</code> function:</li>
+<pre>define(["jquery"],&nbsp;function($){
 &nbsp;&nbsp;//&nbsp;plugin&nbsp;code
-&nbsp;&nbsp;//&nbsp;where&nbsp;$&nbsp;==&nbsp;&ldquo;jquery&rdquo;
+&nbsp;&nbsp;//&nbsp;where&nbsp;$&nbsp;==&nbsp;"jquery"
 })(jQuery);&nbsp;
-</pre></blockquote>
+</pre>
 
 <li>If you need a plugin to be used in various environments, specify it as follows:</li>
 
-<blockquote><pre>(function&nbsp;(factory)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(typeof&nbsp;define&nbsp;===&nbsp;'function'&nbsp;&amp;&amp;&nbsp;define.amd)&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;AMD.&nbsp;Register&nbsp;as&nbsp;an&nbsp;anonymous&nbsp;module.
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;define(['jquery'],&nbsp;factory);
-&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;else&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;Browser&nbsp;globals
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;factory(jQuery);
-&nbsp;&nbsp;&nbsp;&nbsp;}
-}(function&nbsp;($)&nbsp;{
-&nbsp;&nbsp;//&nbsp;plugin&nbsp;code
-&nbsp;&nbsp;//&nbsp;where&nbsp;$&nbsp;==&nbsp;jQuery
+<pre>(function (factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
+  // plugin code
+  // where $ == jQuery
 }));
-</pre></blockquote>
+</pre>
 
 <li>To build a dependency on the third-party plugin, specify a <a href="http://requirejs.org/docs/api.html#config-shim" target="_blank">shim</a> in the following configuration files:</li>
 <ul>
 <li><code>requirejs-config.js</code></li>
 
-<blockquote><pre>var&nbsp;config&nbsp;=&nbsp;{
-&nbsp;&nbsp;&ldquo;shim&rdquo;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;3-rd-party-plugin&rdquo;:&nbsp;[&ldquo;jquery&rdquo;]
+<pre>var&nbsp;config&nbsp;=&nbsp;{
+&nbsp;&nbsp;"shim":&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;"3-rd-party-plugin":&nbsp;["jquery"]
 &nbsp;&nbsp;}
 };
-</pre></blockquote>
+</pre>
 
 <li><code>{third-party-plugin}.js</code></li>
 
-<blockquote><pre>!(function($){
+<pre>!(function($){
 &nbsp;&nbsp;//&nbsp;plugin&nbsp;code
 &nbsp;&nbsp;//&nbsp;where&nbsp;$&nbsp;==&nbsp;jQuery
 })(jQuery);
-</pre></blockquote>
+</pre>
 </ul>
 </ol>
-<h2 id="m2devgde-js-resources-configrequirejs">Configuring RequireJS Library</h2>
+<h2 id="m2devgde-js-resources-configrequirejs">Configure the RequireJS library</h2>
 
-<a href="http://requirejs.org" target="_blank">RequireJS library</a> serves to load the JS files and modules. To make this library available for Magento instance, you will need to specify this library along with specific RequireJS configurations in `layout.xml` file:
+The <a href="http://requirejs.org" target="_blank">RequireJS library</a> loads JavaScript files and modules. To make this library available in your Magento instance, specify this library along with specific RequireJS configurations in `layout.xml` as follows:
 
-<blockquote><pre>&lt;referenceBlock&nbsp;name=&quot;head&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Theme\Block\Html\Head\Script&quot;&nbsp;name=&quot;requirejs&quot;&nbsp;before=&quot;-&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;RequireJs&nbsp;library&nbsp;enabled&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;file&quot;&nbsp;xsi:type=&quot;string&quot;&gt;requirejs/require.js&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Special&nbsp;block&nbsp;with&nbsp;necessary&nbsp;config&nbsp;is&nbsp;added&nbsp;on&nbsp;the&nbsp;page&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\RequireJs\Block\Html\Head\Config&quot;&nbsp;name=&quot;requirejs-config&quot;&nbsp;after=&quot;requirejs&quot;/&gt;
-&lt;/referenceBlock&gt;
-</pre></blockquote>
+<script src="https://gist.github.com/xcomSteveJohnson/5ec88ab806a29c85f1cf.js"></script>
 
-<h2 id="m2devgde-js-resources-mapping">Specifying JS Resources Mapping</h2>
+<h2 id="m2devgde-js-resources-mapping">Specify JavaScript resources mapping</h2>
 
-To work with RequireJS library, you will need to specify the mapping of JS resources, that is, to assign the aliases to resources. Use `requires-config.js` file to create the mapping.
+To work with the RequireJS library, specify the mapping of JavaScript resources; that is, assign the aliases to resources. Use `requires-config.js` to create the mapping.
 
 To make your configurations more precise and specific for different modules/themes, you can identify mapping in `requires-config.js` file at several <a href="#m2devgde-js-resources-configuring">levels</a> depending on your needs. All configurations will be collected and executed in the following order:
+
 <ol>
 <li>Library configurations.</li>
 
@@ -116,7 +109,7 @@ To make your configurations more precise and specific for different modules/them
   <div class="bs-callout bs-callout-warning" id="warning">
     <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
 	<span class="glyphicon-class">
-    <p>Dependencies between the modules/themes will be considered as well.</p></span>
+    <p>Dependencies between the modules or themes are considered as well.</p></span>
   </div>
 
 <li>Configurations at the theme module level for the ancestor themes.</li>
@@ -125,27 +118,27 @@ To make your configurations more precise and specific for different modules/them
 
 <li>Configurations at the theme level for the ancestor themes.</li>
 
-<li>Configurations at the theme level for a current theme.</li>
+<li>Configurations at the theme level for the current theme.</li>
 </ol>
 
-In addition to standard aliases of RequireJS library, Magento uses module notations or relative paths. You will have to specify in RequireJS configurations the relative paths to JS resources belonging to the module and the theme module levels. For instance, specifying the path in `app/code/Magento/Catalog/view/frontend/requirejs-config.js` will look as follows:
+In addition to standard aliases of RequireJS library, Magento uses module notations or relative paths. You must specify in RequireJS configurations the relative paths to JavaScript resources belonging to the module and the theme module levels. For instance, specifying the path in `app/code/Magento/Catalog/view/frontend/requirejs-config.js` will look as follows:
 
-<blockquote><pre>var config = {
+<pre>var config = {
     paths: {
         // configuration for resource 'app/code/Magento/Catalog/view/frontend/product/product.js'
         "product": "./product/product"
     }
 };
-</pre></blockquote>
+</pre>
 
-In the example above, `./product/product` is relative path to JS resources of `Catalog` module.
+In the example above, `./product/product` is relative path to JavaScript resources of `Catalog` module.
 
 You should not specify `baseUrl` parameter in the configurations files, since it is generated automatically.
 
-<h2 id="m2devgde-js-resources-adjusting">Adjusting RequireJS</h2>
+<h2 id="m2devgde-js-resources-adjusting">Adjust RequireJS</h2>
 
 You can adjust RequireJS for your needs in two ways:
 
-*	Via fallback mechanism: general rules on customizing URLs/paths for static view files apply to JS, since JS files are static view files
-*	Via configuration files as described above in <a href="#m2devgde-js-resources-configrequirejs">Configuring RequireJS Library</a> section
+*	Fallback mechanism: general rules on customizing URLs or paths for static view files apply to JavaScript, because JavaScript files are static view files
+*	Configuration files as described earlier in <a href="#m2devgde-js-resources-configrequirejs">Configure the RequireJS library</a>
 
