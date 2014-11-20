@@ -23,8 +23,6 @@ After the area name, the part of the URI segment specifies the *full front name*
 
 The purpose of areas is efficiency. If you are invoking a REST web service call, for examle, rather than load up all the code related to generating user HTML pages, there is a separate area (such as `/rest`) which loads code that knows only how to answer the REST call (and not generate HTML pages using layouts). Each area can have completely different code on how to process URLs and requests. 
 
-For an illustration, see <a href="https://alankent.wordpress.com/2014/07/20/playing-around-with-magento-2-areas" target="_blank">Alan Kent's blog</a>.
-
 Typically, an area has behavior and view components, which operate separately.
 
 However, an area can have only one component, for instance, the `cron` area, which has no view component.
