@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Create a theme (general information), draft
+title: Create a theme overview
 ---
 
 <h1 id="theme-gen">{{ page.title }}</h1>
