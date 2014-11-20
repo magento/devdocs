@@ -120,12 +120,13 @@ title: Configure services as web APIs
                         <p>Required. Child element of <code>&lt;resources&gt;</code>. Defines a resource to which the caller must have access.</p>
                      </td>
                      <td>
-                        <p>
                         <dl>
                            <dt><code>ref</code></dt>
-                           <dd>Required. Referenced resource. Valid values are <code>self</code> or a Magento resource, such as <code>Magento_Customer::group</code>.</dd>
+                           <dd>Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
+                            <p><b>Note:</b> The Magento web API framework enables guest users to access resources that are configured with anonymous permission. Users who cannot be authenticated by the framework through the existing authentication
+          mechanisms are considered guest users.</p>
+       </dd>
                         </dl>
-                        </p>
                      </td>
                   </tr>
                   <tr>
