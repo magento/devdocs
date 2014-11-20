@@ -9,21 +9,27 @@ title: Areas
 
 <h2 id="m2devgde-area-intro">Introduction</h2>
 
-Magento areas facilitate integrating with and extending Magento. To extend Magento, you must understand what the areas serve and how to use modules in the areas.
+Magento uses *areas* to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the `frontend` (storefront), `backend` (administration interface), and `webapi` (web services). 
 
-This article describes areas and their practical use in Magento.
+<div class="bs-callout bs-callout-info" id="info">
+  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+<span class="glyphicon-class">
+  <p>Although <code>frontend</code> and <code>adminhtml</code> are common in layout paths, layouts are not used by web services. Currently, layouts are used only by HTML generated for the storefront and administration interfaces.</p></span>
+</div>
 
-<p class="q">Reviewer: The definition of area doesn't make sense. Please clarify.</p>
+Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area. 
 
-Magento is divided into several conditional parts, which are not interdependent but use the same data. Each of these parts serves to delimit representation of the data to different user groups depending on the behavior logic of the system. These parts are referred to as *areas*.
+After the area name, the part of the URI segment specifies the *full front name*. When an HTTP request arrives, the handle is extracted from the URL. The handle is used to identify the controller (a PHP class) and action (a PHP method in the class) to execute. A common action to display a HTML page is `index`, which returns an HTML page.
 
-Usually, an area has behavior and view components, which operate separately.
+The purpose of areas is efficiency. If you are invoking a REST web service call, for examle, rather than load up all the code related to generating user HTML pages, there is a separate area (such as `/rest`) which loads code that knows only how to answer the REST call (and not generate HTML pages using layouts). Each area can have completely different code on how to process URLs and requests. 
+
+For an illustration, see <a href="https://alankent.wordpress.com/2014/07/20/playing-around-with-magento-2-areas" target="_blank">Alan Kent's blog</a>.
+
+Typically, an area has behavior and view components, which operate separately.
 
 However, an area can have only one component, for instance, the `cron` area, which has no view component.
 
 The Magento areas are:
-
-<p class="q">Reviewer: Please verify all of the following.</p>
 
 * Admin panel: entry point for this area is <code>index.php</code>
 * Storefront: entry point for this area is <code>index.php</code> or <code>pub/index.php</code>
@@ -32,7 +38,4 @@ The Magento areas are:
 * Web API REST (webapi_rest): entry point for this area is `index.php` or `pub/index.php`
 * Web API SOAP (webapi_soap): entry point for this area is `index.php` or `pub/index.php`
 
-If your extension works in several areas, you should ensure it has separate behavior and view components for each area.
-You can add a new area if needed as discussed in TBD.
-
-<p class="q">Reviewer: Are there instructions for creating a new area? If so, where?</p>
+If your extension works in several areas, you should make sure it has separate behavior and view components for each area.
