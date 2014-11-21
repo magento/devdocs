@@ -8,7 +8,7 @@ title: Theme inheritance concept
 <p><a href="{{ site.githuburl }}frontend-dev-guide/themes/theme-inherit.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="theme-inherit-over">Overview</h2>
-Theme inheritance enables you to easily extend themes.You can use an existing theme as a basis for customizations, minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files. 
+Theme inheritance enables you to easily extend themes. You can use an existing theme as a basis for customizations, minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files. 
 The level of theme inheritance is not limited.
 
 Theme inheritance is based on the fallback mechanism, which guarantees that if a view file is not found in the current theme, the system searches in the ancestor themes, module view files or library.
@@ -65,8 +65,23 @@ If module context is defined for a file:
 
 <u>Example</u>
 
+A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
+Orange inherits from the Magento Blank theme. 
 
-<h2 id="theme-inherit-static">Overriding Templates</h2>
+For example you have a background image on footer in your theme. It is placed in:
+app/design/<area>/<Vendor>/<my_theme>/web/images/background.jpg 
+
+A background1.jpg screen here
+
+You need to customize this theme for some holidays by placing a new background image and change some styles. To do that, create a new theme <my_holiday_theme>. In a theme.xml file specify that it inherits <my_theme >. In the new theme place the new background image with exactly the same name and extension:
+app/design/<area>/<Vendor>/< my_holiday_theme >/web/images/ background.jpg 
+
+Apply the holiday theme to your storefront. The holiday background image will override the one we have in <my_theme >, so on store-front the holiday background will be visible.
+
+A background2.jpg screen here
+
+
+<h2 id="theme-inherit-static">Overriding templates</h2>
 Templates are dynamic view files (according to Magento classification<!--ADDLINK-->). Module context is always known for them. The fallback scheme for templates is the following:
 
 1. Theme templates: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/templates`
@@ -74,7 +89,7 @@ Templates are dynamic view files (according to Magento classification<!--ADDLINK
 3. Module templates: `app/code/<Vendor>/<Module>/view/frontend/templates`
 
 
-So if you need to customize a certain template, you need to create an overriding one with the same name in the `../templates/<path_to_template>` directory in the theme module files. Where <path_to_template> is the path to the original template.
+So if you need to customize a certain template, you need to create an overriding one with the same name in the `../templates/<path_to_template>` directory in the theme module files. Where `<path_to_template>` is the path to the original template.
 
 For example, if you need override the `app/code/Magento/Catalog/view/frontend/templates/category/widget/link/link_block.phtml` template, the `<path_to_template>` is `category/widget/link/`
  
@@ -94,9 +109,9 @@ The fallback scheme for layouts is following:
 3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
 
 
-To override the instructions from an ancestor theme layout file: **<!--ancestor or parent?**
+To override the instructions from an ancestor theme layout file: 
 
- * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/<parent_theme>/` directory.
+ * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/<ancestor_theme>/` directory.
  
 To override a module layout file (<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">a base layout</a>):
 
@@ -104,7 +119,7 @@ To override a module layout file (<a href="{{ site.gdeurl }}frontend-dev-guide/l
 
 For more information about overriding layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a> article.
 
-
+<h2 id="theme-inherit-locale">Overriding locales</h2>
 
 **<!-- Do we need to mention locales?**
 
