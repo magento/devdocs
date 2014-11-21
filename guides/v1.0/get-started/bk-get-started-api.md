@@ -23,37 +23,37 @@ title: Get Started with Magento Web APIs
         <p>This guide introduces web API, REST, and cURL command concepts. It also provides examples that show you how to construct REST web API calls and execute them through either a REST client or cURL commands. You can modify these examples to construct other calls.</p>
         <p>Read the following sections to get up and running with the Magento web APIs:</p>
        <ul>
-  <li>
-    <p>
-      <a href="#authentication">Authentication</a>
-    </p>
-  </li>
 
  <li>
     <p>
-      <a href="#web-api-components">The components of a web API request</a>
+      <a href="{{ site.gdeurl }}get-started/web-api-components.html">The components of a web API request</a>
+    </p>
+  </li>
+   <li>
+    <p>
+      <a href="{{ site.gdeurl }}get-started/authentication.html">Authentication</a>
     </p>
   </li>
     <li>
-    <p><a href="#curl">How cURL commands work</a></p>
+    <p><a href="{{ site.gdeurl }}get-started/curl.html">How cURL commands work</a></p>
+  </li>
+   <li>
+    <p>
+      <a href="{{ site.gdeurl }}get-started/rest-concepts.html">REST concepts</a>
+    </p>
   </li>
   <li>
     <p>
-      <a href="{{ site.gdeurl }}get-started/rest/rest-overview.html">REST overview</a>
+      <a href="{{ site.gdeurl }}get-started/rest-overview.html">REST overview</a>
     </p>
   </li>
-  <!--
-<li>
-    <p>
-      <a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">Firefox REST client</a>
-    </p>
-  </li>
- -->
   <li>
     <p>
-      <a href="{{ site.gdeurl }}get-started/rest/rest-web-api-calls.html">REST web API calls</a>
+      <a href="{{ site.gdeurl }}get-started/rest-ff-rest-client.html">Firefox REST client</a>
     </p>
   </li>
+
+
 
   <!--
     <li>
@@ -63,77 +63,9 @@ title: Get Started with Magento Web APIs
     </li>
     -->
 </ul>
-        <a name="authentication"></a>
-          <h2>Authentication</h2>
-          <p>To make REST web API calls, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the web APIs.</p>
-          <p>To get a token, you request one from the Magento token service. You make a token request to the token REST endpoint that is defined for your user type:</p>
-          <table style="width:50%">
-            <tr bgcolor="lightgray">
-              <th>User type</th>
-              <th>Token REST endpoint</th>
-            </tr>
-            <tr>
-              <td>
-                <p>Customer</p>
-              </td>
-              <td>
-                <p>/V1/integration/customer/token</p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>Admin</p>
-              </td>
-              <td>
-                <p>/V1/integration/admin/token</p>
-              </td>
-            </tr>
-          </table>
-          <p>The token service returns
-            a unique authentication token in exchange for valid credentials, which are a customer or admin user name and password for a Magento account.</p>
-            <p>When you make web API calls, you supply this token in the
-            <b>Authorization</b> header to prove that you are who you claim to be.</p>
-          <p>The token never expires but it can be revoked.
-          </p>
 
-          <h3 id="auth-request-syntax">Token request syntax</h3>
-          <p>To request an authentication token for the REST web APIs, use the following command syntax:</p>
-          <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/{customer|admin}/token" \
-     -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
-          <p>In the endpoint, specify <code>customer</code> or <code>admin</code> to indicate your user type. Specify your user name and password for your Magento account.This example syntax shows a JSON-formatted request body, but XML requests are also allowed.</p>
-          <p>To make an XML request, specify the <code>Content-Type:application/xml</code> header and specify the an XML request body, as follows:</p>
-          <pre>-d '&lt;login>&lt;username>test@xample.com&lt;/username>&lt;password>123123q&lt;/password>&lt;/login>'</pre>
-          <h3 id="auth-request">Request an authentication token</h3>
-          <p>To request an authentication token for a customer user for the REST web API:</p>
-          <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
-     -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
-          <p>To request an authentication token for an admin user for the REST web API:</p>
-          <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/admin/token" \
-     -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
-      <a name="auth-response"></a>
-          <h3 id="auth-response">Authentication token response</h3>
-          <p>A successful request returns a response body with the token, as follows:</p>
-          <pre>"asdf3hjklp5iuytre"</pre>
-          <a name="web-api-request-with-token"></a>
-          <h3>Web API authenticated access</h3>
-          <p>You can specify a customer or admin token in a web API call. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.</p>
-          <p>Customers can access only resources with <code>self</code> permissions. To make a web API call with a customer token:</p>
-          <pre>curl -X GET "http://magento.ll/index.php/rest/V1/customer/me" \
-     -H "Authorization: Bearer asdf3hjklp5iuytre"</pre>
-          <p>Admins can access any resources for which they are authorized. To make a web API call with an admin token:</p>
-          <pre>curl -X GET "http://magento.ll/index.php/rest/V1/customerAccounts/2" \
-     -H "Authorization: Bearer vbnf3hjklp5iuytre"</pre>
-        <a name="guest-access"></a>
-        <h3>Web API guest access</h3>
-        <p>The Magento web API framework enables <i>guest users</i> to access resources that are configured with anonymous permission
-          in the <code>webapi.xml</code> configuration file. Users who cannot be authenticated by the framework through the existing authentication
-          mechanisms are considered guest users. Guest users can optionally authenticate themselves
-          when they access these resources with anonymous permission.</p>
-          <p>For information about configuring a resource with anonymous permission, see <a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>.</p>
 
+<!--
  <a name="web-api-components"></a>
         <h2>The components of a web API request</h2>
         <p>Each Magento web API call contains of a combination of these components:</p>
@@ -156,7 +88,7 @@ title: Get Started with Magento Web APIs
           <tr>
             <td><p>Endpoint</p></td>
             <td><p>A URI that includes the server that handles your request, the resource name, and any template parameters.</p>
-            <p>For example, <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code>.</p>
+            <p>For example, <code>http://magento.ll/index.php//V1/customerGroups/:id</code>.</p>
             </td>
           </tr>
           <tr>
@@ -343,13 +275,13 @@ title: Get Started with Magento Web APIs
         <p>To make a Magento API call, put together all the components of the call and execute the call.
        # Accessing Magento Objects Using REST
 
-<p><a href="{{ site.githuburl }}guides/v1.0/get-started/rest/rest-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}guides/v1.0/get-started/rest-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="svcs_rest_rest-call">Basics of Making a REST Call</h2>
 
 All service REST calls are specified by the service's `app/code/[Vendor]/[Module]/etc/webapi.xml`. Inputs and return values are defined in the respective service data objects and builders.
 
-This topic discusses generally how to make a REST call; for step-by-step details, see <a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.
+This topic discusses generally how to make a REST call; for step-by-step details, see <a href="{{ site.gdeurl }}get-started/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.
 
 To make a REST call for the Customer service:
 
@@ -402,15 +334,16 @@ To make a REST call for the Customer service:
 <div>
 <p>Now that you have the URL and the data, you can execute your REST call as follows:</p>
 <ol><li>Create the REST URL as follows:
-<ul><li>Start with <code>https://[your Magento host or IP]/[your Magento base install dir]/rest/default</code></li>
+<ul><li>Start with <code>https://[your Magento host or IP]/[your Magento base install dir]//default</code></li>
 <li>Append the REST URI you found in step 1.</li></ul>
 </li>
 <li>Pass an <a href="http://tools.ietf.org/html/rfc5849#section-3.4" target="_blank">OAuth 1.0a Authorization</a> header using <a href="http://tools.ietf.org/html/rfc5849#section-4.1" target="_blank">RSA-SHA1 encryption</a>.</li>
 <li>Pass a <code>Content-Type: application/json</code> header.</code></li>
 <li>Pass JSON or XML containing the data.</li></ol>
-<p>For a step-by-step example, see <a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.</p>
+<p>For a step-by-step example, see <a href="{{ site.gdeurl }}get-started/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.</p>
 </div>
 </div>
+ -->
 
 
       </div>
