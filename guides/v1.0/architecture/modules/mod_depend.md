@@ -20,8 +20,8 @@ In Magento 2, all modules are partitioned into logical groups, each one of which
 	<span class="glyphicon-class">
     <p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></span></div>
 
-<h3 id="m2devgde-moddep-terms">Terms Used</h3>
-
+Following are commonly used terms:
+	
 Framework layer
 
 :	Defines the role of an application component in Magento, defines standards for the interactions among components, and implements system-level request and response objects and routing.
@@ -46,7 +46,7 @@ Library
 
 : A logical group in the framework layer.
 
-<h2 id="m2devgde-moddep-naming"> Naming and Declaring a Module</h2>
+<h2 id="m2devgde-moddep-naming">Name and declare a module</h2>
 A module should be named according to the Namespace_Module schema, where
 
 * Namespace is a name of a module's vendor
@@ -69,7 +69,7 @@ Declaration sample:
 </pre>
 
 
-<h2 id="m2devgde-moddep-declare-dep"> Declaring Module Dependencies</h2>
+<h2 id="m2devgde-moddep-declare-dep">Declaring module dependencies</h2>
 Module dependencies in Magento could be of two types: hard and soft dependencies.
 
 1. A hard dependency implies that a module cannot function without modules, on which it depends. Specifically:
@@ -91,23 +91,21 @@ Module dependencies in Magento could be of two types: hard and soft dependencies
 </p></span>
 </div>
 
-All module dependencies are validated by Magento when modules are installed. If Magento detects an inappropriate dependency — such as a circular dependency— the modules installation will be terminated.
-
-If module dependencies pass validation, the modules will be installed in the following sequence: first, a module serving as dependency for another module will be installed, followed by the module dependent on it.
+Modules are installed in the following sequence: first, a module serving as dependency for another module will be installed, followed by the module dependent on it.
 
 
-<h3 id="m2devgde-moddep-inapp-dep"> Understanding Inappropriate Dependencies</h3>
+<h3 id="m2devgde-moddep-inapp-dep">Inappropriate dependencies</h3>
 
-The following dependencies are not allowed:
+You should avoid the following dependencies:
 
 * Circular dependencies (both direct and indirect)
 * Undeclared dependencies
 * Incorrect dependencies
 
-<h4 id="m2devgde-moddep-diff-layer">Understanding Dependencies in Different Layers</h4>
+<h4 id="m2devgde-moddep-diff-layer">Dependencies in different layers</h4>
 There are peculiarities of building the dependencies between the modules belonging to different layers.
 
-<h4 id="m2devgde-moddep-frmwk-layer">Understanding Dependencies in the Framework Layer</h4>
+<h4 id="m2devgde-moddep-frmwk-layer">Dependencies in the framework layer</h4>
 Modules belonging to the framework layer can be used in the application layer via an explicit dependency.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -118,12 +116,12 @@ Modules belonging to the framework layer can be used in the application layer vi
 </div>
 
 
-<h4 id="m2devgde-moddep-app-layer">Understanding Dependencies in the Application Layer</h4>
+<h4 id="m2devgde-moddep-app-layer">Dependencies in the application layer</h4>
 Modules belonging to the application layer cannot be used in the framework layer.
 
 You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only via the service layer or the service provider interface (SPI).
 
-<h2 id="m2devgde-moddep-api-spi">Using API- and SPI-specific Interfaces</h2>
+<h2 id="m2devgde-moddep-api-spi">API- and SPI-specific interfaces</h2>
 
 <p class="q">Reviewer: Please validate this because it's probably changed since this was written.</p>
 

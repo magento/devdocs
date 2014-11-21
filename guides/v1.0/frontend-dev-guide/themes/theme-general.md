@@ -28,6 +28,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 3. Add a `composer.json` file.
 3. Create folders for CSS, JavaScript, images, and fonts.
 4. Configure your theme in the Admin panel.
+
 <h2 id="theme-gen-read">Recommended reading</h2> 
 
 * <a href="https://github.com/magento/magento2/tree/master/app/code/Magento" target="_blank">Checklist of modules</a>

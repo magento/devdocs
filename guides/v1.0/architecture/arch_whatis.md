@@ -18,9 +18,7 @@ Object-oriented programming concepts are inherent in the Magento design, allowin
 
 Magento is a modular system, and comprises several key components used to build a custom application or web site. For example, Magento Modules contain logic to fulfill required actions and functions, while Themes, Areas, and Language Packages are used to create the visual design and language capabilities.
 
-The Magento Framework provides core business logic and functionality, the base classes, resource models, and data access cappabilities. The fundamental concepts and rules for how the components of the web site can behave are defined in the Framework. So in keeping with classic object-oriented programming methodology, the Magento Framework provides core components with base functionality which can then be inherited by custom components for a specific web site or application.
-
-Thus, the actual behaviour, look-and-feel, and capabilities of the web site are determined by how the components are extended and customized. 
+The Magento Framework provides core business logic and functionality, the base classes, resource models, and data access cappabilities. The fundamental concepts and rules for how the components of the web site can behave are defined in the Framework. So in keeping with classic object-oriented programming methodology, the Magento Framework provides core components with base functionality which can then be inherited by custom components for a specific web site or application. The final  behaviour, look-and-feel, and capabilities of the web site are determined by how the components are extended and customized. 
  
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
@@ -36,9 +34,9 @@ The following diagram shows the components of the Magento architecture:
 <img src="{{ site.baseurl }}common/images/archi_m2_overview.jpg"/>
 
 <h2 id="m2arch-related"> Related Topics</h2>
-* <a href="https://{{ site.baseurl }}index.html">How Magento is Organized</a>
-* Magento as a Modular System
-* Magento Framework
-* Magento File System
-* Magento Database
-* Commonly Used Terms
+
+* <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a Modular System</a>
+* <a href="{{ site.gdeurl }}architecture/____.html">Magento Framework</a>
+* <a href="{{ site.gdeurl }}architecture/mod-file-system.html">Magento File System</a>
+* <a href="{{ site.gdeurl }}architecture/____.html">Magento Database</a>
+* <a href="{{ site.gdeurl }}architecture/____.html">Commonly Used Terms</a>
