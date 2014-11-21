@@ -5,7 +5,7 @@ title: CSS in themes
 
 <h1 id="fedg_css-in-themes">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}frontend-dev-guide/css-topics/css-themes.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/css-themes.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_css-in-themes_overview">Overview</h2>
 

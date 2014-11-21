@@ -85,7 +85,7 @@ In the mini shopping cart template `app/code/Magento/Checkout/view/frontend/temp
 
 So, let's search for occurrences of "`minicart-wrapper`" in according to the fallback scheme:
 
-1. Sarch in `app/design/frontend/Magento/blank/web/css`, the search returns no results.
+1. Search in `app/design/frontend/Magento/blank/web/css`, the search returns no results.
 2. Search in `app/design/frontend/Magento/blank/Magento_Checkout/web/css`.The "`minicart-wrapper`" style is defined in `app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/minicart.less`
 
 After you determine which `.css` or `.less` file defines the class, you can override the default class definition in your custom `.css` or `.less` files. Please see Customizing Theme CSS for more details.
