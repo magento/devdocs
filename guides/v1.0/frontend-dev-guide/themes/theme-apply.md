@@ -1,6 +1,6 @@
 ---
 layout: howtom2devgde_chapters_fedg
-title: Apply and Configure Theme in Admin
+title: Apply and configure a theme in Admin
 ---
 
 <h1 id="theme-apply">{{ page.title }}</h1>
