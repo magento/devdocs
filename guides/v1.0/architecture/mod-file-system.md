@@ -27,8 +27,13 @@ The main components of the Magento file system are:
 
 The `Magento\Framework\Filesystem` class is an entry point to the file system. This class enables you to:
 
+<!-- These bullets are not true. What Anton M says:
+
+"They merely create in memory objects that represent these directories. The actual directory creation is attempted only whenever a write operation is attempted: e.g. you're trying to create a file in the target directory."
+
 *	Create an instance of a directory with permission to read using the `getDirectoryRead()` method
-*	Create an instance of a directory with permission to write using the `getDirectoryWrite()` method
+*	Create an instance of a directory with permission to write using the `getDirectoryWrite()` method -->
+
 *	Retrieve the URI of a directory using the `getUri()` method
 
 
