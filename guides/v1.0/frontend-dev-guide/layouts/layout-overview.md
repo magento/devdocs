@@ -1,16 +1,16 @@
 ---
 layout: default
+group: fedg
+subgroup: Layouts
 title: Magento 2 theming overview
+menu_title: Magento 2 theming overview
+menu_order: 1
+github_link: frontend-dev-guide/layouts/layout-overview.md
 ---
-
-<h1 id="layout_intro">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/layouts/layout-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
 
 Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into *layers*, including the *view layer*.
 
-The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements, which can be of two types: blocks and containers. Technically, layout is defined in the .xml layout files, which contain element declarations and element manipulation instructions. 
+The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements, which can be of two types: blocks and containers. Technically, layout is defined in the .xml layout files, which contain element declarations and element manipulation instructions.
 
 There are three types of layout files:
 - Page layout: declares high-level page structure using only containers and operation with them: move, remove, update, referenceContainer.

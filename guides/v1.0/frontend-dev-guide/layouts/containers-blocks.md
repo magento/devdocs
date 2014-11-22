@@ -1,11 +1,12 @@
 ---
 layout: default
+group: fedg
+subgroup: Layouts
 title: Containers and blocks
+menu_title: Containers and blocks
+menu_order: 2
+github_link: frontend-dev-guide/layouts/containers-blocks.md
 ---
-
-<h1 id="fedg_layout_containers-blocks">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/layouts/containers-blocks.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 The basic components of Magento page design are blocks and containers. Simply put, containers contain blocks, other containers, and other layout elements.
 

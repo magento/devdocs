@@ -2,7 +2,7 @@
 layout: default
 group: release-notes
 subgroup: New features
-title: New features
+title: Release Notes
 menu_title: New features
 menu_node: parent
 menu_order: 2

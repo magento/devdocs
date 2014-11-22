@@ -1,18 +1,19 @@
 ---
-layout: default 
+layout: default
+group: fedg
+subgroup: Layouts
 title: Override a layout
+menu_title: Override a layout
+menu_order: 4
+github_link: frontend-dev-guide/layouts/layout-override.md
 ---
- 
-<h1 id="fedg_layout_override">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/layouts/layout-override.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_layout_override_overview">Overview of Override a layout</h2>
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
 
 Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
- 
+
 Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
@@ -22,7 +23,7 @@ Examples of customizations that involve overriding layouts:
 	<span class="glyphicon-class">
 		<p>Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.</p></span>
 	</div>
-	
+
 *	Modifying method arguments.
 *	Canceling block/container removal using the remove directive.
 *	Setting XML attributes of blocks and containers.
@@ -83,17 +84,14 @@ To add an overriding theme file (to override parent layout):
     |__/layout
       |__/override
         |__/[parent _theme]
-          |--[name1].xml  
+          |--[name1].xml
           |--[name2].xml</pre>
 
 Where:
 
 `[parent_theme]` is the code of the theme the new layout file belongs to. The parent theme can be a direct or indirect parent; that is, parent, grandparent, and so on.
 
-
-
-
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>

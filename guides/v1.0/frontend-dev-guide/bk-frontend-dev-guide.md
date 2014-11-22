@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Magento 2 Frontend Developer Guide
+group: fedg
+title: Frontend Developer Guide
+menu_title: Introduction
+menu_order: 1
+github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 ---
-
-<h1 id="overview">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="overview-introduction">Introduction</h2>
 
@@ -27,9 +27,9 @@ title: Magento 2 Frontend Developer Guide
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+  <img src="{{ site.baseurl }}/common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento 2 development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a WYSIWYG mode. We'd like to clarify that to meet higher priority objectives, the VDE will <em>not</em> be part of the initial Magento 2 release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p></span>
+<p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento 2 development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a WYSIWYG mode. We'd like to clarify that to meet higher priority objectives, the VDE will <em>not</em> be part of the initial Magento 2 release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p></span>
 </div>
 
 <h2 id="fedg-intended-audience">Intended Audience</h2>

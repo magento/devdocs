@@ -1,11 +1,11 @@
 ---
 layout: default
+group: fedg
+subgroup: CSS
 title: Magento 2 UI library
+menu_order: 4
+github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 ---
- 
-<h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/theme-ui-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_using-ui-lib_overview">Overview of the Magento 2 UI Library</h2>
 
@@ -38,7 +38,7 @@ The library provides the ability to customize all of the following user interfac
 *	tooltips
 *	typography
 *	list of theme variables
-	
+
 The following figure shows a storefront page containing some of the preceding elements:
 
 ![Here are all the things you can change on a Magento storefront page, including layout, breadcrumbs, ratings, buttons, icons, and text]({{ site.baseurl }}common/images/library_mixins_in_use.jpg)
@@ -82,7 +82,7 @@ Each Magento UI library mixin is named after the block or element the mixin conf
     ├── images/
     │    └── blank-theme-icons.png (Library icons sprite)
     └── jquery/ (Library javascript files)</pre>
-	
+
 Following is an example of using a mixin for breadcrumbs in `/app/design/frontend/[your theme name]/css-topics/source/breadcrumbs.less`:
 
 <pre>.breadcrumbs {
@@ -91,9 +91,9 @@ Following is an example of using a mixin for breadcrumbs in `/app/design/fronten
 
 <h2 id="fedg_using-ui-lib_customize">Global Theme Customization Options</h2>
 
-`/app/design/frontend/[your theme name]/css-topics/source/theme.less` contains global theme customization options. 
+`/app/design/frontend/[your theme name]/css-topics/source/theme.less` contains global theme customization options.
 
-Every mixin called without parameters uses variables from `/app/design/frontend/[your theme name]/css-topics/source/lib/variables.less`. To call a mixin with custom variables, you must set their values. 
+Every mixin called without parameters uses variables from `/app/design/frontend/[your theme name]/css-topics/source/lib/variables.less`. To call a mixin with custom variables, you must set their values.
 
 For example, to change the styling for all buttons on a page, the easiest way is to call the `.button` mixin and set new values for variables required for your customization.
 
@@ -107,13 +107,13 @@ A sample follows:
     );
 }</pre>
 
-In the preceding example, variables starting with `@_` are private mixin variables used only in this mixin. Variables starting with `@` (without the underscore) are global, and are listed in `/app/design/frontend/[theme name]/css-topics/source/lib/variables.less`. 
+In the preceding example, variables starting with `@_` are private mixin variables used only in this mixin. Variables starting with `@` (without the underscore) are global, and are listed in `/app/design/frontend/[theme name]/css-topics/source/lib/variables.less`.
 
 You can find the complete list of mixin private variables and their description in the library documentation under `pub/lib/css-topics/docs`.
 
 <h2 id="fedg_using-ui-lib_predef-vars">Using Predefined Variables</h2>
 
-The Magento UI library has a specific file called `pub/lib/css-topics/source/lib/variables.less` that includes a list of all predefined variables you can use for theme customization. By using variables and setting your desired value for them, you can easily customize every element on the page without changing any CSS code or templates.  
+The Magento UI library has a specific file called `pub/lib/css-topics/source/lib/variables.less` that includes a list of all predefined variables you can use for theme customization. By using variables and setting your desired value for them, you can easily customize every element on the page without changing any CSS code or templates.
 
 To override the default library variables for your theme customization, you have to copy `pub/lib/css-topics/source/lib/variables.less` to your theme's `/app/design/frontend/[your custom theme]/css-topics/source/lib/` directory. It overrides the library variables file so that you can use it.
 
@@ -125,10 +125,10 @@ You can find more information on the Magento UI library specific mixins and the 
 
 `README.md` contains an overview and naming conventions for the documentation, as well as descriptions of the HTML files with mixins description and lists of their variables. Each *.html file is named after the elements block which is configured by this particular set of mixins.
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS overview</a>
 

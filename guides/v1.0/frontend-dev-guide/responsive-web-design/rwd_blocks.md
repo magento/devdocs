@@ -1,11 +1,12 @@
 ---
 layout: default
+group: fedg
+subgroup: Responsive web design
 title: Blocks in a responsive design
+menu_title: Blocks in a responsive design
+menu_order: 2
+github_link: frontend-dev-guide/responsive-web-design/rwd_blocks.md
 ---
- 
-<h1 id="fedg_rwd_blocks">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/responsive-web-design/rwd_overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_rwd_blocks_overview">Overview of Blocks in a Responsive Design</h2>
 
@@ -42,7 +43,7 @@ The following figure shows the resulting scroll bar:
 
 <h2 id="fedg_rwd_form">Using Responsive Forms</h2>
 
-If you create custom forms, consider the type of data that the field in the form is expected to receive. If the expected data is e-mail, use `<input type=”email”>` instead of `<input type=”text”>`. 
+If you create custom forms, consider the type of data that the field in the form is expected to receive. If the expected data is e-mail, use `<input type=”email”>` instead of `<input type=”text”>`.
 
 When the user selects this field on a mobile device, a keyboard containing Latin characters and the `@` character displays.
 
@@ -68,7 +69,7 @@ Desktop image:
 
 ![The same responsive image is set to 57% the container width on a desktop device.]({{ site.baseurl }}common/images/rwd_images_desktop.png)
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>

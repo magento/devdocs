@@ -1,11 +1,12 @@
 ---
 layout: default
+group: install-guide
+subgroup: Prerequisites
 title: Installing and configuring MySQL
+menu_title: Installing and configuring MySQL
+menu_order: 4
+github_link: install-gde/prereq/mysql.md
 ---
-
-<h1 id="instgde-prereq-mysql">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}install-gde/prereq/mysql.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="instgde-prereq-mysql-intro">General standard</h2>
 
@@ -17,7 +18,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 
 <h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
 
-1.	Use the standard on the <a href="https://help.ubuntu.com/12.04/serverguide/mysql.html" target="_blank">Ubuntu site</a>. 
+1.	Use the standard on the <a href="https://help.ubuntu.com/12.04/serverguide/mysql.html" target="_blank">Ubuntu site</a>.
 2.	Configure the database instance as discussed in <a href="#instgde-prereq-mysql-instance">Configuring the Magento database instance</a>.
 
 <h2 id="instgde-prereq-mysql-ubuntu">Installing and configuring MySQL on CentOS</h2>
@@ -33,7 +34,7 @@ To configure a MySQL database instance:
 
 1.	Log in to your database server as any user.
 2.	Enter the following command to get to a MySQL command prompt:
-	
+
 	`mysql -u root -p`
 
 3.	Enter the root user's password when prompted.

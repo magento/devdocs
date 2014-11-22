@@ -1,10 +1,13 @@
 ---
 layout: default
+group: coding-standards
+subgroup: Coding standards
 title: JavaScript coding standard
+menu_title: JavaScript coding standard
+menu_order: 2
+github_link: coding-standards/js-coding-standards.md
 ---
 
-<h1 id="fedg_js-code-bestpr">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/js-coding-bestpr.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="fedg_js-code-bestpr_overview">Overview</h2>
 <p>These standard define Magento requirements for code formatting and style for teams that develop JavaScript and jQuery code for Magento.</p>
 <p>These standard are based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>.</p>

@@ -2,9 +2,10 @@
 layout: default
 group: release-notes
 subgroup: Behavior changes
-title: Magento 2 Release Notes
+title: Release Notes
 menu_title: Behavior changes
-menu_order: 2
+menu_node: parent
+menu_order: 3
 github_link: release-notes/behavior-changes.md
 ---
 

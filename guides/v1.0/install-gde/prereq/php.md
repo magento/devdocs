@@ -1,23 +1,16 @@
 ---
 layout: default
+group: install-guide
+subgroup: Prerequisites
 title: Installing PHP 5.4 and required extensions
+menu_title: Installing PHP 5.4 and required extensions
+menu_order: 3
+github_link: install-gde/prereq/php.md
 ---
 
-<h1 id="instgde-prereq-php">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}install-gde/prereq/php.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h4 id="instgde-php-prereq-contents">Contents</h4>
-
-*	<a href="#instgde-prereq-php-install-centos">PHP 5.4 on CentOS</a>
-*	<a href="#instgde-prereq-php-install-ubuntu">PHP 5.4 on Ubuntu</a>
-*	<a href="#instgde-prereq-timezone">Setting the PHP timezone (all operating systems)</a>
-
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <br><br><br><ul><li>You must run all commands on this page as a user with <code>root</code> privileges.</li>
-  <li>If you must install both Apache and PHP, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">install Apache</a> first.</li></ul></span>
+<ul><li>You must run all commands on this page as a user with <code>root</code> privileges.</li>
+  <li>If you must install both Apache and PHP, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">install Apache</a> first.</li></ul>
 </div>
 
 <h2 id="instgde-prereq-php-install-centos">PHP 5.4 on CentOS</h2>
@@ -29,7 +22,7 @@ This section discusses the following topics:
 
 <h3 id="instgde-prereq-php-install-centos-upgr">Upgrade to PHP 5.4 on CentOS</h3>
 
-PHP 5.3 is the default PHP version on CentOS distributions. Upgrade to PHP 5.4 using a repository like <a href="http://blog.famillecollet.com/pages/Config-en" target="_blank">remi</a>. 
+PHP 5.3 is the default PHP version on CentOS distributions. Upgrade to PHP 5.4 using a repository like <a href="http://blog.famillecollet.com/pages/Config-en" target="_blank">remi</a>.
 
 The following resources are also available:
 
@@ -105,22 +98,22 @@ To set your time zone:
 2.	Locate `php.ini` by entering the following command:
 
 	`php -i | grep "Loaded Configuration File"`
-	
+
 	Typical locations follow:
-	
+
 	Ubuntu: `/etc/php5/cli/php.ini`
-	
+
 	CentOS: `/etc/php.ini`
-	
+
 3.	Open `php.ini` in a text editor.
 
 4.	Locate the followign setting and uncomment it if necessary:
 
 	`date.timezone =`
-	
+
 5.	Add the time zone setting you found in step 1.
 6.	Save your changes to `php.ini` and exit the text editor.
-	
+
 
 #### Related topics
 

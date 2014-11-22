@@ -1,14 +1,15 @@
 ---
 layout: default
+group: fedg
+subgroup: Themes
 title: Create a theme overview
+menu_title: Create a theme overview
+menu_order: 1
+github_link: frontend-dev-guide/themes/theme-general.md
 ---
 
-<h1 id="theme-gen">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/theme-general.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
 <h2 id="theme-gen-overview">Overview</h2>
-A theme is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images. 
+A theme is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images.
 
 Themes are designed to override or customize view layer resources, provided initially by modules or libraries.<!--ADDLINK to Fallback--> Themes are implemented by different vendors (frontend developers) and intended to be distributed as additional packages for Magento system similar to other components.
 
@@ -29,7 +30,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 3. Create folders for CSS, JavaScript, images, and fonts.
 4. Configure your theme in the Admin panel.
 
-<h2 id="theme-gen-read">Recommended reading</h2> 
+<h2 id="theme-gen-read">Recommended reading</h2>
 
 * <a href="https://github.com/magento/magento2/tree/master/app/code/Magento" target="_blank">Checklist of modules</a>
 * <a href="{{site.gdeurl}}architecture/view/static-process.html">Static view files processing</a>
