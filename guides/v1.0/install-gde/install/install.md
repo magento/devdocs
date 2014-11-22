@@ -1,5 +1,5 @@
 ---
-layout: howtom2instgde_chapters
+layout: default
 title: Installing and reinstalling Magento 2
 ---
 

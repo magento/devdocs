@@ -1,9 +1,11 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
 title: Authorize web API requests
 ---
 
 <p>The web API framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.
+
+
 
 Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.</p>
 

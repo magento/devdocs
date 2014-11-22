@@ -1,6 +1,6 @@
 ---
 title: Using the View Library
-layout: default-arch
+layout: default
 ...
 
 {{ Magento\_View Library }}

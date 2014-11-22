@@ -1,5 +1,5 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
 title: How-to&mdash;Use the Firefox REST client to create a customer
 ---
 

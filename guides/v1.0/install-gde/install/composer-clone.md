@@ -1,5 +1,5 @@
 ---
-layout: howtom2instgde_chapters
+layout: default
 title: Installing Composer and cloning the Magento 2 GitHub repository
 ---
 

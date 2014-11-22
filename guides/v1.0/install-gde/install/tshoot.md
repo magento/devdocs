@@ -1,5 +1,5 @@
 ---
-layout: howtom2instgde_chapters
+layout: default
 title: Troubleshooting your Magento 2 installation
 ---
 
