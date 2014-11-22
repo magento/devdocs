@@ -1,0 +1,413 @@
+@import 'nav';
+@import 'magento';
+@import 'syntax-highlighting';
+
+$body-bg: #fff;
+$body-font-color: #31302b;
+$link-color: #c14800;
+$link-hover-color: #ef672f;
+$shade-bg: #f7f3eb; // shading for menu 
+$highlight-bg: #ef672f; // orange color
+$callout-bg: #e4f0f5;
+$page-width: 1300px; // width of the container
+$font-family: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
+
+
+/* TYPOGRAPHY */
+
+body {
+	font-family: $font-family;
+	background: $body-bg;
+}
+
+
+
+pre {
+	
+	font-size: 13px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: pre;
+	code {
+		white-space: pre;
+	}
+	span {
+		white-space: nowrap;
+	}
+}
+
+.main-container {
+	
+	padding-top: 0;
+	padding-bottom: 60px;
+	
+	h2 {
+		font-size: 30px;
+		text-transform: none;
+		letter-spacing: 0;
+		margin: 1.3em 0 .7em 0;
+		padding: 0;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+		
+	h3 {
+		font-weight: 700;
+		text-transform: none;
+		letter-spacing: 0;
+		font-size: 20px;
+		line-height: 1.4em;
+		margin: 1.5em 0 .5em 0;
+		padding: 0;
+	}
+	
+	h4 {
+		font-size: 18px;
+		margin: 1.5em 0 .5em 0;
+		text-transform: none;
+		letter-spacing: 0;
+	}
+	
+	a {
+		color: $link-color;
+		letter-spacing: 0;
+		text-transform: none;
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
+	
+	.btn {
+		color: #fff;
+		&:hover {
+			color: #fff;
+		}
+	}
+	
+	p, ul, ol, ul li, ol li, a {
+		font-size: 16px;
+		line-height: 1.5em;
+		font-weight: normal;
+	}
+	
+	ul li, ol li {
+		margin: 0 0 .5em 0;
+	}
+
+	
+	small {
+		font-size: 70%;
+		font-weight: 400;
+	}
+}
+
+
+table {
+	margin: 3em 0 2em 0;
+	border: 1px solid darken( $shade-bg, 10%);
+}
+.gist-data table {
+	margin: 0;
+	border: none;
+	width: 100%;
+}
+	
+th {
+	background: darken( $shade-bg, 15%);
+	text-align: left;
+	padding: 10px 16px;
+	vertical-align: top;
+}
+tr {
+	td {
+		background: #fff;
+		padding: 10px 16px;
+		vertical-align: top;
+	}
+	&:nth-child(odd) {
+		td {
+			background: $shade-bg;
+		}
+	}
+}
+
+
+dl {
+	font-size: 16px;
+	dt {
+		font-weight: 700;
+		margin: 1em 0 .5em 0;
+	}
+	dd {
+		margin: 0;
+	}
+}
+
+blockquote {
+	font-size: 16px;
+	line-height: 24px;
+	margin: 2em 0 1em 0;
+	
+	border-left: 2px solid lighten(#7b756b, 30%);
+		
+	cite {
+		display: block;
+		font-style: italic;
+		margin: .5em 0 0 0;
+	}
+}
+
+
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container, .nav-main #global-nav, .nav-main #subnav-wrap #subnav {
+	width: 100%;
+	max-width: $page-width;
+}
+
+.nav-main {
+	position: relative;
+}
+.nav-main nav .sub-site-name {
+	padding: 16px 0 20px 11px;	
+}
+.nav-main nav .right-header {
+	position: absolute;
+}
+.nav-main nav .sub-site-name a {
+	background: none;
+	font-family: $font-family;
+	font-weight: 200;
+	color: #fff;
+}
+.nav-main nav .menu-btn .menu-icon, .nav-main nav .menu-btn {
+	position: absolute;
+}
+.nav-main nav .menu-btn .menu-label.menu-trigger  {
+	display: none;
+}
+
+.nav-main nav .sub-site-name a {
+	width: auto;
+}
+
+.page-intro {
+	position: relative;
+	padding: 40px 0;
+	background-color: $highlight-bg;
+	
+	a {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	.page-heading {
+		margin: 0;
+		padding: 0;
+		font-family: $font-family;
+		font-size: 38px;
+		font-weight: 700;
+		color: #fff;
+		text-transform: none;
+		letter-spacing: 0;
+	}
+	p {
+		font-size: 24px;
+		color: #fff;
+		max-width: 30em;
+	}
+	
+	.container {
+		position: relative;
+	}
+	
+	.improve-page {
+		position: absolute;
+		font-size: 13px;
+		text-decoration: none;
+		bottom: -1.7em;
+		right: 0;
+		text-align: right;
+		
+		&:hover	{
+			color: #fff;
+			text-decoration: underline;
+		}
+		
+		&:after {
+			display: inline-block;
+			position: relative;
+			top: 4px;
+			left: 5px;
+			content: '';
+			background: url(/i/icon-new-window.gif) no-repeat; 
+			width: 16px;
+			height: 16px;
+			
+		}
+	}
+}
+
+
+
+// Main layout
+
+.content {
+	float: right;
+	width: 77%;
+	padding: 40px 0 0 0;
+
+	.content-wrap {
+		padding: 0 0 0 40px;
+	}
+}
+
+.sidebar {
+	float: left;
+	width: 23%;
+	padding: 40px 0 40px 0;
+	
+	.sidebar-wrapper {
+		background: $shade-bg;
+		padding: 12px 0;
+	}
+	
+	h4 {
+		color: #7b756b;
+	}
+
+	
+	ul {
+		list-style: none;
+		margin: 0;
+		
+		li {
+			margin: 0;
+			font-size: 14px; 
+			line-height: 1.3em;
+		}
+		.has-children {
+			margin-top: 1em;
+		}
+		a, span {
+			display: block;
+			padding: 6px 12px;
+			font-size: 14px;
+			line-height: 1.3em;
+			font-weight: normal;	
+		}
+		span {
+			color: #7b756b;
+		}
+		a:hover {
+			background: darken($shade-bg, 2%);
+		}
+		.nav-header {
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: .06em;		
+			margin-top: 12px;
+			
+			& > a,span {
+				font-weight: 700;
+				padding-top: 10px;
+			}
+		}
+		.active {
+			
+			& > a {
+				color: $body-font-color;
+				background: darken($shade-bg, 5%);
+			}
+		}
+		
+		
+		.level-2 {
+			list-style: none;
+			a, span {
+				padding-left: 18px;
+			}
+		}
+	}
+}
+
+
+.home-section  {
+	
+	padding: 40px 0 0 0;
+	
+	.panel-separator {
+		margin-top: 50px;
+	}
+	
+	h2 {
+		margin: 0 0 .5em 0;
+	}
+	h3 {
+		margin: 1.5em 0 0 0;
+		letter-spacing: .05em;
+		a {
+			font-size: 20px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+	
+	&:last-child {
+		padding-bottom: 60px;
+	}
+}
+
+
+.panel-separator {
+	border-bottom: 1px solid #d6d6d5;
+}
+
+
+.bs-callout {
+	position: relative;
+	margin: 20px 0 20px 0;
+	padding: 20px;
+	background: $callout-bg;
+	&:before {
+		display: block;
+		position: absolute;
+		content: '';
+		width: 30px;
+		height: 30px;
+		top: 20px;
+		left: 16px;
+		background-size: cover;
+	}
+	
+}
+.bs-callout-info {
+	padding-left: 60px;
+	&:before {
+		background-image: url(../i/icon_note.png);
+	}
+}
+
+.bs-callout-warning {
+	padding-left: 60px;
+	background: #fcebce;
+	&:before {
+		background-image: url(../i/icon_important.png);
+	}
+}
+.bs-callout-tip {
+	padding-left: 60px;
+	background: #e7eecd;
+	&:before {
+		background-image: url(../i/icon_tip.png);
+	}
+}
+
+.bs-callout-danger {
+	padding-left: 60px;
+	color: #cc0000;
+	background: #f6e9e3;
+	&:before {
+		background-image: url(../i/icon_caution.png);
+	}
+}

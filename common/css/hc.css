@@ -21,16 +21,11 @@ a.ext1:visited {
     color: blue;
 }
 
-a.btn-visit:visited {
-    color: lightgray;
-}
-
 a.ext1:hover {
     color: darkorange;
 }
 
 /* Blockquote for code sample */
-/*
 blockquote.codesample {
     border-top: 4px solid #6AB0DE;
     border-right: none;
@@ -39,15 +34,6 @@ blockquote.codesample {
     margin-right: -10px;
     padding-left: 40px;
     background: none repeat scroll 0% 0% #e4f1f9;
-}
- */
-
-blockquote {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 40px;
-    margin-right: 40px;
 }
 
 /* Move down content because we have a fixed navbar that is 50px tall */
@@ -83,7 +69,7 @@ p.q 	{
 	font-size: 15pt;
 	color: red;
 	}
-
+	
 
 /*
  * Side navigation
@@ -207,7 +193,7 @@ p.q 	{
     background-color: white;
 }
 
-/*
+/* 
 .container h1 {
     margin-bottom: 12px;
     font-size: 36px;
@@ -279,23 +265,22 @@ h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover {
     color: gray;
 }
 
-h1.api1 {
+h1.heading1 {
     margin-bottom: 8px;
     font-size: 36px;
 }
 
-h2.api2 {
+h2.heading2 {
     margin-bottom: 6px;
-    font-size: 30px;
+    font-size: 28px;
 }
 
-h3.api3 {
+h3.heading3 {
     margin-bottom: 4px;
-    font-size: 24px;
-    background-color: #F2F2F2;
+    font-size: 22px;
 }
 
-h4.api4 {
+h4.heading4 {
     margin-bottom: 2px;
     font-size: 18px;
 }
@@ -389,7 +374,7 @@ p {
 
 ul.nav a {
     border-bottom: none;
-}
+} 
 
 /* Unordered lists */
 ul {
@@ -450,7 +435,7 @@ ul.note>li {
     margin-left: 4em;
 }
 
-/* Media mark-ups */
+/* Media mark-ups */	
 
 /* SRJ - reducing left margin for left TOC */
 @media (min-width: 768px) {
@@ -463,8 +448,7 @@ ul.note>li {
 
 .dropdown-menu>li
 {	position:relative;
-    vertical-align: text-top;
-	-webkit-user-select: none; /* Chrome/Safari */
+	-webkit-user-select: none; /* Chrome/Safari */        
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 	/* Rules below not implemented in browsers yet */
@@ -611,7 +595,7 @@ span.glyphicon-class>p {
 .bs-callout {
     padding-bottom: 40px;
 }
-
+	
 
 
 
@@ -660,7 +644,7 @@ h1 a,h2 a,h3 a,h4 a
     transition: all .5s ease 0;
 }
 
-/* .navbar
+/* .navbar 
 {
   display: none; */
 }
@@ -767,7 +751,6 @@ h1 a,h2 a,h3 a,h4 a
     margin: 0 0 0 20px;
 }
 
-/*
 blockquote {
     border-left: 2px solid #EF672F;
     border-right: 2px solid #EF672F;
@@ -776,7 +759,6 @@ blockquote {
     padding-left: 40px;
     background: #f3f3f7;
 }
- */
 
 pre {
     font-family: "Courier New";
@@ -852,7 +834,7 @@ table .table-headings th {
     color: #31302b;
     font-weight: bold;
     padding: 10px;
-    vertical-align: middle;
+    vertical-align: top;
     font-size: 15px;
 }
 
@@ -1282,11 +1264,7 @@ time {
     margin-top: 2em;
 }
 
-/* SRJ - make links in horizontal nav white */
-
-.navbar-inverse .navbar-nav>li>a{color:#fff}
-
-/* Extra stuff */
+/* Extra stuff */  
 
 
 
@@ -1295,14 +1273,14 @@ time {
 
 
 
-
+	
 /* SRJ - decided not to include the word "Note", etc but leaving in case that comes back
 
 div#info.bs-callout>h4 {
 	margin-top: -1px;
 	margin-left: 2.5em;
 	}
-
+	
 div#warning.bs-callout>h4 {
 	margin-top: -1px;
 	margin-left: 2.5em;
@@ -1314,13 +1292,13 @@ changes to -, needs more work
 
 #accordion_related-topics  .ui-accordion-header-icon {
 background-image: url("images/ui-icons_454545_256x240.png");
-background-position: -16px -128px;
+background-position: -16px -128px; 
 
 }
 
 #accordion_related-topics  .ui-accordion-header-icon.ui-icon.ui-icon.minus {
 background-image: url("images/ui-icons_454545_256x240.png");
-background-position: -48px -128px;
+background-position: -48px -128px; 
 
 } */
 
@@ -1331,12 +1309,33 @@ background-position: -48px -128px;
 
 /* #accordion_related-topics  .ui-accordion-header-icon {
 background-image: url("images/ui-icons_454545_256x240.png");
-background-position: -16px -128px;
+background-position: -16px -128px; 
 
 }
  */
+/* #accordion_related-topics  .span.ui-accordion-header-icon {
+background-image: url("images/ui-icons_454545_256x240.png");
+background-position: -12px -128px; 
 
+} */
 
+/* div.h1-frontpage {
+    align: center;
+	padding-left: 1em;
+    
+}  */
+
+/* h2.heading2 {
+    color: black;
+    font-size: 18pt;
+    
+} 
+
+h3.heading3 {
+    color: gray;
+    font-size: 14pt;
+    
+} */ 
 
 
 
