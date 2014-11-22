@@ -32,10 +32,7 @@ title: Magento Architecture
              <dt>
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/areas/areas.html">Magento Framework &raquo;</a></p>
                </dt>
-               <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/mod-file-system.html">Magento File System &raquo;</a></p>
-               </dt>
-            
+                          
                <dt>
                     <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/modules/payment.html">Commonly Used Terms &raquo;</a></p>
                </dt>
