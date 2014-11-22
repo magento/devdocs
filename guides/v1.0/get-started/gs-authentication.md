@@ -86,8 +86,6 @@ title: Authentication
           mechanisms are considered guest users. Guest users can optionally authenticate themselves
           when they access these resources with anonymous permission.</p>
           <p>For information about configuring a resource with anonymous permission, see <a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>.</p>
-
-
       </div>
     </div>
   </div>

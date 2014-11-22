@@ -1,12 +1,12 @@
 ---
 layout: default
-title: REST concepts
+title: Web API concepts
 ---
 
 <div class="container bs-docs-container">
   <div class="row">
     <div class="jumbotron">
-      <h1 class="api1" id="rest-web-api-calls">{{ page.title }}</h1>
+      <h2 class="api1" id="rest-web-api-calls">{{ page.title }}</h2>
     </div>
     <div class="col-xs-3">
       <p>
@@ -16,10 +16,48 @@ title: REST concepts
     <div class="col-xs-9" role="main">
       <div class="bs-docs-section">
         <p><a href="{{ site.githuburl }}get-started-with-apis/bk-get-started-api.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;
-          <img src="{{ site.baseurl }}common/images/newWindow.gif" />
-        </p>
-<h2 id="formats">Request and response formats</h2>
-
+          <img src="{{ site.baseurl }}common/images/newWindow.gif" /></p>
+          <p>A web API call is made up of a request and a response.</p>
+          <a name="requests"></a>
+        <h2>Web API requests</h2>
+        <a name="verbs"></a>
+        <h3>HTTP verbs</h3>
+        <p>Include one of these HTTP verbs in the web API request:</p>
+        <dl>
+        <dt>GET</dt>
+        <dd>Requests transfer of a current representation of the
+   target resource.</dd>
+        <dt>PUT</dt>
+        <dd>Requests that the state of the target resource be
+   created or replaced with the state defined by the representation
+   enclosed in the request message payload.</dd>
+        <dt>POST</dt>
+        <dd>Requests that the origin server accept the
+   representation enclosed in the request as data to be processed by the
+   target resource.</dd>
+        <dt>DELETE</dt>
+        <dd>Requests that the origin server delete the target
+   resource.</dd>
+        </dl>
+        <a name="endpoints"></a>
+        <h3>Endpoints</h3>
+        <p>An endpoint is a combination of a URL and URI.</p>
+        <p>The REST endpoint URL is <code>http://magento.ll/index.php/rest/</code>.</p>
+        <p>The URL points to the server that fulfills the request.</p>
+        <p>The URI is the resource against which the request is being made. Specifically, the service endpoint combines:</p>
+            <ul>
+            <li>The web protocol: <code>http</code></li>
+            <li>The server that fulfills the request: <code>magento.ll/index.php</code></li>
+            <li>The web service: <code>rest</code></li>
+            <li>The resource URI: <code>V1/customerGroups/</code></li>
+            <li>Any template parameters: <code>/:id</code></li>
+            </ul>
+            <p>In this example, the service endpoint is:</p> <pre>http://magento.ll/index.php/rest/V1/customerGroups/:id</pre>
+            <a name="payload"></a>
+<h3>Call payload</h3>
+<p>Payloads</p>
+<a name="formats"></a>
+<h3 id="formats">Request and response formats</h3>
 <ul>
 <li>JSON</li>
 <li>XML</li>
@@ -36,7 +74,7 @@ title: REST concepts
 </ul>
 
 <a name="http-headers"></a>
-<h2>HTTP headers</h2>
+<h3>HTTP headers</h3>
         <p>Magento has many services and some require that you specify a set of HTTP headers
           in your calls.</p>
         <table style="width:100%">
@@ -71,10 +109,11 @@ title: REST concepts
           don't use any at all). Refer to the Developer documentation for the definitive list
           of HTTP headers for the Magento operation(s) you plan to use.
         </p>
+<a name="responses"></a>
+        <h2>Web API responses</h2>
+<h3>Error handling</h3>
 
-<h2>Error handling</h2>
-
-<h3>Service errors</h3>
+<h4>Service errors</h4>
 
 <p>Service operations always throw exceptions with a service-specific error code and an optional error message. Exceptions enable in-process PHP calls to handle the exception and behave accordingly.</p>
 
@@ -89,7 +128,7 @@ title: REST concepts
 <p>Services do not wrap system exceptions such as network exceptions or database connection exceptions into a service exception. Those exceptions are thrown to the client as-is so the root cause is identified.</p>
 
 <p>Error codes are service-specific. The service name field in the exception helps the caller identify the service. The combination of service name and error code provides a unique error. The service name is a namespace for all errors, including the ones introduced by extensions.</p>
-<h3>Web API error-related behavior</h3>
+<h4>Web API error-related behavior</h4>
 <ul>
 <li>Web API catches all the exceptions thrown by a service and returns an appropriate error response.</li>
 <li>Web API maintains a mapping of base service exceptions to HTTP return codes. This mapping helps determine the HTTP return code.</li>
@@ -99,7 +138,7 @@ title: REST concepts
 <li>In case of errors, response contains an <code>Error</code> element with error code returned by the service and with the error message in the payload.</li>
 <li>In case of authentication or authorization errors, response contains an <code>Error</code> element with an error code denoting authentication or authorization error codes and error messages in the payload.</li>
 </ul>
-<h2>HTTP status codes</h2>
+<h3>HTTP status codes</h3>
 
 <p>The web API returns relevant HTTP return codes, such as 200, 400, and 500, that reflect the result of a request.</p>
 
@@ -145,7 +184,7 @@ title: REST concepts
    </tbody>
 </table>
 
-<h3>Error format</h3>
+<h4>Error format</h4>
 
 <p>Errors returned by the Web API contain an error code, an error message, and parameters that enable you to generate an error message inside the client.</p>
 
