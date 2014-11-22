@@ -1,5 +1,5 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
 title: Responsive web design
 ---
  

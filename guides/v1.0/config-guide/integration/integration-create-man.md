@@ -1,5 +1,5 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
 title: Use Magento Admin to manually create an integration
 ---
 

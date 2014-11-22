@@ -1,5 +1,5 @@
 ---
-layout: default-arch
+layout: default
 title: Magento as a Modular System
 ---
 
