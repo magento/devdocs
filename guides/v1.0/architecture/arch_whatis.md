@@ -37,6 +37,5 @@ The following diagram shows the components of the Magento architecture:
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a Modular System</a>
 * <a href="{{ site.gdeurl }}architecture/____.html">Magento Framework</a>
-* <a href="{{ site.gdeurl }}architecture/mod-file-system.html">Magento File System</a>
 * <a href="{{ site.gdeurl }}architecture/____.html">Magento Database</a>
 * <a href="{{ site.gdeurl }}architecture/____.html">Commonly Used Terms</a>
