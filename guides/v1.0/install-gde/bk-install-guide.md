@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Installation Guide
+group: install-guide
+title: Installation and Upgrade Guide
+menu_title: Introduction
+menu_order: 1
+github_link: install-gde/bk-install-guide.md
 ---
-
-<h1 id="instgde-overview">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}install-gde/m2instgde-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 This guide discusses how to install Magento and extensions using Composer. 
 

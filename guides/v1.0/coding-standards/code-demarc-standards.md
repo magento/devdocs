@@ -1,9 +1,13 @@
 ---
 layout: default
+group: coding-standards
+subgroup: Code demarcation standard
 title: Code demarcation standard
+menu_title: Code demarcation standard
+menu_order: 1
+menu_node: parent
+github_link: coding-standards/code-demarc-standards.md
 ---
-
-<h1 id="m2devgde-stnd_code-demarc">{{ page.title }}</h1>
 
 Magento 2 core developers must follow the Magento code demarcation standard.
 
@@ -18,7 +22,7 @@ The standard was developed in the scope of our efforts to ensure the following:
 * Reinstate emphasis on using of jQuery templates.
 * Reinstate emphasis on decoupling HTML, CSS and JS from PHP classes.
 
-Interpret the keywords "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" as described in RFC 2119.
+Use RFC 2119 to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.
 
 <h2>Semantics</h2>
 

@@ -1,14 +1,15 @@
 ---
 layout: default
+group: fedg
+subgroup: Themes
 title: Magento theme structure
+menu_title: Magento theme structure
+menu_order: 2
+github_link: frontend-dev-guide/themes/theme-structure.md
 ---
 
-<h1 id="theme-structure">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/theme-structure.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
 <h2 id="theme-structure-intro">Introduction</h2>
-A design theme is an important part of the Magento application. This article describes the file structure of a Magento theme. 
+A design theme is an important part of the Magento application. This article describes the file structure of a Magento theme.
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
 All Magento themes are located under `app/design/<area>/<Vendor>/`.
@@ -153,11 +154,11 @@ Let's have a closer look at each particular sub-directory.
     <tr>
       <td colspan="1">
         <code>/media</code>
-        
+
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        <p>This directory contains a theme preview (a screenshot of your theme). 
+        <p>This directory contains a theme preview (a screenshot of your theme).
         </p>
       </td>
     </tr>
@@ -173,14 +174,14 @@ Let's have a closer look at each particular sub-directory.
     <tr>
       <td colspan="1">
         <code>/web/css/source</code>
-        
+
       </td>
       <td colspan="1">
         optional
       </td>
-      <td colspan="1">This directory contains theme 
+      <td colspan="1">This directory contains theme
         <code>less</code>
-         configuration files that invoke mixins for global elements from the Magento UI library, and 
+         configuration files that invoke mixins for global elements from the Magento UI library, and
         <code>theme.less</code>
          file which overrides the default variables values. <!--ADDLINK-->
       </td>
@@ -194,7 +195,7 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">
         View files that override the UI library files stored in <code>lib/web/css/source/lib</code>
-        
+
       </td>
     </tr>
     <tr>
@@ -233,13 +234,13 @@ Let's have a closer look at each particular sub-directory.
     <tr>
       <td colspan="1">
         <code>/theme.xml</code>
-        
+
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
         The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like theme name or theme version, and it is used by the Magento system to recognize the theme. Additionally, here you can see whether a theme is a standalone one or inherited from an existing theme (parent theme).
            <!--ADDLINK-->
-        
+
       </td>
     </tr>
     <tr>
@@ -268,7 +269,7 @@ Apart from the configuration file and theme metadata file, all theme files fall 
 <h3 id="theme-structure-pub">Public theme files (static view files)</h3>
 A set of theme files that are returned by the sever to a browser as is, without any processing, are called the *static files* of a theme. This files usually can be accessed by a direct link from the frontend, so they are distinguished as public theme files. They are: images, .CSS styles, JavaScript files and fonts.
 
-Static files can be located in a theme directory as follows: 
+Static files can be located in a theme directory as follows:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 ├──&nbsp;media/
@@ -278,7 +279,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 │	├──&nbsp;images/
 │	├──&nbsp;js/
 </pre>
-The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files. 
+The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
 
 <div class="bs-callout bs-callout-info" id="info">
   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
@@ -290,7 +291,7 @@ Keep in mind that <code>styles.css</code> and other static files are <a href="{{
 <h3>Non-public theme files</h3>
 Those files, which cannot be accessed directly from the frontend, are distinguished as non-public theme files. These are: `.less` files, templates, layouts and configuration files.
 
-Non-public view files can be located in a theme directory as follows: 
+Non-public view files can be located in a theme directory as follows:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 ├──&nbsp;Magento_&lt;module&gt;/&nbsp;

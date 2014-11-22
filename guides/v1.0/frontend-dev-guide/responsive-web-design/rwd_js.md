@@ -1,11 +1,12 @@
 ---
 layout: default
+group: fedg
+subgroup: Responsive web design
 title: JavaScript in a responsive design
+menu_title: JavaScript in a responsive design
+menu_order: 4
+github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 ---
- 
-<h1 id="fedg_rwd_js">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/responsive-web-design/rwd_overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 To enable pages to load, we excluded JavaScript from the page head block and integrated Magento 2 with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
 
@@ -25,7 +26,7 @@ See one of the following sections for more information
 *	<a href="#fedg_rwd_js_matchmedia">Using matchMedia.js</a>
 *	<a href="#fedg_rwd_js_resp">Using responsive.js</a>
 *	<a href="#fedg_rwd_js_nav">Using navigation-menu.js</a>
-	
+
 <h2 id="fedg_rwd_js_matchmedia">Using matchMedia.js</h2>
 
 <a href="https://github.com/magento/magento2/blob/master/lib/web/matchMedia.js" target="_blank">matchMedia.js</a> enables you to manipulate JavaScript for the desktop or mobile viewports. In the Blank theme, `responsive.js` toggles the behavior when the screen size reaches the breakpoint of 768px.
@@ -42,14 +43,14 @@ The `mediaCheck` call follows:
 
 In `responsive.js`, you can see how the following elements are toggled from the mobile to the desktop version.
 
-*	The link to the shopping cart: For the desktop viewport, clicking the link runs JavaScript and opens the mini shopping cart list (a drop-down list that contains links to customer's items in the shopping cart). 
+*	The link to the shopping cart: For the desktop viewport, clicking the link runs JavaScript and opens the mini shopping cart list (a drop-down list that contains links to customer's items in the shopping cart).
 
-	For the mobile viewport, clicking the link opens the shopping cart page. 
-	
-	The behavior of the same block in the desktop and mobile viewports results from separate JavaScript widgets that are responsible for managing the block's behavior based on the viewport. 
-	
+	For the mobile viewport, clicking the link opens the shopping cart page.
+
+	The behavior of the same block in the desktop and mobile viewports results from separate JavaScript widgets that are responsible for managing the block's behavior based on the viewport.
+
 	With the specified breakpoint, `matchMedia.js` controls which JavaScript widget is applied to the block when the screen size is a desktop or a mobile device.
-	
+
 *	Checkout progress: For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps, and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.
 
 *	Product image zoom on product page: This element is switched off for the mobile viewport and is switched on for the desktop viewport.
@@ -67,9 +68,9 @@ Responsible for rearranging navigation and header links for the desktop and mobi
 
 <h3 id="fedg_rwd_js_nav_mobile">Mobile Navigation</h3>
 
-In a mobile viewport, <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/navigation-menu.js" target="_blank">navigation-menu.js</a> copies the existing navigation menu `<nav class="navigation">`, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag `<div class="page wrapper">`. 
+In a mobile viewport, <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/navigation-menu.js" target="_blank">navigation-menu.js</a> copies the existing navigation menu `<nav class="navigation">`, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag `<div class="page wrapper">`.
 
-`navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings block (language switcher, currency switcher) to the mobile navigation. 
+`navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings block (language switcher, currency switcher) to the mobile navigation.
 
 The mobile navigation moves left and it slides from the left side when the navigation menu button is clicked.
 
@@ -93,14 +94,14 @@ Sample of how it might look:
 
 <h2 id="fedg_rwd_include-js">Including JavaScript Files In Your Responsive Theme</h2>
 
-The Blank theme layout file, <a href="{{ site.mage2000url }}blob/master/app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml</a>, already has `responsive.js`, `navigation-menu.js`, and `matchMedia.js` included. 
+The Blank theme layout file, <a href="{{ site.mage2000url }}blob/master/app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml</a>, already has `responsive.js`, `navigation-menu.js`, and `matchMedia.js` included.
 
 When you add a new theme, you include them in your responsive theme layout as follows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/1f24ae464c0f1727899a.js"></script>
 
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>

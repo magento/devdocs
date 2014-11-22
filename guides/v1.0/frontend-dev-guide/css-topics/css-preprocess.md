@@ -1,10 +1,13 @@
 ---
 layout: default
+group: fedg
+subgroup: CSS
 title: CSS preprocessing
+menu_order: 2
+menu_title: CSS preprocessing
+github_link: frontend-dev-guide/css-topics/css-preprocess.md
 ---
 
-<h1 id="fedg-css-preprocessing">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}frontend-dev-guide/css-topics/css-preprocess.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <p>The Magento publisher supports CSS preprocessing and uses the composite CSS preprocessor.</p>
 <p>The composite CSS preprocessor consists of these independent preprocessors:</p>
 
@@ -14,6 +17,7 @@ title: CSS preprocessing
 <p>By default, the Magento publisher finds and publishes CSS and other view static files in the <code>[your Magento install dir]/pub</code> directory.</p>
 
 <h2 id="fedg_css-less-intro">Leaner CSS (LESS) preprocessor</h2>
+
 LESS brings dynamic behavior to CSS, and extends CSS with new features such as variables, functions, mixins, nested rules and others.
 
 You can use the Magento fallback mechanism to override existing LESS files when the default instructions do not meet your needs, just as you can for regular CSS. As another option, you can extend existing libraries by creating a new LESS file that is automatically included by LESS preprocessing.

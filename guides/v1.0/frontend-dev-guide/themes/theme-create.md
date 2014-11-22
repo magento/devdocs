@@ -1,11 +1,12 @@
 ---
 layout: default
+group: fedg
+subgroup: Themes
 title: Create a theme
+menu_title: Create a theme
+menu_order: 3
+github_link: frontend-dev-guide/themes/theme-create.md
 ---
-
-<h1 id="layout_theme_how-to">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/theme-create.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="layout_theme_how-to_overview">Overview of Creating a Theme</h2>
 
@@ -133,7 +134,7 @@ At this point your theme file structure looks as follows:
 			│   │   │   ├── logo.png</pre>
 
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>

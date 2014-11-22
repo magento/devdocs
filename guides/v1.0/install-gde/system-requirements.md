@@ -1,22 +1,13 @@
 ---
 layout: default
+group: install-guide
+subgroup: System requirements
+title: System requirements
+menu_title: System requirements
+menu_order: 1
+menu_node: parent
+github_link: install-gde/system-requirements.md
 ---
-
-<section class="page-intro">
-	<div class="container">
-		<h2 class="page-heading">frontend developer’s guide</h2>
-	</div>
-</section>
-
-
-<div class="container">
-
-<!-- main content -->
-
-	<section class="content">
-		<div class="content-wrap">
-
-	<p><a href="{{ site.githuburl }}install-guide/system-requirements.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Before you install Magento 2, make sure your system meets or exceeds the following requirements:
 
@@ -84,62 +75,6 @@ print_hi('Tom')
 	<p>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sin</p>
 
 	<blockquote>I do not fear computers. I fear the lack of them. Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur.<cite>Isaac Asimov</cite></blockquote>
-
-
-	</div>
-</section>
-
-<!-- /main content -->
-
-
-
-<!-- sidebar -->
-
-<aside class="sidebar">
-	<div class="sidebar-wrapper">
-		<a href="#">Introduction to Magento 2 Theming</a>
-
-		<h4>Create a theme</h4>
-		<ul class="menu">
-			<li><a href="#">Lorem ipsum dolor sit amet</a></li>
-			<li><a href="#">Consectetur adipisicing elit</a>
-				<ul>
-					<li><a href="#">Consectetur adipisicing elit</a></li>
-					<li><a href="#">Excepteur sint occaecat</a>
-						<ul>
-							<li><a href="#">Consectetur elit</a></li>
-							<li><a href="#">Excepteur occaecat</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-			<li><a href="#">Consectetur adipisicing elit</a></li>
-		</ul>
-
-		<h4>justo sem egesta nibh</h4>
-		<ul class="menu">
-			<li><a href="#">Lorem ipsum dolor sit amet</a></li>
-			<li><a href="#">Consectetur adipisicing elit</a>
-				<ul>
-					<li><a href="#">Consectetur adipisicing elit</a></li>
-					<li><a href="#">Excepteur sint occaecat</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Consectetur adipisicing elit</a></li>
-		</ul>
-
-	</div>
-
-</aside>
-
-</div>
-
-<!-- /sidebar -->
-
-
-
-
-
 
 
 

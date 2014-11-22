@@ -1,10 +1,13 @@
 ---
 layout: default
+group: fedg
+subgroup: Javascript
 title: jQuery widget coding standard
+menu_title: jQuery widget coding standard
+menu_order: 7
+github_link: frontend-dev-guide/javascript/jquery-widget-guidelines.md
 ---
 
-<h1 id="fedg_jq_widget_stnd">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/jquery-widget_coding-stnd.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="fedg_jq-widget-coding-stnd_overview">Overview</h2>
 <p>Magento 2 system uses the <a href="http://jqueryui.com/widget/" target="_blank">jQuery UI Widget Factory</a> library for implementing user interface controls in JavaScript.</p>
 <p>Magento has developed a standard for widget implementing, which is mandatory for Magento 2 core developers.</p>

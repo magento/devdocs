@@ -1,19 +1,19 @@
 ---
 layout: default
+group: coding-standards
+subgroup: DocBlock standards
 title: DocBlock standard
+menu_title: DocBlock standard
+menu_order: 1
+github_link: coding-standards/docblock-standards.md
 ---
-
-<h1 id="m2devgde-stnd_DocBlock">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}extension-dev-guide/test/stnd_DocBlock.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
 
 <p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.</p>
 <p>Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.</p>
 <p>Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the key words "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL."</p>
-
+<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."</p>
 
 <h2 id="scope">Scope of the standard</h2>
 
@@ -26,7 +26,7 @@ The goal of this standard is to unify usage of code DocBlocks for all files, not
 
 Each Magento source code file must have a DocBlock header with short description of the file. After the short description, there can be a long description.
 
-Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from `*`. 
+Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from `*`.
 
 If description or short description happens to be the first one after DocBlock opening tag (`/**`) or last one before closing tag (`*/`), it should not be separated with an empty line.
 
@@ -66,7 +66,7 @@ If description or short description happens to be the first one after DocBlock o
 
 A structural element is defined in [phpDocumentor](http://phpdoc.org/) as part of imperative source code, such as PHP or JavaScript, or procedural SQL. For example: namespace, class, interface, function, property, method, and so on.
 
-If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element. 
+If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element.
 
 So in general case, classes that are declared in dedicated files, must have one DocBlock, which refers to the class and file at the same time.
 

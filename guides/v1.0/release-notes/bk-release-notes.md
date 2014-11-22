@@ -1,18 +1,11 @@
 ---
 layout: default
 group: release-notes
-subgroup: New features
-title: Magento 2 Release Notes
-menu_title: New features
+title: Release Notes
+menu_title: Release Notes
 menu_order: 1
 github_link: release-notes/bk-release-notes.md
 ---
 
-## New features and enhancements
-
-New features and enhancements.
-
-### New features
-
-### Enhancements
+Here are the release notes.
 

@@ -1,11 +1,11 @@
 ---
 layout: default
+group: fedg
+subgroup: CSS
 title: CSS in themes
+menu_order: 3
+github_link: frontend-dev-guide/css-topics/css-themes.md
 ---
-
-<h1 id="fedg_css-in-themes">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/css-themes.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_css-in-themes_overview">Overview</h2>
 
@@ -53,11 +53,9 @@ This example shows how to specify an Internet Explorer 9-specific stylesheet:
 <script src="https://gist.github.com/xcomSteveJohnson/a39c112adc67b86bd376.js"></script>
 
 
-
-
 #### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS overview</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-overview.html">Magento 2 theming</a>
 

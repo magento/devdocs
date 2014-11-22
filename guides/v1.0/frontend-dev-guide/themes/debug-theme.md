@@ -1,11 +1,12 @@
 ---
 layout: default
+group: fedg
+subgroup: Themes
 title: Locate templates, layouts, and styles
+menu_title: Locate templates, layouts, and styles
+menu_order: 6
+github_link: frontend-dev-guide/themes/debug-theme.md
 ---
-
-<h1 id="debug-theme">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/debug-theme.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="debug-theme-intro">Introduction</h2>
 When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files that a Magento storefront uses.
@@ -15,7 +16,7 @@ To locate the template that is responsible for a specific part of the storefront
 
 To enable template hints:
 
-1. Go to **Stores** > **Configuration** > ADVANCED > **Developer**.
+1. Click **Stores** > **Configuration** > ADVANCED > **Developer**.
 
 2. In the **Scope** dropdown in the upper-left corner select the store view you for which you want the template hints.
 
