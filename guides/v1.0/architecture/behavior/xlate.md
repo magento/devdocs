@@ -1,11 +1,13 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Translation
 title: Translation
+menu_title: Translation
+menu_order: 1
+menu_node: parent
+github_link: architecture/behavior/xlate.md
 ---
-
-<h1 id="m2devgde-xlate">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/holding-pen/xlate.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-xlate-intro">Introduction to Magento translations</h2>
 
