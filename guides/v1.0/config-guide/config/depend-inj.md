@@ -23,7 +23,7 @@ See one of the following sections:
 
 Dependency injection is used in Magento 2 as an alternative to the `Mage` class used in Magento 1. With dependency injection, an object does not need to locate an object or value on which it depends. Instead, a PHP class declares its dependencies in a constructor&mdash;a process referred to as *constructor dependency injection*.
 
-A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult. 
+A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
 
 In simple terms, if ModuleA needs to access some functionality in ModuleB, then ModuleA is dependent on ModuleB. ModuleA consumes the service offered by ModuleB, so ModuleA is the consumer and ModuleB is the dependent.
 
@@ -63,7 +63,7 @@ Magento reads constructors using reflection and we recommend you use the Magento
 
 The parameters specified for a class type are inherited by its descendant classes.
 
-To define the interface preferences for the object manager, use `app/etc/di/*.xml`, `[your module dir]/etc/{areaCode}/di.xml`, and `[your module dir]/etc/di.xml` files depending on the level. 
+To define the interface preferences for the object manager, use `app/etc/di/*.xml`, `[your module dir]/etc/{areaCode}/di.xml`, and `[your module dir]/etc/di.xml` files depending on the level.
 
 For example, to set the interface preferences for the Magento Admin, use `app/code/core/Magento/Backend/etc/adminhtml/di.xml` as follows:
 
@@ -89,15 +89,15 @@ Object manager configurations can be specified at any of the following levels:
 
 See one of the following sections for more information:
 
-*	<a href="#dep-inj-mod-type">Type configurations</a>	
-*	<a href="#dep-inj-map">Interface preferences</a>	
+*	<a href="#dep-inj-mod-type">Type configurations</a>
+*	<a href="#dep-inj-map">Interface preferences</a>
 *	<a href="#dep-inj-compile">Definition compiler tool</a>
 
 <h3 id="dep-inj-mod-type">Type configurations</h3>
 
 <p class="q">Reviewer: The following sentence makes no sense, please clarify</p>
 
-A type configuration specifies the parameters that must be used to instantiate a class and lifestyle of class instances. 
+A type configuration specifies the parameters that must be used to instantiate a class and lifestyle of class instances.
 
 See one of the following sections for more information:
 
@@ -105,7 +105,7 @@ See one of the following sections for more information:
 *	<a href="#dep-inj-mod-type-args">Arguments</a>
 
 <h3 id="dep-inj-mod-type-type">Specify types</h3>
-	
+
 Sample dependency injection by type:
 
 <script src="https://gist.github.com/xcomSteveJohnson/0cac7bd1610f55e25a90.js"></script>
@@ -151,7 +151,7 @@ Sample argument that creates instances of `Magento\Core\Model\Session` with the 
 		<pre>&lt;argument xsi:type="object">
 {Type_Name}&lt;/argument></pre>
 		<p><strong>Object with specified lifetime</strong></p>
-		<pre>&lt;argument xsi:type="object" 
+		<pre>&lt;argument xsi:type="object"
 shared="{shared}">{Type_Name}&lt;/argument></pre></td>
 		<td>Creates an instance of <code>Type_Name</code> type and passed as argument. Any class name, interface name, or virtual type name can be passed as <code>Type_Name</code>. <code>shared</code> defines the lifetime of a created instance. </td>
 		<td>n/a</td>
@@ -172,7 +172,7 @@ shared="{shared}">{Type_Name}&lt;/argument></pre></td>
 		<pre>&lt;argument xsi:type="string">
 {someValue}&lt;/argument></pre>
 		<p><strong>Translated string</strong></p>
-		<pre>&lt;argument xsi:type="string" 
+		<pre>&lt;argument xsi:type="string"
 translate="true">{someValue}&lt;/argument></pre></td>
 		<td><code>someValue</code> is passed as string.</td>
 		<td>Any value is passed as a string.</td>
@@ -249,9 +249,7 @@ translate="true">{someValue}&lt;/argument></pre></td>
 </table>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>String literals are case-sensitive.</p></span>
+  <p>String literals are case-sensitive.</p>
 </div>
 
 <table>
@@ -282,7 +280,7 @@ translate="true">{someValue}&lt;/argument></pre></td>
 	<tr>
 		<td><pre>&lt;argument xsi:type="init_parameter">
 {Constant::NAME}&lt;/argument></pre></td>
-		<td>Global application argument represented by 
+		<td>Global application argument represented by
 <code>Constant::NAME</code> looked up and passed as argument.</td>
 		<td>Constant the containing name of a global argument.</td>
 	</tr>
@@ -332,7 +330,7 @@ translate="true">{someValue}&lt;/argument></pre></td>
 		</tr>
 	<tr>
 		<td><pre>&lt;argument xsi:type="array">
-&lt;item key="someItem" 
+&lt;item key="someItem"
 xsi:type="string">someVal&lt;/item>
 &lt;/argument></pre></td>
 		<td>Array with elemens corresponding to the items passed as argument. Array can contain an infinite number of items. Each item can be any type as argument, including an array itself, or an object type.</td>
@@ -384,7 +382,7 @@ Example:
 
 <script src="https://gist.github.com/xcomSteveJohnson/76cab1f42021975b0531.js"></script>
 
-The preceding example configures `Magento\Filesystem` as not shared so that all clients get separate instances of it. 
+The preceding example configures `Magento\Filesystem` as not shared so that all clients get separate instances of it.
 
 Every instance of `Magento\Filesystem` gets a separate instance of the adapter.
 
@@ -394,13 +392,13 @@ Every instance of `Magento\Filesystem` gets a separate instance of the adapter.
 
 Injectable
 
-:	Data object with a singleton lifecycle, typically global system services and value objects. Injectables have no identity and thus do not require a user's input or persisted data to create. These objects can be created by the object manager when necessary. 
+:	Data object with a singleton lifecycle, typically global system services and value objects. Injectables have no identity and thus do not require a user's input or persisted data to create. These objects can be created by the object manager when necessary.
 
 	Examples of injectables: database adapter, WebService adapter, layout model, and so on.
 
 Non-injectable
 
-:	Data object with a transient lifecycle. Non-injectables are data objects or primitive values that have an identity. Non-injectables **cannot** be created by the object manager because it requires interaction with a user (that is, additional information from user-provided arguments). 
+:	Data object with a transient lifecycle. Non-injectables are data objects or primitive values that have an identity. Non-injectables **cannot** be created by the object manager because it requires interaction with a user (that is, additional information from user-provided arguments).
 
 	Non-injectables cannot be requested in a constructor. Examples of non-injectables include product, order, cart items, users, and so on. Use a factory to create this type of object.
 
@@ -416,7 +414,7 @@ Do not push injectables to non-injectables because it violates the <a href="http
 
 <h3 id="dep-inj-mod-type-fact">Factories</h3>
 
-Use factories to create the non-injectable objects; that is, a factory facilitates creating an object using another object. When an object needs to create another object, it declares a dependency on a factory of the object it creates. 
+Use factories to create the non-injectable objects; that is, a factory facilitates creating an object using another object. When an object needs to create another object, it declares a dependency on a factory of the object it creates.
 
 Typically, a factory is simple. If the object manager encounters a non-existing factory in runtime mode or using the compiler, the object is generated. More complicated factories that make decision which implementation to instantiate based on incoming parameters must be written manually.
 
@@ -438,21 +436,21 @@ To use the preceding sample, substitute an existing class with a proxy using the
 
 <h2 id="dep-inj-map">Interface preferences</h2>
 
-In any object-oriented application, all constructor signatures contain interface names in parameter type hints. This does not give the object manager enough information to instantiate an object. 
+In any object-oriented application, all constructor signatures contain interface names in parameter type hints. This does not give the object manager enough information to instantiate an object.
 
 *Interface preferences* are used to map default implementations to interfaces for the object manager in `di` subnode as follows:
 
 *	Mapping interface preferences in the global area using `app/etc/di/config.xml`:
 
 	<script src="https://gist.github.com/xcomSteveJohnson/f146b684cd3a5ccf19e3.js"></script>
-	
+
 *	Mapping interface preferences in the Admin area using `app/code/core/Magento/Backend/etc/adminhtml/di.xml`:
 
 	<script src="https://gist.github.com/xcomSteveJohnson/95eae2001613857a8d42.js"></script>
-	
-In the preceding examples, `Magento\Core\Model\Url` is declared as the default implementation for `Magento\Core\Model\UrlInterface` in the global area. 
 
-`Magento\Backend\Model\Url` is set as the default implementation for the Admin area (`adminhtml`). 
+In the preceding examples, `Magento\Core\Model\Url` is declared as the default implementation for `Magento\Core\Model\UrlInterface` in the global area.
+
+`Magento\Backend\Model\Url` is set as the default implementation for the Admin area (`adminhtml`).
 
 When the object manager encounters `Magento\Core\Model\UrlInterface`, it provides the default implementation for specified area.
 

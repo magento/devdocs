@@ -39,9 +39,7 @@ Translating the names, titles and phrases used in Magento involves the following
 2.	Upload your new dictionary to Magento using the <a href="#m2devgde-xlate-packtool">language package tool</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Only one variant of translation can be used for a word or phrase in a pack. Otherwise, the system will return an error.</p></span>
+  <p>Only one variant of translation can be used for a word or phrase in a pack. Otherwise, the system will return an error.</p>
 </div>
 
 Inline translation via the Text Editor is a customization tool used in the storefront. Changes made in the Text Editor are not recorded in an instance's dictionary; they are stored in the library in an instance's database.

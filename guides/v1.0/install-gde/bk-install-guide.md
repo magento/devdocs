@@ -1,13 +1,13 @@
 ---
 layout: default
 group: install-guide
-title: Installation and Upgrade Guide
+title: Installation Guide
 menu_title: Introduction
 menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
 
-This guide discusses how to install Magento and extensions using Composer. 
+This guide discusses how to install Magento and extensions using Composer.
 
 <h2 id="instgde-overview-composer">Composer and Magento</h2>
 
@@ -58,7 +58,7 @@ After verifying your prerequisites, perform the following tasks in order to prep
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Installing Composer</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Cloning the Magento 2 GitHub repository</a>
-	
+
 <h3>Step 3: Installing and verifying</h3>
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling the Magento 2 software</a>
@@ -71,7 +71,7 @@ Following are the major topics in this guide:
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento 2</a>
 
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a> 
+	*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 	*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Setting security options</a>

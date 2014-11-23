@@ -47,23 +47,17 @@ github_link: coding-standards/js-coding-standards.md
 <p>Source code line length must not exceed 120 characters.</p>
 <p>Recommended line length is 80 characters.</p>
 <div class="bs-callout bs-callout-info" id="info">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
-      <ul class="note">
+      <ul>
          <li>If a comment line contains an example command or a literal URL longer than 120 characters, that line can be longer than 120 characters for ease of cutting and pasting.</li>
          <li>Do not be concerned about header guards that exceed 120 characters.</li>
       </ul>
-   </span>
 </div>
 <h3 id="fedg_js-coding-format_terminate">Line termination</h3>
 <p>Line termination follows the UNIX text file convention.</p>
 <p>Lines must end with a single linefeed (LF) character.</p>
 <p>Linefeed characters are represented as ordinal 10, or hexadecimal (0x0A).</p>
 <div class="bs-callout bs-callout-info" id="info">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
       <p>Do <em>not</em> use carriage returns (CR) as is the convention in Apple OS's (0x0D) or the carriage return&ndash;linefeed combination (CRLF) as is standard for the Windows OS (0x0D, 0x0A).</p>
-   </span>
 </div>
 <h3>Multiline string literals</h3>
 <p>Use string concatenation:</p>
@@ -236,12 +230,9 @@ var a3 = [x1];
 var a4 = [];</pre>
 </blockquote>
 <div class="bs-callout bs-callout-info" id="info">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
       <p>The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.</p>
       <p>Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.</p>
       <script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
-   </span>
 </div>
 <p>Object constructors don't have the same problems, but for readability and consistency object literals should be used.</p>
 <blockquote>
@@ -308,8 +299,6 @@ var o2 = {
    </tbody>
 </table>
 <div class="bs-callout bs-callout-info" id="info2">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
       <p>Here are some examples of non-obvious Boolean expressions results:</p>
       <p>
       <pre>Boolean('0') == true
@@ -329,7 +318,6 @@ undefined != false</pre>
 {} != true
 {} != false</pre>
       </p>
-   </span>
 </div>
 <h3 id="operators">Boolean operators (&& and ||)</h3>
 <p>These binary Boolean operators are short-circuited, and evaluate to the last evaluated term.</p>
@@ -537,15 +525,12 @@ var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.</pre>
 };</pre>
 </blockquote>
 <div class="bs-callout bs-callout-info" id="info">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
       <p>The following is <b>incorrect</b>:</p>
       <pre>WRONG_Object.prototype = {
     a          : 0,
     b          : 1,
     lengthyName: 2
 };</pre>
-   </span>
 </div>
 <h3 id="associative-arrays">Do not use associative arrays</h3>
 <p>Do not use associative arrays.</p>

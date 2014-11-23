@@ -2,7 +2,7 @@
 layout: default
 title: Payment modules
 ---
- 
+
 <h1 id="m2devgde-pymt">{{ page.title }}</h1>
 
 <p><a href="{{ site.githuburl }}architecture/modules/payment.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
@@ -15,7 +15,7 @@ Please note that this article provides only payment module-specific recommendati
 
 <h2 id="m2devgde-cache-implementation">Payments implementation</h2>
 
-In Magento 2.x, payment methods are structured follows: all abstract logic common for all payments methods in located in a separate module, and the implementations of particular methods are located in corresponding modules, grouped by payment gateway or by type. This enables you to easily configure the set of payment methods your store provides by disabling the modules for the solutions you are not interested in. 
+In Magento 2.x, payment methods are structured follows: all abstract logic common for all payments methods in located in a separate module, and the implementations of particular methods are located in corresponding modules, grouped by payment gateway or by type. This enables you to easily configure the set of payment methods your store provides by disabling the modules for the solutions you are not interested in.
 
 Next section gives an overview of all payment modules and recommendations on payment module disabling and enabling.
 
@@ -37,9 +37,9 @@ The following table gives details about payment modules, their functionality and
 	<tr>
 		<td>Magento_Paypal</td>
 		<td>Implementation of all PayPal payment methods:
-	<ul>	
-<li>Payments Advanced</li> 
-<li>Payments Pro</li> 
+	<ul>
+<li>Payments Advanced</li>
+<li>Payments Pro</li>
 <li>Website Payments Standard (aka PayPal Standard)</li>
 <li>Payflow Pro</li>
 <li>Payflow Link</li>
@@ -50,8 +50,8 @@ The following table gives details about payment modules, their functionality and
 		<td>Magento_Payment</td>
 		<td><ul><li>Abstract logic common for all payment methods, including CC (credit card) methods</li>
 <li>Implementation of the Zero Subtotal Checkout payment method.</li></ul></td>
-		<td> Not supposed to be disabled. 
-		
+		<td> Not supposed to be disabled.
+
 		If you decide to disable make sure to disable all modules which depend on <code>Magento_Payment</code>. You can check these dependencies in the <code>app/code/Magento/&lt;module>/etc/module.xml</code> under the <code>&lt;depends/></code> node.</td>
 	</tr>
 	<tr>
@@ -62,11 +62,11 @@ The following table gives details about payment modules, their functionality and
 	<tr>
 		<td>Magento_OfflinePayments</td>
 		<td>Implementation of the payment methods, which work without third-party gateways:
-<ul>	
+<ul>
 <li>Bank Transfer Payment</li>
 <li>Cash on Delivery</li>
 <li>Check/Money Order</li>
-<li>Credit Card (saved)</li> 
+<li>Credit Card (saved)</li>
 <li>Purchase Order</li>
 <li>Configuration of the Zero Subtotal Checkout payment method.</li></ul></td>
 		<td>Can be disabled/enabled.</td>
@@ -79,9 +79,7 @@ The following table gives details about payment modules, their functionality and
 </table>
 
 <div class="bs-callout bs-callout-danger" id="danger">
-  <img src="{{ site.baseurl }}common/images/icon_caution.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>If you plan to disable a payment method by disabling the corresponding module, Magento recommends to avoid using it for payment processing. We cannot guarantee that payments are processed and stored correctly after you disable the module.</p></span>
+  <p>If you plan to disable a payment method by disabling the corresponding module, Magento recommends to avoid using it for payment processing. We cannot guarantee that payments are processed and stored correctly after you disable the module.</p>
 </div>
 
 

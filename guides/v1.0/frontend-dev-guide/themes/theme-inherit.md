@@ -33,9 +33,7 @@ The Orange theme inherits from the Blank theme:
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>A parent and a child theme can belong to different vendors.</p></span>
+  <p>A parent and a child theme can belong to different vendors.</p>
 </div>
 
 

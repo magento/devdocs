@@ -30,17 +30,13 @@ To customize a theme layout for your store, you can:
 To perform either task, you must use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML instructions</a>, which are directives that render your store layout according to your configuration. No PHP coding is required to work with themes.
 
   <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_terms">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend default layouts or override them. </p></span>
+    <p>Although you can edit any layout file, Magento strongly recommends you not modify <a href="#layout_terms">default layouts</a>; instead, perform all customizations in theme layout files, which can either extend default layouts or override them.</p>
   </div>
 
 Magento layouts can be provided by modules and by design themes. To change the appearance of your storefront, you need only to provide additional layout instructions. When Magento processes layout files, it merges them with other layouts or overrides them. Layout files with such instructions are called *extending layout files*.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Unlike previous versions of Magento, there is no need to duplicate any layout instructions that are left unchanged. </p></span>
+  <p>Unlike previous versions of Magento, there is no need to duplicate any layout instructions that are left unchanged.</p>
 </div>
 
 Finally, you can also override a theme layout completely. Layout files with such instructions are called *overriding layout files*. These files override default layouts or parent theme layouts.
@@ -170,9 +166,7 @@ The Magento software:
 1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p></span>
+  <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
 </div>
 
 <h3 id="layout_process_ex">Layout processing example</h3>

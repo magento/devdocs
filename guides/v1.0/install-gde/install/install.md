@@ -33,35 +33,34 @@ After you complete the tasks discussed in the preceding section, update Composer
 2.	Change to the Magento 2 `setup` directory. For example,
 
 	`cd /var/www/html/magento2/setup`
-	
+
 3.	Enter `composer install`
 
 	This command updates package dependencies and can take a few minutes to complete.
-	
+
 4.	Choose what to install:
 
 	*	To install the Magento 2 system software, continue with the next section.
 	*	To install or update only the database schema, see TBD
 	*	To install or update only users and administrators, see TBD
 	*	To only update existing Magento 2 components, see TBD
-	
+
 	<p class="q">Reviewer: Only the first option above will be available for the GitHub Readme. The others will be available for developer beta.</p>
-	
+
 <h2 id="instgde-install-magento">Installing the Magento 2 software</h2>
 
 This section discusses how to run the command-line installer for Magento 2. The installer is designed to be run multiple times if necessary so you can:
 
-*	Provide different values 
+*	Provide different values
 
 	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options
-	
+
 *	Correct mistakes in previous installations
 *	Create additional Magento administrators
 *	Install Magento in a different database instance
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class"><p>The installer doesn't overwrite the Magento database if you install the Magento software in the same database instance.</span>
+  <p>The installer doesn't overwrite the Magento database if you install the Magento software in the same database instance.</p>
 </div>
 
 
@@ -196,7 +195,7 @@ Some customers have more than one Magento instance running on a server with all 
 		<p><code>0</code> means SSL is not used.</p></td>
 		<td>No</td>
 	</tr>
-	
+
 	<tr>
 		<td>use_secure_admin</td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
@@ -231,8 +230,8 @@ Some customers have more than one Magento instance running on a server with all 
 		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
 		<td>No</td>
 	</tr>
-	
-	
+
+
 	</tbody>
 </table>
 

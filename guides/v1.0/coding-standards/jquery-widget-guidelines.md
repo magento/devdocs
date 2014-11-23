@@ -1,11 +1,11 @@
 ---
 layout: default
-group: fedg
-subgroup: Javascript
+group: coding-standards
+subgroup: Coding standards
 title: jQuery widget coding standard
 menu_title: jQuery widget coding standard
-menu_order: 7
-github_link: frontend-dev-guide/javascript/jquery-widget-guidelines.md
+menu_order: 2
+github_link: coding-standards/jquery-widget-guidelines.md
 ---
 
 <h2 id="fedg_jq-widget-coding-stnd_overview">Overview</h2>
@@ -154,10 +154,7 @@ $.widget('mage.accordion', $.ui.accordion, {
    <h3>You must instantiate widgets using the <code>data-mage-init</code> attribute</h3>
    <div>
       <div class="bs-callout bs-callout-info" id="info">
-         <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-         <span class="glyphicon-class">
             <p>You can use the <code>.mage()</code> plug-in to instantiate widgets that use callback methods.</p>
-         </span>
       </div>
       <p>Benefits:</p>
       <ul>
@@ -205,10 +202,7 @@ $.widget('mage.accordion', $.ui.accordion, {
    <h3>Methods and widgets must not be declared using inline JavaScript</h3>
    <div>
       <div class="bs-callout bs-callout-info" id="info">
-         <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-         <span class="glyphicon-class">
             <p>You can declare callback methods inline.</p>
-         </span>
       </div>
       <table>
          <tbody>

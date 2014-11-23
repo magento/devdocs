@@ -39,10 +39,7 @@ For example,
 In Magento, full action names also used as identifiers for sets of layout instructions (layout handles): a controller action by default loads a layout handle which coincides with its full action name. This means that page types correspond to some of the layout handles.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40"/>
-<span class="glyphicon-class">
  <p>There are also other types of layout handles, like specific page handles, as well as custom handles.</p>
- </span>
 </div>
 
 <h2 id="m2devgde-pagetype-declare">Page type declaration</h2>

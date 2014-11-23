@@ -9,7 +9,7 @@ github_link: install-gde/prereq/apache.md
 ---
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>You must run all commands on this page as a user with <code>root</code> privileges</p>
+  <p>You must run all commands on this page as a user with <code>root</code> privileges.</p>
 </div>
 
 <h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
@@ -19,7 +19,7 @@ github_link: install-gde/prereq/apache.md
 3.	Specify the type of directives that can be used in `.htaccess`. Magento uses `.htaccess` for redirects. <a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache documentation</a>.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>You must change the value of <code>Allow Override</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.
+		<p>You must change the value of <code>Allow Override</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</p>
 	</div>
 
 4.	Restart Apache: `service apache2 restart`
@@ -30,7 +30,7 @@ github_link: install-gde/prereq/apache.md
 2.	Enable <a href="http://unix.stackexchange.com/questions/57946/enable-apache-mod-rewrites-to-load-clean-urls" target="_blank">server rewrites</a>.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>You must change the value of <code>Allow Override</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory "/var/www/html"></code>.
+		<p>You must change the value of <code>Allow Override</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory "/var/www/html"></code>.</p>
 	</div>
 
 2.	Set the type of directives that can be used in `.htaccess`. Magento uses `.htaccess` for redirects. <a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache documentation</a>.

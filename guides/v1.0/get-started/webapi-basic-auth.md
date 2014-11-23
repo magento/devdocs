@@ -6,7 +6,6 @@ title: Authorize web API requests
 <p>The web API framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.
 
 
-
 Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.</p>
 
 # Authorize web API requests
@@ -14,9 +13,7 @@ Although REST and SOAP use different payloads and routing, they use the same aut
 <p><a href="{{ site.githuburl }}guides/v1.0/get-started/webapi/webapi-basic-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>The <code>AuthorizationV1Interface</code> interface discussed in this topic is not implemented yet.</p></span>
+  <p>The <code>AuthorizationV1Interface</code> interface discussed in this topic is not implemented yet.</p>
   </div>
 
 This topic provides basic information about how to authorize Web API requests.
@@ -26,9 +23,7 @@ When a merchant installs an integration, they must be informed which Magento res
 Service developers declare the list of permissions required in the integration's `webapi.xml`. This is discussed in more detail in [What is the Web API Framework?]({{ site.gdeurl }}get-started/webapi/what-is-webapi.html)).
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>The Web API framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.</p></span>
+  <p>The Web API framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.</p>
   </div>
 
 The following table shows what we expect <a href="{{ site.mage2000url }}app/code/Magento/Authz/Service/AuthorizationV1Interface.php" target="_blank">AuthorizationV1Interface</a> methods to perform. _(`AuthorizationV1Interface` is not implemented yet.)_

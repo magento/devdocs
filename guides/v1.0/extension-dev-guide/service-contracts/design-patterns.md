@@ -58,10 +58,7 @@ title: Service contract design patterns
                   <li>
                      <p>Because data interfaces include only getter functions, use <a href="#data-entity-builders">data entity builders</a> to create or modify data entities.</p>
                      <div class="bs-callout bs-callout-info" id="info">
-                        <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-                        <span class="glyphicon-class">
                            <p>You cannot modify data entity instances. Instead, you use builder functions to clone attributes for a specified entity into a new entity, change any attributes, and create a new instance.</p>
-                        </span>
                      </div>
                   </li>
                </ul>
@@ -103,10 +100,7 @@ $newCustomer = $this->customerBuilder->create();
 </pre>
                </blockquote>
                <div class="bs-callout bs-callout-info" id="info">
-                  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-                  <span class="glyphicon-class">
                      <p>To populate an entity from an HTML form, use the <code>populateWithArray($nameValuePairsArray)</code> function.</p>
-                  </span>
                </div>
                <h3 id="search-results">Data search results interfaces</h3>
                <p>When you pass search criteria to a <code>getList()</code> call, a search results interface is returned with the search results.</p>
