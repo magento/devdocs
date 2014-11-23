@@ -14,10 +14,7 @@ github_link: coding-standards/php-coding-standards.md
 <p>standard and requirements which cannot be automatically validated must be applied through rigorous code review.</p>
 <p>These standard are enforced for the core development team and are highly recommended for all developers implementing extensions and customizations for the Magento 2 product.
 <div class="bs-callout bs-callout-info" id="info">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
       <p>The numbering in these lists is static and should be used to reference specific standard when communicating with the Magento 2 development team.</p>
-   </span>
 </div>
 <h2 id="m2devgde-zend">Zend framework coding standard</h2>
 <p>Magento 2 has adopted the Zend Framework Coding Standard for PHP. Specifically, Magento 2 has the standard

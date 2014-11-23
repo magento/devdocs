@@ -23,10 +23,7 @@ To do this:
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>
-If you apply a theme a second or subsequent time, you might need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory. This directory stores the <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-structure.md">static files</a>.</p></span>
+  <p>If you apply a theme a second or subsequent time, you might need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory. This directory stores the <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-structure.md">static files</a>.</p>
 </div>
 
 
@@ -78,9 +75,7 @@ If caching is enabled in your Magento Admin panel, you must <a href="#theme-appl
 
 
 <div class="bs-callout bs-callout-warning" id="warning">
-  <img src="{{ site.baseurl }}common/images/icon_tip.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>To delete the permanent logo, go to the same location, select the check box next to the logo image, and click <b>Delete</b>.  </p></span>
+  <p>To delete the permanent logo, go to the same location, select the check box next to the logo image, and click <b>Delete</b>.</p>
 </div>
 
 <h2 id="theme-apply-clear">Clear the cache</h2>

@@ -18,10 +18,7 @@ title: Object Manager helper
 </p>
 <p>You can still provide your custom mocks if needed.</p>
 <div class="bs-callout bs-callout-info" id="info">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
       <p>Do not use the ObjectManager helper class for classes with a small number of dependencies.</p>
-   </span>
 </div>
 <h2 id="help">ObjectManager interface</h2>
 <p>The ObjectManager public interface methods enable you to:</p>

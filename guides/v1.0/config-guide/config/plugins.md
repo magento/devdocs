@@ -56,10 +56,7 @@ Several conditions influence how plugins apply to the same class/interface:
          <li>
             <p>Override an original method (a conflicting change).
             <div class="bs-callout bs-callout-info" id="info">
-               <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-               <span class="glyphicon-class">
                   <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.</p>
-               </span>
             </div>
             </p>
          </li>

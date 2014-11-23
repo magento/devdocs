@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Static file processing 
+title: Static file processing
 ---
 
 <h1 id="m2devgde-static-proc">{{ page.title }}</h1>
@@ -71,10 +71,7 @@ title: Static file processing
 <h2 id="publish-static-view-files">Static view file publication</h2>
 <p>Static files in their initial location might be not web accessible. To enable the Magento server to deliver static files, locate them in the public <code>pub/static</code> directory. The copy process is also known as <i>publication</i>.</p>
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40"/>
-<span class="glyphicon-class">
  <p>Any files that you manually upload (for example, product images), are always stored in <code>pub/media</code>.</p>
- </span>
 </div>
 <p>The publication logic depends on the application mode:</p>
 <dl>
@@ -157,7 +154,7 @@ the identified references are published from following locations:</p>
 Example: <code>css-topics/one/two/file.css</code>
 
 <table>
-   
+
    <thead>
       <tr>
          <th>Reference with context notation</th>
@@ -169,7 +166,7 @@ Example: <code>css-topics/one/two/file.css</code>
          <td><code>url([Vendor name]_[Module name]::images/image.gif)</code></td>
 		 <td><code>url(../../../../[Vendor name]_[Module name]/images/image.gif)</code></td>
       </tr>
-      
+
    </tbody>
 </table>
 
@@ -192,7 +189,7 @@ Example: <code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code>
 		 <td><code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code></td>
 		 <td><code>url(../../../../[Vendor name]_[Module name]/images/image.gif)</code></td>
       </tr>
-      
+
    </tbody>
 </table>
 
@@ -254,7 +251,5 @@ Example: <code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code>
 
 <p>The generated URL is: <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
  <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>
- </span></div>
+</div>

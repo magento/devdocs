@@ -149,9 +149,7 @@ section[role="main"] { ... }
 <p><b>You must not hard-code CSS styles in JavaScript files.</b></p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p></span>
+  <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p>
 </div>
 
 * Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.

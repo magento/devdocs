@@ -9,7 +9,7 @@ title: JavaScript resources
 
 <h2 id="m2devgde-js-resources-intro">Overview</h2>
 
-JavaScript (JavaScript) is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScrip from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>. 
+JavaScript (JavaScript) is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScrip from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous or "lazy" JavaScript loading.
 
@@ -107,9 +107,7 @@ To make your configurations more precise and specific for different modules/them
 <li>Configurations at the module level.</li>
 
   <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p>Dependencies between the modules or themes are considered as well.</p></span>
+    <p>Dependencies between the modules or themes are considered as well.</p>
   </div>
 
 <li>Configurations at the theme module level for the ancestor themes.</li>

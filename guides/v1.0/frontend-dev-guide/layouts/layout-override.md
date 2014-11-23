@@ -19,9 +19,7 @@ Examples of customizations that involve overriding layouts:
 *	Suppressing method invocation.
 
 	<div class="bs-callout bs-callout-info" id="info">
-	<img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-		<p>Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.</p></span>
+		<p>Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.</p>
 	</div>
 
 *	Modifying method arguments.
@@ -29,9 +27,7 @@ Examples of customizations that involve overriding layouts:
 *	Setting XML attributes of blocks and containers.
 
 	<div class="bs-callout bs-callout-info" id="info">
-	<img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-		<p>Overriding is not needed to change the <code>htmlClass</code> of a container when <code>htmlClass</code> is defined in the original container. In this case, it is better to avoid renaming the class). Instead, you should target CSS rules to the original class.</p></span>
+		<p>Overriding is not needed to change the <code>htmlClass</code> of a container when <code>htmlClass</code> is defined in the original container. In this case, it is better to avoid renaming the class). Instead, you should target CSS rules to the original class.</p>
 	</div>
 
 *	Removing block arguments.

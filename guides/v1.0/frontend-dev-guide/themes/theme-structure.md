@@ -49,9 +49,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 Let's have a closer look at each particular sub-directory.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>The directories and files structure described below is the most extended one. It may not coincide with the structure of your store.</p></span>
+  <p>The directories and files structure described below is the most extended one. It may not coincide with the structure of your store.</p>
 </div>
 <table>
   <tbody>
@@ -282,10 +280,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>
-Keep in mind that <code>styles.css</code> and other static files are <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> to <code>/pub/static/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory to be actually accessible for browsers.</p></span>
+  <p>Keep in mind that <code>styles.css</code> and other static files are <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> to <code>/pub/static/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory to be actually accessible for browsers.</p>
 </div>
 
 <h3>Non-public theme files</h3>

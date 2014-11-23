@@ -19,22 +19,20 @@ To make a REST call for the Customer service:
 <h3>Step 1: Look up the call in webapi.xml</h3>
 <div><p>This section discusses how to make an HTTP POST call to create a customer using the <code>createCustomer()</code> method.</p>
 <ol><li>Open <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a>.</li>
-<li><p>Find the desired call; for example,</p> 
+<li><p>Find the desired call; for example,</p>
 <pre>
 &lt;route url="/V1/customerAccounts" method="POST">
     &lt;service class="Magento\Customer\Service\V1\CustomerAccountServiceInterface" method="createCustomer"/>
     &lt;resources>
         &lt;resource ref="anonymous"/>
     &lt;/resources>
-&lt;/route> 
+&lt;/route>
 </pre></li></ol>
 <p>The <code>route url</code> specifies the URI of the REST call. (Step 4 shows the entire URL.)</p>
 <p>In this example, the URI is <code>POST /V1/customerAccounts</code></p>
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
   <ul class="note"><li>Any value prefixed by a colon character is a required input.</li>
-  <li>Some REST calls have no route; for these, use the Base URL only.</li></ul></span>
+  <li>Some REST calls have no route; for these, use the Base URL only.</li></ul>
   </div>
 </div>
 
@@ -45,9 +43,7 @@ To make a REST call for the Customer service:
 <script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
 <p>In this case, the data service object is <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/CustomerDetails.php" target="_blank">\Magento\Customer\Service\V1\Data\CustomerDetails</a>.</p>
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>To use <code>CustomerDetails</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p></span>
+  <p>To use <code>CustomerDetails</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
   </div>
 
 </div>
