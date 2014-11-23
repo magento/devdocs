@@ -280,7 +280,7 @@ composer install
 cd setup
 composer install</pre>
 
-4.	Repeat the tasks discussed in <a href="#installing-or-reinstalling-the-magento-2-software">Installing or reinstalling the Magento 2 software</a>.
+4.	Repeat the tasks discussed in TBD.
 
 #### Next step
 
