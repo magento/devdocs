@@ -1,3 +1,5 @@
+/* SRJ - code/pre overrides so text and background colors match */
+
 pre {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
@@ -16,3 +18,10 @@ code {
 	padding: 3px;
 	color: #000;
 }
+
+/* SRJ - reviewer question */
+
+p.q 	{
+	font-size: 15pt;
+	color: red;
+	}

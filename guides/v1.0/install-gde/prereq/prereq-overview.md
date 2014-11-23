@@ -1,11 +1,12 @@
 ---
 layout: default
-group: install-guide
+group: install
 subgroup: Prerequisites
-title: Prerequisites for installing Magento 2
-menu_title: Prerequisites for installing Magento 2
+title: Prerequisites 
+menu_node: parent
+menu_title: Prerequisites
 menu_order: 1
-github_link: install-gde/prereq/prereq.md
+github_link: install-gde/prereq-overview.md
 ---
 
 <h2 id="instgde-prereq-overview">Before you begin</h2>
@@ -46,7 +47,7 @@ To check your system for prerequisites, enter the following commands:
 Copyright (c) 1997-2014 The PHP Group
 Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 
-	To install or upgrade PHP, see <a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>.
+	To install or upgrade PHP, see <a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP required extensions</a>.
 
 *	Apache
 
@@ -69,16 +70,20 @@ Server built:   Jul 23 2014 14:17:29</pre>
 	
 	`mysql -u magento -p`
 	
-	You must run MySQL version 5.5 or later as the following result indicates:
+	You must run MySQL version 5.6 or later as the following result indicates:
 	
 	<pre>Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 78
-Server version: 5.5.40 MySQL Community Server (GPL) by Remi
-Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
-Oracle is a registered trademark of Oracle Corporation and/or its
-affiliates. Other names may be trademarks of their respective
-owners.
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</pre>
+	Your MySQL connection id is 871
+	Server version: 5.6.21 MySQL Community Server (GPL)
+
+	Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+
+	Oracle is a registered trademark of Oracle Corporation and/or its
+	affiliates. Other names may be trademarks of their respective
+	owners.
+
+	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</pre>
+
 
 	Enter `exit` at the `mysql>` prompt to exit.
 	
@@ -92,9 +97,9 @@ Either install prerequisite software or see <a href="{{ site.gdeurl }}install-gd
 
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.4&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling Magento 2</a>

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: howtom2instgde_chapters
 title: Updating Magento 2
 ---
 
