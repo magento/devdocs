@@ -1,11 +1,12 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Configuration
 title: Dependency injection
+menu_title: Dependency injection
+menu_order: 4
+github_link: config-guide/config/depend-inj.md
 ---
-
-<h1 id="m2devgde-dep-inj">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}config-guide/config/depend-inj.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h4>Contents</h4>
 
@@ -469,10 +470,6 @@ The defintion compiler does following:
 Configure `[definition dir path]` in `app/etc/local.xml` as follows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/e01e71302c8796bf3c2b.js"></script>
-
-
-
-
 
 
 #### Related topics:

@@ -5,7 +5,6 @@ subgroup: Modules
 title: Introduction to Modules
 menu_title: Introduction to Modules
 menu_order: 1
-menu_node: parent
 github_link: architecture/modules/mod_intro.md
 ---
 

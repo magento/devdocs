@@ -1,11 +1,12 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Integration
 title: Code an integration
+menu_title: Code an integration
+menu_order: 3
+github_link: config-guide/integration/integration-code.md
 ---
-
-<h1 id="code-integration">Code an integration</h1>
-
-<p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-code.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 This topic discusses how to code your integration with Magento. Eventually, you will be able to market your integration as an extension on Magento Connect; however, it's not possible to do that now for Magento 2 integrations.
 

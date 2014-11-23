@@ -1,11 +1,12 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Configuration
 title: JavaScript resources
+menu_title: JavaScript resources
+menu_order: 5
+github_link: config-guide/config/js-resources.md
 ---
-
-<h1 id="m2devgde-js-resources">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/behavior/js-resources.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-js-resources-intro">Overview</h2>
 

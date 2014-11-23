@@ -1,11 +1,12 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Configuration
 title: Plugins
+menu_title: Plugins
+menu_order: 6
+github_link: config-guide/config/plugins.md
 ---
-
-<h1 id="plugin-overview">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}dev-guide-devbeta/bk-dev-guide.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="plugin-intro">Introduction</h2>
 

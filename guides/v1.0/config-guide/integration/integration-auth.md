@@ -1,11 +1,12 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Integration
 title: Integration authorization
+menu_title: Integration authorization
+menu_order: 2
+github_link: config-guide/integration/integration-auth.md
 ---
-
-<h1 id="what-is-integration">Integration authorization</h1>
-
-<p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 There are two ways to authenticate the third-party system with Magento:
 

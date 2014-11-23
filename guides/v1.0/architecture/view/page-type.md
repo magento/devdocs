@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Page types
+group: dev-guide
+subgroup: View library
+title: Page type
+menu_title: Page types
+menu_order: 4
+github_link: architecture/view/page-type.md
 ---
-
-<h1 id="m2devgde-page-type">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/view/page-type.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-pagetype-intro">Introduction to page types</h2>
 

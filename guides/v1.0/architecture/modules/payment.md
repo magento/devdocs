@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Payment modules
+group: dev-guide
+subgroup: Modules
+title: Payment Modules
+menu_title: Payment Modules
+menu_order: 7
+github_link: architecture/modules/payment.md
 ---
-
-<h1 id="m2devgde-pymt">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/modules/payment.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-cache-intro">Overview</h2>
 
@@ -79,7 +80,7 @@ The following table gives details about payment modules, their functionality and
 </table>
 
 <div class="bs-callout bs-callout-danger" id="danger">
-  <p>If you plan to disable a payment method by disabling the corresponding module, Magento recommends to avoid using it for payment processing. We cannot guarantee that payments are processed and stored correctly after you disable the module.</p>
+<p>If you plan to disable a payment method by disabling the corresponding module, Magento recommends to avoid using it for payment processing. We cannot guarantee that payments are processed and stored correctly after you disable the module.</p>
 </div>
 
 
