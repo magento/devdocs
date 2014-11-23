@@ -1,10 +1,14 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Routing
 title: Routing
+menu_title: Routing
+menu_order: 1
+menu_node: parent
+github_link: architecture/modules/routing.md
 ---
 
-<h1 id="m2devgde-magento-app">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}architecture/view/RENAME.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="overview">Overview</h2>
 
 In Magento 2, a URL has the following format:
@@ -101,7 +105,6 @@ For this class, the `Magento\Framework\App\ActionInterface` processes the reques
 * The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.
 * The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the `di.xml` file
 * The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area's front names
-
 
 <h2>Default router</h2>
 

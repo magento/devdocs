@@ -1,11 +1,12 @@
 ---
 layout: default
+group: dev-guide
+subgroup: View library
 title: Page assets
+menu_title: Page assets
+menu_order: 3
+github_link: architecture/view/page-assets.md
 ---
-
-<h1 id="m2devgde-page-assets">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/view/page-assets.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-page-assets-intro">Introduction to page assets</h2>
 

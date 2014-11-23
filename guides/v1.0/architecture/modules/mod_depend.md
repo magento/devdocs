@@ -1,11 +1,12 @@
 ---
 layout: default
-title: Magento 2 Understanding Module Dependencies
+group: dev-guide
+subgroup: Modules
+title: Module Dependencies
+menu_title: Module Dependencies
+menu_order: 2
+github_link: architecture/modules/mod_depend.md
 ---
-
-<h1 id="m2devgde-depen">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-moddep-intro"> Introduction</h2>
 In Magento 2, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that
