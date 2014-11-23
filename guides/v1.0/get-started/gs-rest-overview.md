@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Use REST to access Magento objects
+group: get-started
+subgroup: Putting it all together
+title: Putting it all together
+menu_title: Putting it all together
+menu_order: 4
+menu_node: parent
+github_link: get-started/gs-rest-overview.md
 ---
-
-# Accessing Magento Objects Using REST
-
-<p><a href="{{ site.githuburl }}guides/v1.0/get-started/rest/rest-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h2 id="svcs_rest_rest-call">Basics of Making a REST Call</h2>
 
 All service REST calls are specified by the service's `app/code/[Vendor]/[Module]/etc/webapi.xml`. Inputs and return values are defined in the respective service data objects and builders.
 
@@ -71,7 +71,7 @@ To make a REST call for the Customer service:
 </div>
 
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/services/what-is-svc.html">Service contracts</a>

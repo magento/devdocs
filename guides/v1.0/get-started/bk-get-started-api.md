@@ -146,7 +146,7 @@ github_link: get-started/bk-get-started-api.md
    </li>
    <li>
       <p>
-         <a href="{{ site.gdeurl }}get-started/gs-rest-overview.html">REST overview</a>
+         <a href="{{ site.gdeurl }}get-started/gs-rest-overview.html">Putting it all together</a>
       </p>
    </li>
    <li>

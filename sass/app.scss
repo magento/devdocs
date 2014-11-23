@@ -6,7 +6,7 @@ $body-bg: #fff;
 $body-font-color: #31302b;
 $link-color: #c14800;
 $link-hover-color: #ef672f;
-$shade-bg: #f7f3eb; // shading for menu 
+$shade-bg: #f7f3eb; // shading for menu
 $highlight-bg: #ef672f; // orange color
 $callout-bg: #e4f0f5;
 $page-width: 1300px; // width of the container
@@ -23,7 +23,7 @@ body {
 
 
 pre {
-	
+
 	font-size: 13px;
 	overflow-x: auto;
 	overflow-y: hidden;
@@ -37,10 +37,10 @@ pre {
 }
 
 .main-container {
-	
+
 	padding-top: 0;
 	padding-bottom: 60px;
-	
+
 	h2 {
 		font-size: 30px;
 		text-transform: none;
@@ -51,7 +51,7 @@ pre {
 			margin-top: 0;
 		}
 	}
-		
+
 	h3 {
 		font-weight: 700;
 		text-transform: none;
@@ -61,14 +61,14 @@ pre {
 		margin: 1.5em 0 .5em 0;
 		padding: 0;
 	}
-	
+
 	h4 {
 		font-size: 18px;
 		margin: 1.5em 0 .5em 0;
 		text-transform: none;
 		letter-spacing: 0;
 	}
-	
+
 	a {
 		color: $link-color;
 		letter-spacing: 0;
@@ -77,25 +77,25 @@ pre {
 			color: $link-hover-color;
 		}
 	}
-	
+
 	.btn {
 		color: #fff;
 		&:hover {
 			color: #fff;
 		}
 	}
-	
+
 	p, ul, ol, ul li, ol li, a {
 		font-size: 16px;
 		line-height: 1.5em;
 		font-weight: normal;
 	}
-	
+
 	ul li, ol li {
 		margin: 0 0 .5em 0;
 	}
 
-	
+
 	small {
 		font-size: 70%;
 		font-weight: 400;
@@ -112,7 +112,7 @@ table {
 	border: none;
 	width: 100%;
 }
-	
+
 th {
 	background: darken( $shade-bg, 15%);
 	text-align: left;
@@ -148,9 +148,9 @@ blockquote {
 	font-size: 16px;
 	line-height: 24px;
 	margin: 2em 0 1em 0;
-	
+
 	border-left: 2px solid lighten(#7b756b, 30%);
-		
+
 	cite {
 		display: block;
 		font-style: italic;
@@ -169,7 +169,7 @@ blockquote {
 	position: relative;
 }
 .nav-main nav .sub-site-name {
-	padding: 16px 0 20px 11px;	
+	padding: 16px 0 20px 11px;
 }
 .nav-main nav .right-header {
 	position: absolute;
@@ -195,7 +195,7 @@ blockquote {
 	position: relative;
 	padding: 40px 0;
 	background-color: $highlight-bg;
-	
+
 	a {
 		color: #fff;
 		text-decoration: underline;
@@ -216,11 +216,11 @@ blockquote {
 		color: #fff;
 		max-width: 30em;
 	}
-	
+
 	.container {
 		position: relative;
 	}
-	
+
 	.improve-page {
 		position: absolute;
 		font-size: 13px;
@@ -228,22 +228,22 @@ blockquote {
 		bottom: -1.7em;
 		right: 0;
 		text-align: right;
-		
+
 		&:hover	{
 			color: #fff;
 			text-decoration: underline;
 		}
-		
+
 		&:after {
 			display: inline-block;
 			position: relative;
 			top: 4px;
 			left: 5px;
 			content: '';
-			background: url(/i/icon-new-window.gif) no-repeat; 
+			background: url({{ site.baseurl }}i/icon-new-window.gif) no-repeat;
 			width: 16px;
 			height: 16px;
-			
+
 		}
 	}
 }
@@ -266,24 +266,24 @@ blockquote {
 	float: left;
 	width: 23%;
 	padding: 40px 0 40px 0;
-	
+
 	.sidebar-wrapper {
 		background: $shade-bg;
 		padding: 12px 0;
 	}
-	
+
 	h4 {
 		color: #7b756b;
 	}
 
-	
+
 	ul {
 		list-style: none;
 		margin: 0;
-		
+
 		li {
 			margin: 0;
-			font-size: 14px; 
+			font-size: 14px;
 			line-height: 1.3em;
 		}
 		.has-children {
@@ -294,7 +294,7 @@ blockquote {
 			padding: 6px 12px;
 			font-size: 14px;
 			line-height: 1.3em;
-			font-weight: normal;	
+			font-weight: normal;
 		}
 		span {
 			color: #7b756b;
@@ -305,23 +305,23 @@ blockquote {
 		.nav-header {
 			text-transform: uppercase;
 			font-weight: 700;
-			letter-spacing: .06em;		
+			letter-spacing: .06em;
 			margin-top: 12px;
-			
+
 			& > a,span {
 				font-weight: 700;
 				padding-top: 10px;
 			}
 		}
 		.active {
-			
+
 			& > a {
 				color: $body-font-color;
 				background: darken($shade-bg, 5%);
 			}
 		}
-		
-		
+
+
 		.level-2 {
 			list-style: none;
 			a, span {
@@ -333,13 +333,13 @@ blockquote {
 
 
 .home-section  {
-	
+
 	padding: 40px 0 0 0;
-	
+
 	.panel-separator {
 		margin-top: 50px;
 	}
-	
+
 	h2 {
 		margin: 0 0 .5em 0;
 	}
@@ -352,7 +352,7 @@ blockquote {
 			text-transform: uppercase;
 		}
 	}
-	
+
 	&:last-child {
 		padding-bottom: 60px;
 	}
@@ -379,12 +379,12 @@ blockquote {
 		left: 16px;
 		background-size: cover;
 	}
-	
+
 }
 .bs-callout-info {
 	padding-left: 60px;
 	&:before {
-		background-image: url(../i/icon_note.png);
+		background-image: url({{ site.baseurl }}i/icon_note.png);
 	}
 }
 
@@ -392,14 +392,14 @@ blockquote {
 	padding-left: 60px;
 	background: #fcebce;
 	&:before {
-		background-image: url(../i/icon_important.png);
+		background-image: url({{ site.baseurl }}i/icon_important.png);
 	}
 }
 .bs-callout-tip {
 	padding-left: 60px;
 	background: #e7eecd;
 	&:before {
-		background-image: url(../i/icon_tip.png);
+		background-image: url({{ site.baseurl }}i/icon_tip.png);
 	}
 }
 
@@ -408,6 +408,6 @@ blockquote {
 	color: #cc0000;
 	background: #f6e9e3;
 	&:before {
-		background-image: url(../i/icon_caution.png);
+		background-image: url({{ site.baseurl }}i/icon_caution.png);
 	}
 }

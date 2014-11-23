@@ -1,11 +1,12 @@
 ---
 layout: default
+group: dev-guide
+subgroup: Architecture
 title: Magento as a Modular System
+menu_title: Magento as a Modular System
+menu_order: 2
+github_link: architecture/arch_asmodsys.md
 ---
-
-<h1 id="m2arch-asmodsys">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2arch-asmodsys-overview"> Overview</h2>
 Intro/overview text here
@@ -20,9 +21,7 @@ For more information about the components, refer to the following topics:
 
 * <a href="{{ site.gdeurl }}architecture/arch_translations.html">Translation Packs</a>
 
-
-
-<h2 id="m2arch-asmodsys-related"> Related Topics</h2>
+<h2 id="m2arch-asmodsys-related">Related topics</h2>
 
 * Magento Framework
 * Magento File System

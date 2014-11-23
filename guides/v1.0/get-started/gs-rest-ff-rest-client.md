@@ -1,11 +1,13 @@
 ---
 layout: default
-title: How-to&mdash;Use the Firefox REST client to create a customer
+group: get-started
+subgroup: Firefox REST client
+title: Firefox REST client
+menu_title: Firefox REST client
+menu_order: 10
+menu_node: parent
+github_link: get-started/gs-rest-ff-client.md
 ---
-
-# How-To&mdash;Using the Firefox REST Client to Create a Customer
-
-<p><a href="{{ site.githuburl }}guides/v1.0/get-started/rest/rest-ff-rest-client.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 This topic discusses how to use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/" target="_blank">Firefox REST Client</a> browser add-on to send a REST call that creates a new Magento 2 customer.
 
@@ -155,12 +157,11 @@ An example follows:<br>
 </div>
 
 <div id="accordion_related-topics">
-<h4 id="svcs_rest_reltop">Related Topics</h4>
+<h4 id="svcs_rest_reltop">Related topics</h4>
 <div>
 
 <ul><li><a href="{{ site.gdeurl }}extension-dev-guide/services/what-is-svc.html">Service contracts</a></li>
 <li><a href="{{ site.gdeurl }}extension-dev-guide/services/svc-how-to-use.html">How a Client Uses a Service</a></li>
 <li><a href="{{ site.gdeurl }}extension-dev-guide/services/build-svc.html">How to build a service</a></li>
 <li><a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a></li></ul>
-</div>
-</div>
+
