@@ -1,10 +1,13 @@
 ---
 layout: default
+group: dev-guide
+subgroup: View library
 title: Static file processing
+menu_title: Static file processing
+menu_order: 8
+github_link: architecture/view/static-process.md
 ---
 
-<h1 id="m2devgde-static-proc">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}architecture/view/static-process.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="m2devgde-static-proc-intro">Overview</h2>
 <p>When a browser loads a web page and requests a static view file such as a JavaScript, CSS, image file, or another page asset,
    the Magento system processes the requested file before it returns the file to the browser.
@@ -252,4 +255,3 @@ Example: <code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code>
 <p>The generated URL is: <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
 <div class="bs-callout bs-callout-info" id="info">
  <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>
-</div>

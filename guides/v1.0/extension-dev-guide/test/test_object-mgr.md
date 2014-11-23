@@ -1,10 +1,13 @@
 ---
 layout: default
+group: coding-standards
+subgroup: test
 title: Object Manager helper
+menu_title: Object Manager helper
+menu_order: 3
+github_link: extension-dev-guide/test/test_object-mgr.md
 ---
 
-<h1 id="m2devgde-objmgrhelper">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}extension-dev-guide/test/test_object-mgr.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="m2devgde-objmgr-intro">Overview</h2>
 <p>In Magento 2, the constructors in block and model classes declare many dependencies.
    Magento 2 uses constructor dependency injection.

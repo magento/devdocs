@@ -1,7 +1,12 @@
 ---
-title: Using the View Library
 layout: default
-...
+group: dev-guide
+subgroup: View library
+title: View library
+menu_title: View library
+menu_order: 1
+github_link: architecture/view/view-lib.md
+---
 
 {{ Magento\_View Library }}
 
