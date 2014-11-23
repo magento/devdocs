@@ -1,13 +1,14 @@
 ---
 layout: default
-title: How Magento renders prices   
+group: dev-guide
+subgroup: Behavior
+title: How Magento renders prices
+menu_title: How Magento renders prices
+menu_order: 3
+github_link: architecture/behavior/price-render.md
 ---
-  
-<h1 id="m2devgde-pricerend">{{ page.title }}</h1>
 
-<p><a href="{{ site.githuburl }}architecture/behavior/price-render.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h2 id="m2devgde-pricerend-intro">Introduction to Magento price rendering</h2> 
+<h2 id="m2devgde-pricerend-intro">Introduction to Magento price rendering</h2>
 
 The Magento software renders prices using the Pricing library as follows:
 
@@ -128,7 +129,7 @@ This section discusses the following APIs:
         <code>render</code>
       </td>
       <td>
-        <code>$html : string <br/> $amountRender : AmountRenderInterface <br/> $arguments : array = [ ]</code> 
+        <code>$html : string <br/> $amountRender : AmountRenderInterface <br/> $arguments : array = [ ]</code>
       </td>
       <td>
         <code>string</code>
