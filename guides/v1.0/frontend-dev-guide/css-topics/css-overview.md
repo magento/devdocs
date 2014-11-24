@@ -1,11 +1,14 @@
 ---
-layout: howtom2devgde_chapters_fedg
-title: Cascading style sheets (CSS)
+layout: default
+group: fedg
+subgroup: CSS
+title: CSS overview
+menu_title: CSS overview
+menu_order: 1
+github_link: frontend-dev-guide/css-topics/css-overview.md
 ---
 
-<h1 id="fedg_css-overview">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/css-topics/css-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+## Overview
 
 You can use CSS to customize Magento themes. You can add your own images and fonts to the CSS.
 

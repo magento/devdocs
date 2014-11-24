@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: fedg
+subgroup: Layouts
 title: Extend a layout
+menu_title: Extend a layout
+menu_order: 3
+github_link: frontend-dev-guide/layouts/layout-extend.md
 ---
-
-<h1 id="layout_extend">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/layouts/layout-extend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_layout_extend_merge">Creating a Theme Merging File</h2>
 
@@ -44,7 +45,7 @@ Magento merges layout files as follows:
 2.	Replaces the base URL placeholders in the result.
 
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>

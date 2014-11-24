@@ -1,14 +1,44 @@
 ---
-layout: howtom2instgde_chapters
-title: Configuring security options
+layout: default
+group: install
+subgroup: Prerequisites
+title: Security-related prerequisites
+menu_title: Security-related prerequisites
+menu_order: 6
+github_link: install-gde/prereq/security.md
 ---
 
-<h1 id="instgde-prereq-security">{{ page.title }}</h1>
+<h2 id="install-prereq-selinux">SELinux Prerequisite</h2>
+<a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux <em>and</em> Apache must initiate a connection to another host, you must run the commands discussed in this section.
 
-<p><a href="{{ site.githuburl }}install-gde/prereq/security.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+If Apache and the database server are on the same host, you can skip this section and continue with <a href="#install-iptables">Opening Ports In Your Firewall</a>.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>This topic will be ready for dev beta and will cover enabling SELinux and opening ports in the firewall.</p></span>
-</div>
+To enable Apache to initiate a connection to another host with SELinux enabled:
+
+1.	To determine if SELinux is enabled, use the following command:
+
+	<pre>getenforce</pre>
+	
+	<code>Enforcing</code> displays to confirm that SELinux is running.
+
+2.	Enter one of the following commands:
+
+	CentOS: `setsebool -P httpd_can_network_connect=1`
+
+	Ubuntu: `setsebool -P apache2_can_network_connect=1`
+
+<h2 id="install-iptables">Opening Ports In Your Firewall</h2>
+Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:
+
+*	Ubuntu: <a href="https://help.ubuntu.com/community/IptablesHowTo" target="_blank">Ubuntu documentation page</a>.
+*	CentOS: <a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">CentOS how-to</a> and <a href="http://www.centos.org/docs/4/4.5/Security_Guide/s1-firewall-ipt-basic.html" target="_blank">CentOS reference page</a>.
+
+#### Related topics:
+
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.4&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling Magento 2</a>

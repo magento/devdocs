@@ -1,11 +1,11 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: fedg
+subgroup: Javascript
 title: Magento jQuery widgets
+menu_order: 2
+menu_title: Magento jQuery widgets
 ---
-
-<h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/jquery-widgets-about.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Magento 2 uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
 
@@ -19,9 +19,9 @@ This guide discusses the following widgets:
 
 #### Related topics
 
-* <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery Calendar widget</a>
-* <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery Loader widget</a>
-* <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery Tabs widget</a>
+* <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a>
+* <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a>
+* <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a>
 * <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
 
 

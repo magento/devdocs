@@ -1,11 +1,14 @@
 ---
-layout: default-arch
-title: How Magento calculates prices   
+layout: default
+group: dev-guide
+subgroup: Behavior
+title: How Magento calculates prices
+menu_title: How Magento calculates prices
+menu_order: 2
+github_link: architecture/behavior/price-calc.md
 ---
-  
-<h1 id="m2devgde-pricecalc">{{ page.title }}</h1>
 
-<h2 id="m2devgde-pricecalc-intro">Introduction to the Magento pricing library</h2> 
+<h2 id="m2devgde-pricecalc-intro">Introduction to the Magento pricing library</h2>
 This article provides in-depth information about Magento price calculation logic implemented in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library.
 
 <h2 id="m2devgde-pricecalc-gen">Price Calculation General Flow</h2>
@@ -14,7 +17,7 @@ To use the Pricing library for a product (`SaleableItem`), the product model sho
 
 The implementation of `SaleableItemInterface` gives access to the `PriceInfo` object of a product, which in turn provides all available `Price` objects or `Adjustments` specific to the product.
 
-The `Price` object provides the Amount calculated by applying or excluding `Adjustments`. And finally, calling the `getValue()` method of the `Amount` object returns a float price (number). 
+The `Price` object provides the Amount calculated by applying or excluding `Adjustments`. And finally, calling the `getValue()` method of the `Amount` object returns a float price (number).
 
 The flow can be illustrated as follows:
 <p><img src="{{ site.baseurl }}common/images/price_usage1.png" alt="The diagram SaleableItem to PriceInfoFactory to PriceInfoInterface, from here to Price and to Adjustment, from Price to Adjustment Calculator, from here to Adjustment and to Amount, from Amount to Value"></p>
@@ -32,7 +35,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricecalc-api_adj">AdjustmentInterface</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the `SaleableItem` final price. 
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a> contains the business logic responsible for applying adjustment to the `SaleableItem` final price.
 
 <table>
   <tbody>
@@ -300,7 +303,7 @@ This section discusses the following APIs:
       <td colspan="1">
         <code>boolean</code>
       </td>
-      <td colspan="1">Checks if the <code>Amount</code> object contains an <code>Adjustment</code>. 
+      <td colspan="1">Checks if the <code>Amount</code> object contains an <code>Adjustment</code>.
       </td>
     </tr>
   </tbody>

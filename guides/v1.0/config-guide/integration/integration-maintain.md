@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
+group: dev-guide
+subgroup: Integration
 title: Maintain an integration
+menu_title: Maintain an integration
+menu_order: 5
+github_link: config-guide/integration/integration-maintain.md
 ---
-
-<h1 id="integration-maintain">Maintain an integration</h1>
-
-<p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-maintain.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p> 
 
 Only integrations created manually using the Magento Admin can be edited; integrations created automatically from configuration files are not editable.
 

@@ -1,11 +1,13 @@
 ---
-layout: howtom2instgde_chapters
-title: Installation Guide
+layout: default
+group: install
+subgroup: Getting Started
+title: Installation overview
+menu_title: Installation overview
+menu_node: parent
+menu_order: 1
+github_link: install-gde/m2instgde-overview.md
 ---
-
-<h1 id="instgde-overview">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}install-gde/m2instgde-overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 This guide discusses how to install Magento and extensions using Composer. 
 
@@ -35,19 +37,24 @@ Use the following table to verify you have the correct prerequisites to install 
 <table>
 	<tbody>
 		<tr>
-			<th>What to do</th>
-			<th>How to do it</th>
+			<th>Prerequisite</th>
+			<th>How to check</th>
 			<th>For more information</th>
 		</tr>
 	<tr>
-		<td rowspan="3">Prerequisite check</td>
-		<td>Apache 2.2 or later<br>
-		<code>apache -v</code></td><td><a href="{{ site.gdeurl }}install-gde/prereq/apache.html" target="_blank">Apache</a></td>
+		<td>Apache 2.2 or later</td>
+		<td>Ubuntu: <code>apache -v</code><br>
+		CentOS: <code>httpd -v</code></td>
+		<td><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></td>
 	</tr>
-	<tr><td>PHP 5.4.33 or later<br>
-	<code>php -v</code></td><td><a href="{{ site.gdeurl }}install-gde/prereq/php.html" target="_blank">PHP</a></td></tr>
-	<tr><td>MySQL 5.5 or later<br>
-	<code>mysql -u [root user name] -p</code></td><td><a href="{{ site.gdeurl }}install-gde/prereq/mysql.html" target="_blank">MySQL</a></td></tr>
+	<tr>
+		<td>PHP 5.4.11 or 5.5.x</td>
+		<td><code>php -v</code></td>
+		<td><a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a></td>
+	</tr>
+	<tr><td>MySQL 5.6.x</td>
+	<td><code>mysql -u [root user name] -p</code></td>
+	<td><a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a></td>
 	</tr>
 </tbody>
 </table>
@@ -61,30 +68,13 @@ After verifying your prerequisites, perform the following tasks in order to prep
 	
 <h3>Step 3: Installing and verifying</h3>
 
-1.	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling the Magento 2 software</a>
-2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying the instalation</a>
+1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>
+1.	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Running the web-based installer</a>
+2.	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Running the command-line installer</a>
+2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying the installation</a>
 
-<h2 id="instgde-toc">Table of contents</h2>
+<h2>Required server permissions</h2>
 
-Following are the major topics in this guide:
+Unless otherwise noted, all commands in this guide must be entered as a user with `root` privileges and permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group&mdash;provided that group has sufficient privileges.
 
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 system requirements</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento 2</a>
-
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a> 
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php.html">Installing PHP 5.4 and required extensions</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Setting security options</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-
-*	<a href="{{ site.gdeurl }}install-gde/install/install-overview.html">Magento 2 installation options</a>
-
-	*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install.html">Installing and reinstalling Magento 2</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/schema.html">Setting up the database schema</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/admin-users.html">Creating and updating users and administrators</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/update.html">Updating Magento 2</a>
-
-*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify your Magento 2 installation</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/tshoot.html">Troubleshoot your Magento 2 installation</a>
-
+Installing software on Linux typically requires `root` privileges. You should generally not install the Magento 2 software in the web server docroot using `root` privileges; however, that is up to you.

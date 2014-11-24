@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
+group: dev-guide
+subgroup: Integration
 title: What is an integration?
+menu_title: What is an integration?
+menu_order: 1
+github_link: config-guide/integration/what-is-integration.md
 ---
-
-<h1 id="what-is-integration">What is an Integration?</h1>
-
-<p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/what-is-integration.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p> 
 
 All third-party systems integrating with Magento must be authenticated and authorized to access Magento resources securely. To make both procedures easier, we changed the workflow for authorizing the API calls. You can now authorize your third-party system using either secure, cloud-based key exchange or by creating the keys locally on the merchant's Magento system.
 
@@ -25,5 +26,5 @@ You have the following options to create your integration:
 
 *  Creating the integration using the Magento Admin, which you might prefer if you aren't comfortable creating configuration files. For more information, see Use Magento Admin to create an integration.
 
-*  Automatically creating the integration by providing it as an extension package. For more information, see [Creating an Integration Automatically]({{ site.gdeurl }}config-guide/integration/integration-create-man.html)). 
+*  Automatically creating the integration by providing it as an extension package. For more information, see [Creating an Integration Automatically]({{ site.gdeurl }}config-guide/integration/integration-create-man.html)).
 

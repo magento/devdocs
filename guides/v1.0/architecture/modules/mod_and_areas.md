@@ -1,11 +1,12 @@
 ---
-layout: default-arch
+layout: default
+group: dev-guide
+subgroup: Modules
 title: Modules and Areas
+menu_title: Modules and Areas
+menu_order: 4
+github_link: architecture/modules/mod_and_areas.md
 ---
-
-<h1 id="m2arch-module-areas">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2arch-module-areas-overview"> Overview</h2>
 Modules define which resources are visible and accessible in an area, as well as an area's behavior.

@@ -1,26 +1,27 @@
 ---
-layout: howtom2devgde_chapters_fedg
-title: jQuery TranslateInline widget
+layout: default
+group: fedg
+subgroup: Javascript
+title: jQuery translateinline widget
+menu_title: jQuery translateinline widget
+menu_order: 6
+github_link: frontend-dev-guide/javascript/jquery-widget-translate-inline.md
 ---
 
-<h1 id="fedg_jquery_xlate">{{ page.title }}</h1>
+<h2 id="fedg_translate-widget_overview">About the translateinline widget</h2>
 
-<p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h2 id="fedg_translate-widget_overview">About the TranslateInline Widget</h2>
-
-The TranslateInline widget enables users to provide translations for storefront page strings when browsing the pages. The translate inline functionality has the following UI elements:
+The translateinline widget enables users to provide translations for storefront page strings when browsing the pages. The translate inline functionality has the following UI elements:
 
 *	Edit trigger, an element that activates the translation dialog box.
 *	Translation form, which displays in the translation dialog box.
 
-To implement these, translateInline uses editTrigger and dialog widgets as auxiliary components. You can customize the latter two using the options in translateInline itself.
+To implement these, translateinline uses editTrigger and dialog widgets as auxiliary components. You can customize the latter two using the options in translateinline itself.
 
-TranslateInline source is `[your Magento install dir]/pub/lib/mage/translate-inline.js`.
+translateinline source is `[your Magento install dir]/pub/lib/mage/translate-inline.js`.
 
-<h2 id="fedg_translate-widget_init">Initializing the translateInline Widget</h2>
+<h2 id="fedg_translate-widget_init">Initialize the translateinline widget</h2>
 
-To initialize translateInline:
+To initialize translateinline:
 
 <script src="https://gist.github.com/xcomSteveJohnson/8d3fc4e87110d345dccf.js"></script>
 
@@ -32,9 +33,9 @@ The default dialog and translation form look like the following:
 
 ![Default inline translation form]({{ site.baseurl }}common/images/widget_translateinline_default-form.png)
 
-<h2 id="fedg_translate-widget_opt">translateInline Options</h2>
+<h2 id="fedg_translate-widget_opt">translateinline options</h2>
 
-The translateInline widget has the following options:
+The translateinline widget has the following options:
 
 *	<a href="#fedg_translate-widget_opt_ajaxUrl">ajaxUrl</a>
 *	<a href="#fedg_translate-widget_opt_area">area</a>
@@ -149,9 +150,9 @@ Specifies options for the jQuery UI translation dialog box.
 		'class': 'form-button button'
 	}]</pre>
 
-<h2 id="fedg_widget_translateinline_customize">Customizing the translateInline Widget</h2>
+<h2 id="fedg_widget_translateinline_customize">Customize the translateinline widget</h2>
 
-By changing widget options, you can customize translateInline components and behavior.
+By changing widget options, you can customize translateinline components and behavior.
 
 For example, you can change the templates for the edit trigger and translation form, or the translation dialog box properties (size and modal behavior).
 
@@ -167,12 +168,10 @@ The translation form displays as follows:
 
 ![Default inline translation control is a book icon]({{ site.baseurl }}common/images/widget_translateinline_customize2.png)
 
-
-
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery Calendar widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery Loader widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery Tabs widget</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-standard.html">jQuery widget coding standard</a>

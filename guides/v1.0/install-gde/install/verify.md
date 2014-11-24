@@ -1,11 +1,13 @@
 ---
-layout: howtom2instgde_chapters
-title: Verify your Magento 2 installation
+layout: default
+group: install
+subgroup: Verifying your Magento 2 installation
+title: Verifying your Magento 2 installation
+menu_title: Verifying your Magento 2 installation
+menu_node: parent
+menu_order: 1
+github_link: install-gde/install/verify.md
 ---
-
-<h1 id="instgde-verify">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}install-gde/install/verify.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="instgde-verify-front">Verifying the storefront</h2>
 
@@ -13,7 +15,7 @@ Go to the storefront in a web browser. For example, if your Magento 2 installati
 
 The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-<p><img src="{{ site.baseurl }}common/images/install_verify_success.png" alt="Magento storefront which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl }}common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
 
 If the page appears unconfigured (no styles, only text), see TBD.
 
@@ -27,7 +29,7 @@ When prompted, log in as a Magento Administrator.
 
 The following figure shows a sample Magento Admin page. If it displays as follows, your installation was a success!
 
-Reviewer: I have no image currently but will add one.
+<p><img src="{{ site.baseurl }}common/images/install-success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
 
 If the page appears unconfigured (no styles, only text), see TBD.
 

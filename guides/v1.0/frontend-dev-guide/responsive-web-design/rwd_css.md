@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: fedg
+subgroup: Responsive web design
 title: CSS in a responsive design
+menu_title: CSS in a responsive design
+menu_order: 3
+github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
 ---
-
-<h1 id="fedg_rwd_css">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/responsive-web-design/rwd_css.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_rwd_css_break">Breakpoints</h2>
 

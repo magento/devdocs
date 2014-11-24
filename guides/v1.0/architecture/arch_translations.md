@@ -1,11 +1,12 @@
 ---
-layout: default-arch
+layout: default
+group: dev-guide
+subgroup: Architecture
 title: Translation Packs
+menu_title: Translation Packs
+menu_order: 5
+github_link: architecture/arch_translations.md
 ---
-
-<h1 id="m2arch-translations">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2arch-translations-overview"> Overview</h2>
 Modify below text; this is from topic that will stay in the dev guide. (https://wiki.magento.com/display/MAGE2DOC/Overview+of+Translation+in+Magento+2?src=search)
@@ -17,7 +18,7 @@ In order to replace these phrases with alternatives in different languages when 
 
 The business user may need to customize the result through the administrative UI, known as the "Inline Translation Tool."
 
-<h2 id="m2arch-related"> Related Topics</h2>
+<h2 id="m2arch-related">Related topics</h2>
 * aaa
 * bbb
 * ccc

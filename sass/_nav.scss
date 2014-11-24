@@ -1,0 +1,97 @@
+.nav-main {
+    background: #ef672f;
+}
+.nav-main nav .menu-btn .menu-icon {
+    background: url(/i/general-nav-copper.png) top left no-repeat;
+    background-color: #c14800;
+    -webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    -ms-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+}
+.nav-main nav .menu-btn .menu-icon:hover {
+    background: url(/i/general-nav-copper.png) top right no-repeat;
+    background-color: #fff;
+    -webkit-transition: background-color 0.2s linear;
+    -moz-transition: background-color 0.2s linear;
+    -o-transition: background-color 0.2s linear;
+    -ms-transition: background-color 0.2s linear;
+    transition: background-color 0.2s linear;
+}
+.nav-main nav .menu-btn .menu-label {
+    color: #fff;
+    background: #ef672f;
+}
+.nav-main nav .logo {
+    background: #c14800 url(/i/magento.png) 5px top no-repeat;
+}
+.nav-main nav .sub-site-name {
+    float: left;
+    padding: 21px 0 20px 11px;
+}
+.nav-main nav .sub-site-name a {
+    display: block;
+    height: 25px;
+    width: 153px;
+    background: url('/i/ebayinc.png') no-repeat center 7px;
+}
+.nav-main nav .sub-site-name a:before {
+    color: #fff;
+}
+.nav-main nav ul li a {
+    color: #fff;
+}
+.nav-main nav ul li a:hover {
+    color: #ef672f;
+}
+.nav-main nav .right-header ul li a {
+    padding: 23px 30px;
+}
+.nav-main nav .head-search .sb-search .sb-icon-search {
+    background: url(/i/icons/ico-search-copper.png) left top no-repeat;
+}
+.nav-main nav .head-search .sb-search .sb-icon-search:hover {
+    background: #fff url(/i/icons/ico-search-copper.png) left bottom no-repeat;
+}
+.nav-main nav .head-search .sb-search .sb-search-submit {
+    background: url(/i/icons/ico-search-copper.png) left bottom no-repeat;
+}
+.nav-main nav .head-search .sb-search .sb-search-input {
+    background: #fff;
+    color: #cac3b4;
+}
+.nav-main #subnav-wrap {
+    background: #31302b;
+}
+.nav-main #subnav-wrap #subnav ul li a {
+    color: #fff;
+}
+.nav-main #subnav-wrap #subnav ul li:hover > a {
+    color: #ef672f;
+    background: #31302b;
+}
+.nav-main #subnav-wrap #subnav ul li.active a {
+    color: #ef672f;
+}
+.nav-main #subnav-wrap #subnav ul .expanded ul li a {
+    color: #cac3b4;
+}
+.nav-main #subnav-wrap #subnav ul .expanded ul li a:hover {
+    color: #fff;
+}
+.nav-main #subnav-wrap #subnav ul .expanded ul li a.active {
+    color: #ef672f;
+}
+.nav-main #subnav-wrap #subnav ul .expanded:hover ul {
+    color: #fff;
+    background: #31302b;
+}
+::selection {
+    background-color: #ef672f;
+    color: #fff;
+}
+::-moz-selection {
+    background-color: #ef672f;
+    color: #fff;
+}

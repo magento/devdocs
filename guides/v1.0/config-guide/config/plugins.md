@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
+group: dev-guide
+subgroup: Configuration
 title: Plugins
+menu_title: Plugins
+menu_order: 6
+github_link: config-guide/config/plugins.md
 ---
-
-<h1 id="plugin-overview">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}dev-guide-devbeta/bk-dev-guide.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="plugin-intro">Introduction</h2>
 
@@ -56,10 +57,7 @@ Several conditions influence how plugins apply to the same class/interface:
          <li>
             <p>Override an original method (a conflicting change).
             <div class="bs-callout bs-callout-info" id="info">
-               <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-               <span class="glyphicon-class">
                   <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.</p>
-               </span>
             </div>
             </p>
          </li>

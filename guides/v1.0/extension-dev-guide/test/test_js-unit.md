@@ -1,10 +1,13 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
+group: coding-standards
+subgroup: test
 title: JavaScript unit tests
+menu_title: JavaScript unit tests
+menu_order: 2
+github_link: extension-dev-guide/test/test_js-unit.md
 ---
 
-<h1 id="m2devgde-test-jsunit">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}extension-dev-guide/test/test_js-unit.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="m2devgde-js-unit-tests-intro">Overview</h2>
 <p>Magento JavaScript unit tests use the external <a href="#test-library">JsTestDriver test library</a>, are implemented through the external <a href="#jstestdriver-api">JsTestDriver API</a>, and have their own <a href="#framework">jsunit.requirejsUtil framework</a>.</p>
 <p>To run the automated JavaScript unit tests, you run the <a href="#process-overview">run_js_tests.php script</a> inside the PHP interpreter from the command line.</p>

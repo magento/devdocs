@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
+group: dev-guide
+subgroup: Configuration
 title: Caching
+menu_title: Caching
+menu_order: 2
+github_link: config-guide/config/caching.md
 ---
-
-<h1 id="m2devgde-cache">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/modules/caching.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-cache-intro">Overview</h2>
 

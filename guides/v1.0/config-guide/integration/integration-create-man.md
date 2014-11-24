@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters
-title: Use Magento Admin to manually create an integration
+layout: default
+group: dev-guide
+subgroup: Integration
+title: Manually create an integration
+menu_title: Manually create an integration
+menu_order: 4
+github_link: config-guide/integration/integration-create-man.md
 ---
-
-<h1 id="integration-manual-create">Use Magento Admin to create an integration</h1>
-
-<p><a href="{{ site.githuburl }}guides/v1.0/config-guide/integration/integration-create-man.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 Creating a new integration manually implies that the administrative user previously contacted the third-party system's developers and got all necessary information.
 
@@ -13,7 +14,7 @@ To create a new integration:
 
 1.	Log in to the Magento Admin as an administrator.
 
-2.	Click **System** > **Integrations**. 
+2.	Click **System** > **Integrations**.
 
 	The Integrations page displays, as shown in the following figure.
 
@@ -22,9 +23,9 @@ To create a new integration:
 3.	Click ![Click the plus icon to add an integration]({{ site.baseurl }}common/images/integration_plus.png).
 
 	The New Integration page displays as shown in the following figure.
-	
+
 	![Integration information consists of a unique name, optional e-mail address, and identity information]({{ site.baseurl }}common/images/integration_new_info.png)
-	
+
 4.  Enter the following information:
 
 	<table>
@@ -62,25 +63,23 @@ To create a new integration:
 	The API tab page displays as the following figure shows.
 
 	![Select which resources to grant on the API tab page]({{ site.baseurl }}common/images/integration_roleResources.png)
-	
+
 	Defining the access to right resources for the third-party systems is critical for effective and secure work of your online store. There are two ways of how you can limit the access to your store for the third-party systems or some user roles:
 
 	*  Managing access control list for user roles
-	
+
 	*  Managing access to resources for API calls
-	
+
 	In Magento 2, the access control list (ACL) for the API and internal user roles is the same.
 
 	Roles are organized hierarchically; granting access to a parent also grants access to children unless you choose not to do so. Select the check box next to each item that your integration needs access. Leave the check box cleared for any resource to which your integration does not need access.
 
 	Each resource in the ACL tree grants access to something. For instance, for an administrative user this could mean viewing or placing an order, viewing or changing the product details, viewing or creating CMS blocks, banners, or pages, and so on.
-	
+
 	<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>ACLs across Magento can contain different sets of resources. That is, in some cases the ACL can be shortened for usability and security reasons.</p></span>
+  <p>ACLs across Magento can contain different sets of resources. That is, in some cases the ACL can be shortened for usability and security reasons.</p>
   </div>
-	
+
 6.  In the API section, specify which Magento resources the third-party system can have access.
 
 	You can click either **All** from the **Resource Access** list to provide access to all available resources or you can click Custom and select the check box next to each resource you need access to.

@@ -1,10 +1,13 @@
 ---
-layout: default-arch
-title: Static file processing 
+layout: default
+group: dev-guide
+subgroup: View library
+title: Static file processing
+menu_title: Static file processing
+menu_order: 8
+github_link: architecture/view/static-process.md
 ---
 
-<h1 id="m2devgde-static-proc">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}architecture/view/static-process.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="m2devgde-static-proc-intro">Overview</h2>
 <p>When a browser loads a web page and requests a static view file such as a JavaScript, CSS, image file, or another page asset,
    the Magento system processes the requested file before it returns the file to the browser.
@@ -71,10 +74,7 @@ title: Static file processing
 <h2 id="publish-static-view-files">Static view file publication</h2>
 <p>Static files in their initial location might be not web accessible. To enable the Magento server to deliver static files, locate them in the public <code>pub/static</code> directory. The copy process is also known as <i>publication</i>.</p>
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40"/>
-<span class="glyphicon-class">
  <p>Any files that you manually upload (for example, product images), are always stored in <code>pub/media</code>.</p>
- </span>
 </div>
 <p>The publication logic depends on the application mode:</p>
 <dl>
@@ -157,7 +157,7 @@ the identified references are published from following locations:</p>
 Example: <code>css-topics/one/two/file.css</code>
 
 <table>
-   
+
    <thead>
       <tr>
          <th>Reference with context notation</th>
@@ -169,7 +169,7 @@ Example: <code>css-topics/one/two/file.css</code>
          <td><code>url([Vendor name]_[Module name]::images/image.gif)</code></td>
 		 <td><code>url(../../../../[Vendor name]_[Module name]/images/image.gif)</code></td>
       </tr>
-      
+
    </tbody>
 </table>
 
@@ -192,7 +192,7 @@ Example: <code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code>
 		 <td><code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code></td>
 		 <td><code>url(../../../../[Vendor name]_[Module name]/images/image.gif)</code></td>
       </tr>
-      
+
    </tbody>
 </table>
 
@@ -254,7 +254,4 @@ Example: <code>[Vendor name]_[Module name]::css-topics/one/two/file.css</code>
 
 <p>The generated URL is: <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
  <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>
- </span></div>

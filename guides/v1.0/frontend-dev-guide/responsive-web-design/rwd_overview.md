@@ -1,17 +1,18 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: fedg
+subgroup: Responsive web design
 title: Responsive web design
+menu_title: Responsive web design overview
+menu_order: 1
+github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 ---
- 
-<h1 id="fedg_rwd">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/responsive-web-design/rwd_overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_rwd_overview">Overview of Responsive Web Design</h2>
 
-Simply put, <a href="http://www.smashingmagazine.com/2011/01/12/standard-for-responsive-web-design/" target="_blank">responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as *viewports*) without maintaining completely separate style sheets for each.
+<a href="http://www.smashingmagazine.com/2011/01/12/standard-for-responsive-web-design/" target="_blank">Responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as *viewports*) without maintaining completely separate style sheets for each.
 
-Magento 2 ships with a Blank responsive theme and these topics discuss how to use <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS</a>, <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_using-blocks.html">predefined blocks</a> to build a responsive design from there. 
+Magento 2 ships with a Blank responsive theme and these topics discuss how to use <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS</a>, <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_blocks.html">predefined blocks</a> to build a responsive design from there.
 
 <h3 id="fedg_rwd_terms">Terms Used</h3>
 
@@ -69,10 +70,10 @@ Desktop:
 
 ![Viewing a product catalog page on a desktop device using the Blank responsive theme.]({{ site.baseurl }}common/images/rwd_blank_desktop.png)
 
-#### Related Topics:
+#### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_using-blocks.html">Blocks in a responsive design</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a>	
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a>
 
 

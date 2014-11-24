@@ -1,20 +1,20 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
+group: coding-standards
+subgroup: Coding standards
 title: PHP coding standards
+menu_title: PHP coding standard
+menu_order: 1
+github_link: coding-standards/php-coding-standards.md
 ---
 
-<h1 id="m2devgde-stnd_coding">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}coding-standards/php-coding-standards.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <p>The Magento 2 development team has adopted the <a href="http://framework.zend.com/manual/1.12/en/coding-standards.overview.html">Zend Framework Coding Standard for PHP</a>, with a few exceptions.</p>
 <p>In addition, a specific list of "best practices" has been implemented as requirements.</p>
 <p>Where possible, these standard and requirements are enforced using Automated Static Code Analysis Tests.</p>
 <p>standard and requirements which cannot be automatically validated must be applied through rigorous code review.</p>
 <p>These standard are enforced for the core development team and are highly recommended for all developers implementing extensions and customizations for the Magento 2 product.
 <div class="bs-callout bs-callout-info" id="info">
-   <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-   <span class="glyphicon-class">
       <p>The numbering in these lists is static and should be used to reference specific standard when communicating with the Magento 2 development team.</p>
-   </span>
 </div>
 <h2 id="m2devgde-zend">Zend framework coding standard</h2>
 <p>Magento 2 has adopted the Zend Framework Coding Standard for PHP. Specifically, Magento 2 has the standard

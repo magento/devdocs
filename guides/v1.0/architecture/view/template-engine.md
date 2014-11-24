@@ -1,11 +1,12 @@
 ---
-layout: default-arch
-title: Template engine 
+layout: default
+group: dev-guide
+subgroup: View library
+title: Template engine
+menu_title: Template engine
+menu_order: 7
+github_link: architecture/view/template-engine.md
 ---
-
-<h1 id="m2devgde-temp-eng">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/view/template-engine.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-temp-eng-over">Introduction to the Magento template engine</h2>
 A template engine is a mechanism for rendering HTML output from templates associated with page layout blocks. The Magento template rendering subsystem can support multiple template engines, including the default PHP-based engine for processing PHTML templates.
@@ -28,7 +29,7 @@ The sequence of execution of <code>toHtml()</code> depends on whether the HTML c
 *	Case 1: HTML was previously cached:
 
 	1.	Load the cached HTML content.
-	
+
 	2.	Perform the HTML content post-processing defined in <code>_afterToHtml()</code>.
 
 *	Case 2: HTML was not previously cached:
@@ -36,7 +37,7 @@ The sequence of execution of <code>toHtml()</code> depends on whether the HTML c
 	1.	Perform the preparatory tasks defined <code>in _beforeToHtml()</code>.
 
 	2.	Generate the HTML content. Here is where the template engine is invoked for blocks with templates: if a block class is inherited from the <code>Template</code> class, and has a predefined or dynamically obtained  template name, then generating the HTML content is performed by calling <code>Tempalte:: fetchView()</code> which initiates the template engine, calls the <code>render()</code> method, and returns the HTML content for subsequent processing by <code>AbstractBlock::toHtml()</code>.
-	
+
 	3.	Cache the generated HTML.
 
 	4.	Perform the HTML content post-processing defined in <code>_afterToHtml()</code>.

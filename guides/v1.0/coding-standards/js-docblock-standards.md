@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: coding-standards
+subgroup: DocBlock standards
 title: JavaScript DocBlock standard
+menu_title: JavaScript DocBlock standard
+menu_order: 2
+github_link: coding-standards/js-docblock-standards.md
 ---
-
-<h1 id="fedg_using-ui-lib">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/js-coding-docblock.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 

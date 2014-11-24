@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: fedg
+subgroup: Layouts
 title: XML in layouts
+menu_title: XML in layouts
+menu_order: 5
+github_link: frontend-dev-guide/layouts/layout-xml.md
 ---
- 
-<h1 id="layout_xml-markup">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/layouts/layout-xml.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="layout_markup_overview">About This Topic</h2>
 
@@ -30,9 +31,7 @@ Although the layout overriding mechanism provides great customization flexibilit
 <h2 id="layout_markup_start">Getting Started</h2>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>Because you can break other code and prevent successful upgrades, Magento strongly recommends you <em>not</em> change default layout files. </p></span>
+  <p>Because you can break other code and prevent successful upgrades, Magento strongly recommends you <em>not</em> change default layout files.</p>
 </div>
 
 To customize properly, add a theme merging file such as `app/design/frontend/[your theme]/Mage_CatalogSearch/layouts/catalogsearch_result_index.xml`, with the following content:
@@ -59,8 +58,8 @@ The base template uses `<update handle="page_two_columns_left"/>` to define the 
 
 <h2 id="layout_markup_rearrange">Rearranging Elements</h2>
 
-For example, you can change the subordination of the product price block. 
- 
+For example, you can change the subordination of the product price block.
+
 Original declaration (might be in either base or theme layout file):
 
 <script src="https://gist.github.com/xcomSteveJohnson/55ed6e850202bb0d5374.js"></script>
@@ -104,7 +103,7 @@ To change a link, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xm
 
 <h3 id="layout_markup_css_remove">Removing JavaScript or CSS</h3>
 
-To remove the JavaScript and CSS resources used in a layout, make a change similar to the following in a theme merging file: 
+To remove the JavaScript and CSS resources used in a layout, make a change similar to the following in a theme merging file:
 
 <script src="https://gist.github.com/xcomSteveJohnson/2871e00f617d4e031014.js"></script>
 
@@ -145,7 +144,7 @@ To set a page title using the `setTitle()` method, make a customization similar 
 <script src="https://gist.github.com/xcomSteveJohnson/bc7583f5e2ac5835a250.js"></script>
 
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>

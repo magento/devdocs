@@ -1,11 +1,12 @@
 ---
-layout: default-arch
-title: Magento 2 Understanding Module Dependencies
+layout: default
+group: dev-guide
+subgroup: Modules
+title: Module Dependencies
+menu_title: Module Dependencies
+menu_order: 2
+github_link: architecture/modules/mod_depend.md
 ---
-
-<h1 id="m2devgde-depen">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-moddep-intro"> Introduction</h2>
 In Magento 2, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that
@@ -16,12 +17,10 @@ In Magento 2, all modules are partitioned into logical groups, each one of which
 * Removing or disabling a module does not result in disabling other modules.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" width="40" align="left">
-	<span class="glyphicon-class">
-    <p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></span></div>
+    <p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></div>
 
 Following are commonly used terms:
-	
+
 Framework layer
 
 :	Defines the role of an application component in Magento, defines standards for the interactions among components, and implements system-level request and response objects and routing.
@@ -85,10 +84,8 @@ Module dependencies in Magento could be of two types: hard and soft dependencies
 	* The module extends another module's layout.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-<img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" width="40" align="left">
- <span class="glyphicon-class">
 <p>If a module uses code from another module, it should declare the dependency explicitly.
-</p></span>
+</p>
 </div>
 
 Modules are installed in the following sequence: first, a module serving as dependency for another module will be installed, followed by the module dependent on it.
@@ -109,10 +106,8 @@ There are peculiarities of building the dependencies between the modules belongi
 Modules belonging to the framework layer can be used in the application layer via an explicit dependency.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
   <p>In this case using interfaces is preferable to using classes. </p>
-  <p>You can build dependencies between classes in the framework layer even if they belong to different modules.</p></span>
+  <p>You can build dependencies between classes in the framework layer even if they belong to different modules.</p>
 </div>
 
 

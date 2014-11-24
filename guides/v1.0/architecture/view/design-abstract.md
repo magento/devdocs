@@ -1,11 +1,12 @@
 ---
-layout: default-arch
+layout: default
+group: dev-guide
+subgroup: View library
 title: Design abstractions
+menu_title: Design abstractions
+menu_order: 2
+github_link: architecture/view/design-abstract.md
 ---
-
-<h1 id="m2devgde-design-abstract">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/view/design-abstract.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-design-abstract-intro">Introduction to design abstractions</h2>
 

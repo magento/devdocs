@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: fedg
+subgroup: Responsive web design
 title: Theme design best practices
+menu_title: Theme design best practices
+menu_order: 6
+github_link: frontend-dev-guide/responsive-web-design/theme-best-practices.md
 ---
-
-<h1 id="layout_theme_bestpr">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/themes/theme-best-practices.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="layout_theme_bestpr_rwd">Using Responsive Web Design</h2>
 
@@ -31,12 +32,10 @@ The class name for Internet Explorer is `ie`. Use the following classes to overr
 *	`.lt-ie10` (Internet Explorer 10 or earlier)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>HeadJS supports class names for various browsers, but in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about using similar overrides for other browsers.</p></span>
+  <p>HeadJS supports class names for various browsers, but in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about using similar overrides for other browsers.</p>
   </div>
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>

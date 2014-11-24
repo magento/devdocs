@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters_fedg
-title: jQuery Loader widget
+layout: default
+group: fedg
+subgroup: Javascript
+title: jQuery loader widget
+menu_title: jQuery loader widget
+menu_order: 4
+github_link: frontend-dev-guide/javascript/jquery-widget-loader.md
 ---
-
-<h1 id="fedg_jquery_loader">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/jquery-widget-loader.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_loader_widget_overview">About the Loader Widget</h2>
 
@@ -100,11 +101,10 @@ $(this.element).trigger("processStop");</pre>
 
 Where `this.element` is the element on which the loader is dependent.
 
-
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery Widgets</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery Calendar widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery Tabs widget</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-standard.html">jQuery widget coding standard</a>

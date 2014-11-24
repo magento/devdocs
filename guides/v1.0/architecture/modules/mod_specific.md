@@ -1,11 +1,12 @@
 ---
-layout: default-arch
+layout: default
+group: dev-guide
+subgroup: Modules
 title: Specific Modules
+menu_title: Specific Modules
+menu_order: 6
+github_link: architecture/modules/mod_specific.md
 ---
-
-<h1 id="m2arch-module-specific">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}m2devgde/arch/mod_depend.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2arch-module-specific-overview"> Overview</h2>
 The following modules are included in the standard Magento installtion:
@@ -114,8 +115,7 @@ USPS
 Weee module serves to handle the fixed product taxes, in particular, calculate the Waste Electrical and Electronic Equipment Directive tax in the online store.
 
 
-
-<h2 id="m2arch-module-related"> Related Topics</h2>
+<h2 id="m2arch-module-related">Related topics</h2>
 * abc
 * def
 * ghi

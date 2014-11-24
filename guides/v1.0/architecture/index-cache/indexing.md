@@ -1,11 +1,13 @@
 ---
-layout: default-arch
+layout: default
+group: dev-guide
+subgroup: Indexing
 title: Indexing
+menu_title: Indexing
+menu_order: 1
+menu_node: parent
+github_link: architecture/index-cache/indexing.md
 ---
-
-<h1 id="m2devgde-indexing">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}architecture/index-cache/indexing.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>
 
@@ -62,11 +64,8 @@ The following components are involved in the indexing process:
 </tbody></table>
 
   <div class="bs-callout bs-callout-warning" id="warning">
-    <img src="{{ site.baseurl }}common/images/icon_important.png" alt="note" align="left" width="40" />
-	<span class="glyphicon-class">
-    <p><code>Magento_Indexer</code> replaces the Magento 1.x <code>Magento_Index</code> module. Use <code>Magento_Indexer</code> for all new development. </p></span>
+    <p><code>Magento_Indexer</code> replaces the Magento 1.x <code>Magento_Index</code> module. Use <code>Magento_Indexer</code> for all new development.</p>
   </div>
-
 
 <h3 id="m2devgde-indexing-types">Indexing types</h3>
 
@@ -75,9 +74,9 @@ Each index can perform the following types of reindex operations:
 *	Full reindex, which means rebuilding all the indexing-related database tables.
 
 	Full reindexing can be caused by a variety of things, including creating a new web store or new customer group.
-	
+
 	You can optionally fully reindex at any time using the <a href="#m2devgde-indexing-commandline">command line</a>.
-	
+
 *	Partial reindex, which means rebuilding the database tables only for the things that changed (for example, changing a single product attribute or price).
 
 The type of reindex performed in each particular case depends on the type of changes made in the dictionary or in the system. This dependency is specific for <a href="#m2devgde-indexing-outofbox">each indexer</a>.
@@ -177,7 +176,7 @@ Out of the box the Magento system has the following indexers implemented:
 		<td><a href="{{ site.mage2000url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
 		<td></td>
 	</tr>
-	
+
 </tbody></table>
 
 <h2 id="m2devgde-indexing-commandline">Running indexers from the command line</h2>
@@ -190,7 +189,7 @@ Usage:  php -f indexer.php -- [options]
   --status &lt;indexer>            Show Indexer(s) Status
   --mode &lt;indexer>              Show Indexer(s) Index Mode
   --mode-realtime &lt;indexer>     Set index mode type "Update on Save"
-  --mode-schedule &lt;indexer>     Set index mode type "Update by 
+  --mode-schedule &lt;indexer>     Set index mode type "Update by
                                 Schedule"
   --reindex &lt;indexer>           Reindex Data
   info                          Show allowed indexers
@@ -203,7 +202,7 @@ Usage:  php -f indexer.php -- [options]
 For example, to reindex the product price indexer, enter the following command:
 
 	 php -f indexer.php -- --reindex catalog_product_price
-	
+
 Messages similar to the following display:
 
 	Product Price index has been rebuilt successfully in [time]
@@ -252,7 +251,7 @@ Add the the `mview.xml` configuration file in the `etc` module directory, where 
 *	what column data is sent to the indexer
 
 <a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a>
- 
+
 All Mview declarations related to a module should be declared in one file.
 
 <h3 id="m2devgde-indexing-exampleimplementation">Example of a custom indexer implementation</h3>

@@ -1,84 +1,88 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <title>{{ page.title }}</title>
-      <meta name="description" content="{{ site.description }}">
-      <!-- CSS -->
-      <link href="{{ site.baseurl }}common/css/bootstrap.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/bootstrap.min.css" rel="stylesheet">
-      <link href="data:text/css;charset=utf-8," data-href="{{ site.baseurl }}common/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
-      <link href="{{ site.baseurl }}common/css/docs.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/jumbotron.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/docs.min.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/jquery-ui.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/toc.css" rel="stylesheet">
-      <!--
-<link href="{{ site.baseurl }}common/css/shCore.css" rel="stylesheet">
-      <link href="{{ site.baseurl }}common/css/shThemeDefault.css" rel="stylesheet">
- -->
-      <!-- JAVASCRIPT -->
-      <script src="{{ site.baseurl }}common/js/bootstrap.min.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery.min.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery-ui_1.11.0.js"></script>
-      <script src="{{ site.baseurl }}common/js/docs.min.js"></script>
-      <script src="{{ site.baseurl }}common/js/transition.js"></script>
-      <script src="{{ site.baseurl }}common/js/collapse.js"></script>
-      <script src="{{ site.baseurl }}common/js/jquery.toc.js"></script>
-      <script src="{{ site.baseurl }}common/js/ie10-viewport-bug-workaround.js"></script>
-      <script src="{{ site.baseurl }}common/js/ie-emulation-modes-warning.js"></script>
-      <link rel="stylesheet" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css">
-      <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-      <script src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
-      <!--
-<script src="{{ site.baseurl }}common/js/shBrushXml.js""></script>
-      <script src="{{ site.baseurl }}common/js/shCore.js""></script>
- -->
-      <script>hljs.initHighlightingOnLoad();</script>
-      <script type="text/javascript">
-         $(document).ready(function(){
-         $("h2,h3,h4,h5,h6").each(function(i,item){
-         var tag = $(item).get(0).localName;
-         $(item).attr("id","api"+i);
-         $("#category").append('<a class="new'+tag+'" href="#api'+i+'">'+$(this).text()+'</a></br>');
-         $(".newh2").css("margin-left",0);
-         $(".newh3").css("margin-left",20);
-         $(".newh4").css("margin-left",40);
-         $(".newh5").css("margin-left",60);
-         $(".newh6").css("margin-left",80);
-         });
-         });
-      </script>
-   </head>
-   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-frontdoor">
-         <div class="navbar-header">
-            <div class="logo-frontdoor">
-               <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
-            </div>
-         </div>
-         <div class="navbar-collapse collapse">
-            <div class="nav navbar-nav">
-               <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-               </ul>
-            </div>
-            <div class="col-sm-3 col-md-3 pull-right">
-               <form class="navbar-form" role="search">
-                  <div class="input-group">
-                     <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-                     <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                     </div>
-                  </div>
-               </form>
-            </div>
-         </div>
-      </div>
-   </div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<meta name="description" content="{{ site.description }}">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="{{ site.baseurl }}css/app.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}common/css/override.css" />
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+</head>
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="{{ site.baseurl }}"> </a>
+				<div class="sub-site-name"> 
+					<a href="{{ site.baseurl }}"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+
+
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search -->
+
+			</div>
+
+		</div><!-- #global-nav -->
+	</nav>
+
+	{% include navigation.html %}
+
+</header>
+
+
+<div id="gl-wrapper">
+
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">

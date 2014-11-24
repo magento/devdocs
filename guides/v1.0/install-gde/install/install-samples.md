@@ -10,7 +10,7 @@ title: Sample installation commands
 <h2 id="instgde-install-samples-basic">Typical Magento 2 installations</h2>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
+  
 <span class="glyphicon-class">
   <p>All instalation commands must be entered on one line. They are shown here on multiple lines because of space limitations.</p></span>
 </div>

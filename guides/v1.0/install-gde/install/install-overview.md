@@ -1,11 +1,12 @@
 ---
-layout: howtom2instgde_chapters
-title: Magento 2 installation options
+layout: default
+group: install
+subgroup: R_Installation
+title: Installation overview
+menu_title: Installation
+menu_node: parent
+menu_order: 1
+github_link: install-gde/install/install-overview.md
 ---
 
-<h1 id="instgde-overview">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}install-gde/install/overview.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-
-
+Hello

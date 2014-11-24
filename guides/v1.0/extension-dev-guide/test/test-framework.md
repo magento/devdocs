@@ -1,10 +1,13 @@
 ---
-layout: howtom2devgde_chapters
+layout: default
+group: coding-standards
+subgroup: test
 title: Magento test framework (MTF)
+menu_title: Magento test framework (MTF)
+menu_order: 1
+github_link: extension-dev-guide/test/test-framework.md
 ---
 
-<h1 id="m2devgde-objmgrhelper">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}extension-dev-guide/test/test-framework.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="m2devgde-objmgr-intro">Overview</h2>
 <p>The Magento test framework (MTF) enables you to run thorough and accurate tests of your Magento installation. Use these instructions to install and configure MTF, set up the components of a test, and configure testing.</p>
 <p>The main tools are:</p>
@@ -32,9 +35,9 @@ Before you install MTF, meet these prerequisites:
 
 Before you can create tests, you must install MTF:
 
-1. Download and install the composer as described at [http://getcomposer.org/doc/00-intro.md#installation-nix](http://getcomposer.org/doc/00-intro.md#installation-nix) and [http://getcomposer.org/doc/00-intro.md#installation-windows](http://getcomposer.org/doc/00-intro.md#installation-windows). 
+1. Download and install the composer as described at [http://getcomposer.org/doc/00-intro.md#installation-nix](http://getcomposer.org/doc/00-intro.md#installation-nix) and [http://getcomposer.org/doc/00-intro.md#installation-windows](http://getcomposer.org/doc/00-intro.md#installation-windows).
     We recommend installing composer globally. Alternatively, save the `composer.phar` to the same folder with `composer.json` file.
-    
+
     **Important**: `composer.json` is an integral part of every Magento instance. This file contains information/settings for PHPUnit, Selenium server, libraries, and so on to start MTF. It also checks MTF out from separate repository.
 2. MTF is checked out. **vendor** folder contains all elements specified in the `composer.json` file are created. The following sub-folders are available in **vendor** folder:
     * **magento/mtf** folder
@@ -500,17 +503,17 @@ class IsolationTest extends Isolation
     {
         self::_login();
     }
- 
+
     public function test1()
     {
         $this->_deleteProduct();
     }
- 
+
     public function test2()
     {
         $this->_deleteProduct();
     }
- 
+
     public function test3()
     {
         $this->_deleteProduct();
@@ -531,12 +534,12 @@ class IsolationTest extends Isolation
     {
         self::_login();
     }
- 
+
     public function test1()
     {
         $this->_deleteProduct();
     }
- 
+
     /**
      * @isolation after
      */
@@ -544,7 +547,7 @@ class IsolationTest extends Isolation
     {
         $this->_deleteProduct();
     }
- 
+
     public function test3()
     {
         $this->_deleteProduct();
@@ -568,17 +571,17 @@ class IsolationTest extends Isolation
     {
         self::_login();
     }
- 
+
     public function test1()
     {
         $this->_deleteProduct();
     }
- 
+
     public function test2()
     {
         $this->_deleteProduct();
     }
- 
+
     public function test3()
     {
         $this->_deleteProduct();
@@ -731,8 +734,8 @@ Page object opens itself and returns its own blocks.
 
 <blockquote>
 <pre>
-namespace Magento\Customer\Test\Page\Adminhtml; 
-use Mtf\Page\BackendPage; 
+namespace Magento\Customer\Test\Page\Adminhtml;
+use Mtf\Page\BackendPage;
 /**
  * Class CustomerIndex
  *

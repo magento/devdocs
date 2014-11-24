@@ -1,11 +1,12 @@
 ---
-layout: howtom2devgde_chapters_fedg
+layout: default
+group: fedg
+subgroup: Javascript
 title: Mage JavaScript plugin
+menu_title: Mage JavaScript plugin
+menu_order: 1
+github_link: frontend-dev-guide/javascript/js-mage-plugin.md
 ---
-
-<h1 id="fedg_js-mage">{{ page.title }}</h1>
-
-<p><a href="{{ site.githuburl }}frontend-dev-guide/javascript/js-mage-plugin.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <h2 id="fedg_js-mage_overview">Overview</h2>
 

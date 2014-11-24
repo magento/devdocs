@@ -1,19 +1,19 @@
 ---
-layout: howtom2instgde_chapters
-title: Installing Composer and cloning the Magento 2 GitHub repository
+layout: default
+group: install
+subgroup: R_Installation
+title: Installing Composer and cloning the Magento 2 repository
+menu_title: Installing Composer and cloning the Magento 2 repository
+menu_node: 
+menu_order: 2
+github_link: install-gde/install/composer-clone.md
 ---
 
-<h1 id="instgde-prereq-compose-clone">{{ page.title }}</h1>
+#### Contents
 
-<p><a href="{{ site.githuburl }}install-gde/prereq/composer-clone.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-<h2 id="instgde-prereq-compose-intro">Introduction to installing Magento using Composer</h2>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
-<span class="glyphicon-class">
-  <p>You must run all commands on this page as a user with <code>root</code> privileges.</p></span>
-</div>
+*	<a href="#instgde-prereq-compose-install">Install Composer</a>
+*	<a href="#instgde-prereq-compose-clone">Cloning the Magento 2 GitHub repository</a>
+*	<a href="#instgde-prereq-compose-access">Setting file system permissions and ownership</a>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
@@ -109,4 +109,4 @@ find . -type f -exec chmod 600 {} \;</pre>
 
 #### Next step
 
-After completing the tasks discussed on this page, <a href="{{ site.gdeurl }}install-gde/install/install.html">install the Magento 2 software</a>.
+After completing the tasks discussed on this page, see TBD.
