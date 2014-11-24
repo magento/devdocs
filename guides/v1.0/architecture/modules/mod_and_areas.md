@@ -47,16 +47,12 @@ The resources visible and accessible in an area as well as area's behavior are d
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
-* <a href="{{ site.gdeurl }}devguide/___/___.html">Using Areas in Magento</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module Relationships</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and Areas</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>
-* <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
-* <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
-* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language Packages</a>
+
 
