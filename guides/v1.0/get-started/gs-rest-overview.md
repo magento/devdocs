@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: D_Putting it all together
+subgroup: F_Putting it all together
 title: Putting it all together
 menu_title: Putting it all together
 menu_order: 1
@@ -11,7 +11,7 @@ github_link: get-started/gs-rest-overview.md
 
 All service REST calls are specified by the service's `app/code/[Vendor]/[Module]/etc/webapi.xml`. Inputs and return values are defined in the respective service data objects and builders.
 
-This topic discusses generally how to make a REST call; for step-by-step details, see <a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.
+This topic discusses generally how to make a REST call; for step-by-step details, see <a href="{{ site.gdeurl }}get-started/gs-rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.
 
 To make a REST call for the Customer service:
 
@@ -66,14 +66,14 @@ To make a REST call for the Customer service:
 <li>Pass an <a href="http://tools.ietf.org/html/rfc5849#section-3.4" target="_blank">OAuth 1.0a Authorization</a> header using <a href="http://tools.ietf.org/html/rfc5849#section-4.1" target="_blank">RSA-SHA1 encryption</a>.</li>
 <li>Pass a <code>Content-Type: application/json</code> header.</code></li>
 <li>Pass JSON or XML containing the data.</li></ol>
-<p>For a step-by-step example, see <a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.</p>
+<p>For a step-by-step example, see <a href="{{ site.gdeurl }}get-started/gs-rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>.</p>
 </div>
 </div>
 
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}get-started/rest/rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>
+*	<a href="{{ site.gdeurl }}get-started/gs-rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/services/what-is-svc.html">Service contracts</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/services/svc-how-to-use.html">How a Client Uses a Service</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/services/build-svc.html">How to build a service</a>
