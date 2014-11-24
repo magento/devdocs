@@ -98,4 +98,5 @@ After you completed the tasks discussed in the preceding section, update depende
 
 #### Next step
 
-TBD
+*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Web-based installer</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command-line installer</a>

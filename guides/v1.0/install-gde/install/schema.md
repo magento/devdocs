@@ -1,5 +1,5 @@
 ---
-layout: howtom2instgde_chapters
+layout: default
 title: Setting up the database schema
 ---
 

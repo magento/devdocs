@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: fedg
 subgroup: Translation
 title: Translation
 menu_title: Translation
