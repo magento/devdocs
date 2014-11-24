@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Layouts
+subgroup: B_Layouts
 title: Containers and blocks
 menu_title: Containers and blocks
 menu_order: 2

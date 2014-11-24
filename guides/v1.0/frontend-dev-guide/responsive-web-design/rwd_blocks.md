@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Responsive web design
+subgroup: E_rwd
 title: Blocks in a responsive design
 menu_title: Blocks in a responsive design
 menu_order: 2

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: CSS
+subgroup: D_CSS
 title: CSS preprocessing
 menu_order: 2
 menu_title: CSS preprocessing

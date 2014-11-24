@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: CSS
+subgroup: D_CSS
 title: CSS in themes
 menu_order: 3
 github_link: frontend-dev-guide/css-topics/css-themes.md
