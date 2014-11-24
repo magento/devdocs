@@ -280,7 +280,7 @@ composer install
 cd setup
 composer install</pre>
 
-4.	Repeat the tasks discussed in TBD.
+4.	Repeat the tasks discussed in TBD. 
 
 #### Next step
 
