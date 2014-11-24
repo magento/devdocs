@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: CSS
+subgroup: D_CSS
 title: Magento 2 UI library
 menu_order: 4
 github_link: frontend-dev-guide/css-topics/theme-ui-lib.md

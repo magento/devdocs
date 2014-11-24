@@ -1,10 +1,11 @@
 ---
 layout: default
 group: fedg
-subgroup: Responsive web design
+subgroup: E_rwd
 title: Responsive web design
-menu_title: Responsive web design overview
+menu_title: Responsive web design
 menu_order: 1
+menu_node: parent
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 ---
 

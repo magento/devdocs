@@ -1,10 +1,10 @@
 ---
 layout: default
 group: get-started
-subgroup: Putting it all together
+subgroup: D_Putting it all together
 title: Putting it all together
 menu_title: Putting it all together
-menu_order: 4
+menu_order: 1
 menu_node: parent
 github_link: get-started/gs-rest-overview.md
 ---

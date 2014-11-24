@@ -264,6 +264,6 @@ When the `contentUpdated` event is triggered, it goes up to the `<body>` node, a
 
 #### Related topics
 
-* <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-coding-standards.html">JavaScript coding standard</a>
+* <a href="{{ site.gdeurl }}coding-standards/js-coding-standards.html">JavaScript coding standard</a>
 * <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
 * <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-standard.html">jQuery widget coding standard</a>
