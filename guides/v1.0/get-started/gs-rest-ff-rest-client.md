@@ -1,10 +1,10 @@
 ---
 layout: default
 group: get-started
-subgroup: Firefox REST client
+subgroup: G_Firefox REST client
 title: Firefox REST client
 menu_title: Firefox REST client
-menu_order: 10
+menu_order: 1
 menu_node: parent
 github_link: get-started/gs-rest-ff-client.md
 ---

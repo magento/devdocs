@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: C_How cURL commands work
+subgroup: E_How cURL commands work
 title: How cURL commands work
 menu_title: How cURL commands work
 menu_order: 1
