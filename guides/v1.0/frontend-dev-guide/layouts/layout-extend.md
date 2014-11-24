@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Layouts
+subgroup: B_Layouts
 title: Extend a layout
 menu_title: Extend a layout
 menu_order: 3

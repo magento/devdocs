@@ -1,10 +1,11 @@
 ---
 layout: default
 group: fedg
-subgroup: Layouts
-title: Magento 2 theming overview
-menu_title: Magento 2 theming overview
+subgroup: B_Layouts
+title: Layouts
+menu_title: Layouts
 menu_order: 1
+menu_node: parent
 github_link: frontend-dev-guide/layouts/layout-overview.md
 ---
 

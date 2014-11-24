@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Layouts
+subgroup: B_Layouts
 title: XML in layouts
 menu_title: XML in layouts
 menu_order: 5
