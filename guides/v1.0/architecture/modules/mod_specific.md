@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: architecture
 subgroup: Modules
 title: Specific Modules
 menu_title: Specific Modules
