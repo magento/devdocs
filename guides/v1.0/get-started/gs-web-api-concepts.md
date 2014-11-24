@@ -1,10 +1,10 @@
 ---
 layout: default
 group: get-started
-subgroup: Web API concepts
+subgroup: B_Web API concepts
 title: Web API concepts
 menu_title: Web API concepts
-menu_order: 2
+menu_order: 1
 menu_node: parent
 github_link: get-started/gs-web-api-concepts.md
 ---
