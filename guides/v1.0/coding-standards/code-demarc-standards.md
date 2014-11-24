@@ -1,7 +1,7 @@
 ---
 layout: default
 group: coding-standards
-subgroup: Code demarcation standard
+subgroup: B_Code demarcation standard
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
