@@ -99,7 +99,7 @@ Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price
 
 To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module's <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.
 
-To learn more about dependency injection files structure, see <a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a>.
+<--! Steve removed this topic for dev beta because it's incomplete: To learn more about dependency injection files structure, see <a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a>. -->
 
 <h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
 

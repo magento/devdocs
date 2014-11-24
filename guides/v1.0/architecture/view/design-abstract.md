@@ -28,13 +28,9 @@ The other example is a `customer_account` design abstraction which adds menu ite
 
 <p><img src="{{ site.baseurl }}common/images/view_da3.png" alt="My Account section on the storefront"></p>
 
-The <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/layouts/customer_account.xml" target="_blank">customer_account.xml</a> file is a design abstraction. It defines only the links for the <a href="{{ site.mage2000url }}app/code/Magento/Customer" target="_blank">Magento_Customer</a> module (see comments in the following code sample):
+<a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a> is a design abstraction. It defines only the links for the <a href="{{ site.mage2000url }}app/code/Magento/Customer" target="_blank">Magento_Customer</a> module:
 
-<p class="q">Reviewer: The following code is invalid; it no longer matches what's in GitHub. I need you to provide me with the valid code sample and comments as shown in the following. You can fork it on GitHub if that's easiest. I'm not sure doing this kind of thing is useful anyway, so please comment on that.</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/08a75746da66ab83e81a.js"></script>
-
-Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layouts/customer_account.xml" target="_blank">this customer_account.xml</a>.
+Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">the Magento_Review module's customer_account.xml</a>.
 
 When a page is rendered, all `customer_account` layouts are merged, and the pages where the `customer_account` design abstraction is used contain the elements from all `customer_account.xml` files.
 

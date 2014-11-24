@@ -27,12 +27,8 @@ title: Configuration and Integration Guide
                <dt>
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}config-guide/config/config-files.html">Configuration files &raquo;</a></p>
                </dt>
-               <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection &raquo;</a></p>
-               </dt>
-               <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}config-guide/config/data-type-schema.html">Data types schema &raquo;</a></p>
-               </dt>
+               
+               
                <dt>
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}config-guide/config/plugins.html">Plugins &raquo;</a></p>
                </dt>
