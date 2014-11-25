@@ -1,10 +1,10 @@
 ---
 layout: default
 group: fedg
-subgroup: Themes
+subgroup: 1_Themes
 title: Magento theme structure
 menu_title: Magento theme structure
-menu_order: 2
+menu_order: 3
 github_link: frontend-dev-guide/themes/theme-structure.md
 ---
 

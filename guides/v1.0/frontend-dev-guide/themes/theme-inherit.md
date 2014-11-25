@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Themes
+subgroup: 1_Themes
 title: Theme inheritance concept
 menu_title: Theme inheritance concept
 menu_order: 5
@@ -65,17 +65,28 @@ If module context is defined for a file:
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
 Orange inherits from the Magento Blank theme.
 
-For example you have a background image on footer in your theme. It is placed in:
-app/design/<area>/<Vendor>/<my_theme>/web/images/background.jpg
+Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a new orange_winter theme, which inherits from Orange. The theme is located in `app/design/frontend/OrangeCo/orange_winter`
+Orange_winter configuration file looks like following:
+<pre>
+&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Orange&nbsp;Winter&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;0.1.0-alpha100&lt;/version&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;OrangeCo/Orange&lt;/parent&gt;
+	&lt;media&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;&nbsp;
+&lt;/theme&gt;
+</pre>
 
-A background1.jpg screen here
+In the Orange theme there is a footer background image located at `app/design/frontend/OrangeCo/orange/web/images/background.jpg`.
 
-You need to customize this theme for some holidays by placing a new background image and change some styles. To do that, create a new theme <my_holiday_theme>. In a theme.xml file specify that it inherits <my_theme >. In the new theme place the new background image with exactly the same name and extension:
-app/design/<area>/<Vendor>/< my_holiday_theme >/web/images/ background.jpg
+<!-- A background1.jpg screen here -->
 
-Apply the holiday theme to your storefront. The holiday background image will override the one we have in <my_theme >, so on store-front the holiday background will be visible.
+OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and extension in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg` 
 
-A background2.jpg screen here
+Once the Orange Winter theme is applied, the new holiday image overrides the one from Orange, so on storefront the holiday background is visible.
+
+<!-- A background2.jpg screen here-->
 
 
 <h2 id="theme-inherit-static">Overriding templates</h2>
@@ -96,7 +107,7 @@ For example, if you need override the `app/code/Magento/Catalog/view/frontend/te
 For more information about customizing templates refer to the Template section of this guide. <!--ADDLINK-->
 
 
-<h2 id="theme-inherit-layout">Overriding layouts</h2>
+<h2 id="theme-inherit-layout">Overriding and extending layouts</h2>
 Layout files are dynamic view files, for which the module context is always defined.
 The fallback scheme for layouts is following:
 
@@ -105,6 +116,8 @@ The fallback scheme for layouts is following:
 2. Ancestor themes layouts, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
 3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
 
+Unlike templates or images, layot can be not only overidden, but also extended. 
+<h3 id="theme-inherit-layout-over">Overriding layouts</h3>
 
 To override the instructions from an ancestor theme layout file:
 
@@ -115,6 +128,25 @@ To override a module layout file (<a href="{{ site.gdeurl }}frontend-dev-guide/l
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 
 For more information about overriding layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a> article.
+
+<h3 id="theme-inherit-layout-extend">Extending layouts</h3>
+
+Rather than copy extensive layout code and modify what you want to change, you can create
+a theme merging file that contains the changes you want.
+
+To add a theme merging file:
+
+* Place your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`. 
+
+For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a> article.
+
+<u>Example</u>:
+
+OrangeCo decided they should remove the “Report bugs” link from the footer, defined in **<!--**
+To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` : **<!--??**
+
+<pre> &lt;remove&nbsp;name=&quot;report.bugs&quot;/&gt; </pre>
+
 
 <h2 id="theme-inherit-locale">Overriding locales</h2>
 

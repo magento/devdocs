@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Themes
+subgroup: 1_Themes
 title: Locate templates, layouts, and styles
 menu_title: Locate templates, layouts, and styles
 menu_order: 6
