@@ -1,11 +1,10 @@
 ---
 layout: default
 group: get-started
-subgroup: E_How cURL commands work
+subgroup: Step 3. Run the request
 title: How cURL commands work
 menu_title: How cURL commands work
-menu_order: 1
-menu_node: parent
+menu_order: 2
 github_link: get-started/gs-curl.md
 ---
 
