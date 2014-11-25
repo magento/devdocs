@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/themes/theme-inherit.md
 ---
 
 <h2 id="theme-inherit-over">Overview</h2>
-Theme inheritance enables you to easily extend themes. You can use an existing theme as a basis for customizations, minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
+Theme inheritance enables you to easily extend themes and minimise the maintainance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
 The level of theme inheritance is not limited.
 
 Theme inheritance is based on the fallback mechanism, which guarantees that if a view file is not found in the current theme, the system searches in the ancestor themes, module view files or library.
@@ -149,6 +149,10 @@ To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/
 
 
 <h2 id="theme-inherit-locale">Overriding locales</h2>
+Locales are CSV text documents containing translation strings for interface elements and system messages. 
+Locales cab stored in modules and themes. 
+The fallback scheme for locales is the following:
 
-**<!-- Do we need to mention locales?**
+
+
 
