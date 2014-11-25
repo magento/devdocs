@@ -4,7 +4,7 @@ group: fedg
 subgroup: A_Themes
 title: Create a theme
 menu_title: Create a theme
-menu_order: 3
+menu_order: 2
 github_link: frontend-dev-guide/themes/theme-create.md
 ---
 
