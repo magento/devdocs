@@ -8,6 +8,13 @@ menu_order: 4
 github_link: config-guide/config/magento-mode.md
 ---
 
+#### Contents
+
+*	<a href="#mode-introduction">Introduction to Magento modes</a>
+*	<a href="#mode-developer">Developer mode</a>
+*	<a href="#mode-default">Default mode</a>
+*	<a href="#mode-specify">Specify a mode</a>
+
 <h2 id="mode-introduction">Introduction to Magento modes</h2>
 You can run Magento in any of the following *modes*:
 
@@ -32,6 +39,17 @@ You can run Magento in any of the following *modes*:
 
 </tbody>
 </table>
+
+
+
+<h2 id="mode-developer">Developer mode</h2>
+TBD
+
+<h2 id="mode-default">Default mode</h2>
+TBD
+
+<h2 id="mode-production">Production mode</h2>
+TBD
 
 <h2 id="mode-specify">Specify a mode</h2>
 Specify the Magento mode in any of the following ways:
@@ -137,12 +155,3 @@ For more information about each mode, see:
 *	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-production">Production mode</a>
-
-<h2 id="mode-developer">Developer mode</h2>
-TBD
-
-<h2 id="mode-default">Default mode</h2>
-TBD
-
-<h2 id="mode-production">Production mode</h2>
-TBD
