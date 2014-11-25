@@ -1,10 +1,11 @@
 ---
 layout: default
 group: fedg
-subgroup: CSS
-title: CSS overview
-menu_title: CSS overview
+subgroup: D_CSS
+title: CSS
+menu_title: CSS
 menu_order: 1
+menu_node: parent
 github_link: frontend-dev-guide/css-topics/css-overview.md
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: coding-standards
-subgroup: test
+subgroup: Testing
 title: Magento test framework (MTF)
 menu_title: Magento test framework (MTF)
 menu_order: 1

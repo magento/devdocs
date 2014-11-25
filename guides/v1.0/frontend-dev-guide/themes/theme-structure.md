@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: 1_Themes
+subgroup: A_Themes
 title: Magento theme structure
 menu_title: Magento theme structure
 menu_order: 3

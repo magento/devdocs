@@ -1,17 +1,25 @@
 ---
 layout: default
 group: get-started
+subgroup: A_intro
 title: Get Started with Magento Web APIs
-menu_title: Introduction
+menu_title: Get Started
 menu_order: 1
+menu_node: parent
 github_link: get-started/bk-get-started-api.md
 ---
 
-<p class="q">Reviewer: SOAP is not supported for Dev Beta, so I've omitted it for now.</p>
-<p>The Magento web API framework enables Magento and third-party developers to <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a> To access these web APIs, you make REST calls.</p>
-<p>This guide introduces web API, REST, and cURL command concepts. It also provides examples that show you how to construct REST web API calls and execute them through either a REST client or cURL commands. You can modify these examples to construct other calls.</p>
+<!-- <p class="q">Reviewer: SOAP is not supported for Dev Beta, so I've omitted it for now.</p> -->
+<h2>Get started</h2>
+<p>The Magento web API framework enables Magento and third-party developers to <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>. To access these web APIs, you make REST web API calls.</p>
+<p>This guide introduces web API, REST, and cURL command concepts and shows you how to construct REST web API calls. You can modify these examples to construct other calls.</p>
+<p>You execute REST web API calls through cURL commands or a REST client.</p>
+
+<h2>Step 1. Authenticate</h2>
+<p>To make a Magento web API call, you must first request an <a href="{{ site.gdeurl }}get-started/gs-authentication.html">authentication</a> token from the Magento token service.</p>
+<h2>Step 2. Construct a web API request</h2>
 <h2>Web API requests</h2>
-<p>To make a Magento web API call, you combine these components in the request:</p>
+<p>Then, you combine these components in a request:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
       <th>Component</th>
@@ -74,7 +82,8 @@ github_link: get-started/bk-get-started-api.md
    </tr>
    </tbody>
 </table>
-<h2>Web API responses</h2>
+<h2>Step 3. Run a web API request</h2>
+<h2>Step 4. Look at the web API response</h2>
 <p>A Magento web API call returns these components:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -138,7 +147,7 @@ github_link: get-started/bk-get-started-api.md
    </li>
    <li>
       <p>
-         <a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html">Web API concepts</a>
+         <a href="{{ site.gdeurl }}get-started/gs-web-api-requests.html">Web API requests</a>
       </p>
    </li>
    <li>

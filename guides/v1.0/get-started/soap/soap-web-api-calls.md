@@ -3,7 +3,7 @@ layout: default
 title: SOAP web API calls
 ---
 
-<h1 id="m2devgde-data-type-schema">{{ page.title }}</h1>
+<h1 id="m2devgde-soap-eb-api-calls.md">{{ page.title }}</h1>
 <p><a href="{{ site.githuburl }}architecture/view/view-lib.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 <h2 id="formats">How to get a WSDL</h2>
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Responsive web design
+subgroup: E_rwd
 title: Theme design best practices
 menu_title: Theme design best practices
 menu_order: 6

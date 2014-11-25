@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: 1_Themes
+subgroup: A_Themes
 title: Create a theme
 menu_title: Create a theme
 menu_order: 2

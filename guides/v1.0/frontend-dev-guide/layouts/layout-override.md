@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Layouts
+subgroup: B_Layouts
 title: Override a layout
 menu_title: Override a layout
 menu_order: 4
@@ -53,7 +53,7 @@ This section discusses how to override:
 
 To add an overriding default layout file (to override a default layout provided by the module):
 
-1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-overview.html#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/themes-general.html#layout_conventions">layout file conventions</a>.
 2.	Put it according to the location convention, that is:
 
 <pre>__app/design/[area]/[your theme path]

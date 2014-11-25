@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: 1_Themes
+subgroup: A_Themes
 title: Theme inheritance concept
 menu_title: Theme inheritance concept
 menu_order: 5
