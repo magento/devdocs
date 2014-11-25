@@ -80,7 +80,7 @@ To switch to the web server user on CentOS:
 	
 After you completed the tasks discussed in the preceding section, update dependencies as follows:
 
-1.	Log in to your Magento server as the web server user. See the preceding section for details.
+1.	Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>. 
 2.	Change to the Magento 2 installation directory. For example,
 
 	`cd /var/www/html/magento2`

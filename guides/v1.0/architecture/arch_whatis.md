@@ -13,7 +13,7 @@ Magento is a highly-customizable e-commerce platform and content management syst
 
 Magento is written using PHP programming language, and leverages elements of the Zend framework and the model-view-controller architecture. Magento runs on the MySQL relational database, and Magento schema and tables are included in the Magento installation package.
 
-Object-oriented programming concepts are inherent in the Magento design, allowing for maximum flexibiltiy and extensibility of the software components, resulting in the ability to design and implement very customized web sites.
+Object-oriented programming concepts are inherent in the Magento design, allowing for maximum flexibiltiy and extensibility of the software components that results  in the ability to design and implement very customized web sites.
 
 <h3 id="m2arch-whatis-archi"> Product Architecture</h3>
 
