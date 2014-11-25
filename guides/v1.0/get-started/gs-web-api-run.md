@@ -1,12 +1,12 @@
 ---
 layout: default
 group: get-started
-subgroup: F_Putting it all together
-title: Putting it all together
-menu_title: Putting it all together
+subgroup: Step 3. Run the request
+title: Step 3. Run the request
+menu_title: Step 3. Run the request
 menu_order: 1
 menu_node: parent
-github_link: get-started/gs-rest-overview.md
+github_link: get-started/gs-web-api-run.md
 ---
 
 All service REST calls are specified by the service's `app/code/[Vendor]/[Module]/etc/webapi.xml`. Inputs and return values are defined in the respective service data objects and builders.
