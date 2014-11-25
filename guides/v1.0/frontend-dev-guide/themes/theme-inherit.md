@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/themes/theme-inherit.md
 ---
 
 <h2 id="theme-inherit-over">Overview</h2>
-Theme inheritance enables you to easily extend themes and minimise the maintainance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
+Theme inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
 The level of theme inheritance is not limited.
 
 Theme inheritance is based on the fallback mechanism, which guarantees that if a view file is not found in the current theme, the system searches in the ancestor themes, module view files or library.
@@ -103,8 +103,17 @@ For example, if you need override the `app/code/Magento/Catalog/view/frontend/te
 
 
 <u>Example</u>
+By default, according to the module template, in the mini shopping cart products are listed under the Go to Checkout button:
+<p><img src="{{ site.baseurl }}common/images/inherit_mini1.png" alt="In the minishopping cart products are listed under the Go to Checkout button "></p>
 
-For more information about customizing templates refer to the Template section of this guide. <!--ADDLINK-->
+The order is defined in the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` module template. The Blank theme does not override this template.
+OrangeCo decided they want the product list to be displayed before the the Go to Checkout button.
+To do this, in the Orange theme they need to add an overriding template for the corresponding module in the Orange theme folder:
+`app/design/frontend/OrangeCo/orange/Magento_Checkout/templates/cart/minicart.phtml` 
+Note, that the path to the template inside the `templates` directory in the theme corresponds to that in the module.
+Having changed the order or elements in the templates, OrangeCo got the minicart look like following:
+<p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
+You can find out what exactly code changes are required to perform this and other tasks in the Templates section. <!--ADDLINK-->
 
 
 <h2 id="theme-inherit-layout">Overriding and extending layouts</h2>
@@ -116,7 +125,7 @@ The fallback scheme for layouts is following:
 2. Ancestor themes layouts, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
 3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
 
-Unlike templates or images, layot can be not only overidden, but also extended. 
+Unlike templates or images, layout can be not only overridden, but also extended. 
 <h3 id="theme-inherit-layout-over">Overriding layouts</h3>
 
 To override the instructions from an ancestor theme layout file:
@@ -153,6 +162,11 @@ Locales are CSV text documents containing translation strings for interface elem
 Locales cab stored in modules and themes. 
 The fallback scheme for locales is the following:
 
+1. `app/design/frontend/<Vendor>/<theme>/i18n/`
+2. Repeat these steps recursively for each parent theme, until theme with no parent is reached:
+`app/design/frontend/<Vendor>/<parent_theme>/i18n/`
 
+**<!-- Doesn't it search in module folders?**
 
+To override ??
 
