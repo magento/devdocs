@@ -1,17 +1,69 @@
 ---
 layout: default
 group: get-started
-subgroup: D_Web API responses
-title: Web API responses
-menu_title: Web API responses
+subgroup: Step 4. Review the response
+title: Step 4. Review the response
+menu_title: Step 4. Review the response
 menu_order: 1
 menu_node: parent
 github_link: get-started/gs-web-api-responses.md
 ---
 
 <p>A web API call is made up of a <a href={{ site.gdeurl }}get-started/gs-web-api-requests.html">request</a> and a response.</p>
-<a name="responses"></a>
-<h2>Web API responses</h2>
+<p>A Magento web API call returns these components:</p>
+<table style="width:100%">
+   <tr bgcolor="lightgray">
+      <th>Component</th>
+      <th>Description</th>
+   </tr>
+   <tr>
+      <td>
+         <p>Response body</p>
+      </td>
+      <td>
+         <p>A token that proves you as the owner of a Magento
+            account.
+         </p>
+         <p><a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>
+         </p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p>Exception</p>
+      </td>
+      <td>
+         <p>A token that proves you as the owner of a Magento
+            account.
+         </p>
+         <p><a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>
+         </p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p>HTTP status code</p>
+      </td>
+      <td>
+         <p>A combination of the server that fulfills the request and the resource against which the request is being made. For example:</p>
+         <pre>http://magento.ll/index.php/rest/V1/customerGroups/:id</pre>
+         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#service-endpoint">Service endpoint</a></p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <p>Error message</p>
+      </td>
+      <td>
+         <p>A set of input fields that you supply with the request.
+            API operations have both
+            <em>required</em> and
+            <em>optional</em> inputs.
+         </p>
+         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#payload">Call payload</a></p>
+      </td>
+   </tr>
+</table>
 <h3>Error handling</h3>
 <h4>Service errors</h4>
 <p>Service operations always throw exceptions with a service-specific error code and an optional error message. Exceptions enable in-process PHP calls to handle the exception and behave accordingly.</p>

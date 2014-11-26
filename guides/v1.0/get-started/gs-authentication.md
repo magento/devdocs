@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: B_Authentication
 title: Authentication
-menu_title: Authentication
+menu_title: Step 1. Authenticate
 menu_order: 1
 menu_node: parent
 github_link: get-started/gs-authentication.md
