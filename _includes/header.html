@@ -12,8 +12,8 @@
 
 	<link rel="stylesheet" href="{{ site.baseurl }}css/app.css" />
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-			
-	</head>	
+
+</head>	
 <body>
 
 <header id="nav-main" class="nav-main">
@@ -28,11 +28,11 @@
 			<div class="main-site-name">
 				<a class="logo pull-left" href="/"> </a>
 				<div class="sub-site-name">
-					<a href="/"><span>Developer Documentation</span></a>
+					<a href="{{ site.baseurl }}"><span>Developer Documentation</span></a>
 				</div>
 			</div>
-
-<div class="right-header">
+			
+			<div class="right-header">
 				<!--
 				<div class="sales-login">
 					<ul class="menu nav">
@@ -55,34 +55,37 @@
 			
 		</div><!-- #global-nav -->
 	</nav>
-			
-	%7B% include navigation.html %%7D
 
-</header>
+	{% include navigation.html %}
+	
+</header>	
 
 
 <div id="gl-wrapper">
-
-<!-- #sidemenu -->
-<div id="sidemenu" style="display:none;">
-<a class="menu-trigger menu-close" href="#" title=""></a>
-<div class="h8 site-title">Our Sites</div>
-<ul class="menu nav">
-<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
-<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
-<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
-<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
-<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
-<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
-<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
-<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
-</ul>
-</div>
-<!-- /#sidemenu -->
-
-<!-- /.main-container -->
-<div id="gl-container" class="main-container">
-<a id="main-content"></a>
-<div class="pane-content">
-<div class="node node-panel">
 	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
