@@ -109,4 +109,4 @@ find . -type f -exec chmod 600 {} \;</pre>
 
 #### Next step
 
-After completing the tasks discussed on this page, see TBD.
+After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>.

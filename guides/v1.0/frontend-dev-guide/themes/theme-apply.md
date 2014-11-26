@@ -1,7 +1,7 @@
 ---
 layout: default
 group: fedg
-subgroup: Themes
+subgroup: A_Themes
 title: Apply and configure a theme in Admin
 menu_title: Apply and configure a theme in Admin
 menu_order: 4

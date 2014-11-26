@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: fedg
 subgroup: Translation
 title: Translation
 menu_title: Translation
@@ -180,14 +180,15 @@ To help you to make your store more flexible, we implemented ability to upload s
 
 To enable additional package for existing language, just give a new package any name except for existing language code (to avoid confusion). Specify configurations of a pack in `language.xml` file as described in the <a href="#m2devgde-xlate-inheritance">Declaring a Pack and Configuring Language Inheritance</a> section above.
 
-<h3 id="m2devgde-xlate-packtool">Applying the panguage package tool</h3>
+<h3 id="m2devgde-xlate-packtool">Applying the language package tool</h3>
 
-Use the language pack tool to upload the translated dictionary to your Magento instance. The language pack tool will distribute translated names, titles, and phrases to appropriate modules.
+Use the language pack tool to upload the translated dictionary to your Magento instance. The language pack tool distributes translated names, titles, and phrases to appropriate modules.
 
 Use the command line to invoke the language pack tool:
-<blockquote><pre>php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;-s&nbsp;&lt;source_file&gt;&nbsp;-l&nbsp;&lt;language_code&gt;&nbsp;-p&nbsp;&lt;target_dir&gt;&nbsp;[-m&nbsp;&lt;raplace|merge&gt;]&nbsp;[-d&nbsp;&lt;yes|no&gt;]
-php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--locale=&lt;language_code&gt;&nbsp;--pack=&lt;target_dir&gt;&nbsp;[--mode=&lt;replace|merge&gt;]&nbsp;[--allow_duplicates=&lt;yes|no&gt;]
-</pre></blockquote>
+
+<pre>php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;-s&nbsp;&lt;source_file&gt;&nbsp;-l&nbsp;&lt;language_code&gt;&nbsp;-p&nbsp;&lt;target_dir&gt;&nbsp;[-m&nbsp;{replace|merge}]&nbsp;[-d&nbsp;{yes|no}]
+php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--locale=&lt;language_code&gt;&nbsp;--pack=&lt;target_dir&gt;&nbsp;[--mode={replace|merge}]&nbsp;[--allow_duplicates={yes|no}]
+</pre>
 
 To invoke the language pack tool, specify the following parameters:
 

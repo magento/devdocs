@@ -280,8 +280,8 @@ composer install
 cd setup
 composer install</pre>
 
-4.	Repeat the tasks discussed in TBD.
+4.	Repeat the tasks discussed in <a href="#instgde-install-cli-magento">Installing the Magento 2 software from the command line</a>. 
 
 #### Next step
 
-TBD
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying your Magento 2 installation</a>.

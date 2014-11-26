@@ -39,16 +39,9 @@ After you complete the tasks discussed in the preceding section, update Composer
 
 	This command updates package dependencies and can take a few minutes to complete.
 	
-4.	Choose what to install:
-
-	*	To install the Magento 2 system software, continue with the next section.
-	*	To install or update only the database schema, see TBD
-	*	To install or update only users and administrators, see TBD
-	*	To only update existing Magento 2 components, see TBD
+4.	Continue with the next section.
 	
-	<p class="q">Reviewer: Only the first option above will be available for the GitHub Readme. The others will be available for developer beta.</p>
-	
-<h2 id="instgde-install-magento">Installing the Magento 2 software</h2>
+<h2 id="instgde-install-magento-web">Installing the Magento 2 software using the web-based installer</h2>
 
 This section discusses how to run the command-line installer for Magento 2. The installer is designed to be run multiple times if necessary so you can:
 

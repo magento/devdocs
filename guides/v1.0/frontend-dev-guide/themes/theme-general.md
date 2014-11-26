@@ -1,10 +1,11 @@
 ---
 layout: default
 group: fedg
-subgroup: Themes
-title: Create a theme overview
-menu_title: Create a theme overview
+subgroup: A_Themes
+title: Themes
+menu_title: Themes
 menu_order: 1
+menu_node: parent
 github_link: frontend-dev-guide/themes/theme-general.md
 ---
 

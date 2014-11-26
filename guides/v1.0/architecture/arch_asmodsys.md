@@ -25,4 +25,5 @@ For more information about the components, refer to the following topics:
 
 * Magento Framework
 * Magento File System
+* Magento Database
 * Commonly Used Terms

@@ -12,9 +12,9 @@ github_link: architecture/behavior/pricing.md
 
 This topic discusses how to use the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.
 
-<h2 id="m2devgde-pricelib-integrate">How to use the Pricing library in your module</h2>
+<h2 id="m2devgde-pricelib-integrate">Use the pricing library in your module</h2>
 
-To use the Pricing library in a module:
+To use the pricing library in a module:
 
 1. Create price calculating and rendering logic extending and implementing library interfaces.
 
@@ -27,7 +27,7 @@ Each step is described in the following paragraphs.
 If all you need is customizing the way prices are displayed on your pages, skip steps 1 and 2 and proceed directly to layout and template tasks.
 
 
-<h2 id="m2devgde-pricelib-custom">Custom logic for calculating and rendering prices</h2>
+<h2 id="m2devgde-pricelib-custom">Implement price calculation and rendering</h2>
 
 To implement the price calculation and rendering, add the following to your module code base:
 
@@ -88,7 +88,7 @@ To implement the price calculation and rendering, add the following to your modu
 
 To add a custom price type, create a corresponding class extending <code>AbstractPrice</code>.
 
-<h2 id="m2devgde-pricelib-di">Add prices and adjustments to the dependency injection configuration</h2>
+<h2 id="m2devgde-pricelib-di">Configure prices and adjustments</h2>
 
 To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module's <code>di.xml</code> file.
 An example of Catalog module price configuration in its <a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.
@@ -99,7 +99,7 @@ Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price
 
 To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module's <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="{{ site.mage2000url }}app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.
 
-To learn more about dependency injection files structure, see <a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a>.
+<--! Steve removed this topic for dev beta because it's incomplete: To learn more about dependency injection files structure, see <a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a>. -->
 
 <h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
 
@@ -111,7 +111,7 @@ For example:
 
 The value of the <code>price_render_handle</code> argument is the name of the pricing layout handle, where price displaying configuration is set. For more details about pricing layout handle see the following paragraph.
 
-<h2 id="m2devgde-pricelib-custom-price-config">Configure price display options and add prices and adjustments</h2>
+<h2 id="m2devgde-pricelib-custom-price-config">Configure price display options</h2>
 
 To configure price blocks displaying in layouts, you need to create a separate layout handle for price rendering.
 

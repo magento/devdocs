@@ -169,3 +169,16 @@ interface&nbsp;Magento_AuthorizationInterface
 }
 </pre>
 Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
+
+<h2 id="m2arch-module-related"> Related topics</h2>
+
+* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module Relationships</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and Areas</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
+* <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
+* <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
+* <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>
+
+

@@ -13,6 +13,7 @@ github_link: install-gde/prereq/mysql.md
 *	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
 *	<a href="#instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</a>
 *	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL on CentOS</a>
+*	<a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>
 
 <h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
 
@@ -119,6 +120,12 @@ To configure a MySQL database instance:
 GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';</pre>
 
 5.	Enter `exit` to quit the command prompt.
+
+6.	Verify the database:
+
+	<pre>mysql -u magento -p</pre>
+	
+	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 #### Related topics
 
