@@ -6,7 +6,7 @@ module Jekyll
 
     # Full URL of the page.
     def full_url
-        File.join(@dir, self.url)
+        File.join(self.url)
     end
 
     
