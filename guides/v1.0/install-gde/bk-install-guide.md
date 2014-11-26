@@ -6,7 +6,7 @@ title: Installation overview
 menu_title: Installation overview
 menu_node: parent
 menu_order: 1
-github_link: install-gde/m2instgde-overview.md
+github_link: install-gde/bk-install-guide.md
 ---
 
 This guide discusses how to install Magento and extensions using Composer. 
