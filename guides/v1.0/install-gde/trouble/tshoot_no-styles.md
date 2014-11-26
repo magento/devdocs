@@ -6,7 +6,7 @@ title: After installing, images and stylesheets do not load; only text displays,
 menu_title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_node: 
 menu_order: 10
-github_link: install-gde/install/trouble/tshoot_no-styles.md
+github_link: install-gde/trouble/tshoot_no-styles.md
 ---
 
 <h2 id="install-trouble-styles">After installing, images and stylesheets do not load; only text displays, no graphics</h2>

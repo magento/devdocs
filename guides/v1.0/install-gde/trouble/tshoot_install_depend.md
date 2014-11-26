@@ -6,7 +6,7 @@ title: Installation dependencies not met
 menu_title: Installation dependencies not met
 menu_node: 
 menu_order: 2
-github_link: install-gde/install/trouble/tshoot_install_depend.md
+github_link: install-gde/trouble/tshoot_install_depend.md
 ---
 
 
