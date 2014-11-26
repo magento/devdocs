@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install
-subgroup: Verifying your Magento 2 installation
+subgroup: Verify
 title: Verifying your Magento 2 installation
 menu_title: Verifying your Magento 2 installation
 menu_node: parent

@@ -14,12 +14,12 @@ Thumbs.db
 _site
 ignore
 /_config.yml
-/_config-diane.yml
 /_config.steve.yml
+/_config.diane.yml
 /_config.brad.yml
-/_config.sasha.yml
 /_config.olena.yml
+/_config.sasha.yml
+/_config.tana.yml
 /_config.gen.yml
 jk.bat
 gen.bat
-/_config.tana.yml

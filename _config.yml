@@ -22,3 +22,4 @@ mage2000url: "https://github.com/magento/magento2/blob/master/"
 # Build settings
 markdown: kramdown
 highlighter: pygments
+
