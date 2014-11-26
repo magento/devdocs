@@ -24,7 +24,7 @@
 							
 								{% assign n = 0 %}
 								{% for parent in parents %}
-									<li class=" {% if page.url == parent.url %} active {%endif%}"><a class="nav-header" href="{{parent.url}}">{% if parent.menu_title %}{{parent.menu_title}}{% else %}{{parent.title}}{% endif %}</a></li>
+									<li class=" {% if page.url == parent.url %} active {%endif%}"><a class="nav-header" href="{{site.toc_baseurl}}{{parent.url}}">{% if parent.menu_title %}{{parent.menu_title}}{% else %}{{parent.title}}{% endif %}</a></li>
 									{% assign n = 1 %}
 								{% endfor %}
 								
@@ -37,7 +37,7 @@
 								
 								{% for article in articles_sorted %}
 							
-									<li class="level-2 {% if page.url == article.url %} active {%endif%}"><a href="{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+									<li class="level-2 {% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
 						
 								{% endfor %}
 								
@@ -48,7 +48,7 @@
 						
 							{% for article in articles_sorted %}
 							
-								<li class="{% if page.url == article.url %} active {%endif%}"><a href="{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+								<li class="{% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
 				
 							{% endfor %}
 							

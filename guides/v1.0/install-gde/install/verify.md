@@ -29,7 +29,7 @@ When prompted, log in as a Magento Administrator.
 
 The following figure shows a sample Magento Admin page. If it displays as follows, your installation was a success!
 
-<p><img src="{{ site.baseurl }}common/images/install-success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
 
 If the page displays unconfigured (no styles, only text), see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>.
 
