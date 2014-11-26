@@ -6,7 +6,7 @@ title: During installation, fatal PDO error displays
 menu_title: During installation, fatal PDO error displays
 menu_node: 
 menu_order: 6
-github_link: install-gde/install/trouble/tshoot_pdo.md
+github_link: install-gde/trouble/tshoot_pdo.md
 ---
 
 <h2 id="install-trouble-pdo">During installation, fatal PDO error displays</h2>
