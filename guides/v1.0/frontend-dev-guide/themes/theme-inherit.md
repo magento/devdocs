@@ -41,9 +41,9 @@ The Orange theme inherits from the Blank theme:
 Styles, JavaScript, images and fonts are static view files (according to Magento classification).<!--ADDLINK-->
 To customize static view files defined in the parent theme or in the module view or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further.
 
-The fallback for static view files:
+The particular folders, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
 
-If module context is not defined for a file:
+a. If module context is not defined for a file:
 
 1. Theme static files: `app/design/<area>/<Vendor>/<theme>/web/<resource_type>`<!-- `app/design/<area>/<Vendor>/<theme>/web` -->
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
@@ -51,7 +51,7 @@ If module context is not defined for a file:
 	<!-- 2. `app/design/<area>/<Vendor>/<parent_theme>/web` -->
 3. Library static view files: `lib/web/<resource_type>` **<!--is it true about resource type?**
 
-If module context is defined for a file:
+b. If module context is defined for a file:
 
 1. Theme module static files `app/design/<area>/<Vendor>/<theme>/<Vendor>_<Module/>web/<resource_type>`<!--2. `<base_design_dir>/<area>/<theme_path>/<Namespace>_<Module>/web` -->
 3. Ancestor theme's module static files, recursively, until a theme with no parent is reached:
@@ -89,8 +89,8 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 <!-- A background2.jpg screen here-->
 
 
-<h2 id="theme-inherit-static">Overriding templates</h2>
-Templates are dynamic view files (according to Magento classification<!--ADDLINK-->). Module context is always known for them. The fallback scheme for templates is the following:
+<h2 id="theme-inherit-static">Overriding dynamic view files: templates</h2>
+Templates are dynamic view files (according to Magento classification<!--ADDLINK-->). Module context is always known for templates. The fallback scheme for templates is the following:
 
 1. Theme templates: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/templates`
 2. Ancestors themes templates, recursively, until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/templates`
@@ -116,7 +116,7 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 You can find out what exactly code changes are required to perform this and other tasks in the Templates section. <!--ADDLINK-->
 
 
-<h2 id="theme-inherit-layout">Overriding and extending layouts</h2>
+<h2 id="theme-inherit-layout">Overriding dynamic view files: layouts</h2>
 Layout files are dynamic view files, for which the module context is always defined.
 The fallback scheme for layouts is following:
 
