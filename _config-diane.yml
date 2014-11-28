@@ -1,0 +1,13 @@
+name: Magento Developer Documentation
+markdown: kramdown
+highlighter: pygments
+encoding: utf-8
+baseurl: /
+gdeurl: /guides/v1.0/
+description: Magento 2 Developer Guide
+githuburl: https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/master/guides/v1.0/
+namem2fedg: Magento 2 Frontend Developer Guide
+namem2devgde: Magento 2 Developer Guide
+namem2api-ref: Magento 2 API Reference
+namem2install: Magento 2 Installation and Upgrade Guide
+mage2000url: https://github.com/magento/magento2/blob/master/
