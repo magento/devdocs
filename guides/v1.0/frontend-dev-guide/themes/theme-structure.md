@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 group: fedg
 subgroup: A_Themes
@@ -17,34 +17,34 @@ All Magento themes are located under `app/design/<area>/<Vendor>/`.
 Each theme is stored in a separate directory:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/
-+--&nbsp;&lt;theme1&gt;
-+--&nbsp;&lt;theme2&gt;/
-+--&nbsp;&lt;theme3&gt;
-+--...
+├──&nbsp;&lt;theme1&gt;
+├──&nbsp;&lt;theme2&gt;/
+├──&nbsp;&lt;theme3&gt;
+├--...
 </pre>
 
 <h2 id="theme-structure-comp">Theme components</h2>
 The structure of a Magento theme directory typically would be like following:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
-+--&nbsp;&lt;Vendor&gt;_&lt;Module&gt;/&nbsp;
-�	+--&nbsp;web/
-�	�	+--&nbsp;css/
-�	�	�	+--&nbsp;source/
-�	+--&nbsp;layout/
-�	�	+--&nbsp;override/
-�	+--&nbsp;templates/
-+--&nbsp;etc/
-+--&nbsp;i18n/&nbsp;
-+--&nbsp;media/
-+--&nbsp;web/
-�	+--&nbsp;css/
-�	�	+--&nbsp;source/&nbsp;
-�	+--&nbsp;fonts/
-�	+--&nbsp;images/
-�	+--&nbsp;js/
-+--&nbsp;composer.json&nbsp;
-+--&nbsp;theme.xml&nbsp;
+├──&nbsp;&lt;Vendor&gt;_&lt;Module&gt;/&nbsp;
+│	├──&nbsp;web/
+│	│	├──&nbsp;css/
+│	│	│	├──&nbsp;source/
+│	├──&nbsp;layout/
+│	│	├──&nbsp;override/
+│	├──&nbsp;templates/
+├──&nbsp;etc/
+├──&nbsp;i18n/&nbsp;
+├──&nbsp;media/
+├──&nbsp;web/
+│	├──&nbsp;css/
+│	│	├──&nbsp;source/&nbsp;
+│	├──&nbsp;fonts/
+│	├──&nbsp;images/
+│	├──&nbsp;js/
+├──&nbsp;composer.json&nbsp;
+├──&nbsp;theme.xml&nbsp;
 </pre>
 Let's have a closer look at each particular sub-directory.
 
@@ -270,12 +270,12 @@ A set of theme files that are returned by the sever to a browser as is, without 
 Static files can be located in a theme directory as follows:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
-+--&nbsp;media/
-+--&nbsp;web
-�	+--&nbsp;css/&nbsp;(except&nbsp;the&nbsp;&quot;source&quot;&nbsp;sub-directory)
-�	+--&nbsp;fonts/
-�	+--&nbsp;images/
-�	+--&nbsp;js/
+├──&nbsp;media/
+├──&nbsp;web
+│	├──&nbsp;css/&nbsp;(except&nbsp;the&nbsp;&quot;source&quot;&nbsp;sub-directory)
+│	├──&nbsp;fonts/
+│	├──&nbsp;images/
+│	├──&nbsp;js/
 </pre>
 The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
 
@@ -289,17 +289,17 @@ Those files, which cannot be accessed directly from the frontend, are distinguis
 Non-public view files can be located in a theme directory as follows:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
-+--&nbsp;Magento_&lt;module&gt;/&nbsp;
-�	+--&nbsp;web/
-�	�	+--&nbsp;css/
-�	�	�	+--&nbsp;source/
-�	+--&nbsp;layout/
-�	�	+--&nbsp;override/
-�	+--&nbsp;templates/
-+--&nbsp;etc/
-+--&nbsp;i18n/&nbsp;
-+--&nbsp;web/
-�	+--source
-+--&nbsp;composer.json&nbsp;
-+--&nbsp;theme.xml&nbsp;
+├──&nbsp;Magento_&lt;module&gt;/&nbsp;
+│	├──&nbsp;web/
+│	│	├──&nbsp;css/
+│	│	│	├──&nbsp;source/
+│	├──&nbsp;layout/
+│	│	├──&nbsp;override/
+│	├──&nbsp;templates/
+├──&nbsp;etc/
+├──&nbsp;i18n/&nbsp;
+├──&nbsp;web/
+│	├──source
+├──&nbsp;composer.json&nbsp;
+├──&nbsp;theme.xml&nbsp;
 </pre>
