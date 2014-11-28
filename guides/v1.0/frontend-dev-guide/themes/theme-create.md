@@ -18,9 +18,9 @@ To create the directory for your theme:
 
 1.	Go to `<your Magento install dir>/app/fronted`.
 
-3.	Create a new directory named according to your vendor name: `/app/fronted/<Vendor>`. Magento does not imply any specific restrictions on this naming, we advise to follow general 
+3.	Create a new directory named according to your vendor name: `/app/design/fronted/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
 
-4.	Under the vendor directory, create a directory named according to your theme:
+4.	Under the vendor directory, create a directory named according to your theme. 
 
 <pre>
 app/design/frontend/
@@ -29,6 +29,8 @@ app/design/frontend/
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
 │&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;├──&nbsp;...
 </pre>
+
+The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.
 
 <h2 id="fedg_create_theme_how-to_declare">Declaring your theme</h2>
 
@@ -46,13 +48,6 @@ To make sure the theme is recognized by the Magento application, log in to the M
 <h2 id="fedg_create_theme_composer">Add `composer.json` to your theme</h2>
 Each theme must contain a `composer.json` file describing the theme dependencies and meta-information.
 In the theme directory create (or copy from an existing theme) `composer.json` and specify the following:
-
-- `name`:
-- `description`
-- `require`
-- `type`
-- `version`
-- `extra`
 
 Example:
 

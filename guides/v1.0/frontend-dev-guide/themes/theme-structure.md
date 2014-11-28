@@ -1,4 +1,4 @@
----
+﻿---
 layout: default
 group: fedg
 subgroup: A_Themes
@@ -94,7 +94,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-        <p>Layout files which extend the default module or parent theme layouts. <!--ADDLINK--></p>
+        <p>Layout files which extend the default module or parent theme layouts. <!--ADDLINK--></p>
       </td>
     </tr>
     <tr>
@@ -179,9 +179,9 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">This directory contains theme
         <code>less</code>
-         configuration files that invoke mixins for global elements from the Magento UI library, and
+         configuration files that invoke mixins for global elements from the Magento UI library, and
         <code>theme.less</code>
-         file which overrides the default variables values. <!--ADDLINK-->
+         file which overrides the default variables values. <!--ADDLINK-->
       </td>
     </tr>
     <tr>
@@ -226,7 +226,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-        Theme JavaScript files. 
+        Theme JavaScript files. 
       </td>
     </tr>
     <tr>
@@ -236,7 +236,7 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like theme name or theme version, and it is used by the Magento system to recognize the theme. Additionally, here you can see whether a theme is a standalone one or inherited from an existing theme (parent theme).
+        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like theme name or theme version, and it is used by the Magento system to recognize the theme. Additionally, here you can see whether a theme is a standalone one or inherited from an existing theme (parent theme).
            <!--ADDLINK-->
 
       </td>

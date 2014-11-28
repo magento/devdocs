@@ -41,24 +41,24 @@ The Orange theme inherits from the Blank theme:
 Styles, JavaScript, images and fonts are static view files (according to Magento classification).<!--ADDLINK-->
 To customize static view files defined in the parent theme or in the module view or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further.
 
-The fallback for static view files:
+The particular folders, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
 
-If module context is not defined for a file:
+a. If module context is not defined for a file:
 
-1. Theme static files: `app/design/<area>/<Vendor>/<theme>/web/<resource_type>`<!-- `app/design/<area>/<Vendor>/<theme>/web` -->
+1. Theme static files: `app/design/frontend/<Vendor>/<theme>/web/<resource_type>`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
-	 `app/design/<area>/<parent_theme_path>/web/<resource_type>`
-	<!-- 2. `app/design/<area>/<Vendor>/<parent_theme>/web` -->
-3. Library static view files: `lib/web/<resource_type>` **<!--is it true about resource type?**
+	 `app/design/frontend/<parent_theme_path>/web/<resource_type>`
+	
+3. Library static view files: `lib/web/<resource_type>` 
 
-If module context is defined for a file:
+b. If module context is defined for a file:
 
-1. Theme module static files `app/design/<area>/<Vendor>/<theme>/<Vendor>_<Module/>web/<resource_type>`<!--2. `<base_design_dir>/<area>/<theme_path>/<Namespace>_<Module>/web` -->
-3. Ancestor theme's module static files, recursively, until a theme with no parent is reached:
-	`app/design/<area>/<parent_theme_path>/<Vendor>_<Module/>web/<resource_type>`
-	<!--2. `<base_design_dir>/<area>/<parent_theme_path>/<Namespace>_<Module>/web` -->
-3. Module static view files: `app/code/<Vendor>/<Module>/view/<area>/web/<resource_type>`
-<!-- 4. `<base_code_dir>/<Namespace>/<Module>/view/<area>/web` -->
+1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module/>web/<resource_type>`
+3. Ancestor themes module static files, recursively, until a theme with no acncestor is reached:
+	`app/design/frontend/<parent_theme_path>/<Vendor>_<Module/>web/<resource_type>`
+	
+3. Module static view files: `app/code/<Vendor>/<Module>/view/frontend/web/<resource_type>`
+
 
 <u>Example</u>
 
@@ -89,11 +89,11 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 <!-- A background2.jpg screen here-->
 
 
-<h2 id="theme-inherit-static">Overriding templates</h2>
-Templates are dynamic view files (according to Magento classification<!--ADDLINK-->). Module context is always known for them. The fallback scheme for templates is the following:
+<h2 id="theme-inherit-static">Overriding dynamic view files: templates</h2>
+Templates are dynamic view files (according to Magento classification<!--ADDLINK-->). Module context is always known for templates. The fallback scheme for templates is the following:
 
-1. Theme templates: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/templates`
-2. Ancestors themes templates, recursively, until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/templates`
+1. Current theme templates: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/templates`
+2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/templates`
 3. Module templates: `app/code/<Vendor>/<Module>/view/frontend/templates`
 
 
@@ -116,13 +116,11 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 You can find out what exactly code changes are required to perform this and other tasks in the Templates section. <!--ADDLINK-->
 
 
-<h2 id="theme-inherit-layout">Overriding and extending layouts</h2>
-Layout files are dynamic view files, for which the module context is always defined.
-The fallback scheme for layouts is following:
+<h2 id="theme-inherit-layout">Overriding dynamic view files: layouts</h2>
+Layout files are dynamic view files, for which the module context is always defined. Layouts processing mechanism does not fallback. The system collects layout files in the following order:
 
-
-1. Theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout`
-2. Ancestor themes layouts, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
+1. Currrent theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout`
+2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
 3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
 
 Unlike templates or images, layout can be not only overridden, but also extended. 
@@ -132,9 +130,10 @@ To override the instructions from an ancestor theme layout file:
 
  * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/<ancestor_theme>/` directory.
 
-To override a module layout file (<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">a base layout</a>):
+To override module layout instructions (<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">a base layout</a>):
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
+
 
 For more information about overriding layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a> article.
 
@@ -158,15 +157,16 @@ To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/
 
 
 <h2 id="theme-inherit-locale">Overriding locales</h2>
-Locales are CSV text documents containing translation strings for interface elements and system messages. 
-Locales cab stored in modules and themes. 
-The fallback scheme for locales is the following:
+Locales (dictionaries) are CSV text documents containing translation strings for interface elements and system messages. 
+Locales can be stored in modules, themes, packages and in the database.
+The system collects translations for a language in the following order:
 
-1. `app/design/frontend/<Vendor>/<theme>/i18n/`
-2. Repeat these steps recursively for each parent theme, until theme with no parent is reached:
-`app/design/frontend/<Vendor>/<parent_theme>/i18n/`
+1. Modules locales: `app/code/<Vendor>/<Module>/i18n/`
+2. Current theme locales: `app/design/frontend/<Vendor>/<theme>/i18n/`
+3. Language package: `app/i18n/<Vendor>/<package>`
+4. Tranlsation from database.
 
-**<!-- Doesn't it search in module folders?**
+If for a one key, there are different translations, the priority of translation to be used is defined by the same order. For modules, the priority is defined by the order set in `app/etc/config.php`.
 
-To override ??
+
 

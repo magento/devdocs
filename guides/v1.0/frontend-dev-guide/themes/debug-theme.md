@@ -48,9 +48,9 @@ Just like templates, layouts are saved on a per-module basis. You can easily loc
 
 After you have determined the module, you can search for the layout in the following locations according to the layout fallback logic:
 
-1. `app/design/<area>/<Vendor>/<current_theme>/<Namespace>_<Module>/layout`
-2. `app/design/<area>/<Vendor>/<parent_theme(s)>/<Namespace>_<Module> /layout`
-3. `app/code/<Vendor>/<Module>/view/<area>/layout`
+1. `app/design/<area>/<vendor>/<current_theme>/<Namespace>_<Module>/layout`
+2. `app/design/<area>/<vendor>/<parent_theme(s)>/<Namespace>_<Module> /layout`
+3. `app/code/<vendor>/<Module>/view/<area>/layout`
 
 There is no straightforward algorithm how to define at once the exact layout file, but in most cases layout file names are self descriptive. Also you can search them for mentions of the corresponding templates.
 
