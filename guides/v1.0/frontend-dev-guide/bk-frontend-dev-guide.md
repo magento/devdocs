@@ -56,7 +56,7 @@ To be able to understand this guide, you must have basic knowledge of:
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/themes-general.html">Magento 2 theming</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Magento 2 theming</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>

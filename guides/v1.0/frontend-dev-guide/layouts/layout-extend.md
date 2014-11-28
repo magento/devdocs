@@ -14,7 +14,7 @@ Rather than copy extensive layout code and modify what you want to change, in Ma
 
 To add a theme merging file:
 
-1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/themes-general.html#layout_conventions">layout file conventions</a>.
+1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html#layout_conventions">layout file conventions</a>.
 2.	Place the theme merging file according to our location conventions; that is:
 
 <pre>__app/design/[area]/[theme path]
