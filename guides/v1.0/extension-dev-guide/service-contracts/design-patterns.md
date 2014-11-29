@@ -68,13 +68,13 @@ github_link: extension-dev-guide/service-contracts/design-patterns.md
    <li>Call the <code>final</code> <code>create()</code> function to return a new instance.</li>
 </ol>
 <p>For example:</p>
-<blockquote>
+
    <pre>
 $this->customerBuilder->setGroupId(CustomerGroupServiceInterface::NOT_LOGGED_IN_ID);
 ...
 $newCustomer = $this->customerBuilder->create();
 </pre>
-</blockquote>
+
 <h4 id="modify-data-entity">Modify a data entity</h4>
 <p>You cannot modify data entity instances, and doing so can be dangerous because some code, such as shared caches, relies on immutable data entities.</p>
 <p>Instead, each builder has a <code>populate($entity)</code> function that clones entity attributes into a new entity.</p>
@@ -85,13 +85,13 @@ $newCustomer = $this->customerBuilder->create();
    <li>Call the <code>final</code> <code>create()</code> function to create a new instance.</li>
 </ol>
 <p>For example:</p>
-<blockquote>
+
    <pre>
 $this->customerBuilder->populate($customer);
 $this->customerBuilder->setGroupId(CustomerGroupServiceInterface::NOT_LOGGED_IN_ID);
 $newCustomer = $this->customerBuilder->create();
 </pre>
-</blockquote>
+
 <div class="bs-callout bs-callout-info" id="info">
    <p>To populate an entity from an HTML form, use the <code>populateWithArray($nameValuePairsArray)</code> function.</p>
 </div>

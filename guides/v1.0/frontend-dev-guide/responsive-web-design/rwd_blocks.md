@@ -41,13 +41,13 @@ The following figure shows the resulting scroll bar:
 
 ![Sample horizontal scroll bar that displays when the width of a table is larger than a mobile device screen size.]({{ site.baseurl }}common/images/rwd_blocks_scrollbar.png)
 
-<h2 id="fedg_rwd_form">Using Responsive Forms</h2>
+<h2 id="fedg_rwd_form">Use responsive forms</h2>
 
 If you create custom forms, consider the type of data that the field in the form is expected to receive. If the expected data is e-mail, use `<input type=”email”>` instead of `<input type=”text”>`.
 
 When the user selects this field on a mobile device, a keyboard containing Latin characters and the `@` character displays.
 
-<h2 id="fedg_rwd_images">Using Responsive Images</h2>
+<h2 id="fedg_rwd_images">Use Responsive Images</h2>
 
 Product images on product pages in your store are also fully responsive, and can adapt to different screen sizes.
 

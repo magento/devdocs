@@ -31,7 +31,7 @@ Both short and long descriptions (for file headers and herein) must be separated
 If description or short description happens to be the first one after DocBlock opening tag (`/**`) or last one before closing tag (`*/`), it should not be separated with an empty line.
 
 **DocBlock Header in a PHP-file**
-<blockquote>
+
 <pre>
 &lt;?php
 /**
@@ -43,11 +43,11 @@ If description or short description happens to be the first one after DocBlock o
  * License notice...
  */
  </pre>
- </blockquote>
+ 
 
 **DocBlock Header in an XML-file**
 
-<blockquote>
+
 <pre>
 &lt;!--
 /**
@@ -60,7 +60,7 @@ If description or short description happens to be the first one after DocBlock o
  */
 -->
 </pre>
-</blockquote>
+
 
 <h2 id="code-elements">Code structural elements</h2>
 
@@ -71,7 +71,7 @@ If the source code file has one and only one standalone structural element (clas
 So in general case, classes that are declared in dedicated files, must have one DocBlock, which refers to the class and file at the same time.
 
 **DocBlock for a Class**
-<blockquote>
+
 <pre>
 &lt;?php
 /**
@@ -82,7 +82,7 @@ So in general case, classes that are declared in dedicated files, must have one 
 class Autoload
 {
 </pre>
-</blockquote>
+
 
 But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:
 
@@ -91,7 +91,7 @@ But if along with declaring class or function there must be another file with so
 
 **DocBlock with Included Script File**
 
-<blockquote>
+
 <pre>
 &lt;?php
 /**
@@ -110,11 +110,11 @@ namespace Magento\Test;
 class Bootstrap
 {
 </pre>
-</blockquote>
+
 
 **DocBlock with Included Class File**
 
-<blockquote>
+
 <pre>
 namespace Magento\Framework\Profiler\Adapter;
 
@@ -137,7 +137,7 @@ class Csv extends \Magento\Framework\Profiler\AdapterAbstract
 
 require_once __DIR__ . '/../../functions.php';
 </pre>
-</blockquote>
+
 
 <h3 id="classes-interfaces">Classes and interfaces</h3>
 
@@ -149,7 +149,7 @@ It is encouraged to use the short form of the name to encourage readability and 
 
 **Example of a Method DocBlock**
 
-<blockquote>
+
 <pre>
 use Magento\Logger;
 use Magento\Math\Random;
@@ -172,7 +172,7 @@ protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $nu
 
 }
 </pre>
-</blockquote>
+
 
 <h3 id="class-attributes">Class attributes</h3>
 
@@ -180,7 +180,7 @@ Class attributes must have type declaration using `@var` tag.
 
 **Example of Class Attribute**
 
-<blockquote>
+
 <pre>
 // ...
 namespace Magento;
@@ -192,7 +192,7 @@ class Profiler
      */
     protected static $_instance = null;
 </pre>
-</blockquote>
+
 
 <h3 id="functions-methods">Functions and methods</h3>
 
@@ -206,7 +206,7 @@ Functions and methods must have:
 It is encouraged to supply `@para`m and `@throws` tags with additional description, which comes after the formal declaration of the tag.
 
 **Example of a Method DocBlock**
-<blockquote>
+
 <pre>
 /**
  * Merge the config XML-files
@@ -235,7 +235,7 @@ protected function _merge($configFiles)
     $this->_dom = $domConfig->getDom();
 }
 </pre>
-</blockquote>
+
 
 <h4 id="throws">Divergence in @throws tag</h4>
 
@@ -243,7 +243,7 @@ A general case when `@throws` tag must be used is if *throw* language construct 
 
 **Example of Throwing Exception Explicitly**
 
-<blockquote>
+
 <pre>
 /**
  * Set an arbitrary value to specified element
@@ -268,7 +268,7 @@ public function setAttribute($elementId, $attribute, $value)
     return $this;
 }
 </pre>
-</blockquote>
+
 
 In this general case, if an exception is thrown in a sub-routine, then `@throws` must not be used in the parent method.
 
@@ -276,7 +276,7 @@ However, if the only purpose of the referred sub-routine is to throw a specific 
 
 **Throwing Exception Implicitly**
 
-<blockquote>
+
 <pre>
 /**
  * Recursively delete directory from storage
@@ -309,7 +309,7 @@ public function deleteDirectory($path)
     }
 }
 </pre>
-</blockquote>
+
 
 <h4 id="return">@return tag</h4>
 
@@ -323,7 +323,7 @@ Constants must have short description.
 
 For example, a global constant:
 
-<blockquote>
+
 <pre>
 /**
  * Directory separator shorthand
@@ -338,7 +338,7 @@ class Profiler
      */
     const NESTING_SEPARATOR = '->';
 </pre>
-</blockquote>
+
 
 <h3 id="DocBlock-templates">DocBlock templates</h3>
 
@@ -347,18 +347,18 @@ If there is declaration of multiple consecutive elements of same type, the same 
 DocBlock template consists of two DocBlock comments:
 
 * Starting comment is before first element of the group, distinguished using `#@+` and formatted as follows:
-<blockquote>
+
 <pre>
 /**#@+
  *
  */
 </pre>
-</blockquote>
+
 * Ending comment is after the last element of the group, distinguished using `#@-` and formatted as follows:`/**#@-*/`
 
 For example, declaration of multiple class constants or attributes:
 
-<blockquote>
+
 <pre>
 class Mage_Core_Model_Layout extends Varien_Simplexml_Config
 {
@@ -378,7 +378,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
     protected $_scheduledRemoves = array();
     /**#@-*/
     </pre>
-    </blockquote>
+    
 
 <h2 id="documentation-space">Structure of documentation space</h2>
 
@@ -401,23 +401,23 @@ For purpose of automatic type hinting in an IDE, an inline notation of `@var` ta
 
 **Inline Type Hinting**
 
-<blockquote>
+
 <pre>
 /** @var libXMLError $error */
 foreach ($errors as $error) {
 </pre>
-</blockquote>
+
 
 Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:
 
 **Inline Type Hinting Variation**
 
-<blockquote>
+
 <pre>
 /** @var $error libXMLError */
 foreach ($errors as $error) {
 </pre>
-</blockquote>
+
 
 <h3 id="see">@see tag</h3>
 
@@ -425,7 +425,7 @@ Besides the normal way of using `@see` tag as [recommended by phpDocumentor](htt
 
 Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:
 
-<blockquote>
+
 <pre>
 /**
  * @var $this ClassOne
@@ -433,7 +433,7 @@ Specifically, this is possible when a PHP-file composed from multiple file inclu
  * @see FooInterface
  */
 </pre>
-</blockquote>
+
 
 <h3 id="other-tags">Other tags</h3>
 
@@ -445,7 +445,7 @@ Any other valid DocBlock tags may be specified, if author deems necessary, but o
 
 If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.
 
-<blockquote>
+
 <pre>
 /**
  * ...
@@ -455,7 +455,7 @@ If there are two or more tags together in one DocBlock, their values may be padd
  * @link   http://example.com
  */
 </pre>
-</blockquote>
+
 
 <h3 id="format-consistency">Formatting consistency</h3>
 
@@ -465,7 +465,7 @@ For example, padding for visual alignment can be done in two ways consistently:
 
 **Correct – align everything:**
 
-<blockquote>
+
 <pre>
 /**
  * ...
@@ -477,11 +477,11 @@ For example, padding for visual alignment can be done in two ways consistently:
  * @see    _insertChild() for position explanation
  */
  </pre>
- </blockquote>
+ 
 
 **Also correct – don't align anything:**
 
-<blockquote>
+
 <pre>
 /**
  * ...
@@ -494,10 +494,10 @@ For example, padding for visual alignment can be done in two ways consistently:
  */
 public function reorderChild($parentId, $childId, $position)
 </pre>
-</blockquote>
+
 
 **Incorrect – align only partially:**
-<blockquote>
+
 <pre>
 /**
  * ...
@@ -509,5 +509,5 @@ public function reorderChild($parentId, $childId, $position)
  * @see _insertChild() for position explanation
  */
 </pre>
-</blockquote>
+
 

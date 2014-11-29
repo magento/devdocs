@@ -38,14 +38,14 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
          <p>Required. Root element that defines the namespace and location of the XML schema file.</p>
       </td>
       <td>
-         <p>
+
          <dl>
-            <dt><code>xmlns:xsi</code></dt>
-            <dd>Namespace for the XML schema instance.</dd>
-            <dt><code>xsi:noNamespaceSchemaLocation</code></dt>
-            <dd>Path and file name of the XML schema file to use to validate the web API.</dd>
+            <dt><p><code>xmlns:xsi</code></p></dt>
+            <dd><p>Required. Defines the namespace for the XML schema instance.</p></dd>
+            <dt><p><code>xsi:noNamespaceSchemaLocation</code></p></dt>
+            <dd><p>Required. Defines the path and file name of the XML schema file to use to validate the web API.</p></dd>
          </dl>
-         </p>
+
       </td>
    </tr>
    <tr>

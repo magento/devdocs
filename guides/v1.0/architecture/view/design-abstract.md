@@ -8,7 +8,7 @@ menu_order: 2
 github_link: architecture/view/design-abstract.md
 ---
 
-<h2 id="m2devgde-design-abstract-intro">Introduction to design abstractions</h2>
+<h2 id="m2devgde-design-abstract-intro">Introduction</h2>
 
 A *design abstraction* is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type providing business users the ability to customize design for certain type of pages. In particular design abstractions are used in the widget creation to define the types of pages where a widget can be displayed.
 
@@ -58,7 +58,7 @@ Where <code>design_abstraction_name</code> is the name of the design abstraction
 
 To complete the <code>customer_account.xml</code> design abstraction example, look at <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layouts/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the `customer_account` design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page in defined directly, while the left-hand navigation menu is defined by <a href="{{ site.mage2000url }}app/code/Magento/Review/view/frontend/layouts/customer_account.xml" target="_blank">customer_account.xml</a>.
 
-<h3 id="m2devgde-design-abstract-widget">Using Design Abstractions in Widget Creation</h3>
+<h3 id="m2devgde-design-abstract-widget">Design abstractions in widget creation</h3>
 Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design theme. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.
 
 <img src="{{ site.baseurl }}common/images/view_da4.png" alt="Specifying page type">

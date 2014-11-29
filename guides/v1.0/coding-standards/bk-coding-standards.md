@@ -2,7 +2,7 @@
 layout: default
 group: coding-standards
 subgroup: A_intro
-title: Introduction to coding standards
+title: Coding standards
 menu_title: Introduction
 menu_order: 1
 menu_node: parent

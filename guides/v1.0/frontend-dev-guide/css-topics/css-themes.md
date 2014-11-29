@@ -20,13 +20,13 @@ Both approaches work. We recommend that you use theme XML files.
 
 You can include CSS files by adding them to theme templates directly as follows:
 
-<blockquote>
+
 <pre>&lt;head>
     ...
     &lt;link rel="stylesheet" href="<?php echo $this->getViewFileUrl('css-topics/styles.css') ?>" media="all" />
     ...
 &lt;/head></pre>
-</blockquote>
+
 
 This method is inefficient because you must add this code to every template file. Also, we strongly recommend against editing Magento core files because you must then override all page templates just to add a single CSS.
 
@@ -57,5 +57,5 @@ This example shows how to specify an Internet Explorer 9-specific stylesheet:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS overview</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/themes-general.html">Magento 2 theming</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Magento 2 theming</a>
 
