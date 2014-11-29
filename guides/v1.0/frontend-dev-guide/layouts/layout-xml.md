@@ -99,7 +99,7 @@ Where:
 
 <h3 id="layout_markup_css_change">Change JavaScript or CSS links</h3>
 
-To change a link, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#fedg_layout_xml-instruc_ex_rem">remove it</a> then add the new one.
+To change a link, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#layout_markup_remove_elements">remove it</a> then add the new one.
 
 <h3 id="layout_markup_css_remove">Remove JavaScript or CSS</h3>
 
@@ -123,7 +123,7 @@ To change it, make a customization similar to the following in a theme merging f
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
-To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#fedg_layout_xml-instruc_ex_rem">remove it</a> and add a new one.
+To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#layout_markup_remove_elements">remove it</a> and add a new one.
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
