@@ -9,44 +9,33 @@ menu_node: parent
 github_link: get-started/gs-web-api-requests.md
 ---
 
-<p>A web API call is made up of a request and a response.</p>
 <a name="requests"></a>
-<p>Then, you combine these components in a request:</p>
-<table style="width:100%">
+<p>A web API call, or <i>request</i>, contains these components:</p>
+<table style="width:75%">
    <tr bgcolor="lightgray">
       <th>Component</th>
       <th>Description</th>
-      <th>See</th>
    </tr>
    <tr>
       <td>
-         <p>Authentication token</p>
+         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#verbs">HTTP verb</a></p>
       </td>
       <td>
-         <p>A token that proves you as the owner of a Magento
-            account.
-         </p>
-      </td>
-      <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>
-         </p>
+         <p>Specifies the action to perform against the endpoint.</p>
       </td>
    </tr>
    <tr>
       <td>
-         <p>Endpoint</p>
+         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#endpoints">Endpoints</a></p>
       </td>
       <td>
          <p>A combination of the server that fulfills the request and the resource against which the request is being made. For example:</p>
          <pre>http://magento.ll/index.php/rest/V1/customerGroups/:id</pre>
       </td>
-      <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#endpoints">Endpoints</a></p>
-      </td>
    </tr>
    <tr>
       <td>
-         <p>Call payload</p>
+         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#payload">Call payload</a></p>
       </td>
       <td>
          <p>A set of input fields that you supply with the request.
@@ -55,25 +44,22 @@ github_link: get-started/gs-web-api-requests.md
             <em>optional</em> inputs. You specify some inputs in the URI, and some in a request body. You can specify a JSON- or XML-formatted request body.
          </p>
       </td>
-      <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#payload">Call payload</a></p>
-      </td>
+
    </tr>
    <tr>
       <td>
-         <p>HTTP headers</p>
+         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#http-headers">HTTP headers</a></p>
       </td>
       <td>
          <p>Headers specify authentication credentials, the call request and response formats,
             and other information.
          </p>
       </td>
-      <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#http-headers">HTTP headers</a></p>
-      </td>
+
    </tr>
    </tbody>
 </table>
+
 <a name="verbs"></a>
 <h3>HTTP verbs</h3>
 <p>Include one of these HTTP verbs in the web API request:</p>
@@ -142,7 +128,13 @@ github_link: get-started/gs-web-api-requests.md
       <td>
          <code>Authorization: Bearer</code>
       </td>
-      <td>The authentication token.</td>
+      <td>The authentication token that proves you as the owner of a Magento
+            account.
+      </td>
+      <td>
+         <p><a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>
+         </p>
+      </td>
    </tr>
    <tr>
       <td>
@@ -163,6 +155,41 @@ github_link: get-started/gs-web-api-requests.md
       </td>
    </tr>
 </table>
+<p>Common headers in Magento web API requests are:</p>
+<ul>
+            <li>
+               <p>
+                  <code>Content-Type</code>. Required for operations with a request body.
+               </p>
+               <p>Specifies the format of the request body.</p>
+               <p>Use the following syntax for the header
+                  where
+                  <code>format</code>is either
+                  <code>json</code>or
+                  <code>xml</code>.
+               </p>
+               <pre>Content-Type: application/format</pre>
+            </li>
+            <li>
+               <p>
+                  <code>Authorization</code>. Required. Specifies the authentication token.
+               </p>
+            </li>
+            <li>
+               <p>
+                  <code>Accept</code>. Optional.
+               </p>
+               <p>Specifies the format of the response body.</p>
+               <p>Use the following syntax for the header
+                  where
+                  <code>format</code>is either
+                  <code>json</code>or
+                  <code>xml</code>. The default is
+                  <code>json</code>.
+               </p>
+               <pre>Accept: application/format</pre>
+            </li>
+         </ul>
 <p>Be aware that different Magento APIs use different sets of HTTP headers (and some
    don't use any at all). Refer to the Developer documentation for the definitive list
    of HTTP headers for the Magento operation(s) you plan to use.

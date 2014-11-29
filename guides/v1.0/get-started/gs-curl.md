@@ -12,10 +12,13 @@ github_link: get-started/gs-curl.md
    responses from the command line or a shell script. It is available for Linux distributions,
    Mac OS X, and Windows.
 </p>
-<p>This guide shows you how to use cURL commands to make Magento web API calls. The cURL examples
+<p>The examples in this guide use cURL commands to make Magento web API calls. For complete information about cURL, see
+   <a href="http://curl.haxx.se/" target="_top">http://curl.haxx.se/</a>.
+</p>
+<p>The cURL examples in this guide
    use the following command-line options:
 </p>
-<table style="width:100%">
+<table style="width:75%">
    <tr bgcolor="lightgray">
       <th>Option</th>
       <th>Description</th>
@@ -27,8 +30,7 @@ github_link: get-started/gs-curl.md
          </p>
       </td>
       <td>
-         <p>Sends the specified data in a POST request to the HTTP server.</p>
-         <p>Use this option to send a JSON or XML request body to the server.</p>
+         <p>Sends the specified data in a POST request to the HTTP server. Use this option to send a JSON or XML request body to the server.</p>
       </td>
    </tr>
    <tr>
@@ -38,43 +40,11 @@ github_link: get-started/gs-curl.md
          </p>
       </td>
       <td>
-         <p>Specifies an extra HTTP header in the request. You can specify any number of extra
-            headers. Precede each header with the
-            <code>-H</code>option.
+         <p>Specifies an extra HTTP header in the request. Precede each header with the
+            <code>-H</code>option. You can specify any number of extra
+            headers.
          </p>
-         <p>Common headers in Magento web API requests are:</p>
-         <ul>
-            <li>
-               <p>
-                  <code>Content-Type</code>. Required for operations with a request body.
-               </p>
-               <p>Specifies the format of the request body. Following is the syntax for the header
-                  where
-                  <code>format</code>is either
-                  <code>json</code>or
-                  <code>xml</code>.
-               </p>
-               <pre>Content-Type: application/format</pre>
-            </li>
-            <li>
-               <p>
-                  <code>Authorization</code>. Required. Specifies the authentication token.
-               </p>
-            </li>
-            <li>
-               <p>
-                  <code>Accept</code>. Optional.
-               </p>
-               <p>Specifies the format of the response body. Following is the syntax for the header
-                  where
-                  <code>format</code>is either
-                  <code>json</code>or
-                  <code>xml</code>. The default is
-                  <code>json</code>.
-               </p>
-               <pre>Accept: application/format</pre>
-            </li>
-         </ul>
+         <p>For a list of common headers used in Magento web API requests, see <a href="{{ site.gdeurl }}get-started/gs-web-api-requests.html#http-headers">HTTP headers</a>.</p>
       </td>
    </tr>
    <tr>
@@ -94,8 +64,8 @@ github_link: get-started/gs-curl.md
          </p>
       </td>
       <td>
-         <p>Specifies silent or quiet mode, which makes cURL mute. No progress or error messages
-            are shown.
+         <p>Specifies silent or quiet mode, which makes cURL mute. Progress and error messages
+            are suppressed.
          </p>
       </td>
    </tr>
@@ -122,9 +92,10 @@ github_link: get-started/gs-curl.md
       </td>
    </tr>
 </table>
-<p>For complete information about cURL, see
-   <a href="http://curl.haxx.se/" target="_top">http://curl.haxx.se/</a>.
-</p>
+
+<p>For a complete list of cURL command options, see <a href="http://curl.haxx.se/docs/manpage.html">curl.1 the man page</a>.</p>
+
+
 
 
 

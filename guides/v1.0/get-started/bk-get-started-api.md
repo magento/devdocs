@@ -13,7 +13,7 @@ github_link: get-started/bk-get-started-api.md
 <h2>Get started</h2>
 <p>The Magento web API framework enables Magento and third-party developers to <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>. To access these web APIs, you make REST web API calls.</p>
 <p>This guide introduces web API, REST, and cURL command concepts and shows you how to construct REST web API calls. You can modify these examples to construct other calls.</p>
-<p>You execute REST web API calls through cURL commands or a REST client.</p>
+<p>You execute REST web API calls through <a href="{{ site.gdeurl }}get-started/gs-curl.html">cURL commands</a> or a REST client.</p>
 
 <p>Read the following sections to get up and running with the Magento web APIs:</p>
 <ul>
