@@ -8,8 +8,13 @@ menu_order: 1
 github_link: extension-dev-guide/test/test-framework.md
 ---
 
-<h2 id="m2devgde-objmgr-intro">Overview</h2>
-<p>The Magento test framework (MTF) enables you to run thorough and accurate tests of your Magento installation. Use these instructions to install and configure MTF, set up the components of a test, and configure testing.</p>
+The Magento test framework (MTF) enables you to run thorough and accurate tests of your Magento installation.
+
+To install and configure MTF, set up the components of a test, and configure testing, see [Installing and Configuring the Magento Test Framework (MTF)](https://github.com/magento/mtf/blob/master/docs/install-config.md).
+
+
+<!--
+
 <p>The main tools are:</p>
 
 * **Fixtures**: Use these to create context or preconditions for your tests.
@@ -810,3 +815,5 @@ We recommend following this sequence of steps to create a test:
 *     Create the constraints and data sets based on these constraints.
 *     Create the isolation script and specifying the isolation strategy. You can omit this step.
 *     Write a test.
+ -->
+
