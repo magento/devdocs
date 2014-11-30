@@ -10,99 +10,92 @@ github_link: get-started/gs-web-api-requests.md
 ---
 
 <a name="requests"></a>
-<p>A web API call, or <i>request</i>, contains these components:</p>
+<p>Each Magento web API call contains of a combination of these elements:</p>
+<ul>
+   <li><a href="#verbs">HTTP verb</a></li>
+   <li><a href="#endpoints">Endpoint</a></li>
+   <li><a href="#http-headers">HTTP headers</a></li>
+   <li><a href="#payload">Call payload</a></li>
+</ul>
+<p>The following table gives an overview of these API call elements.</p>
+<p>See the sections that follow the table for more complete descriptions.</p>
 <table style="width:75%">
    <tr bgcolor="lightgray">
-      <th>Component</th>
-      <th>Description</th>
+      <th>Element</th>
+      <th>Specifies</th>
    </tr>
    <tr>
       <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#verbs">HTTP verb</a></p>
+         <p><a href="#verbs">HTTP&nbsp;verb</a></p>
       </td>
       <td>
-         <p>Specifies the action to perform against the endpoint.</p>
-      </td>
-   </tr>
-   <tr>
-      <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#endpoints">Endpoints</a></p>
-      </td>
-      <td>
-         <p>A combination of the server that fulfills the request and the resource against which the request is being made. For example:</p>
-         <pre>http://magento.ll/index.php/rest/V1/customerGroups/:id</pre>
+         <p>The action to perform against the endpoint.</p>
       </td>
    </tr>
    <tr>
       <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#payload">Call payload</a></p>
+         <p><a href="#endpoints">Endpoint</a></p>
       </td>
       <td>
-         <p>A set of input fields that you supply with the request.
-            API operations have both
-            <em>required</em> and
-            <em>optional</em> inputs. You specify some inputs in the URI, and some in a request body. You can specify a JSON- or XML-formatted request body.
-         </p>
+         <p>A combination of the <i>server</i> that fulfills a request, the web service, and the <i>resource</i> against which the request is being made.</p>
       </td>
-
    </tr>
    <tr>
       <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-web-api-concepts.html#http-headers">HTTP headers</a></p>
+         <p><a href="#http-headers">HTTP&nbsp;headers</a></p>
       </td>
       <td>
-         <p>Headers specify authentication credentials, the call request and response formats,
+         <p>The authentication token, the call request and response formats,
             and other information.
          </p>
       </td>
-
    </tr>
-   </tbody>
+   <tr>
+      <td>
+         <p><a href="#payload">Call&nbsp;payload</a></p>
+      </td>
+      <td>
+         <p>A set of input parameters and attributes that you supply with the request.
+            API operations have both
+            <em>required</em> and
+            <em>optional</em> inputs. You specify input parameters in the URI and input attributes in a request body. You can specify a JSON- or XML-formatted request body.
+         </p>
+      </td>
+   </tr>
 </table>
-
 <a name="verbs"></a>
-<h3>HTTP verbs</h3>
-<p>Include one of these HTTP verbs in the web API request:</p>
-<dl>
-   <dt>GET</dt>
-   <dd>Requests transfer of a current representation of the
-      target resource.
-   </dd>
-   <dt>PUT</dt>
-   <dd>Requests that the state of the target resource be
+<h2>HTTP verb</h2>
+<p>Specify one of these HTTP verbs in the request:</p>
+<ul>
+   <li><code>GET</code>.
+   Requests transfer of a current representation of the
+      target resource. If you omit the verb, <code>GET</code> is the default.
+   </li>
+   <li><code>PUT</code>.
+   Requests that the state of the target resource be
       created or replaced with the state defined by the representation
       enclosed in the request message payload.
-   </dd>
-   <dt>POST</dt>
-   <dd>Requests that the origin server accept the
+   </li>
+   <li><code>POST</code>.
+   Requests that the origin server accept the
       representation enclosed in the request as data to be processed by the
       target resource.
-   </dd>
-   <dt>DELETE</dt>
-   <dd>Requests that the origin server delete the target
+   </li>
+   <li><code>DELETE</code>.
+   Requests that the origin server delete the target
       resource.
-   </dd>
-</dl>
-<a name="endpoints"></a>
-<h3>Endpoints</h3>
-<p>An endpoint is a combination of a URL and URI.</p>
-<p>The REST endpoint URL is <code>http://magento.ll/index.php/rest/</code>.</p>
-<p>The URL points to the server that fulfills the request.</p>
-<p>The URI is the resource against which the request is being made. Specifically, the service endpoint combines:</p>
-<ul>
-   <li>The web protocol: <code>http</code></li>
-   <li>The server that fulfills the request: <code>magento.ll/index.php</code></li>
-   <li>The web service: <code>rest</code></li>
-   <li>The resource URI: <code>V1/customerGroups/</code></li>
-   <li>Any template parameters: <code>/:id</code></li>
+   </li>
 </ul>
-<p>In this example, the service endpoint is:</p>
-<pre>http://magento.ll/index.php/rest/V1/customerGroups/:id</pre>
+<a name="endpoints"></a>
+<h2>Endpoint</h2>
+<p>An endpoint is a combination of the <i>server</i> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
+
+<p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code>magento.ll/index.php/</code>, the web service is <code>rest</code>, the resource is <code>/V1/customerGroups</code>, and the template parameter is <code>id</code>.</p>
 <a name="payload"></a>
-<h3>Call payload</h3>
+<h2>Call payload</h2>
 <p>Payloads</p>
 <a name="formats"></a>
-<h3 id="formats">Request and response formats</h3>
+<h2>Request and response formats</h2>
 <ul>
    <li>JSON</li>
    <li>XML</li>
@@ -115,32 +108,39 @@ github_link: get-started/gs-web-api-requests.md
    <li>Set the HTTP </code>Content-Type</code> header to </code>text/xml</code>.</li>
 </ul>
 <a name="http-headers"></a>
-<h3>HTTP headers</h3>
-<p>Magento has many services and some require that you specify a set of HTTP headers
-   in your calls.
-</p>
+<h2>HTTP headers</h2>
+<div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
+<p>Specify one or more of the following HTTP headers
+   in your web API calls:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
       <th>HTTP header</th>
       <th>Description</th>
+      <th>Syntax</th>
    </tr>
    <tr>
       <td>
-         <code>Authorization: Bearer</code>
+         <pre>Authorization</pre>
       </td>
-      <td>The authentication token that proves you as the owner of a Magento
-            account.
-      </td>
-      <td>
-         <p><a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>
+      <td><p>Required. Specifies the authentication token that proves you as the owner of a Magento
+         account.
          </p>
       </td>
+      <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
+      <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
+See <a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
    <tr>
-      <td>
-         <code>Accept</code>
+      <td><pre>Accept</pre>
       </td>
-      <td>The API password. This is one of the Authentication token assigned to your account.</td>
+      <td><p>Optional. Specifies the format of the response body. Default is <code>json</code>.</p></td>
+      <td>
+      <pre>Accept: application/&lt;FORMAT&gt;</pre>
+      <p>Where
+         <code>&lt;FORMAT&gt;</code> is either
+         <code>json</code>or
+         <code>xml</code>.</p>
+         <p>If you omit this header, the response is returned in JSON format.</p></td>
    </tr>
    <tr>
       <td>
@@ -148,68 +148,36 @@ github_link: get-started/gs-web-api-requests.md
             <code>Content-Type</code>
          </p>
       </td>
+      <td><p>Required for operations with a request body. Specifies the format of the request body.</p></td>
       <td>
-         <p>Required for operations with a request body.</p>
-         <p>Specifies the format of the request body. The following example shows the syntax for the header, where format is either <code>json</code> or <code>xml</code>:</p>
-         <pre>Content-Type: application/format</pre>
-      </td>
+     <pre>Content-Type:application/&lt;FORMAT&gt;</pre>
+     <p>Where
+         <code>&lt;FORMAT&gt;</code>is either
+         <code>json</code>or
+         <code>xml</code>.
+      </p></td>
    </tr>
 </table>
+<!--
 <p>Common headers in Magento web API requests are:</p>
 <ul>
-            <li>
-               <p>
-                  <code>Content-Type</code>. Required for operations with a request body.
-               </p>
-               <p>Specifies the format of the request body.</p>
-               <p>Use the following syntax for the header
-                  where
-                  <code>format</code>is either
-                  <code>json</code>or
-                  <code>xml</code>.
-               </p>
-               <pre>Content-Type: application/format</pre>
-            </li>
-            <li>
-               <p>
-                  <code>Authorization</code>. Required. Specifies the authentication token.
-               </p>
-            </li>
-            <li>
-               <p>
-                  <code>Accept</code>. Optional.
-               </p>
-               <p>Specifies the format of the response body.</p>
-               <p>Use the following syntax for the header
-                  where
-                  <code>format</code>is either
-                  <code>json</code>or
-                  <code>xml</code>. The default is
-                  <code>json</code>.
-               </p>
-               <pre>Accept: application/format</pre>
-            </li>
-         </ul>
-<p>Be aware that different Magento APIs use different sets of HTTP headers (and some
-   don't use any at all). Refer to the Developer documentation for the definitive list
-   of HTTP headers for the Magento operation(s) you plan to use.
-</p>
-<a name="web-api-request-with-token"></a>
-<h3>Web API authenticated access</h3>
-<p>You can specify a customer or admin token in a web API call. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.</p>
-<p>Customers can access only resources with <code>self</code> permissions. To make a web API call with a customer token:</p>
-<pre>curl -X GET "http://magento.ll/index.php/rest/V1/customer/me" \
-     -H "Authorization: Bearer asdf3hjklp5iuytre"</pre>
-<p>Admins can access any resources for which they are authorized. To make a web API call with an admin token:</p>
-<pre>curl -X GET "http://magento.ll/index.php/rest/V1/customerAccounts/2" \
-     -H "Authorization: Bearer vbnf3hjklp5iuytre"</pre>
-<a name="guest-access"></a>
-<h3>Web API guest access</h3>
-<p>The Magento web API framework enables <i>guest users</i> to access resources that are configured with anonymous permission
-   in the <code>webapi.xml</code> configuration file. Users who cannot be authenticated by the framework through the existing authentication
-   mechanisms are considered guest users. Guest users can optionally authenticate themselves
-   when they access these resources with anonymous permission.
-</p>
-<p>For information about configuring a resource with anonymous permission, see <a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>.</p>
+   <li>
+      <p>
+         <code>Content-Type</code>. Required for operations with a request body.
+      </p>
+      <p>Specifies the format of the request body.</p>
 
+   </li>
+   <li>
+      <p>
+         <code>Authorization</code>. Required. Specifies the authentication token.
+      </p>
+   </li>
+   <li>
+      <p>
+         <code>Accept</code>. Optional.
+      </p>
 
+   </li>
+</ul>
+ -->
