@@ -9,11 +9,11 @@ menu_node: parent
 github_link: get-started/gs-authentication.md
 ---
 
-<p>To make a REST web API call, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API. You request a token from the Magento token service at the REST endpoint that is defined for your user type. The token service returns
-   a unique authentication token in exchange for a user name and password for a Magento account. When you make web API calls, you supply this token in the
-   <code>Authorization: Bearer</code> header to prove your identity. The token never expires but it can be revoked.
+<p>To make a REST web API call, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API.</p><p>You request a token from the Magento token service at the REST endpoint that is defined for your user type. The token service returns
+   a unique authentication token in exchange for a user name and password for a Magento account.</p><p>When you make web API calls, you supply this token in the
+   <code>Authorization</code> header to prove your identity. The token never expires but it can be revoked.
 </p>
-<p>To request an authentication token, read these sections:</p>
+<p>To request an authentication token and learn how to use it in web API calls, read these sections:</p>
 <ul>
 <li><a href="#curl-command-syntax">cURL command syntax</a></li>
 <li><a href="#auth-request">Authentication token request</a></li>
@@ -29,7 +29,7 @@ github_link: get-started/gs-authentication.md
 <p>To use cURL to request an authentication token from the Magento token service, use this syntax:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/{customer|admin}/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"test@example.com", "password":"123123q"}'</pre>
+     -d '{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</pre>
 <p>This syntax shows a JSON request body. Alternatively, you can specify an <a href="#xml-auth-request-syntax">XML request body</a>.</p>
 <p>The components in the command syntax are:</p>
 <table style="width:100%">
@@ -56,7 +56,7 @@ github_link: get-started/gs-authentication.md
       <td>Credentials</td>
       <td>
          <p>The user name and password for a Magento account.</p>
-         <p>To specify these credentials in a JSON request body, include <code>-d '{"username":"test@example.com", "password":"123123q"}'</code> in the call.</p>
+         <p>To specify these credentials in a JSON request body, include <code>-d '{"username":"&lt;USER-NAME&gt;", "password":"&lt;PASSWORD&gt;"}'</code> in the call.</p>
       </td>
    </tr>
 </table>
@@ -70,7 +70,7 @@ github_link: get-started/gs-authentication.md
 </ul>
 <p>For example:</p>
 <pre>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token.xml" \
-     -H "Content-Type:application/json" \
+     -H "Content-Type:application/xml" \
      -d '&lt;login>&lt;username>test@example.com&lt;/username>&lt;password>123123q&lt;/password>&lt;/login>'</pre>
 <a name="auth-request"></a>
 <h2>Authentication token request</h2>
@@ -103,8 +103,8 @@ github_link: get-started/gs-authentication.md
    mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission.</p>
 <h3>Related topics</h3>
 <ul>
+<li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
 <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
-<li><a href="{{ site.gdeurl }}/get-started/gs-web-api-requests.html">Step 2. Construct a request</a></li>
 </ul>
 
 

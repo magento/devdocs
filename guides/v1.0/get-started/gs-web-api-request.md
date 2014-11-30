@@ -6,7 +6,7 @@ title: Step 2. Construct a request
 menu_title: Step 2. Construct a request
 menu_order: 1
 menu_node: parent
-github_link: get-started/gs-web-api-requests.md
+github_link: get-started/gs-web-api-request.md
 ---
 
 <a name="requests"></a>
@@ -91,22 +91,8 @@ github_link: get-started/gs-web-api-requests.md
 <p>An endpoint is a combination of the <i>server</i> that fulfills a request, the web service, the <i>resource</i> against which the request is being made, and any template parameters.</p>
 
 <p>For example, in the <code>http://magento.ll/index.php/rest/V1/customerGroups/:id</code> endpoint, the server is <code>magento.ll/index.php/</code>, the web service is <code>rest</code>, the resource is <code>/V1/customerGroups</code>, and the template parameter is <code>id</code>.</p>
-<a name="payload"></a>
-<h2>Call payload</h2>
-<p>Payloads</p>
-<a name="formats"></a>
-<h2>Request and response formats</h2>
-<ul>
-   <li>JSON</li>
-   <li>XML</li>
-</ul>
-<p>The decision to use JSON- or XML-formatted data depends on your data integration requirements. For example, if you are writing a Magento 2 service consumer, the consumer drives the decision to use either JSON or XML.</p>
-<p>The JSON response format is the default.</p>
-<p>To request an XML response:</p>
-<ul>
-   <li>Set the HTTP </code>Accept</code> header to </code>text/xml</code>.</li>
-   <li>Set the HTTP </code>Content-Type</code> header to </code>text/xml</code>.</li>
-</ul>
+
+
 <a name="http-headers"></a>
 <h2>HTTP headers</h2>
 <div class="bs-callout bs-callout-info" id="info"><p>To specify an HTTP header in a cURL command, use the <code>-H</code> option.</p></div>
@@ -123,7 +109,7 @@ github_link: get-started/gs-web-api-requests.md
          <pre>Authorization</pre>
       </td>
       <td><p>Required. Specifies the authentication token that proves you as the owner of a Magento
-         account.
+         account. You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.
          </p>
       </td>
       <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
@@ -158,26 +144,40 @@ See <a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication
       </p></td>
    </tr>
 </table>
-<!--
-<p>Common headers in Magento web API requests are:</p>
-<ul>
-   <li>
-      <p>
-         <code>Content-Type</code>. Required for operations with a request body.
-      </p>
-      <p>Specifies the format of the request body.</p>
 
-   </li>
-   <li>
-      <p>
-         <code>Authorization</code>. Required. Specifies the authentication token.
-      </p>
-   </li>
-   <li>
-      <p>
-         <code>Accept</code>. Optional.
-      </p>
-
-   </li>
-</ul>
- -->
+<a name="payload"></a>
+<h2>Call payload</h2>
+<p>The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request.
+            API operations have both
+            <em>required</em> and
+            <em>optional</em> inputs.</p>
+<p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
+<p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
+<pre>{
+    "customerDetails": {
+        "customer": {
+            "email": "user@example.com",
+            "firstname": "John",
+            "lastname": "Doe"
+        },
+        "addresses": [
+            {
+                "defaultShipping": true,
+                "defaultBilling": true,
+                "firstname": "John",
+                "lastname": "Doe",
+                "region": {
+                    "regionCode": "CA",
+                    "region": "California",
+                    "regionId": 12
+                },
+                "postcode": "90001",
+                "street": ["Zoe Ave"],
+                "city": "Los Angeles",
+                "telephone": "555-000-00-00",
+                "countryId": "US"
+            }
+        ]
+    }
+}</pre>
+<p>This JSON-formatted request body includes a <code>customerDetails</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>

@@ -1,15 +1,9 @@
 ---
 layout: default
-group: get-started
-subgroup: Step 4. Review the response
 title: Step 4. Review the response
-menu_title: Step 4. Review the response
-menu_order: 1
-menu_node: parent
-github_link: get-started/gs-web-api-responses.md
 ---
 
-<p>A web API call is made up of a <a href={{ site.gdeurl }}get-started/gs-web-api-requests.html">request</a> and a response.</p>
+<p>A web API call is made up of a <a href={{ site.gdeurl }}get-started/gs-web-api-request.html">request</a> and a response.</p>
 <p>A Magento web API call returns these components:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">

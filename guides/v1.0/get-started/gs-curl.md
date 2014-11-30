@@ -44,7 +44,7 @@ github_link: get-started/gs-curl.md
             <code>-H</code>option. You can specify any number of extra
             headers.
          </p>
-         <p>For a list of common headers used in Magento web API requests, see <a href="{{ site.gdeurl }}get-started/gs-web-api-requests.html#http-headers">HTTP headers</a>.</p>
+         <p>For a list of common headers used in Magento web API requests, see <a href="{{ site.gdeurl }}get-started/gs-web-api-request.html#http-headers">HTTP headers</a>.</p>
       </td>
    </tr>
    <tr>
