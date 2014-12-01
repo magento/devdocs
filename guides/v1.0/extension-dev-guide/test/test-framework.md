@@ -8,8 +8,13 @@ menu_order: 1
 github_link: extension-dev-guide/test/test-framework.md
 ---
 
-<h2 id="m2devgde-objmgr-intro">Overview</h2>
-<p>The Magento test framework (MTF) enables you to run thorough and accurate tests of your Magento installation. Use these instructions to install and configure MTF, set up the components of a test, and configure testing.</p>
+The Magento test framework (MTF) enables you to run thorough and accurate tests of your Magento installation.
+
+To install and configure MTF, set up the components of a test, and configure testing, see [Installing and Configuring the Magento Test Framework (MTF)](https://github.com/magento/mtf/blob/master/docs/install-config.md).
+
+
+<!--
+
 <p>The main tools are:</p>
 
 * **Fixtures**: Use these to create context or preconditions for your tests.
@@ -54,9 +59,9 @@ Before you can create tests, you must install MTF:
 Before you run your first test in MTF, you must make these changes:
 
 1. In `phpunit.xml` file, specify the URLs of the frontend and backend of your store in **app_frontend_url** and **app_backend_url** parameters correspondingly.
-    <blockquote><pre>
+    <pre>
 &lt;env name="app_frontend_url" value="http://localhost/index.php/"/>
-&lt;env name="app_backend_url" value="http://localhost/index.php/backend/"/></pre></blockquote>
+&lt;env name="app_backend_url" value="http://localhost/index.php/backend/"/></pre>
 2. In `<magento_root>/dev/tests/functional/config/server.yml` file, specify the settings for Selenium server such as browser, host, port, time-out, and so on.
 
 ### Run tests
@@ -68,14 +73,14 @@ Before you run your first test in MTF, you must make these changes:
 ### Configure MTF
 
 You can configure MTF by changing files at `<magento_root>/dev/tests/functional/config` and `<magento_root>/dev/tests/functional/utils/config` folders:
-<blockquote>
+
 <pre>
     &lt;magento_root>/dev/tests/functional/config/application.yml
     &lt;magento_root>/dev/tests/functional/config/server.yml
     &lt;magento_root>/dev/tests/functional/config/isolation.yml
     &lt;magento_root>/dev/tests/functional/config/handler.yml
 </pre>
-</blockquote>
+
 
 `<magento_root>/dev/tests/functional/config/application.yml` file allows changing the following parameters:
 
@@ -130,7 +135,7 @@ To create the structure for a fixture individually, use fixtureName.xml file. Si
 
 Creating fixtureName.xml files for a module and entering the structure manually to them can be time consuming. To facilitate this task, MTF gets the structure for fixtures from the database automatically via `Module\Test\etc\global\fixture.xml` file. Just list all fixtures you need for a module in this file and specify the necessary parameters. For instance, fixture's structure for a simple product looks as follows:
 
-<blockquote>
+
 <pre>
 &lt;catalogProductSimple module="Magento_Catalog">
         &lt;type>eav&lt;/type>
@@ -172,7 +177,7 @@ Creating fixtureName.xml files for a module and entering the structure manually 
         &lt;/data_config>
     &lt;/catalogProductSimple>
 </pre>
-</blockquote>
+
 
 Parameters that need to be specified for a fixture will depend on its purpose. However, the following parameters are mandatory:
 
@@ -205,7 +210,7 @@ The repository class should share the name with a fixture and fixture configurat
 
 **Sample of the repository class:**
 
-<blockquote>
+
 <pre>
 namespace Magento\Catalog\Test\Repository;
 use Mtf\Repository\AbstractRepository;
@@ -267,7 +272,7 @@ class CatalogProductSimple extends AbstractRepository
     }
 }
 </pre>
-</blockquote>
+
 
 ### Use repository generator
 
@@ -300,7 +305,7 @@ In MTF, there are two default types of handlers:
 
 You can create other handlers if necessary. To make them available in MTF, declare them in the object manager (Mtf\ObjectManagerFactory):
 
-<blockquote>
+
 <pre>
 /**
      * Configure Object Manager
@@ -325,7 +330,7 @@ You can create other handlers if necessary. To make them available in MTF, decla
     }
 }
 </pre>
-</blockquote>
+
 
 Priorities of the handlers in the object manager is reverse, that is, the latest handler in the list has the highest priority.
 
@@ -340,7 +345,7 @@ Creating the test scenarios is not enough to test your application. You also nee
 
 **Sample of the assert class:**
 
-<blockquote>
+
 <pre>
 namespace Magento\Catalog\Test\Constraint;
 use Mtf\Constraint\AbstractConstraint;
@@ -391,7 +396,7 @@ class AssertProductOutOfStock extends AbstractConstraint
     }
 }
 </pre>
-</blockquote>
+
 
 ### Create and link constraints
 
@@ -402,7 +407,7 @@ Creating constraints includes two steps:
 
 After all constraints are ready, you will need to list them along with data and behavior that entail these constraints in the data set - Module\TestCase\TestCaseClassName\methodName.csv file:
 
-<blockquote>
+
 <pre>
 "product/data/name"; "product/data/sku"; "product/data/price/value"; "product/data/special_price"; "constraint"
 "Simple Product %isolation%"; "simple_sku_%isolation%"; "100"; "-"; "assertProductSaveMessage, assertProductInGrid, assertProductInCategory, assertProductView, assertProductInCart";
@@ -418,7 +423,7 @@ After all constraints are ready, you will need to list them along with data and 
 "Simple Product %isolation%"; "simple_sku_%isolation%"; "10"; "-"; "assertProductSaveMessage, assertProductOutOfStock";
 "Simple Product %isolation%"; "simple_sku_%isolation%"; "10"; "-"; "assertProductSaveMessage, assertProductSearchableBySku";
 </pre>
-</blockquote>
+
 
 The sequence of the constraints should be logical. For example, if you test the scenario on creating a new product in the admin panel, first list constraint for "You saved the product" message and then for the Product page.
 
@@ -432,13 +437,13 @@ Within MTF, an isolation script is provided for every edition of Magento (EE, CE
 
 **Sample of the isolation script:**
 
-<blockquote>
+
 <pre>
 &lt;?php
 exec('mysql -umagento -pmagento -e"DROP DATABASE magento; CREATE DATABASE magento CHARACTER SET utf8;"');
 exec('mysql -umagento -pmagento magento < /var/www/magento/magento.dump.sql');
 </pre>
-</blockquote>
+
 
 ### Isolation strategies
 
@@ -453,14 +458,14 @@ Default strategy is specified in the configuration file (isolation.yml). If you 
 
 **Isolation configuration file:**
 
-<blockquote>
+
 <pre>
 reset_url_path: dev/tests/mtf/path_to_script/script.php
 testSuite: none
 testCase: none
 test: none
 </pre>
-</blockquote>
+
 
 You can specify the isolation strategy on the individual level for every test/case/suite if necessary. To set a strategy for a test/case/suite, specify @isolation before, @isolation after, or @isolation both annotation(s) in a PHPDoc.
 Note: A strategy specified on the scope level overwrites a strategy that is set globally.
@@ -469,7 +474,7 @@ Note: A strategy specified on the scope level overwrites a strategy that is set 
 
 Use @isolation annotation on the suite level to set strategy for a suite. In the following example, the isolation script will be run before and after a suite.
 
-<blockquote>
+
 <pre>
 /**
  * @isolation both
@@ -486,13 +491,13 @@ class IsolationSuite extends \PHPUnit_Framework_TestSuite
     }
 }
 </pre>
-</blockquote>
+
 
 #### Specify strategy for a test case
 
 Use @isolation annotation on the case level to set strategy for a case. In the following example, the isolation script will be run before a case.
 
-<blockquote>
+
 <pre>
 /**
  * @isolation before
@@ -520,13 +525,13 @@ class IsolationTest extends Isolation
     }
 }
 </pre>
-</blockquote>
+
 
 #### Specify strategy for a test
 
 Use @isolation annotation on the test level to set strategy for a test. In the following example, the isolation script will be run after the test2.
 
-<blockquote>
+
 <pre>
 class IsolationTest extends Isolation
 {
@@ -554,13 +559,13 @@ class IsolationTest extends Isolation
     }
 }
 </pre>
-</blockquote>
+
 
 #### Specify strategy for every test in a test case
 
 Use @isolation test annotation on the case level to set strategy for every test in a case. In the following example, the isolation script will be run before every test in a case.
 
-<blockquote>
+
 <pre>
 /**
  * @isolation test before
@@ -588,13 +593,13 @@ class IsolationTest extends Isolation
     }
 }
 </pre>
-</blockquote>
+
 
 #### Specify strategy for every test case in a suite
 
 Use @isolation testCase annotation on the suite level to set strategy for every case in a suite. In the following example, the isolation script will be run before and after every case in a suite.
 
-<blockquote>
+
 <pre>
 /**
  * @isolation testCase both
@@ -611,13 +616,13 @@ class IsolationSuite extends \PHPUnit_Framework_TestSuite
     }
 }
 </pre>
-</blockquote>
+
 
 #### Specify strategy for every test in a suite
 
 Use @isolation test annotation on the suite level to set strategy for every test in a suite. In the following example, the isolation script will be run before and after every test in a suite.
 
-<blockquote>
+
 <pre>
 /**
  * @isolation test both
@@ -634,20 +639,20 @@ class IsolationSuite extends \PHPUnit_Framework_TestSuite
     }
 }
 </pre>
-</blockquote>
+
 
 #### Specify different strategies for different scopes in a suite
 
 Use @isolation test and @isolation testCase annotations on the suite level to set strategy correspondingly for every test and every case in a suite. In the following example, the isolation script will be run before and after every test in a suite and before every case in a suite.
 
-<blockquote>
+
 <pre>
 /**
  * @isolation test both
  * @isolation testCase before
  */
 </pre>
-</blockquote>
+
 
 When changing strategy(s) on the individual level, please, consider the following peculiarities:
 
@@ -668,7 +673,7 @@ To define the correspondence between the fields in a block and data in a fixture
 
 **Sample of block object:**
 
-<blockquote>
+
 <pre>
 namespace Magento\Catalog\Test\Block\Adminhtml\Product\Edit\Tab\Super\Config;
 use Mtf\Block\Form;
@@ -718,7 +723,7 @@ class Matrix extends Form
     }
 }
 </pre>
-</blockquote>
+
 
 #### Explore page object
 
@@ -732,7 +737,7 @@ Page object opens itself and returns its own blocks.
 
 **Sample of the page object:**
 
-<blockquote>
+
 <pre>
 namespace Magento\Customer\Test\Page\Adminhtml;
 use Mtf\Page\BackendPage;
@@ -787,7 +792,7 @@ class CustomerIndex extends BackendPage
     }
 }
 </pre>
-</blockquote>
+
 
 #### Create page object
 
@@ -810,3 +815,5 @@ We recommend following this sequence of steps to create a test:
 *     Create the constraints and data sets based on these constraints.
 *     Create the isolation script and specifying the isolation strategy. You can omit this step.
 *     Write a test.
+ -->
+

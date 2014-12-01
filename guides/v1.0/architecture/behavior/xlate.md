@@ -63,25 +63,25 @@ Typically, a dictionary contains three columns:
 
 Sample of a dictionary with meta information:
 
-<blockquote><pre>"Add New Block","Add New Block","module","Mage_Cms"
+<pre>"Add New Block","Add New Block","module","Mage_Cms"
 "Add New Page","Add New Page","module","Mage_Cms"
 "All Countries","All Countries","theme","demo"
 "An error occurred while saving the page.","An error occurred while saving the page.","module","Mage_Cms"
-</pre></blockquote>
+</pre>
 
 Dictionary files can be located in different parts of the code base and are assembled into single language-specific dictionary automatically in the runtime.
 
 Meta information in a dictionary file is necessary for defining where the translation of a phrase should be assigned. A dictionary file without the meta information must be uploaded manually to appropriate module. For example, if you create a new dictionary file for a custom/extension module, such file will not have the meta information. Thus,  to make a new dictionary available in a custom module, upload a dictionary file to `i18n` folder of this module, for instance: `app/code/[Module name]/[Vendor name]/i18n/fr_FR.csv`.
 
-<h3 id="m2devgde-xlate-generatortool">Using the dictionary generator tool</h3>
+<h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
 
 The dictionary generator tool compiles a list of all phrases, names, and titles used in Magento, that is, a dictionary. The generator tool gathers phrases and terms throughout entire Magento, that is, from all supported file types.
 
 To generate a dictionary, use the command line:
 
-<blockquote><pre>php&nbsp;-f&nbsp;generator.php&nbsp;--&nbsp;-d&nbsp;&lt;directory&gt;&nbsp;[-m&nbsp;y]&nbsp;[-o&nbsp;&lt;filename&gt;]
+<pre>php&nbsp;-f&nbsp;generator.php&nbsp;--&nbsp;-d&nbsp;&lt;directory&gt;&nbsp;[-m&nbsp;y]&nbsp;[-o&nbsp;&lt;filename&gt;]
 php&nbsp;-f&nbsp;generator.php&nbsp;--&nbsp;--directory=&lt;directory&gt;&nbsp;[--magento=y]&nbsp;[--output=&lt;filename&gt;]
-</pre></blockquote>
+</pre>
 
 For generating a dictionary, you should specify the following parameters:
 
@@ -95,9 +95,9 @@ The language pack is a dictionary divided into separate module-specific files. Y
 
 After the customization is done, copy the language pack and paste it in the appropriate directory in your Magento instance or use the <a href="#m2devgde-xlate-packtool">language pack tool</a>.
 
-The language packs can be found in `app/i18n/[Module name]/[Vendor name]` directory.
+Find the language packs in the `app/i18n/[Module name]/[Vendor name]` directory.
 
-<blockquote><pre>__/app/i18n
+<pre>__/app/i18n
 &nbsp;|__/magento
 &nbsp;|&nbsp;|__/de_de
 &nbsp;|&nbsp;|&nbsp;|--&nbsp;language.xml
@@ -112,9 +112,9 @@ The language packs can be found in `app/i18n/[Module name]/[Vendor name]` direct
 &nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;language.xml
 &nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;composer.json
 &nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;*.csv
-</pre></blockquote>
+</pre>
 
-Apart from .csv file containing the language pack itself, the directory encompasses `composer.json` file, which allows the system composer to recognize a pack, and `language.xml` file, where you have to declare a language pack.
+Apart from the `.csv` file containing the language pack itself, the directory encompasses `composer.json` file, which allows the system composer to recognize a pack, and `language.xml` file, where you have to declare a language pack.
 
 <h3 id="m2devgde-xlate-inheritance">Declaring a package and configuring language inheritance</h3>
 
@@ -122,9 +122,9 @@ When declaring a language pack in `language.xml` configuration file, you will ne
 
 Language inheritance ensures sustainability of localization and translations in your store. Also, it facilitates translating and customizing Magento for your needs. Inheritance means that you can create a new locale/translation based on the existing one (also known as _parent_). The child locales/translations will override the parent one. However, if the child locale/translation fails to upload or display for a user, parent locale/translation will be used in its stead. Also, if some child translation lacks a phrase or a word, this phrase or word will be taken from parent locale.
 
-To declare a pack, specify the following information
+To declare a pack, specify the following information:
 
-<blockquote><pre>&lt;?xml&nbsp;version=&quot;1.0&quot;?&gt;
+<pre>&lt;?xml&nbsp;version=&quot;1.0&quot;?&gt;
 &lt;language&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;en_GB&lt;/code&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;vendor&gt;magento&lt;/vendor&gt;
@@ -132,7 +132,7 @@ To declare a pack, specify the following information
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;sort_order&gt;100&lt;/sort_order&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;use&nbsp;vendor=&quot;oxford-university&quot;&nbsp;package=&quot;en_us&quot;/&gt;
 &lt;/language&gt;
-</pre></blockquote>
+</pre>
 
 *	`<code>` - code of the language pack; this parameter is mandatory
 *	`<vendor>` - name of a vendor, who created a package; this parameter is mandatory
@@ -150,7 +150,7 @@ To understand how the language inheritance works, let us imagine we have a langu
 
 *	a language pack descents from two packs:
 
-<blockquote><pre>&lt;language&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;&gt;
+<pre>&lt;language&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;en_GB&lt;/code&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;vendor&gt;Magento&lt;/vendor&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;package&gt;language_pack&lt;/package&gt;
@@ -158,7 +158,7 @@ To understand how the language inheritance works, let us imagine we have a langu
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;use&nbsp;vendor=&quot;parent-pack-one&quot;&nbsp;package=&quot;language_pack_one&quot;/&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;use&nbsp;vendor=&nbsp;&quot;parent-pack-two&quot;&nbsp;package=&quot;language_pack_two&quot;/&gt;
 &lt;/language&gt;
-</pre></blockquote>
+</pre>
 
 *	language_pack_one descends from en_au_pack and en_au_pack descends from en_ie_pack
 *	language_pack_two descends from en_ca_pack and en_ca_pack descends from en_us_pack

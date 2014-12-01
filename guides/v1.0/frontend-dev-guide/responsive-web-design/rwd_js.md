@@ -23,17 +23,17 @@ The Blank theme uses the following JavaScript to responsively relocate page elem
 
 See one of the following sections for more information
 
-*	<a href="#fedg_rwd_js_matchmedia">Using matchMedia.js</a>
-*	<a href="#fedg_rwd_js_resp">Using responsive.js</a>
-*	<a href="#fedg_rwd_js_nav">Using navigation-menu.js</a>
+*	<a href="#fedg_rwd_js_matchmedia">Use matchMedia.js</a>
+*	<a href="#fedg_rwd_js_resp">Use responsive.js</a>
+*	<a href="#fedg_rwd_js_nav">Use navigation-menu.js</a>
 
-<h2 id="fedg_rwd_js_matchmedia">Using matchMedia.js</h2>
+<h2 id="fedg_rwd_js_matchmedia">Use matchMedia.js</h2>
 
 <a href="https://github.com/magento/magento2/blob/master/lib/web/matchMedia.js" target="_blank">matchMedia.js</a> enables you to manipulate JavaScript for the desktop or mobile viewports. In the Blank theme, `responsive.js` toggles the behavior when the screen size reaches the breakpoint of 768px.
 
 `matchMedia.js` can be used in any theme.
 
-<h2 id="fedg_rwd_js_resp">Using responsive.js</h2>
+<h2 id="fedg_rwd_js_resp">Use responsive.js</h2>
 
 <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank">responsive.js</a> implements specific responsive functions for the Blank theme. This file also contains a call of the `mediaCheck` anonymous function from `matchMedia.js`, which is responsible for reaching breakpoints.
 
@@ -59,7 +59,7 @@ A sample checkout page follows:
 
 ![In a mobile viewport, checkout progress displays following the checkout steps.]({{ site.baseurl }}common/images/rwd_js_checkout-progress.png)
 
-<h2 id="fedg_rwd_js_nav">Using navigation-menu.js</h2>
+<h2 id="fedg_rwd_js_nav">Use navigation-menu.js</h2>
 
 Responsible for rearranging navigation and header links for the desktop and mobile viewports. See one of the following sections for more information:
 

@@ -140,7 +140,7 @@ For more information about overriding layout refer to the <a href="{{ site.gdeur
 <h3 id="theme-inherit-layout-extend">Extending layouts</h3>
 
 Rather than copy extensive layout code and modify what you want to change, you can create
-a theme merging file that contains the changes you want.
+a theme merging file with instructions providing the required changes. These instructions will be merged when the system collects layouts.
 
 To add a theme merging file:
 
@@ -161,9 +161,9 @@ Locales (dictionaries) are CSV text documents containing translation strings for
 Locales can be stored in modules, themes, packages and in the database.
 The system collects translations for a language in the following order:
 
-1. Modules locales: `app/code/<Vendor>/<Module>/i18n/`
-2. Current theme locales: `app/design/frontend/<Vendor>/<theme>/i18n/`
-3. Language package: `app/i18n/<Vendor>/<package>`
+1. Modules locales: `app/code/<Vendor>/<Module>/i18n/`.
+2. Current theme locales: `app/design/frontend/<Vendor>/<theme>/i18n/`.
+3. Language package: `app/i18n/<Vendor>/<package>`.
 4. Tranlsation from database.
 
 If for a one key, there are different translations, the priority of translation to be used is defined by the same order. For modules, the priority is defined by the order set in `app/etc/config.php`.

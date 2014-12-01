@@ -119,7 +119,7 @@ The name of the layout handle is arbitrary. But if you want to use also default 
 
 To learn about locations of layouts in Magento application, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>.
 
-For example, the Catalog module's <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/base/layouts/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the `catalog_product_prices.xml` layout handle of the corresponding module.
+For example, the Catalog module's <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the `catalog_product_prices.xml` layout handle of the corresponding module.
 
 Class and template declarations in the pricing layout handles are based on the following fallback structures.
 

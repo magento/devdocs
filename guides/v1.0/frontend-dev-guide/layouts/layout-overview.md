@@ -11,7 +11,9 @@ github_link: frontend-dev-guide/layouts/layout-overview.md
 
 Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into *layers*, including the *view layer*.
 
-The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements, which can be of two types: blocks and containers. Technically, layout is defined in the .xml layout files, which contain element declarations and element manipulation instructions.
+The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml layout files, which contain element declarations and element manipulation instructions.
+
+ So what a layout file does is identify an existing block or container in a tree and change it in some way. Changes are to add some more content (e.g. there might be a side bar container to which some more content is added), or remove content (an extension might remove some core functionality, then add replacement functionality). Layouts are like wire-frames - they control the structure of the page tree. Blocks and PHTML files fill in the detailed markup within the tree. 
 
 There are three types of layout files:
 - Page layout: declares high-level page structure using only containers and operation with them: move, remove, update, referenceContainer.

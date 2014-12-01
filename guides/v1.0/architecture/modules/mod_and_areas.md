@@ -27,7 +27,6 @@ You can enable or disable an area within a module. If this module is enabled, it
 <div class="bs-callout bs-callout-warning" id="warning">
 	<p>No module should  depend on another module's area.</p>
     </div>
-    
 
 Magento uses areas to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the frontend (storefront), backend (adminhtml), and webapi (web services).
 
@@ -35,15 +34,13 @@ The purpose of areas is efficiency. If you are invoking a REST web service call,
 
 Typically, an area has behavior and view components, which operate separately.
 
-<h2 id="m2arch-module-using">Using areas in modules</h2>
+<h2 id="m2arch-module-using">Use areas in modules</h2>
 
 The resources visible and accessible in an area as well as area's behavior are defined by modules. The same module can influence several areas, for instance RMA [note: this module is available in EE only] module is represented partly in the adminhtml area and partly in the frontend area.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Disabling an area does not result in disabling the modules related to it.</p>
 </div>
-
-
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 

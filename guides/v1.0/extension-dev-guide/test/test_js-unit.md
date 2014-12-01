@@ -23,7 +23,7 @@ github_link: extension-dev-guide/test/test_js-unit.md
 <p>This organization enables testing of <code>RequireJS</code> modules without any additional Magento test framework (MTF) support. <code>jsunit.requirejsUtil</code> intercepts all <code>define()</code> calls and can pass <code>RequireJS</code> modules to their corresponding tests.</p>
 <p>For example:</p>
 <p><b>dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js:</b></p>
-<blockquote>
+
    <pre>
 var IdNormalizerTest = TestCase('IdNormalizerTest');
 
@@ -36,7 +36,7 @@ IdNormalizerTest.prototype.setUp = function() {
     this.normalizer = defineArgs[0]; // Now we have object to be tested
 };
 </pre>
-</blockquote>
+
 <h3 id="config-files">Configuration files</h3>
 <p>The <code>run_js_tests.php</code> script processes the <a href="jstestdrivephp">jsTestDriver.php.dist</a> and <a href="jstestdriverorderphp">jsTestDriverOrder.php</a> configuration files.
    Both files reside in the <code>/dev/tests/js</code> directory.
@@ -46,7 +46,7 @@ IdNormalizerTest.prototype.setUp = function() {
    This file contains this PHP code:
 </p>
 <p><b>dev/tests/js/jsTestDriver.php.dist:</b></p>
-<blockquote>
+
    <pre>
 &lt;?php
 return array(
@@ -62,7 +62,7 @@ return array(
     'serve' => array('/lib/web/mage/calendar')
 );
 </pre>
-</blockquote>
+
 <p>For a description of these configuration parameters, see <a href="https://code.google.com/p/js-test-driver/wiki/ConfigurationFile">ConfigurationFile</a>.</p>
 <p>Briefly, these parameters are:</p>
 <ul>
@@ -87,7 +87,7 @@ return array(
    This file specifies the order in which the JsTestDriver loads certain JavaScript files. This file contains this PHP code:
 </p>
 <p><b>dev/tests/js/jsTestDriverOrder.php:</b></p>
-<blockquote>
+
    <pre>
 &lt;?php
 return array(
@@ -97,7 +97,7 @@ return array(
     ...
 );
 </pre>
-</blockquote>
+
 <p>The array applies load ordering to the files specified by the <b>load</b> parameter in the <code>jsTestDriver.php</code> or <code>jsTestDriver.php.dist</code> file.</p>
 <h3 id="process-overview">run_js_tests.php script</h3>
 <p>To run the automated unit tests, you run the <a href="#process-overview">run_js_tests.php script</a> inside the PHP interpreter from the command line.</p>
@@ -165,15 +165,15 @@ return array(
 </dl>
 <h2 id="run-js-unit-tests">Use JsTestDriver to run unit tests</h2>
 <p>To run the automated JavaScript tests, run the <code>run_js_tests.php</code> script inside the PHP interpreter from the command line:</p>
-<blockquote>
+
    <pre>
 c:\git\magento2\dev\tests\js>php run_js_tests.php
 </pre>
-</blockquote>
+
 <p>Find the test results in individual <code>.xml</code> files in the <code>dev/tests/js/test-output</code> directory.</p>
 <p>The output of the PHP command resembles this output:</p>
 <p><b>JsTestDriver output:</b></p>
-<blockquote>
+
    <pre>
 c:\git\magento2\dev\tests\js>php run_js_tests.php
 java -jar C:\Users\mchiocca\lib\JsTestDriver.jar --config C:\git\magento2\dev\tests\js/jsTestDriver.conf --port 9876 --browser "C:\Program Files (x86)\Mozilla Firefox\firefox.exe" --tests all --testOutput C:\git\magento2\dev\tests\js/test-output
@@ -182,19 +182,19 @@ setting runnermode QUIET
 Total 36 tests (Passed: 36; Fails: 0; Errors: 0) (138.00 ms)
   Firefox 15.0 Windows: Run 36 tests (Passed: 36; Fails: 0; Errors 0) (138.00 ms)
   </pre>
-</blockquote>
+
 <p>On Linux, the X Server might generate one or more warning messages in the output:</p>
 <p><b>X Server warning messages on Linux:</b></p>
-<blockquote>
+
 <pre>
 FreeFontPath: FPE "unix/:7100" refcount is 2, should be 1; fixing.
 </pre>
-</blockquote>
+
 <p>An X Server bug causes these benign messages, which you can ignore.</p>
 <p>When you run the PHP script, it reads two configuration files. It also generates a <code>jsTestDriver.conf</code> YAML configuration file in the <code>/dev/tests/js</code> directory. The JsTestDriver reads this generated file to run the tests.</p>
 <p>The contents of jsTestDriver.conf resembles this:</p>
 <p><b>Generated jsTestDriver.conf file:</b></p>
-<blockquote>
+
 <pre>
 server: http://localhost:9876
 proxy:
@@ -210,7 +210,7 @@ serve:
   - ../../../lib/web/mage/calendar/calendar.js
   ...
 </pre>
-</blockquote>
+
 <p>After the PHP interpreter runs for the first time, you can <a href="#phpstorm">run the JavaScript unit tests from the PhpStorm IDE</a>.</p>
 <h2 id="phpstorm">Use PhpStorm to run unit tests</h2>
 <h3 id="install-plugin">Step 1. Install the JSTestDriver plugin</h3>

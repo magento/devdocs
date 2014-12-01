@@ -33,12 +33,12 @@ JSDoc comments requirements:
 
 Example:
 
-<blockquote><pre>/*\*
+<pre>/*\*
 *&nbsp;A&nbsp;JSDoc&nbsp;comment&nbsp;should&nbsp;begin&nbsp;with&nbsp;a&nbsp;slash&nbsp;and&nbsp;2&nbsp;asterisks.
 *&nbsp;Inline&nbsp;tags&nbsp;should&nbsp;be&nbsp;enclosed&nbsp;in&nbsp;braces&nbsp;like{@code&nbsp;this}.
 *&nbsp;@desc&nbsp;Block&nbsp;tags&nbsp;should&nbsp;always&nbsp;start&nbsp;on&nbsp;their&nbsp;own&nbsp;line.
 \*/
-</pre></blockquote>
+</pre>
 
 Many tools extract metadata from JSDoc comments to validate and optimize the code.
 
@@ -46,7 +46,7 @@ Many tools extract metadata from JSDoc comments to validate and optimize the cod
 
 If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;Illustrates&nbsp;line&nbsp;wrapping&nbsp;for&nbsp;long&nbsp;param/return&nbsp;descriptions.
 &nbsp;*
 &nbsp;*&nbsp;@param&nbsp;{string}&nbsp;foo&nbsp;This&nbsp;is&nbsp;a&nbsp;param&nbsp;with&nbsp;a&nbsp;description&nbsp;too&nbsp;long&nbsp;to&nbsp;fit&nbsp;in
@@ -57,13 +57,13 @@ If you have to line break a block tag, you should treat this as breaking a code 
 project.MyClass.prototype.method&nbsp;=&nbsp;function(foo)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;5;
 };
-</pre></blockquote>
+</pre>
 
 <h3 id="frontend-dev-guide-javascript-js-coding-docblock-classcomments">Class Comments</h3>
 
 Classes must be documented with a description, and appropriate type tags.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;Class&nbsp;making&nbsp;something&nbsp;fun&nbsp;and&nbsp;easy.
 &nbsp;*&nbsp;@param&nbsp;{string}&nbsp;arg1&nbsp;An&nbsp;argument&nbsp;that&nbsp;makes&nbsp;this&nbsp;more&nbsp;interesting.
 &nbsp;*&nbsp;@param&nbsp;{Array.&lt;number&gt;}&nbsp;arg2&nbsp;List&nbsp;of&nbsp;numbers&nbsp;to&nbsp;be&nbsp;processed.
@@ -72,13 +72,13 @@ Classes must be documented with a description, and appropriate type tags.
 project.MyClass&nbsp;=&nbsp;function(arg1,&nbsp;arg2)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 };
-</pre></blockquote>
+</pre>
 
 <h3 id="frontend-dev-guide-javascript-js-coding-docblock-methodcomments">Method and Function Comments</h3>
 
 A description must be provided along with parameters. Method descriptions should start with a sentence written in the third person declarative voice.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;Operates&nbsp;on&nbsp;an&nbsp;instance&nbsp;of&nbsp;MyClass&nbsp;and&nbsp;returns&nbsp;something.
 &nbsp;*
 &nbsp;*&nbsp;@param&nbsp;{project.MyClass}&nbsp;obj&nbsp;Instance&nbsp;of&nbsp;MyClass&nbsp;which&nbsp;leads&nbsp;to&nbsp;a&nbsp;long
@@ -88,17 +88,17 @@ A description must be provided along with parameters. Method descriptions should
 function&nbsp;someMethod(obj)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 }
-</pre></blockquote>
+</pre>
 
 <h3 id="frontend-dev-guide-javascript-js-coding-docblock-propertycomments">Property Comments</h3>
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;things&nbsp;per&nbsp;pane.
 &nbsp;*
 &nbsp;*&nbsp;@type&nbsp;{number}
 &nbsp;*/
 project.MyClass.prototype.someProperty&nbsp;=&nbsp;4;
-</pre></blockquote>
+</pre>
 
 <h3 id="frontend-dev-guide-javascript-js-coding-docblock-tagreference">JSDoc Tag Reference</h3>
 
@@ -107,7 +107,7 @@ project.MyClass.prototype.someProperty&nbsp;=&nbsp;4;
 
 Marks a variable read-only and suitable for inlining. Generates warnings if it is rewritten. Constants should also be ALL_CAPS, but the annotation should help eliminate reliance on the naming convention.
 
-<blockquote><pre>/**&nbsp;@const&nbsp;*/&nbsp;var&nbsp;DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
+<pre>/**&nbsp;@const&nbsp;*/&nbsp;var&nbsp;DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
 &nbsp;
 /**&nbsp;@const&nbsp;*/&nbsp;MyClass.DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
 &nbsp;
@@ -118,14 +118,14 @@ Marks a variable read-only and suitable for inlining. Generates warnings if it i
 &nbsp;*&nbsp;@type&nbsp;{string}
 &nbsp;*/
 mynamespace.DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
-</pre></blockquote>
+</pre>
 
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-extends">@extends</h4>
 
 Used with `@constructor` to indicate that a class inherits from another class.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;Immutable&nbsp;empty&nbsp;node&nbsp;list.
 &nbsp;*
 &nbsp;*&nbsp;@constructor
@@ -134,14 +134,14 @@ Used with `@constructor` to indicate that a class inherits from another class.
 project.MyClass.EmptyNodeList&nbsp;=&nbsp;function()&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 };
-</pre></blockquote>
+</pre>
 
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-interface">@interface</h4>
 
 Used to indicate that the function defines an inteface.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;A&nbsp;shape.
 &nbsp;*
 &nbsp;*&nbsp;@interface
@@ -157,13 +157,13 @@ Shape.prototype.draw&nbsp;=&nbsp;function()&nbsp;{};
 &nbsp;*/
 function&nbsp;Polygon()&nbsp;{};
 Polygon.prototype.getSides&nbsp;=&nbsp;function()&nbsp;{};
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-implements">@implements</h4>
 
 Used with `@constructor` to indicate that a class implements an interface.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;A&nbsp;shape.
 &nbsp;*
 &nbsp;*&nbsp;@interface
@@ -179,7 +179,7 @@ function&nbsp;Square()&nbsp;{};
 Square.prototype.draw&nbsp;=&nbsp;function()&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 };
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-lends">@lends</h4>
 
@@ -189,26 +189,26 @@ Please note that the name in braces is not a type name like in other annotations
 
 Please refer to <a href ="https://code.google.com/p/jsdoc-toolkit/wiki/TagLends" target="_blank">JSDoc Toolkit</a> for more information about this annotation.
 
-<blockquote><pre>project.MyClass.extend(
+<pre>project.MyClass.extend(
 &nbsp;&nbsp;&nbsp;&nbsp;Button.prototype,
 &nbsp;&nbsp;&nbsp;&nbsp;/**&nbsp;@lends&nbsp;{Button.prototype}&nbsp;*/&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;isButton:&nbsp;function()&nbsp;{return&nbsp;true;}
 &nbsp;&nbsp;&nbsp;&nbsp;}
 );
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-override">@override</h4>
 
 Indicates that a method or property of a subclass intentionally hides a method or property of the superclass. If no other documentation is included, the method or property also inherits documentation from its superclass.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;@return&nbsp;{string}&nbsp;Human-readable&nbsp;representation&nbsp;of&nbsp;project.SubClass.
 &nbsp;*&nbsp;@override
 &nbsp;*/
 project.SubClass.prototype.toString()&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 };
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-param">@param</h4>
 
@@ -216,7 +216,7 @@ Used with method, function and constructor calls to document the arguments of a 
 
 Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the parameter.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;Queries&nbsp;a&nbsp;Storage&nbsp;for&nbsp;items.
 &nbsp;*
 &nbsp;*&nbsp;@param&nbsp;{number}&nbsp;groupNum&nbsp;Subgroup&nbsp;id&nbsp;to&nbsp;query.
@@ -226,7 +226,7 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
 namespace.Storage.prototype.query&nbsp;=&nbsp;function(groupNum,&nbsp;term)&nbsp;{
 &nbsp;&nbsp;&nbsp;//&nbsp;...
 };
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-return">@return</h4>
 
@@ -234,20 +234,20 @@ Used with method and function calls to document the return type. When writing de
 
 Type names must be enclosed in curly braces. If the type is omitted, the compiler will not type-check the return value.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;@return&nbsp;{string}&nbsp;The&nbsp;hex&nbsp;ID&nbsp;of&nbsp;the&nbsp;last&nbsp;item.
 &nbsp;*/
 namespace.Storage.prototype.getLastId&nbsp;=&nbsp;function()&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;id;
 };
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-this">@this</h4>
 
 The type of the object in whose context a particular method is called. Required when the this keyword is referenced from a function that is not a prototype method.
 
-<blockquote><pre>pinto.chat.RosterWidget.extern('getRosterElement',
+<pre>pinto.chat.RosterWidget.extern('getRosterElement',
 &nbsp;&nbsp;&nbsp;&nbsp;/**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;Returns&nbsp;the&nbsp;roster&nbsp;widget&nbsp;element.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*
@@ -258,32 +258,32 @@ The type of the object in whose context a particular method is called. Required 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this._getWrappedComponent().getElement();
 &nbsp;&nbsp;&nbsp;&nbsp;}
 );
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-type">@type</h4>
 
 Identifies the type of a variable, property, or expression.
 
-<blockquote><pre>/**
+<pre>/**
 &nbsp;*&nbsp;The&nbsp;message&nbsp;hex&nbsp;ID.
 &nbsp;*
 &nbsp;*&nbsp;@type&nbsp;{string}
 &nbsp;*/
 var&nbsp;hexId&nbsp;=&nbsp;hexId;
-</pre></blockquote>
+</pre>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-typedef">@typedef</h4>
 
 This annotation can be used to declare an alias of a more complex type.
 
-<blockquote><pre>/**&nbsp;@typedef&nbsp;{(string|number)}&nbsp;*/
+<pre>/**&nbsp;@typedef&nbsp;{(string|number)}&nbsp;*/
 namespace.NumberLike;
 &nbsp;
 /**&nbsp;@param&nbsp;{namespace.NumberLike}&nbsp;x&nbsp;A&nbsp;number&nbsp;or&nbsp;a&nbsp;string.&nbsp;*/
 namespace.readNumber&nbsp;=&nbsp;function(x)&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
 }
-</pre></blockquote>
+</pre>
 
 
 <h3 id="frontend-dev-guide-javascript-js-coding-docblock-jstypes">JavaScript Types</h3>

@@ -37,7 +37,7 @@ title: Customer Service
                <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
                   \Magento\Framework\Event\ManagerInterface $eventManager, ...)
                </p>
-            </blockquote>
+            
             <!-- /.blockquote -->
             <table class="docutils field-list" frame="void" rules="none"  width="400">
                <colgroup>
@@ -98,7 +98,7 @@ title: Customer Service
                <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
                   \Magento\Framework\Event\ManagerInterface $eventManager, ...)
                </p>
-            </blockquote>
+            
             <!-- /.blockquote -->
             <table class="docutils field-list" frame="void" rules="none"  width="400">
                <colgroup>
@@ -159,7 +159,7 @@ title: Customer Service
                <p>__construct(\Magento\Customer\Model\CustomerFactory $customerFactory,
                   \Magento\Framework\Event\ManagerInterface $eventManager, ...)
                </p>
-            </blockquote>
+            
             <!-- /.blockquote -->
             <table class="docutils field-list" frame="void" rules="none"  width="400">
                <colgroup>

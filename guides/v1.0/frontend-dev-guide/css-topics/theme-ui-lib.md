@@ -111,7 +111,7 @@ In the preceding example, variables starting with `@_` are private mixin variabl
 
 You can find the complete list of mixin private variables and their description in the library documentation under `pub/lib/css-topics/docs`.
 
-<h2 id="fedg_using-ui-lib_predef-vars">Using Predefined Variables</h2>
+<h2 id="fedg_using-ui-lib_predef-vars">Predefined variables</h2>
 
 The Magento UI library has a specific file called `pub/lib/css-topics/source/lib/variables.less` that includes a list of all predefined variables you can use for theme customization. By using variables and setting your desired value for them, you can easily customize every element on the page without changing any CSS code or templates.
 

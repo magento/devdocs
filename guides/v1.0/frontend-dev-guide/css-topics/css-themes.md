@@ -20,13 +20,13 @@ Both approaches work. We recommend that you use theme XML files.
 
 You can include CSS files by adding them to theme templates directly as follows:
 
-<blockquote>
+
 <pre>&lt;head>
     ...
     &lt;link rel="stylesheet" href="<?php echo $this->getViewFileUrl('css-topics/styles.css') ?>" media="all" />
     ...
 &lt;/head></pre>
-</blockquote>
+
 
 This method is inefficient because you must add this code to every template file. Also, we strongly recommend against editing Magento core files because you must then override all page templates just to add a single CSS.
 
