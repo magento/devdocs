@@ -172,7 +172,13 @@ For the cache backend you can use any class that implements `Zend_Cache_Backend_
 1.	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Memcached.php" target="_blank">Magento\Cache\Backend\Memcached</a> defines the size of the data to be saved into one memcache cell. This class extends `Zend_Cache_Backend_Memcached` class.
 1.	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/MongoDb.php" target="_blank">Magento\Cache\Backend\MongoDb</a> defines the connection string and additional <a href="http://www.php.net/manual/en/mongoclient.construct.php" target="_blank">connection options for Mongo database</a> s well as saves and gets data from Mongo database.
 
-To modify the behavior of the cache backend, use the <a href="http://www.phpdesignpatterns.com/design-patterns/pattern-decorator/" target="_blank">decorator pattern</a>. The cache backend's decorator implements `Zend_Cache_Backend_ExtendedInterface` and extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Decorator/AbstractDecorator.php" target="_blank">Magento\Cache\Backend\Decorator\AbstractDecorator</a> abstract class. </p>
+To modify the behavior of the cache backend, use the decorator pattern. The cache backend's decorator implements `Zend_Cache_Backend_ExtendedInterface` and extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Decorator/AbstractDecorator.php" target="_blank">Magento\Cache\Backend\Decorator\AbstractDecorator</a> abstract class.
+
+For more information about the decorator pattern, see the following:
+
+*	<a href="http://sourcemaking.com/design_patterns/Decorator/php" target="_blank">sourcemaking.com</a>
+*	<a href="http://framework.zend.com/manual/1.12/en/learning.form.decorators.simplest.html" target="_blank">Zend decorator basics</a>
+*	<a href="http://www.php5dp.com/php-decorator-design-pattern-accessorizing-your-classes/" target="_blank">php5dp.com</a>
 
 To configure the cache backend's decorator in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Cache\Core</a> class:</p>
 
