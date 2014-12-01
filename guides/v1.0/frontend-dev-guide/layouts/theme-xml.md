@@ -10,42 +10,21 @@ github_link: frontend-dev-guide/layouts/theme-xml.md
 
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
-Use XML tags to manipulate container and block elements in a page.
+Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
+Use layout instructions to:
 
-<p class="q">Reviewer: Previously, this read "XML instructions," but I assume that means "XML tags" (based on the content of this topic). Is that right?</p>
+*	move a page element to another parent element
+*	add content 
+*	remove a page element
 
-By referencing these containers and blocks, you can:
+To change the high-level page structure modify the page layout files; all other changes (adding content) is performed in the page configuration files. 
 
-<p class="q">Reviewer: What does it mean to "reference" containers and blocks by using XML tags?</p>
+Page layouts and page configurations use the same layout instructions to manipulate elements, thought the set of elements the files can contain is different. Page layouts define containers only, while page configuration can reference both, containers and blocks.
 
-*	Move a page element to another parent element
-*	Remove a page element
-*	Set page properties
-*	Change some properties of an existing container or block by referencing it
 
-To define the layout of a page, use a set of XML tags and attributes.
+<h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
 
-<p class="q">Reviewer: The next several lines seem a bit jumbled - what's the important point here?</p>
-
-These attributes set a design abstraction that other XML files can use.
-
-For example, `default.xml` and `page_one_column.xml`, in turn, describe the abstraction for the page layout.
-
-The page layout abstraction includes the names of all containers, blocks, and columns that are rendered on the page.
-
-For example, to add a block with best-selling products, you must add a block of this class to a specific reference container.
-
-The following examples refer to these as <code>&lt; referenceContainer name = "content"></code>.
-
-The design abstraction is aware of this block in the context of the page.
-
-After you refresh the page, the block displays best-selling products.
-
-This is also true for any custom HTML block that you want to add a page.
-
-<h2 id="fedg_layout_xml-instruc_ex">Common XML tags</h2>
-
-Use the following common XML tags to customize your layout:
+Use the following layout instructions to customize your layout:
 
 *	<a href="#fedg_layout_xml-instruc_ex_block">&lt;block></a>
 *	<a href="#fedg_layout_xml-instruc_ex_cont">&lt;container></a>
@@ -58,7 +37,8 @@ Use the following common XML tags to customize your layout:
 
 Defines a block.
 
-<p><b>Details:</b> A <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">block</a> represents a page feature. Blocks employ templates to generate HTML. The HTML is inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+<p><b>Details:</b> A <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">block</a> is a unit of page output that renders some distinctive content – a piece of information, a user interface element – anything visually tangible for the end-user.
+Blocks employ templates to generate HTML. The HTML is inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
 <table>
    <tbody>
       <tr>
@@ -99,7 +79,7 @@ Defines a block.
       </tr>
       <tr class="odd">
          <td>as</td>
-         <td>An alias name that serves as identifier in the scope of the parent element.</td>
+         <td>An alias name that serves as identifier in the scope of the parent element (**does it makes sense only if parent is block?**).</td>
          <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
          <td>no</td>
       </tr>
@@ -184,7 +164,18 @@ A structure without content that holds other layout elements such as blocks and 
       </tr>
    </tbody>
 </table>
-<p><b><p><b>Sample declaration in layout:</b></p></b></p>
+
+Sample of usage in layout:
+Question to a reviewer: what are these containers declared in the sample? Can we describe in simple words, where on a page are they displayed? 
+<pre>
+...
+&lt;container&nbsp;name=&quot;div.sidebar.additional&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-additional&quot;&nbsp;after=&quot;div.sidebar.main&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.additional&quot;&nbsp;as=&quot;sidebar_additional&quot;&nbsp;label=&quot;Sidebar&nbsp;Additional&quot;/&gt;
+&lt;/container&gt;
+...
+</pre>
+
+
 <script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script>
 <h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
 Calls public methods on the block API.
@@ -236,10 +227,61 @@ Enables you to ignore some layout tags when generating a layout.
    <li><code>&lt;move element="name.specified" destination="name.destination"/></code></li>
    <li><code>&lt;move element="name.element" destination="name.specified"/></code></li>
 </ul>
-<code>&lt;remove></code> <p><b>Example:</b></p> Layout update
+<p><b>Example:</b></p> 
+Initial layout update:
+
+<pre>
+&lt;layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_default&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.1&quot;&nbsp;output=&quot;toHtml&quot;&nbsp;template=&quot;block1.phtml&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.2&quot;&nbsp;as=&quot;block_2&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.3&quot;&nbsp;as=&quot;block_3&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.1&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;reference&nbsp;name=&quot;existing.block&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setTemplate&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;template.phtml&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/reference&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.2&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_default&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_current&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;layout_handle_default&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;block.2&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;container.1&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;existing.block&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_current&gt;
+&lt;/layout&gt;
+</pre>
+
+Layout generated for `layout_handle_current` handle after processing the `<remove>` directives:
 <script src="https://gist.github.com/xcomSteveJohnson/1e74bc4258bf27f1e126.js"></script>
-<p><b>Result:</b></p>
 <script src="https://gist.github.com/xcomSteveJohnson/d0b5ccf6d5dad7796536.js"></script>
+<pre>
+&lt;layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_default&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.1&quot;&nbsp;output=&quot;toHtml&quot;&nbsp;template=&quot;block1.phtml&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.2&quot;&nbsp;as=&quot;block_2&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.3&quot;&nbsp;as=&quot;block_3&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.1&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;reference&nbsp;name=&quot;existing.block&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setTemplate&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;template.phtml&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/reference&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.2&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_default&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_current&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;layout_handle_default&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;block.2&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;container.1&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;existing.block&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_current&gt;
+&lt;/layout&gt;
+</pre>
+
+
 <h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></h3>
 <p>Cause updates in <code>&lt;referenceBlock></code> to apply to the corresponding <code>&lt;block></code> or <code>&lt;container></code>.</p>
 <p>For example, you must target the reference to a block by name <code>attribute</code>.
@@ -289,128 +331,7 @@ Sets the declared block or container element as a child of another element in th
       </tr>
    </tbody>
 </table>
-<h2 id="fedg_layout_xml-instruc_others">Other XML tags</h2>
-<div id="accordion">
-   You can use other XML tags in a layout.
-   <h3>Include CSS files in a page head block (browsers other than Internet Explorer)</h3>
-   <div>
-      <p>Examples:</p>
-      <script src="https://gist.github.com/xcomSteveJohnson/785a513700ed94e2676b.js"></script>
-      <script src="https://gist.github.com/xcomSteveJohnson/77721ca37bf9842003e0.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>css-topics/styles.css</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-         <li>the block name <code>css-styles-css</code> in <code>&lt;block name=""/></code> to make it more relevant to your customization. This name should be unique.</li>
-      </ul>
-   </div>
-   <h3>Include CSS files in a page head block (Internet Explorer only)</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/99f069bd815c83112650.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>css-topics/styles.css</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-         <li>the block name <code>css-styles-ie</code> in <code>&lt;block name=""/></code> to match the name of your CSS. This name should be unique.</li>
-         <li>IE version restriction parameter in <code>&lt;argument name="properties">&lt;item name="ie_condition">&lt;/item>&lt;/argument></code></li>
-      </ul>
-   </div>
-   <h3>Reference an external CSS file in a page head block</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/eee1dbf762e112e2ef54.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the link <code>http://fonts.googleapis.com/css?family=Alegreya+Sans</code> in <code>&lt;argument name="url">&lt;/argument></code></li>
-         <li>the block name <code>google-font</code> in <code>&lt;block name=""/></code> to match the name of your block. This name should be unique.</li>
-      </ul>
-   </div>
-   <h3>Include JavaScript files in a page head block (browsers other than Internet Explorer)</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/0ac8690ce1552903ac06.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>js/script.js</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-         <li>the block name <code>js-head-js</code> in <code>&lt;block name=""/></code> to match the name of your JavaScript file. This name should be unique.</li>
-      </ul>
-   </div>
-   <h3>Include JavaScript files in a page head block (Internet Explorer only)</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/f269219cc9b66a151c10.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>js/scrip-ie.js</code> in <code>&lt;argument>&lt;argument/></code></li>
-         <li>the block name <code>js-selectivizr-js</code> in <code>&lt;block name=""/></code> to match the name of your JavaScript file.</li>
-         <li>IE version restriction parameter in <code>&lt;argument name="properties">&lt;item name="ie_condition">&lt;/item>&lt;/argument></code></li>
-      </ul>
-   </div>
-   <h3>Apply a CSS class to a block</h3>
-   <div>
-      <p>You can use the following example for any block that has the <code>css_class</code> property.</p>
-      <p><p><b>Example:</b></p></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/5e7fefddf7689824ec44.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the name of the block <code>footer_links</code> in <code>&lt;referenceBlock name=""></code></li>
-         <li>the name of the CSS class <code>links</code> in <code>&lt;argument name="css_class">&lt;/argument></code></li>
-      </ul>
-   </div>
-   <h3>Remove a block</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <pre>&lt;remove name="footer_links"/></pre>
-      <p>Replace <code>footer_links</code> with the name of the block to remove.</p>
-   </div>
-   <h3>Move a block to another block</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <pre>&lt;move element="footer_links" destination="top.links" /></pre>
-      <p>To use this code:</p>
-      <ul>
-         <li>replace <code>footer _links</code> in <code>&lt;move element=""/></code> with the name of the block to move</li>
-         <li>replace <code>top.links</code> in <code>&lt;move destination=""/></code> with the name of the destination block</li>
-         <li>use <code>before</code> and <code>after</code> to order the elements</li>
-      </ul>
-   </div>
-   <h3 id="fedg_xml-instrux_order-block">Order blocks</h3>
-   <div>
-      <p>The following examples show how to:</p>
-      <ul>
-         <li>Place a block before all other blocks</li>
-         <li>Place a block after a particular block</li>
-      </ul>
-      <p>The examples are basically interchangeable; for example, if you use the dash character with <code>after</code>, the block is ordered after all other blocks. For more information, see <a href="#fedg_xml-instrux_before-after">before and after attributes</a>.</p>
-      <p>Examples:</p>
-      <script src="https://gist.github.com/xcomSteveJohnson/1a7904f730e62050a918.js"></script>
-      <p>To use these examples, replace the value of <code>before</code> or <code>after</code> with either dash (before or after all other blocks) or with the name of an existing block.</p>
-   </div>
-   <h3>Set the template used by a block</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <pre>&lt;block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/></pre>
-      <p>To use this code, replace the block class, name, and path to the template.</p>
-   </div>
-   <h3>Specify a page handle</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <pre>&lt;update handle="page_two_columns_left"/></pre>
-      <p>To use this code, replace the <code>page_two_columns_left</code> in <code>&lt;update handle=""/></code> with one of the following:</p>
-      <ul>
-         <li><code>page_empty</code>&mdash;Empty page, used mostly for Ajax responses</code></li>
-         <li><code>page_one_column</code>&mdash;One-column design, used mostly for mobile devices</li>
-         <li><code>page_two_columns_left</code>&mdash;Left-sided, two-column design</li>
-         <li><code>page_two_columns_right</code>&mdash;Right-sided, two-column design</li>
-         <li><code>page_three_columns</code>&mdash;Three-column design</li>
-      </ul>
-   </div>
-   <h3>Create a new container</h3>
-   <div>
-      <p><p><b>Example:</b></p></p>
-      <pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
-      <p>Replace the values with your own. For more information, see the earlier sections in this topic.</p>
-   </div>
-</div>
+
 <h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
 <p>To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
