@@ -8,7 +8,7 @@ menu_order: 6
 github_link: frontend-dev-guide/responsive-web-design/theme-best-practices.md
 ---
 
-<h2 id="layout_theme_bestpr_rwd">Using Responsive Web Design</h2>
+<h2 id="layout_theme_bestpr_rwd">Use responsive web design</h2>
 
 Responsive web design crafts web sites to provide an optimal viewing experience&mdash;easy reading and navigation with a minimum of resizing, panning, and scrolling, across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).
 
@@ -20,7 +20,7 @@ There are also scripts like <a href="http://headjs.com" target="_blank">HeadJS</
 
 Internet Explorer has the most CSS compatibility or behavior issues of all modern web browsers. Before responsive web design, to make CSS work in Internet Explorer, you could use a separate `styles-ie.css` that contained extra styles and instructions. In Magento 2 we use <a href="http://headjs.com" target="_blank">HeadJS</a>, a script that detects the browser type and assigns the corresponding value to the class attribute of the `<html>` tag.
 
-Now the browser-specific overrides for all browsers can be done in `style.css` using the corresponding classes.
+Now the browser-specific overrides for all browsers can be done in `style.css` Use the corresponding classes.
 
 The class name for Internet Explorer is `ie`. Use the following classes to override CSS behavior for Internet Explorer:
 
@@ -32,7 +32,7 @@ The class name for Internet Explorer is `ie`. Use the following classes to overr
 *	`.lt-ie10` (Internet Explorer 10 or earlier)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>HeadJS supports class names for various browsers, but in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about using similar overrides for other browsers.</p>
+  <p>HeadJS supports class names for various browsers, but in Magento 2, only `ie` class names are added by default. Consult the <a href="http://headjs.com/site/api/v2.00.html" target="_blank">HeadJS documentation</a> for information about Use similar overrides for other browsers.</p>
   </div>
 
 #### Related topics:

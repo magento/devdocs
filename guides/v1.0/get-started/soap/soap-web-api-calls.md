@@ -73,7 +73,7 @@ If service throws `Magento_Service_Exception` or any of its derivatives:
 
 <p><b>Sample SOAP error message:</b></p>
 
-<blockquote>
+
 <pre>
 &lt;env:Envelope xmlns:env="http://www.w3.org/2003/05/soap-envelope"
 xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -99,12 +99,12 @@ xmlns:m="http://magento.com">
 &lt;/env:Body>
 &lt;/env:Envelope>
 </pre>
-</blockquote>
+
 
 
 <p><b>Sample JSON error message:</b></p>
 
-<blockquote>
+
 <pre>
 error: {
 code: 3100,
@@ -112,4 +112,4 @@ message: Invalid Quantity,
 parameters: [product, email]
 }
 </pre>
-</blockquote>
+

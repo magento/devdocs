@@ -32,7 +32,7 @@ Use RFC 2119 to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NO
 
 <p><b>Acceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;section id="some-id">
    &lt;p> ... &lt;/p>
@@ -40,11 +40,11 @@ Use RFC 2119 to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NO
 &lt;/div>
 &lt;a href="#some-id">Scroll to text</a>
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;section id="загаловок">
    &lt;p> ... &lt;/p>
@@ -56,7 +56,7 @@ Use RFC 2119 to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NO
 &lt;/div>
 &lt;a href="#some_id">Scroll to text&lt;/a>
 </pre>
-</blockquote>
+
 
 <p><b>Semantic representation may rely on ID attribute.</b></p>
 
@@ -65,7 +65,7 @@ Use RFC 2119 to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NO
 
 <p><b>Acceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;ul>
    &lt;li class="first" type="button" aria-pressed="false" aria-controls="some-id">button 1&lt;/li>
@@ -78,11 +78,11 @@ Use RFC 2119 to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NO
 &lt;/div>
 &lt;a href="#some-id">Scroll to text</a>
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;ul id="my-special-menu">
    &lt;li id="buttonId1" class="first" type="button">button 1&lt;/li>
@@ -90,22 +90,22 @@ Use RFC 2119 to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NO
    &lt;li id="buttonId3" type="button">button 3&lt;/li>
 &lt;/ul>
 </pre>
-</blockquote>
+
 
 <p>JavaScript file</p>
-<blockquote>
+
 <pre>
 $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
 </pre>
-</blockquote>
+
 
 <p>CSS file</p>
-<blockquote>
+
 <pre>
 #my-special-menu { ... }
 #my-special-menu > li { ... }
 </pre>
-</blockquote>
+
 
 <h2>Code demarcation</h2>
 
@@ -118,7 +118,7 @@ $('#my-special-menu').on('click','li[id^="button"]', function() { ... })
 
 <p><b>Acceptable:</b></p>
 <p>CSS file</p>
-<blockquote>
+
 <pre>
 section h1 { ... }
 ul > li.first { ... }
@@ -131,11 +131,11 @@ section.content { ... }
 nav li { ... }
 nav li.active { ... }
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>CSS file</p>
-<blockquote>
+
 <pre>
 #header { ... }
 [data-action="delete"] { ... }
@@ -144,7 +144,7 @@ section[role="main"] { ... }
 [role="menu] [role="menuitem"] { ... }
 [role="menu] [role="menuitem"].active { ... }
 </pre>
-</blockquote>
+
 
 <p><b>You must not hard-code CSS styles in JavaScript files.</b></p>
 
@@ -159,7 +159,7 @@ section[role="main"] { ... }
 <p><b>Acceptable:</b></p>
 
 <p>JavaScript widget file</p>
-<blockquote>
+
 <pre>
 ...
    options: {
@@ -173,11 +173,11 @@ section[role="main"] { ... }
    this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'})
 ...
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>JavaScript file</p>
-<blockquote>
+
 <pre>
 this.element.on('click', function() {
   if ($(this).is(':visible')) {
@@ -187,7 +187,7 @@ this.element.on('click', function() {
   }
 });
 </pre>
-</blockquote>
+
 
 <p><b>You must not use inline CSS styles inside HTML tags.</b></p>
 
@@ -197,19 +197,19 @@ this.element.on('click', function() {
 
 <p><b>Acceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;div class="no-display"> ... &lt;/div>
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;div style="display: none;"> ... &lt;/div>
 </pre>
-</blockquote>
+
 
 
 <h2>Business logic and JavaScript</h2>
@@ -222,14 +222,14 @@ this.element.on('click', function() {
 
 <p><b>Acceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;div data-mage-init="{myWidget: [option1: 'hi']}">&lt;/div>
 </pre>
-</blockquote>
+
 
 <p>JavaScript file</p>
-<blockquote>
+
 <pre>
 ...
 this.element.find('[data-action="delete"]').on( ... );
@@ -239,25 +239,25 @@ this.element.on('click', '[data-action="delete"]', function() { ... });
 $('[data-role="tooltip]').tooltip();  //Globally for ALL tooltip elements
 ...
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;div id="my-widget">&lt;/div>
 </pre>
-</blockquote>
+
 
 <p>JavaScript file</p>
-<blockquote>
+
 <pre>
 $('#my-widget').doSomething();
 $('.parent').on('click', '.button', function() { ... });
 $('form').validate();
 $('[role="menu"]').navigation();
 </pre>
-</blockquote>
+
 
 
 <p><b>You must not select DOM elements based on HTML structure.</b></p>
@@ -266,21 +266,21 @@ $('[role="menu"]').navigation();
 
 <p><b>Acceptable:</b></p>
 <p>JavaScript file</p>
-<blockquote>
+
 <pre>
 this.element.find('[data-action="edit"]');
 this.elements.closest('[data-container]');
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>JavaScript file</p>
-<blockquote>
+
 <pre>
 this.element.children().children().html('hello world');
 this.element.parent().find('[data-action="edit"]').data('entity_id');
 </pre>
-</blockquote>
+
 
 <p><b>You must use jQuery templates to insert recurring markup into DOM structure.</b></p>
 
@@ -297,7 +297,7 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 
 <p>PHP file</p>
 
-<blockquote>
+
 <pre>
 ...
 public function getSelectorOptions()
@@ -306,21 +306,21 @@ public function getSelectorOptions()
 }
 ...
 </pre>
-</blockquote>
+
 
 <p>PHTML template</p>
 
-<blockquote>
+
 <pre>
 ...
 &lt;div data-mage-init="{treeSuggest: [&lt;?php echo $this->getSelectorOptions(); ?>]}">&lt;/div>
 ...
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>PHP file</p>
-<blockquote>
+
 <pre>
 ...
 public function getAfterElementHtml()
@@ -331,15 +331,15 @@ return &lt;&lt;&lt;HTML
     &lt;/script>
 ...
 </pre>
-</blockquote>
+
 
 <p>PHTML file</p>
 
-<blockquote>
+
 <pre>
 &lt;?php echo $this->getAfterElementHtml(); ?>
 </pre>
-</blockquote>
+
 
 <h2>PHTML templates and PHP files</h2>
 
@@ -351,7 +351,7 @@ return &lt;&lt;&lt;HTML
 
 <p><b>Acceptable:</b></p>
 <p>PHP file</p>
-<blockquote>
+
 <pre>...
    $fieldset->addField('new_category_parent', 'text', array(
       'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -361,11 +361,11 @@ return &lt;&lt;&lt;HTML
    ));
 ...
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 <p>PHP file</p>
-<blockquote>
+
 <pre>...
    $fieldset->addField('new_category_parent', 'text', array(
       'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
@@ -375,7 +375,7 @@ return &lt;&lt;&lt;HTML
    ));
 ...
 </pre>
-</blockquote>
+
 
 <p><b>You must not hard-code inline JavaScript in PHP classes.</b></p>
 
@@ -384,7 +384,7 @@ return &lt;&lt;&lt;HTML
 
 <p><b>Acceptable:</b></p>
 <p>PHP file</p>
-<blockquote>
+
 <pre>
 ...
 public function getSelectorOptions()
@@ -393,22 +393,22 @@ public function getSelectorOptions()
 }
 ...
 </pre>
-</blockquote>
+
 
 <p>PHTML template</p>
-<blockquote>
+
 <pre>
 ...
 &lt;div data-mage-init="{treeSuggest: [&lt;?php echo $this->getSelectorOptions(); ?>]}">&lt;/div>
 ...
 </pre>
-</blockquote>
+
 
 <p><b>Unacceptable:</b></p>
 
 <p>PHP file</p>
 
-<blockquote>
+
 <pre>
 ...
 public function getAfterElementHtml()
@@ -419,14 +419,14 @@ return &lt;&lt;&lt;HTML
     &lt;/script>
 ...
 </pre>
-</blockquote>
+
 
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;?php echo $this->getAfterElementHtml(); ?>
 </pre>
-</blockquote>
+
 
 <p><b>You must not hard-code HTML markup (used in the &lt;BODY> tag) in PHP classes.</b></p>
 
@@ -435,7 +435,7 @@ return &lt;&lt;&lt;HTML
 
 <p><b>Acceptable:</b></p>
 <p>PHP file</p>
-<blockquote>
+
 <pre>
 public function getAttributeName($element) {
    return ($element->getExtType() === 'multiple') ? $element->getId() . '_checkbox' : NULL;
@@ -445,10 +445,10 @@ public function getAttributeId($element) {
    return $element->getId();
 }
 </pre>
-</blockquote>
+
 
 <p>PHTML file</p>
-<blockquote>
+
 <pre>
 &lt;span class="attribute-change-checkbox">
     &lt;label>
@@ -456,5 +456,5 @@ public function getAttributeId($element) {
 &lt;/span>
 &lt;!--jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements.-->
 </pre>
-</blockquote>
+
 

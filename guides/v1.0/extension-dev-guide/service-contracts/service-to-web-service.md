@@ -38,14 +38,14 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
          <p>Required. Root element that defines the namespace and location of the XML schema file.</p>
       </td>
       <td>
-         <p>
+
          <dl>
-            <dt><code>xmlns:xsi</code></dt>
-            <dd>Namespace for the XML schema instance.</dd>
-            <dt><code>xsi:noNamespaceSchemaLocation</code></dt>
-            <dd>Path and file name of the XML schema file to use to validate the web API.</dd>
+            <dt><p><code>xmlns:xsi</code></p></dt>
+            <dd><p>Required. Defines the namespace for the XML schema instance.</p></dd>
+            <dt><p><code>xsi:noNamespaceSchemaLocation</code></p></dt>
+            <dd><p>Required. Defines the path and file name of the XML schema file to use to validate the web API.</p></dd>
          </dl>
-         </p>
+
       </td>
    </tr>
    <tr>
@@ -58,13 +58,13 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       <td>
          <p>
          <dl>
-            <dt><code>method</code></dt>
-            <dd>Required. String. HTTP method. Valid values are GET, POST, PUT, and DELETE.</dd>
-            <dt><code>url</code></dt>
-            <dd>Required. String.
+            <dt><p><code>method</code></p></dt>
+            <dd><p>Required. String. HTTP method. Valid values are GET, POST, PUT, and DELETE.</dd>
+            <dt><p><code>url</code></p></dt>
+            <dd><p>Required. String.
                Magento resource. Optionally, one or more template parameters.
             </dd>
-            <dt><code>secure</code></dt>
+            <dt><p><code>secure</code></p></dt>
             <dd>Optional. Boolean. Indicates that the route is accessible over only HTTPS. Any attempts to access this route over non-secure causes an exception.</dd>
          </dl>
          </p>
@@ -80,10 +80,10 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       <td>
          <p>
          <dl>
-            <dt><code>class</code></dt>
-            <dd>Required. String. Location and name of implemented interface.</dd>
-            <dt><code>method</code></dt>
-            <dd>Required. String. Web API method name.</dd>
+            <dt><p><code>class</code></p></dt>
+            <dd><p>Required. String. Location and name of implemented interface.</dd>
+            <dt><p><code>method</code></p></dt>
+            <dd><p>Required. String. Web API method name.</dd>
          </dl>
          </p>
       </td>
@@ -108,7 +108,7 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       </td>
       <td>
          <dl>
-            <dt><code>ref</code></dt>
+            <dt><p><code>ref</code></p></dt>
             <dd>
                Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                <p><b>Note:</b> The Magento web API framework enables guest users to access resources that are configured with anonymous permission. Users who cannot be authenticated by the framework through the existing authentication
@@ -139,9 +139,9 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       <td>
          <p>
          <dl>
-            <dt><code>name</code></dt>
+            <dt><p><code>name</code></p></dt>
             <dd>String. Parameter name.</dd>
-            <dt><code>force</code></dt>
+            <dt><p><code>force</code></p></dt>
             <dd>Boolean.</dd>
          </dl>
          </p>

@@ -72,10 +72,10 @@ To enable the loader for an Ajax request, set the `showLoader` Ajax call option 
 
 See the following sections for more information:
 
-*	<a href="#fedg_loader_details_block-part">Using the Loader to Block Page Content</a>
-*	<a href="#fedg_loader_details_non-ajax">Using Loader for Ajax and Non-Ajax Calls</a>
+*	<a href="#fedg_loader_details_block-part">Use the Loader to Block Page Content</a>
+*	<a href="#fedg_loader_details_non-ajax">Use the Loader for Ajax and Non-Ajax Calls</a>
 
-<h3 id="fedg_loader_details_block-part">Using the Loader to Block Page Content</h3>
+<h3 id="fedg_loader_details_block-part">Use the Loader to Block Page Content</h3>
 
 The loader can be used to lock all page content, or only lock certain forms or certain blocks. Specify the elements to be blocked using the `loaderContext` Ajax call option.
 
@@ -89,7 +89,7 @@ In the following example, an Ajax request loader is triggered and set to block o
     loaderContext: '[data-role="translation-form"]'
 })</pre>
 
-<h3 id="fedg_loader_details_non-ajax">Using Loader for Ajax and Non-Ajax Calls</h3>
+<h3 id="fedg_loader_details_non-ajax">Use the Loader for Ajax and Non-Ajax Calls</h3>
 
 To have the loader to span multiple Ajax calls or to show it when non-Ajax tasks are underway, trigger it manually:
 

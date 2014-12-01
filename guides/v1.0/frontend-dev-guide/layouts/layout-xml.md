@@ -56,7 +56,7 @@ This section discusses how to override the base the layout defined by the `Mage_
 The base template uses `<update handle="page_two_columns_left"/>` to define the number of columns on the page.
 
 
-<h2 id="layout_markup_rearrange">Rearranging Elements</h2>
+<h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
 For example, you can change the subordination of the product price block.
 
@@ -72,15 +72,15 @@ Change you should make in a theme merging file:
 
 <script src="https://gist.github.com/xcomSteveJohnson/93666c8933206a55dd61.js"></script>
 
-<h2 id="layout_markup_css">Changing JavaScript, CSS and RSS</h2>
+<h2 id="layout_markup_css">Change JavaScript, CSS and RSS</h2>
 
 You can use layout instructions to link and remove CSS, JavaScript (JS) and RSS resources to a page's head block. See the following sections for more information:
 
-*	<a href="#layout_markup_css_link">Linking JS, CSS and RSS files</a>
-*	<a href="#layout_markup_css_change">Changing JavaScript or CSS Links</a>
-*	<a href="#layout_markup_css_remove">Removing JavaScript or CSS</a>
+*	<a href="#layout_markup_css_link">Link JS, CSS, and RSS files</a>
+*	<a href="#layout_markup_css_change">Change JavaScript or CSS links</a>
+*	<a href="#layout_markup_css_remove">Remove JavaScript or CSS</a>
 
-<h3 id="layout_markup_css_link">Linking JS, CSS and RSS files</h3>
+<h3 id="layout_markup_css_link">Link JS, CSS and RSS files</h3>
 
 This section discusses how to link the following resources:
 
@@ -97,17 +97,17 @@ Where:
 *	The value of the name attribute of `<block>` is arbitrary.
 *	The file name and path for the file argument (or URL in case of RSS) is relative to the theme root directory `app/design/[area]/[theme name]`, or the `view/[area]` directory of a custom module.
 
-<h3 id="layout_markup_css_change">Changing JavaScript or CSS Links</h3>
+<h3 id="layout_markup_css_change">Change JavaScript or CSS links</h3>
 
-To change a link, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#fedg_layout_xml-instruc_ex_rem">remove it</a> then add the new one.
+To change a link, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#layout_markup_remove_elements">remove it</a> then add the new one.
 
-<h3 id="layout_markup_css_remove">Removing JavaScript or CSS</h3>
+<h3 id="layout_markup_css_remove">Remove JavaScript or CSS</h3>
 
 To remove the JavaScript and CSS resources used in a layout, make a change similar to the following in a theme merging file:
 
 <script src="https://gist.github.com/xcomSteveJohnson/2871e00f617d4e031014.js"></script>
 
-<h2 id="layout_markup_remove_elements">Removing Elements</h2>
+<h2 id="layout_markup_remove_elements">Remove elements</h2>
 
 This section discusses how to remove the shopping cart sidebar block from a page.
 
@@ -121,11 +121,11 @@ To change it, make a customization similar to the following in a theme merging f
     &lt;remove name="cart_sidebar"/>
 &lt;/layout></pre>
 
-<h2 id="layout_markup_replace_elements">Replacing Elements</h2>
+<h2 id="layout_markup_replace_elements">Replace elements</h2>
 
-To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#fedg_layout_xml-instruc_ex_rem">remove it</a> and add a new one.
+To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#layout_markup_remove_elements">remove it</a> and add a new one.
 
-<h2 id="layout_markup_modify-block">Modifying Block Arguments</h2>
+<h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
 This section discusses how to modify the declared block argument and to add a new one.
 
@@ -137,7 +137,7 @@ To modify it, make a customization similar to the following in a theme merging f
 
 <script src="https://gist.github.com/xcomSteveJohnson/f942fac58ef97a39890f.js"></script>
 
-<h2 id="layout_markup_block-properties">Setting Block Properties Using Block Object Methods</h2>
+<h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
 To set a page title using the `setTitle()` method, make a customization similar to the following in a theme merging file:
 

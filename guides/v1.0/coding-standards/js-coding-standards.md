@@ -47,29 +47,27 @@ github_link: coding-standards/js-coding-standards.md
 <p>Source code line length must not exceed 120 characters.</p>
 <p>Recommended line length is 80 characters.</p>
 <div class="bs-callout bs-callout-info" id="info">
-      <ul>
-         <li>If a comment line contains an example command or a literal URL longer than 120 characters, that line can be longer than 120 characters for ease of cutting and pasting.</li>
-         <li>Do not be concerned about header guards that exceed 120 characters.</li>
-      </ul>
+   <ul>
+      <li>If a comment line contains an example command or a literal URL longer than 120 characters, that line can be longer than 120 characters for ease of cutting and pasting.</li>
+      <li>Do not be concerned about header guards that exceed 120 characters.</li>
+   </ul>
 </div>
 <h3 id="fedg_js-coding-format_terminate">Line termination</h3>
 <p>Line termination follows the UNIX text file convention.</p>
 <p>Lines must end with a single linefeed (LF) character.</p>
 <p>Linefeed characters are represented as ordinal 10, or hexadecimal (0x0A).</p>
 <div class="bs-callout bs-callout-info" id="info">
-      <p>Do <em>not</em> use carriage returns (CR) as is the convention in Apple OS's (0x0D) or the carriage return&ndash;linefeed combination (CRLF) as is standard for the Windows OS (0x0D, 0x0A).</p>
+   <p>Do <em>not</em> use carriage returns (CR) as is the convention in Apple OS's (0x0D) or the carriage return&ndash;linefeed combination (CRLF) as is standard for the Windows OS (0x0D, 0x0A).</p>
 </div>
 <h3>Multiline string literals</h3>
 <p>Use string concatenation:</p>
-<blockquote>
-   <pre>var myString = 'JavaScript was originally developed in Netscape, by Brendan Eich. ' +
+<pre>var myString = 'JavaScript was originally developed in Netscape, by Brendan Eich. ' +
     'Battling with Microsoft over the Internet, Netscape considered their client-server solution ' +
     'as a distributed OS, running a portable version of Sun Microsystem&#8217;s Java. ' +
     'Because Java was a competitor of C++ and aimed at professional programmers, ' +
     'Netscape also wanted a lightweight interpreted language that would complement Java ' +
     'by appealing to nonprofessional programmers, like Microsoft&#8217;s VB.[9] (see JavaScript and Java)';
     </pre>
-</blockquote>
 <h3 id="fedg_js-coding_codestyle_parens">Parentheses</h3>
 <p>Use sparingly and in general only where required by the syntax and semantics.</p>
 <p>Never use parentheses for:</p>
@@ -79,8 +77,7 @@ github_link: coding-standards/js-coding-standards.md
 <h3 id="semicolons">Semicolons</h3>
 Always put semicolons as statement terminators.
 The following example shows how missing semicolons can be particularly dangerous:
-<blockquote>
-   <pre>
+<pre>
 // 1.
 MyClass.prototype.myMethod = function() {
     return 42;
@@ -90,9 +87,7 @@ MyClass.prototype.myMethod = function() {
     // Some initialization code wrapped in a function to create a scope for locals.
 })();
 </pre>
-</blockquote>
-<blockquote>
-   <pre>
+<pre>
 // 2.  Trying to do one thing on Internet Explorer and another on Firefox.
 var x = {
     'i': 1,
@@ -102,15 +97,12 @@ var x = {
 // I know you'd never write code like this, but throw me a bone.
 [normalVersion, ffVersion][isIE]();
 </pre>
-</blockquote>
-<blockquote>
-   <pre>
+<pre>
 // 3. conditional execution a la bash
 var THINGS_TO_EAT = [apples, oysters, sprayOnCheese]  // No semicolon here.
 
 -1 == resultOfOperation() || die();
 </pre>
-</blockquote>
 <p><b>So what happens?</b></p>
 <ol>
    <li>JavaScript error - first the function returning 42 is called with the second function as a parameter, then the number 42 is "called" resulting in an error.</li>
@@ -124,25 +116,21 @@ var THINGS_TO_EAT = [apples, oysters, sprayOnCheese]  // No semicolon here.
 <h3 id="fedg_js-coding_codestyle_stmt">Statements and conditions</h3>
 <p>Do not put statements on the same line as conditions.</p>
 <p><b>Incorrect:</b></p>
-<blockquote>
-   <pre>if (true) return;
+<pre>if (true) return;
 if (true) blah();</pre>
-   <p><b>Correct:</b></p>
-   <pre>if (true) {
+<p><b>Correct:</b></p>
+<pre>if (true) {
     return;
 }
 
 if (true) {
     blah();
 }</pre>
-</blockquote>
 <h3 id="strings">Strings</h3>
 <p>For consistency, single-quotes are preferred to double quotes. This is helpful when creating strings that include HTML:</p>
-<blockquote>
-   <pre>
+<pre>
 var msg = '&lt;span class="text">Hello World!&lt;/div>';
 </pre>
-</blockquote>
 <h2 id="fedg_js-coding_naming">Naming conventions</h2>
 <h3 id="fedg_js-coding_naming_const">Constants</h3>
 <p>Constants may contain both alphanumeric characters and underscores (<code>_</code>).</p>
@@ -152,18 +140,15 @@ var msg = '&lt;span class="text">Hello World!&lt;/div>';
 <p>In JavaScript constants are declared using the <code>@const</code> annotation. But Internet Explorer does not parse the <code>@const</code> keyword, so omit it, if possible.</p>
 <p>For example, variables can be used instead of constants for storing simple values. Applying the naming convention used for constants (all CAPS) in naming these variables would indicate that their value is not supposed to be changed.</p>
 <p>Example:</p>
-<blockquote>
-   <pre>
+<pre>
 /**
  * The number of seconds in a minute.
  * @type {number}
  */
 obj.example.SECONDS_IN_A_MINUTE = 60;
 </pre>
-</blockquote>
 <p>For non-primitives, use the <code>@const</code> annotation.</p>
-<blockquote>
-   <pre>
+<pre>
 /**
  * The number of seconds in each of the given units.
  * @type {Object.&lt;number>}
@@ -174,7 +159,6 @@ obj.example.SECONDS_TABLE = {
     hour: 60 * 60
     day: 60 * 60 * 24
 </pre>
-</blockquote>
 <h3 id="fedg_js-coding_naming_files">File names</h3>
 <p>File names should be all lowercase to avoid confusion on case-sensitive platforms.</p>
 <p>File names should contain only alphanumeric characters, and dash character (<code>-</code>) as words separator, end with <code>.js</code>:</p>
@@ -184,13 +168,11 @@ obj.example.SECONDS_TABLE = {
 <h3 id="fedg_js-coding_codestyle_curl">Curly braces</h3>
 <p>Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they are opening.</p>
 <p>For example:</p>
-<blockquote>
-   <pre>if (something) {
+<pre>if (something) {
     // ...
 } else {
     // ...
 }</pre>
-</blockquote>
 <h3 id="fedg_js-coding_naming_fns">Functions and methods</h3>
 <p>Function names may contain only alphanumeric characters.</p>
 <p>Underscores are not permitted.</p>
@@ -223,20 +205,17 @@ obj.example.SECONDS_TABLE = {
 <h3 id="fedg_js-coding_codestyle_literals">Array and object literals</h3>
 <p>Use array and object literals instead of array and object constructors.</p>
 <p>The following example is <b>correct</b>. Always use the more readable array literal:</p>
-<blockquote>
-   <pre>var a = [x1, x2, x3];
+<pre>var a = [x1, x2, x3];
 var a2 = [x1, x2];
 var a3 = [x1];
 var a4 = [];</pre>
-</blockquote>
 <div class="bs-callout bs-callout-info" id="info">
-      <p>The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.</p>
-      <p>Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.</p>
-      <script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
+   <p>The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.</p>
+   <p>Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.</p>
+   <script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
 </div>
 <p>Object constructors don't have the same problems, but for readability and consistency object literals should be used.</p>
-<blockquote>
-   <pre>var o = {};
+<pre>var o = {};
 
 var o2 = {
     a: 0,
@@ -244,7 +223,6 @@ var o2 = {
     c: 2,
     'strange key': 3
 };</pre>
-</blockquote>
 <h3 id="fedg_js-coding_codestyle_binary-ternary">Binary and ternary operators</h3>
 <p>Always put the operator on the preceding line, so that you don't have to think about implicit semi-colon insertion issues.</p>
 <script src="https://gist.github.com/xcomSteveJohnson/07c08ba56af1d9e150c4.js"></script>
@@ -299,25 +277,25 @@ var o2 = {
    </tbody>
 </table>
 <div class="bs-callout bs-callout-info" id="info2">
-      <p>Here are some examples of non-obvious Boolean expressions results:</p>
-      <p>
-      <pre>Boolean('0') == true
+   <p>Here are some examples of non-obvious Boolean expressions results:</p>
+   <p>
+   <pre>Boolean('0') == true
 '0' != true</pre>
-      <pre>0 != null
+   <pre>0 != null
 0 == []
 0 == false</pre>
-      <pre>Boolean(null) == false
+   <pre>Boolean(null) == false
 null != true
 null != false</pre>
-      <pre>Boolean(undefined) == false
+   <pre>Boolean(undefined) == false
 undefined != true
 undefined != false</pre>
-      <pre>Boolean([]) == true
+   <pre>Boolean([]) == true
 [] != true [] == false</pre>
-      <pre>Boolean({}) == true
+   <pre>Boolean({}) == true
 {} != true
 {} != false</pre>
-      </p>
+   </p>
 </div>
 <h3 id="operators">Boolean operators (&& and ||)</h3>
 <p>These binary Boolean operators are short-circuited, and evaluate to the last evaluated term.</p>
@@ -412,21 +390,17 @@ if (kid) {
 <p>ECMAScript only allows function declarations in the root statement list of a script or a function.</p>
 <p>To define a function within a block, use a variable initialized with a function expression.</p>
 <p><b>Wrong:</b></p>
-<blockquote>
-   <pre>
+<pre>
 if (x) {
     function foo() {}
 }
 </pre>
-</blockquote>
 <p><b>Correct:</b></p>
-<blockquote>
-   <pre>
+<pre>
 if (x) {
     var foo = function() {}
 }
 </pre>
-</blockquote>
 <h3 id="exceptions">Exceptions and custom exceptions</h3>
 <p>You cannot avoid exceptions if you are doing something non-trivial (using an application development framework, and so on).</p>
 <p>Without custom exceptions, returning error information from a function that also returns a value can be tricky, not to mention inelegant. Bad solutions include passing in a reference type to hold error information or always returning Objects with a potential error member.</p>
@@ -436,16 +410,13 @@ if (x) {
 <p>For example, string.charAt(3) instead of string[3], and element access with DOM functions instead of using an application-specific shorthand.</p>
 <h3 id="methods">Method definitions</h3>
 <p>There are several ways to attach methods and properties to a constructor, but the preferred style is:</p>
-<blockquote>
-   <pre>
+<pre>
 Foo.prototype.bar = function() {
     // ...
 };
 </pre>
-</blockquote>
 <p>Or you can also use this style:</p>
-<blockquote>
-   <pre>
+<pre>
 Foo.prototype = {
     bar: function() {
         // ...
@@ -455,23 +426,19 @@ Foo.prototype = {
     }
 };
 </pre>
-</blockquote>
 <h3 id="closures">Closures</h3>
 <p>Keep in mind is that a closure keeps a pointer to its enclosing scope.</p>
 <p>As a result, attaching a closure to a DOM element can create a circular reference and thus, a memory leak.</p>
 <p><b>Wrong:</b></p>
-<blockquote>
-   <pre>
+<pre>
 function foo(element, a, b) {
     element.onclick = function() { /* uses a and b */ };
 }
 </pre>
-</blockquote>
 <p>The function closure keeps references to elements "a" and "b" even if it never uses them.</p>
 <p>Since elements also keep references to the closure, it is a cycle that will not be cleaned up by garbage collection. In these situations, the code can be structured as follows:</p>
 <p><b>Correct:</b></p>
-<blockquote>
-   <pre>
+<pre>
 function foo(element, a, b) {
     element.onclick = bar(a, b);
 }
@@ -480,7 +447,6 @@ function bar(a, b) {
     return function() { /* uses a and b */ }
 }
 </pre>
-</blockquote>
 <h2 id="general-recommendations">General recommendations</h2>
 <h3 id="eval">Do not use eval()</h3>
 <p>Avoid using eval().</p>
@@ -489,18 +455,17 @@ function bar(a, b) {
 <p>Do not use the with() statement.</p>
 <p>Using with() clouds the semantics of your program, because its object can have properties that collide with local variables, which can drastically change the meaning of your program.</p>
 <p>Example: what will be the result of the following code execution?</p>
-<blockquote>
-   <pre>
+<pre>
 with (foo) {
     var x = 3;
     return x;
 }
 </pre>
-</blockquote>
 <p>Answer: anything.</p>
 <p>The local variable x could be clobbered by a property of foo, and perhaps it even has a setter, in which case assigning 3 could cause lots of other code to execute.</p>
 <h3 id="this">Use this with caution</h3>
 <p>Semantic of this can be tricky. It can refer to either:</p>
+
 * global object (in most cases)
 * the scope of the caller (in eval)
 * a node in the DOM tree (when attached using an event handler HTML attribute)
@@ -508,7 +473,6 @@ with (foo) {
 * other object - if a function was called by call() or apply().
 
 <p>To avoid confusion, use <code>this</code> only in object constructors, methods, and in closures setting up.</p>
-
 <h3 id="fedg_js-coding_codestyle_arrayinit">Array and object initializers</h3>
 <p>Single-line array and object initializers are allowed when they fit on a line as follows:</p>
 <pre>var arr = [1, 2, 3];  // No space after [ or before ].
@@ -517,16 +481,14 @@ var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.</pre>
 <script src="https://gist.github.com/xcomSteveJohnson/0a09bd28d56b63787a73.js"></script>
 <p>Long identifiers or values present problems for aligned initialization lists, so always prefer non-aligned initialization.</p>
 <p>For example:</p>
-<blockquote>
-   <pre>Object.prototype = {
+<pre>Object.prototype = {
     a: 0,
     b: 1,
     lengthyName: 2
 };</pre>
-</blockquote>
 <div class="bs-callout bs-callout-info" id="info">
-      <p>The following is <b>incorrect</b>:</p>
-      <pre>WRONG_Object.prototype = {
+   <p>The following is <b>incorrect</b>:</p>
+   <pre>WRONG_Object.prototype = {
     a          : 0,
     b          : 1,
     lengthyName: 2
@@ -555,14 +517,12 @@ var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.</pre>
 <p>It also makes hard to define the variable scope. For example, it can be <code>Document</code>, <code>Window</code> or <code>local</code> scope.</p>
 <p>So always declare variables with <code>var</code>.</p>
 <p>Using only one var per scope (function) promotes readability.</p>
-<blockquote>
-   <pre>
+<pre>
 var foo = "bar,"
     num = 1,
     arr = [1, 2, 3];
 </pre>
-</blockquote>
 
-<h3 id="related-topics">Related topics</h3>
+
 
 
