@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: CSS
-menu_title: CSS
+title: Cascading style sheets (CSS)
+menu_title: Cascading style sheets (CSS)
 menu_order: 1
 menu_node: parent
 github_link: frontend-dev-guide/css-topics/css-overview.md
@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/css-topics/css-overview.md
 
 ## Overview
 
-You can use CSS to customize Magento themes. You can add your own images and fonts to the CSS.
+You can use cascading style sheets (CSS) to customize Magento themes. You can add your own images and fonts to the CSS.
 
 Do not use CSS visibility properties to hide Magento blocks and content.
 

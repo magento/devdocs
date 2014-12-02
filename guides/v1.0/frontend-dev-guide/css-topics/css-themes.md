@@ -57,5 +57,5 @@ This example shows how to specify an Internet Explorer 9-specific stylesheet:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS overview</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Magento theming</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themese</a>
 
