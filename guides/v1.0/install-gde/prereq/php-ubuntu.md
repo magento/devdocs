@@ -26,6 +26,7 @@ github_link: install-gde/prereq/php-ubuntu.md
 
 <h2 id="php-support">PHP versions supported</h2>
 Magento requires:
+
 *	PHP 5.4.x where x = 11 or later
 *	PHP 5.5.x 
 

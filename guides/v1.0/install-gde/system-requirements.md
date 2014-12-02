@@ -18,8 +18,10 @@ Before you install Magento, make sure your system meets or exceeds the following
 
 *	<a href="https://getcomposer.org/download/" target="_blank">Composer</a> (latest stable version)
 *	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
-*	PHP 5.4.x where x = 11 or later
-*	PHP 5.5.x 
+*	PHP:
+
+	*	5.4.x where x = 11 or later
+	*	5.5.x 
 *	Required PHP extensions:
 
 	*	PDO/MySQL
