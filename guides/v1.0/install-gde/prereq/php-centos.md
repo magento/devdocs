@@ -24,7 +24,10 @@ github_link: install-gde/prereq/php-centos.md
 
 <h2 id="php-support">PHP versions supported</h2>
 
-Magento requires PHP 5.4.11 or later or PHP 5.5.x.
+Magento requires:
+
+*	PHP 5.4.x where x = 11 or later
+*	PHP 5.5.x 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
