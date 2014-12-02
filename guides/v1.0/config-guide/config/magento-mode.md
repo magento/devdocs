@@ -49,7 +49,20 @@ TBD
 TBD
 
 <h2 id="mode-production">Production mode</h2>
-TBD
+You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="#mode-production-view">view files population tool</a> to write static files to the Magento docroot.
+
+This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
+
+In production mode:
+
+*	View files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
+*	The Magento docroot can have read-only permissions
+*	Errors are logged to the file system and are never displayed to the user
+
+
+
+
+To run Magento in production mode, 
 
 <h2 id="mode-specify">Specify a mode</h2>
 Specify the Magento mode in any of the following ways:

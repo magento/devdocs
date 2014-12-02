@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: 
 subgroup: Integration
 title: Integration authorization
 menu_title: Integration authorization

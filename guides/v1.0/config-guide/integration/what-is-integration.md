@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: 
 subgroup: Integration
 title: What is an integration?
 menu_title: What is an integration?
