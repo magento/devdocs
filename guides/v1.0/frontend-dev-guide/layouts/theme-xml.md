@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: B_Layouts
-title: XML in themes
-menu_title: XML in themes
+title: XML instructions
+menu_title: XML instructions
 menu_order: 6
 github_link: frontend-dev-guide/layouts/theme-xml.md
 ---
@@ -11,15 +11,21 @@ github_link: frontend-dev-guide/layouts/theme-xml.md
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
 Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
-Use layout instructions to:
+To change the high-level page structure modify the page layout files; all other customizations are performed in the page configuration or generic layout files. <!--ADDLINK-->
+
+
+Using layout instructions you can:
 
 *	move a page element to another parent element
 *	add content 
 *	remove a page element
 
-To change the high-level page structure modify the page layout files; all other changes (adding content) is performed in the page configuration files. 
 
-Page layouts and page configurations use the same layout instructions to manipulate elements, thought the set of elements the files can contain is different. Page layouts define containers only, while page configuration can reference both, containers and blocks.
+The basic set of instructions is the same for all types of layout files. Though there are specific limitations and rules of usage for each layout type. This article describes these general instructions; for details about how they are used in particular layout file type, please refer to one of the following:
+
+* Page layout <!--ADDLINK-->
+* Page configuration <!--ADDLINK-->
+* Generic layout <!--ADDLINK-->
 
 
 <h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
@@ -32,6 +38,7 @@ Use the following layout instructions to customize your layout:
 *	<a href="#fedg_layout_xml-instruc_ex_rem">&lt;remove></a>
 *	<a href="#fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></a>
 *	<a href="#fedg_layout_xml-instruc_ex_mv">&lt;move></a>
+*	<a href="#fedg_layout_xml-instruc_ex_upd">&lt;update/&gt;</a>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 

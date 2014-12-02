@@ -45,8 +45,8 @@ To make sure the theme is recognized by the Magento application, log in to the M
 
 <img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
 
-<h2 id="fedg_create_theme_composer">Making your theme a <a href="https://getcomposer.org/">Composer</a> package</h2>
-Magento default themes are distributed as Composer packages. 
+<h2 id="fedg_create_theme_composer">Making your theme a Composer package</h2>
+Magento default themes are distributed as <a href="https://getcomposer.org/">Composer</a> packages. 
 
 If you want your theme to be distributed like this as well, add a `composer.json` file the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 

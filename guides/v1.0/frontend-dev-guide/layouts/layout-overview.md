@@ -11,16 +11,39 @@ github_link: frontend-dev-guide/layouts/layout-overview.md
 
 Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into *layers*, including the *view layer*.
 
-The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml layout files, which contain element declarations and element manipulation instructions.
+<h2>Layout structure</h2>
+
+The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.
 
  So what a layout file does is identify an existing block or container in a tree and change it in some way. Changes are to add some more content (e.g. there might be a side bar container to which some more content is added), or remove content (an extension might remove some core functionality, then add replacement functionality). Layouts are like wire-frames - they control the structure of the page tree. Blocks and PHTML files fill in the detailed markup within the tree. 
 
+The basic components of Magento page design are blocks and containers. Simply put, containers contain blocks, other containers, and other layout elements.
+
+A *container* exists for the sole purpose of assigning content structure to a page. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.
+
+The following figure shows an example:
+
+![A container is basically an empty object that can be filled with visual content.]({{ site.baseurl }}common/images/layouts_containers_defn.jpg)
+
+A *block* produces the actual content inside each structural block. A block represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
+
+The following figure shows an example:
+
+![A *block* produces the actual content inside each structural block.]({{ site.baseurl }}common/images/layouts_block_defn.jpg)
+
+
+
 There are three types of layout files:
+
 - Page layout: declares high-level page structure using only containers and operation with them: move, remove, update, referenceContainer.
+
 - Page configuration: "fills" the containers defined in a layout file by the particular functionality using blocks.
+
 - Generic layouts: a variation of page configuration used for pages loaded by AJAX requests.
 
-Each Magento module has a set of default layouts (base layout files), which can be extended or overridden by theme layouts.
+For the sake of stability and easy maintenance, do not edit the out-of-the-box Magento module and theme layouts. Create a custom theme instead, where you can extend or overridde module and parent theme layouts.
+
+
 
 The view layer is responsible for representing the data
 <h2 id="layout_overview">Overview</h2>
