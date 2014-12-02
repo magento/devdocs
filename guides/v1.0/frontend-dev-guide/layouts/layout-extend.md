@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/layouts/layout-extend.md
 
 <h2 id="fedg_layout_extend_merge">Creating a Theme Merging File</h2>
 
-Rather than copy extensive layout code and modify what you want to change, in Magento 2 you must only create a *theme merging file* that contains the changes you want.
+Rather than copy extensive layout code and modify what you want to change, in the Magento system, you must create only a *theme merging file* that contains the changes you want.
 
 To add a theme merging file:
 
@@ -50,6 +50,6 @@ Magento merges layout files as follows:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI Library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>

@@ -36,7 +36,7 @@ See one of the following sections:
 Enter the following command to install NTP:
 
 	apt-get install ntp
-	
+
 Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a>.
 
 <h3 id="install-optional-ntp-centos">Install and configure NTP on CentOS</h3>
@@ -46,13 +46,13 @@ To install and configure NTP:
 1.	Enter the following command to find the appropriate NTP software:
 
 	<pre>yum search ntp</pre>
-	
+
 2.	Select a package to install. For example, <code>ntp.x86_64</code>.
 
 2.	Install the package.
 
 	<pre>yum -y install ntp.x86_64</pre>
-	
+
 3.	Enter the following command so that NTP starts when the server starts.
 
 	<pre>chkconfig ntpd on</pre>
@@ -69,7 +69,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 	<pre>server 0.centos.pool.ntp.org
 	server 1.centos.pool.ntp.org
 	server 2.centos.pool.ntp.org</pre>
-	
+
 3.	Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It's a good idea to specify more than one.
 
 4.	An example of using three United States-based NTP servers follows:
@@ -83,13 +83,13 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 4.	Restart the service.
 
 	Ubuntu: <code>service ntp restart</code>
-	
+
 	CentOS: <code>service ntpd restart</code>
-	
+
 4.	Enter <code>date</code> to check the server's date.
 
-	If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall. 
-	
+	If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.
+
 	Try the <code>ntpdate <em>[pool server host name]</em></code> command. If it fails, search for the error it returns.
 
 	If all else fails, try rebooting the server.
@@ -106,14 +106,14 @@ For more information, see the <a href="http://php.net/manual/en/function.phpinfo
 To view the results, enter the following URL in your browser's location or address field:
 
 	http://[web server host or IP]/phpinfo.php
-	
+
 If a 404 (Not Found) error displays, check the following:
 
 *	Start the web server if necessary.
 *	Make sure your firewall allows traffic on port 80.
 
 	<a href="https://help.ubuntu.com/community/UFW" target="_blank">Help for Ubuntu</a>
-	
+
 	<a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">Help for CentOS</a>
 
 <h2 id="install-optional-phpmyadmin">Install phpmyadmin</h2>
@@ -129,13 +129,13 @@ To install phpmyadmin on Ubuntu:
 1.	Use the following command:
 
 	<pre>apt-get install phpmyadmin</pre>
-	
+
 2.	Follow the prompts on your screen to complete the installation.
 
 3.	To use phpmyadmin, enter the following URL in your browser's address or location field:
 
 	<pre>http://[web server host or IP]/phpmyadmin</pre>
-	
+
 4.	When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.
 
 <h2 id="install-optional-phpmyadmin-centos">Install phpmyadmin on CentOS</h2>
@@ -154,15 +154,15 @@ To install phpmyadmin on CentOS:
 3.	Authorize access to phpmyadmin from your machine's IP address.
 
 	Open the following file for editing:
-	
+
 	<pre>vim /etc/httpd/conf.d/phpMyAdmin.conf</pre>
 
 3.	Replace the following IP address with your IP address
 
 	<pre>Require ip 127.0.0.1</pre>
-	
+
 	For example,
-	
+
 	<pre>Require ip 192.51.100.101</pre>
 
 4.	Replace the following IP with your IP address:
@@ -170,7 +170,7 @@ To install phpmyadmin on CentOS:
 	<pre>Allow from 127.0.0.1</pre>
 
 	For example,
-	
+
 	<pre>Allow from 192.51.100.101</pre>
 
 5.	Save your changes to <code>/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.
@@ -193,5 +193,5 @@ To install phpmyadmin on CentOS:
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento GitHub repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>

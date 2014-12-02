@@ -9,15 +9,11 @@ github_link: coding-standards/jquery-widget-guidelines.md
 ---
 
 <h2 id="fedg_jq-widget-coding-stnd_overview">Overview</h2>
-<p>Magento 2 system uses the <a href="http://jqueryui.com/widget/" target="_blank">jQuery UI Widget Factory</a> library for implementing user interface controls in JavaScript.</p>
-<p>Magento has developed a standard for widget implementing, which is mandatory for Magento 2 core developers.</p>
-<p>This article presents those requirements of the standard, which are recommended for 3rd-party Magento 2 developers.</p>
-<p>Some parts of Magento 2 code may not comply with the standard, but we are working to gradually improve this.</p>
-<p>Use the <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the keywords "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional."</p>
-<p>All jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the <a href="http://jqueryui.com/widget/" target="_blank">jQuery UI Widget Factory</a>.</p>
-<p>The factory provides a flexible base for building complex, stateful plug-ins with a consistent API.</p>
-<p>It is designed not only for plug-ins that are part of jQuery UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.</p>
+<p>In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the <a href="http://jqueryui.com/widget/" target="_blank">jQuery UI Widget Factory</a>. The factory provides a flexible base for building complex, stateful plug-ins with a consistent API. It is designed not only for plug-ins that are part of jQuery UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.</p>
 <p>For more information, see the <a href="http://api.jqueryui.com/jQuery.widget/" target="_blank">jQuery Widget API documentation</a>.</p>
+<p>This standard is mandatory for Magento core developers and recommended for third-party extension developers. Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.</p>
+<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
+
 <h2 id="fedg_jq-widget-coding-stnd_naming">Naming conventions</h2>
 <div id="accordion">
    <h3>Widget names must consist of one or more non-abbreviated English words</h3>

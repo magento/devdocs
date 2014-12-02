@@ -224,11 +224,11 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 <ul>
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Design patterns</a></li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers</a></li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.html">Create a service - example</a></li>
-   <li><a href="{{ site.gdeurl }}get-started/webapi/webapi-basic-auth.html">Authorizing Web API Requests</a>
-   <li><a href="{{ site.gdeurl }}get-started/rest/rest-overview.html">Accessing Magento Objects Using REST</a></li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/services/service-how-to-use.html">How a Client Uses a Service</a></li>
+   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-domain-guidelines.html">Guidelines for domain and service layers</a></li>
+   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-example.html">Create a service - example</a></li>
+   <li><a href="{{ site.gdeurl }}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
+   <li><a href="{{ site.gdeurl }}get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a></li>
    <li><a href="{{ site.gdeurl }}get-started/soap/soap-web-api-calls.html">SOAP web APIs</a></li>
 </ul>
 

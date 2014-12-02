@@ -10,7 +10,7 @@ github_link: config-guide/config/caching.md
 
 <h2 id="m2devgde-cache-intro">Overview</h2>
 
-In Magento 2, the functionality was split into several layers depending on role of each component:
+In the Magento system, the functionality was split into several layers depending on role of each component:
 
 * The system-level components went to **framework layer**
 * The business-logic components went to **application layer**

@@ -9,9 +9,9 @@ menu_node: parent
 github_link: architecture/behavior/xlate.md
 ---
 
-<h2 id="m2devgde-xlate-intro">Introduction to Magento translations</h2>
+<h2 id="m2devgde-xlate-intro">Introduction</h2>
 
-Magento's translation functionality enables you to customize and localize your store for multiple regions and markets.
+The Magento translation functionality enables you to customize and localize your store for multiple regions and markets.
 
 The translation functionality was changed to improve the localization and customization of Magento instances. Specifically, the dictionaries are easier to update and maintain and the code coupling and duplication are reduced.
 

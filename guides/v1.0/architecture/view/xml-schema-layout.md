@@ -9,10 +9,10 @@ github_link: architecture/view/xml-schema-layout.md
 ---
 
 <h2 id="m2devgde-xml-layout-intro">Overview</h2>
-<p>In Magento 2, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
+<p>In the Magento system, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
 <p>The system uses the Magento XML schemas to validate these layouts.</p>
 <h2 id="xml-schemas">XML schemas</h2>
-<p>Magento 2 uses the following XML schemas to validate these layouts:</p>
+<p>The Magento system uses the following XML schemas to validate these layouts:</p>
 
 <p class="q">Reviewer: The original topic mentioned 3 XSD files, two of which do not exist or have been renamed: layout_single.xsd, layouts.xsd, and layout_merged.xsd. I guessed that layout_single = layout_generic but I do not know the correct reference for layouts.xsd. Please provide this information.</p>
 <table>
@@ -289,7 +289,7 @@ github_link: architecture/view/xml-schema-layout.md
       <tr>
          <td>
             <p>Handles parameters that are injected into the parent block constructor during instantiation.
-               
+
             </p>
          </td>
          <td>

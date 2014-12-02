@@ -7,6 +7,8 @@ menu_order: 1
 github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 ---
 
+This guide is for frontend developers who want to understand the way frontend of Magento can be customized and tailored to the needs of a specific customer. With this guide, frontend developers will be able to create custom Magento themes up and running quickly.
+
 <h2 id="overview-introduction">Introduction</h2>
 
 <p>You can apply these levels of customization you can apply to your site, where the levels require different development skills:</p>
@@ -27,14 +29,10 @@ github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento 2 development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a WYSIWYG mode. We'd like to clarify that to meet higher priority objectives, the VDE will <em>not</em> be part of the initial Magento 2 release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p>
+<p>There have been some inquiries about the status of the Visual Design Editor (VDE), which is currently part of the Magento development code base. The VDE enables assigning and unassigning themes, editing theme CSS and JS files, changing page layouts, and managing blocks and their positions on pages in a WYSIWYG mode. We'd like to clarify that to meet higher priority objectives, the VDE will <em>not</em> be part of the initial Magento release. Future plans for the VDE will be communicated at a later point in time. You are welcome to continue to provide input on the VDE, but please note that we will not be actively reviewing or actioning these comments in the near term.</p>
 </div>
 
-<h2 id="fedg-intended-audience">Intended Audience</h2>
-
-This guide is intended for frontend developers who want to understand the way frontend of Magento can be customized and tailored to the needs of a specific customer. With this guide, frontend developers will be able to create custom Magento themes up and running quickly.
-
-<h2 id="fedg-prereqs">Magento 2 Frontend Development Prerequisites</h2>
+<h2 id="fedg-prereqs">Magento Frontend Development Prerequisites</h2>
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
@@ -56,11 +54,11 @@ To be able to understand this guide, you must have basic knowledge of:
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Magento 2 theming</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS) </a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>
 *	<a href="{{ site.gdeurl }}coding-standards/js-coding-standards.html">JavaScript coding standard</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
-*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Magento 2 localization</a>
+*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>
 

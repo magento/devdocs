@@ -2,21 +2,21 @@
 layout: default
 group: dev-guide
 subgroup: Modules
-title: Payment Modules
-menu_title: Payment Modules
+title: Payment modules
+menu_title: Payment modules
 menu_order: 7
 github_link: architecture/modules/payment.md
 ---
 
 <h2 id="m2devgde-cache-intro">Overview</h2>
 
-This article describes in general the functionality, and responsibilities of payment modules in Magento 2.x, and gives recommendations on disabling particular payment modules. This information is primarily intended for developers and administrators performing the initial Magento 2.x configuration.
+This article describes in general the functionality, and responsibilities of payment modules in the Magento system, and gives recommendations on disabling particular payment modules. This information is primarily intended for developers and administrators performing the initial Magento configuration.
 
 Please note that this article provides only payment module-specific recommendations.
 
 <h2 id="m2devgde-cache-implementation">Payments implementation</h2>
 
-In Magento 2.x, payment methods are structured follows: all abstract logic common for all payments methods in located in a separate module, and the implementations of particular methods are located in corresponding modules, grouped by payment gateway or by type. This enables you to easily configure the set of payment methods your store provides by disabling the modules for the solutions you are not interested in.
+In the Magento system, payment methods are structured follows: all abstract logic common for all payments methods in located in a separate module, and the implementations of particular methods are located in corresponding modules, grouped by payment gateway or by type. This enables you to easily configure the set of payment methods your store provides by disabling the modules for the solutions you are not interested in.
 
 Next section gives an overview of all payment modules and recommendations on payment module disabling and enabling.
 

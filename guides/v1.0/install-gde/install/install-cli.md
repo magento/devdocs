@@ -4,7 +4,7 @@ group: install
 subgroup: R_Installation
 title: Command-line installer
 menu_title: Command-line installer
-menu_node: 
+menu_node:
 menu_order: 7
 github_link: install-gde/install/install-cli.md
 ---
@@ -16,16 +16,16 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-install-cli-magento">Installing the Magento 2 software from the command line</a>
-*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento 2 software</a>
+*	<a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>
+*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
 
-1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 System Requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prequisites for installing Magento 2</a>.
-3.	You installed Composer and cloned the Magento 2 GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento 2 GitHub repository</a>.
+1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
+2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prequisites for installing Magento</a>.
+3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
 4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -35,7 +35,7 @@ Before you begin, make sure that:
 
 The installer is designed to be run multiple times if necessary so you can:
 
-*	Provide different values 
+*	Provide different values
 
 	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.
 *	Correct mistakes in previous installations
@@ -71,12 +71,12 @@ Before you begin, you can run the following commands to find values for some req
 	</tr>
 	</tbody>
 	</table>
-	
+
 The format of the command follows:
 
 	php -f index.php install --[installation option name]=[installation option value] ...
-	
-<h2 id="instgde-install-cli-magento">Installing the Magento 2 software from the command line</h2>
+
+<h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
 The following table discusses the meanings of installation option names and values. An example is provided in <a href="#sample-localhost-installation">Sample localhost installation</a>.
 
@@ -91,7 +91,7 @@ The following table discusses the meanings of installation option names and valu
 		<td>base_url</td>
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <tt>http[s]://[host or ip]/[your Magento base dir]/</tt>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
-		<p><tt>[your Magento base dir]</tt> is the docroot-relative path in which to install the Magento 2 software. Depending on how you set up your web server and virtual hosts, the path might be <tt>magento2</tt> or it might be blank.</p>
+		<p><tt>[your Magento base dir]</tt> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <tt>magento2</tt> or it might be blank.</p>
 		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://127.0.0.1/[your Magento base dir]/</code>.</p>
 		</td>
 		<td>Yes</td>
@@ -186,7 +186,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<p><code>0</code> means SSL is not used.</p></td>
 		<td>No</td>
 	</tr>
-	
+
 	<tr>
 		<td>use_secure_admin</td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
@@ -213,7 +213,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tr>
 	<tr>
 		<td>cleanup_database</td>
-		<td>To drop database tables before installing the Magento 2 software, specify this parameter without a value. Otherwise, the Magento database is left intact.</td>
+		<td>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -226,7 +226,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</td>
 		<td>No</td>
 	</tr>
-	
+
 	</tbody>
 </table>
 
@@ -237,11 +237,11 @@ The following example installs Magento with the following options:
 *	The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
 
 	Your storefront URL is `http://localhost` and you can access the Magento Admin at `http://localhost/admin`
-	
+
 *	The database server is on the same host as the web server.
 
 	The database name is `magento`, and the user name and password are both `magento`
-	
+
 *	The Magento administrator has the following properties:
 
 	*	First and last name are is `Magento User`
@@ -253,9 +253,9 @@ The following example installs Magento with the following options:
 *	Default time zone is U.S. Central (America/Chicago)
 
 	<pre>php -f index.php install --base_url=http://localhost/magento2/
-		--backend_frontname=admin 
-		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento 
-		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com 	
+		--backend_frontname=admin
+		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento
+		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com
 		--admin_username=admin --admin_password=iamtheadmin --language=en_US
 		--currency=USD --timezone=America/Chicago</pre>
 
@@ -264,11 +264,11 @@ The following example installs Magento with the following options:
   <p>The command must be entered on a single line; it's shown here on multiple lines because of space limitations.</p></span>
 </div>
 
-<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento 2 software</h2>
+<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
 
-This section discusses how to install the Magento 2 software after you installed it previously. You might do this in an development environment especially to get all the latest code changes.
+This section discusses how to install the Magento software after you installed it previously. You might do this in an development environment especially to get all the latest code changes.
 
-To reinstall the Magento 2 software:
+To reinstall the Magento software:
 
 1.	Optionally delete and re-create the database instance.
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
@@ -280,8 +280,8 @@ composer install
 cd setup
 composer install</pre>
 
-4.	Repeat the tasks discussed in <a href="#instgde-install-cli-magento">Installing the Magento 2 software from the command line</a>. 
+4.	Repeat the tasks discussed in <a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>.
 
 #### Next step
 
-<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying your Magento 2 installation</a>.
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying your Magento installation</a>.

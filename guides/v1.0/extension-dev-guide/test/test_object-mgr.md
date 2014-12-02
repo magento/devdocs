@@ -9,8 +9,8 @@ github_link: extension-dev-guide/test/test_object-mgr.md
 ---
 
 <h2 id="m2devgde-objmgr-intro">Overview</h2>
-<p>In Magento 2, the constructors in block and model classes declare many dependencies.
-   Magento 2 uses constructor dependency injection.
+<p>The constructors in block and model classes declare many dependencies.
+   The Magento system uses constructor dependency injection.
 </p>
 <p>To unit test such classes, you must manually create mocks for all constructor parameters before you can instantiate the class objects.
    If the number of dependencies is ten or greater, this task is time-consuming.
@@ -101,7 +101,7 @@ $optionCollection =
 public function getConstructArguments($className,
      array $arguments = array());
 </pre>
-            <p>In Magento 2.x, several tests introduced mocks for abstract models and blocks.</p>
+            <p>In the Magento system, several tests introduced mocks for abstract models and blocks.</p>
          <td>
 <pre>
 $attributeData = array(

@@ -2,15 +2,15 @@
 layout: default
 group: install
 subgroup: Z_Troubleshooting
-title: Cannot clone the Magento 2 GitHub repository
-menu_title: Cannot clone the Magento 2 GitHub repository
-menu_node: 
+title: Cannot clone the Magento GitHub repository
+menu_title: Cannot clone the Magento GitHub repository
+menu_node:
 menu_order: 3
 github_link: install-gde/trouble/tshoot_clone.md
 ---
 
 
-<h2 id="install-trouble-cannot-clone">Cannot clone the Magento 2 GitHub repository</h2>
+<h2 id="install-trouble-cannot-clone">Cannot clone the Magento GitHub repository</h2>
 
 ### Detail
 

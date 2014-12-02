@@ -4,7 +4,7 @@ group: install
 subgroup: Z_Troubleshooting
 title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_title: After installing, images and stylesheets do not load; only text displays, no graphics
-menu_node: 
+menu_node:
 menu_order: 10
 github_link: install-gde/trouble/tshoot_no-styles.md
 ---
@@ -15,7 +15,7 @@ github_link: install-gde/trouble/tshoot_no-styles.md
 
 The path to images and stylesheets is not correct, either because of an incorrect base URL or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.
 
-Magento 2 static assets should be located under `[your Magento install dir]/pub/static/` (there should be `frontend` and `adminhtml` directories).
+Magento static assets should be located under `[your Magento install dir]/pub/static/` (there should be `frontend` and `adminhtml` directories).
 
 ### Solution
 

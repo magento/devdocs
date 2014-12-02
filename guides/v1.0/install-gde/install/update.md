@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Updating Magento 2
+title: Updating Magento
 ---
 
 <h1 id="instgde-update">{{ page.title }}</h1>

@@ -9,11 +9,11 @@ menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
 
-This guide discusses how to install Magento and extensions using Composer. 
+This guide discusses how to install Magento and extensions using Composer.
 
 <h2 id="instgde-overview-composer">Composer and Magento</h2>
 
-We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento 2 software. Composer enables us to manage Magento 2, extensions, and their dependencies.
+We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.
 
 Composer provides you with the following advantages:
 
@@ -28,11 +28,11 @@ We'll have more information soon on how developers can use Composer to package e
 
 <h2 id="instgde-overview-roadmap">High-level installation roadmap</h2>
 
-Following is a brief overview of how to install the Magento 2 software.
+Following is a brief overview of how to install the Magento software.
 
 <h3>Step 1: Verify your prerequisites</h3>
 
-Use the following table to verify you have the correct prerequisites to install the Magento 2 software.
+Use the following table to verify you have the correct prerequisites to install the Magento software.
 
 <table>
 	<tbody>
@@ -61,11 +61,11 @@ Use the following table to verify you have the correct prerequisites to install 
 
 <h3>Step 2: Prepare to install</h3>
 
-After verifying your prerequisites, perform the following tasks in order to prepare to install the Magento 2 software.
+After verifying your prerequisites, perform the following tasks in order to prepare to install the Magento software.
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Installing Composer</a>
-2.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Cloning the Magento 2 GitHub repository</a>
-	
+2.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Cloning the Magento GitHub repository</a>
+
 <h3>Step 3: Installing and verifying</h3>
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>
@@ -77,4 +77,4 @@ After verifying your prerequisites, perform the following tasks in order to prep
 
 Unless otherwise noted, all commands in this guide must be entered as a user with `root` privileges and permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group&mdash;provided that group has sufficient privileges.
 
-Installing software on Linux typically requires `root` privileges. You should generally not install the Magento 2 software in the web server docroot using `root` privileges; however, that is up to you.
+Installing software on Linux typically requires `root` privileges. You should generally not install the Magento software in the web server docroot using `root` privileges; however, that is up to you.
