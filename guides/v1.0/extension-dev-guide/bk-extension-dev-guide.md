@@ -35,13 +35,13 @@ title: Extension Developer Guide
                </dt>
                <!--
 <dt>
-                    <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
+                    <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-domain-guidelines.html">Guidelines for domain and service layers &raquo;</a></p>
                </dt>
                </dl>
  -->
                <!--
 <dt>
-                  <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.html">Create a service - example &raquo;</a></p>
+                  <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-example.html">Create a service - example &raquo;</a></p>
                </dt>
  -->
  <h2 id="api-concepts">How to</h2>

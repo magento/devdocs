@@ -22,7 +22,7 @@ title: Guidelines for domain and service layers
 
                <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a>
                </li>
-               <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.html">Create a service - example</a>
+               <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-example.html">Create a service - example</a>
                </li>
                <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
                </li>

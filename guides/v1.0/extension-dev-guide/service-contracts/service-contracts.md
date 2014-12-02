@@ -37,9 +37,9 @@ github_link: extension-dev-guide/service-contracts/service-contracts.md
 <ul>
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
    <!--
-      <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-domain-guidelines.html">Guidelines for domain and service layers</a>
+      <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-domain-guidelines.html">Guidelines for domain and service layers</a>
                        </li>
-                       <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-create-example.html">Create a service - example</a>
+                       <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-example.html">Create a service - example</a>
                        </li>
       -->
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
