@@ -2,13 +2,13 @@
 layout: default
 group: coding-standards
 subgroup: Coding standards
-title: PHP coding standards
+title: PHP coding standard
 menu_title: PHP coding standard
-menu_order: 1
-github_link: coding-standards/php-coding-standard.md
+menu_order: 2
+github_link: coding-standards/php-coding-standards.md
 ---
 
-<p>The Magento 2 core development team uses the standards listed on this page, which are a subset of the <a href="http://framework.zend.com/manual/1.12/en/coding-standard.html">Zend Framework Coding Standard for PHP</a>. Magento recommends that developers who create Magento 2 extensions and customizations also use these standards.</p>
+<p>The Magento core development team uses a subset of the <a href="http://framework.zend.com/manual/1.12/en/coding-standard.html">Zend Framework Coding Standard for PHP</a>. Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>
 <p>Where possible, <code>PHP_CodeSniffer</code> is used to automatically enforce these standards. Otherwise, standards and requirements must be applied through rigorous code review.</p>
 <h2 id="php-file-formatting">PHP file formatting</h2>
 <ul>
@@ -38,15 +38,15 @@ github_link: coding-standards/php-coding-standard.md
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standard.coding-style.control-statements.if-else-elseif">If/Else/Elseif</a>. Partially automated by <code>PHP_CodeSniffer</code>.</li>
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.coding-style.control-statements.switch">Switch</a>. Not automated.</li>
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.documentation-format">Documentation Blocks -  Format</a>. Partially automated by <code>PHP_CodeSniffer</code>.</li>
-   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.files">Documentation Blocks -  Files</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standards</a>.</li>
-   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.classes">Documentation Blocks -  Classes</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standards</a>.</li>
+   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.files">Documentation Blocks -  Files</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standard</a>.</li>
+   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.classes">Documentation Blocks -  Classes</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standard</a>.</li>
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.functions">Documentation Blocks -   Functions</a>. Not automated.</li>
 </ul>
-<h2 id="doc-blocks">DocBlock standards</h2>
-<p>For details, see <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standards</a>.</p>
+<h2 id="doc-blocks">DocBlock standard</h2>
+<p>For details, see <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standard</a>.</p>
 <h2>Exceptions to Zend Framework Coding standard</h2>
-<p>Magento 2 PHP Coding standard deviate from the Zend Framework Coding standard in a few specific areas.</p>
-<p>To ensure that Magento 2 code is well-structured, readable, and easy to maintain, the Magento 2 team uses the
+<p>The Magento PHP coding standard deviates from the Zend Framework coding standard in a few specific areas.</p>
+<p>To ensure that Magento code is well-structured, readable, and easy to maintain, the Magento team uses the
 <p><a href="http://phpmd.org/">PHPMD - PHP Mess Detector</a> to analyze the source code and identify potential problems.</p>
 <p>Extension developers are strongly encouraged to adhere to these best practices.</p>
 <h3 id="code-size">Code size rules</h3>

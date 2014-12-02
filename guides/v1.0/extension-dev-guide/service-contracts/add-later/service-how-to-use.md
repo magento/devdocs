@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How a Client Uses a Service
---- 
+---
 
 <h1 id="how-client-uses-svc">How a Client Uses a Service</h1>
 
@@ -30,17 +30,17 @@ Service methods complete in one of two ways:
     *	Null if no data is returned
 	*	Array
 	*	Primitive type (such as an ID)
-	*	[Service data object]({{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-build.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on. 
- 
+	*	[Service data object]({{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-build.html#about-service-data-objects). A service data object holds only primitives or other service data objects and so on.
+
  *  Throw an exception
 
     An exception should be handled according to logic associated with the method invocation and the error received. Most of the time, the client logs only the details of the root exception and reports the error to the user in an appropriate way.
-	
+
 ### References For Dependency Injection
 
 *Dependency injection* is a technique used in object-oriented programming. When working with Magento software, dependency injection means you define a constructor dependency on the service you need. From there, you can use the instance you receive to invoke whatever methods you need directly. Because this concept might be new to PHP developers, we recommend the following references:
 
-*	<a href="https://wiki.magento.com/display/MAGE2DOC/Using+Dependency+Injection" target="_blank">Magento 2 Dependency Injection</a>
+*	<a href="https://wiki.magento.com/display/MAGE2DOC/Using+Dependency+Injection" target="_blank">Magento dependency injection</a>
 *	<a href="http://magento-quickies.alanstorm.com/post/66355728727/instantiating-and-injecting-helpers-in-magento-2" target="_blank">Instantiating and Injecting Helpers in Magento 2 by Alan Storm</a>
 *	<a href="http://magento-quickies.alanstorm.com/post/68129858943/magento-2-injecting-interfaces" target="_blank">Magento 2: Injecting Interfaces by Alan Storm</a>
 *	<a href="http://www.youtube.com/watch?v=RlfLCWKxHJ0" target="_blank">Video&mdash;The Clean Code Talks: Don't Look For Things!</a>
@@ -57,5 +57,5 @@ To set up a service so it can be accessed using REST, see [What is the Web API F
 
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-build.html">How to build a service</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-compare-m1-m2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a>
+<!-- *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-compare-m1-m2.html">Services Use Case&mdash;Magento 1 and Magento 2 Side-By-Side</a> -->
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-customer.html">Services Use Case&mdash;Creating a Customer</a>

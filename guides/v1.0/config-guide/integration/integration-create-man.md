@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group:
 subgroup: Integration
 title: Manually create an integration
 menu_title: Manually create an integration
@@ -70,7 +70,7 @@ To create a new integration:
 
 	*  Managing access to resources for API calls
 
-	In Magento 2, the access control list (ACL) for the API and internal user roles is the same.
+	In the Magento system, the access control list (ACL) for the API and internal user roles is the same.
 
 	Roles are organized hierarchically; granting access to a parent also grants access to children unless you choose not to do so. Select the check box next to each item that your integration needs access. Leave the check box cleared for any resource to which your integration does not need access.
 

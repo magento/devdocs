@@ -4,7 +4,7 @@ group: install
 subgroup: Z_Troubleshooting
 title: The PHP mcrypt extension is not installed properly
 menu_title: The PHP mcrypt extension is not installed properly
-menu_node: 
+menu_node:
 menu_order: 1
 github_link: install-gde/trouble/tshoot_mcrypt.md
 ---
@@ -28,11 +28,11 @@ Fatal error: Uncaught exception 'Exception' with message 'Module 'Magento_Core' 
  Command returned non-zero exit code:
 `/usr/bin/php5 -f '/var/www/magento2/dev/shell/run_data_fixtures.php' -- --bootstrap='MAGE_DIRS[base][path]=/var/www/magento2' 2>&1`</pre>
 
-### Description 
+### Description
 
 Particularly on developer systems that include a Linux/Apache/MySQL/PHP (LAMP) "stack" that is separate from the operating system, it's possible that mcrypt is either not installed at all or it's installed in the LAMP stack's path but not the operating system's path.
 
-As a result, the Magento 2 installer cannot locate the extension and the installation fails.
+As a result, the Magento installer cannot locate the extension and the installation fails.
 
 ### Suggestion
 
@@ -42,10 +42,10 @@ Determine if the mcrypt extension is loaded in any of the following ways:
 *	Run the following command:
 
 	<pre>php -r "phpinfo();" | grep mcrypt</pre>
-	
+
 	If mycrypt is *not* installed, messages similar to the following display:
-	
+
 	<pre>PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/lib/php5/20121212/mcrypt.so' - /usr/lib/php5/20121212/mcrypt.so: cannot open shared object file: No such file or directory in Unknown on line 0</pre>
-	
-In some cases, you might need to run the <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">command-line installer</a> and specify the full path to the LAMP stack that has mcrypt installed.	
+
+In some cases, you might need to run the <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">command-line installer</a> and specify the full path to the LAMP stack that has mcrypt installed.
 

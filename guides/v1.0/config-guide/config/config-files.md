@@ -9,12 +9,12 @@ github_link: config-guide/config/config-files.md
 ---
 
 <h2 id="overview">Overview</h2>
-<p>In Magento 2, configuration files are simple to use, easy to troubleshoot, and validated automatically.</p>
+<p>In the Magento system, configuration files are simple to use, easy to troubleshoot, and validated automatically.</p>
 <p>Configuration performance and memory usage are also improved.</p>
 <p>These topics summarize the major features and changes in Magento configuration.</p>
 <h3>Migration</h3>
-<p>To migrate from earlier versions to Magento 2, you must redefine the configuration files.</p>
-<p>For reference-level details about configuration changes from earlier versions, see Configuration Changes from Magento 1 to Magento 2.</p>
+<p>To migrate from earlier Magento versions, you must redefine the configuration files.</p>
+<!-- <p>For reference-level details about configuration changes from earlier versions, see Configuration Changes from Magento 1 to Magento 2.</p> -->
 <h3>Configuration files</h3>
 <p>The <code>config.xml</code> configuration file used in previous versions of Magento is now divided into smaller files that configure specific behaviors and entities.</p>
 <p>This division enables on-demand loading of configuration files. Because Magento no longer loads all configuration instructions at once, Magento now loads some files only when an application file requests a specific configuration type.</p>

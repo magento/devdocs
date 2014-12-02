@@ -9,7 +9,7 @@ title: SOAP web API calls
 
 A WSDL file is generated only for services you request. This means that different clients may use different services and therefore use different WSDLs.
 
-The Magento 2 Web API uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
+The Magento web API uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
 
 Each Magento service is represented as a separate service in the WSDL.
 

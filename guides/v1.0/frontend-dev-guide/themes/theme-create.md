@@ -20,7 +20,7 @@ To create the directory for your theme:
 
 3.	Create a new directory named according to your vendor name: `/app/design/fronted/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
 
-4.	Under the vendor directory, create a directory named according to your theme. 
+4.	Under the vendor directory, create a directory named according to your theme.
 
 <pre>
 app/design/frontend/
@@ -41,18 +41,18 @@ After you create a directory for your theme, you must create `theme.xml` contain
 2. Configure it using the following example:
 <script src="https://gist.github.com/xcomSteveJohnson/52ba4e2571c9e1f5482b.js"></script>
 
-To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**. 
+To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
 
 <img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
 
 <h2 id="fedg_create_theme_composer">Making your theme a <a href="https://getcomposer.org/">Composer</a> package</h2>
-Magento default themes are distributed as Composer packages. 
+Magento default themes are distributed as Composer packages.
 
 If you want your theme to be distributed like this as well, add a `composer.json` file the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
 You can find the details about the Composer integration in the Magento system in Composer Integration. <!--ADDLINK-->
 
-If your theme supports Composer, the end-users are able to easy install or uninstall it on their Magento 2 systems.
+If your theme supports Composer, the end-users are able to easy install or uninstall it on their Magento systems.
 
 <h2 id="fedg_create_theme_how-to-images">Configuring images</h2>
 
@@ -73,7 +73,7 @@ For example, you can make the category grid view product images square by specif
 
 <h2 id="fedg_theme_how-to_static">Creating directories for static files</h2>
 
-Your theme will likely contain several types of static files: styles, fonts, JavaScript and images. 
+Your theme will likely contain several types of static files: styles, fonts, JavaScript and images.
 Each type should be stored in a separate sub-directory of `web` in your theme folder:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
@@ -115,7 +115,7 @@ app/design/frontend/&lt;Vendor&gt;/
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>

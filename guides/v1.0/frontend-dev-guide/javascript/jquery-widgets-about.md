@@ -7,7 +7,7 @@ menu_order: 2
 menu_title: Magento jQuery widgets
 ---
 
-Magento 2 uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
+The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
 
 This guide discusses the following widgets:
 

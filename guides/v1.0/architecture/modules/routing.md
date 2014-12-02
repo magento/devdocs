@@ -11,7 +11,7 @@ github_link: architecture/modules/routing.md
 
 <h2 id="overview">Overview</h2>
 
-In Magento 2, a URL has the following format:
+In the Magento system, a URL has the following format:
 
 `[area front name]/[Vendor name]/[Module name]/[controller name]/[action name]`
 

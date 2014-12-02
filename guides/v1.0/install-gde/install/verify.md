@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: Verify
-title: Verifying your Magento 2 installation
-menu_title: Verifying your Magento 2 installation
+title: Verifying your Magento installation
+menu_title: Verifying your Magento installation
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/verify.md
@@ -11,7 +11,7 @@ github_link: install-gde/install/verify.md
 
 <h2 id="instgde-verify-front">Verifying the storefront</h2>
 
-Go to the storefront in a web browser. For example, if your Magento 2 installation base URL is `http://www.example.com`, enter it in your browser's address or location bar.
+Go to the storefront in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, enter it in your browser's address or location bar.
 
 The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
@@ -21,7 +21,7 @@ If the page displays unconfigured (no styles, only text), see <a href="{{ site.g
 
 <h2 id="instgde-verify-admin">Verifying the Magento Admin</h2>
 
-Go to the Magento Admin in a web browser. For example, if your Magento 2 installation base URL is `http://www.example.com`, and the Admin URL is `admin`, enter `http://www.example.com/admin` in your browser's address or location bar.
+Go to the Magento Admin in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URL is `admin`, enter `http://www.example.com/admin` in your browser's address or location bar.
 
 (The Admin URL is specified by the value of the `backend_frontname` installation parameter.)
 

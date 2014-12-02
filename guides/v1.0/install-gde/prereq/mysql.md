@@ -38,11 +38,11 @@ See one of the following sections for more information:
 To install MySQL 5.6 on Ubuntu 14, enter the following command:
 
 	apt-get -y install mysql-server-5.6 mysql-client-5.6
-	
+
 Test the installation by entering the following command:
 
 	mysql -u root -p
-	
+
 Sample output:
 
 	Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -65,11 +65,11 @@ To install MySQL 5.6 on Ubuntu 12, enter the following commands in the order sho
 	apt-add-repository ppa:ondrej/mysql-5.6
 	apt-get -y update
 	apt-get -y install mysql-server
-	
+
 Test the installation by entering the following command:
 
 	mysql -u root -p
-	
+
 Messages similar to the following display:
 
 	Welcome to the MySQL monitor.  Commands end with ; or \g.
@@ -96,11 +96,11 @@ The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26
 wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
 rpm -ivh mysql-community-release-el6-5.noarch.rpm
 yum -y install mysql-server</pre>
-	
+
 2.	Start MySQL.
 
 	`service mysqld start`
-	
+
 3.	Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
 
 	`mysql_secure_installation`
@@ -112,7 +112,7 @@ This section discusses how to create a new database instance for Magento. Althou
 To configure a MySQL database instance:
 
 1.	Log in to your database server as any user.
-2.	Enter the following command to get to a MySQL command prompt:	
+2.	Enter the following command to get to a MySQL command prompt:
 	<pre>mysql -u root -p</pre>
 3.	Enter the MySQL `root` user's password when prompted.
 4.	Enter the following commands in the order shown to create a database instance named `magento` with user name `magento`:
@@ -124,7 +124,7 @@ GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';</pre>
 6.	Verify the database:
 
 	<pre>mysql -u magento -p</pre>
-	
+
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 #### Related topics
@@ -134,5 +134,5 @@ GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';</pre>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento GitHub repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>

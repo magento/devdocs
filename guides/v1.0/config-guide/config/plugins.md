@@ -10,7 +10,7 @@ github_link: config-guide/config/plugins.md
 
 <h2 id="plugin-intro">Introduction</h2>
 
-In Magento 2, you can change, or *extend*, the behavior of any original method in any Magento class.
+In the Magento system, you can change, or *extend*, the behavior of any original method in any Magento class.
 
 An *original method* is an existing Magento class method. You can change the behavior of an original method by creating an extension. Extensions use the *Plugin* class to change the behavior of an original method in Magento code.
 

@@ -13,9 +13,9 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 
 <a href="http://www.smashingmagazine.com/2011/01/12/standard-for-responsive-web-design/" target="_blank">Responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as *viewports*) without maintaining completely separate style sheets for each.
 
-Magento 2 ships with a Blank responsive theme and these topics discuss how to use <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS</a>, <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_blocks.html">predefined blocks</a> to build a responsive design from there.
+The Magento system ships with a blank responsive theme and these topics discuss how to use <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS</a>, <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_blocks.html">predefined blocks</a> to build a responsive design from there.
 
-<h3 id="fedg_rwd_terms">Terms Used</h3>
+<h3 id="fedg_rwd_terms">Terms used</h3>
 
 Responsive web design
 
