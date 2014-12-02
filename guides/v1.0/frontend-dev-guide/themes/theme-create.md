@@ -45,38 +45,16 @@ To make sure the theme is recognized by the Magento application, log in to the M
 
 <img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
 
-<h2 id="fedg_create_theme_composer">Add `composer.json` to your theme</h2>
-Each theme must contain a `composer.json` file describing the theme dependencies and meta-information.
-In the theme directory create (or copy from an existing theme) `composer.json` and specify the following:
+<h2 id="fedg_create_theme_composer">Making your theme a <a href="https://getcomposer.org/">Composer</a> package</h2>
+Magento default themes are distributed as Composer packages. 
 
-Example:
+If you want your theme to be distributed like this as well, add a `composer.json` file the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
-`app/design/frontend/Magento/blank/composer.json`
-<pre>
-{
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;magento/theme-frontend-blank&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;N/A&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;require&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;php&quot;:&nbsp;&quot;~5.4.11|~5.5.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/framework&quot;:&nbsp;&quot;0.1.0-alpha100&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/magento-composer-installer&quot;:&nbsp;&quot;*&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;},
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;magento2-theme&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;version&quot;:&nbsp;&quot;0.1.0-alpha100&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;extra&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;map&quot;:&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;*&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;frontend/Magento/blank&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-&nbsp;&nbsp;&nbsp;&nbsp;}
-}
+You can find the details about the Composer integration in the Magento system in Composer Integration. <!--ADDLINK-->
 
-</pre>
+If your theme supports Composer, the end-users are able to easy install or uninstall it on their Magento 2 systems.
 
-
-<h2 id="fedg_create_theme_how-to-images">Optionally configure images</h2>
+<h2 id="fedg_create_theme_how-to-images">Configuring images</h2>
 
 If product image sizes of your theme differ from those of the default theme, you need to add a `view.xml` file which contains configuration of all product image sizes used on the storefront.
 
