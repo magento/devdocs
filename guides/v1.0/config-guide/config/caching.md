@@ -132,7 +132,7 @@ $cacheFrontendOne->clean();</pre>
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Cache\Frontend\Decorator\TagScope</a> component serves to associate a cache entry with a cache type and restrict the cache operations, as necessary, for a cache type.
 
-For **profiling the cache** we use <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/Profiler.php" target="_blank">Magento\Cache\Frontend\Decorator\Profiler</a> class that implements the caching integration with <a href="https://wiki.corp.x.com/display/MAGE2/Magento_Framework_Profiler" target="_blank">Magento_Profiler</a>. The following records are gathered for every cache operation:
+For **profiling the cache** we use <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/Profiler.php" target="_blank">Magento\Cache\Frontend\Decorator\Profiler</a> class that implements the caching integration with the Magento_Profiler. The following records are gathered for every cache operation:
 
 1.	Profiler timer name: `cache_&lt;cache_operation>`.
 1.	Profiler tag group: `cache`
