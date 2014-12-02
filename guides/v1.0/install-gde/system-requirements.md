@@ -17,7 +17,7 @@ Before you install Magento 2, make sure your system meets or exceeds the followi
 	Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on
 	
 *	<a href="https://getcomposer.org/download/" >Composer</a> (latest stable version)
-*	<a href="http://httpd.apache.org/download.cgi" >Apache 2.2</a> or later
+*	<a href="http://httpd.apache.org/download.cgi" >Apache 2.2 or 2.4</a>
 *	PHP 5.4.11 or 5.5.x 
 *	Required PHP extensions:
 
