@@ -49,7 +49,65 @@ TBD
 TBD
 
 <h2 id="mode-production">Production mode</h2>
-TBD
+You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="#mode-production-view">view files creation tool</a> to write static files to the Magento docroot.
+
+This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
+
+In production mode:
+
+*	View files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
+*	The Magento docroot can have read-only permissions
+*	Errors are logged to the file system and are never displayed to the user
+
+<h3 id="mode-production-view">Running the static view file creation tool</h3>
+In production mode, because static file URLs are created on the fly, you must write static files to the Magento docroot; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
+
+Run the static view file creation tool from the command line in the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must run the view files creation tool as the web server user; otherwise, Magento might have issues accessing the files. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
+</div>
+
+Following is the command syntax:
+
+	php -f deploy.php -- [--langs=[language codes]] [--verbose=0|1] [--dry-run] [--help]
+	
+The following table discusses the meanings of the options:
+
+<table>
+	<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+	<tr>
+		<td>--langs</td>
+		<td><p class="q">Reviewer: Is it comma-separated and is there another way to find the list?</p>
+		<p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. (Default is <code>en_US</code>.)</p>
+		<p>You can find the list by running <code>[your Magento install dir]/php -f index.php help languages</code>.</p></td>
+	</tr>
+	<tr>
+		<td>--verbose</td>
+		<td>Omit to display errors only. Use <code>0</code> to suppress all output. Use <code>1</code> to display verbose output.</td>
+	</tr>
+	<tr>
+		<td>--dry-run</td>
+		<td>Include to view the files output by the tool without outputting anything.</td>
+	</tr>
+	<tr>
+		<td>--help</td>
+		<td>Display command help.</td>
+	</tr>
+</tbody>
+</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>At this time, the static view files tool displays errors. These errors do not indicate problems with your view files.</p></span>
+</div>
+
+For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="mode-specify">Specify a mode</h2>
 Specify the Magento mode in any of the following ways:

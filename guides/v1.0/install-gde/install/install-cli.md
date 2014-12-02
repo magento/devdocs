@@ -74,7 +74,7 @@ Before you begin, you can run the following commands to find values for some req
 	
 The format of the command follows:
 
-	php -f index.php install [--[installation option name]=[installation option value] ...
+	php -f index.php install --[installation option name]=[installation option value] ...
 	
 <h2 id="instgde-install-cli-magento">Installing the Magento 2 software from the command line</h2>
 
