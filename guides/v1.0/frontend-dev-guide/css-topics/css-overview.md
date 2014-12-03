@@ -15,7 +15,7 @@ You can use cascading style sheets (CSS) to customize Magento themes. You can ad
 
 Do not use CSS visibility properties to hide Magento blocks and content.
 
-To add or remove blocks in Magento, use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a> instead.
+To add or remove blocks in Magento, use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a> instead.
 
 You can customize Magento themes in these ways:
 
@@ -31,6 +31,6 @@ You can customize Magento themes in these ways:
 #### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/css-themes.html">CSS in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>

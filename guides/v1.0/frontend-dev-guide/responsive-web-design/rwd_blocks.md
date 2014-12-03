@@ -8,7 +8,7 @@ menu_order: 2
 github_link: frontend-dev-guide/responsive-web-design/rwd_blocks.md
 ---
 
-<h2 id="fedg_rwd_blocks_overview">Overview of Blocks in a Responsive Design</h2>
+<h2 id="fedg_rwd_blocks_overview">Overview</h2>
 
 This topic discusses:
 
@@ -18,9 +18,9 @@ This topic discusses:
 
 In the Blank theme, the breakpoint is at a 768px viewport.
 
-For more information about XML instructions related to blocks, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#fedg_layout_xml-instruc_ex_block">&lt;block&lt;/></a>.
+<p>For more information about XML instructions related to blocks, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
 
-<h2 id="fedg_rwd_resp-table-class">Implementing Responsive Tables</h2>
+<h2 id="fedg_rwd_resp-table-class">Implement responsive tables</h2>
 
 If you want to make tables in storefront responsive, wrap your HTML code of each table in a `<div class=”table wrapper”>` tag as shown in the following example:
 
@@ -41,13 +41,13 @@ The following figure shows the resulting scroll bar:
 
 ![Sample horizontal scroll bar that displays when the width of a table is larger than a mobile device screen size.]({{ site.baseurl }}common/images/rwd_blocks_scrollbar.png)
 
-<h2 id="fedg_rwd_form">Use responsive forms</h2>
+<h2 id="fedg_rwd_form">Responsive forms</h2>
 
 If you create custom forms, consider the type of data that the field in the form is expected to receive. If the expected data is e-mail, use `<input type=”email”>` instead of `<input type=”text”>`.
 
 When the user selects this field on a mobile device, a keyboard containing Latin characters and the `@` character displays.
 
-<h2 id="fedg_rwd_images">Use Responsive Images</h2>
+<h2 id="fedg_rwd_images">Responsive images</h2>
 
 Product images on product pages in your store are also fully responsive, and can adapt to different screen sizes.
 
@@ -72,7 +72,7 @@ Desktop image:
 #### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>

@@ -36,7 +36,7 @@ These types are represented as interfaces in the
 
 <p><img src="{{ site.baseurl }}common/images/view_asset-interfaces.png" alt="Asset interfaces"></p>
 
-The classes implementing the interfaces are responsible for:
+The classes Implement the interfaces are responsible for:
 
 * Remote: Implements an asset for which there is only URL and content type information. Used for rendering included RSS feeds, for example.
 * File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.
@@ -108,7 +108,7 @@ This section discusses the following ways to work with view assets:
 
 <h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
 
-Although you can use the API to manipulate assets, frontend developers should use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">layout XML instructions</a> to register assets.
+Although you can use the API to manipulate assets, frontend developers should use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.
 
 This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.
 
@@ -190,5 +190,5 @@ For example, to add a local JavaScript or CSS file to the page output:
 
 #### Related topics
 
-* <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
+* <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 * TBD

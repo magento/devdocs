@@ -47,7 +47,7 @@ To make sure the theme is recognized by the Magento application, log in to the M
 
 <<<<<<< HEAD
 <h2 id="fedg_create_theme_composer">Making your theme a Composer package</h2>
-Magento default themes are distributed as <a href="https://getcomposer.org/">Composer</a> packages. 
+Magento default themes are distributed as <a href="https://getcomposer.org/">Composer</a> packages.
 =======
 <h2 id="fedg_create_theme_composer">Make your theme a <a href="https://getcomposer.org/">Composer</a> package</h2>
 >>>>>>> origin/devbeta
@@ -120,8 +120,8 @@ app/design/frontend/&lt;Vendor&gt;/
 #### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>

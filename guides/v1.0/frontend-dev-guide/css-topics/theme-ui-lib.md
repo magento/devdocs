@@ -89,9 +89,9 @@ Following is an example of using a mixin for breadcrumbs in `/app/design/fronten
     .breadcrumbs();
 }</pre>
 
-<h2 id="fedg_using-ui-lib_customize">Global Theme Customization Options</h2>
+<h2 id="fedg_using-ui-lib_customize">Global theme customization options</h2>
 
-`/app/design/frontend/[your theme name]/css-topics/source/theme.less` contains global theme customization options.
+`/app/design/frontend/[your theme name]/css-topics/source/theme.less` contains Global theme customization options.
 
 Every mixin called without parameters uses variables from `/app/design/frontend/[your theme name]/css-topics/source/lib/variables.less`. To call a mixin with custom variables, you must set their values.
 
@@ -130,5 +130,5 @@ You can find more information on the Magento UI library specific mixins and the 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS overview</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a>
 

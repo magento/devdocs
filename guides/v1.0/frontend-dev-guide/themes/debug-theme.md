@@ -9,9 +9,11 @@ github_link: frontend-dev-guide/themes/debug-theme.md
 ---
 
 <h2 id="debug-theme-intro">Introduction</h2>
+
 When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files that a Magento storefront uses.
 
 <h2 id="debug-theme-templ">Locate templates</h2>
+
 To locate the template that is responsible for a specific part of the storefront, you can use Magento built-in template hints.
 
 To enable template hints:
@@ -89,5 +91,4 @@ So, let's search for occurrences of "`minicart-wrapper`" in according to the fal
 1. Search in `app/design/frontend/Magento/blank/web/css`, the search returns no results.
 2. Search in `app/design/frontend/Magento/blank/Magento_Checkout/web/css`.The "`minicart-wrapper`" style is defined in `app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/minicart.less`
 
-After you determine which `.css` or `.less` file defines the class, you can override the default class definition in your custom `.css` or `.less` files. Please see Customizing Theme CSS for more details.
-<!-- ADDLINK -->
+<p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>

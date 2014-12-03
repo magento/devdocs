@@ -408,7 +408,7 @@ An example of a layout declaration with before and after usage follows:</p>
 </table>
 <h4 id="related-topics">Related topics</h4>
 <ul>
-   <li><a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a></li>
+   <li><a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>
    <li><a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
    <li><a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
    <li><a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>

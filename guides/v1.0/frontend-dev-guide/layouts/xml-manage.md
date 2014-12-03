@@ -11,7 +11,6 @@ github_link: frontend-dev-guide/layouts/layout-xml.md
 This topic shows you how to extend a layout by using merging layout files:
 
 *	<a href="#layout_markup_bad">Avoid layout customization mistakes</a>
-*	<a href="#layout_markup_start">Get started</a>
 *	<a href="#layout_markup_columns">Change columns in a layout</a>
 *	<a href="#layout_markup_rearrange">Rearrange elements</a>
 *	<a href="#layout_markup_remove_elements">Remove elements</a>
@@ -22,7 +21,7 @@ This topic shows you how to extend a layout by using merging layout files:
 *	<a href="#move" >Move a block to another block</a> - if not covered in Rearrange element
 *	<a href="#fedg_xml-instrux_order-block">Order blocks</a> - if not covered in Rearrange element
 *	<a href="#set_template">Set the template used by a block</a> - Should it be here???
-*	<a href="#create_cont">Create a new container</a> - Should it be here???
+*	<a href="#create_cont">Create a container</a> - Should it be here???
 
 <h2 id="layout_markup_bad">Avoid layout customization mistakes</h2>
 
@@ -33,11 +32,9 @@ Although the layout overriding mechanism provides great customization flexibilit
 
 <h2 id="layout_markup_columns">Change columns in a layout</h2>
 
-Example: The `catalogsearch_result_index.xml` base layout file of the Mage_CatalogSearch module defines a three-column page layout. We need to change it to two-column layout. 
+Example: The `catalogsearch_result_index.xml` base layout file of the Mage_CatalogSearch module defines a three-column page layout. We need to change it to two-column layout.
 Original declaration in `app/code/Mage/CatalogSearch/view/frontend/layout/catalogsearch_result_index.xml`
-TO reviewer: Need to completely rewrite it, guess it should be done in page layout file
-
-
+<p class="q">TO reviewer: Need to completely rewrite it, guess it should be done in page layout file.</p>
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
@@ -99,7 +96,7 @@ This section discusses how to link the following resources:
 *	`app/design/frontend/[theme path]/mui/reset.css`
 *	`app/design/frontend/[theme path]/feeds/feed.xml`
 
-To reviewer: this is outdated for sure, new approach described here: https://wiki.corp.x.com/display/MPD/Page+Layout+%28Draft%29#PageLayout%28Draft%29-Headelements
+<p class="q">To reviewer: this is outdated for sure, new approach described here: https://wiki.corp.x.com/display/MPD/Page+Layout+%28Draft%29#PageLayout%28Draft%29-Headelements.</p>
 
 Make the following change in your theme merging file:
 
@@ -112,7 +109,7 @@ Where:
 
 <h3 id="layout_markup_css_change">Change JavaScript or CSS links</h3>
 
-To change a link, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#layout_markup_remove_elements">remove it</a> then add the new one.
+To change a link, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html#layout_markup_remove_elements">remove it</a> then add the new one.
 
 <h3 id="layout_markup_css_remove">Remove JavaScript or CSS</h3>
 
@@ -162,7 +159,7 @@ To change it, make a customization similar to the following in a theme merging f
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
-To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html#layout_markup_remove_elements">remove it</a> and add a new one.
+To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html#layout_markup_remove_elements">remove it</a> and add a new one.
 
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
@@ -197,7 +194,8 @@ To set a page title using the `setTitle()` method, make a customization similar 
 
    <h2 id="apply_css">Apply a CSS class to a block</h2>
 
-To reviewer: is it similar to linking a CSS to the page or no?
+<p class="q">To reviewer: is it similar to linking a CSS to the page or no?</p>
+
    <div>
       <p>You can use the following example for any block that has the <code>css_class</code> property.</p>
       <p><b>Example:</b></p>
@@ -208,7 +206,7 @@ To reviewer: is it similar to linking a CSS to the page or no?
          <li>the name of the CSS class <code>links</code> in <code>&lt;argument name="css_class">&lt;/argument></code></li>
       </ul>
    </div>
-  
+
    <h2 id="move" >Move a block to another block</h2>
    <div>
       <p><b>Example:</b></p>
@@ -233,23 +231,18 @@ To reviewer: is it similar to linking a CSS to the page or no?
       <p>To use these examples, replace the value of <code>before</code> or <code>after</code> with either dash (before or after all other blocks) or with the name of an existing block.</p>
    </div>
    <h2 id="set_template">Set the template used by a block</h2>
-   <div>
-      <p><b>Example:</b></p>
-      <pre>&lt;block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/></pre>
-      <p>To use this code, replace the block class, name, and path to the template.</p>
-   </div>
+<p><b>Example:</b></p>
+<pre>&lt;block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/></pre>
+<p>To use this code, replace the block class, name, and path to the template.</p>
 
+<h2 id="create_cont">Create a container</h2>
 
-   <h2 id="create_cont">Create a new container</h2>
-   <div>
-      <p><b>Example:</b></p>
-      <pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
-      <p>Replace the values with your own. For more information, see the earlier sections in this topic.</p>
-   </div>
-</div>
+<p><b>Example:</b></p>
+<pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
+<p>Replace the values with your own. For more information, see the earlier sections in this topic.</p>
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-xml.html">XML in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>

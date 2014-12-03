@@ -23,17 +23,17 @@ The Blank theme uses the following JavaScript to responsively relocate page elem
 
 See one of the following sections for more information
 
-*	<a href="#fedg_rwd_js_matchmedia">Use matchMedia.js</a>
-*	<a href="#fedg_rwd_js_resp">Use responsive.js</a>
-*	<a href="#fedg_rwd_js_nav">Use navigation-menu.js</a>
+*	<a href="#fedg_rwd_js_matchmedia">matchMedia.js</a>
+*	<a href="#fedg_rwd_js_resp">responsive.js</a>
+*	<a href="#fedg_rwd_js_nav">navigation-menu.js</a>
 
-<h2 id="fedg_rwd_js_matchmedia">Use matchMedia.js</h2>
+<h2 id="fedg_rwd_js_matchmedia">matchMedia.js</h2>
 
 <a href="https://github.com/magento/magento2/blob/master/lib/web/matchMedia.js" target="_blank">matchMedia.js</a> enables you to manipulate JavaScript for the desktop or mobile viewports. In the Blank theme, `responsive.js` toggles the behavior when the screen size reaches the breakpoint of 768px.
 
 `matchMedia.js` can be used in any theme.
 
-<h2 id="fedg_rwd_js_resp">Use responsive.js</h2>
+<h2 id="fedg_rwd_js_resp">responsive.js</h2>
 
 <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank">responsive.js</a> implements specific responsive functions for the Blank theme. This file also contains a call of the `mediaCheck` anonymous function from `matchMedia.js`, which is responsible for reaching breakpoints.
 
@@ -59,20 +59,20 @@ A sample checkout page follows:
 
 ![In a mobile viewport, checkout progress displays following the checkout steps.]({{ site.baseurl }}common/images/rwd_js_checkout-progress.png)
 
-<h2 id="fedg_rwd_js_nav">Use navigation-menu.js</h2>
+<h2 id="fedg_rwd_js_nav">navigation-menu.js</h2>
 
 Responsible for rearranging navigation and header links for the desktop and mobile viewports. See one of the following sections for more information:
 
-*	<a href="#fedg_rwd_js_nav_mobile">Mobile Navigation</a>
-*	<a href="#fedg_rwd_js_nav_desktop">Desktop Navigation</a>
+*	<a href="#fedg_rwd_js_nav_mobile">Mobile navigation</a>
+*	<a href="#fedg_rwd_js_nav_desktop">Desktop navigation</a>
 
-<h3 id="fedg_rwd_js_nav_mobile">Mobile Navigation</h3>
+<h3 id="fedg_rwd_js_nav_mobile">Mobile navigation</h3>
 
 In a mobile viewport, <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/navigation-menu.js" target="_blank">navigation-menu.js</a> copies the existing navigation menu `<nav class="navigation">`, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag `<div class="page wrapper">`.
 
-`navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings block (language switcher, currency switcher) to the mobile navigation.
+`navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings block (language switcher, currency switcher) to the Mobile navigation.
 
-The mobile navigation moves left and it slides from the left side when the navigation menu button is clicked.
+The Mobile navigation moves left and it slides from the left side when the navigation menu button is clicked.
 
 Sample HTML:
 
@@ -82,7 +82,7 @@ Sample of how it might look:
 
 ![In a mobile viewport, navigation displays on the left.]({{ site.baseurl }}common/images/rwd_js_nav_mobile.png)
 
-<h3 id="fedg_rwd_js_nav_desktop">Desktop Navigation</h3>
+<h3 id="fedg_rwd_js_nav_desktop">Desktop navigation</h3>
 
 In a desktop viewport, the script returns the default elements sequence in the source code:
 
@@ -92,7 +92,7 @@ Sample of how it might look:
 
 ![In a desktop viewport, navigation displays at the top.]({{ site.baseurl }}common/images/rwd_js_nav_desktop.png)
 
-<h2 id="fedg_rwd_include-js">Including JavaScript Files In Your Responsive Theme</h2>
+<h2 id="fedg_rwd_include-js">Include JavaScript files in a responsive theme</h2>
 
 The Blank theme layout file, <a href="{{ site.mage2000url }}blob/master/app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml</a>, already has `responsive.js`, `navigation-menu.js`, and `matchMedia.js` included.
 

@@ -8,9 +8,9 @@ menu_order: 3
 github_link: frontend-dev-guide/javascript/jquery-widget-calendar.md
 ---
 
-<h2 id="fedg_jquery-widget_calendar-overview">About the Calendar jQuery Widget</h2>
+<h2 id="fedg_jquery-widget_calendar-overview">Overview</h2>
 
-The Calendar widget is a customized <a href="http://api.jQueryui.com/datepicker/" target="_blank">jQuery UI Datepicker widget</a> that enables you to select a data using a pop-up or an in-line calendar. Calendar is also responsible for:
+The Calendar widget is a customized jQuery <a href="http://api.jQueryui.com/datepicker/" target="_blank">Datepicker Widget</a> that enables you to select a data using a pop-up or an in-line calendar. Calendar is also responsible for:
 
 *	Merging the <a href="#fedg_calendar_config">global configuration</a> with the options that are passed from PHP when Calendar is initialized.
 *	Taking into account server time zone offset.
@@ -18,7 +18,7 @@ The Calendar widget is a customized <a href="http://api.jQueryui.com/datepicker/
 *	Making the calendar initialization easier.
 *	The Calendar widget source is `[your Magento install dir]/pub/lib/mage/calendar.js`.
 
-<h2 id="fedg_calendar_init">Initializing the Calendar Widget</h2>
+<h2 id="fedg_calendar_init">Initialize the calendar widget</h2>
 
 Example:
 
@@ -32,7 +32,7 @@ Example:
    })
 })(jQuery)</pre>
 
-<h2 id="fedg_calendar_config">Calendar Global Configuration</h2>
+<h2 id="fedg_calendar_config">Configure the calendar widget</h2>
 
 The calendar widget's *global configuration* is a set of default options that are applied when each calendar instance is initialized. It includes the following:
 
@@ -52,9 +52,9 @@ calendarConfig: {
 });
 })( jQuery );</pre>
 
-<h2 id="fedg_calendar_options">Calendar Widget Options, Methods, and Events</h2>
+<h2 id="fedg_calendar_options">Options, methods, and events for the calendar widget</h2>
 
-Calendar widget options, methods, and events mostly coincide with the <a href="http://api.jqueryui.com/datepicker/" target="_blank">jQuery UI Datepicker options</a>.
+<p>Most options, methods, and events for the calendar widget correspond to the jQuery <a href="http://api.jqueryui.com/datepicker/" target="_blank">Datepicker Widget</a> options.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p>
@@ -65,6 +65,6 @@ Calendar widget options, methods, and events mostly coincide with the <a href="h
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a>
 *	<a href="{{ site.gdeurl }}coding-standards/jquery-widget-guidelines.html">jQuery widget coding standard</a>
 

@@ -85,7 +85,7 @@ _lib/Magento/View
 The default engine for working with templates is the <code>Magento\Framework\View\TemplateEngine\Php</code> class.
 
 <h3 id="m2devgde-temp-eng-basic">Basic classes</h3>
-The class diagram of the basic classes implementing the template rendering subsystem:
+The class diagram of the basic classes Implement the template rendering subsystem:
 <p><img src="{{ site.baseurl }}common/images/view_te8.png" alt="template rendering diagram of classes"></p>
 
 <h3 id="m2devgde-temp-eng-desc">Class descriptions</h3>
