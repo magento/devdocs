@@ -2,8 +2,8 @@
 layout: default
 group: dev-guide
 subgroup: Modules
-title: Modules Relationships
-menu_title: Modules Relationships
+title: Module relationships
+menu_title: Module relationships
 menu_order: 3
 github_link: architecture/modules/mod_relationships.md
 ---
@@ -44,7 +44,7 @@ A single module can have the following types of relationships with another modul
 <h2 id="m2arch-module-related"> Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and Areas</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>

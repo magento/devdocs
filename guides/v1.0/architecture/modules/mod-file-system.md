@@ -12,7 +12,7 @@ github_link: architecture/modules/mod_file_system.md
 
 <p class="q">Reviewer: This information was outdated when I saw it. I did my best to update it in a limited time. Please read it very carefully and validate everything.</p>
 
-The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem.php" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In Magento 2, this class was refactored and renamed `Magento\Framework\Filesystem`.
+The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem.php" target="_blank">Magento\Framework\Filesystem</a> class handles interactions with files in Magento. In earlier Magento versions, the `Dir` class was responsible for managing and customizing the file system. In the Magento system, this class was refactored and renamed `Magento\Framework\Filesystem`.
 
 <h2 id="mod-file-sys-struct">Magento file system structure</h2>
 
@@ -260,7 +260,7 @@ Complementary interfaces: <a href="{{ site.mage2000url }}lib/internal/Magento/Fr
 
 Both files and directories use _drivers_ to perform operations like creating, copying, and deleting files and directories.
 
-Following is the list of drivers available in Magento 2:
+These drivers are available in the Magento system:
 
 *	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/File.php" target="_blank">\Magento\Framework\Filesystem\Driver\File</a> for file system operations (reading, writing, creating, copying, deleting, and so on the files and directories).
 *	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Http.php" target="_blank">\Magento\Framework\Filesystem\Driver\Http</a> and <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Https.php" target="_blank">\Magento\Framework\Filesystem\Driver\Https</a> for HTTP and HTTPS operations, respectively.

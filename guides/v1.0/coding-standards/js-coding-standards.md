@@ -9,11 +9,10 @@ github_link: coding-standards/js-coding-standards.md
 ---
 
 <h2 id="fedg_js-code-bestpr_overview">Overview</h2>
-<p>These standard define Magento requirements for code formatting and style for teams that develop JavaScript and jQuery code for Magento.</p>
-<p>These standard are based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>.</p>
-<p>Use the <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
-<p>Magento 2 uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets">jQuery widgets</a>.
-   For jQuery widget coding standard, see <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-standard.html">jQuery widget coding standard</a>.
+<p>This standard define Magento requirements for code formatting and style for teams that develop JavaScript and jQuery code for Magento.</p>
+<p>This standard is based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>.</p>
+<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
+<p>The Magento system uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets" target="_blank">jQuery widgets</a>. For the jQuery widget coding standard, see <a href="{{ site.gdeurl }}coding-standards/jquery-widget-guidelines.html">jQuery widget coding standard</a>.
 </p>
 <p>Some parts of Magento code might not comply with these standard.</p>
 <p>These standard are optional for third-party Magento developers.</p>

@@ -8,7 +8,7 @@ menu_order: 4
 github_link: frontend-dev-guide/layouts/layout-override.md
 ---
 
-<h2 id="fedg_layout_override_overview">Overview of Override a layout</h2>
+<h2 id="fedg_layout_override_overview">Overview</h2>
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
 
@@ -34,7 +34,7 @@ Examples of customizations that involve overriding layouts:
 *	Modifying and suppressing handles inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
 
-<h2 id="layout_override_bad">Avoiding Layout Customization Mistakes</h2>
+<h2 id="layout_override_bad">Avoid layout customization mistakes</h2>
 
 Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:
 
@@ -42,7 +42,7 @@ Although the layout overriding mechanism provides great customization flexibilit
 *	Changing handle inheritance. For example, you should not change the page type parent handle.
 
 
-<h2 id="fedg_layout_override_howto">How to Override a Layout</h2>
+<h2 id="fedg_layout_override_howto">How to override a layout</h2>
 
 This section discusses how to override:
 
@@ -68,7 +68,7 @@ Where:
 `[your theme path]` is a path to the theme relative to the themes directory.
 `[area]` is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
 
-<h3 id="fedg_layout_override_theme">Overriding Theme Layouts</h3>
+<h3 id="fedg_layout_override_theme">Override theme layouts</h3>
 
 To add an overriding theme file (to override parent layout):
 
@@ -92,6 +92,6 @@ Where:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-xml.html">XML in themes</a>

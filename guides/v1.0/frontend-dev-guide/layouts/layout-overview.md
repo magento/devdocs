@@ -15,7 +15,7 @@ Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%
 
 The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.
 
- So what a layout file does is identify an existing block or container in a tree and change it in some way. Changes are to add some more content (e.g. there might be a side bar container to which some more content is added), or remove content (an extension might remove some core functionality, then add replacement functionality). Layouts are like wire-frames - they control the structure of the page tree. Blocks and PHTML files fill in the detailed markup within the tree. 
+So what a layout file does is identify an existing block or container in a tree and change it in some way. Changes are to add some more content (e.g. there might be a side bar container to which some more content is added), or remove content (an extension might remove some core functionality, then add replacement functionality). Layouts are like wire-frames - they control the structure of the page tree. Blocks and PHTML files fill in the detailed markup within the tree.
 
 
 There are three types of layout files:
@@ -69,7 +69,7 @@ Layout handle
 
 :	A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.
 
-	There are three kinds of layout handles:
+There are three kinds of layout handles:
 
 	*	Page type layout handles&mdash;Synonyms of the page type identifiers. Correspond to "full action names" of controller actions; for example, `catalog_product_view`
 	*	Page layout handles&mdash;Identify specific pages. Correspond to controller actions with parameters that identify specific pages; for example, `catalog_product_view_type_simple_id_128`
@@ -83,7 +83,7 @@ Default layout
 
 :	Layout provided by Magento, extension provider, or in-house developer. A default layout defines the default look and feel of the storefront. Unlike earlier versions of Magento, you should not change the default layout directly and you do not have to copy the default layout to start developing a custom layout.
 
-	Instead, you override layout behavior by modifying only the page elements you want to change.
+Instead, you override layout behavior by modifying only the page elements you want to change.
 
 Extending layout
 
@@ -183,10 +183,10 @@ Following is an illustration of how layout processing works for two modules and 
 #### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-xml.html">XML in themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
-*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Magento 2 localization</a>
+*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>
 

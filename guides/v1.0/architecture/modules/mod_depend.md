@@ -2,14 +2,14 @@
 layout: default
 group: dev-guide
 subgroup: Modules
-title: Module Dependencies
-menu_title: Module Dependencies
+title: Module dependencies
+menu_title: Module dependencies
 menu_order: 2
 github_link: architecture/modules/mod_depend.md
 ---
 
 <h2 id="m2devgde-moddep-intro"> Introduction</h2>
-In Magento 2, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that
+In the Magento system, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that
 
 * Several modules cannot be responsible for one feature.
 * One module cannot be responsible for several features.
@@ -17,7 +17,7 @@ In Magento 2, all modules are partitioned into logical groups, each one of which
 * Removing or disabling a module does not result in disabling other modules.
 
 <div class="bs-callout bs-callout-warning" id="warning">
-    <p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></div>
+<p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></div>
 
 Following are commonly used terms:
 
@@ -122,10 +122,11 @@ You can build dependencies between classes in the application layer, but these c
 
 **NOTE: not sure this section belongs there.**
 
-To facilitate building correct dependencies between the modules, Magento 2 has both API  (Application Programming Interface) and SPI (Service Provide Interface) interfaces.
+To facilitate building correct dependencies between the modules, the Magento system has both API (Application Programming Interface) and SPI (Service Provide Interface) interfaces.
 
 Interfaces marked as API-specific can be used by other modules; and interfaces marked as SPI-specific can be implemented by other modules.
 To be considered API-specific, an interface should be declared with `@api` annotation:
+
 <pre>
 /**
 &nbsp;*&nbsp;@api
@@ -140,6 +141,7 @@ final&nbsp;class&nbsp;Mage_Core_Controller_Varien_Router_Base&nbsp;implements&nb
 &nbsp;&nbsp;&nbsp;&nbsp;//...
 }
 </pre>
+
 Thus, an interface and its implementations automatically become a part of API, unlike other elements, which remain module-private. All classes considered a part of API must be declared `final` to prevent the implicit use of them in the SPI.
 
 To be considered SPI-specific, an interface should be declared with `@spi` annotation:
@@ -152,6 +154,7 @@ interface&nbsp;RouterInterface
 &nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;match();
 }
 </pre>
+
 Thus, an interface is automatically becomes a part of SPI, while its implementations are part of neither the SPI nor the API. Other interfaces and their implementations, which are not marked as SPI-specific, remain module-private.
 
 The SPI-specific interfaces can be implemented by the third party developers and used in the dependency injection configurations. <!-- ADDLINK -->
@@ -168,13 +171,14 @@ interface&nbsp;Magento_AuthorizationInterface
 &nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;isAllowed($resource);
 }
 </pre>
+
 Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
 
-<h2 id="m2arch-module-related"> Related topics</h2>
+<h2 id="m2arch-module-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module Relationships</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and Areas</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>

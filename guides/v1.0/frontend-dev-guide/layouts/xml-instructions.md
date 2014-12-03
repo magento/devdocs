@@ -10,23 +10,22 @@ github_link: frontend-dev-guide/layouts/theme-xml.md
 
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
+
 Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
 To change the high-level page structure modify the page layout files; all other customizations are performed in the page configuration or generic layout files. <!--ADDLINK-->
 
+Use layout instructions to:
 
-Using layout instructions you can:
 
 *	move a page element to another parent element
-*	add content 
+*	add content
 *	remove a page element
-
 
 The basic set of instructions is the same for all types of layout files. Though there are specific limitations and rules of usage for each layout type. This article describes these general instructions; for details about how they are used in particular layout file type, please refer to one of the following:
 
 * Page layout <!--ADDLINK-->
 * Page configuration <!--ADDLINK-->
 * Generic layout <!--ADDLINK-->
-
 
 <h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
 
@@ -173,7 +172,7 @@ A structure without content that holds other layout elements such as blocks and 
 </table>
 
 Sample of usage in layout:
-Question to a reviewer: what are these containers declared in the sample? Can we describe in simple words, where on a page are they displayed? 
+Question to a reviewer: what are these containers declared in the sample? Can we describe in simple words, where on a page are they displayed?
 <pre>
 ...
 &lt;container&nbsp;name=&quot;div.sidebar.additional&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-additional&quot;&nbsp;after=&quot;div.sidebar.main&quot;&gt;
@@ -181,7 +180,6 @@ Question to a reviewer: what are these containers declared in the sample? Can we
 &lt;/container&gt;
 ...
 </pre>
-
 
 <script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script>
 <h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
@@ -234,7 +232,7 @@ Enables you to ignore some layout tags when generating a layout.
    <li><code>&lt;move element="name.specified" destination="name.destination"/></code></li>
    <li><code>&lt;move element="name.element" destination="name.specified"/></code></li>
 </ul>
-<p><b>Example:</b></p> 
+<p><b>Example:</b></p>
 Initial layout update:
 
 <pre>

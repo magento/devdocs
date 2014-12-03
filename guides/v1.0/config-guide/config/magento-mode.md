@@ -14,6 +14,7 @@ github_link: config-guide/config/magento-mode.md
 *	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-specify">Specify a mode</a>
+*	<a href="#mode-production-view">Running the static view file creation tool</a>
 
 <h2 id="mode-introduction">Introduction to Magento modes</h2>
 You can run Magento in any of the following *modes*:
@@ -29,24 +30,44 @@ You can run Magento in any of the following *modes*:
 		<td>Intended for development only, this mode disables static file caching, provides verbose logging, enhanced debugging, and results slowest performance (because of the preceding).</td>
 	</tr>
 	<tr class="odd">
-		<td><a href="mode-default">default</a></td>
-		<td>As the name implies, Magento operates in this mode if no mode is explicitly set. Static file caching is enabled, exceptions are not displayed to the user, exceptiosn are written to log files. Although you <em>can</em> run Magento in default mode in production, we don't recommend it.</td>
+		<td><a href="#mode-default">default</a></td>
+		<td>As the name implies, Magento operates in this mode if no mode is explicitly set. Static file caching is enabled, exceptions are not displayed to the user; instead, exceptions are written to log files. Although you <em>can</em> run Magento in default mode in production, we don't recommend it.</td>
 	</tr>
 	<tr class="even">
 		<td><a href="#mode-production">production</a></td>
-		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static files are not materialized. You can set the static file directory to read-only because files are read without going through the fallback mechanism.</td>
+		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static files are not cached. You can set the static file directory to read-only because files are read without going through the fallback mechanism.</td>
 	</tr>
 
 </tbody>
 </table>
 
-
+<p class="q">Reviewer: We don't have topics on materialization of static view files or caching view files. As soon as those topics are written, I will provide links to them.</p>
 
 <h2 id="mode-developer">Developer mode</h2>
-TBD
+You should run the Magento software in developer mode when you're extending or customizing it.
+
+In developer mode:
+
+*	Static view files are not cached; they are written to the Magento docroot every time they're called
+*	Uncaught exceptions display in the browser
+*	System logging in `var/report` is verbose
+*	An exception is thrown in the error handler, rather than being logged 
+*	An exception is thrown when an event subscriber cannot be invoked
+
+For more information, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="mode-default">Default mode</h2>
-TBD
+As its name implies, default mode is how the Magento software operates if no other mode is specified. 
+
+In default mode:
+
+*	Errors are logged to the file reports at server, and never shown to a user
+*	Static view files are cached
+*	Default mode is not optimized for a production environment
+
+<p class="q">Reviewer: It would be nice to say clearly why default mode is not recommended for production.</p>
+
+For more information, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="mode-production">Production mode</h2>
 You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="#mode-production-view">view files creation tool</a> to write static files to the Magento docroot.
@@ -58,56 +79,6 @@ In production mode:
 *	View files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
 *	The Magento docroot can have read-only permissions
 *	Errors are logged to the file system and are never displayed to the user
-
-<h3 id="mode-production-view">Running the static view file creation tool</h3>
-In production mode, because static file URLs are created on the fly, you must write static files to the Magento docroot; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
-
-Run the static view file creation tool from the command line in the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must run the view files creation tool as the web server user; otherwise, Magento might have issues accessing the files. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
-</div>
-
-Following is the command syntax:
-
-	php -f deploy.php -- [--langs=[language codes]] [--verbose=0|1] [--dry-run] [--help]
-	
-The following table discusses the meanings of the options:
-
-<table>
-	<tbody>
-		<tr>
-			<th>Option</th>
-			<th>Description</th>
-		</tr>
-	<tr>
-		<td>--langs</td>
-		<td><p class="q">Reviewer: Is it comma-separated and is there another way to find the list?</p>
-		<p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>[your Magento install dir]/php -f index.php help languages</code>.</p></td>
-	</tr>
-	<tr>
-		<td>--verbose</td>
-		<td>Omit to display errors only. Use <code>0</code> to suppress all output. Use <code>1</code> to display verbose output.</td>
-	</tr>
-	<tr>
-		<td>--dry-run</td>
-		<td>Include to view the files output by the tool without outputting anything.</td>
-	</tr>
-	<tr>
-		<td>--help</td>
-		<td>Display command help.</td>
-	</tr>
-</tbody>
-</table>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>At this time, the static view files tool displays errors. These errors do not indicate problems with your view files.</p></span>
-</div>
-
-For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="mode-specify">Specify a mode</h2>
 Specify the Magento mode in any of the following ways:
@@ -126,7 +97,12 @@ For example,
 	MAGE_MODE=developer
 	export $MAGE_MODE
 	
-Now see one of the following sections for more information about each mode:
+After setting the mode, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service httpd restart`
+	
+See one of the following sections for more information about each mode:
 
 *	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
@@ -139,10 +115,10 @@ The Apache `mod_env` directive is slightly different in <a href="http://httpd.ap
 	
 The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use `mod_env` directives; consult the Apache documentation for details.
 
-*	<a href="#mode-specify-ubuntu">Specifying a mode using Ubuntu 14</a>
+*	<a href="#mode-specify-ubuntu">Specifying a mode using Ubuntu</a>
 *	<a href="#mode-specify-centos">Specifying a mode using CentOS</a>
 
-<h4 id="mode-specify-ubuntu">Specifying a mode using Ubuntu 14</h4>
+<h4 id="mode-specify-ubuntu">Specifying a mode using Ubuntu</h4>
 This section assumes you've already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts" target="_blank">this digitalocean tutorial</a>.
 
 For more information about each mode, see:
@@ -208,8 +184,57 @@ To set the Magento mode using your web server's environment:
 
 	`service httpd restart`
 	
-For more information about each mode, see:
+<h2 id="mode-production-view">Running the static view file creation tool</h2>
+In production mode, because static file URLs are created on the fly, you must write static files to the Magento docroot; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
-*	<a href="#mode-developer">Developer mode</a>
-*	<a href="#mode-default">Default mode</a>
-*	<a href="#mode-production">Production mode</a>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must run the view files creation tool as the web server user; otherwise, Magento might have issues accessing the files. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
+</div>
+
+To create static files:
+
+1.	Log in as or switch to the web server user.
+2.	Delete the contents of `[your Magento install dir]/pub/static`.
+3.	Run the static file creation tool from the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
+4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+
+Following is the command syntax:
+
+	php -f deploy.php -- [--langs=[language codes]] [--verbose=0|1] [--dry-run] [--help]
+	
+The following table discusses the meanings of the options:
+
+<table>
+	<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+	<tr>
+		<td>--langs</td>
+		<td><p class="q">Reviewer: Is it comma-separated and is there another way to find the list?</p>
+		<p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. (Default is <code>en_US</code>.)</p>
+		<p>You can find the list by running <code>[your Magento install dir]/php -f index.php help languages</code>.</p></td>
+	</tr>
+	<tr>
+		<td>--verbose</td>
+		<td>Omit to display errors only. Use <code>0</code> to suppress all output. Use <code>1</code> to display verbose output.</td>
+	</tr>
+	<tr>
+		<td>--dry-run</td>
+		<td>Include to view the files output by the tool without outputting anything.</td>
+	</tr>
+	<tr>
+		<td>--help</td>
+		<td>Display command help.</td>
+	</tr>
+</tbody>
+</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>At this time, the static view files tool displays errors. These errors do not indicate problems with your static files.</p></span>
+</div>
+
+For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.

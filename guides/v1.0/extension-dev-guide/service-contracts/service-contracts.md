@@ -14,7 +14,7 @@ github_link: extension-dev-guide/service-contracts/service-contracts.md
 <p>Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento.
    Also, Magento and third-party developers can find it difficult to track and report the dependencies that customized extensions have on other extensions.
 </p>
-<p>To address these issues, Magento 2 introduces <i>service contracts</i>.</p>
+<p>To address these issues, the Magento system introduces <i>service contracts</i>.</p>
 <h2 id="what-is-msc">What is a service contract?</h2>
 <p>A service contract is a set of PHP interfaces that are defined for a module.
    A service contract includes <a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/design-patterns.html#data-interfaces">data interfaces</a>, which preserve data integrity, and <a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/design-patterns.html#service-interfaces">service interfaces</a>, which hide business logic details from service requestors such as controllers, web services, and other modules.
