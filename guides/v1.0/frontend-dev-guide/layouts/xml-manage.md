@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: B_Layouts
-title: XML in layouts
-menu_title: XML in layouts
+title: Common layout customization tasks
+menu_title: Common layout customization tasks
 menu_order: 5
 github_link: frontend-dev-guide/layouts/layout-xml.md
 ---
@@ -18,6 +18,11 @@ This topic shows you how to extend a layout by using merging layout files:
 *	<a href="#layout_markup_replace_elements">Replace elements</a>
 *	<a href="#layout_markup_modify-block">Modify block arguments</a>
 *	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
+*	<a href="#apply_css">Apply a CSS class to a block</a> - Should it be here???
+*	<a href="#move" >Move a block to another block</a> - if not covered in Rearrange element
+*	<a href="#fedg_xml-instrux_order-block">Order blocks</a> - if not covered in Rearrange element
+*	<a href="#set_template">Set the template used by a block</a> - Should it be here???
+*	<a href="#create_cont">Create a new container</a> - Should it be here???
 
 <h2 id="layout_markup_bad">Avoid layout customization mistakes</h2>
 
@@ -26,32 +31,12 @@ Although the layout overriding mechanism provides great customization flexibilit
 *	Changing a block name or alias. Neither the name of a block should not be changed nor the alias of a block remaining in the same parent element.
 *	Changing handle inheritance. For example, you should not change the page type parent handle.
 
-<h2 id="layout_markup_start">Get started</h2>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Because you can break other code and prevent successful upgrades, Magento strongly recommends you <em>not</em> change default layout files.</p>
-</div>
-
-To customize properly, add a theme merging file such as `app/design/frontend/[your theme]/Mage_CatalogSearch/layouts/catalogsearch_result_index.xml`, with the following content:
-
-<pre>&lt;layout>
-    &lt;update handle="page_three_columns_left"/>
-&lt;/layout></pre>
-
-You have the following choices:
-
-*	`page_empty`&mdash;Empty page used mostly for Ajax responses
-*	`page_one_column`&mdash;One-column design used mostly for mobile devices
-*	`page_two_columns_left`&mdash;Left-sided, two-column design
-*	`page_two_columns_right`&mdash;Right-sided, two-column design
-*	`page_three_columns`&mdash;Three columns
-
-
 <h2 id="layout_markup_columns">Change columns in a layout</h2>
 
-This section discusses how to override the base the layout defined by the `Mage_CatalogSearch` module from two columns to three columns. You can find the original layout <a href="{{ site.mage2000url }}blob/master/app/code/Magento/CatalogSearch/view/frontend/layouts/catalogsearch_result_index.xml" target="_blank">here</a>.
+Example: The `catalogsearch_result_index.xml` base layout file of the Mage_CatalogSearch module defines a three-column page layout. We need to change it to two-column layout. 
+Original declaration in `app/code/Mage/CatalogSearch/view/frontend/layout/catalogsearch_result_index.xml`
+TO reviewer: Need to completely rewrite it, guess it should be done in page layout file
 
-The base template uses `<update handle="page_two_columns_left"/>` to define the number of columns on the page.
 
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
@@ -59,16 +44,44 @@ The base template uses `<update handle="page_two_columns_left"/>` to define the 
 For example, you can change the subordination of the product price block.
 
 Original declaration (might be in either base or theme layout file):
+<pre>
+&lt;layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;product.info&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.bundle&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.prices&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
+&lt;/layout&gt;
+</pre>
 
-<script src="https://gist.github.com/xcomSteveJohnson/55ed6e850202bb0d5374.js"></script>
+<!-- <script src="https://gist.github.com/xcomSteveJohnson/55ed6e850202bb0d5374.js"></script>  -->
 
 Desired result:
-
-<script src="https://gist.github.com/xcomSteveJohnson/9771c824e65567bd0dd8.js"></script>
+<pre>
+layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;product.info&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.bundle&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.summary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.prices&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.addtocart.bundle&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
+&lt;/layout&gt;
+</pre>
+<!--<script src="https://gist.github.com/xcomSteveJohnson/9771c824e65567bd0dd8.js"></script> -->
 
 Change you should make in a theme merging file:
-
-<script src="https://gist.github.com/xcomSteveJohnson/93666c8933206a55dd61.js"></script>
+<pre>
+&lt;layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;product.info&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.summary&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.addtocart.bundle&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;bundle.prices&quot;&nbsp;destination=&quot;bundle.summary&quot;&nbsp;before=&quot;product.info.addtocart.bundle&quot;/&gt;
+&lt;/layout&gt;
+</pre>
+<!-- <script src="https://gist.github.com/xcomSteveJohnson/93666c8933206a55dd61.js"></script> -->
 
 <h2 id="layout_markup_css">Change JavaScript, CSS, and RSS</h2>
 
@@ -85,6 +98,8 @@ This section discusses how to link the following resources:
 *	`app/design/frontend/[theme path]/jquery/jquery.js`
 *	`app/design/frontend/[theme path]/mui/reset.css`
 *	`app/design/frontend/[theme path]/feeds/feed.xml`
+
+To reviewer: this is outdated for sure, new approach described here: https://wiki.corp.x.com/display/MPD/Page+Layout+%28Draft%29#PageLayout%28Draft%29-Headelements
 
 Make the following change in your theme merging file:
 
@@ -110,8 +125,34 @@ To remove the JavaScript and CSS resources used in a layout, make a change simil
 This section discusses how to remove the shopping cart sidebar block from a page.
 
 Original:
+<pre>
+&lt;layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;right&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Mage_Checkout_Block_Cart_Sidebar&quot;&nbsp;name=&quot;cart_sidebar&quot;&nbsp;template=&quot;cart/sidebar.phtml&quot;&nbsp;before=&quot;-&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;addItemRender&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;type&quot;&nbsp;xsi:type=&quot;string&quot;&gt;simple&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;block&quot;&nbsp;xsi:type=&quot;object&quot;&gt;Mage_Checkout_Block_Cart_Item_Renderer&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cart/sidebar/default.phtml&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;addItemRender&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;type&quot;&nbsp;xsi:type=&quot;string&quot;&gt;grouped&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;block&quot;&nbsp;xsi:type=&quot;object&quot;&gt;Mage_Checkout_Block_Cart_Item_Renderer_Grouped&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cart/sidebar/default.phtml&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;addItemRender&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;type&quot;&nbsp;xsi:type=&quot;string&quot;&gt;configurable&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;block&quot;&nbsp;xsi:type=&quot;object&quot;&gt;Mage_Checkout_Block_Cart_Item_Renderer_Configurable&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cart/sidebar/default.phtml&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;cart_sidebar.extra_actions&quot;&nbsp;as=&quot;extra_actions&quot;&nbsp;label=&quot;Shopping&nbsp;Cart&nbsp;Sidebar&nbsp;Extra&nbsp;Actions&quot;&nbsp;module=&quot;Mage_Checkout&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
+&lt;/layout&gt;
+</pre>
 
+<!--
 <script src="https://gist.github.com/xcomSteveJohnson/faa16e16f157a50823a3.js"></script>
+-->
 
 To change it, make a customization similar to the following in a theme merging file:
 
@@ -139,65 +180,24 @@ To modify it, make a customization similar to the following in a theme merging f
 
 To set a page title using the `setTitle()` method, make a customization similar to the following in a theme merging file:
 
-<script src="https://gist.github.com/xcomSteveJohnson/bc7583f5e2ac5835a250.js"></script>
+<pre>
+&lt;layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;head&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setTitle&quot;&nbsp;module=&quot;Enterprise_Wishlist&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;title&quot;&nbsp;xsi:type=&quot;string&quot;&gt;My&nbsp;Wish&nbsp;Lists&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
+&lt;/layout&gt;
+</pre>
 
-<h2 id="fedg_layout_xml-instruc_others">Other XML tags</h2>
-<div id="accordion">
-   You can use other XML tags in a layout.
-   <h3>Include CSS files in a page head block (browsers other than Internet Explorer)</h3>
-   <div>
-      <p>Examples:</p>
-      <script src="https://gist.github.com/xcomSteveJohnson/785a513700ed94e2676b.js"></script>
-      <script src="https://gist.github.com/xcomSteveJohnson/77721ca37bf9842003e0.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>css-topics/styles.css</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-         <li>the block name <code>css-styles-css</code> in <code>&lt;block name=""/></code> to make it more relevant to your customization. This name should be unique.</li>
-      </ul>
-   </div>
-   <h3>Include CSS files in a page head block (Internet Explorer only)</h3>
-   <div>
-      <p><b>Example:</b></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/99f069bd815c83112650.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>css-topics/styles.css</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-         <li>the block name <code>css-styles-ie</code> in <code>&lt;block name=""/></code> to match the name of your CSS. This name should be unique.</li>
-         <li>IE version restriction parameter in <code>&lt;argument name="properties">&lt;item name="ie_condition">&lt;/item>&lt;/argument></code></li>
-      </ul>
-   </div>
-   <h3>Reference an external CSS file in a page head block</h3>
-   <div>
-      <p><b>Example:</b></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/eee1dbf762e112e2ef54.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the link <code>http://fonts.googleapis.com/css?family=Alegreya+Sans</code> in <code>&lt;argument name="url">&lt;/argument></code></li>
-         <li>the block name <code>google-font</code> in <code>&lt;block name=""/></code> to match the name of your block. This name should be unique.</li>
-      </ul>
-   </div>
-   <h3>Include JavaScript files in a page head block (browsers other than Internet Explorer)</h3>
-   <div>
-      <p><b>Example:</b></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/0ac8690ce1552903ac06.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>js/script.js</code> in <code>&lt;argument name="file">&lt;/argument></code></li>
-         <li>the block name <code>js-head-js</code> in <code>&lt;block name=""/></code> to match the name of your JavaScript file. This name should be unique.</li>
-      </ul>
-   </div>
-   <h3>Include JavaScript files in page head block (Internet Explorer)</h3>
-   <div>
-      <p><b>Example:</b></p>
-      <script src="https://gist.github.com/xcomSteveJohnson/f269219cc9b66a151c10.js"></script>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the file name <code>js/scrip-ie.js</code> in <code>&lt;argument>&lt;argument/></code></li>
-         <li>the block name <code>js-selectivizr-js</code> in <code>&lt;block name=""/></code> to match the name of your JavaScript file.</li>
-         <li>IE version restriction parameter in <code>&lt;argument name="properties">&lt;item name="ie_condition">&lt;/item>&lt;/argument></code></li>
-      </ul>
-   </div>
-   <h3>Apply a CSS class to a block</h3>
+<!--
+<script src="https://gist.github.com/xcomSteveJohnson/bc7583f5e2ac5835a250.js"></script>
+-->
+
+
+   <h2 id="apply_css">Apply a CSS class to a block</h2>
+
+To reviewer: is it similar to linking a CSS to the page or no?
    <div>
       <p>You can use the following example for any block that has the <code>css_class</code> property.</p>
       <p><b>Example:</b></p>
@@ -208,13 +208,8 @@ To set a page title using the `setTitle()` method, make a customization similar 
          <li>the name of the CSS class <code>links</code> in <code>&lt;argument name="css_class">&lt;/argument></code></li>
       </ul>
    </div>
-   <h3>Remove a block</h3>
-   <div>
-      <p><b>Example:</b></p>
-      <pre>&lt;remove name="footer_links"/></pre>
-      <p>Replace <code>footer_links</code> with the name of the block to remove.</p>
-   </div>
-   <h3>Move a block to another block</h3>
+  
+   <h2 id="move" >Move a block to another block</h2>
    <div>
       <p><b>Example:</b></p>
       <pre>&lt;move element="footer_links" destination="top.links" /></pre>
@@ -225,7 +220,7 @@ To set a page title using the `setTitle()` method, make a customization similar 
          <li>use <code>before</code> and <code>after</code> to order the elements</li>
       </ul>
    </div>
-   <h3 id="fedg_xml-instrux_order-block">Order blocks</h3>
+   <h2 id="fedg_xml-instrux_order-block">Order blocks</h2>
    <div>
       <p>The following examples show how to:</p>
       <ul>
@@ -237,26 +232,15 @@ To set a page title using the `setTitle()` method, make a customization similar 
       <script src="https://gist.github.com/xcomSteveJohnson/1a7904f730e62050a918.js"></script>
       <p>To use these examples, replace the value of <code>before</code> or <code>after</code> with either dash (before or after all other blocks) or with the name of an existing block.</p>
    </div>
-   <h3>Set the template used by a block</h3>
+   <h2 id="set_template">Set the template used by a block</h2>
    <div>
       <p><b>Example:</b></p>
       <pre>&lt;block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/></pre>
       <p>To use this code, replace the block class, name, and path to the template.</p>
    </div>
-   <h3>Specify a page handle</h3>
-   <div>
-      <p><b>Example:</b></p>
-      <pre>&lt;update handle="page_two_columns_left"/></pre>
-      <p>To use this code, replace the <code>page_two_columns_left</code> in <code>&lt;update handle=""/></code> with one of the following:</p>
-      <ul>
-         <li><code>page_empty</code>&mdash;Empty page, used mostly for Ajax responses</code></li>
-         <li><code>page_one_column</code>&mdash;One-column design, used mostly for mobile devices</li>
-         <li><code>page_two_columns_left</code>&mdash;Left-sided, two-column design</li>
-         <li><code>page_two_columns_right</code>&mdash;Right-sided, two-column design</li>
-         <li><code>page_three_columns</code>&mdash;Three-column design</li>
-      </ul>
-   </div>
-   <h3>Create a new container</h3>
+
+
+   <h2 id="create_cont">Create a new container</h2>
    <div>
       <p><b>Example:</b></p>
       <pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
