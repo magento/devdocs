@@ -13,18 +13,18 @@ This document describes Magento's content rendering process, explains the view l
 
 <h2 id="fedg-intended-audience">Intended Audience</h2>
 
-This guide is intended for frontend developers who want to understand the way frontend of Magento can be customized and tailored to the needs of a specific customer. With this guide, frontend developers will be able to create custom Magento themes up and running quickly.
+This guide is intended for frontend developers who want to understand the way frontend of the Magento store can be customized and tailored to the needs of a specific customer. With this guide, developers will be able to create and have the custom Magento themes up and running quickly.
 
 <h2 id="fedg-prereqs">Magento 2 Frontend Development Prerequisites</h2>
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
 *	Internet Explorer 9 or later (Windows)
-*	Mozilla Firefox Latest, Latest-1 (any operating system)
-*	Google Chrome Latest, Latest-1 (any operating system)
+*	Mozilla Firefox latest, latest-2 (any operating system)
+*	Google Chrome latest, latest-2 (any operating system)
 *	Apple Safari 5 or later (Mac OS)
 *	Apple Safari Mobile for iPad, iPad Mini, iPad with Retina Display (iOS 6 or later), for Desktop Frontend
-*	Apple Safari Mobile for iPhone 4, iPhone 4S, iPhone 5 (iOS 6 or later), for Mobile Frontend
+*	Apple Safari Mobile for iPhone 4 or later; iOS 6 or later, for Mobile Frontend
 
 To be able to understand this guide, you must have basic knowledge of:
 
