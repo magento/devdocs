@@ -28,4 +28,4 @@ The following figure shows an example:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-xml.html">XML in themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>

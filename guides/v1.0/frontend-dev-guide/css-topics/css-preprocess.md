@@ -24,17 +24,17 @@ You can use the Magento fallback mechanism to override existing LESS files when 
 
 For example, if you need to change the color of some page element, you can do this by simply redefining the corresponding variable.
 
-<p>Magento 2 provides LESS preprocessor out of the box. It is located in your <code>[Magento install dir]/lib/internal/Magento/Framework/css/PreProcessor</code>.</p>
+<p>The Magento system provides LESS preprocessor out of the box. It is located in your <code>[Magento install dir]/lib/internal/Magento/Framework/css/PreProcessor</code>.</p>
 
 <p class="q">Reviewer: What does the reader need to know about the LESS preprocessor? The following list seems random to me and doesn't spell out how the user can use the LESS processor.</p>
 The LESS preprocessor provides these benefits:
 
 *	A built-in compilation in Magento to support multi-level theme inheritance and Magento publisher behavior.
 *	Possible to use the client-side LESS.js compiler, which is the easiest way to get started and is good for developing with LESS.
-*	Compatibility of extensions across all Magento 2 instances.
+*	Compatibility of extensions across all Magento instances.
 *	Stable PHP LESS compiler that meets our internal quality requirements.
 *	Ability to use regular CSS.
-*	<p>LESS implementation does not extend Magento 2 requirements with any external libraries such as <code>node.js</code>.</p>
+*	<p>LESS implementation does not extend Magento requirements with any external libraries such as <code>node.js</code>.</p>
 *	<p>A third-party LESS library (Oyejorge LESS parser) is located in <code>[your Magento install dir]/lib/internal/Magento/Framework/css/PreProcessor/Adapter</code>.</p>
 
 <h3 id="fedg_css-magento-import">The @magento_import instruction</h3>
@@ -125,6 +125,6 @@ The generated CSS file is located in the same directory where the compilation ra
 
 #### Related topics:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/css-themes.html">CSS in themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Magento 2 theming </a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
 

@@ -8,7 +8,7 @@ menu_order: 4
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 ---
 
-To enable pages to load, we excluded JavaScript from the page head block and integrated Magento 2 with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
+To enable pages to load, we excluded JavaScript from the page head block and integrated the Magento system with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
 
 For an example of how to include JavaScript in your responsive theme, see <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>.
 
@@ -105,7 +105,7 @@ When you add a new theme, you include them in your responsive theme layout as fo
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2 UI library</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a>
 
 

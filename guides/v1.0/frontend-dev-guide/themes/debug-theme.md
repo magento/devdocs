@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/themes/debug-theme.md
 <h2 id="debug-theme-intro">Introduction</h2>
 When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files that a Magento storefront uses.
 
-<h2 id="debug-theme-templ">Locate Templates</h2>
+<h2 id="debug-theme-templ">Locate templates</h2>
 To locate the template that is responsible for a specific part of the storefront, you can use Magento built-in template hints.
 
 To enable template hints:
@@ -43,7 +43,7 @@ A search through the app directory for occurrences of "minicart-wrapper" in .pht
 Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to Customizing Theme Template.
 <!-- ADDLINK -->
 
-<h2 id="debug-theme-layout" >Locate Layouts</h2>
+<h2 id="debug-theme-layout" >Locate layouts</h2>
 Just like templates, layouts are saved on a per-module basis. You can easily locate the layout file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
 
 After you have determined the module, you can search for the layout in the following locations according to the layout fallback logic:
@@ -69,7 +69,7 @@ Let's search for the layout following the fallback scheme:
 After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder add overriding content. Please see Customizing Theme Layouts for more details.
 <!-- ADDLINK -->
 
-<h2 id="debug-theme-style">Locate Styles</h2>
+<h2 id="debug-theme-style">Locate styles</h2>
 To locate a CSS rule that is applyed to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the .less or .css file that defines the class. Perform the search according to the following fallback scheme:
 

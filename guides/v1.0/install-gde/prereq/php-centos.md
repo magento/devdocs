@@ -24,11 +24,14 @@ github_link: install-gde/prereq/php-centos.md
 
 <h2 id="php-support">PHP versions supported</h2>
 
-Magento 2 requires PHP 5.4.11 or later or PHP 5.5.x.
+Magento requires:
+
+*	PHP 5.4.x where x = 11 or later
+*	PHP 5.5.x 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento 2 does <em>not</em> support PHP 5.6.</p></span>
+  <p>Magento does <em>not</em> support PHP 5.6.</p></span>
 </div>
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
@@ -105,35 +108,35 @@ To set your time zone and memory limit:
 2.	Locate `php.ini` by entering the following command:
 
 	`php -i | grep "Loaded Configuration File"`
-	
+
 	Typical locations follow:
-	
+
 	Ubuntu: `/etc/php5/cli/php.ini`
-	
+
 	CentOS: `/etc/php.ini`
-	
+
 3.	Open `php.ini` in a text editor.
 
 4.	Locate the following setting and uncomment it if necessary:
 
 	`date.timezone =`
-	
+
 5.	Add the time zone setting you found in step 1.
 
 2.	Change `memory_limit` to:
 
 	`memory_limit = 512M` or more for normal operation
-	
+
 	`memory_limit = 2G` or more for testing
-	
-3.	Save your changes and exit the text editor. 
+
+3.	Save your changes and exit the text editor.
 
 4.	Restart Apache:
 
 	Ubuntu: `service apache2 restart`
-	
+
 	CentOS: `service httpd restart`
-	
+
 
 #### Related topics
 

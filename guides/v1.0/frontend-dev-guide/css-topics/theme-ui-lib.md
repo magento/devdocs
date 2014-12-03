@@ -2,12 +2,12 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: Magento 2 UI library
+title: Magento UI library
 menu_order: 4
 github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 ---
 
-<h2 id="fedg_using-ui-lib_overview">Overview of the Magento 2 UI Library</h2>
+<h2 id="fedg_using-ui-lib_overview">Overview</h2>
 
 The Magento UI library is a flexible, modular Magento frontend library designed to assist Magento theme developers. It employs a set of mixins for base elements to ease frontend theme development and customization. The Magento UI library is:
 

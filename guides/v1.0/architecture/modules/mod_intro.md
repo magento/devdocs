@@ -2,8 +2,8 @@
 layout: default
 group: dev-guide
 subgroup: Modules
-title: Introduction to Modules
-menu_title: Introduction to Modules
+title: Introduction to modules
+menu_title: Introduction to modules
 menu_order: 1
 github_link: architecture/modules/mod_intro.md
 ---
@@ -31,8 +31,8 @@ For 'How To' topics such as instructions for adding modules, extending modules, 
 <h3 id="arch-modules-related">Related topics</h3>
 
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module Relationships</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and Areas</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>

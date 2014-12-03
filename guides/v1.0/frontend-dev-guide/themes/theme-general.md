@@ -22,7 +22,7 @@ Your new theme can be a standalone new theme, or can inherit from the default or
 
 The How to Create New Theme chapter provides all information, including theoretical concepts and practical references, a frontend developer might need to efficiently create a new theme in Magento application.
 
-<h2 id="theme-gen-walkthrough">Adding new theme: walkthrough</h2>
+<h2 id="theme-gen-walkthrough">Add a theme: walkthrough</h2>
 The high-level steps required to add a new theme in the Magento system are the following:
 
 1. Create a folder for the theme under `app/design/frontend/<your_vendor_name>/<your_theme_name>`.

@@ -4,7 +4,7 @@ group: install
 subgroup: R_Installation
 title: Web-based installer
 menu_title: Web-based installer
-menu_node: 
+menu_node:
 menu_order: 6
 github_link: install-gde/install/install-web.md
 ---
@@ -15,46 +15,46 @@ See one of the following sections:
 
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-start">Getting started with your installation</a>
-*	<a href="#instgde-install-magento">Installing the Magento 2 software</a>
-*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento 2 software</a>
+*	<a href="#instgde-install-magento">Installing the Magento software</a>
+*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
 Before you begin, make sure that:
 
-1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento 2 System Requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prequisites for installing Magento 2</a>.
-3.	You installed Composer and cloned the Magento 2 GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento 2 GitHub repository</a>.
+1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
+2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prequisites for installing Magento</a>.
+3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
 
 <h2 id="instgde-install-start">Getting started with your installation</h2>
 
 After you complete the tasks discussed in the preceding section, update Composer and run the installer:
 
 1.	Log in to your Magento server as a user with `root` privileges.
-2.	Change to the Magento 2 `setup` directory. For example,
+2.	Change to the Magento `setup` directory. For example,
 
 	`cd /var/www/html/magento2/setup`
-	
+
 3.	Enter `composer install`
 
 	This command updates package dependencies and can take a few minutes to complete.
-	
+
 4.	Continue with the next section.
-	
-<h2 id="instgde-install-magento-web">Installing the Magento 2 software using the web-based installer</h2>
 
-This section discusses how to run the command-line installer for Magento 2. The installer is designed to be run multiple times if necessary so you can:
+<h2 id="instgde-install-magento-web">Installing the Magento software using the web-based installer</h2>
 
-*	Provide different values 
+This section discusses how to run the Magento command-line installer. The installer is designed to be run multiple times if necessary so you can:
+
+*	Provide different values
 
 	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options
-	
+
 *	Correct mistakes in previous installations
 *	Create additional Magento administrators
 *	Install Magento in a different database instance
 
 <div class="bs-callout bs-callout-info" id="info">
-  
+
 <span class="glyphicon-class"><p>The installer doesn't overwrite the Magento database if you install the Magento software in the same database instance.</span>
 </div>
 
@@ -190,7 +190,7 @@ Some customers have more than one Magento instance running on a server with all 
 		<p><code>0</code> means SSL is not used.</p></td>
 		<td>No</td>
 	</tr>
-	
+
 	<tr>
 		<td>use_secure_admin</td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
@@ -225,8 +225,8 @@ Some customers have more than one Magento instance running on a server with all 
 		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
 		<td>No</td>
 	</tr>
-	
-	
+
+
 	</tbody>
 </table>
 
@@ -234,11 +234,11 @@ Some customers have more than one Magento instance running on a server with all 
 
 For sample installation commands, see <a href="{{ site.gdeurl }}install-gde/install/install-samples.html">Sample installation commands</a>.
 
-<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento 2 software</h2>
+<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
 
-This section discusses how to install the Magento 2 software after you installed it previously. You might do this in an development environment especialy to get all the latest code changes.
+This section discusses how to install the Magento software after you installed it previously. You might do this in an development environment especialy to get all the latest code changes.
 
-To reinstall the Magento 2 software:
+To reinstall the Magento software:
 
 1.	Optionally delete and re-create the database instance.
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
@@ -248,5 +248,5 @@ To reinstall the Magento 2 software:
 git pull
 composer install</pre>
 
-4.	Repeat the tasks discussed in <a href="#instgde-install-magento">Installing the Magento 2 software</a>.
+4.	Repeat the tasks discussed in <a href="#instgde-install-magento">Installing the Magento software</a>.
 

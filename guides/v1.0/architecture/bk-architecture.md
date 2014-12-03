@@ -27,7 +27,7 @@ title: Magento Architecture
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/arch_whatis.html">What is Magento? &raquo;</a></p>
                </dt>
            <dt>
-                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a Modular System &raquo;</a></p>
+                  <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system &raquo;</a></p>
                </dt>
              <dt>
                   <p><a type="button" class="btn-block btn btn-info btn-lg active" href="{{ site.gdeurl }}architecture/areas/areas.html">Magento Framework &raquo;</a></p>

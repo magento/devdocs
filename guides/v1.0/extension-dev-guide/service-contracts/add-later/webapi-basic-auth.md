@@ -5,12 +5,9 @@ title: Authorize web API requests
 
 <p>The web API framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.
 
-
 Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.</p>
 
 # Authorize web API requests
-
-<p><a href="{{ site.githuburl }}guides/v1.0/get-started/webapi/webapi-basic-auth.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The <code>AuthorizationV1Interface</code> interface discussed in this topic is not implemented yet.</p>
@@ -20,7 +17,7 @@ This topic provides basic information about how to authorize Web API requests.
 
 When a merchant installs an integration, they must be informed which Magento resources the Magento integration needs access to. To see how a merchant authorizes an integration, go to [What is the Web API Framework?]({{ site.gdeurl }}config-guide/integration/integration-auth.html)).
 
-Service developers declare the list of permissions required in the integration's `webapi.xml`. This is discussed in more detail in [What is the Web API Framework?]({{ site.gdeurl }}get-started/webapi/what-is-webapi.html)).
+Service developers declare the list of permissions required in the integration's `webapi.xml`. This is discussed in more detail in [What is the Web API Framework?]({{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/what-is-webapi.html)).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Web API framework only verifies that the user (Magento administrator, anonymous user, API user, and so on) is authorized to invoke the API. Any business logic specific authorizations must be implemented at the service level.</p>
@@ -65,9 +62,3 @@ When a client requests access to the `/V1/testmodule1` route, the resources it r
 The authorization checks are performed by the `dispatch` method in <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/Rest.php" target="_blank">\Magento\Webapi\Controller\Rest</a>.
 
 For the call to succeed, _all_ resources must be authorized; otherwise, an authorization exception is thrown.
-
-#### Related Topics:
-
-*	<a href="{{ site.gdeurl }}extension-dev-guide/services/build-svc.html">How to build a service</a>
-
-*	<a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a>

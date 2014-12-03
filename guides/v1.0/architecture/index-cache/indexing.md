@@ -83,7 +83,7 @@ The type of reindex performed in each particular case depends on the type of cha
 
 The following figure shows the logic for full or partial reindexing.
 
-<p><img src="{{ site.baseurl }}common/images/indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow"></p>
+<p><img src="{{ site.baseurl }}common/images/index_indexers_flow.png" width="400px" alt="The image displays the partial reindex workflow"></p>
 
 
 <!-- <h3 id="m2devgde-indexing-status">Indexer status</h3>

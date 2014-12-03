@@ -8,7 +8,7 @@ menu_order: 3
 github_link: get-started/gs-rest-ff-client.md
 ---
 
-This topic discusses how to use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/" target="_blank">Firefox REST Client</a> browser add-on to send a REST call that creates a new Magento 2 customer.
+This topic discusses how to use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/" target="_blank">Firefox REST Client</a> browser add-on to send a REST call that creates a new Magento customer.
 
 To do this, you need to set up an _integration_ that provides access to Magento customer resources. You set up the integration using the Magento Admin.
 
@@ -134,7 +134,7 @@ The following figure shows an example.<br>
 
 <h2>Step 10: Complete the REST call</h2>
 <div>
-<p>Now that you have your <code>Authorization</code> header set, you must set one more headers for Magento 2 to accept the REST call: <code>Content-Type: application/json</code>. Finally, add the request body and send the request.</p>
+<p>Now that you have your <code>Authorization</code> header set, you must set one more headers for the Magento system to accept the REST call: <code>Content-Type: application/json</code>. Finally, add the request body and send the request.</p>
 <p>To complete your REST call:</p>
 <ol><li>Click <strong>Headers</strong> > <strong>Custom Header</strong>.</li>
 <li>In the <strong>Name</strong> field, enter <code>Content-Type</code>.</li>
@@ -159,8 +159,12 @@ An example follows:<br>
 <h4 id="svcs_rest_reltop">Related topics</h4>
 <div>
 
-<ul><li><a href="{{ site.gdeurl }}extension-dev-guide/services/what-is-svc.html">Service contracts</a></li>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/services/svc-how-to-use.html">How a Client Uses a Service</a></li>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/services/build-svc.html">How to build a service</a></li>
-<li><a href="{{ site.gdeurl }}get-started/webapi/what-is-webapi.html">What Is the Web API Framework?</a></li></ul>
+<ul><li><a href="{{ site.gdeurl }}get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
+<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+
+<!--
+<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a></li>
+<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-build.html">How to build a service</a></li>
+<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/what-is-webapi.html">What Is the Web API Framework?</a></li>
+ --></ul>
 

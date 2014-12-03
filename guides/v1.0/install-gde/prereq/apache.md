@@ -14,6 +14,10 @@ github_link: install-gde/prereq/apache.md
 *	<a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 
+<h2 id="apache-support">Apache versions supported</h2>
+
+Magento requires Apache 2.2.x or 2.4.x.
+
 <h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
 Install Apache 2 if you haven't already done so:
 
@@ -83,7 +87,7 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 	<pre>&lt;Directory "/var/www">
 	AllowOverride [value from Apache site]
 	&lt;/Directory></pre>
-	
+
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
 	<p>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</p></span>
@@ -131,5 +135,5 @@ Install Apache 2 if you haven't already done so.
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento 2 GitHub repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Installing Composer and cloning the Magento GitHub repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>
