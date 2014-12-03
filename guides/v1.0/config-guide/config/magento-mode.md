@@ -57,12 +57,15 @@ In developer mode:
 For more information, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="mode-default">Default mode</h2>
-As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode is not optimized for a production environment.
+As its name implies, default mode is how the Magento software operates if no other mode is specified. 
 
 In default mode:
 
 *	Errors are logged to the file reports at server, and never shown to a user
 *	Static view files are cached
+*	Default mode is not optimized for a production environment
+
+<p class="q">Reviewer: It would be nice to say clearly why default mode is not recommended for production.</p>
 
 For more information, see <a href="#mode-specify">Specify a mode</a>.
 
@@ -76,8 +79,6 @@ In production mode:
 *	View files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
 *	The Magento docroot can have read-only permissions
 *	Errors are logged to the file system and are never displayed to the user
-
-
 
 <h2 id="mode-specify">Specify a mode</h2>
 Specify the Magento mode in any of the following ways:
@@ -95,6 +96,11 @@ For example,
 	
 	MAGE_MODE=developer
 	export $MAGE_MODE
+	
+After setting the mode, restart the web server:
+
+*	Ubuntu: `service apache2 restart`
+*	CentOS: `service httpd restart`
 	
 See one of the following sections for more information about each mode:
 
@@ -181,8 +187,6 @@ To set the Magento mode using your web server's environment:
 <h2 id="mode-production-view">Running the static view file creation tool</h2>
 In production mode, because static file URLs are created on the fly, you must write static files to the Magento docroot; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
-Run the static view file creation tool from the command line in the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
-
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You must run the view files creation tool as the web server user; otherwise, Magento might have issues accessing the files. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
@@ -192,7 +196,7 @@ To create static files:
 
 1.	Log in as or switch to the web server user.
 2.	Delete the contents of `[your Magento install dir]/pub/static`.
-3.	Run the static file creation tool.
+3.	Run the static file creation tool from the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
 
 Following is the command syntax:
