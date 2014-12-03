@@ -125,6 +125,6 @@ The generated CSS file is located in the same directory where the compilation ra
 
 #### Related topics:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/css-themes.html">CSS in themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themese</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
 

@@ -2,8 +2,8 @@
 layout: default
 group: dev-guide
 subgroup: Modules
-title: Module Naming and Location Conventions
-menu_title: Module Naming and Location Conventions
+title: Module naming and location conventions
+menu_title: Module naming and location conventions
 menu_order: 5
 github_link: architecture/modules/mod_conventions.md
 ---
@@ -28,8 +28,8 @@ Example: "catalogsearch" is module alias of "Magento_CatalogSearch" module.
 
 <h2 id="m2arch-module-related"> Related Topics</h2>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module Relationships</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and Areas</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>

@@ -2,8 +2,8 @@
 layout: default
 group: dev-guide
 subgroup: Architecture
-title: Translation Packs
-menu_title: Translation Packs
+title: Translation packs
+menu_title: Translation packs
 menu_order: 5
 github_link: architecture/arch_translations.md
 ---
