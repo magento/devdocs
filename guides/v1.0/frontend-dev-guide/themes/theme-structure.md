@@ -265,7 +265,7 @@ Apart from the configuration file and theme metadata file, all theme files fall 
 * Dynamic view files
 
 <h3 id="theme-structure-pub">Static view files</h3>
-A set of theme files that are returned by the sever to a browser as is, without any processing, are called the *static files* of a theme. 
+A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme. 
 
 Static files can be located in a theme directory as follows:
 <pre>
@@ -279,10 +279,10 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 </pre>
 The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
 
-Static view files that can be accessed by a direct link from the frontend, are distinguished as public theme files.
+Static view files that can be accessed by a direct link from the store front, are distinguished as public theme files.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To be actually accessible for browsers public static files are <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> to the <code>/pub/static/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory .</p>
+  <p>To be actually accessible for browsers public static files are <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> to the <code>/pub/static/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 </div>
 
 <h3>Dynamic view files</h3>
