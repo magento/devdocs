@@ -70,8 +70,8 @@ After verifying your prerequisites, perform the following tasks in order to prep
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>
 2.	Install Magento:
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Running the web-based installer</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Running the command-line installer</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the web interface</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install the Magento software using the command line</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying the installation</a>
 
 <h2>Required server permissions</h2>

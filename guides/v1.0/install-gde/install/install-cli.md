@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: R_Installation
-title: Command-line installer
-menu_title: Command-line installer
+title: Install the Magento software using the command line
+menu_title: Install the Magento software using the command line
 menu_node:
 menu_order: 7
 github_link: install-gde/install/install-cli.md
@@ -49,9 +49,21 @@ The installer is designed to be run multiple times if necessary so you can:
 
 <h2 id="instgde-install-cli-first">First steps</h2>
 
-Before you begin, you can run the following commands to find values for some required options:
+Before you begin:
 
-<table>
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+2.	Change to the following directory:
+
+	<pre>cd [your Magento install dir]/setup</pre>
+	
+	<p>Examples:</p>
+	
+	*	Ubuntu: `cd /var/www/magento2/setup`
+	*	CentOS: `cd /var/www/html/magento2/setup`
+
+3.	Optionally run the following commands to find values for some required options:
+
+	<table>
 	<tbody>
 		<tr>
 			<th>Installer option</th>
@@ -71,12 +83,12 @@ Before you begin, you can run the following commands to find values for some req
 	</tr>
 	</tbody>
 	</table>
+	
+<h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
-The format of the command follows:
+The format of the install command follows:
 
 	php -f index.php install --[installation option name]=[installation option value] ...
-
-<h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
 The following table discusses the meanings of installation option names and values. An example is provided in <a href="#sample-localhost-installation">Sample localhost installation</a>.
 
