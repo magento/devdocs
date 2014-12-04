@@ -49,7 +49,7 @@ This section discusses how to override:
 *	Default layout
 *	Theme layout
 
-<h3 id="fedg_layout_override_default">Overriding Default Layouts</h3>
+<h3 id="fedg_layout_override_default">Override default layouts</h3>
 
 To add an overriding default layout file (to override a default layout provided by the module):
 
@@ -93,5 +93,5 @@ Where:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/theme-xml.html">XML in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-manage.html">XML instructions</a>

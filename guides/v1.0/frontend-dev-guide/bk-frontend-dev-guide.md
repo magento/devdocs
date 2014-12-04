@@ -10,14 +10,6 @@ github_link: frontend-dev-guide/bk-frontend-dev-guide.md
 <h2 id="overview-introduction">Introduction</h2>
 This document describes Magento's content rendering process, explains the view layer of the system, and provides instructions for creating and installing themes. It also walks through everyday frontend developer's tasks.
 
-<<<<<<< HEAD
-
-<h2 id="fedg-intended-audience">Intended Audience</h2>
-
-This guide is intended for frontend developers who want to understand the way frontend of the Magento store can be customized and tailored to the needs of a specific customer. With this guide, developers will be able to create and have the custom Magento themes up and running quickly.
-
-<h2 id="fedg-prereqs">Magento 2 Frontend Development Prerequisites</h2>
-=======
 Frontend developers can use this guide to create custom themes to tailor the Magento frontend for a specific customer.
 
 <p>You can apply these levels of customization to your site, where the levels require different development skills:</p>
@@ -42,7 +34,6 @@ Frontend developers can use this guide to create custom themes to tailor the Mag
 </div>
 
 <h2 id="fedg-prereqs">Frontend development prerequisites</h2>
->>>>>>> origin/devbeta
 
 To implement what is discussed in this guide, you need a working Magento installation and the following browser versions installed on your device:
 
@@ -61,7 +52,6 @@ To use this guide, you must be familiar with:
 *	JavaScript
 *	Responsive Web Design (RWD)
 
-<!--
 #### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
@@ -70,10 +60,5 @@ To use this guide, you must be familiar with:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>
 *	<a href="{{ site.gdeurl }}coding-standards/js-coding-standards.html">JavaScript coding standard</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
-<<<<<<< HEAD
-*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Magento 2 localization</a>
--->
-=======
 *	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>
 
->>>>>>> origin/devbeta

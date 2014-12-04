@@ -261,11 +261,11 @@ All theme files are stored under `app/design/<area>/<Vendor>/<theme>/`.
 
 Apart from the configuration file and theme metadata file, all theme files fall into the following two categories:
 
-* Public theme files (static view files)
-* Non-public theme files
+* Static view files
+* Dynamic view files
 
-<h3 id="theme-structure-pub">Public theme files (static view files)</h3>
-A set of theme files that are returned by the sever to a browser as is, without any processing, are called the *static files* of a theme. This files usually can be accessed by a direct link from the frontend, so they are distinguished as public theme files. They are: images, .CSS styles, JavaScript files and fonts.
+<h3 id="theme-structure-pub">Static view files</h3>
+A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme. 
 
 Static files can be located in a theme directory as follows:
 <pre>
@@ -279,14 +279,16 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 </pre>
 The key difference between static files and other theme files is that static files appear on a web page as references to the files, while other theme files take part in the page generation, but are not explicitly referenced on a web page as files.
 
+Static view files that can be accessed by a direct link from the store front, are distinguished as public theme files.
+
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Keep in mind that <code>styles.css</code> and other static files are <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> to <code>/pub/static/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory to be actually accessible for browsers.</p>
+  <p>To be actually accessible for browsers public static files are <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> to the <code>/pub/static/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/&lt;language&gt;/css/</code> directory.</p>
 </div>
 
-<h3>Non-public theme files</h3>
-Those files, which cannot be accessed directly from the frontend, are distinguished as non-public theme files. These are: `.less` files, templates, layouts and configuration files.
+<h3>Dynamic view files</h3>
+View files that are processed or executed by the server in order to provide result to the client. These are: `.less` files, templates, layouts .
 
-Non-public view files can be located in a theme directory as follows:
+Dynamic view files are located in a theme directory as follows:
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 ├──&nbsp;Magento_&lt;module&gt;/&nbsp;
@@ -296,10 +298,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 │	├──&nbsp;layout/
 │	│	├──&nbsp;override/
 │	├──&nbsp;templates/
-├──&nbsp;etc/
-├──&nbsp;i18n/&nbsp;
 ├──&nbsp;web/
 │	├──source
-├──&nbsp;composer.json&nbsp;
-├──&nbsp;theme.xml&nbsp;
+
 </pre>

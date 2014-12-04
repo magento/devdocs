@@ -32,7 +32,7 @@ Changes made:
 *	The translation tool uses lazy loading.
 
 
-<h2 id="m2devgde-xlate-translating">Translating Magento by yourself</h2>
+<h2 id="m2devgde-xlate-translating">Manually translate Magento</h2>
 
 Translating the names, titles and phrases used in Magento involves the following steps:
 
@@ -89,7 +89,7 @@ For generating a dictionary, you should specify the following parameters:
 *	`-o|output` defines the name of the output file (a dictionary); by default, the output file (dictionary) is saved in the directory from which the script was launched. This parameter is optional.
 *	`-m|magento` defines whether a directory belongs to the root code base, that is, whether the meta information should be included into a dictionary; by default, the value is set to 'no'. The value can be set to 'yes' only for the Magento root directory, otherwise the parser will not be able to find the correct path. This parameter is optional.
 
-<h2 id="m2devgde-xlate-languagepack">Understanding language packages</h2>
+<h2 id="m2devgde-xlate-languagepack">Language packs</h2>
 
 The language pack is a dictionary divided into separate module-specific files. You can download the ready-to-use language packs and customize them, even if you do not have a Magento instance installed.
 
@@ -116,7 +116,7 @@ Find the language packs in the `app/i18n/[Module name]/[Vendor name]` directory.
 
 Apart from the `.csv` file containing the language pack itself, the directory encompasses `composer.json` file, which allows the system composer to recognize a pack, and `language.xml` file, where you have to declare a language pack.
 
-<h3 id="m2devgde-xlate-inheritance">Declaring a package and configuring language inheritance</h3>
+<h3 id="m2devgde-xlate-inheritance">Declare a package and configure language inheritance</h3>
 
 When declaring a language pack in `language.xml` configuration file, you will need also to specify the sequence of the language inheritance for this pack.
 
@@ -174,13 +174,13 @@ To understand how the language inheritance works, let us imagine we have a langu
 
 Specifying all inheritances between the language packs may result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
-<h3 id="m2devgde-xlate-severalpacks">Configuring several packages for one language</h3>
+<h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 
 To help you to make your store more flexible, we implemented ability to upload several language packages for the same language in your store. Thus, you can use different custom packs for different parts of your store for the system will compile a single pack from all packs available for a language.
 
 To enable additional package for existing language, just give a new package any name except for existing language code (to avoid confusion). Specify configurations of a pack in `language.xml` file as described in the <a href="#m2devgde-xlate-inheritance">Declaring a Pack and Configuring Language Inheritance</a> section above.
 
-<h3 id="m2devgde-xlate-packtool">Applying the language package tool</h3>
+<h3 id="m2devgde-xlate-packtool">The language package tool</h3>
 
 Use the language pack tool to upload the translated dictionary to your Magento instance. The language pack tool distributes translated names, titles, and phrases to appropriate modules.
 
@@ -200,7 +200,7 @@ To invoke the language pack tool, specify the following parameters:
 
 <h2 id="m2devgde-xlate-howtos">How-to scenarios</h2>
 
-<h3 id="m2devgde-xlate-newpack">Create a new language pack and upload it to Magento</h3>
+<h3 id="m2devgde-xlate-newpack">Create and upload a language pack to Magento</h3>
 
 To create custom language package:
 

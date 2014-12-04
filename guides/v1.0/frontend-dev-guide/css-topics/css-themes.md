@@ -46,7 +46,7 @@ For example, you can include a style sheet by adding the following block of code
 
 `<argument name="file">` specifies the path to the stylesheet file that you include in your theme.
 
-The `<arguments>` node can contain additional attributes, such as conditional comments for Internet Explorer. To learn more about conditionals, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>.
+The `<arguments>` node can contain additional attributes, such as conditional comments for Internet Explorer. To learn more about conditionals, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.
 
 This example shows how to specify an Internet Explorer 9-specific stylesheet:
 
@@ -55,7 +55,7 @@ This example shows how to specify an Internet Explorer 9-specific stylesheet:
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS overview</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themese</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
 
