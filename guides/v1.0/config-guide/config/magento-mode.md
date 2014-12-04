@@ -14,7 +14,7 @@ github_link: config-guide/config/magento-mode.md
 *	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-specify">Specify a mode</a>
-*	<a href="#mode-production-view">Running the static view file creation tool</a>
+*	<a href="#mode-production-view">static view file creation tool</a>
 *	<a href="#view-file-trouble">Troubleshooting</a>
 
 <h2 id="mode-introduction">Introduction to Magento modes</h2>
@@ -185,7 +185,7 @@ To set the Magento mode using your web server's environment:
 
 	`service httpd restart`
 	
-<h2 id="mode-production-view">Running the static view file creation tool</h2>
+<h2 id="mode-production-view">static view file creation tool</h2>
 In production mode, because static file URLs are created on the fly, you must write static files to the Magento docroot; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -241,7 +241,7 @@ The following table discusses the meanings of the options:
 For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="view-file-trouble">Troubleshooting</h2>
-This section discusses errors that result from running the view files creation tool without first <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installing the Magento software</a>.
+This section discusses errors that result from view files creation tool without first <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installing the Magento software</a>.
 
 **Symptom**: Any of the following errors display when you run the static file creation tool:
 

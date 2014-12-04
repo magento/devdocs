@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: R_Installation
-title: Installing Composer and cloning the Magento repository
-menu_title: Installing Composer and cloning the Magento repository
+title: Install Composer and clone the Magento repository
+menu_title: Install Composer and clone the Magento repository
 menu_node:
 menu_order: 2
 github_link: install-gde/install/composer-clone.md
@@ -12,8 +12,8 @@ github_link: install-gde/install/composer-clone.md
 #### Contents
 
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
-*	<a href="#instgde-prereq-compose-clone">Cloning the Magento GitHub repository</a>
-*	<a href="#instgde-prereq-compose-access">Setting file system permissions and ownership</a>
+*	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
+*	<a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
@@ -34,7 +34,7 @@ To install Composer:
 
 	CentOS: `service httpd restart`
 
-<h2 id="instgde-prereq-compose-clone">Cloning the Magento GitHub repository</h2>
+<h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
 
 To clone the Magento GitHub repository:
 
@@ -64,7 +64,7 @@ To clone the Magento GitHub repository:
 
 3.	Wait for the repository to clone on your server.
 
-<h2 id="instgde-prereq-compose-access">Setting file system permissions and ownership</h2>
+<h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
 
 After the clone is complete, set ownership of all Magento files and directories and make sure they are writable by that user.
 
@@ -109,4 +109,4 @@ find . -type f -exec chmod 600 {} \;</pre>
 
 #### Next step
 
-After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>.
+After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.

@@ -40,7 +40,7 @@ Exception
  
 ### Description
 
-You must run `composer install` from *both* the `[your Magento install dir]` and `[your Magento install dir]/setup` directories before running the installer.
+You must run `composer install` from *both* the `[your Magento install dir]` and `[your Magento install dir]/setup` directories before installer.
 
 ### Suggestion
 

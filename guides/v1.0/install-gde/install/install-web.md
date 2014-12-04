@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: R_Installation
-title: Install the Magento software using the web interface
-menu_title: Install the Magento software using the web interface
+title: Install Magento software through the web interface
+menu_title: Install Magento software through the web interface
 menu_node:
 menu_order: 6
 github_link: install-gde/install/install-web.md
@@ -17,15 +17,15 @@ See one of the following sections:
 *	<a href="#instgde-install-magento-web">Installing the Magento software using the web interface</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
 
-This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="#running-the-command-line-installer">Install the Magento software using the command line</a>.
+This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="#running-the-command-line-installer">Install Magento software through the command line</a>.
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
 Before you begin, make sure you completed all of the following tasks:
 
 *	<a href="#prerequisites">Prerequisites</a>
-*	<a href="#installing-composer">Installing Composer</a>
-*	<a href="#updating-installation-dependencies">Updating installation dependencies</a>
+*	<a href="#installing-composer">Install Composer</a>
+*	<a href="#updating-installation-dependencies">Update installation dependencies</a>
 
 **Note**: If you get errors during the installation, see <a href="#troubleshooting">Troubleshooting</a>.
 

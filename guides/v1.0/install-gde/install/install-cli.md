@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: R_Installation
-title: Install the Magento software using the command line
-menu_title: Install the Magento software using the command line
+title: Install Magento software through the command line
+menu_title: Install Magento software through the command line
 menu_node:
 menu_order: 7
 github_link: install-gde/install/install-cli.md
@@ -296,4 +296,4 @@ composer install</pre>
 
 #### Next step
 
-<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying your Magento installation</a>.
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
