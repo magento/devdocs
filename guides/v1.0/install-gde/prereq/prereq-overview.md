@@ -41,7 +41,7 @@ To check your system for prerequisites, enter the following commands:
 
 	`php -v`
 
-	You must run PHP version 5.4.33 or later as the following result indicates:
+	You must run PHP version 5.4.11 or later as the following result indicates:
 
 	<pre>PHP 5.4.33 (cli) (built: Sep 20 2014 16:20:03)
 Copyright (c) 1997-2014 The PHP Group
@@ -55,7 +55,7 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 
 	Ubuntu: `apache2 -v`
 
-	You must run Apache version 2.2 or later as the following result indicates:
+	You must run Apache version 2.2 or 2.4 as the following result indicates:
 
 	<pre>Server version: Apache/2.2.15 (Unix)
 Server built:   Jul 23 2014 14:17:29</pre>
