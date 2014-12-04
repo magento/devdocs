@@ -66,7 +66,7 @@ After verifying your prerequisites, perform the following tasks in order to prep
 1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Installing Composer</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Cloning the Magento GitHub repository</a>
 
-<h3>Step 3: Installing and verifying</h3>
+<h3>Step 3: Install and verify installation</h3>
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>
 2.	Install Magento:
