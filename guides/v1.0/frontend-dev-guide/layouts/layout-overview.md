@@ -55,35 +55,63 @@ Before you start to work on your theme, you must understand the following terms:
 
 Any combination of layout, template, locale, and styles that create the visual experience of your storefront.
 
+<u> Layout file types: by role </u>
+
 *Page layout*
 
-Page layout declares high-level page structure, for example, two-column page layout. Page layouts and contains only containers and operation with them.
+An XML file declaring high-level page structure, for example, two-column page layout. Page layouts and contains only containers and operation with them.
 
-Allowed tags list: container, move, remove, update, referenceContainer. 
+For details, refer to Layout File Types. <!-- ADDLINK -->
 
-Page configuration
+*Page configuration*
 
-:	Layouts for themes which can extend the default layout (these are referred to as <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">extending theme files</a> and override default layouts or parent themes (<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">overriding theme files</a>).
+An XML file defining the low level page structure: containters and blocks declarations and  manipulation instructions. 
 
-Layout handle
 
-:	A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.
+For details, refer to Layout File Types. <!-- ADDLINK -->
+
+*Generic layout*
+
+An XML layout file defining the low level structure for pages opened by AJAX requests.
+
+
+For details, refer to Layout File Types. <!-- ADDLINK -->
+
+<!--
+*Layout handle*
+
+A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.
 
 There are three kinds of layout handles:
 
-	*	Page type layout handles&mdash;Synonyms of the page type identifiers. Correspond to "full action names" of controller actions; for example, `catalog_product_view`
-	*	Page layout handles&mdash;Identify specific pages. Correspond to controller actions with parameters that identify specific pages; for example, `catalog_product_view_type_simple_id_128`
-	*	Arbitrary handles&mdash;Do not correspond to any page type, but other handles use them by inclusion.
+* Page type layout handles: Synonyms of the page type identifiers. Corresponds to "full action names" of controller actions; for example, `catalog_product_view`
+* Page layout handles: Identifies specific pages. Correspond to controller actions with parameters that identify specific pages; for example, `catalog_product_view_type_simple_id_128`
+* Arbitrary handles: Does not correspond to any page type, but other handles use them by inclusion.
 
-Base layout
+**To reviewer: is it true about handle?**
 
-:	Layout provided by Magento that contains view files common for all areas (that is, common view files for `adminhtml`, `frontend`, and any other Magento areas). Each area also has its own default layout.
+-->
 
+<u> Layout file types: by location </u>
+
+*Base layout*
+
+Layout files provided by modules. Conventional location: `app/code/<Vendor>/<Module>/view/`
+
+<!--
 Default layout
 
 :	Layout provided by Magento, extension provider, or in-house developer. A default layout defines the default look and feel of the storefront. Unlike earlier versions of Magento, you should not change the default layout directly and you do not have to copy the default layout to start developing a custom layout.
 
 Instead, you override layout behavior by modifying only the page elements you want to change.
+
+-->
+
+Theme layout
+
+Layout files provided by themes. Conventional locations:
+
+* app/design/<area>/<Vendor>/theme/
 
 Extending layout
 
