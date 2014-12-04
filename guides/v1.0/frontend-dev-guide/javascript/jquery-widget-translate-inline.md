@@ -2,13 +2,13 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: jQuery translateinline widget
-menu_title: jQuery translateinline widget
+title: jQuery translateInline widget
+menu_title: jQuery translateInline widget
 menu_order: 6
 github_link: frontend-dev-guide/javascript/jquery-widget-translate-inline.md
 ---
 
-<h2 id="fedg_translate-widget_overview">About the translateinline widget</h2>
+<h2 id="fedg_translate-widget_overview">Overview</h2>
 
 The translateinline widget enables users to provide translations for storefront page strings when browsing the pages. The translate inline functionality has the following UI elements:
 
@@ -33,7 +33,7 @@ The default dialog and translation form look like the following:
 
 ![Default inline translation form]({{ site.baseurl }}common/images/widget_translateinline_default-form.png)
 
-<h2 id="fedg_translate-widget_opt">translateinline options</h2>
+<h2 id="fedg_translate-widget_opt">Options for the translateinline widget</h2>
 
 The translateinline widget has the following options:
 

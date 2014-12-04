@@ -14,239 +14,201 @@ github_link: install-gde/install/install-web.md
 See one of the following sections:
 
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-start">Getting started with your installation</a>
-*	<a href="#instgde-install-magento">Installing the Magento software</a>
+*	<a href="#instgde-install-magento-web">Installing the Magento software using the web-based wizard</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
+
+This section discusses how to run the web-based installer for Magento 2. To install Magento 2 from the command line, see <a href="#running-the-command-line-installer">Running the command-line installer</a>.
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
-Before you begin, make sure that:
+Before you begin, make sure you completed all of the following tasks:
 
-1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prequisites for installing Magento</a>.
-3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
+*	<a href="#prerequisites">Prerequisites</a>
+*	<a href="#installing-composer">Installing Composer</a>
+*	<a href="#updating-installation-dependencies">Updating installation dependencies</a>
 
-<h2 id="instgde-install-start">Getting started with your installation</h2>
+**Note**: If you get errors during the installation, see <a href="#troubleshooting">Troubleshooting</a>.
 
-After you complete the tasks discussed in the preceding section, update Composer and run the installer:
+<h2 id="instgde-install-magento-web">Installing the Magento software using the web-based wizard</h2>
 
-1.	Log in to your Magento server as a user with `root` privileges.
-2.	Change to the Magento `setup` directory. For example,
+The web-based installer has a multi-page format that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
 
-	`cd /var/www/html/magento2/setup`
+In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.
 
-3.	Enter `composer install`
+To run the web-based installer:
 
-	This command updates package dependencies and can take a few minutes to complete.
+1.	Start a web browser.
 
-4.	Continue with the next section.
+2.	Enter the following URL in the browser's address or location bar:
 
-<h2 id="instgde-install-magento-web">Installing the Magento software using the web-based installer</h2>
+	<pre>http://[Magento host or IP]/[path to Magento root]/setup</pre>
+	
+	For example, if the Magento server's IP address is 192.0.2.10 and you installed Magento 2 in the <tt>magento2</tt> directory relative to the web server's docroot, and you did not configure a Virtual Host, enter:
+	
+	<pre>http://192.0.2.10/magento2/setup</pre>
+	
+3.	On the initial page, click **Agree and Set Up Magento**.
 
-This section discusses how to run the Magento command-line installer. The installer is designed to be run multiple times if necessary so you can:
+4.	Continue with the following sections in the order presented to complete the installation.
 
-*	Provide different values
+<h3>Step 1: Readiness Check</h3>
 
-	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options
+1.	Click **Start Readiness Check**.
 
-*	Correct mistakes in previous installations
-*	Create additional Magento administrators
-*	Install Magento in a different database instance
+	If any errors display, you must resolve them before you continue.
 
-<div class="bs-callout bs-callout-info" id="info">
+	Click **More detail** if available to see more information about each check.
+	
+2.	Click **Next**.
 
-<span class="glyphicon-class"><p>The installer doesn't overwrite the Magento database if you install the Magento software in the same database instance.</span>
-</div>
+<h3>Step 2: Add a Database</h3>
 
+1.	Enter the following information:
 
-Before you begin, you can run the following commands to find values for some required options:
-
-<table>
+	<table>
 	<tbody>
 		<tr>
-			<th>Installer option</th>
-			<th>Command</th>
+			<th>Item</th>
+			<th>Description</th>
 		</tr>
 	<tr>
-		<td>Language</td>
-		<td><code>php -f setup/index.php help languages</code></td>
+		<td>Database Server Host</td>
+		<td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
 	</tr>
 	<tr>
-		<td>Time zone</td>
-		<td><code>php -f setup/index.php help timezones</code></td>
+		<td>Database Server Username</td>
+		<td>Enter the user name of the Magento database instance owner.</td>
 	</tr>
 	<tr>
-		<td>Currency</td>
-		<td><code>php -f setup/index.php help currencies</code></td>
+		<td>Database Server Password</td>
+		<td>Enter the Magento database user's password, if any. Leave this field blank if you did not configure a password.</td>
+	</tr>
+	<tr>
+		<td>Database Name</td>
+		<td>Enter the Magento database instance name.</td>
+	</tr>
+	<tr>
+		<td>Table prefix</td>
+		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
+		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 	</tr>
 	</tbody>
-	</table>The format of the command follows:
+	</table>
+	
+2.	Click **Test Connection and Authentication**.
 
-`php -f index.php install [--[installation option name]=[installation option value] ...`
+	The message `Test connection successful` displays to confirm the database is reachable and the user name and password you entered are correct.
+	
+	If errors display, verify the information you entered, verify the database is reachable from the web server, and try again.
+	
+3.	Click **Next**.
 
-The following table discusses the meanings of installation option names and values. Some examples are provided in <a href="{{ site.gdeurl }}install-gde/install/install-samples.html">Sample installation commands</a>.
+<h3>Step 3: Web Configuration</h3>
 
-<table>
+1.	Enter the following information:
+
+	<table>
 	<tbody>
 		<tr>
-			<th>Name</th>
-			<th>Value</th>
-			<th>Required?</th>
+			<th>Item</th>
+			<th>Description</th>
 		</tr>
-		<tr>
-		<td>base_url</td>
-		<td><p>Base URL to use to access the Magento Admin and your Magento storefront.</p>
-		<p>To run Magento on localhost, you can use either <code>http://localhost</code> or <code>http://127.0.0.1</code>.</p>
-		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p></td>
-		<td>Yes</td>
+	<tr>
+		<td>Your Store Address </td>
+		<td><p>Enter the URL, *including scheme and trailing slash*, by which users access your storefront.</p>
+		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p>
+		<p><strong>Important</strong>: Your URL <em>must</em> start with the scheme and <em>must</em> end with a slash (/) or the storefront and Admin will be inaccessible after installation.</p></td>
 	</tr>
 	<tr>
-		<td>backend_frontname</td>
-		<td>Path to access the Magento Admin. This path is appended to Base URL.
-For example, if Base URL is http://www.example.com and Admin Path is `admin`, the Admin Panel's URL is `http://www.example.com/admin`&mdash;provided you configured your web server for server rewrites.</td>
-		<td>Yes</td>
+		<td>Magento Admin Address </td>
+		<td>Enter the relative URL by which to access the Magento Admin.</td>
 	</tr>
-	<tr>
-	<tr>
-		<td>db_host</td>
-		<td><p>Use any of the following:</p>
-		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> if your database serve is on the same host as your web server.</li>
-		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
-		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>localhost:9000</code></p>
-</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>db_name</td>
-		<td>Name of the Magento database instance in which you want to install the Magento database tables.</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>db_user</td>
-		<td>User name of the Magento database instance owner.</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>db_pass</td>
-		<td>Magento database instance owner's password.</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>db_prefix</td>
-		<td>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already. In that case, use a prefix to identify the Magento tables for this installation.
-Some customers have more than one Magento instance running on a server with all tables in the same database. This option enables those customers to share the database server with more than one Magento installation.</td>
-		<td>No</td>
-	</tr>
-
-		<td>admin_firstname</td>
-		<td>Magento administrator user's first name.</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>admin_lastname</td>
-		<td>Magento administrator user's last name.</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>admin_email</td>
-		<td>Magento administrator user's e-mail address.</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>admin_username</td>
-		<td>Magento administrator user name.</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>admin_password</td>
-		<td>Magento administrator user password.</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>language</td>
-		<td>:anguage code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php -f setup/index.php help languages</code> from the <code>setup</code> directory.)</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>currency</td>
-		<td>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php -f setup/index.php help currencies</code> from the <code>setup</code> directory.)</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>timezone</td>
-		<td>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php -f setup/index.php help timezones</code> from the <code>setup</code> directory.)</td>
-		<td>Yes</td>
-	</tr>
-	<tr>
-		<td>use_secure</td>
-		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>.</p></td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>base_secure_url</td>
-		<td><p><code>1</code> means SSL is preferred in Magento URLs designed to use it (for example, the checkout page). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> means SSL is not used.</p></td>
-		<td>No</td>
-	</tr>
-
-	<tr>
-		<td>use_secure_admin</td>
-		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> means you do not use SSL with the Admin.</p></td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>admin_use_security_key</td>
-		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>.</p>
-		<p><code>0</code> disables the use of the key.</p></td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>session_save</td>
-		<td><p>Use any of the following:</p>
-		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
-		<li><code>db.files</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li></ul></td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>key</td>
-		<td>If you have one, specify a key to encrypt sensitive data (such as passwords and personally identifiable customer information) in the Magento database. If you don't have one, Magento generates one for you.</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>db_model</td>
-		<td>Advanced MySQL configuration parameter. Change the default, `db_model`, only if you are an experienced database administrator.</td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>db_init_statements</td>
-		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
-		<td>No</td>
-	</tr>
-
-
 	</tbody>
-</table>
+	</table>
+	
+2.	Optionally click **Advanced Options** and enter the following information:
 
-<h3 id="instgde-install-ex">Sample installations</h3>
+	<table>
+	<tbody>
+	<tr>
+			<th>Item</th>
+			<th>Description</th>
+		</tr>
+	<tr>
+		<td>HTTPS Options</td>
+		<td>Select the check box to enable the use of Secure Sockets Layer (SSL) in the indicated URL. Make sure your web server supports SSL before you select either check box.</td>
+	</tr>
+	<tr>
+		<td>Apache Rewrites</td>
+		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="#apache">Apache</a>.</td>
+	</tr>
+	<tr>
+		<td>Encryption Key</td>
+		<td><p>Magento uses an encryption key to encrypt passwords and personally identifiable customer information in the database.</p>
+		<p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
+		<p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
+	</tr>
+	</tbody>
+	</table>
+	
+12.	Click **Next**.
 
-For sample installation commands, see <a href="{{ site.gdeurl }}install-gde/install/install-samples.html">Sample installation commands</a>.
+<h3>Step 4: Customize Your Store</h3>
 
-<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
+1.	From the **Store Default Time Zone** list, click the name of your store's time zone.
 
-This section discusses how to install the Magento software after you installed it previously. You might do this in an development environment especialy to get all the latest code changes.
+2.	From the **Store Default Currency** list, click the default currency to use in your store.
 
-To reinstall the Magento software:
+3.	From the **Store Default Language** list, click the default language to use in your store.
 
-1.	Optionally delete and re-create the database instance.
-2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
-3.	Enter the following commands in the order shown:
+4.	Click **Next**.
 
-	<pre>cd [your Magento install dir]/setup
-git pull
-composer install</pre>
+<h3>Step 5: Create Admin Account</h3>
 
-4.	Repeat the tasks discussed in <a href="#instgde-install-magento">Installing the Magento software</a>.
+1.	Enter the following information:
 
+	<table>
+	<tbody>
+	<tr>
+			<th>Item</th>
+			<th>Description</th>
+		</tr>
+	<tr>
+		<td>New Username</td>
+		<td>Enter a user name with which to log in to the Magento Admin. This user is an administrator and can create other users, including other administrative users.</td>
+	</tr>
+	<tr>
+		<td>New E-Mail</td>
+		<td>Enter the Magento administrator's e-mail address.</td>
+	</tr>
+	<tr>
+		<td>New Password</td>
+		<td>Enter the administrator's password.</td>
+	</tr>
+	<tr>
+		<td>Confirm Password</td>
+		<td>Enter the password again for verification.</td>
+	</tr>
+	</tbody>
+	</table>
+
+2.	Click **Next**.
+
+<h3>Step 6: Install</h3>
+
+Click **Install Now**.
+
+You have the following options:
+
+*	To see installation progress or error details, click **Console Log**.
+*	In the event of problems, click **Previous** to go back and fix incorrect entries.
+*	To try the installation again in the event of failure, click **Try Again**.
+
+<h3>Installation Success</h3>
+
+The message `Success` displays to indicate a successful installation.
+
+If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="#troubleshooting">Troubleshooting</a>.
+
+You can also run the installer again.

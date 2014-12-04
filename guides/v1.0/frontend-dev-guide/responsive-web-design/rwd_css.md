@@ -28,7 +28,7 @@ CSS snippet:
 
 <script src="https://gist.github.com/xcomSteveJohnson/be946288f49b228e04df.js"></script>
 
-<h2 id="fedg_rwd_ex">CSS examples from the Blank theme</h2>
+<h2 id="fedg_rwd_ex">Blank theme CSS examples</h2>
 
 To change the position of elements depending on the screen width, you must redefine which styles control their behavior. The following example compares a two-column display for mobile and desktop viewports.
 

@@ -9,11 +9,11 @@ menu_node: parent
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 ---
 
-<h2 id="fedg_rwd_overview">Overview of Responsive Web Design</h2>
+<h2 id="fedg_rwd_overview">Overview</h2>
 
 <a href="http://www.smashingmagazine.com/2011/01/12/standard-for-responsive-web-design/" target="_blank">Responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as *viewports*) without maintaining completely separate style sheets for each.
 
-The Magento system ships with a blank responsive theme and these topics discuss how to use <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">CSS</a>, <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">JavaScript</a>, and <a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_blocks.html">predefined blocks</a> to build a responsive design from there.
+<p>The Magento system ships with a blank responsive theme. To build a responsive design, see <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html">cascading style sheets (CSS)</a>, <a href="{{ site.gdeurl }}frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>, and <a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_blocks.html">blocks in a responsive design</a>.</p>
 
 <h3 id="fedg_rwd_terms">Terms used</h3>
 
@@ -30,7 +30,7 @@ Breakpoint
 :	The viewport size at which the width of the user’s screen causes your responsive layout to change.
 
 
-<h2 id="fedg_rwd_blank">About the Blank Theme</h2>
+<h2 id="fedg_rwd_blank">The Blank theme</h2>
 
 You should use the Blank responsive theme as your template for theme development. It contains examples of mobile-first responsive design, including:
 
@@ -43,7 +43,7 @@ You should use the Blank responsive theme as your template for theme development
 *	checkout progress
 *	different page elements (such as forms, tables, predefined properties for moving and showing or hiding elements depending on the device's screen width, and so on)
 
-<h3 id="fedg_rwd_blank_location">Location of the Blank Theme</h3>
+<h3 id="fedg_rwd_blank_location">Blank theme location</h3>
 
 The blank theme is located as follows:
 
@@ -59,7 +59,7 @@ The blank theme is located as follows:
 │    │    │   │   ...
 │    │    │   │   ├── media/</pre>
 
-<h3 id="fedg_rwd_blank_ex">Examples of the Blank Theme</h3>
+<h3 id="fedg_rwd_blank_ex">Blank theme examples</h3>
 
 The following figures show the same page built on the Blank theme on mobile and desktop devices.
 

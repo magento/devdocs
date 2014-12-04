@@ -8,9 +8,9 @@ menu_order: 5
 github_link: frontend-dev-guide/javascript/jquery-widget-tabs.md
 ---
 
-<h2 id="fedg_tabs-widget_overview">About the Tabs Widget</h2>
+<h2 id="fedg_tabs-widget_overview">Overview</h2>
 
-The Magento tabs widget is a customization of the <a href="http://api.jqueryui.com/tabs/" target="_blank">jQuery UI tabs widget</a>, which implements tab pages as single content area with multiple panels, each associated with a header in a list.
+The Magento tabs widget is a customization of the jQuery <a href="http://api.jqueryui.com/tabs/" target="_blank">Tabs Widget</a>, which implements tab pages as single content area with multiple panels, each associated with a header in a list.
 
 Specifically, the tabs widget implements the following:
 
@@ -21,7 +21,7 @@ Specifically, the tabs widget implements the following:
 
 The Tabs widget source is located in the `[your Magento install dir]/pub/lib/mage/backend` directory. All tab pages in Magento Admin panel are implemented using the tabs widget.
 
-<h2 id="fedg_tabs_init">Instantiating the Tabs Widget</h2>
+<h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
 
 Example 1, where the first tab is active by default:
 
@@ -31,7 +31,7 @@ Example 2:
 
 <pre>$('#tabs').tabs({destination:'#edit_form'});  </pre>
 
-<h2 id="fedg_tabs_options">Tabs Widget Options</h2>
+<h2 id="fedg_tabs_options">Options for the tabs widget</h2>
 
 The tabs widget has the following options:
 
@@ -42,7 +42,7 @@ The tabs widget has the following options:
 *	<a href="#fedg_tabs_options-tabsBlockPrefix">tabsBlockPrefix</a>
 *	<a href="#fedg_tabs_options-shadowTabsShadow">shadowTabsShadow</a>
 
-The Magento tabs widget has the same options as the <a href="http://api.jqueryui.com/tabs/" target="_blank">jQuery UI tabs widget</a>, plus several custom options that are discussed in the sections that follow.
+The Magento tabs widget has the same options as the jQuery <a href="http://api.jqueryui.com/tabs/" target="_blank">Tabs Widget</a>, plus several custom options that are discussed in the sections that follow.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p>
@@ -110,9 +110,9 @@ shadowTabsShadow tabs load in the background.
     ...
 }</pre>
 
-<h2 id="fedg_tabs_events-methods">Using Events and Methods</h2>
+<h2 id="fedg_tabs_events-methods">Events and methods for the tabs widget</h2>
 
-The Magento tabs widget has the same events and methods as the <a href="http://api.jqueryui.com/tabs/" target="_blank">jQuery UI tabs widget</a>, plus custom events that are discussed in this section.
+The Magento tabs widget has the same events and methods as the jQuery <a href="http://api.jqueryui.com/tabs/" target="_blank">Tabs Widget</a>, plus custom events that are discussed in this section.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p>
@@ -131,5 +131,5 @@ The tabs widget is subscribed to the following events:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery TranslateInline widget</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a>
 *	<a href="{{ site.gdeurl }}coding-standards/jquery-widget-guidelines.html">jQuery widget coding standard</a>

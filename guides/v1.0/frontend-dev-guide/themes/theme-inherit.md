@@ -41,10 +41,10 @@ The Orange theme inherits from the Blank theme:
 </div>
 
 
-<h2 id="theme-inherit-static">Override static view files (styles, JavaScript, images, fonts)</h2>
+<h2 id="theme-inherit-static">Override static view files</h2>
 
-Styles, JavaScript, images and fonts are static view files (according to Magento classification).<!--ADDLINK-->
-To customize static view files defined in the parent theme or in the module view or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further.
+Static view files are styles, JavaScript, images, and fonts (according to Magento classification).<!--ADDLINK-->
+To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further.
 
 The particular folders, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
 
@@ -95,7 +95,10 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 
 
 <h2 id="theme-inherit-static">Override dynamic view files: templates</h2>
-Templates are dynamic view files (according to Magento classification<!--ADDLINK-->). Module context is always known for templates. The fallback scheme for templates is the following:
+
+Dynamic view files are templates (according to Magento classification). <!--ADDLINK-->
+
+Module context is always known for templates. The fallback scheme for templates is:
 
 1. Current theme templates: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/templates`
 2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/templates`

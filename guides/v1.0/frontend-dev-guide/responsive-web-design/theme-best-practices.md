@@ -16,7 +16,7 @@ Your main tool in responsive design is CSS. A responsive site usually uses <a hr
 
 There are also scripts like <a href="http://headjs.com" target="_blank">HeadJS</a> that assign class names relevant to the current browser, resolution, portrait or landscape viewing, and so on. This allows specifying different CSS instructions for each combination of these characteristics.
 
-<h2 id="layout_theme_bestpr_browser">Solving Browser-Specific Issues</h2>
+<h2 id="layout_theme_bestpr_browser">Browser-specific issues</h2>
 
 Internet Explorer has the most CSS compatibility or behavior issues of all modern web browsers. Before responsive web design, to make CSS work in Internet Explorer, you could use a separate `styles-ie.css` that contained extra styles and instructions. In the Magento system, we use <a href="http://headjs.com" target="_blank">HeadJS</a>, a script that detects the browser type and assigns the corresponding value to the class attribute of the `<html>` tag.
 

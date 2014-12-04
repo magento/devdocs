@@ -42,13 +42,13 @@ Use the following table to verify you have the correct prerequisites to install 
 			<th>For more information</th>
 		</tr>
 	<tr>
-		<td>Apache 2.2 or later</td>
+		<td>Apache 2.2 or 2.4</td>
 		<td>Ubuntu: <code>apache -v</code><br>
 		CentOS: <code>httpd -v</code></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></td>
 	</tr>
 	<tr>
-		<td>PHP 5.4.11 or 5.5.x</td>
+		<td>PHP 5.4.x (where x = 11 or later) or 5.5.x</td>
 		<td><code>php -v</code></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a></td>
 	</tr>
@@ -69,8 +69,9 @@ After verifying your prerequisites, perform the following tasks in order to prep
 <h3>Step 3: Installing and verifying</h3>
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>
-1.	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Running the web-based installer</a>
-2.	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Running the command-line installer</a>
+2.	Install Magento:
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Running the web-based installer</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Running the command-line installer</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verifying the installation</a>
 
 <h2>Required server permissions</h2>

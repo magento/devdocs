@@ -27,6 +27,7 @@ For example, if you need to change the color of some page element, you can do th
 <p>The Magento system provides LESS preprocessor out of the box. It is located in your <code>[Magento install dir]/lib/internal/Magento/Framework/css/PreProcessor</code>.</p>
 
 <p class="q">Reviewer: What does the reader need to know about the LESS preprocessor? The following list seems random to me and doesn't spell out how the user can use the LESS processor.</p>
+
 The LESS preprocessor provides these benefits:
 
 *	A built-in compilation in Magento to support multi-level theme inheritance and Magento publisher behavior.
@@ -46,16 +47,20 @@ The LESS preprocessor provides these benefits:
 
 To use the @magento_import feature:
 
-*	<p><code>@magento_import</code> must contain the file path. You can omit the file extension.</p>
-    <p>The file path can be written with either single or double quotes.</p>
-    <p><b>Example:</b></p>
-    <pre>//@magento_import "path_to/some/file";
-    //@magento_import 'path_to/some/other_file.less';</pre>
-    <p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
-    <p><b>Example:</b></p>
-    <script src="https://gist.github.com/xcomSteveJohnson/f03b22f16fa2022cb0d7.js"></script>
-* Create a file in a view folder of your module by the path specified by a <code>@magento_import</code> instruction.
-* Enable this module.
+<ol>
+<li><p><code>@magento_import</code> must contain the file path. You can omit the file extension.</p>
+<p>The file path can be written with either single or double quotes.</p>
+<p><b>Example:</b></p>
+<pre>//@magento_import "path_to/some/file";
+//@magento_import 'path_to/some/other_file.less';</pre>
+    </li>
+<li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
+<p><b>Example:</b></p>
+<script src="https://gist.github.com/xcomSteveJohnson/f03b22f16fa2022cb0d7.js"></script></li>
+
+<li><p>Create a file in a view folder of your module by the path specified by a <code>@magento_import</code> instruction.</p></li>
+<li><p>Enable this module.</p></li>
+</ol>
 
 The LESS preprocessor:
 
@@ -124,7 +129,7 @@ The generated CSS file is located in the same directory where the compilation ra
 </table>
 
 #### Related topics:
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/css-themes.html">CSS in themes</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-xml.html">XML in layouts</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 
