@@ -35,7 +35,7 @@ The web interface is a multi-page wizard that enables you to go back and forward
 
 In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.
 
-To run the web-based installer:
+To install the Magento software using a web interface:
 
 1.	Start a web browser.
 
