@@ -1,30 +1,13 @@
 ---
 layout: default
-group: install
+group: install2
 subgroup: Getting Started
 title: Installation overview
 menu_title: Installation overview
-menu_node: parent
+menu_node: 
 menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
-
-This guide discusses how to install Magento and extensions using Composer.
-
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
-
-We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.
-
-Composer provides you with the following advantages:
-
-*	Enables you to reuse third-party libraries without bundling them with source code
-*	Component-based architecture with robust dependency management
-*	Manages dependencies to reduce extension conflicts and compatibility issues
-*	Versioned dependencies
-*	<a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a>
-*	Supports PHP Framework Interoperability standard
-
-We'll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.
 
 <h2 id="instgde-overview-roadmap">High-level installation roadmap</h2>
 
