@@ -46,7 +46,7 @@ The Orange theme inherits from the Blank theme:
 Static view files are styles, JavaScript, images, and fonts (according to Magento classification).<!--ADDLINK-->
 To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further.
 
-The particular folders, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
+The particular directories, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
 
 a. If module context is not defined for a file:
 
@@ -96,7 +96,7 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 
 <h2 id="theme-inherit-static">Override dynamic view files: templates</h2>
 
-Dynamic view files are templates (according to Magento classification). <!--ADDLINK-->
+Templates are dynamic view files (according to Magento classification). <!--ADDLINK-->
 
 Module context is always known for templates. The fallback scheme for templates is:
 
@@ -122,16 +122,25 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
 You can find out what exactly code changes are required to perform this and other tasks in the Templates section. <!--ADDLINK-->
 
-<h2 id="theme-inherit-layout">Override dynamic view files: layouts</h2>
-Layout files are dynamic view files, for which the module context is always defined. Layouts processing mechanism does not fallback. The system collects layout files in the following order:
+<h2 id="theme-inherit-layout">Extending layouts</h2>
+Layout files are dynamic view files, for which the module context is always defined. Layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
 
 1. Currrent theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout`
 2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
 3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
 
-Unlike templates or images, layout can be not only overridden, but also extended.
+Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme merging layout files.
+
+
+To add a theme merging file:
+
+* Place your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
+
+For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a> article.
+
 <h3 id="theme-inherit-layout-over">Override layouts</h3>
 
+Though overriding layouts is not recommended, it is still possible, and might be a solution for certain customization tasks.
 To override the instructions from an ancestor theme layout file:
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/<ancestor_theme>/` directory.
@@ -141,18 +150,6 @@ To override module layout instructions (<a href="{{ site.gdeurl }}frontend-dev-g
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 
 
-For more information about overriding layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a> article.
-
-<h3 id="theme-inherit-layout-extend">Extend layouts</h3>
-
-Rather than copy extensive layout code and modify what you want to change, you can create
-a theme merging file with instructions providing the required changes. These instructions will be merged when the system collects layouts.
-
-To add a theme merging file:
-
-* Place your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
-
-For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a> article.
 
 <u>Example</u>:
 
@@ -162,17 +159,6 @@ To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/
 <pre> &lt;remove&nbsp;name=&quot;report.bugs&quot;/&gt; </pre>
 
 
-<h2 id="theme-inherit-locale">Override locales</h2>
-Locales (dictionaries) are CSV text documents containing translation strings for interface elements and system messages.
-Locales can be stored in modules, themes, packages and in the database.
-The system collects translations for a language in the following order:
-
-1. Modules locales: `app/code/<Vendor>/<Module>/i18n/`.
-2. Current theme locales: `app/design/frontend/<Vendor>/<theme>/i18n/`.
-3. Language package: `app/i18n/<Vendor>/<package>`.
-4. Tranlsation from database.
-
-If there are different translations for a key, the translation priority is defined by the same order. For modules, the priority is defined by the order set in `app/etc/config.php`.
 
 
 
