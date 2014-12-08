@@ -245,61 +245,11 @@ Enables you to ignore some layout tags when generating a layout.
    <li><code>&lt;move element="name.element" destination="name.specified"/></code></li>
 </ul>
 <p><b>Example:</b></p>
-Initial layout update:
 
-**Samples are outdated!!!**
-
+Removing the `report.bugs` block:
 <pre>
-&lt;layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_default&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.1&quot;&nbsp;output=&quot;toHtml&quot;&nbsp;template=&quot;block1.phtml&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.2&quot;&nbsp;as=&quot;block_2&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.3&quot;&nbsp;as=&quot;block_3&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.1&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;reference&nbsp;name=&quot;existing.block&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setTemplate&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;template.phtml&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/reference&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.2&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_default&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_current&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;layout_handle_default&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;block.2&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;container.1&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;existing.block&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_current&gt;
-&lt;/layout&gt;
+&lt;remove&nbsp;name=&quot;report.bugs&quot;/&gt;
 </pre>
-
-Layout generated for `layout_handle_current` handle after processing the `<remove>` directives:
-<script src="https://gist.github.com/xcomSteveJohnson/1e74bc4258bf27f1e126.js"></script>
-<script src="https://gist.github.com/xcomSteveJohnson/d0b5ccf6d5dad7796536.js"></script>
-<pre>
-&lt;layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_default&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.1&quot;&nbsp;output=&quot;toHtml&quot;&nbsp;template=&quot;block1.phtml&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.2&quot;&nbsp;as=&quot;block_2&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block.3&quot;&nbsp;as=&quot;block_3&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.1&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;reference&nbsp;name=&quot;existing.block&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setTemplate&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;template.phtml&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/reference&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;container.2&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_default&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout_handle_current&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;layout_handle_default&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;block.2&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;container.1&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;existing.block&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout_handle_current&gt;
-&lt;/layout&gt;
-</pre>
-
 
 <h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></h3>
 <p>Cause updates in <code>&lt;referenceBlock></code> to apply to the corresponding <code>&lt;block></code> or <code>&lt;container></code>.</p>
@@ -420,11 +370,5 @@ An example of a layout declaration with before and after usage follows:</p>
       </tr>
    </tbody>
 </table>
-<h4 id="related-topics">Related topics</h4>
-<ul>
-   <li><a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>
-   <li><a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
-   <li><a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
-   <li><a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
-</ul>
+
 
