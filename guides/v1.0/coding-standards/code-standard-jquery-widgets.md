@@ -4,8 +4,8 @@ group: coding-standards
 subgroup: Coding standards
 title: jQuery widget coding standard
 menu_title: jQuery widget coding standard
-menu_order: 2
-github_link: coding-standards/coding-standard-jquery-widgets.md
+menu_order: 4
+github_link: coding-standards/code-standard-jquery-widgets.md
 ---
 
 <h2 id="fedg_jq-widget-coding-stnd_overview">Overview</h2>
