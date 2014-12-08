@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: R_Installation
-title: Install Magento software through the command line
-menu_title: Install Magento software through the command line
+title: Install Magento software using the command line
+menu_title: Install Magento software using the command line
 menu_node:
 menu_order: 7
 github_link: install-gde/install/install-cli.md
@@ -71,15 +71,15 @@ Before you begin:
 		</tr>
 	<tr>
 		<td>Language</td>
-		<td><code>php -f index.php help languages</code></td>
+		<td><code>php -f index.php help language</code></td>
 	</tr>
 	<tr>
 		<td>Time zone</td>
-		<td><code>php -f index.php help timezones</code></td>
+		<td><code>php -f index.php help timezone</code></td>
 	</tr>
 	<tr>
 		<td>Currency</td>
-		<td><code>php -f index.php help currencies</code></td>
+		<td><code>php -f index.php help currency</code></td>
 	</tr>
 	</tbody>
 	</table>
@@ -173,17 +173,17 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tr>
 	<tr>
 		<td>language</td>
-		<td>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php -f index.php help languages</code> from the <code>setup</code> directory.)</td>
+		<td>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php -f index.php help language</code> from the <code>setup</code> directory.)</td>
 		<td>Yes</td>
 	</tr>
 	<tr>
 		<td>currency</td>
-		<td>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php -f index.php help currencies</code> from the <code>setup</code> directory.)</td>
+		<td>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php -f index.php help currency</code> from the <code>setup</code> directory.)</td>
 		<td>Yes</td>
 	</tr>
 	<tr>
 		<td>timezone</td>
-		<td>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php -f index.php help timezones</code> from the <code>setup</code> directory.)</td>
+		<td>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php -f index.php help timezone</code> from the <code>setup</code> directory.)</td>
 		<td>Yes</td>
 	</tr>
 	<tr>

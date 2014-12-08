@@ -13,16 +13,16 @@ github_link: coding-standards/bk-coding-standards.md
 <h2 id="coding-standards">Coding standards</h2>
 <p>To code extensions, follow the Magento standards for code:</p>
 <ul>
-<li><a href="{{ site.gdeurl }}coding-standards/coding-standard-demarcation.html">Code demarcation standard</a></li>
+<li><a href="{{ site.gdeurl }}coding-standards/code-standard-demarcation.html">Code demarcation standard</a></li>
 <li><a href="{{ site.gdeurl }}coding-standards/code-standard-php.html">PHP coding standard</a></li>
 <li><a href="{{ site.gdeurl }}coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
-<li><a href="{{ site.gdeurl }}coding-standards/coding-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
+<li><a href="{{ site.gdeurl }}coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
 </ul>
 <h2 id="doc-block-standards">Documentation block standards</h2>
 <p>To add or update documentation for extensions, follow the Magento standards for documentation blocks:</p>
 <ul>
 <li><a href="{{ site.gdeurl }}coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
-<li><a href="{{ site.gdeurl }}coding-standards/docblock-standard-javascript-general.html">JavaScript DocBlock standard</a></li>
+<li><a href="{{ site.gdeurl }}coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
 </ul>
 <h2 id="testing">Testing</h2>
 

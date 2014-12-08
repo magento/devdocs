@@ -33,6 +33,6 @@ The following figure shows a sample Magento Admin page. If it displays as follow
 
 If the page displays unconfigured (no styles, only text), see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>.
 
-If you get a 404 (Not Found) error similar to the following, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_access-browser.html">Cannot access Magento in a web browser</a>.
+If you get a 404 (Not Found) error similar to the following, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a>.
 
 `The requested URL /magento2index.php/admin/admin/dashboard/index/key/0c81957145a968b697c32a846598dc2e/ was not found on this server.`
