@@ -115,7 +115,7 @@ $newCustomer = $this->customerBuilder->create();
    <li>Management interfaces</li>
    <li>Metadata interfaces</li>
 </ul>
-<p>For file names and coding standards, follow the defined <a href="{{ site.gdeurl }}coding-standards/php-coding-standards.html">PHP coding standards</a>.</p>
+<p>For file names and coding standards, follow the defined <a href="{{ site.gdeurl }}coding-standards/code-standard-php.html">PHP coding standards</a>.</p>
 <p>Place service interfaces in the top-level <b>Api</b> directory for a module.</p>
 <h3 id="repository-interfaces">Repository interfaces</h3>
 <p>Repository interfaces provide access to persistent data entities.</p>
