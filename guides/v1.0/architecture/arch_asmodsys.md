@@ -9,7 +9,7 @@ github_link: architecture/arch_asmodsys.md
 ---
 
 <h2 id="m2arch-asmodsys-overview"> Overview</h2>
-Intro/overview text here
+As explained in the <a href="{{ site.gdeurl }}architecture/arch_whatis.html">What is Magento?</a> topic, Magento has several components that are used to build custom web sites, applications, and integrated systems.
 
 For more information about the components, refer to the following topics:
 
