@@ -4,6 +4,7 @@ title: Basics of Building a Service
 ---
  
 # Basics of Building a Service 
+Hello
 
 <p><a href="{{ site.githuburl }}guides/m2devgde/v1.0.0.0/svcs-framework/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
