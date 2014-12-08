@@ -40,4 +40,3 @@ The following diagram shows the components of the Magento architecture:
 * <a href="{{ site.gdeurl }}architecture/____.html">Magento framework</a>
 * <a href="{{ site.gdeurl }}architecture/____.html">Magento database</a>
 * <a href="{{ site.gdeurl }}architecture/____.html">Commonly used terms</a>
-

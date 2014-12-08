@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: R_Installation
-title: Installing Composer and cloning the Magento repository
-menu_title: Installing Composer and cloning the Magento repository
+title: Install Composer and clone the Magento repository
+menu_title: Install Composer and clone the Magento repository
 menu_node:
 menu_order: 2
 github_link: install-gde/install/composer-clone.md
@@ -11,9 +11,25 @@ github_link: install-gde/install/composer-clone.md
 
 #### Contents
 
+*	<a href="#instgde-overview-composer">Composer and Magento</a>
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>
-*	<a href="#instgde-prereq-compose-clone">Cloning the Magento GitHub repository</a>
-*	<a href="#instgde-prereq-compose-access">Setting file system permissions and ownership</a>
+*	<a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>
+*	<a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>
+
+<h2 id="instgde-overview-composer">Composer and Magento</h2>
+
+We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.
+
+Composer provides you with the following advantages:
+
+*	Enables you to reuse third-party libraries without bundling them with source code
+*	Component-based architecture with robust dependency management
+*	Manages dependencies to reduce extension conflicts and compatibility issues
+*	Versioned dependencies
+*	<a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a>
+*	Supports PHP Framework Interoperability standard
+
+We'll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
@@ -34,7 +50,7 @@ To install Composer:
 
 	CentOS: `service httpd restart`
 
-<h2 id="instgde-prereq-compose-clone">Cloning the Magento GitHub repository</h2>
+<h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
 
 To clone the Magento GitHub repository:
 
@@ -64,7 +80,7 @@ To clone the Magento GitHub repository:
 
 3.	Wait for the repository to clone on your server.
 
-<h2 id="instgde-prereq-compose-access">Setting file system permissions and ownership</h2>
+<h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
 
 After the clone is complete, set ownership of all Magento files and directories and make sure they are writable by that user.
 
@@ -109,4 +125,4 @@ find . -type f -exec chmod 600 {} \;</pre>
 
 #### Next step
 
-After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Updating installation dependencies</a>.
+After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.
