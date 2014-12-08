@@ -98,5 +98,5 @@ After you completed the tasks discussed in the preceding section, update depende
 
 #### Next step
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software through the web interface</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software through the command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software using the web interface</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>

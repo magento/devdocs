@@ -5,7 +5,7 @@ subgroup: Coding standards
 title: PHP coding standard
 menu_title: PHP coding standard
 menu_order: 2
-github_link: coding-standards/php-coding-standards.md
+github_link: coding-standards/code-standard-php.md
 ---
 
 <p>The Magento core development team uses a subset of the <a href="http://framework.zend.com/manual/1.12/en/coding-standard.html">Zend Framework Coding Standard for PHP</a>. Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>
@@ -38,12 +38,12 @@ github_link: coding-standards/php-coding-standards.md
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standard.coding-style.control-statements.if-else-elseif">If/Else/Elseif</a>. Partially automated by <code>PHP_CodeSniffer</code>.</li>
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.coding-style.control-statements.switch">Switch</a>. Not automated.</li>
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.documentation-format">Documentation Blocks -  Format</a>. Partially automated by <code>PHP_CodeSniffer</code>.</li>
-   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.files">Documentation Blocks -  Files</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standard</a>.</li>
-   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.classes">Documentation Blocks -  Classes</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standard</a>.</li>
+   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.files">Documentation Blocks -  Files</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standard-general.html">DocBlock standard</a>.</li>
+   <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.classes">Documentation Blocks -  Classes</a>. Not automated. See the exceptions listed <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standard-general.html">DocBlock standard</a>.</li>
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.coding-style.html#coding-standards.inline-documentation.functions">Documentation Blocks -   Functions</a>. Not automated.</li>
 </ul>
 <h2 id="doc-blocks">DocBlock standard</h2>
-<p>For details, see <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standards.html">DocBlock standard</a>.</p>
+<p>For details, see <a href="http://0.0.0.0:4000/guides/v1.0/coding-standards/docblock-standard-general.html">DocBlock standard</a>.</p>
 <h2>Exceptions to Zend Framework Coding standard</h2>
 <p>The Magento PHP coding standard deviates from the Zend Framework coding standard in a few specific areas.</p>
 <p>To ensure that Magento code is well-structured, readable, and easy to maintain, the Magento team uses the
