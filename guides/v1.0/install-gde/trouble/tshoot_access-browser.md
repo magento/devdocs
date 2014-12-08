@@ -2,15 +2,15 @@
 layout: default
 group: install
 subgroup: Z_Troubleshooting
-title: Cannot access Magento in a web browser
-menu_title: Cannot access Magento in a web browser
+title: Cannot access Magento software in a web browser
+menu_title: Cannot access Magento software in a web browser
 menu_node: 
 menu_order: 7
 github_link: install-gde/install/composer-clone.md
 ---
 
 
-<h2 id="install-trouble-web-browser">Cannot access Magento in a web browser</h2>
+<h2 id="install-trouble-web-browser">Cannot access Magento software in a web browser</h2>
 
 ### Symptom: The following message displays when you try to access the Magento storefront or Admin:
 
