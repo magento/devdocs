@@ -2,22 +2,24 @@
 layout: default
 group: get-started
 subgroup: B_Authentication
-title: Authentication
+title: Step 1. Authenticate
 menu_title: Step 1. Authenticate
 menu_order: 1
 menu_node: parent
 github_link: get-started/authentication/gs-authentication.md
 ---
 
-<h2 id="overview">Overview</h2>
-<p>The Magento web API framework enables you to make an API call in multiple ways.</p>
-<p>Read these sections to learn about:</p>
-<ul>
-<li><p><a href="#webapi-clients">Web API clients</a></p></li>
-<li><p><a href="#auth-method">Authentication methods by client</a></p></li>
-<li><p><a href="#resources">Which resources can you access?</a></p></li>
-<li><p><a href="#authenticate">How to authenticate</a></p></li>
-</ul>
+<h2 id="overview-authenticate">Overview</h2>
+<p>The Magento web API framework enables you to make a web API call through various <a href="#webapi-clients">web API clients</a>. You authenticate access to the web APIs by using the
+<a href="#auth-method">authentication method for the client</a>.</p>
+<p>Depending on whether you are a customer, admin, or guest user, you can access certain <a href="#resources">resources</a>.
+Customers can access resources that are configured with <code>anonymous</code> or <code>self</code> permission in the <code>webapi.xml</code> configuration file.
+Admins can access resources for which they are authorized.</p>
+<div class="bs-callout bs-callout-info" id="info">
+<p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p></div>
+<p>For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#configuration-options">webapi.xml configuration options</a>.</p>
+
+<p>Learn <a href="#authenticate">how to authenticate</a>.</p>
 <h2 id="webapi-clients">Web API clients</h2>
 <p>You can make web API calls through one of these clients:</p>
 <ul>
@@ -102,12 +104,7 @@ github_link: get-started/authentication/gs-authentication.md
       </td>
    </tr>
 </table>
-<h2 id="resources">Which resources can you access?</h2>
-<p>Customers can access resources that are configured with <code>anonymous</code> or <code>self</code> permission in the <code>webapi.xml</code> configuration file.</p>
-<p>Admins can access resources for which they are authorized.</p>
-<div class="bs-callout bs-callout-info" id="info">
-<p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p></div>
-<p>For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#configuration-options">webapi.xml configuration options</a>.</p>
+
 <h2 id="authenticate">How to authenticate</h2>
 <p>Depending on how you plan to access the web APIs, read the appropriate authentication section:</p>
 <ul>
