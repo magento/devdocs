@@ -2,14 +2,14 @@
 layout: default
 group: install
 subgroup: Verify
-title: Verifying your Magento installation
-menu_title: Verifying your Magento installation
+title: Verify the installation
+menu_title: Verify the installation
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/verify.md
 ---
 
-<h2 id="instgde-verify-front">Verifying the storefront</h2>
+<h2 id="instgde-verify-front">Verify the storefront</h2>
 
 Go to the storefront in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, enter it in your browser's address or location bar.
 
@@ -19,7 +19,7 @@ The following figure shows a sample storefront page. If it displays as follows, 
 
 If the page displays unconfigured (no styles, only text), see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a>.
 
-<h2 id="instgde-verify-admin">Verifying the Magento Admin</h2>
+<h2 id="instgde-verify-admin">Verify the Magento Admin</h2>
 
 Go to the Magento Admin in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URL is `admin`, enter `http://www.example.com/admin` in your browser's address or location bar.
 

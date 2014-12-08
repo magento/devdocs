@@ -114,7 +114,7 @@ github_link: get-started/gs-web-api-request.md
       </td>
       <td><pre>Authorization:&nbsp;Bearer&nbsp;&lt;TOKEN&gt;</pre>
       <p>Where <code>&lt;TOKEN&gt;</code> is the authentication token returned by the Magento token service.
-See <a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>.</p></td>
+See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Authentication</a>.</p></td>
    </tr>
    <tr>
       <td><pre>Accept</pre>

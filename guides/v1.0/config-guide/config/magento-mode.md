@@ -14,7 +14,8 @@ github_link: config-guide/config/magento-mode.md
 *	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-specify">Specify a mode</a>
-*	<a href="#mode-production-view">Running the static view file creation tool</a>
+*	<a href="#mode-production-view">static view file creation tool</a>
+*	<a href="#view-file-trouble">Troubleshooting</a>
 
 <h2 id="mode-introduction">Introduction to Magento modes</h2>
 You can run Magento in any of the following *modes*:
@@ -184,7 +185,7 @@ To set the Magento mode using your web server's environment:
 
 	`service httpd restart`
 	
-<h2 id="mode-production-view">Running the static view file creation tool</h2>
+<h2 id="mode-production-view">static view file creation tool</h2>
 In production mode, because static file URLs are created on the fly, you must write static files to the Magento docroot; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -194,7 +195,7 @@ In production mode, because static file URLs are created on the fly, you must wr
 
 To create static files:
 
-1.	Log in as or switch to the web server user.
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
 2.	Delete the contents of `[your Magento install dir]/pub/static`.
 3.	Run the static file creation tool from the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
@@ -215,7 +216,7 @@ The following table discusses the meanings of the options:
 		<td>--langs</td>
 		<td><p class="q">Reviewer: Is it comma-separated and is there another way to find the list?</p>
 		<p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>[your Magento install dir]/php -f index.php help languages</code>.</p></td>
+		<p>You can find the list by running <code>[your Magento install dir]/setup/php -f index.php help languages</code>.</p></td>
 	</tr>
 	<tr>
 		<td>--verbose</td>
@@ -238,3 +239,39 @@ The following table discusses the meanings of the options:
 </div>
 
 For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
+
+<h2 id="view-file-trouble">Troubleshooting</h2>
+This section discusses errors that result from view files creation tool without first <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installing the Magento software</a>.
+
+**Symptom**: Any of the following errors display when you run the static file creation tool:
+
+<pre>PHP Fatal error:  Cannot instantiate interface Magento\Framework\App\View\Deployment\Version\StorageInterface 
+in /var/www/magento2/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php on line 188</pre>
+	
+<pre>ERROR: &lt;lib> tiny_mce/classes/dom/Serializer.js exception 'Zend_Exception' with message 'dbModel read resource does not 
+implement \Zend_Db_Adapter_Abstract' in /var/www/my.magento/magento2/lib/internal/Magento/Framework/Data/Collection/Db.php:184</pre>
+	
+<pre>#20 {main} ERROR: &lt;Magento_Paypal> order-review.js exception 
+'Magento\Framework\App\InitException' with message 'Store Manager has been initialized not properly' in 
+/var/www/my.magento/magento2/app/code/Magento/Store/Model/Storage/Db.php:331
+Stack trace:
+#0
+/var/www/my.magento/magento2/app/code/Magento/Store/Model/StoreManager.php
+... (more messages) ...
+/var/www/my.magento/magento2/lib/internal/Magento/Framework/View/Asset/
+Repository.php(178): 
+Magento\Framework\View\Asset\Repository->getFallbackContext('static',NULL, 'frontend', 'Magento/blank', 'en_US')</pre>
+
+**Solution**:
+
+Use the following steps:
+
+1.	Install the Magento software in any of the following ways:
+
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command-line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Web-based</a>
+	
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+2.	Delete the contents of `[your Magento install dir]/pub/static`.
+3.	Run the static file creation tool from the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
+4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.

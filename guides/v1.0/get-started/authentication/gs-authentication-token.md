@@ -2,25 +2,24 @@
 layout: default
 group: get-started
 subgroup: B_Authentication
-title: Authentication
-menu_title: Step 1. Authenticate
+title: Token-based authentication
+menu_title: Token-based authentication
 menu_order: 1
-menu_node: parent
-github_link: get-started/gs-authentication.md
+github_link: get-started/authentication/gs-authentication-token.md
 ---
 
-<p>To make a REST web API call, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API.</p><p>You request a token from the Magento token service at the REST endpoint that is defined for your user type. The token service returns
-   a unique authentication token in exchange for a user name and password for a Magento account.</p><p>When you make web API calls, you supply this token in the
-   <code>Authorization</code> header to prove your identity. The token never expires but it can be revoked.
+<p>To make a web API call through a mobile application, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API.</p>
+<p>You request a token from the Magento token service at the REST endpoint that is defined for your user type. The token service returns
+   a unique authentication token in exchange for a user name and password for a Magento account.
 </p>
+<p>When you make web API calls, you supply this token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme to prove your identity. The token never expires but it can be revoked.</p>
 <p>To request an authentication token and learn how to use it in web API calls, read these sections:</p>
 <ul>
-<li><a href="#curl-command-syntax">cURL command syntax</a></li>
-<li><a href="#auth-request">Authentication token request</a></li>
-<li><a href="#auth-response">Authentication token response</a></li>
-<li><a href="#web-api-access">Web API request</a></li>
+   <li><a href="#curl-command-syntax">cURL command syntax</a></li>
+   <li><a href="#auth-request">Authentication token request</a></li>
+   <li><a href="#auth-response">Authentication token response</a></li>
+   <li><a href="#web-api-access">Web API request</a></li>
 </ul>
-
 <a name="curl-command-syntax"></a>
 <h2>cURL command syntax</h2>
 <p>The examples on this page use cURL commands. For more information, see
@@ -91,20 +90,23 @@ github_link: get-started/gs-authentication.md
 <p>You must specify an authentication token in a web API call for a resource for which you are authorized.</p>
 <p>You specify the token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP authorization scheme.</p>
 <h3>Customer access</h3>
-<p>Customers can access only resources with <code>self</code> permissions.</p><p>For example, to make a web API call with a customer token:</p>
+<p>Customers can access only resources with <code>self</code> permissions.</p>
+<p>For example, to make a web API call with a customer token:</p>
 <pre>curl -X GET "http://magento.ll/index.php/rest/V1/customer/me" \
      -H "Authorization: Bearer asdf3hjklp5iuytre"</pre>
 <h3>Admin access</h3>
-<p>Admins can access any resources for which they are authorized.</p><p>For example, to make a web API call with an admin token:</p>
+<p>Admins can access any resources for which they are authorized.</p>
+<p>For example, to make a web API call with an admin token:</p>
 <pre>curl -X GET "http://magento.ll/index.php/rest/V1/customerAccounts/2" \
      -H "Authorization: Bearer vbnf3hjklp5iuytre"</pre>
 <h3>Guest access</h3>
 <p>The Magento web API framework allows <i>guest users</i> to access resources that are configured with anonymous permission. Guest users are users who the framework cannot authenticate through existing authentication
-   mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission.</p>
+   mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission.
+</p>
 <h3>Related topics</h3>
 <ul>
-<li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
-<li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+   <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+   <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
 
 

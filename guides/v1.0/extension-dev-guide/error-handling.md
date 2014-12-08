@@ -18,7 +18,7 @@ title: Step 4. Review the response
          <p>A token that proves you as the owner of a Magento
             account.
          </p>
-         <p><a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>
+         <p><a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Authentication</a>
          </p>
       </td>
    </tr>
@@ -30,7 +30,7 @@ title: Step 4. Review the response
          <p>A token that proves you as the owner of a Magento
             account.
          </p>
-         <p><a href="{{ site.gdeurl }}get-started/gs-authentication.html">Authentication</a>
+         <p><a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Authentication</a>
          </p>
       </td>
    </tr>

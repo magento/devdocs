@@ -18,7 +18,7 @@ github_link: get-started/bk-get-started-api.md
 <ul>
    <li>
       <p>
-         <a href="{{ site.gdeurl }}get-started/gs-authentication.html">Step 1. Authenticate</a>
+         <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Step 1. Authenticate</a>
       </p>
    </li>
    <li>
