@@ -30,10 +30,6 @@ The Magento Framework provides core business logic and functionality, the base c
 
 The various components of Magento, in addition to the Magento Framework and Libraries, together form a powerful set of building blocks.
 
-The following diagram shows the components of the Magento architecture:
-
-<img src="{{ site.baseurl }}common/images/archi_m2_overview.jpg"/>
-
 <h2 id="m2arch-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
