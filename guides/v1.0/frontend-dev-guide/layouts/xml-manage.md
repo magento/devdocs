@@ -23,7 +23,7 @@ This topic shows you how to extend a layout by using merging layout files:
 *	<a href="#layout_markup_modify-block">Modify block arguments</a>
 *	<a href="#apply_css">Apply a CSS class to a block</a>
 *	<a href="#fedg_xml-instrux_order-block">Change blocks order</a>
-*	<a href="">referenceBlock</a>
+*	<a href="">Reference block</a>
 *	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
 
 

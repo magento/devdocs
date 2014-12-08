@@ -172,7 +172,6 @@ A structure without content that holds other layout elements such as blocks and 
 </table>
 
 Sample of usage in layout:
-Question to a reviewer: what are these containers declared in the sample? Can we describe in simple words, where on a page are they displayed?
 <pre>
 ...
 &lt;container&nbsp;name=&quot;div.sidebar.additional&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-additional&quot;&nbsp;after=&quot;div.sidebar.main&quot;&gt;
@@ -180,12 +179,25 @@ Question to a reviewer: what are these containers declared in the sample? Can we
 &lt;/container&gt;
 ...
 </pre>
+This would add a new column to the page layout.
 
-<script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script>
+<!-- <script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script> -->
 <h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
 Calls public methods on the block API.
 <p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action></code> node must be located in the scope of the <code>&lt;block></code> node.</p>
-<script src="https://gist.github.com/xcomSteveJohnson/4dd7ea5d2ea1bd546ccb.js"></script>
+Example:
+<pre>
+&lt;block&nbsp;class=&quot;Magento\Module\Block\Class&quot;&nbsp;name=&quot;block&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setText&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;text&quot;&nbsp;translate=&quot;true&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Text&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setEnabled&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;enabled&quot;&nbsp;xsi:type=&quot;boolean&quot;&gt;true&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&lt;/block&gt;
+</pre>
+
+<!-- <script src="https://gist.github.com/xcomSteveJohnson/4dd7ea5d2ea1bd546ccb.js"></script> -->
 <p><code>&lt;action></code> child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under <code>&lt;action></code>, they are passed as one array.</p>
 <p>In the previous example, the value of <code>&lt;arg1></code> is passed as the first argument and <code>&lt;arg2></code> values are passed as `array('one', 'two')`. The list of all available methods depends on the block implementation (for example, the public method of the block class).</p>
 <table>
@@ -234,6 +246,8 @@ Enables you to ignore some layout tags when generating a layout.
 </ul>
 <p><b>Example:</b></p>
 Initial layout update:
+
+**Samples are outdated!!!**
 
 <pre>
 &lt;layout&gt;
