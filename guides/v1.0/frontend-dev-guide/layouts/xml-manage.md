@@ -10,75 +10,50 @@ github_link: frontend-dev-guide/layouts/layout-xml.md
 
 This topic shows you how to extend a layout by using merging layout files:
 
-*	<a href="#layout_markup_bad">Avoid layout customization mistakes</a>
+*	<a href="#layout_markup_bad">Important things to remember before you start</a>
 *	<a href="#layout_markup_columns">Change columns in a layout</a>
+*	<a>Add/remove CSS, JavaScript and RSS in &lt;head&gt;</a>
 *	<a href="#layout_markup_rearrange">Rearrange elements</a>
 *	<a href="#layout_markup_remove_elements">Remove elements</a>
 *	<a href="#layout_markup_replace_elements">Replace elements</a>
+*	<a href="#create_cont">Create a container</a>
+*	<a href="#">Reference container</a>
+*	<a href="#">Create a block</a>
+*	<a href="#set_template">Set the template used by a block</a>
 *	<a href="#layout_markup_modify-block">Modify block arguments</a>
+*	<a href="#apply_css">Apply a CSS class to a block</a>
+*	<a href="#fedg_xml-instrux_order-block">Change blocks order</a>
+*	<a href="">Reference block</a>
 *	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
-*	<a href="#apply_css">Apply a CSS class to a block</a> - Should it be here???
-*	<a href="#move" >Move a block to another block</a> - if not covered in Rearrange element
-*	<a href="#fedg_xml-instrux_order-block">Order blocks</a> - if not covered in Rearrange element
-*	<a href="#set_template">Set the template used by a block</a> - Should it be here???
-*	<a href="#create_cont">Create a container</a> - Should it be here???
 
-<h2 id="layout_markup_bad">Avoid layout customization mistakes</h2>
+
+
+<h2 id="layout_markup_bad">Before you start customizing layout</h2>
 
 Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. Magento strongly recommends you not make the following changes:
 
+* Editing system files. To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. 
 *	Changing a block name or alias. Neither the name of a block should not be changed nor the alias of a block remaining in the same parent element.
 *	Changing handle inheritance. For example, you should not change the page type parent handle.
 
-<h2 id="layout_markup_columns">Change columns in a layout</h2>
+<h2 id="layout_markup_columns">Set the page layout</h2>
 
-Example: The `catalogsearch_result_index.xml` base layout file of the Mage_CatalogSearch module defines a three-column page layout. We need to change it to two-column layout.
-Original declaration in `app/code/Mage/CatalogSearch/view/frontend/layout/catalogsearch_result_index.xml`
-<p class="q">TO reviewer: Need to completely rewrite it, guess it should be done in page layout file.</p>
+The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root `<page>` node.
+
+Example: 
+Change the layout of Advanced Search page from default 1 column to 2 columns with left bar. To do this you should create a Mage_CatalogSearch/layout folder in your themeand place there catalogsearch_advanced_index.xml layout  
+<pre>
+&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;layout=&quot;2columns-left&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+&lt;/page&gt;
+</pre>
+
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
-For example, you can change the subordination of the product price block.
+With layout files you can change the elements order on a page. For example, you need to edit product page.
 
-Original declaration (might be in either base or theme layout file):
-<pre>
-&lt;layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;product.info&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.bundle&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.prices&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
-&lt;/layout&gt;
-</pre>
+<img src="{{ site.baseurl }}common/images/layout_image1.png" />
 
-<!-- <script src="https://gist.github.com/xcomSteveJohnson/55ed6e850202bb0d5374.js"></script>  -->
-
-Desired result:
-<pre>
-layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;product.info&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.bundle&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.summary&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.prices&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.addtocart.bundle&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
-&lt;/layout&gt;
-</pre>
-<!--<script src="https://gist.github.com/xcomSteveJohnson/9771c824e65567bd0dd8.js"></script> -->
-
-Change you should make in a theme merging file:
-<pre>
-&lt;layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;product.info&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;bundle.summary&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;name=&quot;product.info.addtocart.bundle&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;move&nbsp;element=&quot;bundle.prices&quot;&nbsp;destination=&quot;bundle.summary&quot;&nbsp;before=&quot;product.info.addtocart.bundle&quot;/&gt;
-&lt;/layout&gt;
-</pre>
-<!-- <script src="https://gist.github.com/xcomSteveJohnson/93666c8933206a55dd61.js"></script> -->
 
 <h2 id="layout_markup_css">Change JavaScript, CSS, and RSS</h2>
 

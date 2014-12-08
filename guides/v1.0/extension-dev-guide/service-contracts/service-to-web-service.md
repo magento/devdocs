@@ -121,8 +121,9 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
                <p><code>ref</code>.
                   Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                </p>
-               <div class="bs-callout bs-callout-info" id="info"><p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Users who the framework cannot authenticate through the existing authentication
-                  mechanisms are considered guest users.
+               <div class="bs-callout bs-callout-info" id="info"><p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
+               <p>Any user that the framework cannot authenticate through existing <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">authentication
+                  mechanisms</a> is considered a guest user.
                </p></div>
             </li></ul>
       </td>
@@ -169,7 +170,8 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
          <p>3</p>
       </td>
       <td>
-         <p>The XML schema file that is used to validate the XML, which is <code>../../../../../app/code/Magento/Webapi/etc/webapi.xsd</code>.</p>
+         <p>The XML schema file that is used to validate the XML.</p>
+         <p>The XML schema file is <code>../../../../../app/code/Magento/Webapi/etc/webapi.xsd</code>.</p>
       </td>
    </tr>
    <tr>
@@ -218,21 +220,7 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>/Webapi/etc/webapi.xsd</code> XML schema file is:</p>
+
 <script src="https://github.corp.ebay.com/gist/difleming/b2b1aafbfbd9f54f3179.js"></script>
 
-<h3 id="related-topics">Related topics</h3>
-<ul>
-   <li><p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></p></li>
-   <li><p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Design patterns</a></p></li>
-   <!--
-<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-domain-guidelines.html">Guidelines for domain and service layers</a></li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-example.html">Create a service - example</a></li>
-   <li><a href="{{ site.gdeurl }}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a></li>
- -->
-   <li><p><a href="{{ site.gdeurl }}get-started/gs-web-api-request.html">Step 2. Construct a request</a></p></li>
-   <!--
-<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a></li>
-   <li><a href="{{ site.gdeurl }}get-started/soap/soap-web-api-calls.html">SOAP web APIs</a></li>
- -->
-</ul>
 
