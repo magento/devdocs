@@ -19,7 +19,7 @@ How you can benefit from translation feature in Magento
 
 *	You can translate any part of your store (that is, a module, theme) without influencing other parts.
 *	You can use the ready-to-use language packages prepared by other users or create your own.
-*	You can create localized version based on existing (aka parent) translations by using language inheritance feature. Thus, if you missed or omitted localizing some phrases/terms, parent translations will be used.
+*	You can create localized version based on existing, or parent, translations by using language inheritance feature. Thus, if you missed or omitted localizing some phrases/terms, parent translations are used.
 *	You can customize you translations even further by creating more than one version of translation for the same language.
 
 Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.
@@ -41,12 +41,12 @@ Translating the names, titles and phrases used in Magento involves the following
 2.	Upload your new dictionary to Magento using the <a href="#m2devgde-xlate-packtool">language package tool</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Only one variant of translation can be used for a word or phrase in a pack. Otherwise, the system will return an error.</p>
+  <p>Only one variant of translation can be used for a word or phrase in a pack. Otherwise, the system returns an error.</p>
 </div>
 
 Inline translation via the Text Editor is a customization tool used in the storefront. Changes made in the Text Editor are not recorded in an instance's dictionary; they are stored in the library in an instance's database.
 
-In the storefront, an inline translation of a phrase will overwrite the translation stated in a dictionary. However, inline translations are theme-specific, and will not apply if another theme is assigned.
+In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.
 
 <h2 id="m2devgde-xlate-dictionaries">What is a dictionary?</h2>
 
@@ -71,7 +71,7 @@ Sample of a dictionary with meta information:
 
 Dictionary files can be located in different parts of the code base and are assembled into single language-specific dictionary automatically in the runtime.
 
-Meta information in a dictionary file is necessary for defining where the translation of a phrase should be assigned. A dictionary file without the meta information must be uploaded manually to appropriate module. For example, if you create a new dictionary file for a custom/extension module, such file will not have the meta information. Thus,  to make a new dictionary available in a custom module, upload a dictionary file to `i18n` folder of this module, for instance: `app/code/[Module name]/[Vendor name]/i18n/fr_FR.csv`.
+Meta information in a dictionary file is necessary for defining where the translation of a phrase should be assigned. A dictionary file without the meta information must be uploaded manually to appropriate module. For example, if you create a dictionary file for a custom/extension module, this file does not have the meta information. Thus, to make a new dictionary available in a custom module, upload a dictionary file to `i18n` folder of this module, for instance: `app/code/[Module name]/[Vendor name]/i18n/fr_FR.csv`.
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
 
@@ -87,7 +87,7 @@ For generating a dictionary, you should specify the following parameters:
 
 *	`-d|directory` defines path to a directory to be parsed. This parameter is required.
 *	`-o|output` defines the name of the output file (a dictionary); by default, the output file (dictionary) is saved in the directory from which the script was launched. This parameter is optional.
-*	`-m|magento` defines whether a directory belongs to the root code base, that is, whether the meta information should be included into a dictionary; by default, the value is set to 'no'. The value can be set to 'yes' only for the Magento root directory, otherwise the parser will not be able to find the correct path. This parameter is optional.
+*	`-m|magento` defines whether a directory belongs to the root code base, that is, whether the meta information should be included into a dictionary; by default, the value is set to 'no'. The value can be set to 'yes' only for the Magento root directory, otherwise the parser cannot find the correct path. This parameter is optional.
 
 <h2 id="m2devgde-xlate-languagepack">Language packs</h2>
 
@@ -114,13 +114,13 @@ Find the language packs in the `app/i18n/[Module name]/[Vendor name]` directory.
 &nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;*.csv
 </pre>
 
-Apart from the `.csv` file containing the language pack itself, the directory encompasses `composer.json` file, which allows the system composer to recognize a pack, and `language.xml` file, where you have to declare a language pack.
+Apart from the `.csv` file that contains the language pack, the directory encompasses `composer.json` file, which allows the system composer to recognize a pack, and `language.xml` file, in which you declare a language pack.
 
 <h3 id="m2devgde-xlate-inheritance">Declare a package and configure language inheritance</h3>
 
-When declaring a language pack in `language.xml` configuration file, you will need also to specify the sequence of the language inheritance for this pack.
+When declaring a language pack in `language.xml` configuration file, you must specify the sequence of the language inheritance for this pack.
 
-Language inheritance ensures sustainability of localization and translations in your store. Also, it facilitates translating and customizing Magento for your needs. Inheritance means that you can create a new locale/translation based on the existing one (also known as _parent_). The child locales/translations will override the parent one. However, if the child locale/translation fails to upload or display for a user, parent locale/translation will be used in its stead. Also, if some child translation lacks a phrase or a word, this phrase or word will be taken from parent locale.
+Language inheritance ensures sustainability of localization and translations in your store. Also, it facilitates translating and customizing Magento for your needs. Inheritance means that you can create a new locale/translation based on the existing one (also known as _parent_). The child locales/translations override the parent. However, if the child locale/translation fails to upload or display for a user, parent locale/translation is used instead. Also, if some child translation lacks a phrase or a word, this phrase or word is taken from the parent locale.
 
 To declare a pack, specify the following information:
 
@@ -140,15 +140,13 @@ To declare a pack, specify the following information:
 *	`<sort_order>` - priority of uploading a pack when there are several language packs available for a store; this parameter is optional
 *	`<use>` - name and code of the parent language package; this parameter is optional
 
-You can specify several parent packs if necessary. In such case, the parent packs will apply on 'first listed - first used' basis.
+If necessary, you can specify several parent packs. The parent packs are applied on 'first listed - first used' basis.
 
 <h4 id="m2devgde-xlate-inheritancework">Example: how language inheritance works</h4>
 
-To understand how the language inheritance works, let us imagine we have a language pack that descends from two other packs and each of the latter also has parent and 'grand-parent' packs.
+To understand how the language inheritance works, imagine a language pack that descends from two other packs, and those packs also have parent and 'grand-parent' packs.
 
-**If**
-
-*	a language pack descents from two packs:
+**If a language pack descends from two packs:**
 
 <pre>&lt;language&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;en_GB&lt;/code&gt;
@@ -163,7 +161,7 @@ To understand how the language inheritance works, let us imagine we have a langu
 *	language_pack_one descends from en_au_pack and en_au_pack descends from en_ie_pack
 *	language_pack_two descends from en_ca_pack and en_ca_pack descends from en_us_pack
 
-**Then** after system fails to find a term in en_GB pack, it will look in other packs in following sequence:
+**Then** after system fails to find a term in en_GB pack, it looks in other packs in following sequence:
 
 1.	parent_pack_one/language_pack_one
 1.	[Vendor name]/en_au_pack
@@ -172,13 +170,13 @@ To understand how the language inheritance works, let us imagine we have a langu
 1.	[Vendor name]/en_ca_pack
 1.	[Vendor name]/en_us_pack
 
-Specifying all inheritances between the language packs may result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
+Specifying all inheritances between the language packs might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
 <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 
-To help you to make your store more flexible, we implemented ability to upload several language packages for the same language in your store. Thus, you can use different custom packs for different parts of your store for the system will compile a single pack from all packs available for a language.
+To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packs for different parts of your store because the system compiles a single pack from all packs that are available for a language.
 
-To enable additional package for existing language, just give a new package any name except for existing language code (to avoid confusion). Specify configurations of a pack in `language.xml` file as described in the <a href="#m2devgde-xlate-inheritance">Declaring a Pack and Configuring Language Inheritance</a> section above.
+To enable additional package for existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a pack in `language.xml` file as described in the <a href="#m2devgde-xlate-inheritance">Declaring a Pack and Configuring Language Inheritance</a>.
 
 <h3 id="m2devgde-xlate-packtool">The language package tool</h3>
 
