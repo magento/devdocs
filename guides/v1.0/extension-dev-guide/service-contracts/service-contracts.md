@@ -19,8 +19,7 @@ github_link: extension-dev-guide/service-contracts/service-contracts.md
 <p>A service contract is a set of PHP interfaces that are defined for a module.
    A service contract includes <a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/design-patterns.html#data-interfaces">data interfaces</a>, which preserve data integrity, and <a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/design-patterns.html#service-interfaces">service interfaces</a>, which hide business logic details from service requestors such as controllers, web services, and other modules.
 </p>
-<p>
-   If developers define data and service interfaces according to a set of <a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/design-patterns.html">design patterns</a>, the result is a well-defined, durable API that other modules and third-party extensions can implement through Magento models and resource models.
+<p>If developers define data and service interfaces according to a set of <a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/design-patterns.html">design patterns</a>, the result is a well-defined, durable API that other modules and third-party extensions can implement through Magento models and resource models.
 </p>
 <p><img src="{{ site.baseurl }}common/images/msc.jpg"/></p>
 <h2 id="msc-benefits">Service contract benefits</h2>
