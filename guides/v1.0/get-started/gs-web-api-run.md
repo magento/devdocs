@@ -1,13 +1,15 @@
 ---
 layout: default
-group: get-started
-subgroup: Step 3. Run the request
-title: Step 3. Run the request
-menu_title: Step 3. Run the request
+group:
+subgroup: Step 3. Use cURL to run the request
+title: Step 3. Use cURL to run the request
+menu_title: Step 3. Use cURL to run the request
 menu_order: 1
 menu_node: parent
-github_link: get-started/gs-web-api-run.md
+github_link: get-started/gs-curl.md
 ---
+
+<p>To configure a web API, developers define API components in the <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE></code> is the module name. For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file.</p>
 
 All service REST calls are specified by the service's `app/code/[Vendor]/[Module]/etc/webapi.xml`. Inputs and return values are defined in the respective service data objects and builders.
 
