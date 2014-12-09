@@ -86,13 +86,13 @@ orange_winter configuration file looks like following:
 
 In the Orange theme there is a footer background image located at `app/design/frontend/OrangeCo/orange/web/images/background.jpg`.
 
-<!-- A background1.jpg screen here -->
+<img src="{{ site.baseurl }}common/images/inh-background1.jpg"/>
 
 OrangeCo wants it to be replaced with a holiday one, so it places a new background image with exactly the same name and extension in `app/design/frontend/OrangeCo/orange_winter/web/images/background.jpg`
 
 Once the Orange Winter theme is applied, the new holiday image overrides the one from Orange, so on storefront the holiday background is visible.
 
-<!-- A background2.jpg screen here-->
+<img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
 
 
 <h2 id="theme-inherit-static">Override templates</h2>
@@ -148,7 +148,7 @@ To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/
 &lt;/page&gt;
 </pre>
 
-For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a> article.
+For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
 <h3 id="theme-inherit-layout-over">Override layouts</h3>
 
@@ -157,7 +157,7 @@ To override the instructions from an ancestor theme layout file:
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
-To override module layout instructions (<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">a base layout</a>):
+To override module layout instructions (base layout): <!-- ADDLINK -->
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 

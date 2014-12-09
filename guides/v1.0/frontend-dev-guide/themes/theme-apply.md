@@ -23,7 +23,7 @@ To do this:
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you apply a theme a second or subsequent time, you might need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory. This directory stores the <a href="{{site.gdeurl}}architecture/view/static-process.html">published</a> <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-structure.md">static files</a>.</p>
+  <p>If you apply a theme a second or subsequent time, you might need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> directory. This directory stores the <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published</a> <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-structure.html#theme-structure-pub" target="_blank">static files</a>.</p>
 </div>
 
 

@@ -49,11 +49,11 @@ To make sure the theme is recognized by the Magento application, log in to the M
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package</h2>
 
 
-Magento default themes are distributed as <a href="https://getcomposer.org/">Composer</a> packages.
+Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
 
 To distribute your theme, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
-You can find details about the Composer integration in the Magento system in Composer Integration. <!--ADDLINK-->
+<!--ADDLINK You can find details about the Composer integration in the Magento system in Composer Integration. -->
 
 If your theme supports Composer, the end users can install or uninstall it on their Magento systems.
 
@@ -113,8 +113,9 @@ app/design/frontend/&lt;Vendor&gt;/
 │&nbsp;&nbsp;&nbsp;├──&nbsp;composer.json
 </pre>
 
+<!--
 
-#### Related topics:
+Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
@@ -122,3 +123,5 @@ app/design/frontend/&lt;Vendor&gt;/
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
+
+-->
