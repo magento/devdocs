@@ -21,8 +21,6 @@ Modules live in the `/app/modules` directory of a Magento installation, in a dir
 
 <h3 id="arch-modules-working-with">Working with modules</h3>
 
-This document, the Architecture Guide, provides high-level conceptual infomation about modules and other Magento components.
-
 Magento developers, admininistrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.
 
 For 'How To' topics such as instructions for adding modules, extending modules, implementing themes and other components, refer to the Magento Documentation set at <a href ="https://github.corp.ebay.com/pages/Magento/devdocs_internal/index.html">https://github.corp.ebay.com/pages/Magento/devdocs_internal/index.html</a> for a list of all Magento Guides and Manuals. Additionally, see the Related Topics below.
