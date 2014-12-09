@@ -1,7 +1,7 @@
 ---
 layout: default
-group: get-started
-subgroup: Step 3. Run the request
+group:
+subgroup: Step 3. Use cURL to run the request
 title: Firefox REST client
 menu_title: Firefox REST client
 menu_order: 3
