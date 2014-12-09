@@ -148,7 +148,7 @@ To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/
 &lt;/page&gt;
 </pre>
 
-For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a> article.
+For more information about extending layout refer to the <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a> article.
 
 <h3 id="theme-inherit-layout-over">Override layouts</h3>
 
@@ -157,7 +157,7 @@ To override the instructions from an ancestor theme layout file:
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
-To override module layout instructions (<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">a base layout</a>):
+To override module layout instructions (base layout): <!-- ADDLINK -->
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 
