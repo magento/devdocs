@@ -1,6 +1,6 @@
 ---
 layout: default
-group: fedg
+group: 
 subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
@@ -8,7 +8,9 @@ menu_order: 5
 github_link: frontend-dev-guide/layouts/layout-xml.md
 ---
 
-This topic shows you how to extend a layout by using merging layout files:
+<h2>Introduction</h2>
+
+This topic shows you how to customize layout by using <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">merging</a> layout files:
 
 <p class="q">Question to reviewer: Do we only use page configuration files, or page layouts as well? </p>
 
@@ -44,10 +46,11 @@ Although the layout overriding mechanism provides great customization flexibilit
 The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root `<page>` node.
 
 Example: 
-Change the layout of Advanced Search page from default 1 column to 2 columns with left bar. To do this you should create a Mage_CatalogSearch/layout folder in your themeand place there catalogsearch_advanced_index.xml layout  
+Change the layout of Advanced Search page from default 1 column to 2 columns with left bar. To do this, create a `Mage_CatalogSearch/layout` directory in your theme directory and place the `catalogsearch_advanced_index.xml` layout there.
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;layout=&quot;2columns-left&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&lt;/page&gt;
+...
+&lt;/page&gt
 </pre>
 
 <h2 id="layout_markup_css">Add JavaScript and CSS</h2>
@@ -66,7 +69,7 @@ Make the following change in your theme merging file:
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
-To remove the JavaScript and CSS resources linked in page <head>, make a change similar to the following in a theme merging file:
+To remove the JavaScript and CSS resources linked in page `<head>`, make a change similar to the following in a theme merging file:
 <pre>
 &lt;page&gt;
 &nbsp;&nbsp;&nbsp;&lt;head&gt;
@@ -146,7 +149,7 @@ Original:
 <script src="https://gist.github.com/xcomSteveJohnson/faa16e16f157a50823a3.js"></script>
 -->
 
-To change it, make a customization similar to the following in a theme merging file:
+To change it, make a customization similar to the following merging theme layout:
 
 <pre>&lt;layout>
     &lt;remove name="cart_sidebar"/>
