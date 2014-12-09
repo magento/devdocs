@@ -66,7 +66,7 @@ Make the following change in your theme merging file:
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
-To remove the JavaScript and CSS resources linked in page <head>, make a change similar to the following in a theme merging file:
+To remove the JavaScript and CSS resources linked in page `<head>`, make a change similar to the following in a theme merging file:
 <pre>
 &lt;page&gt;
 &nbsp;&nbsp;&nbsp;&lt;head&gt;
