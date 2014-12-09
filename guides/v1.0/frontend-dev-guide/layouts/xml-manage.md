@@ -1,6 +1,6 @@
 ---
 layout: default
-group: fedg
+group: 
 subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
