@@ -16,7 +16,7 @@ Be sure to research additional Magento conventions, beyond those applicable to m
 
 <h2 id="m2arch-module-conventions-location"> Module location conventions</h2>
 
-The following table shows the standard locatin within the Magento file system for specific entities.
+The following table shows the standard locating within the Magento file system for specific entities.
 
 <div class="table-wrap"><table class="confluenceTable"><tbody><tr><th class="confluenceTh">Entity</th><th class="confluenceTh">Location</th></tr><tr><td class="confluenceTd">Code base of your custom module</td><td class="confluenceTd"><p><code>&lt;root&gt;/app/code/&lt;Vendor&gt;/&lt;Module&gt;</code></p><p> </p></td></tr><tr><td colspan="1" class="confluenceTd">Your custom theme files</td><td colspan="1" class="confluenceTd"><code>&lt;root&gt;/app/design/&lt;Module&gt;/&lt;theme&gt;</code></td></tr><tr><td colspan="1" class="confluenceTd">If you want to use a library</td><td colspan="1" class="confluenceTd"><code>&lt;root/lib/&lt;Vendor_Library&gt;</code></td></tr></tbody></table></div>
 

@@ -144,7 +144,7 @@ title: Catalog inventory service
                <dt><code>qty</code></dt>
                <dd>Float. The quantity of a product.</dd>
                <dt><code>min_qty</code></dt>
-               <dd>Float. Mininum quantity that indicates that a product is close to being out of stock.</dd>
+               <dd>Float. Minimum quantity that indicates that a product is close to being out of stock.</dd>
                <dt><code>use_config_min_qty</code></dt>
                <dd>Boolean. Defines whether the general configurations are used for minimum quantity parameter. 1 is true. 0 is false.</dd>
                <dt><code>is_qty_decimal</code></dt>
@@ -171,7 +171,7 @@ title: Catalog inventory service
                <dt><code>use_config_notify_stock_qty</code></dt>
                <dd>Boolean. Defines whether the general configurations are used for the notify for quantity below parameter. 1 is true. 0 is false.</dd>
                <dt><code>manage_stock</code></dt>
-               <dd>Boolean. Defines whether a stock is managable. 1 is true. 0 is false.</dd>
+               <dd>Boolean. Defines whether a stock is manageable. 1 is true. 0 is false.</dd>
                <dt><code>use_config_manage_stock</code></dt>
                <dd>Boolean. Defines whether the general configurations are used for the manage stock parameter. 1 is true. 0 is false.</dd>
                <dt><code>stock_status_changed_auto</code></dt>
@@ -220,7 +220,7 @@ title: Catalog inventory service
             <dd>The quantity increments for adding a product to the shopping cart in the storefront.</dd>
             <dt><code>enable_qty_increments</code></dt>
             <dd>Enable the quantity increments feature for a product.</dd>
-            <dt><code>is_decimal_devided</code></dt>
+            <dt><code>is_decimal_divided</code></dt>
             <dd>If a product quantity is decimal, defines whether a product can be shipped in several boxes.</dd>
             </dl>
             <p><b>Output parameters:</b></p>
