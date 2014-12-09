@@ -2,36 +2,14 @@
 layout: default
 group: install2
 subgroup: Getting Started
-title: Doing the basics
-menu_title: Doing the basics
+title: Is the Magento software installed already?
+menu_title: Is the Magento software installed already?
 menu_node: 
-menu_order: 2
+menu_order: 1
 github_link: install-gde/basics.md
 ---
 
-<h2 id="instgde-basics">What are the basics?</h2>
-
-This page has basic information for you if you're:
-
-*	New to Magento
-*	Unfamiliar with installing software on a Linux system
-*	Using a hosting provider and aren't sure what's installed and what's not
-
-You'll need:
-
-*	A login to your Magento server
-*	The host name or IP address of your Magento server
-*	TBD
-
-See the following:
-
-*	TBD
-*	TBD
-*	TBD
-*	TBD
-
-<h2 id="instgde-basics-magento-installed">Is the Magento software installed already?</h2>
-To determine if the Magento sofware is installed already, you can access the Magento Admin (administration console) or storefront using a web browser.
+To determine if the Magento software is installed already, you can access the Magento Admin (administration console) or storefront using a web browser.
 
 **Prerequisite**: You must know the Magento server's host name or IP address, and the URL to access the Magento installation. If you're not sure, find the information from your system administrator or hosting provider.
 
@@ -47,11 +25,13 @@ If Magento is installed, you should see something like the following:
 
 Magento Admin:
 
-TBD
+<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
+
 
 Magento storefront:
 
-TBD
+<p><img src="{{ site.baseurl }}common/images/install-success_store.png" alt="Magento storefront which verifies a successful installation"></p>
+
 
 <h2 id="instgde-basics-terminal">How do I log in to my Magento server?</h2>
 To complete almost all of the tasks in this guide, you must remotely log in to your Magento server. 
@@ -69,7 +49,7 @@ To complete almost all of the tasks in this guide, you must remotely log in to y
 	
 	On a hosted system, this is likely a user who doesn't have administrative rights to the server; that's OK as long as the user can install system software, stop and start services like the web server, and so on. 
 	
-	If you have your own server, you or your system administrator can usually log in as the <a href="http://www.linfo.org/root.html" target="_blank">root</a> user, which on Linux, is the user with full adminsitrative rights over the entire server.
+	If you have your own server, you or your system administrator can usually log in as the <a href="http://www.linfo.org/root.html" target="_blank">root</a> user, which on Linux, is the user with full administrative rights over the entire server.
 
 To use a terminal application to remotely access the Magento server:
 
@@ -80,7 +60,7 @@ To use a terminal application to remotely access the Magento server:
 
 Here's what it looks like to log in to a server as the `root` user using Cygwin on Windows.
 
-<p><img src="{{ site.baseurl }}common/images/install_cygwin.png" alt="Logging in using Cygwin on Windows"></p>
+    <p><img src="{{ site.baseurl }}common/images/install_cygwin.png" alt="Logging in using Cygwin on Windows"></p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

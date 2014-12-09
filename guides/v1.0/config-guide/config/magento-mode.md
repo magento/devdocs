@@ -185,13 +185,20 @@ To set the Magento mode using your web server's environment:
 
 	`service httpd restart`
 	
-<h2 id="mode-production-view">static view file creation tool</h2>
+<h2 id="mode-production-view">Static view file creation tool</h2>
 In production mode, because static file URLs are created on the fly, you must write static files to the Magento docroot; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You must run the view files creation tool as the web server user; otherwise, Magento might have issues accessing the files. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
 </div>
+
+See one of the following sections for more information:
+
+*	<a href="#mode-production-view-run">Running the static file creation tool</a>
+*	<a href="#view-file-trouble">Troubleshooting the static file creation tool</a>
+
+<h3 id="mode-production-view-run">Running the static file creation tool</h3>
 
 To create static files:
 
@@ -240,7 +247,7 @@ The following table discusses the meanings of the options:
 
 For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
 
-<h2 id="view-file-trouble">Troubleshooting</h2>
+<h3 id="view-file-trouble">Troubleshooting the static file creation tool</h3>
 This section discusses errors that result from view files creation tool without first <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installing the Magento software</a>.
 
 **Symptom**: Any of the following errors display when you run the static file creation tool:

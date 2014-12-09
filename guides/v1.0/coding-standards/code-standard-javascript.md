@@ -4,23 +4,19 @@ group: coding-standards
 subgroup: Coding standards
 title: JavaScript coding standard
 menu_title: JavaScript coding standard
-menu_order: 2
-github_link: coding-standards/js-coding-standards.md
+menu_order: 3
+github_link: coding-standards/code-standard-javascript.md
 ---
 
-<h2 id="fedg_js-code-bestpr_overview">Overview</h2>
-<p>This standard define Magento requirements for code formatting and style for teams that develop JavaScript and jQuery code for Magento.</p>
-<p>This standard is based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>.</p>
+<p>The JavaScript coding standard, based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>, defines Magento requirements for code formatting and style for teams that develop Magento JavaScript and jQuery code.</p>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
-<p>The Magento system uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets" target="_blank">jQuery widgets</a>. For the jQuery widget coding standard, see <a href="{{ site.gdeurl }}coding-standards/jquery-widget-guidelines.html">jQuery widget coding standard</a>.
+<p>The Magento system uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets" target="_blank">jQuery widgets</a>. For the jQuery widget coding standard, see <a href="{{ site.gdeurl }}coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a>.
 </p>
-<p>Some parts of Magento code might not comply with these standard.</p>
-<p>These standard are optional for third-party Magento developers.</p>
+<p>Some parts of Magento code might not comply with this coding standard.</p>
+<p>This coding standard is optional for third-party Magento developers.</p>
 <h2 id="fedg_js-coding_JSHint">JSHint tool</h2>
 <p>Use <a href="http://www.JSHint.com" target="_blank">JSHint</a> to ensure the quality of your JavaScript code.</p>
-<p>JSHint is a community-driven tool that detects errors and potential problems in JavaScript code.</p>
-<p>Its flexibility enables you to customize it to your coding standard and expected code execution environment.</p>
-<p>jQuery core passes JSHint.</p>
+<p>JSHint is a community-driven tool that detects errors and potential problems in JavaScript code. Its flexibility enables you to customize it to your coding standard and expected code execution environment. jQuery core passes JSHint.</p>
 <h2 id="fedg_js-coding-format">Formatting</h2>
 <h3 id="fedg_js-coding_codestyle_anon">Anonymous functions</h3>
 <p>When you declare an anonymous function in the list of arguments for a function call, indent the body of the function four spaces from the left edge of the statement, or four spaces from the left edge of the function keyword.</p>
@@ -253,7 +249,7 @@ var o2 = {
       </tr>
    </tbody>
 </table>
-<p>So the following code samples are equal:</p>
+<p>So the following code samples are equivalent:</p>
 <table style="width:130%">
    <thead style="background-color:lightgray">
       <tr>
@@ -435,7 +431,7 @@ function foo(element, a, b) {
 }
 </pre>
 <p>The function closure keeps references to elements "a" and "b" even if it never uses them.</p>
-<p>Since elements also keep references to the closure, it is a cycle that will not be cleaned up by garbage collection. In these situations, the code can be structured as follows:</p>
+<p>Because elements also keep references to the closure, it is a cycle that will not be cleaned up by garbage collection. In these situations, the code can be structured as follows:</p>
 <p><b>Correct:</b></p>
 <pre>
 function foo(element, a, b) {

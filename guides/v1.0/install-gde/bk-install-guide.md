@@ -9,11 +9,17 @@ menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
 
-<h2 id="instgde-overview-roadmap">High-level installation roadmap</h2>
+<h2>New to Magento? Need some help?</h2>
+If you're not sure about the following, you probably need a little help before you get started using the Magento software:
 
-Following is a brief overview of how to install the Magento software.
+*	Is the Magento software <a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">installed already</a>?
+*	What's a <a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">terminal, command prompt, or Secure Shell (ssh)</a>?
+*	Where's my <a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">Magento server</a> and how do I access it?
+*	What's <a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">PHP</a>?
+*	What's <a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">Apache</a>?
+*	What's <a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">MySQL</a>?
 
-<h3>Step 1: Verify your prerequisites</h3>
+<h2>Step 1: Verify your prerequisites</h2>
 
 Use the following table to verify you have the correct prerequisites to install the Magento software.
 
@@ -42,19 +48,19 @@ Use the following table to verify you have the correct prerequisites to install 
 </tbody>
 </table>
 
-<h3>Step 2: Prepare to install</h3>
+<h2>Step 2: Prepare to install</h2>
 
 After verifying your prerequisites, perform the following tasks in order to prepare to install the Magento software.
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Clone the Magento repository</a>
 
-<h3>Step 3: Install and verify the installation</h3>
+<h2>Step 3: Install and verify the installation</h2>
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>
 2.	Install Magento:
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software through the web interface</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software through the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software using the web interface</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
 <h2>Required server permissions</h2>

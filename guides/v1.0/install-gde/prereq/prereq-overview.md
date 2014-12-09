@@ -19,6 +19,12 @@ Before you install Magento, you must do all of the following:
 
 We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems.
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Don't know what any of this means? Check out our <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installation overview page</a>.</p></span>
+</div>
+	
+
 Enter the following commands as a user with `root` privileges:
 
 *	Ubuntu
