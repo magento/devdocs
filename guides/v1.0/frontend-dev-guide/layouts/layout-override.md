@@ -1,6 +1,6 @@
 ---
 layout: default
-group: fedg
+group: 
 subgroup: B_Layouts
 title: Override a layout
 menu_title: Override a layout

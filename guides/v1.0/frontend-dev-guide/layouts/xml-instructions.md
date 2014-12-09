@@ -1,6 +1,6 @@
 ---
 layout: default
-group: fedg
+group: 
 subgroup: B_Layouts
 title: XML instructions
 menu_title: XML instructions
