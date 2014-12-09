@@ -24,7 +24,7 @@ The Magento software now uses *dependency injection* as an alternative to the Ma
 
 A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
 
-The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
+The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
 
 This topic uses the following terms:
 
@@ -405,7 +405,7 @@ Sample:
 <script src="https://gist.github.com/xcomSteveJohnson/24ffa1426734520f58a1.js"></script>
 
 <p class="q">Reviewer: I had a hard time figuring out what this meant. Please review carefully. Original wording: "During merging, arguments with the same name are completely replaced, if their type is different, and are overridden, if their type is same."</p>
-<p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the type is the same, the arguments are overridden.</p>
+<p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the name is the same, the arguments are overridden.</p>
 
 </div>
 </div>
@@ -414,7 +414,7 @@ Sample:
 <h4 id="dep-inj-mod-type-args-config-inher">Parameter configuration inheritance</h4>
 <div>
 
-Parameters configured for a class type are automatically configured for all of its descendants. Any descendant can override parameters configured for the supertype:
+Parameters configured for a class type are automatically configured for all of its descendants. Any descendant can override parameters configured for the supertype (that is, the parent class or interface):
 
 <script src="https://gist.github.com/xcomSteveJohnson/8ef9264be06fba085a03.js"></script>
 
@@ -496,16 +496,24 @@ By default, class definitions are read using reflection. Because PHP reflection 
 *	Compiles class inheritance implementation relations to increase performance of configuration inheritance operations
 *	Compiles plug-in definitions (that is, the list of declared public methods)
 
-The compiler tool writes compiled definitions to `<your Magento install dir>/var/di/definitions.php`. This file is used by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>.
+The compiler tool creates three files under `<your Magento install dir>/var/di`:
 
-If you don't run the compiler tool and if `definitions.php` does not exist, the  slower <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. 
+<p class="q">Reviewer: Please check the following list.</p>
+
+*	`definitions.php` for compiled definitions. 
+*	`plugins.php` for declared public methods in plug-in definitions. 
+*	`relations.php` for class inheritance implementation relations.
+
+The preceding files are used by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>.
+
+If you don't run the compiler tool and if the preceding do not exist, the  slower <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>We suggest you use the slower runtime object during development but use only the compiled code in production.</p></span>
 </div>
 
-<h3 id="dep-inj-compile-notes">Note about using the definition compiler tool</h3>
+<h3 id="dep-inj-compile-notes">Notes about using the definition compiler tool</h3>
 <div class="bs-callout bs-callout-warning">
 <span class="glyphicon-class">
   <p>The definition compiler tool does not analyze auto-generated factory classes in files that are located in the <code>&lt;your Magento install dir>lib/internal/Magento</code> directory.</p>
@@ -522,7 +530,90 @@ Naming rules for an auto-generated class named `Some\Module\Name':
 <!-- *	Proxy Class: `Some\Model\Name\Proxy` -->
 *	Factory Class: `Some\Model\NameFactory`
 
+<h3 id="dep-inj-compile-run">Running the definition compiler tool</h3>
+To run the definition compiler tool:
 
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+2.	Change to the `[your Magento install dir]/dev/tools/Magento/Tools/Di` directory.
+
+Following is the command syntax:
+
+	php compiler.php [--serializer <word>] [--verbose|-v] [--extra-classes-file <string>] [--generation <string>] [--di <string>] [--help]
+	
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Use double quotes (") to wrap strings.</p></span>
+</div>
+	
+The following table discusses the meanings of the options:
+
+<table>
+	<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+	<tr>
+		<td>--serializer &lt;word></td>
+		<td>Serializer function to use <code>serialize</code> or <code>binary</code>. Default is <code>serialize</code>.</td>
+	</tr>
+	<tr>
+		<td>--verbose | v</td>
+		<td>Omit to display errors only. Include to display verbose output (including the generated classes).</td>
+	</tr>
+	<tr>
+		<td>--extra-classes-file &lt;string></td>
+		<td>Include to specify factories that are not in the code base. For more information, see TBD.</td>
+	</tr>
+	<tr>
+		<td>--generation &lt;string></td>
+		<td>Specify the absolute file system path to generate <code>definitions.php</code>, <code>plugins.php</code>, and <code>relations.php</code>. Default is <code>&lt;magento_root>/var/di</code>.</td>
+	</tr>
+	<tr>
+		<td>--help</td>
+		<td>Display command help</td>
+	</tr>
+	</tbody>
+</table>
+
+<h4 id="dep-inj-compile-extra">Specifying extra classes</h4>
+To generate <!--proxies and -->factories not declared in dependency injection or the Magento code base, use the `--extra-classes-file` parameter to specify the path to a file that contains a list of factories and classes to generate. A sample follows:
+
+{% highlight PHP %}
+<?php
+
+return array(
+    'Magento\Core\Model\SomeFactory',
+    'Magento\Core\Model\Some\Proxy'
+);
+{% endhighlight %}
+
+<h4 id="dep-inj-compile-sample">Sample commands</h4>
+
+**Example 1: Running the definition tool in verbose mode**
+
+	php compiler.php -v
+	
+Sample output:
+
+	Generated classes:
+        Magento\AdminNotification\Model\FeedFactory
+        Magento\AdminNotification\Model\InboxFactory
+        Magento\Authorization\Model\Acl\Role\GroupFactory
+        Magento\Authorization\Model\Acl\Role\UserFactory
+        Magento\Authorization\Model\Resource\Role\CollectionFactory
+        Magento\Authorization\Model\Resource\Rules\CollectionFactory
+        Magento\Authorization\Model\RoleFactory
+	... (more)
+	
+**Example 2: Specifying an alternate path to geneated files**
+
+	php compiler.php --generation /var/www/magento2/mydir
+	
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The user who runs the definition compiler tool must have write access to the directory you specify.</p></span>
+</div>
 
 
 #### Related topics:
