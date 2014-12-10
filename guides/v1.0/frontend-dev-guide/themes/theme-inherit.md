@@ -59,11 +59,11 @@ a. If module context is not defined for a file:
 
 b. If module context is defined for a file:
 
-1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module/>web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
+1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module/>web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no acncestor is reached:
 	`app/design/frontend/<parent_theme_path>/<Vendor>_<Module/>web/`
 
-3. Module static view files: `app/code/<Vendor>/<Module>/view/frontend/web/`
+3. Module static view files: `app/code/<Namespace>/<Module>/view/frontend/web/`
 
 
 <u>Example</u>
@@ -99,9 +99,9 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 
 The fallback scheme for templates is the following (module context is always known for them):
 
-1. Current theme templates: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/templates`
-2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/templates`
-3. Module templates: `app/code/<Vendor>/<Module>/view/frontend/templates`
+1. Current theme templates: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/templates`
+2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `app/design/frontend/<parent_theme_path>/<Namespace>_<Module>/templates`
+3. Module templates: `app/code/<Namespace>/<Module>/view/frontend/templates`
 
 
 So if you need to customize a certain template, you need to create an overriding one with the same name in the `../templates/<path_to_template>` directory in the theme module files. Where `<path_to_template>` is the path to the original template.

@@ -91,7 +91,7 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
  <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files, for example a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>`.
-Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like `.../&lt;theme&gt;/&lt;Vendor_Module&gt;/web/css` and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
+Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like `.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css` and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
 </div>
 
 
