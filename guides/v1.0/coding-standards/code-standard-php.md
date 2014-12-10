@@ -8,8 +8,9 @@ menu_order: 2
 github_link: coding-standards/code-standard-php.md
 ---
 
-<p>The Magento core development team uses a subset of the <a href="http://framework.zend.com/manual/1.12/en/coding-standard.html">Zend Framework Coding Standard for PHP</a>. Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>
-<p>Where possible, <code>PHP_CodeSniffer</code> is used to automatically enforce these standards. Otherwise, standards and requirements must be applied through rigorous code review.</p>
+<p>The Magento core development team uses the <a href="http://framework.zend.com/manual/1.12/en/coding-standard.html">Zend Framework Coding Standard for PHP</a>. Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>
+<p>Where possible, use <code>PHP_CodeSniffer</code> to automatically enforce these standards. Otherwise, standards and requirements must be applied through rigorous code review.</p>
+<!--
 <h2 id="php-file-formatting">PHP file formatting</h2>
 <ul>
    <li><a href="http://framework.zend.com/manual/1.12/en/coding-standard.php-file-formatting.html#coding-standard.php-file-formatting.general">General</a>. Partially automated by <code>PHP_CodeSniffer</code>.</li>
@@ -100,4 +101,5 @@ github_link: coding-standards/code-standard-php.md
       Avoid duplicated tokens. 70 tokens (or more).
    </li>
 </ul>
+ -->
 

@@ -4,14 +4,12 @@ group: get-started
 subgroup: B_Authentication
 title: OAuth-based authentication
 menu_title: OAuth-based authentication
-menu_order: 3
+menu_order: 2
 github_link: get-started/authentication/gs-authentication-oauth.md
 ---
 
 <p>Third-party applications that integrate with Magento use OAuth-based authentication to access the Magento web APIs. This authentication method uses an OAuth 1.0a handshake process that exchanges a request token for an access token that enables access to Magneto APIs.</p>
-<p>Magento instances use the OAuth-based authentication process for both SOAP and REST web API calls.</p>
-
-
+<p>Magento instances can use the OAuth-based authentication process for both SOAP and REST web API calls.</p>
 <p>For details about OAuth 1.0a, see <a href="https://tools.ietf.org/html/rfc5849">The OAuth 1.0 Protocol</a>.</p>
 <p>To configure your third-party application to use OAuth-based authentication to access the Magento web APIs, read these sections:</p>
 <ul>
@@ -205,8 +203,13 @@ github_link: get-started/authentication/gs-authentication-oauth.md
    <li><code>oauth_token</code>. The <code>oauth_token</code>, or access token, value obtained in <a href="#get-access-token">Step 2. Get an access token</a>.</li>
 </ul>
 
-<h2>Related topics</h2>
+<h2>Next step</h2>
 <ul>
    <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+
+</ul>
+<h2>Related topic</h2>
+<ul>
+
    <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>

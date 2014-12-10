@@ -4,7 +4,7 @@ group: get-started
 subgroup: B_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication
-menu_order: 2
+menu_order: 3
 github_link: get-started/authentication/gs-authentication-session.md
 ---
 
@@ -26,8 +26,14 @@ github_link: get-started/authentication/gs-authentication-session.md
 and the JavaScript widget <code>Magento_Customer::group</code> API, details for the logged-in admin are fetched.
 The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the <code>Magento_Customer::group</code> resource.</p>
 
-<h3>Related topics</h3>
+<h2>Next step</h2>
 <ul>
    <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+
+</ul>
+<h2>Related topic</h2>
+<ul>
+
    <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
+

@@ -15,10 +15,13 @@ Themes are located in the <code>/app/themes</code> folder of a Magento installat
 
 Themes are also divided by area, allowing you define themes that customize either the storefront or admin sections of the Magento application independently.
 
-<!--
+For detailed information about working with themes, refer to  <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.
+
 <h2 id="m2arch-related">Related topics</h2>
-* aaa
-* bbb
-* ccc
- -->
+
+* <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
+* Magento framework
+* Magento file system
+* Magento database
+* Commonly used terms
 

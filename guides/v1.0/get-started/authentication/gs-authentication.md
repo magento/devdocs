@@ -2,49 +2,34 @@
 layout: default
 group: get-started
 subgroup: B_Authentication
-title: Authentication
+title: Step 1. Authenticate
 menu_title: Step 1. Authenticate
 menu_order: 1
 menu_node: parent
 github_link: get-started/authentication/gs-authentication.md
 ---
 
-<h2 id="overview">Overview</h2>
-<p>The Magento web API framework enables you to make an API call in multiple ways.</p>
-<p>Read these sections to learn about:</p>
-<ul>
-<li><p><a href="#webapi-clients">Web API clients</a></p></li>
-<li><p><a href="#auth-method">Authentication methods by client</a></p></li>
-<li><p><a href="#resources">Which resources can you access?</a></p></li>
-<li><p><a href="#authenticate">How to authenticate</a></p></li>
+<h2 id="overview-authenticate">Authentication overview</h2>
+<p>The Magento web API framework enables you to make web API calls to access resources. Before you can make web API calls, you must authenticate your identity. Authentication ensures that you have permission to access the requested resource.</p>
+<p>You can make web API calls through clients such as mobile applications, a JavaScript widget on the Magento frontend or backend, or third-party applications. Each type of client has a preferred authentication method.</p>
+<p>Developers define web API resources and their permissions in a <code>webapi.xml</code> configuration file. The resources that you can access depend on your user type and the configured permission of the resource:</p>
+<ul><li>Customers can access resources with <code>anonymous</code> or <code>self</code> permission.</li>
+<li>Admins can access resources for which they are authorized.</li>
+<li>A guest user, who is any user that the Magento web API framework cannot authenticate through existing authentication mechanisms, can access resources with <code>anonymous</code> permission.</li>
 </ul>
-<h2 id="webapi-clients">Web API clients</h2>
-<p>You can make web API calls through one of these clients:</p>
-<ul>
-<li>A mobile application</li>
-<li>A Magento frontend or backend JavaScript widget</li>
-<li>A third-party application</li>
-</ul>
-<p>To make an API call, you must first authenticate by using the authentication method for your client.</p>
-
-<h2 id="auth-methods">Authentication methods by client</h2>
-<p>The following table lists the clients through which you can access the web APIs as either a customer or admin user.</p>
-<p>Use the authentication method for the client through which you access the APIs:</p>
+<p>For details, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>.</p>
+<p>To authenticate, use the authentication method for your preferred client:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
       <th>Client</th>
-      <th>Authentication method</th>
-      <th>Authentication process</th>
+      <th>Authentication method and process</th>
    </tr>
    <tr>
       <td>
          <p>Mobile application</p>
       </td>
        <td>
-         <p><a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">Token-based authentication</a></p>
-      </td>
-      <td>
-         <p>Registered users use token-based authentication to make web API calls through a mobile application. The token acts like an electronic key that provides access the API.</p>
+         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">token-based authentication</a> to make web API calls through a mobile application. The token acts like an electronic key that provides access the API.</p>
          <ol>
             <li>
                <p>As a registered Magento user, you request a token from the Magento token service at the endpoint that is defined for your user type.</p>
@@ -58,39 +43,16 @@ github_link: get-started/authentication/gs-authentication.md
                </p>
             </li>
          </ol>
-         <p>The token never expires but it can be revoked.</p>
+        <!--  <p>The token never expires but it can be revoked.</p> -->
       </td>
    </tr>
-   <tr>
-      <td>
-         <p>JavaScript widget on the Magento frontend or backend </p>
-      </td>
-       <td>
-         <p><a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a></p>
-      </td>
-      <td>
-         <p>Registered users use session-based authentication to log in to the Magento frontend or backend.</p>
-         <ol>
-            <li>
-              <p>As a customer, you log in to the Magento frontend with your customer credentials. As an admin, you log in to the Magento backend with your admin credentials.</p>
-            </li>
-            <li>
-               <p>
-                  The Magento web API framework identifies you and controls access to the requested resource.
-               </p>
-            </li>
-         </ol>
-      </td>
-   </tr>
+
    <tr>
       <td>
          <p>Third-party application</p>
       </td>
       <td>
-         <p><a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></p>
-      </td>
-      <td>
-         <p>Third-party applications use OAuth-based authentication to access the web APIs.</p>
+         <p>Third-party applications use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> to access the web APIs.</p>
          <ol>
             <li>
                <p>The third-party add-on registers with Magento.</p>
@@ -101,29 +63,31 @@ github_link: get-started/authentication/gs-authentication.md
          </ol>
       </td>
    </tr>
+    <tr>
+      <td>
+         <p>JavaScript widget on the Magento frontend or backend</p>
+      </td>
+       <td>
+         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento frontend or backend.</p>
+         <p>A session is identified by a cookie and time out after a period of inactivity. Additionally, you can have a session as a guest user without logging in.</p>
+         <ol>
+            <li>
+              <p>As a customer, you log in to the Magento frontend with your customer credentials. As an admin, you log in to the Magento backend with your admin credentials.</p>
+            </li>
+            <li>
+               <p>The Magento web API framework identifies you and controls access to the requested resource.
+               </p>
+            </li>
+         </ol>
+      </td>
+   </tr>
 </table>
-<h2 id="resources">Which resources can you access?</h2>
-<p>Customers can access resources that are configured with <code>anonymous</code> or <code>self</code> permission in the <code>webapi.xml</code> configuration file.</p>
-<p>Admins can access resources for which they are authorized.</p>
-<div class="bs-callout bs-callout-info" id="info">
-<p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p></div>
-<p>For more information, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#configuration-options">webapi.xml configuration options</a>.</p>
-<h2 id="authenticate">How to authenticate</h2>
-<p>Depending on how you plan to access the web APIs, read the appropriate authentication section:</p>
+<h2 id="next-step-auth">Next step</h2>
+<p>Proceed to the authentication method for your preferred client:</p>
 <ul>
-   <li>
-      <p>Mobile application:
-         <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">Token-based authentication</a>
-      </p>
-   </li>
-   <li>
-      <p>Magento frontend or backend:
-         <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>
-      </p>
-   </li>
-   <li>
-      <p>Third-party application:
-         <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
-      </p>
-   </li>
+<li>Mobile application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</li>
+<li>Third-party application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
+<li>JavaScript widget on the Magento frontend or backend. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
+
+

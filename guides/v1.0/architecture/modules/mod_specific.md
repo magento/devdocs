@@ -9,20 +9,20 @@ github_link: architecture/modules/mod_specific.md
 ---
 
 <h2 id="m2arch-module-specific-overview"> Overview</h2>
-The following modules are included in the standard Magento installtion:
+The following modules are included in the standard Magento installation:
 
 * abc
 * abc
 * abc
 
-<h2 id="AG-into-mods-specific">Specific Modules</h2>
+<h2 id="AG-into-mods-specific">Specific modules</h2>
 
 <p class ="q">Need to decide what content we want about each Module... this stuff below from Olena's TEST page (https://wiki.magento.com/pages/viewpage.action?title=Working+with+Modules+in+Magento+2+-+DRAFT%2C+DO+NOT+DISTRIBUTE&spaceKey=TEST), or the content from Oleh with the dynamically generated diagram showing dependencies...? or...?</p>
 
 
 Checkout Module
 
-: The Multishipping feature and the Terms and Conditions feature were moved from Checkout module to separate modules. Thus, the third-part developer can disable these functionalies without influencing other parts of the application. Also, the dependencies between decoupled modules and other modules were eliminated or made more explicit.
+: The Multishipping feature and the Terms and Conditions feature were moved from Checkout module to separate modules. Thus, the third-part developer can disable these functionalities without influencing other parts of the application. Also, the dependencies between decoupled modules and other modules were eliminated or made more explicit.
 
 Catalog Module
 

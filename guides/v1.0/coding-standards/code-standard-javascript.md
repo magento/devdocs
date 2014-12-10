@@ -4,13 +4,13 @@ group: coding-standards
 subgroup: Coding standards
 title: JavaScript coding standard
 menu_title: JavaScript coding standard
-menu_order: 2
+menu_order: 3
 github_link: coding-standards/code-standard-javascript.md
 ---
 
 <p>The JavaScript coding standard, based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>, defines Magento requirements for code formatting and style for teams that develop Magento JavaScript and jQuery code.</p>
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
-<p>The Magento system uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets" target="_blank">jQuery widgets</a>. For the jQuery widget coding standard, see <a href="{{ site.gdeurl }}coding-standards/coding-standard-jquery-widgets.html">jQuery widget coding standard</a>.
+<p>The Magento system uses the jQuery library including the standard and custom <a href="http://api.jqueryui.com/category/widgets" target="_blank">jQuery widgets</a>. For the jQuery widget coding standard, see <a href="{{ site.gdeurl }}coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a>.
 </p>
 <p>Some parts of Magento code might not comply with this coding standard.</p>
 <p>This coding standard is optional for third-party Magento developers.</p>

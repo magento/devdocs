@@ -1,11 +1,7 @@
 ---
 layout: default
-title: Service implementation comparison 
+title: Service implementation comparison
 ---
- 
-# Service implementation comparison
-
-<p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/service-contracts/add-later/service-compare-m1-m2.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
 
 As an example of the power and simplicity of the Magento 2 service framework, let's take a look at two side-by-side implementations:
 
@@ -59,7 +55,7 @@ However, the similarities end there. The following table shows the key differenc
 	</tr>
 	</tbody>
 	</table>
-	
+
 ## Register During Checkout Example
 
 This example sends a welcome e-mail to a customer after the customer registers during checkout.
@@ -96,10 +92,3 @@ From that point they are different, as the following table shows:
 	</tr>
 	</tbody>
 	</table>
-	
-
-
-
-#### Related Topics
-
-*	

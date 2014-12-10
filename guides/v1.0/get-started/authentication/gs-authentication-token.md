@@ -8,7 +8,7 @@ menu_order: 1
 github_link: get-started/authentication/gs-authentication-token.md
 ---
 
-<p>To make a web API call through a mobile application, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API.</p>
+<p>To make a web API call from a client such as a mobile application, you must supply an <i>authentication token</i> on the call. The token acts like an electronic key that lets you access the API.</p>
 <p>You request a token from the Magento token service at the REST endpoint that is defined for your user type. The token service returns
    a unique authentication token in exchange for a user name and password for a Magento account.
 </p>
@@ -103,9 +103,13 @@ github_link: get-started/authentication/gs-authentication-token.md
 <p>The Magento web API framework allows <i>guest users</i> to access resources that are configured with anonymous permission. Guest users are users who the framework cannot authenticate through existing authentication
    mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission.
 </p>
-<h3>Related topics</h3>
+<h2>Next step</h2>
 <ul>
    <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+</ul>
+<h2>Related topic</h2>
+<ul>
+
    <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
 

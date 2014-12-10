@@ -1,7 +1,7 @@
 ---
 layout: default
-group: get-started
-subgroup: Step 3. Run the request
+group:
+subgroup: Step 3. Use cURL to run the request
 title: Firefox REST client
 menu_title: Firefox REST client
 menu_order: 3
@@ -151,20 +151,10 @@ An example follows:<br>
 <p>Following is sample raw data from a successful REST call:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/fed484b41f9fbdd46331.js"></script>
 
-</div>
-
-</div>
-
-<div id="accordion_related-topics">
 <h4 id="svcs_rest_reltop">Related topics</h4>
-<div>
+
 
 <ul><li><a href="{{ site.gdeurl }}get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
 <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
-
-<!--
-<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a></li>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-build.html">How to build a service</a></li>
-<li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/what-is-webapi.html">What Is the Web API Framework?</a></li>
- --></ul>
+</ul>
 
