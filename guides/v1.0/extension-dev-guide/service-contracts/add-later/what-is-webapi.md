@@ -3,9 +3,6 @@ layout: default
 title: What is the web API framework?
 ---
 
-<h1 class="api1" id="api-services">{{ page.title }}</h1>
-<p><a href="{{ site.githuburl }}guides/v1.0/get-started/webapi/what-is-webapi.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
 The web API framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.
 
 Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.
@@ -55,5 +52,4 @@ Your module can use `webapi.xsd` or you can create a customized validation.
 *	<a href="{{ site.gdeurl }}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 *	<a href="{{ site.gdeurl }}get-started/gs-web-api-request.html">Step 2. Construct a request</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/svcs-props.html">Service design</a>
+
