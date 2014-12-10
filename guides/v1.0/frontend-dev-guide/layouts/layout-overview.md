@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group:
 subgroup: B_Layouts
 title: Layouts
 menu_title: Layouts
@@ -29,11 +29,11 @@ Layout files include:
 
 For the sake of stability and easy maintenance, do not edit the out-of-the-box Magento module and theme layouts. Create a custom theme instead, where you can extend or overridde module and parent theme layouts.
 
-To customize the layout, add overriding or extending layouts in your theme.
+To customize the layout, add layout overrides or extensions in your theme.
 
 <h2 id="layout_overview_blocks">Basic layout elements</h2>
 
- The basic components of Magento page design are blocks and containers. Simply put, containers contain blocks, other containers, and other layout elements.
+The basic components of Magento page design are blocks and containers. Simply put, containers contain blocks, other containers, and other layout elements.
 
 A *container* exists for the sole purpose of assigning content structure to a page. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.
 
@@ -67,7 +67,7 @@ For details, refer to Layout File Types. <!-- ADDLINK -->
 
 *Page configuration*
 
-An XML file defining the low level page structure: containers and blocks declarations and  manipulation instructions. 
+An XML file defining the low level page structure: containers and blocks declarations and  manipulation instructions.
 
 
 For details, refer to Layout File Types. <!-- ADDLINK -->
@@ -123,7 +123,7 @@ You can provide additional instructions for the existing layout files layout fil
 
 *Overriding layout*
 
-A layout to be used instead a certain base or theme layout. 
+A layout to be used instead a certain base or theme layout.
 
 
 <h2 id="layout_conventions">Layout file conventions</h2>
@@ -171,7 +171,7 @@ The Magento software:
 
 	c. For all themes except the parent theme, replaces overridden theme layouts.
 
-1.	Extends layout files from the list. For details about extending layouts, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>.
+1.	Extends layout files from the list. For details about layout extensions, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
