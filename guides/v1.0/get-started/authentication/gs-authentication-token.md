@@ -103,9 +103,13 @@ github_link: get-started/authentication/gs-authentication-token.md
 <p>The Magento web API framework allows <i>guest users</i> to access resources that are configured with anonymous permission. Guest users are users who the framework cannot authenticate through existing authentication
    mechanisms. As a guest user, you do not need to, but you can, specify a token in a web API call for a resource with anonymous permission.
 </p>
-<h3>Related topics</h3>
+<h2>Next step</h2>
 <ul>
    <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+</ul>
+<h2>Related topic</h2>
+<ul>
+
    <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
 
