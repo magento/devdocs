@@ -31,13 +31,14 @@ The basic set of instructions is the same for all types of layout files. Though 
 
 Use the following layout instructions to customize your layout:
 
-*	<a href="#fedg_layout_xml-instruc_ex_block">&lt;block></a>
-*	<a href="#fedg_layout_xml-instruc_ex_cont">&lt;container></a>
-*	<a href="#fedg_layout_xml-instruc_ex_act">&lt;action></a>
-*	<a href="#fedg_layout_xml-instruc_ex_rem">&lt;remove></a>
-*	<a href="#fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></a>
-*	<a href="#fedg_layout_xml-instruc_ex_mv">&lt;move></a>
-*	<a href="#fedg_layout_xml-instruc_ex_upd">&lt;update/&gt;</a>
+*	<a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
+*	<a href="#fedg_xml-instrux_before-after">the <code>before</code> and <code>after</code> attributes</a>
+*	<a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_rem"><code>&lt;remove></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
@@ -182,6 +183,77 @@ Sample of usage in layout:
 This would add a new column to the page layout.
 
 <!-- <script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script> -->
+
+<h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
+<p>To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
+<p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
+An example of a layout declaration with before and after usage follows:</p>
+<script src="https://gist.github.com/xcomSteveJohnson/a88b5c8c4e53682e2596.js"></script>
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Value</th>
+         <th>Description</th>
+      </tr>
+      <tr class="even">
+         <td>before</td>
+         <td>Dash (-)</td>
+         <td>The block displays before all other elements in its parent node.</td>
+      </tr>
+      <tr class="odd">
+         <td>before</td>
+         <td>[element name]</td>
+         <td>The block displays before the named element.</td>
+      </tr>
+      <tr class="even">
+         <td>before</td>
+         <td>empty value or [element name] is absent</td>
+         <td>Use the value of <code>after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+      </tr>
+      <tr class="even">
+         <td>after</td>
+         <td>Dash (-)</td>
+         <td>The block displays after all other elements in its parent node.</td>
+      </tr>
+      <tr class="odd">
+         <td>after</td>
+         <td>[element name]</td>
+         <td>The block displays after the named element.</td>
+      </tr>
+      <tr class="even">
+         <td>after</td>
+         <td>empty value or [element name] is absent</td>
+         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+      </tr>
+   </tbody>
+</table>
+<h3 id="examples">Examples</h3>
+<table>
+   <tbody>
+      <tr>
+         <th>Situation</th>
+         <th>Result</th>
+      </tr>
+      <tr class="even">
+         <td>Both <code>before</code> and <code>after</code> attributes are present</td>
+         <td><code>after</code> takes precedence.</td>
+      </tr>
+      <tr class="odd">
+         <td>Both <code>before</code> and <code>after</code> attributes are absent or empty</td>
+         <td>The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements.</td>
+      </tr>
+      <tr class="even">
+         <td>Several elements have <code>before</code> or <code>after</code> set to dash (-)</td>
+         <td>All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
+      </tr>
+      <tr class="odd">
+         <td>The <code>before</code> or <code>after</code> attribute's value refers to an element that is not located in the parent node of the element being defined.</td>
+         <td>The element displays at a random location that doesn't violate requirements for the correctly positioned elements.</td>
+      </tr>
+   </tbody>
+</table>
+
 <h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
 Calls public methods on the block API.
 <p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action></code> node must be located in the scope of the <code>&lt;block></code> node.</p>
@@ -301,74 +373,14 @@ Sets the declared block or container element as a child of another element in th
    </tbody>
 </table>
 
-<h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
-<p>To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
-<p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
-An example of a layout declaration with before and after usage follows:</p>
-<script src="https://gist.github.com/xcomSteveJohnson/a88b5c8c4e53682e2596.js"></script>
-<table>
-   <tbody>
-      <tr>
-         <th>Attribute</th>
-         <th>Value</th>
-         <th>Description</th>
-      </tr>
-      <tr class="even">
-         <td>before</td>
-         <td>Dash (-)</td>
-         <td>The block displays before all other elements in its parent node.</td>
-      </tr>
-      <tr class="odd">
-         <td>before</td>
-         <td>[element name]</td>
-         <td>The block displays before the named element.</td>
-      </tr>
-      <tr class="even">
-         <td>before</td>
-         <td>empty value or [element name] is absent</td>
-         <td>Use the value of <code>after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
-      </tr>
-      <tr class="even">
-         <td>after</td>
-         <td>Dash (-)</td>
-         <td>The block displays after all other elements in its parent node.</td>
-      </tr>
-      <tr class="odd">
-         <td>after</td>
-         <td>[element name]</td>
-         <td>The block displays after the named element.</td>
-      </tr>
-      <tr class="even">
-         <td>after</td>
-         <td>empty value or [element name] is absent</td>
-         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
-      </tr>
-   </tbody>
-</table>
-<h3 id="examples">Examples</h3>
-<table>
-   <tbody>
-      <tr>
-         <th>Situation</th>
-         <th>Result</th>
-      </tr>
-      <tr class="even">
-         <td>Both <code>before</code> and <code>after</code> attributes are present</td>
-         <td><code>after</code> takes precedence.</td>
-      </tr>
-      <tr class="odd">
-         <td>Both <code>before</code> and <code>after</code> attributes are absent or empty</td>
-         <td>The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements.</td>
-      </tr>
-      <tr class="even">
-         <td>Several elements have <code>before</code> or <code>after</code> set to dash (-)</td>
-         <td>All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
-      </tr>
-      <tr class="odd">
-         <td>The <code>before</code> or <code>after</code> attribute's value refers to an element that is not located in the parent node of the element being defined.</td>
-         <td>The element displays at a random location that doesn't violate requirements for the correctly positioned elements.</td>
-      </tr>
-   </tbody>
-</table>
+<h3 id="fedg_layout_xml-instruc_ex_upd">&lt;update&gt;</h3>
+
+Includes a certain layout.
+
+Used as follows:
+<pre>
+handle="{name_of_handle_to_include}"
+</pre>
+The specified <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#handle">handle is "included" and executed recursively.
 
 

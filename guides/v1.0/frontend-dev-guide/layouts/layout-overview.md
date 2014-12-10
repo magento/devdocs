@@ -81,8 +81,8 @@ For details, refer to Layout File Types. <!-- ADDLINK -->
 *Layout instruction*
 TBD
 
-<!--
-*Layout handle*
+
+<span id="handle">*Layout handle* </span>
 
 A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.
 
@@ -92,9 +92,9 @@ Layout handles include:
 * Page layout handles: Identifies specific pages. Correspond to controller actions with parameters that identify specific pages; for example, `catalog_product_view_type_simple_id_128`
 * Arbitrary handles: Does not correspond to any page type, but other handles use them by inclusion.
 
-**To reviewer: is it true about handle?**
+<p class=q>To reviewer: is it true about handle?</p>
 
--->
+
 
 <u> Layout file types: by location </u>
 
