@@ -94,7 +94,7 @@ Sample of how it might look:
 
 <h2 id="fedg_rwd_include-js">Include JavaScript files in a responsive theme</h2>
 
-The Blank theme layout file, <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml</a>, already has `responsive.js`, `navigation-menu.js`, and `matchMedia.js` included.
+The Blank theme layout file, <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml</a>, already has `responsive.js`, `navigation-menu.js`, and `matchMedia.js` included.
 
 When you add a new theme, you include them in your responsive theme layout as follows:
 

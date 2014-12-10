@@ -27,7 +27,7 @@ github_link: architecture/view/xml-schema-layout.md
          <td>Individual layouts</td>
       </tr>
       <tr>
-         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Layout/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
+         <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
          <td>Individual layouts.</td>
       </tr>
       <tr>
@@ -352,7 +352,7 @@ github_link: architecture/view/xml-schema-layout.md
    </thead>
    <tbody>
       <tr>
-         <td><a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/layout/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
+         <td><a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
          <td>Layouts</td>
       </tr>
       <tr>
