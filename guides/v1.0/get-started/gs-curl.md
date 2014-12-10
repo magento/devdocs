@@ -98,6 +98,12 @@ github_link: get-started/gs-curl.md
    </tr>
 </table>
 
+<h2>Next step</h2>
+<ul>
+   <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
+
+</ul>
+
 
 
 

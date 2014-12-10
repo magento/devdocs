@@ -42,8 +42,6 @@ You can run Magento in any of the following *modes*:
 </tbody>
 </table>
 
-<p class="q">Reviewer: We don't have topics on materialization of static view files or caching view files. As soon as those topics are written, I will provide links to them.</p>
-
 <h2 id="mode-developer">Developer mode</h2>
 You should run the Magento software in developer mode when you're extending or customizing it.
 
@@ -64,9 +62,7 @@ In default mode:
 
 *	Errors are logged to the file reports at server, and never shown to a user
 *	Static view files are cached
-*	Default mode is not optimized for a production environment
-
-<p class="q">Reviewer: It would be nice to say clearly why default mode is not recommended for production.</p>
+*	Default mode is not optimized for a production environment, primariy because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="#mode-specify">Specify a mode</a>.
 
@@ -221,8 +217,7 @@ The following table discusses the meanings of the options:
 		</tr>
 	<tr>
 		<td>--langs</td>
-		<td><p class="q">Reviewer: Is it comma-separated and is there another way to find the list?</p>
-		<p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. (Default is <code>en_US</code>.)</p>
+		<td><p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. *Do not* separate locales with a space. (Default is <code>en_US</code>.)</p>
 		<p>You can find the list by running <code>[your Magento install dir]/setup/php -f index.php help languages</code>.</p></td>
 	</tr>
 	<tr>
