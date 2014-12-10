@@ -26,7 +26,7 @@ github_link: get-started/bk-get-started-api.md
    </li>
    <li>
       <p>
-         <a href="{{ site.gdeurl }}get-started/gs-web-api-run.html">Step 3. Run the request</a>
+         <a href="{{ site.gdeurl }}get-started/gs-curl.html">Step 3. Use cURL to run the request</a>
       </p>
    </li>
    <li>

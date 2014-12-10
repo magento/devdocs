@@ -4,7 +4,7 @@ group: get-started
 subgroup: B_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication
-menu_order: 2
+menu_order: 3
 github_link: get-started/authentication/gs-authentication-session.md
 ---
 

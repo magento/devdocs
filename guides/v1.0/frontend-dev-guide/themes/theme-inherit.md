@@ -121,8 +121,9 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
 You can find out what exactly code changes are required to perform this and other tasks in the Templates section. <!--ADDLINK-->
 
-<h2 id="theme-inherit-layout">Extending layouts</h2>
-Layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
+<h2 id="theme-inherit-layout">Extend layouts</h2>
+
+The layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
 
 1. Current theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout`
 2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
@@ -138,9 +139,9 @@ To add a merging layout file:
 <u>Example</u>:
 
 OrangeCo decided they should remove the “Report bugs” link from the footer, defined in `app/code/Magento/Theme/view/frontend/layout/default.xml`
-To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` : 
+To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` :
 
-<pre> 
+<pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;report.bugs&quot;/&gt;
@@ -162,7 +163,7 @@ To override module layout instructions (base layout): <!-- ADDLINK -->
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 
 
- 
+
 
 
 

@@ -3,11 +3,7 @@ layout: default
 title: Service building basics
 ---
 
-# How to build a service
-
-<p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/service-contracts/add-later/build-svc.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
-
-A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods. To review the properties of a service, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/svcs-props.html">Service design</a>.
+A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods.
 
 The code that uses a service should depend on the interface rather than on the service implementation. Doing so enables you to use a different implementation if needed.
 
@@ -111,10 +107,11 @@ Note the following:
 
 *	Setters should rely on the method `_set` provided for convenience in the `\Magento\Framework\Service\Data\AbstractObjectBuilder` class.
 
-#### Related Topics:
+#### Related topics:
 
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 
+<!--
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a>
 
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/svcs-props.html">Service design</a>
@@ -122,3 +119,4 @@ Note the following:
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/what-is-webapi.html">What Is the Web API Framework?</a>
 
 *	<a href="{{ site.gdeurl }}config-guide/integration/cg-authorization.html">Authorizing Web API Requests</a>
+ -->

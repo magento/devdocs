@@ -1,10 +1,11 @@
 ---
 layout: default
 group: get-started
-subgroup: Step 3. Run the request
-title: How cURL commands work
-menu_title: How cURL commands work
-menu_order: 2
+subgroup: Step 3. Use cURL to run the request
+title: Step 3. Use cURL to run the request
+menu_title: Step 3. Use cURL to run the request
+menu_order: 1
+menu_node: parent
 github_link: get-started/gs-curl.md
 ---
 
@@ -12,9 +13,13 @@ github_link: get-started/gs-curl.md
    responses from the command line or a shell script. It is available for Linux distributions,
    Mac OS X, and Windows.
 </p>
-<p>The examples in this guide use cURL commands to make Magento web API calls. For complete information about cURL, see
-   <a href="http://curl.haxx.se/" target="_top">http://curl.haxx.se/</a>.
-</p>
+
+
+<p>To use cURL to run your REST web API call, use the <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html#curl-command-syntax">cURL command syntax</a> to construct the cURL command.</p>
+<p>To create the endpoint in the call, append the REST URI that you constructed in <a href="{{ site.gdeurl }}get-started/gs-web-api-construct.html">Step 3. Construct a request</a> to this URL:</p>
+<pre>https://&lt;MAGENTO_HOST_OR_IP&gt;/&lt;MAGENTO_BASE_INSTALL_DIR&gt;/rest/</pre>
+<p>To pass the customer data object in the POST call payload, specify a JSON or XML request body on the call.</p>
+<p>For a complete list of cURL command options, see <a href="http://curl.haxx.se/docs/manpage.html">curl.1 the man page</a>.</p>
 <p>The cURL examples in this guide
    use the following command-line options:
 </p>
@@ -93,7 +98,7 @@ github_link: get-started/gs-curl.md
    </tr>
 </table>
 
-<p>For a complete list of cURL command options, see <a href="http://curl.haxx.se/docs/manpage.html">curl.1 the man page</a>.</p>
+
 
 
 

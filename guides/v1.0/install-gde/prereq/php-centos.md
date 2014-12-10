@@ -36,7 +36,7 @@ Magento requires:
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
 
-PHP 5.3 is the default PHP version on CentOS 6.x distributions. For best results, make sure PHP 5.3 is already installed and, if not, install it before upgrading to PHPH 5.4 or 5.5.
+PHP 5.3 is the default PHP version on CentOS 6.x distributions. For best results, make sure PHP 5.3 is already installed and, if not, install it before upgrading to PHP 5.4 or 5.5.
 
 To verify if PHP is installed already, enter `php -v`. If PHP is *not* installed, install it by entering the following command:
 

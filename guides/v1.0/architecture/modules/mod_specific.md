@@ -22,7 +22,7 @@ The following modules are included in the standard Magento installation:
 
 Checkout Module
 
-: The Multishipping feature and the Terms and Conditions feature were moved from Checkout module to separate modules. Thus, the third-part developer can disable these functionalies without influencing other parts of the application. Also, the dependencies between decoupled modules and other modules were eliminated or made more explicit.
+: The Multishipping feature and the Terms and Conditions feature were moved from Checkout module to separate modules. Thus, the third-part developer can disable these functionalities without influencing other parts of the application. Also, the dependencies between decoupled modules and other modules were eliminated or made more explicit.
 
 Catalog Module
 
