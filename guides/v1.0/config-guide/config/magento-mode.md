@@ -62,7 +62,7 @@ In default mode:
 
 *	Errors are logged to the file reports at server, and never shown to a user
 *	Static view files are cached
-*	Default mode is not optimized for a production environment, primariy because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="#mode-specify">Specify a mode</a>.
 

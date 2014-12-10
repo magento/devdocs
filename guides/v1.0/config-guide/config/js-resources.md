@@ -10,7 +10,7 @@ github_link: config-guide/config/js-resources.md
 
 <h2 id="m2devgde-js-resources-intro">Overview</h2>
 
-JavaScript (JavaScript) is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScrip from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
+JavaScript (JavaScript) is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous or "lazy" JavaScript loading.
 
