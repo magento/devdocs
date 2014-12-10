@@ -10,7 +10,7 @@ github_link: coding-standards/docblock-standard-javascript-general.md
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 
-This article contains Magento requirements and conventions for adding JavaSrcipt code inline documentation. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
+This article contains Magento requirements and conventions for adding JavaScript code inline documentation. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
 These standard are a subset of <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
@@ -139,7 +139,7 @@ project.MyClass.EmptyNodeList&nbsp;=&nbsp;function()&nbsp;{
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-interface">@interface</h4>
 
-Used to indicate that the function defines an inteface.
+Used to indicate that the function defines an interface.
 
 <pre>/**
 &nbsp;*&nbsp;A&nbsp;shape.
@@ -396,7 +396,7 @@ new Date()</pre></td>
 		<td><pre>var obj = {};
 obj[1] = 'bar';</pre></td>
 		<td>An Object in which the keys are numbers and the values are strings.
-Note that in JavaScript, the keys are always implicitly coverted to strings, so obj['1'] == obj[1].
+Note that in JavaScript, the keys are always implicitly converted to strings, so obj['1'] == obj[1].
 So the key will always be a string in for...in loops. But the compiler will verify the type if the key when indexing into the object.</td>
 	</tr>
 	<tr>
@@ -477,7 +477,7 @@ new&nbsp;project.MyClass()</pre></td>
 		An array of strings.<br>
 		<code>{Object. <string, number>}</code><br>
 		An object in which the keys are strings and the values are numbers.</td>
-		<td>Patameterizes a type, by applying a set of type arguments to that type. The idea is analogous to generics in Java.</td>
+		<td>Parametrizes a type, by applying a set of type arguments to that type. The idea is analogous to generics in Java.</td>
 		<td></td>
 	</tr>
 	<tr>
