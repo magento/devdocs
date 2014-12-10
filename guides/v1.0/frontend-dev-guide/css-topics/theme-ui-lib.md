@@ -121,7 +121,7 @@ The following figure shows how to customize a theme using only variables from `v
 
 ![Example of customizing a theme using variables from variables.less]({{ site.baseurl }}common/images/library_variables_customization.jpg)
 
-You can find more information on the Magento UI library specific mixins and the list of mixins variables in the <a href="{{ site.mage2000url }}blob/master/lib/web/css-topics/docs/source/README.md" target="_blank">library documentation on GitHub</a>.
+You can find more information on the Magento UI library specific mixins and the list of mixins variables in the <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a>.
 
 `README.md` contains an overview and naming conventions for the documentation, as well as descriptions of the HTML files with mixins description and lists of their variables. Each *.html file is named after the elements block which is configured by this particular set of mixins.
 

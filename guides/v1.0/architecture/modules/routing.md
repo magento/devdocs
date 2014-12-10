@@ -110,4 +110,4 @@ For this class, the `Magento\Framework\App\ActionInterface` processes the reques
 
 If a request cannot be processed by any router, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.
 
-<a href="{{ site.mage2000url }}ib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.

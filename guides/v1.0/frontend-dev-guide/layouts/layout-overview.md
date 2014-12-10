@@ -134,7 +134,7 @@ To be processed correctly, all layout files must meet the following requirements
 *	The layout file name defines the name of the layout handle.
 *	The layout file is located according to convention (`app/code/<VendorName>/<ModuleName>/view/frontend/layout`); for example:
 
-	<a href="{{ site.mage2000url }}blob/master/app/code/Magento/Checkout/view/frontend/layouts/checkout_cart_index.xml" target="_blank">Sample layout file</a>
+	<a href="{{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/layouts/checkout_cart_index.xml" target="_blank">Sample layout file</a>
 
 `checkout_cart_index.xml` defines several handles, including `checkout_cart_item_renderers`.
 
