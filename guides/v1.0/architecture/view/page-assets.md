@@ -191,4 +191,3 @@ For example, to add a local JavaScript or CSS file to the page output:
 #### Related topics
 
 * <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-* TBD

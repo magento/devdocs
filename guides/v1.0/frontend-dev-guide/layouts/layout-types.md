@@ -95,6 +95,268 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
 
 <h3>Page configuration structure and allowed layout instructions</h3>
 
+<table>
+  <tbody>
+    <tr>
+      <th>Element</th>
+      <th colspan="1">Attributes</th>
+      <th colspan="1">Parent of</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code> <span>&lt;page&gt;&lt;/page&gt;</span> </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code>layout = {layout}</code>
+          </li>
+          <li>
+            <code class="xml color1">
+              <a href="http://xsinoNamespaceSchemaLocation">xsi:noNamespaceSchemaLocation</a>
+            </code>
+            <code class="xml plain">=</code>
+            <code class="xml string">"../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd</code>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>&lt;html&gt;</li>
+          <li>&lt;head&gt;</li>
+          <li>&lt;body&gt;</li>
+          <li>&lt;update&gt;</li>
+        </ul>
+      </td>
+      <td>Mandatory root element.</td>
+    </tr>
+    <tr>
+      <td colspan="1">&lt;html&gt;&lt;/html&gt;</td>
+      <td colspan="1">
+        <p>none</p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>&lt;attribute&gt;</li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>Mandatory element.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">&lt;head&gt;&lt;/head&gt;</td>
+      <td colspan="1">none</td>
+      <td colspan="1">
+        <ul>
+          <li>&lt;title&gt;</li>
+          <li>&lt;meta&gt;</li>
+          <li>&lt;link&gt;</li>
+          <li>&lt;css&gt;</li>
+          <li>&lt;script&gt;</li>
+        </ul>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">&lt;body&gt;&lt;/body&gt;</td>
+      <td colspan="1">none</td>
+      <td colspan="1">
+        <ul>
+          <li>&lt;block&gt;</li>
+          <li>&lt;container&gt;</li>
+          <li>&lt;remove/&gt;</li>
+          <li>&lt;move/&gt;</li>
+          <li>&lt;update/&gt;</li>
+          <li>&lt;referenceBlock&gt;</li>
+          <li>&lt;referenceContainer&gt;</li>
+          <li>&lt;action/&gt;</li>
+        </ul>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">&lt;attribute/&gt;</td>
+      <td colspan="1">
+        <ul>
+          <li>name = <span>{arbitrary_name}</span>
+          </li>
+          <li>value = <span>{arbitrary_value}</span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1"> </td>
+      <td colspan="1">
+        <p>Specified for &lt;html&gt;, rendered like following:</p>
+        <p>&lt;html name="value'&gt;</p>
+        <p> </p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>&lt;title&gt;</p>
+      </td>
+      <td colspan="1">none</td>
+      <td colspan="1">none</td>
+      <td colspan="1">Page title</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>&lt;meta&gt;</p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span>content </span>
+          </li>
+          <li>
+            <span>charset </span>
+          </li>
+          <li>
+            <span>http-equiv </span>
+          </li>
+          <li>
+            <span>name </span>
+          </li>
+          <li>
+            <span>scheme </span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>&lt;link/&gt;</p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span>src</span>
+          </li>
+          <li>
+            <span>defer </span>
+          </li>
+          <li>
+            <span>ie_condition </span>
+          </li>
+          <li>
+            <span>charset </span>
+          </li>
+          <li>
+            <span>hreflang </span>
+          </li>
+          <li>
+            <span>media </span>
+          </li>
+          <li>
+            <span>rel </span>
+          </li>
+          <li>
+            <span>rev </span>
+          </li>
+          <li>
+            <span>sizes </span>
+          </li>
+          <li>
+            <span>target </span>
+          </li>
+          <li>
+            <span>type </span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span>&lt;css/&gt;</span>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span>src </span>
+          </li>
+          <li>
+            <span>defer </span>
+          </li>
+          <li>
+            <span>ie_condition </span>
+          </li>
+          <li>
+            <span>charset </span>
+          </li>
+          <li>
+            <span>hreflang </span>
+          </li>
+          <li>
+            <span>media </span>
+          </li>
+          <li>
+            <span>rel </span>
+          </li>
+          <li>
+            <span>rev </span>
+          </li>
+          <li>
+            <span>sizes </span>
+          </li>
+          <li>
+            <span>target </span>
+          </li>
+          <li>
+            <span>type </span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p>&lt;script&gt;</p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span>src </span>
+          </li>
+          <li>
+            <span>defer </span>
+          </li>
+          <li>
+            <span>ie_condition </span>
+          </li>
+          <li>
+            <span>async </span>
+          </li>
+          <li>
+            <span>charset </span>
+          </li>
+          <li>
+            <span>type </span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 
 
 
