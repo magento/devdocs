@@ -107,7 +107,7 @@ A sample follows:
     );
 }</pre>
 
-In the preceding example, variables starting with `@_` are private mixin variables used only in this mixin. Variables starting with `@` (without the underscore) are global, and are listed in `/app/design/frontend/[theme name]/css-topics/source/lib/variables.less`.
+In the preceding example, variables starting with `@_` are private mixin variables used only in this mixin. Variables starting with `@` (without the underscore) are global, and are listed in `/app/design/frontend/<ThemeName>/css-topics/source/lib/variables.less`.
 
 You can find the complete list of mixin private variables and their description in the library documentation under `pub/lib/css-topics/docs`.
 

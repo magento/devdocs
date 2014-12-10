@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/javascript/jquery-widget-loader.md
 
 The loader widget blocks some or all page content when an Ajax request is being sent; however, you can also use it for non-Ajax tasks.
 
-The loader source is `[your Magento install dir]/pub/lib/mage/loader.js`.
+The loader source is `<your Magento install dir>/pub/lib/mage/loader.js`.
 
 <h2 id="fedg_loader_init">Initialize the loader widget</h2>
 

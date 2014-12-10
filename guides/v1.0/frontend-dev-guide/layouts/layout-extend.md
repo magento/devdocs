@@ -17,7 +17,7 @@ To add a theme merging file:
 1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html#layout_conventions">layout file conventions</a>.
 2.	Place the theme merging file according to our location conventions; that is:
 
-<pre>__app/design/[area]/[theme path]
+<pre>__app/design/<areaname>/[theme path]
  |__/[your namespace]_[your module name]
    |__/layout
      |--&lt;layout1>.xml
@@ -26,7 +26,7 @@ To add a theme merging file:
 Where:
 
 *	`[theme_path]` is a path to the theme relative to the themes directory
-*	`[area]` is the code of the application area to which the theme applies (typically, `adminhtml` or `frontend`)
+*	`<areaname>` is the code of the application area to which the theme applies (typically, `adminhtml` or `frontend`)
 
 <h2 id="fedg_layout_extend_merge">Merge layout files</h2>
 

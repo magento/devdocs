@@ -51,8 +51,8 @@ A module should be named according to the Namespace_Module schema, where
 * Namespace is a name of a module's vendor
 * Module is a name assigned to a module by its vendor
 
-Typically, a module is located in `[root]/app/code/[Namespace]/[Module]` directory.
-A module should be declared in `[root]/app/code/[Namespace]/[ModuleName]/etc/module.xml` file. To declare a module, the following information should be specified:
+Typically, a module is located in `[root]/app/code/<namespace>/<ModuleName>` directory.
+A module should be declared in `[root]/app/code/<namespace>/[ModuleName]/etc/module.xml` file. To declare a module, the following information should be specified:
 * The name of a module, according to the naming rules
 * An element specifying whether a module is active
 * Dependency of a module on other modules, if any
