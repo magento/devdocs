@@ -10,7 +10,7 @@ github_link: extension-dev-guide/service-contracts/design-patterns.md
 
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a design pattern as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
-<!-- <p>If additional patterns emerge, some of these functions might make their way into new patterns. For example, changing a password is never likely to be shared across data entities. Validation on the other hand might, so perhaps a new pattern will emerge to introduce AddressValidationInterface.</p> -->
+
 <h2 id="top-level-msc">Interface types and locations</h2>
 <p>A service contract must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
 <p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. To build data entities, you use builders. These builders are generated automatically when you set up dependency injection in the <b>di.xml</b> file. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a module.</p>
@@ -58,7 +58,9 @@ github_link: extension-dev-guide/service-contracts/design-patterns.md
 <h3 id="data-entity-builders">Data entity builders</h3>
 <p>A data entity builder is a class that provides setter functions that enable you to build data entities.</p>
 <p>You automatically generate and get a handle to builders through the dependency injection framework. After you set up dependency injection in the <b>di.xml</b> file, builders are automatically generated for defined dependencies.</p>
+<!--
 <p class="q">Reviewer: Exactly how do settings in di.xml cause builders to be generated?</p>
+ -->
 <p>For example, the <code>CustomerBuilder</code> class with setter functions is automatically generated in the <b>var/generated/Magento/Customer/Api/Data</b> subdirectory.
 </p>
 <h4 id="build-data-entity">Build a data entity</h4>
@@ -101,6 +103,7 @@ $newCustomer = $this->customerBuilder->create();
    <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.
    In <code>GroupSearchResultsInterface</code>, the<code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
 </p>
+<!--
 <h3 id="validation-rules">Validation rules</h3>
 <p class="q">Reviewer: What are patterns for validation rules interfaces?</p>
 <h3 id="validation-results">Validation results</h3>
@@ -108,6 +111,7 @@ $newCustomer = $this->customerBuilder->create();
 <h3 id="attribute-metadata">Attribute metadata</h3>
 <p>Metadata interfaces provide information about what attributes are defined for an entity. This includes custom attributes.</p>
 <p class="q">Reviewer: What are patterns for attribute metadata interfaces?</p>
+ -->
 <h2 id="service-interfaces">Service interfaces</h2>
 <p>Service interfaces include several interface subtypes:</p>
 <ul>
@@ -203,10 +207,6 @@ $newCustomer = $this->customerBuilder->create();
 <h3 id="related-topics">Related topics</h3>
 <ul>
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-domain-guidelines.html">Guidelines for domain and service layers</a>
-   </li>
-   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-example.html">Create a service - example</a>
-   </li>
    <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
    </li>
 </ul>

@@ -59,11 +59,11 @@ a. If module context is not defined for a file:
 
 b. If module context is defined for a file:
 
-1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module/>web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
+1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module/>web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no acncestor is reached:
 	`app/design/frontend/<parent_theme_path>/<Vendor>_<Module/>web/`
 
-3. Module static view files: `app/code/<Vendor>/<Module>/view/frontend/web/`
+3. Module static view files: `app/code/<Namespace>/<Module>/view/frontend/web/`
 
 
 <u>Example</u>
@@ -99,9 +99,9 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 
 The fallback scheme for templates is the following (module context is always known for them):
 
-1. Current theme templates: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/templates`
-2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/templates`
-3. Module templates: `app/code/<Vendor>/<Module>/view/frontend/templates`
+1. Current theme templates: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/templates`
+2. Ancestors themes templates, recursively, until a theme with no ancestor is reached: `app/design/frontend/<parent_theme_path>/<Namespace>_<Module>/templates`
+3. Module templates: `app/code/<Namespace>/<Module>/view/frontend/templates`
 
 
 So if you need to customize a certain template, you need to create an overriding one with the same name in the `../templates/<path_to_template>` directory in the theme module files. Where `<path_to_template>` is the path to the original template.
@@ -121,8 +121,9 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p><img src="{{ site.baseurl }}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed above the Go to Checkout button "></p>
 You can find out what exactly code changes are required to perform this and other tasks in the Templates section. <!--ADDLINK-->
 
-<h2 id="theme-inherit-layout">Extending layouts</h2>
-Layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
+<h2 id="theme-inherit-layout">Extend layouts</h2>
+
+The layouts processing mechanism does not involve fallback. The system collects layout files in the following order:
 
 1. Current theme layouts: `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout`
 2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
@@ -138,9 +139,9 @@ To add a merging layout file:
 <u>Example</u>:
 
 OrangeCo decided they should remove the “Report bugs” link from the footer, defined in `app/code/Magento/Theme/view/frontend/layout/default.xml`
-To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` : 
+To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` :
 
-<pre> 
+<pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;report.bugs&quot;/&gt;
@@ -162,7 +163,7 @@ To override module layout instructions (base layout): <!-- ADDLINK -->
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 
 
- 
+
 
 
 
