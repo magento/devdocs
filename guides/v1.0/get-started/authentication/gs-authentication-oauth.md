@@ -203,8 +203,13 @@ github_link: get-started/authentication/gs-authentication-oauth.md
    <li><code>oauth_token</code>. The <code>oauth_token</code>, or access token, value obtained in <a href="#get-access-token">Step 2. Get an access token</a>.</li>
 </ul>
 
-<h2>Related topics</h2>
+<h2>Next step</h2>
 <ul>
    <li><a href="{{ site.gdeurl }}/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+
+</ul>
+<h2>Related topic</h2>
+<ul>
+
    <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
