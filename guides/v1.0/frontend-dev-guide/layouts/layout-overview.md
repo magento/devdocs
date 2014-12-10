@@ -27,7 +27,7 @@ Layout files include:
 
 * Generic layouts: a variation of page configuration used for pages loaded by AJAX requests.
 
-For the sake of stability and easy maintenance, do not edit the out-of-the-box Magento module and theme layouts. Create a custom theme instead, where you can extend or overridde module and parent theme layouts.
+For the sake of stability and easy maintenance, do not edit the out-of-the-box Magento module and theme layouts. Create a custom theme instead, where you can extend or override module and parent theme layouts.
 
 To customize the layout, add layout overrides or extensions in your theme.
 
@@ -181,7 +181,7 @@ The Magento software:
 
 Following is an illustration of how layout processing works for two modules and two themes:
 
-![When Magento processes themes, it overrides layout 1 in module 1 because of a theme override. Layout 1 of the parent theme is also overriden the same way.]({{ site.baseurl }}common/images/layout_processing_dev.png)
+![When Magento processes themes, it overrides layout 1 in module 1 because of a theme override. Layout 1 of the parent theme is also overridden the same way.]({{ site.baseurl }}common/images/layout_processing_dev.png)
 
 
 #### Related topics:

@@ -8,7 +8,7 @@ menu_order: 4
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 ---
 
-To enable pages to load, we excluded JavaScript from the page head block and integrated the Magento system with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
+To enable pages to load, we excluded JavaScript from the page head block and integrated the Magento system with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load time and enables you to specify dependencies between JavaScript resources in your responsive theme.
 
 For an example of how to include JavaScript in your responsive theme, see <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>.
 

@@ -28,7 +28,7 @@ To enable template hints:
 
 Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.
 
-For example, here is how a strorefront category page looks with enabled template hints:
+For example, here is how a storefront category page looks with enabled template hints:
 <p><img src="{{ site.baseurl }}common/images/theme_debug2.png" alt="A storefront page with enabled template hints"></p>
 
 In this example mini shopping cart page element is defined by the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` template:
@@ -72,7 +72,7 @@ After you located the necessary layout file, you can create your custom layout f
 <!-- ADDLINK -->
 
 <h2 id="debug-theme-style">Locate styles</h2>
-To locate a CSS rule that is applyed to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
+To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
 After you find the class name, use text search in the theme and module styles directories to locate the .less or .css file that defines the class. Perform the search according to the following fallback scheme:
 
 1. Theme styles `app/design/<area>/<Vendor>/<current_theme>/web/css`
