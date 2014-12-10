@@ -496,13 +496,19 @@ By default, class definitions are read using reflection. Because PHP reflection 
 *	Compiles class inheritance implementation relations to increase performance of configuration inheritance operations
 *	Compiles plug-in definitions (that is, the list of declared public methods)
 
-The compiler tool creates three files under `<your Magento install dir>/var/di`:
-
 <p class="q">Reviewer: Please check the following list.</p>
 
-*	`definitions.php` for compiled definitions. 
-*	`plugins.php` for declared public methods in plug-in definitions. 
-*	`relations.php` for class inheritance implementation relations.
+As a result of running the compiler tool, the following files and directories are created:
+
+*	`<your Magento install dir>/var/generation` directory, which contains all generated classes by Magento and modules. 
+
+	We use code-generation actively to create service classes (proxies, interceptors, factories, and builders). 
+	
+*	`<your Magento install dir>/var/di` directory, which contains the following:
+
+	*	`definitions.php` for compiled definitions. 
+	*	`plugins.php` for declared public methods in plug-in definitions. 
+	*	`relations.php` for class inheritance implementation relations.
 
 The preceding files are used by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>.
 
@@ -567,7 +573,7 @@ The following table discusses the meanings of the options:
 	</tr>
 	<tr>
 		<td>--generation &lt;string></td>
-		<td>Specify the absolute file system path to generate <code>definitions.php</code>, <code>plugins.php</code>, and <code>relations.php</code>. Default is <code>&lt;magento_root>/var/di</code>.</td>
+		<td>Specify the absolute file system path to generate service classes. Default is <code>&lt;magento_root>/var/di</code>.</td>
 	</tr>
 	<tr>
 		<td>--help</td>
@@ -608,7 +614,7 @@ Sample output:
 	
 **Example 2: Specifying an alternate path to geneated files**
 
-	php compiler.php --generation /var/www/magento2/mydir
+	php compiler.php --generation "/var/www/magento2/mydir"
 	
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
