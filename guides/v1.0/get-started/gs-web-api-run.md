@@ -77,6 +77,4 @@ To make a REST call for the Customer service:
 
 *	<a href="{{ site.gdeurl }}get-started/gs-rest-ff-rest-client.html">How-To&mdash;Using the Firefox REST Client to Create a Customer</a>
 *	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-how-to-use.html">How a Client Uses a Service</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-build.html">How to build a service</a>
-*	<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/what-is-webapi.html">What Is the Web API Framework?</a>
+
