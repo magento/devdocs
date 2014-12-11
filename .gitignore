@@ -16,7 +16,6 @@ Thumbs.db
 ###########################
 _site
 ignore
-/_config.yml
 /_config.steve.yml
 /_config.diane.yml
 /_config.brad.yml
