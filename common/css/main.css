@@ -34,7 +34,7 @@ body
 	font-weight: normal;
 	vertical-align: top;
 	margin-top: 0em;
-	padding-top: 0px;
+	padding-top: 20px;
 	font-size: 35pt;
 	margin-bottom: 46pt;
 	line-height: normal;
@@ -79,6 +79,18 @@ body
 	margin-bottom: 14pt;
 	font-family: 'OpenSansSemiBold';
 }
+
+/* .container h-acc
+{
+    vertical-align: top;
+	margin-top: 0em;
+	font-size: 22pt;
+	line-height: normal;
+	margin-top: 28px;
+	margin-bottom: 14pt;
+	font-family: 'OpenSansSemiBold';
+	color: #31302b;
+} */
 
 /* p { margin: 1em 0; }
  */
@@ -131,7 +143,7 @@ a:visited { color: #a0a; }
 }
 
 .title a {
-  color: #a00;
+  color: #a00; 
 }
 
 .title a:hover {

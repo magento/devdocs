@@ -1,68 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="{{ site.description }}">
-   <link href="{{ site.baseurl }}common/css/bootstrap.min.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/hc.css" rel="stylesheet">
-  <link href="{{ site.baseurl }}common/css/main.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!--   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
- -->  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
-  <![endif]-->
-    </head>
-    <body>
-<!-- <div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
- -->      <div id = "wrapper">
+	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<meta name="description" content="{{ site.description }}">
 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <p class="navbar-brand">{{ site.name }}</p>
-        </div>
-        <div class="navbar-collapse collapse">
-          <!-- <ul class="nav navbar-nav">
-          <li><a href="{{ site.baseurl }}guides/m2devgde/V1.0.0.0/index.html">Magento 2 Developer's Guide</a></li>
-		  <li><a href="http://www.cnn.com">CNN</a></li>
-<!--           <li><a href="{{ site.baseurl }}what-is-svc.html">What is the Magento 2 Service Framework?</a></li>
- -->         <!--  <li><a href="{{ site.baseurl }}links.html">Links</a></li>
-          <li><a href="{{ site.baseurl }}projects.html">Projects</a></li>
-          <li><a href="{{ site.baseurl }}about.html">About</a></li>
-          </ul>  -->
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
+	<link rel="stylesheet" href="{{ site.baseurl }}css/app.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}common/css/override.css" />
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
+</head>	
+<body>
 
+<header id="nav-main" class="nav-main">
 
-       <!-- Sidebar -->
-	   
-	   
-       <div id="sidebar-wrapper">
-	   <div class="logo">
-	   <a href="{{ site.baseurl }}"><img src="{{ site.baseurl }}common/images/magento-logo-m.png"></a>
-	   </div>
-        <ul class="sidebar-nav">
-          <p class="brand">Guides</p>
-          <hr />
-          <li class="sidebar-brand"><li><a href="{{ site.baseurl }}guides/m2devgde/v1.0.0.0/index.html">Magento 2 Developer's Guide</a></li>
-         
-          <hr />
-       </ul>
-     </div>
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="{{ site.baseurl }}"> </a>
+				<div class="sub-site-name">
+					<a href="{{ site.baseurl }}"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
 
+	{% include navigation.html %}
+	
+</header>	
 
 
-     <div class="container">
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
 

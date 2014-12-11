@@ -1,15 +1,22 @@
-<h1>Magento 2 Developer Documentation&mdash;The Transition</h1>
+Magento 2 Developer Documentation -- INTERNAL REPO
+==================================================
 
-For the first time, Magento developer documentation is on this public github.
-From humble beginnings ... currently, we have a small subset of Services framework
-documentation available but by the start of the Magento Imagine eCommerce Conference on
-May 12, 2014, we'll expand it.
+Internal repo for review and experimentation of the 
+Jekyll/markdown for these documents:
 
-_Update_: We're moving our content from another github. Please be patient.
+* Magento 2 Developer's Guide
+* API Reference pages
 
-Where's the rest of it? Still on the <a href="https://wiki.magento.com/display/MAGE2DOC/Magento+2+Product+Documentation" target="_blank">Magento public wiki</a>. 
+How to Contribute
+=================
 
-Look around, send us comments, [let us know](mailto:DL-Magento-Doc-Feedback@ebay.com) how you think we're doing.
-We're here to serve _you_ so let us hear from you.
+Follow these steps to contribute to this repository:
 
-<p>&mdash;Magento documentation team</p>
+1. Clone this repository.
+2. cd into the clone.
+3. Check out a local branch.
+4. Do your work.
+5. Commit your changes.
+6. Push your changes to devbeta: git push origin <local_branch>:devbeta
+
+
