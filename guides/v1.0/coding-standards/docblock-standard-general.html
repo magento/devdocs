@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>DocBlock standard</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v1.0/coding-standards/docblock-standard-general.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+<div id="subnav">
+<ul class="menu nav">
+               <!--
+<li class="first expanded">
+<a href="/pages/magento/devdocsl/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/magento/devdocsl/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+<!~~ <li class="leaf"><a href="/pages/magento/devdocsl/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
+</ul>
+</li>
+-->
+                  <li class="first expanded">
+                    <a href="/pages/magento/devdocsl/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/magento/devdocsl/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+                       <!-- <li class="leaf"><a href="/pages/magento/devdocsl/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
+                     </ul>
+                  </li>
+                   <li class="expanded">
+                     <a href="/pages/magento/devdocsl/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/magento/devdocsl/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/magento/devdocsl/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                     </ul>
+                  </li>
+                  <!--
+<li class="first expanded">
+<a href="article-side.html">System Integrator</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/magento/devdocsl/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+</ul>
+</li>
+-->
+                  <li class="expanded">
+                    <a href="/pages/magento/devdocsl/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
+                     <ul class="menu nav">
+                     <li class="first leaf"><a href="/pages/magento/devdocsl/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+                        <li class="leaf"><a href="/pages/magento/devdocsl/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/magento/devdocsl/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                        <!--
+<li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
+<li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
+-->
+                        <!-- <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li> -->
+                     </ul>
+                  </li>
+
+               </ul>
+
+</div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">DocBlock standard</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/coding-standards/docblock-standard-general.md" target="_blank">Help us improve this page</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
+
+<p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.</p>
+<p>Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.</p>
+<p>Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
+<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."</p>
+
+<h2 id="scope">Scope of the standard</h2>
+
+<p>The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language. The following is assumed by default:</p>
+
+<ul>
+  <li>Formatting according phpDocumentor standard</li>
+  <li>Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.</li>
+</ul>
+
+<h2 id="files">Files</h2>
+
+<p>Each Magento source code file must have a DocBlock header with short description of the file. After the short description, there can be a long description.</p>
+
+<p>Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from <code>*</code>.</p>
+
+<p>If description or short description happens to be the first one after DocBlock opening tag (<code>/**</code>) or last one before closing tag (<code>*/</code>), it should not be separated with an empty line.</p>
+
+<p><strong>DocBlock Header in a PHP-file</strong></p>
+
+<pre>
+&lt;?php
+/**
+ * Short description...
+ *
+ * Long description
+ * Broken down into several lines
+ *
+ * License notice...
+ */
+ </pre>
+
+<p><strong>DocBlock Header in an XML-file</strong></p>
+
+<pre>
+&lt;!--
+/**
+ * Short description...
+ *
+ * Long description
+ * Broken down into several lines
+ *
+ * License notice...
+ */
+--&gt;
+</pre>
+
+<h2 id="code-elements">Code structural elements</h2>
+
+<p>A structural element is defined in <a href="http://phpdoc.org/">phpDocumentor</a> as part of imperative source code, such as PHP or JavaScript, or procedural SQL. For example: namespace, class, interface, function, property, method, and so on.</p>
+
+<p>If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element.</p>
+
+<p>So in general case, classes that are declared in dedicated files, must have one DocBlock, which refers to the class and file at the same time.</p>
+
+<p><strong>DocBlock for a Class</strong></p>
+
+<pre>
+&lt;?php
+/**
+ * Autoloader with class map capability
+ *
+ * ...
+ */
+class Autoload
+{
+</pre>
+
+<p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:</p>
+
+<ul>
+  <li>Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.</li>
+  <li>Or include after declaring the element (it is possible in PHP and won’t cause issues before execution).</li>
+</ul>
+
+<p><strong>DocBlock with Included Script File</strong></p>
+
+<pre>
+&lt;?php
+/**
+ * Magento integration Magento test framework (MTF) bootstrap
+ *
+ * ...
+ */
+
+require __DIR__ . '/../bootstrap.php';
+
+namespace Magento\Test;
+
+/**
+ * Magento integration Magento test framework (MTF) bootstrap
+ */
+class Bootstrap
+{
+</pre>
+
+<p><strong>DocBlock with Included Class File</strong></p>
+
+<pre>
+namespace Magento\Framework\Profiler\Adapter;
+
+/**
+ * Profiler CSV adapter
+ *
+ * ...
+ */
+class Csv extends \Magento\Framework\Profiler\AdapterAbstract
+{
+// ...
+    public function setFile($file)
+    {
+        if (!isValidFile($file)) {
+            throw new \ArgumentException('A valid file name is expected.');
+        }
+        // ...
+    }
+}
+
+require_once __DIR__ . '/../../functions.php';
+</pre>
+
+<h3 id="classes-interfaces">Classes and interfaces</h3>
+
+<p>Classes and interfaces must have short description.</p>
+
+<h3 id="short-name-form">Short name form</h3>
+
+<p>It is encouraged to use the short form of the name to encourage readability and consistency with the type hint. The only exception is in the <code>Service/DTO</code> classes due to tooling requirements.</p>
+
+<p><strong>Example of a Method DocBlock</strong></p>
+
+<pre>
+use Magento\Logger;
+use Magento\Math\Random;
+use Magento\Stdlib\DateTime as StdlibDateTime;
+
+/**
+ * @var Logger
+ */
+protected $_logger;
+
+/**
+ * Description of method here.
+ *
+ * @param Random $mathRandom
+ * @param StdlibDateTime $dateTime
+ * @param int $number
+ */
+protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $number)
+{
+
+}
+</pre>
+
+<h3 id="class-attributes">Class attributes</h3>
+
+<p>Class attributes must have type declaration using <code>@var</code> tag.</p>
+
+<p><strong>Example of Class Attribute</strong></p>
+
+<pre>
+// ...
+namespace Magento;
+
+class Profiler
+{
+    /**
+     * @var Profiler
+     */
+    protected static $_instance = null;
+</pre>
+
+<h3 id="functions-methods">Functions and methods</h3>
+
+<p>Functions and methods must have:</p>
+
+<ul>
+  <li>Short description</li>
+  <li>Declaration of all arguments (if any) using <code>@param</code> tag. Appropriate argument type must be specified.</li>
+  <li>Declaration of return type using <code>@return</code> tag. If there is no such operator, the <code>@return</code> tag must have <code>void</code> as the return value.</li>
+  <li>Declaration of possibly thrown exception using <code>@throws</code> tag, if the actual body of function triggers throwing an exception. All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
+</ul>
+
+<p>It is encouraged to supply <code>@para</code>m and <code>@throws</code> tags with additional description, which comes after the formal declaration of the tag.</p>
+
+<p><strong>Example of a Method DocBlock</strong></p>
+
+<pre>
+/**
+ * Merge the config XML-files
+ *
+ * @param array $configFiles
+ * @return void
+ * @throws \Magento\Exception if a non-existing or invalid XML-file passed
+ */
+protected function _merge($configFiles)
+{
+    $domConfig = new \Magento\Config\Dom($this-&gt;_getInitialXml(), $this-&gt;_getIdAttributes());
+    foreach ($configFiles as $file) {
+        if (!file_exists($file)) {
+            throw new \Magento\Exception("File does not exist: {$file}");
+        }
+        $domConfig-&gt;merge(file_get_contents($file));
+        if (!$domConfig-&gt;validate($this-&gt;getSchemaFile(), $errors)) {
+            $message = "Invalid XML-file: {$file}\n";
+            /** @var libXMLError $error */
+            foreach ($errors as $error) {
+                $message .= "{$error-&gt;message} Line: {$error-&gt;line}\n";
+            }
+            throw new \Magento\Exception($message);
+        }
+    }
+    $this-&gt;_dom = $domConfig-&gt;getDom();
+}
+</pre>
+
+<h4 id="throws">Divergence in @throws tag</h4>
+
+<p>A general case when <code>@throws</code> tag must be used is if <em>throw</em> language construct is used – for example:</p>
+
+<p><strong>Example of Throwing Exception Explicitly</strong></p>
+
+<pre>
+/**
+ * Set an arbitrary value to specified element
+ *
+ * @param string $elementId
+ * @param string $attribute
+ * @param mixed $value
+ * @return Magento_Data_Structure
+ * @throws \InvalidArgumentException
+ */
+public function setAttribute($elementId, $attribute, $value)
+{
+    $this-&gt;_assertElementExists($elementId);
+    switch ($attribute) {
+        case self::PARENT: // break is intentionally omitted
+        case self::CHILDREN:
+        case self::GROUPS:
+            throw new \InvalidArgumentException("Attribute '{$attribute}' is reserved and cannot be set.");
+        default:
+            $this-&gt;_elements[$elementId][$attribute] = $value;
+    }
+    return $this;
+}
+</pre>
+
+<p>In this general case, if an exception is thrown in a sub-routine, then <code>@throws</code> must not be used in the parent method.</p>
+
+<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code>@throws</code> must be used in the parent method. For example:</p>
+
+<p><strong>Throwing Exception Implicitly</strong></p>
+
+<pre>
+/**
+ * Recursively delete directory from storage
+ *
+ * @param string $path Target dir
+ * @return void
+ * @throws Mage_Core_Exception when directories cannot be deleted
+ */
+public function deleteDirectory($path)
+{
+    // prevent accidental root directory deleting
+    $rootCmp = rtrim($this-&gt;getHelper()-&gt;getStorageRoot(), DS);
+    $pathCmp = rtrim($path, DS);
+
+    if ($rootCmp == $pathCmp) {
+        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')-&gt;__('Cannot delete root directory %s.', $path));
+    }
+
+    $io = new Varien_Io_File();
+
+    if (Mage::helper('Mage_Core_Helper_File_Storage_Database')-&gt;checkDbUsage()) {
+        Mage::getModel('Mage_Core_Model_File_Storage_Directory_Database')-&gt;deleteDirectory($path);
+    }
+    if (!$io-&gt;rmdir($path, true)) {
+        Mage::throwException(Mage::helper('Mage_Cms_Helper_Data')-&gt;__('Cannot delete directory %s.', $path));
+    }
+
+    if (strpos($pathCmp, $rootCmp) === 0) {
+        $io-&gt;rmdir($this-&gt;getThumbnailRoot() . DS . ltrim(substr($pathCmp, strlen($rootCmp)), '\\/'), true);
+    }
+}
+</pre>
+
+<h4 id="return">@return tag</h4>
+
+<p>If there is no explicit return statement in a method or function, a <code>@return void</code> should be used in the documentation.</p>
+
+<p>If the method returns itself, <code>return $this</code> should be used.</p>
+
+<h3 id="constants">Constants</h3>
+
+<p>Constants must have short description.</p>
+
+<p>For example, a global constant:</p>
+
+<pre>
+/**
+ * Directory separator shorthand
+ */
+define('DS', DIRECTORY_SEPARATOR);
+
+Or constants in a class:
+class Profiler
+{
+    /**
+     * Separator literal to assemble timer identifier from timer names
+     */
+    const NESTING_SEPARATOR = '-&gt;';
+</pre>
+
+<h3 id="DocBlock-templates">DocBlock templates</h3>
+
+<p>If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them. In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.</p>
+
+<p>DocBlock template consists of two DocBlock comments:</p>
+
+<ul>
+  <li>Starting comment is before first element of the group, distinguished using <code>#@+</code> and formatted as follows:</li>
+</ul>
+
+<pre>
+/**#@+
+ *
+ */
+</pre>
+
+<ul>
+  <li>Ending comment is after the last element of the group, distinguished using <code>#@-</code> and formatted as follows:<code>/**#@-*/</code></li>
+</ul>
+
+<p>For example, declaration of multiple class constants or attributes:</p>
+
+<pre>
+class Mage_Core_Model_Layout extends Varien_Simplexml_Config
+{
+    /**#@+
+     * Supported layout directives
+     */
+    const TYPE_BLOCK = 'block';
+    const TYPE_CONTAINER = 'container';
+    /**#@-*/
+
+    /**#@+
+     * Scheduled structure elements operations
+     *
+     * @var array
+     */
+    protected $_scheduledMoves = array();
+    protected $_scheduledRemoves = array();
+    /**#@-*/
+    </pre>
+
+<h2 id="documentation-space">Structure of documentation space</h2>
+
+<p><code>@category</code>, <code>@package</code>, and <code>@subpackage</code> MUST NOT be used. Documentation is organized with the use of namespaces.</p>
+
+<h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
+<h3 id="deprecated">@deprecated tag</h3>
+
+<p>The <code>@deprecated</code> tag must be used for a structural element or file, if it is not used anymore and not supposed to be used anymore, but retained because of backwards compatibility requirements.</p>
+
+<p>The value for tag must contain fully qualified version of product or component it belongs to, since which the element is deprecated:</p>
+
+<p><code>@deprecated since 1.2.0.0</code></p>
+
+<p>The <code>since</code> implies any version above the specified, not including it. Thus, in the example above the element is not deprecated in version 1.2.0.0, but in general case is deprecated in 1.2.0.1 or 1.3, and so on.</p>
+
+<h3 id="var">@var inline tag</h3>
+
+<p>For purpose of automatic type hinting in an IDE, an inline notation of <code>@var</code> tag can be used wherever the IDE is unable to resolve variable type. This tag declares variables that will emerge in next lines of code as follows:</p>
+
+<p><strong>Inline Type Hinting</strong></p>
+
+<pre>
+/** @var libXMLError $error */
+foreach ($errors as $error) {
+</pre>
+
+<p>Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:</p>
+
+<p><strong>Inline Type Hinting Variation</strong></p>
+
+<pre>
+/** @var $error libXMLError */
+foreach ($errors as $error) {
+</pre>
+
+<h3 id="see">@see tag</h3>
+
+<p>Besides the normal way of using <code>@see</code> tag as <a href="http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html">recommended by phpDocumentor</a>, it may be used as an addition to <code>@var</code>, when the <code>@var</code> is already used in this comment.</p>
+
+<p>Specifically, this is possible when a PHP-file composed from multiple file includes, as result variables may contain objects of different types depending on context:</p>
+
+<pre>
+/**
+ * @var $this ClassOne
+ * @see ClassTwo
+ * @see FooInterface
+ */
+</pre>
+
+<h3 id="other-tags">Other tags</h3>
+
+<p>Any other valid DocBlock tags may be specified, if author deems necessary, but only if they bring any valuable not obvious information.</p>
+
+<h2 id="format-conventions">Formatting conventions</h2>
+
+<h3 id="padding-tags">Padding tags</h3>
+
+<p>If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.</p>
+
+<pre>
+/**
+ * ...
+ *
+ * @param  string $argument
+ * @return bool
+ * @link   http://example.com
+ */
+</pre>
+
+<h3 id="format-consistency">Formatting consistency</h3>
+
+<p>In a given DocBlock, style of formatting must be consistent.</p>
+
+<p>For example, padding for visual alignment can be done in two ways consistently:</p>
+
+<p><strong>Correct – align everything:</strong></p>
+
+<pre>
+/**
+ * ...
+ *
+ * @param  string $parentId
+ * @param  string $childId
+ * @param  int|null $position
+ * @return int
+ * @see    _insertChild() for position explanation
+ */
+ </pre>
+
+<p><strong>Also correct – don’t align anything:</strong></p>
+
+<pre>
+/**
+ * ...
+ *
+ * @param string $parentId
+ * @param string $childId
+ * @param int|null $position
+ * @return int
+ * @see _insertChild() for position explanation
+ */
+public function reorderChild($parentId, $childId, $position)
+</pre>
+
+<p><strong>Incorrect – align only partially:</strong></p>
+
+<pre>
+/**
+ * ...
+ *
+ * @param  string $parentId
+ * @param  string $childId
+ * @param  int|null $position
+ * @return int
+ * @see _insertChild() for position explanation
+ */
+</pre>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Introduction</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Coding standards</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/code-standard-demarcation.html">Code demarcation standard</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/code-standard-php.html">PHP coding standard</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">DocBlock standards</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Testing</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/test/test_js-unit.html">JavaScript unit tests</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/test/test_object-mgr.html">Object Manager helper</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>
