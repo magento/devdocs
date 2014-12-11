@@ -9,13 +9,13 @@ github_link: frontend-dev-guide/layouts/layout-types.md
 ---
 
 <h2>Overview</h2>
-For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
+For a particular page, its layout is defined by two major layout components: <a href="#layout-types-page">*page layout*</a> file and <a href="#layout-types-conf">*page configuration*</a> file. 
 
 A page layout file defines the high level structure of the page, for example, one-column layout. Technically page layout is an .xml file, which features only <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
 
 Page configuration is also an .xml file, it defines which page layout is used and the low level, detailed structure (page header, footer, etc.) and content. Page configuration features both main elements, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
 All page layouts used for page rendering should be declared in the page layout declaration file.
-For rendering AJAX requests output a specific type of a page configuration files is used called *generic layout*.
+For rendering AJAX requests output a specific type of a page configuration files is used called <a href="#layout-types-gen">*generic layout*</a>.
 This article gives a comprehensive description of layout type structure and rules of usage.
 
 <h2 id="layout-types-page">Page layout</h2>
@@ -359,7 +359,7 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
 
 Generic layout is a variation of page configuration used for pages loaded by AJAX requests. 
 
-<h3>Generic layout structure and allowed elements</h3>
+<h3 id="layout-types-gen">Generic layout structure and allowed elements</h3>
 <table>
   <tbody>
     <tr>
