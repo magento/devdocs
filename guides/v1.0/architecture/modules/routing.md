@@ -13,9 +13,9 @@ github_link: architecture/modules/routing.md
 
 In the Magento system, a URL has the following format:
 
-`[area front name]/[Vendor name]/[Module name]/[controller name]/[action name]`
+`<area front name>/<VendorName>/<ModuleName>/[controller name]/[action name]`
 
-`[area front name]` indicates it is at the "front" of the URL. (The _area name_ is used internally to refer to the area in configuration files. Magento provides areas such as `frontend` for the storefront and `adminhtml` for the administration area.)
+`<area front name>` indicates it is at the "front" of the URL. (The _area name_ is used internally to refer to the area in configuration files. Magento provides areas such as `frontend` for the storefront and `adminhtml` for the administration area.)
 
 To assign a URL to a corresponding controller and action, use the router class.
 
@@ -110,4 +110,4 @@ For this class, the `Magento\Framework\App\ActionInterface` processes the reques
 
 If a request cannot be processed by any router, the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.
 
-<a href="{{ site.mage2000url }}ib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.

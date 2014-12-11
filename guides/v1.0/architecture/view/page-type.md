@@ -22,7 +22,7 @@ As a framework convention, page types correspond to full action names.
 
 Full action names are mapped to the controller actions as follows:
 
-<pre>[module]_[controller]_[action] -> Vendor\Module\Controller*\Controller::actionAction()</pre>
+<pre><ModuleName>_[controller]_[action] -> Vendor\Module\Controller*\Controller::actionAction()</pre>
 
 where
 
@@ -49,7 +49,7 @@ Page types for each module are declared in `page_types.xml`. The declaration is 
 
 `page_types.xml` is typically located in:
 
-<pre>app/code/[Vendor name]/[Module name]/etc/frontend</pre>
+<pre>app/code/<VendorName>/<ModuleName>/etc/frontend</pre>
 
 For example, <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/page_types.xml" target="_blank">Customer module page_types.xml</a>.
 

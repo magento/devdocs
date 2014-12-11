@@ -32,7 +32,7 @@ This method is inefficient because you must add this code to every template file
 
 <h2 id="fedg_css-in-themes_xml">CSS in themes</h2>
 
-A better option to include your CSS is to add them to either `default_head_blocks.xml` or `default.xml` files, which are located in `[your Magento install dir]\app\design\frontend\[your theme name]\Magento_Theme\layout\`.
+A better option to include your CSS is to add them to either `default_head_blocks.xml` or `default.xml` files, which are located in `<your Magento install dir>\app\design\frontend\[your theme name]\Magento_Theme\layout\`.
 
 `default.xml` does many things, such as relocating blocks. It is a large file, so it was divided into two files to separate redefinition and customization of the `<head>` block and to make it more flexible.
 

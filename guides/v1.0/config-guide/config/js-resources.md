@@ -10,7 +10,7 @@ github_link: config-guide/config/js-resources.md
 
 <h2 id="m2devgde-js-resources-intro">Overview</h2>
 
-JavaScript (JavaScript) is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScrip from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
+JavaScript (JavaScript) is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous or "lazy" JavaScript loading.
 
@@ -21,9 +21,9 @@ You must specify and configure all JavaScript resources used in modules and them
 JavaScript resources can be specified as follows:
 
 *	Library level for all libraries in Magento code base (`lib/web`)
-*	Module level for all libraries in a module (`app/code/[Vendor name]/[Module name]/view/[area name]/web`)
-*	Theme for all libraries in a theme (`app/design/[area name]/[Vendor name]/[custom theme name]/[Vendor name]_[Module name]/web`)
-*	(_Not recommended_) All libraries in a theme  (`app/design/[area name]/[Vendor name]/[custom theme name]/web`). We do not recommend using this level to specify JavaScript resources.
+*	Module level for all libraries in a module (`app/code/<VendorName>/<ModuleName>/view/<areaname>/web`)
+*	Theme for all libraries in a theme (`app/design/<areaname>/<VendorName>/[custom theme name]/<VendorName>_<ModuleName>/web`)
+*	(_Not recommended_) All libraries in a theme  (`app/design/<areaname>/<VendorName>/[custom theme name]/web`). We do not recommend using this level to specify JavaScript resources.
 
 We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 

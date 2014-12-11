@@ -16,7 +16,7 @@ The Calendar widget is a customized jQuery <a href="http://api.jQueryui.com/date
 *	Taking into account server time zone offset.
 *	Converting date and time formats to avoid inconsistency in Zend Date format and Datepicker format.
 *	Making the calendar initialization easier.
-*	The Calendar widget source is `[your Magento install dir]/pub/lib/mage/calendar.js`.
+*	The Calendar widget source is `<your Magento install dir>/pub/lib/mage/calendar.js`.
 
 <h2 id="fedg_calendar_init">Initialize the calendar widget</h2>
 

@@ -62,7 +62,7 @@ In default mode:
 
 *	Errors are logged to the file reports at server, and never shown to a user
 *	Static view files are cached
-*	Default mode is not optimized for a production environment, primariy because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="#mode-specify">Specify a mode</a>.
 
@@ -199,8 +199,8 @@ See one of the following sections for more information:
 To create static files:
 
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
-2.	Delete the contents of `[your Magento install dir]/pub/static`.
-3.	Run the static file creation tool from the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
+2.	Delete the contents of `<your Magento install dir>/pub/static`.
+3.	Run the static file creation tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
 
 Following is the command syntax:
@@ -218,7 +218,7 @@ The following table discusses the meanings of the options:
 	<tr>
 		<td>--langs</td>
 		<td><p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. *Do not* separate locales with a space. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>[your Magento install dir]/setup/php -f index.php help languages</code>.</p></td>
+		<p>You can find the list by running <code><your Magento install dir>/setup/php -f index.php help languages</code>.</p></td>
 	</tr>
 	<tr>
 		<td>--verbose</td>
@@ -274,6 +274,6 @@ Use the following steps:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Web-based</a>
 	
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
-2.	Delete the contents of `[your Magento install dir]/pub/static`.
-3.	Run the static file creation tool from the `[your Magento install dir]/dev/tools/Magento/Tools/View` directory.
+2.	Delete the contents of `<your Magento install dir>/pub/static`.
+3.	Run the static file creation tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.

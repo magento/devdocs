@@ -56,7 +56,7 @@ To add an overriding default layout file (to override a default layout provided 
 1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html#layout_conventions">layout file conventions</a>.
 2.	Put it according to the location convention, that is:
 
-<pre>__app/design/[area]/[your theme path]
+<pre>__app/design/<areaname>/[your theme path]
   |__/[your namespace]_[your module]
     |__/layout
       |__/override
@@ -66,7 +66,7 @@ To add an overriding default layout file (to override a default layout provided 
 Where:
 
 `[your theme path]` is a path to the theme relative to the themes directory.
-`[area]` is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
+`<areaname>` is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
 
 <h3 id="fedg_layout_override_theme">Override theme layouts</h3>
 

@@ -25,7 +25,7 @@ github_link: extension-dev-guide/api-concepts.md
    <li>Client API</li>
    <li>Provider API (SPI)</li>
 </ul>
-<p>Directory structure and configuration file structure are types of APIs because extension developers use them. Developers write configs, places their static files in specified folders and so if configuration file structure or directory structure changes in subsequent releases, extensions break.</p>
+<p>Directory structure and configuration file structure are types of APIs because extension developers use them. Developers write configurations, places their static files in specified folders and so if configuration file structure or directory structure changes in subsequent releases, extensions break.</p>
 
 
 

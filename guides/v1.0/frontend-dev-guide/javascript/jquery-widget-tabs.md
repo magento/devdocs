@@ -19,7 +19,7 @@ Specifically, the tabs widget implements the following:
 *	Setting active tab on initialization
 *	Rendering tab pages vertically or horizontally
 
-The Tabs widget source is located in the `[your Magento install dir]/pub/lib/mage/backend` directory. All tab pages in Magento Admin panel are implemented using the tabs widget.
+The Tabs widget source is located in the `<your Magento install dir>/pub/lib/mage/backend` directory. All tab pages in Magento Admin panel are implemented using the tabs widget.
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
 

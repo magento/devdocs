@@ -61,7 +61,7 @@ You might want to set a permanent store logo, that displays on the store front n
 To add a permanent theme-independent logo:
 
 1. In the Admin panel, go to **Stores** > **Configuration** > **Design**.
-2. In the **Scope** drop-down, select the storeview.
+2. In the **Scope** drop-down, select the store view.
 3. In the **Design** section of the General configuration, expand the **Header** tab.
 4. In the **Logo Image** field browse to the logo file saved in your file system.
 6. Upload the file.
