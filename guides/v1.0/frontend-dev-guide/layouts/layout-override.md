@@ -12,8 +12,12 @@ github_link: frontend-dev-guide/layouts/layout-override.md
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
 
+The overriding mechanism is similar for both page layout files and page configuration files, so in this article *layout files* is used to reference any of them.
+
 Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
 
+
+<h2>Examples of customizations that involve overriding layouts</h2>
 Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
@@ -46,46 +50,45 @@ Although the layout overriding mechanism provides great customization flexibilit
 
 This section discusses how to override:
 
-*	Default layout
-*	Theme layout
+*	<a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#location" target="_blank">Base layout</a>
+*	<a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#location" target="_blank">Theme layout</a>
 
 <h3 id="fedg_layout_override_default">Override default layouts</h3>
 
-To add an overriding default layout file (to override a default layout provided by the module):
+To add an overriding base layout file (to override a base layout provided by the module):
 
-1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html#layout_conventions">layout file conventions</a>.
-2.	Put it according to the location convention, that is:
 
-<pre>__app/design/<areaname>/[your theme path]
-  |__/[your namespace]_[your module]
-    |__/layout
-      |__/override
-        |--[ name1 ].xml
-        |--[ name2 ].xml</pre>
+2.	Put the layout file in the follwoing location:
 
-Where:
+<pre>
+__app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;|__/layout
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
 
-`[your theme path]` is a path to the theme relative to the themes directory.
-`<areaname>` is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
+</pre>
+
+
 
 <h3 id="fedg_layout_override_theme">Override theme layouts</h3>
 
-To add an overriding theme file (to override parent layout):
+To add an overriding theme file (to override a parent theme layout):
 
-1.	Create a layout file following the layout files conventions.
-2.	Put it according to location convention, that is:
+2.	Put the layout file in the following location:
 
-<pre>__app/design/area]/[your theme path]
-  |__/[your namespace]_[your module]
-    |__/layout
-      |__/override
-        |__/[parent _theme]
-          |--[name1].xml
-          |--[name2].xml</pre>
+<pre>
+__app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;|__/layout
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;Vendor&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;theme&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
+</pre>
 
-Where:
-
-`[parent_theme]` is the code of the theme the new layout file belongs to. The parent theme can be a direct or indirect parent; that is, parent, grandparent, and so on.
 
 #### Related topics:
 
@@ -94,4 +97,3 @@ Where:
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-manage.html">XML instructions</a>

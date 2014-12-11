@@ -13,7 +13,7 @@ github_link: frontend-dev-guide/layouts/layout-practice.md
 This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header. 
 
 <h2>Moving customer account links</h2>
-OrangeCo wants in their Orange theme design to tranform the header links block to a drop-down, as follows:
+In their Orange theme, OrangeCo wants design to tranform the header links block to a drop-down, as follows:
 
 <img src="{{ site.baseurl }}common/images/layout_transform.png">
 
