@@ -180,9 +180,6 @@ Thus, a class can be used and reimplemented by the third party developers. To en
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
-<!--* <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>-->
+
 
 

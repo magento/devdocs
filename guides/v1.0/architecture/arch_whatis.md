@@ -33,7 +33,4 @@ The various components of Magento, in addition to the Magento Framework and Libr
 <h2 id="m2arch-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
-<!--* Magento framework
-* Magento file system
-* Magento database
-* Commonly used terms-->
+
