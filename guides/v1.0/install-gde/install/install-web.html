@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Install Magento software using the web interface</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v1.0/install-gde/install/install-web.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+<div id="subnav">
+<ul class="menu nav">
+               <!--
+<li class="first expanded">
+<a href="/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+<!~~ <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
+</ul>
+</li>
+-->
+                  <li class="first expanded">
+                    <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+                       <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
+                     </ul>
+                  </li>
+                   <li class="expanded">
+                     <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                     </ul>
+                  </li>
+                  <!--
+<li class="first expanded">
+<a href="article-side.html">System Integrator</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+</ul>
+</li>
+-->
+                  <li class="expanded">
+                    <a href="/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
+                     <ul class="menu nav">
+                     <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+                        <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
+                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                        <!--
+<li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
+<li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
+-->
+                        <!-- <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li> -->
+                     </ul>
+                  </li>
+
+               </ul>
+
+</div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Install Magento software using the web interface</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/install-gde/install/install-web.md" target="_blank">Help us improve this page</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h4>Contents</h4>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#instgde-install-prereq">Before you start your installation</a></li>
+  <li><a href="#instgde-install-magento-web">Installing the Magento software using the web interface</a></li>
+  <li><a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a></li>
+</ul>
+
+<p>This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="#running-the-command-line-installer">Install Magento software using the command line</a>.</p>
+
+<h2 id="instgde-install-prereq">Before you start your installation</h2>
+
+<p>Before you begin, make sure you completed all of the following tasks:</p>
+
+<ul>
+  <li><a href="#prerequisites">Prerequisites</a></li>
+  <li><a href="#installing-composer">Install Composer</a></li>
+  <li><a href="#updating-installation-dependencies">Update installation dependencies</a></li>
+</ul>
+
+<p><strong>Note</strong>: If you get errors during the installation, see <a href="#troubleshooting">Troubleshooting</a>.</p>
+
+<h2 id="instgde-install-magento-web">Installing the Magento software using the web-based wizard</h2>
+
+<p>The web interface is a multi-page wizard that enables you to go back and forward one page at a time. You <em>cannot</em> skip pages, and you must enter all required information on every page before you can proceed to the next page.</p>
+
+<p>In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.</p>
+
+<p>To install the Magento software using a web interface:</p>
+
+<ol>
+  <li>
+    <p>Start a web browser.</p>
+  </li>
+  <li>
+    <p>Enter the following URL in the browser’s address or location bar:</p>
+
+    <pre>http://[Magento host or IP]/[path to Magento root]/setup</pre>
+
+    <p>For example, if the Magento server’s IP address is 192.0.2.10 and you installed Magento 2 in the <tt>magento2</tt> directory relative to the web server’s docroot, and you did not configure a Virtual Host, enter:</p>
+
+    <pre>http://192.0.2.10/magento2/setup</pre>
+  </li>
+  <li>
+    <p>On the initial page, click <strong>Agree and Set Up Magento</strong>.</p>
+  </li>
+  <li>
+    <p>Continue with the following sections in the order presented to complete the installation.</p>
+  </li>
+</ol>
+
+<h3>Step 1: Readiness Check</h3>
+
+<ol>
+  <li>
+    <p>Click <strong>Start Readiness Check</strong>.</p>
+
+    <p>If any errors display, you must resolve them before you continue.</p>
+
+    <p>Click <strong>More detail</strong> if available to see more information about each check.</p>
+  </li>
+  <li>
+    <p>Click <strong>Next</strong>.</p>
+  </li>
+</ol>
+
+<h3>Step 2: Add a Database</h3>
+
+<ol>
+  <li>
+    <p>Enter the following information:</p>
+
+    <table>
+<tbody>
+    <tr>
+        <th>Item</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>Database Server Host</td>
+    <td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
+</tr>
+<tr>
+    <td>Database Server Username</td>
+    <td>Enter the user name of the Magento database instance owner.</td>
+</tr>
+<tr>
+    <td>Database Server Password</td>
+    <td>Enter the Magento database user's password, if any. Leave this field blank if you did not configure a password.</td>
+</tr>
+<tr>
+    <td>Database Name</td>
+    <td>Enter the Magento database instance name.</td>
+</tr>
+<tr>
+    <td>Table prefix</td>
+    <td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
+    <p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
+    <p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
+</tr>
+</tbody>
+</table>
+  </li>
+  <li>
+    <p>Click <strong>Test Connection and Authentication</strong>.</p>
+
+    <p>The message <code>Test connection successful</code> displays to confirm the database is reachable and the user name and password you entered are correct.</p>
+
+    <p>If errors display, verify the information you entered, verify the database is reachable from the web server, and try again.</p>
+  </li>
+  <li>
+    <p>Click <strong>Next</strong>.</p>
+  </li>
+</ol>
+
+<h3>Step 3: Web Configuration</h3>
+
+<ol>
+  <li>
+    <p>Enter the following information:</p>
+
+    <table>
+<tbody>
+    <tr>
+        <th>Item</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>Your Store Address </td>
+    <td><p>Enter the URL, *including scheme and trailing slash*, by which users access your storefront.</p>
+    <p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p>
+    <p><strong>Important</strong>: Your URL <em>must</em> start with the scheme and <em>must</em> end with a slash (/) or the storefront and Admin will be inaccessible after installation.</p></td>
+</tr>
+<tr>
+    <td>Magento Admin Address </td>
+    <td>Enter the relative URL by which to access the Magento Admin.</td>
+</tr>
+</tbody>
+</table>
+  </li>
+  <li>
+    <p>Optionally click <strong>Advanced Options</strong> and enter the following information:</p>
+
+    <table>
+<tbody>
+<tr>
+        <th>Item</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>HTTPS Options</td>
+    <td>Select the check box to enable the use of Secure Sockets Layer (SSL) in the indicated URL. Make sure your web server supports SSL before you select either check box.</td>
+</tr>
+<tr>
+    <td>Apache Rewrites</td>
+    <td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="#apache">Apache</a>.</td>
+</tr>
+<tr>
+    <td>Encryption Key</td>
+    <td><p>Magento uses an encryption key to encrypt passwords and personally identifiable customer information in the database.</p>
+    <p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
+    <p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
+</tr>
+</tbody>
+</table>
+  </li>
+  <li>
+    <p>Click <strong>Next</strong>.</p>
+  </li>
+</ol>
+
+<h3>Step 4: Customize Your Store</h3>
+
+<ol>
+  <li>
+    <p>From the <strong>Store Default Time Zone</strong> list, click the name of your store’s time zone.</p>
+  </li>
+  <li>
+    <p>From the <strong>Store Default Currency</strong> list, click the default currency to use in your store.</p>
+  </li>
+  <li>
+    <p>From the <strong>Store Default Language</strong> list, click the default language to use in your store.</p>
+  </li>
+  <li>
+    <p>Click <strong>Next</strong>.</p>
+  </li>
+</ol>
+
+<h3>Step 5: Create Admin Account</h3>
+
+<ol>
+  <li>
+    <p>Enter the following information:</p>
+
+    <table>
+<tbody>
+<tr>
+        <th>Item</th>
+        <th>Description</th>
+    </tr>
+<tr>
+    <td>New Username</td>
+    <td>Enter a user name with which to log in to the Magento Admin. This user is an administrator and can create other users, including other administrative users.</td>
+</tr>
+<tr>
+    <td>New E-Mail</td>
+    <td>Enter the Magento administrator's e-mail address.</td>
+</tr>
+<tr>
+    <td>New Password</td>
+    <td>Enter the administrator's password.</td>
+</tr>
+<tr>
+    <td>Confirm Password</td>
+    <td>Enter the password again for verification.</td>
+</tr>
+</tbody>
+</table>
+  </li>
+  <li>
+    <p>Click <strong>Next</strong>.</p>
+  </li>
+</ol>
+
+<h3>Step 6: Install</h3>
+
+<p>Click <strong>Install Now</strong>.</p>
+
+<p>You have the following options:</p>
+
+<ul>
+  <li>To see installation progress or error details, click <strong>Console Log</strong>.</li>
+  <li>In the event of problems, click <strong>Previous</strong> to go back and fix incorrect entries.</li>
+  <li>To try the installation again in the event of failure, click <strong>Try Again</strong>.</li>
+</ul>
+
+<h3>Installation Success</h3>
+
+<p>The message <code>Success</code> displays to indicate a successful installation.</p>
+
+<p>If the installation failed, click <strong>Previous</strong> to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="#troubleshooting">Troubleshooting</a>.</p>
+
+<p>You can also run the installer again.</p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/prereq/optional.html">Optional software</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/install/install-overview.html">Installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/install/install-web.html">Install Magento software using the web interface</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Incorrect table definition error</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/pages/magento/devdocs/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>
