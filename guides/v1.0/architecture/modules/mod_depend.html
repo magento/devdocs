@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Module dependencies</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/architecture/modules/mod_depend.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
+				<div class="sub-site-name">
+					<a href="/pages/Magento/devdocs_internal/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+<div id="subnav">
+<ul class="menu nav">
+               <!--
+<li class="first expanded">
+<a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+<!~~ <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
+</ul>
+</li>
+-->
+                  <li class="first expanded">
+                    <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+                       <!-- <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
+                     </ul>
+                  </li>
+                   <li class="expanded">
+                     <a href="/pages/Magento/devdocs_internal/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                     </ul>
+                  </li>
+                  <!--
+<li class="first expanded">
+<a href="article-side.html">System Integrator</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+</ul>
+</li>
+-->
+                  <li class="expanded">
+                    <a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
+                     <ul class="menu nav">
+                     <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                        <!--
+<li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">PHP API Reference</a></li>
+<li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">REST API Reference</a></li>
+-->
+                        <!-- <li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">SOAP API Reference</a></li> -->
+                     </ul>
+                  </li>
+
+               </ul>
+
+</div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Module dependencies</h1>
+			
+			<a class="improve-page" href="https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/devbeta/guides/v1.0/architecture/modules/mod_depend.md" target="_blank">Help us improve this page</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="m2devgde-moddep-intro"> Introduction</h2>
+<p>In the Magento system, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that</p>
+
+<ul>
+  <li>Several modules cannot be responsible for one feature.</li>
+  <li>One module cannot be responsible for several features.</li>
+  <li>A module declares explicit dependency, if any, on another module.</li>
+  <li>Removing or disabling a module does not result in disabling other modules.</li>
+</ul>
+
+<div class="bs-callout bs-callout-warning" id="warning">
+<p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></div>
+
+<p>Following are commonly used terms:</p>
+
+<dl>
+  <dt>Framework layer</dt>
+  <dd>
+    <p>Defines the role of an application component in Magento, defines standards for the interactions among components, and implements system-level request and response objects and routing.</p>
+  </dd>
+  <dt>Application layer</dt>
+  <dd>
+    <p>Implements business logic. This layer is built on top of the framework layer.</p>
+  </dd>
+  <dt>Service layer</dt>
+  <dd>
+    <p>Provides a formal contract between a client and the service provider. This form of contact allows a service implementation to evolve without affecting the client.</p>
+  </dd>
+  <dt>Module</dt>
+  <dd>
+    <p>A logical group (that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget) in the application layer. A module is designed to work independently and to not intervene into work of other functionality.</p>
+  </dd>
+  <dt>Feature</dt>
+  <dd>
+    <p>A functionality or a capability allowing a system to perform better.</p>
+  </dd>
+  <dt>Library</dt>
+  <dd>
+    <p>A logical group in the framework layer.</p>
+  </dd>
+</dl>
+
+<h2 id="m2devgde-moddep-naming">Name and declare a module</h2>
+<p>A module should be named according to the Namespace_Module schema, where</p>
+
+<ul>
+  <li>Namespace is a name of a module’s vendor</li>
+  <li>Module is a name assigned to a module by its vendor</li>
+</ul>
+
+<p>Typically, a module is located in <code>[root]/app/code/&lt;namespace&gt;/&lt;ModuleName&gt;</code> directory.
+A module should be declared in <code>[root]/app/code/&lt;namespace&gt;/[ModuleName]/etc/module.xml</code> file. To declare a module, the following information should be specified:
+* The name of a module, according to the naming rules
+* An element specifying whether a module is active
+* Dependency of a module on other modules, if any
+Declaration sample:</p>
+<pre>
+&lt;config&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;module&nbsp;name=&quot;Namespace_Module&quot;&nbsp;version=&quot;2.0.0.0&quot;&nbsp;active=&quot;true&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;depends&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;module&nbsp;name=&quot;Namespace_Module1&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/depends&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/modules&gt;
+&lt;/config&gt;
+</pre>
+
+<h2 id="m2devgde-moddep-declare-dep">Declaring module dependencies</h2>
+<p>Module dependencies in Magento could be of two types: hard and soft dependencies.</p>
+
+<ol>
+  <li>
+    <p>A hard dependency implies that a module cannot function without modules, on which it depends. Specifically:</p>
+
+    <ul>
+      <li>The module contains code that uses logic from another module directly, that is, the latter’s instances, class constants, static methods, public class properties, interfaces, and traits.</li>
+      <li>The module contains strings that include class names, method names, class constants, class properties, interfaces, and traits from another module.</li>
+      <li>The module deserializes an object declared in another module.</li>
+      <li>The module uses or modifies the database tables used by another module.</li>
+    </ul>
+  </li>
+  <li>
+    <p>A soft dependency implies that a module can function without other modules, on which it depends. Specifically:</p>
+    <ul>
+      <li>The module directly checks another module’s availability.</li>
+      <li>The module extends another module’s configuration.</li>
+      <li>The module extends another module’s layout.</li>
+    </ul>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-warning" id="warning">
+<p>If a module uses code from another module, it should declare the dependency explicitly.
+</p>
+</div>
+
+<p>Modules are installed in the following sequence: first, a module serving as dependency for another module will be installed, followed by the module dependent on it.</p>
+
+<h3 id="m2devgde-moddep-inapp-dep">Inappropriate dependencies</h3>
+
+<p>You should avoid the following dependencies:</p>
+
+<ul>
+  <li>Circular dependencies (both direct and indirect)</li>
+  <li>Undeclared dependencies</li>
+  <li>Incorrect dependencies</li>
+</ul>
+
+<h4 id="m2devgde-moddep-diff-layer">Dependencies in different layers</h4>
+<p>There are peculiarities of building the dependencies between the modules belonging to different layers.</p>
+
+<h4 id="m2devgde-moddep-frmwk-layer">Dependencies in the framework layer</h4>
+<p>Modules belonging to the framework layer can be used in the application layer via an explicit dependency.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>In this case using interfaces is preferable to using classes. </p>
+  <p>You can build dependencies between classes in the framework layer even if they belong to different modules.</p>
+</div>
+
+<h4 id="m2devgde-moddep-app-layer">Dependencies in the application layer</h4>
+<p>Modules belonging to the application layer cannot be used in the framework layer.</p>
+
+<p>You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only via the service layer or the service provider interface (SPI).</p>
+
+<h2 id="m2devgde-moddep-api-spi">API- and SPI-specific interfaces</h2>
+
+<p class="q">Reviewer: Please validate this because it's probably changed since this was written.</p>
+
+<p><strong>NOTE: not sure this section belongs there.</strong></p>
+
+<p>To facilitate building correct dependencies between the modules, the Magento system has both API (Application Programming Interface) and SPI (Service Provide Interface) interfaces.</p>
+
+<p>Interfaces marked as API-specific can be used by other modules; and interfaces marked as SPI-specific can be implemented by other modules.
+To be considered API-specific, an interface should be declared with <code>@api</code> annotation:</p>
+
+<pre>
+/**
+&nbsp;*&nbsp;@api
+&nbsp;*/
+interface&nbsp;RouterInterface
+{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;match();
+}
+&nbsp;
+final&nbsp;class&nbsp;Mage_Core_Controller_Varien_Router_Base&nbsp;implements&nbsp;RouterInterface
+{
+&nbsp;&nbsp;&nbsp;&nbsp;//...
+}
+</pre>
+
+<p>Thus, an interface and its implementations automatically become a part of API, unlike other elements, which remain module-private. All classes considered a part of API must be declared <code>final</code> to prevent the implicit use of them in the SPI.</p>
+
+<p>To be considered SPI-specific, an interface should be declared with <code>@spi</code> annotation:</p>
+<pre>
+/**
+&nbsp;*&nbsp;@spi
+&nbsp;*/
+interface&nbsp;RouterInterface
+{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;match();
+}
+</pre>
+
+<p>Thus, an interface is automatically becomes a part of SPI, while its implementations are part of neither the SPI nor the API. Other interfaces and their implementations, which are not marked as SPI-specific, remain module-private.</p>
+
+<p>The SPI-specific interfaces can be implemented by the third party developers and used in the dependency injection configurations. <!-- ADDLINK --></p>
+
+<p>To be marked as <strong>both</strong> API- and SPI-specific, an interface should be declared with  <code>@api</code>  <strong>and</strong> <code>@spi</code> annotations:</p>
+
+<pre>
+/**
+&nbsp;*&nbsp;@api
+&nbsp;*&nbsp;@spi
+&nbsp;*/
+interface&nbsp;Magento_AuthorizationInterface
+{
+&nbsp;&nbsp;&nbsp;&nbsp;public&nbsp;function&nbsp;isAllowed($resource);
+}
+</pre>
+
+<p>Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.</p>
+
+<h2 id="m2arch-module-related">Related topics</h2>
+
+<ul>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_depend.html">Understanding module dependencies</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_conventions.html">Module location and naming conventions</a>
+&lt;!–* <a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_specific.html">Specific Magento Modules</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/____.html">Adding a New Module</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/____.html">Disabling or Removing a Module</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/____.html">Extending Modules</a>–&gt;</li>
+</ul>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Architecture</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">What is Magento?</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular system</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_libraries.html">Libraries</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_themes.html">Themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_translations.html">Translation packs</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/areas/areas.html">Areas</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Behavior</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/price-calc.html">How Magento calculates prices</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/price-render.html">How Magento renders prices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Configuration</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-files.html">Configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/caching.html">Caching</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/magento-mode.html">Magento modes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/js-resources.html">JavaScript resources</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/plugins.html">Plugins</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Extensions</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/index-cache/indexing.html">Indexing</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Modules</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_intro.html">Introduction to modules</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_conventions.html">Module naming and location conventions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/payment.html">Payment modules</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/routing.html">Routing</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">View library</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/view-lib.html">View library</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/design-abstract.html">Design abstractions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/page-assets.html">Page assets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/page-type.html">Page types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/template-engine.html">Template engine</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/static-process.html">Static file processing</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/pages/Magento/devdocs_internal/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/pages/Magento/devdocs_internal/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/pages/Magento/devdocs_internal/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
+
+
+</body>
+</html>

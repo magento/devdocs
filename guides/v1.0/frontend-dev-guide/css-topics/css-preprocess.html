@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>CSS preprocessing</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
+				<div class="sub-site-name">
+					<a href="/pages/Magento/devdocs_internal/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+<div id="subnav">
+<ul class="menu nav">
+               <!--
+<li class="first expanded">
+<a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+<!~~ <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
+</ul>
+</li>
+-->
+                  <li class="first expanded">
+                    <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+                       <!-- <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
+                     </ul>
+                  </li>
+                   <li class="expanded">
+                     <a href="/pages/Magento/devdocs_internal/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                     </ul>
+                  </li>
+                  <!--
+<li class="first expanded">
+<a href="article-side.html">System Integrator</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+</ul>
+</li>
+-->
+                  <li class="expanded">
+                    <a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
+                     <ul class="menu nav">
+                     <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                        <!--
+<li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">PHP API Reference</a></li>
+<li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">REST API Reference</a></li>
+-->
+                        <!-- <li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">SOAP API Reference</a></li> -->
+                     </ul>
+                  </li>
+
+               </ul>
+
+</div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">CSS preprocessing</h1>
+			
+			<a class="improve-page" href="https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/devbeta/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.md" target="_blank">Help us improve this page</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<p>The Magento publisher supports CSS preprocessing and uses the composite CSS preprocessor.</p>
+<p>The composite CSS preprocessor consists of these independent preprocessors:</p>
+
+<ul>
+  <li>LESS preprocessor—enables the use of LESS in the Magento application.</li>
+  <li>CSS URL resolver—resolves links found in CSS source files. Corrects links that are not valid.</li>
+</ul>
+
+<p>By default, the Magento publisher finds and publishes CSS and other view static files in the <code><your magento="" install="" dir="">/pub directory.
+
+<h2 id="fedg_css-less-intro">Leaner CSS (LESS) preprocessor</h2>
+
+LESS brings dynamic behavior to CSS, and extends CSS with new features such as variables, functions, mixins, nested rules and others.
+
+You can use the Magento fallback mechanism to override existing LESS files when the default instructions do not meet your needs, just as you can for regular CSS. As another option, you can extend existing libraries by creating a new LESS file that is automatically included by LESS preprocessing.
+
+For example, if you need to change the color of some page element, you can do this by simply redefining the corresponding variable.
+
+<p>The Magento system provides LESS preprocessor out of the box. It is located in your <code>[Magento install dir]/lib/internal/Magento/Framework/css/PreProcessor</code>.</p>
+
+<p class="q">Reviewer: What does the reader need to know about the LESS preprocessor? The following list seems random to me and doesn't spell out how the user can use the LESS processor.</p>
+
+The LESS preprocessor provides these benefits:
+
+*	A built-in compilation in Magento to support multi-level theme inheritance and Magento publisher behavior.
+*	Possible to use the client-side LESS.js compiler, which is the easiest way to get started and is good for developing with LESS.
+*	Compatibility of extensions across all Magento instances.
+*	Stable PHP LESS compiler that meets our internal quality requirements.
+*	Ability to use regular CSS.
+*	<p>LESS implementation does not extend Magento requirements with any external libraries such as <code>node.js</code>.</p>
+*	<p>A third-party LESS library (Oyejorge LESS parser) is located in <code><your magento="" install="" dir="">/lib/internal/Magento/Framework/css/PreProcessor/Adapter.
+
+<h3 id="fedg_css-magento-import">The @magento_import instruction</h3>
+
+<p>Specify the <code>@magento_import</code> instruction to collect LESS files in a common library over your Magento system.</p>
+
+<p>You do not need to worry about editing layouts or templates to include your custom styles.
+</p>
+
+To use the @magento_import feature:
+
+<ol>
+<li><p><code>@magento_import</code> must contain the file path. You can omit the file extension.</p>
+<p>The file path can be written with either single or double quotes.</p>
+<p><b>Example:</b></p>
+<pre>//@magento_import "path_to/some/file";
+//@magento_import 'path_to/some/other_file.less';</pre>
+    </li>
+<li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
+<p><b>Example:</b></p>
+<script src="https://gist.github.com/xcomSteveJohnson/f03b22f16fa2022cb0d7.js"></script></li>
+
+<li><p>Create a file in a view folder of your module by the path specified by a <code>@magento_import</code> instruction.</p></li>
+<li><p>Enable this module.</p></li>
+</ol>
+
+The LESS preprocessor:
+
+1.	Searches for all `@magento_import` instructions.
+2.	Aggregates LESS across all of Magento.
+3.	Replaces the original `@magento_import` instructions one by one in a list of typical LESS imports.
+
+Example before and after processing:
+
+<table>
+   <tbody>
+      <tr>
+         <th>Before</th>
+         <th>After</th>
+      </tr>
+      <tr class="even">
+         <td>
+            <pre>//@magento_import "[id]";</pre>
+         </td>
+         <td>
+            <pre>@import "path/to/dir1/some_file";
+@import "path/to/file/file1.less";
+@import "path/to/file/file2.less";</pre>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+
+<h2 id="fedg_css-preprocess_less-example">LESS example</h2>
+
+The LESS preprocessor:
+
+1.	Checks if the requested CSS file is found. If the CSS file is found, LESS preprocessor stops its execution. Otherwise, continue with the next step.
+2.	Changes the extension of the requested file to `.less` and tries to find the file using the Magento fallback mechanism. If the `.less` file is not found, LESS preprocessor stops its execution. Otherwise, continue with the next step.
+3.	<p>Reads LESS file contents and resolves <code>@magento_import</code> and default LESS import instructions. Imported files are processed recursively.</p>
+4.	Resolves all paths in `.less` files to absolute paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to `var/temp/less/` with a unique file path that covers theme, locale, area, and so on.
+
+To compile LESS sources files into CSS, the Magento LESS preprocessor uses the LESS PHP adapter.
+
+The LESS PHP adapter works with the Oyejorge LESS parser, which is compatible with `less.js` version 1.7.
+
+The generated CSS file is located in the same directory where the compilation ran.
+
+<h2 id="fedg_css-preprocess-url-resolver">CSS URL resolver</h2>
+
+<p>The CSS URL resolver looks for links in CSS content (that is, links to images, fonts, backgrounds, and so on).</p>
+
+<p>When links are found, the CSS URL resolver publishes them. After that, the CSS URL resolver replaces the old links with URLs to the published files.</p>
+<p><b>Example:</b></p>
+<table>
+   <tbody>
+      <tr>
+         <th>Before</th>
+         <th>After</th>
+      </tr>
+      <tr class="even">
+         <td>
+            <script src="https://gist.github.com/xcomSteveJohnson/00b91311155da6aa95fc.js"></script>
+         </td>
+         <td>
+            <script src="https://gist.github.com/xcomSteveJohnson/840d2750624894c44f9a.js"></script>
+         </td>
+      </tr>
+   </tbody>
+</table>
+
+#### Related topics:
+*	<a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>
+*	<a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a>
+*	<a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
+
+</your></code></p></your></code></p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Javascript</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/pages/Magento/devdocs_internal/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/pages/Magento/devdocs_internal/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/pages/Magento/devdocs_internal/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
+
+
+</body>
+</html>

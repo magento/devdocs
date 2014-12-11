@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Responsive web design</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
+				<div class="sub-site-name">
+					<a href="/pages/Magento/devdocs_internal/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+<div id="subnav">
+<ul class="menu nav">
+               <!--
+<li class="first expanded">
+<a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+<!~~ <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
+</ul>
+</li>
+-->
+                  <li class="first expanded">
+                    <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+                       <!-- <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
+                     </ul>
+                  </li>
+                   <li class="expanded">
+                     <a href="/pages/Magento/devdocs_internal/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                     </ul>
+                  </li>
+                  <!--
+<li class="first expanded">
+<a href="article-side.html">System Integrator</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+</ul>
+</li>
+-->
+                  <li class="expanded">
+                    <a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
+                     <ul class="menu nav">
+                     <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
+                        <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                        <!--
+<li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">PHP API Reference</a></li>
+<li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">REST API Reference</a></li>
+-->
+                        <!-- <li class="leaf"><a href="/pages/Magento/devdocs_internal/article-side.html">SOAP API Reference</a></li> -->
+                     </ul>
+                  </li>
+
+               </ul>
+
+</div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Responsive web design</h1>
+			
+			<a class="improve-page" href="https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/devbeta/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.md" target="_blank">Help us improve this page</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="fedg_rwd_overview">Overview</h2>
+
+<p><a href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">Responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as <em>viewports</em>) without maintaining completely separate style sheets for each.</p>
+
+<p>The Magento system ships with a blank responsive theme. To build a responsive design, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">cascading style sheets (CSS)</a>, <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>, and <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">blocks in a responsive design</a>.</p>
+
+<h3 id="fedg_rwd_terms">Terms used</h3>
+
+<dl>
+  <dt>Responsive web design</dt>
+  <dd>
+    <p>(Also referred to as <em>responsive design</em>)—a web design approach aimed at creating sites with an optimal viewing experience for all screen sizes. This means that a responsive web site is easy for reading and has navigation with a minimum of resizing, panning, and scrolling across a wide range of devices—from desktop computers to mobile phones.</p>
+  </dd>
+  <dt>Viewport</dt>
+  <dd>
+    <p>The viewing region or screen size for which your responsive design is implemented.</p>
+  </dd>
+  <dt>Breakpoint</dt>
+  <dd>
+    <p>The viewport size at which the width of the user’s screen causes your responsive layout to change.</p>
+  </dd>
+</dl>
+
+<h2 id="fedg_rwd_blank">The Blank theme</h2>
+
+<p>You should use the Blank responsive theme as your template for theme development. It contains examples of mobile-first responsive design, including:</p>
+
+<ul>
+  <li>navigation menu</li>
+  <li>page header</li>
+  <li>catalog page</li>
+  <li>product pages for different product types</li>
+  <li>customer account</li>
+  <li>shopping cart</li>
+  <li>checkout progress</li>
+  <li>different page elements (such as forms, tables, predefined properties for moving and showing or hiding elements depending on the device’s screen width, and so on)</li>
+</ul>
+
+<h3 id="fedg_rwd_blank_location">Blank theme location</h3>
+
+<p>The blank theme is located as follows:</p>
+
+<pre>app/
+├── design/
+│    ├── frontend/
+│    │    ├── Magento/
+│    │    │   ├── blank/
+│    │    │   │   ├── css-topics/
+│    │    │   │   ├── fonts/
+│    │    │   │   ├── js/
+│    │    │   │   ├── Magento_[your module name]/
+│    │    │   │   ...
+│    │    │   │   ├── media/</pre>
+
+<h3 id="fedg_rwd_blank_ex">Blank theme examples</h3>
+
+<p>The following figures show the same page built on the Blank theme on mobile and desktop devices.</p>
+
+<p>Mobile:</p>
+
+<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_blank_mobile.png" alt="Viewing a product catalog page on a mobile device using the Blank responsive theme." /></p>
+
+<p>Desktop:</p>
+
+<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_blank_desktop.png" alt="Viewing a product catalog page on a desktop device using the Blank responsive theme." /></p>
+
+<h4 id="related-topics">Related topics:</h4>
+
+<ul>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+</ul>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Javascript</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/pages/Magento/devdocs_internal/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/pages/Magento/devdocs_internal/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/pages/Magento/devdocs_internal/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
+
+
+</body>
+</html>
