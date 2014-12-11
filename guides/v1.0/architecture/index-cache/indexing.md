@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Indexing
 title: Indexing
 menu_title: Indexing

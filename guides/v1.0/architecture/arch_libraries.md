@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Architecture
 title: Libraries
 menu_title: Libraries

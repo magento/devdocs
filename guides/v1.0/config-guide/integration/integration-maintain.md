@@ -1,6 +1,6 @@
 ---
 layout: default
-group:
+group: config-guide
 subgroup: Integration
 title: Maintain an integration
 menu_title: Maintain an integration
