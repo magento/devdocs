@@ -1,7 +1,7 @@
 ---
 layout: default
-group: dev-guide
-subgroup: Extensions
+group: extension-dev-guide
+subgroup: Concepts
 title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 3

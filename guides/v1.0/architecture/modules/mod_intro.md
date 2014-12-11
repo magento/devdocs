@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Modules
 title: Introduction to modules
 menu_title: Introduction to modules

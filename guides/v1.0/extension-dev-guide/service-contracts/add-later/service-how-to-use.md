@@ -45,7 +45,7 @@ Service methods complete in one of two ways:
 
 ## Method 2: Web Services
 
-Any service that has an `app/code/[Vendor]/[Module]/etc/webapi.xml` can be accessed using REST and SOAP. (Additional tasks, not discussed here, are required to access services using SOAP.)
+Any service that has an `app/code/[Vendor]/<ModuleName>/etc/webapi.xml` can be accessed using REST and SOAP. (Additional tasks, not discussed here, are required to access services using SOAP.)
 
 <!-- To set up a service so it can be accessed using REST, see [What is the Web API Framework?]({{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/what-is-webapi.html) -->
 

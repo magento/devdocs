@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: View library
 title: View library
 menu_title: View library

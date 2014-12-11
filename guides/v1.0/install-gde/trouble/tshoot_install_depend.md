@@ -35,12 +35,12 @@ Exception
  
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>If the web installer stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run `composer install` from the `[your Magento install dir]/setup` directory. The web installer message is <code>Installation is incomplete. Check the console log for errors before trying again.</code></p></span>
+  <p>If the web installer stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run `composer install` from the `<your Magento install dir>/setup` directory. The web installer message is <code>Installation is incomplete. Check the console log for errors before trying again.</code></p></span>
 </div>
  
 ### Description
 
-You must run `composer install` from *both* the `[your Magento install dir]` and `[your Magento install dir]/setup` directories before installer.
+You must run `composer install` from *both* the `<your Magento install dir>` and `<your Magento install dir>/setup` directories before installer.
 
 ### Suggestion
 

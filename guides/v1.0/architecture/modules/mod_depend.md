@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Modules
 title: Module dependencies
 menu_title: Module dependencies
@@ -51,8 +51,8 @@ A module should be named according to the Namespace_Module schema, where
 * Namespace is a name of a module's vendor
 * Module is a name assigned to a module by its vendor
 
-Typically, a module is located in `[root]/app/code/[Namespace]/[Module]` directory.
-A module should be declared in `[root]/app/code/[Namespace]/[ModuleName]/etc/module.xml` file. To declare a module, the following information should be specified:
+Typically, a module is located in `[root]/app/code/<namespace>/<ModuleName>` directory.
+A module should be declared in `[root]/app/code/<namespace>/[ModuleName]/etc/module.xml` file. To declare a module, the following information should be specified:
 * The name of a module, according to the naming rules
 * An element specifying whether a module is active
 * Dependency of a module on other modules, if any
@@ -176,13 +176,13 @@ Thus, a class can be used and reimplemented by the third party developers. To en
 
 <h2 id="m2arch-module-related">Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
+<!--* <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
 * <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>
+* <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>-->
 
 
