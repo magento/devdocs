@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Caching</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v1.0/config-guide/config/caching.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+<div id="subnav">
+<ul class="menu nav">
+               <!--
+<li class="first expanded">
+<a href="/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+<!~~ <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
+</ul>
+</li>
+-->
+                  <li class="first expanded">
+                    <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+                       <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
+                     </ul>
+                  </li>
+                   <li class="expanded">
+                     <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+                     <ul class="menu nav">
+                        <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                     </ul>
+                  </li>
+                  <!--
+<li class="first expanded">
+<a href="article-side.html">System Integrator</a>
+<ul class="menu nav">
+<li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+</ul>
+</li>
+-->
+                  <li class="expanded">
+                    <a href="/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
+                     <ul class="menu nav">
+                     <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+                        <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
+                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+                        <!--
+<li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
+<li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
+-->
+                        <!-- <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li> -->
+                     </ul>
+                  </li>
+
+               </ul>
+
+</div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Caching</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/config-guide/config/caching.md" target="_blank">Help us improve this page</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="m2devgde-cache-intro">Overview</h2>
+
+<p>In the Magento system, the functionality was split into several layers depending on role of each component:</p>
+
+<ul>
+  <li>The system-level components went to <strong>framework layer</strong></li>
+  <li>The business-logic components went to <strong>application layer</strong></li>
+  <li>The components responsible for contact between a client and service provider went to <strong>service layer</strong></li>
+</ul>
+
+<p>A logical group in the application layer is <em>a module</em> and a logical group in the framework layer is <em>a library</em>.</p>
+
+<p>Moving some features to framework layer is to facilitate decreasing the module dependencies.</p>
+
+<p>Features moved to the library depend only on the framework components and abstractions and do not depend on modules in the application layer.</p>
+
+<p>To adjust the system to our new approach, we moved some elements out of the modules to libraries. In particular:</p>
+
+<ol>
+  <li>Session</li>
+  <li>Cookies</li>
+  <li>Data types processing</li>
+  <li>Email</li>
+  <li>functions.php</li>
+  <li>Cache</li>
+  <li>CAPTCHA</li>
+</ol>
+
+<p>This article describes the changes in the Cache functionality.</p>
+
+<h2 id="m2devgde-cache-explore">Cache changes</h2>
+
+<p>Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.</p>
+
+<h2 id="m2devgde-cache-configuring">Configure the cache</h2>
+
+<p>Make the primary configurations for cache in:</p>
+
+<ul>
+  <li>DI configuration files (<code>app/etc/di.xml</code> or <code>app/etc/*/di.xml</code>) to define the pre configured cache settings.</li>
+  <li>Deployment configuration files (<code>app/etc/local.xml</code>) to tweak the application during the deployment as necessary.</li>
+</ul>
+
+<p>Configuring the cache involves setting up the <a href="#m2devgde-cache-frontend">cache frontend</a> and <a href="#m2devgde-cache-backend">cache backend</a>. Thus, you will need to specify the cache frontend configuration, attach the cache types to the cache frontend, and set up the cache backend for the cache frontend.</p>
+
+<p>System uses <a href="#m2devgde-cache-frontend">cache frontend</a> for all caching operations.</p>
+
+<p>Use <code>di.xml</code> file of a module to make the settings for the cache frontend:</p>
+
+<pre>&lt;type&nbsp;name=&quot;Magento\App\Cache\Frontend\Pool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;frontendSettings&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;%cache_frontend_id%&quot;&nbsp;xsi:type=&quot;string&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%cache_options%
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&lt;/type&gt;</pre>
+
+<p>These settings should contain a unique <em>identifier</em>, so the cache frontend could be easily retrieved from the pool.</p>
+
+<p>The custom settings will override the default settings for the parts of the application that use corresponding cache frontend.</p>
+
+<p>If necessary, you can prohibit saving new cache entities into the storage via <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Cache\Core</a> class:</p>
+
+<pre>$options['disable_save'] = true;</pre>
+
+<p>As a result, new cache entities will not be saved, but the previously saved cache will be still available.</p>
+
+<h3 id="m2devgde-cache-type">Cache type</h3>
+
+<p>Cache type unites the cached data based on their functional role. Cache type serves to facilitate handling the cache, for instance, you can execute operations not to the whole cache, but to its part assigned to the same cache type. You can manage the cache divided into the types via the Cache Management page in the admin panel or via the programming interface in the run-time.</p>
+
+<p>Tag scope component provides mechanism behind a cache type.</p>
+
+<p>To create a new cache type:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/574ff5d582c92f8f6acf.js"></script>
+
+<p>You must specify the following parameters:</p>
+
+<ul>
+  <li><code>Namespace_Module</code> defines the name of a module that uses a cache type. A module can use several cache types and a cache type can be used in several modules.</li>
+  <li><code>%cache_type_id%</code> defines unique identifier of a cache type.</li>
+  <li><code>%cache_type_tag%</code> defines unique tag to be used in the cache type scoping.</li>
+</ul>
+
+<p>Then you must make configurations of the grid on the Cache Management page or a new cache type. These configurations are taken from modules, that is, from <code>{Namespace}/{Module}/etc/cache.xml</code> file:</p>
+
+<pre>&lt;config&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;%cache_type_id%&quot;&nbsp;instance=&quot;%cacheInstanceName%&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;%cache_type_label%&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;%cache_type_description%&lt;/description&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
+&lt;/config&gt;</pre>
+
+<p>You must specify the following parameters:</p>
+
+<ul>
+  <li><code>%cache_type_label%</code> defines the text name (label) that will display in the <strong>Cache Type</strong> column of the grid.</li>
+  <li><code>%cache_type_description%</code> defines the text that will display in the <strong>Description</strong> column of the grid.</li>
+</ul>
+
+<h3 id="m2devgde-cache-frontend">Cache frontend</h3>
+
+<p>The cache frontend interface is API to the cache storage. When this interface is used, the cache does not appear in the client code. The frontend interface serves for</p>
+
+<ul>
+  <li>Manipulating an individual cache entry, including validating its existence, loading, saving, and removing cache.</li>
+  <li>Manipulating the subset of the cache entries, for instance, batch cache cleaning.</li>
+</ul>
+
+<p>We use the <a href="http://www.php5dp.com/php-decorator-design-pattern-accessorizing-your-classes/" target="_blank">decorator</a> and proxy patterns in implementation of the cache frontend interface. For instance, these patterns can be used for</p>
+
+<ul>
+  <li>Segmentation by the cache tag</li>
+  <li>Profiling</li>
+  <li>Decorating individual operations</li>
+</ul>
+
+<p><strong>Segmentation of the cache</strong> ensures that cache in the cache storage is used by appropriate applications. We distinguish the cache entries in the storage by tagging them and adding unique prefixes to the tags. A tag and a prefix help to figure out to which application cache belongs as well as to avoid influence of cache with different tags (or without tags at all) on each other. To strengthen isolation of the cache, we use the cache tag scope. Cache tag scope ensures grouping of cache according to the specified type.</p>
+
+<p>Use <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Cache\Frontend\Decorator\TagScope</a> component to handle the isolation of the cache segments:</p>
+
+<pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
+
+$cacheFrontendOne = new \Magento\Cache\Frontend\Decorator\TagScope($cacheFrontend, 'cache_segment_one_tag');
+$cacheFrontendTwo = new \Magento\Cache\Frontend\Decorator\TagScope($cacheFrontend, 'cache_segment_two_tag');
+
+$cacheFrontendOne-&gt;save('example_data_one', 'example_id_one');
+$cacheFrontendTwo-&gt;save('example_data_two', 'example_id_two');
+
+// erase 'example_data_one', but not 'example_data_two'
+$cacheFrontendOne-&gt;clean();</pre>
+
+<p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Cache\Frontend\Decorator\TagScope</a> component serves to associate a cache entry with a cache type and restrict the cache operations, as necessary, for a cache type.</p>
+
+<p>For <strong>profiling the cache</strong> we use <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Frontend/Decorator/Profiler.php" target="_blank">Magento\Cache\Frontend\Decorator\Profiler</a> class that implements the caching integration with the Magento_Profiler. The following records are gathered for every cache operation:</p>
+
+<ol>
+  <li>Profiler timer name: <code>cache_&amp;lt;cache_operation&gt;</code>.</li>
+  <li>Profiler tag group: <code>cache</code></li>
+  <li>Profiler tag operation: <code>cache:&lt;cache_operation&gt;</code>. <code>cache_operation</code> defines the frontend method used, for instance: <code>test()</code>, <code>load()</code>, <code>save()</code>, <code>remove()</code>, <code>clean()</code>.</li>
+  <li>Profiler tag <code>frontend_type</code>: <code>&lt;frontend_class&gt;</code>. <code>frontend_class</code> defines name of Zend frontend class.</li>
+  <li>Profiler tag <code>backend_type</code>: <code>&lt;backend_type_name&gt;</code>. <code>backend_type_name</code> defines name of Zend backend class; it may retrieve the prefix of the class name passed to the constructor.</li>
+</ol>
+
+<p>To enable the cache profiling in the run-time:</p>
+<pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
+
+if (\Magento\Profiler::isEnabled()) {
+    $cacheFrontend = new Magento\Cache\Frontend\Decorator\Profiler($cacheFrontend);
+}
+
+$cacheFrontend-&gt;save('example_data', 'example_id'); // corresponds to 'cache_save' profiler timer
+$cachedData = $cacheFrontend-&gt;load('example_id');   // corresponds to 'cache_load' profiler timer
+$cacheFrontend-&gt;remove('example_id');               // corresponds to 'cache_remove' profiler timer</pre>
+
+<p>Some <strong>decorator methods</strong> influence several objects, while others influence a single method. This diversity may lead to duplication of the decorated methods. To address this problem, we use <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Frontend/Decorator/Bare.php" target="_blank">Magento\Cache\Frontend\Decorator\Bare</a> class. This decorator does not attach any additional responsibility to a decorated subject. Use this class, if you need to create decorators that imply only the individual actions:</p>
+
+<pre>namespace Magento\Cache\Frontend\Decorator;
+
+class SuccessfulSave extends \Magento\Cache\Frontend\Decorator\Bare
+{
+    public function save($data, $id, array $tags = array(), $lifeTime = null)
+    {
+        return true;
+    }
+}</pre>
+
+<h3 id="m2devgde-cache-backend">Cache backend</h3>
+
+<p>For the cache backend you can use any class that implements <code>Zend_Cache_Backend_Interface</code> or its extended interface - <code>Zend_Cache_Backend_ExtendedInterface</code>. By default, Magento uses four classes for the cache backend:</p>
+
+<ol>
+  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Backend/Database.php" target="_blank">Magento\Cache\Backend\Database</a> retrieves the database Zend adapter and its callback, name of the tables containing the cache data and cache tags as well as whether cache should be stored to the database.</li>
+  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Backend/Eaccelerator.php" target="_blank">Magento\Cache\Backend\Eaccelerator</a> facilitates work with <a href="http://eaccelerator.net/" target="_blank">eAccelerator</a>.</li>
+  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Backend/Memcached.php" target="_blank">Magento\Cache\Backend\Memcached</a> defines the size of the data to be saved into one memcache cell. This class extends <code>Zend_Cache_Backend_Memcached</code> class.</li>
+  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Backend/MongoDb.php" target="_blank">Magento\Cache\Backend\MongoDb</a> defines the connection string and additional <a href="http://www.php.net/manual/en/mongoclient.construct.php" target="_blank">connection options for Mongo database</a> s well as saves and gets data from Mongo database.</li>
+</ol>
+
+<p>To modify the behavior of the cache backend, use the decorator pattern. The cache backend’s decorator implements <code>Zend_Cache_Backend_ExtendedInterface</code> and extends <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Backend/Decorator/AbstractDecorator.php" target="_blank">Magento\Cache\Backend\Decorator\AbstractDecorator</a> abstract class.</p>
+
+<p>For more information about the decorator pattern, see the following:</p>
+
+<ul>
+  <li><a href="http://sourcemaking.com/design_patterns/Decorator/php" target="_blank">sourcemaking.com</a></li>
+  <li><a href="http://framework.zend.com/manual/1.12/en/learning.form.decorators.simplest.html" target="_blank">Zend decorator basics</a></li>
+  <li><a href="http://www.php5dp.com/php-decorator-design-pattern-accessorizing-your-classes/" target="_blank">php5dp.com</a></li>
+</ul>
+
+<p>To configure the cache backend’s decorator in <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Cache\Core</a> class:&lt;/p&gt;</p>
+
+<pre>$options['backend_decorators']&nbsp;=&gt;&nbsp;array(
+&nbsp;&nbsp;&nbsp;&nbsp;array(
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'class'&nbsp;=&gt;&nbsp;'&lt;decorator_class&gt;',
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['options'&nbsp;=&gt;&nbsp;&lt;decorator_options&gt;],
+&nbsp;&nbsp;&nbsp;&nbsp;),
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
+);
+</pre>
+
+<p>You must specify the following parameters:</p>
+
+<ul>
+  <li><code>&lt;decorator_class&gt;</code> defines the name of a class extending <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Backend/Decorator/AbstractDecorator.php" target="_blank">Magento\Cache\Backend\Decorator\AbstractDecorator</a>.</li>
+  <li><code>&lt;decorator_options&gt;</code> retrieves an array of arbitrary options to be passed to the constructor during creation of a decorator.</li>
+</ul>
+
+<p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache/Backend/Decorator/Compression.php" target="_blank">Magento\Cache\Backend\Decorator\Compression</a> class is used to compresses the data before saving them to the cache backend. The data string, which consists of more symbol than specified in <code>compression_threshold</code> parameter, will be compressed. You can distinguish the compressed data by the <code>compression_prefix</code>.</p>
+
+<p>Magento also uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend framework’s two-level cache backend</a>. You can customize it by changing the deployment settings in <code>local.xml</code> or <code>di.xml</code> file. However, some default parameters cannot be overridden:</p>
+
+<ul>
+  <li><code>fast_backend_custom_naming</code></li>
+  <li><code>fast_backend_autoload</code></li>
+  <li><code>slow_backend_custom_naming</code></li>
+  <li><code>slow_backend_autoload</code></li>
+</ul>
+
+<p>To configure the two-level cache with the memcache as fast backend and file system as slow backend cache use <code>app/etc/local.xml</code>:</p>
+
+<pre>&lt;config&gt;
+....
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;cache&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;frontend&nbsp;name=&quot;default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;backend&gt;memcached&lt;/backend&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;slow_backend&gt;File&lt;/slow_backend&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;slow_backend_store_data&gt;1&lt;/slow_backend_store_data&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;auto_refresh_fast_cache&gt;1&lt;/auto_refresh_fast_cache&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;slow_backend_options&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hashed_directory_level&gt;1&lt;/hashed_directory_level&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hashed_directory_umask&gt;0777&lt;/hashed_directory_umask&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;file_name_prefix&gt;custom&lt;/file_name_prefix&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cache_dir&gt;&lt;![CDATA[cache_slow]]&gt;&lt;/cache_dir&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/slow_backend_options&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;memcached&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;servers&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;server1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;host&gt;&lt;![CDATA[localhost]]&gt;&lt;/host&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;port&gt;&lt;![CDATA[11211]]&gt;&lt;/port&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;persistent&gt;&lt;![CDATA[1]]&gt;&lt;/persistent&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;weight&gt;&lt;![CDATA[1]]&gt;&lt;/weight&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;timeout&gt;&lt;![CDATA[60]]&gt;&lt;/timeout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;retry_interval&gt;&lt;![CDATA[10]]&gt;&lt;/retry_interval&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/server1&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/servers&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/memcached&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/frontend&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cache&gt;
+&lt;/config&gt;
+</pre>
+
+<p>Alternatively, you can configure the two-level cache with the memcache as fast backend and file system as slow backend cache via <code>di.xml</code>. For instance, in <code>app/etc/di.xml</code> file:</p>
+
+<pre>&lt;config&nbsp;&gt;
+....
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;Magento\App\Cache\Frontend\Pool&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;frontendSettings&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;default&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;backend&quot;&nbsp;xsi:type=&quot;string&quot;&gt;memcached&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;slow_backend&quot;&nbsp;xsi:type=&quot;string&quot;&gt;File&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;slow_backend_store_data&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;auto_refresh_fast_cache&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;slow_backend_options&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;hashed_directory_level&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;hashed_directory_umask&quot;&nbsp;xsi:type=&quot;number&quot;&gt;0777&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;file_name_prefix&quot;&nbsp;xsi:type=&quot;string&quot;&gt;custom&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;cache_dir&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cache_slow&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;memcached&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;servers&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;server1&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;host&quot;&nbsp;xsi:type=&quot;string&quot;&gt;localhost&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;port&quot;&nbsp;xsi:type=&quot;number&quot;&gt;11211&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;persistent&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;weight&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;timeout&quot;&nbsp;xsi:type=&quot;number&quot;&gt;60&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;retry_interval&quot;&nbsp;xsi:type=&quot;number&quot;&gt;10&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
+&lt;/config&gt;</pre>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Architecture</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/arch_whatis.html">What is Magento?</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular system</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/arch_libraries.html">Libraries</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/arch_themes.html">Themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/arch_translations.html">Translation packs</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/magento/devdocs/guides/v1.0/architecture/areas/areas.html">Areas</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Behavior</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/behavior/price-calc.html">How Magento calculates prices</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/behavior/price-render.html">How Magento renders prices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Configuration</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/config-guide/config/config-files.html">Configuration files</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="https://github.com/magento/devdocs/guides/v1.0/config-guide/config/caching.html">Caching</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/config-guide/config/magento-mode.html">Magento modes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/config-guide/config/js-resources.html">JavaScript resources</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/config-guide/config/plugins.html">Plugins</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Extensions</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/magento/devdocs/guides/v1.0/architecture/index-cache/indexing.html">Indexing</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Modules</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/modules/mod_intro.html">Introduction to modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/modules/mod_conventions.html">Module naming and location conventions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/modules/payment.html">Payment modules</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.com/magento/devdocs/guides/v1.0/architecture/modules/routing.html">Routing</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">View library</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/view/view-lib.html">View library</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/view/design-abstract.html">Design abstractions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/view/page-assets.html">Page assets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/view/page-type.html">Page types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/view/template-engine.html">Template engine</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.com/magento/devdocs/guides/v1.0/architecture/view/static-process.html">Static file processing</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>
