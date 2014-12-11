@@ -110,7 +110,7 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
       <td colspan="1">
         <ul>
           <li>
-            <code>layout = {layout}</code>
+            <code>layout = {layout_id}</code>
           </li>
           <li>
             <code class="xml color1">
@@ -355,6 +355,58 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
   </tbody>
 </table>
 
+<h2 id="page-types-generic">Generic layout</h2>
+
+Generic layout is a variation of page configuration used for pages loaded by AJAX requests. 
+
+<h3>Generic layout structure and allowed elements</h3>
+<table>
+  <tbody>
+    <tr>
+      <th>Element</th>
+      <th colspan="1">Attributes</th>
+      <th colspan="1">Parent of</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code> <span>&lt;layout&gt;&lt;/layout&gt;</span> </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          
+          <li>
+            
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Core/etc/page.xsd
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>&lt;html&gt;</li>
+          <li>&lt;head&gt;</li>
+          <li>&lt;body&gt;</li>
+          <li>&lt;update&gt;</li>
+        </ul>
+      </td>
+      <td>Mandatory root element.</td>
+    </tr>
+ 
+</tbody>
+</table>
+
+
+Generic layout sample:
+
+***app/code/Magento/Centinel/view/frontend/layout/centinel_index_authenticationcomplete.xml***
+
+<pre>
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;root&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Centinel\Block\Authentication\Complete&quot;&nbsp;name=&quot;page.block&quot;&nbsp;template=&quot;authentication/complete.phtml&quot;&nbsp;cacheable=&quot;false&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
+&lt;/layout&gt;
+</pre>
 
 
 
