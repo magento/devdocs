@@ -1,22 +1,8 @@
-Magento 2 Developer Documentation -- INTERNAL REPO
-==================================================
+Magento Developer Documentation 
+=================================
 
-Internal repo for review and experimentation of the 
-Jekyll/markdown for these documents:
+Welcome! This site contains the latest Magento developer documentation for the upcoming developer beta release.
 
-* Magento 2 Developer's Guide
-* API Reference pages
+To contribute, please fork the develop branch. We won't accept pull requests into master.
 
-How to Contribute
-=================
-
-Follow these steps to contribute to this repository:
-
-1. Clone this repository.
-2. cd into the clone.
-3. Check out a local branch.
-4. Do your work.
-5. Commit your changes.
-6. Push your changes to devbeta: git push origin <local_branch>:devbeta
-
-
+We're looking forward to hearing from you!
