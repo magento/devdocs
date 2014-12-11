@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide
+group: 
 subgroup: Integration
 title: Code an integration
 menu_title: Code an integration
