@@ -1,0 +1,68 @@
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		{% assign categories = site.articles | group_by:"group" %}
+		
+		{% for node in categories %}
+				
+				{% if node.name == page.group %}
+					
+					{% assign subcategories =  node.items | group_by:"subgroup" %}
+					{% assign subcategories_sorted =  subcategories | sort: "name" %}
+					
+					{% for subcats in subcategories_sorted %}
+					
+						{% assign articles_sorted = subcats.items | sort: "menu_order" | where:"menu_node", null %}
+						
+						{% if subcats.name != "" %}
+						
+							{% assign parents = subcats.items | where:"menu_node","parent" %}
+														
+							
+								{% assign n = 0 %}
+								{% for parent in parents %}
+									<li class=" {% if page.url == parent.url %} active {%endif%}"><a class="nav-header" href="{{site.toc_baseurl}}{{parent.url}}">{% if parent.menu_title %}{{parent.menu_title}}{% else %}{{parent.title}}{% endif %}</a></li>
+									{% assign n = 1 %}
+								{% endfor %}
+								
+								{% if n == 0 %}
+							
+									<li class=""><span class="nav-header">{{ subcats.name }}</span></li>
+								
+								{% endif %}
+							
+								
+								{% for article in articles_sorted %}
+							
+									<li class="level-2 {% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+						
+								{% endfor %}
+								
+								
+							
+							
+						{% else %}
+						
+							{% for article in articles_sorted %}
+							
+								<li class="{% if page.url == article.url %} active {%endif%}"><a href="{{site.toc_baseurl}}{{article.url}}">{% if article.menu_title %}{{article.menu_title}}{% else %}{{article.title}}{% endif %}</a></li>
+				
+							{% endfor %}
+							
+						{% endif %}
+
+					{% endfor %}
+
+
+				{% endif %}
+			
+			{% endfor %}
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->

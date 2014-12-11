@@ -1,0 +1,9 @@
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">{{ page.title }}</h1>
+		{% if page.github_link %}	
+			<a class="improve-page" href="{{ site.githuburl }}{{ page.github_link }}" target="_blank">Help us improve this page</a>
+		{% endif %}
+	</div>
+</section>
