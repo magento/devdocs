@@ -107,7 +107,7 @@ The Integration Tokens for Extensions dialog box displays the authorization cred
 <ol><li>Start the Firefox web browser and the Firefox REST Client.</li>
 <li>From the <strong>Method</strong> list, click <strong>POST</strong>.</li>
 <li>In the <strong>URL</strong> field, enter the following:<br>
-<code>https://[your Magento host or IP]/[your Magento base install dir]/rest/default/V1/customerAccounts</code><br>
+<code>https://<your Magento host or IP>/<your Magento install dir>/rest/default/V1/customerAccounts</code><br>
 The following figure shows an example.<br>
 <img src="{{ site.baseurl }}common/images/rest_ff-rest-initial-url.png"></li></ol>
 <div class="bs-callout bs-callout-info" id="info">

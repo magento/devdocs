@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Architecture
 title: Translation packs
 menu_title: Translation packs
@@ -22,8 +22,8 @@ For more information, refer to <a href="{{ site.gdeurl }}architecture/behavior/x
 <h2 id="m2arch-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
-* Magento framework
+<!--* Magento framework
 * Magento file system
 * Magento database
-* Commonly used terms
+* Commonly used terms-->
 

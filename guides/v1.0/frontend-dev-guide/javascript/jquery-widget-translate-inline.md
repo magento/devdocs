@@ -17,7 +17,7 @@ The translateinline widget enables users to provide translations for storefront 
 
 To implement these, translateinline uses editTrigger and dialog widgets as auxiliary components. You can customize the latter two using the options in translateinline itself.
 
-translateinline source is `[your Magento install dir]/pub/lib/mage/translate-inline.js`.
+translateinline source is `<your Magento install dir>/pub/lib/mage/translate-inline.js`.
 
 <h2 id="fedg_translate-widget_init">Initialize the translateinline widget</h2>
 

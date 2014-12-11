@@ -71,7 +71,7 @@ Sample of a dictionary with meta information:
 
 Dictionary files can be located in different parts of the code base and are assembled into single language-specific dictionary automatically in the runtime.
 
-Meta information in a dictionary file is necessary for defining where the translation of a phrase should be assigned. A dictionary file without the meta information must be uploaded manually to appropriate module. For example, if you create a dictionary file for a custom/extension module, this file does not have the meta information. Thus, to make a new dictionary available in a custom module, upload a dictionary file to `i18n` folder of this module, for instance: `app/code/[Module name]/[Vendor name]/i18n/fr_FR.csv`.
+Meta information in a dictionary file is necessary for defining where the translation of a phrase should be assigned. A dictionary file without the meta information must be uploaded manually to appropriate module. For example, if you create a dictionary file for a custom/extension module, this file does not have the meta information. Thus, to make a new dictionary available in a custom module, upload a dictionary file to `i18n` folder of this module, for instance: `app/code/<ModuleName>/<VendorName>/i18n/fr_FR.csv`.
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
 
@@ -95,7 +95,7 @@ The language pack is a dictionary divided into separate module-specific files. Y
 
 After the customization is done, copy the language pack and paste it in the appropriate directory in your Magento instance or use the <a href="#m2devgde-xlate-packtool">language pack tool</a>.
 
-Find the language packs in the `app/i18n/[Module name]/[Vendor name]` directory.
+Find the language packs in the `app/i18n/<ModuleName>/<VendorName>` directory.
 
 <pre>__/app/i18n
 &nbsp;|__/magento
@@ -164,11 +164,11 @@ To understand how the language inheritance works, imagine a language pack that d
 **Then** after system fails to find a term in en_GB pack, it looks in other packs in following sequence:
 
 1.	parent_pack_one/language_pack_one
-1.	[Vendor name]/en_au_pack
-1.	[Vendor name]/en_ie_pack
+1.	<VendorName>/en_au_pack
+1.	<VendorName>/en_ie_pack
 1.	parent_pack_two/language_pack_two
-1.	[Vendor name]/en_ca_pack
-1.	[Vendor name]/en_us_pack
+1.	<VendorName>/en_ca_pack
+1.	<VendorName>/en_us_pack
 
 Specifying all inheritances between the language packs might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
@@ -204,8 +204,8 @@ To create custom language package:
 
 1.	Find a language pack on Magento-related websites or generate it from Magneto by using <a href="#m2devgde-xlate-generatortool">generator tool</a>.
 1.	Translate the terms/phrases as appropriate.
-1.	Declare the pack in `app/i18n/[Vendor name]/[Package name]/language.xml` file.
-1.	Upload your language pack to appropriate directory in your Magento instance, for example, `app/i18n/[Vendor name]/[Package name]`.
+1.	Declare the pack in `app/i18n/<VendorName>/[Package name]/language.xml` file.
+1.	Upload your language pack to appropriate directory in your Magento instance, for example, `app/i18n/<VendorName>/[Package name]`.
 1.	Alternatively, run the <a href="#m2devgde-xlate-packtool">language pack tool</a> to upload the newly created pack.
 
 <h3 id="m2devgde-xlate-translatetheme">Create a translation for a module or theme</h3>

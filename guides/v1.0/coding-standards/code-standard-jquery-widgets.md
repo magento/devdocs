@@ -491,7 +491,7 @@ $.widget("mage.form," {
    </div>
    <h3>Abstract widgets which can be used shared with non-Magento applications</h3>
    <div>
-      <p>Place all such widgets under the <code>[your Magento install dir]/pub/lib/[your company]/[author]</code> directory.</p>
+      <p>Place all such widgets under the <code><your Magento install dir>/pub/lib/[your company]/[author]</code> directory.</p>
       <table>
          <tbody>
             <tr>
@@ -520,7 +520,7 @@ $.widget("mage.form," {
    </div>
    <h3>Magento product specific widgets</h3>
    <div>
-      <p>You must locate all of these under the <code>[your Magento install dir]/app/code/[Namespace]/[Module]/view/[area]/js</code> directory.</p>
+      <p>You must locate all of these under the <code><your Magento install dir>/app/code/<namespace>/<ModuleName>/view/<areaname>/js</code> directory.</p>
       <table>
          <tbody>
             <tr>

@@ -8,9 +8,9 @@ menu_order: 4
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 ---
 
-To enable pages to load, we excluded JavaScript from the page head block and integrated the Magento system with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load tme and enables you to specify dependencies between JavaScript resources in your responsive theme.
+To enable pages to load, we excluded JavaScript from the page head block and integrated the Magento system with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load time and enables you to specify dependencies between JavaScript resources in your responsive theme.
 
-For an example of how to include JavaScript in your responsive theme, see <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>.
+For an example of how to include JavaScript in your responsive theme, see <!-- <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>--> bootstrap.js.
 
 The Blank theme uses the following JavaScript to responsively relocate page elements by viewport:
 
@@ -94,7 +94,7 @@ Sample of how it might look:
 
 <h2 id="fedg_rwd_include-js">Include JavaScript files in a responsive theme</h2>
 
-The Blank theme layout file, <a href="{{ site.mage2000url }}blob/master/app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layouts/default_head_blocks.xml</a>, already has `responsive.js`, `navigation-menu.js`, and `matchMedia.js` included.
+The Blank theme layout file, <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml</a>, already has `responsive.js`, `navigation-menu.js`, and `matchMedia.js` included.
 
 When you add a new theme, you include them in your responsive theme layout as follows:
 
