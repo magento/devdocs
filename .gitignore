@@ -15,13 +15,5 @@ Thumbs.db
 # Config and output files #
 ###########################
 _site
-ignore
-/_config.steve.yml
-/_config.diane.yml
-/_config.brad.yml
-/_config.olena.yml
-/_config.sasha.yml
-/_config.tana.yml
-/_config.gen.yml
-jk.bat
-gen.bat
+CNAME
+_config.yml
