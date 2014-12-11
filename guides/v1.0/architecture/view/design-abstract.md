@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: View library
 title: Design abstractions
 menu_title: Design abstractions

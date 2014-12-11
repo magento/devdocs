@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: View library
 title: Static file processing
 menu_title: Static file processing
