@@ -8,21 +8,25 @@ menu_order: 4
 github_link: config-guide/config/depend-inj.md
 ---
 
-<h4>Contents</h4>
+<h4>Contents</h4> 
 
 See one of the following sections:
 
-*	<a href="#dep-inj-intro">Introduction</a>
-*	<a href="#dep-inj-mod">How to use dependency injection</a>
-*	<a href="#dep-inj-mod-config">Dependency injection type configurations</a>
-*	<a href="#dep-inj-map">Interface preferences</a>
+*	<a href="#dep-inj-intro">Overview of dependency injection</a>
+*	<a href="#dep-inj-preview">Preview of using dependency injection</a>
+*	<a href="#dep-inj-mod">Configuration overview</a>
+*	<a href="#dep-inj-mod-class">Class definitions</a>
+*	<a href="#dep-inj-mod-type">Type configurations</a>
+*	<a href="#dep-inj-mod-type-life-mgmt">Lifestyle management</a>
 *	<a href="#dep-inj-compile">Definition compiler tool</a>
 
-<h2 id="dep-inj-intro">Introduction</h2>
+<h2 id="dep-inj-intro">Overview of dependency injection</h2>
 
 The Magento software now uses *dependency injection* as an alternative to the Magento 1.x `Mage` class. Dependency injection means that all object dependencies are passed (that is, *injected*) into an object instead of being pulled by the object from the environment.
 
 A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
+
+In simple terms, if ModuleA needs to access some functionality in ModuleB, ModuleA *depends on* ModuleB. ModuleA consumes the service offered by ModuleB, so ModuleA is the *consumer* and ModuleB is the *dependent*.
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
 
@@ -42,7 +46,8 @@ Factory
 
 Proxy
 
-:	Object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
+:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
+
 
 Lifestyle
 
@@ -52,7 +57,18 @@ Lifestyle
 This section provides examples of constructor and method injection so you can see what they look at. To use dependency injection in your module, you must configure it as discussed in TBD.
 
 <h3 id="dep-inj-preview-cons">Preview of constructor injection</h3>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. TBD LINK Proxies must be used for expensive optional dependencies.
+Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target=_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
+
+A sample proxy (which you declare in `di.xml`) follows:
+
+{% highlight PHP %}
+<?php
+<type name="Magento\Backend\Model\Config\Structure\Element\Iterator\Field" shared="false">
+    <arguments>
+        <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
+    </arguments>
+</type>
+{% endhighlight %}
 
 <p class="q">Reviewer: Can you provide me with another example? Foo/bar examples are not ideal.</p>
 
@@ -208,13 +224,13 @@ Sample argument that creates instances of `Magento\Core\Model\Session` with the 
 			<th>Possible values</th>
 		</tr>
 	<tr>
-		<td><p><strong>Object with default lifetime</strong></p>
+		<td><p><strong>Object with default lifestyle</strong></p>
 		<pre>&lt;argument xsi:type="object">
 {Type_Name}&lt;/argument></pre>
-		<p><strong>Object with specified lifetime</strong></p>
+		<p><strong>Object with specified lifestyle</strong></p>
 		<pre>&lt;argument xsi:type="object"
 shared="{shared}">{Type_Name}&lt;/argument></pre></td>
-		<td>Creates an instance of <code>Type_Name</code> type and passed as argument. Any class name, interface name, or virtual type name can be passed as <code>Type_Name</code>. <code>shared</code> defines the lifetime of a created instance. </td>
+		<td>Creates an instance of <code>Type_Name</code> type and passed as argument. Any class name, interface name, or virtual type name can be passed as <code>Type_Name</code>. <code>shared</code> defines the lifestyle of a created instance. </td>
 		<td>n/a</td>
 	</tr>
 	</tbody>
@@ -404,7 +420,6 @@ Sample:
 
 <script src="https://gist.github.com/xcomSteveJohnson/24ffa1426734520f58a1.js"></script>
 
-<p class="q">Reviewer: I had a hard time figuring out what this meant. Please review carefully. Original wording: "During merging, arguments with the same name are completely replaced, if their type is different, and are overridden, if their type is same."</p>
 <p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the name is the same, the arguments are overridden.</p>
 
 </div>
@@ -490,7 +505,7 @@ Most factories are simple, so developers do not have to bother with writing them
 By default, class definitions are read using reflection. Because PHP reflection is slow, we created the definition compiler tool. The defintion compiler tool performs the following tasks:
 
 *	Generates all required factories 
-<!-- *	generate proxies declared in di.xml files -->
+*	Generates proxies declared in `di.xml` files
 *	Generate interceptors for all classes that have plug-ins declared in `di.xml` 
 *	Automatically compiles definitions for all modules and libraries
 *	Compiles class inheritance implementation relations to increase performance of configuration inheritance operations
@@ -527,13 +542,13 @@ If you don't run the compiler tool and if the preceding do not exist, the  slowe
 </div>
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <!-- <p>Only place where Proxy classes can be declared is di.xml files (as a preference, as a type for virtualType or as an instance of type parameter)</p> -->
-  <p>You can declare factory classes only in a PHP file's <code>__construct</code> of a class that is located under <code>&lt;your Magento install dir>app/code</code>.</p></span>
+ <ul><li>Declare proxy classes only in `di.xml` (as a preference, as a type for virtualType or as an instance of type parameter)</li>
+  <li>Declare factory classes only in a PHP file's <code>__construct</code> of a class that is located under <code>&lt;your Magento install dir>app/code</code>.</li></ul></span>
 </div>
   
 Naming rules for an auto-generated class named `Some\Module\Name':
 
-<!-- *	Proxy Class: `Some\Model\Name\Proxy` -->
+*	Proxy Class: `Some\Model\Name\Proxy`
 *	Factory Class: `Some\Model\NameFactory`
 
 <h3 id="dep-inj-compile-run">Running the definition compiler tool</h3>
@@ -569,7 +584,7 @@ The following table discusses the meanings of the options:
 	</tr>
 	<tr>
 		<td>--extra-classes-file &lt;string></td>
-		<td>Include to specify factories that are not in the code base. For more information, see TBD.</td>
+		<td>Include to specify factories that are not in the code base. For more information, see <a href="#dep-inj-mod">Configuration overview</a>.</td>
 	</tr>
 	<tr>
 		<td>--generation &lt;string></td>
@@ -583,7 +598,7 @@ The following table discusses the meanings of the options:
 </table>
 
 <h4 id="dep-inj-compile-extra">Specifying extra classes</h4>
-To generate <!--proxies and -->factories not declared in dependency injection or the Magento code base, use the `--extra-classes-file` parameter to specify the path to a file that contains a list of factories and classes to generate. A sample follows:
+To generate proxies and factories not declared in dependency injection or the Magento code base, use the `--extra-classes-file` parameter to specify the path to a file that contains a list of factories and classes to generate. A sample follows:
 
 {% highlight PHP %}
 <?php
