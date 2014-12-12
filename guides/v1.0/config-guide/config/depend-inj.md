@@ -54,7 +54,7 @@ Lifestyle
 :	An object's *lifestyle* determines in what scope instances are reused, and when to release them. For more information, see <a href="http://docs.castleproject.org/%28X%281%29S%283i1uai55lunseee55whzgdzv%29%29/Default.aspx?Page=LifeStyles&NS=Windsor&AspxAutoDetectCookieSupport=1" target="_blank">the Castle project</a>.
 
 <h2 id="dep-inj-preview">Preview of using dependency injection</h2>
-This section provides examples of constructor and method injection so you can see what they look at. To use dependency injection in your module, you must configure it as discussed in TBD.
+This section provides examples of constructor and method injection so you can see what they look at. To use dependency injection in your module, you must configure it as discussed in <a href="#dep-inj-mod">Configuration overview</a>.
 
 <h3 id="dep-inj-preview-cons">Preview of constructor injection</h3>
 Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target=_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
