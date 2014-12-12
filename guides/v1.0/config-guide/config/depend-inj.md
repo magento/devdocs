@@ -169,7 +169,7 @@ Object manager configurations can be specified at any of the following levels:
 <h2 id="dep-inj-mod-class">Class definitions</h2>
 Magento uses class constructor signatures to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.
 
-Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">defintion compiler tool</a> to pre-compile class definitions for better performance.
+Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">definition compiler tool</a> to pre-compile class definitions for better performance.
 
 The parameters specified for a class type are inherited by its descendant classes.
 
@@ -502,7 +502,7 @@ class Magento\Core\Model\Config\BaseFactory
 Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory. 
 
 <h2 id="dep-inj-compile">Definition compiler tool</h2>
-By default, class definitions are read using reflection. Because PHP reflection is slow, we created the definition compiler tool. The defintion compiler tool performs the following tasks:
+By default, class definitions are read using reflection. Because PHP reflection is slow, we created the definition compiler tool. The definition compiler tool performs the following tasks:
 
 *	Generates all required factories 
 *	Generates proxies declared in `di.xml` files
@@ -627,7 +627,7 @@ Sample output:
         Magento\Authorization\Model\RoleFactory
 	... (more)
 	
-**Example 2: Specifying an alternate path to geneated files**
+**Example 2: Specifying an alternate path to generated files**
 
 	php compiler.php --generation "/var/www/magento2/mydir"
 	
