@@ -13,9 +13,11 @@ github_link: config-guide/config/depend-inj.md
 See one of the following sections:
 
 *	<a href="#dep-inj-intro">Introduction</a>
-*	<a href="#dep-inj-mod">How to use dependency injection</a>
-*	<a href="#dep-inj-mod-config">Dependency injection type configurations</a>
-*	<a href="#dep-inj-map">Interface preferences</a>
+*	<a href="#dep-inj-preview">Preview of using dependency injection</a>
+*	<a href="#dep-inj-mod">Configuration overview</a>
+*	<a href="#dep-inj-mod-class">Class definitions</a>
+*	<a href="#dep-inj-mod-type">Type configurations</a>
+*	<a href="#dep-inj-mod-type-life-mgmt">Lifestyle management</a>
 *	<a href="#dep-inj-compile">Definition compiler tool</a>
 
 <h2 id="dep-inj-intro">Introduction</h2>
@@ -24,7 +26,9 @@ The Magento software now uses *dependency injection* as an alternative to the Ma
 
 A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
 
-The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
+In simple terms, if ModuleA needs to access some functionality in ModuleB, ModuleA *depends on* ModuleB. ModuleA consumes the service offered by ModuleB, so ModuleA is the *consumer* and ModuleB is the *dependent*.
+
+The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
 
 This topic uses the following terms:
 
@@ -42,7 +46,7 @@ Factory
 
 Proxy
 
-:	Object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
+:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
 
 Lifestyle
 
@@ -52,7 +56,20 @@ Lifestyle
 This section provides examples of constructor and method injection so you can see what they look at. To use dependency injection in your module, you must configure it as discussed in TBD.
 
 <h3 id="dep-inj-preview-cons">Preview of constructor injection</h3>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. TBD LINK Proxies must be used for expensive optional dependencies.
+Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
+
+A sample proxy (which you declare in `di.xml`) follows:
+
+{% highlight PHP %}
+<?php
+<type name="Magento\Backend\Model\Config\Structure\Element\Iterator\Field" shared="false">
+    <arguments>
+        <argument name="groupFlyweight" xsi:type="object">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</argument>
+    </arguments>
+</type>
+{% endhighlight %}
+
+Sample of using constructor injection.
 
 <p class="q">Reviewer: Can you provide me with another example? Foo/bar examples are not ideal.</p>
 
@@ -404,7 +421,6 @@ Sample:
 
 <script src="https://gist.github.com/xcomSteveJohnson/24ffa1426734520f58a1.js"></script>
 
-<p class="q">Reviewer: I had a hard time figuring out what this meant. Please review carefully. Original wording: "During merging, arguments with the same name are completely replaced, if their type is different, and are overridden, if their type is same."</p>
 <p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the name is the same, the arguments are overridden.</p>
 
 </div>
@@ -490,7 +506,7 @@ Most factories are simple, so developers do not have to bother with writing them
 By default, class definitions are read using reflection. Because PHP reflection is slow, we created the definition compiler tool. The defintion compiler tool performs the following tasks:
 
 *	Generates all required factories 
-<!-- *	generate proxies declared in di.xml files -->
+*	Generate proxies declared in di.xml files
 *	Generate interceptors for all classes that have plug-ins declared in `di.xml` 
 *	Automatically compiles definitions for all modules and libraries
 *	Compiles class inheritance implementation relations to increase performance of configuration inheritance operations

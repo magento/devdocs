@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Architecture
 title: Libraries
 menu_title: Libraries
@@ -23,3 +23,4 @@ For detailed information, refer to  <a href="{{ site.gdeurl }}architecture/view/
 * Magento file system
 * Magento database
 * Commonly used terms-->
+
