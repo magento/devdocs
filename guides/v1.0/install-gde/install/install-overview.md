@@ -10,7 +10,7 @@ github_link: install-gde/install/install-overview.md
 ---
 
 To install Magento, complete the following tasks in the order shown:
-
+ 
 1.	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>
 1.	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
 1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>

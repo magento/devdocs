@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install 
 subgroup: R_Installation
 title: Install Magento software using the command line
 menu_title: Install Magento software using the command line

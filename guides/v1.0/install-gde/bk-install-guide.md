@@ -9,7 +9,7 @@ menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
 
-<h2>New to Magento? Need some help?</h2>
+<h2>New to Magento? Need some help?</h2> 
 If you're not sure about the following, you probably need a little help before you get started using the Magento software:
 
 *	Is the Magento software <a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">installed already</a>?

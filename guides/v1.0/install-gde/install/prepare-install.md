@@ -3,7 +3,7 @@ layout: default
 group: install
 subgroup: R_Installation
 title: Update installation dependencies
-menu_title: Update installation dependencies
+menu_title: Update installation dependencies 
 menu_node:
 menu_order: 4
 github_link: install-gde/install/prepare-install.md
