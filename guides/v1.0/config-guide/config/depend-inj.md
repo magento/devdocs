@@ -410,7 +410,7 @@ translate="true">{someValue}&lt;/argument></pre></td>
 &lt;item key="someItem"
 xsi:type="string">someVal&lt;/item>
 &lt;/argument></pre></td>
-		<td>Array with elemens corresponding to the items passed as argument. Array can contain an infinite number of items. Each item can be any type as argument, including an array itself, or an object type.</td>
+		<td>Array with elements corresponding to the items passed as argument. Array can contain an infinite number of items. Each item can be any type as argument, including an array itself, or an object type.</td>
 		<td>n/a</td>
 	</tr>
 	</tbody>
