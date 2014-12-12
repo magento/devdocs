@@ -176,7 +176,7 @@
 
 <ol>
   <li>Your system meets the requirements discussed in <a href="/guides/v1.0/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
-  <li>You completed all prerequisite tasks discussed in <a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento</a>.</li>
+  <li>You completed all prerequisite tasks discussed in <a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
   <li>You installed Composer and cloned the Magento GitHub repository as discussed in <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.</li>
   <li>After you log in to the Magento server, switch to the web server user as discussed in <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li>
 </ol>
@@ -213,14 +213,14 @@
   <li>
     <p>Change to the following directory:</p>
 
-    <pre>cd <your magento="" install="" dir="">/setup
-	
-<p>Examples:</p>
-	
-*	Ubuntu: `cd /var/www/magento2/setup`
-*	CentOS: `cd /var/www/html/magento2/setup`
+    <pre>cd &lt;your Magento install dir&gt;/setup</pre>
 
-</your></pre>
+    <p>Examples:</p>
+
+    <ul>
+      <li>Ubuntu: <code>cd /var/www/magento2/setup</code></li>
+      <li>CentOS: <code>cd /var/www/html/magento2/setup</code></li>
+    </ul>
   </li>
   <li>
     <p>Optionally run the following commands to find values for some required options:</p>
@@ -462,13 +462,11 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre>cd <your magento="" install="" dir="">
+    <pre>cd &lt;your Magento install dir&gt;
 git pull
 composer install
 cd setup
-composer install
-
-</your></pre>
+composer install</pre>
   </li>
   <li>Repeat the tasks discussed in <a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>.</li>
 </ol>
@@ -624,7 +622,7 @@ composer install
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-web.html">Install Magento software using the web interface</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
 						
 								
 							
