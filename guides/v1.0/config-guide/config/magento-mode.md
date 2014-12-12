@@ -2,7 +2,7 @@
 layout: default
 group: dev-guide
 subgroup: Configuration
-title: Magento modes
+title: Magento modes 
 menu_title: Magento modes
 menu_order: 4
 github_link: config-guide/config/magento-mode.md
