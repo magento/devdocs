@@ -13,7 +13,7 @@ A Magento service can be exposed using REST only or using both SOAP and REST. In
 
 ### Configuring webapi.xml
 
-To start, you must configure your service using `app/code/[Vendor]/[Module]/etc/webapi.xml`. Each REST API call must have a corresponding `<rest route>` in `webapi.xml`. In other words, to access a method using REST, the method must have a `<rest route>` in `webapi.xml`; otherwise, the method cannot be accssed.
+To start, you must configure your service using `app/code/[Vendor]/<ModuleName>/etc/webapi.xml`. Each REST API call must have a corresponding `<rest route>` in `webapi.xml`. In other words, to access a method using REST, the method must have a `<rest route>` in `webapi.xml`; otherwise, the method cannot be accssed.
 
 If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the `secure = true` attribute. Attempting to access a `secure` route using non-secure means results in an exception.
 

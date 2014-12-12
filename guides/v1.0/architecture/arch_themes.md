@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Architecture
 title: Themes
 menu_title: Themes
@@ -20,7 +20,7 @@ For detailed information about working with themes, refer to  <a href="{{ site.g
 <h2 id="m2arch-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
-<!--* Magento framework
+<!-- Magento framework
 * Magento file system
 * Magento database
 * Commonly used terms-->

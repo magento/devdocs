@@ -1,14 +1,12 @@
 ---
 layout: default
-group: dev-guide
+group: config-guide
 subgroup: Configuration
 title: Caching
 menu_title: Caching
-menu_order: 2
+menu_order: 3
 github_link: config-guide/config/caching.md
 ---
-
-<h2 id="m2devgde-cache-intro">Overview</h2>
 
 In the Magento system, the functionality was split into several layers depending on role of each component:
 
@@ -42,7 +40,7 @@ Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" 
 
 Make the primary configurations for cache in:
 
-*	DI configuration files (`app/etc/di.xml` or `app/etc/*/di.xml`) to define the preconfigured cache settings.
+*	DI configuration files (`app/etc/di.xml` or `app/etc/*/di.xml`) to define the pre configured cache settings.
 *	Deployment configuration files (`app/etc/local.xml`) to tweak the application during the deployment as necessary.
 
 Configuring the cache involves setting up the <a href="#m2devgde-cache-frontend">cache frontend</a> and <a href="#m2devgde-cache-backend">cache backend</a>. Thus, you will need to specify the cache frontend configuration, attach the cache types to the cache frontend, and set up the cache backend for the cache frontend.

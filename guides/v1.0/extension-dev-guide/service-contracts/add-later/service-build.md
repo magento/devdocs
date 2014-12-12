@@ -11,7 +11,7 @@ The code that uses a service should depend on the interface rather than on the s
 
 Terminology frequently used in this guide:
 
-*	Module: The PHP code that defines your application's business logic. The module code must be in subdirectories of `[your Magento install dir]/app/code/[module name]`.
+*	Module: The PHP code that defines your application's business logic. The module code must be in subdirectories of `<your Magento install dir>/app/code/<ModuleName>`.
 *	Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a module or extension) must agree to allow the integration to access those resources.
 *	Extension: A tested module that is marketed to other merchants on Magento Connect. (*Not currently available*.)
 
@@ -43,7 +43,7 @@ To see an example of a Customer service interface, see <a href="{{ site.mage2000
 
 To expose a service as a REST or SOAP API, you must:
 
-1.	Create a `[your Magento install dir]/app/code/[module name]/etc/webapi.xml` that defines a route URL, HTTP methods supported, and the Magento resources the method must access.
+1.	Create a `<your Magento install dir>/app/code/<ModuleName>/etc/webapi.xml` that defines a route URL, HTTP methods supported, and the Magento resources the method must access.
 
 	Sample:
 
