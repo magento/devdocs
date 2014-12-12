@@ -19,8 +19,8 @@ Composer is a separate application that manages PHP dependencies. Before you can
 2.	<a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.
 2.	Run the <a href="#install-composer-install">`composer install` command</a> from *both* of the following directories:
 
-	<pre><your Magento install dir>
-	<your Magento install dir>/setup</pre>
+	<pre>&lt;your Magento install dir>
+	&lt;your Magento install dir>/setup</pre>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
