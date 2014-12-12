@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Architecture
 title: Magento as a modular system
 menu_title: Magento as a modular system

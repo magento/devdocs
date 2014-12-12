@@ -1,6 +1,6 @@
 ---
 layout: default
-group: extension-dev-guide
+group: coding-standards
 subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper

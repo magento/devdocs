@@ -20,4 +20,3 @@ For detailed information, refer to  <a href="{{ site.gdeurl }}architecture/view/
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
 
-

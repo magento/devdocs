@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group:
 subgroup: Integration
 title: Manually create an integration
 menu_title: Manually create an integration

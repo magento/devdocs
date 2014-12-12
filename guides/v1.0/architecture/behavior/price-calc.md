@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Behavior
 title: How Magento calculates prices
 menu_title: How Magento calculates prices
