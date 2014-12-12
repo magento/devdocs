@@ -144,7 +144,7 @@ To install the Magento software using the Setup Wizard:
 	</tr>
 	<tr>
 		<td>Apache Rewrites</td>
-		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="#apache">Apache</a>.</td>
+		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="{{ site.gdeurl}}install-gde/prereq/apache.html">Apache</a>.</td>
 	</tr>
 	<tr>
 		<td>Encryption Key</td>
