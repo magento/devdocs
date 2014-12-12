@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: R_Installation
-title: Install Magento software using the web interface
-menu_title: Install Magento software using the web interface
+title: Install the Magento software using the Setup Wizard
+menu_title: Install the Magento software using the Setup Wizard
 menu_node:
 menu_order: 6
 github_link: install-gde/install/install-web.md
@@ -14,10 +14,9 @@ github_link: install-gde/install/install-web.md
 See one of the following sections:
 
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-magento-web">Installing the Magento software using the web interface</a>
-*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
+*	<a href="#instgde-install-magento-web">Installing the Magento software using the Setup Wizard</a>
 
-This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="#running-the-command-line-installer">Install Magento software using the command line</a>.
+This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
@@ -31,11 +30,11 @@ Before you begin, make sure you completed all of the following tasks:
 
 <h2 id="instgde-install-magento-web">Installing the Magento software using the web-based wizard</h2>
 
-The web interface is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
+The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
 
 In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.
 
-To install the Magento software using a web interface:
+To install the Magento software using the Setup Wizard:
 
 1.	Start a web browser.
 
