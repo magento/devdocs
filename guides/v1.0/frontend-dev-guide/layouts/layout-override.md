@@ -32,9 +32,9 @@ Examples of customizations that involve overriding layouts:
 *	Setting XML attributes of blocks and containers.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>Overriding is not needed to change the <code>htmlClass</code> of a container when <code>htmlClass</code> is defined in the original container. It is better to avoid renaming the class. Instead, you should target CSS rules to the original class.</p>
+		<p>Certain attributes, lilke <code>htmlClass</code>, <code>htmlId</code>, <code>label</code> attributes can be changed in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending layouts</a>.</p>
 	</div>
-
+<p class="q">Question to reviewer: Are there any attributes that cannot be set/changed in extending layouts?</p>
 *	Removing block arguments.
 *	Modifying and suppressing handles inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
@@ -60,7 +60,7 @@ This section discusses how to override:
 To add an overriding base layout file (to override a base layout provided by the module):
 
 
-2.	Put the layout file in the follwoing location:
+2.	Put the layout file in the following location:
 
 <pre>
 __app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
@@ -73,6 +73,9 @@ __app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
 
 </pre>
 
+These files override the following layouts:
+- 	`app/code/<Vendor>/<Namespace>/<Module>/layout/<layout1>.xml`
+-   `app/code/<Vendor>/<Namespace>/<Module>/layout/<layout2>.xml`
 
 
 <h3 id="fedg_layout_override_theme">Override theme layouts</h3>
@@ -86,10 +89,11 @@ __app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
 &nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;|__/layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;Vendor&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;theme&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/theme
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;Vendor&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;ancestor_theme&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
 </pre>
 
 

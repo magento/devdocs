@@ -31,7 +31,7 @@ Magento merges layout files as follows:
 
 1. For each layout file in the list:
 	1. Loads layout handle declaration and layout instructions.
-	2. b.Appends to the result in the following format:
+	2. Appends to the result in the following format:
 <p class="q"> To the reviewer: could you plz provide an updated code sample if this is outdated </p>
 <pre>
 &lt;layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
