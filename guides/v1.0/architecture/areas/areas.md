@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group:
 subgroup: Areas
 title: Areas
 menu_title: Areas
