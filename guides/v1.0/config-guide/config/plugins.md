@@ -1,12 +1,14 @@
 ---
 layout: default
-group: config-guide
+group: dev-guide
 subgroup: Configuration
 title: Plugins
 menu_title: Plugins
-menu_order: 2
+menu_order: 6
 github_link: config-guide/config/plugins.md
 ---
+
+<h2 id="plugin-intro">Introduction</h2>
 
 In the Magento system, you can change, or *extend*, the behavior of any original method in any Magento class.
 
@@ -104,6 +106,7 @@ class Plugin
 
 <script src="https://gist.github.com/xcomSteveJohnson/4a68a7c692536d520ffe.js"></script>
 
+
 <p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
 
 <p>The around prefix should be added to the name of an original method.</p>
@@ -111,6 +114,7 @@ class Plugin
 <p>For example:</p>
 
 <script src="https://gist.github.com/xcomSteveJohnson/8e25785abf1754c59ccb.js"></script>
+
 
 <p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>) followed by the arguments belonging to an original method.</p>
 

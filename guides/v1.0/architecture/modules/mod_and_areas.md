@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Modules
 title: Modules and areas
 menu_title: Modules and areas

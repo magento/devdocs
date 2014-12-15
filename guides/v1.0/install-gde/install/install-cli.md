@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install 
 subgroup: R_Installation
 title: Install Magento software using the command line
 menu_title: Install Magento software using the command line
@@ -24,7 +24,7 @@ See one of the following sections:
 Before you begin, make sure that:
 
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites for installing Magento</a>.
+2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
 4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.
 
@@ -54,7 +54,7 @@ Before you begin:
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
 2.	Change to the following directory:
 
-	<pre>cd <your Magento install dir>/setup</pre>
+	<pre>cd &lt;your Magento install dir>/setup</pre>
 	
 	<p>Examples:</p>
 	
@@ -286,7 +286,7 @@ To reinstall the Magento software:
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
 3.	Enter the following commands in the order shown:
 
-	<pre>cd <your Magento install dir>
+	<pre>cd &lt;your Magento install dir>
 git pull
 composer install
 cd setup

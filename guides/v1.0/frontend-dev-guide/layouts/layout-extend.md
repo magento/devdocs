@@ -8,45 +8,41 @@ menu_order: 3
 github_link: frontend-dev-guide/layouts/layout-extend.md
 ---
 
-<h2 id="fedg_layout_extend_merge">Create a theme extending file</h2>
+<h2 id="fedg_layout_extend_merge">Create a theme merging file</h2>
 
-Rather than copy extensive page layout or page configuration code and modify what you want to change, in the Magento system, you must create only a *theme extending file* that contains the changes you want. In this article both, page layout files and page configuration files are referenced as *layot files*, as the mechanism of extending is similar for both them.
+Rather than copy extensive layout code and modify what you want to change, in the Magento system, you must create only a *theme merging file* that contains the changes you want.
 
-To add a theme extending file:
+To add a theme merging file:
 
-2.	Put the layot file in the following location:
-<pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
-&nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
-&nbsp;&nbsp;&nbsp;|__/layout
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&amp;lt;layout1&gt;.xml
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&amp;lt;layout2&gt;.xml
-</pre>
+1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html#layout_conventions">layout file conventions</a>.
+2.	Place the theme merging file according to our location conventions; that is:
 
+<pre>__app/design/<areaname>/[theme path]
+ |__/[your namespace]_[your module name]
+   |__/layout
+     |--&lt;layout1>.xml
+     |--&lt;layout2>.xml</pre>
 
+Where:
 
-<h2 id="fedg_layout_extend_merge">Processing extending layouts</h2>
+*	`[theme_path]` is a path to the theme relative to the themes directory
+*	`<areaname>` is the code of the application area to which the theme applies (typically, `adminhtml` or `frontend`)
+
+<h2 id="fedg_layout_extend_merge">Merge layout files</h2>
 
 Magento merges layout files as follows:
 
-1. For each layout file in the list:
-	1. Loads layout handle declaration and layout instructions.
-	2. b.Appends to the result in the following format:
-<p class="q"> To the reviewer: could you plz provide an updated code sample if this is outdated </p>
-<pre>
-&lt;layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_cart_index&quot;&nbsp;label=&quot;Shopping&nbsp;Cart&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_cart_index.xml&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_onepage_index&quot;&nbsp;label=&quot;One&nbsp;Page&nbsp;Checkout&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_onepage_index.xml&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;...&nbsp;--&gt;
-&lt;/layouts&gt;
-</pre>
-Where a `handle ID` is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.
+1.	For each layout file in the list:
 
-2. Replaces the base URL placeholders in the result.
+	a.	Loads layout handle declaration and layout instructions.
+
+	b.	Appends to the result in the following format:
+
+	<script src="https://gist.github.com/xcomSteveJohnson/6c2e7a15fba5d8f14fad.js"></script>
+
+	Where a `handle ID` is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.
+
+2.	Replaces the base URL placeholders in the result.
 
 
 #### Related topics:
