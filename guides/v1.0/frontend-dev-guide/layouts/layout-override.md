@@ -39,8 +39,9 @@ Examples of customizations that involve overriding layouts:
 *	Modifying and suppressing handles inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
 
-<h2 id="layout_override_bad">Avoid layout customization mistakes</h2>
-
+<div class="bs-callout bs-callout-info" id="info">
+		<p>Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the changes described in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_bad">Before you start customizing layout</a> paragraph.</p>
+	</div>
 Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:
 
 *	Changing block name or alias. The name of a block should not be changed, as well as the alias of a block remaining in the same parent element.
@@ -66,8 +67,9 @@ __app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
 &nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;|__/layout
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/base
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
 
 </pre>
 

@@ -13,7 +13,8 @@ github_link: frontend-dev-guide/layouts/layout-practice.md
 This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 <h2>Moving customer account links</h2>
-In their Orange theme, OrangeCo wants design to tranform the header links block to a drop-down, as follows:
+In their Orange theme, OrangeCo wants design to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
+
 
 <img src="{{ site.baseurl }}common/images/layout_transform.png">
 
@@ -21,18 +22,42 @@ To do this, they need to wrap the list of header links with a container and add 
 
 By default rendered header links look like following:
 
-<img src="{{ site.baseurl }}common/images/layout_code_before.png/>
+<img src="{{ site.baseurl }}common/images/layout_code_before1.png">
 
 Needed:
 
-<img src="{{ site.baseurl }}common/images/layout_code_after.png/>
+<img src="{{ site.baseurl }}common/images/layout_code_after.png">
 
 <br>
-<u>Step 1: Define the template</u>
+<u>Step 1: Define the blocks</u>
 
-OrangeCo needs to find out which tempalte is responsible for displaying page links, to be able to include it a layout file.
+OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">apply the Luma theme</a>. Using the approach described in <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `app/code/Magento/Customer/view/frontend/layout/default.xml`:
 
-Using the approach described in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a> article, OrangeCo define that the following template is used for links displaying:
+<pre>
+...
+&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;top.links&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\Link&quot;&nbsp;name=&quot;my-account-link&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&nbsp;translate=&quot;true&quot;&gt;My&nbsp;Account&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\RegisterLink&quot;&nbsp;name=&quot;register-link&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&nbsp;translate=&quot;true&quot;&gt;Register&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Customer\Block\Account\AuthorizationLink&quot;&nbsp;name=&quot;authorization-link&quot;&nbsp;template=&quot;account/link/authorization.phtml&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+&lt;/page&gt;
+</pre>
+
+<u>Step 2: Define the templates</u>
+
+Similar to the way we defined the layout on the previous step, we 
+define the  template which is used for rearranging the links:
 
 **`app/code/Magento/Customer/view/frontend/templates/account/customer.phtml`**
 
@@ -52,9 +77,9 @@ Using the approach described in the <a href="{{site.gdeurl}}frontend-dev-guide/t
 &lt;?php&nbsp;endif;&nbsp;?&gt;
 </pre>
 <br>
-<u>Step 2: Add a block to the base layout</u>
+<u>Step 3: Add a block to the base layout</u>
 
-OrcangeCo needs to create a `header.links` block in the `header.panel` container to move the links there. As he links can be added this list by different modules, it is better to add this block to the default.xml page configuration of the Theme module.
+OrcangeCo needs to create a new block, for example, `header.links`, in the `header.panel` container to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the Theme module.
 
 So the following extending layout is added in the Orange theme:
 
@@ -75,7 +100,8 @@ So the following extending layout is added in the Orange theme:
 
 <br>
 
-<u>Step 3: Move links</u>
+<u>Step 4: Move links</u>
+
 
 To move the links to the `header.links` block OrangeCo add an extending page configuration:
 
