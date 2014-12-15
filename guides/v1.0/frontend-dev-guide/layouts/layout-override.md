@@ -12,7 +12,8 @@ github_link: frontend-dev-guide/layouts/layout-override.md
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
 
-The overriding mechanism is similar for both page layout files and page configuration files, so in this article *layout files* is used to reference any of them.
+In this article both, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referenced to as *layot files*, as the mechanism of overriding is similar for them.
+
 
 Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
 
@@ -31,7 +32,7 @@ Examples of customizations that involve overriding layouts:
 *	Setting XML attributes of blocks and containers.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>Overriding is not needed to change the <code>htmlClass</code> of a container when <code>htmlClass</code> is defined in the original container. In this case, it is better to avoid renaming the class). Instead, you should target CSS rules to the original class.</p>
+		<p>Overriding is not needed to change the <code>htmlClass</code> of a container when <code>htmlClass</code> is defined in the original container. It is better to avoid renaming the class. Instead, you should target CSS rules to the original class.</p>
 	</div>
 
 *	Removing block arguments.
@@ -53,7 +54,7 @@ This section discusses how to override:
 *	<a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#location" target="_blank">Base layout</a>
 *	<a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#location" target="_blank">Theme layout</a>
 
-<h3 id="fedg_layout_override_default">Override default layouts</h3>
+<h3 id="fedg_layout_override_default">Override base layouts</h3>
 
 To add an overriding base layout file (to override a base layout provided by the module):
 
@@ -92,8 +93,6 @@ __app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>

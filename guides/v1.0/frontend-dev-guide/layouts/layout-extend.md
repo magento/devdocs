@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/layouts/layout-extend.md
 
 <h2 id="fedg_layout_extend_merge">Create a theme extending file</h2>
 
-Rather than copy extensive page layout or page configuration code and modify what you want to change, in the Magento system, you must create only a *theme extending file* that contains the changes you want. In this article both, page layout files and page configuration files are referenced as *layot files*, as the mechanism of extending is similar for both them.
+Rather than copy extensive page layout or page configuration code and modify what you want to change, in the Magento system, you must create only a *theme extending file* that contains the changes you want. In this article both, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referenced to as *layot files*, as the mechanism of extending is similar for them.
 
 To add a theme extending file:
 
