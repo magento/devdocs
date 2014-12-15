@@ -12,8 +12,13 @@ github_link: frontend-dev-guide/layouts/layout-override.md
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
 
+In this article both, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referenced to as *layot files*, as the mechanism of overriding is similar for them.
+
+
 Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
 
+
+<h2>Examples of customizations that involve overriding layouts</h2>
 Examples of customizations that involve overriding layouts:
 
 *	Suppressing method invocation.
@@ -27,15 +32,16 @@ Examples of customizations that involve overriding layouts:
 *	Setting XML attributes of blocks and containers.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>Overriding is not needed to change the <code>htmlClass</code> of a container when <code>htmlClass</code> is defined in the original container. In this case, it is better to avoid renaming the class). Instead, you should target CSS rules to the original class.</p>
+		<p>Certain attributes, lilke <code>htmlClass</code>, <code>htmlId</code>, <code>label</code> attributes can be changed in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending layouts</a>.</p>
 	</div>
-
+<p class="q">Question to reviewer: Are there any attributes that cannot be set/changed in extending layouts?</p>
 *	Removing block arguments.
 *	Modifying and suppressing handles inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
 
-<h2 id="layout_override_bad">Avoid layout customization mistakes</h2>
-
+<div class="bs-callout bs-callout-info" id="info">
+		<p>Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the changes described in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_bad">Before you start customizing layout</a> paragraph.</p>
+	</div>
 Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:
 
 *	Changing block name or alias. The name of a block should not be changed, as well as the alias of a block remaining in the same parent element.
@@ -46,52 +52,53 @@ Although the layout overriding mechanism provides great customization flexibilit
 
 This section discusses how to override:
 
-*	Default layout
-*	Theme layout
+*	<a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#location" target="_blank">Base layout</a>
+*	<a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#location" target="_blank">Theme layout</a>
 
-<h3 id="fedg_layout_override_default">Override default layouts</h3>
+<h3 id="fedg_layout_override_default">Override base layouts</h3>
 
-To add an overriding default layout file (to override a default layout provided by the module):
+To add an overriding base layout file (to override a base layout provided by the module):
 
-1.	Create a layout file following our <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html#layout_conventions">layout file conventions</a>.
-2.	Put it according to the location convention, that is:
 
-<pre>__app/design/<areaname>/[your theme path]
-  |__/[your namespace]_[your module]
-    |__/layout
-      |__/override
-        |--[ name1 ].xml
-        |--[ name2 ].xml</pre>
+2.	Put the layout file in the following location:
 
-Where:
+<pre>
+__app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;|__/layout
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/base
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
 
-`[your theme path]` is a path to the theme relative to the themes directory.
-`<areaname>` is the code of the application area the theme applies to (typically, `frontend` or `adminhtml`)
+</pre>
+
+These files override the following layouts:
+- 	`app/code/<Vendor>/<Namespace>/<Module>/layout/<layout1>.xml`
+-   `app/code/<Vendor>/<Namespace>/<Module>/layout/<layout2>.xml`
+
 
 <h3 id="fedg_layout_override_theme">Override theme layouts</h3>
 
-To add an overriding theme file (to override parent layout):
+To add an overriding theme file (to override a parent theme layout):
 
-1.	Create a layout file following the layout files conventions.
-2.	Put it according to location convention, that is:
+2.	Put the layout file in the following location:
 
-<pre>__app/design/area]/[your theme path]
-  |__/[your namespace]_[your module]
-    |__/layout
-      |__/override
-        |__/[parent _theme]
-          |--[name1].xml
-          |--[name2].xml</pre>
+<pre>
+__app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&nbsp;&nbsp;|__/&lt;Namespace_Module&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;|__/layout
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/override
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/theme
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;Vendor&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|__/&lt;ancestor_theme&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
+</pre>
 
-Where:
-
-`[parent_theme]` is the code of the theme the new layout file belongs to. The parent theme can be a direct or indirect parent; that is, parent, grandparent, and so on.
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-manage.html">XML instructions</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
