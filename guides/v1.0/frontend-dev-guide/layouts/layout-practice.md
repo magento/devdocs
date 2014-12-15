@@ -3,14 +3,14 @@ layout: default
 group:
 subgroup: B_Layouts
 title: Layouts
-menu_title: Customizing layout: step-by-step illustration
+menu_title: Customizing layout - step-by-step illustration
 menu_order: 2
 menu_node: parent
 github_link: frontend-dev-guide/layouts/layout-practice.md
 ---
 
 <h2>Introduction</h2>
-This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header. 
+This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 <h2>Moving customer account links</h2>
 In their Orange theme, OrangeCo wants design to tranform the header links block to a drop-down, as follows:
@@ -30,7 +30,7 @@ Needed:
 <br>
 <u>Step 1: Define the template</u>
 
-OrangeCo needs to find out which tempalte is responsible for displaying page links, to be able to include it a layout file. 
+OrangeCo needs to find out which tempalte is responsible for displaying page links, to be able to include it a layout file.
 
 Using the approach described in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a> article, OrangeCo define that the following template is used for links displaying:
 
