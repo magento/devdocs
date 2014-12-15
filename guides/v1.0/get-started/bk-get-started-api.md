@@ -1,8 +1,8 @@
 ---
 layout: default
 group: get-started
-subgroup: AB_intro
-title: Get Started with Magento Web APIs
+subgroup: A_get-started
+title: Getting Started with Magento Web APIs
 menu_title: Get Started
 menu_order: 1
 menu_node: parent
