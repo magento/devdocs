@@ -1,11 +1,11 @@
 ---
 layout: default
-group: 
+group: config-guide
 subgroup: Integration
 title: What is an integration?
 menu_title: What is an integration?
 menu_order: 1
-github_link: config-guide/integration/what-is-integration.md
+github_link: config-guide/integration/integration-what-is.md
 ---
 
 Third-party developers can create integrations to extend Magento functionality.
