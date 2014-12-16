@@ -13,7 +13,7 @@ github_link: frontend-dev-guide/layouts/layout-practice.md
 This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 <h2>Moving customer account links</h2>
-In their Orange theme, OrangeCo wants design to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
+In their Orange theme, OrangeCo want to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 
 <img src="{{ site.baseurl }}common/images/layout_transform.png">
@@ -79,11 +79,11 @@ define the  template which is used for rearranging the links:
 <br>
 <u>Step 3: Add a block to the base layout</u>
 
-OrcangeCo needs to create a new block, for example, `header.links`, in the `header.panel` container to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the Theme module.
+OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the Theme module.
 
 So the following extending layout is added in the Orange theme:
 
-***app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml***
+**app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml**
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
@@ -101,7 +101,6 @@ So the following extending layout is added in the Orange theme:
 <br>
 
 <u>Step 4: Move links</u>
-
 
 To move the links to the `header.links` block OrangeCo add an extending page configuration:
 
@@ -125,14 +124,10 @@ Now the customer links look like following:
 
 <img src="{{ site.baseurl }}common/images/layout_screen2.png">
 
-The last touch will be adding styles.
-
-<br>
-<u>Step 4: Add styles</u>
-
-By using styles OrangeCo makes the header links look like they wanted:
+The last touch will be adding styles:
 
 <img src="{{ site.baseurl }}common/images/layout_screen3.png">
+
 
 
 

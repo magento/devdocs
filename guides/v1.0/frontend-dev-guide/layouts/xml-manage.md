@@ -27,9 +27,9 @@ This topic shows you how to customize layout by using <a href="{{site.gdeurl}}fr
 *	<a href="#set_template">Set the template used by a block</a>
 *	<a href="#layout_markup_modify-block">Modify block arguments</a>
 *	<a href="#apply_css">Apply a CSS class to a block</a>
-*	<a href="#fedg_xml-instrux_order-block">Change blocks order</a>
 *	<a href="#xml-manage-ref-block">Reference block</a>
 *	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
+*	*	<a href="#fedg_xml-instrux_order-block">Change blocks and containers order</a>
 
 
 
@@ -46,7 +46,9 @@ Although the layout overriding mechanism provides great customization flexibilit
 The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root `<page>` node.
 
 Example: 
-Change the layout of Advanced Search page from default 1 column to 2 columns with left bar. To do this, create a `Mage_CatalogSearch/layout` directory in your theme directory and place the `catalogsearch_advanced_index.xml` layout there.
+Change the layout of Advanced Search page from default "1-column" to "2-column with left bar". To do this, extend `catalogsearch_advanced_index.xml` in your theme by adding the following layout:
+
+**app/design/frontend/<theme_path>/<Vendor>_CatalogSearch/layout/catalogsearch_advanced_index.xml**
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;layout=&quot;2columns-left&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 ...
@@ -83,10 +85,12 @@ To remove the JavaScript and CSS resources linked in page `<head>`, make a chang
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
-With layout files you can change the elements order on a page. 
+Using layout files you can change the elements order on a page. 
 
 Example:
-In the custom Orange theme we want to edit the product page. By default looks as follows: 
+In the custom Orange theme you need to place the stock availability and SKU blocks next to the product price on a product page.
+
+In the Magento Blank theme these elements are located as follows:
 
 <img src="{{ site.baseurl }}common/images/layout_image1.png" />
 

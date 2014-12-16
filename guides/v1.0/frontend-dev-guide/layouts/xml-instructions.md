@@ -39,6 +39,7 @@ Use the following layout instructions to customize your layout:
 *	<a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
+*	<a href="#argument"><code>&lt;argument&gt;</code></a>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
@@ -46,6 +47,7 @@ Defines a block.
 
 <p><b>Details:</b> A <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">block</a> is a unit of page output that renders some distinctive content – a piece of information, a user interface element – anything visually tangible for the end-user.
 Blocks employ templates to generate HTML. The HTML is inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+
 <table>
    <tbody>
       <tr>
@@ -104,6 +106,9 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
    </tbody>
 </table>
+
+To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction. 
+
 <h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container></h3>
 A structure without content that holds other layout elements such as blocks and containers.
 <p><b>Details:</b> A <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">container</a> renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container></code> and <code>&lt;block></code> elements.
@@ -288,6 +293,9 @@ Example:
       </tr>
    </tbody>
 </table>
+
+To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove></h3>
 Enables you to ignore some layout tags when generating a layout.
 <p><b>Details:</b> Removal works even if the <code>&lt;remove></code> tag occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a <code>&lt;remove></code> tag, the named elements are not generated.</p>
@@ -328,6 +336,9 @@ Removing the `report.bugs` block:
 <p>For example, you must target the reference to a block by name <code>attribute</code>.
 This attribute targets the <code>&lt;block></code> tag's <code>name</code> attribute.</p>
 <p>If you make a reference by <code>&lt;referenceBlock name="right"></code>, you're targeting the block <code>&lt;block name="right"></code>.</p>
+
+To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
@@ -381,6 +392,56 @@ Used as follows:
 <pre>
 handle="{name_of_handle_to_include}"
 </pre>
-The specified <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#handle">handle is "included" and executed recursively.
+The specified <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#handle">handle</a> is "included" and executed recursively.
 
+<h3 id="argument">&lt;argument&gt;</h3>
+Used to pass an argument.
+
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>name</td>
+         <td>Argument name.</td>
+         <td>unique</td>
+         <td>yes</td>
+      </tr>
+      <tr class="odd">
+         <td>xsi:type</td>
+         <td>Argument type.</td>
+         <td>string|boolean|object|number|null|array</td>
+         <td>yes</td>
+      </tr>
+      <tr class="even">
+         <td>translate</td>
+         <td></td>
+         <td>true|false</td>
+         <td>no</td>
+      </tr>
+
+   </tbody>
+</table>
+
+To pass multiple arguments use the following construction:
+<pre>
+&lt;arguments&gt;
+	&lt;argument&gt;&lt;/argument&gt;
+	&lt;arguments&gt;&lt;/argument&gt;
+	...
+&lt;/arguments&gt;
+</pre>
+
+To pass an argument that is an array use the following construction:
+<pre>
+&lt;argument&gt;
+	&lt;item&gt;&lt;/item&gt;
+	&lt;item&gt;&lt;/item&gt;
+	...
+&lt;/argument&gt;
+</pre>
 
