@@ -32,7 +32,7 @@ A single module can have the following types of relationships with another modul
 
 <p><span class="image-wrap" style=""><img src="{{ site.baseurl }}common/images/archi_second_relate.png" style="border: 0px solid black"></span></p>
 
-<p>If both module A and C customize module B, we have to be careful about how these customizations are implemented so that we avoid conflicts (see below).</p>
+<p>If both module A and C customize module B, be careful about how these customizations are implemented so that you avoid conflicts (see below).</p>
 
 <p><span class="image-wrap" style=""><img src="{{ site.baseurl }}common/images/archi_third_relate.png" style="border: 0px solid black"></span></p>
 
