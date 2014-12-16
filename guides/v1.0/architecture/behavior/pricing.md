@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Behavior
 title: The pricing library
 menu_title: The pricing library

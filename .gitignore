@@ -21,5 +21,10 @@ ignore
 /_config.sasha.yml
 /_config.tana.yml
 /_config.gen.yml
+/_config.public.yml
+/gen_public.bat
+/_config.internal.yml
+/gen_internal.bat
+/Readme.md
 jk.bat
 gen.bat
