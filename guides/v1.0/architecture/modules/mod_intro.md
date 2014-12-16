@@ -55,7 +55,7 @@ Minimal declaration sample:
 
 Magento developers, administrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.
 
-For 'How To' topics such as instructions for adding modules, extending modules, implementing themes and other components, refer to the Magento Documentation set at <a href ="https://github.corp.ebay.com/pages/Magento/devdocs_internal/index.html">https://github.corp.ebay.com/pages/Magento/devdocs_internal/index.html</a> for a list of all Magento Guides and Manuals. Additionally, see the Related Topics below.
+For 'How To' topics such as instructions for adding modules, extending modules, implementing themes and other components, refer to the Magento Documentation set at <a href ="http://devdocs.magento.com">http://devdocs.magento.com</a> for a list of all Magento Guides and Manuals. Additionally, see the Related Topics below.
 
 
 <h3 id="arch-modules-related">Related topics</h3>
