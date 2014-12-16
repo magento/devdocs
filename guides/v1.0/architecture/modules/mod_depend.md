@@ -96,6 +96,16 @@ Magento\Customer\etc\module.xml
   <p>Remember that the &lt;sequence> element in the <i>module.xml</i> file is used to define the load order of dependencies, but the actual dependency declarations are made in <i>composer.json file</i>. </p>
 </div>
 
+<h2 id="m2devgde-moddep-dep-injection">Dependency Injection Overview</h2>
+
+Dependency injection means that all object dependencies are passed (that is, injected) into an object instead of being pulled by the object from the environment.
+
+A dependency (sometimes referred to as coupling) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
+
+The object manager specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code.
+
+For more information about using dependencyinjection, refer to the Developer's Guide.
+
 <h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
 Module dependencies in Magento could be of two types: hard and soft dependencies.
 
@@ -144,13 +154,6 @@ Modules belonging to the application layer cannot be used in the framework layer
 
 You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only via the service layer or the service provider interface (SPI).
 
-<h2 id="m2devgde-moddep-dep-injection">Dependency Injection Overview</h2>
-
-Dependency injection means that all object dependencies are passed (that is, injected) into an object instead of being pulled by the object from the environment.
-
-A dependency (sometimes referred to as coupling) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
-
-The object manager specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code.
 
 <h2 id="m2devgde-moddep-api-spi">API- and SPI-specific interfaces</h2>
 
