@@ -1,12 +1,6 @@
 ---
 layout: default
-group: config-guide
-subgroup: A_Introduction
 title: Configuration and Integration Guide
-menu_title: Introduction
-menu_order: 1
-menu_node: parent
-github_link: config-guide/bk-config-guide.md
 ---
 
 <h2 id="configuration">Configuration</h2>

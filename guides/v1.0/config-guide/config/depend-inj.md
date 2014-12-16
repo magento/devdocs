@@ -148,7 +148,7 @@ For example, to set the interface preferences for the Magento Admin, use `app/co
 
 <script src="https://gist.github.com/xcomSteveJohnson/a166ab469a52eeec9954.js"></script>
 
-You can also specify the sharebility of the object's `di.xml` configuration file as follows:
+You can also specify whether or not the object is shareable in its `di.xml` as follows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/f66e46702da03ec264eb.js"></script>
 

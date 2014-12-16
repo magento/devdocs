@@ -26,7 +26,7 @@ github_link: coding-standards/bk-coding-standards.md
 </ul>
 <h2 id="testing">Testing</h2>
 
-Use the Magento test framework (MTF) for testing. MTF enables you to run thorough and accurate tests of your Magento installation. To install and configure MTF, see [Installing and Configuring the Magento Test Framework (MTF)](https://github.com/magento/mtf/blob/master/docs/install-config.md).
+Use the Magento test framework (MTF) for testing. MTF enables you to write and execute functional tests for your Magento installation. To install and configure MTF, see [Installing and Configuring the Magento Test Framework (MTF)](https://github.com/magento/mtf/blob/master/docs/install-config.md).
 
 <p>For JavaScript code, use the JsTestDriver test library. Additionally, use the ObjectManager public interface methods to create class instances with automatically mocked dependencies, list mocked constructor arguments, and create collection instances that contain specified elements.</p>
 

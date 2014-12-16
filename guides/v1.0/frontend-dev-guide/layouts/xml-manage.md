@@ -39,7 +39,7 @@ Although the layout overriding mechanism provides great customization flexibilit
 
 * Editing system files. To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. 
 *	Changing a block name or alias. Neither the name of a block should not be changed nor the alias of a block remaining in the same parent element.
-*	Changing handle inheritance. For example, you should not change the page type parent handle.
+*	Changing handle inheritance. For example, you should not change the <a href="{{site.gdeurl}}architecture/view/page-type.html" target="_blank">page type</a> parent handle.
 
 <h2 id="layout_markup_columns">Set the page layout</h2>
 
@@ -169,9 +169,9 @@ To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-
 
    <h2 id="ref_container">Reference a container</h2>
    
-   <h2 id="xml-manage-block">Create a block</h2>
-
-<h2 id="set_template">Set the template used by a block</h2>
+   	<h2 id="xml-manage-block">Create a block</h2>
+	
+	h2 id="set_template">Set the template used by a block</h2>
 <p><b>Example:</b></p>
 <pre>&lt;block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/></pre>
 <p>To use this code, replace the block class, name, and path to the template.</p>

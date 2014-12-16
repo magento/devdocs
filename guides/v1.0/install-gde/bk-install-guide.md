@@ -9,7 +9,7 @@ menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
 
-<h2>New to Magento? Need some help?</h2>
+<h2>New to Magento? Need some help?</h2> 
 If you're not sure about the following, you probably need a little help before you get started using the Magento software:
 
 *	Is the Magento software <a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">installed already</a>?
@@ -59,7 +59,7 @@ After verifying your prerequisites, perform the following tasks in order to prep
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>
 2.	Install Magento:
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software using the web interface</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>
 2.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 

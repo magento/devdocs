@@ -1,7 +1,7 @@
 ---
 layout: default
-group: extension-dev-guide
-subgroup: How to
+group: dev-guide
+subgroup: Extensions
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
 menu_order: 4
