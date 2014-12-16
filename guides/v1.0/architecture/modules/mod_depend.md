@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Modules
 title: Module dependencies
 menu_title: Module dependencies
@@ -56,14 +56,14 @@ A module's depencies (that is, all of the components upon which the module is de
         "magento/module-eav": "0.1.0-alpha108",
         "magento/module-cms": "0.1.0-alpha108",
         "magento/module-indexer": "0.1.0-alpha108",
-        "magento/module-customer": "0.1.0-alpha108" 
+        "magento/module-customer": "0.1.0-alpha108"
 	},
 </pre>
 
 <h2 id="m2devgde-moddep-load-order">Define the load order for a module's dependencies</h2>
 
 
-The load order of any dependencies on a module are declared using the &lt;sequence> element in the module.xml file. 
+The load order of any dependencies on a module are declared using the &lt;sequence> element in the module.xml file.
 
 The &lt;sequence> element is optional, and is used only if 1) you care in what order components are loaded/installed, and 2) only for modules. No other type of component is entered in the &lt;sequence> section. Furthermore, listing a module in the &lt;sequence> list doesn’t mean that everything about that module is used; only config files and certain files under the /etc and the /view directories are considered for load order. Classes within a module are not impacted by their module being in the &lt;sequence> list.
 
@@ -94,7 +94,7 @@ Magento\Customer\etc\module.xml
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Remember that the &lt;sequence> element in the <i>module.xml</i> file is used to define the load order of dependencies, but the actual dependency declarations are made in <i>composer.json file</i>. </p>
-</div> 
+</div>
 
 <h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
 Module dependencies in Magento could be of two types: hard and soft dependencies.
