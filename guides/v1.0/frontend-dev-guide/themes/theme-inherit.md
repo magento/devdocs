@@ -129,17 +129,17 @@ The layouts processing mechanism does not involve fallback. The system collects 
 2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
 3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
 
-Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme merging layout files.
+Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.
 
 
-To add a merging layout file:
+To add an extending layout file:
 
-* Place your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
+* Put your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
 
 <u>Example</u>:
 
 OrangeCo decided they should remove the “Report bugs” link from the footer, defined in `app/code/Magento/Theme/view/frontend/layout/default.xml`
-To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` :
+To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` :
 
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
