@@ -15,21 +15,6 @@ Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%
 
 The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.
 
-So what a layout file does is identify an existing block or container in a tree and change it in some way. Changes are to add some more content (e.g. there might be a side bar container to which some more content is added), or remove content (an extension might remove some core functionality, then add replacement functionality). Layouts are like wire-frames - they control the structure of the page tree. Blocks and PHTML files fill in the detailed markup within the tree.
-
-TBD: how layout is processed
-
-Layout files include:
-
-* Page layout: declares high-level page structure using only containers and operation with them: move, remove, update, referenceContainer.
-
-* Page configuration: "fills" the containers defined in a layout file by the particular functionality using blocks.
-
-* Generic layouts: a variation of page configuration used for pages loaded by AJAX requests.
-
-For the sake of stability and easy maintenance, do not edit the out-of-the-box Magento module and theme layouts. Create a custom theme instead, where you can extend or override module and parent theme layouts.
-
-To customize the layout, add layout overrides or extensions in your theme.
 
 <h2 id="layout_overview_blocks">Basic layout elements</h2>
 
@@ -39,48 +24,55 @@ A *container* exists for the sole purpose of assigning content structure to a pa
 
 The following figure shows an example:
 
-![A container is basically an empty object that can be filled with visual content.]({{ site.baseurl }}common/images/layouts_containers_defn.jpg)
+<img src="({{ site.baseurl }}common/images/layouts_containers_defn.jpg" />
 
-A *block* produces the actual content inside each structural block. A block represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
+ A *block* represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
 
 The following figure shows an example:
 
-![A *block* produces the actual content inside each structural block.]({{ site.baseurl }}common/images/layouts_block_defn.jpg).
+<img src="{{ site.baseurl }}common/images/layouts_block_defn.jpg"/>.
 
-<h2>Main concepts</h2>
-Before you start to work on your theme, you must understand the following terms:
+<h2>Layout files types and conventions</h2>
 
-*Theme*
-
-Any combination of layout, template, locale, and styles that create the visual experience of your storefront.
-
-*Theme inheritance*
-TBD
-
-<u> Layout file types: by role </u>
+<h3>Layout file types: by role</h3>
 
 *Page layout*
 
 An XML file declaring high-level page structure, for example, two-column page layout. Page layouts and contains only containers and operation with them.
 
-For details, refer to Layout File Types. <!-- ADDLINK -->
-
 *Page configuration*
 
 An XML file defining the low level page structure: containers and blocks declarations and  manipulation instructions.
-
-
-For details, refer to Layout File Types. <!-- ADDLINK -->
 
 *Generic layout*
 
 An XML layout file defining the low level structure for pages opened by AJAX requests.
 
-For details, refer to Layout File Types. <!-- ADDLINK -->
+For details, refer to <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.
 
-*Layout instruction*
-TBD
 
+<h3> Layout file types: by location </h3>
+
+*Base layout*
+
+Layout files provided by modules. Conventional location: `app/code/<Vendor>/<Module>/view/`
+
+*Theme layout*
+
+Layout files provided by themes. Conventional location:` app/design/frontend/<theme_path>/<Vendor>_<Module>`
+
+<h3>Layout file: by type of customization</h3>
+
+*Extending layout*
+
+You can provide additional instructions for the existing layout files layout files in addition to existing files. In these layout files you need to add layout instructions which Magento will merge with existing layouts. Layout instructions that are left unchanged are not duplicated.
+
+*Overriding layout*
+
+A layout to be used instead a certain base or theme layout.
+
+
+<h3 id="layout_conventions">Layout file conventions</h3>
 
 <span id="handle">*Layout handle* </span>
 
@@ -94,39 +86,6 @@ Layout handles include:
 
 <p class=q>To reviewer: is it true about handle?</p>
 
-
-
-<u> Layout file types: by location </u>
-
-*Base layout*
-
-Layout files provided by modules. Conventional location: `app/code/<Vendor>/<Module>/view/`
-
-<!--
-Default layout
-
-:	Layout provided by Magento, extension provider, or in-house developer. A default layout defines the default look and feel of the storefront. Unlike earlier versions of Magento, you should not change the default layout directly and you do not have to copy the default layout to start developing a custom layout.
-
-Instead, you override layout behavior by modifying only the page elements you want to change.
-
--->
-
-*Theme layout*
-
-Layout files provided by themes. Conventional location:` app/design/frontend/<theme_path>/<Vendor>_<Module>`
-
-<u>By type of customization</u>
-
-*Extending layout*
-
-You can provide additional instructions for the existing layout files layout files in addition to existing files. In these layout files you need to add layout instructions which Magento will merge with existing layouts. Layout instructions that are left unchanged are not duplicated.
-
-*Overriding layout*
-
-A layout to be used instead a certain base or theme layout.
-
-
-<h2 id="layout_conventions">Layout file conventions</h2>
 
 To be processed correctly, all layout files must meet the following requirements:
 

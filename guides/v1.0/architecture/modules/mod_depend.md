@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Modules
 title: Module dependencies
 menu_title: Module dependencies
@@ -9,69 +9,97 @@ github_link: architecture/modules/mod_depend.md
 ---
 
 <h2 id="m2devgde-moddep-intro"> Introduction</h2>
-In the Magento system, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that
+
+The concept of dependencies, or using and being dependent upon another module's features, is important in Magento.
+
+In the Magento system, all modules are partitioned into logical groups, each one of which is responsible for a separate feature. In practice this means that:
 
 * Several modules cannot be responsible for one feature.
 * One module cannot be responsible for several features.
-* A module declares explicit dependency, if any, on another module.
+* A module declares explicit dependency, if any, on another module. Any dependency upon other components (theme, language pack, or library) must also be declared.
 * Removing or disabling a module does not result in disabling other modules.
+
+Modules can be dependent upon the following components:
+
+* other modules
+* PHP extensions
+* Libraries (either Magento Framework Library or 3rd party libraries)
 
 <div class="bs-callout bs-callout-warning" id="warning">
 <p>When using Magento's modularity, you can lose historical information contained in a module if this module is removed or disabled. We recommend considering storage of such information before you remove or disable a module.</p></div>
 
-Following are commonly used terms:
+<h3 id="m2devgde-moddep-intro">Module dependencies tasks</h3>
 
-Framework layer
+At a high level, there are three main steps for managing module dependencies:
 
-:	Defines the role of an application component in Magento, defines standards for the interactions among components, and implements system-level request and response objects and routing.
+1. **<a href ="{{ site.gdeurl }}architecture/modules/mod_intro.html">Name and declare</a>** the module (do this in the `module.xml` file)
+2. **Declare any dependencies** that the module has, whether on other modules or a different component. (do this in the module's `composer.json` file)
+3. (*Optional*) **Define the desired load order** of config files, .css files, etc. (do this in the `module.xml` file)
 
-Application layer
+EXAMPLE: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the &lt;sequence> list, so that B’s files are loaded before A's. Additionally, in A’s `composer.json` file, a dependency upon Module B will need to be declared. Furthermore, in the deployment configuration file, Modules A and B will both need to be defined as active.
 
-: Implements business logic. This layer is built on top of the framework layer.
 
-Service layer
+<h2 id="m2devgde-moddep-declare-deps">Declare the module's dependencies</h2>
 
-: Provides a formal contract between a client and the service provider. This form of contact allows a service implementation to evolve without affecting the client.
+A module's depencies (that is, all of the components upon which the module is dependent upon) are listed in the module's `composer.json` file.
 
-Module
+<h4 id="m2devgde-moddep-use-example">Usage example</h4>
 
-: A logical group (that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget) in the application layer. A module is designed to work independently and to not intervene into work of other functionality.
+&lt;root>/app/code/<Vendor>/Catalog/composer.json
 
-Feature
-
-: A functionality or a capability allowing a system to perform better.
-
-Library
-
-: A logical group in the framework layer.
-
-<h2 id="m2devgde-moddep-naming">Name and declare a module</h2>
-A module should be named according to the Namespace_Module schema, where
-
-* Namespace is a name of a module's vendor
-* Module is a name assigned to a module by its vendor
-
-Typically, a module is located in `[root]/app/code/<namespace>/<ModuleName>` directory.
-A module should be declared in `[root]/app/code/<namespace>/[ModuleName]/etc/module.xml` file. To declare a module, the following information should be specified:
-* The name of a module, according to the naming rules
-* An element specifying whether a module is active
-* Dependency of a module on other modules, if any
-Declaration sample:
 <pre>
-&lt;config&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;module&nbsp;name=&quot;Namespace_Module&quot;&nbsp;version=&quot;2.0.0.0&quot;&nbsp;active=&quot;true&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;depends&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;module&nbsp;name=&quot;Namespace_Module1&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/depends&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/modules&gt;
-&lt;/config&gt;
+{
+    "name": "magento/module-catalog",
+    "description": "N/A",
+    "require": {
+        "magento/module-store": "0.1.0-alpha108",
+        "magento/module-eav": "0.1.0-alpha108",
+        "magento/module-cms": "0.1.0-alpha108",
+        "magento/module-indexer": "0.1.0-alpha108",
+        "magento/module-customer": "0.1.0-alpha108"
+	},
+</pre>
+
+<h2 id="m2devgde-moddep-load-order">Define the load order for a module's dependencies</h2>
+
+
+The load order of any dependencies on a module are declared using the &lt;sequence> element in the module.xml file.
+
+The &lt;sequence> element is optional, and is used only if 1) you care in what order components are loaded/installed, and 2) only for modules. No other type of component is entered in the &lt;sequence> section. Furthermore, listing a module in the &lt;sequence> list doesn’t mean that everything about that module is used; only config files and certain files under the /etc and the /view directories are considered for load order. Classes within a module are not impacted by their module being in the &lt;sequence> list.
+
+Basic syntax using the &lt;equence> element:
+
+<pre>
+&lt;sequence>
+    &lt;module name="Vendor_Module"/>
+&lt;/sequence>
 </pre>
 
 
-<h2 id="m2devgde-moddep-declare-dep">Declaring module dependencies</h2>
+<h4 id="m2devgde-moddep-use-example">Usage example</h4>
+
+Magento\Customer\etc\module.xml
+
+<pre>
+&lt;config>
+    &lt;module name="Magento_Customer" schema_version="1.11.0">
+        &lt;sequence>
+            &lt;module name="Magento_Adminhtml"/>
+            &lt;module name="Magento_Customer"/>
+            &lt;module name="Magento_Sales"/>
+        &lt;/sequence>
+    &lt;/module>
+&lt;/config>
+</pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Remember that the &lt;sequence> element in the <i>module.xml</i> file is used to define the load order of dependencies, but the actual dependency declarations are made in <i>composer.json file</i>. </p>
+</div>
+
+<h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
 Module dependencies in Magento could be of two types: hard and soft dependencies.
 
-1. A hard dependency implies that a module cannot function without modules, on which it depends. Specifically:
+1. A hard dependency implies that a module cannot function without the modules upon which it depends. Specifically:
 
 	* The module contains code that uses logic from another module directly, that is, the latter's instances, class constants, static methods, public class properties, interfaces, and traits.
 	* The module contains strings that include class names, method names, class constants, class properties, interfaces, and traits from another module.
@@ -125,10 +153,6 @@ A dependency (sometimes referred to as coupling) implies the degree that one com
 The object manager specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code.
 
 <h2 id="m2devgde-moddep-api-spi">API- and SPI-specific interfaces</h2>
-
-<p class="q">Reviewer: Please validate this because it's probably changed since this was written.</p>
-
-**NOTE: not sure this section belongs there.**
 
 To facilitate building correct dependencies between the modules, the Magento system has both API (Application Programming Interface) and SPI (Service Provide Interface) interfaces.
 
