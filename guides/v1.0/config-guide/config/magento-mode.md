@@ -80,10 +80,10 @@ In production mode:
 <h2 id="mode-specify">Specify a mode</h2>
 Specify the Magento mode in any of the following ways:
 
-*	<a href="#mode-specify-var">Specifying a node using an environment variable</a>
-*	<a href="#mode-specify-var">Specifying a node using your web server environment</a>
+*	<a href="#mode-specify-var">Specifying a mode using an environment variable</a>
+*	<a href="#mode-specify-var">Specifying a mode using your web server environment</a>
 
-<h3 id="mode-specify-var">Specifying a node using an environment variable</h3>
+<h3 id="mode-specify-var">Specifying a mode using an environment variable</h3>
 
 Use the `MAGE_MODE` system environment variable to specify a mode as follows:
 
@@ -105,7 +105,7 @@ See one of the following sections for more information about each mode:
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-production">Production mode</a>
 	
-<h3 id="mode-specify-var">Specifying a node using your web server environment</h3>
+<h3 id="mode-specify-var">Specifying a mode using your web server environment</h3>
 The Apache web server supports this using `mod_env` directives.
 	
 The Apache `mod_env` directive is slightly different in <a href="http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv" target="_blank">version 2.2</a> and <a href="http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv" target="_blank">version 2.4</a>.

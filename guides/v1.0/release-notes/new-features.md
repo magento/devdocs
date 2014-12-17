@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 subgroup: New features
 title: Release Notes
 menu_title: New features
