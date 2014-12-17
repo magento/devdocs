@@ -48,6 +48,7 @@ Following are the definitions of each layout file type:
 
 For details, refer to <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.
 
+In this guide we use *layout files* when talking about concepts which are similarly applied to all types of layout files.
 
 <h3>Layout file types: by location</h3>
 
