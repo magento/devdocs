@@ -38,6 +38,19 @@ The Setup Wizard is a multi-page wizard that enables you to go back and forward 
 
 In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.
 
+See one of the following sections for more information:
+
+*	<a href="#instgde-install-magento-web-step0">Getting started</a>
+*	<a href="#instgde-install-magento-web-step1">Step 1: Readiness Check</a>
+*	<a href="#instgde-install-magento-web-step2">Step 2: Add a Database</a>
+*	<a href="#instgde-install-magento-web-step4">Step 4: Customize Your Store</a>
+*	<a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>
+*	<a href="#instgde-install-magento-web-step6">Step 6: Install</a>
+*	<a href="#instgde-install-magento-web-step5last">Installation Success</a>
+*	<a href="#instgde-install-magento-web-log">Viewing the installation log</a>
+
+<h3 id="instgde-install-magento-web-step0">Getting started</h3>
+
 To install the Magento software using the Setup Wizard:
 
 1.	Start a web browser.
@@ -54,7 +67,7 @@ To install the Magento software using the Setup Wizard:
 
 4.	Continue with the following sections in the order presented to complete the installation.
 
-<h3>Step 1: Readiness Check</h3>
+<h3 id="instgde-install-magento-web-step1">Step 1: Readiness Check</h3>
 
 1.	Click **Start Readiness Check**.
 
@@ -64,7 +77,7 @@ To install the Magento software using the Setup Wizard:
 	
 2.	Click **Next**.
 
-<h3>Step 2: Add a Database</h3>
+<h3 id="instgde-install-magento-web-step2">Step 2: Add a Database</h3>
 
 1.	Enter the following information:
 
@@ -107,7 +120,7 @@ To install the Magento software using the Setup Wizard:
 	
 3.	Click **Next**.
 
-<h3>Step 3: Web Configuration</h3>
+<h3 id="instgde-install-magento-web-step3">Step 3: Web Configuration</h3>
 
 1.	Enter the following information:
 
@@ -157,7 +170,7 @@ To install the Magento software using the Setup Wizard:
 	
 12.	Click **Next**.
 
-<h3>Step 4: Customize Your Store</h3>
+<h3 id="instgde-install-magento-web-step4">Step 4: Customize Your Store</h3>
 
 1.	From the **Store Default Time Zone** list, click the name of your store's time zone.
 
@@ -167,7 +180,7 @@ To install the Magento software using the Setup Wizard:
 
 4.	Click **Next**.
 
-<h3>Step 5: Create Admin Account</h3>
+<h3 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h3>
 
 1.	Enter the following information:
 
@@ -198,7 +211,7 @@ To install the Magento software using the Setup Wizard:
 
 2.	Click **Next**.
 
-<h3>Step 6: Install</h3>
+<h3 id="instgde-install-magento-web-step6">Step 6: Install</h3>
 
 Click **Install Now**.
 
@@ -208,10 +221,32 @@ You have the following options:
 *	In the event of problems, click **Previous** to go back and fix incorrect entries.
 *	To try the installation again in the event of failure, click **Try Again**.
 
-<h3>Installation Success</h3>
+<h3 id="instgde-install-magento-web-step5last">Installation Success</h3>
 
 The message `Success` displays to indicate a successful installation.
 
 If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>.
 
 You can also run the installer again.
+
+<h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
+The Setup Wizard creates a log file, named `install.log`, that you might find useful in debugging issues or in verifying the actions performed by the wizard.
+
+The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to determine where to write the installation log. To locate the log:
+
+1.	Open `php.ini` in a text editor.
+
+	If you don't know where `php.ini` is located:
+
+	1.	Log in as or switch to the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>.
+	2.	Create <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> in the web server's docroot.
+	3.	Access `phpinfo.php` in a web browser.
+
+		The location of `php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
+
+2.	Search for `sys_temp_dir`.
+
+The value of `sys_temp_dir` determines where `install.log` is located. If the value is commented out, PHP uses that value as its default. 
+
+A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.log`.
+

@@ -2,23 +2,28 @@
 layout: default
 group: install
 subgroup: Z_Troubleshooting
-title: During installation, Incorrect table definition error
-menu_title: During installation, Incorrect table definition error
+title: During installation, Reflection Exception error
+menu_title: During installation, Reflection Exception error
 menu_node: 
-menu_order: 6
-github_link: install-gde/trouble/tshoot_wrong-mysql.md
+menu_order: 7
+github_link: install-gde/trouble/tshoot_clear-var.md
 ---
 
-<h2 id="install-trouble-wrong-mysql">During installation, Incorrect table definition error</h2>
+<h2 id="install-trouble-clear-var">During installation, Reflection Exception error</h2>
 
 ### Details
 
-During the installation, the following message displays: 
+During the installation, a  message similar to the following displays: 
 
-	[ERROR] exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1293 Incorrect table definition; 
-	there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause'
+	[ERROR] exception 'ReflectionException' with message 'Class Magento\Framework\StoreManagerInterface does not exist' 
+	in /<path>/lib/internal/Magento/Framework/Code/Reader/ClassReader.php
 
 ### Solution
 
-You are using an unsupported version of MySQL. We support <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL 5.6</a>. 
+Clear all directories and files under Magento's `var` subdirectory and install the Magento software again.
+
+As the web server user or as a user with `root` privileges, enter the following commands:
+
+	cd <your Magento install directory>/var
+	rm -rf cache/* di/* generation/* page_cache/* session/*
 
