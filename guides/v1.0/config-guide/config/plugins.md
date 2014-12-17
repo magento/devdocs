@@ -12,11 +12,11 @@ github_link: config-guide/config/plugins.md
 
 In the Magento system, you can change, or *extend*, the behavior of any original method in any Magento class.
 
-An *original method* is an existing Magento class method. You can change the behavior of an original method by creating an extension. Extensions use the *Plugin* class to change the behavior of an original method in Magento code.
+<!-- An *original method* is an existing Magento class method. You can change the behavior of an original method by creating an extension. Extensions use the *Plugin* class to change the behavior of an original method in Magento code. -->
 
 To ensure that plugins work correctly, you must follow declaration and naming rules.
 
-You use *interception* to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception through the plugin class, which observes public methods, and listener methods in this class. Plugin changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plugins do not conflict. This technique is called interception.
+You use *interception* to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception through the plugin class, which observes public methods, and listener methods in this class. Plugin changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plugins do not conflict. 
 
 Interception ensures that conflicting extensions run without intervention in the system.
 
@@ -24,7 +24,7 @@ Interception ensures that conflicting extensions run without intervention in the
 
 You cannot use plugins for:
 
-* Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator.
+<!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 * Final methods.
 * Final classes.
 
@@ -38,7 +38,7 @@ You must specify these elements:
 
 * `type name`. A class, interface, or virtual type, which the plugin observes.
 * `plugin name`. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
-* `plugin type`. The name of a plugin's class or its virtual type. Use the following schema when you specify this element: {ModelName}\Plugin.
+* `plugin type`. The name of a plugin's class or its virtual type. Use the following schema when you specify this element: <ModelName>\Plugin.
 * `plugin sortOrder`. The order in which plugins that call the same method are run.
 * `plugin disabled`. To disable a plugin, set this element to `true`.
 
