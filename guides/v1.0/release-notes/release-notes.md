@@ -208,4 +208,4 @@ Click the "Edit this page on GitHub" link at the top of a documentation page to
 open the file in our GitHub repository, where you are invited to suggest changes
 by creating pull requests, or open a discussion by creating an issue.
 Feel free to contact the documentation team directly at
-DL-Magento-Doc-Feedback\@ebay.com.
+DL-Magento-Doc-Feedback@ebay.com.
