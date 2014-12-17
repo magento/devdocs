@@ -1,6 +1,6 @@
 ---
-layout: default
-group: install
+layout: default 
+group: install 
 subgroup: R_Installation
 title: Install the Magento software using the Setup Wizard
 menu_title: Install the Magento software using the Setup Wizard
