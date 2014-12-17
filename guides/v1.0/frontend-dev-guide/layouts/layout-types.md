@@ -171,7 +171,7 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
           <li>&lt;container&gt;</li>
           <li>&lt;remove/&gt;</li>
           <li>&lt;move/&gt;</li>
-          <li>&lt;update/&gt;</li>
+       <li>&lt;attribute/&gt;</li>
           <li>&lt;referenceBlock&gt;</li>
           <li>&lt;referenceContainer&gt;</li>
           <li>&lt;action/&gt;</li>

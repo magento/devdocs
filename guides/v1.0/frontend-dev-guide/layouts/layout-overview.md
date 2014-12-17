@@ -50,12 +50,12 @@ For details, refer to <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-
 
 In this guide we use *layout files* when talking about concepts which are similarly applied to all types of layout files.
 
-<h3>Layout file types: by location</h3>
+<h3 id="layout-loc">Layout file types: by location</h3>
 
 The following terms are used to distinguish layouts provided by different application components:
 
 * *Base layouts*: Layout files provided by modules. Conventional location: `app/code/<Namespace>/<Module>/view/frontend/layout`
-* *Theme layouts*: Layout files provided by themes. Conventional location:` app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout`
+* *Theme layouts*: Layout files provided by themes. Conventional location:` app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/layout`
 
 
 <h2 id="layout_processing">Layout files processing</h2>
@@ -63,17 +63,16 @@ The following terms are used to distinguish layouts provided by different applic
 
 The Magento application processes layout files in the following order:
 
-1.	Collects all default layouts from modules. The order is determined by module dependencies and by alphabetical order of module names.
+1.	Collects all layout files from modules. The order is determined by the modules order in the module list `from app/etc/config.php`.
 2.	Determines the sequence of <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
-3.	Iterates the sequence of themes:
+3.	Iterates the sequence of themes from last ancestor to current:
 
-	a.	Adds all extending theme layouts to the list.
+	a.	Adds all extending theme layout files to the list.
 
-	b.	Replaces overridden default layouts.
+	b.	Replaces overridden layout files in the list.
 
-	c. For all themes except the parent theme, replaces overridden theme layouts.
 
-1.	Extends layout files from the list. For details about layout extensions, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>.
+1.	Merges all layout files from the list. For details about layout extensions, see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>

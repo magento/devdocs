@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/layouts/theme-xml.md
 
 
 Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
-To change the high-level page structure modify the page layout files; all other customizations are performed in the page configuration or generic layout files. <!--ADDLINK-->
+To change the page wireframe, modify the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#page-layout" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#page-configuration" target="_blank">page configuration</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#page-layout" target="_blank">generic layout</a> files. 
 
 Use layout instructions to:
 
