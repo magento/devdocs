@@ -27,7 +27,7 @@ To resolve the issue, change the value of `open_basedir` and restart the web ser
 
 If you're not sure how to change this value, use the following steps:
 
-1.	If you haven't already done so, create phpinfo.php.
+1.	If you haven't already done so, create <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
 2.	Enter the following URL in your browser's address or location field:
 
 	<code>http://&lt;your web server IP or host name>/&lt;path to docroot>/phpinfo.php</code>
