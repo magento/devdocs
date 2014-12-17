@@ -18,4 +18,7 @@ For detailed information, refer to  <a href="{{ site.gdeurl }}architecture/view/
 <h2 id="m2arch-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a>
+* <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
+* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language packs</a>
 
