@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 subgroup: Behavior changes
 title: Release Notes
 menu_title: Behavior changes

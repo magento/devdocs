@@ -17,6 +17,6 @@ Follow these steps to contribute to this repository:
 3. Check out a local branch.
 4. Do your work.
 5. Commit your changes.
-6. Push your changes to devbeta: git push origin <local_branch>:devbeta
+6. Push your changes to the latest sprint branch. Ask Steve if you're not sure: git push origin <local_branch>:<sprint_branch>
 
 
