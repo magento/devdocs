@@ -63,7 +63,7 @@ For 'How To' topics such as instructions for adding modules, extending modules, 
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
 * <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
 * <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
 * <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language Packages</a>
