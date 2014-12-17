@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>During installation, Incorrect table definition error</title>
+	<title>During installation, Reflection Exception error</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -73,6 +73,7 @@
                   <li class="first expanded">
                     <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
                      <ul class="menu nav">
+                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
                         <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                        <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
                      </ul>
@@ -148,9 +149,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">During installation, Incorrect table definition error</h1>
+		<h1 class="page-heading">During installation, Reflection Exception error</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.md" target="_blank">Help us improve this page</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/install-gde/trouble/tshoot_clear-var.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -159,19 +160,25 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="install-trouble-wrong-mysql">During installation, Incorrect table definition error</h2>
+		<h2 id="install-trouble-clear-var">During installation, Reflection Exception error</h2>
 
 <h3 id="details">Details</h3>
 
-<p>During the installation, the following message displays: </p>
+<p>During the installation, a  message similar to the following displays: </p>
 
-<pre><code>[ERROR] exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1293 Incorrect table definition; 
-there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON UPDATE clause'
+<pre><code>[ERROR] exception 'ReflectionException' with message 'Class Magento\Framework\StoreManagerInterface does not exist' 
+in /&lt;path&gt;/lib/internal/Magento/Framework/Code/Reader/ClassReader.php
 </code></pre>
 
 <h3 id="solution">Solution</h3>
 
-<p>You are using an unsupported version of MySQL. We support <a href="/guides/v1.0/install-gde/prereq/mysql.html">MySQL 5.6</a>. </p>
+<p>Clear all directories and files under Magento’s <code>var</code> subdirectory and install the Magento software again.</p>
+
+<p>As the web server user or as a user with <code>root</code> privileges, enter the following commands:</p>
+
+<pre><code>cd &lt;your Magento install directory&gt;/var
+rm -rf cache/* di/* generation/* page_cache/* session/*
+</code></pre>
 
 
 
@@ -403,11 +410,11 @@ there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON U
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Incorrect table definition error</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
 						
 								
 							
@@ -416,6 +423,14 @@ there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON U
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_clear-var.html">Installation fails; cannot create install.log</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
 						
 								
 								
@@ -427,6 +442,10 @@ there can be only one TIMESTAMP column with CURRENT_TIMESTAMP in DEFAULT or ON U
 					
 
 
+				
+			
+			
+				
 				
 			
 			

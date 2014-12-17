@@ -73,6 +73,7 @@
                   <li class="first expanded">
                     <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
                      <ul class="menu nav">
+                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
                         <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                        <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
                      </ul>
@@ -150,7 +151,7 @@
 	<div class="container">
 		<h1 class="page-heading">Theme inheritance</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/frontend-dev-guide/themes/theme-inherit.md" target="_blank">Help us improve this page</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/frontend-dev-guide/themes/theme-inherit.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -177,10 +178,10 @@ subsequent chapters in this guide.</p>
 <p>A parent theme is specified in the child theme configuration file<!--ADDLINK-->, under <code>&lt;parent&gt;&lt;/parent&gt;</code>.</p>
 
 <p>Example:
-The Orange theme inherits from the Blank theme:</p>
+The Orange theme by OrangeCo inherits from the Magento Blank theme:</p>
 <pre>
 &lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Magento&nbsp;Orange&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;OrangeCo&nbsp;Orange&lt;/title&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;0.1.0-alpha100&lt;/version&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;
@@ -286,19 +287,19 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
   <li>Module layouts: <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
 </ol>
 
-<p>Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme merging layout files.</p>
+<p>Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.</p>
 
-<p>To add a merging layout file:</p>
+<p>To add an extending layout file:</p>
 
 <ul>
-  <li>Place your custom layout file in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/ directory</code>.</li>
+  <li>Put your custom layout file in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/ directory</code>.</li>
 </ul>
 
 <u>Example</u>
 <p>:</p>
 
 <p>OrangeCo decided they should remove the “Report bugs” link from the footer, defined in <code>app/code/Magento/Theme/view/frontend/layout/default.xml</code>
-To do this, they added a merging layout in <code>app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml</code> :</p>
+To do this, they added an extending layout in <code>app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml</code> :</p>
 
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
@@ -340,10 +341,6 @@ To override the instructions from an ancestor theme layout file:</p>
 		
 		
 		
-				
-				
-			
-			
 				
 				
 			
@@ -585,6 +582,14 @@ To override the instructions from an ancestor theme layout file:</p>
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

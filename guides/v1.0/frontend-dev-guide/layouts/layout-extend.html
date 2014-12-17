@@ -73,6 +73,7 @@
                   <li class="first expanded">
                     <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
                      <ul class="menu nav">
+                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
                         <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                        <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
                      </ul>
@@ -150,7 +151,7 @@
 	<div class="container">
 		<h1 class="page-heading">Extend a layout</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/frontend-dev-guide/layouts/layout-extend.md" target="_blank">Help us improve this page</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/frontend-dev-guide/layouts/layout-extend.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -159,54 +160,63 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="fedg_layout_extend_merge">Create a theme merging file</h2>
+		<h2 id="fedg_layout_extend_merge">Create a theme extending file</h2>
 
-<p>Rather than copy extensive layout code and modify what you want to change, in the Magento system, you must create only a <em>theme merging file</em> that contains the changes you want.</p>
+<p>Rather than copy extensive page layout or page configuration code and modify what you want to change, in the Magento system, you must create only a <em>theme extending file</em> that contains the changes you want. In this article both, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referenced to as <em>layout files</em>, as the mechanism of extending is similar for them.</p>
 
-<p>To add a theme merging file:</p>
+<p>To add a theme extending file:</p>
 
 <ol>
-  <li>Create a layout file following our <a href="/guides/v1.0/frontend-dev-guide/themes/theme-general.html#layout_conventions">layout file conventions</a>.</li>
-  <li>Place the theme merging file according to our location conventions; that is:</li>
+  <li>Put the layout file in the following location:</li>
+</ol>
+<pre>
+app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
+&nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
+&nbsp;&nbsp;&nbsp;|__/layout
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&amp;lt;layout1&gt;.xml
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&amp;lt;layout2&gt;.xml
+</pre>
+
+<h2 id="fedg_layout_extend_merge">Processing extending layouts</h2>
+
+<p>Magento merges layout files as follows:</p>
+
+<ol>
+  <li>For each layout file in the list:
+    <ol>
+      <li>Loads layout handle declaration and layout instructions.</li>
+      <li>Appends to the result in the following format:
+&lt;p class="q"&gt; To the reviewer: could you plz provide an updated code sample if this is outdated &lt;/p&gt;</li>
+    </ol>
+  </li>
+</ol>
+<pre>
+&lt;layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_cart_index&quot;&nbsp;label=&quot;Shopping&nbsp;Cart&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_cart_index.xml&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_onepage_index&quot;&nbsp;label=&quot;One&nbsp;Page&nbsp;Checkout&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_onepage_index.xml&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;...&nbsp;--&gt;
+&lt;/layouts&gt;
+</pre>
+<p>Where a <code>handle ID</code> is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.</p>
+
+<ol>
+  <li>Replaces the base URL placeholders in the result.</li>
 </ol>
 
-<pre>__app/design/<areaname>/[theme path]
- |__/[your namespace]_[your module name]
-   |__/layout
-     |--&lt;layout1&gt;.xml
-     |--&lt;layout2&gt;.xml
+<h4 id="related-topics">Related topics:</h4>
 
-Where:
-
-*	`[theme_path]` is a path to the theme relative to the themes directory
-*	`<areaname>` is the code of the application area to which the theme applies (typically, `adminhtml` or `frontend`)
-
-<h2 id="fedg_layout_extend_merge">Merge layout files</h2>
-
-Magento merges layout files as follows:
-
-1.	For each layout file in the list:
-
-	a.	Loads layout handle declaration and layout instructions.
-
-	b.	Appends to the result in the following format:
-
-	<script src="https://gist.github.com/xcomSteveJohnson/6c2e7a15fba5d8f14fad.js"></script>
-
-	Where a `handle ID` is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.
-
-2.	Replaces the base URL placeholders in the result.
-
-
-#### Related topics:
-
-*	<a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a>
-*	<a href="/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a>
-*	<a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
-*	<a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">XML instructions</a>
-</areaname></areaname></pre>
+<ul>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">XML instructions</a></li>
+</ul>
 
 
 		</div>
@@ -222,6 +232,10 @@ Magento merges layout files as follows:
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			

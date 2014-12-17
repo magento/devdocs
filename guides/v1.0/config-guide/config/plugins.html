@@ -73,6 +73,7 @@
                   <li class="first expanded">
                     <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
                      <ul class="menu nav">
+                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
                         <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                        <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
                      </ul>
@@ -150,7 +151,7 @@
 	<div class="container">
 		<h1 class="page-heading">Plugins</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/config-guide/config/plugins.md" target="_blank">Help us improve this page</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/config-guide/config/plugins.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -163,11 +164,11 @@
 
 <p>In the Magento system, you can change, or <em>extend</em>, the behavior of any original method in any Magento class.</p>
 
-<p>An <em>original method</em> is an existing Magento class method. You can change the behavior of an original method by creating an extension. Extensions use the <em>Plugin</em> class to change the behavior of an original method in Magento code.</p>
+<!-- An *original method* is an existing Magento class method. You can change the behavior of an original method by creating an extension. Extensions use the *Plugin* class to change the behavior of an original method in Magento code. -->
 
 <p>To ensure that plugins work correctly, you must follow declaration and naming rules.</p>
 
-<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception through the plugin class, which observes public methods, and listener methods in this class. Plugin changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plugins do not conflict. This technique is called interception.</p>
+<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception through the plugin class, which observes public methods, and listener methods in this class. Plugin changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plugins do not conflict. </p>
 
 <p>Interception ensures that conflicting extensions run without intervention in the system.</p>
 
@@ -175,8 +176,8 @@
 
 <p>You cannot use plugins for:</p>
 
+<!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 <ul>
-  <li>Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator.</li>
   <li>Final methods.</li>
   <li>Final classes.</li>
 </ul>
@@ -192,7 +193,7 @@
 <ul>
   <li><code>type name</code>. A class, interface, or virtual type, which the plugin observes.</li>
   <li><code>plugin name</code>. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
-  <li><code>plugin type</code>. The name of a plugin’s class or its virtual type. Use the following schema when you specify this element: {ModelName}\Plugin.</li>
+  <li><code>plugin type</code>. The name of a plugin’s class or its virtual type. Use the following schema when you specify this element: <modelname>\Plugin.</modelname></li>
   <li><code>plugin sortOrder</code>. The order in which plugins that call the same method are run.</li>
   <li><code>plugin disabled</code>. To disable a plugin, set this element to <code>true</code>.</li>
 </ul>
@@ -372,31 +373,6 @@ class Plugin
 							
 								
 								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/architecture/areas/areas.html">Areas</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
 								
 								
 							
@@ -450,6 +426,10 @@ class Plugin
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/caching.html">Caching</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/depend-inj.html">Dependency injection</a></li>
 						
 								
 							
@@ -669,6 +649,10 @@ class Plugin
 					
 
 
+				
+			
+			
+				
 				
 			
 			

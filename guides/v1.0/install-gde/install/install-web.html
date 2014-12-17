@@ -73,6 +73,7 @@
                   <li class="first expanded">
                     <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
                      <ul class="menu nav">
+                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
                         <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                        <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
                      </ul>
@@ -150,7 +151,7 @@
 	<div class="container">
 		<h1 class="page-heading">Install the Magento software using the Setup Wizard</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/install-gde/install/install-web.md" target="_blank">Help us improve this page</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/install-gde/install/install-web.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -192,6 +193,21 @@
 
 <p>In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.</p>
 
+<p>See one of the following sections for more information:</p>
+
+<ul>
+  <li><a href="#instgde-install-magento-web-step0">Getting started</a></li>
+  <li><a href="#instgde-install-magento-web-step1">Step 1: Readiness Check</a></li>
+  <li><a href="#instgde-install-magento-web-step2">Step 2: Add a Database</a></li>
+  <li><a href="#instgde-install-magento-web-step4">Step 4: Customize Your Store</a></li>
+  <li><a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a></li>
+  <li><a href="#instgde-install-magento-web-step6">Step 6: Install</a></li>
+  <li><a href="#instgde-install-magento-web-step5last">Installation Success</a></li>
+  <li><a href="#instgde-install-magento-web-log">Viewing the installation log</a></li>
+</ul>
+
+<h3 id="instgde-install-magento-web-step0">Getting started</h3>
+
 <p>To install the Magento software using the Setup Wizard:</p>
 
 <ol>
@@ -215,7 +231,7 @@
   </li>
 </ol>
 
-<h3>Step 1: Readiness Check</h3>
+<h3 id="instgde-install-magento-web-step1">Step 1: Readiness Check</h3>
 
 <ol>
   <li>
@@ -230,7 +246,7 @@
   </li>
 </ol>
 
-<h3>Step 2: Add a Database</h3>
+<h3 id="instgde-install-magento-web-step2">Step 2: Add a Database</h3>
 
 <ol>
   <li>
@@ -279,7 +295,7 @@
   </li>
 </ol>
 
-<h3>Step 3: Web Configuration</h3>
+<h3 id="instgde-install-magento-web-step3">Step 3: Web Configuration</h3>
 
 <ol>
   <li>
@@ -335,7 +351,7 @@
   </li>
 </ol>
 
-<h3>Step 4: Customize Your Store</h3>
+<h3 id="instgde-install-magento-web-step4">Step 4: Customize Your Store</h3>
 
 <ol>
   <li>
@@ -352,7 +368,7 @@
   </li>
 </ol>
 
-<h3>Step 5: Create Admin Account</h3>
+<h3 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h3>
 
 <ol>
   <li>
@@ -388,7 +404,7 @@
   </li>
 </ol>
 
-<h3>Step 6: Install</h3>
+<h3 id="instgde-install-magento-web-step6">Step 6: Install</h3>
 
 <p>Click <strong>Install Now</strong>.</p>
 
@@ -400,13 +416,44 @@
   <li>To try the installation again in the event of failure, click <strong>Try Again</strong>.</li>
 </ul>
 
-<h3>Installation Success</h3>
+<h3 id="instgde-install-magento-web-step5last">Installation Success</h3>
 
 <p>The message <code>Success</code> displays to indicate a successful installation.</p>
 
 <p>If the installation failed, click <strong>Previous</strong> to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting</a>.</p>
 
 <p>You can also run the installer again.</p>
+
+<h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
+<p>The Setup Wizard creates a log file, named <code>install.log</code>, that you might find useful in debugging issues or in verifying the actions performed by the wizard.</p>
+
+<p>The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to determine where to write the installation log. To locate the log:</p>
+
+<ol>
+  <li>
+    <p>Open <code>php.ini</code> in a text editor.</p>
+
+    <p>If you don’t know where <code>php.ini</code> is located:</p>
+
+    <ol>
+      <li>Log in as or switch to the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>.</li>
+      <li>Create <a href="/guides/v1.0/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> in the web server’s docroot.</li>
+      <li>
+        <p>Access <code>phpinfo.php</code> in a web browser.</p>
+
+        <p>The location of <code>php.ini</code> is typically specified as <strong>Loaded Configuration File</strong> in the displayed results.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Search for <code>sys_temp_dir</code>.</p>
+  </li>
+</ol>
+
+<p>The value of <code>sys_temp_dir</code> determines where <code>install.log</code> is located. If the value is commented out, PHP uses that value as its default. </p>
+
+<p>A typical default value is <code>/tmp</code>. If that’s the case, the log is <code>/tmp/install.log</code>.</p>
+
 
 
 		</div>
@@ -637,11 +684,11 @@
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Incorrect table definition error</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
 						
 								
 							
@@ -650,6 +697,14 @@
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_clear-var.html">Installation fails; cannot create install.log</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
 						
 								
 								
@@ -661,6 +716,10 @@
 					
 
 
+				
+			
+			
+				
 				
 			
 			
