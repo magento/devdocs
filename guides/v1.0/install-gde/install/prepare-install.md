@@ -3,7 +3,7 @@ layout: default
 group: install
 subgroup: R_Installation
 title: Update installation dependencies
-menu_title: Update installation dependencies
+menu_title: Update installation dependencies 
 menu_node:
 menu_order: 4
 github_link: install-gde/install/prepare-install.md
@@ -19,8 +19,8 @@ Composer is a separate application that manages PHP dependencies. Before you can
 2.	<a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.
 2.	Run the <a href="#install-composer-install">`composer install` command</a> from *both* of the following directories:
 
-	<pre><your Magento install dir>
-	<your Magento install dir>/setup</pre>
+	<pre>&lt;your Magento install dir>
+	&lt;your Magento install dir>/setup</pre>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -98,5 +98,5 @@ After you completed the tasks discussed in the preceding section, update depende
 
 #### Next step
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software using the web interface</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>
