@@ -56,10 +56,13 @@ To be able to use a layout for actual page rendering, you need to declare it in 
 Conventionally layout declaration file can be located in one of the following locations: 
 <p class=q>Does this order correspond to the overriding order? </p>
 
-* app/code/<Namespace>/<Module>/view/frontend/page/layouts.xml
-* app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/page/layouts.xml
-* app/design/frontend/<Vendor><theme>/<Namespace>_<Module>/page/override/layouts.xml 
-* app/design/frontend/<Vendor><theme>/<Namespace>_<Module>/override/<ancestor_theme>/layouts.xml 
+<ul>
+<li><code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page/layouts.xml</code></li>
+<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page/layouts.xml</code></li>
+<li><code>app/design/frontend/&lt;Vendor&gt;&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page/override/layouts.xml&nbsp;</code></li>
+<li><code>app/design/frontend/&lt;Vendor&gt;&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/override/&lt;ancestor_theme&gt;/layouts.xml</code></li> 
+
+</ul>
 
 To declare a layout file use the <layout></layout> element, for which specify the following:
 

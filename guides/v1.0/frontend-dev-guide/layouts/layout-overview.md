@@ -27,7 +27,7 @@ The following figure shows an example:
 
 <img src="({{ site.baseurl }}common/images/layouts_containers_defn.jpg" />
 
- A *block* represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
+ A *block* represents each feature on a page and employs templates to generate the HTML to insert into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.
 
 The following figure shows an example:
 
@@ -42,9 +42,9 @@ For a particular page, its layout is defined by two major layout components: *pa
 
 Following are the definitions of each layout file type:
 
-* *Page layout*: an XML file declaring high-level page structure, for example, two-column page layout. Page layouts and contains only containers and operation with them.
-* *Page configuration*: an XML file defining the low level page structure: containers and blocks declarations and  manipulation instructions.
-* *Generic layout*: a layout file defining the low level structure for pages returned by AJAX requests, emails, HTML snippets.
+* *Page layout*: an XML file declaring a page wireframe, for example, two-column page layout. 
+* *Page configuration*: an XML file declaring contents and meta-information of a page.
+* *Generic layout*: an XML file declaring page structure for pages returned by AJAX requests, emails, HTML snippets, and so on.
 
 For details, refer to <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.
 
