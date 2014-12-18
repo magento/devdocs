@@ -20,7 +20,7 @@ There are no restrictions on using the demonstration Luma theme for a live store
 
 Your new theme can be a standalone new theme, or can inherit from the default or any other existing one. The theme inheritance concept implemented in the Magento system allows you changing only certain theme files, and inheriting the rest necessary files from a parent theme. <!--ADDLINK Magento Theme Inheritance for details. -->
 
-The How to Create New Theme chapter provides all information, including theoretical concepts and practical references, a frontend developer might need to efficiently create a new theme in Magento application.
+The Create a new theme chapter provides all information, including theoretical concepts and practical references, a frontend developer might need to efficiently create a new theme in Magento application.
 
 <h2 id="theme-gen-walkthrough">Add a theme: walkthrough</h2>
 The high-level steps required to add a new theme in the Magento system are the following:

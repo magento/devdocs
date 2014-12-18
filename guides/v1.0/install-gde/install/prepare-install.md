@@ -41,7 +41,7 @@ To switch to the web server user on Ubuntu:
 
 	<pre>su www-data</pre>
 
-2.	If a password prompt displays but you don't know the user's password, continue with the next step; otherwise, continue with <a href="#running-composer-to-update-dependencies">Running Composer to update dependencies</a>.
+2.	If a password prompt displays but you don't know the user's password, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
 
 3.	To enable the `www-data` user's shell and to set a password, enter the following commands in the order shown:
 
@@ -62,7 +62,7 @@ To switch to the web server user on CentOS:
 
 	<pre>su - apache</pre>
 
-	If the following error displays, continue with the next step; otherwise, continue with <a href="#running-composer-to-update-dependencies">Running Composer to update dependencies</a>.
+	If the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
 
 	<pre>This account is currently not available.</pre>
 
