@@ -56,12 +56,6 @@ features of the release.
 
     [6]: <{{ site.gdeurl }}config-guide/config/js-resources.html>
 
--   PHP and MySQL. Magento 2 supports PHP 5.5, with PHP 5.4 (actually 5.4.11 or
-    later) as the minimum requirement, and MySQL 5.6. See [System
-    requirements][7].
-
-    [7]: <{{ site.gdeurl }}install-gde/system-requirements.html>
-
 -   PSR Compliance. PSR compliance standardizes the use of PHP to allow
     different sets of code libraries to work together. See [PHP coding
     standard][8].
