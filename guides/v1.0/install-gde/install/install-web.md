@@ -112,12 +112,6 @@ To install the Magento software using the Setup Wizard:
 	</tbody>
 	</table>
 	
-2.	Click **Test Connection and Authentication**.
-
-	The message `Test connection successful` displays to confirm the database is reachable and the user name and password you entered are correct.
-	
-	If errors display, verify the information you entered, verify the database is reachable from the web server, and try again.
-	
 3.	Click **Next**.
 
 <h3 id="instgde-install-magento-web-step3">Step 3: Web Configuration</h3>
@@ -132,9 +126,8 @@ To install the Magento software using the Setup Wizard:
 		</tr>
 	<tr>
 		<td>Your Store Address </td>
-		<td><p>Enter the URL, *including scheme and trailing slash*, by which users access your storefront.</p>
-		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p>
-		<p><strong>Important</strong>: Your URL <em>must</em> start with the scheme and <em>must</em> end with a slash (/) or the storefront and Admin will be inaccessible after installation.</p></td>
+		<td><p>Enter the URL, <em>including scheme and trailing slash</em>, by which users access your storefront.</p>
+		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
 	</tr>
 	<tr>
 		<td>Magento Admin Address </td>
