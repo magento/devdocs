@@ -1,9 +1,9 @@
 ---
 layout: default
-group:fedg
+group: fedg
 subgroup: B_Layouts
-title: Layouts
-menu_title: Layouts
+title: Layout overview
+menu_title: Layout
 menu_order: 1
 menu_node: parent
 github_link: frontend-dev-guide/layouts/layout-overview.md
@@ -16,6 +16,17 @@ Magento application implements the <a href="http://en.wikipedia.org/wiki/Model%E
 The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.
 
 This article describes the basic concepts you need to know to create layouts for your custom theme.
+
+<h2 id="layout-over-terms">Terms used</h2>
+
+<span id="handle">*Layout handle*</span>
+
+A *layout handle* is a uniquely identified set of layout instructions that serves as a name of a layout file.
+
+There are three kinds of layout handles:
+page type layout handles –  synonyms of the page type identifiers. Correspond to "full action names" of controller actions, for example, catalog_product_view.
+page layout handles – identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.
+arbitrary handles. Do not correspond to any page type, but other handles use them by including.
 
 <h2 id="layout_overview_blocks">Basic layout elements</h2>
 
