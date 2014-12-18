@@ -34,7 +34,7 @@ This topic shows you how to customize layout by using <a href="{{site.gdeurl}}fr
 
 <h2 id="layout_markup_bad">Before you start customizing layout</h2>
 
-Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. Magento strongly recommends you not make the following changes:
+Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend that you not make the following changes:
 
 * Editing system files. To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. 
 *	Changing a block name or alias. Neither the name of a block should not be changed nor the alias of a block remaining in the same parent element.
@@ -158,7 +158,7 @@ Example: change template of the page title block.
    
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
-To modify block arguments, use the <referenceBlock> instruction.
+To modify block arguments, use the `<referenceBlock>` instruction.
 
 Example: change the value of the existing block argument and add a new argument.
 
@@ -211,7 +211,7 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#edg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing element's parent. 
+* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#edg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing an element's parent. 
 * <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing the elementes order within one parent.
 
 Example of `<move>` usage:

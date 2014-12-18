@@ -2,7 +2,7 @@
 layout: default
 group:
 subgroup: B_Layouts
-title: Layouts
+title: Customizing layout - step-by-step illustration
 menu_title: Customizing layout - step-by-step illustration
 menu_order: 2
 menu_node: parent
@@ -56,7 +56,7 @@ OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html#them
 
 <u>Step 2: Define the templates</u>
 
-Similar to the way we defined the layout on the previous step, we 
+Similar to the way they defined the layout on the previous step, they 
 define the  template which is used for rearranging the links:
 
 **`app/code/Magento/Customer/view/frontend/templates/account/customer.phtml`**
