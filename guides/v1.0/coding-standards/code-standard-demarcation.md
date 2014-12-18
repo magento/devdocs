@@ -30,7 +30,7 @@ github_link: coding-standards/code-standard-demarcation.md
    &lt;p> ... &lt;/p>
    &lt;p> ... &lt;/p>
 &lt;/div>
-&lt;a href="#some-id">Scroll to text</a>
+&lt;a href="#some-id">Scroll to text&lt;/a>
 </pre>
 <p><b>Unacceptable PHTML file</b></p>
 <pre>
