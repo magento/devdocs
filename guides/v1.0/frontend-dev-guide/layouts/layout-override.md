@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/layouts/layout-override.md
 
 Not all layout customizations can be performed by <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme's file.
 
-In this article both, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referenced to as *layout files*, as the mechanism of overriding is similar for them.
+In this article, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referred to as *layout files*, as the mechanism of overriding is similar for all of them.
 
 
 Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
@@ -24,7 +24,7 @@ Examples of customizations that involve overriding layouts:
 *	Suppressing method invocation.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.</p>
+		<p>Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.</p>
 	</div>
 
 *	Modifying method arguments.
@@ -39,12 +39,10 @@ Examples of customizations that involve overriding layouts:
 *	Modifying and suppressing handles inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
 
-<div class="bs-callout bs-callout-info" id="info">
-		<p>Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the changes described in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_bad">Before you start customizing layout</a> paragraph.</p>
-	</div>
+
 Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:
 
-*	Changing block name or alias. The name of a block should not be changed, as well as the alias of a block remaining in the same parent element.
+*	Changing block name or alias. The name of a block should not be changed, and neither should the alias of a block remaining in the same parent element.
 *	Changing handle inheritance. For example, you should not change the page type parent handle.
 
 
