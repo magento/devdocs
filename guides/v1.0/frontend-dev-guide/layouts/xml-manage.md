@@ -125,7 +125,7 @@ Example: add links to the page header panel.
 
 Blocks are created (declared) using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
-Example: add a page title block
+Example: add a page title block.
 
 <pre>
 &lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\View\Description&quot;&nbsp;name=&quot;product.info.sku&quot;&nbsp;template=&quot;product/view/attribute.phtml&quot;&nbsp;after=&quot;product.info.type&quot;&gt;
@@ -142,6 +142,15 @@ Example: add a page title block
 
 To update a block use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
 
+Example: pass the image to the `logo` block.
+
+<pre>
+&lt;referenceBlock&nbsp;name=&quot;logo&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;logo_file&quot;&nbsp;xsi:type=&quot;string&quot;&gt;images/logo.png&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&lt;/referenceBlock&gt;
+</pre>
 
 <h2 id="set_template">Set the template used by a block</h2>
 
@@ -193,7 +202,7 @@ Extending layout:
 
 Block object methods are accessed using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. 
 
-Example: Set a page title using the `setTitle()` method.
+Example: Set a page title using the `setPageTitle()` method.
 
 Extending layout:
 

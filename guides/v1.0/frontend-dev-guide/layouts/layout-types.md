@@ -111,6 +111,7 @@ Conventionally page configuration files must be located as follows:
 
 <h3>Page configuration structure and allowed layout instructions</h3>
 
+The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
 <table>
   <tbody>
     <tr>
@@ -374,6 +375,104 @@ Conventionally page configuration files must be located as follows:
 <h2 id="layout-types-gen">Generic layout</h2>
 
 Generic layouts define the contents and detailed structure inside the `<body>` section of an HTML page. 
+
+<h3 id="layout-type-gen-loc">Generic layout file conventional location</h3>
+
+Conventionally generic layout files must be located as follows:
+
+* Module generic layouts: `app/code/<Namespace>/<Module>/view/frontend/layout`
+* Theme generic layouts: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/layout`
+
+<h3>Generic layout structure and allowed layout instructions</h3>
+
+The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+
+<table>
+  <tbody>
+    <tr>
+      <th>Element</th>
+      <th colspan="1">Attributes</th>
+      <th colspan="1">Parent of</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code> &lt;layout&gt;&lt;/layout&gt; </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code class="xml color1">
+              <a href="http://xsinoNamespaceSchemaLocation">xsi:noNamespaceSchemaLocation</a>
+            </code>
+            <code class="xml plain">=</code>
+            <code class="xml string">"../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd</code>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;update&gt;</code></li>
+
+        </ul>
+      </td>
+      <td>Mandatory root element.</td>
+    </tr>
+    <tr>
+      <td>
+        <code> &lt;update&gt; </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code>handle="{name_of_handle_to_include}"</code>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+none
+      </td>
+
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;container&gt;</code></td>
+      <td colspan="1">
+<ul>
+<li><code>name="root"</code></li>
+<li>For complete list of attributes, see <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
+</ul>
+</td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;block&gt;</code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;remove&gt;</code></li>
+          <li><code>&lt;move&gt;</code></li>
+       <li><code>&lt;attribute&gt;</code></li>
+          <li><code>&lt;referenceBlock&gt;</code></li>
+          <li><code>&lt;referenceContainer&gt;</code></li>
+          
+        </ul>
+      </td>
+      <td colspan="1"> Mandatory element</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+Sample generic layout:
+<pre>
+
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../Core/etc/layout_generic.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;formkey&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;adminhtml_googleshopping_types_block&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;root&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Backend\Block\Widget\Grid\Container&quot;&nbsp;name=&quot;googleshopping.types.container&quot;&nbsp;template=&quot;Magento_Backend::widget/grid/container/empty.phtml&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
+&lt;/layout&gt;
+</pre>
 
 
 
