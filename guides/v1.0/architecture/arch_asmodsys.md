@@ -21,9 +21,3 @@ For more information about the components, refer to the following topics:
 
 * <a href="{{ site.gdeurl }}architecture/arch_translations.html">Translation packs</a>
 
-<!--<h2 id="m2arch-asmodsys-related">Related topics</h2>
-<ul>
-<li>Magento Framework</li>
-<li>Magento File System</li>
-<li>Magento Database</li>
-<li>Commonly Used Terms</li></ul>-->

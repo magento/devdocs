@@ -162,7 +162,7 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
 <p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
 <p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
 <pre>{
-    "customerDetails": {
+    "customers": {
         "customer": {
             "email": "user@example.com",
             "firstname": "John",
@@ -188,7 +188,7 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
         ]
     }
 }</pre>
-<p>This JSON-formatted request body includes a <code>customerDetails</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
+<p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 
 <h2 id="construct-request">Construct a request</h2>
 <p>This example shows you how to construct a REST web API call to create an account.</p>
@@ -214,12 +214,10 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
         $password = null,
         $redirectUrl = ''
     );</pre>
-<p>The <code>createAccount</code> call requires a customer data object. The <code>password</code> and <code>redirectUrl</code> values are optional. The default <code>password</code> value is <code>null</code> and the default <code>redirectUrl</code> value is blank.</p>
+<p>The <code>createAccount</code> call requires a <code>customer</code> data object. The <code>password</code> and <code>redirectUrl</code> values are optional. The default <code>password</code> value is <code>null</code> and the default <code>redirectUrl</code> value is blank.</p>
 </li>
-<li><p>To pass the customer data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or XML request body on the call.</p></li>
+<li><p>To pass the <code>customer</code> data object in the POST call payload, specify a <a href="http://www.json.com/" target="_blank">JSON</a> or XML request body on the call.</p></li>
 </ol>
-
-
 
 <h2>Next step</h2>
 <p>Run the web API call through a <a href="{{ site.gdeurl }}get-started/gs-curl.html">cURL command</a> or a REST client.</p>

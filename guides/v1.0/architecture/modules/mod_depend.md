@@ -41,7 +41,7 @@ EXAMPLE: Module A declares a dependency upon Module B. Thus, in Module A's `modu
 
 <h2 id="m2devgde-moddep-declare-deps">Declare the module's dependencies</h2>
 
-A module's depencies (that is, all of the components upon which the module is dependent upon) are listed in the module's `composer.json` file.
+A module's dependencies (that is, all of the components upon which the module is dependent upon) are listed in the module's `composer.json` file.
 
 <h4 id="m2devgde-moddep-use-example">Usage example</h4>
 
@@ -67,7 +67,7 @@ The load order of any dependencies on a module are declared using the &lt;sequen
 
 The &lt;sequence> element is optional, and is used only if 1) you care in what order components are loaded/installed, and 2) only for modules. No other type of component is entered in the &lt;sequence> section. Furthermore, listing a module in the &lt;sequence> list doesn’t mean that everything about that module is used; only config files and certain files under the /etc and the /view directories are considered for load order. Classes within a module are not impacted by their module being in the &lt;sequence> list.
 
-Basic syntax using the &lt;equence> element:
+Basic syntax using the &lt;sequence> element:
 
 <pre>
 &lt;sequence>
@@ -104,7 +104,7 @@ A dependency (sometimes referred to as coupling) implies the degree that one com
 
 The object manager specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code.
 
-For more information about using dependencyinjection, refer to the Developer's Guide.
+For more information about using dependency injection, refer to the Developer's Guide.
 
 <h2 id="m2devgde-moddep-declare-dep">Types of module dependencies</h2>
 Module dependencies in Magento could be of two types: hard and soft dependencies.

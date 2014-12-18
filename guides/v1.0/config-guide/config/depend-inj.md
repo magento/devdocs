@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide
+group: dev-guide
 subgroup: Configuration
 title: Dependency injection
 menu_title: Dependency injection
@@ -27,6 +27,14 @@ The Magento software now uses *dependency injection* as an alternative to the Ma
 A *dependency* (sometimes referred to as *coupling*) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
 
 In simple terms, if ModuleA needs to access some functionality in ModuleB, ModuleA *depends on* ModuleB. ModuleA consumes the service offered by ModuleB, so ModuleA is the *consumer* and ModuleB is the *dependent*.
+
+In addition, we use *dependency inversion*, a coding principle that stipulates you use abstractions to reduce code dependencies. Dependency inversion means:
+
+*	High-level modules should not depend on low-level modules. Both should depend on abstractions.
+*	Abstractions should not depend upon details. Details should depend on abstractions.
+
+For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article</a> by Robert C. Martin.
+
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
 

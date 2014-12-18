@@ -32,7 +32,7 @@ Examples of customizations that involve overriding layouts:
 *	Setting XML attributes of blocks and containers.
 
 	<div class="bs-callout bs-callout-info" id="info">
-		<p>Certain attributes, lilke <code>htmlClass</code>, <code>htmlId</code>, <code>label</code> attributes can be changed in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending layouts</a>.</p>
+		<p>Certain attributes, like <code>htmlClass</code>, <code>htmlId</code>, <code>label</code> attributes can be changed in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending layouts</a>.</p>
 	</div>
 <p class="q">Question to reviewer: Are there any attributes that cannot be set/changed in extending layouts?</p>
 *	Removing block arguments.
