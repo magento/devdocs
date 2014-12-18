@@ -241,7 +241,7 @@
 <h2 id="css-files">CSS file publication</h2>
 <p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
 <h3 id="merging-enabled">Merging enabled</h3>
-<p>If CSS merging is enabled in your Magento instance, a CSS file copied from <code>app/design/<areaname>/<vendorname>/<themename> to <code>pub/static</code> is also parsed for references to other static resources, such as images or other CSS files.
+<p>If CSS merging is enabled in your Magento instance, a CSS file copied from <code>app/design/&lt;areaname&gt;/&lt;VendorName&gt;/&lt;ThemeName&gt;</code> to <code>pub/static</code> is also parsed for references to other static resources, such as images or other CSS files.</p>
 <p>To enable publication of these files, reference them in a CSS file, as follows:</p>
 <ul>
    <li>Use the CSS <code>url()</code> directive to reference the file.</li>
@@ -318,16 +318,16 @@ Example: <code>css-topics/one/two/file.css</code>
    </thead>
    <tbody>
       <tr>
-         <td><code>url(<vendorname>_<modulename>::images/image.gif)
-		 <td><code>url(../../../../<vendorname>_<modulename>/images/image.gif)
-      
+         <td><code>url(&lt;VendorName&gt;_&lt;ModuleName&gt;::images/image.gif)</code></td>
+		 <td><code>url(../../../../&lt;VendorName&gt;_&lt;ModuleName&gt;/images/image.gif)</code></td>
+      </tr>
 
-   
-
+   </tbody>
+</table>
 
 <h4 id="merging-disabled-css1">CSS specified by module</h4>
 
-Example: <code><vendorname>_<modulename>::css-topics/one/two/file.css
+Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.css</code>
 
 <table>
    <colgroup><col width="25%" />
@@ -341,12 +341,12 @@ Example: <code><vendorname>_<modulename>::css-topics/one/two/file.css
    </thead>
    <tbody>
       <tr>
-		 <td><code><vendorname>_<modulename>::css-topics/one/two/file.css
-		 <td><code>url(../../../../<vendorname>_<modulename>/images/image.gif)
-      
+		 <td><code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.css</code></td>
+		 <td><code>url(../../../../&lt;VendorName&gt;_&lt;ModuleName&gt;/images/image.gif)</code></td>
+      </tr>
 
-   
-
+   </tbody>
+</table>
 
 <h2 id="static-view-files-url-resolution">URL resolution for static view files</h2>
 <p>The URL resolution mechanism builds URLs for static view files.</p>
@@ -407,7 +407,7 @@ Example: <code><vendorname>_<modulename>::css-topics/one/two/file.css
 <p>The generated URL is: <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
 <div class="bs-callout bs-callout-info" id="info">
  <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>
-</div></ul></modulename></vendorname></code></td></modulename></vendorname></code></td></tr></tbody></table></modulename></vendorname></code></modulename></vendorname></code></td></modulename></vendorname></code></td></tr></tbody></table></themename></vendorname></areaname></code></p></p></dd></dl>
+</div></ul></p></dd></dl>
 
 
 		</div>
