@@ -1,10 +1,10 @@
 ---
 layout: default
-group: 
+group: fedg
 subgroup: B_Layouts
 title: XML instructions
-menu_title: XML instructions
-menu_order: 6
+menu_title: Layout instructions
+menu_order: 2
 github_link: frontend-dev-guide/layouts/theme-xml.md
 ---
 
@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/layouts/theme-xml.md
 
 
 Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
-To change the high-level page structure modify the page layout files; all other customizations are performed in the page configuration or generic layout files. <!--ADDLINK-->
+To change the page wireframe, modify the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#page-layout" target="_blank">page layout</a> files; all other customizations are performed in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#page-configuration" target="_blank">page configuration</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#page-layout" target="_blank">generic layout</a> files. 
 
 Use layout instructions to:
 
@@ -21,11 +21,8 @@ Use layout instructions to:
 *	add content
 *	remove a page element
 
-The basic set of instructions is the same for all types of layout files. Though there are specific limitations and rules of usage for each layout type. This article describes these general instructions; for details about how they are used in particular layout file type, please refer to one of the following:
+The basic set of instructions is the same for all types of layout files. Though there are specific limitations and rules of usage for each layout type. This article describes these general instructions; for details about how they are used in particular layout file type, please refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.
 
-* Page layout <!--ADDLINK-->
-* Page configuration <!--ADDLINK-->
-* Generic layout <!--ADDLINK-->
 
 <h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
 
@@ -33,19 +30,21 @@ Use the following layout instructions to customize your layout:
 
 *	<a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
-*	<a href="#fedg_xml-instrux_before-after">the <code>before</code> and <code>after</code> attributes</a>
+*	<a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
 *	<a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_rem"><code>&lt;remove></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
+*	<a href="#argument"><code>&lt;argument&gt;</code></a>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
 Defines a block.
 
 <p><b>Details:</b> A <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">block</a> is a unit of page output that renders some distinctive content – a piece of information, a user interface element – anything visually tangible for the end-user.
-Blocks employ templates to generate HTML. The HTML is inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+Blocks employ templates to generate HTML. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+
 <table>
    <tbody>
       <tr>
@@ -68,13 +67,13 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
       <tr class="even">
          <td>before</td>
-         <td>Used to position the block before an element whose name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
       <tr class="odd">
          <td>after</td>
-         <td>Used to position the block after an element with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
@@ -86,14 +85,8 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
       <tr class="odd">
          <td>as</td>
-         <td>An alias name that serves as identifier in the scope of the parent element (**does it makes sense only if parent is block?**).</td>
+         <td>An alias name that serves as identifier in the scope of the parent element.</td>
          <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td>output</td>
-         <td>Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
-         <td>Any value except the obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
          <td>no</td>
       </tr>
       <tr class="odd">
@@ -104,6 +97,9 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
    </tbody>
 </table>
+
+To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction. 
+
 <h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container></h3>
 A structure without content that holds other layout elements such as blocks and containers.
 <p><b>Details:</b> A <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/containers-blocks.html">container</a> renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container></code> and <code>&lt;block></code> elements.
@@ -129,13 +125,13 @@ A structure without content that holds other layout elements such as blocks and 
       </tr>
       <tr class="even">
          <td>before</td>
-         <td>Used to position the container before a block with the name specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-).</td>
          <td>no</td>
       </tr>
       <tr class="odd">
          <td>after</td>
-         <td>Used to position the container after a block with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the container after an element. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-).</td>
          <td>no</td>
       </tr>
@@ -182,13 +178,13 @@ Sample of usage in layout:
 </pre>
 This would add a new column to the page layout.
 
-<!-- <script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script> -->
 
 <h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
-<p>To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
+<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
-An example of a layout declaration with before and after usage follows:</p>
-<script src="https://gist.github.com/xcomSteveJohnson/a88b5c8c4e53682e2596.js"></script>
+
+The following tables give a detailed description of the results you can get using the `before` and `after` attributes. The first table uses a block a as positoned element.
+
 <table>
    <tbody>
       <tr>
@@ -224,7 +220,7 @@ An example of a layout declaration with before and after usage follows:</p>
       <tr class="even">
          <td>after</td>
          <td>empty value or [element name] is absent</td>
-         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the block is considered as non-positioned.</td>
       </tr>
    </tbody>
 </table>
@@ -288,6 +284,9 @@ Example:
       </tr>
    </tbody>
 </table>
+
+To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove></h3>
 Enables you to ignore some layout tags when generating a layout.
 <p><b>Details:</b> Removal works even if the <code>&lt;remove></code> tag occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a <code>&lt;remove></code> tag, the named elements are not generated.</p>
@@ -328,6 +327,9 @@ Removing the `report.bugs` block:
 <p>For example, you must target the reference to a block by name <code>attribute</code>.
 This attribute targets the <code>&lt;block></code> tag's <code>name</code> attribute.</p>
 <p>If you make a reference by <code>&lt;referenceBlock name="right"></code>, you're targeting the block <code>&lt;block name="right"></code>.</p>
+
+To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
@@ -381,6 +383,56 @@ Used as follows:
 <pre>
 handle="{name_of_handle_to_include}"
 </pre>
-The specified <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#handle">handle is "included" and executed recursively.
+The specified <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#handle">handle</a> is "included" and executed recursively.
 
+<h3 id="argument">&lt;argument&gt;</h3>
+Used to pass an argument.
+
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>name</td>
+         <td>Argument name.</td>
+         <td>unique</td>
+         <td>yes</td>
+      </tr>
+      <tr class="odd">
+         <td>xsi:type</td>
+         <td>Argument type.</td>
+         <td>string|boolean|object|number|null|array</td>
+         <td>yes</td>
+      </tr>
+      <tr class="even">
+         <td>translate</td>
+         <td></td>
+         <td>true|false</td>
+         <td>no</td>
+      </tr>
+
+   </tbody>
+</table>
+
+To pass multiple arguments use the following construction:
+<pre>
+&lt;arguments&gt;
+	&lt;argument&gt;&lt;/argument&gt;
+	&lt;arguments&gt;&lt;/argument&gt;
+	...
+&lt;/arguments&gt;
+</pre>
+
+To pass an argument that is an array use the following construction:
+<pre>
+&lt;argument&gt;
+	&lt;item&gt;&lt;/item&gt;
+	&lt;item&gt;&lt;/item&gt;
+	...
+&lt;/argument&gt;
+</pre>
 

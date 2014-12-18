@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/layouts/layout-xml.md
 
 <h2>Introduction</h2>
 
-This topic shows you how to customize layout by using <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">merging</a> layout files:
+This topic shows you how to customize layout by using <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout files:
 
 <p class="q">Question to reviewer: Do we only use page configuration files, or page layouts as well? </p>
 
@@ -18,24 +18,23 @@ This topic shows you how to customize layout by using <a href="{{site.gdeurl}}fr
 *	<a href="#layout_markup_columns">Set the page layout</a>
 *	<a href="#layout_markup_css">Add CSS and JavaScript in &lt;head&gt;</a>
 *	<a href="#layout_markup_css_remove">Remove CSS and JavaScript in &lt;head&gt;</a>
-*	<a href="#layout_markup_rearrange">Rearrange elements</a>
-*	<a href="#layout_markup_remove_elements">Remove elements</a>
-*	<a href="#layout_markup_replace_elements">Replace elements</a>
 *	<a href="#create_cont">Create a container</a>
-*	<a href="#ref_container">Reference container</a>
+*	<a href="#ref_container">Reference a container</a>
 *	<a href="#xml-manage-block">Create a block</a>
 *	<a href="#set_template">Set the template used by a block</a>
 *	<a href="#layout_markup_modify-block">Modify block arguments</a>
-*	<a href="#apply_css">Apply a CSS class to a block</a>
-*	<a href="#fedg_xml-instrux_order-block">Change blocks order</a>
-*	<a href="#xml-manage-ref-block">Reference block</a>
+*	<a href="#xml-manage-ref-block">Reference a block</a>
 *	<a href="#layout_markup_block-properties">Use block object methods to set block properties</a>
+*	<a href="#layout_markup_rearrange">Rearrange elements</a>
+*	<a href="#layout_markup_remove_elements">Remove elements</a>
+*	<a href="#layout_markup_replace_elements">Replace elements</a>
+
 
 
 
 <h2 id="layout_markup_bad">Before you start customizing layout</h2>
 
-Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. Magento strongly recommends you not make the following changes:
+Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend that you not make the following changes:
 
 * Editing system files. To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. 
 *	Changing a block name or alias. Neither the name of a block should not be changed nor the alias of a block remaining in the same parent element.
@@ -46,7 +45,9 @@ Although the layout overriding mechanism provides great customization flexibilit
 The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root `<page>` node.
 
 Example: 
-Change the layout of Advanced Search page from default 1 column to 2 columns with left bar. To do this, create a `Mage_CatalogSearch/layout` directory in your theme directory and place the `catalogsearch_advanced_index.xml` layout there.
+Change the layout of Advanced Search page from default "1-column" to "2-column with left bar". To do this, extend `catalogsearch_advanced_index.xml` in your theme by adding the following layout:
+
+**app/design/frontend/<theme_path>/<Vendor>_CatalogSearch/layout/catalogsearch_advanced_index.xml**
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;layout=&quot;2columns-left&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 ...
@@ -55,43 +56,182 @@ Change the layout of Advanced Search page from default 1 column to 2 columns wit
 
 <h2 id="layout_markup_css">Add JavaScript and CSS</h2>
 
-Make the following change in your theme merging file:
+Javascript, CSS and other static assets are added in the `<head>` section of a page layout. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and Javascript is to extend this file in your custom theme, and add the assets there. 
+Following is a sample of a file you need to add:
+
+`app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
+
 <pre>
-&lt;page&nbsp;layout=&quot;3columns&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;css&nbsp;src=&quot;css/styles.css&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;src=&quot;Magento_Doc::jumly/coffee-script.js&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;Magento_Rule::rules.js&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;css&nbsp;src=&quot;css/my-styles.css&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;src=&quot;sample.js&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;Magento_Catalog::js/sample1.js&quot;/&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
 &lt;/page&gt;
+
 </pre>
+
+You can use either `<link src="sample.js"/>` or `<script src="sample.js"/>` instruction to add a JavaScript file to your theme
+
 
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
-To remove the JavaScript and CSS resources linked in page `<head>`, make a change similar to the following in a theme merging file:
+To remove the JavaScript and CSS resources linked in page `<head>`, make a change similar to the following in a theme extending file:
+
+`app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
+
 <pre>
 &lt;page&gt;
 &nbsp;&nbsp;&nbsp;&lt;head&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;css-styles-css&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;coffe-script-js&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;css/styles-m.css&quot;&nbsp;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;my-js.js&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;Magento_Catalog::js/compare.js&quot;&nbsp;/&gt;
 &nbsp;&nbsp;&nbsp;&lt;/head&gt;
 &lt;/page&gt;
-</pre>
-<p class="q"> In removing file names might be wrong file names. </p>
 
+</pre>
+
+Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
+
+
+
+<h2 id="create_cont">Create a container</h2>
+
+Use the following sample to create (declare) a container:
+
+<pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
+<p>Replace the values with your own. For more information, see the earlier sections in this topic.</p>
+
+<h2 id="ref_container">Reference a container</h2>
+
+To update a container use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
+
+Example: add links to the page header panel. 
+
+<pre>
+&lt;referenceContainer&nbsp;name=&quot;header.panel&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Framework\View\Element\Html\Links&quot;&nbsp;name=&quot;header.links&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;header&nbsp;links&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
+&lt;/referenceContainer&gt;
+</pre>
+
+   
+<h2 id="xml-manage-block">Create a block</h2>
+
+Blocks are created (declared) using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
+
+Example: add a page title block.
+
+<pre>
+&lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\View\Description&quot;&nbsp;name=&quot;product.info.sku&quot;&nbsp;template=&quot;product/view/attribute.phtml&quot;&nbsp;after=&quot;product.info.type&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;at_call&quot;&nbsp;xsi:type=&quot;string&quot;&gt;getSku&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;at_code&quot;&nbsp;xsi:type=&quot;string&quot;&gt;sku&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;sku&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&lt;/block&gt;
+
+</pre>
+
+<h2 id="xml-manage-ref-block">Reference a block</h2>
+
+To update a block use the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
+
+Example: pass the image to the `logo` block.
+
+<pre>
+&lt;referenceBlock&nbsp;name=&quot;logo&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;logo_file&quot;&nbsp;xsi:type=&quot;string&quot;&gt;images/logo.png&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&lt;/referenceBlock&gt;
+</pre>
+
+<h2 id="set_template">Set the template used by a block</h2>
+
+To setup template for a block, use the `template` attribute.
+
+Example: change template of the page title block.
+
+<pre>
+
+&lt;referenceBlock&nbsp;name=&quot;page.main.title&quot;&nbsp;template=&quot;html/title_new.phtml&quot;/&gt;
+
+</pre>
+
+   
+<h2 id="layout_markup_modify-block">Modify block arguments</h2>
+
+To modify block arguments, use the `<referenceBlock>` instruction.
+
+Example: change the value of the existing block argument and add a new argument.
+
+Initial block declaration:
+<pre>
+...
+&lt;block&nbsp;class=&quot;Namespace_Module_Block_Type&quot;&nbsp;name=&quot;block.example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Block&nbsp;Label&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&lt;/block&gt;
+...
+</pre>
+
+Extending layout:
+
+<pre>
+...
+&lt;referenceBlock&nbsp;name=&quot;block.example&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Modified&nbsp;block&nbsp;argument&nbsp;-&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;New&nbsp;Block&nbsp;Label&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-&nbsp;Newly&nbsp;added&nbsp;block&nbsp;argument&nbsp;-&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;custom_label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Custom&nbsp;Block&nbsp;Label&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
+&lt;/referenceBlock&gt;&nbsp;
+...
+</pre>
+
+
+<h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
+
+Block object methods are accessed using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. 
+
+Example: Set a page title using the `setPageTitle()` method.
+
+Extending layout:
+
+<pre>
+...
+&lt;referenceBlock&nbsp;name=&quot;page.main.title&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setPageTitle&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;translate=&quot;true&quot;&nbsp;name=&quot;title&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Catalog&nbsp;Advanced&nbsp;Search&lt;/argument&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+&lt;/referenceBlock&gt;
+...
+</pre>
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
-With layout files you can change the elements order on a page. 
+In layout files you can change the elements order on a page. This can be done using one of the following:
 
-Example:
-In the custom Orange theme we want to edit the product page. By default looks as follows: 
+* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#edg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing an element's parent. 
+* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing the elementes order within one parent.
+
+Example of `<move>` usage:
+put the stock availability and SKU blocks next to the product price on a product page.
+
+In the Magento Blank theme these elements are located as follows:
 
 <img src="{{ site.baseurl }}common/images/layout_image1.png" />
 
 Let's place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
-To do this, add a catalog_product_view.xml in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
+To do this, add an extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
 <pre>
 &lt;page&nbsp;layout=&quot;1column&quot;&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
@@ -112,159 +252,41 @@ This would make the product page look like following:
 </div>
 
 
-
-
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
-Remove a shopping cart sidebar block from a page.
+Elements are removed using the `<remove>` instruction.
 
-Original:
+For example, remove the Compare Products sidebar block from all store pages. This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
+
 <pre>
-&lt;layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;right&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Mage_Checkout_Block_Cart_Sidebar&quot;&nbsp;name=&quot;cart_sidebar&quot;&nbsp;template=&quot;cart/sidebar.phtml&quot;&nbsp;before=&quot;-&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;addItemRender&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;type&quot;&nbsp;xsi:type=&quot;string&quot;&gt;simple&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;block&quot;&nbsp;xsi:type=&quot;object&quot;&gt;Mage_Checkout_Block_Cart_Item_Renderer&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cart/sidebar/default.phtml&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;addItemRender&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;type&quot;&nbsp;xsi:type=&quot;string&quot;&gt;grouped&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;block&quot;&nbsp;xsi:type=&quot;object&quot;&gt;Mage_Checkout_Block_Cart_Item_Renderer_Grouped&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cart/sidebar/default.phtml&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;addItemRender&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;type&quot;&nbsp;xsi:type=&quot;string&quot;&gt;configurable&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;block&quot;&nbsp;xsi:type=&quot;object&quot;&gt;Mage_Checkout_Block_Cart_Item_Renderer_Configurable&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;template&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cart/sidebar/default.phtml&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;cart_sidebar.extra_actions&quot;&nbsp;as=&quot;extra_actions&quot;&nbsp;label=&quot;Shopping&nbsp;Cart&nbsp;Sidebar&nbsp;Extra&nbsp;Actions&quot;&nbsp;module=&quot;Mage_Checkout&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
-&lt;/layout&gt;
+&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;sidebar.additional&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\Compare\Sidebar&quot;&nbsp;name=&quot;catalog.compare.sidebar&quot;&nbsp;template=&quot;product/compare/sidebar.phtml&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
+...
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+&lt;/page&gt;
 </pre>
 
-<p class="q">Please help to modify the sample above</p>
-<!--
-<script src="https://gist.github.com/xcomSteveJohnson/faa16e16f157a50823a3.js"></script>
--->
-
-To change it, make a customization similar to the following merging theme layout:
-
-<pre>&lt;layout>
-    &lt;remove name="cart_sidebar"/>
-&lt;/layout></pre>
+To remove the block, add an extending `default.xml` in your theme: 
+`app/design/frontend/<Vendor>/<theme>/Magento_Catalog/frontend/layout/default.xml`
+In this file, add the `<remove>` instruction:
+<pre>
+&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
+...
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;name=&quot;catalog.compare.sidebar&quot;&nbsp;/&gt;
+...
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/body&gt;
+&lt;/page&gt;
+</pre>
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
 To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html#layout_markup_remove_elements">remove it</a> and add a new one.
 
-
-<h2 id="create_cont">Create a container</h2>
-
-<p><b>Example:</b></p>
-<pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
-<p>Replace the values with your own. For more information, see the earlier sections in this topic.</p>
-
-
-   <h2 id="ref_container">Reference a container</h2>
-   
-   	<h2 id="xml-manage-block">Create a block</h2>
-	
-	h2 id="set_template">Set the template used by a block</h2>
-<p><b>Example:</b></p>
-<pre>&lt;block class="Magento\Theme\Block\Html\Title" name="page.main.title" template="html/title.phtml"/></pre>
-<p>To use this code, replace the block class, name, and path to the template.</p>
-   
-   <h2 id="layout_markup_modify-block">Modify block arguments</h2>
-
-This section discusses how to modify the declared block argument and to add a new one.
-
-Original:
-
-<pre>
-&lt;block&nbsp;class=&quot;Namespace_Module_Block_Type&quot;&nbsp;name=&quot;block.example&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Block&nbsp;Label&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/block&gt;
-</pre>
-
-
-To modify it, make a customization similar to the following in a theme merging file:
-<pre>
-&lt;referenceBlock&nbsp;name=&quot;block.example&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&lt;!--&nbsp;Modified&nbsp;block&nbsp;argument&nbsp;-&gt;
-&lt;argument&nbsp;name=&quot;label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;New&nbsp;Block&nbsp;Label&lt;/argument&gt;
-&lt;!-&nbsp;Newly&nbsp;added&nbsp;block&nbsp;argument&nbsp;-&gt;
-&lt;argument&nbsp;name=&quot;custom_label&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Custom&nbsp;Block&nbsp;Label&lt;/argument&gt;
-&lt;/arguments&gt;
-&lt;/referenceBlock&gt;
-</pre>
-
-   <h2 id="apply_css">Apply a CSS class to a block</h2>
-
-
-   <div>
-      <p>You can use the following example for any block that has the <code>css_class</code> property.</p>
-      <p><b>Example:</b></p>
-`css-class-block_layout.xml`
-<pre>
-&lt;!--&nbsp;apply&nbsp;a&nbsp;CSS&nbsp;class&nbsp;to&nbsp;a&nbsp;block&nbsp;--&gt;
-&nbsp;
-&lt;referenceBlock&nbsp;name=&quot;footer_links&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;css_class&quot;&nbsp;xsi:type=&quot;string&quot;&gt;links&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/referenceBlock&gt;
-</pre>
-      <p>To use this code, replace the following:</p>
-      <ul>
-         <li>the name of the block <code>footer_links</code> in <code>&lt;referenceBlock name=""></code></li>
-         <li>the name of the CSS class <code>links</code> in <code>&lt;argument name="css_class">&lt;/argument></code></li>
-      </ul>
-   </div>
-
-
-   <h2 id="fedg_xml-instrux_order-block">Change block order</h2>
-   <div>
-      <p>The following examples show how to:</p>
-      <ul>
-         <li>Place a block before all other blocks</li>
-         <li>Place a block after a particular block</li>
-      </ul>
-      <p>The examples are basically interchangeable; for example, if you use the dash character with <code>after</code>, the block is ordered after all other blocks. For more information, see <a href="#fedg_xml-instrux_before-after">before and after attributes</a>.</p>
-      <p>Examples:</p>
-      <script src="https://gist.github.com/xcomSteveJohnson/1a7904f730e62050a918.js"></script>
-      <p>To use these examples, replace the value of <code>before</code> or <code>after</code> with either dash (before or after all other blocks) or with the name of an existing block.</p>
-   </div>
-   
-<h2 id="xml-manage-ref-block">Reference a block</h2>
-
-
-
-
-
-
-
-<h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
-
-To set a page title using the `setTitle()` method, make a customization similar to the following in a theme merging file:
-
-<pre>
-&lt;layout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceBlock&nbsp;name=&quot;head&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setTitle&quot;&nbsp;module=&quot;Enterprise_Wishlist&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;title&quot;&nbsp;xsi:type=&quot;string&quot;&gt;My&nbsp;Wish&nbsp;Lists&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceBlock&gt;
-&lt;/layout&gt;
-</pre>
-
-<!--
-<script src="https://gist.github.com/xcomSteveJohnson/bc7583f5e2ac5835a250.js"></script>
--->
 
 #### Related topics:
 

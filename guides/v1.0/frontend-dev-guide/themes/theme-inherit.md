@@ -49,7 +49,7 @@ To customize static view files defined in the parent theme, module view, or libr
 
 The particular directories, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
 
-a. If module context is not defined for a file:
+If module context is not defined for a file:
 
 1. Theme static files: `app/design/frontend/<Vendor>/<theme>/web/`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
@@ -57,7 +57,7 @@ a. If module context is not defined for a file:
 
 3. Library static view files: `lib/web/`
 
-b. If module context is defined for a file:
+If module context is defined for a file:
 
 1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module/>web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
@@ -136,7 +136,8 @@ To add an extending layout file:
 
 * Put your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
 
-<u>Example</u>:
+<u>Example</u>
+
 
 OrangeCo decided they should remove the “Report bugs” link from the footer, defined in `app/code/Magento/Theme/view/frontend/layout/default.xml`
 To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` :
