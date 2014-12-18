@@ -110,6 +110,30 @@ See also
 <h2 id="known-devbeta">Known issues</h2>
 We have identified the following known issues in this release:
 
+*   Magento sample data is available only if you edit `composer.json` as follows:
+
+    1.  Log in to your Magento server as the web server user or as a user with `root` privileges.
+    2.  Change to your Magento installation directory.
+    3.  Open `composer.json` in a text editor.
+    4.  Under `"repositories":`, add the following:
+
+        <pre>{
+            "type": "composer",
+            "url": "http://packages.magento.com/"
+        }
+    ],
+     "require": {
+         "php": "~5.4.11|~5.5.0",
+           "magento/sample-data": "0.42.0-beta1",        
+           "magento/sample-data-media": "0.42.0-beta1”</pre>
+    5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
+
+    <div class="bs-callout bs-callout-info" id="info">
+        <p>An exception might display after you run `composer install` to install the Magento software. This error is harmless. The error follows:</p>
+        <code>[ErrorException]</code><br>                                                                                                
+  <code>Target ./dev/tools/Magento/Tools/SampleData/InstallerApp.php already exists.</code></div>
+
+
 *	<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31834">MAGETWO-31834</a> and <a href="https://jira.corp.x.com/browse/MAGETWO-31180">MAGETWO-31180</a> --> Errors might display when you attempt to access the Magento storefront or Magento Admin after installation:
 
 	Storefront:
