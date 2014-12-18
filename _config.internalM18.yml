@@ -1,0 +1,26 @@
+# Site settings
+encoding: "utf-8"
+title: Magento 2 Developer Documentation
+email: mailto:DL-Magento-Doc-Feedback@ebay.com
+description: > # this means to ignore newlines until "baseurl:"
+  Magento 2 Developer Guide.
+baseurl: "/pages/Magento/devdocs_internal/"
+# url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
+# twitter_username: magento
+# github_username:  magento
+
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+gdeurl: "/pages/Magento/devdocs_internal/guides/v1.0/"
+githuburl: "https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/DevDocs-19-M8/guides/v1.0/"
+namem2fedg: "Magento 2 Frontend Developer's Guide"
+namem2devgde: "Magento 2 Developer's Guide"
+namem2apiref: "Magento 2 API Reference"
+namem2install: "Magento 2 Installation Guide"
+mage2000url: "https://github.com/magento/magento2/blob/master/"
+toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
+
+# Build settings
+markdown: kramdown
+highlighter: pygments
+

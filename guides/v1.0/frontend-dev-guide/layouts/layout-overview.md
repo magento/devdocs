@@ -1,6 +1,6 @@
 ---
 layout: default
-group:fedg
+group: fedg
 subgroup: B_Layouts
 title: Layouts
 menu_title: Layouts
