@@ -89,13 +89,6 @@ After you completed the tasks discussed in the preceding section, update depende
 
 	This command updates package dependencies and can take a few minutes to complete.
 
-4.	Change to the Magento `setup` subdirectory and enter `composer install`.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Failure to update dependencies in both of the preceding directories results in an incomplete or non-functional installation.</p></span>
-</div>
-
 #### Next step
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
