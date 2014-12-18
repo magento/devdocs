@@ -24,8 +24,6 @@ Errors similar to the following display when you run the installer:
 
 Exception
  PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
- 
-<pre>Dependencies not installed. Please run 'composer install' under /setup directory.</pre>
 
 <pre>Whoops, it looks like setup tool dependencies are not installed.</pre>
 
@@ -40,8 +38,8 @@ Exception
  
 ### Description
 
-You must run `composer install` from *both* the `<your Magento install dir>` and `<your Magento install dir>/setup` directories before installer.
+You must run `composer install` from `<your Magento install dir>` directory before running the installer.
 
 ### Suggestion
 
-<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Run composer install</a> from both of the preceding directories and try the installation again.
+<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Run composer install</a> from the Magento root directory and try the installation again.

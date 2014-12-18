@@ -288,8 +288,6 @@ To reinstall the Magento software:
 
 	<pre>cd &lt;your Magento install dir>
 git pull
-composer install
-cd setup
 composer install</pre>
 
 4.	Repeat the tasks discussed in <a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>.
