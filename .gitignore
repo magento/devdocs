@@ -25,6 +25,8 @@ ignore
 /gen_public.bat
 /_config.internal.yml
 /gen_internal.bat
+_config.internalM18.yml
+jkM18.bat
 /Readme.md
 jk.bat
 gen.bat
