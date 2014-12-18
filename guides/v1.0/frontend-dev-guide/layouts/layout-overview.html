@@ -160,23 +160,25 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Magento implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into <em>layers</em>, including the <em>view layer</em>.</p>
+		<h2>Introduction</h2>
 
-<h2>Layout structure</h2>
+<p>Magento application implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into <em>layers</em>, including the <em>view layer</em>.</p>
 
 <p>The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.</p>
 
+<p>This article describes the basic concepts you need to know to create layouts for your custom theme.</p>
+
 <h2 id="layout_overview_blocks">Basic layout elements</h2>
 
-<p>The basic components of Magento page design are blocks and containers. Simply put, containers contain blocks, other containers, and other layout elements.</p>
+<p>The basic components of Magento page design are blocks and containers. </p>
 
 <p>A <em>container</em> exists for the sole purpose of assigning content structure to a page. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.</p>
 
 <p>The following figure shows an example:</p>
 
-<p><img src="(/common/images/layouts_containers_defn.jpg" /></p>
+<p><img src="/common/images/layouts_containers_defn.jpg" /></p>
 
-<p>A <em>block</em> represents each feature on a page and employs templates to generate the HTML to inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+<p>A <em>block</em> represents each feature on a page and employs templates to generate the HTML to insert into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
 
 <p>The following figure shows an example:</p>
 
@@ -186,135 +188,74 @@
 
 <h3>Layout file types: by role</h3>
 
-<p><em>Page layout</em></p>
+<p>For a particular page, its layout is defined by two major layout components: <em>page layout</em> file and <em>page configuration</em> file (or <em>generic layout</em> for pages returned in AJAX requests, emails, and so on).</p>
 
-<p>An XML file declaring high-level page structure, for example, two-column page layout. Page layouts and contains only containers and operation with them.</p>
+<p>Following are the definitions of each layout file type:</p>
 
-<p><em>Page configuration</em></p>
-
-<p>An XML file defining the low level page structure: containers and blocks declarations and  manipulation instructions.</p>
-
-<p><em>Generic layout</em></p>
-
-<p>An XML layout file defining the low level structure for pages opened by AJAX requests.</p>
+<ul>
+  <li><em>Page layout</em>: an XML file declaring a page wireframe inside the <code>&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout. </li>
+  <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> sections of the HTML page markup).</li>
+  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code>body</code> section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
+</ul>
 
 <p>For details, refer to <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.</p>
 
-<h3> Layout file types: by location </h3>
+<p>In this guide we use <em>layout files</em> when talking about concepts which are similarly applied to all of these types of layout files.</p>
 
-<p><em>Base layout</em></p>
+<h3 id="layout-loc">Module and theme layout files</h3>
 
-<p>Layout files provided by modules. Conventional location: <code>app/code/&lt;Vendor&gt;/&lt;Module&gt;/view/</code></p>
-
-<p><em>Theme layout</em></p>
-
-<p>Layout files provided by themes. Conventional location:<code> app/design/frontend/&lt;theme_path&gt;/&lt;Vendor&gt;_&lt;Module&gt;</code></p>
-
-<h3>Layout file: by type of customization</h3>
-
-<p><em>Extending layout</em></p>
-
-<p>You can provide additional instructions for the existing layout files layout files in addition to existing files. In these layout files you need to add layout instructions which Magento will merge with existing layouts. Layout instructions that are left unchanged are not duplicated.</p>
-
-<p><em>Overriding layout</em></p>
-
-<p>A layout to be used instead a certain base or theme layout.</p>
-
-<h3 id="layout_conventions">Layout file conventions</h3>
-
-<p><span id="handle"><em>Layout handle</em> </span></p>
-
-<p>A uniquely identified set of layout instructions that the Magento application uses to determine what to do with the updates nested by it.</p>
-
-<p>Layout handles include:</p>
+<p>The following terms are used to distinguish layouts provided by different application components:</p>
 
 <ul>
-  <li>Page type layout handles: Synonyms of the page type identifiers. Corresponds to “full action names” of controller actions; for example, <code>catalog_product_view</code></li>
-  <li>Page layout handles: Identifies specific pages. Correspond to controller actions with parameters that identify specific pages; for example, <code>catalog_product_view_type_simple_id_128</code></li>
-  <li>Arbitrary handles: Does not correspond to any page type, but other handles use them by inclusion.</li>
-</ul>
-
-<p>&lt;p class=q&gt;To reviewer: is it true about handle?&lt;/p&gt;</p>
-
-<p>To be processed correctly, all layout files must meet the following requirements:</p>
-
-<ul>
-  <li>A single layout file always declares a single layout handle and defines layout instructions for that layout handle.</li>
-  <li>The layout file name defines the name of the layout handle.</li>
-  <li>
-    <p>The layout file is located according to convention (<code>app/code/&lt;VendorName&gt;/&lt;ModuleName&gt;/view/frontend/layout</code>); for example:</p>
-
-    <p><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Checkout/view/frontend/layout/checkout_cart_index.xml" target="_blank">Sample layout file</a></p>
-  </li>
-</ul>
-
-<p><code>checkout_cart_index.xml</code> defines several handles, including <code>checkout_cart_item_renderers</code>.</p>
-
-<p>Magento automatically detects layout files located according to convention.</p>
-
-<h2 id="layout_processing">Layout file processing</h2>
-
-<p>For more information about how Magento processes layout files, see the following sections:</p>
-
-<ul>
-  <li><a href="#layout_processing_ordering">Ordering Layout Files</a></li>
-  <li><a href="#layout_processing_how">How the Magento Software Processes Layouts</a></li>
-  <li><a href="#layout_process_ex">Example of Layout Processing</a></li>
-</ul>
-
-<h3 id="layout_processing_ordering">Precedence of layout files</h3>
-
-<p>Magento processes layout files in the following precedence order:</p>
-
-<ul>
-  <li>Files from different modules:
+  <li><em>Base layouts</em>: Layout files provided by modules. Conventional location: 
     <ul>
-      <li>By module dependencies, that is, dependent module after modules on which it depends</li>
-      <li>Alphabetically by module names, if module dependencies are not defined</li>
+      <li>Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout`</code></li>
+      <li>Page layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code></li>
     </ul>
   </li>
-  <li>Files in the same module load alphabetically by file name</li>
+  <li><em>Theme layouts</em>: Layout files provided by themes. Conventional location:
+    <ul>
+      <li>Page configuration and generic layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+      <li>Page layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
+    </ul>
+  </li>
 </ul>
 
-<h3 id="layout_processing_how">Layout process flow</h3>
+<h2 id="layout-custom">Customize layout</h2>
 
-<p>The Magento software:</p>
+<p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts.</p>
+
+<p>To make the necessary changes, create <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. </p>
+
+<h2 id="layout_processing">Layout files processing</h2>
+
+<p>The Magento application processes layout files in the following order:</p>
 
 <ol>
-  <li>Collects all default layouts from modules. The order is determined by module dependencies and by alphabetical order of module names.</li>
-  <li>Determines the sequence of inherited themes <code>[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
+  <li>Collects all layout files from modules. The order is determined by the modules order in the module list from <code>app/etc/config.php</code>.</li>
+  <li>Determines the sequence of <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes <code>[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
   <li>
-    <p>Iterates the sequence of themes:</p>
+    <p>Iterates the sequence of themes from last ancestor to current:</p>
 
-    <p>a.	Adds all extending theme layouts to the list.</p>
+    <p>a.	Adds all extending theme layout files to the list.</p>
 
-    <p>b.	Replaces overridden default layouts.</p>
-
-    <p>c. For all themes except the parent theme, replaces overridden theme layouts.</p>
+    <p>b.	Replaces overridden layout files in the list.</p>
   </li>
-  <li>Extends layout files from the list. For details about layout extensions, see <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>.</li>
+  <li>Merges all layout files from the list.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
 </div>
 
-<h3 id="layout_process_ex">Layout processing example</h3>
-
-<p>Following is an illustration of how layout processing works for two modules and two themes:</p>
-
-<p><img src="/common/images/layout_processing_dev.png" alt="When Magento processes themes, it overrides layout 1 in module 1 because of a theme override. Layout 1 of the parent theme is also overridden the same way." /></p>
-
 <h4 id="related-topics">Related topics:</h4>
 
 <ul>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">XML instructions</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
-  <li><a href="/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a></li>
 </ul>
 
 
@@ -353,6 +294,259 @@
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layouts</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Javascript</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			

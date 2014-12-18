@@ -164,7 +164,7 @@
 
 <p>Not all layout customizations can be performed by <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent theme’s file.</p>
 
-<p>In this article both, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referenced to as <em>layout files</em>, as the mechanism of overriding is similar for them.</p>
+<p>In this article, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referred to as <em>layout files</em>, as the mechanism of overriding is similar for all of them.</p>
 
 <p>Layout files with instructions that override the default or parent theme files are referred to as <em>overriding layout files</em>.</p>
 
@@ -176,7 +176,7 @@
     <p>Suppressing method invocation.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-    <p>Overriding is not necessary if a block has an opposite method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the opposite method is invoked.</p>
+    <p>Overriding is not necessary if a block has a method that cancels the effect of the originally invoked method. In this case, you can customize the layout by adding a layout file where the canceling method is invoked.</p>
 </div>
   </li>
   <li>Modifying method arguments.</li>
@@ -194,13 +194,10 @@
   <li>Removing all handle instructions by declaring an overriding layout file with an empty handle.</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-		<p>Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend you not make the changes described in the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html#layout_markup_bad">Before you start customizing layout</a> paragraph.</p>
-	</div>
 <p>Although the layout overriding mechanism provides great customization flexibility, it’s possible to use it to add logically irrelevant changes. We strongly recommend you not make the following changes:</p>
 
 <ul>
-  <li>Changing block name or alias. The name of a block should not be changed, as well as the alias of a block remaining in the same parent element.</li>
+  <li>Changing block name or alias. The name of a block should not be changed, and neither should the alias of a block remaining in the same parent element.</li>
   <li>Changing handle inheritance. For example, you should not change the page type parent handle.</li>
 </ul>
 

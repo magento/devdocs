@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Layouts</title>
+	<title>Customizing layout - step-by-step illustration</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -149,7 +149,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Layouts</h1>
+		<h1 class="page-heading">Customizing layout - step-by-step illustration</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/master/guides/v1.0/frontend-dev-guide/layouts/layout-practice.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -164,7 +164,7 @@
 <p>This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.</p>
 
 <h2>Moving customer account links</h2>
-<p>In their Orange theme, OrangeCo wants design to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:</p>
+<p>In their Orange theme, OrangeCo want to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:</p>
 
 <p><img src="/common/images/layout_transform.png" /></p>
 
@@ -206,7 +206,7 @@
 
 <u>Step 2: Define the templates</u>
 
-<p>Similar to the way we defined the layout on the previous step, we 
+<p>Similar to the way they defined the layout on the previous step, they 
 define the  template which is used for rearranging the links:</p>
 
 <p><strong><code>app/code/Magento/Customer/view/frontend/templates/account/customer.phtml</code></strong></p>
@@ -229,11 +229,11 @@ define the  template which is used for rearranging the links:</p>
 <p><br /></p>
 <u>Step 3: Add a block to the base layout</u>
 
-<p>OrcangeCo needs to create a new block, for example, <code>header.links</code>, in the <code>header.panel</code> container to move the links there. As the links can be added to this list by different modules, it is better to add this block to the <code>default.xml</code> page configuration of the Theme module.</p>
+<p>OrangeCo needs to create a new block, say, <code>header.links</code>, in the <code>header.panel</code> container to move the links there. As the links can be added to this list by different modules, it is better to add this block to the <code>default.xml</code> page configuration of the Theme module.</p>
 
 <p>So the following extending layout is added in the Orange theme:</p>
 
-<p><strong><em>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml</em></strong></p>
+<p><strong>app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml</strong></p>
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
@@ -274,12 +274,7 @@ define the  template which is used for rearranging the links:</p>
 
 <p><img src="/common/images/layout_screen2.png" /></p>
 
-<p>The last touch will be adding styles.</p>
-
-<p><br /></p>
-<u>Step 4: Add styles</u>
-
-<p>By using styles OrangeCo makes the header links look like they wanted:</p>
+<p>The last touch will be adding styles:</p>
 
 <p><img src="/common/images/layout_screen3.png" /></p>
 

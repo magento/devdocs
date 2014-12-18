@@ -163,15 +163,17 @@
 		<h2>Overview</h2>
 <p>For a particular page, its layout is defined by two major layout components: <em>page layout</em> file and <em>page configuration</em> file. </p>
 
-<p>A page layout file defines the high level structure of the page, for example, one-column layout. Technically page layout is an .xml file, which features only <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. </p>
+<p>A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the <code>&lt;body&gt;</code> section of an HTML page. Page layouts feature only <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
+All page layouts used for page rendering should be declared in the page layout declaration file.</p>
 
-<p>Page configuration is also an .xml file, it defines which page layout is used and the low level, detailed structure (page header, footer, etc.) and content. Page configuration features both main elements, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
-All page layouts used for page rendering should be declared in the page layout declaration file.
-For rendering AJAX requests output a specific type of a page configuration files is used called <em>generic layout</em>.
-This article gives a comprehensive description of layout type structure and rules of usage.</p>
+<p>Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.</p>
+
+<p>We also distinguish the third type of layout files, <em>generic layouts</em>. They are .xml files which define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of an HTML page. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.</p>
+
+<p>This article gives a comprehensive description of layout type structure and rules of usage.</p>
 
 <h2 id="layout-types-page">Page layout</h2>
-<p>Page layout declares high-level page structure, for example one-column layout or two-column layout. </p>
+<p>Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. </p>
 
 <p>Allowed layout instructions:</p>
 
@@ -201,28 +203,45 @@ This article gives a comprehensive description of layout type structure and rule
 &lt;/layout&gt;
 </pre>
 
+<h3 id="layout-types-page-conv">Page layout files conventional location</h3>
+
+<p>Conventionally page layouts must be located as follows:</p>
+
+<ul>
+  <li>Module page layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code></li>
+  <li>Theme page layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
+</ul>
+
 <h3 id="layout-types-page-dec">Page layouts declaration</h3>
 
 <p>To be able to use a layout for actual page rendering, you need to declare it in the layouts declaration file <code>layouts.xml</code>.</p>
 
-<p class="q">Are they declared on per-module basis? Meaning, if I want to use a layout for a module, I should declare it in this module directory?<p>
+<p>Conventionally layout declaration file can be located in one of the following locations: </p>
 
-Conventionally layout declaration file can be located in one of the following locations: 
-&lt;p class=q&gt;Does this order correspond to the overriding order? </p>
+<ul>
+<li>Module layout declations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layouts.xml</code></li>
+<li>Theme layout declaration: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
 
-* app/code/<namespace>/<module>/view/frontend/page/layouts.xml
-* app/design/frontend/<vendor>/<theme>/<namespace>_<module>/page/layouts.xml
-* app/design/frontend/<vendor><theme>/<namespace>_<module>/page/override/layouts.xml 
-* app/design/frontend/<vendor><theme>/<namespace>_<module>/override/<ancestor_theme>/layouts.xml 
+</ul>
 
-To declare a layout file use the <layout></layout> element, for which specify the following:
+<p>Declare a layout file using the <code>&lt;layout&gt;&lt;/layout&gt;</code> instruction, for which specify the following:</p>
 
-* <code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the `2columns-left.xml` page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code>
-* <code>&lt;label&nbsp;tranlsate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code>
+<ul>
+  <li><code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the <code>2columns-left.xml</code> page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code></li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><code>&lt;label&nbsp;tranlsate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-Sample page layout declaration file:
+<p>Sample page layout declaration file:</p>
 
-**`app/code/Magento/Theme/view/frontend/layouts.xml`**
+<p><strong><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></strong></p>
 
 <pre>
 &lt;page_layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd&quot;&gt;
@@ -241,14 +260,22 @@ Sample page layout declaration file:
 &lt;/page_layouts&gt;
 </pre>
 
-
-
 <h2 id="layout-types-conf">Page configuration</h2>
 
-Page configuration is an .xml file, which "fills" the containers defined in a layout file by the particular functionality using blocks.
+<p>The page configuration “fills” the containers defined in a layout file with specified functionality using blocks and containers. It also contains page meta-information, and contents of the <code>&lt;head&gt;</code> section.</p>
+
+<h3 id="layout-type-conf-loc">Page configuration file conventional location</h3>
+
+<p>Conventionally page configuration files must be located as follows:</p>
+
+<ul>
+  <li>Module page configurations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
+  <li>Theme page configurations: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+</ul>
 
 <h3>Page configuration structure and allowed layout instructions</h3>
 
+<p>The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.</p>
 <table>
   <tbody>
     <tr>
@@ -277,22 +304,22 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
       </td>
       <td colspan="1">
         <ul>
-          <li>&lt;html&gt;</li>
-          <li>&lt;head&gt;</li>
-          <li>&lt;body&gt;</li>
-          <li>&lt;update&gt;</li>
+          <li><code>&lt;html&gt;</code></li>
+          <li><code>&lt;head&gt;</code></li>
+          <li><code>&lt;body&gt;</code></li>
+          <li><code>&lt;update&gt;</code></li>
         </ul>
       </td>
       <td>Mandatory root element.</td>
     </tr>
     <tr>
-      <td colspan="1">&lt;html&gt;&lt;/html&gt;</td>
+      <td colspan="1"><code>&lt;html&gt;&lt;/html&gt;</code></td>
       <td colspan="1">
         <p>none</p>
       </td>
       <td colspan="1">
         <ul>
-          <li>&lt;attribute&gt;</li>
+          <li><code>&lt;attribute&gt;</code></li>
         </ul>
       </td>
       <td colspan="1">
@@ -300,56 +327,56 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
       </td>
     </tr>
     <tr>
-      <td colspan="1">&lt;head&gt;&lt;/head&gt;</td>
+      <td colspan="1"><code>&lt;head&gt;&lt;/head&gt;</code></td>
       <td colspan="1">none</td>
       <td colspan="1">
         <ul>
-          <li>&lt;title&gt;</li>
-          <li>&lt;meta&gt;</li>
-          <li>&lt;link&gt;</li>
-          <li>&lt;css&gt;</li>
-          <li>&lt;script&gt;</li>
+          <li><code>&lt;title&gt;</code></li>
+          <li><code>&lt;meta&gt;</code></li>
+          <li><code>&lt;link&gt;</code></li>
+          <li><code>&lt;css&gt;</code></li>
+          <li><code>&lt;script&gt;</code></li>
         </ul>
       </td>
       <td colspan="1"> </td>
     </tr>
     <tr>
-      <td colspan="1">&lt;body&gt;&lt;/body&gt;</td>
+      <td colspan="1"><code>&lt;body&gt;&lt;/body&gt;</code></td>
       <td colspan="1">none</td>
       <td colspan="1">
         <ul>
-          <li>&lt;block&gt;</li>
-          <li>&lt;container&gt;</li>
-          <li>&lt;remove/&gt;</li>
-          <li>&lt;move/&gt;</li>
-          <li>&lt;update/&gt;</li>
-          <li>&lt;referenceBlock&gt;</li>
-          <li>&lt;referenceContainer&gt;</li>
-          <li>&lt;action/&gt;</li>
-        </ul>
-      </td>
+          <li><code>&lt;block&gt;</code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;remove&gt;</code></li>
+          <li><code>&lt;move&gt;</code></li>
+       <li><code>&lt;attribute&gt;</code></li>
+          <li><code>&lt;referenceBlock&gt;</code></li>
+          <li><code>&lt;referenceContainer&gt;</code></li>
+          <li><code>&lt;action&gt;
+        
+      
       <td colspan="1"> </td>
-    </tr>
+    
     <tr>
-      <td colspan="1">&lt;attribute/&gt;</td>
+      <td colspan="1"><code>&lt;attribute&gt;</code></td>
       <td colspan="1">
         <ul>
-          <li>name = <span>{arbitrary_name}</span>
-          </li>
-          <li>value = <span>{arbitrary_value}</span>
-          </li>
-        </ul>
-      </td>
+          <li><code>name = <span>{arbitrary_name}</span>
+          
+          <li><code>value = <span>{arbitrary_value}</span>
+          
+        
+      
       <td colspan="1"> </td>
       <td colspan="1">
-        <p>Specified for &lt;html&gt;, rendered like following:</p>
-        <p>&lt;html name="value'&gt;</p>
+        <p>Specified for <code>&lt;html&gt;</code>, rendered like following:</p>
+        <p><code>&lt;html name="value'&gt;</code></p>
         <p> </p>
       </td>
-    </tr>
+    
     <tr>
       <td colspan="1">
-        <p>&lt;title&gt;</p>
+        <p><code>&lt;title&gt;</code></p>
       </td>
       <td colspan="1">none</td>
       <td colspan="1">none</td>
@@ -357,24 +384,24 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
     </tr>
     <tr>
       <td colspan="1">
-        <p>&lt;meta&gt;</p>
+        <p><code>&lt;meta&gt;</code></p>
       </td>
       <td colspan="1">
         <ul>
           <li>
-            <span>content </span>
+            <span><code>content</code></span>
           </li>
           <li>
-            <span>charset </span>
+            <span><code>charset</code></span>
           </li>
           <li>
-            <span>http-equiv </span>
+            <span><code>http-equiv</code></span>
           </li>
           <li>
-            <span>name </span>
+            <span><code>name</code></span>
           </li>
           <li>
-            <span>scheme </span>
+            <span><code>scheme</code></span>
           </li>
         </ul>
       </td>
@@ -385,42 +412,42 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
     </tr>
     <tr>
       <td colspan="1">
-        <p>&lt;link/&gt;</p>
+        <p><code>&lt;link&gt;</code></p>
       </td>
       <td colspan="1">
         <ul>
           <li>
-            <span>src</span>
+            <span><code>src</code></span>
           </li>
           <li>
-            <span>defer </span>
+            <span><code>defer</code></span>
           </li>
           <li>
-            <span>ie_condition </span>
+            <span><code>ie_condition</code></span>
           </li>
           <li>
-            <span>charset </span>
+            <span><code>charset</code></span>
           </li>
           <li>
-            <span>hreflang </span>
+            <span><code>hreflang</code></span>
           </li>
           <li>
-            <span>media </span>
+            <span><code>media</code></span>
           </li>
           <li>
-            <span>rel </span>
+            <span><code>rel</code></span>
           </li>
           <li>
-            <span>rev </span>
+            <span><code>rev</code></span>
           </li>
           <li>
-            <span>sizes </span>
+            <span><code>sizes</code></span>
           </li>
           <li>
-            <span>target </span>
+            <span><code>target</code></span>
           </li>
           <li>
-            <span>type </span>
+            <span><code>type</code></span>
           </li>
         </ul>
       </td>
@@ -431,42 +458,42 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
     </tr>
     <tr>
       <td colspan="1">
-        <span>&lt;css/&gt;</span>
+        <span><code>&lt;css&gt;</code></span>
       </td>
       <td colspan="1">
         <ul>
           <li>
-            <span>src </span>
+            <span><code>src</code></span>
           </li>
           <li>
-            <span>defer </span>
+            <span><code>defer</code></span>
           </li>
           <li>
-            <span>ie_condition </span>
+            <span><code>ie_condition</code></span>
           </li>
           <li>
-            <span>charset </span>
+            <span><code>charset</code></span>
           </li>
           <li>
-            <span>hreflang </span>
+            <span><code>hreflang</code></span>
           </li>
           <li>
-            <span>media </span>
+            <span><code>media</code></span>
           </li>
           <li>
-            <span>rel </span>
+            <span><code>rel</code></span>
           </li>
           <li>
-            <span>rev </span>
+            <span><code>rev</code></span>
           </li>
           <li>
-            <span>sizes </span>
+            <span><code>sizes</code></span>
           </li>
           <li>
-            <span>target </span>
+            <span><code>target</code></span>
           </li>
           <li>
-            <span>type </span>
+            <span><code>type</code></span>
           </li>
         </ul>
       </td>
@@ -477,27 +504,27 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
     </tr>
     <tr>
       <td colspan="1">
-        <p>&lt;script&gt;</p>
+        <p><code>&lt;script&gt;</code></p>
       </td>
       <td colspan="1">
         <ul>
           <li>
-            <span>src </span>
+            <span><code>src</code></span>
           </li>
           <li>
-            <span>defer </span>
+            <span><code>defer</code></span>
           </li>
           <li>
-            <span>ie_condition </span>
+            <span><code>ie_condition</code></span>
           </li>
           <li>
-            <span>async </span>
+            <span><code>async</code></span>
           </li>
           <li>
-            <span>charset </span>
+            <span><code>charset</code></span>
           </li>
           <li>
-            <span>type </span>
+            <span><code>type</code></span>
           </li>
         </ul>
       </td>
@@ -506,18 +533,117 @@ Page configuration is an .xml file, which "fills" the containers defined in a la
       </td>
       <td colspan="1"> </td>
     </tr>
+  
+
+
+<h2 id="layout-types-gen">Generic layout</h2>
+
+Generic layouts define the contents and detailed structure inside the `<body>` section of an HTML page. 
+
+<h3 id="layout-type-gen-loc">Generic layout file conventional location</h3>
+
+Conventionally generic layout files must be located as follows:
+
+* Module generic layouts: `app/code/<namespace>/<module>/view/frontend/layout`
+* Theme generic layouts: `app/design/frontend/<vendor>/<theme>/<namespace>_<module>/layout`
+
+<h3>Generic layout structure and allowed layout instructions</h3>
+
+The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+
+<table>
+  <tbody>
+    <tr>
+      <th>Element</th>
+      <th colspan="1">Attributes</th>
+      <th colspan="1">Parent of</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code> &lt;layout&gt;&lt;/layout&gt; </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code class="xml color1">
+              <a href="http://xsinoNamespaceSchemaLocation">xsi:noNamespaceSchemaLocation</a>
+            </code>
+            <code class="xml plain">=</code>
+            <code class="xml string">"../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd</code>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;update&gt;</code></li>
+
+        </ul>
+      </td>
+      <td>Mandatory root element.</td>
+    </tr>
+    <tr>
+      <td>
+        <code> &lt;update&gt; </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code>handle="{name_of_handle_to_include}"</code>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+none
+      </td>
+
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;container&gt;</code></td>
+      <td colspan="1">
+<ul>
+<li><code>name="root"</code></li>
+<li>For complete list of attributes, see <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
+</ul>
+</td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;block&gt;</code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;remove&gt;</code></li>
+          <li><code>&lt;move&gt;</code></li>
+       <li><code>&lt;attribute&gt;</code></li>
+          <li><code>&lt;referenceBlock&gt;</code></li>
+          <li><code>&lt;referenceContainer&gt;</code></li>
+          
+        </ul>
+      </td>
+      <td colspan="1"> Mandatory element</td>
+    </tr>
+
+
   </tbody>
 </table>
 
+Sample generic layout:
+<pre>
+
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../Core/etc/layout_generic.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;formkey&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;adminhtml_googleshopping_types_block&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;root&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Backend\Block\Widget\Grid\Container&quot;&nbsp;name=&quot;googleshopping.types.container&quot;&nbsp;template=&quot;Magento_Backend::widget/grid/container/empty.phtml&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
+&lt;/layout&gt;
+</pre>
 
 
 
 
 
 
-
-
-</ancestor_theme></module></namespace></theme></vendor></module></namespace></theme></vendor></module></namespace></theme></vendor></module></namespace></p>
+</module></namespace></theme></vendor></module></namespace></body></code></li></code></li></ul></td></tr></code></li></ul></td></tr></tbody></table>
 
 
 		</div>

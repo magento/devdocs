@@ -163,7 +163,7 @@
 		<h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
 <p>Changing layout files is one of the two possible ways to customize page layout in Magento (the second way is altering templates). 
-To change the high-level page structure modify the page layout files; all other customizations are performed in the page configuration or generic layout files. <!--ADDLINK--></p>
+To change the page wireframe, modify the <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#page-layout" target="_blank">page layout</a> files; all other customizations are performed in the <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#page-configuration" target="_blank">page configuration</a> or <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#page-layout" target="_blank">generic layout</a> files. </p>
 
 <p>Use layout instructions to:</p>
 
@@ -173,13 +173,7 @@ To change the high-level page structure modify the page layout files; all other 
   <li>remove a page element</li>
 </ul>
 
-<p>The basic set of instructions is the same for all types of layout files. Though there are specific limitations and rules of usage for each layout type. This article describes these general instructions; for details about how they are used in particular layout file type, please refer to one of the following:</p>
-
-<ul>
-  <li>Page layout <!--ADDLINK--></li>
-  <li>Page configuration <!--ADDLINK--></li>
-  <li>Generic layout <!--ADDLINK--></li>
-</ul>
+<p>The basic set of instructions is the same for all types of layout files. Though there are specific limitations and rules of usage for each layout type. This article describes these general instructions; for details about how they are used in particular layout file type, please refer to the <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.</p>
 
 <h2 id="fedg_layout_xml-instruc_ex">Common layout instructions</h2>
 
@@ -188,12 +182,13 @@ To change the high-level page structure modify the page layout files; all other 
 <ul>
   <li><a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a></li>
-  <li><a href="#fedg_xml-instrux_before-after">the <code>before</code> and <code>after</code> attributes</a></li>
+  <li><a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_rem"><code>&lt;remove&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a></li>
+  <li><a href="#argument"><code>&lt;argument&gt;</code></a></li>
 </ul>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block&gt;</h3>
@@ -201,7 +196,8 @@ To change the high-level page structure modify the page layout files; all other 
 <p>Defines a block.</p>
 
 <p><b>Details:</b> A <a href="/guides/v1.0/frontend-dev-guide/layouts/containers-blocks.html">block</a> is a unit of page output that renders some distinctive content – a piece of information, a user interface element – anything visually tangible for the end-user.
-Blocks employ templates to generate HTML. The HTML is inserted into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+Blocks employ templates to generate HTML. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+
 <table>
    <tbody>
       <tr>
@@ -224,13 +220,13 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
       <tr class="even">
          <td>before</td>
-         <td>Used to position the block before an element whose name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
       <tr class="odd">
          <td>after</td>
-         <td>Used to position the block after an element with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
@@ -242,14 +238,8 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
       <tr class="odd">
          <td>as</td>
-         <td>An alias name that serves as identifier in the scope of the parent element (**does it makes sense only if parent is block?**).</td>
+         <td>An alias name that serves as identifier in the scope of the parent element.</td>
          <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td>output</td>
-         <td>Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
-         <td>Any value except the obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
          <td>no</td>
       </tr>
       <tr class="odd">
@@ -260,6 +250,9 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
    </tbody>
 </table>
+
+<p>To pass parameters use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction. </p>
+
 <h3 id="fedg_layout_xml-instruc_ex_cont">&lt;container&gt;</h3>
 <p>A structure without content that holds other layout elements such as blocks and containers.</p>
 <p><b>Details:</b> A <a href="/guides/v1.0/frontend-dev-guide/layouts/containers-blocks.html">container</a> renders child elements during view output generation. It can be empty or it can contain an arbitrary set of <code>&lt;container&gt;</code> and <code>&lt;block&gt;</code> elements.
@@ -285,13 +278,13 @@ Blocks employ templates to generate HTML. The HTML is inserted into its parent s
       </tr>
       <tr class="even">
          <td>before</td>
-         <td>Used to position the container before a block with the name specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-).</td>
          <td>no</td>
       </tr>
       <tr class="odd">
          <td>after</td>
-         <td>Used to position the container after a block with the name specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td>Used to position the container after an element. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-).</td>
          <td>no</td>
       </tr>
@@ -338,13 +331,13 @@ Sample of usage in layout:
 </pre>
 This would add a new column to the page layout.
 
-<!-- <script src="https://gist.github.com/xcomSteveJohnson/8c75b9bcab19f24318c8.js"></script> -->
 
 <h2 id="fedg_xml-instrux_before-after">before and after attributes</h2>
-<p>To help you to position blocks in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
+<p>To help you to position elements in a specific order suitable for design, SEO, usability, or other requirements, the Magento software provides the <code>before</code> and <code>after</code> layout attributes.</p>
 <p>These optional attributes can be used in layout XML files to control the order of elements in their common parent.
-An example of a layout declaration with before and after usage follows:</p>
-<script src="https://gist.github.com/xcomSteveJohnson/a88b5c8c4e53682e2596.js"></script>
+
+The following tables give a detailed description of the results you can get using the `before` and `after` attributes. The first table uses a block a as positoned element.
+
 <table>
    <tbody>
       <tr>
@@ -380,7 +373,7 @@ An example of a layout declaration with before and after usage follows:</p>
       <tr class="even">
          <td>after</td>
          <td>empty value or [element name] is absent</td>
-         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
+         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the block is considered as non-positioned.</td>
       </tr>
    </tbody>
 </table>
@@ -444,6 +437,9 @@ Example:
       </tr>
    </tbody>
 </table>
+
+To pass parameters use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove&gt;</h3>
 Enables you to ignore some layout tags when generating a layout.
 <p><b>Details:</b> Removal works even if the <code>&lt;remove&gt;</code> tag occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a <code>&lt;remove&gt;</code> tag, the named elements are not generated.</p>
@@ -484,6 +480,9 @@ Removing the `report.bugs` block:
 <p>For example, you must target the reference to a block by name <code>attribute</code>.
 This attribute targets the <code>&lt;block&gt;</code> tag's <code>name</code> attribute.</p>
 <p>If you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
+
+To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move&gt;</h3>
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
@@ -537,10 +536,60 @@ Used as follows:
 <pre>
 handle="{name_of_handle_to_include}"
 </pre>
-The specified <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#handle">handle is "included" and executed recursively.
+The specified <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#handle">handle</a> is "included" and executed recursively.
 
+<h3 id="argument">&lt;argument&gt;</h3>
+Used to pass an argument.
 
-</a></p>
+<table>
+   <tbody>
+      <tr>
+         <th>Attribute</th>
+         <th>Description</th>
+         <th>Values</th>
+         <th>Required?</th>
+      </tr>
+      <tr class="even">
+         <td>name</td>
+         <td>Argument name.</td>
+         <td>unique</td>
+         <td>yes</td>
+      </tr>
+      <tr class="odd">
+         <td>xsi:type</td>
+         <td>Argument type.</td>
+         <td>string|boolean|object|number|null|array</td>
+         <td>yes</td>
+      </tr>
+      <tr class="even">
+         <td>translate</td>
+         <td></td>
+         <td>true|false</td>
+         <td>no</td>
+      </tr>
+
+   </tbody>
+</table>
+
+To pass multiple arguments use the following construction:
+<pre>
+&lt;arguments&gt;
+	&lt;argument&gt;&lt;/argument&gt;
+	&lt;arguments&gt;&lt;/argument&gt;
+	...
+&lt;/arguments&gt;
+</pre>
+
+To pass an argument that is an array use the following construction:
+<pre>
+&lt;argument&gt;
+	&lt;item&gt;&lt;/item&gt;
+	&lt;item&gt;&lt;/item&gt;
+	...
+&lt;/argument&gt;
+</pre>
+
+</p></p>
 
 
 		</div>
@@ -577,6 +626,259 @@ The specified <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.h
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layouts</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Javascript</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			

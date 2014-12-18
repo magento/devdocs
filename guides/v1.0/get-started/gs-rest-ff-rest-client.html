@@ -197,16 +197,16 @@
 <p>The service data object tells you what data to pass in to the REST API. The service data object is specified by the service interface method named by <code>service class</code> in <code>webapi.xml</code>.</p>
 <p>Continuing the preceding example, the <code>createCustomer()</code> method on the <code>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code> specifies the data service object as follows:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
-<p>In this case, the service object is <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/CustomerDetails.php" target="_blank">\Magento\Customer\Service\V1\Data\CustomerDetails</a>.</p>
+<p>In this case, the service object is <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/customer.php" target="_blank">\Magento\Customer\Service\V1\Data\customer</a>.</p>
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To use <code>customerDetails</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. In other words, the parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
+  <p>To use <code>customer</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. The parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
   </div>
 </div>
 
-<h2>Step 4: Find getters on CustomerDetails</h2>
+<h2>Step 4: Find getters on customer</h2>
 <div>
 <p>Getters on service data objects enable you to find what data is required to execute the action (in this case, create a customer).</p>
-<p>There are two getters on <code>CustomerDetails</code>:</p>
+<p>There are two getters on <code>customer</code>:</p>
 <ul><li><p><code>getAddresses()</code>, which returns data defined by the service data object <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Address.php" target="_blank">\Magento\Customer\Service\V1\Data\Address</a></p>
 <p>Note that the <code>@return</code> specifies <code>\Magento\Customer\Service\V1\Data\Address[]|null</code>, which means that null values are accepted (in other words, you don't have to pass any data in).</p></li>
 <li><code>getCustomer()</code>, which returns data defined by <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">\Magento\Customer\Service\V1\Data\Customer</a>.</li></ul>

@@ -179,13 +179,7 @@
   <li>Your system meets the requirements discussed in <a href="/guides/v1.0/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
   <li>You completed all prerequisite tasks discussed in <a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
   <li>You installed Composer and cloned the Magento GitHub repository as discussed in <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.</li>
-  <li>After you log in to the Magento server, switch to the web server user as discussed in <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li>
 </ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
-</div>
 
 <h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
 
@@ -217,9 +211,9 @@
   <li>
     <p>Enter the following URL in the browser’s address or location bar:</p>
 
-    <pre>http://[Magento host or IP]/[path to Magento root]/setup</pre>
+    <pre>http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup</pre>
 
-    <p>For example, if the Magento server’s IP address is 192.0.2.10 and you installed Magento 2 in the <tt>magento2</tt> directory relative to the web server’s docroot, and you did not configure a Virtual Host, enter:</p>
+    <p>For example, if the Magento server’s IP address is 192.0.2.10 and you installed Magento 2 in the <code>magento2</code> directory relative to the web server’s docroot, and you did not configure a Virtual Host, enter:</p>
 
     <pre>http://192.0.2.10/magento2/setup</pre>
   </li>
@@ -260,7 +254,7 @@
     </tr>
 <tr>
     <td>Database Server Host</td>
-    <td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
+    <td>If the web server and database server are located on the same host, enter <code>localhost</code>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
 </tr>
 <tr>
     <td>Database Server Username</td>
@@ -276,7 +270,7 @@
 </tr>
 <tr>
     <td>Table prefix</td>
-    <td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
+    <td><p><em>Optional</em>. Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
     <p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
     <p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 </tr>
@@ -301,9 +295,9 @@
         <th>Description</th>
     </tr>
 <tr>
-    <td>Your Store Address </td>
+    <td>Base URL</td>
     <td><p>Enter the URL, <em>including scheme and trailing slash</em>, by which users access your storefront.</p>
-    <p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
+    <p>For example, if your storefront host name is <code>http://www.example.com</code>, enter <code>http://www.example.com/</code></p></td>
 </tr>
 <tr>
     <td>Magento Admin Address </td>
@@ -327,13 +321,13 @@
 </tr>
 <tr>
     <td>Apache Rewrites</td>
-    <td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a>.</td>
+    <td>Select this check box to use server rewrites. We strongly recommend you enable server rewrites; however, we support it only if you enabled server rewrites when you installed <a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a>.</td>
 </tr>
 <tr>
     <td>Encryption Key</td>
     <td><p>Magento uses an encryption key to encrypt passwords and personally identifiable customer information in the database.</p>
     <p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
-    <p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
+    <p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key. If you select this option, enter your encryption key in the provided field.</p></td>
 </tr>
 </tbody>
 </table>
