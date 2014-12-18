@@ -55,18 +55,18 @@ In this guide we use *layout files* when talking about concepts which are simila
 The following terms are used to distinguish layouts provided by different application components:
 
 * *Base layouts*: Layout files provided by modules. Conventional location: 
-	* Page configuration files: `app/code/<Namespace>/<Module>/view/frontend/layout`
-	* Page layout files: `app/code/<Namespace>/<Module>/view/frontend/page_layout`
+	* Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout`</code>
+	* Page layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code>
 * *Theme layouts*: Layout files provided by themes. Conventional location:
-	* Page configuration files: ` app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/layout`
-	* Page layout files: ` app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/page_layout`
+	* Page configuration and generic layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code>
+	* Page layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code>
 
 
 <h2 id="layout-custom">Customize layout</h2>
 
 To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts.
 
-To make the necessary changes, create <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">extending</a> and overriding layout files in your custom theme. 
+To make the necessary changes, create <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. 
 
 <h2 id="layout_processing">Layout files processing</h2>
 
