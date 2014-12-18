@@ -264,16 +264,16 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-	<pre>php -f index.php install --base_url=http://localhost/magento2/
-		--backend_frontname=admin
-		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento
-		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com
-		--admin_username=admin --admin_password=iamtheadmin --language=en_US
+	<pre>php -f index.php install --base_url=http://localhost/magento2/ \
+		--backend_frontname=admin \
+		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento \
+		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
+		--admin_username=admin --admin_password=iamtheadmin --language=en_US \
 		--currency=USD --timezone=America/Chicago</pre>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The command must be entered on a single line; it's shown here on multiple lines because of space limitations.</p></span>
+  <p>The command must be entered on a single line; or like in the exemple above use backslashes at the end of each line to execute a single command on multiple lines.</p></span>
 </div>
 
 <h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
