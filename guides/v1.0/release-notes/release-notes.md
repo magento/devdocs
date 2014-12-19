@@ -211,7 +211,12 @@ Workarounds:
         ‘save_path’ => ‘<your session save path>'</pre>
 
 1.  Save your changes and exit the text editor.
-2.  The Magento system now uses dependency injection for session save settings.
+2.  Restart Apache.
+
+    Ubuntu: `sudo service apache2 restart`
+    CentOS: `sudo service httpd restart`
+
+The Magento system now uses dependency injection for session save settings.
 
 <h4>Finding php.ini</h4>
 
