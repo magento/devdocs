@@ -41,6 +41,12 @@ Before you install Magento, make sure your system meets or exceeds the following
 *	Optional but recommended:
 
 	*	<a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)
+
+		<div class="bs-callout bs-callout-info" id="info">
+  		<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
+  		<p>For details, see <a href="{{ site.gdeurl }}"release-notes/release-notes.html#known-devbeta-xdebug">Known issue with xdebug</a>
+		</div>
+
     *	PHPUnit (as a command-line tool) 4.1 or later
 
 
