@@ -169,18 +169,8 @@
 <ol>
   <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install the Composer software</a>.</li>
   <li><a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.</li>
-  <li>
-    <p>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from <em>both</em> of the following directories:</p>
-
-    <pre>&lt;your Magento install dir&gt;
-&lt;your Magento install dir&gt;/setup</pre>
-  </li>
+  <li>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code>/var/www/magento2/</code>).</li>
 </ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Failure to update dependencies in both of the preceding directories results in an incomplete or non-functional installation.</p></span>
-</div>
 
 <h2 id="install-update-depend-apache">Switching to the Apache user</h2>
 
