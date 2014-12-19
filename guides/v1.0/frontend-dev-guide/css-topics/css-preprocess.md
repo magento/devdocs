@@ -14,7 +14,7 @@ github_link: frontend-dev-guide/css-topics/css-preprocess.md
 *	LESS preprocessor&mdash;enables the use of LESS in the Magento application.
 *	CSS URL resolver&mdash;resolves links found in CSS source files. Corrects links that are not valid.
 
-<p>By default, the Magento publisher finds and publishes CSS and other view static files in the <code><your Magento install dir>/pub</code> directory.</p>
+<p>By default, the Magento publisher finds and publishes CSS and other view static files in the <code>&lt;your Magento install dir&gt;/pub</code> directory.</p>
 
 <h2 id="fedg_css-less-intro">Leaner CSS (LESS) preprocessor</h2>
 
