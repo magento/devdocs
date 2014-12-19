@@ -137,7 +137,7 @@ To edit `composer.json`:
     "magento/sample-data-media": "0.42.0-beta1
 
     <div class="bs-callout bs-callout-info" id="info">
-        <p>AValid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
+        <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
 
 5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
 
