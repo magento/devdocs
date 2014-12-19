@@ -142,11 +142,14 @@ To edit `composer.json`:
 5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
-If you use the optional PHP extension `xdebug`, you can encounter exceptions accessing either the Magento Admin or storefront after a successful installation. 
+If you use the optional PHP extension `xdebug`, you can encounter exceptions:
+
+*   During installation 
+*   Accessing either the Magento Admin or storefront after a successful installation 
 
 Sample exception:
 
-    Fatal error: Maximum function nesting level of '100' reached, aborting! in <path>/ClassLoader.php on line 37
+    Fatal error: Maximum function nesting level of '100' reached, aborting!
 
 To resolve this issue, you can:
 
