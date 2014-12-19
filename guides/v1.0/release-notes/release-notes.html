@@ -255,6 +255,7 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 
 <ul>
   <li><a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a></li>
+  <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
   <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
   <li><a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a></li>
   <li><a href="#known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</a></li>
@@ -296,6 +297,28 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
   </li>
   <li>Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="/guides/v1.0/install-gde/bk-install-guide.html">Magento installation guide</a>.</li>
 </ol>
+
+<h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
+<p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions accessing either the Magento Admin or storefront after a successful installation. </p>
+
+<p>Sample exception:</p>
+
+<pre><code>Fatal error: Maximum function nesting level of '100' reached, aborting! in &lt;path&gt;/ClassLoader.php on line 37
+</code></pre>
+
+<p>To resolve this issue, you can:</p>
+
+<ul>
+  <li>Disable the <code>xdebug</code> extension.</li>
+  <li>Set the value of <code>xdebug.max_nesting_level</code> to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
+</ul>
+
+<p>After you change the configuration of or disable <code>xdebug</code>, restart Apache:</p>
+
+<ul>
+  <li>CentOS: <code>sudo service httpd restart</code></li>
+  <li>Ubuntu: <code>sudo service apache2 restart</code></li>
+</ul>
 
 <h3 id="known-devbeta-storefront-err">Access errors</h3>
 
