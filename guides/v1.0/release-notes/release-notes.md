@@ -137,16 +137,19 @@ To edit `composer.json`:
     "magento/sample-data-media": "0.42.0-beta1
 
     <div class="bs-callout bs-callout-info" id="info">
-        <p>AValid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
+        <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
 
 5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
-If you use the optional PHP extension `xdebug`, you can encounter exceptions accessing either the Magento Admin or storefront after a successful installation. 
+If you use the optional PHP extension `xdebug`, you can encounter exceptions:
+
+*   During installation 
+*   Accessing either the Magento Admin or storefront after a successful installation 
 
 Sample exception:
 
-    Fatal error: Maximum function nesting level of '100' reached, aborting! in <path>/ClassLoader.php on line 37
+    Fatal error: Maximum function nesting level of '100' reached, aborting!
 
 To resolve this issue, you can:
 
