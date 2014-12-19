@@ -1,20 +1,19 @@
 ---
 layout: default
-group: 
+group: fedg
 subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
-menu_order: 5
+menu_order: 6
 github_link: frontend-dev-guide/layouts/layout-xml.md
 ---
 
 <h2>Introduction</h2>
 
-This topic shows you how to customize layout by using <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout files:
+This article shows how to perform typical layout customization tasks. 
 
-<p class="q">Question to reviewer: Do we only use page configuration files, or page layouts as well? </p>
+The following tasks are described:
 
-*	<a href="#layout_markup_bad">Important things to remember before you start</a>
 *	<a href="#layout_markup_columns">Set the page layout</a>
 *	<a href="#layout_markup_css">Add CSS and JavaScript in &lt;head&gt;</a>
 *	<a href="#layout_markup_css_remove">Remove CSS and JavaScript in &lt;head&gt;</a>
@@ -29,34 +28,29 @@ This topic shows you how to customize layout by using <a href="{{site.gdeurl}}fr
 *	<a href="#layout_markup_remove_elements">Remove elements</a>
 *	<a href="#layout_markup_replace_elements">Replace elements</a>
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
+</div>
 
-
-
-<h2 id="layout_markup_bad">Before you start customizing layout</h2>
-
-Although the layout overriding mechanism provides great customization flexibility, it's possible to use it to add logically irrelevant changes. We strongly recommend that you not make the following changes:
-
-* Editing system files. To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. 
-*	Changing a block name or alias. Neither the name of a block should not be changed nor the alias of a block remaining in the same parent element.
-*	Changing handle inheritance. For example, you should not change the <a href="{{site.gdeurl}}architecture/view/page-type.html" target="_blank">page type</a> parent handle.
 
 <h2 id="layout_markup_columns">Set the page layout</h2>
 
-The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root `<page>` node.
+The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root <code>&lt;page&gt;</code> node.
 
 Example: 
 Change the layout of Advanced Search page from default "1-column" to "2-column with left bar". To do this, extend `catalogsearch_advanced_index.xml` in your theme by adding the following layout:
 
-**app/design/frontend/<theme_path>/<Vendor>_CatalogSearch/layout/catalogsearch_advanced_index.xml**
+<b><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml</code></b>
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;layout=&quot;2columns-left&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 ...
-&lt;/page&gt
+&lt;/page&gt;
 </pre>
 
 <h2 id="layout_markup_css">Add JavaScript and CSS</h2>
 
-Javascript, CSS and other static assets are added in the `<head>` section of a page layout. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and Javascript is to extend this file in your custom theme, and add the assets there. 
+JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there. 
 Following is a sample of a file you need to add:
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
@@ -78,7 +72,7 @@ You can use either `<link src="sample.js"/>` or `<script src="sample.js"/>` inst
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
-To remove the JavaScript and CSS resources linked in page `<head>`, make a change similar to the following in a theme extending file:
+To remove the JavaScript and CSS resources linked in a page `<head>`, make a change similar to the following in a theme extending file:
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
 
@@ -102,7 +96,7 @@ Note, that if a static asset is added with a module path (for example `Magento_C
 Use the following sample to create (declare) a container:
 
 <pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
-<p>Replace the values with your own. For more information, see the earlier sections in this topic.</p>
+
 
 <h2 id="ref_container">Reference a container</h2>
 
@@ -125,7 +119,7 @@ Example: add links to the page header panel.
 
 Blocks are created (declared) using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
-Example: add a page title block.
+Example: add a block with a product SKU information.
 
 <pre>
 &lt;block&nbsp;class=&quot;Magento\Catalog\Block\Product\View\Description&quot;&nbsp;name=&quot;product.info.sku&quot;&nbsp;template=&quot;product/view/attribute.phtml&quot;&nbsp;after=&quot;product.info.type&quot;&gt;
@@ -220,9 +214,10 @@ Extending layout:
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#edg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing an element's parent. 
-* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing the elementes order within one parent.
+* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank">`<move>` instruction</a>: allows changing elements' order and parent. 
+* <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank">`before` and `after` attributes of `<block>`</a>: allows changing elements' order within one parent.
 
+<p></p>
 Example of `<move>` usage:
 put the stock availability and SKU blocks next to the product price on a product page.
 
@@ -231,7 +226,7 @@ In the Magento Blank theme these elements are located as follows:
 <img src="{{ site.baseurl }}common/images/layout_image1.png" />
 
 Let's place the stock availability and SKU blocks after product price block on a product page, and move the review block out of the product-info-price container.
-To do this, add an extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
+To do this, add the extending `catalog_product_view.xml` in the `app/design/frontend/OrangeCo/orange/Magento_Catalog/layout/` directory:
 <pre>
 &lt;page&nbsp;layout=&quot;1column&quot;&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
@@ -246,17 +241,17 @@ This would make the product page look like following:
 <img src="{{ site.baseurl }}common/images/layout_image2.png" />
 
 <div class="bs-callout bs-callout-info" id="info">
-  <img src="{{ site.baseurl }}common/images/icon_note.png" alt="note" align="left" width="40" />
 <span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, refer to the <a href="{{site.gdeurl}} frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> article.</p></span>
+  <p>To learn how to locate the layout file you need to customize, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> article.</p></span>
 </div>
+
 
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
 
 Elements are removed using the `<remove>` instruction.
 
-For example, remove the Compare Products sidebar block from all store pages. This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
+Example: remove the Compare Products sidebar block from all store pages. This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
 
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
@@ -270,7 +265,7 @@ For example, remove the Compare Products sidebar block from all store pages. Thi
 &lt;/page&gt;
 </pre>
 
-To remove the block, add an extending `default.xml` in your theme: 
+To remove the block, add the extending `default.xml` in your theme: 
 `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/frontend/layout/default.xml`
 In this file, add the `<remove>` instruction:
 <pre>
@@ -285,11 +280,11 @@ In this file, add the `<remove>` instruction:
 
 <h2 id="layout_markup_replace_elements">Replace elements</h2>
 
-To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html#layout_markup_remove_elements">remove it</a> and add a new one.
+To replace an element, <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
 
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html" target="_blank">Theme design best practices</a>
