@@ -1,27 +1,31 @@
 ---
 layout: default
-group: 
+group: fedg
 subgroup: B_Layouts
 title: Layout file types
 menu_title: Layout file types
-menu_order: 5
+menu_order: 3
 github_link: frontend-dev-guide/layouts/layout-types.md
 ---
-
+<head>
+	<style>
+		table tr td, table tr th {border: 1px solid #ABABAB}
+	</style>
+</head>
 <h2>Overview</h2>
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of an HTML page. Page layouts feature only <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
 Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
 
-We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the `<body>` section of an HTML page. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
+We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
 
-This article gives a comprehensive description of layout type structure and rules of usage.
+This article gives a comprehensive description of each layout file type.
 
 <h2 id="layout-types-page">Page layout</h2>
-Page layout declares the wireframe of a page inside the `<body>` section, for example one-column layout or two-column layout. 
+Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. 
 
 Allowed layout instructions:
 
@@ -59,7 +63,7 @@ Conventionally page layouts must be located as follows:
 
 <h3 id="layout-types-page-dec">Page layouts declaration</h3>
 
-To be able to use a layout for actual page rendering, you need to declare it in the layouts declaration file `layouts.xml`.
+To be able to use a layout for actual page rendering, you need to declare it in `layouts.xml`.
 
 Conventionally layout declaration file can be located in one of the following locations: 
 
@@ -70,14 +74,19 @@ Conventionally layout declaration file can be located in one of the following lo
 
 </ul>
 
-Declare a layout file using the `<layout></layout>` instruction, for which specify the following:
+<br>
+<p>Declare a layout file using the <code>&lt;layout&gt;&lt;/layout&gt;</code> instruction, for which specify the following:
 
-* <code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the `2columns-left.xml` page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code>
-* <code>&lt;label&nbsp;tranlsate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code>
+<ul>
+ <li><code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the `2columns-left.xml` page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code></li>
+
+<li><code>&lt;label&nbsp;tranlsate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code></li>
+</ul>
 
 Sample page layout declaration file:
+<p></p>
 
-**`app/code/Magento/Theme/view/frontend/layouts.xml`**
+<p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b>
 
 <pre>
 &lt;page_layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd&quot;&gt;
@@ -100,14 +109,16 @@ Sample page layout declaration file:
 
 <h2 id="layout-types-conf">Page configuration</h2>
 
-The page configuration "fills" the containers defined in a layout file with specified functionality using blocks and containers. It also contains page meta-information, and contents of the `<head>` section.
+The page configuration adds content to the wireframe defined in a page layout file. A page configuration also contains page meta-information, and contents of the <code>&lt;head&gt;</code> section.
 
 <h3 id="layout-type-conf-loc">Page configuration file conventional location</h3>
 
 Conventionally page configuration files must be located as follows:
 
-* Module page configurations: `app/code/<Namespace>/<Module>/view/frontend/layout`
-* Theme page configurations: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/layout`
+<ul>
+<li> Module page configurations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
+<li> Theme page configurations: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+</ul>
 
 <h3>Page configuration structure and allowed layout instructions</h3>
 
@@ -130,11 +141,9 @@ The following table describes the instructions specific for page configuration f
             <code>layout = {layout}</code>
           </li>
           <li>
-            <code class="xml color1">
-              <a href="http://xsinoNamespaceSchemaLocation">xsi:noNamespaceSchemaLocation</a>
-            </code>
-            <code class="xml plain">=</code>
-            <code class="xml string">"../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd</code>
+            <code >
+              xsi:noNamespaceSchemaLocation ="{path_to_schema}"</code>
+            
           </li>
         </ul>
       </td>
@@ -374,14 +383,17 @@ The following table describes the instructions specific for page configuration f
 
 <h2 id="layout-types-gen">Generic layout</h2>
 
-Generic layouts define the contents and detailed structure inside the `<body>` section of an HTML page. 
+Generic layouts define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. 
 
 <h3 id="layout-type-gen-loc">Generic layout file conventional location</h3>
 
 Conventionally generic layout files must be located as follows:
 
-* Module generic layouts: `app/code/<Namespace>/<Module>/view/frontend/layout`
-* Theme generic layouts: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/layout`
+<ul>
+<li>Module generic layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
+<li>Theme generic layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+</ul>
+
 
 <h3>Generic layout structure and allowed layout instructions</h3>
 
@@ -402,11 +414,9 @@ The following table describes the instructions specific for generic layout files
       <td colspan="1">
         <ul>
           <li>
-            <code class="xml color1">
-              <a href="http://xsinoNamespaceSchemaLocation">xsi:noNamespaceSchemaLocation</a>
-            </code>
-            <code class="xml plain">=</code>
-            <code class="xml string">"../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd</code>
+            <code >
+              xsi:noNamespaceSchemaLocation="{path_to_schema}"
+</code>
           </li>
         </ul>
       </td>
@@ -433,7 +443,7 @@ The following table describes the instructions specific for generic layout files
       <td colspan="1">
 none
       </td>
-
+<td></td>
     </tr>
     <tr>
       <td colspan="1"><code>&lt;container&gt;</code></td>
@@ -447,9 +457,6 @@ none
         <ul>
           <li><code>&lt;block&gt;</code></li>
           <li><code>&lt;container&gt;</code></li>
-          <li><code>&lt;remove&gt;</code></li>
-          <li><code>&lt;move&gt;</code></li>
-       <li><code>&lt;attribute&gt;</code></li>
           <li><code>&lt;referenceBlock&gt;</code></li>
           <li><code>&lt;referenceContainer&gt;</code></li>
           
