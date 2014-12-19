@@ -105,6 +105,7 @@ See also
 We have identified the following known issues in this release:
 
 *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
+*   <a href="#known-devbeta-xdebug">Known issue with xdebug</a>
 *   <a href="#known-devbeta-storefront-err">Access errors</a>
 *   <a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a>
 *   <a href="#known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</a>
@@ -139,6 +140,23 @@ To edit `composer.json`:
         <p>AValid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
 
 5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
+
+<h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
+If you use the optional PHP extension `xdebug`, you can encounter exceptions accessing either the Magento Admin or storefront after a successful installation. 
+
+Sample exception:
+
+    Fatal error: Maximum function nesting level of '100' reached, aborting! in <path>/ClassLoader.php on line 37
+
+To resolve this issue, you can:
+
+*   Disable the `xdebug` extension.
+*   Set the value of `xdebug.max_nesting_level` to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.
+
+After you change the configuration of or disable `xdebug`, restart Apache:
+
+*   CentOS: `sudo service httpd restart`
+*   Ubuntu: `sudo service apache2 restart`
 
 <h3 id="known-devbeta-storefront-err">Access errors</h3>
 
