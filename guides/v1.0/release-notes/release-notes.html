@@ -291,7 +291,7 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 “magento/sample-data-media”: “0.42.0-beta1</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-    <p>AValid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. 
+    <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. 
 
 </p></div>
   </li>
@@ -299,11 +299,16 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 </ol>
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
-<p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions accessing either the Magento Admin or storefront after a successful installation. </p>
+<p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions:</p>
+
+<ul>
+  <li>During installation </li>
+  <li>Accessing either the Magento Admin or storefront after a successful installation </li>
+</ul>
 
 <p>Sample exception:</p>
 
-<pre><code>Fatal error: Maximum function nesting level of '100' reached, aborting! in &lt;path&gt;/ClassLoader.php on line 37
+<pre><code>Fatal error: Maximum function nesting level of '100' reached, aborting!
 </code></pre>
 
 <p>To resolve this issue, you can:</p>
