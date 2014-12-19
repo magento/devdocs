@@ -56,56 +56,50 @@ features of the release.
 
     [6]: <{{ site.gdeurl }}config-guide/config/js-resources.html>
 
--   PHP and MySQL. Magento 2 supports PHP 5.5, with PHP 5.4 (actually 5.4.11 or
-    later) as the minimum requirement, and MySQL 5.6. See [System
-    requirements][7].
-
-    [7]: <{{ site.gdeurl }}install-gde/system-requirements.html>
-
 -   PSR Compliance. PSR compliance standardizes the use of PHP to allow
     different sets of code libraries to work together. See [PHP coding
-    standard][8].
+    standard][7].
 
-    [8]: <{{ site.gdeurl }}coding-standards/code-standard-php.html>
+    [7]: <{{ site.gdeurl }}coding-standards/code-standard-php.html>
 
 -   Modular architecture. Define your own set of modules. Cross-module
     dependencies are reduced, and interfaces among multiple extensions are
-    cleaner and more discrete. See [What is Magento?][9], [Magento as a modular
-    system][10], and [Service contracts][11].
+    cleaner and more discrete. See [What is Magento?][8], [Magento as a modular
+    system][9], and [Service contracts][10].
 
-    [9]: <{{ site.gdeurl }}architecture/arch_whatis.html>
+    [8]: <{{ site.gdeurl }}architecture/arch_whatis.html>
 
-    [10]: <{{ site.gdeurl }}architecture/arch_asmodsys.html>
+    [9]: <{{ site.gdeurl }}architecture/arch_asmodsys.html>
 
-    [11]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
+    [10]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
 
 -   Testing framework. Magento 2 includes a pre-packaged series of test scripts,
     including tests for integration, units, static environments, functional
-    areas, and performance criteria. See [Magento Test Framework][12], and the
-    [JavaScript unit tests][13].
+    areas, and performance criteria. See [Magento Test Framework][11], and the
+    [JavaScript unit tests][12].
 
-    [12]: <https://github.com/magento/mtf/blob/master/docs/install-config.md>
+    [11]: <https://github.com/magento/mtf/blob/master/docs/install-config.md>
 
-    [13]: <{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html>
+    [12]: <{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html>
 
 See also
 --------
 
--   [XML validation][14].
+-   [XML validation][13].
 
-    [14]: <{{ site.gdeurl }}architecture/view/xml-schema-layout.html>
+    [13]: <{{ site.gdeurl }}architecture/view/xml-schema-layout.html>
 
--   [Service contracts][15].
+-   [Service contracts][14].
 
-    [15]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
+    [14]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
 
--   [Translation][16].
+-   [Translation][15].
 
-    [16]: <{{ site.gdeurl }}architecture/behavior/xlate.html>
+    [15]: <{{ site.gdeurl }}architecture/behavior/xlate.html>
 
--   [Services as web APIs.][17]
+-   [Services as web APIs.][16]
 
-    [17]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
+    [16]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
 	
 <h2 id="known-devbeta">Known issues</h2>
 We have identified the following known issues in this release:
@@ -217,7 +211,12 @@ Workarounds:
         ‘save_path’ => ‘<your session save path>'</pre>
 
 1.  Save your changes and exit the text editor.
-2.  The Magento system now uses dependency injection for session save settings.
+2.  Restart Apache.
+
+    Ubuntu: `sudo service apache2 restart`
+    CentOS: `sudo service httpd restart`
+
+The Magento system now uses dependency injection for session save settings.
 
 <h4>Finding php.ini</h4>
 
@@ -241,9 +240,9 @@ If you don't know where `php.ini` is located, use the following steps:
 <h2 id="install">Installation</h2>
 
 Installation is simplified, and now uses Composer. See our friendly
-[Installation Guide][18].
+[Installation Guide][17].
 
-[18]: <{{ site.gdeurl }}install-gde/bk-install-guide.html>
+[17]: <{{ site.gdeurl }}install-gde/bk-install-guide.html>
 
 <h2 id="help">Help improve this documentation</h2>
 
