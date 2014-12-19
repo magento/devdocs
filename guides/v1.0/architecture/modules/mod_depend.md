@@ -210,14 +210,15 @@ interface&nbsp;Magento_AuthorizationInterface
 Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
 
 <h2 id="m2arch-module-related">Related topics</h2>
-
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
-<!--* <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>-->
+<ul>
+<li><a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a></li>
+<li><a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a></li>
+<li><a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a></li>
+<li><a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a></li>
+<!--<li><a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a></li>
+<li><a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a></li>
+<li><a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a></li>
+<li><a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a></li>-->
+</ul>
 
 
