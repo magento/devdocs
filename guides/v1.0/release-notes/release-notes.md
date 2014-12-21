@@ -121,20 +121,20 @@ To edit `composer.json`:
 4.  Search for a `"repositories":` section.
 
     If you have one, add the following block (without `"repositories":`) to it.
-
+    
     If you have no `"repositories":` section, add one as follows before the `"require":` section:
 
-    <pre>"repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages.magento.com/"
-        }
-    ],</pre>
+        "repositories": [
+            {
+                "type": "composer",
+                "url": "http://packages.magento.com/"
+            }
+        ],
 
 5.  Add the following to the `"require":` section:
 
-    "magento/sample-data": "0.42.0-beta1",        
-    "magento/sample-data-media": "0.42.0-beta1
+        "magento/sample-data": "0.42.0-beta1",        
+        "magento/sample-data-media": "0.42.0-beta1
 
     <div class="bs-callout bs-callout-info" id="info">
         <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
@@ -166,20 +166,20 @@ After you change the configuration of or disable `xdebug`, restart Apache:
 <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31834">MAGETWO-31834</a> and <a href="https://jira.corp.x.com/browse/MAGETWO-31180">MAGETWO-31180</a> --> Errors might display when you attempt to access the Magento storefront or Magento Admin after installation:
 
 Storefront:
-	
-	<pre>"Can't create directory /var/www/html/m/var/generation/Magento/Framework/App/PageCache/Identifier/."
-#0 /var/www/html/m/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(34): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
-#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
-#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
-... more </pre>
+
+    "Can't create directory /var/www/html/m/var/generation/Magento/Framework/App/PageCache/Identifier/."
+    #0 /var/www/html/m/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(34): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+    #1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+    #2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+    ... more
 
 Magento Admin:
 
-    <pre>"Class Magento\Logging\Model\FlagFactory does not exist"
-"#0 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(46): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Logging...')
-#1 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php(170): Magento\Framework\ObjectManager\Definition\Runtime->getParameters('Magento\\Logging...')
-#2 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Factory->create('Magento\\Logging...')
-... more</pre>
+    "Class Magento\Logging\Model\FlagFactory does not exist"
+    "#0 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(46): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Logging...')
+    #1 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php(170): Magento\Framework\ObjectManager\Definition\Runtime->getParameters('Magento\\Logging...')
+    #2 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Factory->create('Magento\\Logging...')
+    ... more
 
 In either case, try accessing the storefront or Magento Admin again.
 
@@ -228,8 +228,8 @@ Workarounds:
 7.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
 8.  Add the following:
 
-    <pre>‘session’ => [
-        ‘save_path’ => ‘<your session save path>'</pre>
+        ‘session’ => [
+            ‘save_path’ => ‘<your session save path>'
 
 1.  Save your changes and exit the text editor.
 2.  Restart Apache.
