@@ -41,7 +41,7 @@ Minimal declaration sample:
 
 <pre>
 &lt;config>
-    &lt;module name="Vendor_Module" schema_version="2.0.0">
+    &lt;module name="Namespace_Module" schema_version="2.0.0">
     &lt;/module>
 &lt;/config>
 </pre>
