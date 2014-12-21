@@ -133,8 +133,8 @@ To edit `composer.json`:
 
 5.  Add the following to the `"require":` section:
 
-    "magento/sample-data": "0.42.0-beta1",        
-    "magento/sample-data-media": "0.42.0-beta1
+        "magento/sample-data": "0.42.0-beta1",        
+        "magento/sample-data-media": "0.42.0-beta1
 
     <div class="bs-callout bs-callout-info" id="info">
         <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
