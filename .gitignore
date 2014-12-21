@@ -1,3 +1,6 @@
+_site/
+
+=======
 # OS generated files #
 ######################
 .DS_Store
@@ -9,8 +12,23 @@
 ehthumbs.db
 Thumbs.db
 
-_site/
-/_config.yml
+# Config and output files #
+###########################
+_site
 CNAME
-
+_config.yml
 /Readme.md
+=======
+ignore
+/_config.yml
+/_config.steve.yml
+/_config.diane.yml
+/_config.brad.yml
+/_config.olena.yml
+/_config.sasha.yml
+/_config.tana.yml
+/_config.public.yml
+/*.yml
+/gen_public.bat
+/jk.bat
+*.bat
