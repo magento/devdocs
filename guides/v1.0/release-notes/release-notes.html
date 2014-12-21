@@ -277,18 +277,20 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 
     <p>If you have no <code>"repositories":</code> section, add one as follows before the <code>"require":</code> section:</p>
 
-    <pre>"repositories": [
+    <pre><code>"repositories": [
     {
         "type": "composer",
         "url": "http://packages.magento.com/"
     }
-],</pre>
+],
+</code></pre>
   </li>
   <li>
     <p>Add the following to the <code>"require":</code> section:</p>
 
-    <p>“magento/sample-data”: “0.42.0-beta1”,      <br />
-“magento/sample-data-media”: “0.42.0-beta1</p>
+    <pre><code>"magento/sample-data": "0.42.0-beta1",        
+"magento/sample-data-media": "0.42.0-beta1
+</code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
     <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. 
@@ -332,12 +334,20 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 
 <p>Storefront:</p>
 
-<pre><code>&lt;pre&gt;"Can't create directory /var/www/html/m/var/generation/Magento/Framework/App/PageCache/Identifier/." #0 /var/www/html/m/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(34): Magento\Framework\Code\Generator-&gt;generateClass('Magento\\Framewo...') #1 [internal function]: Magento\Framework\Code\Generator\Autoloader-&gt;load('Magento\\Framewo...') #2 [internal function]: spl_autoload_call('Magento\\Framewo...') ... more &lt;/pre&gt;
+<pre><code>"Can't create directory /var/www/html/m/var/generation/Magento/Framework/App/PageCache/Identifier/."
+#0 /var/www/html/m/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(34): Magento\Framework\Code\Generator-&gt;generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader-&gt;load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+... more
 </code></pre>
 
 <p>Magento Admin:</p>
 
-<pre><code>&lt;pre&gt;"Class Magento\Logging\Model\FlagFactory does not exist" "#0 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(46): Magento\Framework\Code\Reader\ClassReader-&gt;getConstructor('Magento\\Logging...') #1 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php(170): Magento\Framework\ObjectManager\Definition\Runtime-&gt;getParameters('Magento\\Logging...') #2 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Factory-&gt;create('Magento\\Logging...') ... more&lt;/pre&gt;
+<pre><code>"Class Magento\Logging\Model\FlagFactory does not exist"
+"#0 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(46): Magento\Framework\Code\Reader\ClassReader-&gt;getConstructor('Magento\\Logging...')
+#1 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php(170): Magento\Framework\ObjectManager\Definition\Runtime-&gt;getParameters('Magento\\Logging...')
+#2 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Factory-&gt;create('Magento\\Logging...')
+... more
 </code></pre>
 
 <p>In either case, try accessing the storefront or Magento Admin again.</p>
@@ -400,10 +410,9 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
   <li>
     <p>Add the following:</p>
 
-    <pre>‘session’ =&gt; [
-    ‘save_path’ =&gt; ‘<your session="" save="" path="">'
-
-</your></pre>
+    <pre><code>‘session’ =&gt; [
+    ‘save_path’ =&gt; ‘&lt;your session save path&gt;'
+</code></pre>
   </li>
   <li>Save your changes and exit the text editor.</li>
   <li>
