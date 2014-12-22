@@ -202,7 +202,7 @@ To invoke the language pack tool, specify the following parameters:
 
 To create custom language package:
 
-1.	Find a language pack on Magento-related websites or generate it from Magneto by using <a href="#m2devgde-xlate-generatortool">generator tool</a>.
+1.	Find a language pack on Magento-related websites or generate it from Magento by using <a href="#m2devgde-xlate-generatortool">generator tool</a>.
 1.	Translate the terms/phrases as appropriate.
 1.	Declare the pack in `app/i18n/<VendorName>/[Package name]/language.xml` file.
 1.	Upload your language pack to appropriate directory in your Magento instance, for example, `app/i18n/<VendorName>/[Package name]`.
