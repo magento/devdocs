@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: View library
 title: XML layouts and schemas
 menu_title: XML layouts and schemas

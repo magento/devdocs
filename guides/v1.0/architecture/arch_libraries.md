@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Architecture
 title: Libraries
 menu_title: Libraries
@@ -13,13 +13,12 @@ Libraries consist of reusable logic that is often useful across multiple applica
 
 Libraries are placed in the <code>/lib</code> folder and are also organized by vendor to be PSR-0 compliant.
 
-
 For detailed information, refer to  <a href="{{ site.gdeurl }}architecture/view/view-lib.html">View Library</a>.
 
 <h2 id="m2arch-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
-<!-- Magento framework
-* Magento file system
-* Magento database
-* Commonly used terms-->
+* <a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a>
+* <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
+* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language packs</a>
+

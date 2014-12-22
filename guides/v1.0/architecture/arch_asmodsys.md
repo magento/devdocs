@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Architecture
 title: Magento as a modular system
 menu_title: Magento as a modular system
@@ -21,9 +21,3 @@ For more information about the components, refer to the following topics:
 
 * <a href="{{ site.gdeurl }}architecture/arch_translations.html">Translation packs</a>
 
-<!--<h2 id="m2arch-asmodsys-related">Related topics</h2>
-
-* Magento Framework
-* Magento File System
-* Magento Database
-* Commonly Used Terms-->

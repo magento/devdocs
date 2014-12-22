@@ -1,10 +1,10 @@
 ---
 layout: default
 group: coding-standards
-subgroup: DocBlock standards
+subgroup: Coding standards
 title: DocBlock standard
 menu_title: DocBlock standard
-menu_order: 1
+menu_order: 5
 github_link: coding-standards/docblock-standard-general.md
 ---
 
@@ -43,7 +43,7 @@ If description or short description happens to be the first one after DocBlock o
  * License notice...
  */
  </pre>
- 
+
 
 **DocBlock Header in an XML-file**
 
@@ -378,7 +378,7 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
     protected $_scheduledRemoves = array();
     /**#@-*/
     </pre>
-    
+
 
 <h2 id="documentation-space">Structure of documentation space</h2>
 
@@ -477,7 +477,7 @@ For example, padding for visual alignment can be done in two ways consistently:
  * @see    _insertChild() for position explanation
  */
  </pre>
- 
+
 
 **Also correct – don't align anything:**
 

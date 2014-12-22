@@ -1,41 +1,57 @@
 ---
-layout: default
-group: install
+layout: default 
+group: install 
 subgroup: R_Installation
-title: Install Magento software using the web interface
-menu_title: Install Magento software using the web interface
+title: Install the Magento software using the Setup Wizard
+menu_title: Install the Magento software using the Setup Wizard
 menu_node:
 menu_order: 6
 github_link: install-gde/install/install-web.md
 ---
 
-<h4>Contents</h4>
+<h4>Contents</h4> 
 
 See one of the following sections:
 
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-magento-web">Installing the Magento software using the web interface</a>
-*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
+*	<a href="#instgde-install-magento-web">Running the Setup Wizard</a>
 
-This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="#running-the-command-line-installer">Install Magento software using the command line</a>.
+This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 
-Before you begin, make sure you completed all of the following tasks:
+Before you begin, make sure that:
 
-*	<a href="#prerequisites">Prerequisites</a>
-*	<a href="#installing-composer">Install Composer</a>
-*	<a href="#updating-installation-dependencies">Update installation dependencies</a>
+1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
+2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
+3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
+4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.
 
-**Note**: If you get errors during the installation, see <a href="#troubleshooting">Troubleshooting</a>.
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
+</div>
 
-<h2 id="instgde-install-magento-web">Installing the Magento software using the web-based wizard</h2>
+<h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
 
-The web interface is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
+The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
 
 In the event of errors, you can run the installer again or you can return to a previous page to fix errors on that page.
 
-To install the Magento software using a web interface:
+See one of the following sections for more information:
+
+*	<a href="#instgde-install-magento-web-step0">Getting started</a>
+*	<a href="#instgde-install-magento-web-step1">Step 1: Readiness Check</a>
+*	<a href="#instgde-install-magento-web-step2">Step 2: Add a Database</a>
+*	<a href="#instgde-install-magento-web-step4">Step 4: Customize Your Store</a>
+*	<a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>
+*	<a href="#instgde-install-magento-web-step6">Step 6: Install</a>
+*	<a href="#instgde-install-magento-web-step5last">Installation Success</a>
+*	<a href="#instgde-install-magento-web-log">Viewing the installation log</a>
+
+<h3 id="instgde-install-magento-web-step0">Getting started</h3>
+
+To install the Magento software using the Setup Wizard:
 
 1.	Start a web browser.
 
@@ -51,7 +67,7 @@ To install the Magento software using a web interface:
 
 4.	Continue with the following sections in the order presented to complete the installation.
 
-<h3>Step 1: Readiness Check</h3>
+<h3 id="instgde-install-magento-web-step1">Step 1: Readiness Check</h3>
 
 1.	Click **Start Readiness Check**.
 
@@ -61,7 +77,7 @@ To install the Magento software using a web interface:
 	
 2.	Click **Next**.
 
-<h3>Step 2: Add a Database</h3>
+<h3 id="instgde-install-magento-web-step2">Step 2: Add a Database</h3>
 
 1.	Enter the following information:
 
@@ -96,15 +112,9 @@ To install the Magento software using a web interface:
 	</tbody>
 	</table>
 	
-2.	Click **Test Connection and Authentication**.
-
-	The message `Test connection successful` displays to confirm the database is reachable and the user name and password you entered are correct.
-	
-	If errors display, verify the information you entered, verify the database is reachable from the web server, and try again.
-	
 3.	Click **Next**.
 
-<h3>Step 3: Web Configuration</h3>
+<h3 id="instgde-install-magento-web-step3">Step 3: Web Configuration</h3>
 
 1.	Enter the following information:
 
@@ -116,9 +126,8 @@ To install the Magento software using a web interface:
 		</tr>
 	<tr>
 		<td>Your Store Address </td>
-		<td><p>Enter the URL, *including scheme and trailing slash*, by which users access your storefront.</p>
-		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p>
-		<p><strong>Important</strong>: Your URL <em>must</em> start with the scheme and <em>must</em> end with a slash (/) or the storefront and Admin will be inaccessible after installation.</p></td>
+		<td><p>Enter the URL, <em>including scheme and trailing slash</em>, by which users access your storefront.</p>
+		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
 	</tr>
 	<tr>
 		<td>Magento Admin Address </td>
@@ -141,7 +150,7 @@ To install the Magento software using a web interface:
 	</tr>
 	<tr>
 		<td>Apache Rewrites</td>
-		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="#apache">Apache</a>.</td>
+		<td>Select this check box to use Apache rewrites. We support this option only if you enabled server rewrites when you installed <a href="{{ site.gdeurl}}install-gde/prereq/apache.html">Apache</a>.</td>
 	</tr>
 	<tr>
 		<td>Encryption Key</td>
@@ -154,7 +163,7 @@ To install the Magento software using a web interface:
 	
 12.	Click **Next**.
 
-<h3>Step 4: Customize Your Store</h3>
+<h3 id="instgde-install-magento-web-step4">Step 4: Customize Your Store</h3>
 
 1.	From the **Store Default Time Zone** list, click the name of your store's time zone.
 
@@ -164,7 +173,7 @@ To install the Magento software using a web interface:
 
 4.	Click **Next**.
 
-<h3>Step 5: Create Admin Account</h3>
+<h3 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h3>
 
 1.	Enter the following information:
 
@@ -195,7 +204,7 @@ To install the Magento software using a web interface:
 
 2.	Click **Next**.
 
-<h3>Step 6: Install</h3>
+<h3 id="instgde-install-magento-web-step6">Step 6: Install</h3>
 
 Click **Install Now**.
 
@@ -205,10 +214,32 @@ You have the following options:
 *	In the event of problems, click **Previous** to go back and fix incorrect entries.
 *	To try the installation again in the event of failure, click **Try Again**.
 
-<h3>Installation Success</h3>
+<h3 id="instgde-install-magento-web-step5last">Installation Success</h3>
 
 The message `Success` displays to indicate a successful installation.
 
-If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="#troubleshooting">Troubleshooting</a>.
+If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>.
 
 You can also run the installer again.
+
+<h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
+The Setup Wizard creates a log file, named `install.log`, that you might find useful in debugging issues or in verifying the actions performed by the wizard.
+
+The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-temp-dir.php" target="_blank">sys_get_temp_dir ( void )</a> PHP call to determine where to write the installation log. To locate the log:
+
+1.	Open `php.ini` in a text editor.
+
+	If you don't know where `php.ini` is located:
+
+	1.	Log in as or switch to the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>.
+	2.	Create <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> in the web server's docroot.
+	3.	Access `phpinfo.php` in a web browser.
+
+		The location of `php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
+
+2.	Search for `sys_temp_dir`.
+
+The value of `sys_temp_dir` determines where `install.log` is located. If the value is commented out, PHP uses that value as its default. 
+
+A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.log`.
+

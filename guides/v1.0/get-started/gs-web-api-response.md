@@ -60,7 +60,7 @@ github_link: get-started/gs-web-api-response.md
 <p>The response payload depends on the call.</p>
 <p>For example, a <code>GET /V1/customers/:customerId</code> call returns the following payload:</p>
 <pre>{
-    "customerDetails": {
+    "customers": {
         "customer": {
             "email": "user@example.com",
             "firstname": "John",
@@ -86,7 +86,7 @@ github_link: get-started/gs-web-api-response.md
         ]
     }
 }</pre>
-<p>This JSON-formatted response body includes a <code>customerDetails</code> object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.</p>
+<p>This JSON-formatted response body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.</p>
 
 <!--
 <h2 id="error-format">Error format</h2>

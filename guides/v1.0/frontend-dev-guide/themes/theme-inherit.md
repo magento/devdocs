@@ -26,10 +26,10 @@ subsequent chapters in this guide.
 A parent theme is specified in the child theme configuration file<!--ADDLINK-->, under `<parent></parent>`.
 
 Example:
-The Orange theme inherits from the Blank theme:
+The Orange theme by OrangeCo inherits from the Magento Blank theme:
 <pre>
 &lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Magento&nbsp;Orange&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;OrangeCo&nbsp;Orange&lt;/title&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;0.1.0-alpha100&lt;/version&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;
@@ -49,7 +49,7 @@ To customize static view files defined in the parent theme, module view, or libr
 
 The particular directories, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
 
-a. If module context is not defined for a file:
+If module context is not defined for a file:
 
 1. Theme static files: `app/design/frontend/<Vendor>/<theme>/web/`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
@@ -57,7 +57,7 @@ a. If module context is not defined for a file:
 
 3. Library static view files: `lib/web/`
 
-b. If module context is defined for a file:
+If module context is defined for a file:
 
 1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module/>web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
@@ -129,17 +129,18 @@ The layouts processing mechanism does not involve fallback. The system collects 
 2. Ancestor themes layouts, starting from the  most distant ancestor, recursively until a theme with no parent is reached: `app/design/frontend/<parent_theme_path>/<Vendor>_<Module>/layout`
 3. Module layouts: `app/code/<Vendor>/<Module>/view/frontend/layout`
 
-Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme merging layout files.
+Unlike templates or images, layout can be not only overridden, but also extended. And the recommended way to customize layout is to extend it by creating theme extending layout files.
 
 
-To add a merging layout file:
+To add an extending layout file:
 
-* Place your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
+* Put your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
 
-<u>Example</u>:
+<u>Example</u>
+
 
 OrangeCo decided they should remove the “Report bugs” link from the footer, defined in `app/code/Magento/Theme/view/frontend/layout/default.xml`
-To do this, they added a merging layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` :
+To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_blank/layout/default.xml` :
 
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;

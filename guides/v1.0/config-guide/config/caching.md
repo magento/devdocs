@@ -1,12 +1,14 @@
 ---
 layout: default
-group: config-guide
+group: dev-guide
 subgroup: Configuration
 title: Caching
 menu_title: Caching
-menu_order: 3
+menu_order: 2
 github_link: config-guide/config/caching.md
 ---
+
+<h2 id="m2devgde-cache-intro">Overview</h2>
 
 In the Magento system, the functionality was split into several layers depending on role of each component:
 
