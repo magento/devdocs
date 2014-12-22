@@ -68,7 +68,7 @@ Let's search for the layout following the fallback scheme:
 2. We can find the info about parent theme in a theme configuration file theme.xml, the parent theme name is specified there in the `<parent></parent>` node. In the `app/design/frontend/Magento/blank/theme.xml` there's no `<parent>` node, which means the blank theme has no parents. So we should search on the next fallback level which is the module layouts.
 3. The Magento_Checkout layouts are located in `app/code/Magento/Checkout/view/frontend/layout/`. After searching this directory for occurrences of "`minicart.phtml`", we define that the layout we are looking for is `app/code/Magento/Checkout/view/frontend/layout/default.xml`.
 
-After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder add overriding content. Please see Customizing Theme Layouts for more details.
+After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder add overriding or extending content. Please see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a> or <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a> for more details.
 <!-- ADDLINK -->
 
 <h2 id="debug-theme-style">Locate styles</h2>
