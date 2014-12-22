@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Modules
 title: Module naming and location conventions
 menu_title: Module naming and location conventions
@@ -27,12 +27,8 @@ Several modules in Magento have composite names. For example, when a name consis
 Example: "catalogsearch" is module alias of "Magento_CatalogSearch" module.
 
 <h2 id="m2arch-module-related"> Related topics</h2>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>
 
 

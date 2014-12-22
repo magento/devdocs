@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Indexing
 title: Indexing
 menu_title: Indexing
@@ -19,17 +19,17 @@ Without indexing, Magento would have to calculate the price of every product on 
 
 Indexing terminology:
 
-:	Dictionary
+<dl><dt>Dictionary</dt>
 
-	Original data entered to the system. Dictionaries are organized in <a href="http://en.wikipedia.org/wiki/Database_normalization" target="_blank">normal form</a> to facilitate maintenance (updating the data).
+<dd>Original data entered to the system. Dictionaries are organized in <a href="http://en.wikipedia.org/wiki/Database_normalization" target="_blank">normal form</a> to facilitate maintenance (updating the data).</dd>
 
-:	Index
+<dt>Index</dt>
 
-	Representation of the original data for optimized reading and searching. Indexes can contain results of aggregations and various calculations. Index data can be always re-created from a dictionary using a certain algorithm.
+<dd>Representation of the original data for optimized reading and searching. Indexes can contain results of aggregations and various calculations. Index data can be always re-created from a dictionary using a certain algorithm.</dd>
 
-:	Indexer
+<dt>Indexer</dt>
 
-	Object that creates an index.
+<dd>Object that creates an index.</dd></dl>
 
 <h3 id="indexing-custom">Create custom indexers</h3>
 

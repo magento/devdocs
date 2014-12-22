@@ -3,7 +3,7 @@ layout: default
 group: install
 subgroup: R_Installation
 title: Update installation dependencies
-menu_title: Update installation dependencies
+menu_title: Update installation dependencies 
 menu_node:
 menu_order: 4
 github_link: install-gde/install/prepare-install.md
@@ -17,15 +17,7 @@ Composer is a separate application that manages PHP dependencies. Before you can
 
 1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install the Composer software</a>.
 2.	<a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.
-2.	Run the <a href="#install-composer-install">`composer install` command</a> from *both* of the following directories:
-
-	<pre><your Magento install dir>
-	<your Magento install dir>/setup</pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Failure to update dependencies in both of the preceding directories results in an incomplete or non-functional installation.</p></span>
-</div>
+2.	Run the <a href="#install-composer-install">`composer install` command</a> from your Magento root directory (for example, `/var/www/magento2/`).
 
 <h2 id="install-update-depend-apache">Switching to the Apache user</h2>
 
@@ -41,7 +33,7 @@ To switch to the web server user on Ubuntu:
 
 	<pre>su www-data</pre>
 
-2.	If a password prompt displays but you don't know the user's password, continue with the next step; otherwise, continue with <a href="#running-composer-to-update-dependencies">Running Composer to update dependencies</a>.
+2.	If a password prompt displays but you don't know the user's password, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
 
 3.	To enable the `www-data` user's shell and to set a password, enter the following commands in the order shown:
 
@@ -62,7 +54,7 @@ To switch to the web server user on CentOS:
 
 	<pre>su - apache</pre>
 
-	If the following error displays, continue with the next step; otherwise, continue with <a href="#running-composer-to-update-dependencies">Running Composer to update dependencies</a>.
+	If the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
 
 	<pre>This account is currently not available.</pre>
 
@@ -89,14 +81,7 @@ After you completed the tasks discussed in the preceding section, update depende
 
 	This command updates package dependencies and can take a few minutes to complete.
 
-4.	Change to the Magento `setup` subdirectory and enter `composer install`.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Failure to update dependencies in both of the preceding directories results in an incomplete or non-functional installation.</p></span>
-</div>
-
 #### Next step
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software using the web interface</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>

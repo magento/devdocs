@@ -1,6 +1,6 @@
 ---
 layout: default
-group: extension-dev-guide
+group:
 subgroup: Testing
 title: JavaScript unit tests
 menu_title: JavaScript unit tests

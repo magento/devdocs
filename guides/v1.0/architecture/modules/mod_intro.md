@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Modules
 title: Introduction to modules
 menu_title: Introduction to modules
@@ -17,23 +17,53 @@ Modules encapsulate a particular business feature or set of features; a module i
 
 A Module is a logical group--that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget. A module is designed to work independently and not to intervene with the work of other functionality. Using a modular approach implies that every module encapsulates a feature and has minimum dependencies on other modules.
 
-Modules live in the `/app/modules` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `/app/modules/<vendor>/<module_name>`, e.g. the Customer module of Magento can be found at `/app/modules/Magento/Customer`. Inside of this folder, you will find all of the code and configuration related to this module, including the `etc/module.xml` file, which contains the name and version of the module, as well as any dependencies.
+Specifically, a module is a directory that contains php and xml files (blocks, controllers, helpers, models, etc.) related to a specific functionality.
+
+The purpose of each module is to provide specific product features by implementing new functionality or extending the functionality of other modules. Each module is designed to function independently, so the inclusion or exclusion of a particular module does not impact the functionality of other modules.
+
+Modules live in the `/app/code/modules` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `/app/code/modules/<vendor>/<module_name>`, e.g. the Customer module of Magento can be found at `/app/modules/Magento/Customer`. Inside of this folder, you will find all of the code and configuration related to this module, including the `etc/module.xml` file, which contains the name and version of the module, as well as any dependencies.
+
+<h2 id="m2devgde-moddep-naming">Name and declare a module</h2>
+
+A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in `<root>/app/code/<Vendor>/<ModuleName>/etc/`. 
+
+A module should be named according to the Namespace_Module schema, where
+
+* Namespace is a name of a module's vendor
+* Module is a name assigned to a module by its vendor
+
+To declare a module, the following information should be specified:
+
+* The fully qualified name of a module, according to the naming rules
+* Dependency of a module on other modules, if any
+
+Minimal declaration sample:
+
+<pre>
+&lt;config>
+    &lt;module name="Namespace_Module" schema_version="2.0.0">
+    &lt;/module>
+&lt;/config>
+</pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The enabled/disabled flag for a module is no longer set within a module; it is controlled by the deployment configuration file, with enabled=1, disabled=0. This is controlled by administrators and integrators, not by module developers.</p>
+</div>
+
 
 <h3 id="arch-modules-working-with">Working with modules</h3>
 
 Magento developers, administrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.
 
-For 'How To' topics such as instructions for adding modules, extending modules, implementing themes and other components, refer to the Magento Documentation set at <a href ="https://github.corp.ebay.com/pages/Magento/devdocs_internal/index.html">https://github.corp.ebay.com/pages/Magento/devdocs_internal/index.html</a> for a list of all Magento Guides and Manuals. Additionally, see the Related Topics below.
+For 'How To' topics such as instructions for adding modules, extending modules, implementing themes and other components, refer to the Magento Documentation set at <a href ="http://devdocs.magento.com">http://devdocs.magento.com</a> for a list of all Magento Guides and Manuals. Additionally, see the Related Topics below.
 
 
 <h3 id="arch-modules-related">Related topics</h3>
 
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
 * <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
 * <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
-* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language Packages</a>
+* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language packages</a>

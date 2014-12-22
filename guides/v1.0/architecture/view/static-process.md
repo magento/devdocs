@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: View library
 title: Static file processing
 menu_title: Static file processing
@@ -89,7 +89,7 @@ github_link: architecture/view/static-process.md
 <h2 id="css-files">CSS file publication</h2>
 <p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
 <h3 id="merging-enabled">Merging enabled</h3>
-<p>If CSS merging is enabled in your Magento instance, a CSS file copied from <code>app/design/<areaname>/<VendorName>/<ThemeName></code> to <code>pub/static</code> is also parsed for references to other static resources, such as images or other CSS files.</p>
+<p>If CSS merging is enabled in your Magento instance, a CSS file copied from <code>app/design/&lt;areaname>/&lt;VendorName>/&lt;ThemeName></code> to <code>pub/static</code> is also parsed for references to other static resources, such as images or other CSS files.</p>
 <p>To enable publication of these files, reference them in a CSS file, as follows:</p>
 <ul>
    <li>Use the CSS <code>url()</code> directive to reference the file.</li>
@@ -166,8 +166,8 @@ Example: <code>css-topics/one/two/file.css</code>
    </thead>
    <tbody>
       <tr>
-         <td><code>url(<VendorName>_<ModuleName>::images/image.gif)</code></td>
-		 <td><code>url(../../../../<VendorName>_<ModuleName>/images/image.gif)</code></td>
+         <td><code>url(&lt;VendorName>_&lt;ModuleName>::images/image.gif)</code></td>
+		 <td><code>url(../../../../&lt;VendorName>_&lt;ModuleName>/images/image.gif)</code></td>
       </tr>
 
    </tbody>
@@ -175,7 +175,7 @@ Example: <code>css-topics/one/two/file.css</code>
 
 <h4 id="merging-disabled-css1">CSS specified by module</h4>
 
-Example: <code><VendorName>_<ModuleName>::css-topics/one/two/file.css</code>
+Example: <code>&lt;VendorName>_&lt;ModuleName>::css-topics/one/two/file.css</code>
 
 <table>
    <colgroup><col width="25%">
@@ -189,8 +189,8 @@ Example: <code><VendorName>_<ModuleName>::css-topics/one/two/file.css</code>
    </thead>
    <tbody>
       <tr>
-		 <td><code><VendorName>_<ModuleName>::css-topics/one/two/file.css</code></td>
-		 <td><code>url(../../../../<VendorName>_<ModuleName>/images/image.gif)</code></td>
+		 <td><code>&lt;VendorName>_&lt;ModuleName>::css-topics/one/two/file.css</code></td>
+		 <td><code>url(../../../../&lt;VendorName>_&lt;ModuleName>/images/image.gif)</code></td>
       </tr>
 
    </tbody>

@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: dev-guide
 subgroup: Modules
 title: Modules and areas
 menu_title: Modules and areas
@@ -44,12 +44,9 @@ The resources visible and accessible in an area as well as area's behavior are d
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding Module Dependencies</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module Location and Naming Conventions</a>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_specific.html">Specific Magento Modules</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Adding a New Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Disabling or Removing a Module</a>
-* <a href="{{ site.gdeurl }}architecture/modules/____.html">Extending Modules</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
+
 
 
