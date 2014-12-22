@@ -34,7 +34,7 @@ Use the following table to verify you have the correct prerequisites to install 
 		<td>Apache 2.2 or 2.4</td>
 		<td>Ubuntu: <code>apache -v</code><br>
 		CentOS: <code>httpd -v</code><br>
-		Debian: <code>/usr/sbin/apachd2 -v</code></td>
+		Debian: <code>/usr/sbin/apache2 -v</code></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></td>
 	</tr>
 	<tr>
