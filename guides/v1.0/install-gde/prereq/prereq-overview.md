@@ -61,6 +61,8 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 
 	Ubuntu: `apache2 -v`
 
+	Debian: `/usr/sbin/apache2 -v`
+
 	You must run Apache version 2.2 or 2.4 as the following result indicates:
 
 	<pre>Server version: Apache/2.2.15 (Unix)

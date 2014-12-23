@@ -16,9 +16,9 @@ This topic discusses how to create the files that make up a theme, how to add a 
 
 To create the directory for your theme:
 
-1.	Go to `<your Magento install dir>/app/fronted`.
+1.	Go to `<your Magento install dir>/app/frontend`.
 
-3.	Create a new directory named according to your vendor name: `/app/design/fronted/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
+3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
 
 4.	Under the vendor directory, create a directory named according to your theme.
 

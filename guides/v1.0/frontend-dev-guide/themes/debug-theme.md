@@ -42,8 +42,7 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 A search through the app directory for occurrences of "minicart-wrapper" in .phtml files returns the `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml` template.
 
-Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to Customizing Theme Template.
-<!-- ADDLINK -->
+Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a>.
 
 <h2 id="debug-theme-layout" >Locate layouts</h2>
 Just like templates, layouts are saved on a per-module basis. You can easily locate the layout file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
@@ -68,8 +67,7 @@ Let's search for the layout following the fallback scheme:
 2. We can find the info about parent theme in a theme configuration file theme.xml, the parent theme name is specified there in the `<parent></parent>` node. In the `app/design/frontend/Magento/blank/theme.xml` there's no `<parent>` node, which means the blank theme has no parents. So we should search on the next fallback level which is the module layouts.
 3. The Magento_Checkout layouts are located in `app/code/Magento/Checkout/view/frontend/layout/`. After searching this directory for occurrences of "`minicart.phtml`", we define that the layout we are looking for is `app/code/Magento/Checkout/view/frontend/layout/default.xml`.
 
-After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder add overriding content. Please see Customizing Theme Layouts for more details.
-<!-- ADDLINK -->
+After you located the necessary layout file, you can create your custom layout file with the corresponding name in your theme folder add overriding or extending content. Please see <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a> or <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-override.html">Override a layout</a> for more details.
 
 <h2 id="debug-theme-style">Locate styles</h2>
 To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
