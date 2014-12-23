@@ -5,7 +5,7 @@ subgroup: B_Layouts
 title: Layout instructions
 menu_title: Layout instructions
 menu_order: 2
-github_link: frontend-dev-guide/layouts/theme-xml.md
+github_link: frontend-dev-guide/layouts/xml-instructions.md
 ---
 <head>
 	<style>
