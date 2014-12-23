@@ -1,6 +1,6 @@
 ---
 layout: default
-group: coding-standards
+group:
 subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper

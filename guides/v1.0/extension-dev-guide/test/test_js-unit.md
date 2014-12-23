@@ -1,6 +1,6 @@
 ---
 layout: default
-group: coding-standards
+group:
 subgroup: Testing
 title: JavaScript unit tests
 menu_title: JavaScript unit tests

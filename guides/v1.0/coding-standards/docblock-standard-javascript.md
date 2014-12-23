@@ -1,29 +1,29 @@
 ---
 layout: default
 group: coding-standards
-subgroup: DocBlock standards
+subgroup: Coding standards
 title: JavaScript DocBlock standard
 menu_title: JavaScript DocBlock standard
-menu_order: 2
+menu_order: 6
 github_link: coding-standards/docblock-standard-javascript-general.md
 ---
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 
-This article contains Magento requirements and conventions for adding JavaScript code inline documentation. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
-These standard are a subset of <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
+To add JavaScript code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
+This standard are a subset of <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-use">Use JSDoc</h2>
 
-All files, classes, methods and properties should be documented with JSDoc comments.
+Document all files, classes, methods, and properties with JSDoc comments.
 
 Inline comments should be of the "//" type.
 
-It is recommended to avoid sentence fragments in doc-blocks. Start sentences with a properly capitalized word, and put a period at the end. Sentence fragmentation is acceptable in inline commentaries, in order to keep it short.
+It is recommended to avoid sentence fragments in documentation blocks. Use sentence-style capitalization and put a period at the end. Sentence fragmentation is acceptable in inline commentaries to keep it short.
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-syntax">Comment Syntax</h3>
+<h3 id="frontend-dev-guide-javascript-js-coding-docblock-syntax">Comment syntax</h3>
 
 JSDoc comments requirements:
 
@@ -42,7 +42,7 @@ Example:
 
 Many tools extract metadata from JSDoc comments to validate and optimize the code.
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-indentation">JSDoc Indentation</h3>
+<h3 id="frontend-dev-guide-javascript-js-coding-docblock-indentation">JSDoc indentation</h3>
 
 If you have to line break a block tag, you should treat this as breaking a code statement and indent it four spaces.
 
@@ -59,7 +59,7 @@ project.MyClass.prototype.method&nbsp;=&nbsp;function(foo)&nbsp;{
 };
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-classcomments">Class Comments</h3>
+<h3 id="frontend-dev-guide-javascript-js-coding-docblock-classcomments">Class comments</h3>
 
 Classes must be documented with a description, and appropriate type tags.
 
@@ -74,7 +74,7 @@ project.MyClass&nbsp;=&nbsp;function(arg1,&nbsp;arg2)&nbsp;{
 };
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-methodcomments">Method and Function Comments</h3>
+<h3 id="frontend-dev-guide-javascript-js-coding-docblock-methodcomments">Method and function comments</h3>
 
 A description must be provided along with parameters. Method descriptions should start with a sentence written in the third person declarative voice.
 
@@ -90,7 +90,7 @@ function&nbsp;someMethod(obj)&nbsp;{
 }
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-propertycomments">Property Comments</h3>
+<h3 id="frontend-dev-guide-javascript-js-coding-docblock-propertycomments">Property comments</h3>
 
 <pre>/**
 &nbsp;*&nbsp;Maximum&nbsp;number&nbsp;of&nbsp;things&nbsp;per&nbsp;pane.
@@ -100,8 +100,7 @@ function&nbsp;someMethod(obj)&nbsp;{
 project.MyClass.prototype.someProperty&nbsp;=&nbsp;4;
 </pre>
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-tagreference">JSDoc Tag Reference</h3>
-
+<h3 id="frontend-dev-guide-javascript-js-coding-docblock-tagreference">JSDoc tag reference</h3>
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-const">@const</h4>
 
@@ -119,7 +118,6 @@ Marks a variable read-only and suitable for inlining. Generates warnings if it i
 &nbsp;*/
 mynamespace.DEFAULT_TIMEZONE&nbsp;=&nbsp;'GMT';
 </pre>
-
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-extends">@extends</h4>
 
@@ -286,14 +284,14 @@ namespace.readNumber&nbsp;=&nbsp;function(x)&nbsp;{
 </pre>
 
 
-<h3 id="frontend-dev-guide-javascript-js-coding-docblock-jstypes">JavaScript Types</h3>
+<h3 id="frontend-dev-guide-javascript-js-coding-docblock-jstypes">JavaScript types</h3>
 
 
 <table>
 	<tbody>
 	<tr>
-		<th>Type Example</th>
-		<th>Value Example</th>
+		<th>Type example</th>
+		<th>Value example</th>
 		<th>Description</th>
 	</tr>
 	<tr>
@@ -373,12 +371,12 @@ new Date()</pre></td>
 	<tr>
 		<td>Array.&lt;number></td>
 		<td><pre>[11, 22, 33]</pre></td>
-		<td>An Array of numbers</td>
+		<td>An array of numbers</td>
 	</tr>
 	<tr>
 		<td>Array.<Array.&lt;string>></td>
 		<td><pre>[['one', 'two', 'three'], ['foo', 'bar']]</pre></td>
-		<td>Array of Arrays of strings</td>
+		<td>Array of arrays of strings</td>
 	</tr>
 	<tr>
 		<td>Object</td>
@@ -389,13 +387,13 @@ new Date()</pre></td>
 	<tr>
 		<td>Object.&lt;string></td>
 		<td><pre>{'foo': 'bar'}</pre></td>
-		<td>An Object in which the values are strings.</td>
+		<td>An object. In the object, the values are strings.</td>
 	</tr>
 	<tr>
 		<td>Object.<number, string></td>
 		<td><pre>var obj = {};
 obj[1] = 'bar';</pre></td>
-		<td>An Object in which the keys are numbers and the values are strings.
+		<td>An object. In the object, the keys are numbers and the values are strings.
 Note that in JavaScript, the keys are always implicitly converted to strings, so obj['1'] == obj[1].
 So the key will always be a string in for...in loops. But the compiler will verify the type if the key when indexing into the object.</td>
 	</tr>
@@ -455,15 +453,15 @@ new&nbsp;project.MyClass()</pre></td>
   </tbody>
 </table>
 
-<h4 id="frontend-dev-guide-javascript-js-coding-docblock-typelang">JavaScript Type Language</h4>
+<h4 id="frontend-dev-guide-javascript-js-coding-docblock-typelang">JavaScript type language</h4>
 
 <table>
 	<tbody>
 	<tr>
-		<th>Operator Name</th>
+		<th>Operator name</th>
 		<th>Syntax</th>
 		<th>Description</th>
-		<th>Deprecated Syntaxes</th>
+		<th>Deprecated syntaxes</th>
 	</tr>
 	<tr>
 		<td>Type Name</td>
@@ -476,7 +474,7 @@ new&nbsp;project.MyClass()</pre></td>
 		<td><code>{Array.&nbsp;&lt;string&gt;}</code><br>
 		An array of strings.<br>
 		<code>{Object. <string, number>}</code><br>
-		An object in which the keys are strings and the values are numbers.</td>
+		An object. In the object, the keys are strings and the values are numbers.</td>
 		<td>Parametrizes a type, by applying a set of type arguments to that type. The idea is analogous to generics in Java.</td>
 		<td></td>
 	</tr>

@@ -56,172 +56,214 @@ features of the release.
 
     [6]: <{{ site.gdeurl }}config-guide/config/js-resources.html>
 
--   PHP and MySQL. Magento 2 supports PHP 5.5, with PHP 5.4 (actually 5.4.11 or
-    later) as the minimum requirement, and MySQL 5.6. See [System
-    requirements][7].
-
-    [7]: <{{ site.gdeurl }}install-gde/system-requirements.html>
-
 -   PSR Compliance. PSR compliance standardizes the use of PHP to allow
     different sets of code libraries to work together. See [PHP coding
-    standard][8].
+    standard][7].
 
-    [8]: <{{ site.gdeurl }}coding-standards/code-standard-php.html>
+    [7]: <{{ site.gdeurl }}coding-standards/code-standard-php.html>
 
 -   Modular architecture. Define your own set of modules. Cross-module
     dependencies are reduced, and interfaces among multiple extensions are
-    cleaner and more discrete. See [What is Magento?][9], [Magento as a modular
-    system][10], and [Service contracts][11].
+    cleaner and more discrete. See [What is Magento?][8], [Magento as a modular
+    system][9], and [Service contracts][10].
 
-    [9]: <{{ site.gdeurl }}architecture/arch_whatis.html>
+    [8]: <{{ site.gdeurl }}architecture/arch_whatis.html>
 
-    [10]: <{{ site.gdeurl }}architecture/arch_asmodsys.html>
+    [9]: <{{ site.gdeurl }}architecture/arch_asmodsys.html>
 
-    [11]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
+    [10]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
 
 -   Testing framework. Magento 2 includes a pre-packaged series of test scripts,
     including tests for integration, units, static environments, functional
-    areas, and performance criteria. See [Magento Test Framework][12], and the
-    [JavaScript unit tests][13].
+    areas, and performance criteria. See [Magento Test Framework][11], and the
+    [JavaScript unit tests][12].
 
-    [12]: <https://github.com/magento/mtf/blob/master/docs/install-config.md>
+    [11]: <https://github.com/magento/mtf/blob/master/docs/install-config.md>
 
-    [13]: <{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html>
+    [12]: <{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html>
 
 See also
 --------
 
--   [XML validation][14].
+-   [XML validation][13].
 
-    [14]: <{{ site.gdeurl }}architecture/view/xml-schema-layout.html>
+    [13]: <{{ site.gdeurl }}architecture/view/xml-schema-layout.html>
 
--   [Service contracts][15].
+-   [Service contracts][14].
 
-    [15]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
+    [14]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
 
--   [Translation][16].
+-   [Translation][15].
 
-    [16]: <{{ site.gdeurl }}architecture/behavior/xlate.html>
+    [15]: <{{ site.gdeurl }}architecture/behavior/xlate.html>
 
--   [Services as web APIs.][17]
+-   [Services as web APIs.][16]
 
-    [17]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
+    [16]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
 	
 <h2 id="known-devbeta">Known issues</h2>
 We have identified the following known issues in this release:
 
-*   Magento sample data is available only if you edit `composer.json` as follows:
+*   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
+*   <a href="#known-devbeta-xdebug">Known issue with xdebug</a>
+*   <a href="#known-devbeta-storefront-err">Access errors</a>
+*   <a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a>
+*   <a href="#known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</a>
+*   <a href="#known-devbeta-wiz-fail-session-save">session.save_path issue</a>
 
-    1.  Log in to your Magento server as the web server user or as a user with `root` privileges.
-    2.  Change to your Magento installation directory.
-    3.  Open `composer.json` in a text editor.
-    4.  Under `"repositories":`, add the following:
+<h3 id="known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</h3>
 
-        <pre>{
-            "type": "composer",
-            "url": "http://packages.magento.com/"
-        }
-    ],
-     "require": {
-         "php": "~5.4.11|~5.5.0",
-           "magento/sample-data": "0.42.0-beta1",        
-           "magento/sample-data-media": "0.42.0-beta1”</pre>
-    5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
+To edit `composer.json`:
+
+1.  Log in to your Magento server as the web server user or as a user with `root` privileges.
+2.  Change to your Magento installation directory.
+3.  Open `composer.json` in a text editor.
+4.  Search for a `"repositories":` section.
+
+    If you have one, add the following block (without `"repositories":`) to it.
+    
+    If you have no `"repositories":` section, add one as follows before the `"require":` section:
+
+        "repositories": [
+            {
+                "type": "composer",
+                "url": "http://packages.magento.com/"
+            }
+        ],
+
+5.  Add the following to the `"require":` section:
+
+        "magento/sample-data": "0.42.0-beta1",        
+        "magento/sample-data-media": "0.42.0-beta1
 
     <div class="bs-callout bs-callout-info" id="info">
-        <p>An exception might display after you run `composer install` to install the Magento software. This error is harmless. The error follows:</p>
-        <code>[ErrorException]</code><br>                                                                                                
-  <code>Target ./dev/tools/Magento/Tools/SampleData/InstallerApp.php already exists.</code></div>
+        <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
 
+5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
 
-*	<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31834">MAGETWO-31834</a> and <a href="https://jira.corp.x.com/browse/MAGETWO-31180">MAGETWO-31180</a> --> Errors might display when you attempt to access the Magento storefront or Magento Admin after installation:
+<h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
+If you use the optional PHP extension `xdebug`, you can encounter exceptions:
 
-	Storefront:
-	
-	<pre>"Can't create directory /var/www/html/m/var/generation/Magento/Framework/App/PageCache/Identifier/."
-#0 /var/www/html/m/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(34): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
-#1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
-#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
-... more </pre>
+*   During installation 
+*   Accessing either the Magento Admin or storefront after a successful installation 
 
-    Magento Admin:
+Sample exception:
 
-    <pre>"Class Magento\Logging\Model\FlagFactory does not exist"
-"#0 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(46): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Logging...')
-#1 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php(170): Magento\Framework\ObjectManager\Definition\Runtime->getParameters('Magento\\Logging...')
-#2 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Factory->create('Magento\\Logging...')
-... more</pre>
+    Fatal error: Maximum function nesting level of '100' reached, aborting!
 
-    In either case, try accessing the storefront or Magento Admin again.
+To resolve this issue, you can:
 
-*   <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31949">MAGETWO-31949</a> --> In some cases, the Setup Wizard appears to have failed when it has not failed. 
+*   Disable the `xdebug` extension.
+*   Set the value of `xdebug.max_nesting_level` to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.
 
-    Symptoms:
+After you change the configuration of or disable `xdebug`, restart Apache:
 
-    *   The following message displays at the top of your browser on the last page: `Installation is incomplete. Check the console log for errors before trying again.`
-    *   If you open the console, a success message displays at the bottom with no errors or exceptions.
+*   CentOS: `sudo service httpd restart`
+*   Ubuntu: `sudo service apache2 restart`
 
-    In this case, the installation *was* successful. You can access the storefront and Magento Admin as discussed in <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+<h3 id="known-devbeta-storefront-err">Access errors</h3>
 
-    To access your Magento-created encryption key:
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31834">MAGETWO-31834</a> and <a href="https://jira.corp.x.com/browse/MAGETWO-31180">MAGETWO-31180</a> --> Errors might display when you attempt to access the Magento storefront or Magento Admin after installation:
 
-    1.  Log in to your Magento server as a user with `root` privileges.
-    2.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
-    3.  Locate the value of `'key' =>`.
+Storefront:
+
+    "Can't create directory /var/www/html/m/var/generation/Magento/Framework/App/PageCache/Identifier/."
+    #0 /var/www/html/m/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(34): Magento\Framework\Code\Generator->generateClass('Magento\\Framewo...')
+    #1 [internal function]: Magento\Framework\Code\Generator\Autoloader->load('Magento\\Framewo...')
+    #2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+    ... more
+
+Magento Admin:
+
+    "Class Magento\Logging\Model\FlagFactory does not exist"
+    "#0 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(46): Magento\Framework\Code\Reader\ClassReader->getConstructor('Magento\\Logging...')
+    #1 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php(170): Magento\Framework\ObjectManager\Definition\Runtime->getParameters('Magento\\Logging...')
+    #2 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Factory->create('Magento\\Logging...')
+    ... more
+
+In either case, try accessing the storefront or Magento Admin again.
+
+<h3 id="known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</h3>
+
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31949">MAGETWO-31949</a> --> In some cases, the Setup Wizard appears to have failed when it has not failed. 
+
+Symptoms:
+
+*   The following message displays at the top of your browser on the last page: `Installation is incomplete. Check the console log for errors before trying again.`
+*   If you open the console, a success message displays at the bottom with no errors or exceptions.
+
+In this case, the installation *was* successful. You can access the storefront and Magento Admin as discussed in <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+
+To access your Magento-created encryption key:
+
+1.  Log in to your Magento server as a user with `root` privileges.
+2.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+3.  Locate the value of `'key' =>`.
         
-        This is your encryption key.
+This is your encryption key.
 
-*   <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31850">MAGETWO-31850</a> --> In some cases (such as running the Setup Wizard in two browser windows or tab pages at the same time), the installation fails because it cannot create `install.log`. 
+<h3 id="known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</h3>
 
-    To work around this issue, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a>
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31850">MAGETWO-31850</a> -->In some cases (such as running the Setup Wizard in two browser windows or tab pages at the same time), the installation fails because it cannot create `install.log`. 
 
-*   <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31851">MAGETWO-31851</a> and <a href="https://github.com/magento/magento2/issues/792">GitHub issue 792</a> --> There is a known issue that prevents the usage of <a href="http://php.net/manual/en/configuration.changes.php" target="_blank">php_admin_value</a> for some session configuration settings. Specifically, we are aware that the <a href="http://php.net/manual/en/session.configuration.php#ini.session.save-path" target="_blank">session.save_path</a> cannot be set with `php_admin_value` at this time.
+To work around this issue, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a>
 
-    Workarounds:
+<h3 id="known-devbeta-wiz-fail-session-save">session.save_path issue</h3>
 
-     *   If you're using a hosting provider that does not allow you to change the value of `php_admin_value`, there is no workaround currently. However, the only known instance that we are aware of at this time is ISPManager/ISPConfig which appears to have a <a href="http://www.howtoforge.com/forums/showthread.php?t=61127" target="_blank">method of disabling</a> the `php_admin_value` setting.
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31851">MAGETWO-31851</a> and <a href="https://github.com/magento/magento2/issues/792">GitHub issue 792</a> -->There is a known issue that prevents the usage of <a href="http://php.net/manual/en/configuration.changes.php" target="_blank">php_admin_value</a> for some session configuration settings. Specifically, we are aware that the <a href="http://php.net/manual/en/session.configuration.php#ini.session.save-path" target="_blank">session.save_path</a> cannot be set with `php_admin_value` at this time.
+
+Workarounds:
+
+*   If you're using a hosting provider that does not allow you to change the value of `php_admin_value`, there is no workaround currently. However, the only known instance that we are aware of at this time is ISPManager/ISPConfig which appears to have a <a href="http://www.howtoforge.com/forums/showthread.php?t=61127" target="_blank">method of disabling</a> the `php_admin_value` setting.
 
 
-    *   If you're running the Magento software on your own server and you can log in as a user with `root` privileges, you can replace the `session.save_path` setting with a dependency injection call as follows:
+*   If you're running the Magento software on your own server and you can log in as a user with `root` privileges, you can replace the `session.save_path` setting with a dependency injection call as follows:
 
-        1.  Log in to your Magento server as a user with `root` privileges.
-        2.  Open `php.ini` in a text editor.
-        3.  Search for `session.save_path`.
-        4.  Comment it out.
-        5.  Save your changes to `php.ini` and exit the text editor.
-        6.  Restart your web server.
-        7.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
-        8.  Add the following:
+1.  Log in to your Magento server as a user with `root` privileges.
+2.  Open `php.ini` in a text editor.
+3.  Search for `session.save_path`.
+4.  Comment it out.
+5.  Save your changes to `php.ini` and exit the text editor.
+6.  Restart your web server.
+7.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+8.  Add the following:
 
-            <pre>‘session’ => [
-‘save_path’ => ‘<your session save path>'
-]</pre>
-    1.  Save your changes and exit the text editor.
-    2.  The Magento system now uses dependency injection for session save settings.
+        ‘session’ => [
+            ‘save_path’ => ‘<your session save path>'
 
-    If you don't know where `php.ini` is located, use the following steps:
+1.  Save your changes and exit the text editor.
+2.  Restart Apache.
 
-    1.  If you haven't already done so, create <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
-    2.  Enter the following URL in your browser's address or location field:
+    Ubuntu: `sudo service apache2 restart`
+    CentOS: `sudo service httpd restart`
 
-        <code>http://&lt;your web server IP or host name>/&lt;path to docroot>/phpinfo.php</code>
+The Magento system now uses dependency injection for session save settings.
 
-    3.  Look for the location of `php.ini`.
+<h4>Finding php.ini</h4>
 
-        `php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
+If you don't know where `php.ini` is located, use the following steps:
 
-    4.  As a user with <code>root</code> privileges, open `php.ini` in a text editor.
-    5.  Locate the value of `open_basedir` and change it.
-    6.  Save your changes to `php.ini`.
-    7.  Restart the web server.
+1.  If you haven't already done so, create <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
+2.  Enter the following URL in your browser's address or location field:
+
+    <code>http://&lt;your web server IP or host name>/&lt;path to docroot>/phpinfo.php</code>
+
+3.  Look for the location of `php.ini`.
+
+    `php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
+
+4.  As a user with <code>root</code> privileges, open `php.ini` in a text editor.
+5.  Locate the value of `open_basedir` and change it.
+6.  Save your changes to `php.ini`.
+7.  Restart the web server.
 
 
 <h2 id="install">Installation</h2>
 
 Installation is simplified, and now uses Composer. See our friendly
-[Installation Guide][18].
+[Installation Guide][17].
 
-[18]: <{{ site.gdeurl }}install-gde/bk-install-guide.html>
+[17]: <{{ site.gdeurl }}install-gde/bk-install-guide.html>
 
 <h2 id="help">Help improve this documentation</h2>
 

@@ -1,5 +1,5 @@
-.DS_Store
 _site/
+
 =======
 # OS generated files #
 ######################
@@ -27,14 +27,8 @@ ignore
 /_config.olena.yml
 /_config.sasha.yml
 /_config.tana.yml
-/_config.gen.yml
 /_config.public.yml
+/*.yml
 /gen_public.bat
-/_config.internal.yml
-/gen_internal.bat
-_config.internalM18.yml
-jkM18.bat
-/Readme.md
-jk.bat
-gen.bat
-
+/jk.bat
+*.bat
