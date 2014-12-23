@@ -44,12 +44,6 @@ To install Composer:
 
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
 
-3.	Restart Apache:
-
-	Ubuntu: `service apache2 restart`
-
-	CentOS: `service httpd restart`
-
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
 
 To clone the Magento GitHub repository:
