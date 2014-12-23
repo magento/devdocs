@@ -247,7 +247,7 @@ Let's have a closer look at each particular sub-directory.
           /composer.json
         </code>
       </td>
-      <td colspan="1">optional</td>
+      <td colspan="1">required</td>
       <td colspan="1">
         <p>Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package<!--ADDLINK-->
         </p>

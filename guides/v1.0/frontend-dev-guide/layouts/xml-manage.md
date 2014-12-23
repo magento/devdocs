@@ -5,7 +5,7 @@ subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
-github_link: frontend-dev-guide/layouts/layout-xml.md
+github_link: frontend-dev-guide/layouts/xml-manage.md
 ---
 
 <h2>Introduction</h2>
