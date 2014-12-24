@@ -59,59 +59,53 @@
 
 	﻿<!--Sub Navigation-->
 <div id="subnav-wrap">
-<div id="subnav">
-<ul class="menu nav">
-               <!--
-<li class="first expanded">
-<a href="/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
-<!~~ <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
-</ul>
-</li>
--->
-                  <li class="first expanded">
-                    <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
-                     <ul class="menu nav">
-                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
-                        <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-                       <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
-                     </ul>
-                  </li>
-                   <li class="expanded">
-                     <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
-                     <ul class="menu nav">
-                        <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                     </ul>
-                  </li>
-                  <!--
-<li class="first expanded">
-<a href="article-side.html">System Integrator</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
-</ul>
-</li>
--->
-                  <li class="expanded">
-                    <a href="/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
-                     <ul class="menu nav">
-                     <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                        <!--
-<li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
-<li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
--->
-                        <!-- <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li> -->
-                     </ul>
-                  </li>
-
-               </ul>
-
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+        <!--
+ <li class="first expanded">
+            <a href="article-side.html">System Integrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+ -->
+         <li class="expanded">
+            <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+              <!--
+ <li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li>
+ -->
+            </ul>
+         </li>
+      </ul>
+   </div>
 </div>
-</div>
-
 	
 </header>	
 
@@ -175,15 +169,16 @@ subsequent chapters in this guide.</p>
 
 <h2>Set a parent theme</h2>
 
-<p>A parent theme is specified in the child theme configuration file<!--ADDLINK-->, under <code>&lt;parent&gt;&lt;/parent&gt;</code>.</p>
+<p>A parent theme is specified in the child theme <code>composer.json</code> file.</p>
 
 <p>Example:
-The Orange theme by OrangeCo inherits from the Magento Blank theme:</p>
+The Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in composer.json of the Orange theme as follows:</p>
 <pre>
 &lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;OrangeCo&nbsp;Orange&lt;/title&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;0.1.0-alpha100&lt;/version&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;&nbsp;
 &lt;/theme&gt;
@@ -195,8 +190,11 @@ The Orange theme by OrangeCo inherits from the Magento Blank theme:</p>
 
 <h2 id="theme-inherit-static">Override static assets</h2>
 
-<p>Static assets, or static view files, are styles, JavaScript, images, and fonts.<!--ADDLINK-->
-To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further. This also refers to the <code>.less</code> files, which technically are not static assets.</p>
+<p>Static assets, or static view files, are styles, JavaScript, images, and fonts.</p>
+
+<p><!--ADDLINK--></p>
+
+<p>To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further. This also refers to the <code>.less</code> files, which technically are not static assets.</p>
 
 <p>The particular directories, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.</p>
 
@@ -227,8 +225,10 @@ To customize static view files defined in the parent theme, module view, or libr
 <p>A company named OrangeCo created a theme named Orange. The theme files are located in <code>app/design/frontend/OrangeCo/orange</code>.
 Orange inherits from the Magento Blank theme.</p>
 
-<p>Let’s imagine OrangeCo needs to add some winter holidays decor. So it creates a new orange_winter theme, which inherits from Orange. The theme is located in <code>app/design/frontend/OrangeCo/orange_winter</code>
-orange_winter configuration file looks like following:</p>
+<p>Let’s imagine OrangeCo needs to add some winter holidays decor. So it creates a new orange_winter theme, which inherits from Orange. The theme is located in <code>app/design/frontend/OrangeCo/orange_winter</code>.</p>
+
+<!--
+orange_winter configuration file looks like following:
 <pre>
 &lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Orange&nbsp;Winter&lt;/title&gt;
@@ -240,6 +240,8 @@ orange_winter configuration file looks like following:</p>
 &lt;/theme&gt;
 </pre>
 
+-->
+
 <p>In the Orange theme there is a footer background image located at <code>app/design/frontend/OrangeCo/orange/web/images/background.jpg</code>.</p>
 
 <p><img src="/common/images/inh-background1.jpg" /></p>
@@ -250,7 +252,7 @@ orange_winter configuration file looks like following:</p>
 
 <p><img src="/common/images/inh-background2.jpg" /></p>
 
-<h2 id="theme-inherit-static">Override templates</h2>
+<h2 id="theme-inherit-templates">Override templates</h2>
 
 <p>The fallback scheme for templates is the following (module context is always known for them):</p>
 
@@ -319,7 +321,9 @@ To override the instructions from an ancestor theme layout file:</p>
   <li>Create a layout file with the same name in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/theme/&lt;Vendor&gt;/&lt;ancestor_theme&gt;</code> directory.</li>
 </ul>
 
-<p>To override module layout instructions (base layout): <!-- ADDLINK --></p>
+<p>To override module layout instructions (base layout):</p>
+
+<p><!-- ADDLINK --></p>
 
 <ul>
   <li>Create a layout file with the same name in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/base</code> directory.</li>
@@ -340,6 +344,14 @@ To override the instructions from an ancestor theme layout file:</p>
 		
 		
 		
+				
+				
+			
+			
+				
+				
+			
+			
 				
 				
 			

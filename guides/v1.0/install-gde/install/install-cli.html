@@ -59,59 +59,53 @@
 
 	﻿<!--Sub Navigation-->
 <div id="subnav-wrap">
-<div id="subnav">
-<ul class="menu nav">
-               <!--
-<li class="first expanded">
-<a href="/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
-<!~~ <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
-</ul>
-</li>
--->
-                  <li class="first expanded">
-                    <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
-                     <ul class="menu nav">
-                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
-                        <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-                       <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
-                     </ul>
-                  </li>
-                   <li class="expanded">
-                     <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
-                     <ul class="menu nav">
-                        <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                     </ul>
-                  </li>
-                  <!--
-<li class="first expanded">
-<a href="article-side.html">System Integrator</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
-</ul>
-</li>
--->
-                  <li class="expanded">
-                    <a href="/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
-                     <ul class="menu nav">
-                     <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                        <!--
-<li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
-<li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
--->
-                        <!-- <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li> -->
-                     </ul>
-                  </li>
-
-               </ul>
-
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+        <!--
+ <li class="first expanded">
+            <a href="article-side.html">System Integrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+ -->
+         <li class="expanded">
+            <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+              <!--
+ <li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li>
+ -->
+            </ul>
+         </li>
+      </ul>
+   </div>
 </div>
-</div>
-
 	
 </header>	
 
@@ -270,7 +264,7 @@
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <tt>http[s]://[host or ip]/[your Magento base dir]/</tt>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><tt>[your Magento base dir]</tt> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <tt>magento2</tt> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://127.0.0.1/[your Magento base dir]/</code>.</p>
+		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://localhost/[your Magento base dir]/</code>.</p>
 		</td>
 		<td>Yes</td>
 	</tr>
@@ -390,6 +384,12 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr>
 	<tr>
+		<td>use_sample_data</td>
+		<td><p><code>1</code> installs optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+		<p>Sample data installs only if you already enabled the package as discussed in <a href="/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
+		<td>No</td>
+	</tr>
+	<tr>
 		<td>cleanup_database</td>
 		<td>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</td>
 		<td>No</td>
@@ -424,6 +424,9 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
     <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
   </li>
   <li>
+    <p>Installs optional sample data</p>
+  </li>
+  <li>
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
@@ -442,7 +445,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
     --db_host=localhost --db_name=magento --db_user=magento --db_pass=magento
     --admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com
     --admin_username=admin --admin_password=iamtheadmin --language=en_US
-    --currency=USD --timezone=America/Chicago</pre>
+    --use_sample_data=1 --currency=USD --timezone=America/Chicago</pre>
   </li>
 </ul>
 
@@ -619,6 +622,10 @@ composer install</pre>
 						
 								
 							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
 						
 								
@@ -733,6 +740,14 @@ composer install</pre>
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

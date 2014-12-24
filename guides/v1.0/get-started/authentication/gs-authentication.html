@@ -59,59 +59,53 @@
 
 	﻿<!--Sub Navigation-->
 <div id="subnav-wrap">
-<div id="subnav">
-<ul class="menu nav">
-               <!--
-<li class="first expanded">
-<a href="/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
-<!~~ <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
-</ul>
-</li>
--->
-                  <li class="first expanded">
-                    <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
-                     <ul class="menu nav">
-                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
-                        <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-                       <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
-                     </ul>
-                  </li>
-                   <li class="expanded">
-                     <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
-                     <ul class="menu nav">
-                        <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                     </ul>
-                  </li>
-                  <!--
-<li class="first expanded">
-<a href="article-side.html">System Integrator</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
-</ul>
-</li>
--->
-                  <li class="expanded">
-                    <a href="/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
-                     <ul class="menu nav">
-                     <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                        <!--
-<li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
-<li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
--->
-                        <!-- <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li> -->
-                     </ul>
-                  </li>
-
-               </ul>
-
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+        <!--
+ <li class="first expanded">
+            <a href="article-side.html">System Integrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+ -->
+         <li class="expanded">
+            <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+              <!--
+ <li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li>
+ -->
+            </ul>
+         </li>
+      </ul>
+   </div>
 </div>
-</div>
-
 	
 </header>	
 
@@ -161,11 +155,19 @@
 		<div class="content-wrap">
 		
 		<h2 id="overview-authenticate">Authentication overview</h2>
-<p>The Magento web API framework enables you to make web API calls to access resources. Before you can make web API calls, you must authenticate your identity. Authentication ensures that you have permission to access the requested resource.</p>
-<p>You can make web API calls through clients such as mobile applications, a JavaScript widget on the Magento frontend or backend, or third-party applications. Each type of client has a preferred authentication method.</p>
+<p>Before you can make web API calls, you must authenticate your identity. Authentication ensures that you have permission to access a requested resource.</p>
+<p>You use a client, such as a mobile application or an external batch job, to access Magento services through web APIs. Each type of client has a preferred authentication method.</p>
 <p>Developers define web API resources and their permissions in a <code>webapi.xml</code> configuration file. The resources that you can access depend on your user type and the configured permission of the resource:</p>
 <ul><li>Customers can access resources with <code>anonymous</code> or <code>self</code> permission.</li>
-<li>Admins can access resources for which they are authorized.</li>
+<li><p>Admins can access resources for which they are authorized. For example, if the admin is authorized for the <code>Magento_Customer::group</code> resource, he or she can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
+<p>The <code>acl.xml</code> file for the module defines the access control list (ACL) for resources.</p><pre>
+&lt;route url="/V1/customerGroups/:id" method="GET"&gt;
+    &lt;service class="Magento\Customer\Api\GroupRepositoryInterface" method="get"/&gt;
+    &lt;resources&gt;
+        &lt;resource ref="Magento_Customer::group"/&gt;
+    &lt;/resources&gt;
+&lt;/route&gt;</pre>
+</li>
 <li>A guest user, who is any user that the Magento web API framework cannot authenticate through existing authentication mechanisms, can access resources with <code>anonymous</code> permission.</li>
 </ul>
 <p>For details, see <a href="/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>.</p>
@@ -256,6 +258,14 @@
 		
 		
 		
+				
+				
+			
+			
+				
+				
+			
+			
 				
 				
 			

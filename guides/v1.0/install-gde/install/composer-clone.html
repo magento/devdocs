@@ -59,59 +59,53 @@
 
 	﻿<!--Sub Navigation-->
 <div id="subnav-wrap">
-<div id="subnav">
-<ul class="menu nav">
-               <!--
-<li class="first expanded">
-<a href="/guides/v1.0/release-notes/bk-release-notes.html">Get Started</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
-<!~~ <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li> ~~>
-</ul>
-</li>
--->
-                  <li class="first expanded">
-                    <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
-                     <ul class="menu nav">
-                      <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
-                        <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-                       <!-- <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li> -->
-                     </ul>
-                  </li>
-                   <li class="expanded">
-                     <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
-                     <ul class="menu nav">
-                        <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                     </ul>
-                  </li>
-                  <!--
-<li class="first expanded">
-<a href="article-side.html">System Integrator</a>
-<ul class="menu nav">
-<li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
-</ul>
-</li>
--->
-                  <li class="expanded">
-                    <a href="/guides/v1.0/architecture/arch_whatis.html">Extension Developer</a>
-                     <ul class="menu nav">
-                     <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Developer Guide</a></li>
-                        <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-                        <!--
-<li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
-<li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
--->
-                        <!-- <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li> -->
-                     </ul>
-                  </li>
-
-               </ul>
-
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+        <!--
+ <li class="first expanded">
+            <a href="article-side.html">System Integrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+            </ul>
+         </li>
+ -->
+         <li class="expanded">
+            <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+              <!--
+ <li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
+               <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li>
+ -->
+            </ul>
+         </li>
+      </ul>
+   </div>
 </div>
-</div>
-
 	
 </header>	
 
@@ -188,6 +182,19 @@
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
+<p>First, check  if Composer is already installed: </p>
+
+<p>In a command prompt, enter any of the following commands:</p>
+
+<ul>
+  <li><code>composer --help</code></li>
+  <li><code>composer list --help</code></li>
+</ul>
+
+<p>If command help displays, Composer is already installed; in thast case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.</p>
+
+<p>If an error displays, use the following steps to install Composer.</p>
+
 <p>To install Composer:</p>
 
 <ol>
@@ -201,13 +208,6 @@
 mv composer.phar /usr/local/bin/composer</pre>
 
     <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
-  </li>
-  <li>
-    <p>Restart Apache:</p>
-
-    <p>Ubuntu: <code>service apache2 restart</code></p>
-
-    <p>CentOS: <code>service httpd restart</code></p>
   </li>
 </ol>
 
@@ -451,6 +451,10 @@ find . -type f -exec chmod 600 {} \;</pre>
 						
 								
 							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
 						
 								
@@ -565,6 +569,14 @@ find . -type f -exec chmod 600 {} \;</pre>
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
