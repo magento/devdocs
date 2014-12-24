@@ -32,17 +32,6 @@ app/design/frontend/
 
 The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.
 
-<h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
-
-After you create a directory for your theme, you must create `theme.xml` containing the theme declaration and name, version, and parent theme name (if your theme inherits from another theme).
-
-1. Add or copy from an existing `theme.xml` to your theme directory `app/design/frontend/<Vendor>/<theme>`
-
-2. Configure it using the following example:
-<script src="https://gist.github.com/xcomSteveJohnson/52ba4e2571c9e1f5482b.js"></script>
-
-To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
-
 <img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
 
 
@@ -53,9 +42,59 @@ Magento default themes are distributed as <a href="https://getcomposer.org/" tar
 
 To distribute your theme, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
+`composer.json` provides theme dependency information, including the specification of a parent theme (if your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from another theme).
+
+Example of a theme `composer.json`:
+<pre>
+{
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;magento/theme-frontend-luma&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;N/A&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;require&quot;:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;php&quot;:&nbsp;&quot;~5.4.11|~5.5.0&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/theme-frontend-blank&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/framework&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/magento-composer-installer&quot;:&nbsp;&quot;*&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;type&quot;:&nbsp;&quot;magento2-theme&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;version&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;license&quot;:&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;OSL-3.0&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;AFL-3.0&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;],
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;extra&quot;:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;map&quot;:&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;*&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Magento/luma&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;}
+}
+</pre>
+
+
+<!-- If your theme supports Composer, the end users can install or uninstall it on their Magento systems. -->
+
 <!--ADDLINK You can find details about the Composer integration in the Magento system in Composer Integration. -->
 
-If your theme supports Composer, the end users can install or uninstall it on their Magento systems.
+<h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
+
+After you create a directory for your theme, you must create `theme.xml` containing the theme declaration and name, version, and parent theme name .
+
+1. Add or copy from an existing `theme.xml` to your theme directory `app/design/frontend/<Vendor>/<theme>`
+
+2. Configure it using the following example:
+<pre>
+&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;New&nbsp;Theme&lt;/title&gt;&nbsp;&nbsp;&lt;!--&nbsp;your&nbsp;theme's&nbsp;name&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;&nbsp;&nbsp;&lt;!--&nbsp;the&nbsp;path&nbsp;to&nbsp;your&nbsp;theme's&nbsp;preview&nbsp;image&nbsp;--&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;
+&lt;/theme&gt;
+</pre>
+
+To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
+
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
