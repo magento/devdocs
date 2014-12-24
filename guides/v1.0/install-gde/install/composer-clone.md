@@ -33,7 +33,7 @@ We'll have more information soon on how developers can use Composer to package e
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
-First, check  if Composer is already installed:
+First, check  if Composer is already installed: 
 
 In a command prompt, enter any of the following commands:
 
