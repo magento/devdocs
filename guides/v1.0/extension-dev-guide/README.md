@@ -5,7 +5,7 @@ This outline describes the new Magento 2 API Guide.
 
 The goals of this guide are to:
 
-* Introduce developers to API concepts and common tasks.
+* Introduce developers to Programming concepts and common tasks.
 * Provide guidance for developers who want to extend the Magento APIs.
 * Discuss ways of extending with the Magento APIs
 
