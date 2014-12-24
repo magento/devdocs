@@ -32,8 +32,6 @@ app/design/frontend/
 
 The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.
 
-<img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
-
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package</h2>
 
@@ -94,6 +92,8 @@ After you create a directory for your theme, you must create `theme.xml` contain
 </pre>
 
 To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
+
+<img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
 
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
