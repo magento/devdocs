@@ -35,7 +35,14 @@ We'll have more information soon on how developers can use Composer to package e
 
 First, check  if Composer is already installed:
 
-Open up a command prompt. To get help from the command-line, simply call `composer` or `composer list` to see the complete list of commands, then --help combined with any of those can give you more information. If you see a statement like `command not found` then you need to install composer.
+In a command prompt, enter any of the following commands:
+
+*	`composer --help`
+*	`composer list --help`
+
+If command help displays, Composer is already installed; in thast case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.
+
+If an error displays, use the following steps to install Composer.
 
 To install Composer:
 
