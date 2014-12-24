@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default  
 group: fedg
 subgroup: A_Themes
 title: Locate templates, layouts, and styles

@@ -1,5 +1,5 @@
 ---
-layout: default 
+layout: default  
 group: fedg
 subgroup: A_Themes
 title: Create a theme
