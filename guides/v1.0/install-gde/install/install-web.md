@@ -89,7 +89,7 @@ To install the Magento software using the Setup Wizard:
 		</tr>
 	<tr>
 		<td>Database Server Host</td>
-		<td>If the web server and database server are located on the same host, enter <tt>127.0.0.1</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
+		<td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
 	</tr>
 	<tr>
 		<td>Database Server Username</td>

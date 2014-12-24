@@ -104,7 +104,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <tt>http[s]://[host or ip]/[your Magento base dir]/</tt>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><tt>[your Magento base dir]</tt> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <tt>magento2</tt> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://127.0.0.1/[your Magento base dir]/</code>.</p>
+		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://localhost/[your Magento base dir]/</code>.</p>
 		</td>
 		<td>Yes</td>
 	</tr>
@@ -118,7 +118,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>db_host</td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>127.0.0.1</code> if your database serve is on the same host as your web server.</li>
+		<li><code>localhost</code> if your database serve is on the same host as your web server.</li>
 		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
@@ -274,7 +274,7 @@ The following example installs Magento with the following options:
 
 	<pre>php -f index.php install --base_url=http://localhost/magento2/
 		--backend_frontname=admin
-		--db_host=127.0.0.1 --db_name=magento --db_user=magento --db_pass=magento
+		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com
 		--admin_username=admin --admin_password=iamtheadmin --language=en_US
 		--use_sample_data=1 --currency=USD --timezone=America/Chicago</pre>
