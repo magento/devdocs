@@ -88,7 +88,7 @@ Let's have a closer look at each particular sub-directory.
     </tr>
     <tr>
       <td colspan="1">
-        <code>/&lt;Vendor&gt;/layout</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/layout</code>
       </td>
       <td colspan="1">
         optional
@@ -99,9 +99,7 @@ Let's have a closer look at each particular sub-directory.
     </tr>
     <tr>
       <td colspan="1">
-        <code>/&lt;Vendor&gt;
-        </code>
-        <code>/layout/override/base</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/base</code>
       </td>
       <td colspan="1">
         optional
@@ -112,9 +110,7 @@ Let's have a closer look at each particular sub-directory.
     </tr>
     <tr>
       <td colspan="1">
-        <code>/&ltVendor&gt;
-        </code>
-        <code>/layout/override/&lt;parent_theme&gt;</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/layout/override/&lt;parent_theme&gt;</code>
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">
@@ -123,7 +119,7 @@ Let's have a closer look at each particular sub-directory.
     </tr>
     <tr>
       <td colspan="1">
-        <code>/&lt;Vendor&gt;/templates</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/templates</code>
       </td>
       <td colspan="1">
         optional

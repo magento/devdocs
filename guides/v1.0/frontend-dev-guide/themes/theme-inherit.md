@@ -103,7 +103,7 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 <img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
 
 
-<h2 id="theme-inherit-static">Override templates</h2>
+<h2 id="theme-inherit-templates">Override templates</h2>
 
 The fallback scheme for templates is the following (module context is always known for them):
 
