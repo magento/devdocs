@@ -159,7 +159,7 @@ To install phpmyadmin on CentOS:
 
 3.	Replace the following IP address with your IP address
 
-	<pre>Require ip 127.0.0.1</pre>
+	<pre>Require ip localhost</pre>
 
 	For example,
 
@@ -167,7 +167,7 @@ To install phpmyadmin on CentOS:
 
 4.	Replace the following IP with your IP address:
 
-	<pre>Allow from 127.0.0.1</pre>
+	<pre>Allow from localhost</pre>
 
 	For example,
 
