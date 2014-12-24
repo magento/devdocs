@@ -35,9 +35,9 @@ github_link: config-guide/config/config-files.md
 <p>Predefined configuration files include:</p>
 <dl>
    <dt>
-      <code>local.xml</code></dt><dd><p>Created during the installation of Magento and loaded on every run of your Magento instance.</p>
+      <code>config.php</code></dt><dd><p>Created during the installation of Magento and loaded on every run of your Magento instance.</p>
 <p>This file controls parameters that are specific to each Magento installation, such as connection to database, cryptographic key, database table prefix, session storage configuration.</p>
-      <p>These parameters are gathered in a wizard during installation and written to a single <code>local.xml</code>, so your site administrator can configure these values in a single location.</p></dd>
+      <p>These parameters are gathered in a wizard during installation and written to a single <code>config.php</code>, so your site administrator can configure these values in a single location.</p></dd>
    <dt><code>config.xml</code></dt><dd><p>Contains the configurations specified in the <b>Stores > Configuration</b> menu in the <b>Admin</b> panel for the default, website, and store scopes of your Magento instance.</p>
       <p>This menu is itself configured by the <code>system.xml</code> file, which declares the configuration keys for application configuration and defines how they are displayed the in <b>Stores > Configuration</b>.</p>
    </dd>
@@ -45,12 +45,11 @@ github_link: config-guide/config/config-files.md
   <dt><code>events.xml</code><dd><p>Lists observers and the events to which they are subscribed.</p>
    </dd>
    <dt><code>routes.xml</code><dd><p>Lists the routes and routers.</p></dd></dl>
-<p>This list is not comprehensive. You can find all the changed configuration files in Configuration Changes from Magento 1.x to 2.x.</p>
 <h3>Load order for configuration files</h3>
 <p>The following groupings determine the load order of configuration files:</p>
 <ul>
    <li>
-      <p>The primary configuration files, which give the most basic types of configuration such as the database connection and the cache, are loaded on bootstrap. These include only configuration required for the application to start (such as app/etc/di.xml) and installation-specific configuration (such as app/etc/local.xml).</p>
+      <p>The primary configuration files, which give the most basic types of configuration such as the database connection and the cache, are loaded on bootstrap. These include only configuration required for the application to start (such as <code>app/etc/di.xml</code>) and installation-specific configuration (such as <code>app/etc/config.php</code>).</p>
    </li>
    <li>
       <p>Global configuration files are loaded next. They include configuration from all modules common for all application areas, such as settings for which modules are enabled and which routers are used.</p>
@@ -72,7 +71,7 @@ github_link: config-guide/config/config-files.md
 <p>After two XML documents are merged, the resulting document contains all nodes from the original files.</p>
 <p>The second XML file either supplements or overwrites nodes in the first XML file.</p>
 <p>In the following example, the node contents of the second file overwrite node contents of first file if both files contain nodes with same name and identifier.</p>
-<p>This example shows configuration files and their merge result:</p>
+
 <h2>The Magento\Framework\Config component</h2>
 <p><code>Magento\Framework\Config</code> ensures loading, merging, validation, and processing of the configurations. You can change the standard loading procedure by providing your own implementation of its interfaces. Magento\Framework\Config should be used to introduce a new configuration type.</p>
 <p><code>Magento\Framework\Config</code> provides the following interfaces for extension developers to manage configuration files:</p>
