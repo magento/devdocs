@@ -8,7 +8,7 @@ menu_order: 2
 github_link: get-started/authentication/gs-authentication-oauth.md
 ---
 
-<p>Third-party applications that integrate with Magento use OAuth-based authentication to access the Magento web APIs. This authentication method uses an OAuth 1.0a handshake process that exchanges a request token for an access token that enables access to Magneto APIs.</p>
+<p>Third-party applications that integrate with Magento use OAuth-based authentication to access the Magento web APIs. This authentication method uses an OAuth 1.0a handshake process that exchanges a request token for an access token that enables access to Magento APIs.</p>
 <p>Magento instances can use the OAuth-based authentication process for both SOAP and REST web API calls.</p>
 <p>For details about OAuth 1.0a, see <a href="https://tools.ietf.org/html/rfc5849">The OAuth 1.0 Protocol</a>.</p>
 <p>To configure your third-party application to use OAuth-based authentication to access the Magento web APIs, read these sections:</p>

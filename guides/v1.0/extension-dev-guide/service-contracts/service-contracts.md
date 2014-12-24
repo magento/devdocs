@@ -1,7 +1,7 @@
 ---
 layout: default
-group: dev-guide
-subgroup: Extensions
+group: extension-dev-guide
+subgroup: Concepts
 title: Service contracts
 menu_title: Service contracts
 menu_order: 2

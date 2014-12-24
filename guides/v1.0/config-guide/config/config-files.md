@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: config-guide
 subgroup: Configuration
 title: Configuration files
 menu_title: Configuration files
@@ -8,7 +8,6 @@ menu_order: 1
 github_link: config-guide/config/config-files.md
 ---
 
-<h2 id="overview">Overview</h2>
 <p>In the Magento system, configuration files are simple to use, easy to troubleshoot, and validated automatically.</p>
 <p>Configuration performance and memory usage are also improved.</p>
 <p>These topics summarize the major features and changes in Magento configuration.</p>
@@ -162,7 +161,6 @@ If any other extension declares a <code>search.xml</code> file, it is merged wit
 &lt;config
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd"></pre>
-
 
 <p>IDEs can validate your configuration files at both runtime and development time.</p>
 <script type="text/xml">

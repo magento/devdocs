@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: View library
 title: Page assets
 menu_title: Page assets

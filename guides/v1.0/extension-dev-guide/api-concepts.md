@@ -1,22 +1,22 @@
 ---
 layout: default
-group: dev-guide
-subgroup: Extensions
+group: extension-dev-guide
+subgroup: Concepts
 title: Programming concepts
 menu_title: Programming concepts
 menu_order: 1
 github_link: extension-dev-guide/api-concepts.md
 ---
 
-<h2 class="api2" id="public-interface">What is a public interface?</h2>
+<h2 id="public-interface">What is a public interface?</h2>
 <p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or pluginize. Magento guarantees that this code will not change in subsequent releases without a major version change.</p>
 <p>Public interfaces for a module reside in the <code>Api</code> folder for a module. For example, the public interfaces for the <code>Customer</code> module reside in the <code>app/code/Magento/Customer/Api</code> folder.
    Third-party developers should use only these interfaces.
    You can use other interfaces but Magento does not guarantee that other interface will not be modified or removed in subsequent releases.
 </p>
-<h2 class="api2" id="api-definition">What is an API?</h2>
+<h2 id="api-definition">What is an API?</h2>
 <p>An application programming interface (API) is a set of interfaces and their implementations that a module provides to other modules.</p>
-<h3 class="api2" id="api-types">API types</h3>
+<h3 id="api-types">API types</h3>
 <p>The following items are considered types of APIs:</p>
 <ul>
    <li>Directory structure</li>

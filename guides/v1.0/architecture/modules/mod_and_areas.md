@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Modules
 title: Modules and areas
 menu_title: Modules and areas
@@ -44,7 +44,7 @@ The resources visible and accessible in an area as well as area's behavior are d
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
 
