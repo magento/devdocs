@@ -5,7 +5,7 @@ subgroup: R_Installation
 title: Install Magento software using the command line
 menu_title: Install Magento software using the command line
 menu_node:
-menu_order: 7
+menu_order: 9
 github_link: install-gde/install/install-cli.md
 ---
 
@@ -104,7 +104,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <tt>http[s]://[host or ip]/[your Magento base dir]/</tt>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><tt>[your Magento base dir]</tt> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <tt>magento2</tt> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://127.0.0.1/[your Magento base dir]/</code>.</p>
+		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://localhost/[your Magento base dir]/</code>.</p>
 		</td>
 		<td>Yes</td>
 	</tr>
@@ -224,6 +224,12 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr>
 	<tr>
+		<td>use_sample_data</td>
+		<td><p><code>1</code> installs optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+		<p>Sample data installs only if you already enabled the package as discussed in <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
+		<td>No</td>
+	</tr>
+	<tr>
 		<td>cleanup_database</td>
 		<td>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</td>
 		<td>No</td>
@@ -254,6 +260,8 @@ The following example installs Magento with the following options:
 
 	The database name is `magento`, and the user name and password are both `magento`
 
+*	Installs optional sample data
+
 *	The Magento administrator has the following properties:
 
 	*	First and last name are is `Magento User`
@@ -269,7 +277,7 @@ The following example installs Magento with the following options:
 		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com
 		--admin_username=admin --admin_password=iamtheadmin --language=en_US
-		--currency=USD --timezone=America/Chicago</pre>
+		--use_sample_data=1 --currency=USD --timezone=America/Chicago</pre>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
