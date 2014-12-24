@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: arch-guide
 subgroup: Modules
 title: Module relationships
 menu_title: Module relationships
@@ -43,7 +43,7 @@ A single module can have the following types of relationships with another modul
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
-* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
 

@@ -10,11 +10,19 @@ github_link: get-started/authentication/gs-authentication.md
 ---
 
 <h2 id="overview-authenticate">Authentication overview</h2>
-<p>The Magento web API framework enables you to make web API calls to access resources. Before you can make web API calls, you must authenticate your identity. Authentication ensures that you have permission to access the requested resource.</p>
-<p>You can make web API calls through clients such as mobile applications, a JavaScript widget on the Magento frontend or backend, or third-party applications. Each type of client has a preferred authentication method.</p>
+<p>Before you can make web API calls, you must authenticate your identity. Authentication ensures that you have permission to access a requested resource.</p>
+<p>You use a client, such as a mobile application or an external batch job, to access Magento services through web APIs. Each type of client has a preferred authentication method.</p>
 <p>Developers define web API resources and their permissions in a <code>webapi.xml</code> configuration file. The resources that you can access depend on your user type and the configured permission of the resource:</p>
 <ul><li>Customers can access resources with <code>anonymous</code> or <code>self</code> permission.</li>
-<li>Admins can access resources for which they are authorized.</li>
+<li><p>Admins can access resources for which they are authorized. For example, if the admin is authorized for the <code>Magento_Customer::group</code> resource, he or she can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
+<p>The <code>acl.xml</code> file for the module defines the access control list (ACL) for resources.</p><pre>
+&lt;route url="/V1/customerGroups/:id" method="GET">
+    &lt;service class="Magento\Customer\Api\GroupRepositoryInterface" method="get"/>
+    &lt;resources>
+        &lt;resource ref="Magento_Customer::group"/>
+    &lt;/resources>
+&lt;/route></pre>
+</li>
 <li>A guest user, who is any user that the Magento web API framework cannot authenticate through existing authentication mechanisms, can access resources with <code>anonymous</code> permission.</li>
 </ul>
 <p>For details, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>.</p>

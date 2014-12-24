@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default  
 group: fedg
 subgroup: A_Themes
 title: Create a theme
@@ -16,9 +16,9 @@ This topic discusses how to create the files that make up a theme, how to add a 
 
 To create the directory for your theme:
 
-1.	Go to `<your Magento install dir>/app/fronted`.
+1.	Go to `<your Magento install dir>/app/frontend`.
 
-3.	Create a new directory named according to your vendor name: `/app/design/fronted/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
+3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`. For built-in themes this directory is `app/design/frontend/Magento`.
 
 4.	Under the vendor directory, create a directory named according to your theme.
 
@@ -31,8 +31,6 @@ app/design/frontend/
 </pre>
 
 The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.
-
-<img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
 
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package</h2>
@@ -94,6 +92,8 @@ After you create a directory for your theme, you must create `theme.xml` contain
 </pre>
 
 To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
+
+<img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
 
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>

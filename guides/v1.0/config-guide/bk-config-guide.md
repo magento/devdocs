@@ -1,6 +1,12 @@
 ---
 layout: default
+group: config-guide
+subgroup: A_Introduction
 title: Configuration and Integration Guide
+menu_title: Introduction
+menu_order: 1
+menu_node: parent
+github_link: config-guide/bk-config-guide.md
 ---
 
 <h2 id="configuration">Configuration</h2>
@@ -26,7 +32,9 @@ title: Configuration and Integration Guide
 <p>To learn about integration, read these topics:</p>
 <ul>
    <li>
-      <p><a href="{{ site.gdeurl }}config-guide/integration/integration-what-is.html">What is an integration?</a></p>
+
+      <p><a href="{{ site.gdeurl }}config-guide/integration/what-is-integration.html">What is an integration?</a></p>
+
    </li>
    <li>
       <p><a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">Integration authorization</a></p>
@@ -40,4 +48,6 @@ title: Configuration and Integration Guide
    <li>
       <p><a href="{{ site.gdeurl }}config-guide/integration/integration-maintain.html">Maintain an integration</a></p>
    </li>
+
 </ul>
+

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: default  
 group: fedg
 subgroup: A_Themes
 title: Theme inheritance
@@ -26,7 +26,7 @@ subsequent chapters in this guide.
 A parent theme is specified in the child theme `composer.json` file.
 
 Example:
-The Orange theme by OrangeCo inherits from the Magento Blank theme:
+The Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in composer.json of the Orange theme as follows:
 <pre>
 &lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;OrangeCo&nbsp;Orange&lt;/title&gt;
@@ -100,7 +100,7 @@ Once the Orange Winter theme is applied, the new holiday image overrides the one
 <img src="{{ site.baseurl }}common/images/inh-background2.jpg"/>
 
 
-<h2 id="theme-inherit-static">Override templates</h2>
+<h2 id="theme-inherit-templates">Override templates</h2>
 
 The fallback scheme for templates is the following (module context is always known for them):
 
