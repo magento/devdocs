@@ -32,6 +32,7 @@ The Orange theme by OrangeCo inherits from the Magento Blank theme:
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;OrangeCo&nbsp;Orange&lt;/title&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;0.1.0-alpha100&lt;/version&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;&nbsp;
 &lt;/theme&gt;
