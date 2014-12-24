@@ -1,5 +1,5 @@
 ---
-layout: default  
+layout: default
 group: fedg
 subgroup: A_Themes
 title: Theme inheritance
@@ -45,7 +45,10 @@ The Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 
 <h2 id="theme-inherit-static">Override static assets</h2>
 
-Static assets, or static view files, are styles, JavaScript, images, and fonts.<!--ADDLINK-->
+Static assets, or static view files, are styles, JavaScript, images, and fonts.
+
+<p><!--ADDLINK--></p>
+
 To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further. This also refers to the `.less` files, which technically are not static assets.
 
 The particular directories, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
@@ -164,7 +167,9 @@ To override the instructions from an ancestor theme layout file:
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
-To override module layout instructions (base layout): <!-- ADDLINK -->
+To override module layout instructions (base layout):
+
+<p><!-- ADDLINK --></p>
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 
