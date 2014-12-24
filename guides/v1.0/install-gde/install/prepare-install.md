@@ -5,7 +5,7 @@ subgroup: R_Installation
 title: Update installation dependencies
 menu_title: Update installation dependencies 
 menu_node:
-menu_order: 4
+menu_order: 6
 github_link: install-gde/install/prepare-install.md
 ---
 
@@ -83,5 +83,6 @@ After you completed the tasks discussed in the preceding section, update depende
 
 #### Next step
 
+*	<a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>

@@ -69,7 +69,7 @@ Conventionally layout declaration file can be located in one of the following lo
 
 
 <ul>
-<li>Module layout declations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layouts.xml</code></li>
+<li>Module layout declarations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layouts.xml</code></li>
 <li>Theme layout declaration: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
 
 </ul>
@@ -80,7 +80,7 @@ Conventionally layout declaration file can be located in one of the following lo
 <ul>
  <li><code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the `2columns-left.xml` page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code></li>
 
-<li><code>&lt;label&nbsp;tranlsate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code></li>
+<li><code>&lt;label&nbsp;translate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code></li>
 </ul>
 
 Sample page layout declaration file:
