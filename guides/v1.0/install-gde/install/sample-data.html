@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.4 or 5.5&mdash;Ubuntu</title>
+	<title>Enable optional Magento sample data</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/prereq/php-ubuntu.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/install/sample-data.html">
 
 </head>	
 <body>
@@ -149,9 +149,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP 5.4 or 5.5&mdash;Ubuntu</h1>
+		<h1 class="page-heading">Enable optional Magento sample data</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/prereq/php-ubuntu.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/sample-data.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -160,192 +160,71 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="instgde-php-prereq-contents">Contents</h4>
+		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#php-support">PHP versions supported</a></li>
-  <li><a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</a></li>
-  <li><a href="#instgde-prereq-php54-install-ubuntu">PHP 5.4 on Ubuntu</a></li>
-  <li><a href="#instgde-prereq-php-upgrade-ubuntu">Upgrade PHP on Ubuntu</a></li>
-  <li><a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a></li>
-  <li><a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a></li>
+  <li><a href="#instgde-install-sample-intro">Introduction to Magento sample data</a></li>
+  <li><a href="#instgde-install-sample-enabling">Enable the use of sample data</a></li>
+  <li><a href="#instgde-install-sample-after">Enable sample data after installing the Magento software</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="/guides/v1.0/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
-</div>
+<h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
+<p>This section discusses how to enable you to install the optional Magento sample data. If you don’t wish to use sample data, skip this topic and continue your installation. However, you can optionally install the sample data at a later time if you wish.</p>
 
-<h2 id="php-support">PHP versions supported</h2>
-<p>Magento requires:</p>
+<p>Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+
+<p>To enable sample data, you must edit <code>composer.json</code> in the Magento root installation directory to provide the location of the sample data package.</p>
+
+<h2 id="instgde-install-sample-enabling">Enable the use of sample data</h2>
+
+<p>To edit <code>composer.json</code>:</p>
+
+<ol>
+  <li>Log in to your Magento server as the web server user or as a user with <code>root</code> privileges.</li>
+  <li>Change to your Magento installation directory.</li>
+  <li>Open <code>composer.json</code> in a text editor.</li>
+  <li>
+    <p>Search for a <code>"repositories":</code> section.</p>
+
+    <p>If you have one, add the following block (without <code>"repositories":</code>) to it.</p>
+
+    <p>If you have no <code>"repositories":</code> section, add one as follows before the <code>"require":</code> section:</p>
+
+    <pre><code>"repositories": [
+    {
+        "type": "composer",
+        "url": "http://packages.magento.com/"
+    }
+],
+</code></pre>
+  </li>
+  <li>
+    <p>Add the following to the <code>"require":</code> section:</p>
+
+    <pre><code>"magento/sample-data": "0.42.0-beta1",        
+"magento/sample-data-media": "0.42.0-beta1
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. 
+
+</p></div>
+  </li>
+</ol>
+<h2 id="instgde-install-sample-after">Enable sample data after installing the Magento software</h2>
+<p>If you’ve already installed the Magento software, you can still use sample data as follows:</p>
+
+<ol>
+  <li>Update <code>composer.json</code> as discussed in <a href="#instgde-install-sample-enabling">Enable the use of sample data</a>.</li>
+  <li>As the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>, run <code>composer update</code> from your Magento installation directory (for example, <code>/var/www/magento2</code>).</li>
+  <li>Install the Magento software again.</li>
+</ol>
+
+<h4 id="next-step">Next step</h4>
 
 <ul>
-  <li>PHP 5.4.x where x = 11 or later</li>
-  <li>PHP 5.5.x </li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento does <em>not</em> support PHP 5.6.</p></span>
-</div>
-
-<h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</h2>
-
-<p>See one of the following sections for more information:</p>
-
-<ul>
-  <li><a href="#instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu14</a></li>
-  <li><a href="#instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu12</a></li>
-</ul>
-
-<h3 id="instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14</h3>
-<p>To install PHP 5.5 on Ubuntu 14:</p>
-
-<ol>
-  <li>
-    <p>Enter the following command:</p>
-
-    <p><code>apt-get -y install php5</code></p>
-  </li>
-  <li>
-    <p>Verify the PHP version by entering <code>php -v</code>. Messages similar to the following should display:</p>
-
-    <pre>PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies</pre>
-  </li>
-</ol>
-
-<h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu12</h3>
-<ol>
-  <li>
-    <p>Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:</p>
-
-    <pre>add-apt-repository ppa:ondrej/php5
-apt-get update
-sudo apt-get install php5</pre>
-  </li>
-  <li>
-    <p>Verify the PHP version by entering <code>php -v</code>. Messages similar to the following should display:</p>
-
-    <pre>PHP 5.5.18-1+deb.sury.org~precise+1 (cli) (built: Oct 17 2014 15:11:34)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies</pre>
-  </li>
-</ol>
-
-<h2 id="instgde-prereq-php54-install-ubuntu">PHP 5.4 on Ubuntu</h2>
-
-<p>The Ubuntu 14 repository has PHP 5.4. This section discusses how to install PHP 5.4 on Ubuntu 12.</p>
-
-<p>To install PHP 5.4 on Ubuntu 12:</p>
-
-<ol>
-  <li>
-    <p>Use the following instructions from <a href="http://askubuntu.com/questions/109404/how-do-i-install-latest-php-in-supported-ubuntu-versions-like-5-4-x-in-ubuntu-1" target="_blank">askubuntu</a>:</p>
-
-    <pre>add-apt-repository ppa:ondrej/php5-oldstable
-apt-get update
-apt-get upgrade
-apt-get install php5</pre>
-  </li>
-  <li>
-    <p>Verify the PHP version by entering <code>php -v</code>. Messages similar to the following should display:</p>
-
-    <pre>PHP 5.4.33-2+deb.sury.org~precise+1 (cli) (built: Sep 25 2014 09:06:25)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
-  </li>
-  <li>
-    <p>Restart Apache: <code>service apache2 restart</code></p>
-  </li>
-</ol>
-
-<h2 id="instgde-prereq-php-upgrade-ubuntu">Upgrade PHP on Ubuntu</h2>
-
-<p>To upgrade to PHP 5.4 on Ubuntu:</p>
-
-<ol>
-  <li>Use the instructions on <a href="http://phpave.com/upgrade-php-5-3-php-5-5-ubuntu-12-04-lts/" target="_blank">phpave</a>.</li>
-  <li>
-    <p>After upgrading, verify the PHP version by entering <code>php -v</code>. Messages similar to the following should display:</p>
-
-    <pre>PHP 5.4.33-2+deb.sury.org~precise+1 (cli) (built: Sep 25 2014 09:06:25)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
-  </li>
-  <li>Restart Apache: <code>service apache2 restart</code></li>
-</ol>
-
-<h2 id="instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</h2>
-
-<p>To install the PHP extensions required by Magento, enter the following command:</p>
-
-<pre>apt-get install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl</pre>
-
-<h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
-
-<p>Before you install Magento, you might need to set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
-
-<p><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings.</code> [more messages follow]</p>
-
-<p>We also recommend you increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</p>
-
-<p>To set your time zone and memory limit:</p>
-
-<ol>
-  <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.</li>
-  <li>
-    <p>Locate <code>php.ini</code> by entering the following command:</p>
-
-    <p><code>php -i | grep "Loaded Configuration File"</code></p>
-
-    <p>Typical locations follow:</p>
-
-    <p>Ubuntu: <code>/etc/php5/cli/php.ini</code></p>
-
-    <p>CentOS: <code>/etc/php.ini</code></p>
-  </li>
-  <li>
-    <p>Open <code>php.ini</code> in a text editor.</p>
-  </li>
-  <li>
-    <p>Locate the following setting and uncomment it if necessary:</p>
-
-    <p><code>date.timezone =</code></p>
-  </li>
-  <li>
-    <p>Add the time zone setting you found in step 1.</p>
-  </li>
-  <li>
-    <p>Change <code>memory_limit</code> to:</p>
-
-    <p><code>memory_limit = 512M</code> or more for normal operation</p>
-
-    <p><code>memory_limit = 2G</code> or more for testing</p>
-  </li>
-  <li>
-    <p>Save your changes and exit the text editor.</p>
-  </li>
-  <li>
-    <p>Restart Apache:</p>
-
-    <p><code>service apache2 restart</code></p>
-  </li>
-</ol>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5—CentOS</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/apache.html">Installing and configuring Apache</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/mysql.html">Installing and configuring MySQL</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
 </ul>
 
 
@@ -442,7 +321,7 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
 						
 								
 							
@@ -491,7 +370,7 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
 						
 								
 							

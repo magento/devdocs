@@ -248,6 +248,7 @@
 </table>
   </li>
 </ol>
+<p>&lt;/table&gt;</p>
 
 <h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
@@ -390,6 +391,12 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr>
 	<tr>
+		<td>use_sample_data</td>
+		<td><p><code>1</code> installs optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+		<p>Sample data installs only if you already enabled the package as discussed in <a href="/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
+		<td>No</td>
+	</tr>
+	<tr>
 		<td>cleanup_database</td>
 		<td>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</td>
 		<td>No</td>
@@ -424,6 +431,9 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
     <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
   </li>
   <li>
+    <p>Installs optional sample data</p>
+  </li>
+  <li>
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
@@ -442,7 +452,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
     --db_host=localhost --db_name=magento --db_user=magento --db_pass=magento
     --admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com
     --admin_username=admin --admin_password=iamtheadmin --language=en_US
-    --currency=USD --timezone=America/Chicago</pre>
+    --use_sample_data=1 --currency=USD --timezone=America/Chicago</pre>
   </li>
 </ul>
 
@@ -616,6 +626,10 @@ composer install</pre>
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
 						
 								
 							
