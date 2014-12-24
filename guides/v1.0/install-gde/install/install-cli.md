@@ -82,7 +82,7 @@ Before you begin:
 		<td><code>php -f index.php help currency</code></td>
 	</tr>
 	</tbody>
-</table>
+	</table>
 	
 <h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
