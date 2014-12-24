@@ -23,19 +23,20 @@ subsequent chapters in this guide.
 
 <h2>Set a parent theme</h2>
 
-A parent theme is specified in the child theme configuration file<!--ADDLINK-->, under `<parent></parent>`.
+A parent theme is specified in the child theme `composer.json` file.
 
 Example:
 The Orange theme by OrangeCo inherits from the Magento Blank theme:
 <pre>
-&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;OrangeCo&nbsp;Orange&lt;/title&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;0.1.0-alpha100&lt;/version&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;&nbsp;
-&lt;/theme&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;orangeco/theme-frontend-orange&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;N/A&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;require&quot;:&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;php&quot;:&nbsp;&quot;~5.4.11|~5.5.0&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/theme-frontend-blank&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/framework&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/magento-composer-installer&quot;:&nbsp;&quot;*&quot;
+&nbsp;&nbsp;&nbsp;&nbsp;},
+
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -72,7 +73,9 @@ If module context is defined for a file:
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
 Orange inherits from the Magento Blank theme.
 
-Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a new orange_winter theme, which inherits from Orange. The theme is located in `app/design/frontend/OrangeCo/orange_winter`
+Let's imagine OrangeCo needs to add some winter holidays decor. So it creates a new orange_winter theme, which inherits from Orange. The theme is located in `app/design/frontend/OrangeCo/orange_winter`.
+
+<!--
 orange_winter configuration file looks like following:
 <pre>
 &lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
@@ -84,6 +87,8 @@ orange_winter configuration file looks like following:
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;&nbsp;
 &lt;/theme&gt;
 </pre>
+
+-->
 
 In the Orange theme there is a footer background image located at `app/design/frontend/OrangeCo/orange/web/images/background.jpg`.
 

@@ -5,7 +5,7 @@ subgroup: R_Installation
 title: Install the Magento software using the Setup Wizard
 menu_title: Install the Magento software using the Setup Wizard
 menu_node:
-menu_order: 6
+menu_order: 8
 github_link: install-gde/install/install-web.md
 ---
 
@@ -165,6 +165,12 @@ To install the Magento software using the Setup Wizard:
 
 <h3 id="instgde-install-magento-web-step4">Step 4: Customize Your Store</h3>
 
+1.	To install optional sample data, select the **Use Sample Data** check box.
+
+	<div class="bs-callout bs-callout-info" id="info">
+  	<p>If the <strong>Use Sample Data</strong> check box is not available, see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
+	</div>
+
 1.	From the **Store Default Time Zone** list, click the name of your store's time zone.
 
 2.	From the **Store Default Currency** list, click the default currency to use in your store.
@@ -243,3 +249,6 @@ The value of `sys_temp_dir` determines where `install.log` is located. If the va
 
 A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.log`.
 
+#### Next step
+
+<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
