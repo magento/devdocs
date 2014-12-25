@@ -25,7 +25,7 @@ subsequent chapters in this guide.
 
 A parent theme is specified in the child theme `composer.json` file.
 
-Example:
+Example
 The Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in composer.json of the Orange theme as follows:
 <pre>
 {
