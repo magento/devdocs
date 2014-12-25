@@ -25,18 +25,18 @@ github_link: config-guide/config/config-files.md
    For example, events, which previously would have been configured in <code>config.xml</code> along with all other configurations, are now configured in a separate file called <code>events.xml</code>.
    The <code>events.xml</code> file is validated during loading against the <code>events.xsd</code> schema file.
 </p>
-<h3>Magento\Config</h3>
-<p>All configuration files are processed by the Magento <code>Magento\Config</code> library component, which loads, merges, and validates XML configuration files and converts them to proper array format.
-   During configuration loading, <code>Magento\Config</code> validates configuration files against schemas in XSD format.
+<h3>Magento\Framework\Config</h3>
+<p>All configuration files are processed by the Magento <code>Magento\Framework\Config</code> library component, which loads, merges, and validates XML configuration files and converts them to proper array format.
+   During configuration loading, <code>Magento\Framework\Config</code> validates configuration files against schemas in XSD format.
    Each XML configuration type has its own XSD schema.
 </p>
 <h3>Predefined configuration files</h3>
 <p>Predefined configuration files include:</p>
 <dl>
    <dt>
-      <code>local.xml</code></dt><dd><p>Created during the installation of Magento and loaded on every run of your Magento instance.</p>
+      <code>config.php</code></dt><dd><p>Created during the installation of Magento and loaded on every run of your Magento instance.</p>
 <p>This file controls parameters that are specific to each Magento installation, such as connection to database, cryptographic key, database table prefix, session storage configuration.</p>
-      <p>These parameters are gathered in a wizard during installation and written to a single <code>local.xml</code>, so your site administrator can configure these values in a single location.</p></dd>
+      <p>These parameters are gathered in a wizard during installation and written to a single <code>config.php</code>, so your site administrator can configure these values in a single location.</p></dd>
    <dt><code>config.xml</code></dt><dd><p>Contains the configurations specified in the <b>Stores > Configuration</b> menu in the <b>Admin</b> panel for the default, website, and store scopes of your Magento instance.</p>
       <p>This menu is itself configured by the <code>system.xml</code> file, which declares the configuration keys for application configuration and defines how they are displayed the in <b>Stores > Configuration</b>.</p>
    </dd>
@@ -44,12 +44,11 @@ github_link: config-guide/config/config-files.md
   <dt><code>events.xml</code><dd><p>Lists observers and the events to which they are subscribed.</p>
    </dd>
    <dt><code>routes.xml</code><dd><p>Lists the routes and routers.</p></dd></dl>
-<p>This list is not comprehensive. You can find all the changed configuration files in Configuration Changes from Magento 1.x to 2.x.</p>
 <h3>Load order for configuration files</h3>
 <p>The following groupings determine the load order of configuration files:</p>
 <ul>
    <li>
-      <p>The primary configuration files, which give the most basic types of configuration such as the database connection and the cache, are loaded on bootstrap. These include only configuration required for the application to start (such as app/etc/di.xml) and installation-specific configuration (such as app/etc/local.xml).</p>
+      <p>The primary configuration files, which give the most basic types of configuration such as the database connection and the cache, are loaded on bootstrap. These include only configuration required for the application to start (such as <code>app/etc/di.xml</code>) and installation-specific configuration (such as <code>app/etc/config.php</code>).</p>
    </li>
    <li>
       <p>Global configuration files are loaded next. They include configuration from all modules common for all application areas, such as settings for which modules are enabled and which routers are used.</p>
@@ -71,22 +70,22 @@ github_link: config-guide/config/config-files.md
 <p>After two XML documents are merged, the resulting document contains all nodes from the original files.</p>
 <p>The second XML file either supplements or overwrites nodes in the first XML file.</p>
 <p>In the following example, the node contents of the second file overwrite node contents of first file if both files contain nodes with same name and identifier.</p>
-<p>This example shows configuration files and their merge result:</p>
-<h2>The Magento\Config component</h2>
-<p><code>Magento\Config</code> ensures loading, merging, validation, and processing of the configurations. You can change the standard loading procedure by providing your own implementation of its interfaces. Magento\Config should be used to introduce a new configuration type.</p>
-<p><code>Magento\Config</code> provides the following interfaces for extension developers to manage configuration files:</p>
+
+<h2>The Magento\Framework\Config component</h2>
+<p><code>Magento\Framework\Config</code> ensures loading, merging, validation, and processing of the configurations. You can change the standard loading procedure by providing your own implementation of its interfaces. Magento\Framework\Config should be used to introduce a new configuration type.</p>
+<p><code>Magento\Framework\Config</code> provides the following interfaces for extension developers to manage configuration files:</p>
 <ul>
    <li>
-      <p><code>\Magento\Config\DataInterface</code> retrieves the configuration data within a scope.</p>
+      <p><code>\Magento\Framework\Config\DataInterface</code> retrieves the configuration data within a scope.</p>
    </li>
    <li>
-      <p><code>\Magento\Config\ScopeInterface</code> identifies current application scope and provides information about the scope's data.</p>
+      <p><code>\Magento\Framework\Config\ScopeInterface</code> identifies current application scope and provides information about the scope's data.</p>
    </li>
    <li>
-      <p><code>\Magento\Config\FileResolverInterface</code> identifies the set of files to be read by <code>\Magento\Config\ReaderInterface</code>.</p>
+      <p><code>\Magento\Framework\Config\FileResolverInterface</code> identifies the set of files to be read by <code>\Magento\Framework\Config\ReaderInterface</code>.</p>
    </li>
    <li>
-      <p><code>\Magento\Config\ReaderInterface</code> reads the configuration data from storage, selects the storage from which it reads.</p>
+      <p><code>\Magento\Framework\Config\ReaderInterface</code> reads the configuration data from storage, selects the storage from which it reads.</p>
       <p>That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.</p>
    </li>
 </ul>
@@ -117,19 +116,19 @@ github_link: config-guide/config/config-files.md
 
 If any other extension declares a <code>search.xml</code> file, it is merged with your file when it loads.</p>
 
-<p>To add a configuration type to the file system, use the default implementation of the <code>\Magento\Config\ReaderInterface</code>, which is <code>Magento\Config\Reader\Filesystem</code>. Extend from the default implementation and provide the following parameters:</p>
+<p>To add a configuration type to the file system, use the default implementation of the <code>\Magento\Framework\Config\ReaderInterface</code>, which is <code>Magento\Framework\Config\Reader\Filesystem</code>. Extend from the default implementation and provide the following parameters:</p>
 <ul>
    <li>
-      <p><code>$fileResolver</code>. Implements <code>\Magento\Config\FileResolverInterface</code>. This parameter lists the files containing the configurations of your custom type.</p>
+      <p><code>$fileResolver</code>. Implements <code>\Magento\Framework\Config\FileResolverInterface</code>. This parameter lists the files containing the configurations of your custom type.</p>
    </li>
    <li>
-      <p><code>$converter</code>. Implements <code>\Magento\Config\ConverterInterface</code>. This parameter is responsible for converting the XML into the internal array representation of the configurations.</p>
+      <p><code>$converter</code>. Implements <code>\Magento\Framework\Config\ConverterInterface</code>. This parameter is responsible for converting the XML into the internal array representation of the configurations.</p>
    </li>
    <li>
-      <p><code>$schemaLocator</code>. Implements <code>\Magento\Config/SchemaLocatorInterface</code>. This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.</p>
+      <p><code>$schemaLocator</code>. Implements <code>\Magento\Framework\Config/SchemaLocatorInterface</code>. This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.</p>
    </li>
    <li>
-      <p><code>$validationState</code>. Implements <code>\Magento\Config\ValidationStateInterface</code>. This parameter defines whether a configuration file should be validated. It is provided by the application by default.</p>
+      <p><code>$validationState</code>. Implements <code>\Magento\Framework\Config\ValidationStateInterface</code>. This parameter defines whether a configuration file should be validated. It is provided by the application by default.</p>
    </li>
    <li>
       <p><code>$fileName</code>. The name of a file containing custom configuration. Reader looks for the file names specified by this parameter in <code>etc</code> directories.</p>
@@ -161,7 +160,7 @@ If any other extension declares a <code>search.xml</code> file, it is merged wit
 <pre>
 &lt;config
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:noNamespaceSchemaLocation="../../../../../lib/Magento/ObjectManager/etc/config.xsd"></pre>
+   xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd"></pre>
 
 <p>IDEs can validate your configuration files at both runtime and development time.</p>
 <script type="text/xml">

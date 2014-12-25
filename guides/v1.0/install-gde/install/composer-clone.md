@@ -33,6 +33,17 @@ We'll have more information soon on how developers can use Composer to package e
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
+First, check  if Composer is already installed: 
+
+In a command prompt, enter any of the following commands:
+
+*	`composer --help`
+*	`composer list --help`
+
+If command help displays, Composer is already installed; in thast case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.
+
+If an error displays, use the following steps to install Composer.
+
 To install Composer:
 
 1.	Change to or create an empty directory on your Magento server.

@@ -211,7 +211,6 @@ Thus, a class can be used and reimplemented by the third party developers. To en
 
 <h2 id="m2arch-module-related">Related topics</h2>
 <ul>
-<li><a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Understanding module dependencies</a></li>
 <li><a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a></li>
 <li><a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a></li>
 <li><a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a></li>

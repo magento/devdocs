@@ -4,7 +4,7 @@ group: install
 subgroup: Prerequisites
 title: Security-related prerequisites
 menu_title: Security-related prerequisites
-menu_order: 6
+menu_order: 10
 github_link: install-gde/prereq/security.md
 ---
 

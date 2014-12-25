@@ -28,17 +28,14 @@ A parent theme is specified in the child theme `composer.json` file.
 Example
 The Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in composer.json of the Orange theme as follows:
 <pre>
-{
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;orangeco/theme-frontend-orange&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;N/A&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;require&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;php&quot;:&nbsp;&quot;~5.4.11|~5.5.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/theme-frontend-blank&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/framework&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/magento-composer-installer&quot;:&nbsp;&quot;*&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;},
-...
-}
+&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;OrangeCo&nbsp;Orange&lt;/title&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;0.1.0-alpha100&lt;/version&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;&nbsp;
+&lt;/theme&gt;
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -48,7 +45,10 @@ The Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 
 <h2 id="theme-inherit-static">Override static assets</h2>
 
-Static assets, or static view files, are styles, JavaScript, images, and fonts.<!--ADDLINK-->
+Static assets, or static view files, are styles, JavaScript, images, and fonts.
+
+<p><!--ADDLINK--></p>
+
 To customize static view files defined in the parent theme, module view, or library files, you can override them by adding a file with the same name in the relevant location according to the fallback schemes described further. This also refers to the `.less` files, which technically are not static assets.
 
 The particular directories, where the system searches in the course of the fallback, depend on whether module context is known for file. Following are the descriptions of both options.
@@ -167,7 +167,9 @@ To override the instructions from an ancestor theme layout file:
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
-To override module layout instructions (base layout): <!-- ADDLINK -->
+To override module layout instructions (base layout):
+
+<p><!-- ADDLINK --></p>
 
 * Create a layout file with the same name in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/override/base` directory.
 
