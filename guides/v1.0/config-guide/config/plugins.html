@@ -232,19 +232,7 @@
 <p>The before prefix should be added to the name of an original method.</p>
 <p>For example:</p>
 
-
-<pre>
-namespace My\Module\Model\Product;
-
-class Plugin
-{
-    public function beforeSetName(\Magento\Catalog\Model\Product <code>$subject</code>, $name)
-    {
-        return array('(' . $name . ')');
-    }
-}
-</pre>
-
+<script src="https://gist.github.com/xcomSteveJohnson/8e25785abf1754c59ccb.js"></script>
 
 <p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
 
