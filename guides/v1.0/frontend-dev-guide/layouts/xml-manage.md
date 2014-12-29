@@ -259,7 +259,7 @@ Example: remove the Compare Products sidebar block from all store pages. This bl
 &lt;/page&gt;
 </pre>
 
-To remove the block, add an extending `default.xml` in your theme:
+To remove the block, add the extending `default.xml` in your theme:
 `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/layout/default.xml`
 
 In this file, add the `<remove>` instruction:
