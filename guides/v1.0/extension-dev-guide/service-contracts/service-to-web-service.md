@@ -18,10 +18,18 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 <p>Users can make REST or SOAP calls to access the web API.</p>
 <p>To configure a web API, read these topics:</p>
 <ul>
-<li><p><a href="#configure-webapi">Configure a web API</a></p></li>
-<li><p><a href="#configuration-options">webapi.xml configuration options</a></p></li>
-<li><p><a href="#sample-webapi">Sample webapi.xml file</a></p></li>
-<li><p><a href="#validate-webapi">webapi.xsd XML schema file</a></p></li>
+   <li>
+      <p><a href="#configure-webapi">Configure a web API</a></p>
+   </li>
+   <li>
+      <p><a href="#configuration-options">webapi.xml configuration options</a></p>
+   </li>
+   <li>
+      <p><a href="#sample-webapi">Sample webapi.xml file</a></p>
+   </li>
+   <li>
+      <p><a href="#validate-webapi">webapi.xsd XML schema file</a></p>
+   </li>
 </ul>
 <h2 id="configure-webapi">Configure a web API</h2>
 <p>To configure a web API for a service, you define XML elements and attributes in the
@@ -108,7 +116,6 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
          <p>None.</p>
       </td>
    </tr>
-
    <tr>
       <td>
          <p><code>&lt;resource&gt;</code></p>
@@ -117,15 +124,19 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
          <p>Required. Child element of <code>&lt;resources&gt;</code>. Defines a resource to which the caller must have access.</p>
       </td>
       <td>
-         <ul><li>
+         <ul>
+            <li>
                <p><code>ref</code>.
                   Required. Referenced resource. Valid values are <code>self</code>, <code>anonymous</code>, or a Magento resource, such as <code>Magento_Customer::group</code>.
                </p>
-               <div class="bs-callout bs-callout-info" id="info"><p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
-               <p>Any user that the framework cannot authenticate through existing <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">authentication
-                  mechanisms</a> is considered a guest user.
-               </p></div>
-            </li></ul>
+               <div class="bs-callout bs-callout-info" id="info">
+                  <p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission.</p>
+                  <p>Any user that the framework cannot authenticate through existing <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">authentication
+                     mechanisms</a> is considered a guest user.
+                  </p>
+               </div>
+            </li>
+         </ul>
       </td>
    </tr>
    <tr>
@@ -147,18 +158,20 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
          <p>Required if <code>&lt;data&gt;</code> is specified. Child element of <code>&lt;data&gt;</code>. Defines a parameter.</p>
       </td>
       <td>
-         <ul><li>
+         <ul>
+            <li>
                <p><code>name</code>. String. Parameter name.</p>
-            </li><li>
+            </li>
+            <li>
                <p><code>force</code>. Boolean.</p>
-            </li></ul>
+            </li>
+         </ul>
       </td>
    </tr>
 </table>
-
 <h2 id="sample-webapi">Sample webapi.xml file</h2>
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
-<script src="https://github.corp.ebay.com/gist/difleming/2d55a6cbbaece7813618.js"></script>
+<script src="https://gist.github.com/difleming/bc3e3742ed117929f6b4.js"></script>
 <p>In this <code>webapi.xml</code> example:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -180,7 +193,6 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       </td>
       <td>
          <p>The HTTP method and web resource through which to access the route.</p>
-
          <p>The HTTP method is GET.</p>
          <p>The resource is <code>/V1/customerGroups/:id</code>. Users must substitute a customer ID for the <code>id</code> template parameter.</p>
       </td>
@@ -191,7 +203,6 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       </td>
       <td>
          <p>The interface that the route implements and the name of the web API method.</p>
-
          <p>The route implements the <code>Magento\Customer\Api\GroupRepositoryInterface</code> interface.</p>
          <p>The web API method name is <code>get</code>.</p>
       </td>
@@ -202,7 +213,6 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       </td>
       <td>
          <p>The resource to which the caller must have access.</p>
-
          <p>The caller must have access to <code>Magento_Customer::group</code> resource.</p>
       </td>
    </tr>
@@ -212,7 +222,6 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
       </td>
       <td>
          <p>A required parameter.</p>
-
          <p>The <code>id</code> parameter is required on GET calls to <code>/V1/customers/me/billingAddress</code>.</p>
       </td>
    </tr>
@@ -220,7 +229,5 @@ github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 <h2 id="validate-webapi">webapi.xsd XML schema file</h2>
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>/Webapi/etc/webapi.xsd</code> XML schema file is:</p>
-
 <script src="https://github.corp.ebay.com/gist/difleming/b2b1aafbfbd9f54f3179.js"></script>
-
 
