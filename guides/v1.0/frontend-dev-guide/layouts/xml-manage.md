@@ -48,7 +48,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 <h2 id="layout_markup_css">Add JavaScript and CSS</h2>
 
 JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
-Following is a sample of a file you must add:
+The following file is a sample of a file you must add:
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
 
@@ -84,14 +84,11 @@ To remove the JavaScript and CSS resources linked in a page `<head>`, make a cha
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
-
-
 <h2 id="create_cont">Create a container</h2>
 
 Use the following sample to create (declare) a container:
 
 <pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
-
 
 <h2 id="ref_container">Reference a container</h2>
 
@@ -108,7 +105,6 @@ Example: add links to the page header panel.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
 &lt;/referenceContainer&gt;
 </pre>
-
 
 <h2 id="xml-manage-block">Create a block</h2>
 
@@ -153,7 +149,6 @@ Example: change template of the page title block.
 
 </pre>
 
-
 <h2 id="layout_markup_modify-block">Modify block arguments</h2>
 
 To modify block arguments, use the `<referenceBlock>` instruction.
@@ -185,7 +180,6 @@ Extending layout:
 &lt;/referenceBlock&gt;&nbsp;
 ...
 </pre>
-
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
@@ -258,7 +252,7 @@ Example: remove the Compare Products sidebar block from all store pages. This bl
 &lt;/page&gt;
 </pre>
 
-To remove the block, add an extending `default.xml` in your theme:
+To remove the block, add the extending `default.xml` in your theme:
 `app/design/frontend/<Vendor>/<theme>/Magento_Catalog/layout/default.xml`
 
 In this file, add the `<remove>` instruction:
