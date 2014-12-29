@@ -156,7 +156,7 @@
 		
 		<h2>Introduction</h2>
 
-<p>This article shows how to perform typical layout customization tasks. </p>
+<p>This article shows how to perform typical layout customization tasks.</p>
 
 <p>The following tasks are described:</p>
 
@@ -185,7 +185,7 @@
 
 <p>The type of page layout to be used for a certain page is defined in the page configuration file, in the <code>layout</code> attribute of the root <code>&lt;page&gt;</code> node.</p>
 
-<p>Example: 
+<p>Example:
 Change the layout of Advanced Search page from default “1-column” to “2-column with left bar”. To do this, extend <code>catalogsearch_advanced_index.xml</code> in your theme by adding the following layout:</p>
 
 <p><b><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_CatalogSearch/layout/catalogsearch_advanced_index.xml</code></b></p>
@@ -197,7 +197,7 @@ Change the layout of Advanced Search page from default “1-column” to “2-co
 
 <h2 id="layout_markup_css">Add JavaScript and CSS</h2>
 
-<p>JavaScript, CSS and other static assets are added in the <code>&lt;head&gt;</code> section of a <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page <code>&lt;head&gt;</code> is defined by <code>app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml</code>. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there. 
+<p>JavaScript, CSS and other static assets are added in the <code>&lt;head&gt;</code> section of a <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page <code>&lt;head&gt;</code> is defined by <code>app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml</code>. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 Following is a sample of a file you need to add:</p>
 
 <p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
@@ -213,7 +213,7 @@ Following is a sample of a file you need to add:</p>
 
 </pre>
 
-<p>You can use either <code>&lt;link src="sample.js"/&gt;</code> or <code>&lt;script src="sample.js"/&gt;</code> instruction to add a JavaScript file to your theme</p>
+<p>You can use either <code>&lt;link src="sample.js"/&gt;</code> or <code>&lt;script src="sample.js"/&gt;</code> instruction to add a JavaScript file to your theme.</p>
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
@@ -244,7 +244,7 @@ Following is a sample of a file you need to add:</p>
 
 <p>To update a container use the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank"><code>&lt;referenceContainer&gt;</code></a> instruction.</p>
 
-<p>Example: add links to the page header panel. </p>
+<p>Example: add links to the page header panel.</p>
 
 <pre>
 &lt;referenceContainer&nbsp;name=&quot;header.panel&quot;&gt;
@@ -333,7 +333,7 @@ Following is a sample of a file you need to add:</p>
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
-<p>Block object methods are accessed using the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. </p>
+<p>Block object methods are accessed using the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction.</p>
 
 <p>Example: Set a page title using the <code>setPageTitle()</code> method.</p>
 
@@ -354,7 +354,7 @@ Following is a sample of a file you need to add:</p>
 <p>In layout files you can change the elements order on a page. This can be done using one of the following:</p>
 
 <ul>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank"><code>&lt;move&gt;</code> instruction</a>: allows changing elements’ order and parent. </li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank"><code>&lt;move&gt;</code> instruction</a>: allows changing elements’ order and parent.</li>
   <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_xml-instrux_before-after" target="_blank"><code>before</code> and <code>after</code> attributes of <code>&lt;block&gt;</code></a>: allows changing elements’ order within one parent.</li>
 </ul>
 
@@ -404,9 +404,10 @@ To do this, add the extending <code>catalog_product_view.xml</code> in the <code
 &lt;/page&gt;
 </pre>
 
-<p>To remove the block, add the extending <code>default.xml</code> in your theme: 
-<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/frontend/layout/default.xml</code>
-In this file, add the <code>&lt;remove&gt;</code> instruction:</p>
+<p>To remove the block, add the extending <code>default.xml</code> in your theme:
+<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/layout/default.xml</code></p>
+
+<p>In this file, add the <code>&lt;remove&gt;</code> instruction:</p>
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;body&gt;
