@@ -10,9 +10,7 @@ github_link: frontend-dev-guide/layouts/xml-manage.md
 
 <h2>Introduction</h2>
 
-This article shows how to perform typical layout customization tasks.
-
-The following tasks are described:
+This article describes the following typical layout customization tasks:
 
 *	<a href="#layout_markup_columns">Set the page layout</a>
 *	<a href="#layout_markup_css">Add CSS and JavaScript in &lt;head&gt;</a>
@@ -33,7 +31,6 @@ The following tasks are described:
   <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
 </div>
 
-
 <h2 id="layout_markup_columns">Set the page layout</h2>
 
 The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root <code>&lt;page&gt;</code> node.
@@ -51,7 +48,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 <h2 id="layout_markup_css">Add JavaScript and CSS</h2>
 
 JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
-Following is a sample of a file you need to add:
+The following file is a sample of a file you must add:
 
 `app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
 
@@ -87,14 +84,11 @@ To remove the JavaScript and CSS resources linked in a page `<head>`, make a cha
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
-
-
 <h2 id="create_cont">Create a container</h2>
 
 Use the following sample to create (declare) a container:
 
 <pre>&lt;container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" /></pre>
-
 
 <h2 id="ref_container">Reference a container</h2>
 
@@ -111,7 +105,6 @@ Example: add links to the page header panel.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/block&gt;
 &lt;/referenceContainer&gt;
 </pre>
-
 
 <h2 id="xml-manage-block">Create a block</h2>
 
@@ -238,7 +231,7 @@ This would make the product page look like following:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To learn how to locate the layout file you need to customize, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> article.</p></span>
+  <p>To learn how to locate the layout file you need to customize, see <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
 </div>
 
 <h2 id="layout_markup_remove_elements">Remove elements</h2>
