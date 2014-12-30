@@ -32,9 +32,7 @@ github_link: config-guide/bk-config-guide.md
 <p>To learn about integration, read these topics:</p>
 <ul>
    <li>
-
-      <p><a href="{{ site.gdeurl }}config-guide/integration/what-is-integration.html">What is an integration?</a></p>
-
+      <p><a href="{{ site.gdeurl }}config-guide/integration/integration-what-is.html">What is an integration?</a></p>
    </li>
    <li>
       <p><a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">Integration authorization</a></p>
