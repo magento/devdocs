@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting suggestions</title>
+	<title>Contributor Guide</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/trouble/tshoot.html">
+	<link rel="canonical" href="//guides/v1.0/contributor-guide/CONTRIBUTING.html">
 
 </head>	
 <body>
@@ -136,9 +136,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshooting suggestions</h1>
+		<h1 class="page-heading">Contributor Guide</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/trouble/tshoot.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/contributor-guide/Contribute.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -147,20 +147,80 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The following topics discuss the installation errors and suggested solutions:</p>
+		<h2>Contribute to Magento 2 code</h2>
 
-<ul>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run ‘composer install’</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics.</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">Exceptions occur with xdebug PHP extension</a></li>
-</ul>
+<p>Use the <a href="#fork">fork</a> &amp; <a href="#pull_request">pull</a> model to contribute to the Magento 2 codebase.
+This contribution model has contributors maintaining their own copy of the forked codebase (which can easily be synced with the main copy). The forked repository is then used to submit a request to the base repository to “pull” a set of changes (hence the phrase “pull request”).</p>
+
+<p>Contributions can take the form of new components/features, changes to existing features, tests, documentation (such as developer guides, user guides, examples, or specifications), bug fixes, optimizations or just good suggestions.</p>
+
+<p>The Magento 2 development team reviews all issues and contributions submitted by the community of developers on a first in, first out order. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks, the issue is closed.</p>
+
+<h2>Contribution requirements</h2>
+
+<ol>
+  <li>Contributions must adhere to <a href="/guides/v1.0/coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.</li>
+  <li>Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances of a pull request to be merged quickly and without additional clarification requests.</li>
+  <li>Commits must be accompanied by meaningful commit messages.</li>
+  <li>PRs which include bug fixing, must be accompanied with step-by-step description of how to reproduce the bug.</li>
+  <li>PRs which include new logic or new features must be submitted along with:
+    <ul>
+      <li>Unit/integration test coverage (we will be releasing more information on writing test coverage in the near future).</li>
+      <li>Proposed <a href="http://devdocs.magento.com/" target="_blank">documentation</a> update. Documentation contributions can be submitted <a href="https://github.com/magento/devdocs" target="_blank">here</a>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>For large features or changes, please <a href="https://github.com/magento/magento2/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and it may gain you some additional contributors.</p>
+  </li>
+  <li>All automated tests are passed successfully (all builds on <a href="https://travis-ci.org/magento/magento2" target="_blank">Travis CI</a> must be green).</li>
+</ol>
+
+<h2 id="fork">Fork a repository</h2>
+<p>To fork a repository on Github, do the following:</p>
+
+<ol>
+  <li>Create or log in to your free account on GitHub. <!-- necessarily free?--></li>
+  <li>Navigate to the <a href="https://github.com/magento/magento2" target="_blank">Magento 2 repository</a>.</li>
+  <li>
+    <p>Click <em>Fork</em> at the top right: <br /><img src="/common/images/fork.png" alt="fork a repository" /></p>
+  </li>
+  <li>Clone the repo into your development environment, get the app installed, and start playing.</li>
+</ol>
+
+<h2 id="pull_request">Create a pull request</h2>
+
+<p>First, check the <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!</p>
+
+<p>To create a pull request do the following:</p>
+
+<ol>
+  <li>Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.</li>
+  <li>In your repository, click <strong>Pull requests</strong> on the right, and then click <strong>New pull request</strong>: <br /><img src="/common/images/pr.png" target="_blank" /></li>
+  <li>Ensure that you are creating a PR to the <code>magento:develop</code> branch. We accept PRs to this branch only.</li>
+  <li>Review the changes, then click <strong>Create pull request</strong>. Fill out the form, and click <strong>Create pull request</strong> again to submit the PR – that’s it!</li>
+</ol>
+
+<p>After submitting your PR, you can head over to the magento/magento2 repository’s <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">Pull Requests panel</a> to see you PR along with the others. Your PR undergoes automated testing, and if it passes, the core team considers it for inclusion in the Magento 2 core. If some tests fail, please make the corresponding corrections in your code.</p>
+
+<h2>Report an issue</h2>
+<p>If you find a bug in Magento 2 code, you can report it by creating an issue record for the Magento 2 repository.
+Note:
+Before creating an issue, please do the following:</p>
+
+<ol>
+  <li>Check the <a href="devdocs.magento.com">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.</li>
+  <li>Check the <a href="https://github.com/magento/magento2/issues" target="_blank"> existing issues</a> to make sure you are not duplicating somebody’s work.</li>
+</ol>
+
+<p>To add an issue:</p>
+
+<ol>
+  <li>In the Magento 2 public repository, click the <strong>Issues</strong> link on the right. <br /><img src="/common/images/issues.png" alt="the Issues link at the right" /></li>
+  <li>Click <strong>New issue</strong>.<br /><img src="/common/images/new_issue.png" alt="the New Issue button" /></li>
+  <li>Fill in the Title and issue description.</li>
+  <li>Click <strong>Submit new issue</strong>.</li>
+</ol>
+
 
 
 		</div>
@@ -178,259 +238,42 @@
 		
 				
 				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contribute to Magento 2 code</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
 			
 			
 				
-				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/optional.html">Optional software</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-overview.html">Installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class="  active "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">Exceptions occur with xdebug PHP extension</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-
-
 				
 			
 			

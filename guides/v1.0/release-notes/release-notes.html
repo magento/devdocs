@@ -75,32 +75,25 @@
                <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
             </ul>
          </li>
-         <li class="expanded">
+         <li class="first expanded">
             <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
                <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
-        <!--
- <li class="first expanded">
-            <a href="article-side.html">System Integrator</a>
-            <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
-            </ul>
-         </li>
- -->
          <li class="expanded">
             <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
                <li class="leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-              <!--
- <li class="leaf"><a href="/article-side.html">PHP API Reference</a></li>
-               <li class="leaf"><a href="/article-side.html">REST API Reference</a></li>
-               <li class="leaf"><a href="/article-side.html">SOAP API Reference</a></li>
- -->
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -282,7 +275,7 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
   <li>
     <p>Add the following to the <code>"require":</code> section:</p>
 
-    <pre><code>"magento/sample-data": "0.42.0-beta1",        
+    <pre><code>"magento/sample-data": "0.42.0-beta1",
 "magento/sample-data-media": "0.42.0-beta1
 </code></pre>
 
@@ -295,11 +288,11 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 </ol>
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
-<p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions:</p>
+<p>If you use the optional <code>xdebug</code> PHP extension, you can encounter exceptions:</p>
 
 <ul>
-  <li>During installation </li>
-  <li>Accessing either the Magento Admin or storefront after a successful installation </li>
+  <li>During installation</li>
+  <li>When you access either the Magento Admin or storefront after a successful installation</li>
 </ul>
 
 <p>Sample exception:</p>
@@ -311,7 +304,7 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 
 <ul>
   <li>Disable the <code>xdebug</code> extension.</li>
-  <li>Set the value of <code>xdebug.max_nesting_level</code> to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
+  <li>Set the value of <code>xdebug.max_nesting_level</code> to a value of 500 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
 </ul>
 
 <p>After you change the configuration of or disable <code>xdebug</code>, restart Apache:</p>
@@ -349,7 +342,7 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 <h3 id="known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</h3>
 
 <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31949">MAGETWO-31949</a> -->
-<p>In some cases, the Setup Wizard appears to have failed when it has not failed. </p>
+<p>In some cases, the Setup Wizard appears to have failed when it has not failed.</p>
 
 <p>Symptoms:</p>
 
@@ -373,7 +366,7 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 <h3 id="known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</h3>
 
 <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31850">MAGETWO-31850</a> -->
-<p>In some cases (such as running the Setup Wizard in two browser windows or tab pages at the same time), the installation fails because it cannot create <code>install.log</code>. </p>
+<p>In some cases (such as running the Setup Wizard in two browser windows or tab pages at the same time), the installation fails because it cannot create <code>install.log</code>.</p>
 
 <p>To work around this issue, see <a href="/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></p>
 
@@ -471,6 +464,10 @@ DL-Magento-Doc-Feedback@ebay.com.</p>
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			

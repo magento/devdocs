@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting suggestions</title>
+	<title>Exceptions occur with xdebug PHP extension</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/trouble/tshoot.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/trouble/tshoot_xdebug.html">
 
 </head>	
 <body>
@@ -136,9 +136,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Troubleshooting suggestions</h1>
+		<h1 class="page-heading">Exceptions occur with xdebug PHP extension</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/trouble/tshoot.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/trouble/tshoot_xdebug.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -147,20 +147,34 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The following topics discuss the installation errors and suggested solutions:</p>
+		<h2 id="known-devbeta-xdebug">Exceptions occur with xdebug PHP extension</h2>
+
+<p>If you use the optional <code>xdebug</code> PHP extension, you can encounter exceptions:</p>
 
 <ul>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run ‘composer install’</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics.</a></li>
-  <li><a href="/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">Exceptions occur with xdebug PHP extension</a></li>
+  <li>During installation</li>
+  <li>When you access the Magento Admin or storefront after a successful installation</li>
 </ul>
+
+<p>Sample exception:</p>
+
+<pre><code>Fatal error: Maximum function nesting level of '100' reached, aborting!
+</code></pre>
+
+<p>To resolve this issue, you can:</p>
+
+<ul>
+  <li>Disable the <code>xdebug</code> extension.</li>
+  <li>Set the value of <code>xdebug.max_nesting_level</code> to a value of 500 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
+</ul>
+
+<p>After you change the configuration of or disable <code>xdebug</code>, restart Apache:</p>
+
+<ul>
+  <li>CentOS: <code>sudo service httpd restart</code></li>
+  <li>Ubuntu: <code>sudo service apache2 restart</code></li>
+</ul>
+
 
 
 		</div>
@@ -366,7 +380,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
 									
 								
 								
@@ -415,7 +429,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">Exceptions occur with xdebug PHP extension</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">Exceptions occur with xdebug PHP extension</a></li>
 						
 								
 							
