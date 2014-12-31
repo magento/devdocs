@@ -147,7 +147,17 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="mode-introduction">Introduction</h2>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#mode-introduction">Introduction</a></li>
+  <li><a href="mode-developer">Developer mode</a></li>
+  <li><a href="#mode-default">Default mode</a></li>
+  <li><a href="#mode-production">Production mode</a></li>
+  <li><a href="#mode-specify">Specify a mode</a></li>
+  <li><a href="#mode-production-view">Static view file creation tool</a></li>
+</ul>
+
+<h2 id="mode-introduction">Introduction</h2>
 <p>You can run Magento in any of the following <em>modes</em>:</p>
 
 <table>
@@ -384,6 +394,8 @@ export $MAGE_MODE
 <p>The following table discusses the meanings of the options:</p>
 
 <table>
+	<col width="15%" />
+  <col width="555%" />
 	<tbody>
 		<tr>
 			<th>Option</th>
@@ -391,43 +403,43 @@ export $MAGE_MODE
 		</tr>
 	<tr>
 		<td>--langs</td>
-		<td><p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. *Do not* separate locales with a space. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code><your magento="" install="" dir="">/setup/php -f index.php help languages.
-	
+		<td><p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. <em>Do not</em> separate locales with a space. (Default is <code>en_US</code>.)</p>
+		<p>You can find the list by running <code>&lt;your Magento install dir&gt;/setup/php -f index.php help languages</code>.</p></td>
+	</tr>
 	<tr>
 		<td>--verbose</td>
-		<td>Omit to display errors only. Use <code>0</code> to suppress all output. Use <code>1</code> to display verbose output.</td>
+		<td><p>Omit to display errors only. Use <code>0</code> to suppress all output. Use <code>1</code> to display verbose output.</p></td>
 	</tr>
 	<tr>
 		<td>--dry-run</td>
-		<td>Include to view the files output by the tool without outputting anything.</td>
+		<td><p>Include to view the files output by the tool without outputting anything.</p></td>
 	</tr>
 	<tr>
 		<td>--help</td>
-		<td>Display command help.</td>
+		<td><p>Display command help.</p></td>
 	</tr>
-
-
+</tbody>
+</table>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>At this time, the static view files tool displays errors. These errors do not indicate problems with your static files.</p></span>
 </div>
 
-For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
+<p>For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.</p>
 
 <h3 id="view-file-trouble">Troubleshooting the static file creation tool</h3>
-This section discusses errors that result from view files creation tool without first <a href="/guides/v1.0/install-gde/bk-install-guide.html">installing the Magento software</a>.
+<p>This section discusses errors that result from running the view files creation tool without first <a href="/guides/v1.0/install-gde/bk-install-guide.html">installing the Magento software</a>.</p>
 
-**Symptom**: Any of the following errors display when you run the static file creation tool:
+<p><strong>Symptom</strong>: Any of the following errors display when you run the static file creation tool:</p>
 
-<pre>PHP Fatal error:  Cannot instantiate interface Magento\Framework\App\View\Deployment\Version\StorageInterface
-in /var/www/magento2/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php on line 188</pre>
+<pre><code>PHP Fatal error:  Cannot instantiate interface Magento\Framework\App\View\Deployment\Version\StorageInterface
+in /var/www/magento2/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php on line 188
 
-<pre>ERROR: &lt;lib&gt; tiny_mce/classes/dom/Serializer.js exception 'Zend_Exception' with message 'dbModel read resource does not
-implement \Zend_Db_Adapter_Abstract' in /var/www/my.magento/magento2/lib/internal/Magento/Framework/Data/Collection/Db.php:184</pre>
+ERROR: &lt;lib&gt; tiny_mce/classes/dom/Serializer.js exception 'Zend_Exception' with message 'dbModel read resource does not
+implement \Zend_Db_Adapter_Abstract' in /var/www/my.magento/magento2/lib/internal/Magento/Framework/Data/Collection/Db.php:184
 
-<pre>#20 {main} ERROR: &lt;Magento_Paypal&gt; order-review.js exception
+#20 {main} ERROR: &lt;Magento_Paypal&gt; order-review.js exception
 'Magento\Framework\App\InitException' with message 'Store Manager has been initialized not properly' in
 /var/www/my.magento/magento2/app/code/Magento/Store/Model/Storage/Db.php:331
 Stack trace:
@@ -436,22 +448,27 @@ Stack trace:
 ... (more messages) ...
 /var/www/my.magento/magento2/lib/internal/Magento/Framework/View/Asset/
 Repository.php(178):
-Magento\Framework\View\Asset\Repository-&gt;getFallbackContext('static',NULL, 'frontend', 'Magento/blank', 'en_US')</pre>
+Magento\Framework\View\Asset\Repository-&gt;getFallbackContext('static',NULL, 'frontend', 'Magento/blank', 'en_US')
+</code></pre>
 
-**Solution**:
+<p><strong>Solution</strong>:</p>
 
-Use the following steps:
+<p>Use the following steps:</p>
 
-1.	Install the Magento software in any of the following ways:
+<ol>
+  <li>
+    <p>Install the Magento software in any of the following ways:</p>
 
-	*	<a href="/guides/v1.0/install-gde/install/install-cli.html">Command-line</a>
-	*	<a href="/guides/v1.0/install-gde/install/install-web.html">Web-based</a>
-
-1.	Log in to the Magento server as, or <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
-2.	Delete the contents of `<your magento="" install="" dir="">/pub/static`.
-3.	Run the static file creation tool from the `<your magento="" install="" dir="">/dev/tools/Magento/Tools/View` directory.
-4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
-</your></your></your></code></p></td></tr></tbody></table>
+    <ul>
+      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command-line</a></li>
+      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Web-based</a></li>
+    </ul>
+  </li>
+  <li>Log in to the Magento server as, or <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
+  <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>.</li>
+  <li>Run the static file creation tool from the <code>&lt;your Magento install dir&gt;/dev/tools/Magento/Tools/View</code> directory.</li>
+  <li>Set read-only file permissions for the <code>pub/static</code> directory, its subdirectories, and files.</li>
+</ol>
 
 
 		</div>
