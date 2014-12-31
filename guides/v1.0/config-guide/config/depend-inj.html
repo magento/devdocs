@@ -72,7 +72,7 @@
             <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -213,7 +213,7 @@
 
 <p>A sample proxy (which you declare in <code>di.xml</code>) follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="o">&lt;</span><span class="nx">type</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Magento\Backend\Model\Config\Structure\Element\Iterator\Field&quot;</span> <span class="nx">shared</span><span class="o">=</span><span class="s2">&quot;false&quot;</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;groupFlyweight&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="o">&gt;</span><span class="nx">Magento\Backend\Model\Config\Structure\Element\Group\Proxy</span><span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
@@ -222,7 +222,7 @@
 
 <p class="q">Reviewer: Can you provide me with another example? Foo/bar examples are not ideal.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Foo</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$_bar</span><span class="p">;</span>
@@ -254,7 +254,7 @@
   <li>Use <code>$command</code> as the API parameter that the object acts on</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">Magento\Backend\Model\Menu</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">Builder</span>
 <span class="p">{</span>
@@ -652,7 +652,7 @@ Parameters configured for a class type are automatically configured for all of i
 
 <p class="q">Reviewer: Add a description of what this sample does?</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Magento\Core\Model\Config\BaseFactory</span>
 <span class="p">{</span>
     <span class="k">protected</span> <span class="nv">$_objectManager</span><span class="p">;</span>
@@ -783,7 +783,7 @@ Parameters configured for a class type are automatically configured for all of i
 <h4 id="dep-inj-compile-extra">Specifying extra classes</h4>
 <p>To generate proxies and factories not declared in dependency injection or the Magento code base, use the <code>--extra-classes-file</code> parameter to specify the path to a file that contains a list of factories and classes to generate. A sample follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 
 <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;Magento\Core\Model\SomeFactory&#39;</span><span class="p">,</span>
@@ -867,22 +867,35 @@ Parameters configured for a class type are automatically configured for all of i
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
 					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
 					
 					
 						
@@ -904,7 +917,27 @@ Parameters configured for a class type are automatically configured for all of i
 								
 								
 							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/config-files.html">Configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/plugins.html">Plugins</a></li>
+						
+								
+							
 									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/depend-inj.html">Dependency injection</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/magento-mode.html">Magento modes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/caching.html">Caching</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/js-resources.html">JavaScript resources</a></li>
 						
 								
 								
@@ -916,6 +949,14 @@ Parameters configured for a class type are automatically configured for all of i
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
