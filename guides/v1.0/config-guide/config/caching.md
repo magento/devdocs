@@ -4,7 +4,7 @@ group: config-guide
 subgroup: Configuration
 title: Caching
 menu_title: Caching
-menu_order: 3
+menu_order: 5
 github_link: config-guide/config/caching.md
 ---
 

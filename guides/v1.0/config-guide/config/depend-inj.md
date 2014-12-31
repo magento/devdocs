@@ -1,6 +1,6 @@
 ---
 layout: default
-group: dev-guide
+group: config-guide
 subgroup: Configuration
 title: Dependency injection
 menu_title: Dependency injection

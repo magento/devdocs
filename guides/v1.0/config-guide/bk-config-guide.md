@@ -2,7 +2,7 @@
 layout: default
 group: config-guide
 subgroup: A_Introduction
-title: Configuration and Integration Guide
+title: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
@@ -18,17 +18,21 @@ github_link: config-guide/bk-config-guide.md
    <li>
       <p><a href="{{ site.gdeurl }}config-guide/config/plugins.html">Plugins</a></p>
    </li>
-   <li>
-      <p><a href="{{ site.gdeurl }}config-guide/config/caching.html">Caching</a></p>
+  
+       <li>
+      <p><a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a></p>
    </li>
     <li>
       <p><a href="{{ site.gdeurl }}config-guide/config/magento-mode.html">Magento modes</a></p>
    </li>
     <li>
+      <p><a href="{{ site.gdeurl }}config-guide/config/caching.html">Caching</a></p>
+   </li>
+    <li>
       <p><a href="{{ site.gdeurl }}config-guide/config/js-resources.html">JavaScript resources</a></p>
    </li>
 </ul>
-<h2 id="integration">Integration</h2>
+<!-- <h2 id="integration">Integration</h2>
 <p>To learn about integration, read these topics:</p>
 <ul>
    <li>
@@ -49,5 +53,5 @@ github_link: config-guide/bk-config-guide.md
       <p><a href="{{ site.gdeurl }}config-guide/integration/integration-maintain.html">Maintain an integration</a></p>
    </li>
 
-</ul>
+</ul> -->
 
