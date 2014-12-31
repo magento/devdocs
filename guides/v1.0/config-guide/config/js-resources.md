@@ -4,7 +4,7 @@ group: config-guide
 subgroup: Configuration
 title: JavaScript resources
 menu_title: JavaScript resources
-menu_order: 5
+menu_order: 10
 github_link: config-guide/config/js-resources.md
 ---
 
