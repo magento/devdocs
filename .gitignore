@@ -21,10 +21,7 @@ _config.yml
 =======
 ignore
 /_config.yml
-/_config.steve.yml
-/_config.diane.yml
 /_config.brad.yml
-/_config.olena.yml
 /_config.sasha.yml
 /_config.tana.yml
 /_config.public.yml
@@ -32,3 +29,4 @@ ignore
 /gen_public.bat
 /jk.bat
 *.bat
+*.sh
