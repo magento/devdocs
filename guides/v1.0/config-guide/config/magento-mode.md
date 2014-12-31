@@ -8,6 +8,14 @@ menu_order: 4
 github_link: config-guide/config/magento-mode.md
 ---
 
+#### Contents
+*	<a href="#mode-introduction">Introduction</a>
+*	<a href="mode-developer">Developer mode</a>
+*	<a href="#mode-default">Default mode</a>
+*	<a href="#mode-production">Production mode</a>
+*	<a href="#mode-specify">Specify a mode</a>
+*	<a href="#mode-production-view">Static view file creation tool</a>
+
 <h2 id="mode-introduction">Introduction</h2>
 You can run Magento in any of the following *modes*:
 
@@ -203,6 +211,8 @@ Following is the command syntax:
 The following table discusses the meanings of the options:
 
 <table>
+	<col width="15%">
+  <col width="555%">
 	<tbody>
 		<tr>
 			<th>Option</th>
@@ -210,20 +220,20 @@ The following table discusses the meanings of the options:
 		</tr>
 	<tr>
 		<td>--langs</td>
-		<td><p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. *Do not* separate locales with a space. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code><your Magento install dir>/setup/php -f index.php help languages</code>.</p></td>
+		<td><p>Comma-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static files. <em>Do not</em> separate locales with a space. (Default is <code>en_US</code>.)</p>
+		<p>You can find the list by running <code>&lt;your Magento install dir>/setup/php -f index.php help languages</code>.</p></td>
 	</tr>
 	<tr>
 		<td>--verbose</td>
-		<td>Omit to display errors only. Use <code>0</code> to suppress all output. Use <code>1</code> to display verbose output.</td>
+		<td><p>Omit to display errors only. Use <code>0</code> to suppress all output. Use <code>1</code> to display verbose output.</p></td>
 	</tr>
 	<tr>
 		<td>--dry-run</td>
-		<td>Include to view the files output by the tool without outputting anything.</td>
+		<td><p>Include to view the files output by the tool without outputting anything.</p></td>
 	</tr>
 	<tr>
 		<td>--help</td>
-		<td>Display command help.</td>
+		<td><p>Display command help.</p></td>
 	</tr>
 </tbody>
 </table>
@@ -236,26 +246,26 @@ The following table discusses the meanings of the options:
 For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
 
 <h3 id="view-file-trouble">Troubleshooting the static file creation tool</h3>
-This section discusses errors that result from view files creation tool without first <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installing the Magento software</a>.
+This section discusses errors that result from running the view files creation tool without first <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installing the Magento software</a>.
 
 **Symptom**: Any of the following errors display when you run the static file creation tool:
 
-<pre>PHP Fatal error:  Cannot instantiate interface Magento\Framework\App\View\Deployment\Version\StorageInterface
-in /var/www/magento2/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php on line 188</pre>
+	PHP Fatal error:  Cannot instantiate interface Magento\Framework\App\View\Deployment\Version\StorageInterface
+	in /var/www/magento2/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php on line 188
 
-<pre>ERROR: &lt;lib> tiny_mce/classes/dom/Serializer.js exception 'Zend_Exception' with message 'dbModel read resource does not
-implement \Zend_Db_Adapter_Abstract' in /var/www/my.magento/magento2/lib/internal/Magento/Framework/Data/Collection/Db.php:184</pre>
+	ERROR: <lib> tiny_mce/classes/dom/Serializer.js exception 'Zend_Exception' with message 'dbModel read resource does not
+	implement \Zend_Db_Adapter_Abstract' in /var/www/my.magento/magento2/lib/internal/Magento/Framework/Data/Collection/Db.php:184
 
-<pre>#20 {main} ERROR: &lt;Magento_Paypal> order-review.js exception
-'Magento\Framework\App\InitException' with message 'Store Manager has been initialized not properly' in
-/var/www/my.magento/magento2/app/code/Magento/Store/Model/Storage/Db.php:331
-Stack trace:
-#0
-/var/www/my.magento/magento2/app/code/Magento/Store/Model/StoreManager.php
-... (more messages) ...
-/var/www/my.magento/magento2/lib/internal/Magento/Framework/View/Asset/
-Repository.php(178):
-Magento\Framework\View\Asset\Repository->getFallbackContext('static',NULL, 'frontend', 'Magento/blank', 'en_US')</pre>
+	#20 {main} ERROR: <Magento_Paypal> order-review.js exception
+	'Magento\Framework\App\InitException' with message 'Store Manager has been initialized not properly' in
+	/var/www/my.magento/magento2/app/code/Magento/Store/Model/Storage/Db.php:331
+	Stack trace:
+	#0
+	/var/www/my.magento/magento2/app/code/Magento/Store/Model/StoreManager.php
+	... (more messages) ...
+	/var/www/my.magento/magento2/lib/internal/Magento/Framework/View/Asset/
+	Repository.php(178):
+	Magento\Framework\View\Asset\Repository->getFallbackContext('static',NULL, 'frontend', 'Magento/blank', 'en_US')
 
 **Solution**:
 
