@@ -6,7 +6,7 @@ title: Contributor Guide
 menu_title: Contribute to Magento 2 code
 menu_order: 1
 menu_node: parent
-github_link: contributor-guide/Contribute.md
+github_link: contributor-guide/CONTRIBUTING.md
 ---
 
 <h2>Contribute to Magento 2 code</h2>
