@@ -130,4 +130,7 @@ find . -type f -exec chmod 600 {} \;</pre>
 
 #### Next step
 
-After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.
+After completing the tasks discussed on this page, see one of the following topics:
+
+*	To install Magento with optional sample data: <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>
+*	To install Magento without optional sample data: <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>
