@@ -40,7 +40,7 @@ In a command prompt, enter any of the following commands:
 *	`composer --help`
 *	`composer list --help`
 
-If command help displays, Composer is already installed; in thast case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.
+If command help displays, Composer is already installed; in that case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.
 
 If an error displays, use the following steps to install Composer.
 
