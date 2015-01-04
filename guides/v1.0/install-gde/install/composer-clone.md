@@ -40,7 +40,7 @@ In a command prompt, enter any of the following commands:
 *	`composer --help`
 *	`composer list --help`
 
-If command help displays, Composer is already installed; in thast case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.
+If command help displays, Composer is already installed; in that case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.
 
 If an error displays, use the following steps to install Composer.
 
@@ -130,4 +130,7 @@ find . -type f -exec chmod 600 {} \;</pre>
 
 #### Next step
 
-After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.
+After completing the tasks discussed on this page, see one of the following topics:
+
+*	To install Magento with optional sample data: <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>
+*	To install Magento without optional sample data: <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>

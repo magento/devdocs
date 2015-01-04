@@ -54,7 +54,7 @@ Before you begin:
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
 2.	Change to the following directory:
 
-	<pre>cd &lt;your Magento install dir>/setup</pre>
+		cd &lt;your Magento install dir>/setup
 	
 	<p>Examples:</p>
 	
@@ -83,6 +83,11 @@ Before you begin:
 	</tr>
 	</tbody>
 	</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
+</div>
 	
 <h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
@@ -294,13 +299,17 @@ To reinstall the Magento software:
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
 3.	Enter the following commands in the order shown:
 
-	<pre>cd &lt;your Magento install dir>
-git pull
-composer install
-cd setup
-composer install</pre>
+		cd <your Magento install dir>
+		git pull origin master
+		cd setup
+		php index.php uninstall
+		cd ..
+		composer update
 
-4.	Repeat the tasks discussed in <a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>.
+4.	Repeat the tasks discussed in:
+
+	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 #### Next step
 

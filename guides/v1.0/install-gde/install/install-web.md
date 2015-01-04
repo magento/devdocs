@@ -15,6 +15,7 @@ See one of the following sections:
 
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-magento-web">Running the Setup Wizard</a>
+*	<a href="#instgde-install-reinstall">Reinstalling the Magento software</a>
 
 This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
 
@@ -252,3 +253,8 @@ A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.
 #### Next step
 
 <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+
+<h2 id="instgde-install-reinstall">Reinstalling the Magento software</h2>
+You can reinstall the Magento software in an development environment especially to get all the latest code changes.
+
+To reinstall the Magento software, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-reinstall">Reinstalling the Magento software</a>.
