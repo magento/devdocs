@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Exceptions occur with xdebug PHP extension</title>
+	<title>During installation, xdebug maximum function nesting level error</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -72,7 +72,7 @@
             <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
-               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration and Integration Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html"">Configuration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -136,9 +136,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Exceptions occur with xdebug PHP extension</h1>
+		<h1 class="page-heading">During installation, xdebug maximum function nesting level error</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/trouble/tshoot_xdebug.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/trouble/tshoot_xdebug.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -147,34 +147,21 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="known-devbeta-xdebug">Exceptions occur with xdebug PHP extension</h2>
+		<h2 id="install-trouble-xdebug">During installation, xdebug maximum function nesting level error</h2>
 
-<p>If you use the optional <code>xdebug</code> PHP extension, you can encounter exceptions:</p>
+<h3 id="details">Details</h3>
 
-<ul>
-  <li>During installation</li>
-  <li>When you access the Magento Admin or storefront after a successful installation</li>
-</ul>
+<p>During the installation, a  message similar to the following displays: </p>
 
-<p>Sample exception:</p>
-
-<pre><code>Fatal error: Maximum function nesting level of '100' reached, aborting!
+<pre><code>PHP Fatal error: Maximum function nesting level of '100' reached, aborting! in &lt;path&gt;/ClassLoader.php
 </code></pre>
 
-<p>To resolve this issue, you can:</p>
+<h3 id="solution">Solution</h3>
 
-<ul>
-  <li>Disable the <code>xdebug</code> extension.</li>
-  <li>Set the value of <code>xdebug.max_nesting_level</code> to a value of 500 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
-</ul>
+<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
+<p>For details, see <a href="/guides/v1.0/release-notes/release-notes.html#known-devbeta-xdebug">Known issue with xdebug</a>.
 
-<p>After you change the configuration of or disable <code>xdebug</code>, restart Apache:</p>
-
-<ul>
-  <li>CentOS: <code>sudo service httpd restart</code></li>
-  <li>Ubuntu: <code>sudo service apache2 restart</code></li>
-</ul>
-
+</p>
 
 
 		</div>
@@ -429,11 +416,11 @@
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">Exceptions occur with xdebug PHP extension</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
 						
 								
 								
@@ -445,10 +432,6 @@
 					
 
 
-				
-			
-			
-				
 				
 			
 			

@@ -201,7 +201,8 @@
   <li>
     <p>Change to the following directory:</p>
 
-    <pre>cd &lt;your Magento install dir&gt;/setup</pre>
+    <pre><code>cd &amp;lt;your Magento install dir&gt;/setup
+</code></pre>
 
     <p>Examples:</p>
 
@@ -235,6 +236,11 @@
 </table>
   </li>
 </ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
+</div>
 
 <h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
@@ -459,13 +465,22 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre>cd &lt;your Magento install dir&gt;
-git pull
-composer install
+    <pre><code>cd &lt;your Magento install dir&gt;
+git pull origin master
 cd setup
-composer install</pre>
+php index.php uninstall
+cd ..
+composer update
+</code></pre>
   </li>
-  <li>Repeat the tasks discussed in <a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>.</li>
+  <li>
+    <p>Repeat the tasks discussed in:</p>
+
+    <ul>
+      <li><a href="#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
 </ol>
 
 <h4 id="next-step">Next step</h4>
@@ -726,6 +741,10 @@ composer install</pre>
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
 						
 								
 								
