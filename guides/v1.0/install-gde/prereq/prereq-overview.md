@@ -6,7 +6,7 @@ title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
-github_link: install-gde/prereq-overview.md
+github_link: install-gde/prereq/prereq-overview.md
 ---
 
 <h2 id="instgde-prereq-overview">Before you begin</h2>

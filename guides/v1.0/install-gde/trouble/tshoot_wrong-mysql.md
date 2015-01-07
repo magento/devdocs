@@ -6,7 +6,7 @@ title: During installation, Reflection Exception error
 menu_title: During installation, Reflection Exception error
 menu_node: 
 menu_order: 7
-github_link: install-gde/trouble/tshoot_clear-var.md
+github_link: install-gde/trouble/tshoot_wrong-mysql.md
 ---
 
 <h2 id="install-trouble-clear-var">During installation, Reflection Exception error</h2>

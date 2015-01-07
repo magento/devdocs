@@ -6,7 +6,7 @@ title: Is the Magento software installed already?
 menu_title: Is the Magento software installed already?
 menu_node: 
 menu_order: 1
-github_link: install-gde/basics.md
+github_link: install-gde/basics/basics_magento-installed.md
 ---
 
 To determine if the Magento software is installed already, you can access the Magento Admin (administration console) or storefront using a web browser.
