@@ -113,33 +113,9 @@ We have identified the following known issues in this release:
 
 <h3 id="known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</h3>
 
-To edit `composer.json`:
+To install the optional Magento 2 sample data, you must update `composer.json`, run `composer update`, and run the Magento 2 installer to update the database.
 
-1.  Log in to your Magento server as the web server user or as a user with `root` privileges.
-2.  Change to your Magento installation directory.
-3.  Open `composer.json` in a text editor.
-4.  Search for a `"repositories":` section.
-
-    If you have one, add the following block (without `"repositories":`) to it.
-    
-    If you have no `"repositories":` section, add one as follows before the `"require":` section:
-
-        "repositories": [
-            {
-                "type": "composer",
-                "url": "http://packages.magento.com/"
-            }
-        ],
-
-5.  Add the following to the `"require":` section:
-
-        "magento/sample-data": "0.42.0-beta1",        
-        "magento/sample-data-media": "0.42.0-beta1
-
-    <div class="bs-callout bs-callout-info" id="info">
-        <p>Valid JSON requires the line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma. </div>
-
-5.  Install the Magento software using either the command line or Setup Wizard as discussed in the <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento installation guide</a>.
+See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
 If you use the optional PHP extension `xdebug`, you can encounter exceptions:
