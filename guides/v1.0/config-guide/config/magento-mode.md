@@ -10,7 +10,7 @@ github_link: config-guide/config/magento-mode.md
 
 #### Contents
 *	<a href="#mode-introduction">Introduction</a>
-*	<a href="mode-developer">Developer mode</a>
+*	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-production">Production mode</a>
 *	<a href="#mode-specify">Specify a mode</a>
@@ -105,7 +105,7 @@ See one of the following sections for more information about each mode:
 *	<a href="#mode-production">Production mode</a>
 
 
-<h3 id="mode-specify-var">Specifying a node using your web server environment</h3>
+<h3 id="mode-specify-var">Specifying a mode using your web server environment</h3>
 
 The Apache web server supports this using `mod_env` directives.
 

@@ -295,7 +295,6 @@ This section discusses how to install the Magento software after you installed i
 
 To reinstall the Magento software:
 
-1.	Optionally delete and re-create the database instance.
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
 3.	Enter the following commands in the order shown:
 
@@ -313,4 +312,6 @@ To reinstall the Magento software:
 
 #### Next step
 
-<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+*	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+*	To install optional Magento sample data (sample store, products, customers, and so on), see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
+
