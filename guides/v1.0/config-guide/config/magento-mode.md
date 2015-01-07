@@ -10,7 +10,7 @@ github_link: config-guide/config/magento-mode.md
 
 #### Contents
 *	<a href="#mode-introduction">Introduction</a>
-*	<a href="mode-developer">Developer mode</a>
+*	<a href="#mode-developer">Developer mode</a>
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-production">Production mode</a>
 *	<a href="#mode-specify">Specify a mode</a>
