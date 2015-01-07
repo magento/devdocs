@@ -5,7 +5,7 @@ subgroup: Coding standards
 title: JavaScript DocBlock standard
 menu_title: JavaScript DocBlock standard
 menu_order: 6
-github_link: coding-standards/docblock-standard-javascript-general.md
+github_link: coding-standards/docblock-standard-javascript.md
 ---
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
