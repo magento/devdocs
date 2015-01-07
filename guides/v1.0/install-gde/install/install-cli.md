@@ -277,16 +277,17 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-	<pre>php -f index.php install --base_url=http://localhost/magento2/
-		--backend_frontname=admin
-		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento
-		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com
-		--admin_username=admin --admin_password=iamtheadmin --language=en_US
-		--use_sample_data=1 --currency=USD --timezone=America/Chicago</pre>
+	php -f index.php install --base_url=http://localhost/magento2/ \
+		--backend_frontname=admin \
+		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento \
+		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
+		--admin_username=admin --admin_password=iamtheadmin --language=en_US \
+		--currency=USD --timezone=America/Chicago
+
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>The command must be entered on a single line; it's shown here on multiple lines because of space limitations.</p></span>
+  <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
 <h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
@@ -314,4 +315,5 @@ To reinstall the Magento software:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
 *	To install optional Magento sample data (sample store, products, customers, and so on), see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
+
 
