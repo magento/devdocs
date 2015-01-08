@@ -82,19 +82,60 @@ To change the arguments of an original method or add some behavior before an ori
 
 Prefix the name of the original method with `before` as the following sample shows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/f777163f6e44bc5c5ca0.js"></script>
+{% highlight PHP %}
+<?php
+
+namespace My\Module\Model\Product;
+ 
+class Plugin
+{
+    public function beforeSetName(\Magento\Catalog\Model\Product $subject, $name)
+    {
+        return array('(' . $name . ')');
+    }
+}
+{% endhighlight %}
 
 To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.
 
 Prefix the name of the original method with `after` as the following sample shows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/4a68a7c692536d520ffe.js"></script>
+{% highlight PHP %}
+<?php
+
+namespace My\Module\Model\Product;
+
+class Plugin
+{
+    public function afterGetName(\Magento\Catalog\Model\Product $subject, $result)
+    {
+        return '|' . $result . '|';
+    }
+}
+{% endhighlight %}
 
 To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.
 
 Prefix the name of the original listener with `around` as the following sample shows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/8e25785abf1754c59ccb.js"></script>
+{% highlight PHP %}
+<?php
+
+namespace My\Module\Model\Product;
+ 
+class Plugin
+{
+ public function aroundSave(\Magento\Catalog\Model\Product $subject, \Closure $proceed)
+ {
+   $this->doSmthBeforeProductIsSaved();
+    $returnValue = $proceed();
+    if ($returnValue) {
+    $this->postProductToFacebook();
+   }
+        return $returnValue;
+    }
+}
+{% endhighlight %}
 
 The around-listener method receives two parameters (`$subject` and `$proceed`), followed by the arguments belonging to an original method.
 
