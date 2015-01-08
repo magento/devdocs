@@ -2,31 +2,41 @@
 layout: default
 group: config-guide
 subgroup: Configuration
-title: Plugins
-menu_title: Plugins
+title: Plug-ins
+menu_title: Plug-ins
 menu_order: 2
 github_link: config-guide/config/plugins.md
 ---
 
-In the Magento system, you can change, or *extend*, the behavior of any original method in any Magento class.
+#### Contents
 
-<!-- An *original method* is an existing Magento class method. You can change the behavior of an original method by creating an extension. Extensions use the *Plugin* class to change the behavior of an original method in Magento code. -->
+*  <a href="#plugin-intro">Introduction to Magento plug-ins</a>
+*  <a href="#plugin-limit">Limitations</a>
+*  <a href="#plugin-declare">Declare a plug-in</a>
+*  <a href="#plugin-priority">Prioritize plug-ins</a>
+*  <a href="#plugin-example">Example plug-ins</a>
+*  <a href="#config-inheritance">Configuration inheritance</a>
 
-To ensure that plugins work correctly, you must follow declaration and naming rules.
 
-You use *interception* to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception through the plugin class, which observes public methods, and listener methods in this class. Plugin changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plugins do not conflict. 
+<h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
+
+Magento enables you to change, or *extend*, the behavior of any original method in any Magento class. You can change the behavior of an *original method* by creating an extension. These extensions use the `Plugin` class and are therefore referred to as plug-ins. 
+
+To ensure that plug-ins work correctly, you must follow declaration and naming rules.
+
+You use *interception* to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the `Plugin` class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict. 
 
 Interception ensures that conflicting extensions run without intervention in the system.
 
 <h2 id="plugin-limit">Limitations</h2>
 
-You cannot use plugins for:
+You cannot use plug-ins for:
 
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 * Final methods.
 * Final classes.
 
-<h2 id="plugin-declare">Declare a plugin</h2>
+<h2 id="plugin-declare">Declare a plug-in</h2>
 
 You declare a plugin for an object in the <code>di.xml</code> file for a module:
 
@@ -34,49 +44,45 @@ You declare a plugin for an object in the <code>di.xml</code> file for a module:
 
 You must specify these elements:
 
-* `type name`. A class, interface, or virtual type, which the plugin observes.
-* `plugin name`. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.
-* `plugin type`. The name of a plugin's class or its virtual type. Use the following schema when you specify this element: <ModelName>\Plugin.
-* `plugin sortOrder`. The order in which plugins that call the same method are run.
-* `plugin disabled`. To disable a plugin, set this element to `true`.
+* `type name`. A class, interface, or virtual type, which the plug-in observes.
+* `plugin name`. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.
+* `plugin type`. The name of a plug-in's class or its virtual type. Use the following schema when you specify this element: <ModelName>\Plugin.
+* `plugin sortOrder`. The order in which plug-ins that call the same method are run.
+* `plugin disabled`. To disable a plug-in, set this element to `true`.
 
-<h2 id="plugin-priority">Prioritize plugins</h2>
+<h2 id="plugin-priority">Prioritize plug-ins</h2>
 
-Several conditions influence how plugins apply to the same class/interface:
+Several conditions influence how plug-ins apply to the same class or interface:
 
-<ul>
-   <li>
-      <p>Whether a listener method in a plugin should apply before, after, or around an original method.</p>
-      <p>Use one or more of the following methods to extend/modify an original method's behavior with the interception functionality:
-      <ul>
-         <li>Change the arguments of an original method through the before-listener.</li>
-         <li>Change the values returned by an original method through the after-listener.</li>
-         <li>Change both the arguments and returned values of an original method through the around-listener.</li>
-         <li>
-            <p>Override an original method (a conflicting change).
-            <div class="bs-callout bs-callout-info" id="info">
-                  <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.</p>
-            </div>
-            </p>
-         </li>
-      </ul>
-   <li>
-      <p>The sort order of a plugin.</p>
-      <p>This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.</p>
-      <p>If several plugins apply to the same original method, the following sequence is observed:
-      <ul>
-         <li>The before listener in a plugin with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-         <li>The around listener in a plugin with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-         <li>Other before listeners in plugins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
-         <li>Other around listeners in plugins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
-         <li>The after listener in a plugin with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
-         <li>Other after listeners in plugins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
-      </ul>
-      </p>
-   </li>
-</ul>
+*  Whether a listener method in a plug-in should apply before, after, or around an original method.
 
-<h2 id="plugin-intro">Example plugins</h2>
+   Use one or more of the following methods to extend/modify an original method's behavior with the interception functionality:
+
+   *  Change the arguments of an original method through the before-listener.
+
+   *  Change the values returned by an original method through the after-listener.
+   *  Change both the arguments and returned values of an original method through the around-listener.
+   *  Override an original method (a conflicting change).
+    
+      <div class="bs-callout bs-callout-info" id="info">
+          <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.
+      </div>
+
+*  The sort order of a plug-in.
+
+   This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.
+
+   If several plug-ins apply to the same original method, the following sequence is observed:
+
+   *  The before listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).
+   *  The around listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).
+   *  Other before listeners in plug-ins according to sort order specified for them (that is, from the smallest to the greatest value).
+   *  Other around listeners in plug-ins according to the sort order specified for them (that is, from the smallest to the greatest value).
+   *  The after listener in a plug-in with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).
+   *  Other after listeners in plug-ins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).
+
+
+<h2 id="plugin-example">Example plug-ins</h2>
 
 To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.
 
@@ -141,17 +147,18 @@ The around-listener method receives two parameters (`$subject` and `$proceed`), 
 
 The <code>$subject</code> parameter provides access to all public methods of the original class.
 
-The <code>$proceed</code> parameter calls the next plugin or method.
+The <code>$proceed</code> parameter calls the next plug-in or method.
 
 <h2 id="config-inheritance">Configuration inheritance</h2>
 
-The configuration inheritance implies that a plugin applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.
+<p>The configuration inheritance implies that a plug-in applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.</p>
 
-You can use the configuration inheritance to implement AOP-like functionality with plugins, for instance, to observe the same methods of all models.
+You can use the configuration inheritance to implement AOP-like functionality with plug-ins, for instance, to observe the same methods of all models.
 
-You can override the plugins defined in the global scope by changing <code>di.xml</code> file of an area.
+You can override the plug-ins defined in the global scope by changing `di.xml` file of an area.
 
-<h2 id="compiler-tool">The compiler tool</h2>
-<p class="q">Reviewer: More information required. What is the compiler tool and how do I use it?</pre>
-<p>The compiler tool automatically generates the classes to manage your plugins.</p>
-<p>The compiler tool also handles the performance slowdown caused by configuration inheritance.</p>
+#### Related topics
+
+*  <a href="{{ site.gdeurl }}config-guide/config/depend-inj.html#dep-inj-compile">Definition compiler tool</a>
+*  <a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a>
+
