@@ -102,7 +102,7 @@ Dependency injection means that all object dependencies are passed (that is, inj
 
 A dependency (sometimes referred to as coupling) implies the degree that one component relies on another component to perform a function. A large amount of dependency limits code reuse and makes moving components to new projects difficult.
 
-The object manager specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code.
+The object manager specifies the dependency environment for constructor injection. The object manager must be present only when composing code.
 
 For more information about using dependency injection, refer to the Developer's Guide.
 
@@ -177,7 +177,7 @@ final&nbsp;class&nbsp;Mage_Core_Controller_Varien_Router_Base&nbsp;implements&nb
 }
 </pre>
 
-Thus, an interface and its implementations automatically become a part of API, unlike other elements, which remain module-private. All classes considered a part of API must be declared `final` to prevent the implicit use of them in the SPI.
+Thus, an interface and its implementations automatically become a part of the API, unlike other elements, which remain module-private. All classes considered a part of the API must be declared `final` to prevent the implicit use of them in the SPI.
 
 To be considered SPI-specific, an interface should be declared with `@spi` annotation:
 <pre>
@@ -190,9 +190,9 @@ interface&nbsp;RouterInterface
 }
 </pre>
 
-Thus, an interface is automatically becomes a part of SPI, while its implementations are part of neither the SPI nor the API. Other interfaces and their implementations, which are not marked as SPI-specific, remain module-private.
+Thus, an interface automatically becomes a part of the SPI, while its implementations are part of neither the SPI nor the API. Other interfaces and their implementations, which are not marked as SPI-specific, remain module-private.
 
-The SPI-specific interfaces can be implemented by the third party developers and used in the dependency injection configurations. <!-- ADDLINK -->
+The SPI-specific interfaces can be implemented by third party developers and used in dependency injection configurations. <!-- ADDLINK -->
 
 To be marked as **both** API- and SPI-specific, an interface should be declared with  `@api`  **and** `@spi` annotations:
 
@@ -207,7 +207,7 @@ interface&nbsp;Magento_AuthorizationInterface
 }
 </pre>
 
-Thus, a class can be used and reimplemented by the third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
+Thus, a class can be used and reimplemented by third party developers. To ensure correct behavior, a class should be split into a final class, which becomes a part of the API, and an implementation interface, which becomes a part of the SPI.
 
 <h2 id="m2arch-module-related">Related topics</h2>
 <ul>
