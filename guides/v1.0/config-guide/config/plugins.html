@@ -225,19 +225,60 @@ To change the arguments of an original method or add some behavior before an ori
 
 Prefix the name of the original method with `before` as the following sample shows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/f777163f6e44bc5c5ca0.js"></script>
+
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
+ 
+<span class="k">class</span> <span class="nc">Plugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
 
 To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.
 
 Prefix the name of the original method with `after` as the following sample shows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/4a68a7c692536d520ffe.js"></script>
+
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Plugin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="s1">&#39;|&#39;</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">&#39;|&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
 
 To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.
 
 Prefix the name of the original listener with `around` as the following sample shows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/8e25785abf1754c59ccb.js"></script>
+
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
+ 
+<span class="k">class</span> <span class="nc">Plugin</span>
+<span class="p">{</span>
+ <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
+ <span class="p">{</span>
+   <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
+    <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
+   <span class="p">}</span>
+        <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
 
 The around-listener method receives two parameters (`$subject` and `$proceed`), followed by the arguments belonging to an original method.
 
