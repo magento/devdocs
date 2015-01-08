@@ -78,41 +78,37 @@ Several conditions influence how plugins apply to the same class/interface:
 
 <h2 id="plugin-intro">Example plugins</h2>
 
-<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.</p>
-<p>The before prefix should be added to the name of an original method.</p>
-<p>For example:</p>
+To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.
 
-<script src="https://gist.github.com/xcomSteveJohnson/8e25785abf1754c59ccb.js"></script>
+Prefix the name of the original method with `before` as the following sample shows:
 
-<p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
+<script src="https://gist.github.com/xcomSteveJohnson/f777163f6e44bc5c5ca0.js"></script>
 
-<p>The after prefix should be added to the name of an original method.</p>
+To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.
 
-<p>For example:</p>
+Prefix the name of the original method with `after` as the following sample shows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/4a68a7c692536d520ffe.js"></script>
 
-<p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
+To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.
 
-<p>The around prefix should be added to the name of an original method.</p>
-
-<p>For example:</p>
+Prefix the name of the original listener with `around` as the following sample shows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/8e25785abf1754c59ccb.js"></script>
 
-<p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>) followed by the arguments belonging to an original method.</p>
+The around-listener method receives two parameters (`$subject` and `$proceed`), followed by the arguments belonging to an original method.
 
-<p>The <code>$subject</code> parameter provides access to all public methods of the original class.</p>
+The <code>$subject</code> parameter provides access to all public methods of the original class.
 
-<p>The <code>$proceed</code> parameter calls the next plugin or method.</p>
+The <code>$proceed</code> parameter calls the next plugin or method.
 
 <h2 id="config-inheritance">Configuration inheritance</h2>
 
-<p>The configuration inheritance implies that a plugin applied to a class or interface is derived by the classes/interfaces, which implement/inherit an original class/interface.</p>
+The configuration inheritance implies that a plugin applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.
 
-<p>You can use the configuration inheritance to implement AOP-like functionality with plugins, for instance, to observe the same methods of all models.</p>
+You can use the configuration inheritance to implement AOP-like functionality with plugins, for instance, to observe the same methods of all models.
 
-<p>You can override the plugins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
+You can override the plugins defined in the global scope by changing <code>di.xml</code> file of an area.
 
 <h2 id="compiler-tool">The compiler tool</h2>
 <p class="q">Reviewer: More information required. What is the compiler tool and how do I use it?</pre>
