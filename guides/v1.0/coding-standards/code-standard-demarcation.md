@@ -61,7 +61,7 @@ github_link: coding-standards/code-standard-demarcation.md
    &lt;label for="some-id">Enter text&lt;/label>
    &lt;textarea id="some-id">&lt;/textarea>
 &lt;/div>
-&lt;a href="#some-id">Scroll to text&lt;/a>
+&lt;a href="#some-id">Scroll to text</a>
 </pre>
 <p><b>Unacceptable combination of PHTML, JavaScript, and CSS files</b></p>
 <p>The following unacceptable example replaces a single PHTML file with a combination of a PHTML, JavaScript, and CSS files.</p>
