@@ -249,7 +249,7 @@
 <pre><code>php -f index.php install --[installation option name]=[installation option value] ...
 </code></pre>
 
-<p>The following table discusses the meanings of installation option names and values. An example is provided in <a href="#sample-localhost-installation">Sample localhost installation</a>.</p>
+<p>The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.</p>
 
 <table>
 	<tbody>
@@ -407,7 +407,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tbody>
 </table>
 
-<h4>Sample localhost installation</h4>
+<h4 id="install-cli-example">Sample localhost installation</h4>
 
 <p>The following example installs Magento with the following options:</p>
 
@@ -439,12 +439,13 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <li>
     <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-    <p>php -f index.php install –base_url=http://localhost/magento2/ \
-    –backend_frontname=admin \
-    –db_host=localhost –db_name=magento –db_user=magento –db_pass=magento \
-    –admin_firstname=Magento –admin_lastname=User –admin_email=user@example.com \
-    –admin_username=admin –admin_password=iamtheadmin –language=en_US \
-    –currency=USD –timezone=America/Chicago</p>
+    <pre><code>php -f index.php install --base_url=http://localhost/magento2/ \
+--backend_frontname=admin \
+--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento \
+--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
+--admin_username=admin --admin_password=iamtheadmin --language=en_US \
+--currency=USD --timezone=America/Chicago
+</code></pre>
   </li>
 </ul>
 
