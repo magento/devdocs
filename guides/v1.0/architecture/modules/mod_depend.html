@@ -187,22 +187,7 @@
 
 <p>A module’s dependencies (that is, all of the components upon which the module is dependent upon) are listed in the module’s <code>composer.json</code> file.</p>
 
-<h4 id="m2devgde-moddep-use-example">Usage example</h4>
-
-<p>&lt;root&gt;/app/code/<vendor>/Catalog/composer.json</vendor></p>
-
-<pre>
-{
-    "name": "magento/module-catalog",
-    "description": "N/A",
-    "require": {
-        "magento/module-store": "0.1.0-alpha108",
-        "magento/module-eav": "0.1.0-alpha108",
-        "magento/module-cms": "0.1.0-alpha108",
-        "magento/module-indexer": "0.1.0-alpha108",
-        "magento/module-customer": "0.1.0-alpha108"
-	},
-</pre>
+<p>As an example, see <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/composer.json" target="_blank">the Magento_Catalog module’s composer.json</a>.</p>
 
 <h2 id="m2devgde-moddep-load-order">Define the load order for a module's dependencies</h2>
 
