@@ -95,7 +95,7 @@ The format of the install command follows:
 
 	php -f index.php install --[installation option name]=[installation option value] ...
 
-The following table discusses the meanings of installation option names and values. An example is provided in <a href="#sample-localhost-installation">Sample localhost installation</a>.
+The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.
 
 <table>
 	<tbody>
@@ -253,7 +253,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tbody>
 </table>
 
-<h4>Sample localhost installation</h4>
+<h4 id="install-cli-example">Sample localhost installation</h4>
 
 The following example installs Magento with the following options:
 
@@ -277,7 +277,7 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-	php -f index.php install --base_url=http://localhost/magento2/ \
+		php -f index.php install --base_url=http://localhost/magento2/ \
 		--backend_frontname=admin \
 		--db_host=localhost --db_name=magento --db_user=magento --db_pass=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
