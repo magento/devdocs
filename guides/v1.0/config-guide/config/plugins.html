@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Plugins</title>
+	<title>Plug-ins</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -136,7 +136,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Plugins</h1>
+		<h1 class="page-heading">Plug-ins</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/config/plugins.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -147,19 +147,30 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>In the Magento system, you can change, or <em>extend</em>, the behavior of any original method in any Magento class.</p>
+		<h4 id="contents">Contents</h4>
 
-<!-- An *original method* is an existing Magento class method. You can change the behavior of an original method by creating an extension. Extensions use the *Plugin* class to change the behavior of an original method in Magento code. -->
+<ul>
+  <li><a href="#plugin-intro">Introduction to Magento plug-ins</a></li>
+  <li><a href="#plugin-limit">Limitations</a></li>
+  <li><a href="#plugin-declare">Declare a plug-in</a></li>
+  <li><a href="#plugin-priority">Prioritize plug-ins</a></li>
+  <li><a href="#plugin-example">Example plug-ins</a></li>
+  <li><a href="#config-inheritance">Configuration inheritance</a></li>
+</ul>
 
-<p>To ensure that plugins work correctly, you must follow declaration and naming rules.</p>
+<h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
 
-<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception through the plugin class, which observes public methods, and listener methods in this class. Plugin changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plugins do not conflict. </p>
+<p>Magento enables you to change, or <em>extend</em>, the behavior of any original method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins. </p>
+
+<p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
+
+<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict. </p>
 
 <p>Interception ensures that conflicting extensions run without intervention in the system.</p>
 
 <h2 id="plugin-limit">Limitations</h2>
 
-<p>You cannot use plugins for:</p>
+<p>You cannot use plug-ins for:</p>
 
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 <ul>
@@ -167,7 +178,7 @@
   <li>Final classes.</li>
 </ul>
 
-<h2 id="plugin-declare">Declare a plugin</h2>
+<h2 id="plugin-declare">Declare a plug-in</h2>
 
 <p>You declare a plugin for an object in the <code>di.xml</code> file for a module:</p>
 
@@ -176,55 +187,63 @@
 <p>You must specify these elements:</p>
 
 <ul>
-  <li><code>type name</code>. A class, interface, or virtual type, which the plugin observes.</li>
-  <li><code>plugin name</code>. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
-  <li><code>plugin type</code>. The name of a plugin’s class or its virtual type. Use the following schema when you specify this element: <modelname>\Plugin.</modelname></li>
-  <li><code>plugin sortOrder</code>. The order in which plugins that call the same method are run.</li>
-  <li><code>plugin disabled</code>. To disable a plugin, set this element to <code>true</code>.</li>
+  <li><code>type name</code>. A class, interface, or virtual type, which the plug-in observes.</li>
+  <li><code>plugin name</code>. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.</li>
+  <li><code>plugin type</code>. The name of a plug-in’s class or its virtual type. Use the following schema when you specify this element: <modelname>\Plugin.</modelname></li>
+  <li><code>plugin sortOrder</code>. The order in which plug-ins that call the same method are run.</li>
+  <li><code>plugin disabled</code>. To disable a plug-in, set this element to <code>true</code>.</li>
 </ul>
 
-<h2 id="plugin-priority">Prioritize plugins</h2>
+<h2 id="plugin-priority">Prioritize plug-ins</h2>
 
-<p>Several conditions influence how plugins apply to the same class/interface:</p>
+<p>Several conditions influence how plug-ins apply to the same class or interface:</p>
 
 <ul>
-   <li>
-      <p>Whether a listener method in a plugin should apply before, after, or around an original method.</p>
-      <p>Use one or more of the following methods to extend/modify an original method's behavior with the interception functionality:
-      <ul>
-         <li>Change the arguments of an original method through the before-listener.</li>
-         <li>Change the values returned by an original method through the after-listener.</li>
-         <li>Change both the arguments and returned values of an original method through the around-listener.</li>
-         <li>
-            <p>Override an original method (a conflicting change).
-            <div class="bs-callout bs-callout-info" id="info">
-                  <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.</p>
-            </div>
-            </p>
-         </li>
-      </ul>
-   <li>
-      <p>The sort order of a plugin.</p>
-      <p>This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.</p>
-      <p>If several plugins apply to the same original method, the following sequence is observed:
-      <ul>
-         <li>The before listener in a plugin with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-         <li>The around listener in a plugin with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-         <li>Other before listeners in plugins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
-         <li>Other around listeners in plugins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
-         <li>The after listener in a plugin with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
-         <li>Other after listeners in plugins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
-      </ul>
-      </p>
-   </li>
+  <li>
+    <p>Whether a listener method in a plug-in should apply before, after, or around an original method.</p>
+
+    <p>Use one or more of the following methods to extend/modify an original method’s behavior with the interception functionality:</p>
+
+    <ul>
+      <li>
+        <p>Change the arguments of an original method through the before-listener.</p>
+      </li>
+      <li>Change the values returned by an original method through the after-listener.</li>
+      <li>Change both the arguments and returned values of an original method through the around-listener.</li>
+      <li>
+        <p>Override an original method (a conflicting change).</p>
+
+        <div class="bs-callout bs-callout-info" id="info">
+    <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.
 
 
-<h2 id="plugin-intro">Example plugins</h2>
+</p></div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>The sort order of a plug-in.</p>
 
-To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.
+    <p>This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.</p>
 
-Prefix the name of the original method with `before` as the following sample shows:
+    <p>If several plug-ins apply to the same original method, the following sequence is observed:</p>
 
+    <ul>
+      <li>The before listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
+      <li>The around listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
+      <li>Other before listeners in plug-ins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
+      <li>Other around listeners in plug-ins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
+      <li>The after listener in a plug-in with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
+      <li>Other after listeners in plug-ins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="plugin-example">Example plug-ins</h2>
+
+<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.</p>
+
+<p>Prefix the name of the original method with <code>before</code> as the following sample shows:</p>
 
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 
@@ -238,11 +257,9 @@ Prefix the name of the original method with `before` as the following sample sho
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
+<p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
 
-To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.
-
-Prefix the name of the original method with `after` as the following sample shows:
-
+<p>Prefix the name of the original method with <code>after</code> as the following sample shows:</p>
 
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 
@@ -256,11 +273,9 @@ Prefix the name of the original method with `after` as the following sample show
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
+<p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
 
-To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.
-
-Prefix the name of the original listener with `around` as the following sample shows:
-
+<p>Prefix the name of the original listener with <code>around</code> as the following sample shows:</p>
 
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 
@@ -279,26 +294,27 @@ Prefix the name of the original listener with `around` as the following sample s
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
+<p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>), followed by the arguments belonging to an original method.</p>
 
-The around-listener method receives two parameters (`$subject` and `$proceed`), followed by the arguments belonging to an original method.
+<p>The <code>$subject</code> parameter provides access to all public methods of the original class.</p>
 
-The <code>$subject</code> parameter provides access to all public methods of the original class.
-
-The <code>$proceed</code> parameter calls the next plugin or method.
+<p>The <code>$proceed</code> parameter calls the next plug-in or method.</p>
 
 <h2 id="config-inheritance">Configuration inheritance</h2>
 
-The configuration inheritance implies that a plugin applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.
+<p>The configuration inheritance implies that a plug-in applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.</p>
 
-You can use the configuration inheritance to implement AOP-like functionality with plugins, for instance, to observe the same methods of all models.
+<p>You can use the configuration inheritance to implement AOP-like functionality with plug-ins, for instance, to observe the same methods of all models.</p>
 
-You can override the plugins defined in the global scope by changing <code>di.xml</code> file of an area.
+<p>You can override the plug-ins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
 
-<h2 id="compiler-tool">The compiler tool</h2>
-<p class="q">Reviewer: More information required. What is the compiler tool and how do I use it?
-<p>The compiler tool automatically generates the classes to manage your plugins.</p>
-<p>The compiler tool also handles the performance slowdown caused by configuration inheritance.</p>
-</p></p></li></ul>
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v1.0/config-guide/config/depend-inj.html#dep-inj-compile">Definition compiler tool</a></li>
+  <li><a href="/guides/v1.0/config-guide/config/depend-inj.html">Dependency injection</a></li>
+</ul>
+
 
 
 		</div>
@@ -398,7 +414,7 @@ You can override the plugins defined in the global scope by changing <code>di.xm
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/plugins.html">Plugins</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/plugins.html">Plug-ins</a></li>
 						
 								
 							
