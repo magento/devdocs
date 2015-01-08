@@ -75,7 +75,17 @@ To edit `composer.json`:
 After you've installed the Magento software or run `composer install`, you can install the sample data as follows:
 
 1.  Update `composer.json` as discussed in <a href="#instgde-install-sample-enabling">Enable the use of sample data</a>.
-2.  As the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>, run `composer update` from your Magento installation directory (for example, `/var/www/magento2`).
+2.  As the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>:
+
+    a.  Change to your Magento installation directory (for example, `/var/www/magento2`).
+
+    b. Enter `composer update`
+
+    <div class="bs-callout bs-callout-info" id="info">
+        <p>The following error displays if you have run <code>composer update</code> recently. The error is normal; you can continue the installation.</p> 
+        <pre>[ErrorException]
+  Target ./dev/tools/Magento/Tools/SampleData/Installer.php already exists (set extra.magento-force to override)</pre></div>
+
 3.  Run the Magento setup software (if you've already installed Magento, the setup software updates the database):
 
     *   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>
