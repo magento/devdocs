@@ -13,7 +13,7 @@ Magento is an application that is built  of several different types of component
 
 Modules and themes are the units of customization in Magento,  modules for business features and themes for user experience and look-and-feel. Both have a lifecycle allowing them to be installed, deleted, disabled, etc.
 
-Modules encapsulate a particular business feature or set of features; a module is basically a package of code. Modules can relate to and depend on each other in a variety of ways, but should be as independent as possible to maximum flexibility when customizing a site. And while modules primarily define new business features, or customizations to existing ones, they also define a default user interface for those features, which can be customized by themes.
+Modules encapsulate a particular business feature or set of features; a module is basically a package of code. Modules can relate to and depend on each other in a variety of ways, but should be as independent as possible to maximize flexibility when customizing a site. And while modules primarily define new business features, or customizations to existing ones, they also define a default user interface for those features, which can be customized by themes.
 
 A Module is a logical group--that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget. A module is designed to work independently and not to intervene with the work of other functionality. Using a modular approach implies that every module encapsulates a feature and has minimum dependencies on other modules.
 
@@ -27,7 +27,7 @@ Modules live in the `/app/code` directory of a Magento installation, in a direct
 
 A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in `<root>/app/code/<Vendor>/<ModuleName>/etc/`. 
 
-A module should be named according to the Namespace_Module schema, where
+A module should be named according to the Namespace_Module schema, where:
 
 * Namespace is a name of a module's vendor
 * Module is a name assigned to a module by its vendor
