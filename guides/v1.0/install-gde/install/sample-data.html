@@ -76,7 +76,7 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/guides/v1.0//frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
                <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
@@ -233,7 +233,18 @@
 
 <ol>
   <li>Update <code>composer.json</code> as discussed in <a href="#instgde-install-sample-enabling">Enable the use of sample data</a>.</li>
-  <li>As the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>, run <code>composer update</code> from your Magento installation directory (for example, <code>/var/www/magento2</code>).</li>
+  <li>
+    <p>As the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>:</p>
+
+    <p>a.  Change to your Magento installation directory (for example, <code>/var/www/magento2</code>).</p>
+
+    <p>b. Enter <code>composer update</code></p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <p>The following error displays if you have run <code>composer update</code> recently. The error is normal; you can continue the installation.</p> 
+    <pre>[ErrorException]
+  Target ./dev/tools/Magento/Tools/SampleData/Installer.php already exists (set extra.magento-force to override)</pre></div>
+  </li>
   <li>
     <p>Run the Magento setup software (if you’ve already installed Magento, the setup software updates the database):</p>
 
