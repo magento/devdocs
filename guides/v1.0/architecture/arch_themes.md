@@ -13,7 +13,7 @@ Themes allow you to customize the look-and-feel of the Magento application. Them
 
 Themes are located in the `/app/design/frontend/<Vendor>/` folder of a Magento installation. Each theme contains a <code>theme.xml</code> file, which defines the name and version of that theme, as well as the name of the parent theme, if any.
 
-Themes are also divided by area, allowing you define themes that customize either the storefront or admin sections of the Magento application independently.
+Themes are also divided by area, allowing you to define themes that customize either the storefront or admin sections of the Magento application independently.
 
 For detailed information about working with themes, refer to  <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.
 
