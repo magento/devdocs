@@ -12,7 +12,7 @@ github_link: architecture/modules/mod_conventions.md
 
 When developing or working with modules, be aware of Magento standards and conventions, such as naming conventions and the location of modules within the file system.
 
-Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see Coding Standards.
+Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html">Coding Standards</a>.
 
 <h2 id="m2arch-module-conventions-location"> Module location conventions</h2>
 
