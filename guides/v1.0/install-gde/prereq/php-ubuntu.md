@@ -15,7 +15,6 @@ github_link: install-gde/prereq/php-ubuntu.md
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu</a>
 *	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</a>
-*	<a href="#instgde-prereq-php-upgrade-ubuntu">Upgrade PHP on Ubuntu</a>
 *	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
 
@@ -62,6 +61,8 @@ To install PHP 5.6 on Ubuntu 14:
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 		with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
+3.	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>.
+
 
 <h3 id="instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu12</h3>
 TBD
@@ -91,22 +92,24 @@ To install PHP 5.5 on Ubuntu 14:
 <h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu12</h3>
 1.	Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:
 
-	<pre>add-apt-repository ppa:ondrej/php5
-	apt-get update
-	sudo apt-get install php5</pre>
+		add-apt-repository ppa:ondrej/php5
+		apt-get update
+		apt-get -y install php5
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
-	<pre>PHP 5.5.18-1+deb.sury.org~precise+1 (cli) (built: Oct 17 2014 15:11:34)
-	Copyright (c) 1997-2014 The PHP Group
-	Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
-    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies</pre>
+		PHP 5.5.18-1+deb.sury.org~precise+1 (cli) (built: Oct 17 2014 15:11:34)
+		Copyright (c) 1997-2014 The PHP Group
+		Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
+    	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+
+3.	Install required PHP extensions as discussed in the next section.
 
 <h2 id="instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</h2>
 
 To install the PHP extensions required by Magento, enter the following command:
 
-<pre>apt-get install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl</pre>
+<pre>apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl</pre>
 
 <h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
 

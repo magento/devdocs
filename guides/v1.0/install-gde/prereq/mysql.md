@@ -11,9 +11,9 @@ github_link: install-gde/prereq/mysql.md
 #### Contents
 
 *	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
-*	<a href="#instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</a>
-*	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL on CentOS</a>
-*	<a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>
+*	<a href="#instgde-prereq-mysql-ubuntu">Install mySQl ON ubuNtu</a>
+*	<a href="#instgde-prereq-mysql-centos">Install and configuring mySQl ON cenTos</a>
+*	<a href="#instgde-prereq-mysql-config">Configure the maGento database instance</a>
 
 <h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
 
@@ -28,7 +28,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 *	Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.
 *	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.
 
-<h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
+<h2 id="instgde-prereq-mysql-ubuntu">Install mySQl ON ubuNtu</h2>
 See one of the following sections for more information:
 
 *	<a href="#instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</a>
@@ -86,7 +86,7 @@ Messages similar to the following display:
 
 	mysql>
 
-<h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL on CentOS</h2>
+<h2 id="instgde-prereq-mysql-centos">Install and configuring mySQl ON cenTos</h2>
 
 The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.
 
@@ -105,8 +105,9 @@ yum -y install mysql-server</pre>
 
 	`mysql_secure_installation`
 
-<h2 id="instgde-prereq-mysql-config">Configuring the Magento database instance</h2>
+4.	Configure the Magento database instance as discussed in the next section.
 
+<h2 id="instgde-prereq-mysql-config">Configuring the Magento database instance</h2>
 This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance.
 
 To configure a MySQL database instance:
