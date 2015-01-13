@@ -2,8 +2,8 @@
 layout: default
 group: install
 subgroup: Prerequisites
-title: PHP 5.4 or 5.5&mdash;Ubuntu
-menu_title: PHP 5.4 or 5.5&mdash;Ubuntu
+title: PHP 5.5 or 5.6&mdash;Ubuntu
+menu_title: PHP 5.5 or 5.6&mdash;Ubuntu
 menu_order: 3
 github_link: install-gde/prereq/php-ubuntu.md
 ---
@@ -13,8 +13,8 @@ github_link: install-gde/prereq/php-ubuntu.md
 <h4 id="instgde-php-prereq-contents">Contents</h4>
 
 *	<a href="#php-support">PHP versions supported</a>
+*	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu</a>
 *	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</a>
-*	<a href="#instgde-prereq-php54-install-ubuntu">PHP 5.4 on Ubuntu</a>
 *	<a href="#instgde-prereq-php-upgrade-ubuntu">Upgrade PHP on Ubuntu</a>
 *	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
@@ -27,13 +27,45 @@ github_link: install-gde/prereq/php-ubuntu.md
 <h2 id="php-support">PHP versions supported</h2>
 Magento requires:
 
-*	PHP 5.4.x where x = 11 or later
+*	PHP 5.6.x
 *	PHP 5.5.x 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento does <em>not</em> support PHP 5.6.</p></span>
+  <p>Magento no longer supports PHP 5.4.</p></span>
 </div>
+
+<h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu</h2>
+
+See one of the following sections for more information:
+
+*	<a href="#instgde-prereq-php56-install-ubuntu14">PHP 5.6 on Ubuntu14</a>
+*	<a href="#instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu12</a>
+
+<h3 id="instgde-prereq-php56-install-ubuntu14">PHP 5.6 on Ubuntu14</h3>
+To install PHP 5.6 on Ubuntu 14:
+
+1.	Enter the following commands in the order shown:
+
+		add-apt-repository ppa:ondrej/php5-5.6
+		apt-get -y update
+		apt-get -y install php5
+
+2.	Enter the following command to verify PHP 5.6 installed properly:
+
+		php -v
+
+	Following is a sample response that indicates PHP 5.6 is installed:
+
+		PHP 5.6.4-1+deb.sury.org~trusty+1 (cli) (built: Dec 21 2014 19:28:16)
+		Copyright (c) 1997-2014 The PHP Group
+		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+		with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+
+
+<h3 id="instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu12</h3>
+TBD
+
 
 <h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</h2>
 
@@ -51,10 +83,10 @@ To install PHP 5.5 on Ubuntu 14:
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
-	<pre>PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
-	Copyright (c) 1997-2014 The PHP Group
-	Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
-    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies</pre>
+		PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
+		Copyright (c) 1997-2014 The PHP Group
+		Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
+	    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 
 <h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu12</h3>
 1.	Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:
@@ -69,40 +101,6 @@ To install PHP 5.5 on Ubuntu 14:
 	Copyright (c) 1997-2014 The PHP Group
 	Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
     with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies</pre>
-
-<h2 id="instgde-prereq-php54-install-ubuntu">PHP 5.4 on Ubuntu</h2>
-
-The Ubuntu 14 repository has PHP 5.4. This section discusses how to install PHP 5.4 on Ubuntu 12.
-
-To install PHP 5.4 on Ubuntu 12:
-
-1.	Use the following instructions from <a href="http://askubuntu.com/questions/109404/how-do-i-install-latest-php-in-supported-ubuntu-versions-like-5-4-x-in-ubuntu-1" target="_blank">askubuntu</a>:
-
-	<pre>add-apt-repository ppa:ondrej/php5-oldstable
-	apt-get update
-	apt-get upgrade
-	apt-get install php5</pre>
-
-2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
-
-	<pre>PHP 5.4.33-2+deb.sury.org~precise+1 (cli) (built: Sep 25 2014 09:06:25)
-	Copyright (c) 1997-2014 The PHP Group
-	Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
-
-3.	Restart Apache: `service apache2 restart`
-
-<h2 id="instgde-prereq-php-upgrade-ubuntu">Upgrade PHP on Ubuntu</h2>
-
-To upgrade to PHP 5.4 on Ubuntu:
-
-1.	Use the instructions on <a href="http://phpave.com/upgrade-php-5-3-php-5-5-ubuntu-12-04-lts/" target="_blank">phpave</a>.
-2.	After upgrading, verify the PHP version by entering `php -v`. Messages similar to the following should display:
-
-	<pre>PHP 5.4.33-2+deb.sury.org~precise+1 (cli) (built: Sep 25 2014 09:06:25)
-	Copyright (c) 1997-2014 The PHP Group
-	Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
-
-3.	Restart Apache: `service apache2 restart`
 
 <h2 id="instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</h2>
 
@@ -155,7 +153,7 @@ To set your time zone and memory limit:
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>

@@ -49,21 +49,21 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
     allow from all
 &lt;/Directory></pre>
 
-3.	Change the value of <code>AllowOverride</code> to <code>[value from Apache site]</code>.
+3.	Change the value of `AllowOverride` to `<value from Apache site>`.
 
-	<pre>&lt;Directory /var/www/>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride All
-    Order allow,deny
-    allow from all
-	&lt;/Directory></pre>
+		<Directory /var/www/>
+   	 	Options Indexes FollowSymLinks MultiViews
+    	AllowOverride All
+    	Order allow,deny
+    	allow from all
+		<Directory>
 
 4.	Save the file and exit the text editor.
 
 5.	Configure Apache to use the <code>mod_rewrite</code> module.
 
-	<pre>cd /etc/apache2/mods-enabled
-	ln -s ../mods-available/rewrite.load</pre>
+		cd /etc/apache2/mods-enabled
+		ln -s ../mods-available/rewrite.load
 
 6.	Restart Apache.
 
@@ -97,6 +97,8 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 
 	<pre>service apache2 restart</pre>
 
+Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>), or start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
 
 Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.
@@ -118,7 +120,7 @@ Install Apache 2 if you haven't already done so.
 
 	<pre>&lt;Directory /var/www/html></pre>
 
-3.	In that block, change the value of <code>AllowOverride</code> to <code>All</code>.
+3.	In that block, change the value of `AllowOverride` to one of the values documented on the <a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache site</a>.
 
 4.	Save your changes to <code>httpd.conf</code> and exit the text editor.
 
@@ -126,12 +128,13 @@ Install Apache 2 if you haven't already done so.
 
 	<pre>service httpd restart</pre>
 
+Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a>), or start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
 
 
 #### Related topics:
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.4&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
