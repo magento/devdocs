@@ -11,6 +11,7 @@ github_link: install-gde/prereq/apache.md
 
 #### Contents
 
+*	<a href="#apache-support">Apache versions supported</a>
 *	<a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 
@@ -23,51 +24,20 @@ Install Apache 2 if you haven't already done so:
 
 	apt-get -y install apache2
 
-<h3 id="install-ubuntu-apache-rewrites">Enabling Apache Rewrites</h3>
+<h3 id="install-ubuntu-apache-rewrites">Enabling Apache rewrites</h3>
 Ubuntu 12 (which natively supports Apache 2.2) is different from Ubuntu 14 (which natively supports Apache 2.4).
 
-It's very important you choose a value for <code>AllowOverride</code> that is suited to your deployment. You can use <code>AllowOverride All</code> in development but it might not be desirable in production.
+It's very important you choose a value for `AllowOverride` that is suited to your deployment. You can use `AllowOverride All` in development but it might not be desirable in production.
 
-For more information, see one of the following references:
+More information about `AllowOverride`:
 
 *	<a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache 2.2</a>
 *	<a href="http://httpd.apache.org/docs/current/mod/core.html#allowoverride" target="_blank">Apache 2.4</a>
 
-<h4 id="apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</h4>
-Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.2, which is supported by the default Ubuntu 12 repository.
+See one of the following sections:
 
-1.	Open the following file for editing.
-
-	<pre>vim /etc/apache2/sites-available/default</pre>
-
-2.	Locate the following block.
-
-	<pre>&lt;Directory /var/www/>
-    Options Indexes FollowSymLinks MultiViews
-    AllowOverride None
-    Order allow,deny
-    allow from all
-&lt;/Directory></pre>
-
-3.	Change the value of `AllowOverride` to `<value from Apache site>`.
-
-		<Directory /var/www/>
-   	 	Options Indexes FollowSymLinks MultiViews
-    	AllowOverride All
-    	Order allow,deny
-    	allow from all
-		<Directory>
-
-4.	Save the file and exit the text editor.
-
-5.	Configure Apache to use the <code>mod_rewrite</code> module.
-
-		cd /etc/apache2/mods-enabled
-		ln -s ../mods-available/rewrite.load
-
-6.	Restart Apache.
-
-	<pre>service apache2 restart</pre>
+*	<a href="#apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</a>
+*	<a href="#apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</a>
 
 <h4 id="apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</h4>
 Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.4, which is supported by the default Ubuntu 14 repository.
@@ -84,9 +54,9 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 
 	For example, you can add the following to the bottom of <code>000-default.conf</code>:
 
-	<pre>&lt;Directory "/var/www">
-	AllowOverride [value from Apache site]
-	&lt;/Directory></pre>
+		<Directory "/var/www">
+		AllowOverride <value from Apache site>
+		&lt;/Directory>
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -94,6 +64,44 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 	</div>
 
 3.	Restart Apache:
+
+	<pre>service apache2 restart</pre>
+
+Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>), or start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+
+<h4 id="apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</h4>
+Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.2, which is supported by the default Ubuntu 12 repository.
+
+1.	Open the following file for editing.
+
+		vim /etc/apache2/sites-available/default
+
+2.	Locate the following block.
+
+		<Directory /var/www/>
+	    Options Indexes FollowSymLinks MultiViews
+	    AllowOverride None
+	    Order allow,deny
+	    allow from all
+		<Directory>
+
+3.	Change the value of `AllowOverride` to `<value from Apache site>`.
+
+		<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+    	AllowOverride <value from Apache site>
+    	Order allow,deny
+    	allow from all
+		<Directory>
+
+4.	Save the file and exit the text editor.
+
+5.	Configure Apache to use the <code>mod_rewrite</code> module.
+
+		cd /etc/apache2/mods-enabled
+		ln -s ../mods-available/rewrite.load
+
+6.	Restart Apache.
 
 	<pre>service apache2 restart</pre>
 

@@ -13,7 +13,7 @@ github_link: install-gde/prereq/php-ubuntu.md
 <h4 id="instgde-php-prereq-contents">Contents</h4>
 
 *	<a href="#php-support">PHP versions supported</a>
-*	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu</a>
+*	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14 or Ubuntu 12</a>
 *	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</a>
 *	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
@@ -34,15 +34,9 @@ Magento requires:
   <p>Magento no longer supports PHP 5.4.</p></span>
 </div>
 
-<h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu</h2>
+<h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14 or Ubuntu 12</h2>
 
-See one of the following sections for more information:
-
-*	<a href="#instgde-prereq-php56-install-ubuntu14">PHP 5.6 on Ubuntu14</a>
-*	<a href="#instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu12</a>
-
-<h3 id="instgde-prereq-php56-install-ubuntu14">PHP 5.6 on Ubuntu14</h3>
-To install PHP 5.6 on Ubuntu 14:
+To install PHP 5.6 on Ubuntu 14 or Ubuntu 12:
 
 1.	Enter the following commands in the order shown:
 
@@ -62,10 +56,6 @@ To install PHP 5.6 on Ubuntu 14:
 		with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 3.	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>.
-
-
-<h3 id="instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu12</h3>
-TBD
 
 
 <h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</h2>

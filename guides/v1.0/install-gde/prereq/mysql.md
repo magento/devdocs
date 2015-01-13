@@ -35,56 +35,65 @@ See one of the following sections for more information:
 *	<a href="#instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</a>
 
 <h3 id="instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</h3>
-To install MySQL 5.6 on Ubuntu 14, enter the following command:
+To install MySQL 5.6 on Ubuntu 14:
 
-	apt-get -y install mysql-server-5.6 mysql-client-5.6
+1.	Enter the following command:
 
-Test the installation by entering the following command:
+		apt-get -y install mysql-server-5.6 mysql-client-5.6
 
-	mysql -u root -p
+2.	Test the installation by entering the following command:
 
-Sample output:
+		mysql -u root -p
 
-	Welcome to the MySQL monitor.  Commands end with ; or \g.
-	Your MySQL connection id is 45
-	Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
+	Sample output:
 
-	Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 45
+		Server version: 5.6.19-0ubuntu0.14.04.1 (Ubuntu)
 
-	Oracle is a registered trademark of Oracle Corporation and/or its
-	affiliates. Other names may be trademarks of their respective
-	owners.
+		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
 
-	mysql>
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+		mysql>
+
+3.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
 
 <h3 id="instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</h3>
-To install MySQL 5.6 on Ubuntu 12, enter the following commands in the order shown:
 
-	apt-add-repository ppa:ondrej/mysql-5.6
-	apt-get -y update
-	apt-get -y install mysql-server
+To install MySQL 5.6 on Ubuntu 12:
 
-Test the installation by entering the following command:
+1.	Enter the following commands in the order shown:
 
-	mysql -u root -p
+		apt-add-repository ppa:ondrej/mysql-5.6
+		apt-get -y update
+		apt-get -y install mysql-server
 
-Messages similar to the following display:
+2.	Test the installation by entering the following command:
 
-	Welcome to the MySQL monitor.  Commands end with ; or \g.
-	Your MySQL connection id is 43
-	Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
+		mysql -u root -p
 
-	Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+	Messages similar to the following display:
 
-	Oracle is a registered trademark of Oracle Corporation and/or its
-	affiliates. Other names may be trademarks of their respective
-	owners.
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 43
+		Server version: 5.6.21-1+deb.sury.org~precise+1 (Ubuntu)
 
-	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-	mysql>
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
+
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+		mysql>
+
+3.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
 
 <h2 id="instgde-prereq-mysql-centos">Install and configuring mySQl ON cenTos</h2>
 
@@ -92,10 +101,10 @@ The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26
 
 1.	Install the MySQL database:
 
-	<pre>cd /tmp
-wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
-rpm -ivh mysql-community-release-el6-5.noarch.rpm
-yum -y install mysql-server</pre>
+		cd /tmp
+		wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
+		rpm -ivh mysql-community-release-el6-5.noarch.rpm
+		yum -y install mysql-server
 
 2.	Start MySQL.
 
@@ -114,17 +123,20 @@ To configure a MySQL database instance:
 
 1.	Log in to your database server as any user.
 2.	Enter the following command to get to a MySQL command prompt:
-	<pre>mysql -u root -p</pre>
+
+		mysql -u root -p
+
 3.	Enter the MySQL `root` user's password when prompted.
 4.	Enter the following commands in the order shown to create a database instance named `magento` with user name `magento`:
-	<pre>create database magento;
-GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';</pre>
+
+		create database magento;
+		GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 
 5.	Enter `exit` to quit the command prompt.
 
 6.	Verify the database:
 
-	<pre>mysql -u magento -p</pre>
+		mysql -u magento -p
 
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
