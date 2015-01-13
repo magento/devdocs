@@ -32,15 +32,35 @@ app/design/frontend/
 
 The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.
 
+<h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
 
-<h2 id="fedg_create_theme_composer">Make your theme a Composer package</h2>
+After you create a directory for your theme, you must create `theme.xml` containing the theme name, version, and parent theme name.
+
+1. Add or copy from an existing `theme.xml` to your theme directory `app/design/frontend/<Vendor>/<theme>`
+
+2. Configure it using the following example:
+	
+		<theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd">
+   	 		<title>New theme</title> <!-- your theme's name -->
+   			 <version>0.1.0</version> <!-- your theme version -->
+   				 <parent>Magento/blank</parent> <!-- the parent theme, in case your theme inherits from an existing theme -->
+    		<media>
+       	 	<preview_image>media/preview.jpg</preview_image> <!-- the path to your theme's preview image -->
+    		</media>
+		</theme>
+
+To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
+
+<img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
+
+<h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
 
 Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
 
-To distribute your theme, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
+To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
-`composer.json` provides theme dependency information, including the specification of a parent theme (if your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from another theme).
+`composer.json` provides theme dependency information.
 
 Example of a theme `composer.json`:
 <pre>
@@ -74,12 +94,6 @@ Example of a theme `composer.json`:
 <!-- If your theme supports Composer, the end users can install or uninstall it on their Magento systems. -->
 
 <!--ADDLINK You can find details about the Composer integration in the Magento system in Composer Integration. -->
-
-<h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
-
-After you create a directory for your theme, you must create `theme.xml` containing the theme declaration and name, version, and parent theme name .
-
-1. Add or copy from an existing `theme.xml` to your theme directory `app/design/frontend/<Vendor>/<theme>`
 
 2. Configure it using the following example:
 <pre>
