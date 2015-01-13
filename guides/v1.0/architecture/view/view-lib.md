@@ -19,7 +19,7 @@ for HTML content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.
 
 The View component is represented
-as `Magento\Framework\View` library: `magento2/lib/Magento/Framework/View`.
+as `Magento\Framework\View` library: `/lib/internal/Magento/Framework/View`.
 
 <h2>Using Magento\Framework\View Library</h2>
 
