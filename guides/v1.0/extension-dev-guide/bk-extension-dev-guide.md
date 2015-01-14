@@ -8,6 +8,8 @@ menu_order: 1
 menu_node: parent
 github_link: extension-dev-guide/bk-extension-dev-guide.md
 ---
+<h2 id="overview-introduction">Introduction</h2>
+This guide contains information for developers who want to extend, or customize, any of the components in the Magento platform. 
 
 <h2 id="api-concepts">Concepts</h2>
 <dl>
@@ -37,3 +39,6 @@ github_link: extension-dev-guide/bk-extension-dev-guide.md
       <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></p>
    </dt>
 </dl>
+
+<h2 id="m2arch-related">Related topics</h2>
+* <a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.
