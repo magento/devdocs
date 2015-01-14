@@ -10,10 +10,20 @@ github_link: install-gde/prereq/mysql.md
 
 #### Contents
 
+*	<a href="#mysql-help-beginner">Help if you're just starting out</a>
 *	<a href="#instgde-prereq-mysql-intro">General guidelines</a>
-*	<a href="#instgde-prereq-mysql-ubuntu">Install mySQl ON ubuNtu</a>
-*	<a href="#instgde-prereq-mysql-centos">Install and configuring mySQl ON cenTos</a>
-*	<a href="#instgde-prereq-mysql-config">Configure the maGento database instance</a>
+*	<a href="#instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</a>
+*	<a href="#instgde-prereq-mysql-centos">Installing and configuring MySQL on CentOS</a>
+*	<a href="#instgde-prereq-mysql-config">Configuring the Magento database instance</a>
+
+<h2 id="mysql-help-beginner">Help if you're just starting out</h2>
+If you're new to all this and need some help getting started, we suggest the following:
+
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+
 
 <h2 id="instgde-prereq-mysql-intro">General guidelines</h2>
 
@@ -28,7 +38,7 @@ Magento _strongly_ recommends you observe the following standard when you set up
 *	Familiarize yourself with <a href="http://dev.mysql.com/doc/mysql-reslimits-excerpt/5.1/en/stored-program-restrictions.html" target="_blank">these potential MySQL trigger limitations</a> before you continue.
 *	If you use MySQL database replication, be aware that Magento does _not_ support MySQL statement-based replication. Make sure you use _only_ <a href="http://dev.mysql.com/doc/refman/5.1/en/replication-formats.html" target="_blank">row-based replication</a>.
 
-<h2 id="instgde-prereq-mysql-ubuntu">Install mySQl ON ubuNtu</h2>
+<h2 id="instgde-prereq-mysql-ubuntu">Installing MySQL on Ubuntu</h2>
 See one of the following sections for more information:
 
 *	<a href="#instgde-prereq-mysql56ubu14">Installing MySQL 5.6 on Ubuntu 14</a>
@@ -95,24 +105,23 @@ To install MySQL 5.6 on Ubuntu 12:
 
 3.	<a href="#instgde-prereq-mysql-config">Configure the Magento database instance</a>.
 
-<h2 id="instgde-prereq-mysql-centos">Install and configuring mySQl ON cenTos</h2>
+<h2 id="instgde-prereq-mysql-centos">Installing and configuring MySQL 5.6 on CentOS</h2>
 
 The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.
 
 1.	Install the MySQL database:
 
-		cd /tmp
 		wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
 		rpm -ivh mysql-community-release-el6-5.noarch.rpm
 		yum -y install mysql-server
 
 2.	Start MySQL.
 
-	`service mysqld start`
+		service mysqld start
 
 3.	Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
 
-	`mysql_secure_installation`
+		mysql_secure_installation
 
 4.	Configure the Magento database instance as discussed in the next section.
 

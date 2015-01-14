@@ -13,6 +13,7 @@ github_link: install-gde/prereq/php-ubuntu.md
 <h4 id="instgde-php-prereq-contents">Contents</h4>
 
 *	<a href="#php-support">PHP versions supported</a>
+*	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
 *	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14 or Ubuntu 12</a>
 *	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</a>
 *	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>
@@ -33,6 +34,15 @@ Magento requires:
 <span class="glyphicon-class">
   <p>Magento no longer supports PHP 5.4.</p></span>
 </div>
+
+<h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
+If you're new to all this and need some help getting started, we suggest the following:
+
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+
 
 <h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14 or Ubuntu 12</h2>
 

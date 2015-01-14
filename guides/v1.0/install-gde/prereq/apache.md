@@ -12,12 +12,22 @@ github_link: install-gde/prereq/apache.md
 #### Contents
 
 *	<a href="#apache-support">Apache versions supported</a>
+*	<a href="#apache-help-beginner">Help if you're just starting out</a>
 *	<a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 
 <h2 id="apache-support">Apache versions supported</h2>
 
 Magento requires Apache 2.2.x or 2.4.x.
+
+<h2 id="apache-help-beginner">Help if you're just starting out</h2>
+If you're new to all this and need some help getting started, we suggest the following:
+
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
+*	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+
 
 <h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
 Install Apache 2 if you haven't already done so:
