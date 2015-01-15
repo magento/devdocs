@@ -25,15 +25,12 @@ The purpose of areas is efficiency. If you are invoking a REST web service call,
 
 Typically, an area has behavior and view components, which operate separately.
 
-However, an area can have only one component, for instance, the `cron` area, which has no view component.
-
 The Magento areas are:
 
-* Admin panel: entry point for this area is <code>index.php</code>
-* Storefront: entry point for this area is <code>index.php</code> or <code>pub/index.php</code>
-* Crontab (crontab): entry point for this area is <code>pub/cron.php</code>
-* Install (install): entry point for this area is <code>setup/index.php</code>. `setup` contains `composer.json` that resolves dependencies and manages packages that comprise the Magento software
-* Web API REST (webapi_rest): entry point for this area is `index.php` or `pub/index.php`
-* Web API SOAP (webapi_soap): entry point for this area is `index.php` or `pub/index.php`
+* Magento Admin (adminhtml)
+* Storefront (frontend)
+* Web API REST (webapi_rest)
+* Web API SOAP (webapi_soap)
+* Doc (doc)
 
-If your extension works in several areas, you should make sure it has separate behavior and view components for each area.
+If your extension works in several different areas, you should make sure it has separate behavior and view components for each area.

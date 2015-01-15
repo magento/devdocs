@@ -41,4 +41,6 @@ This guide contains information for developers who want to extend, or customize,
 </dl>
 
 <h2 id="m2arch-related">Related topics</h2>
-* <a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.
+<ul>
+   <li><a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.</li>
+   </ul>

@@ -11,7 +11,7 @@ github_link: architecture/modules/mod_and_areas.md
 <h2 id="m2arch-module-areas-overview"> Overview</h2>
 Modules define which resources are visible and accessible in an area, as well as an area's behavior.
 
-In Magento there are six Areas:
+In Magento there are five Areas:
 
 *     **Magento Admin** (adminhtml)
 *     **Storefront** (frontend)
