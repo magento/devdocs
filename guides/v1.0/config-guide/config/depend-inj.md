@@ -65,7 +65,7 @@ Lifestyle
 This section provides examples of constructor and method injection so you can see what they look at. To use dependency injection in your module, you must configure it as discussed in <a href="#dep-inj-mod">Configuration overview</a>.
 
 <h3 id="dep-inj-preview-cons">Preview of constructor injection</h3>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target=_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
+Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
 
 A sample proxy (which you declare in `di.xml`) follows:
 
