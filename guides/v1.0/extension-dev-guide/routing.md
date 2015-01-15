@@ -1,12 +1,12 @@
 ---
 layout: default
-group: arch-guide
+group: extension-dev-guide
 subgroup: Routing
 title: Routing
 menu_title: Routing
 menu_order: 1
 menu_node: parent
-github_link: architecture/modules/routing.md
+github_link: extension-dev-guide/routing.md
 ---
 
 <h2 id="overview">Overview</h2>

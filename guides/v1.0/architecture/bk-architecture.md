@@ -1,6 +1,6 @@
 ---
 layout: default
-group: AG
+group: arch-guide
 subgroup: 
 title: Architecture Guide
 menu_title: Get Started

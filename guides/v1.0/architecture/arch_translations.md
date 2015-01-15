@@ -14,7 +14,7 @@ Magento can present the user interface (UI) in different languages without modif
 
 To replace these phrases with alternatives in different languages when the source code is interpreted, Magento has a layer of indirection. It allows for translation by providing dictionary files that contain phrases from `en_US` translated into a different language. The dictionary packages in other languages either ship with Magento code out-of-the-box or are provided by the community.
 
-For more information, refer to <a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation packs</a>.
+For more information, refer to <a href="{{ site.gdeurl }}.html">Translation packs</a>.
 
 <h2 id="m2arch-related">Related topics</h2>
 
