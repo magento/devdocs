@@ -44,10 +44,6 @@ Constructor injection
 
 :	Type of dependency injection used for *implementation dependencies* (that is, dependencies that fulfill a business task of an object)
 
-Method injection
-
-:	Type of dependency injection used for *API dependencies* (that is, dependencies that an object acts on)
-
 Factory
 
 :	Object that creates the objects of a specific type. Unlike business objects, a factory can be dependent on the object manager.
@@ -104,41 +100,6 @@ class Foo
 $bar = new Bar();
 $foo = new Foo($bar);
 $foo->execute();
-{% endhighlight %}
-
-<h3 id="dep-inj-preview-method">Preview of method injection</h3>
-Method injection must be used for API parameters; in other words, the API objects that your object acts on. The following example shows how to use method injection to:
-
-*	Declare `$itemFactory` and `$menu` as service dependencies
-*	Use `$command` as the API parameter that the object acts on
-
-{% highlight PHP %}
-<?php
-namespace Magento\Backend\Model\Menu;
-class Builder
-{
-    /**
-     * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
-     * @param \Magento\Backend\Model\Menu $menu
-     */
-    public function __construct(
-        Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
-        Magento\Backend\Model\Menu $menu  // Service dependency
-    ) {
-        $this->_itemFactory = $menuItemFactory;
-        $this->_menu = $menu;
-    }
- 
-    public function processCommand(\Magento\Backend\Model\Menu\Builder\CommandAbstract $command) // API param
-    {
-        if (!isset($this->_commands[$command->getId()])) {
-            $this->_commands[$command->getId()] = $command;
-        } else {
-            $this->_commands[$command->getId()]->chain($command);
-        }
-        return $this;
-    }
-}
 {% endhighlight %}
 
 
