@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/themes/theme-create.md
 
 <h2 id="layout_theme_how-to_overview">Overview</h2>
 
-This topic discusses how to create the files that make up a theme, how to add a logo to a theme, how to size images, and how to preview a theme.
+This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
 
@@ -143,8 +143,8 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files, for example a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>`.
-Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like `.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css` and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
+ <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files, for example a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
+Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
 </div>
 
 
