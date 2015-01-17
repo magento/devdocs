@@ -14,7 +14,7 @@ github_link: install-gde/prereq/php-ubuntu.md
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
-*	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14 or Ubuntu 12</a>
+*	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
 *	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</a>
 *	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
@@ -32,7 +32,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
+  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably..</p></span>
 </div>
 
 <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
@@ -44,9 +44,9 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 
-<h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14 or Ubuntu 12</h2>
+<h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></h2>
 
-To install PHP 5.6 on Ubuntu 14 or Ubuntu 12:
+To install PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 -->:
 
 1.	Enter the following commands in the order shown:
 
@@ -65,7 +65,7 @@ To install PHP 5.6 on Ubuntu 14 or Ubuntu 12:
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 		with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
-3.	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>.
+3.	<a href="#instgde-prereq-php-ubuntu-ext">Install required PHP extensions on Ubuntu</a>.
 
 
 <h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</h2>

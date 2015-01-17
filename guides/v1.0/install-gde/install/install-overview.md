@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 1
 github_link: install-gde/install/install-overview.md
 ---
-
+ 
 To install Magento, complete the following tasks in the order shown:
  
 1.	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>

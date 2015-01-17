@@ -32,7 +32,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
+  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably..</p></span>
 </div>
 
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>

@@ -9,7 +9,7 @@ menu_order: 1
 github_link: install-gde/system-requirements.md
 ---
 
-
+ 
 Before you install Magento, make sure your system meets or exceeds the following requirements:
 
 *	Operating systems 

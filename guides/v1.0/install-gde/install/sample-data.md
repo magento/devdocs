@@ -7,7 +7,7 @@ menu_title: Enable optional Magento sample data
 menu_order: 10
 github_link: install-gde/install/sample-data.md
 ---
-
+ 
 #### Contents
 
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
