@@ -64,9 +64,9 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 
 	For example, you can add the following to the bottom of <code>000-default.conf</code>:
 
-		<Directory "/var/www">
+		<Directory "/var/www/html">
 		AllowOverride <value from Apache site>
-		&lt;/Directory>
+		</Directory>
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
