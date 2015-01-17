@@ -14,8 +14,9 @@ github_link: install-gde/prereq/php-ubuntu.md
 
 *	<a href="#php-support">PHP versions supported</a>
 *	<a href="#php-ubuntu-help-beginner">Help if you're just starting out</a>
+*	<a href="#ubuntu-verify-php">Verify PHP is installed</a>
 *	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
-*	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</a>
+*	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</a>
 *	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
 
@@ -32,7 +33,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably..</p></span>
+  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably.</p></span>
 </div>
 
 <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
@@ -43,6 +44,21 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
+<h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
+To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
+
+	PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
+	Copyright (c) 1997-2014 The PHP Group
+	Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+
+If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
+
+If PHP is *not* installed, see one of the following sections:
+
+*	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a>
+*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
+ 
 
 <h2 id="instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></h2>
 
@@ -68,15 +84,15 @@ To install PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 -->:
 3.	<a href="#instgde-prereq-php-ubuntu-ext">Install required PHP extensions on Ubuntu</a>.
 
 
-<h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu</h2>
+<h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h2>
 
 See one of the following sections for more information:
 
-*	<a href="#instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu14</a>
-*	<a href="#instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu12</a>
+*	<a href="#instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14</a>
+*	<a href="#instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 12</a>
 
-<h3 id="instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14</h3>
-To install PHP 5.5 on Ubuntu 14:
+<h3 id="instgde-prereq-php55-install-ubuntu14">PHP 5.5 on Ubuntu 14 or Ubuntu 12 14</h3>
+To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
 
 1.	Enter the following command:
 
@@ -89,7 +105,7 @@ To install PHP 5.5 on Ubuntu 14:
 		Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
 	    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 
-<h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu12</h3>
+<h3 id="instgde-prereq-php55-install-ubuntu12">PHP 5.5 on Ubuntu 14 or Ubuntu 1212</h3>
 1.	Use the following commands from <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>:
 
 		add-apt-repository ppa:ondrej/php5

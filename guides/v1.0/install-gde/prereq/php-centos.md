@@ -11,7 +11,7 @@ github_link: install-gde/prereq/php-centos.md
 <h4 id="instgde-php-prereq-contents">Contents</h4>
 
 *	<a href="#php-support">PHP versions supported</a>
-*	<a href="#*	<a href="#php-support">PHP versions supported</a></a>
+*	<a href="#php-centos-help-beginner">Help if you're just starting out</a>
 *	<a href="#centos-verify-php">Verify PHP is installed</a>
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
@@ -32,7 +32,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably..</p></span>
+  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably.</p></span>
 </div>
 
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
@@ -43,15 +43,21 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
-
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
 
-PHP 5.3 is the default PHP version on CentOS 6.x distributions. For best results, make sure PHP 5.3 is already installed and, if not, install it before upgrading to PHP 5.4 or 5.5.
+To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
 
-To verify if PHP is installed already, enter `php -v`. If PHP is *not* installed, see one of the following sections:
+	PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
+	Copyright (c) 1997-2014 The PHP Group
+	Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
-*	TBD
-*	TBD
+If PHP is installed, continue with the next prerequisite, <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
+
+If PHP is *not* installed, see one of the following sections:
+
+*	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
+*	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
 
 <h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
 There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.

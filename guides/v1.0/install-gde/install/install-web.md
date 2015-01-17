@@ -9,7 +9,7 @@ menu_order: 8
 github_link: install-gde/install/install-web.md
 ---
 
-<h4>Contents</h4>  
+<h4>Contents</h4>   
 
 See one of the following sections:
 

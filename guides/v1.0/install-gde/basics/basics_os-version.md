@@ -8,7 +8,7 @@ menu_node:
 menu_order: 2
 github_link: install-gde/basics/basics_os-version.md
 ---
-
+ 
  
 How can you tell what operating system and version your Magento server runs? 
 

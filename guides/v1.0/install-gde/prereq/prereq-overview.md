@@ -8,7 +8,7 @@ menu_title: Prerequisites
 menu_order: 1
 github_link: install-gde/prereq/prereq-overview.md
 ---
-
+ 
 <h2 id="instgde-prereq-overview">Before you begin</h2>
 
 Before you install Magento, you must do all of the following:

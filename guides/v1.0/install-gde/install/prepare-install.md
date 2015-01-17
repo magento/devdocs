@@ -8,7 +8,7 @@ menu_node:
 menu_order: 6
 github_link: install-gde/install/prepare-install.md
 ---
- 
+  
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
 
 For the first time, Magento uses <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.
