@@ -9,7 +9,7 @@ menu_order: 9
 github_link: install-gde/install/install-cli.md
 ---
 
-
+  
 <h4>Contents</h4>
 
 See one of the following sections:
@@ -54,7 +54,7 @@ Before you begin:
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
 2.	Change to the following directory:
 
-		cd &lt;your Magento install dir>/setup
+		cd <your Magento install dir>/setup
 	
 	<p>Examples:</p>
 	
@@ -88,12 +88,13 @@ Before you begin:
 <span class="glyphicon-class">
   <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
+
 	
 <h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
 
 The format of the install command follows:
 
-	php -f index.php install --[installation option name]=[installation option value] ...
+	php -f index.php install --<installation option name>=<installation option value> ...
 
 The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.
 
@@ -106,10 +107,10 @@ The following table discusses the meanings of installation option names and valu
 		</tr>
 		<tr>
 		<td>base_url</td>
-		<td><p>Base URL to use to access your Magento Admin and storefront in the format <tt>http[s]://[host or ip]/[your Magento base dir]/</tt>.</p>
+		<td><p>Base URL to use to access your Magento Admin and storefront in the format <code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
-		<p><tt>[your Magento base dir]</tt> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <tt>magento2</tt> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://localhost/[your Magento base dir]/</code>.</p>
+		<p><code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
+		<p>To access Magento on localhost, you can use either <code>http://localhost/&lt;your Magento install dir>/</code> or <code>http://localhost/&lt;your Magento install dir>/</code>.</p>
 		</td>
 		<td>Yes</td>
 	</tr>
