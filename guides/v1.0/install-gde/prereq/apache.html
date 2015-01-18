@@ -150,6 +150,8 @@
 		<h4 id="contents">Contents</h4>
 
 <ul>
+  <li><a href="#apache-support">Apache versions supported</a></li>
+  <li><a href="#apache-help-beginner">Help if you’re just starting out</a></li>
   <li><a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a></li>
   <li><a href="#install-prereq-apache-centos">Installing Apache on CentOS</a></li>
 </ul>
@@ -158,68 +160,40 @@
 
 <p>Magento requires Apache 2.2.x or 2.4.x.</p>
 
+<h2 id="apache-help-beginner">Help if you're just starting out</h2>
+<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+
+<ul>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+</ul>
+
 <h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
 <p>Install Apache 2 if you haven’t already done so:</p>
 
 <pre><code>apt-get -y install apache2
 </code></pre>
 
-<h3 id="install-ubuntu-apache-rewrites">Enabling Apache Rewrites</h3>
+<h3 id="install-ubuntu-apache-rewrites">Enabling Apache rewrites</h3>
 <p>Ubuntu 12 (which natively supports Apache 2.2) is different from Ubuntu 14 (which natively supports Apache 2.4).</p>
 
 <p>It’s very important you choose a value for <code>AllowOverride</code> that is suited to your deployment. You can use <code>AllowOverride All</code> in development but it might not be desirable in production.</p>
 
-<p>For more information, see one of the following references:</p>
+<p>More information about <code>AllowOverride</code>:</p>
 
 <ul>
   <li><a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache 2.2</a></li>
   <li><a href="http://httpd.apache.org/docs/current/mod/core.html#allowoverride" target="_blank">Apache 2.4</a></li>
 </ul>
 
-<h4 id="apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</h4>
-<p>Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.2, which is supported by the default Ubuntu 12 repository.</p>
+<p>See one of the following sections:</p>
 
-<ol>
-  <li>
-    <p>Open the following file for editing.</p>
-
-    <pre>vim /etc/apache2/sites-available/default</pre>
-  </li>
-  <li>
-    <p>Locate the following block.</p>
-
-    <pre>&lt;Directory /var/www/&gt;
-Options Indexes FollowSymLinks MultiViews
-AllowOverride None
-Order allow,deny
-allow from all
-&lt;/Directory&gt;</pre>
-  </li>
-  <li>
-    <p>Change the value of <code>AllowOverride</code> to <code>[value from Apache site]</code>.</p>
-
-    <pre>&lt;Directory /var/www/&gt;
-Options Indexes FollowSymLinks MultiViews
-AllowOverride All
-Order allow,deny
-allow from all
-&lt;/Directory&gt;</pre>
-  </li>
-  <li>
-    <p>Save the file and exit the text editor.</p>
-  </li>
-  <li>
-    <p>Configure Apache to use the <code>mod_rewrite</code> module.</p>
-
-    <pre>cd /etc/apache2/mods-enabled
-ln -s ../mods-available/rewrite.load</pre>
-  </li>
-  <li>
-    <p>Restart Apache.</p>
-
-    <pre>service apache2 restart</pre>
-  </li>
-</ol>
+<ul>
+  <li><a href="#apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</a></li>
+  <li><a href="#apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</a></li>
+</ul>
 
 <h4 id="apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</h4>
 <p>Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.4, which is supported by the default Ubuntu 14 repository.</p>
@@ -239,9 +213,10 @@ ln -s ../mods-available/rewrite.load</pre>
 
     <p>For example, you can add the following to the bottom of <code>000-default.conf</code>:</p>
 
-    <pre>&lt;Directory "/var/www"&gt;
-AllowOverride [value from Apache site]
-&lt;/Directory&gt;</pre>
+    <pre><code>&lt;Directory "/var/www/html"&gt;
+AllowOverride &lt;value from Apache site&gt;
+&lt;/Directory&gt;
+</code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -254,6 +229,59 @@ AllowOverride [value from Apache site]
     <pre>service apache2 restart</pre>
   </li>
 </ol>
+
+<p>Continue with the next prerequisite (<a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>), or start your installation by going to <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.</p>
+
+<h4 id="apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</h4>
+<p>Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.2, which is supported by the default Ubuntu 12 repository.</p>
+
+<ol>
+  <li>
+    <p>Open the following file for editing.</p>
+
+    <pre><code>vim /etc/apache2/sites-available/default
+</code></pre>
+  </li>
+  <li>
+    <p>Locate the following block.</p>
+
+    <pre><code>&lt;Directory /var/www/&gt;
+Options Indexes FollowSymLinks MultiViews
+AllowOverride None
+Order allow,deny
+allow from all
+&lt;Directory&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Change the value of <code>AllowOverride</code> to <code>&lt;value from Apache site&gt;</code>.</p>
+
+    <pre><code>&lt;Directory /var/www/&gt;
+Options Indexes FollowSymLinks MultiViews
+AllowOverride &lt;value from Apache site&gt;
+Order allow,deny
+allow from all
+&lt;Directory&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Save the file and exit the text editor.</p>
+  </li>
+  <li>
+    <p>Configure Apache to use the <code>mod_rewrite</code> module.</p>
+
+    <pre><code>cd /etc/apache2/mods-enabled
+ln -s ../mods-available/rewrite.load
+</code></pre>
+  </li>
+  <li>
+    <p>Restart Apache.</p>
+
+    <pre>service apache2 restart</pre>
+  </li>
+</ol>
+
+<p>Continue with the next prerequisite (<a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>), or start your installation by going to <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.</p>
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
 
@@ -281,7 +309,7 @@ AllowOverride [value from Apache site]
     <pre>&lt;Directory /var/www/html&gt;</pre>
   </li>
   <li>
-    <p>In that block, change the value of <code>AllowOverride</code> to <code>All</code>.</p>
+    <p>In that block, change the value of <code>AllowOverride</code> to one of the values documented on the <a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache site</a>.</p>
   </li>
   <li>
     <p>Save your changes to <code>httpd.conf</code> and exit the text editor.</p>
@@ -293,11 +321,13 @@ AllowOverride [value from Apache site]
   </li>
 </ol>
 
+<p>Continue with the next prerequisite (<a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP CentOS</a>), or start your installation by going to <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.</p>
+
 <h4 id="related-topics">Related topics:</h4>
 
 <ul>
-  <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.4—Ubuntu</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.4—CentOS</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/mysql.html">Installing and configuring MySQL</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/security.html">Configuring security options</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/optional.html">Installing optional software</a></li>
@@ -403,11 +433,11 @@ AllowOverride [value from Apache site]
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
 						
 								
 							

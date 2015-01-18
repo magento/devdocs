@@ -152,7 +152,7 @@
 <p>Before you install Magento, you must do all of the following:</p>
 
 <ul>
-  <li>Set up one or more hosts that meet the <a href="/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a>.</li>
+  <li>Set up one or more hosts that meet the <a href="install-gde/system-requirements.html">Magento system requirements</a>.</li>
   <li>If you are setting up more than one web node with load balancing, set up and test that part of your system <em>before</em> you install Magento.</li>
   <li>Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.</li>
 </ul>
@@ -170,16 +170,16 @@
   <li>
     <p>Ubuntu</p>
 
-    <p><code>apt-get update</code></p>
-
-    <p><code>apt-get upgrade</code></p>
+    <pre><code>apt-get update
+apt-get upgrade
+</code></pre>
   </li>
   <li>
     <p>CentOS</p>
 
-    <p><code>yum -y update</code></p>
-
-    <p><code>yum -y upgrade</code></p>
+    <pre><code>yum -y update
+yum -y upgrade
+</code></pre>
   </li>
 </ul>
 
@@ -187,46 +187,53 @@
 
 <p>To check your system for prerequisites, enter the following commands:</p>
 
-<ul>
-  <li>
-    <p>PHP</p>
+<h3 id="apache">Apache</h3>
 
-    <p><code>php -v</code></p>
+<p>CentOS: <code>httpd -v</code></p>
 
-    <p>You must run PHP version 5.4.11 or later as the following result indicates:</p>
+<p>Ubuntu: <code>apache2 -v</code></p>
 
-    <pre>PHP 5.4.33 (cli) (built: Sep 20 2014 16:20:03)
+<p>You must run Apache version 2.2 or 2.4 as the following result indicates:</p>
+
+<pre><code>Server version: Apache/2.2.15 (Unix)
+Server built:   Jul 23 2014 14:17:29
+</code></pre>
+
+<p>To install or upgrade Apache, see <a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a>.</p>
+
+<h3 id="php">PHP</h3>
+
+<pre><code>php -v
+</code></pre>
+
+<p>You must run PHP version 5.5 or later as the following result indicates:</p>
+
+<pre><code>PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
 Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
+Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
+with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
+</code></pre>
 
-    <p>To install or upgrade PHP, see <a href="/guides/v1.0/install-gde/prereq/php.html">Installing PHP required extensions</a>.</p>
-  </li>
-  <li>
-    <p>Apache</p>
+<p>To install PHP, see:</p>
 
-    <p>CentOS: <code>httpd -v</code></p>
+<ul>
+  <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
+</ul>
 
-    <p>Ubuntu: <code>apache2 -v</code></p>
+<h3 id="mysql">MySQL</h3>
 
-    <p>You must run Apache version 2.2 or 2.4 as the following result indicates:</p>
+<pre><code>mysql -u &lt;database root user or database owner name&gt; -p
+</code></pre>
 
-    <pre>Server version: Apache/2.2.15 (Unix)
-Server built:   Jul 23 2014 14:17:29</pre>
+<p>For example:</p>
 
-    <p>To install or upgrade Apache, see <a href="/guides/v1.0/install-gde/prereq/apache.html">Installing and configuring Apache</a>.</p>
-  </li>
-  <li>
-    <p>MySQL</p>
+<pre><code>mysql -u magento -p
+</code></pre>
 
-    <p><code>mysql -u [database root user or database owner name] -p</code></p>
+<p>You must run MySQL version 5.6 or later as the following result indicates:</p>
 
-    <p>For example:</p>
-
-    <p><code>mysql -u magento -p</code></p>
-
-    <p>You must run MySQL version 5.6 or later as the following result indicates:</p>
-
-    <pre>Welcome to the MySQL monitor.  Commands end with ; or \g.
+<pre><code>Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 871
 Server version: 5.6.21 MySQL Community Server (GPL)
 
@@ -236,13 +243,12 @@ Oracle is a registered trademark of Oracle Corporation and/or its
 affiliates. Other names may be trademarks of their respective
 owners.
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</pre>
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
 
-    <p>Enter <code>exit</code> at the <code>mysql&gt;</code> prompt to exit.</p>
+<p>Enter <code>exit</code> at the <code>mysql&gt;</code> prompt to exit.</p>
 
-    <p>To install or upgrade MySQL, see <a href="/guides/v1.0/install-gde/prereq/mysql.html">Installing and configuring MySQL</a>.</p>
-  </li>
-</ul>
+<p>To install or upgrade MySQL, see <a href="/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
 <h4 id="next-step">Next step</h4>
 
@@ -253,8 +259,8 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</
 <ul>
   <li><a href="/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/apache.html">Installing and configuring Apache</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.4—Ubuntu</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.4—CentOS</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/mysql.html">Installing and configuring MySQL</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/optional.html">Installing optional software</a></li>
   <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a></li>
@@ -360,11 +366,11 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
 						
 								
 							

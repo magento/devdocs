@@ -201,7 +201,7 @@
   <li>
     <p>Change to the following directory:</p>
 
-    <pre><code>cd &amp;lt;your Magento install dir&gt;/setup
+    <pre><code>cd &lt;your Magento install dir&gt;/setup
 </code></pre>
 
     <p>Examples:</p>
@@ -246,7 +246,7 @@
 
 <p>The format of the install command follows:</p>
 
-<pre><code>php -f index.php install --[installation option name]=[installation option value] ...
+<pre><code>php -f index.php install --&lt;installation option name&gt;=&lt;installation option value&gt; ...
 </code></pre>
 
 <p>The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.</p>
@@ -260,10 +260,10 @@
 		</tr>
 		<tr>
 		<td>base_url</td>
-		<td><p>Base URL to use to access your Magento Admin and storefront in the format <tt>http[s]://[host or ip]/[your Magento base dir]/</tt>.</p>
+		<td><p>Base URL to use to access your Magento Admin and storefront in the format <code>http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
-		<p><tt>[your Magento base dir]</tt> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <tt>magento2</tt> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://localhost/[your Magento base dir]/</code> or <code>http://localhost/[your Magento base dir]/</code>.</p>
+		<p><code>&lt;your Magento install dir&gt;</code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
+		<p>To access Magento on localhost, you can use either <code>http://localhost/&lt;your Magento install dir&gt;/</code> or <code>http://localhost/&lt;your Magento install dir&gt;/</code>.</p>
 		</td>
 		<td>Yes</td>
 	</tr>
@@ -589,11 +589,11 @@ composer update
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
 						
 								
 							

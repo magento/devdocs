@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install Composer and clone the Magento repository</title>
+	<title>What operating system is my server running?</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/install/composer-clone.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/basics/basics_os-version.html">
 
 </head>	
 <body>
@@ -136,9 +136,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Install Composer and clone the Magento repository</h1>
+		<h1 class="page-heading">What operating system is my server running?</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/composer-clone.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/basics/basics_os-version.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -147,164 +147,50 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<p>How can you tell what operating system and version your Magento server runs? </p>
 
-<ul>
-  <li><a href="#instgde-overview-composer">Composer and Magento</a></li>
-  <li><a href="#instgde-prereq-compose-install">Install Composer</a></li>
-  <li><a href="#instgde-prereq-compose-clone">Clone the Magento repository</a></li>
-  <li><a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a></li>
-</ul>
+<p><strong>Prerequisites</strong>: You must access the server using a command prompt (an application that enables you to enter commands directly). </p>
 
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
+<p>If you can log in directly to the machine, the application is usually called Terminal. </p>
 
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.</p>
+<p>If you cannot log in directly, you can <a href="/guides/v1.0/install-gde/basics/basics_magento-installed.html#instgde-basics-terminal">log in remotely</a>.</p>
 
-<p>Composer provides you with the following advantages:</p>
+<h2 id="exact-command-or-process-of-elimination">Exact command or process of elimination?</h2>
 
-<ul>
-  <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-  <li>Component-based architecture with robust dependency management</li>
-  <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-  <li>Versioned dependencies</li>
-  <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-  <li>Supports PHP Framework Interoperability standard</li>
-</ul>
+<p>If you already know you’re running Ubuntu or CentOS but don’t know the version, see one of the following sections. If you don’t know that much, just use the process of elimination—run both commands until you find the one that works.</p>
 
-<p>We’ll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.</p>
+<h3 id="centos">CentOS</h3>
 
-<h2 id="instgde-prereq-compose-install">Install Composer</h2>
+<p>To find the CentOS version, enter the following command in Terminal:</p>
 
-<p>First, check  if Composer is already installed: </p>
+<pre><code>cat /etc/*release*
+</code></pre>
 
-<p>In a command prompt, enter any of the following commands:</p>
+<p>The following sample ouput shows you’re running CentOS 6.5 (you can ignore most of the output):</p>
 
-<ul>
-  <li><code>composer --help</code></li>
-  <li><code>composer list --help</code></li>
-</ul>
+<pre><code>CentOS release 6.5 (Final)
+LSB_VERSION=base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
+cat: /etc/lsb-release.d: Is a directory
+CentOS release 6.5 (Final)
+CentOS release 6.5 (Final)
+</code></pre>
 
-<p>If command help displays, Composer is already installed; in that case, you can skip the next section and continue with <a href="#instgde-prereq-compose-clone">Clone the Magento repository</a>.</p>
+<h3 id="ubuntu">Ubuntu</h3>
 
-<p>If an error displays, use the following steps to install Composer.</p>
+<p>To find the Ubuntu version, enter the following command in Terminal:</p>
 
-<p>To install Composer:</p>
+<pre><code>lsb_release -a
+</code></pre>
 
-<ol>
-  <li>
-    <p>Change to or create an empty directory on your Magento server.</p>
-  </li>
-  <li>
-    <p>Enter the following commands:</p>
+<p>The following sample output shows you’re running Ubuntu 14:</p>
 
-    <pre>curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer</pre>
+<pre><code>No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 14.04.1 LTS
+Release:        14.04
+Codename:       trusty
+</code></pre>
 
-    <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
-  </li>
-</ol>
-
-<h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
-
-<p>To clone the Magento GitHub repository:</p>
-
-<ol>
-  <li>
-    <p>To clone the Magento repository using secure shell (SSH), <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">generate SSH keys</a> and add the public key to GitHub.</p>
-  </li>
-  <li>
-    <p>Copy to the clipboard the Magento GitHub repository SSH or HTTPS clone URL.</p>
-
-    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
-
-    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click either <strong>SSH</strong> or <strong>HTTPS</strong>.</p>
-
-    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
-
-    <p>The following figure shows an example of copying the HTTPS clone URL to the clipboard.</p>
-
-    <p><img src="/common/images/install_mage2_clone-url1.png" alt="Clone the Magento GitHub repository using either HTTPS or SSH" /></p>
-  </li>
-  <li>
-    <p>Change to your web server’s docroot directory.</p>
-
-    <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
-  </li>
-  <li>
-    <p>Enter any of the following commands:</p>
-
-    <p>To clone using HTTPS: <code>git clone https://github.com/magento/magento2.git</code></p>
-
-    <p>To clone using SSH: <code>git clone git@github.com:magento/magento2.git</code></p>
-  </li>
-  <li>
-    <p>Wait for the repository to clone on your server.</p>
-  </li>
-</ol>
-
-<h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
-
-<p>After the clone is complete, set ownership of all Magento files and directories and make sure they are writable by that user.</p>
-
-<p>Typically, Magento files and directories should be owned by the web server user; however, the choice of user is up to you. The important thing is that the owner of the Magento file system must have write access to all files and directories.</p>
-
-<p>We recommend setting the permissions as follows:</p>
-
-<ul>
-  <li>
-    <p>All directories have 700 permissions <code>(drwx------)</code>.</p>
-
-    <p>700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</p>
-  </li>
-  <li>
-    <p>All files have 600 permissions <code>(-rw-------)</code>.</p>
-
-    <p>600 permissions mean the owner can read and write but other users have no permissions.</p>
-  </li>
-</ul>
-
-<p>Assuming the web server user owns the Magento 2 file system, use the following steps:</p>
-
-<ol>
-  <li>
-    <p>Change to the Magento directory:</p>
-
-    <pre>cd magento2</pre>
-  </li>
-  <li>
-    <p>Find the web server user:</p>
-
-    <p>Ubuntu: <code>ps -ef | grep apache2</code></p>
-
-    <p>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code></p>
-  </li>
-  <li>
-    <p>Set ownership:</p>
-
-    <p><code>chown -R [your web server user name] .</code></p>
-
-    <p>Typical examples:</p>
-
-    <p>CentOS: <code>chown -R apache .</code></p>
-
-    <p>Ubuntu: <code>chown -R www-data .</code></p>
-  </li>
-  <li>
-    <p>Set permissions:</p>
-
-    <pre>find . -type d -exec chmod 700 {} \;
-find . -type f -exec chmod 600 {} \;</pre>
-  </li>
-</ol>
-
-<h4 id="next-step">Next step</h4>
-
-<p>After completing the tasks discussed on this page, see one of the following topics:</p>
-
-<ul>
-  <li>To install Magento with optional sample data: <a href="/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
-  <li>To install Magento without optional sample data: <a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-</ul>
 
 
 		</div>
@@ -326,6 +212,18 @@ find . -type f -exec chmod 600 {} \;</pre>
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -341,86 +239,33 @@ find . -type f -exec chmod 600 {} \;</pre>
 							
 								
 								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
 								
 								
 							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
+									<li class=""><span class="nav-header">Getting Started</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/bk-install-guide.html">Installation overview</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/optional.html">Optional software</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
 						
 								
 								
@@ -440,52 +285,7 @@ find . -type f -exec chmod 600 {} \;</pre>
 							
 								
 								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-overview.html">Installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/continue.html">Continue with your installation</a></li>
 									
 								
 								
@@ -500,93 +300,8 @@ find . -type f -exec chmod 600 {} \;</pre>
 						
 
 					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			

@@ -181,13 +181,13 @@
 <ol>
   <li>Log in to your Magento server as the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
   <li>Change to your Magento installation directory.</li>
-  <li>Open <code>composer.json</code> in a text editor.</li>
+  <li>Open <code>&lt;your Magento install dir&gt;/composer.json</code> in a text editor.</li>
   <li>
     <p>Search for a <code>"repositories":</code> section.</p>
 
     <p>If you have one, add the following block (without <code>"repositories":</code>) to it.</p>
 
-    <p>If you have no <code>"repositories":</code> section, add one as follows before the <code>"require":</code> section:</p>
+    <p>If you have no <code>"repositories":</code> section, add one before the <code>"require":</code> section as follows:</p>
 
     <pre><code>"repositories": [
     {
@@ -227,7 +227,9 @@
 
 </p></div>
   </li>
+  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
 </ol>
+
 <h2 id="instgde-install-sample-after">Complete the sample data installation</h2>
 <p>After you’ve installed the Magento software or run <code>composer install</code>, you can install the sample data as follows:</p>
 
@@ -357,11 +359,11 @@
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
 						
 								
 							

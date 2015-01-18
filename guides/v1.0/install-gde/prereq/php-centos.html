@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.4 or 5.5&mdash;CentOS</title>
+	<title>PHP 5.5 or 5.6&mdash;CentOS</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -136,7 +136,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">PHP 5.4 or 5.5&mdash;CentOS</h1>
+		<h1 class="page-heading">PHP 5.5 or 5.6&mdash;CentOS</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/prereq/php-centos.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -151,9 +151,10 @@
 
 <ul>
   <li><a href="#php-support">PHP versions supported</a></li>
+  <li><a href="#php-centos-help-beginner">Help if you’re just starting out</a></li>
   <li><a href="#centos-verify-php">Verify PHP is installed</a></li>
+  <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
   <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
-  <li><a href="#instgde-prereq54-php-install-centos">PHP 5.4 on CentOS</a></li>
   <li><a href="#instgde-prereq-php-prereq-centos">Installing required PHP extensions on CentOS</a></li>
   <li><a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a></li>
 </ul>
@@ -168,83 +169,108 @@
 <p>Magento requires:</p>
 
 <ul>
-  <li>PHP 5.4.x where x = 11 or later</li>
-  <li>PHP 5.5.x </li>
+  <li>PHP 5.5.x</li>
+  <li>PHP 5.6.x </li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento does <em>not</em> support PHP 5.6.</p></span>
+  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably.</p></span>
 </div>
+
+<h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
+<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+
+<ul>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+</ul>
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
 
-<p>PHP 5.3 is the default PHP version on CentOS 6.x distributions. For best results, make sure PHP 5.3 is already installed and, if not, install it before upgrading to PHP 5.4 or 5.5.</p>
+<p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
 
-<p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is <em>not</em> installed, install it by entering the following command:</p>
-
-<pre>yum -y install php php-xml</pre>
-
-<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
-
-<p>To upgrade to PHP 5.5:</p>
-
-<p>There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.</p>
-
-<p>Enter the following commands in the order shown.</p>
-
-<pre><code>cd /tmp
-rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-yum -y remove php-common-5.3.3-40.el6_6.x86_64
-yum -y install php55w php55w-opcache
+<pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
+Copyright (c) 1997-2014 The PHP Group
+Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre>
 
-<p>Restart Apache: <code>service httpd restart</code></p>
+<p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
-<h2 id="instgde-prereq-php55-install-centos">PHP 5.4 on CentOS</h2>
-<p>There is more than one way to upgrade CentOS 6.x to PHP 5.4; the following is a suggestion only. Consult a reference for additional options.</p>
+<p>If PHP is <em>not</em> installed, see one of the following sections:</p>
 
-<p>To upgrade to PHP 5.4:</p>
+<ul>
+  <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
+  <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
+</ul>
+
+<h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</h2>
+<p>There is more than one way to upgrade CentOS 6.5 to PHP 5.6; the following is a suggestion only. Consult a reference for additional options.</p>
+
+<p>To upgrade to PHP 5.6:</p>
 
 <ol>
   <li>
-    <p>Enter the following commands:</p>
+    <p>Enter the following commands in the order shown:</p>
 
-    <pre>cd /tmp
-rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-yum -y --enablerepo=remi install httpd php php-common</pre>
+    <pre><code>rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
+yum install -y php56w php56w-opcache
+</code></pre>
   </li>
   <li>
-    <p>To verify PHP 5.4 is installed, enter <code>php -v</code>. The command displays results similar to the following:</p>
+    <p>Enter the followign command to verify that PHP 5.6 is installed:</p>
 
-    <pre>PHP 5.4.33 (cli) (built: Sep 20 2014 16:20:03)
+    <pre><code>php -v
+</code></pre>
+
+    <p>The following response indicates that PHP 5.6 is installed properly:</p>
+
+    <pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
 Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
+Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+</code></pre>
+  </li>
+  <li>
+    <p><a href="#instgde-prereq-php-prereq-centos">Install required PHP extensions on CentOS</a>.</p>
+  </li>
+</ol>
+
+<h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
+<p>There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.</p>
+
+<p>To upgrade to PHP 5.5:</p>
+
+<ol>
+  <li>
+    <p>Enter the following commands in the order shown.</p>
+
+    <pre><code>rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
+yum -y remove php-common-5.3.3-40.el6_6.x86_64
+yum -y install php55w php55w-opcache
+</code></pre>
   </li>
   <li>
     <p>Restart Apache: <code>service httpd restart</code></p>
   </li>
+  <li>
+    <p><a href="#instgde-prereq-php-prereq-centos">Install required PHP extensions on CentOS</a>.</p>
+  </li>
 </ol>
 
-<p>The following resources are also available:</p>
-
-<ul>
-  <li><a href="http://kb.parallels.com/en/115875" target="_blank">kb.parallels</a></li>
-  <li><a href="http://stackoverflow.com/questions/21502656/upgrading-php-on-centos-6-5-final" target="_blank">stackoverflow</a></li>
-  <li><a href="http://rpms.famillecollet.com/" target="_blank">remi repository</a></li>
-</ul>
-
 <h2 id="instgde-prereq-php-prereq-centos">Installing required PHP extensions on CentOS</h2>
+
+<p>PHP 5.6:</p>
+
+<pre><code>yum -y install php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-mbstring
+</code></pre>
 
 <p>PHP 5.5:</p>
 
 <pre><code>yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-mbstring
-</code></pre>
-
-<p>PHP 5.4:</p>
-
-<pre><code>yum -y install --enablerepo=remi php-mcrypt gd gd-devel php-gd php-mysql
 </code></pre>
 
 <h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
@@ -410,11 +436,11 @@ Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies</pre>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
 						
 								
 							
