@@ -8,8 +8,8 @@ menu_node:
 menu_order: 2
 github_link: install-gde/install/composer-clone.md
 ---
-
-#### Contents
+ 
+#### Contents 
 
 *	<a href="#instgde-overview-composer">Composer and Magento</a>
 *	<a href="#instgde-prereq-compose-install">Install Composer</a>

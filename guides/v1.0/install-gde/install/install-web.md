@@ -9,7 +9,7 @@ menu_order: 8
 github_link: install-gde/install/install-web.md
 ---
 
-<h4>Contents</h4> 
+<h4>Contents</h4>   
 
 See one of the following sections:
 
@@ -58,11 +58,11 @@ To install the Magento software using the Setup Wizard:
 
 2.	Enter the following URL in the browser's address or location bar:
 
-	<pre>http://[Magento host or IP]/[path to Magento root]/setup</pre>
+		http://<Magento host or IP>/[path to Magento root]/setup
 	
 	For example, if the Magento server's IP address is 192.0.2.10 and you installed Magento 2 in the <tt>magento2</tt> directory relative to the web server's docroot, and you did not configure a Virtual Host, enter:
 	
-	<pre>http://192.0.2.10/magento2/setup</pre>
+		http://192.0.2.10/magento2/setup
 	
 3.	On the initial page, click **Agree and Set Up Magento**.
 

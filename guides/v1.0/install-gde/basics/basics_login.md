@@ -9,7 +9,7 @@ menu_order: 2
 github_link: install-gde/basics/basics_login.md
 ---
 
-
+ 
 To complete almost all of the tasks in this guide, you must remotely log in to your Magento server. 
 
 **Prerequisites**: You must have:
