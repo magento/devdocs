@@ -29,88 +29,72 @@ Enter the following commands as a user with `root` privileges:
 
 *	Ubuntu
 
-	`apt-get update`
-
-	`apt-get upgrade`
+		apt-get update
+		apt-get upgrade
 
 *	CentOS
 
-	`yum -y update`
-
-	`yum -y upgrade`
+		yum -y update
+		yum -y upgrade
 
 <h2 id="instgde-prereq-check">Prerequisite check</h2>
 
 To check your system for prerequisites, enter the following commands:
 
-*	Apache
+### Apache
 
-	CentOS: `httpd -v`
+CentOS: `httpd -v`
 
-	Ubuntu: `apache2 -v`
+Ubuntu: `apache2 -v`
 
-	To install or upgrade Apache, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>.
+You must run Apache version 2.2 or 2.4 as the following result indicates:
 
-	You must run Apache version 2.2 or 2.4 as the following result indicates:
+	Server version: Apache/2.2.15 (Unix)
+	Server built:   Jul 23 2014 14:17:29
 
-		Server version: Apache/2.2.15 (Unix)
-		Server built:   Jul 23 2014 14:17:29
+To install or upgrade Apache, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>.
+	
+### PHP
 
-*	PHP
+	php -v
 
-	You must run PHP version 5.5 or later as the following result indicates:
+You must run PHP version 5.5 or later as the following result indicates:
 
-		PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
-		Copyright (c) 1997-2014 The PHP Group
-		Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
-	    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
+	PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
+	Copyright (c) 1997-2014 The PHP Group
+	Zend Engine v2.5.0, Copyright (c) 1998-2014 Zend Technologies
+    with Zend OPcache v7.0.3, Copyright (c) 1999-2014, by Zend Technologies
 
 To install PHP, see:
 
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
 
-*	PHP
+### MySQL
 
-	`php -v`
+	mysql -u <database root user or database owner name> -p
 
-	You must run PHP version 5.4.11 or later as the following result indicates:
+For example:
 
-		PHP 5.4.33 (cli) (built: Sep 20 2014 16:20:03)
-		Copyright (c) 1997-2014 The PHP Group
-		Zend Engine v2.4.0, Copyright (c) 1998-2014 Zend Technologies
+	mysql -u magento -p
 
-	To install or upgrade PHP, see:
+You must run MySQL version 5.6 or later as the following result indicates:
 
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.4 or 5.5&mdash;CentOS</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.4 or 5.5&mdash;Ubuntu</a>
+	Welcome to the MySQL monitor.  Commands end with ; or \g.
+	Your MySQL connection id is 871
+	Server version: 5.6.21 MySQL Community Server (GPL)
 
-*	MySQL
+	Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-		mysql -u <database root user or database owner name> -p
+	Oracle is a registered trademark of Oracle Corporation and/or its
+	affiliates. Other names may be trademarks of their respective
+	owners.
 
-	For example:
+	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-		mysql -u magento -p
+Enter `exit` at the `mysql>` prompt to exit.
 
-	You must run MySQL version 5.6 or later as the following result indicates:
-
-		Welcome to the MySQL monitor.  Commands end with ; or \g.
-		Your MySQL connection id is 871
-		Server version: 5.6.21 MySQL Community Server (GPL)
-
-		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
-
-		Oracle is a registered trademark of Oracle Corporation and/or its
-		affiliates. Other names may be trademarks of their respective
-		owners.
-
-		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-
-
-	Enter `exit` at the `mysql>` prompt to exit.
-
-	To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>.
+To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>.
 
 #### Next step
 
