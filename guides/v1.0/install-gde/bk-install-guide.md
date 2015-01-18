@@ -8,7 +8,7 @@ menu_node:
 menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
-
+  
 <h2>New to Magento? Need some help?</h2> 
 If you're not sure about the following, you probably need a little help before you get started using the Magento software:
 
@@ -37,7 +37,7 @@ Use the following table to verify you have the correct prerequisites to install 
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></td>
 	</tr>
 	<tr>
-		<td>PHP 5.4.x (where x = 11 or later) or 5.5.x</td>
+		<td>PHP 5.6.x or 5.5.x (PHP 5.4 is deprecated)</td>
 		<td><code>php -v</code></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a><br><a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a></td>
 	</tr>
