@@ -8,8 +8,8 @@ menu_node: parent
 menu_order: 1
 github_link: install-gde/system-requirements.md
 ---
-
-
+ 
+ 
 Before you install Magento, make sure your system meets or exceeds the following requirements:
 
 *	Operating systems 
@@ -23,8 +23,14 @@ Before you install Magento, make sure your system meets or exceeds the following
 	
 *	PHP:
 
-	*	5.4.x where x = 11 or later
+	*	5.6.x
 	*	5.5.x 
+
+	<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+  	<p>PHP 5.4 support is deprecated.  In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably.</p></span>
+	</div>
+
 *	Required PHP extensions:
 
 	*	PDO/MySQL

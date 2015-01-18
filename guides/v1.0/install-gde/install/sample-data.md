@@ -7,7 +7,7 @@ menu_title: Enable optional Magento sample data
 menu_order: 10
 github_link: install-gde/install/sample-data.md
 ---
-
+  
 #### Contents
 
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
@@ -37,12 +37,12 @@ To edit `composer.json`:
 
 1.  Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with `root` privileges.
 2.  Change to your Magento installation directory.
-3.  Open `composer.json` in a text editor.
+3.  Open `<your Magento install dir>/composer.json` in a text editor.
 4.  Search for a `"repositories":` section.
 
     If you have one, add the following block (without `"repositories":`) to it.
     
-    If you have no `"repositories":` section, add one as follows before the `"require":` section:
+    If you have no `"repositories":` section, add one before the `"require":` section as follows:
 
         "repositories": [
             {
@@ -70,6 +70,8 @@ To edit `composer.json`:
         <p>Valid JSON requires that:
             <ul><li>The line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma as shown in the preceding.</li>
             <li>The names of all values in a section must align.</li></ul> </div>
+
+6.  Save your changes to `composer.json` and exit the text editor.
 
 <h2 id="instgde-install-sample-after">Complete the sample data installation</h2>
 After you've installed the Magento software or run `composer install`, you can install the sample data as follows:

@@ -8,8 +8,8 @@ menu_node: parent
 menu_order: 1
 github_link: install-gde/install/verify.md
 ---
-
-#### Contents
+ 
+#### Contents 
 
 *	<a href="#instgde-verify-front-sample">Verify the storefront (with optional sample data)</a>
 *	<a href="#instgde-verify-front">Verify the storefront (no sample data)</a>
