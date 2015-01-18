@@ -52,7 +52,7 @@ You must run Apache version 2.2 or 2.4 as the following result indicates:
 	Server version: Apache/2.2.15 (Unix)
 	Server built:   Jul 23 2014 14:17:29
 
-To install or upgrade Apache, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>.
+To install or upgrade Apache, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>.
 	
 ### PHP
 
@@ -94,7 +94,7 @@ You must run MySQL version 5.6 or later as the following result indicates:
 
 Enter `exit` at the `mysql>` prompt to exit.
 
-To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>.
+To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>.
 
 #### Next step
 
