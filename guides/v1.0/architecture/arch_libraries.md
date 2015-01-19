@@ -2,9 +2,9 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Libraries
+title: Magetno Architecture
 menu_title: Libraries
-menu_order: 3
+menu_order: 4
 github_link: architecture/arch_libraries.md
 ---
 

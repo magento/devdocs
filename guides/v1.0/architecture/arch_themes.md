@@ -2,9 +2,9 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Themes
+title: Magetno Architecture
 menu_title: Themes
-menu_order: 4
+menu_order: 5
 github_link: architecture/arch_themes.md
 ---
 

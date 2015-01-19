@@ -2,9 +2,9 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Translation packages
+title: Magento Architecture
 menu_title: Translation packages
-menu_order: 5
+menu_order: 6
 github_link: architecture/arch_translations.md
 ---
 
