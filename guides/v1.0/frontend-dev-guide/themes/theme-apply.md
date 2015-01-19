@@ -39,7 +39,7 @@ To apply a theme:
 5. Click **Save Config**.
 6. To see your changes applied, Reload the store front pages.
 
-If caching is enabled in your Magento Admin panel, you must <a href="#theme-apply-clear">clear the cache</a> to see the changes applied.
+If caching is enabled in your Magento Admin panel, you must <a href="#theme-apply-clear">clear the cache</a> to see the changes applied. You might also need to manually delete all the <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">published static files</a> in `pub/static/frontend`. 
 <!--ADDLINK-->
 
 <h2 id="theme-apply-except">Add a design exception</h2>
