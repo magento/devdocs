@@ -17,7 +17,7 @@ The default Magento <code>theme.xml</code> files are located in the following tw
  
 * <code>/app/designfrontend/<vendor_name>/luma</code> 
 
-Each <code>theme.xml</code> defines the name of that theme as well as the name of the parent theme, if any. The version of the theme is controlled by the <code>composer.json</code> file in which the theme is packaged.
+Each <code>`theme.xml`</code> defines the name of that theme as well as the name of the parent theme, if any. The version of the theme is controlled by the <code>composer.json</code> file in which the theme is packaged.
 
 Themes are also divided by area, allowing you define themes that customize either the storefront or admin sections of the Magento application independently.
 
