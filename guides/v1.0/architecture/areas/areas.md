@@ -1,9 +1,9 @@
 ---
 layout: default
-group: extension-dev-guide
-subgroup: Areas
-title: Extension Devloper Guide
-menu_title: Areas
+group: 
+subgroup: 
+title: 
+menu_title: 
 menu_order: 1
 menu_node: parent
 github_link: architecture/areas/areas.md
