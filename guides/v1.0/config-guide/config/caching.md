@@ -8,11 +8,9 @@ menu_order: 5
 github_link: config-guide/config/caching.md
 ---
 
-In the Magento system, the functionality was split into several layers depending on role of each component:
-
-* The system-level components went to **framework layer**
-* The business-logic components went to **application layer**
-* The components responsible for contact between a client and service provider went to **service layer**
+*	<a href="#m2devgde-cache-explore">Overview of caching</a>
+*	<a href="#m2devgde-cache-type">Create a cache type</a>
+* 	<a href="#m2devgde-cache-more">More information about caching</a>
 
 A logical group in the application layer is _a module_ and a logical group in the framework layer is _a library_.
 
@@ -72,9 +70,9 @@ As a result, new cache entities will not be saved, but the previously saved cach
 
 <h3 id="m2devgde-cache-type">Cache type</h3>
 
-Cache type unites the cached data based on their functional role. Cache type serves to facilitate handling the cache, for instance, you can execute operations not to the whole cache, but to its part assigned to the same cache type. You can manage the cache divided into the types via the Cache Management page in the admin panel or via the programming interface in the run-time.
+A *cache type* enables you to specify what is cached and enables merchants to clear that cache type using the Cache Management page in the Magento Admin.
 
-Tag scope component provides mechanism behind a cache type.
+The tag *scope* provides a mechanism for a cache type.
 
 To create a new cache type:
 
@@ -86,194 +84,23 @@ You must specify the following parameters:
 *	`%cache_type_id%` defines unique identifier of a cache type.
 *	`%cache_type_tag%` defines unique tag to be used in the cache type scoping.
 
-Then you must make configurations of the grid on the Cache Management page or a new cache type. These configurations are taken from modules, that is, from `{Namespace}/{Module}/etc/cache.xml` file:
+<h2 id="m2devgde-cache-more">More information about caching</h2>
+At this time, you can get more information about caching by looking at the code. To start, look for `const CONFIG_KEY =` in the following classes. Specify each key in `config.php` and add configuration detail (including cache storage) under that key.
 
-<pre>&lt;config&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;%cache_type_id%&quot;&nbsp;instance=&quot;%cacheInstanceName%&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&gt;%cache_type_label%&lt;/label&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description&gt;%cache_type_description%&lt;/description&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
-&lt;/config&gt;</pre>
-
-You must specify the following parameters:
-
-*	`%cache_type_label%` defines the text name (label) that will display in the **Cache Type** column of the grid.
-*	`%cache_type_description%` defines the text that will display in the **Description** column of the grid.
-
-<h3 id="m2devgde-cache-frontend">Cache frontend</h3>
-
-The cache frontend interface is API to the cache storage. When this interface is used, the cache does not appear in the client code. The frontend interface serves for
-
-*	Manipulating an individual cache entry, including validating its existence, loading, saving, and removing cache.
-*	Manipulating the subset of the cache entries, for instance, batch cache cleaning.
-
-We use the <a href="http://www.php5dp.com/php-decorator-design-pattern-accessorizing-your-classes/" target="_blank">decorator</a> and proxy patterns in implementation of the cache frontend interface. For instance, these patterns can be used for
-
-*	Segmentation by the cache tag
-*	Profiling
-*	Decorating individual operations
-
-**Segmentation of the cache** ensures that cache in the cache storage is used by appropriate applications. We distinguish the cache entries in the storage by tagging them and adding unique prefixes to the tags. A tag and a prefix help to figure out to which application cache belongs as well as to avoid influence of cache with different tags (or without tags at all) on each other. To strengthen isolation of the cache, we use the cache tag scope. Cache tag scope ensures grouping of cache according to the specified type.
-
-Use <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Cache\Frontend\Decorator\TagScope</a> component to handle the isolation of the cache segments:
-
-<pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
-
-$cacheFrontendOne = new \Magento\Cache\Frontend\Decorator\TagScope($cacheFrontend, 'cache_segment_one_tag');
-$cacheFrontendTwo = new \Magento\Cache\Frontend\Decorator\TagScope($cacheFrontend, 'cache_segment_two_tag');
-
-$cacheFrontendOne->save('example_data_one', 'example_id_one');
-$cacheFrontendTwo->save('example_data_two', 'example_id_two');
-
-// erase 'example_data_one', but not 'example_data_two'
-$cacheFrontendOne->clean();</pre>
-
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Cache\Frontend\Decorator\TagScope</a> component serves to associate a cache entry with a cache type and restrict the cache operations, as necessary, for a cache type.
-
-For **profiling the cache** we use <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/Profiler.php" target="_blank">Magento\Cache\Frontend\Decorator\Profiler</a> class that implements the caching integration with the Magento_Profiler. The following records are gathered for every cache operation:
-
-1.	Profiler timer name: `cache_&lt;cache_operation>`.
-1.	Profiler tag group: `cache`
-1.	Profiler tag operation: `cache:<cache_operation>`. `cache_operation` defines the frontend method used, for instance: `test()`, `load()`, `save()`, `remove()`, `clean()`.
-1.	Profiler tag `frontend_type`: `<frontend_class>`. `frontend_class` defines name of Zend frontend class.
-1.	Profiler tag `backend_type`: `<backend_type_name>`. `backend_type_name` defines name of Zend backend class; it may retrieve the prefix of the class name passed to the constructor.
-
-To enable the cache profiling in the run-time:
-<pre>/** @var $cacheFrontend \Magento\Cache\FrontendInterface */
-
-if (\Magento\Profiler::isEnabled()) {
-    $cacheFrontend = new Magento\Cache\Frontend\Decorator\Profiler($cacheFrontend);
-}
-
-$cacheFrontend->save('example_data', 'example_id'); // corresponds to 'cache_save' profiler timer
-$cachedData = $cacheFrontend->load('example_id');   // corresponds to 'cache_load' profiler timer
-$cacheFrontend->remove('example_id');               // corresponds to 'cache_remove' profiler timer</pre>
-
-Some **decorator methods** influence several objects, while others influence a single method. This diversity may lead to duplication of the decorated methods. To address this problem, we use <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/Bare.php" target="_blank">Magento\Cache\Frontend\Decorator\Bare</a> class. This decorator does not attach any additional responsibility to a decorated subject. Use this class, if you need to create decorators that imply only the individual actions:
-
-<pre>namespace Magento\Cache\Frontend\Decorator;
-
-class SuccessfulSave extends \Magento\Cache\Frontend\Decorator\Bare
-{
-    public function save($data, $id, array $tags = array(), $lifeTime = null)
-    {
-        return true;
-    }
-}</pre>
-
-<h3 id="m2devgde-cache-backend">Cache backend</h3>
-
-For the cache backend you can use any class that implements `Zend_Cache_Backend_Interface` or its extended interface - `Zend_Cache_Backend_ExtendedInterface`. By default, Magento uses four classes for the cache backend:
-
-1.	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Database.php" target="_blank">Magento\Cache\Backend\Database</a> retrieves the database Zend adapter and its callback, name of the tables containing the cache data and cache tags as well as whether cache should be stored to the database.
-1.	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Eaccelerator.php" target="_blank">Magento\Cache\Backend\Eaccelerator</a> facilitates work with <a href="http://eaccelerator.net/" target="_blank">eAccelerator</a>.
-1.	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Memcached.php" target="_blank">Magento\Cache\Backend\Memcached</a> defines the size of the data to be saved into one memcache cell. This class extends `Zend_Cache_Backend_Memcached` class.
-1.	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/MongoDb.php" target="_blank">Magento\Cache\Backend\MongoDb</a> defines the connection string and additional <a href="http://www.php.net/manual/en/mongoclient.construct.php" target="_blank">connection options for Mongo database</a> s well as saves and gets data from Mongo database.
-
-To modify the behavior of the cache backend, use the decorator pattern. The cache backend's decorator implements `Zend_Cache_Backend_ExtendedInterface` and extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Decorator/AbstractDecorator.php" target="_blank">Magento\Cache\Backend\Decorator\AbstractDecorator</a> abstract class.
-
-For more information about the decorator pattern, see the following:
-
-*	<a href="http://sourcemaking.com/design_patterns/Decorator/php" target="_blank">sourcemaking.com</a>
-*	<a href="http://framework.zend.com/manual/1.12/en/learning.form.decorators.simplest.html" target="_blank">Zend decorator basics</a>
-*	<a href="http://www.php5dp.com/php-decorator-design-pattern-accessorizing-your-classes/" target="_blank">php5dp.com</a>
-
-To configure the cache backend's decorator in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Cache\Core</a> class:</p>
-
-<pre>$options['backend_decorators']&nbsp;=&gt;&nbsp;array(
-&nbsp;&nbsp;&nbsp;&nbsp;array(
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'class'&nbsp;=&gt;&nbsp;'&lt;decorator_class&gt;',
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;['options'&nbsp;=&gt;&nbsp;&lt;decorator_options&gt;],
-&nbsp;&nbsp;&nbsp;&nbsp;),
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;...
-);
-</pre>
-
-You must specify the following parameters:
-
-*	`<decorator_class>` defines the name of a class extending <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Decorator/AbstractDecorator.php" target="_blank">Magento\Cache\Backend\Decorator\AbstractDecorator</a>.
-*	`<decorator_options>` retrieves an array of arbitrary options to be passed to the constructor during creation of a decorator.
-
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend/Decorator/Compression.php" target="_blank">Magento\Cache\Backend\Decorator\Compression</a> class is used to compresses the data before saving them to the cache backend. The data string, which consists of more symbol than specified in `compression_threshold` parameter, will be compressed. You can distinguish the compressed data by the `compression_prefix`.
-
-Magento also uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend framework's two-level cache backend</a>. You can customize it by changing the deployment settings in `local.xml` or `di.xml` file. However, some default parameters cannot be overridden:
-
-*	`fast_backend_custom_naming`
-*	`fast_backend_autoload`
-*	`slow_backend_custom_naming`
-*	`slow_backend_autoload`
-
-To configure the two-level cache with the memcache as fast backend and file system as slow backend cache use `app/etc/local.xml`:
-
-<pre>&lt;config&gt;
-....
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;cache&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;frontend&nbsp;name=&quot;default&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;backend&gt;memcached&lt;/backend&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;slow_backend&gt;File&lt;/slow_backend&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;slow_backend_store_data&gt;1&lt;/slow_backend_store_data&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;auto_refresh_fast_cache&gt;1&lt;/auto_refresh_fast_cache&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;slow_backend_options&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hashed_directory_level&gt;1&lt;/hashed_directory_level&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;hashed_directory_umask&gt;0777&lt;/hashed_directory_umask&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;file_name_prefix&gt;custom&lt;/file_name_prefix&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;cache_dir&gt;&lt;![CDATA[cache_slow]]&gt;&lt;/cache_dir&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/slow_backend_options&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;memcached&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;servers&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;server1&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;host&gt;&lt;![CDATA[localhost]]&gt;&lt;/host&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;port&gt;&lt;![CDATA[11211]]&gt;&lt;/port&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;persistent&gt;&lt;![CDATA[1]]&gt;&lt;/persistent&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;weight&gt;&lt;![CDATA[1]]&gt;&lt;/weight&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;timeout&gt;&lt;![CDATA[60]]&gt;&lt;/timeout&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;retry_interval&gt;&lt;![CDATA[10]]&gt;&lt;/retry_interval&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/server1&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/servers&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/memcached&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/frontend&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/cache&gt;
-&lt;/config&gt;
-</pre>
-
-Alternatively, you can configure the two-level cache with the memcache as fast backend and file system as slow backend cache via `di.xml`. For instance, in `app/etc/di.xml` file:
-
-<pre>&lt;config&nbsp;&gt;
-....
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;type&nbsp;name=&quot;Magento\App\Cache\Frontend\Pool&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;frontendSettings&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;default&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;backend&quot;&nbsp;xsi:type=&quot;string&quot;&gt;memcached&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;slow_backend&quot;&nbsp;xsi:type=&quot;string&quot;&gt;File&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;slow_backend_store_data&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;auto_refresh_fast_cache&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;slow_backend_options&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;hashed_directory_level&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;hashed_directory_umask&quot;&nbsp;xsi:type=&quot;number&quot;&gt;0777&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;file_name_prefix&quot;&nbsp;xsi:type=&quot;string&quot;&gt;custom&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;cache_dir&quot;&nbsp;xsi:type=&quot;string&quot;&gt;cache_slow&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;memcached&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;servers&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;server1&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;host&quot;&nbsp;xsi:type=&quot;string&quot;&gt;localhost&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;port&quot;&nbsp;xsi:type=&quot;number&quot;&gt;11211&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;persistent&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;weight&quot;&nbsp;xsi:type=&quot;number&quot;&gt;1&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;timeout&quot;&nbsp;xsi:type=&quot;number&quot;&gt;60&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;retry_interval&quot;&nbsp;xsi:type=&quot;number&quot;&gt;10&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/type&gt;
-&lt;/config&gt;</pre>
+* <a href="{{ site.mage2000url }}ib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/CacheConfig.php" target="_blank">CacheConfig.php</a> for the frontend cache.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/BackendConfig.php" target="_blank">BackendConfig.php</a> for the backend cache.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/DbConfig.php" target="_blank">DbConfig.php</a> for database caching.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/EncryptConfig.php" target="_blank">EncryptConfig.php</a> for the `encrypt` cache.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/InstallConfig.php" target="_blank">InstallConfig.php</a> for the `installconfig` cache.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/ResourceConfig.php" target="_blank">ResourceConfig.php</a> for the `resourceconfig` cache.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/SegmentInterface.php" target="_blank">SegmentInterface.php</a> for the `segmentinterface` cache.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/SessionConfig.php" target="_blank">SessionConfig.php</a> for the session cache.
 
 
-
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Please help us improve this topic by suggesting details using the <strong>Edit this page in GitHub</strong> link at the top of the page. </p>
+</div>
 
 
 
