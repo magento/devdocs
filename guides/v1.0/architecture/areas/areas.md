@@ -1,8 +1,8 @@
 ---
 layout: default
-group: arch-guide
+group: extension-dev-guide
 subgroup: Areas
-title: Areas
+title: Extension Devloper Guide
 menu_title: Areas
 menu_order: 1
 menu_node: parent
@@ -11,7 +11,7 @@ github_link: architecture/areas/areas.md
 
 <h2 id="m2devgde-area-intro">Introduction</h2>
 
-Magento uses *areas* to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the `frontend` (storefront), `backend` (administration interface), and `webapi` (web services).
+Magento uses *areas* to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the `storefront` (frontend), `Magento Admin` (adminhtml, the administration interface), and `web API REST` (webapi_rest).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Although <code>frontend</code> and <code>adminhtml</code> are common in layout paths, layouts are not used by web services. Currently, layouts are used only by HTML generated for the storefront and administration interfaces.</p>
@@ -25,12 +25,10 @@ The purpose of areas is efficiency. If you are invoking a REST web service call,
 
 Typically, an area has behavior and view components, which operate separately.
 
-The Magento areas are:
+The Magento areas currently available are:
 
 * Magento Admin (adminhtml)
 * Storefront (frontend)
 * Web API REST (webapi_rest)
-* Web API SOAP (webapi_soap)
-* Doc (doc)
 
 If your extension works in several different areas, you should make sure it has separate behavior and view components for each area.
