@@ -54,7 +54,7 @@ Factory
 
 Proxy
 
-:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies.
+:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies. Also, a proxy can be used to break cyclical dependencies.
 
 
 Lifestyle
