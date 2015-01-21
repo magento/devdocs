@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Modules
-title: Introduction to modules
-menu_title: Introduction to modules
-menu_order: 1
+subgroup: Architecture
+title: Magento Architecture
+menu_title: Modules
+menu_order: 4
 github_link: architecture/modules/mod_intro.md
 ---
 

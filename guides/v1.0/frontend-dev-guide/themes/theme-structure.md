@@ -232,7 +232,7 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like theme name or theme version, and it is used by the Magento system to recognize the theme. Additionally, here you can see whether a theme is a standalone one or inherited from an existing theme (parent theme).
+        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
            <!--ADDLINK-->
 
       </td>
