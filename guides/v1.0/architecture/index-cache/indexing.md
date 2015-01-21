@@ -1,7 +1,7 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Indexing
+group: extension-dev-guide
+subgroup: Functional 
 title: Indexing
 menu_title: Indexing
 menu_order: 1

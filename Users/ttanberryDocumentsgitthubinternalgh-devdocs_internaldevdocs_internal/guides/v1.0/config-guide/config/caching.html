@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Caching</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/config-guide/config/caching.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
+				<div class="sub-site-name">
+					<a href="/pages/Magento/devdocs_internal/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html"">Configuration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Caching</h1>
+			
+			<a class="improve-page" href="https://github.scm.corp.ebay.com/Magento/devdocs_internal/tree/devdocs-22-m8/guides/v1.0/config-guide/config/caching.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h4 id="contents">Contents</h4>
+
+<ul>
+  <li><a href="#m2devgde-cache-explore">Overview of caching</a></li>
+  <li><a href="#m2devgde-cache-type">Create a cache type</a></li>
+  <li><a href="#m2devgde-cache-more">More information about caching</a></li>
+</ul>
+
+<h2 id="m2devgde-cache-explore">Overview of caching</h2>
+
+<p>Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir&gt;/var</code>.</p>
+</div>
+
+<p>To change the cache configuration, edit <code>&lt;Magento install dir&gt;/app/etc/config.php</code>.</p>
+
+<p>The cache configuration is an associative array similar to the following:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
+<span class="s1">&#39;cache_types&#39;</span> <span class="o">=&gt;</span>
+  <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;layout&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;block_html&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;view_files_fallback&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;view_files_preprocessing&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;collections&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;db_ddl&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;eav&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;full_page&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;translate&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;config_integration&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;config_webservice&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s1">&#39;config_integration_api&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="p">),</span>
+<span class="p">);</span></code></pre></div>
+
+<h2 id="m2devgde-cache-type">Create a cache type</h2>
+
+<p>A <em>cache type</em> enables you to specify what is cached and enables merchants to clear that cache type using the Cache Management page in the Magento Admin.</p>
+
+<p>The tag <em>scope</em> provides a mechanism for a cache type.</p>
+
+<p>To create a new cache type:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/574ff5d582c92f8f6acf.js"></script>
+
+<p>You must specify the following parameters:</p>
+
+<ul>
+  <li><code>Namespace_Module</code> defines the name of a module that uses a cache type. A module can use several cache types and a cache type can be used in several modules.</li>
+  <li><code>%cache_type_id%</code> defines unique identifier of a cache type.</li>
+  <li><code>%cache_type_tag%</code> defines unique tag to be used in the cache type scoping.</li>
+</ul>
+
+<h2 id="m2devgde-cache-more">More information about caching</h2>
+<p>At this time, you can get more information about caching by looking at the code. To start, look for <code>const CONFIG_KEY =</code> in the following classes. Specify each key in <code>config.php</code> and add configuration detail (including cache storage) under that key.</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/develop/ib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/CacheConfig.php" target="_blank">CacheConfig.php</a> for the frontend cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/BackendConfig.php" target="_blank">BackendConfig.php</a> for the backend cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/DbConfig.php" target="_blank">DbConfig.php</a> for database caching.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/EncryptConfig.php" target="_blank">EncryptConfig.php</a> for the <code>encrypt</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/InstallConfig.php" target="_blank">InstallConfig.php</a> for the <code>installconfig</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/ResourceConfig.php" target="_blank">ResourceConfig.php</a> for the <code>resourceconfig</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/SegmentInterface.php" target="_blank">SegmentInterface.php</a> for the <code>segmentinterface</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/SessionConfig.php" target="_blank">SessionConfig.php</a> for the session cache.</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Please help us improve this topic by suggesting details using the <strong>Edit this page in GitHub</strong> link at the top of the page. </p>
+</div>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Configuration</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-files.html">Configuration files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/plugins.html">Plug-ins</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/depend-inj.html">Dependency injection</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/magento-mode.html">Magento modes</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/caching.html">Caching</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/js-resources.html">JavaScript resources</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/pages/Magento/devdocs_internal/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/pages/Magento/devdocs_internal/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/pages/Magento/devdocs_internal/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
+
+
+</body>
+</html>
