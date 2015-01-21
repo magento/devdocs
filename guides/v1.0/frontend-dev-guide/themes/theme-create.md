@@ -96,21 +96,6 @@ Example of a theme `composer.json`:
 
 <!--ADDLINK You can find details about the Composer integration in the Magento system in Composer Integration. -->
 
-2. Configure it using the following example:
-<pre>
-&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;New&nbsp;Theme&lt;/title&gt;&nbsp;&nbsp;&lt;!--&nbsp;your&nbsp;theme's&nbsp;name&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;&nbsp;&nbsp;&lt;!--&nbsp;the&nbsp;path&nbsp;to&nbsp;your&nbsp;theme's&nbsp;preview&nbsp;image&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;
-&lt;/theme&gt;
-</pre>
-
-To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
-
-<img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
-
-
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
 If product image sizes of your theme differ from those of the default theme, you need to add a `view.xml` file which contains configuration of all product image sizes used on the storefront.
