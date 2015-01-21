@@ -8,67 +8,47 @@ menu_order: 5
 github_link: config-guide/config/caching.md
 ---
 
+#### Contents
+
 *	<a href="#m2devgde-cache-explore">Overview of caching</a>
 *	<a href="#m2devgde-cache-type">Create a cache type</a>
-* 	<a href="#m2devgde-cache-more">More information about caching</a>
+* <a href="#m2devgde-cache-more">More information about caching</a>
 
-A logical group in the application layer is _a module_ and a logical group in the framework layer is _a library_.
 
-Moving some features to framework layer is to facilitate decreasing the module dependencies.
-
-Features moved to the library depend only on the framework components and abstractions and do not depend on modules in the application layer.
-
-To adjust the system to our new approach, we moved some elements out of the modules to libraries. In particular:
-
-1.	Session
-2. 	Cookies
-3. 	Data types processing
-4. 	Email
-5.	functions.php
-1.	Cache
-1.	CAPTCHA
-
-This article describes the changes in the Cache functionality.
-
-<h2 id="m2devgde-cache-explore">Cache changes</h2>
+<h2 id="m2devgde-cache-explore">Overview of caching</h2>
 
 Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.
 
-<h2 id="m2devgde-cache-configuring">Configure the cache</h2>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir>/var</code>.</p>
+</div>
 
-Make the primary configurations for cache in:
+To change the cache configuration, edit `<Magento install dir>/app/etc/config.php`.
 
-*	DI configuration files (`app/etc/di.xml` or `app/etc/*/di.xml`) to define the pre configured cache settings.
-*	Deployment configuration files (`app/etc/local.xml`) to tweak the application during the deployment as necessary.
+The cache configuration is an associative array similar to the following:
 
-Configuring the cache involves setting up the <a href="#m2devgde-cache-frontend">cache frontend</a> and <a href="#m2devgde-cache-backend">cache backend</a>. Thus, you will need to specify the cache frontend configuration, attach the cache types to the cache frontend, and set up the cache backend for the cache frontend.
+{% highlight PHP %}
+<? php
+'cache_types' =>
+  array (
+    'config' => 1,
+    'layout' => 1,
+    'block_html' => 1,
+    'view_files_fallback' => 1,
+    'view_files_preprocessing' => 1,
+    'collections' => 1,
+    'db_ddl' => 1,
+    'eav' => 1,
+    'full_page' => 1,
+    'translate' => 1,
+    'config_integration' => 1,
+    'config_webservice' => 1,
+    'config_integration_api' => 1,
+  ),
+);
+{% endhighlight %}
 
-System uses <a href="#m2devgde-cache-frontend">cache frontend</a> for all caching operations.
-
-Use `di.xml` file of a module to make the settings for the cache frontend:
-
-<pre>&lt;type&nbsp;name=&quot;Magento\App\Cache\Frontend\Pool&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;arguments&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;name=&quot;frontendSettings&quot;&nbsp;xsi:type=&quot;array&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;item&nbsp;name=&quot;%cache_frontend_id%&quot;&nbsp;xsi:type=&quot;string&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%cache_options%
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/item&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/arguments&gt;
-&lt;/type&gt;</pre>
-
-These settings should contain a unique _identifier_, so the cache frontend could be easily retrieved from the pool.
-
-The custom settings will override the default settings for the parts of the application that use corresponding cache frontend.
-
-If necessary, you can prohibit saving new cache entities into the storage via <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Cache\Core</a> class:
-
-<pre>$options['disable_save'] = true;</pre>
-
-As a result, new cache entities will not be saved, but the previously saved cache will be still available.
-
-<h3 id="m2devgde-cache-type">Cache type</h3>
+<h2 id="m2devgde-cache-type">Create a cache type</h2>
 
 A *cache type* enables you to specify what is cached and enables merchants to clear that cache type using the Cache Management page in the Magento Admin.
 
