@@ -13,5 +13,5 @@ The Architecture Guide provides a relatively high-level introduction and view of
 
 The Magento platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 
-More detailed infomation about building online stores, using the Magento APIs, installing, configuring, and extending the platform is included in other books in the <a href="{{ site.baseurl }}index.html">Magento library</a>.
+More detailed information about building online stores, using the Magento APIs, installing, configuring, and extending the platform is included in other books in the <a href="{{ site.baseurl }}index.html">Magento library</a>.
 
