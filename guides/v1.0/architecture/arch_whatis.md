@@ -8,8 +8,6 @@ menu_order: 1
 github_link: architecture/arch_whatis.md
 ---
 
-This guide supports developers who create Magento extensions.
-
 <h2 id="m2arch-whatis-overview">What is Magento?</h2>
 
 Magento is a highly-customizable e-commerce platform and content management system that is primarily used to build online storefronts, or web sites for selling merchandise. Common e-commerce features, such as shopping carts and inventory management, are available in Magento.
@@ -26,7 +24,7 @@ The Magento Framework provides core business logic and functionality, the base c
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.baseurl }}index.html">Magento Documentation</a>.</p>
+  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}bk-extension-dev-guide.html">Extension Developer Guide</a>.</p>
 
 </div>
 

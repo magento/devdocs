@@ -2,9 +2,9 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Libraries
+title: Magento Architecture
 menu_title: Libraries
-menu_order: 3
+menu_order: 5
 github_link: architecture/arch_libraries.md
 ---
 

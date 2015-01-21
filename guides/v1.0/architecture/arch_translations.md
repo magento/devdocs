@@ -2,9 +2,9 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Translation packs
-menu_title: Translation packs
-menu_order: 5
+title: Magento Architecture, Translation packages
+menu_title: Translation packages
+menu_order: 7
 github_link: architecture/arch_translations.md
 ---
 
@@ -14,7 +14,7 @@ Magento can present the user interface (UI) in different languages without modif
 
 To replace these phrases with alternatives in different languages when the source code is interpreted, Magento has a layer of indirection. It allows for translation by providing dictionary files that contain phrases from `en_US` translated into a different language. The dictionary packages in other languages either ship with Magento code out-of-the-box or are provided by the community.
 
-For more information, refer to <a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation packs</a>.
+For more information, refer to <a href="{{ site.gdeurl }}architecture/modules/xlate.html">Translation packages</a>.
 
 <h2 id="m2arch-related">Related topics</h2>
 

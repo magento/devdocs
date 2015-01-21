@@ -69,7 +69,7 @@ To upgrade to PHP 5.6:
 		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
 		yum install -y php56w php56w-opcache
 
-2.	Enter the followign command to verify that PHP 5.6 is installed:
+2.	Enter the following command to verify that PHP 5.6 is installed:
 
 		php -v
 

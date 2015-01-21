@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/themes/theme-create.md
 
 <h2 id="layout_theme_how-to_overview">Overview</h2>
 
-This topic discusses how to create the files that make up a theme, how to add a logo to a theme, how to size images, and how to preview a theme.
+This topic discusses how to create the files that make up a theme, how to add a logo to a theme, and how to size images.
 
 <h2 id="layout_theme_how-to_dirs">Create a theme directory</h2>
 
@@ -32,15 +32,36 @@ app/design/frontend/
 
 The folder name conventionally equals to the theme code, any alphanumeric set of characters as the vendor sees fit. This convention is merely a recommendation, so nothing prevents calling this directory in any other way.
 
+<h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
 
-<h2 id="fedg_create_theme_composer">Make your theme a Composer package</h2>
+After you create a directory for your theme, you must create `theme.xml` containing at least the theme name and the parent theme name (if the theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from one). Optionally you can specify where the theme preview image is stored.
+
+1. Add or copy from an existing `theme.xml` to your theme directory `app/design/frontend/<Vendor>/<theme>`
+
+2. Configure it using the following example:
+
+	<pre>&lt;theme&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;New&nbsp;theme&lt;/title&gt;&nbsp;&lt;!--&nbsp;your&nbsp;theme's&nbsp;name&nbsp;--&gt;
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;parent&gt;Magento/blank&lt;/parent&gt;&nbsp;&lt;!--&nbsp;the&nbsp;parent&nbsp;theme,&nbsp;in&nbsp;case&nbsp;your&nbsp;theme&nbsp;inherits&nbsp;from&nbsp;an&nbsp;existing&nbsp;theme&nbsp;--&gt;
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;media&gt;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt;&nbsp;&lt;!--&nbsp;the&nbsp;path&nbsp;to&nbsp;your&nbsp;theme's&nbsp;preview&nbsp;image&nbsp;--&gt;
+	&nbsp;&nbsp;&nbsp;&nbsp;&lt;/media&gt;
+	&lt;/theme&gt;</pre>
+
+To make sure the theme is recognized by the Magento application, log in to the Magento Admin and check if the theme is displayed in the grid under **Content** > **Design** > **Themes**.
+
+<img src= "{{ site.baseurl }}common/images/layout_theme_new_admin.png" />
+
+Clicking on a theme record on Themes opens a page containing the information from the theme declaration file, and a preview image if available.
+
+<h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
 
 Magento default themes are distributed as <a href="https://getcomposer.org/" target="_blank">Composer</a> packages.
 
-To distribute your theme, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
+To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is <a href="https://packagist.org/" target="_blank" >https://packagist.org/</a>.
 
-`composer.json` provides theme dependency information, including the specification of a parent theme (if your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from another theme).
+`composer.json` provides theme dependency information.
 
 Example of a theme `composer.json`:
 <pre>
@@ -68,18 +89,12 @@ Example of a theme `composer.json`:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }
-</pre>
+</pre> 
 
 
 <!-- If your theme supports Composer, the end users can install or uninstall it on their Magento systems. -->
 
 <!--ADDLINK You can find details about the Composer integration in the Magento system in Composer Integration. -->
-
-<h2 id="fedg_create_theme_how-to_declare">Declare your theme</h2>
-
-After you create a directory for your theme, you must create `theme.xml` containing the theme declaration and name, version, and parent theme name .
-
-1. Add or copy from an existing `theme.xml` to your theme directory `app/design/frontend/<Vendor>/<theme>`
 
 2. Configure it using the following example:
 <pre>
@@ -129,8 +144,8 @@ app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files, for example a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>`.
-Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like `.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css` and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
+ <p>In the <code>...&lt;theme&gt;/web/images</code> you store the general theme related static files, for example a theme logo is stored in <code>...&lt;theme&gt;/web/images</code>.
+Most probably your theme will also contain module-specific files, which are stored in the corresponding sub-directories, like <code>.../&lt;theme&gt;/&lt;Namespace_Module&gt;/web/css</code> and similar. Managing the module-specific theme files is discussed in the following sections of this Guide.</p></span>
 </div>
 
 
