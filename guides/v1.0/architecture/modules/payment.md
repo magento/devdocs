@@ -1,7 +1,7 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Modules
+group: 
+subgroup: 
 title: Payment modules
 menu_title: Payment modules
 menu_order: 7
