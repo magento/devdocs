@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable optional Magento sample data</title>
+	<title>Routing</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/install/sample-data.html">
+	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/routing.html">
 
 </head>	
 <body>
@@ -136,9 +136,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Enable optional Magento sample data</h1>
+		<h1 class="page-heading">Routing</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/sample-data.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/routing.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -147,119 +147,108 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<h2 id="overview">Overview</h2>
+
+<p>In the Magento system, a URL has the following format:</p>
+
+<p><code>&lt;area front name&gt;/&lt;VendorName&gt;/&lt;ModuleName&gt;/[controller name]/[action name]</code></p>
+
+<p><code>&lt;area front name&gt;</code> indicates it is at the “front” of the URL. (The <em>area name</em> is used internally to refer to the area in configuration files. Magento provides areas such as <code>frontend</code> for the storefront and <code>adminhtml</code> for the administration area.)</p>
+
+<p>To assign a URL to a corresponding controller and action, use the router class.</p>
+
+<p>Router has an algorithm to find a matching controller, determined by request.</p>
+
+<p>Then, according to a route rule, controller is assigned to URL. Use the <code>routes.xml</code> file to review or change the route rules.</p>
+
+<h3>Routers</h3>
+
+<p>The routers information for the modules is described in the <code>routerList</code> parameter of <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your <code>di.xml</code>.</p>
+
+<p>Each area has its own set of the routers. The <code>Magento\Framework\App\RouterList</code> model is injected into <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.</p>
+
+<p>You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
+(such as, CMS router, default router, and so on).
+However, you must not customize the routers that are used in Magento core modules.</p>
+
+<h3>Routes</h3>
+
+<p>Configurations of the routes are stored in <code>routes.xml</code> in the scopes area.</p>
+
+<p>Only the standard frontend and backend routers use routes. Typically, the configuration for a route is in the following format:</p>
+
+<pre>
+&lt;config&gt;
+    &lt;router id="%routerId%"&gt;
+        &lt;route id="%routeId%" frontName="%frontName%"&gt;
+            &lt;module name="%moduleName%" before="%moduleName%"/&gt;
+        &lt;/route&gt;
+    &lt;/router&gt;
+&lt;/config&gt;
+</pre>
+
+<p>To retrieve the configuration for route for an area by the specified router, use the <code>Magento\App\Framework\Route\Config</code>.</p>
+
+<p>To replace the controller action in a route with custom one, add the custom controller class before the original controller.</p>
+
+<p>The custom controller and action should share the same names with the original ones.</p>
+
+<p>The system processes the custom controller before the original, while a route remains the same.</p>
+
+<p>If you must reset a route and design, forward the request processing to another route:</p>
+
+<p><code>$this-&gt;_forward('other/controller/action')</code></p>
+
+<p>To remove the controller action, forward to <code>noroute</code>, for instance, in <code>app/code/Company/SomeExtension/Controller/Account.php</code>:</p>
+
+<pre>
+namespace Company\SomeExtension\Controller;
+
+class Account extends \Magento\Framework\App\Action\Action
+{
+    public function loginAction()
+    {
+        ...
+    }
+
+    public function createAction()
+    {
+        $this-&gt;_forward('noroute');
+    }
+
+    public function forgotpasswordAction()
+    {
+        $this-&gt;_forward('noroute');
+    }
+}
+</pre>
+
+<h3>Routing processing</h3>
+
+<p>Routing is processed in the following way:</p>
 
 <ul>
-  <li><a href="#instgde-install-sample-intro">Introduction to Magento sample data</a></li>
-  <li><a href="#instgde-install-sample-enabling">Enable the use of sample data</a></li>
-  <li><a href="#instgde-install-sample-after">Complete the sample data installation</a></li>
+  <li>Modules provide information on their routers through the <code>routerList</code> parameter of <code>Magento\Framework\App\RouterList</code> type in <code>di.xml</code>.</li>
+  <li><code>FrontController</code> obtains active routers and checks whether a request can be processed.</li>
+  <li>If a request cannot be processed by any router, the default router is used.</li>
+  <li>If a request can be processed by a router, the router finds a route with matching <code>frontName</code> and looks through corresponding modules. If a module has matching controller and action names, a router instantiates this controller.</li>
 </ul>
 
-<h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
-<p>This section discusses how to enable you to install the optional Magento sample data. If you don’t wish to use sample data, skip this topic and continue with <a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a>.</p>
+<p>The <code>dispatch()</code> method of the <code>Magento\Framework\App\Action\Action</code> class requests an instance and returns its response.</p>
 
-<p>Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+<p>For this class, the <code>Magento\Framework\App\ActionInterface</code> processes the requests through its actions. Also, the following classes participate in processing the requests:</p>
 
-<p>To enable sample data, you must edit <code>composer.json</code> in the Magento root installation directory to provide the location of the sample data package.</p>
+<ul>
+  <li>The <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.</li>
+  <li>The <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the <code>di.xml</code> file</li>
+  <li>The <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area’s front names</li>
+</ul>
 
-<h2 id="instgde-install-sample-enabling">Enable the use of sample data</h2>
+<h2>Default router</h2>
 
-<p>To enable sample data, you must:</p>
+<p>If a request cannot be processed by any router, the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.</p>
 
-<ol>
-  <li>Edit <code>composer.json</code> to reference the repository and packages that specify the Magento sample data.</li>
-  <li>Run <code>composer update</code> to get the sample data packages.</li>
-  <li>Run the Magento 2 installer to update the database.</li>
-</ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-   <p>The sample data Composer package recently changed. If you're using an alpha or beta1 Magento 2 build, we strongly recommend you update to a beta2 build to get the latest code.</p> 
-<p>To upgrade, see <a href="/guides/v1.0/install-gde/install/install-cli.html#instgde-install-magento-reinstall">Reinstalling the Magento software</a>.</p></div>
-
-<p>To edit <code>composer.json</code>:</p>
-
-<ol>
-  <li>Log in to your Magento server as the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
-  <li>Change to your Magento installation directory.</li>
-  <li>Open <code>&lt;your Magento install dir&gt;/composer.json</code> in a text editor.</li>
-  <li>
-    <p>Search for a <code>"repositories":</code> section.</p>
-
-    <p>If you have one, add the following block (without <code>"repositories":</code>) to it.</p>
-
-    <p>If you have no <code>"repositories":</code> section, add one before the <code>"require":</code> section as follows:</p>
-
-    <pre><code>"repositories": [
-    {
-        "type": "composer",
-        "url": "http://packages.magento.com/"
-    }
-    ],
-</code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>The keyword <code>repositories</code> must align with the keyword <code>require</code>.</p> </div>
-  </li>
-  <li>
-    <p>Add one of the following to the <code>"require":</code> section:</p>
-
-    <ul>
-      <li>
-        <p>Recent build (<code>beta2</code> from mid-December 2014, or later):</p>
-
-        <pre><code>"magento/sample-data": "0.42.0-beta2",
-"magento/sample-data-media": "~0.42.0-beta1",
-</code></pre>
-      </li>
-      <li>
-        <p>Older build (<code>alpha</code> or <code>beta1</code>):</p>
-
-        <pre><code>"magento/sample-data": "0.42.0-beta1",        
-"magento/sample-data-media": "0.42.0-beta1",
-</code></pre>
-      </li>
-    </ul>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>Valid JSON requires that:
-        <ul><li>The line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma as shown in the preceding.</li>
-        <li>The names of all values in a section must align.</li></ul> 
-
-</p></div>
-  </li>
-  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
-</ol>
-
-<h2 id="instgde-install-sample-after">Complete the sample data installation</h2>
-<p>After you’ve installed the Magento software or run <code>composer install</code>, you can install the sample data as follows:</p>
-
-<ol>
-  <li>Update <code>composer.json</code> as discussed in <a href="#instgde-install-sample-enabling">Enable the use of sample data</a>.</li>
-  <li>
-    <p>As the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>:</p>
-
-    <p>a.  Change to your Magento installation directory (for example, <code>/var/www/magento2</code>).</p>
-
-    <p>b. Enter <code>composer update</code></p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>The following error displays if you have run <code>composer update</code> recently. The error is normal; you can continue the installation.</p> 
-    <pre>[ErrorException]
-  Target ./dev/tools/Magento/Tools/SampleData/Installer.php already exists (set extra.magento-force to override)</pre></div>
-  </li>
-  <li>
-    <p>Run the Magento setup software (if you’ve already installed Magento, the setup software updates the database):</p>
-
-    <ul>
-      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
-      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Install Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
-
-<h4 id="next-step">Next step</h4>
-
-<p>After running the setup software, see <a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></p>
+<p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.</p>
 
 
 		</div>
@@ -281,259 +270,135 @@
 			
 				
 				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/prereq/optional.html">Optional software</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-overview.html">Installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-
-
-				
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Concepts</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">How to</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			

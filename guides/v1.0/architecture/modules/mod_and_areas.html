@@ -65,7 +65,7 @@
             <a href="/guides/v1.0/release-notes/release-notes.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
-               <li class="leaf"><a href="/guides/v1.0/architecture/arch_whatis.html">Magento Architecture</a></li>
+               <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -150,14 +150,12 @@
 		<h2 id="m2arch-module-areas-overview"> Overview</h2>
 <p>Modules define which resources are visible and accessible in an area, as well as an area’s behavior.</p>
 
-<p>In Magento there are six Areas:</p>
+<p>In Magento there are the following Areas:</p>
 
 <ul>
   <li><strong>Magento Admin</strong> (adminhtml)</li>
   <li><strong>Storefront</strong> (frontend)</li>
   <li><strong>Web API REST</strong> (webapi_rest)</li>
-  <li><strong>Web API SOAP</strong> (webapi_soap)</li>
-  <li><strong>Doc</strong> (doc)</li>
 </ul>
 
 <p>Each area declares itself within a module. All resources specific for an area are located within the same module as well.</p>
@@ -181,6 +179,20 @@
 <div class="bs-callout bs-callout-info" id="info">
   <p>Disabling an area does not result in disabling the modules related to it.</p>
 </div>
+
+<p>Magento uses <em>areas</em> to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the <code>storefront</code> (frontend), <code>Magento Admin</code> (adminhtml, the administration interface), and <code>web API REST</code> (webapi_rest).</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Although <code>frontend</code> and <code>adminhtml</code> are common in layout paths, layouts are not used by web services. Currently, layouts are used only by HTML generated for the storefront and administration interfaces.</p>
+</div>
+
+<p>Magento processes a URL request by first stripping off the base URL. The first path segment of the remaining URL identifies the request area.</p>
+
+<p>After the area name, the part of the URI segment specifies the <em>full front name</em>. When an HTTP request arrives, the handle is extracted from the URL. The handle is used to identify the controller (a PHP class) and action (a PHP method in the class) to execute. A common action to display a HTML page is <code>index</code>, which returns an HTML page.</p>
+
+<p>Typically, an area has behavior and view components, which operate separately.</p>
+
+<p>If your extension works in several different areas, you should make sure it has separate behavior and view components for each area.</p>
 
 <h2 id="m2arch-module-related"> Related topics</h2>
 
@@ -230,6 +242,16 @@
 						
 						
 							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
 														
 							
 								
@@ -248,7 +270,15 @@
 						
 								
 							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular system</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/modules/mod_intro.html">Modules</a></li>
 						
 								
 							
@@ -260,33 +290,8 @@
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/arch_translations.html">Translation packs</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/arch_translations.html">Translation packages</a></li>
 						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/architecture/areas/areas.html">Areas</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
@@ -378,10 +383,6 @@
 								
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/modules/mod_intro.html">Introduction to modules</a></li>
-						
-								
-							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
 						
 								
@@ -396,35 +397,6 @@
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/modules/mod_conventions.html">Module naming and location conventions</a></li>
 						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/architecture/modules/payment.html">Payment modules</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/architecture/modules/routing.html">Routing</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
