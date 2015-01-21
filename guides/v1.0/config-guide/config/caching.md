@@ -14,7 +14,6 @@ github_link: config-guide/config/caching.md
 *	<a href="#m2devgde-cache-type">Create a cache type</a>
 * <a href="#m2devgde-cache-more">More information about caching</a>
 
-
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
 
 Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.
