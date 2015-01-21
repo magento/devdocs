@@ -1,7 +1,7 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Functional 
+subgroup: Indexing 
 title: Indexing
 menu_title: Indexing
 menu_order: 1
@@ -181,7 +181,7 @@ Out of the box the Magento system has the following indexers implemented:
 
 <h2 id="m2devgde-indexing-commandline">Running indexers from the command line</h2>
 
-To run indexers from the command line, change to `<your Magento install dir>/dev/shell` and format the command as follows:
+To run indexers from the command line, change to `<your_Magento_install_dir>/dev/shell` and format the command as follows:
 
 <pre>
 Usage:  php -f indexer.php -- [options]
