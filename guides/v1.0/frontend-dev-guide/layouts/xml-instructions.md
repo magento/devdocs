@@ -440,3 +440,23 @@ To pass an argument that is an array use the following construction:
 &lt;/argument&gt;
 </pre>
 
+Arguments values set in a layout file can be accessed in <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the `get{ArgumentName}()` and `has{ArgumentName}()`methods. The latter returns a boolean difining whether there's any value set. 
+`{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getSomeString()`.
+
+
+Example:
+Setting a value of `css_class` in the <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
+<pre>
+...
+&lt;arguments&gt;
+    &lt;argument name=&quot;css_class&quot; xsi:type=&quot;string&quot;&gt;header links&lt;/argument&gt;
+&lt;/arguments&gt;
+...
+</pre>
+
+Using the value of `css_class` in <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+<pre>
+...
+$cssClass&nbsp;=&nbsp;$this-&gt;getCssClass()&nbsp;?&nbsp;'&nbsp;'&nbsp;.&nbsp;$this-&gt;getCssClass()&nbsp;:&nbsp;'';
+...
+</pre>
