@@ -50,15 +50,15 @@ Factory
 
 Proxy
 
-:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies. A proxy can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.
+:	Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency&mdash;the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.
 
 
 Lifestyle
 
 :	An object's *lifestyle* determines in what scope instances are reused, and when to release them. For more information, see <a href="http://docs.castleproject.org/%28X%281%29S%283i1uai55lunseee55whzgdzv%29%29/Default.aspx?Page=LifeStyles&NS=Windsor&AspxAutoDetectCookieSupport=1" target="_blank">the Castle project</a>.
 
-<h2 id="dep-inj-preview">Preview of using constructor injection</h2>
-Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target=_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
+<h2 id="dep-inj-preview-cons">Preview of constructor injection</h2>
+Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
 
 A sample proxy (which you declare in `di.xml`) follows:
 

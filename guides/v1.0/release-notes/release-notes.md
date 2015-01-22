@@ -109,7 +109,7 @@ We have identified the following known issues in this release:
 *   <a href="#known-devbeta-storefront-err">Access errors</a>
 *   <a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a>
 *   <a href="#known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</a>
-*   <a href="#known-devbeta-wiz-fail-session-save">session.save_path issue</a>
+<!-- *   <a href="#known-devbeta-wiz-fail-session-save">session.save_path issue</a> -->
 
 <h3 id="known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</h3>
 
@@ -184,9 +184,9 @@ This is your encryption key.
 
 To work around this issue, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a>
 
-<h3 id="known-devbeta-wiz-fail-session-save">session.save_path issue</h3>
+<!-- <h3 id="known-devbeta-wiz-fail-session-save">session.save_path issue</h3>
 
-<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31851">MAGETWO-31851</a> and <a href="https://github.com/magento/magento2/issues/792">GitHub issue 792</a> -->There is a known issue that prevents the usage of <a href="http://php.net/manual/en/configuration.changes.php" target="_blank">php_admin_value</a> for some session configuration settings. Specifically, we are aware that the <a href="http://php.net/manual/en/session.configuration.php#ini.session.save-path" target="_blank">session.save_path</a> cannot be set with `php_admin_value` at this time.
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31851">MAGETWO-31851</a> and <a href="https://github.com/magento/magento2/issues/792">GitHub issue 792</a> --><!-- There is a known issue that prevents the usage of <a href="http://php.net/manual/en/configuration.changes.php" target="_blank">php_admin_value</a> for some session configuration settings. Specifically, we are aware that the <a href="http://php.net/manual/en/session.configuration.php#ini.session.save-path" target="_blank">session.save_path</a> cannot be set with `php_admin_value` at this time.
 
 Workarounds:
 
@@ -231,7 +231,7 @@ If you don't know where `php.ini` is located, use the following steps:
 4.  As a user with <code>root</code> privileges, open `php.ini` in a text editor.
 5.  Locate the value of `open_basedir` and change it.
 6.  Save your changes to `php.ini`.
-7.  Restart the web server.
+7.  Restart the web server. -->
 
 
 <h2 id="install">Installation</h2>
