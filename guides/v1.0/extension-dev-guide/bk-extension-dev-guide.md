@@ -12,35 +12,23 @@ github_link: extension-dev-guide/bk-extension-dev-guide.md
 This guide contains information for developers who want to extend, or customize, any of the components in the Magento platform. 
 
 <h2 id="api-concepts">Concepts</h2>
-<dl>
-<dt>
-   <p><a href="{{ site.gdeurl }}extension-dev-guide/api-concepts.html">Programming concepts</a></p>
-</dt>
-<dt>
-   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></p>
-</dt>
-<dt>
-   <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></p>
-</dt>
-<!--
-   <dt>
-                       <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-domain-guidelines.html">Guidelines for domain and service layers</a></p>
-                  </dt>
-                  </dl>
-    -->
-<!--
-   <dt>
-                     <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-create-example.html">Create a service - example</a></p>
-                  </dt>
-    -->
-<h2 id="api-concepts">How to</h2>
-<dl>
-   <dt>
-      <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></p>
-   </dt>
-</dl>
 
-<h2 id="m2arch-related">Related topics</h2>
-<ul>
-   <li><a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.</li>
-   </ul>
+* <a href="{{ site.gdeurl }}extension-dev-guide/api-concepts.html">Programming concepts</a>
+* <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+* <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a>
+
+
+<h2 id="api-fun">Fundamentals</h2>
+
+* <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a>
+* <a href="{{ site.gdeurl }}extension-dev-guide/plugins.html">Plug-ins</a>
+* <a href="{{ site.gdeurl }}extension-dev-guide/routing.html">Routing</a>
+
+<h2 id="api-concepts">How to</h2>
+
+<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
+
+<h2 id="m2arch-related">Related topic</h2>
+
+<a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a> in the Magento Architecture Guide.
+
