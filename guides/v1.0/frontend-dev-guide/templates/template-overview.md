@@ -16,7 +16,7 @@ github_link: frontend-dev-guide/templates/template-overview.md
 
 In Magento application the markup of a certain page is defined by a "layout plus template" bundle. Where <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">layout files</a> control the presence or absence of each content block in a theme. What, specifically, gets rendered inside of that block is controlled by the template files. Most templates do not contain any logic about whether they will or will not be rendered, this is typically handled by the layout files. Once a template is called, it is expected that it will be parsed and displayed.
 
-Default template files in Magento are PHTML files that contain xHTML and PHP that is parsed and then rendered by a browser. 
+Default template files in Magento are PHTML files that contain HTML and PHP that is parsed and then rendered by a browser. 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

@@ -14,7 +14,7 @@ Depending upon your role and purpose for learning more about Magento, there are 
 
 <h3 id="archi-layers">Architecture layers diagram</h3>
 
-The following diagram illustrates the components of Magento, and shows the "layer" or tiers, for each component, including the Magento framework, 3rd party libraries, the supported database, and other technologies.
+The following diagram illustrates the components of Magento, and shows the "layer" or tier, for all components, as well as the Magento framework, 3rd party libraries, the supported database, and other technologies.
 
 <p><img src="{{ site.baseurl }}common/images/archi_diagrams_layers_alt4.jpg" alt="Magento architecture layers"></p>
 
