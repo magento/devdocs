@@ -19,11 +19,11 @@ for HTML content rendering. All application modules perform rendering using the
 View component, and remain independent from each other.
 
 The View component is represented
-as `Magento\Framework\View` library: `magento2/lib/Magento/Framework/View`.
+as `Magento\Framework\View` library: `/lib/internal/Magento/Framework/View`.
 
 <h2>Using Magento\Framework\View Library</h2>
 
-The View component contains contains basic classes, factories and interfaces
+The View component contains basic classes, factories and interfaces
 used to implement HTML content rendering  for the frontend and backend
 application areas. 
 
@@ -113,10 +113,10 @@ In addition, a few other modules also use the `Magento\Framework\View` library
 in method calls, constructors of models, and helper classes.
 
 The majority of Magento module dependencies on
-the `Magento\Framework\View` library are induced on the level of Magento blocks
-classes implementation. These dependencies result from unified process of block
+the `Magento\Framework\View` library are induced on the level of Magento block
+classes implementation. These dependencies result from the unified process of block
 classes creation, which is implemented by means of
-the `Magento\Framework\View` library:  two parental classes
+the `Magento\Framework\View` library: two parent classes
 (`\Magento\Framework\View\Element\AbstractBlock` and`\Magento\Framework\View\Element\Template`)
 are common ancestors for all block classes of Magento modules, and implement
 the `\Magento\Framework\View\Element\BlockInterface` interface.

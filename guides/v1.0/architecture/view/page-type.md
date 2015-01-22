@@ -10,7 +10,7 @@ github_link: architecture/view/page-type.md
 
 <h2 id="m2devgde-pagetype-intro">Introduction to page types</h2>
 
-Page types are semantic abstractions of those controller actions which are used for page rendering. They help to qualify pages by context type, like Product View page, Shopping Cart page, and so on, providing business users the ability to customize page design. In particular page types are used in the widget creation  to define the pages where a widget can be displayed.
+Page types are semantic abstractions of those controller actions which are used for page rendering. They help to qualify pages by context type, like Product View page, Shopping Cart page, and so on, providing business users the ability to customize page design. In particular, page types are used in the widget creation  to define the pages where a widget can be displayed.
 
 Page types are defined for the frontend area only, that is for the store front pages.
 
