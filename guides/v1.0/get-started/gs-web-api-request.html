@@ -330,7 +330,7 @@ See <a href="/guides/v1.0/get-started/authentication/gs-authentication.html">Aut
 <h2 id="construct-request">Construct a request</h2>
 <p>This example shows you how to construct a REST web API call to create an account.</p>
 
-<ol><li>Open the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a> configuration file.</li>
+<ol><li>Open the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/webapi.xml" target="_blank">webapi.xml</a> configuration file.</li>
 <li><p>Find the route element that defines the <code>createAccount</code> call:</p>
 <pre>
 &lt;route url="/V1/customers" method="POST"&gt;
@@ -345,7 +345,7 @@ See <a href="/guides/v1.0/get-started/authentication/gs-authentication.html">Aut
 <pre>POST /V1/customers</pre></li>
 <li><p>Use the <code>class</code> attribute on the <code>service</code> element to identify the service interface.</p>
 <p>In this example, the service interface is the <code>AccountManagementInterface</code> PHP file.</p>
-<p>Open the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
+<p>Open the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Api/AccountManagementInterface.php" target="_blank">AccountManagementInterface.php</a> file and find the <code>createAccount</code> method, as follows:</p>
 <pre>public function createAccount(
         \Magento\Customer\Api\Data\CustomerInterface $customer,
         $password = null,

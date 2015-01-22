@@ -163,9 +163,9 @@
 
 <h3>Routers</h3>
 
-<p>The routers information for the modules is described in the <code>routerList</code> parameter of <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your <code>di.xml</code>.</p>
+<p>The routers information for the modules is described in the <code>routerList</code> parameter of <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your <code>di.xml</code>.</p>
 
-<p>Each area has its own set of the routers. The <code>Magento\Framework\App\RouterList</code> model is injected into <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.</p>
+<p>Each area has its own set of the routers. The <code>Magento\Framework\App\RouterList</code> model is injected into <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.</p>
 
 <p>You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
 (such as, CMS router, default router, and so on).
@@ -239,16 +239,16 @@ class Account extends \Magento\Framework\App\Action\Action
 <p>For this class, the <code>Magento\Framework\App\ActionInterface</code> processes the requests through its actions. Also, the following classes participate in processing the requests:</p>
 
 <ul>
-  <li>The <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.</li>
-  <li>The <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the <code>di.xml</code> file</li>
-  <li>The <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area’s front names</li>
+  <li>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.</li>
+  <li>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the <code>di.xml</code> file</li>
+  <li>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area’s front names</li>
 </ul>
 
 <h2>Default router</h2>
 
-<p>If a request cannot be processed by any router, the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.</p>
+<p>If a request cannot be processed by any router, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.</p>
 
-<p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.</p>
+<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.</p>
 
 
 		</div>
@@ -355,14 +355,22 @@ class Account extends \Magento\Framework\App\Action\Action
 								
 								
 							
-									<li class=""><span class="nav-header">How to</span></li>
+									<li class=""><span class="nav-header">Fundamentals</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
 						
 								
 								
@@ -382,13 +390,18 @@ class Account extends \Magento\Framework\App\Action\Action
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
-									
 								
+								
+							
+									<li class=""><span class="nav-header">How to</span></li>
 								
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
 								
 								
 								

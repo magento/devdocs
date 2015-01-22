@@ -157,7 +157,7 @@
 
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
 
-<p>Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.</p>
+<p>Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" target="_blank">Zend_Cache</a> component for interaction with the cache storage. However, Magento also has <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Cache" target="_blank">Magento\Cache</a> library component for implementing Magento-specific caching.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir&gt;/var</code>.</p>
@@ -208,15 +208,15 @@
 <p>At this time, you can get more information about caching by looking at the code. To start, look for <code>const CONFIG_KEY =</code> in the following classes. Specify each key in <code>config.php</code> and add configuration detail (including cache storage) under that key.</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/master/ib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/CacheConfig.php" target="_blank">CacheConfig.php</a> for the frontend cache.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/BackendConfig.php" target="_blank">BackendConfig.php</a> for the backend cache.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/DbConfig.php" target="_blank">DbConfig.php</a> for database caching.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/EncryptConfig.php" target="_blank">EncryptConfig.php</a> for the <code>encrypt</code> cache.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/InstallConfig.php" target="_blank">InstallConfig.php</a> for the <code>installconfig</code> cache.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/ResourceConfig.php" target="_blank">ResourceConfig.php</a> for the <code>resourceconfig</code> cache.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/SegmentInterface.php" target="_blank">SegmentInterface.php</a> for the <code>segmentinterface</code> cache.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/App/DeploymentConfig/SessionConfig.php" target="_blank">SessionConfig.php</a> for the session cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/ib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/CacheConfig.php" target="_blank">CacheConfig.php</a> for the frontend cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/BackendConfig.php" target="_blank">BackendConfig.php</a> for the backend cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/DbConfig.php" target="_blank">DbConfig.php</a> for database caching.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/EncryptConfig.php" target="_blank">EncryptConfig.php</a> for the <code>encrypt</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/InstallConfig.php" target="_blank">InstallConfig.php</a> for the <code>installconfig</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/ResourceConfig.php" target="_blank">ResourceConfig.php</a> for the <code>resourceconfig</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/SegmentInterface.php" target="_blank">SegmentInterface.php</a> for the <code>segmentinterface</code> cache.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/SessionConfig.php" target="_blank">SessionConfig.php</a> for the session cache.</li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -319,14 +319,6 @@
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/config-files.html">Configuration files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/plugins.html">Plug-ins</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/config-guide/config/depend-inj.html">Dependency injection</a></li>
 						
 								
 							

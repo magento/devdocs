@@ -186,7 +186,7 @@
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
 		<td>Implements:<ul>
 <li>indexer declaration</li>
 <li>indexer running</li>
@@ -194,7 +194,7 @@
 <li>indexer status</li></ul></td>
 	</tr>
 	<tr>
-		<td><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
 		<td><ul>
 <li>Allows tracking database changes for a certain entity (product, category and so on) and running change handler.</li>
 <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing PHP code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
@@ -277,49 +277,49 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 	<tr>
 		<td>Category products</td>
 		<td>catalog_category_product</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/Model/Indexer/Category/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Flat</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Indexer/Category/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Flat</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product categories</td>
 		<td>catalog_product_category</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/Model/Indexer/Product/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Flat</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Indexer/Product/Flat.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Flat</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product price</td>
 		<td>catalog_product_price</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
 		<td>Pre-calculates product prices</td>
 	</tr>
 	<tr>
 		<td>Product entity attribute value</td>
 		<td>catalog_product_attribute</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
 		<td>Reorganizes the EAV product structure to flat structure</td>
 	</tr>
 	<tr>
 		<td>Stock</td>
 		<td>cataloginventory_stock</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td>catalogrule_rule</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td>catalogrule_product</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
 		<td></td>
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td>catalogsearch_fulltext</td>
-		<td><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
+		<td><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
 		<td></td>
 	</tr>
 
@@ -371,7 +371,7 @@ Usage:  php -f indexer.php -- [options]
 
 <h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
 
-<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Indexer/Model/ActionInterface.php" target="_blank">\Magento\Indexer\Model\ActionInterface</a>, and the indexer should be able to perform three types of operations:</p>
+<p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Indexer/Model/ActionInterface.php" target="_blank">\Magento\Indexer\Model\ActionInterface</a>, and the indexer should be able to perform three types of operations:</p>
 
 <ul>
   <li>row reindex: processing a single entry from a dictionary; responsibility of <code>executeRow($id)</code></li>
@@ -391,7 +391,7 @@ Usage:  php -f indexer.php -- [options]
   <li>indexer view ID</li>
 </ul>
 
-<p><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/etc/indexer.xml" target="_blank">Example</a></p>
+<p><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/etc/indexer.xml" target="_blank">Example</a></p>
 
 <p>All indexers related to a module should be declared in one file.</p>
 
@@ -406,7 +406,7 @@ Usage:  php -f indexer.php -- [options]
   <li>what column data is sent to the indexer</li>
 </ul>
 
-<p><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a></p>
+<p><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/etc/mview.xml" target="_blank">Example</a></p>
 
 <p>All Mview declarations related to a module should be declared in one file.</p>
 

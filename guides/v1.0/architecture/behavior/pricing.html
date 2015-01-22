@@ -149,7 +149,7 @@
 		
 		<h2 id="m2devgde-pricelib-intro">Introduction to the Magento pricing library</h2>
 
-<p>This topic discusses how to use the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.</p>
+<p>This topic discusses how to use the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.</p>
 
 <h2 id="m2devgde-pricelib-integrate">Use the pricing library in your module</h2>
 
@@ -191,7 +191,7 @@
         <p>Saleable entity</p>
       </td>
       <td>
-        <p>Implements <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>
         </p>
       </td>
     </tr>
@@ -200,7 +200,7 @@
         <p>PriceType model</p>
       </td>
       <td>
-        <p>Extends <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a>
+        <p>Extends <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a>
         </p>
       </td>
     </tr>
@@ -209,7 +209,7 @@
         <p>Amount model</p>
       </td>
       <td>
-        <p>Implements <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a>
         </p>
       </td>
     </tr>
@@ -218,7 +218,7 @@
         <p>Adjustment model</p>
       </td>
       <td>
-        <p>Implements <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a>
         </p>
       </td>
     </tr>
@@ -232,13 +232,13 @@
 <h2 id="m2devgde-pricelib-di">Configure prices and adjustments</h2>
 
 <p>To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module’s <code>di.xml</code> file.
-An example of Catalog module price configuration in its <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
+An example of Catalog module price configuration in its <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
 
 <p>Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price types</a>.</p>
 
 <h3 id="m2devgde-pricelib-adj">Specify adjustments for a product</h3>
 
-<p>To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module’s <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
+<p>To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module’s <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
 
 <h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
 
@@ -258,7 +258,7 @@ An example of Catalog module price configuration in its <a href="https://github.
 
 <p>To learn about locations of layouts in Magento application, see <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
 
-<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the <code>catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
+<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the <code>catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
 
 <p>Class and template declarations in the pricing layout handles are based on the following fallback structures.</p>
 

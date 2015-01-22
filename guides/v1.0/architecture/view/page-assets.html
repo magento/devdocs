@@ -181,7 +181,7 @@ who have solid experience with PHP and are familiar with <a href="/guides/v1.0/a
 </ul>
 
 <p>These types are represented as interfaces in the
-<a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View" target="_blank">Magento/Framework/View</a> library:</p>
+<a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View" target="_blank">Magento/Framework/View</a> library:</p>
 
 <p><img src="/common/images/view_asset-interfaces.png" alt="Asset interfaces" /></p>
 
@@ -204,7 +204,7 @@ who have solid experience with PHP and are familiar with <a href="/guides/v1.0/a
 
 <h3 id="m2devgde-page-assets-imp-no-info">Assets without remote or local information</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Asset/Remote.php" target="_blank">\Magento\Framework\View\Asset\Remote</a> represents resources for which only the URL and content type are known, and which might reside in the local file system, or on a remote server. The class diagram for this asset implementation follows:</p>
+<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/Remote.php" target="_blank">\Magento\Framework\View\Asset\Remote</a> represents resources for which only the URL and content type are known, and which might reside in the local file system, or on a remote server. The class diagram for this asset implementation follows:</p>
 
 <p><img src="/common/images/view_asset-interface_no-local.png" alt="Assets with no remote or local information" /></p>
 
@@ -212,7 +212,7 @@ who have solid experience with PHP and are familiar with <a href="/guides/v1.0/a
 
 <h3 id="m2devgde-page-assets-imp-local">Local assets</h3>
 
-<p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant “file path”.</p>
+<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant “file path”.</p>
 
 <p>This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to CSS files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
 
@@ -233,14 +233,14 @@ who have solid experience with PHP and are familiar with <a href="/guides/v1.0/a
 
 <ul>
   <li>
-    <p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path.</p>
+    <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path.</p>
 
     <p>Using this context and, for example, a “media” base URL, this asset generates the following URL:</p>
 
     <pre>http://example.com/pub/media/arbitrary_path/product/placeholder.jpg</pre>
   </li>
   <li>
-    <p><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Asset/File/FallbackContext.php" target="_blank">\Magento\Framework\View\Asset\File\FallbackContext</a>: Extended implementation used for static view files that are subject to view files fallback.</p>
+    <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/File/FallbackContext.php" target="_blank">\Magento\Framework\View\Asset\File\FallbackContext</a>: Extended implementation used for static view files that are subject to view files fallback.</p>
 
     <p>The URLs generated with this kind of context include fully qualified information necessary for files fallback:</p>
 
@@ -332,8 +332,8 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 <p>The following classes implement Magento asset collections:</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>—a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.</li>
-  <li><a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>—an extended collection that also implements asset grouping by properties (for example by content type)</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>—a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>—an extended collection that also implements asset grouping by properties (for example by content type)</li>
 </ul>
 
 <p>Asset collections enable you to:</p>

@@ -220,7 +220,7 @@
    <dt>Default mode</dt>
    <dd>Static files are published automatically when the requested file does not exist in the <code>pub/static</code> directory, or it exists but the original file was modified.</dd>
    <dt>Production mode</dt>
-   <dd>To publish files, you must run the view files deployment tool. The script is located in <a href="https://github.com/magento/magento2/blob/master/dev/tools/Magento/Tools/View/deploy.php" target="_blank">deploy.php</a>.</dd>
+   <dd>To publish files, you must run the view files deployment tool. The script is located in <a href="https://github.com/magento/magento2/blob/develop/dev/tools/Magento/Tools/View/deploy.php" target="_blank">deploy.php</a>.</dd>
    <dt>Developer mode</dt>
    <dd>Files are not published. Though you can still run the deployment tool, all static view files are cached in the <code>pub/static</code> directory.
    So, if a frontend developer changes any static view file, they must re-run the tool after each change.</dd>
@@ -356,7 +356,7 @@ Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.cs
 <p>The repository:</p>
 <ol>
    <li>Determines all necessary parameters and context.</li>
-   <li>Creates a <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/View/Asset/Repository.php" target="_blank">\Magento\Framework\View\Asset\File</a> object.</li>
+   <li>Creates a <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Asset/Repository.php" target="_blank">\Magento\Framework\View\Asset\File</a> object.</li>
    <li>Uses the <code>File::getUrl()</code> method to get the necessary URL to the static view file.</li>
 </ol>
 <p>If a client requests the URL, the web server handles it as a separate request:</p>

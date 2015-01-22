@@ -189,7 +189,7 @@
   </li>
 </ul>
 
-<p>To see an example of a Customer service interface, see <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a>.</p>
+<p>To see an example of a Customer service interface, see <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php</a>.</p>
 
 <h2 id="exposing-a-service-as-a-rest-or-soap-api">Exposing a Service as a REST or SOAP API</h2>
 
@@ -210,7 +210,7 @@
 &lt;/route&gt;
 </code></p>
 
-    <p>(<a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)</p>
+    <p>(<a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/webapi.xml" target="_blank">Source</a>)</p>
   </li>
   <li>
     <p>Create a service data object that defines any data required to pass between the service and its clients. See the next section.</p>
@@ -250,9 +250,9 @@
   <li>The service data object class must reside in the <code>[module namespace]\Service\Data\V[xx]</code> namespace.</li>
   <li>A service data object must have getters that clearly describe all data that the data object can contain.</li>
   <li>Annotations in the code must clearly describe the parameters and outputs of all methods.</li>
-  <li>Getters should rely on the <code>_get</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObject</code></a> class.</li>
-  <li>A service data object should extend <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> or any of its children.</li>
-  <li>Setters should rely on the <code>_set</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/master/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> class.</li>
+  <li>Getters should rely on the <code>_get</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Service/Data/AbstractObject.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObject</code></a> class.</li>
+  <li>A service data object should extend <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> or any of its children.</li>
+  <li>Setters should rely on the <code>_set</code> method provided for convenience in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Service/Data/AbstractObjectBuilder.php" target="_blank"><code>\Magento\Framework\Service\Data\AbstractObjectBuilder</code></a> class.</li>
 </ul>
 
 <h3 id="sample-service-data-object">Sample Service Data Object</h3>

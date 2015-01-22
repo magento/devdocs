@@ -151,19 +151,19 @@
 
 <p>To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.</p>
 
-<p>Because a service call typically accepts one or more primitive types or service data objects, you might have to convert or extract them before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
+<p>Because a service call typically accepts one or more primitive types or service data objects, you might have to convert or extract them before calling the service. For an example, see <code>public function getInputData</code> in <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.</p>
 
 <p>For example, if you know a customer’s ID and want to get data about the customer, here’s what you do:</p>
 
 <ol>
   <li>
-    <p>Search the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method <code>(public function getCustomer($customerId);)</code></p>
+    <p>Search the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Service/V1/CustomerAccountServiceInterface.php" target="_blank">customer account service interface</a> for the getCustomer method <code>(public function getCustomer($customerId);)</code></p>
   </li>
   <li>
     <p>Notice in the comment <code>@return \Magento\Customer\Service\V1\Data\Customer</code>. This is the <em>service data object</em>.</p>
   </li>
   <li>
-    <p>Get the details about the response from the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">service data object</a>.</p>
+    <p>Get the details about the response from the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Service/V1/Data/Customer.php" target="_blank">service data object</a>.</p>
   </li>
 </ol>
 

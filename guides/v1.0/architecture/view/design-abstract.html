@@ -149,9 +149,9 @@
 		
 		<h2 id="m2devgde-design-abstract-intro">Introduction</h2>
 
-<p>A <em>design abstraction</em> is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type providing business users the ability to customize design for certain type of pages. In particular design abstractions are used in the widget creation to define the types of pages where a widget can be displayed.</p>
+<p>A <em>design abstraction</em> is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type, providing business users the ability to customize designs for certain types of pages. In particular design abstractions are used in widget creation to define the types of pages where a widget can be displayed.</p>
 
-<p>For example, there is a design abstraction defining a two-column page layout. So when creating a widget, you can select it to be displayed on all pages with two-column page layout. This article describes how design abstractions are declared, called in layout files, and used in widget creation in the Admin panel. This information is a practical reference for the frontend developers working with layouts, and is also useful for the wider audience of server-side and frontend developers who want to understand how the Magento system implements layouts.</p>
+<p>For example, there is a design abstraction defining a two-column page layout. So when creating a widget, you can select it to be displayed on all pages with two-column page layout. This article describes how design abstractions are declared, called in layout files, and used in widget creation in the Admin panel. This information is a practical reference for frontend developers working with layouts, and is also useful for the wider audience of server-side and frontend developers who want to understand how the Magento system implements layouts.</p>
 
 <h2 id="m2devgde-design-abstract-what">About design abstractions</h2>
 
@@ -159,7 +159,7 @@
 
 <p>The “look and feel” defined in design abstractions might be determined by the purpose of pages or merely by design requirements.</p>
 
-<p>For example, <code>page_three_column</code> is a design abstraction which defines a three-column layout for a page. Which can illustrated like this:</p>
+<p>For example, <code>page_three_column</code> is a design abstraction that defines a three-column layout for a page. Example:</p>
 
 <p><img src="/common/images/view_da.png" alt="Three column layout" /></p>
 
@@ -167,9 +167,9 @@
 
 <p><img src="/common/images/view_da3.png" alt="My Account section on the storefront" /></p>
 
-<p><a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a> is a design abstraction. It defines only the links for the <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Customer" target="_blank">Magento_Customer</a> module:</p>
+<p><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a> is a design abstraction. It defines only the links for the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer" target="_blank">Magento_Customer</a> module:</p>
 
-<p>Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">the Magento_Review module’s customer_account.xml</a>.</p>
+<p>Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">the Magento_Review module’s customer_account.xml</a>.</p>
 
 <p>When a page is rendered, all <code>customer_account</code> layouts are merged, and the pages where the <code>customer_account</code> design abstraction is used contain the elements from all <code>customer_account.xml</code> files.</p>
 
@@ -194,7 +194,7 @@ If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_accoun
 </pre>
 <p>Where <code>design_abstraction_name</code> is the name of the design abstraction layout file.</p>
 
-<p>To complete the <code>customer_account.xml</code> design abstraction example, look at <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the <code>customer_account</code> design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page in defined directly, while the left-hand navigation menu is defined by <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.</p>
+<p>To complete the <code>customer_account.xml</code> design abstraction example, look at <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the <code>customer_account</code> design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page is defined directly, while the left-hand navigation menu is defined by <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.</p>
 
 <h3 id="m2devgde-design-abstract-widget">Design abstractions in widget creation</h3>
 <p>Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design theme. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.</p>
