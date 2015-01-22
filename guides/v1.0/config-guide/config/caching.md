@@ -8,12 +8,11 @@ menu_order: 5
 github_link: config-guide/config/caching.md
 ---
 
-#### Contents
+#### Contents 
 
 *	<a href="#m2devgde-cache-explore">Overview of caching</a>
 *	<a href="#m2devgde-cache-type">Create a cache type</a>
 * <a href="#m2devgde-cache-more">More information about caching</a>
-
 
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
 

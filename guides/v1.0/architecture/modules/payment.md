@@ -4,7 +4,7 @@ group:
 subgroup: 
 title: Payment modules
 menu_title: Payment modules
-menu_order: 7
+menu_order: 
 github_link: architecture/modules/payment.md
 ---
 
@@ -16,7 +16,7 @@ Please note that this article provides only payment module-specific recommendati
 
 <h2 id="m2devgde-cache-implementation">Payments implementation</h2>
 
-In the Magento system, payment methods are structured as follows: all abstract logic common for all payment methods is located in a separate module, the implementations of particular methods are located in corresponding modules, grouped by payment gateway or by type. This enables you to easily configure the set of payment methods your store provides by disabling the modules for the solutions you are not interested in.
+In the Magento system, payment methods are structured as follows: all abstract logic common for all payments methods in located in a separate module, and the implementations of particular methods are located in the corresponding modules, grouped by payment gateway or by type. This enables you to easily configure the set of payment methods your store provides by disabling the modules for the solutions you are not interested in.
 
 The next section gives an overview of all payment modules and recommendations on payment module disabling and enabling.
 
@@ -24,7 +24,7 @@ The next section gives an overview of all payment modules and recommendations on
 
 If the business logic of your Magento store provides that you do not need some payment solutions, you can disable the corresponding modules. If required, you can later enable the modules (unless you deleted it from the code base).
 
-Please note that most payment modules implement not a separate payment method, but several methods of one provider or one type, for example <a href="{{ site.mage2000url }}app/code/Magento/Paypal" target="_blank">Paypal</a> module contains all PayPal solutions.
+[//]: # "Please note that most payment modules implement not a separate payment method, but several methods of one provider or one type, for example <a href="{{ site.mage2000url }}app/code/Magento/Paypal" target="_blank">Paypal</a> module contains all PayPal solutions."
 
 The following table gives details about payment modules, their functionality and disabling/enabling specifics.
 
