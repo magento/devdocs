@@ -22,6 +22,12 @@ This guide contains information for developers who want to extend, or customize,
 <dt>
    <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></p>
 </dt>
+<dt>
+  <p><a href="{{ site.gdeurl }}config-guide/config/plugins.html">Plugins</a></p>
+</dt>
+<dt>
+  <p><a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a></p>
+</dt>
 <!--
    <dt>
                        <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/add-later/service-domain-guidelines.html">Guidelines for domain and service layers</a></p>

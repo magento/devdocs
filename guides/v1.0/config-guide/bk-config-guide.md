@@ -15,13 +15,6 @@ github_link: config-guide/bk-config-guide.md
    <li>
       <p><a href="{{ site.gdeurl }}config-guide/config/config-files.html">Configuration files</a></p>
    </li>
-   <li>
-      <p><a href="{{ site.gdeurl }}config-guide/config/plugins.html">Plugins</a></p>
-   </li>
-  
-       <li>
-      <p><a href="{{ site.gdeurl }}config-guide/config/depend-inj.html">Dependency injection</a></p>
-   </li>
     <li>
       <p><a href="{{ site.gdeurl }}config-guide/config/magento-mode.html">Magento modes</a></p>
    </li>
