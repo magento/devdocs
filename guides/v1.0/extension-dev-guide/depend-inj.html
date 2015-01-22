@@ -153,7 +153,7 @@
 
 <ul>
   <li><a href="#dep-inj-intro">Overview of dependency injection</a></li>
-  <li><a href="#dep-inj-preview">Preview of using dependency injection</a></li>
+  <li><a href="#dep-inj-preview">Preview of using constructor injection</a></li>
   <li><a href="#dep-inj-mod">Configuration overview</a></li>
   <li><a href="#dep-inj-mod-class">Class definitions</a></li>
   <li><a href="#dep-inj-mod-type">Type configurations</a></li>
@@ -176,7 +176,7 @@
   <li>Abstractions should not depend upon details. Details should depend on abstractions.</li>
 </ul>
 
-<p>For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article</a> by Robert C. Martin.</p>
+<p>For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article by Robert C. Martin</a>.</p>
 
 <p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.</p>
 
@@ -187,17 +187,13 @@
   <dd>
     <p>Type of dependency injection used for <em>implementation dependencies</em> (that is, dependencies that fulfill a business task of an object)</p>
   </dd>
-  <dt>Method injection</dt>
-  <dd>
-    <p>Type of dependency injection used for <em>API dependencies</em> (that is, dependencies that an object acts on)</p>
-  </dd>
   <dt>Factory</dt>
   <dd>
     <p>Object that creates the objects of a specific type. Unlike business objects, a factory can be dependent on the object manager.</p>
   </dd>
   <dt>Proxy</dt>
   <dd>
-    <p>Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency—the object manager. A proxy is used for lazy loading of optional dependencies.</p>
+    <p>Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency—the object manager. A proxy is used for lazy loading of optional dependencies. A proxy can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.</p>
   </dd>
   <dt>Lifestyle</dt>
   <dd>
@@ -205,10 +201,7 @@
   </dd>
 </dl>
 
-<h2 id="dep-inj-preview">Preview of using dependency injection</h2>
-<p>This section provides examples of constructor and method injection so you can see what they look at. To use dependency injection in your module, you must configure it as discussed in <a href="#dep-inj-mod">Configuration overview</a>.</p>
-
-<h3 id="dep-inj-preview-cons">Preview of constructor injection</h3>
+<h2 id="dep-inj-preview">Preview of using constructor injection</h2>
 <p>Constructor injection <em>must</em> be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a &lt;a href=”http://en.wikipedia.org/wiki/Proxy_pattern” target=_blank”&gt;proxy&lt;/a&gt; for expensive optional dependencies; proxies are auto-generated, no coding is required.</p>
 
 <p>A sample proxy (which you declare in <code>di.xml</code>) follows:</p>
@@ -245,41 +238,6 @@
 <span class="nv">$bar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">();</span>
 <span class="nv">$foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">);</span>
 <span class="nv">$foo</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span></code></pre></div>
-
-<h3 id="dep-inj-preview-method">Preview of method injection</h3>
-<p>Method injection must be used for API parameters; in other words, the API objects that your object acts on. The following example shows how to use method injection to:</p>
-
-<ul>
-  <li>Declare <code>$itemFactory</code> and <code>$menu</code> as service dependencies</li>
-  <li>Use <code>$command</code> as the API parameter that the object acts on</li>
-</ul>
-
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
-<span class="k">namespace</span> <span class="nx">Magento\Backend\Model\Menu</span><span class="p">;</span>
-<span class="k">class</span> <span class="nc">Builder</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory</span>
-<span class="sd">     * @param \Magento\Backend\Model\Menu $menu</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">Magento\Backend\Model\Menu\Item\Factory</span> <span class="nv">$menuItemFactory</span><span class="p">,</span>  <span class="c1">// Service dependency</span>
-        <span class="nx">Magento\Backend\Model\Menu</span> <span class="nv">$menu</span>  <span class="c1">// Service dependency</span>
-    <span class="p">)</span> <span class="p">{</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_itemFactory</span> <span class="o">=</span> <span class="nv">$menuItemFactory</span><span class="p">;</span>
-        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_menu</span> <span class="o">=</span> <span class="nv">$menu</span><span class="p">;</span>
-    <span class="p">}</span>
- 
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">processCommand</span><span class="p">(</span><span class="nx">\Magento\Backend\Model\Menu\Builder\CommandAbstract</span> <span class="nv">$command</span><span class="p">)</span> <span class="c1">// API param</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_commands</span><span class="p">[</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()]))</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_commands</span><span class="p">[</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()]</span> <span class="o">=</span> <span class="nv">$command</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_commands</span><span class="p">[</span><span class="nv">$command</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">()]</span><span class="o">-&gt;</span><span class="na">chain</span><span class="p">(</span><span class="nv">$command</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
 
 <h2 id="dep-inj-mod">Configuration overview</h2>
 
@@ -975,6 +933,31 @@ Parameters configured for a class type are automatically configured for all of i
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/architecture/index-cache/indexing.html">Indexing</a></li>
+									
+								
+								
+								
+							
+								
 								
 								
 								
