@@ -1,11 +1,11 @@
 ---
 layout: default
-group: config-guide
-subgroup: Configuration
+group: extension-dev-guide
+subgroup: Fundamentals
 title: Dependency injection
 menu_title: Dependency injection
-menu_order: 4
-github_link: config-guide/config/depend-inj.md
+menu_order: 1
+github_link: extension-dev-guide/depend-inj.md
 ---
 
 <h4>Contents</h4> 
