@@ -245,8 +245,8 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
   <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
   <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
   <li><a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a></li>
-  <li><a href="#known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</a></li>
-  <li><a href="#known-devbeta-wiz-fail-session-save">session.save_path issue</a></li>
+  <li><a href="#known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</a>
+<!-- *   <a href="#known-devbeta-wiz-fail-session-save">session.save_path issue</a> --></li>
 </ul>
 
 <h3 id="known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</h3>
@@ -338,69 +338,55 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 
 <p>To work around this issue, see <a href="/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></p>
 
-<h3 id="known-devbeta-wiz-fail-session-save">session.save_path issue</h3>
+<!-- <h3 id="known-devbeta-wiz-fail-session-save">session.save_path issue</h3>
 
 <!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31851">MAGETWO-31851</a> and <a href="https://github.com/magento/magento2/issues/792">GitHub issue 792</a> -->
-<p>There is a known issue that prevents the usage of <a href="http://php.net/manual/en/configuration.changes.php" target="_blank">php_admin_value</a> for some session configuration settings. Specifically, we are aware that the <a href="http://php.net/manual/en/session.configuration.php#ini.session.save-path" target="_blank">session.save_path</a> cannot be set with <code>php_admin_value</code> at this time.</p>
+<!-- There is a known issue that prevents the usage of <a href="http://php.net/manual/en/configuration.changes.php" target="_blank">php_admin_value</a> for some session configuration settings. Specifically, we are aware that the <a href="http://php.net/manual/en/session.configuration.php#ini.session.save-path" target="_blank">session.save_path</a> cannot be set with `php_admin_value` at this time.
 
-<p>Workarounds:</p>
+Workarounds:
 
-<ul>
-  <li>
-    <p>If you’re using a hosting provider that does not allow you to change the value of <code>php_admin_value</code>, there is no workaround currently. However, the only known instance that we are aware of at this time is ISPManager/ISPConfig which appears to have a <a href="http://www.howtoforge.com/forums/showthread.php?t=61127" target="_blank">method of disabling</a> the <code>php_admin_value</code> setting.</p>
-  </li>
-  <li>
-    <p>If you’re running the Magento software on your own server and you can log in as a user with <code>root</code> privileges, you can replace the <code>session.save_path</code> setting with a dependency injection call as follows:</p>
-  </li>
-</ul>
+*   If you're using a hosting provider that does not allow you to change the value of `php_admin_value`, there is no workaround currently. However, the only known instance that we are aware of at this time is ISPManager/ISPConfig which appears to have a <a href="http://www.howtoforge.com/forums/showthread.php?t=61127" target="_blank">method of disabling</a> the `php_admin_value` setting.
 
-<ol>
-  <li>Log in to your Magento server as a user with <code>root</code> privileges.</li>
-  <li>Open <code>php.ini</code> in a text editor.</li>
-  <li>Search for <code>session.save_path</code>.</li>
-  <li>Comment it out.</li>
-  <li>Save your changes to <code>php.ini</code> and exit the text editor.</li>
-  <li>Restart your web server.</li>
-  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/config.php</code> in a text editor.</li>
-  <li>
-    <p>Add the following:</p>
 
-    <pre><code>‘session’ =&gt; [
-    ‘save_path’ =&gt; ‘&lt;your session save path&gt;'
-</code></pre>
-  </li>
-  <li>Save your changes and exit the text editor.</li>
-  <li>
-    <p>Restart Apache.</p>
+*   If you're running the Magento software on your own server and you can log in as a user with `root` privileges, you can replace the `session.save_path` setting with a dependency injection call as follows:
 
-    <p>Ubuntu: <code>sudo service apache2 restart</code>
-CentOS: <code>sudo service httpd restart</code></p>
-  </li>
-</ol>
+1.  Log in to your Magento server as a user with `root` privileges.
+2.  Open `php.ini` in a text editor.
+3.  Search for `session.save_path`.
+4.  Comment it out.
+5.  Save your changes to `php.ini` and exit the text editor.
+6.  Restart your web server.
+7.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+8.  Add the following:
 
-<p>The Magento system now uses dependency injection for session save settings.</p>
+        ‘session’ => [
+            ‘save_path’ => ‘<your session save path>'
+
+1.  Save your changes and exit the text editor.
+2.  Restart Apache.
+
+    Ubuntu: `sudo service apache2 restart`
+    CentOS: `sudo service httpd restart`
+
+The Magento system now uses dependency injection for session save settings.
 
 <h4>Finding php.ini</h4>
 
-<p>If you don’t know where <code>php.ini</code> is located, use the following steps:</p>
+If you don't know where `php.ini` is located, use the following steps:
 
-<ol>
-  <li>If you haven’t already done so, create <a href="/guides/v1.0/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.</li>
-  <li>
-    <p>Enter the following URL in your browser’s address or location field:</p>
+1.  If you haven't already done so, create <a href="/guides/v1.0/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
+2.  Enter the following URL in your browser's address or location field:
 
-    <p><code>http://&lt;your web server IP or host name&gt;/&lt;path to docroot&gt;/phpinfo.php</code></p>
-  </li>
-  <li>
-    <p>Look for the location of <code>php.ini</code>.</p>
+    <code>http://&lt;your web server IP or host name>/&lt;path to docroot>/phpinfo.php</code>
 
-    <p><code>php.ini</code> is typically specified as <strong>Loaded Configuration File</strong> in the displayed results.</p>
-  </li>
-  <li>As a user with <code>root</code> privileges, open <code>php.ini</code> in a text editor.</li>
-  <li>Locate the value of <code>open_basedir</code> and change it.</li>
-  <li>Save your changes to <code>php.ini</code>.</li>
-  <li>Restart the web server.</li>
-</ol>
+3.  Look for the location of `php.ini`.
+
+    `php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
+
+4.  As a user with <code>root</code> privileges, open `php.ini` in a text editor.
+5.  Locate the value of `open_basedir` and change it.
+6.  Save your changes to `php.ini`.
+7.  Restart the web server. -->
 
 <h2 id="install">Installation</h2>
 

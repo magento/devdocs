@@ -150,20 +150,9 @@
 		<h2 id="m2arch-themes-overview">Overview</h2>
 <p>Themes allow you to customize the look-and-feel of the Magento application. Themes generally provide no new business features of their own, other than branding and user experience. They relate to each other through inheritance, allowing you to customize an existing theme by setting it as the parent and then defining any desired customizations in the new theme.</p>
 
-<p>The default Magento <code>theme.xml</code> files are located in the following two directories:</p>
+<p>Themes are located in the <code>/app/design/frontend/&lt;Vendor&gt;/</code> folder of a Magento installation. Each theme contains a <code>theme.xml</code> file, which defines the name and version of that theme, as well as the name of the parent theme, if any.</p>
 
-<ul>
-  <li>
-    <p><code>/app/designfrontend/&lt;vendor_name&gt;/blank</code></p>
-  </li>
-  <li>
-    <p><code>/app/designfrontend/&lt;vendor_name&gt;/luma</code> </p>
-  </li>
-</ul>
-
-<p>Each <code>theme.xml</code> defines the name of that theme as well as the name of the parent theme, if any. The version of the theme is controlled by the <code>composer.json</code> file in which the theme is packaged.</p>
-
-<p>Themes are also divided by area, allowing you define themes that customize either the storefront or admin sections of the Magento application independently.</p>
+<p>Themes are also divided by area, allowing you to define themes that customize either the storefront or Magento Admin.</p>
 
 <p>For detailed information about working with themes, refer to  <a href="/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a> in the Frontend Developers Guide.</p>
 

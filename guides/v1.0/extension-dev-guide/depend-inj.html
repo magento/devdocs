@@ -193,7 +193,7 @@
   </dd>
   <dt>Proxy</dt>
   <dd>
-    <p>Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency—the object manager. A proxy is used for lazy loading of optional dependencies. A proxy can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.</p>
+    <p>Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency—the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.</p>
   </dd>
   <dt>Lifestyle</dt>
   <dd>
@@ -201,8 +201,8 @@
   </dd>
 </dl>
 
-<h2 id="dep-inj-preview">Preview of using constructor injection</h2>
-<p>Constructor injection <em>must</em> be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a &lt;a href=”http://en.wikipedia.org/wiki/Proxy_pattern” target=_blank”&gt;proxy&lt;/a&gt; for expensive optional dependencies; proxies are auto-generated, no coding is required.</p>
+<h2 id="dep-inj-preview-cons">Preview of constructor injection</h2>
+<p>Constructor injection <em>must</em> be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.</p>
 
 <p>A sample proxy (which you declare in <code>di.xml</code>) follows:</p>
 
