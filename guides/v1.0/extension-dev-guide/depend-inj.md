@@ -36,7 +36,7 @@ In addition, we use *dependency inversion*, a coding principle that stipulates y
 For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article by Robert C. Martin</a>.
 
 
-The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
+The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
 
 This topic uses the following terms:
 
@@ -108,7 +108,7 @@ The object manager needs the following configurations:
 *	Instance configurations for retrieving how the objects are instantiated and for defining their lifestyle
 *	Abstraction-implementation mappings (that is, interface preferences) for defining what implementation is to be used upon request to an interface
 
-To define the interface preferences for the object manager, use `app/etc/di/*.xml`, `<your module dir>/etc/<areaname>/di.xml`, and `<your module dir>/etc/di.xml` files depending on the level.
+To define the interface preferences for the object manager, use `app/etc/di/*.xml`, `<your module dir>/etc/di.xml`, and `<your module dir>/etc/<areaname>/di.xml` files depending on the scope it belongs in.
 
 For example, to set the interface preferences for the Magento Admin, use `app/code/core/Magento/Backend/etc/adminhtml/di.xml` as follows:
 
@@ -120,20 +120,24 @@ You can also specify whether or not the object is shareable in its `di.xml` as f
 
 Dependency injection is configuration-based; configurations are validated by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.
 
-Object manager configurations can be specified at any of the following levels:
+Object manager configurations can be specified at any of the following scopes:
 
-*	Global across all of Magento (`app/etc/di/*.xml`)
-*	Entire module (`<your module directory>/etc/di.xml`)
-*	Area-specific configuration for a module (`<your module directory>/etc/<areaname>/di.xml`)
+*	Primary for bootstrapping (`app/etc/di/*.xml`)
+*	Global across all of Magento (`<your module directory>/etc/di.xml`)
+*	Area-specific configuration (`<your module directory>/etc/<areaname>/di.xml`)
 
-	*Area-specific* means specific to a module's area (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
+	*Area-specific* means specific a Magento area (`frontend`, `adminhtml`, and so on). For example, here is the <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module's adminhtml di.xml</a>.
 	
 <div class="bs-callout bs-callout-info" id="info">
-  <p>An area configuration overrides the global configuration.</p>
+  <p>Each scope overrides any previously existing config when it is loaded.</p>
+</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Configurations for each scope are merged across modules, so there is no way to create a configuration that is only seen by a single module.</p>
 </div>
 
 <h2 id="dep-inj-mod-class">Class definitions</h2>
-Magento uses class constructor signatures to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.
+Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.
 
 Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">definition compiler tool</a> to pre-compile class definitions for better performance.
 
@@ -162,17 +166,7 @@ The preceding sample declares the following types:
 
 <h3 id="dep-inj-mod-type-args">Arguments</h3>
 
-Arguments are injected into a class instance during its creation. Parameter names must correspond to constructor parameters of the configured class.
-
-The Object Manager defines the following:
-
-Parameter
-
-:	Variable declared in the constructor signature.
-
-Argument
-
-:	Value passed to the constructor when the class instance is created.
+Arguments are injected into a class instance during its creation. Argument names must correspond to constructor parameters of the configured class.
 
 Sample argument that creates instances of `Magento\Core\Model\Session` with the argument `$sessionName` set to a value of `adminhtml`:
 
@@ -386,7 +380,7 @@ Sample:
 
 <script src="https://gist.github.com/xcomSteveJohnson/24ffa1426734520f58a1.js"></script>
 
-<p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the name is the same, the arguments are overridden.</p>
+<p>When the configuration files for a given scope are merged, array arguments with the same name are merged into a new array. If a new configuration is loaded at a later time, either a more specific scope or through code, then any array definitions in the new configuration will completley replace the previously loaded config instead of being merged.</p>
 
 </div>
 </div>
@@ -428,15 +422,15 @@ Non-injectable
 :	Object that *cannot* be instantiated by the object manager. Typically, this object:
 
 	*	Has a transient lifestyle
-	*	Requires external (such as data user input or data from database) to be properly created
+	*	Requires external information (such as data user input or data from database) to be properly created
 
 	Most models are non-injectable (for example, <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="{{ site.mage2000url }}app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).
 	
 You must observe the following rules:
 
 *    Injectables can request other injectables in the constructor, but non-injectables *cannot* request other objects in a constructor
-*    If a business function of an injectable object is to produce non-injectables, the injectable must ask for the <a href="#dep-inj-mod-type-fact">factory</a> in its constructor (due to the fact that factories are injectables)
-*    if a business function of an injectable object is to perform some actions on non-injectable, it must receive the non-injectable as method argument
+*    If a business function of an injectable object is to produce non-injectables, the injectable must ask for a <a href="#dep-inj-mod-type-fact">factory</a> in its constructor (due to the fact that factories are injectables)
+*    If a business function of an injectable object is to perform some actions on a non-injectable, it must receive the non-injectable as a method argument
 
 You can create non-injectables in services with object <a href="#dep-inj-mod-type-fact">factories</a> or you can pass them in as method parameters. 
 
