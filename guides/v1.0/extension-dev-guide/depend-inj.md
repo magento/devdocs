@@ -13,7 +13,7 @@ github_link: extension-dev-guide/depend-inj.md
 See one of the following sections:
 
 *	<a href="#dep-inj-intro">Overview of dependency injection</a>
-*	<a href="#dep-inj-preview">Preview of using dependency injection</a>
+*	<a href="#dep-inj-preview">Preview of using constructor injection</a>
 *	<a href="#dep-inj-mod">Configuration overview</a>
 *	<a href="#dep-inj-mod-class">Class definitions</a>
 *	<a href="#dep-inj-mod-type">Type configurations</a>
@@ -33,7 +33,7 @@ In addition, we use *dependency inversion*, a coding principle that stipulates y
 *	High-level modules should not depend on low-level modules. Both should depend on abstractions.
 *	Abstractions should not depend upon details. Details should depend on abstractions.
 
-For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article</a> by Robert C. Martin.
+For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article by Robert C. Martin</a>.
 
 
 The <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.
@@ -43,10 +43,6 @@ This topic uses the following terms:
 Constructor injection
 
 :	Type of dependency injection used for *implementation dependencies* (that is, dependencies that fulfill a business task of an object)
-
-Method injection
-
-:	Type of dependency injection used for *API dependencies* (that is, dependencies that an object acts on)
 
 Factory
 
@@ -61,10 +57,7 @@ Lifestyle
 
 :	An object's *lifestyle* determines in what scope instances are reused, and when to release them. For more information, see <a href="http://docs.castleproject.org/%28X%281%29S%283i1uai55lunseee55whzgdzv%29%29/Default.aspx?Page=LifeStyles&NS=Windsor&AspxAutoDetectCookieSupport=1" target="_blank">the Castle project</a>.
 
-<h2 id="dep-inj-preview">Preview of using dependency injection</h2>
-This section provides examples of constructor and method injection so you can see what they look at. To use dependency injection in your module, you must configure it as discussed in <a href="#dep-inj-mod">Configuration overview</a>.
-
-<h3 id="dep-inj-preview-cons">Preview of constructor injection</h3>
+<h2 id="dep-inj-preview">Preview of using constructor injection</h2>
 Constructor injection *must* be used for all optional and required service dependencies of an object. Service dependencies fulfill business functions of your object. Use a <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target=_blank">proxy</a> for expensive optional dependencies; proxies are auto-generated, no coding is required.
 
 A sample proxy (which you declare in `di.xml`) follows:
@@ -104,41 +97,6 @@ class Foo
 $bar = new Bar();
 $foo = new Foo($bar);
 $foo->execute();
-{% endhighlight %}
-
-<h3 id="dep-inj-preview-method">Preview of method injection</h3>
-Method injection must be used for API parameters; in other words, the API objects that your object acts on. The following example shows how to use method injection to:
-
-*	Declare `$itemFactory` and `$menu` as service dependencies
-*	Use `$command` as the API parameter that the object acts on
-
-{% highlight PHP %}
-<?php
-namespace Magento\Backend\Model\Menu;
-class Builder
-{
-    /**
-     * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
-     * @param \Magento\Backend\Model\Menu $menu
-     */
-    public function __construct(
-        Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
-        Magento\Backend\Model\Menu $menu  // Service dependency
-    ) {
-        $this->_itemFactory = $menuItemFactory;
-        $this->_menu = $menu;
-    }
- 
-    public function processCommand(\Magento\Backend\Model\Menu\Builder\CommandAbstract $command) // API param
-    {
-        if (!isset($this->_commands[$command->getId()])) {
-            $this->_commands[$command->getId()] = $command;
-        } else {
-            $this->_commands[$command->getId()]->chain($command);
-        }
-        return $this;
-    }
-}
 {% endhighlight %}
 
 
