@@ -1,11 +1,11 @@
 ---
 layout: default
-group: config-guide
-subgroup: Configuration
+group: extension-dev-guide
+subgroup: Fundamentals
 title: Plug-ins
 menu_title: Plug-ins
 menu_order: 2
-github_link: config-guide/config/plugins.md
+github_link: cextension-dev-guide/plugins.md
 ---
 
 #### Contents
