@@ -14,9 +14,9 @@ Understanding how one module relates to another helps determine how it reacts to
 
 A single module can have the following types of relationships with another module:
 
-* **uses**: module A uses modules B if it invokes behavior of module B 
+* **uses**: module A uses module B if it invokes behavior of module B 
 
-* **reacts to**: modules A reacts to module B if its behavior is triggered by an event in module B without module B knowing about module A 
+* **reacts to**: module A reacts to module B if its behavior is triggered by an event in module B without module B knowing about module A 
 
 * **customizes**: module A customizes module B if it modifies the behavior of module B 
 
