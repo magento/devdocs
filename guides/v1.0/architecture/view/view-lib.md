@@ -116,7 +116,7 @@ The majority of Magento module dependencies on
 the `Magento\Framework\View` library are induced on the level of Magento block
 classes implementation. These dependencies result from the unified process of block
 classes creation, which is implemented by means of
-the `Magento\Framework\View` library:  two parental classes
+the `Magento\Framework\View` library: two parent classes
 (`\Magento\Framework\View\Element\AbstractBlock` and`\Magento\Framework\View\Element\Template`)
 are common ancestors for all block classes of Magento modules, and implement
 the `\Magento\Framework\View\Element\BlockInterface` interface.
