@@ -440,7 +440,7 @@ To pass an argument that is an array use the following construction:
 &lt;/argument&gt;
 </pre>
 
-Arguments values set in a layout file can be accessed in <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the `get{ArgumentName}()` and `has{ArgumentName}()`methods. The latter returns a boolean difining whether there's any value set. 
+<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the `get{ArgumentName}()` and `has{ArgumentName}()`methods. The latter returns a boolean difining whether there's any value set. 
 `{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getSomeString()`.
 
 
