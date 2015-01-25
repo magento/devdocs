@@ -98,7 +98,8 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-	<p>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</p></span>
+	<ul><li>If you upgraded from Apache 2.2 to 2.4, the value of <code>Directory</code> might be different. Make sure the value of <code>Directory</code> matches the value of <code>DocumentRoot</code>.</li>
+		<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</li></span>
 	</div>
 
 3.	Restart Apache:
@@ -184,5 +185,5 @@ Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prere
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>

@@ -84,6 +84,38 @@ To install PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 -->:
 
 3.	<a href="#instgde-prereq-php-ubuntu-ext">Install required PHP extensions on Ubuntu</a>.
 
+<h2 id="instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</h2>
+Before continuing, make sure you're running Apache 2.4; enter the following command:
+
+	apache2 -v
+
+The result should be similar to the following:
+
+	Server version: Apache/2.4.10 (Ubuntu)
+	Server built:   Jul 22 2014 22:46:25
+
+If you're running an earlier Apache version, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#install-prereq-apache-ubuntu12">upgrade to Apache 2.4</a> first.
+
+To install or upgrade to PHP 5.6 on Ubuntu 12:
+
+1.	Enter the following commands in the order shown:
+
+		add-apt-repository ppa:ondrej/php5-5.6
+		apt-get -y update
+		apt-get -y install php5
+
+2.	Verify that PHP 5.6 installed properly:
+
+		php -v
+
+	Messages similar to the following should display:
+
+		PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
+		Copyright (c) 1997-2014 The PHP Group
+		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+    	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+
+3.	<a href="#instgde-prereq-php-ubuntu-ext">Install required PHP extensions</a>.
 
 <h2 id="instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</h2>
 
@@ -173,10 +205,10 @@ To set your time zone and memory limit:
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>

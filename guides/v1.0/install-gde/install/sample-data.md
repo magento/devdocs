@@ -15,7 +15,11 @@ github_link: install-gde/install/sample-data.md
 *   <a href="#instgde-install-sample-after">Complete the sample data installation</a>
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
-This section discusses how to enable you to install the optional Magento sample data. If you don't wish to use sample data, skip this topic and continue with <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+This section discusses how to enable you to install the optional Magento sample data. If you don't wish to use sample data, skip this topic and continue with:
+
+*   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install the Magento software using the command line</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
 Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.
 
@@ -96,4 +100,4 @@ After you've installed the Magento software or run `composer install`, you can i
 
 #### Next step
 
-After running the setup software, see <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
+After running the setup software, see <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.

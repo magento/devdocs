@@ -307,7 +307,12 @@ To reinstall the Magento software:
 		cd ..
 		composer update
 
-4.	Repeat the tasks discussed in:
+4.	Update the Magento database.
+
+		cd <your Magento install dir>/setup
+		php index.php setup update
+
+4.	_Optional_. To change installation options, repeat the tasks discussed in:
 
 	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
