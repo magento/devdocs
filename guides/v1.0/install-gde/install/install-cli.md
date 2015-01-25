@@ -3,7 +3,7 @@ layout: default
 group: install 
 subgroup: R_Installation
 title: Install Magento software using the command line
-menu_title: Install Magento software using the command line
+menu_title: Install the Magento software using the command line
 menu_node:
 menu_order: 9
 github_link: install-gde/install/install-cli.md

@@ -40,7 +40,10 @@ To upgrade Apache to version 2.4 on Ubuntu 12:
 		apt-get update
 		apt-get -y install apache2
 
-	@@@@
+	<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p></span>
+	</div>
 
 2.	Enter the following command to verify you upgraded successfully:
 
