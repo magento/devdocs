@@ -13,6 +13,7 @@ github_link: install-gde/prereq/apache.md
 
 *	<a href="#apache-support">Apache versions supported</a>
 *	<a href="#apache-help-beginner">Help if you're just starting out</a>
+*	<a href="#install-prereq-apache-ubuntu12">Upgrading Apache on Ubuntu 12</a>
 *	<a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 
@@ -27,6 +28,30 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+
+<h2 id="install-prereq-apache-ubuntu12">Upgrading Apache on Ubuntu 12</a></h2>
+To use PHP 5.6 on Ubuntu 12, you must first upgrade Apache to version 2.4. This is not necessary to use PHP 5.5.
+
+To upgrade Apache to version 2.4 on Ubuntu 12:
+
+1.	Enter the following commands in the order shown:
+
+		add-apt-repository ppa:ondrej/apache2
+		apt-get update
+		apt-get -y install apache2
+
+	@@@@
+
+2.	Enter the following command to verify you upgraded successfully:
+
+		apache2 -v
+
+	Messages similar to the following display:
+
+		Server version: Apache/2.4.10 (Ubuntu)
+		Server built:   Sep 10 2014 11:32:50
+
+3.	<a href="#apache-rewrites2.4">Enable Apache rewrites</a>.
 
 
 <h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
