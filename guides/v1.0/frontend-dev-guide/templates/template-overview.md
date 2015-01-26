@@ -33,21 +33,7 @@ For template files with the same name the following is true:
 
 For more details about overriding templates please refer to the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.md" target="_blank">Templates overriding</a> article.
 
-<h3>Template customization waklthrough</h3>
 
-To customize a template in your theme:
-
-1. Locate which template is associated with the page/block you want to change using <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html#debug-theme-templ" target="_blank">template hints</a>.
-
-2. Copy the template to your theme folder, according to the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-convention" target="_blank">template storing convention</a>: app/design/<Vendor>/<theme>/<Namespace_Module>/templates/<path_to_template>
-
-3. Make the required changes.
-
-To add a new template in a theme:
-
-1. Add your new template in your theme directory according to the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-convention" target="_blank">conventional location</a>. 
-
-2. Assign your template to a block or page in the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-layout" target="_blank">corresponding layout file</a>. 
 
 
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
