@@ -4,10 +4,11 @@ group: fedg
 subgroup: C_Templates
 title: Templates overriding
 menu_title: Templates overriding
+menu_order: 3
 github_link: frontend-dev-guide/templates/template-override.md
 ---
 
-<h3>How templates are initiated</h3>
+<h3 id="template-layout">How templates are initiated</h3>
 
 Templates are iniitated in layout files.
 Each layout block has an associated template. 
@@ -25,12 +26,12 @@ The templates directory of the `Magento_Catalog` module is `app/code/Magento/Cat
 
 The next section describes where templates can be located in general.
 
-<h3>Conventional templates location</h3>
+<h3 id="template-convention">Conventional templates location</h3>
 Templates are stored in the following locations:
 
 
-* Module templates: `app/code/<Namespace>/<Module>/view/frontend/templates/<path_to_templates>`
-* Theme templates: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/templates/<path_to_templates>`
+* <span id="module">Module templates: `app/code/<Namespace>/<Module>/view/frontend/templates/<path_to_templates>`
+* <span id="">Theme templates: `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/templates/<path_to_templates>`
 
 Here `<path_to_templates>` might have several levels of directory nesting, or might be empty. Examples:
 

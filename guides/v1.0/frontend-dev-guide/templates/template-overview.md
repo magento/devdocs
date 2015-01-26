@@ -29,17 +29,26 @@ The best practice is creating a new design theme and adding your modified templa
 
 <h3>Templates overriding</h3>
 For template files with the same name the following is true: 
-Theme templates override module templates, and those of a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">child theme</a> override parent theme templates.
+<a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#theme">theme templates</a> override <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#module">module templates</a>, and those of a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">child theme</a> override parent theme templates.
 
 For more details about overriding templates please refer to the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.md" target="_blank">Templates overriding</a> article.
 
 <h3>Template customization waklthrough</h3>
 
-<h3>Sample template customization: changing a layout of the mini shopping cart</h3>
-In the default Blank theme, in the mini shopping cart products are listed under the Go to Checkout button, like following:
-<img src="{{ site.baseurl }}common/images/inherit_mini1.png" alt="An image of a mini shopping cart where products are listed under the Go to checkout button">
+To customize a template in your theme:
 
-OrangeCo are creating a custom design for their store and decided they want the product list to be displayed before the Go to Checkout button. 
+1. Locate which template is associated with the page/block you want to change using <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html#debug-theme-templ" target="_blank">template hints</a>.
+
+2. Copy the template to your theme folder, according to the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-convention" target="_blank">template storing convention</a>: app/design/<Vendor>/<theme>/<Namespace_Module>/templates/<path_to_template>
+
+3. Make the required changes.
+
+To add a new template in a theme:
+
+1. Add your new template in your theme directory according to the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-convention" target="_blank">conventional location</a>. 
+
+2. Assign your template to a block or page in the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-layout" target="_blank">corresponding layout file</a>. 
+
 
 A company named OrangeCo created a theme named Orange. The theme files are located in `app/design/frontend/OrangeCo/orange`.
 Orange inherits from the Magento Blank theme.
