@@ -13,7 +13,6 @@ github_link: install-gde/prereq/apache.md
 
 *	<a href="#apache-support">Apache versions supported</a>
 *	<a href="#apache-help-beginner">Help if you're just starting out</a>
-*	<a href="#install-prereq-apache-ubuntu12">Upgrading Apache on Ubuntu 12</a>
 *	<a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 
@@ -28,33 +27,6 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
-
-<h2 id="install-prereq-apache-ubuntu12">Upgrading Apache on Ubuntu 12</a></h2>
-To use PHP 5.6 on Ubuntu 12, you must first upgrade Apache to version 2.4. This is not necessary to use PHP 5.5.
-
-To upgrade Apache to version 2.4 on Ubuntu 12:
-
-1.	Enter the following commands in the order shown:
-
-		add-apt-repository ppa:ondrej/apache2
-		apt-get update
-		apt-get -y install apache2
-
-	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p></span>
-	</div>
-
-2.	Enter the following command to verify you upgraded successfully:
-
-		apache2 -v
-
-	Messages similar to the following display:
-
-		Server version: Apache/2.4.10 (Ubuntu)
-		Server built:   Sep 10 2014 11:32:50
-
-3.	<a href="#apache-rewrites2.4">Enable Apache rewrites</a>.
 
 
 <h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
@@ -98,7 +70,7 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-	<ul><li>If you upgraded from Apache 2.2 to 2.4, the value of <code>Directory</code> might be different. Make sure the value of <code>Directory</code> matches the value of <code>DocumentRoot</code>.</li>
+	<ul><li>If you upgraded from an earlier Apache version, first look for <code>&lt;Directory "/var/www/html"></code> or <code>&lt;Directory "/var/www"></code> in <code>000-default.conf</code>.</li>
 		<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</li></span>
 	</div>
 
@@ -185,5 +157,5 @@ Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prere
 *	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>
