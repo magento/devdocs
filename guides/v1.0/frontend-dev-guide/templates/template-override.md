@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/templates/template-override.md
 
 <h3 id="template-layout">How templates are initiated</h3>
 
-Templates are iniitated in layout files.
+Templates are initiated in layout files.
 Each layout block has an associated template. 
 Template is specified in the `template` attribute of the <block> layout instruction. 
 For example, from <a href="{{site.mage2000url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</a>:
@@ -43,7 +43,7 @@ root.phtml
 
 <h3>Template structure</h3>
 
-<p class="q" Is there something our target audience (a fdg creating a new theme)should know about a template file structure?>
+<p class="q"> Is there something our target audience (a fdg creating a new theme)should know about a template file structure?</p>
 
 <p class="q">I In the declaration like following /**
  * @var $this \Magento\Framework\View\Element\Html\Link
