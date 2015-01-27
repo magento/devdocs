@@ -9,19 +9,20 @@ menu_node: parent
 github_link: get-started/authentication/gs-authentication.md
 ---
 
-<h2 id="overview-authenticate">Authentication overview</h2>
+<h2 id="overview-authenticate">Web API Authentication overview</h2>
+<p>
+Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>. 
+Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a> 
 
-Developers define web API resources and their permissions in a <code>webapi.xml</code> configuration file. For details, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#sample-webapi">Sample webapi.xml file</a>.</p>
-
-<p>Before you can make web API calls, you must authenticate your identity and have requisite permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (admin, integration, customer or guest) access rights, resource acessibility is determined.
-
+Before you can make web API calls, you must authenticate your identity and have requisite permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (admin, integration, customer or guest) access rights, API calls' resource acessibility is determined.
+</p>
 
 <h3 id="accessible-resources">Accessible resources</h3>
 <p>The resources that you can access depend on your user type and the configured permission of the resource in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
       <th>User type</th>
-      <th>Accessible resources</th>
+      <th>Accessible resources (defined in webapi.xml)</th>
    </tr>
    <tr>
       <td>
@@ -37,7 +38,6 @@ Developers define web API resources and their permissions in a <code>webapi.xml<
       </td>
       <td>
          <p>Resources for which admins or integrations are authorized. For example, if admins are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
-         <p>The <code>acl.xml</code> file for the module defines the access control list (ACL) for resources. See <a href="#acl-xml-file">Sample acl.xml file</a>.</p>
       </td>
    </tr>
    <tr>
@@ -49,18 +49,90 @@ Developers define web API resources and their permissions in a <code>webapi.xml<
       </td>
    </tr>
 </table>
-<div class="bs-callout bs-callout-info" id="info">
-   <p>A guest user is one that the Magento web API framework cannot authenticate through existing authentication mechanisms.</p>
-</div>
-<h3 id="acl-xml-file">Sample acl.xml file</h3>
-<p>The following <code>acl.xml</code> file defines the access control list (ACL) for the Customer module. It defines available set of permissions to access the customer resources. Ex: account, customer configuration, and customer group resources:</p>
-<script src="https://gist.github.com/difleming/6bfb9252b303ee503f55.js"></script>. 
-acl.xml files across all Magento modules are consolidated to build the ACL tree which is used to select allowed Admin role resources or third party Integration's access (System > Extension > Integration > Add New Integration > Available APIs).
+
+<h3 id="acl-webapi-relation">Relation between acl.xml and webapi.xml</h3>
+<p>The acl.xml file defines the access control list (ACL) for a given module. It defines available set of permissions to access the resources. acl.xml files across all Magento modules are consolidated to build an ACL tree which is used to select allowed Admin role resources or third party Integration's access (System > Extension > Integration > Add New Integration > Available APIs).
+</p>
+<h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
+Ex: Account management, customer configuration, and customer group resource permissions are defined in the below customer acl.xml
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Adminhtml::admin">
+                <resource id="Magento_Customer::customer" title="Customers" sortOrder="40">
+                    <resource id="Magento_Customer::manage" title="All Customers" sortOrder="10" />
+                </resource>
+                <resource id="Magento_Adminhtml::stores">
+                    <resource id="Magento_Adminhtml::stores_settings">
+                        <resource id="Magento_Adminhtml::config">
+                            <resource id="Magento_Customer::config_customer" title="Customers Section" sortOrder="50" />
+                        </resource>
+                    </resource>
+                    <resource id="Magento_Adminhtml::stores_other_settings">
+                        <resource id="Magento_Customer::group" title="Customer Groups" sortOrder="10" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
+```
 
 When a developer creates the Web API configuration file : webapi.xml, the permissions defined in acl.xml are referenced to create access rights for each API.
-
+<h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
+```xml
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+    <!-- Customer Group -->
+    <route url="/V1/customerGroups/:id" method="GET">
+        <service class="Magento\Customer\Api\GroupRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Magento_Customer::group"/>
+        </resources>
+    </route>
+............
+.......
+.....
+    <!-- Customer Account -->
+    <route url="/V1/customers/:customerId" method="GET">
+        <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Magento_Customer::customer"/>
+        </resources>
+    </route>
+    <route url="/V1/customers" method="POST">
+        <service class="Magento\Customer\Api\AccountManagementInterface" method="createAccount"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/customers/:id" method="PUT">
+        <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Customer::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/customers/me" method="PUT">
+        <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customer.id" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+..........
+.....
+...
+```
 ex: 
-In the above webapi.xml, for the "<route url="/V1/customerGroups/:id" method="GET">" API, only a user with a "Magento_Customer::group" can access the API. The user can be an admin (or an Integration) defined in the backend with the customer group selected as one of the resource in the ACL tree.
+In the above sample webapi.xml, for the customerGroups resource, only a user with a "Magento_Customer::group" can access the GET /V1/customerGroups/:id API. On the other hand, POST /V1/customers (customer creation) can be accessed anonymously (or by a guest) without a need for presenting the identity.
+
+The user here can be an admin (or an Integration) defined in the backend with the customer group selected as one of the resource in the ACL tree.
+<div class="bs-callout bs-callout-info" id="info">
+   <p>A guest or anonymous is a special permission that doesn't need to be defined in acl.xml (and will not show up in the acl tree in the backend). It just indicates that the current resource in webapi.xml can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. ex GET /V1/customers/me will fetch the logged in customer's details. This is typically useful for javascript based widgets. </p>
+</div>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
 <p>You use a client, such as a mobile application or an external batch job, to access Magento services through web APIs.</p>
