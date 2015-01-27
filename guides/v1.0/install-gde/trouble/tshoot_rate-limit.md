@@ -46,4 +46,10 @@ github_link: install-gde/trouble/tshoot_rate-limit.md
 
 		composer config -g github-oauth.github.com <your token>
 
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>If the command fails, try making the web server user the owner of your web server docroot directory.</p>
+  		<p>For example, on Ubuntu, enter <code>sudo chown www-data /var/www</code>.</p></span>
+	</div>
+
 13.	Repeat the task that failed previously (usually running either `composer install` or `composer update`.)

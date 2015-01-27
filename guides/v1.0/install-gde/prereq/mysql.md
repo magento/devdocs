@@ -79,6 +79,7 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 
 1.	Enter the following commands in the order shown:
 
+		apt-get -y update
 		apt-add-repository ppa:ondrej/mysql-5.6
 		apt-get -y update
 		apt-get -y install mysql-server
@@ -160,7 +161,7 @@ To configure a MySQL database instance:
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.4&mdash;CentOS</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
