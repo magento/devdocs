@@ -2,7 +2,7 @@
 layout: default  
 group: fedg
 subgroup: C_Templates
-title: Customizing template: illustration
+title: Customizing template illustration
 menu_title: Customizing template illustration
 menu_order: 4
 
