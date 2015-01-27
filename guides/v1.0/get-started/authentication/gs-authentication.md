@@ -10,9 +10,12 @@ github_link: get-started/authentication/gs-authentication.md
 ---
 
 <h2 id="overview-authenticate">Authentication overview</h2>
-<p>Before you can make web API calls, you must authenticate your identity and have requisite permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (admin, integration, customer or guest) access rights, resource acessibility is determined.
 
 Developers define web API resources and their permissions in a <code>webapi.xml</code> configuration file. For details, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#sample-webapi">Sample webapi.xml file</a>.</p>
+
+<p>Before you can make web API calls, you must authenticate your identity and have requisite permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (admin, integration, customer or guest) access rights, resource acessibility is determined.
+
+
 <h3 id="accessible-resources">Accessible resources</h3>
 <p>The resources that you can access depend on your user type and the configured permission of the resource in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 <table style="width:100%">
@@ -50,8 +53,14 @@ Developers define web API resources and their permissions in a <code>webapi.xml<
    <p>A guest user is one that the Magento web API framework cannot authenticate through existing authentication mechanisms.</p>
 </div>
 <h3 id="acl-xml-file">Sample acl.xml file</h3>
-<p>The following <code>acl.xml</code> file defines the access control list (ACL) for the Customer module. It defines admin users/integration permission to access the customer, customer configuration, and customer group resources:</p>
-<script src="https://gist.github.com/difleming/6bfb9252b303ee503f55.js"></script>
+<p>The following <code>acl.xml</code> file defines the access control list (ACL) for the Customer module. It defines available set of permissions to access the customer resources. Ex: account, customer configuration, and customer group resources:</p>
+<script src="https://gist.github.com/difleming/6bfb9252b303ee503f55.js"></script>. 
+acl.xml files across all Magento modules are consolidated to build the ACL tree which is used to select allowed Admin role resources or third party Integration's access (System > Extension > Integration > Add New Integration > Available APIs).
+
+When a developer creates the Web API configuration file : webapi.xml, the permissions defined in acl.xml are referenced to create access rights for each API.
+
+ex: 
+In the above webapi.xml, for the "<route url="/V1/customerGroups/:id" method="GET">" API, only a user with a "Magento_Customer::group" can access the API. The user can be an admin (or an Integration) defined in the backend with the customer group selected as one of the resource in the ACL tree.
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
 <p>You use a client, such as a mobile application or an external batch job, to access Magento services through web APIs.</p>
@@ -91,7 +100,7 @@ Developers define web API resources and their permissions in a <code>webapi.xml<
          <p>Third-party applications use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> to access the web APIs.</p>
          <ol>
             <li>
-               <p>The third-party add-on registers with Magento.</p>
+               <p>The third-party Integration registers with Magento.</p>
             </li>
             <li>
                <p>Merchants authorize extensions and applications to access or update store data.</p>
