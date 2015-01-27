@@ -17,13 +17,13 @@ To customize a template in your theme:
 
 1. Locate which template is associated with the page/block you want to change using <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html#debug-theme-templ" target="_blank">template hints</a>.
 
-2. Copy the template to your theme folder, according to the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.html#template-convention" target="_blank">template storing convention</a>: <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace_Module&gt;/templates/&lt;path_to_template&gt;</code>
+2. Copy the template to your theme folder, according to the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-convention" target="_blank">template storing convention</a>: <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace_Module&gt;/templates/&lt;path_to_template&gt;</code>
 
 3. Make the required changes.
 
 To add a new template in a theme:
 
-1. Add a template in your theme directory according to the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.html#template-convention" target="_blank">conventional location</a>. 
+1. Add a template in your theme directory according to the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-convention" target="_blank">conventional location</a>. 
 
 2. Assign your template to a block or page in the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.html#template-layout" target="_blank">corresponding layout file</a>. 
 
