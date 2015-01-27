@@ -10,7 +10,9 @@ github_link: get-started/authentication/gs-authentication.md
 ---
 
 <h2 id="overview-authenticate">Authentication overview</h2>
-<p>Before you can make web API calls, you must authenticate your identity. Authentication ensures that you have permission to access a requested resource. Developers define web API resources and their permissions in a <code>webapi.xml</code> configuration file. For details, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#sample-webapi">Sample webapi.xml file</a>.</p>
+<p>Before you can make web API calls, you must authenticate your identity and have requisite permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (admin, integration, customer or guest) access rights, resource acessibility is determined.
+
+Developers define web API resources and their permissions in a <code>webapi.xml</code> configuration file. For details, see <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html#sample-webapi">Sample webapi.xml file</a>.</p>
 <h3 id="accessible-resources">Accessible resources</h3>
 <p>The resources that you can access depend on your user type and the configured permission of the resource in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 <table style="width:100%">
@@ -28,10 +30,10 @@ github_link: get-started/authentication/gs-authentication.md
    </tr>
    <tr>
       <td>
-         <p>Admin</p>
+         <p>Admin or Integration</p>
       </td>
       <td>
-         <p>Resources for which admins are authorized. For example, if admins are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
+         <p>Resources for which admins or integrations are authorized. For example, if admins are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
          <p>The <code>acl.xml</code> file for the module defines the access control list (ACL) for resources. See <a href="#acl-xml-file">Sample acl.xml file</a>.</p>
       </td>
    </tr>
@@ -48,7 +50,7 @@ github_link: get-started/authentication/gs-authentication.md
    <p>A guest user is one that the Magento web API framework cannot authenticate through existing authentication mechanisms.</p>
 </div>
 <h3 id="acl-xml-file">Sample acl.xml file</h3>
-<p>The following <code>acl.xml</code> file defines the access control list (ACL) for the Customer service. It grants admin users permission to access the customer, customer configuration, and customer group resources:</p>
+<p>The following <code>acl.xml</code> file defines the access control list (ACL) for the Customer module. It defines admin users/integration permission to access the customer, customer configuration, and customer group resources:</p>
 <script src="https://gist.github.com/difleming/6bfb9252b303ee503f55.js"></script>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
@@ -123,4 +125,3 @@ github_link: get-started/authentication/gs-authentication.md
    <li>Third-party application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
    <li>JavaScript widget on the Magento frontend or backend. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
-
