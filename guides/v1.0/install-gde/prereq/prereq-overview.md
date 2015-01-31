@@ -13,7 +13,7 @@ github_link: install-gde/prereq/prereq-overview.md
 
 Before you install Magento, you must do all of the following:
 
-*	Set up one or more hosts that meet the <a href="{{ site.gdeurl5.4 or  }}install-gde/system-requirements.html">Magento system requirements</a>.
+*	Set up one or more hosts that meet the <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>.
 *	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
 *	Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.
 
