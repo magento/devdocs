@@ -94,7 +94,7 @@ The result should be similar to the following:
 	Server version: Apache/2.4.10 (Ubuntu)
 	Server built:   Jul 22 2014 22:46:25
 
-If you're running an earlier Apache version, <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#install-prereq-apache-ubuntu12">upgrade to Apache 2.4</a> first.
+If you're running an earlier Apache version, see <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</a> first.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

@@ -38,6 +38,8 @@ github_link: install-gde/trouble/tshoot_rate-limit.md
 
 9.	Save the token you just copied. You cannot view it again.
 
+9.	Log in to your Magento server.
+
 10.	In a command prompt or terminal window, change to your Magento installation directory.
 
 	On Ubuntu, you might need to elevate to the `root` user first: `sudo -s`

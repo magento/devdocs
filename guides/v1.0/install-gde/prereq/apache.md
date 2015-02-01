@@ -67,14 +67,14 @@ The result displays similar to the following:
 	Server version: Apache/2.2.22 (Ubuntu)
 	Server built:   Jul 22 2014 14:35:32
 
-Now you must <a href="#install-ubuntu-apache-rewrites">Enabling Apache rewrites">enable Apache rewrites</a>.
+Now you must <a href="#install-ubuntu-apache-rewrites">enable Apache rewrites</a>.
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu Ubuntu 12</h3>
 To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
 
 To upgrade to Apache 2.4:
 
-1.	Add the TBD repository, which has Apache 2.4:
+1.	Add the `ppa:ondrej` repository, which has Apache 2.4:
 
 		apt-get -y update
 		apt-add-repository ppa:ondrej/apache2
@@ -84,7 +84,22 @@ To upgrade to Apache 2.4:
 
 		apt-get install -y apache2
 
+	<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>If the Apache installation fails because of an unmet dependency, try installing that component only. For example, if the error message is <code>The following packages have unmet dependencies:
+ apache2 : Depends: apache2-bin but it is not going to be installed</code>, try <code>apt-get install apache2-bin</code>.</span>
+	</div>
 
+3.	Verify the installation.
+
+		apache2 -v
+
+	Messages similar to the following should display:
+
+		Server version: Apache/2.4.10 (Ubuntu)
+		Server built:   Jul 22 2014 22:46:25
+
+3.	<a href="#apache-rewrites2.4">Enable Apache rewrites</a>.
 
 <h3 id="install-ubuntu-apache-rewrites">Enabling Apache rewrites</h3>
 Ubuntu 12 (which natively supports Apache 2.2) is different from Ubuntu 14 (which natively supports Apache 2.4).

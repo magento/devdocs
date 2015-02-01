@@ -84,6 +84,10 @@ To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="
 		apt-get -y update
 		apt-get -y install mysql-server
 
+3.	Secure the installation.
+
+		mysql_secure_installation
+
 2.	Test the installation by entering the following command:
 
 		mysql -u root -p
