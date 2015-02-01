@@ -13,7 +13,7 @@ github_link: install-gde/prereq/apache.md
 
 *	<a href="#apache-support">Apache versions supported</a>
 *	<a href="#apache-help-beginner">Help if you're just starting out</a>
-*	<a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a>
+*	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 
 <h2 id="apache-support">Apache versions supported</h2>
@@ -28,11 +28,55 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
+<h2 id="install-prereq-apache-verify">Verify the Apache version</h2>
+To verify the Apache version you're currently running, enter:
 
-<h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
-Install Apache 2 if you haven't already done so:
+	apache2 -v
 
-	apt-get -y install apache2
+The result displays similar to the following:
+
+	Server version: Apache/2.2.22 (Ubuntu)
+	Server built:   Jul 22 2014 14:35:32
+
+*	If Apache is *not* installed, see the next section.
+*	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use PHP 5.6, see the next section
+*	If Apache is installed and it's the correct version, make sure Apache rewrites are enabled:
+
+	*	<a href="#apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</a>
+	*	<a href="#apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</a>
+
+<h2 id="install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</h2>
+The following sections discusses how to install or upgrade Apache:
+
+*	Install Apache
+*	Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 5.6
+
+<h3 id="install-prereq-apache-ubuntu-install">Installing Apache on Ubuntu 14 or Ubuntu 12</h3>
+To install the default version of Apache (Ubuntu 14&mdash;Apache 2.4, Ubuntu 12&mdash;Apache 2.2):
+
+1.	Install Apache
+
+		apt-get -y install apache2
+
+2.	Verify the installation.
+
+		apache2 -v
+
+The result displays similar to the following:
+
+	Server version: Apache/2.2.22 (Ubuntu)
+	Server built:   Jul 22 2014 14:35:32
+
+Now you must <a href="#install-ubuntu-apache-rewrites">Enabling Apache rewrites">enable Apache rewrites</a>.
+
+<h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu Ubuntu 12</h3>
+To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
+
+To upgrade to Apache 2.4:
+
+
+
+
 
 <h3 id="install-ubuntu-apache-rewrites">Enabling Apache rewrites</h3>
 Ubuntu 12 (which natively supports Apache 2.2) is different from Ubuntu 14 (which natively supports Apache 2.4).
