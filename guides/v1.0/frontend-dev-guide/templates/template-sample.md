@@ -13,7 +13,7 @@ In the default Blank theme, in the mini shopping cart products are listed under 
 <img src="{{ site.baseurl }}common/images/inherit_mini1.png" alt="An image of a mini shopping cart where products are listed under the Go to checkout button">
 
 Let's change this and display the product list before the Go to Checkout button. 
-The template responsible for displaying the minishopping cart is `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml`.
+The template responsible for displaying the mini-shopping cart is `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml`.
 Here is the part of the code we will work with:
 
 <img src="{{site.baseurl}}common/images/templ_overview_code1.png" alt="code">

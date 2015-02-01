@@ -28,7 +28,7 @@ To find the CentOS version, enter the following command in Terminal:
 
 	cat /etc/*release*
 
-The following sample ouput shows you're running CentOS 6.5 (you can ignore most of the output):
+The following sample output shows you're running CentOS 6.5 (you can ignore most of the output):
 
 	CentOS release 6.5 (Final)
 	LSB_VERSION=base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
