@@ -44,7 +44,7 @@ The cache configuration is an associative array similar to the following:
     'config_webservice' => 1,
     'config_integration_api' => 1,
   ),
-);
+); ?>
 {% endhighlight %}
 
 <h2 id="m2devgde-cache-type">Create a cache type</h2>
