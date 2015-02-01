@@ -74,7 +74,15 @@ To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default
 
 To upgrade to Apache 2.4:
 
+1.	Add the TBD repository, which has Apache 2.4:
 
+		apt-get -y update
+		apt-add-repository ppa:ondrej/apache2
+		apt-get -y update
+
+2.	Install Apache 2.4:
+
+		apt-get install -y apache2
 
 
 
