@@ -17,6 +17,7 @@ See one of the following sections:
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>
+*	<a href="#instgde-install-magento-update">Updating the Magento software</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
@@ -298,17 +299,16 @@ You might do this in an development environment especially to get all the latest
 
 To update the Magento software:
 
-2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
+2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
 3.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
 		git pull origin develop
-		cd setup
 		composer update
 
 4.	Update the Magento database.
 
-		cd <your Magento install dir>/setup
+		cd setup
 		php -f index.php update
 
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
@@ -321,7 +321,7 @@ This section discusses how to uninstall and then reinstall the Magento software.
 
 To reinstall the Magento software:
 
-2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
+2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
 3.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>

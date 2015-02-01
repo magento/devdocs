@@ -69,7 +69,7 @@ The result displays similar to the following:
 
 Now you must <a href="#install-ubuntu-apache-rewrites">enable Apache rewrites</a>.
 
-<h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu Ubuntu 12</h3>
+<h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
 To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
 
 To upgrade to Apache 2.4:
@@ -86,8 +86,7 @@ To upgrade to Apache 2.4:
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-	<p>If the Apache installation fails because of an unmet dependency, try installing that component only. For example, if the error message is <code>The following packages have unmet dependencies:
- apache2 : Depends: apache2-bin but it is not going to be installed</code>, try <code>apt-get install apache2-bin</code>.</span>
+	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a></p>.</span>
 	</div>
 
 3.	Verify the installation.
