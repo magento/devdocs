@@ -291,9 +291,33 @@ The following example installs Magento with the following options:
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
+<h2 id="instgde-install-magento-update">Updating the Magento software</h2>
+This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.
 
-This section discusses how to install the Magento software after you installed it previously. You might do this in an development environment especially to get all the latest code changes.
+You might do this in an development environment especially to get all the latest code changes.
+
+To update the Magento software:
+
+2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system.
+3.	Enter the following commands in the order shown:
+
+		cd <your Magento install dir>
+		git pull origin develop
+		cd setup
+		composer update
+
+4.	Update the Magento database.
+
+		cd <your Magento install dir>/setup
+		php -f index.php update
+
+4.	_Optional_. To change installation options, repeat the tasks discussed in:
+
+	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+
+<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
+This section discusses how to uninstall and then reinstall the Magento software. 
 
 To reinstall the Magento software:
 
@@ -301,18 +325,13 @@ To reinstall the Magento software:
 3.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		git pull origin master
+		git pull origin develop
 		cd setup
 		php index.php uninstall
 		cd ..
 		composer update
 
-4.	Update the Magento database.
-
-		cd <your Magento install dir>/setup
-		php index.php setup update
-
-4.	_Optional_. To change installation options, repeat the tasks discussed in:
+4.	Install the Magento software:
 
 	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>

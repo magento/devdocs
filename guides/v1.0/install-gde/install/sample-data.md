@@ -35,7 +35,7 @@ To enable sample data, you must:
 
 <div class="bs-callout bs-callout-info" id="info">
    <p>The sample data Composer package recently changed. If you're using an alpha or beta1 Magento 2 build, we strongly recommend you update to a beta2 build to get the latest code.</p> 
-<p>To upgrade, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-reinstall">Reinstalling the Magento software</a>.</p></div>
+<p>To update, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-update">Updating the Magento software</a>.</p></div>
 
 To edit `composer.json`:
 
