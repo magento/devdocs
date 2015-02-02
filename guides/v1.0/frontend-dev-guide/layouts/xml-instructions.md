@@ -291,7 +291,7 @@ Example:
    </tbody>
 </table>
 
-To pass parameters, use the <a href="#argument">`<argument></argument>`</a> instruction.
+To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
 <h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove></h3>
 Enables you to ignore some layout tags when generating a layout.
