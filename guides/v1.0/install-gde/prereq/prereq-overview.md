@@ -86,6 +86,10 @@ You must run MySQL version 5.6 or later as the following result indicates:
 
 		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
+
 		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 Enter `exit` at the `mysql>` prompt to exit.
