@@ -30,3 +30,4 @@ ignore
 /jk.bat
 *.bat
 *.sh
+Rakefile
