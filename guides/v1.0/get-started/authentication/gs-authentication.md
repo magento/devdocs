@@ -18,7 +18,9 @@ Before you can make web API calls, you must authenticate your identity and have 
 </p>
 
 <h3 id="accessible-resources">Accessible resources</h3>
-<p>The resources that you can access depend on your user type and the configured permission of the resource in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
+<p>The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. Previous statement is true for guest users as well. 
+Each admin or integration user can have a unique set of permissions which is configured in the admin panel. 
+Permissions required to access particular resource are configured in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
       <th>User type</th>
@@ -28,7 +30,7 @@ Before you can make web API calls, you must authenticate your identity and have 
       <td>
          <p>Admin or Integration</p>
       </td>
-      <td>e
+      <td>
          <p>Resources for which admins or integrations are authorized. For example, if admins are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
       </td>
    </tr>
@@ -56,7 +58,7 @@ acl.xml files across all Magento modules are consolidated to build an ACL tree w
 Overall <a href="http://www.magentocommerce.com/api/rest/permission_settings/permission_settings.html#PermissionSettings-Authorization">ACL concept</a> remains same as Magento 1, its just been extended to cover WebAPIs. 
 </p>
 <h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
-e.g.: Account management, customer configuration, and customer group resource permissions are defined in the below customer acl.xml
+e.g., Account management, customer configuration, and customer group resource permissions are defined in the below customer acl.xml
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Acl/etc/acl.xsd">
     <acl>
@@ -81,7 +83,7 @@ e.g.: Account management, customer configuration, and customer group resource pe
 </config>
 ```
 
-When a developer creates the Web API configuration file : webapi.xml, the permissions defined in acl.xml are referenced to create access rights for each API.
+When a developer creates the Web API configuration file (webapi.xml), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 <h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
 ```xml
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -128,7 +130,7 @@ When a developer creates the Web API configuration file : webapi.xml, the permis
 .....
 ...
 ```
-e.g.: 
+e.g.,
 In the above sample webapi.xml, for the customerGroups resource, only a user with a "Magento_Customer::group" can access the GET /V1/customerGroups/:id API. On the other hand, POST /V1/customers (customer creation) can be accessed anonymously (or by a guest) without a need for presenting the identity.
 
 The user here can be an admin (or an Integration) defined in the backend with the customer group selected as one of the resource in the ACL tree.
