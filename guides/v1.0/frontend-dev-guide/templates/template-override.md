@@ -24,7 +24,7 @@ The following topics are covered:
 Templates are initiated in layout files.
 Each layout block has an associated template. 
 Template is specified in the `template` attribute of the <block> layout instruction. 
-For example, from <a href="{{site.mage2000url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</a>:
+For example, from <code><a href="{{site.mage2000url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</a></code>:
 
 <pre>
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
@@ -37,14 +37,14 @@ The next section describes where templates can be located in general.
 
 <h2 id="root">Root template</h2>
 
-In Magento application there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2url}}app/code/Magento/Theme/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
+In Magento application there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
 
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
 
 But similar to other templates, `root.phtml` can be overridden in a theme. 
 For example, Magento Blank theme contains an overriding root template: 
 
-<code><a href="{{site.mage2url}}app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code>
+<code><a href="{{site.mage2000url}}app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code>
 
 
 <h2 id="template-convention">Conventional templates location</h2> Templates are stored in the following locations:
@@ -59,7 +59,7 @@ Here <code>&lt;path_to_templates&gt;</code> might have several levels of directo
 
 <h2 id="override">Templates overriding</h2>
 For template files with the same name the following is true: 
-<a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#theme">theme templates</a> override <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#module">module templates</a>, and those of a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">child theme</a> override parent theme templates.
+theme templates override module templates, and those of a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent theme templates.
 
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to an overriding one in your custom theme.
 
