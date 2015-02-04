@@ -152,7 +152,7 @@
 <ul>
   <li><a href="#apache-support">Apache versions supported</a></li>
   <li><a href="#apache-help-beginner">Help if you’re just starting out</a></li>
-  <li><a href="#install-prereq-apache-ubuntu">Installing Apache on Ubuntu</a></li>
+  <li><a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a></li>
   <li><a href="#install-prereq-apache-centos">Installing Apache on CentOS</a></li>
 </ul>
 
@@ -170,11 +170,106 @@
   <li><a href="/guides/v1.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
 </ul>
 
-<h2 id="install-prereq-apache-ubuntu">Installing Apache on Ubuntu</h2>
-<p>Install Apache 2 if you haven’t already done so:</p>
+<h2 id="install-prereq-apache-verify">Verify the Apache version</h2>
+<p>To verify the Apache version you’re currently running, enter:</p>
 
-<pre><code>apt-get -y install apache2
+<pre><code>apache2 -v
 </code></pre>
+
+<p>The result displays similar to the following:</p>
+
+<pre><code>Server version: Apache/2.2.22 (Ubuntu)
+Server built:   Jul 22 2014 14:35:32
+</code></pre>
+
+<ul>
+  <li>If Apache is <em>not</em> installed, see the next section.</li>
+  <li>If Apache 2.2 is installed on Ubuntu 12 <em>and</em> you want to use PHP 5.6, see the next section</li>
+  <li>
+    <p>If Apache is installed and it’s the correct version, make sure Apache rewrites are enabled:</p>
+
+    <ul>
+      <li><a href="#apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</a></li>
+      <li><a href="#apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</h2>
+<p>The following sections discusses how to install or upgrade Apache:</p>
+
+<ul>
+  <li>Install Apache</li>
+  <li>Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 5.6</li>
+</ul>
+
+<h3 id="install-prereq-apache-ubuntu-install">Installing Apache on Ubuntu 14 or Ubuntu 12</h3>
+<p>To install the default version of Apache (Ubuntu 14—Apache 2.4, Ubuntu 12—Apache 2.2):</p>
+
+<ol>
+  <li>
+    <p>Install Apache</p>
+
+    <pre><code>apt-get -y install apache2
+</code></pre>
+  </li>
+  <li>
+    <p>Verify the installation.</p>
+
+    <pre><code>apache2 -v
+</code></pre>
+  </li>
+</ol>
+
+<p>The result displays similar to the following:</p>
+
+<pre><code>Server version: Apache/2.2.22 (Ubuntu)
+Server built:   Jul 22 2014 14:35:32
+</code></pre>
+
+<p>Now you must <a href="#install-ubuntu-apache-rewrites">enable Apache rewrites</a>.</p>
+
+<h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
+<p>To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)</p>
+
+<p>To upgrade to Apache 2.4:</p>
+
+<ol>
+  <li>
+    <p>Add the <code>ppa:ondrej</code> repository, which has Apache 2.4:</p>
+
+    <pre><code>apt-get -y update
+apt-add-repository ppa:ondrej/apache2
+apt-get -y update
+</code></pre>
+  </li>
+  <li>
+    <p>Install Apache 2.4:</p>
+
+    <pre><code>apt-get install -y apache2
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a></p>.</span>
+</div>
+  </li>
+  <li>
+    <p>Verify the installation.</p>
+
+    <pre><code>apache2 -v
+</code></pre>
+
+    <p>Messages similar to the following should display:</p>
+
+    <pre><code>Server version: Apache/2.4.10 (Ubuntu)
+Server built:   Jul 22 2014 22:46:25
+</code></pre>
+  </li>
+  <li>
+    <p><a href="#apache-rewrites2.4">Enable Apache rewrites</a>.</p>
+  </li>
+</ol>
 
 <h3 id="install-ubuntu-apache-rewrites">Enabling Apache rewrites</h3>
 <p>Ubuntu 12 (which natively supports Apache 2.2) is different from Ubuntu 14 (which natively supports Apache 2.4).</p>
@@ -220,8 +315,11 @@ AllowOverride &lt;value from Apache site&gt;
 
     <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-<p>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www&gt;</code>.</p></span>
-</div>
+<ul><li>If you upgraded from an earlier Apache version, first look for <code>&lt;Directory "/var/www/html"&gt;</code> or <code>&lt;Directory "/var/www"&gt;</code> in <code>000-default.conf</code>.</li>
+    <li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www&gt;</code>.</li>
+
+
+</ul></span></div>
   </li>
   <li>
     <p>Restart Apache:</p>
@@ -328,7 +426,7 @@ ln -s ../mods-available/rewrite.load
 <ul>
   <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/mysql.html">Installing and configuring MySQL</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/security.html">Configuring security options</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/optional.html">Installing optional software</a></li>
   <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a></li>
@@ -490,7 +588,7 @@ ln -s ../mods-available/rewrite.load
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
 						
 								
 							
@@ -585,6 +683,10 @@ ln -s ../mods-available/rewrite.load
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
 						
 								
 							

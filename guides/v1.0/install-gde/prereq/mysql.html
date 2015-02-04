@@ -230,15 +230,22 @@ mysql&gt;
 
 <h3 id="instgde-prereq-mysql56ubu12">Installing MySQL 5.6 on Ubuntu 12</h3>
 
-<p>To install MySQL 5.6 on Ubuntu 12:</p>
+<p>To install MySQL 5.6 on Ubuntu 12, use the following instructions from <a href="http://askubuntu.com/questions/433014/unable-to-install-mysql-5-6-in-ubuntu-12-04" target="_blank">askubuntu.com</a>.</p>
 
 <ol>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>apt-add-repository ppa:ondrej/mysql-5.6
+    <pre><code>apt-get -y update
+apt-add-repository ppa:ondrej/mysql-5.6
 apt-get -y update
 apt-get -y install mysql-server
+</code></pre>
+  </li>
+  <li>
+    <p>Secure the installation.</p>
+
+    <pre><code>mysql_secure_installation
 </code></pre>
   </li>
   <li>
@@ -336,14 +343,15 @@ GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/guides/v1.0/install-gde/prereq/apache.html">Installing and configuring Apache</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/optional.html">Installing optional software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.4—CentOS</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/security.html">Configuring security options</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/optional.html">Installing optional software</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
 </ul>
+
 
 
 		</div>
@@ -500,7 +508,7 @@ GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
 						
 								
 							
@@ -595,6 +603,10 @@ GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
 						
 								
 							

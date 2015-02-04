@@ -175,7 +175,7 @@
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably.</p></span>
+  <p>Magento no longer supports PHP 5.4.</p></span>
 </div>
 
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
@@ -189,7 +189,6 @@
 </ul>
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
-
 <p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
 
 <pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
@@ -288,7 +287,8 @@ yum -y install php55w php55w-opcache
   <li>
     <p>Locate <code>php.ini</code> by entering the following command:</p>
 
-    <p><code>php -i | grep "Loaded Configuration File"</code></p>
+    <pre><code>php -i | grep "Loaded Configuration File"
+</code></pre>
 
     <p>Typical locations follow:</p>
 
@@ -302,7 +302,8 @@ yum -y install php55w php55w-opcache
   <li>
     <p>Locate the following setting and uncomment it if necessary:</p>
 
-    <p><code>date.timezone =</code></p>
+    <pre><code>date.timezone =
+</code></pre>
   </li>
   <li>
     <p>Add the time zone setting you found in step 1.</p>
@@ -310,9 +311,9 @@ yum -y install php55w php55w-opcache
   <li>
     <p>Change <code>memory_limit</code> to:</p>
 
-    <p><code>memory_limit = 512M</code> or more for normal operation</p>
-
-    <p><code>memory_limit = 2G</code> or more for testing</p>
+    <pre><code>memory_limit = 512M` or more for normal operation
+memory_limit = 2G` or more for testing
+</code></pre>
   </li>
   <li>
     <p>Save your changes and exit the text editor.</p>
@@ -330,8 +331,8 @@ yum -y install php55w php55w-opcache
 
 <ul>
   <li><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/apache.html">Installing and configuring Apache</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/mysql.html">Installing and configuring MySQL</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
+  <li><a href="/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/security.html">Configuring security options</a></li>
   <li><a href="/guides/v1.0/install-gde/prereq/optional.html">Installing optional software</a></li>
   <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and cloning the Magento 2 GitHub repository</a></li>
@@ -493,7 +494,7 @@ yum -y install php55w php55w-opcache
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
 						
 								
 							
@@ -588,6 +589,10 @@ yum -y install php55w php55w-opcache
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
 						
 								
 							

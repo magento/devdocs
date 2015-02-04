@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>During installation, xdebug maximum function nesting level error</title>
+	<title>GitHub API rate limit</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/trouble/tshoot_xdebug.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">
 
 </head>	
 <body>
@@ -136,9 +136,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">During installation, xdebug maximum function nesting level error</h1>
+		<h1 class="page-heading">GitHub API rate limit</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/trouble/tshoot_xdebug.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/trouble/tshoot_rate-limit.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -147,21 +147,64 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="install-trouble-xdebug">During installation, xdebug maximum function nesting level error</h2>
+		<h2 id="install-trouble-pdo">You reach the GitHub API rate limit</h2>
 
-<h3 id="details">Details</h3>
-
-<p>During the installation, a  message similar to the following displays: </p>
-
-<pre><code>PHP Fatal error: Maximum function nesting level of '100' reached, aborting! in &lt;path&gt;/ClassLoader.php
+<pre><code>Could not fetch &lt;name&gt;, enter your GitHub credentials to go over the API rate limit
+The credentials will be swapped for an OAuth token stored in /var/www/.composer/auth.json, your password will not be stored
 </code></pre>
 
-<h3 id="solution">Solution</h3>
+<h3 id="solution-based-on-a-hrefhttpscoderwallcompkz4egwcomposer-install-github-rate-limiting-work-around-targetblankcoderwalla">Solution (based on <a href="https://coderwall.com/p/kz4egw/composer-install-github-rate-limiting-work-around" target="_blank">coderwall</a>:</h3>
 
-<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-<p>For details, see <a href="/guides/v1.0/release-notes/release-notes.html#known-devbeta-xdebug">Known issue with xdebug</a>.
+<ol>
+  <li>Press Control+C to stop the current activity.</li>
+  <li>Log in to <a href="http://github.com" target="_blank">github.com</a>.</li>
+  <li>Click <img src="/common/images/icon_github-account.png" alt="GitHub settings button" /> in the horizontal toolbar to view your GitHub account settings.</li>
+  <li>
+    <p>In the left pane, click <strong>Applications</strong>, as the following figure shows.</p>
 
-</p>
+    <p><img src="/common/images/github_applications.png" alt="GitHub Applications menu" /></p>
+  </li>
+  <li>
+    <p>In the right pane, click <strong>Generate New Token</strong>, as the following figure shows.</p>
+
+    <p><img src="/common/images/github_generate-new-token.png" alt="Generate a new token" /></p>
+  </li>
+  <li>
+    <p>Enter a description for the token in the provided field. </p>
+
+    <p>To change other values on this page, consult the GitHub help.</p>
+  </li>
+  <li>Click <strong>Generate Token</strong>.</li>
+  <li>
+    <p>Click <strong>Copy Token</strong>, as the following figure shows.</p>
+
+    <p><img src="/common/images/github_copy-token.png" alt="Copying a GitHub token" /></p>
+  </li>
+  <li>
+    <p>Save the token you just copied. You cannot view it again.</p>
+  </li>
+  <li>
+    <p>Log in to your Magento server.</p>
+  </li>
+  <li>
+    <p>In a command prompt or terminal window, change to your Magento installation directory.</p>
+
+    <p>On Ubuntu, you might need to elevate to the <code>root</code> user first: <code>sudo -s</code></p>
+  </li>
+  <li>
+    <p>As a user with <code>root</code> privileges, enter the following command:</p>
+
+    <pre><code>composer config -g github-oauth.github.com &lt;your token&gt;
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+  		<p>If the command fails, try making the web server user the owner of your web server docroot directory.</p>
+  		<p>For example, on Ubuntu, enter <code>sudo chown www-data /var/www</code>.</p></span>
+</div>
+  </li>
+  <li>Repeat the task that failed previously (usually running either <code>composer install</code> or <code>composer update</code>.)</li>
+</ol>
 
 
 		</div>
@@ -416,7 +459,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
 						
 								
 							
@@ -424,7 +467,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
 						
 								
 								

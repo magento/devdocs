@@ -167,7 +167,7 @@
 
 <p>The cache configuration is an associative array similar to the following:</p>
 
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
 <span class="s1">&#39;cache_types&#39;</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
     <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
@@ -184,7 +184,7 @@
     <span class="s1">&#39;config_webservice&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
     <span class="s1">&#39;config_integration_api&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
   <span class="p">),</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <h2 id="m2devgde-cache-type">Create a cache type</h2>
 
@@ -208,7 +208,7 @@
 <p>At this time, you can get more information about caching by looking at the code. To start, look for <code>const CONFIG_KEY =</code> in the following classes. Specify each key in <code>config.php</code> and add configuration detail (including cache storage) under that key.</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/develop/ib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).</li>
   <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/CacheConfig.php" target="_blank">CacheConfig.php</a> for the frontend cache.</li>
   <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/BackendConfig.php" target="_blank">BackendConfig.php</a> for the backend cache.</li>
   <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/DbConfig.php" target="_blank">DbConfig.php</a> for database caching.</li>

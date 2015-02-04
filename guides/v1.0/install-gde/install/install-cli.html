@@ -155,6 +155,7 @@
   <li><a href="#instgde-install-cli-prereq">Before you start your installation</a></li>
   <li><a href="#instgde-install-cli-first">First steps</a></li>
   <li><a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a></li>
+  <li><a href="#instgde-install-magento-update">Updating the Magento software</a></li>
   <li><a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a></li>
 </ul>
 
@@ -454,19 +455,52 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
+<h2 id="instgde-install-magento-update">Updating the Magento software</h2>
+<p>This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.</p>
 
-<p>This section discusses how to install the Magento software after you installed it previously. You might do this in an development environment especially to get all the latest code changes.</p>
+<p>You might do this in an development environment especially to get all the latest code changes.</p>
 
-<p>To reinstall the Magento software:</p>
+<p>To update the Magento software:</p>
 
 <ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system.</li>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
     <pre><code>cd &lt;your Magento install dir&gt;
-git pull origin master
+git pull origin develop
+composer update
+</code></pre>
+  </li>
+  <li>
+    <p>Update the Magento database.</p>
+
+    <pre><code>cd setup
+php -f index.php update
+</code></pre>
+  </li>
+  <li>
+    <p><em>Optional</em>. To change installation options, repeat the tasks discussed in:</p>
+
+    <ul>
+      <li><a href="#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
+<p>This section discusses how to uninstall and then reinstall the Magento software. </p>
+
+<p>To reinstall the Magento software:</p>
+
+<ol>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;
+git pull origin develop
 cd setup
 php index.php uninstall
 cd ..
@@ -474,7 +508,7 @@ composer update
 </code></pre>
   </li>
   <li>
-    <p>Repeat the tasks discussed in:</p>
+    <p>Install the Magento software:</p>
 
     <ul>
       <li><a href="#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
@@ -646,7 +680,7 @@ composer update
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
 						
 								
 							
@@ -741,6 +775,10 @@ composer update
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
 						
 								
 							
