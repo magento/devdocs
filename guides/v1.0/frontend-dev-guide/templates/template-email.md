@@ -4,7 +4,7 @@ group: fedg
 subgroup: C_Templates
 title: Customizing email templates
 menu_title: Customizing email templates
-menu_order: 3
+menu_order: 4
 
 github_link: frontend-dev-guide/templates/template-email.md
 ---
@@ -76,7 +76,7 @@ To add a variable to your template content:
 </div>
 
 
-<h3>Applying a new template</h3>
+<h2>Applying a new template</h2>
 
 To use a new template for generating emails, you need to specify it in the in Admin under **Stores** > **Configuration**. 
 

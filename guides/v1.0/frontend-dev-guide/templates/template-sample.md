@@ -4,7 +4,7 @@ group: fedg
 subgroup: C_Templates
 title: Customizing template illustration
 menu_title: Customizing template illustration
-menu_order: 4
+menu_order: 3
 
 github_link: frontend-dev-guide/templates/template-sample.md
 ---

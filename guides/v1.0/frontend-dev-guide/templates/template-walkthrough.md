@@ -8,10 +8,10 @@ menu_order: 2
 github_link: frontend-dev-guide/templates/template-overview.md
 ---
 
-<h2>Introduction</h2>
+<h2>Overview</h2>
 This article features high-level steps of a template customization.
 
-<h3>Template customization walkthrough</h3>
+<h2>Template customization walkthrough</h2>
 
 To customize a template in your theme:
 
