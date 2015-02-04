@@ -5,7 +5,7 @@ subgroup: C_Templates
 title: Templates customizing walkthrough
 menu_title: Templates customizing walkthrough
 menu_order: 2
-github_link: frontend-dev-guide/templates/template-walkthrough.md
+github_link: frontend-dev-guide/templates/template-overview.md
 ---
 
 <h2>Introduction</h2>
@@ -25,7 +25,7 @@ To add a new template in a theme:
 
 1. Add a template in your theme directory according to the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-convention" target="_blank">conventional location</a>. 
 
-2. Assign your template to a block or page in the <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-override.html#template-layout" target="_blank">corresponding layout file</a>. 
+2. Assign your template to a block in the <a href="{{site.gdeurl}}frontend-dev-guide/template-override.html#template-layout" target="_blank">corresponding layout file</a>. 
 
 <h2>Walkthrough illustration: adding a message to the customer review form</h2>
 A small customization to illustrate the walkthrough: in their Orange theme the OrangeCo company want to add a short text to the product review form to inspire customers to write reviews. 
