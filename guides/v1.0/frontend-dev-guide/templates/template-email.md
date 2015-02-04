@@ -41,11 +41,8 @@ To create a custom email template:
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Click the **Add New Template** button. 
-3. If you want to use a default template as a starting point, in the Load default template section, choose the default template and click the **Load Template** button. <br><img src="{{site.baseurl}}common/images/create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%">
-<br> <div class="bs-callout bs-callout-info" id="info_path">
-<span class="glyphicon-class">
- <p>The path to the configuration settings for each default template appears in the Used as Default For section at the top of the page. Make note of this path, because you will later need to update the configuration with the name of the new template.</p></span>
-</div>
+3. If you want to use a default template as a starting point, in the Load default template section, choose the default template and click the **Load Template** button. <br id="info_path">The path to the configuration settings for each default template appears in the **Used as Default For** field in the Template Information section. Make note of this path, because you will later need to update the configuration with the name of the new template.<br><img src="{{site.baseurl}}common/images/create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%"/>
+
 4. In **Template Name** enter the name which will be used in the Magento Admin.
 5. In **Template Subject** add plain text which will be used as a Subject of the emails sent using the template you create. This field can contain <a href="#var">system variables</a>.  
 5. Customize template content. For details please refer to the <a href="#content">next paragraph</a>.
@@ -86,5 +83,5 @@ To use a new template for generating emails, you need to specify it in the in Ad
 The further path to the configuration depends on the purpose of the template. 
 For example, if the template is supposed to be used for sales emails, like new order notification, or invoice, it is configured under **Stores** > **Configuration** > SALES > **Sales Emails**.
 
-If your templte was created using a default one, then the path for configuration was specified on the template creation page in the <a href="#info_path">Used as Default For section.
+If your template was created using a default one, then the path for configuration was specified on the template creation page in the <a href="#info_path">**Used as Default For** field</a>.
 
