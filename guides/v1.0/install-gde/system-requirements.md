@@ -28,7 +28,7 @@ Before you install Magento, make sure your system meets or exceeds the following
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-  	<p>PHP 5.4 support is deprecated.  In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably.</p></span>
+  	<p>Magento no longer supports PHP 5.4.</p></span>
 	</div>
 
 *	Required PHP extensions:
