@@ -55,7 +55,6 @@ Permissions required to access particular resource are configured in the <code>w
 <h3 id="acl-webapi-relation">Relation between acl.xml and webapi.xml</h3>
 <p>The acl.xml file defines the access control list (ACL) for a given module. It defines available set of permissions to access the resources.
 acl.xml files across all Magento modules are consolidated to build an ACL tree which is used to select allowed Admin role resources or third party Integration's access (System > Extension > Integration > Add New Integration > Available APIs).
-Overall <a href="http://www.magentocommerce.com/api/rest/permission_settings/permission_settings.html#PermissionSettings-Authorization">ACL concept</a> remains same as Magento 1, its just been extended to cover WebAPIs. 
 </p>
 <h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
 e.g., Account management, customer configuration, and customer group resource permissions are defined in the below customer acl.xml
