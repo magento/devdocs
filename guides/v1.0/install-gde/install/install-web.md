@@ -250,10 +250,11 @@ The value of `sys_temp_dir` determines where `install.log` is located. If the va
 
 A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.log`.
 
-<h2 id="instgde-install-reinstall">Reinstalling the Magento software</h2>
-You can reinstall the Magento software in an development environment especially to get all the latest code changes.
+<h2 id="instgde-install-reinstall">Updating or reinstalling the Magento software</h2>
+You can reinstall the Magento software in an development environment especially to get all the latest code changes:
 
-To reinstall the Magento software, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-reinstall">Reinstalling the Magento software</a>.
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-update">Update</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-reinstall">Uninstall and reinstall</a>
 
 #### Next step
 
