@@ -291,7 +291,7 @@ Example:
    </tbody>
 </table>
 
-To pass parameters, use the <a href="#argument">`<argument></argument>`</a> instruction.
+To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
 <h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove></h3>
 Enables you to ignore some layout tags when generating a layout.
@@ -426,7 +426,7 @@ To pass multiple arguments use the following construction:
 <pre>
 &lt;arguments&gt;
 	&lt;argument&gt;&lt;/argument&gt;
-	&lt;arguments&gt;&lt;/argument&gt;
+	&lt;argument&gt;&lt;/argument&gt;
 	...
 &lt;/arguments&gt;
 </pre>
@@ -440,3 +440,22 @@ To pass an argument that is an array use the following construction:
 &lt;/argument&gt;
 </pre>
 
+<p id="getter">Arguments values set in a layout file can be accessed in <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
+<code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
+
+Example:
+Setting a value of `css_class` in the <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml" target="_blank">app/code/Magento/Theme/view/frontend/layout/default.xml</a></code> layout file:
+<pre>
+...
+&lt;arguments&gt;
+    &lt;argument name=&quot;css_class&quot; xsi:type=&quot;string&quot;&gt;header links&lt;/argument&gt;
+&lt;/arguments&gt;
+...
+</pre>
+
+Using the value of `css_class` in <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml" target="_blank">app/code/Magento/Theme/view/frontend/templates/html/title.phtml</a></code>:
+<pre>
+...
+$cssClass&nbsp;=&nbsp;$this-&gt;getCssClass()&nbsp;?&nbsp;'&nbsp;'&nbsp;.&nbsp;$this-&gt;getCssClass()&nbsp;:&nbsp;'';
+...
+</pre>

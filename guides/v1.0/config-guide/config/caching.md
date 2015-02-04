@@ -8,12 +8,11 @@ menu_order: 5
 github_link: config-guide/config/caching.md
 ---
 
-#### Contents
+#### Contents 
 
 *	<a href="#m2devgde-cache-explore">Overview of caching</a>
 *	<a href="#m2devgde-cache-type">Create a cache type</a>
 * <a href="#m2devgde-cache-more">More information about caching</a>
-
 
 <h2 id="m2devgde-cache-explore">Overview of caching</h2>
 
@@ -45,7 +44,7 @@ The cache configuration is an associative array similar to the following:
     'config_webservice' => 1,
     'config_integration_api' => 1,
   ),
-);
+); ?>
 {% endhighlight %}
 
 <h2 id="m2devgde-cache-type">Create a cache type</h2>
@@ -67,7 +66,7 @@ You must specify the following parameters:
 <h2 id="m2devgde-cache-more">More information about caching</h2>
 At this time, you can get more information about caching by looking at the code. To start, look for `const CONFIG_KEY =` in the following classes. Specify each key in `config.php` and add configuration detail (including cache storage) under that key.
 
-* <a href="{{ site.mage2000url }}ib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/CacheConfig.php" target="_blank">CacheConfig.php</a> for the frontend cache.
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/BackendConfig.php" target="_blank">BackendConfig.php</a> for the backend cache.
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/DbConfig.php" target="_blank">DbConfig.php</a> for database caching.

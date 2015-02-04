@@ -80,17 +80,17 @@ For example:
 
 You must run MySQL version 5.6 or later as the following result indicates:
 
-	Welcome to the MySQL monitor.  Commands end with ; or \g.
-	Your MySQL connection id is 871
-	Server version: 5.6.21 MySQL Community Server (GPL)
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 871
+		Server version: 5.6.21 MySQL Community Server (GPL)
 
-	Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-	Oracle is a registered trademark of Oracle Corporation and/or its
-	affiliates. Other names may be trademarks of their respective
-	owners.
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
 
-	Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 Enter `exit` at the `mysql>` prompt to exit.
 
@@ -98,15 +98,15 @@ To install or upgrade MySQL, see <a href="{{ site.gdeurl }}install-gde/prereq/my
 
 #### Next step
 
-Either install prerequisite software or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>.
+Either install <a href="{{ site.gdeurl }}install-gde/prereq/security.html">security-related software</a> or see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>.
 
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and Clone the Magento repository</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>

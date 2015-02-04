@@ -1,11 +1,11 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Routing
+subgroup: Fundamentals
 title: Routing
 menu_title: Routing
-menu_order: 1
-menu_node: parent
+menu_order: 10
+menu_node: 
 github_link: extension-dev-guide/routing.md
 ---
 

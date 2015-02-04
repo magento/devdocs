@@ -32,7 +32,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>PHP 5.4 support is deprecated. In the near future, installing Magento 2 on PHP 5.4 will fail, and some functionality might not work reliably.</p></span>
+  <p>Magento no longer supports PHP 5.4.</p></span>
 </div>
 
 <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
@@ -44,7 +44,6 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
 <h2 id="centos-verify-php">Verify PHP is installed</h2>
-
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
 
 	PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
@@ -120,7 +119,7 @@ To set your time zone and memory limit:
 1.	Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.
 2.	Locate `php.ini` by entering the following command:
 
-	`php -i | grep "Loaded Configuration File"`
+		php -i | grep "Loaded Configuration File"
 
 	Typical locations follow:
 
@@ -132,15 +131,14 @@ To set your time zone and memory limit:
 
 4.	Locate the following setting and uncomment it if necessary:
 
-	`date.timezone =`
+		date.timezone =
 
 5.	Add the time zone setting you found in step 1.
 
 2.	Change `memory_limit` to:
 
-	`memory_limit = 512M` or more for normal operation
-
-	`memory_limit = 2G` or more for testing
+		memory_limit = 512M` or more for normal operation
+		memory_limit = 2G` or more for testing
 
 3.	Save your changes and exit the text editor.
 
@@ -154,8 +152,8 @@ To set your time zone and memory limit:
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Installing and configuring Apache</a>
-*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">Installing and configuring MySQL</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a>
+*	<a href="{{ site.gdeurl }}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/security.html">Configuring security options</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/optional.html">Installing optional software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and cloning the Magento 2 GitHub repository</a>
