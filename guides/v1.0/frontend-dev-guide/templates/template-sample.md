@@ -8,7 +8,12 @@ menu_order: 3
 
 github_link: frontend-dev-guide/templates/template-sample.md
 ---
-<h3>Sample template customization: changing a layout of the mini shopping cart</h3>
+<h2>Overview</h2>
+
+This article contains a step-by-step illustration of a typical customization task solved by customizing a template.
+
+
+<h2>Sample template customization: changing a layout of the mini shopping cart</h2>
 In the default Blank theme, in the mini shopping cart products are listed under the Go to Checkout button, like following:
 <img src="{{ site.baseurl }}common/images/inherit_mini1.png" alt="An image of a mini shopping cart where products are listed under the Go to checkout button">
 
@@ -29,4 +34,4 @@ When we apply our new theme, the mini shopping cart with products will look like
 
 <img src="{{site.baseurl}}common/images/inherit_mini2.png" alt="In the minishopping cart products are listed before the Go to Checkout button ">
 
-<!-- ADDLINK For more details about solving real life customization tasks using templates, refer to the Practice article. --> 
+
