@@ -12,10 +12,14 @@ github_link: install-gde/install/sample-data.md
 
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
 *	<a href="#instgde-install-sample-enabling">Enable the use of sample data</a>
-*   <a href="#instgde-install-sample-after">Complete the sample data installation</a>
+*   <a href="#instgde-install-sample-after">Complete the sample data package installation</a>
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
-This section discusses how to enable you to install the optional Magento sample data. If you don't wish to use sample data, skip this topic and continue with <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+This section discusses how to enable you to install the optional Magento sample data. If you don't wish to use sample data, skip this topic and continue with:
+
+*   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install the Magento software using the command line</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
 Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.
 
@@ -31,7 +35,7 @@ To enable sample data, you must:
 
 <div class="bs-callout bs-callout-info" id="info">
    <p>The sample data Composer package recently changed. If you're using an alpha or beta1 Magento 2 build, we strongly recommend you update to a beta2 build to get the latest code.</p> 
-<p>To upgrade, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-reinstall">Reinstalling the Magento software</a>.</p></div>
+<p>To update, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-update">Updating the Magento software</a>.</p></div>
 
 To edit `composer.json`:
 
@@ -67,13 +71,14 @@ To edit `composer.json`:
             "magento/sample-data-media": "0.42.0-beta1",
 
     <div class="bs-callout bs-callout-info" id="info">
-        <p>Valid JSON requires that:
+        <p>Valid JSON requires that:</p>
             <ul><li>The line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma as shown in the preceding.</li>
-            <li>The names of all values in a section must align.</li></ul> </div>
+            <li>The names of all values in a section must align.</li></ul>
+             </div>
 
 6.  Save your changes to `composer.json` and exit the text editor.
 
-<h2 id="instgde-install-sample-after">Complete the sample data installation</h2>
+<h2 id="instgde-install-sample-after">Complete the sample data package installation</h2>
 After you've installed the Magento software or run `composer install`, you can install the sample data as follows:
 
 1.  Update `composer.json` as discussed in <a href="#instgde-install-sample-enabling">Enable the use of sample data</a>.
@@ -84,7 +89,8 @@ After you've installed the Magento software or run `composer install`, you can i
     b. Enter `composer update`
 
     <div class="bs-callout bs-callout-info" id="info">
-        <p>The following error displays if you have run <code>composer update</code> recently. The error is normal; you can continue the installation.</p> 
+        <ul><li>If you have reached the GitHub API rate limit, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a>.</li>
+        <li>The following error displays if you have run <code>composer update</code> recently. The error is normal; you can continue the installation.<br> 
         <pre>[ErrorException]
   Target ./dev/tools/Magento/Tools/SampleData/Installer.php already exists (set extra.magento-force to override)</pre></div>
 
@@ -96,4 +102,4 @@ After you've installed the Magento software or run `composer install`, you can i
 
 #### Next step
 
-After running the setup software, see <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
+After running the setup software, see <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
