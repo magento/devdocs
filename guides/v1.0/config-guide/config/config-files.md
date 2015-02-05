@@ -28,7 +28,7 @@ Following are common terms used in this topic:
   <dt>Configuration object</dt>
   <dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
   <dt>Configuration stage</dt>
-  <dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files. For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
+  <dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
   <dt>Configuration scope</dt>
   <dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>.</dd>
 </dl>
