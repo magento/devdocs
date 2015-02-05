@@ -1,6 +1,6 @@
 ---
 layout: default  
-group: fedg
+group: 
 subgroup: C_Templates
 title: Customizing email templates
 menu_title: Customizing email templates
