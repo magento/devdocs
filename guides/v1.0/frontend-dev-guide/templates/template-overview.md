@@ -1,6 +1,6 @@
 ---
 layout: default  
-group: fedg
+group: 
 subgroup: C_Templates
 title: Templates overview
 menu_title: Templates
