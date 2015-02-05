@@ -46,7 +46,7 @@ To create a custom email template:
 4. In **Template Name** enter the name which will be used in the Magento Admin.
 5. In **Template Subject** add plain text which will be used as a Subject of the emails sent using the template you create. This field can contain <a href="#var">system variables</a>.  
 5. Customize template content. For details please refer to the <a href="#content">next paragraph</a>.
-6. In **Template Styles** optionally add styling information using CSS syntax. 
+6. In **Template Styles** optionally add CSS styles for the template. 
 5. Save the template. 
 
 <h3 id="content">Customizing content</h3>

@@ -44,7 +44,7 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 But similar to other templates, `root.phtml` can be overridden in a theme. 
 For example, Magento Blank theme contains an overriding root template: 
 
-<code><a href="{{site.mage2000url}}app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code>
+<code><a href="{{site.mage2000url}}app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml" target="_blank">app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code>
 
 
 <h2 id="template-convention">Conventional templates location</h2> Templates are stored in the following locations:

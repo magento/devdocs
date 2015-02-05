@@ -13,7 +13,7 @@ github_link: frontend-dev-guide/templates/template-overview.md
 
 
 In Magento application templates are the part of the view layer. Templates define how exactly the content of <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">layout blocks</a> are presented on a page: order, CSS classes, elements  grouping and so on. 
-Templates do not contain any logic about whether they will or will not be rendered, this is typically handled by the layout files. Once a template is called in a layout, it is expected that it will be parsed and displayed.
+In most cases, templates do not contain any logic about whether they will or will not be rendered, this is typically handled by the layout files. Once a template is called in a layout, it is expected that it will be parsed and displayed.
 
 Default Magento templates are PHTML files that contain HTML and PHP defining the logic for visual presentation. And in this guide by the term "a template" we mean a default Magento `.phtml` template.
 
