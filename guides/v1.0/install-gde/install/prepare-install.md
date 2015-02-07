@@ -31,7 +31,7 @@ To switch to the web server user on Ubuntu:
 
 1.	Enter the following command:
 
-	<pre>su www-data</pre>
+		su www-data
 
 2.	If a password prompt displays but you don't know the user's password, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
 
@@ -51,19 +51,19 @@ To switch to the web server user on CentOS:
 
 1.	Enter the following command:
 
-	<pre>su - apache</pre>
+		su - apache
 
 	If the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
 
-	<pre>This account is currently not available.</pre>
+		This account is currently not available.
 
 2.	To give `apache` a valid shell account so you can switch to it, enter the following command:
 
-	<pre>sudo chsh -s /bin/bash apache</pre>
+		sudo chsh -s /bin/bash apache
 
 3.	Run the following command again; this time, it should work:
 
-	<pre>su - apache</pre>
+		su - apache
 
 3.	Continue with the next section.
 
@@ -72,7 +72,7 @@ To switch to the web server user on CentOS:
 After you completed the tasks discussed in the preceding section, update dependencies as follows:
 
 1.	Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>.
-2.	Change to the Magento installation directory. For example,
+2.	Change to the Magento installation directory and run `composer install`. For example,
 
 		cd /var/www/html/magento2 && composer install
 
