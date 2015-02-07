@@ -125,8 +125,11 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 
 4.	Set permissions:
 
-	<pre>find . -type d -exec chmod 700 {} \;
-find . -type f -exec chmod 600 {} \;</pre>
+		find . -type d -exec chmod 700 {} \; && find . -type f -exec chmod 600 {} \;
+
+	If you must enter the commands as `sudo`, use:
+
+		sudo find . -type d -exec chmod 700 {} \; && sudo find . -type f -exec chmod 600 {} \;
 
 #### Next step
 

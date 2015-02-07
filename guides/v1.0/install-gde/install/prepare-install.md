@@ -37,12 +37,11 @@ To switch to the web server user on Ubuntu:
 
 3.	To enable the `www-data` user's shell and to set a password, enter the following commands in the order shown:
 
-	<pre>sudo chsh -s /bin/bash www-data
-	sudo passwd www-data</pre>
+		sudo chsh -s /bin/bash www-data && sudo passwd www-data
 
 4.	Run the following command again and enter the user's password:
 
-	<pre>su www-data</pre>
+		su www-data
 
 5.	Continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.
 
@@ -75,9 +74,7 @@ After you completed the tasks discussed in the preceding section, update depende
 1.	Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>.
 2.	Change to the Magento installation directory. For example,
 
-	`cd /var/www/html/magento2`
-
-3.	As user with privileges to write to the web server docroot, enter `composer install`
+		cd /var/www/html/magento2 && composer install
 
 	This command updates package dependencies and can take a few minutes to complete.
 
