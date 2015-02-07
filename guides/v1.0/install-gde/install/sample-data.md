@@ -60,9 +60,9 @@ To edit `composer.json`:
 
 5.  Add one of the following to the `"require":` section:
 
-    *   Recent build (`beta2` from mid-December 2014, or later):
+    *   Recent build (`beta6` from January 2015, or later):
 
-            "magento/sample-data": "0.42.0-beta2",
+            "magento/sample-data": "0.42.0-beta6",
             "magento/sample-data-media": "~0.42.0-beta1",
 
     *   Older build (`alpha` or `beta1`):
