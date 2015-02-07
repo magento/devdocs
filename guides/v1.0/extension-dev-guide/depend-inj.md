@@ -1,4 +1,4 @@
----
+
 layout: default
 group: extension-dev-guide
 subgroup: Fundamentals
@@ -97,6 +97,7 @@ class Foo
 $bar = new Bar();
 $foo = new Foo($bar);
 $foo->execute();
+?>
 {% endhighlight %}
 
 
@@ -456,7 +457,7 @@ class Magento\Core\Model\Config\BaseFactory
     {
         return $this->_objectManager->create('Magento\Core\Model\Config\Base', array('sourceData' => $sourceData));
     }
-}
+} ?>
 {% endhighlight %}
 
 Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory. 
