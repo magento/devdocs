@@ -73,7 +73,7 @@ The following sections discuss the available subcommands.
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="#instgde-cli-subcommands-configphp">Installing the deployment configuration</a>
-*	<a href="#{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Module enable, disable</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Module enable, disable</a>
 *	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
 *	<a href="#instgde-cli-subcommands-uninstall">Uninstalling the Magento software</a>
 
