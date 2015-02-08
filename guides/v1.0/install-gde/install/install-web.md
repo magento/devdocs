@@ -1,11 +1,11 @@
 ---
 layout: default 
 group: install 
-subgroup: R_Installation
-title: Install the Magento software using the Setup Wizard
-menu_title: Install the Magento software using the Setup Wizard
-menu_node:
-menu_order: 8
+subgroup: S_Installation
+title: Setup Wizard installation
+menu_title: Setup Wizard installation
+menu_node: parent
+menu_order: 1
 github_link: install-gde/install/install-web.md
 ---
 
