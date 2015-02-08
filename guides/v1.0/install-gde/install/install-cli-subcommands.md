@@ -20,18 +20,7 @@ See one of the following sections:
 *	<a href="#instgde-cli-subcommands">Command line installer subcommands</a>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
-
-Before you begin, make sure that:
-
-1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
-2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
-3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
-4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
-</div>
+{% include install/before-you-begin-cli.html %}
 
 The installer is designed to be run multiple times if necessary so you can:
 
@@ -43,17 +32,7 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Install Magento in a different database instance
 
 <h2 id="instgde-cli-before">First steps</h2>
-Before you begin:
-
-1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
-2.	Change to the following directory:
-
-		cd <your Magento install dir>/setup
-	
-	Examples:
-	
-	*	Ubuntu: `cd /var/www/magento2/setup`
-	*	CentOS: `cd /var/www/html/magento2/setup`
+{% include install/first-steps-cli.html %}
 
 <h2 id="instgde-cli-help">Command-line installer help commands</h2>
 To display a complete list of installer subcommands, enter:
@@ -75,7 +54,7 @@ The following sections discuss the available subcommands.
 *	<a href="#instgde-cli-subcommands-configphp">Installing the deployment configuration</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Module enable, disable</a>
 *	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
-*	<a href="#instgde-cli-subcommands-uninstall">Uninstalling the Magento software</a>
+*	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -154,15 +133,15 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr>
 	<tr> 
-		<td>enable_modules {--modules=&lt;list>} [--force]</td>
+		<td>enable_modules=&lt;list>} [--force]</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>disable_modules {--modules=&lt;list>} [--force]</td>
+		<td>disable_modules=&lt;list>} [--force]</td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-			<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -173,12 +152,32 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tbody>
 </table>
 
+<h4 id="instgde-cli-enable-warn">About enabling and disabling modules</h4>
+{% include install/enable-disable-modules.html %}
+
 <h3 id="instgde-cli-maint-configphp">Maintenance mode</h3>
-To put your Magento store in maintenance mode, enter:
+Magento uses *maintenance mode* to disable bootstrapping; for example, if your system is being updated or reconfigured. 
 
-	php index.php maintenance 
+Magento detects maintenance mode as follows:
 
-<h3 id="instgde-cli-subcommands-uninstall">Uninstalling the Magento software</h3>
+*	If `var/.maintenance.flag` does not exist, maintenance mode is off and Magento operates normally.
+*	Otherwise, maintenance mode is on unless `var/.maintenance.ip` exists:
+
+	`var/.maintenance.ip` can contain a list of comma-separated IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.
+
+Command usage:
+
+	php index.php maintenance [--set=1|0] [--addresses=<list>|none]
+
+For example, to enable maintenance mode:
+
+	php index.php maintenance --set=1
+
+To enable maintenance mode for all clients except 192.0.2.10:
+
+	php index.php maintenance --set=1 --addresses=192.0.2.10
+
+<h3 id="instgde-cli-subcommands-uninstall">Uninstall</h3>
 The command discussed in this section does the following:
 
 *	Drops and re-creates the database, if the connection settings are present in the deployment configuration (`app/etc/config.php`). All tables and data are lost because only database is re-created, not the tables.

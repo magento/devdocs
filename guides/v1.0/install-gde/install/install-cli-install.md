@@ -53,26 +53,26 @@ The installer is designed to be run multiple times if necessary so you can:
 
 Optionally run the following commands to find values for some required options:
 
-	<table>
-	<tbody>
-		<tr>
-			<th>Installer option</th>
-			<th>Command</th>
-		</tr>
+<table>
+<tbody>
 	<tr>
-		<td>Language</td>
-		<td><code>php -f index.php help language</code></td>
+		<th>Installer option</th>
+		<th>Command</th>
 	</tr>
-	<tr>
-		<td>Time zone</td>
-		<td><code>php -f index.php help timezone</code></td>
-	</tr>
-	<tr>
-		<td>Currency</td>
-		<td><code>php -f index.php help currency</code></td>
-	</tr>
-	</tbody>
-	</table>
+<tr>
+	<td>Language</td>
+	<td><code>php -f index.php help language</code></td>
+</tr>
+<tr>
+	<td>Time zone</td>
+	<td><code>php -f index.php help timezone</code></td>
+</tr>
+<tr>
+	<td>Currency</td>
+	<td><code>php -f index.php help currency</code></td>
+</tr>
+</tbody>
+</table>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -206,6 +206,20 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td>No</td>
 	</tr>
+	<tr> 
+		<td>enable_modules=&lt;list>} [--force]</td>
+		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<td>No</td>
+	</tr>
+	<tr>
+		<td>disable_modules=&lt;list>} [--force]</td>
+		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<td>No</td>
+	</tr>
 	<tr>
 		<td>session_save</td>
 		<td><p>Use any of the following:</p>
@@ -242,6 +256,11 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 
 	</tbody>
 </table>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p></span>
+</div>
 
 <h4 id="install-cli-example">Sample localhost installation</h4>
 
