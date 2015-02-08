@@ -51,6 +51,10 @@ To install MySQL 5.6 on Ubuntu 14:
 
 		apt-get -y install mysql-server-5.6 mysql-client-5.6
 
+2.	Secure the installation.
+
+		mysql_secure_installation
+
 2.	Test the installation by entering the following command:
 
 		mysql -u root -p
