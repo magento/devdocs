@@ -9,5 +9,5 @@ menu_order: 1
 github_link: install-gde/continue.md
 ---
 
-Continue your installation at <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites overview</a>
+Continue with your installation at <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites overview</a>
 
