@@ -137,13 +137,13 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr>
 	<tr> 
-		<td>enable_modules=&lt;list>}</td>
+		<td>enable_modules=&lt;list></td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>disable_modules=&lt;list>}</td>
+		<td>disable_modules=&lt;list></td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
