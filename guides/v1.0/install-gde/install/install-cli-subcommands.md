@@ -19,7 +19,7 @@ See one of the following sections:
 *	<a href="#instgde-cli-help">Command-line installer help commands</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="#instgde-cli-subcommands-configphp">Deployment configuration</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Module enable, disable</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
 *	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
 *	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
 
@@ -56,7 +56,7 @@ The following sections discuss the available subcommands.
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="#instgde-cli-subcommands-configphp">Deployment configuration</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Module enable, disable</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
 *	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
 *	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
 
@@ -145,7 +145,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	<tr>
 		<td>disable_modules=&lt;list>} [--force]</td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules">About enabling and disabling modules</a>.</p></td>
+		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
