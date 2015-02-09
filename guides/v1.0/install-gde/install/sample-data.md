@@ -1,10 +1,11 @@
 ---
 layout: default
 group: install
-subgroup: R_Installation
-title: Enable optional Magento sample data
-menu_title: Enable optional Magento sample data
-menu_order: 10
+subgroup: T_SampleData
+title: Optional Magento sample data
+menu_title: Optional Magento sample data
+menu_node: parent
+menu_order: 1
 github_link: install-gde/install/sample-data.md
 ---
   
@@ -17,8 +18,8 @@ github_link: install-gde/install/sample-data.md
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
 This section discusses how to enable you to install the optional Magento sample data. If you don't wish to use sample data, skip this topic and continue with:
 
-*   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install the Magento software using the command line</a>
-*   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
+*   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
 *   <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
 Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.
@@ -60,9 +61,9 @@ To edit `composer.json`:
 
 5.  Add one of the following to the `"require":` section:
 
-    *   Recent build (`beta2` from mid-December 2014, or later):
+    *   Recent build (`beta6` from January 2015, or later):
 
-            "magento/sample-data": "0.42.0-beta2",
+            "magento/sample-data": "0.42.0-beta6",
             "magento/sample-data-media": "~0.42.0-beta1",
 
     *   Older build (`alpha` or `beta1`):
