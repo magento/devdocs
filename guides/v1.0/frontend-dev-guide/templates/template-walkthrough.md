@@ -1,6 +1,6 @@
 ---
 layout: default  
-group: fedg
+group: 
 subgroup: C_Templates
 title: Templates customizing walkthrough
 menu_title: Templates customizing walkthrough
