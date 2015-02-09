@@ -17,14 +17,18 @@ See one of the following sections:
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-cli-help">Command-line installer help commands</a>
-*	<a href="#instgde-cli-subcommands">Command line installer subcommands</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
+*	<a href="#instgde-cli-subcommands-configphp">Deployment configuration</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Module enable, disable</a>
+*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
+*	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 {% include install/before-you-begin-cli.html %}
 
 The installer is designed to be run multiple times if necessary so you can:
 
-*	Provide different values
+*	Provide different values 
 
 	For example, after you configure your web server for Secure Sockets Layer (SSL), you can run the installer to set SSL options.
 
@@ -51,7 +55,7 @@ For example,
 The following sections discuss the available subcommands.
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
-*	<a href="#instgde-cli-subcommands-configphp">Installing the deployment configuration</a>
+*	<a href="#instgde-cli-subcommands-configphp">Deployment configuration</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Module enable, disable</a>
 *	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
 *	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
@@ -61,7 +65,7 @@ The following sections discuss the available subcommands.
   <p>Not all subcommands are currently documented. Provide us input by <a href="{{ site.githuburl }}install-gde/install/install-cli-subcommands.md }}">editing this page on GitHub</a>.</p></span>
 </div>
 
-<h3 id="instgde-cli-subcommands-configphp">Installing the deployment configuration</h3>
+<h3 id="instgde-cli-subcommands-configphp">Deployment configuration</h3>
 Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.
 
 To install the deployment configuration:
