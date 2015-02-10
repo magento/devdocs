@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: Cannot access Magento software in a web browser
 menu_title: Cannot access Magento software in a web browser
 menu_node: 
-menu_order: 7
+menu_order: 2
 github_link: install-gde/install/composer-clone.md
 ---
 

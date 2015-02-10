@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: Cannot clone the Magento GitHub repository
 menu_title: Cannot clone the Magento GitHub repository
 menu_node:
-menu_order: 3
+menu_order: 15
 github_link: install-gde/trouble/tshoot_clone.md
 ---
 
