@@ -173,6 +173,12 @@ Command usage:
 
 	php index.php maintenance [--set=1|0] [--addresses=<list>|none]
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Running <code>php index.php maintenance</code> with no arguments displays the current status.</p></span>
+</div>
+ 
+
 For example, to enable maintenance mode:
 
 	php index.php maintenance --set=1
