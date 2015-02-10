@@ -57,6 +57,7 @@ The following sections discuss the available subcommands.
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="#instgde-cli-subcommands-configphp">Deployment configuration</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+*	<a href="#instgde-cli-subcommands-update">Update the database</a>
 *	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
 *	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
 
@@ -67,6 +68,11 @@ The following sections discuss the available subcommands.
 
 <h3 id="instgde-cli-subcommands-configphp">Deployment configuration</h3>
 Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.
+
+You can use this sucommand if:
+
+*	You previously uninstalled the Magento software and you don't want to run the entire installation again
+*	If you want to create only `config.php` and continue the Magento installation some other way
 
 To install the deployment configuration:
 
@@ -137,13 +143,13 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr>
 	<tr> 
-		<td>enable_modules=&lt;list>} [--force]</td>
+		<td>enable_modules=&lt;list></td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>disable_modules=&lt;list>} [--force]</td>
+		<td>disable_modules=&lt;list></td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
@@ -156,8 +162,18 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tbody>
 </table>
 
+3.	Continue your Magento software installation; for example:
+
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Command line installation</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
+
 <h4 id="instgde-cli-enable-warn">About enabling and disabling modules</h4>
 {% include install/enable-disable-modules.html %}
+
+<h3 id="instgde-cli-subcommands-update">Update the database</a>
+To update the database (for example, after you install a new module or update an existing module), use the following command:
+
+	php index.php update
 
 <h3 id="instgde-cli-maint-configphp">Maintenance mode</h3>
 Magento uses *maintenance mode* to disable bootstrapping; for example, if your system is being updated or reconfigured. 
@@ -172,6 +188,12 @@ Magento detects maintenance mode as follows:
 Command usage:
 
 	php index.php maintenance [--set=1|0] [--addresses=<list>|none]
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Running <code>php index.php maintenance</code> with no arguments displays the current status.</p></span>
+</div>
+ 
 
 For example, to enable maintenance mode:
 

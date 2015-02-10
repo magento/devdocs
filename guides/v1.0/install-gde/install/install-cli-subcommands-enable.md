@@ -21,7 +21,7 @@ See one of the following sections:
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
 To enable or disable currently installed modules, use the following command:
 
-	php index.php {module-enable|module-disable} {--modules="&lt;list>"} [--force]
+	php index.php {module-enable|module-disable} {--modules="<list>"} [--force]
 
 Use the following command to list enabled and disabled modules:
 
@@ -30,6 +30,11 @@ Use the following command to list enabled and disabled modules:
 For example, to disable the Weee module, enter:
 
 	php index.php module-disable --modules=Magento_Weee
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>To enable or disable more than one module at a time, enter module names as a comma-separated list (no spaces).</p></span>
+</div>
 
 For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 

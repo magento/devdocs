@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: GitHub API rate limit
 menu_title: GitHub API rate limit
 menu_node: 
-menu_order: 16
+menu_order: 199
 github_link: install-gde/trouble/tshoot_rate-limit.md
 ---
 
