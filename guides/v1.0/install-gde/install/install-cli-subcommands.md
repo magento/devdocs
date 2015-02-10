@@ -71,7 +71,7 @@ Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/confi
 
 You can use this sucommand if:
 
-*	You previously uninstalled the Magento software and you don't want to run the entire installation again
+*	To change settings like the database host, user name, and so on without reinstalling the Magento software
 *	If you want to create only `config.php` and continue the Magento installation some other way
 
 To install the deployment configuration:
@@ -162,7 +162,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tbody>
 </table>
 
-3.	Continue your Magento software installation; for example:
+3.	If you have not installed it yet, continue your Magento software installation; for example:
 
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Command line installation</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
