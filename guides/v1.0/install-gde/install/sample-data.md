@@ -42,65 +42,25 @@ To edit `composer.json`:
 
 1.  Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with `root` privileges.
 2.  Change to your Magento installation directory.
-3.  Open `<your Magento install dir>/composer.json` in a text editor.
-4.  Search for a `"repositories":` section.
+3.  Enter the following command to install the required package:
 
-    If you have one, add the following block (without `"repositories":`) to it.
-    
-    If you have no `"repositories":` section, add one before the `"require":` section as follows:
+        composer config repositories.magento composer http://packages.magento.com
 
-        "repositories": [
-            {
-                "type": "composer",
-                "url": "http://packages.magento.com/"
-            }
-            ],
+3.  Enter the following command to require TBD:
 
-    <div class="bs-callout bs-callout-info" id="info">
-        <p>The keyword <code>repositories</code> must align with the keyword <code>require</code>.</p> </div>
+        composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:~0.42.0-beta1 -dev
 
-5.  Add one of the following to the `"require":` section:
+    If the commands were successful, the following message displays:
 
-    *   Recent build (`beta6` from January 2015, or later):
+        ./composer.json has been updated
 
-            "magento/sample-data": "0.42.0-beta6",
-            "magento/sample-data-media": "~0.42.0-beta1",
+4.  Wait while dependencies are installed.
 
-    *   Older build (`alpha` or `beta1`):
+5.  To optionally install sample data only if the Magento software is already installed, enter:
 
-            "magento/sample-data": "0.42.0-beta1",        
-            "magento/sample-data-media": "0.42.0-beta1",
+        php dev/tools/Magento/Tools/SampleData/install.php –admin_username=<user name>
 
-    <div class="bs-callout bs-callout-info" id="info">
-        <p>Valid JSON requires that:</p>
-            <ul><li>The line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma as shown in the preceding.</li>
-            <li>The names of all values in a section must align.</li></ul>
-             </div>
+6.  If you haven't already installed, see the following sections:
 
-6.  Save your changes to `composer.json` and exit the text editor.
-
-<h2 id="instgde-install-sample-after">Complete the sample data package installation</h2>
-After you've installed the Magento software or run `composer install`, you can install the sample data as follows:
-
-1.  Update `composer.json` as discussed in <a href="#instgde-install-sample-enabling">Enable the use of sample data</a>.
-2.  As the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>:
-
-    a.  Change to your Magento installation directory (for example, `/var/www/magento2`).
-
-    b. Enter `composer update`
-
-    <div class="bs-callout bs-callout-info" id="info">
-        <ul><li>If you have reached the GitHub API rate limit, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a>.</li>
-        <li>The following error displays if you have run <code>composer update</code> recently. The error is normal; you can continue the installation.<br> 
-        <pre>[ErrorException]
-  Target ./dev/tools/Magento/Tools/SampleData/Installer.php already exists (set extra.magento-force to override)</pre></div>
-
-3.  Run the Magento setup software (if you've already installed Magento, the setup software updates the database):
-
-    *   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>
-    *   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install Magento software using the Setup Wizard</a>
-
-
-#### Next step
-
-After running the setup software, see <a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>.
+    *   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
+    *   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
