@@ -1,10 +1,10 @@
 ---
 layout: default  
-group: 
+group: fedg
 subgroup: C_Templates
 title: Customizing email templates
 menu_title: Customizing email templates
-menu_order: 3
+menu_order: 4
 
 github_link: frontend-dev-guide/templates/template-email.md
 ---

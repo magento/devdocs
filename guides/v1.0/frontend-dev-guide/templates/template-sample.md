@@ -1,10 +1,10 @@
 ---
 layout: default  
-group: 
+group: fedg
 subgroup: C_Templates
 title: Illustration of customizing templates
 menu_title: Illustration of customizing templates
-menu_order: 4
+menu_order: 3
 
 github_link: frontend-dev-guide/templates/template-sample.md
 ---
