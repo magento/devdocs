@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable optional Magento sample data</title>
+	<title>Optional Magento sample data</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -136,7 +136,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Enable optional Magento sample data</h1>
+		<h1 class="page-heading">Optional Magento sample data</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/sample-data.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -159,8 +159,8 @@
 <p>This section discusses how to enable you to install the optional Magento sample data. If you don’t wish to use sample data, skip this topic and continue with:</p>
 
 <ul>
-  <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
   <li><a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
 </ul>
 
@@ -173,8 +173,8 @@
 <p>To enable sample data, you must:</p>
 
 <ol>
-  <li>Edit <code>composer.json</code> to reference the repository and packages that specify the Magento sample data.</li>
-  <li>Run <code>composer update</code> to get the sample data packages.</li>
+  <li>Find the current versions of the <code>magento/sample-data</code> and <code>magento/sample-data-media</code> on <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</li>
+  <li>Run the <code>composer package</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li>
   <li>Run the Magento 2 installer to update the database.</li>
 </ol>
 
@@ -182,92 +182,49 @@
    <p>The sample data Composer package recently changed. If you're using an alpha or beta1 Magento 2 build, we strongly recommend you update to a beta2 build to get the latest code.</p> 
 <p>To update, see <a href="/guides/v1.0/install-gde/install/install-cli.html#instgde-install-magento-update">Updating the Magento software</a>.</p></div>
 
-<p>To edit <code>composer.json</code>:</p>
+<p>To update <code>composer.json</code>:</p>
 
 <ol>
+  <li>Go to <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a> and write down suitable versions of <code>magento/sample-data</code> and <code>magento/sample-data-media</code> (typically, you should choose the most recent version).</li>
   <li>Log in to your Magento server as the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
   <li>Change to your Magento installation directory.</li>
-  <li>Open <code>&lt;your Magento install dir&gt;/composer.json</code> in a text editor.</li>
   <li>
-    <p>Search for a <code>"repositories":</code> section.</p>
+    <p>Enter the following command to reference Magento packages in <code>composer.json</code>:</p>
 
-    <p>If you have one, add the following block (without <code>"repositories":</code>) to it.</p>
-
-    <p>If you have no <code>"repositories":</code> section, add one before the <code>"require":</code> section as follows:</p>
-
-    <pre><code>"repositories": [
-    {
-        "type": "composer",
-        "url": "http://packages.magento.com/"
-    }
-    ],
+    <pre><code>composer config repositories.magento composer http://packages.magento.com
 </code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>The keyword <code>repositories</code> must align with the keyword <code>require</code>.</p> </div>
   </li>
   <li>
-    <p>Add one of the following to the <code>"require":</code> section:</p>
+    <p>Enter the following command to require the current version of the sample data and media packages:</p>
+
+    <pre><code>composer require magento/sample-data:&lt;version&gt; magento/sample-data-media:&lt;version&gt; -dev
+</code></pre>
+
+    <p>where you found <code>&lt;version&gt;</code> in step 1.</p>
+
+    <p>For example,</p>
+
+    <pre><code>composer require magento/sample-data:0.42.0-beta7 magento/sample-data-media:0.42.0-beta7 -dev
+</code></pre>
+  </li>
+  <li>
+    <p>Wait while dependencies are installed.</p>
+  </li>
+  <li>
+    <p>To optionally install sample data only if the Magento software is already installed, enter:</p>
+
+    <pre><code>php dev/tools/Magento/Tools/SampleData/install.php –admin_username=&lt;user name&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>If you haven’t already installed, see the following sections:</p>
 
     <ul>
-      <li>
-        <p>Recent build (<code>beta6</code> from January 2015, or later):</p>
-
-        <pre><code>"magento/sample-data": "0.42.0-beta6",
-"magento/sample-data-media": "~0.42.0-beta1",
-</code></pre>
-      </li>
-      <li>
-        <p>Older build (<code>alpha</code> or <code>beta1</code>):</p>
-
-        <pre><code>"magento/sample-data": "0.42.0-beta1",        
-"magento/sample-data-media": "0.42.0-beta1",
-</code></pre>
-      </li>
-    </ul>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <p>Valid JSON requires that:</p>
-        <ul><li>The line before the preceding end with a comma. If you place the preceding block in the middle of the section, it must end with a comma as shown in the preceding.</li>
-        <li>The names of all values in a section must align.</li></ul>
-         </div>
-  </li>
-  <li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
-</ol>
-
-<h2 id="instgde-install-sample-after">Complete the sample data package installation</h2>
-<p>After you’ve installed the Magento software or run <code>composer install</code>, you can install the sample data as follows:</p>
-
-<ol>
-  <li>Update <code>composer.json</code> as discussed in <a href="#instgde-install-sample-enabling">Enable the use of sample data</a>.</li>
-  <li>
-    <p>As the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>:</p>
-
-    <p>a.  Change to your Magento installation directory (for example, <code>/var/www/magento2</code>).</p>
-
-    <p>b. Enter <code>composer update</code></p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <ul><li>If you have reached the GitHub API rate limit, see <a href="/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a>.</li>
-    <li>The following error displays if you have run <code>composer update</code> recently. The error is normal; you can continue the installation.<br /> 
-    <pre>[ErrorException]
-  Target ./dev/tools/Magento/Tools/SampleData/Installer.php already exists (set extra.magento-force to override)</pre>
-
-</li></ul></div>
-  </li>
-  <li>
-    <p>Run the Magento setup software (if you’ve already installed Magento, the setup software updates the database):</p>
-
-    <ul>
-      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Install Magento software using the command line</a></li>
-      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Install Magento software using the Setup Wizard</a></li>
+      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
+      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
     </ul>
   </li>
 </ol>
-
-<h4 id="next-step">Next step</h4>
-
-<p>After running the setup software, see <a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a>.</p>
 
 
 		</div>
@@ -427,9 +384,30 @@
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
 						
 								
+								
+								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
+							
 						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/sample-data.html">Optional Magento sample data</a></li>
+									
+								
+								
+								
+							
+								
 								
 								
 								

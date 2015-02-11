@@ -157,7 +157,7 @@
   <li><a href="#dep-inj-mod">Configuration overview</a></li>
   <li><a href="#dep-inj-mod-class">Class definitions</a></li>
   <li><a href="#dep-inj-mod-type">Type configurations</a></li>
-  <li><a href="#dep-inj-mod-type-life-mgmt">Lifestyle management</a></li>
+  <li><a href="#dep-inj-mod-type-life-mgmt">Lifecycle management</a></li>
   <li><a href="#dep-inj-compile">Definition compiler tool</a></li>
 </ul>
 
@@ -178,7 +178,7 @@
 
 <p>For more information, see <a href="http://www.objectmentor.com/resources/articles/dip.pdf" target="_blank">this article by Robert C. Martin</a>.</p>
 
-<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.</p>
+<p>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php" target="_blank">object manager</a> specifies the dependency environment for constructor injection. The object manager must be present only when composing code. In larger applications, composing code is performed early in the bootstrapping process.</p>
 
 <p>This topic uses the following terms:</p>
 
@@ -195,9 +195,9 @@
   <dd>
     <p>Auto-generated object that implements the same interface as the original object, but unlike this original object has only one dependency—the object manager. A proxy is used for lazy loading of optional dependencies. A <a href="http://en.wikipedia.org/wiki/Proxy_pattern" target="_blank">proxy</a> can be used to break cyclical dependencies. For more information about proxies, see <a href="#dep-inj-preview-cons">Preview of constructor injection</a>.</p>
   </dd>
-  <dt>Lifestyle</dt>
+  <dt>Lifecycle</dt>
   <dd>
-    <p>An object’s <em>lifestyle</em> determines in what scope instances are reused, and when to release them. For more information, see <a href="http://docs.castleproject.org/%28X%281%29S%283i1uai55lunseee55whzgdzv%29%29/Default.aspx?Page=LifeStyles&amp;NS=Windsor&amp;AspxAutoDetectCookieSupport=1" target="_blank">the Castle project</a>.</p>
+    <p>An object’s <em>lifecycle</em> determines in what scope instances are reused, and when to release them.</p>
   </dd>
 </dl>
 
@@ -237,7 +237,8 @@
  
 <span class="nv">$bar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Bar</span><span class="p">();</span>
 <span class="nv">$foo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Foo</span><span class="p">(</span><span class="nv">$bar</span><span class="p">);</span>
-<span class="nv">$foo</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span></code></pre></div>
+<span class="nv">$foo</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">();</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <h2 id="dep-inj-mod">Configuration overview</h2>
 
@@ -245,11 +246,11 @@
 
 <ul>
   <li>Class definitions for retrieving the types and numbers of class dependencies</li>
-  <li>Instance configurations for retrieving how the objects are instantiated and for defining their lifestyle</li>
+  <li>Instance configurations for retrieving how the objects are instantiated and for defining their lifecycle</li>
   <li>Abstraction-implementation mappings (that is, interface preferences) for defining what implementation is to be used upon request to an interface</li>
 </ul>
 
-<p>To define the interface preferences for the object manager, use <code>app/etc/di/*.xml</code>, <code>&lt;your module dir&gt;/etc/&lt;areaname&gt;/di.xml</code>, and <code>&lt;your module dir&gt;/etc/di.xml</code> files depending on the level.</p>
+<p>To define the interface preferences for the object manager, use <code>app/etc/di/*.xml</code>, <code>&lt;your module dir&gt;/etc/di.xml</code>, and <code>&lt;your module dir&gt;/etc/&lt;areaname&gt;/di.xml</code> files depending on the scope it belongs in.</p>
 
 <p>For example, to set the interface preferences for the Magento Admin, use <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code> as follows:</p>
 
@@ -261,24 +262,28 @@
 
 <p>Dependency injection is configuration-based; configurations are validated by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/etc/config.xsd" target="_blank">config.xsd</a>.</p>
 
-<p>Object manager configurations can be specified at any of the following levels:</p>
+<p>Object manager configurations can be specified at any of the following scopes:</p>
 
 <ul>
-  <li>Global across all of Magento (<code>app/etc/di/*.xml</code>)</li>
-  <li>Entire module (<code>&lt;your module directory&gt;/etc/di.xml</code>)</li>
+  <li>Primary for bootstrapping (<code>app/etc/di/*.xml</code>)</li>
+  <li>Global across all of Magento (<code>&lt;your module directory&gt;/etc/di.xml</code>)</li>
   <li>
-    <p>Area-specific configuration for a module (<code>&lt;your module directory&gt;/etc/&lt;areaname&gt;/di.xml</code>)</p>
+    <p>Area-specific configuration (<code>&lt;your module directory&gt;/etc/&lt;areaname&gt;/di.xml</code>)</p>
 
-    <p><em>Area-specific</em> means specific to a module’s area (<code>frontend</code>, <code>adminhtml</code>, and so on). For example, here is the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module’s adminhtml di.xml</a>.</p>
+    <p><em>Area-specific</em> means specific a Magento area (<code>frontend</code>, <code>adminhtml</code>, and so on). For example, here is the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/adminhtml/di.xml" target="_blank">Magento Customer module’s adminhtml di.xml</a>.</p>
   </li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>An area configuration overrides the global configuration.</p>
+  <p>Each scope overrides any previously existing config when it is loaded.</p>
+</div>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Configurations for each scope are merged across modules, so there is no way to create a configuration that is only seen by a single module.</p>
 </div>
 
 <h2 id="dep-inj-mod-class">Class definitions</h2>
-<p>Magento uses class constructor signatures to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.</p>
+<p>Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.</p>
 
 <p>Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">definition compiler tool</a> to pre-compile class definitions for better performance.</p>
 
@@ -311,20 +316,7 @@
 
 <h3 id="dep-inj-mod-type-args">Arguments</h3>
 
-<p>Arguments are injected into a class instance during its creation. Parameter names must correspond to constructor parameters of the configured class.</p>
-
-<p>The Object Manager defines the following:</p>
-
-<dl>
-  <dt>Parameter</dt>
-  <dd>
-    <p>Variable declared in the constructor signature.</p>
-  </dd>
-  <dt>Argument</dt>
-  <dd>
-    <p>Value passed to the constructor when the class instance is created.</p>
-  </dd>
-</dl>
+<p>Arguments are injected into a class instance during its creation. Argument names must correspond to constructor parameters of the configured class.</p>
 
 <p>Sample argument that creates instances of <code>Magento\Core\Model\Session</code> with the argument <code>$sessionName</code> set to a value of <code>adminhtml</code>:</p>
 
@@ -342,13 +334,13 @@
 			<th>Possible values</th>
 		</tr>
 	<tr>
-		<td><p><strong>Object with default lifestyle</strong></p>
+		<td><p><strong>Object with default lifecycle</strong></p>
 		<pre>&lt;argument xsi:type="object"&gt;
 {Type_Name}&lt;/argument&gt;</pre>
-		<p><strong>Object with specified lifestyle</strong></p>
+		<p><strong>Object with specified lifecycle</strong></p>
 		<pre>&lt;argument xsi:type="object"
 shared="{shared}"&gt;{Type_Name}&lt;/argument&gt;</pre></td>
-		<td>Creates an instance of <code>Type_Name</code> type and passed as argument. Any class name, interface name, or virtual type name can be passed as <code>Type_Name</code>. <code>shared</code> defines the lifestyle of a created instance. </td>
+		<td>Creates an instance of <code>Type_Name</code> type and passed as argument. Any class name, interface name, or virtual type name can be passed as <code>Type_Name</code>. <code>shared</code> defines the lifecycle of a created instance. </td>
 		<td>n/a</td>
 	</tr>
 	</tbody>
@@ -538,7 +530,7 @@ Sample:
 
 <script src="https://gist.github.com/xcomSteveJohnson/24ffa1426734520f58a1.js"></script>
 
-<p>When the configuration is merged, arguments with the same name are completely replaced. If argument types are different but the name is the same, the arguments are overridden.</p>
+<p>When the configuration files for a given scope are merged, array arguments with the same name are merged into a new array. If a new configuration is loaded at a later time, either a more specific scope or through code, then any array definitions in the new configuration will completley replace the previously loaded config instead of being merged.</p>
 
 </div>
 </div>
@@ -555,21 +547,21 @@ Parameters configured for a class type are automatically configured for all of i
 </div>
 </div>
 
-<h2 id="dep-inj-mod-type-life-mgmt">Lifestyle management</h2>
-<p>An object’s <em>lifestyle</em> determines in what scope instances are reused, and when to release them. For more information, see <a href="http://docs.castleproject.org/%28X%281%29S%283i1uai55lunseee55whzgdzv%29%29/Default.aspx?Page=LifeStyles&amp;NS=Windsor&amp;AspxAutoDetectCookieSupport=1" target="_blank">the Castle project</a>.</p>
+<h2 id="dep-inj-mod-type-life-mgmt">Lifecycle management</h2>
+<p>An object’s <em>lifecycle</em> determines in what scope instances are reused, and when to release them.</p>
 
-<p>The object manager creates objects and manages the lifestyle of the following types of objects:</p>
+<p>The object manager creates objects and manages the lifecycle of the following types of objects:</p>
 
 <ul>
   <li><code>singleton</code>—Create one class instance at the first request and subsequently reuse that instance. Release the instance when the container with which it’s registered is disposed. This is the default.</li>
   <li><code>transient</code>—Create a new class instance every time the class is requested.</li>
 </ul>
 
-<p>The preceding lifestyles can be configured as:</p>
+<p>The preceding lifecycle can be configured as:</p>
 
 <ul>
-  <li><code>argument</code>—Defines the lifestyle for the argument only.</li>
-  <li><code>type</code>—A convenience configuration that defines the lifestyle for all instances of the specified type.</li>
+  <li><code>argument</code>—Defines the lifecycle for the argument only.</li>
+  <li><code>type</code>—A convenience configuration that defines the lifecycle for all instances of the specified type.</li>
 </ul>
 
 <h3 id="dep-inj-mod-type-inject">Injectables and non-injectables</h3>
@@ -585,7 +577,7 @@ Parameters configured for a class type are automatically configured for all of i
     <p>Object that <em>cannot</em> be instantiated by the object manager. Typically, this object:</p>
 
     <ul>
-      <li>Has a transient lifestyle</li>
+      <li>Has a transient lifecycle</li>
       <li>Requires external (such as data user input or data from database) to be properly created</li>
     </ul>
 
@@ -597,8 +589,8 @@ Parameters configured for a class type are automatically configured for all of i
 
 <ul>
   <li>Injectables can request other injectables in the constructor, but non-injectables <em>cannot</em> request other objects in a constructor</li>
-  <li>If a business function of an injectable object is to produce non-injectables, the injectable must ask for the <a href="#dep-inj-mod-type-fact">factory</a> in its constructor (due to the fact that factories are injectables)</li>
-  <li>if a business function of an injectable object is to perform some actions on non-injectable, it must receive the non-injectable as method argument</li>
+  <li>If a business function of an injectable object is to produce non-injectables, the injectable must ask for a <a href="#dep-inj-mod-type-fact">factory</a> in its constructor (due to the fact that factories are injectables)</li>
+  <li>If a business function of an injectable object is to perform some actions on a non-injectable, it must receive the non-injectable as a method argument</li>
 </ul>
 
 <p>You can create non-injectables in services with object <a href="#dep-inj-mod-type-fact">factories</a> or you can pass them in as method parameters. </p>
@@ -624,7 +616,7 @@ Parameters configured for a class type are automatically configured for all of i
     <span class="p">{</span>
         <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="s1">&#39;Magento\Core\Model\Config\Base&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">));</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <p>Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory. </p>
 
@@ -746,7 +738,7 @@ Parameters configured for a class type are automatically configured for all of i
 <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
     <span class="s1">&#39;Magento\Core\Model\SomeFactory&#39;</span><span class="p">,</span>
     <span class="s1">&#39;Magento\Core\Model\Some\Proxy&#39;</span>
-<span class="p">);</span></code></pre></div>
+<span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <h4 id="dep-inj-compile-sample">Sample commands</h4>
 

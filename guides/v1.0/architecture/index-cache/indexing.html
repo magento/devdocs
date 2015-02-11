@@ -414,19 +414,19 @@ Usage:  php -f indexer.php -- [options]
 
 <p>Suppose you want to push best-selling products to the top of a category listing. This requires processing statistics about sales to change the product position dynamically.</p>
 
-<p>Assuming your module is named <code>&lt;VendorName&gt;_Merchandising</code> module, you must write the appropriate code in the indexer class:</p>
+<p>Assuming your module is named <code>&lt;VendorName&gt;_Merchandizing</code>, you must write the appropriate code in the indexer class:</p>
 
 <script src="https://gist.github.com/xcomSteveJohnson/ef9be4963011bb13efe5.js"></script>
 
-<p>Next, declare the indexer in <code>Merchandising/etc/indexer.xml</code>:</p>
+<p>Next, declare the indexer in <code>Merchandizing/etc/indexer.xml</code>:</p>
 
 <script src="https://gist.github.com/xcomSteveJohnson/5780857cdd5343cafacf.js"></script>
 
-<p>Finally, declare the indexer view (<code>merchandising_popular_order</code>) that tracks sales (<code>Merchandising/etc/mview.xml</code>):</p>
+<p>Finally, declare the indexer view (<code>merchandizsing_popular_order</code>) that tracks sales (<code>Merchandizing/etc/mview.xml</code>):</p>
 
 <script src="https://gist.github.com/xcomSteveJohnson/4313c5246b38ff8193df.js"></script>
 
-<p>These settings start <code>&lt;VendorName&gt;\Merchandising\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
+<p>These settings start <code>&lt;VendorName&gt;\Merchandizing\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
 
 <p>Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.</p>
 
@@ -540,6 +540,10 @@ Usage:  php -f indexer.php -- [options]
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+						
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
