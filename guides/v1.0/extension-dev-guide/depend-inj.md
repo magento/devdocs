@@ -1,4 +1,4 @@
-
+---
 layout: default
 group: extension-dev-guide
 subgroup: Fundamentals
@@ -567,7 +567,7 @@ To generate proxies and factories not declared in dependency injection or the Ma
 return array(
     'Magento\Core\Model\SomeFactory',
     'Magento\Core\Model\Some\Proxy'
-);
+); ?>
 {% endhighlight %}
 
 <h4 id="dep-inj-compile-sample">Sample commands</h4>
