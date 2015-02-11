@@ -5,14 +5,12 @@ subgroup: T_Command-line installation
 title: Enable and disable modules
 menu_title: Enable and disable modules
 menu_node: 
-menu_order: 10
+menu_order: 5
 github_link: install-gde/install/install-cli-subcommands-enable.md
 ---
 
   
-<h4>Contents</h4>
-
-See one of the following sections:
+#### Contents
 
 *	<a href="#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
 *	<a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>
@@ -50,4 +48,5 @@ If you enabled one or more modules, run the following command to update the data
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>

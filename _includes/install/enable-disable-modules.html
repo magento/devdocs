@@ -4,13 +4,12 @@
 <p>Examples:</p>
 <ul><li>Module A depends on Module B. You cannot disable Module B unless you first disable Module A.</li>
 	<li>Module A depends on Module B, both of which are disabled. You must enable module B before you can enable module A.</li>
-	<li>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</p>
-
+	<li>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</li></ul>
 
 <p>Dependencies and conflicts are declared in the <code>require</code> field in Magento's <code>composer.json</code> file for each module. Conflicts are declared in the <code>conflict</code> field in modules' <code>composer.json</code> files. We use that information to build a dependency graph:</p>
 <ul><li><code>A->B</code> means module A depends on module B.</li>
 	<li>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code>A->B->C</code>.</li></ul>
-
+<p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>It's possible that module A's <code>composer.json</code> declares a conflict with module B but not vice versa.</p></span>
