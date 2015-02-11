@@ -25,7 +25,7 @@ You can use this sucommand if:
 
 To install the deployment configuration:
 
-1.	Complete the tasks discussed in <a href="#instgde-install-cli-prereq">Before you start your installation</a>.
+1.	Complete the tasks discussed in <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-prereq">Before you start your installation</a>. 
 
 2.	Enter the following command:
 
@@ -94,13 +94,13 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	<tr> 
 		<td>enable_modules=&lt;list></td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules</a>.</p></td>
+		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
 		<td>disable_modules=&lt;list></td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-enable-warn">About enabling and disabling modules</a>.</p></td>
+		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -111,10 +111,10 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tbody>
 </table>
 
-3.	If applicable, continue your Magento software installation:
+If applicable, continue your Magento software installation:
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Command line installation</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Command line installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
 
 <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %}
