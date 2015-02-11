@@ -14,24 +14,24 @@ github_link: get-started/authentication/gs-authentication.md
 Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>. 
 Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a> 
 
-Before you can make web API calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (admin, integration, customer or guest) access rights, API calls' resource acessibility is determined.
+Before you can make web API calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource acessibility is determined.
 </p>
 
 <h3 id="accessible-resources">Accessible resources</h3>
-<p>The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. Previous statement is true for guest users as well. 
-Each admin or integration user can have a unique set of permissions which is configured in the admin panel. 
+<p>The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well. 
+Each administrator or integration user can have a unique set of permissions which is configured in the Magento Admin. 
 Permissions required to access particular resource are configured in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
       <th>User type</th>
-      <th>Accessible resources (defined in webapi.xml)</th>
+      <th>Accessible resources (defined in <code>webapi.xml</code>)</th>
    </tr>
    <tr>
       <td>
-         <p>Admin or Integration</p>
+         <p>Administrator or Integration</p>
       </td>
       <td>
-         <p>Resources for which admins or integrations are authorized. For example, if admins are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
+         <p>Resources for which administrators or integrations are authorized. For example, if administrators are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
       </td>
    </tr>
    <tr>
@@ -132,13 +132,13 @@ When a developer creates the Web API configuration file (webapi.xml), the permis
 e.g.,
 In the above sample webapi.xml, for the customerGroups resource, only a user with a "Magento_Customer::group" can access the GET /V1/customerGroups/:id API. On the other hand, POST /V1/customers (customer creation) can be accessed anonymously (or by a guest) without a need for presenting the identity.
 
-The user here can be an admin (or an Integration) defined in the backend with the customer group selected as one of the resource in the ACL tree.
+The user here can be an administrator (or an Integration) defined in the backend with the customer group selected as one of the resource in the ACL tree.
 <div class="bs-callout bs-callout-info" id="info">
    <p>A guest or anonymous is a special permission that doesn't need to be defined in acl.xml (and will not show up in the acl tree in the backend). It just indicates that the current resource in webapi.xml can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. e.g. GET /V1/customers/me will fetch the logged in customer's details. This is typically useful for javascript based widgets. </p>
 </div>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
-<p>You use a client, such as a mobile application or an external batch job, to access Magento services through web APIs.</p>
+<p>You use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.</p>
 <p>Each type of client has a preferred authentication method. To authenticate, use the authentication method for your preferred client:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -150,7 +150,7 @@ The user here can be an admin (or an Integration) defined in the backend with th
          <p>Mobile application</p>
       </td>
       <td>
-         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">token-based authentication</a> to make web API calls through a mobile application. The token acts like an electronic key that provides access to the API(s).</p>
+         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">token-based authentication</a> to make web API calls using a mobile application. The token acts like an electronic key that provides access to the API(s).</p>
          <ol>
             <li>
                <p>As a registered Magento user, you request a token from the Magento token service at the endpoint that is defined for your user type.</p>
@@ -192,7 +192,7 @@ The user here can be an admin (or an Integration) defined in the backend with th
          <p>A session is identified by a cookie and time out after a period of inactivity. Additionally, you can have a session as a guest user without logging in.</p>
          <ol>
             <li>
-               <p>As a customer, you log in to the Magento frontend with your customer credentials. As an admin, you log in to the Magento backend with your admin credentials.</p>
+               <p>As a customer, you log in to the Magento frontend with your customer credentials. As an administrator, you log in to the Magento backend with your administrator credentials.</p>
             </li>
             <li>
                <p>The Magento web API framework identifies you and controls access to the requested resource.
