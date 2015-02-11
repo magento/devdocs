@@ -14,7 +14,7 @@ github_link: get-started/authentication/gs-authentication.md
 Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>. 
 Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a> 
 
-Before you can make web API calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource acessibility is determined.
+Before you can make web API calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 </p>
 
 <h3 id="accessible-resources">Accessible resources</h3>
@@ -31,7 +31,7 @@ Permissions required to access particular resource are configured in the <code>w
          <p>Administrator or Integration</p>
       </td>
       <td>
-         <p>Resources for which administrators or integrations are authorized. For example, if administrators are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
+         <p>Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the <code>Magento_Customer::group</code> resource, they can make a <code>GET&nbsp;/V1/customerGroups/:id</code> call.</p>
       </td>
    </tr>
    <tr>
@@ -132,9 +132,9 @@ When a developer creates the Web API configuration file (webapi.xml), the permis
 e.g.,
 In the above sample webapi.xml, for the customerGroups resource, only a user with a "Magento_Customer::group" can access the GET /V1/customerGroups/:id API. On the other hand, POST /V1/customers (customer creation) can be accessed anonymously (or by a guest) without a need for presenting the identity.
 
-The user here can be an administrator (or an Integration) defined in the backend with the customer group selected as one of the resource in the ACL tree.
+The user here can be an administrator (or an Integration) defined in the Magento Admin with the customer group selected as one of the resource in the ACL tree.
 <div class="bs-callout bs-callout-info" id="info">
-   <p>A guest or anonymous is a special permission that doesn't need to be defined in acl.xml (and will not show up in the acl tree in the backend). It just indicates that the current resource in webapi.xml can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. e.g. GET /V1/customers/me will fetch the logged in customer's details. This is typically useful for javascript based widgets. </p>
+   <p>A guest or anonymous is a special permission that doesn't need to be defined in acl.xml (and will not show up in the acl tree in the Magento Admin). It just indicates that the current resource in webapi.xml can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. e.g. GET /V1/customers/me will fetch the logged in customer's details. This is typically useful for JavaScript based widgets. </p>
 </div>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
@@ -185,14 +185,14 @@ The user here can be an administrator (or an Integration) defined in the backend
    </tr>
    <tr>
       <td>
-         <p>JavaScript widget on the Magento frontend or backend</p>
+         <p>JavaScript widget on the Magento storefront or Magento Admin</p>
       </td>
       <td>
-         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento frontend or backend.</p>
+         <p>Registered users use <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">session-based authentication</a> to log in to the Magento storefront or Magento Admin.</p>
          <p>A session is identified by a cookie and time out after a period of inactivity. Additionally, you can have a session as a guest user without logging in.</p>
          <ol>
             <li>
-               <p>As a customer, you log in to the Magento frontend with your customer credentials. As an administrator, you log in to the Magento backend with your administrator credentials.</p>
+               <p>As a customer, you log in to the Magento storefront with your customer credentials. As an administrator, you log in to the Magento Magento Admin with your administrator credentials.</p>
             </li>
             <li>
                <p>The Magento web API framework identifies you and controls access to the requested resource.
@@ -207,5 +207,5 @@ The user here can be an administrator (or an Integration) defined in the backend
 <ul>
    <li>Mobile application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</li>
    <li>Third-party application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
-   <li>JavaScript widget on the Magento frontend or backend. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
+   <li>JavaScript widget on the Magento Admin or storefront. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
