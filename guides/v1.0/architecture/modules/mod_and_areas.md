@@ -26,7 +26,7 @@ You can enable or disable an area within a module. If this module is enabled, it
 	<p>No module should  depend on another module's area.</p>
     </div>
 
-Magento uses areas to efficiently make web service calls, loading only the dependent code for that area. Examples of areas include the frontend (storefront), backend (adminhtml), and webapi (web services).
+Magento uses areas to efficiently make web service calls, loading only the dependent code for that area. 
 
 The purpose of areas is efficiency. If you are invoking a REST web service call, for example, rather than load up all the code related to generating user HTML pages, there is a separate area (such as /rest) which loads code that knows only how to answer the REST call (and not generate HTML pages using layouts). Each area can have completely different code on how to process URLs and requests.
 
