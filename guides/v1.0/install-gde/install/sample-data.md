@@ -55,7 +55,7 @@ To update `composer.json`:
 
 	For example,
 
-        composer require magento/sample-data:0.42.0-beta7 magento/sample-data-media:0.42.0-beta7 -dev
+        composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1 -dev
 
  4.  Wait while dependencies are installed.
 
