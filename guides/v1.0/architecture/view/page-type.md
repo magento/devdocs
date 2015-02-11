@@ -22,7 +22,7 @@ As a framework convention, page types correspond to full action names.
 
 Full action names are mapped to the controller actions as follows:
 
-<pre><ModuleName>_[controller]_[action] -> Vendor\Module\Controller*\Controller::actionAction()</pre>
+	<ModuleName>_[controller]_[action] -> Vendor\Module\Controller*\Controller::actionAction()
 
 where
 
@@ -33,7 +33,7 @@ where
 
 For example,
 
-<pre>customer_account_forgotpassword -> Magento\Customer\Controller\Account::forgotPasswordAction</pre>
+	customer_account_forgotpassword -> Magento\Customer\Controller\Account::forgotPasswordAction
 
 <h2 id="m2devgde-pagetype-handles">Page types and layout handles</h2>
 
@@ -49,17 +49,19 @@ Page types for each module are declared in `page_types.xml`. The declaration is 
 
 `page_types.xml` is typically located in:
 
-<pre>app/code/<VendorName>/<ModuleName>/etc/frontend</pre>
+	app/code/<VendorName>/<ModuleName>/etc/frontend
 
 For example, <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/page_types.xml" target="_blank">Customer module page_types.xml</a>.
 
 You must declare the ID and label of each page type in the following format:
 
-<pre>&lt;?xml version="1.0"?>
-&lt;page_types>
-    &lt;type id="module1_controller1_action1" label="Page1"/>
-    &lt;type id="module2_controller2_action2" label="Page2"/>
-&lt;/page_types></pre>
+{% highlight XML %}
+<?xml version="1.0"?>
+	<page_types>
+		<type id="module1_controller1_action1" label="Page1"/>
+		<type id="module2_controller2_action2" label="Page2"/>
+	</page_types>
+{% endhighlight %}
 
 An example is shown in the previously referenced Customer module `page_types.xml`.
 
