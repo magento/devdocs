@@ -66,7 +66,6 @@ The following sections discuss the available subcommands.
   <p>Not all subcommands are currently documented. Provide us input by <a href="{{ site.githuburl }}install-gde/install/install-cli-subcommands.md }}">editing this page on GitHub</a>.</p></span>
 </div>
 
-
 <h3 id="instgde-cli-subcommands-update">Update the database</a>
 To update the database (for example, after you install a new module or update an existing module), use the following command:
 
