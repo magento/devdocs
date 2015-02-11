@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/templates/template-email.md
 
 <h2>Overview</h2>
 
-Email templates are not bound to design themes, but creating a custom theme for a store most likely will include customization of email templates as well. Even if use the default templates, there is a change you will definitely need to make; namely you should change the logo used in these templates (by default the Magento logo is used). 
+Email templates are not bound to design themes, but creating a custom theme for a store most likely will include customization of email templates as well. Even if use the default templates, there is a change you will definitely need to make; namely you should change the logo used in these templates which is the Magento logo by default. 
 
 
 This topic describes how to change the default logo used in default email templates, how to further customize email templates and apply them for a store. 
@@ -41,7 +41,7 @@ To create a custom email template:
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Click the **Add New Template** button. 
-3. If you want to use a default template as a starting point, in the Load default template section, choose the default template and click the **Load Template** button. <br id="info_path">The path to the configuration settings for each default template appears in the **Used as Default For** field in the Template Information section. Make note of this path, because you will later need to update the configuration with the name of the new template.<br><img src="{{site.baseurl}}common/images/create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%"/>
+3. If you want to use a default template as a starting point, in the Load default template section, choose the template and click the **Load Template** button. <br id="info_path">The path to the configuration settings for each default template appears in the **Used as Default For** field in the Template Information section. Make note of this path, because you will later need to update the configuration with the name of the new template.<br><img src="{{site.baseurl}}common/images/create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%"/>
 
 4. In **Template Name**, enter the name which will be used in the Magento Admin.
 5. In **Template Subject**, add plain text which will be used as a Subject of the emails sent using the template you create. This field can contain <a href="#var">system variables</a>.  
@@ -53,9 +53,9 @@ To create a custom email template:
 
 An email template is an HTML snippet, where the content should be enclosed in <code>&lt;body&gt;&lt;/body&gt;</code>
 
-<span id="var">To add store and sales related information to a template, use system variables. 
+<span id="var">To add the store and sales related information to a template, use system variables. 
 
-System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code>&#123;&#123;var order.increment_id&#125;&#125;</code> variable is replaced by the order ID of the order for which the email is generated.
+System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code>&#123;&#123;var order.increment_id&#125;&#125;</code> variable is replaced by the ID of the order for which the email is generated.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -68,12 +68,12 @@ To add a variable to your template content:
 1. On the template creation page, click to place the cursor in the text in which to insert the variable.
 2. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. Variables are grouped by the modules they relate to. The following image illustrates a variable list: <br><img src="{{site.baseurl}}common/images/insert-variable.png" alt="The list of available variables" width="70%" height="70%">
 
-2. Click the name of the required variable. <br> the variable code is inserted in the template content.
+2. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p> The selection of available variables depends on which template you use as basis. Alternatively, you can manually insert variables "related" to other templates in your template code if you know the variable code. </p></span>
+ <p> The selection of available variables depends on which template you use as a basis. Alternatively, you can manually insert variables "related" to other templates in your template code if you know the variable code. </p></span>
 </div>
 
 

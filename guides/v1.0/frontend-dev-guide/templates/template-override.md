@@ -30,9 +30,9 @@ For example, from <code><a href="{{site.mage2000url}}app/code/Magento/Catalog/vi
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
 </pre>
 
-This means that the `category.image` block is rendered by the `image.phtml` template, which is located in the `Magento_Catalog/category` subdirectory.
- 
-`app/code/Magento/Catalog/view/frontend/templates` contains templates for the `Magento_Catalog` module.
+This means that the `category.image` block is rendered by the `image.phtml` template, which is located in the `category` subdirectory of the `Magento_Catalog` module templates directory.
+
+The templates directory of `Magento_Catalog` is `app/code/Magento/Catalog/view/frontend/templates`.
 
 The next section describes where templates can be located in general.
 
@@ -57,7 +57,7 @@ Overriding templates is described with more details in the <a href="{{site.gdeur
 
 <h2 id="root">Root template</h2>
 
-In Magento application there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
+In Magento there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
 
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
 
