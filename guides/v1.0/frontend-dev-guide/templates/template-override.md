@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/templates/template-override.md
 ---
 
 <h2>Overview</h2>
-This topic discusses the main concepts of how default templates work in Magento application. 
+This topic discusses the main concepts of how default templates work in the Magento application. 
 The following topics are covered:
 
 * <a href="#template-layout">How templates are initiated</a>
@@ -23,7 +23,7 @@ The following topics are covered:
 
 Templates are usually initiated in layout files.
 Each layout block has an associated template. 
-Template is specified in the `template` attribute of the <block> layout instruction. 
+The template is specified in the `template` attribute of the <block> layout instruction. 
 For example, from <code><a href="{{site.mage2000url}}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</a></code>:
 
 <pre>
@@ -35,18 +35,6 @@ This means that the `category.image` block is rendered by the `image.phtml` temp
 `app/code/Magento/Catalog/view/frontend/templates` contains templates for the `Magento_Catalog` module.
 
 The next section describes where templates can be located in general.
-
-<h2 id="root">Root template</h2>
-
-In Magento application there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
-
-Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
-
-But similar to other templates, `root.phtml` can be overridden in a theme. 
-For example, Magento Blank theme contains an overriding root template: 
-
-<code><a href="{{site.mage2000url}}app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml" target="_blank">app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code>
-
 
 <h2 id="template-convention">Conventional templates location</h2> Templates are stored in the following locations:
 
@@ -65,6 +53,19 @@ theme templates override module templates, and those of a <a href="{{site.gdeurl
 This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to overriding one in your custom theme.
 
 Overriding templates is described with more details in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.
+
+
+<h2 id="root">Root template</h2>
+
+In Magento application there's a special template which serves as root template for all pages in the application: <code><a href="{{site.mage2000url}}app/code/Magento/Theme/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code>
+
+Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
+
+But similar to other templates, `root.phtml` can be overridden in a theme. 
+For example, Magento Blank theme contains an overriding root template: 
+
+<code><a href="{{site.mage2000url}}app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml" target="_blank">app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code>
+
 
 
 <h2 id="getter">Getting argument values from layout</h2>
