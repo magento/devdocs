@@ -38,7 +38,7 @@ The main steps to create a module are:
 5. In your browser, verify that the `index.html` file displays
 
 
-<h3 id="create-module-file-structure">Build the file structure</h3>
+<h2 id="create-module-file-structure">Build the file structure</h2>
 First let's create the file structure, which is basically a set of directories (or folders) containing all of the components, references, and parts that the module will need. 
 
 Typically these components are:
@@ -54,8 +54,8 @@ So a typical file structure might look like this:
 
 ***INSERT IMAGE HERE***
 
-<h3 id="create-module-naming">Create the new module.xml file</h3>
-Now let's create the module, in the /etc directory of the file structure you just created.
+<h2 id="create-module-naming">Create the new module.xml file</h2>
+Now let's create the module, in the /etc directory of the module you just created.
 
 A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `/app/code/<Vendor>/<NewModuleName>/etc/`. 
 
@@ -80,29 +80,34 @@ Minimal declaration sample:
                </div>
 
 
-<h3 id="create-module-config.xml">Create the module's configuration files</h3>
+<h2 id="create-module-config.xml">Create the module's configuration files</h2>
 
 The module needs several configuration file that define which blocks, models, helpers, routes, etc. the module will use, and thus controls the module's appearance and behaviour.
 
-* index.php
+* Index.php
 * Block: <block_name>.php
 * routes.xml
+
+Additionally, the view assets need to be created in the appropriate directories:
+
 * Template: <name>_index.xml
 * Layout: <name>.phtml
 
-<h4 id="create-module-index.php">Index.php configuration file</h4>
+<h3 id="create-module-index.php">Index.php configuration file</h3>
 
 Create your Index.php file within the `app/code/<Vendor>/<ModuleName>/Controller/Index` directory. 
 
 explain purpose/structure of this file... acts as the controller
 
-<h4 id="create-module-block_name.php">block_name.php configuration file</h4>
+<h3 id="create-module-block_name.php">block_name.php configuration file</h3>
 
-Create your BlockName.php file within the `ap/code/<Vendor>/<ModuleName>/Controller/Index` directory.
+Create your BlockName.php file within the `ap/code/<Vendor>/<ModuleName>/Block/` directory.
 
 explain purpose/structure of the block_name.php file
 
-<h4 id="create-module-block_name.php">routes.xml configuration file</h4>
+<h3 id="create-module-block_name.php">routes.xml configuration file</h3>
+
+Create the routes.xml file within the `app/code/<Vendor>/<ModuleName>/etc/` directory, under the appropriate directory of either `/frontend`, `/base`, or `/adminhtml` directory. 
 
 explain purpose/structure of the routes.xml file
 
@@ -115,22 +120,22 @@ View assets, such as templates and layout files, are stored within the module's 
 * `/base` (for assets that you want displayed in the _______)
 * `/frontend` (for assets that you want displayed on your storefront UI)
 
-Decide where you want your view assets to be placed. This depends on how you plan to display them. For example, if the layout will be shown in the frontend view area, then place the .phtml file in the `app/code/<Vendor>/<ModuleName>/view/frontend` directory. Or, if this layout will only be seen in the Magento Admin panel, then place the files in the `app/code/<Vendor>/<ModuleName>/view/adminhtml` directory.
+Decide where you want your view assets to be placed. This depends on how you plan to display them. For example, if the layout will be shown in the frontend view area, then place the .phtml file in the `app/code/<Vendor>/<ModuleName>/view/frontend/layout` directory. Or, if this layout will only be seen in the Magento Admin panel, then place the files in the `app/code/<Vendor>/<ModuleName>/view/adminhtml` directory.
 
-Within each of the three areas in each view-directory of an area code, you will generally find three sub-directories: web for assets, templates for the *.phtml files and layout for the XML configuration files. 
+Within each of the three areas in each view-directory of an area code, you will generally find three sub-directories: `/web` for assets, `/templates` for the .phtml files and `/layout` for the XML configuration files. 
 
 **Reviewer, what is the "base" directory under app/code/Magento/<Module>/view used for? Where would any view assets placed there be displayed?"** 
 
 <h4 id="create-module-____.xml">____.xml configuration file</h4>
 
-explain purpose/structure of the ___.xml file... this is the template file that includes the info about what router, controller and action the module contains
+explain purpose/structure of the ___index.xml file... this is the template file that includes the info about what router, controller and action the module contains
 
 <h4 id="create-module-____.phtml">____.phtml configuration file</h4>
 
 
 explain purpose/structure of the ___.phtml file... this is the template file that has the text to display on UI, like Success! or Hello World! 
 
-<h3 id="create-module-activate.xml">Activate the new module</h3>
+<h2 id="create-module-activate.xml">Activate the new module</h2>
 
 Finally, in the context of this exercise, you can activate the module by editing the `config.php` file (located in the `app/etc` directory) and adding the new module to the array of all modules. When you add the module to the array, you will also need to set the "enable" flag to 1, for true.
 
@@ -141,9 +146,9 @@ Finally, in the context of this exercise, you can activate the module by editing
 </div>
 
 
-<h3 id="create-module-launch">Open the index.html file</h3>
+<h2 id="create-module-launch">Display the index.html file</h2>
 
-add info about how to launch htis file and verify that the module is enabled...
+add info about how to launch this file and verify that the module is enabled...
 
 
 
