@@ -258,18 +258,18 @@ All Mview declarations related to a module should be declared in one file.
 
 Suppose you want to push best-selling products to the top of a category listing. This requires processing statistics about sales to change the product position dynamically.
 
-Assuming your module is named `<VendorName>_Merchandising` module, you must write the appropriate code in the indexer class:
+Assuming your module is named `<VendorName>_Merchandizing`, you must write the appropriate code in the indexer class:
 
 <script src="https://gist.github.com/xcomSteveJohnson/ef9be4963011bb13efe5.js"></script>
 
-Next, declare the indexer in `Merchandising/etc/indexer.xml`:
+Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
 
 <script src="https://gist.github.com/xcomSteveJohnson/5780857cdd5343cafacf.js"></script>
 
-Finally, declare the indexer view (`merchandising_popular_order`) that tracks sales (`Merchandising/etc/mview.xml`):
+Finally, declare the indexer view (`merchandizsing_popular_order`) that tracks sales (`Merchandizing/etc/mview.xml`):
 
 <script src="https://gist.github.com/xcomSteveJohnson/4313c5246b38ff8193df.js"></script>
 
-These settings start `<VendorName>\Merchandising\Model\Indexer\Popular::execute` method every time an order is changed.
+These settings start `<VendorName>\Merchandizing\Model\Indexer\Popular::execute` method every time an order is changed.
 
 Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.

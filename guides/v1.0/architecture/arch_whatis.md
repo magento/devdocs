@@ -24,7 +24,7 @@ The Magento Framework provides core business logic and functionality, the base c
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}bk-extension-dev-guide.html">Extension Developer Guide</a>.</p>
+  <p>For more information about designing and extending the Magento components, refer to the <a href="{{ site.gdeurl }}extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a>.</p>
 
 </div>
 
