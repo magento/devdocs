@@ -61,7 +61,7 @@ To update `composer.json`:
 
 5.  To optionally install sample data only if the Magento software is already installed, enter:
 
-        php dev/tools/Magento/Tools/SampleData/install.php –admin_username=<user name>
+        php dev/tools/Magento/Tools/SampleData/install.php --admin_username=<user name>
 
 6.  If you haven't already installed, see the following sections:
 
