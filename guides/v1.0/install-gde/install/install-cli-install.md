@@ -310,6 +310,7 @@ To update the Magento software:
 3.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
+		git reset --hard HEAD
 		git pull origin develop
 		composer update
 

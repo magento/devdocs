@@ -12,60 +12,45 @@ github_link: extension-dev-guide/create_a_module.md
 
 This topic covers the basic steps of creating a new module. Subsequent sections in this Developer's Guide explain how to verify your new module and how to use Composer to package and distribute the module.
 
-(FROM CHUCK's description in MAGEDOC-1065 :
---Create a module 
---Add appropriate etc/XML files to setup/configure your module 
----This includes creating webapi.xml to turn on core APIs to be used along with oath v1 handshaking to your SAAS platform if desired 
---Create a service(s) 
----Optionally expose the service(s) methods as APIs via webapi.xml configuration 
----How a service should be written (all read methods in 1 class; all writes in another); can directly access models for performance 
---Create controllers that call services if needed 
---Create blocks/layout that use service if needed 
---Create EAV/models/tables if needed by service)
-
 <h2 id="create-module-basics">Basic Pre-Requisites</h2>
-Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the following prerequisites:
+Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the Magento [System Requirements](http://://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html>System Requirements).
 
-* PHP version 5.5.x or 5.6.x
-* Apache 2.4 or 2.5
-* MySQL 5.6.x
-
-Also, Magento recommends that you disable caching while performing the following steps. <Explain why.>
+Also, Magento recommends that you disable caching while performing the following steps. 
 
 <h2 id="create-module-code-setup">Get started</h2>
 The main steps to create a module are:
 
-1. Build the file structure, with the appropriate "building block" directories
-2. Create the module.xml file, with a namespace and name for the new module 
-3. Create the required configuration files
-4. Activate the new module by adding it to the `app/etc/config.php` file
-5. In your browser, verify that the `index.html` file displays
+1. Build the file structure for the module, with the appropriate "building block" directories
+2. Create the `module.xml` file, with a namespace and name for the new module 
+
+In subsequent topics, we will discuss which configuration files are needed for your new module. The required configuration files depend on how you plan to use the module: will it be manifested on the storefront UI, or in the Magento Admin panel, or as a backend externsion that makes a service call?
 
 
-<h3 id="create-module-file-structure">Build the file structure</h3>
-First let's create the file structure, which is basically a set of directories (or folders) containing all of the components, references, and parts that the module will need. 
+<h2 id="create-module-file-structure">Build the file structure</h2>
+First let's create the <ModuleName> directory. Use a module name that is descriptive, and not too long.
 
-Typically these components are:
+Next, you can create the /etc directory, within the <ModuleName> directory:
+
+Example: <ModuleName>/etc
+
+The /etc directory is where the `module.xml` file resides, and it is required no matter how you plan to use the module. Additional directories may be needed under <ModuleName>, depending on how you plan to use the module. 
+
+We will look at the additional directories in the next topic, and link to some sample modules showing these directories and the configuration files in each. Typically these components are:
 
 * Blocks
 * Controllers
 * Helpers
 * Models
 
-Along with the directories for those main compoenents, you will need at some additional directories for important things like configuration files, optional plugins, i18n files, APIs, and other files.
+Along with the directories for those main components, you may need some additional directories for important things like configuration files, optional plugins, i18n files, APIs, and other files.
 
-So a typical file structure might look like this:
-INSERT IMAGE HERE
+Be aware that the standard placement of the <ModuleName> directory within the overall Magento file structure is `app/code/<Vendor>/<ModuleName>/etc/`. However, if you are creating a new module for distribution, you can just create the <ModuleName> directory and the required directories within it.                  
 
-<h3 id="create-module-naming">Create the new module.xml file</h3>
-Now let's create the module, in the /etc directory of the file structure you just created.
 
-A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the `<Magento install dir>/app/code/<Vendor>/<NewModuleName>/etc/`. 
+<h2 id="create-module-naming">Create the new module.xml file</h2>
+Now let's create the module itself, in the /etc directory of the module you just created.
 
-A module should be named according to the Namespace_Module schema, where
-
-* `Vendor` is a name of a module's vendor
-* `ModuleName` is a name assigned to a module by its vendor
+A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<NewModuleName>/etc/`. 
 
 Minimal declaration sample:
 
@@ -76,49 +61,14 @@ Minimal declaration sample:
 &lt;/config>
 </pre>
 
-<h3 id="create-module-config.xml">Create the module's configuration files</h3>
-
-The module needs several configuration file that define which blocks, models, helpers, routes, etc. the module will use, and thus controls much about the module's appearance and behaviour.
-
-* index.php
-* Block: <block_name>.php
-* routes.xml
-* Template: <name>_index.xml
-* Layout: <name>.phtml
-
-<h4 id="create-module-index.php">index.php configuration file</h4>
-
-explain purpose/structure of this file... acts as the controller
-
-<h4 id="create-module-block_name.php">block_name.php configuration file</h4>
-
-explain purpose/structure of the block_name.php file
-
-<h4 id="create-module-block_name.php">routes.xml configuration file</h4>
-
-explain purpose/structure of the routes.xml file
-
-<h4 id="create-module-____.xml">____.xml configuration file</h4>
-
-explain purpose/structure of the ___.xml file... this is the layout file that includes the info about what router, controller and action the module contains
-
-<h4 id="create-module-____.phtml">____.phtml configuration file</h4>
-
-explain purpose/structure of the ___.xml file... this is the template file that has the text to display on UI, like Success! or Hello World!
-
-
-<h3 id="create-module-activate.xml">Activate the new module</h3>
-
-Finally, to activate the module you need to edit the `config.php` file (located in the `app/etc` directory) and add the new module to the array of all modules. When you add the module to the array, you will also need to set the "enable" flag to 1, for true.
-
 <div class="bs-callout bs-callout-info" id="info">
+                  <p>Take a look at a <a href="https://github.corp.ebay.com/magento2/magento2-samples"> sample module</a> created by the Magento Core Team. </p>
+                  <p>The team is creating a <a href="https://github.corp.ebay.com/magento2/magento2-samples">collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magneto 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them.
+                  </p>
+               </div>
 
-  <p>Be aware that when working with Magento, it is more typical to use a Command Line Tool (CLI) to set the enable/disable flag, instead of manually editing the config.php file. For more information about the CLI tool, refer to ___________.
-  </p>
-</div>
 
 
-<h3 id="create-module-launch">Open the index.html file</h3>
 
 
 
