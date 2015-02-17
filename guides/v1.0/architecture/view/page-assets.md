@@ -131,7 +131,7 @@ Expand one of the following sections for more information:
 <div><strong>Layout instructions</strong>
 <script src="https://gist.github.com/xcomSteveJohnson/6617872c0698ea1f5d07.js"></script>
 <strong>Rendered HTML Output</strong>
-<script src="https://gist.github.com/xcomSteveJohnson/72fa732d12600dacb7bf.js"></script>
+<script src="https://gist.github.com/xcomSteveJohnson/7957c6bd6b8d893da2a1.js"></script>
 </div>
 </div>
 

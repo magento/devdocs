@@ -30,37 +30,40 @@ To enable sample data, you must edit `composer.json` in the Magento root install
 
 To enable sample data, you must:
 
-1.  Edit `composer.json` to reference the repository and packages that specify the Magento sample data.
-2.  Run `composer update` to get the sample data packages.
+1.  Find the current versions of the `magento/sample-data` and `magento/sample-data-media` on <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.
+2.  Run the `composer package` and `composer require` commands to update `composer.json`.
 3.  Run the Magento 2 installer to update the database.
 
 <div class="bs-callout bs-callout-info" id="info">
    <p>The sample data Composer package recently changed. If you're using an alpha or beta1 Magento 2 build, we strongly recommend you update to a beta2 build to get the latest code.</p> 
 <p>To update, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html#instgde-install-magento-update">Updating the Magento software</a>.</p></div>
 
-To edit `composer.json`:
+To update `composer.json`:
 
+1.	Go to <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a> and write down suitable versions of `magento/sample-data` and `magento/sample-data-media` (typically, you should choose the most recent version).
 1.  Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with `root` privileges.
 2.  Change to your Magento installation directory.
-3.  Enter the following command to install the required package:
+3.  Enter the following command to reference Magento packages in `composer.json`:
 
         composer config repositories.magento composer http://packages.magento.com
 
-3.  Enter the following command to require TBD:
+3.  Enter the following command to require the current version of the sample data and media packages:
 
-        composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:~0.42.0-beta1 -dev
+		composer require magento/sample-data:<version> magento/sample-data-media:<version> -dev
 
-    If the commands were successful, the following message displays:
+	where you found `<version>` in step 1.
 
-        ./composer.json has been updated
+	For example,
 
-4.  Wait while dependencies are installed.
+        composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1 -dev
+
+ 4.  Wait while dependencies are installed.
 
 5.  To optionally install sample data only if the Magento software is already installed, enter:
 
         php dev/tools/Magento/Tools/SampleData/install.php –admin_username=<user name>
 
-6.  If you haven't already installed, see the following sections:
+6.  If you haven't already installed the Magento software, see the following sections:
 
     *   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
     *   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
