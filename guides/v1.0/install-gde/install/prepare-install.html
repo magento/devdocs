@@ -173,7 +173,8 @@
   <li>
     <p>Enter the following command:</p>
 
-    <pre>su www-data</pre>
+    <pre><code>su www-data
+</code></pre>
   </li>
   <li>
     <p>If a password prompt displays but you don’t know the user’s password, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.</p>
@@ -181,13 +182,14 @@
   <li>
     <p>To enable the <code>www-data</code> user’s shell and to set a password, enter the following commands in the order shown:</p>
 
-    <pre>sudo chsh -s /bin/bash www-data
-sudo passwd www-data</pre>
+    <pre><code>sudo chsh -s /bin/bash www-data &amp;&amp; sudo passwd www-data
+</code></pre>
   </li>
   <li>
     <p>Run the following command again and enter the user’s password:</p>
 
-    <pre>su www-data</pre>
+    <pre><code>su www-data
+</code></pre>
   </li>
   <li>
     <p>Continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.</p>
@@ -202,21 +204,25 @@ sudo passwd www-data</pre>
   <li>
     <p>Enter the following command:</p>
 
-    <pre>su - apache</pre>
+    <pre><code>su - apache
+</code></pre>
 
     <p>If the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.</p>
 
-    <pre>This account is currently not available.</pre>
+    <pre><code>This account is currently not available.
+</code></pre>
   </li>
   <li>
     <p>To give <code>apache</code> a valid shell account so you can switch to it, enter the following command:</p>
 
-    <pre>sudo chsh -s /bin/bash apache</pre>
+    <pre><code>sudo chsh -s /bin/bash apache
+</code></pre>
   </li>
   <li>
     <p>Run the following command again; this time, it should work:</p>
 
-    <pre>su - apache</pre>
+    <pre><code>su - apache
+</code></pre>
   </li>
   <li>
     <p>Continue with the next section.</p>
@@ -230,12 +236,10 @@ sudo passwd www-data</pre>
 <ol>
   <li>Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>.</li>
   <li>
-    <p>Change to the Magento installation directory. For example,</p>
+    <p>Change to the Magento installation directory and run <code>composer install</code>. For example,</p>
 
-    <p><code>cd /var/www/html/magento2</code></p>
-  </li>
-  <li>
-    <p>As user with privileges to write to the web server docroot, enter <code>composer install</code></p>
+    <pre><code>cd /var/www/html/magento2 &amp;&amp; composer install
+</code></pre>
 
     <p>This command updates package dependencies and can take a few minutes to complete.</p>
   </li>
@@ -383,7 +387,7 @@ sudo passwd www-data</pre>
 							
 								
 								
-									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-overview.html">Installation</a></li>
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
 									
 								
 								
@@ -399,12 +403,70 @@ sudo passwd www-data</pre>
 									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
 						
 								
+								
+								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
 						
 								
 								
@@ -483,7 +545,23 @@ sudo passwd www-data</pre>
 								
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
 						
 								
 							
@@ -495,10 +573,6 @@ sudo passwd www-data</pre>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
 						
 								
@@ -507,19 +581,11 @@ sudo passwd www-data</pre>
 						
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
 						
 								
 							

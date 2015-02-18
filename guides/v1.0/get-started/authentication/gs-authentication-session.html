@@ -147,21 +147,21 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>As a customer, you log in to the Magento frontend with your customer credentials. As an admin, you log in to the Magento backend with your admin credentials.</p>
+		<p>As a customer, you log in to the Magento storefront with your customer credentials. As an admin, you log in to the Magento Admin with your admin credentials.</p>
 
 <p>The Magento web API framework uses your logged-in session information to verify your identity and authorize access to the requested resource.</p>
 
 <p>Customers can access resources that are configured with <code>anonymous</code> or <code>self</code> permission in the <code>webapi.xml</code> configuration file.</p>
-<p>Admins can access resources that are assigned to their backend profile.</p>
+<p>Admins can access resources that are assigned to their Magento Admin profile.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p></div>
 
-<p>For example, if a customer is logged in to the Magento frontend and the JavaScript widget invokes the <code>self</code> API, details for the logged-in customer are fetched:</p>
+<p>For example, if a customer is logged in to the Magento storefront and the JavaScript widget invokes the <code>self</code> API, details for the logged-in customer are fetched:</p>
 
 <pre>GET /rest/V1/customer/me</pre>
 
-<p>Similarly, if an admin is logged in to the Magento backend
+<p>Similarly, if an admin is logged in to the Magento Admin
 and the JavaScript widget <code>Magento_Customer::group</code> API, details for the logged-in admin are fetched.
 The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the <code>Magento_Customer::group</code> resource.</p>
 

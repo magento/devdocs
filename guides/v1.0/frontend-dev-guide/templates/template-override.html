@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Templates overriding</title>
+	<title>Templates basic concepts</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -136,7 +136,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Templates overriding</h1>
+		<h1 class="page-heading">Templates basic concepts</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/templates/template-override.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -147,52 +147,72 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h3 id="template-layout">How templates are initiated</h3>
+		<h2>Overview</h2>
+<p>This topic discusses the main concepts of how default templates work in the Magento application. 
+The following topics are covered:</p>
 
-<p>Templates are initiated in layout files.
+<ul>
+  <li><a href="#template-layout">How templates are initiated</a></li>
+  <li><a href="#root">Root template</a></li>
+  <li><a href="#template-convention">Conventional templates location</a></li>
+  <li><a href="#override">Templates overriding</a></li>
+  <li><a href="#getter">Getting argument values from layout</a></li>
+</ul>
+
+<h2 id="template-layout">How templates are initiated</h2>
+
+<p>Templates are usually initiated in layout files.
 Each layout block has an associated template. 
-Template is specified in the <code>template</code> attribute of the <block> layout instruction. 
-For example, from <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</a>:</block></p>
+The template is specified in the <code>template</code> attribute of the <block> layout instruction. 
+For example, from <code><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml" target="_blank">app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml</a></code>:</block></p>
 
 <pre>
 &lt;block class=&quot;Magento\Catalog\Block\Category\View&quot; name=&quot;category.image&quot; template=&quot;Magento_Catalog::category/image.phtml&quot;/&gt;
 </pre>
 
-<p>This means that for rendering the <code>category.image</code> block the <code>image.phtml</code> template stored in the <code>category</code> sub-directory of the <code>Magento_Catalog</code> templates directory is used. 
-The templates directory of the <code>Magento_Catalog</code> module is <code>app/code/Magento/Catalog/view/frontend/templates</code>.</p>
+<p>This means that the <code>category.image</code> block is rendered by the <code>image.phtml</code> template, which is located in the <code>category</code> subdirectory of the <code>Magento_Catalog</code> module templates directory.</p>
 
-<p class="q">What about page templates, how are they initiated?
+<p>The templates directory of <code>Magento_Catalog</code> is <code>app/code/Magento/Catalog/view/frontend/templates</code>.</p>
 
-The next section describes where templates can be located in general.
+<p>The next section describes where templates can be located in general.</p>
 
-<h3 id="template-convention">Conventional templates location</h3>
-Templates are stored in the following locations:
+<h2 id="template-convention">Conventional templates location</h2>
+<p>Templates are stored in the following locations:</p>
 
+<ul>
+  <li><span id="module">Module templates: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/templates/&lt;path_to_templates&gt;</code></span></li>
+  <li><span id="theme">Theme templates: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/templates/&lt;path_to_templates&gt;</code></span></li>
+</ul>
 
-* <span id="module">Module templates: `app/code/<namespace>/<module>/view/frontend/templates/<path_to_templates>`
-* <span>Theme templates: `app/design/frontend/<vendor>/<theme>/<namespace>_<module>/templates/<path_to_templates>`
+<p>Here <code>&lt;path_to_templates&gt;</code> might have several levels of directory nesting, or might be empty. Examples:</p>
 
-Here `<path_to_templates>` might have several levels of directory nesting, or might be empty. Examples:
+<ul>
+  <li><code>app/code/Magento/Catalog/view/frontend/templates/product/widget/new/content/new_grid.phtml</code></li>
+  <li><code>app/code/Magento/Checkout/view/frontend/templates/cart.phtml</code></li>
+</ul>
 
-* `app/code/Magento/Catalog/view/frontend/templates/product/widget/new/content/new_grid.phtml`
-* `app/code/Magento/Checkout/view/frontend/templates/cart.phtml`
+<h2 id="override">Templates overriding</h2>
+<p>For template files with the same name, the following is true: 
+theme templates override module templates, and those of a <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">child theme</a> override parent theme templates.</p>
 
-Templates for blocks and templates for pages??
-root.phtml
+<p>This mechanism is the basis of the template customization concept in Magento application: to change the output defined by a certain default template, you need to overriding one in your custom theme.</p>
 
-<h3>Template structure</h3>
+<p>Overriding templates is described with more details in the <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Theme Inheritance article</a>.</p>
 
-<p class="q"> Is there something our target audience (a fdg creating a new theme)should know about a template file structure?</p>
+<h2 id="root">Root template</h2>
 
-<p class="q">I In the declaration like following /**
- * @var $this \Magento\Framework\View\Element\Html\Link
- */ (from app/code/Magento/Theme/view/frontend/templates/link.phtml) what are the requirements for this class being specified or how is it related to the  template</p>
+<p>In Magento there’s a special template which serves as root template for all pages in the application: <code><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Theme/view/base/templates/root.phtml" target="_blank">app/code/Magento/Theme/view/base/templates/root.phtml</a></code></p>
 
+<p>Unlike other templates, <code>root.phtml</code> contains the <code>doctype</code> specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. </p>
 
-<h3>Getting argument values from layout</h3>
+<p>But similar to other templates, <code>root.phtml</code> can be overridden in a theme. 
+For example, Magento Blank theme contains an overriding root template: </p>
 
-Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#getter" target="_blank">Layout instructions article.
-</a></path_to_templates></path_to_templates></module></namespace></theme></vendor></span></path_to_templates></module></namespace></span></p>
+<p><code><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml" target="_blank">app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code></p>
+
+<h2 id="getter">Getting argument values from layout</h2>
+
+<p>Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#getter" target="_blank">Layout instructions article.</a></p>
 
 
 		</div>
@@ -241,6 +261,316 @@ Arguments values set in a layout file can be accessed in templates using the <co
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Javascript</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="http://devdocs.magento.com/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			
