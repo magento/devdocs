@@ -8,7 +8,7 @@ menu_node: parent
 menu_order: 1
 github_link: install-gde/install/sample-data.md
 ---
-  
+
 #### Contents
 
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
@@ -49,21 +49,21 @@ To update `composer.json`:
 
 3.  Enter the following command to require the current version of the sample data and media packages:
 
-		composer require magento/sample-data:<version> magento/sample-data-media:<version> -dev
+		composer require magento/sample-data:<version> magento/sample-data-media:<version> --dev
 
 	where you found `<version>` in step 1.
 
 	For example,
 
-        composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1 -dev
+        composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1 --dev
 
  4.  Wait while dependencies are installed.
 
 5.  To optionally install sample data only if the Magento software is already installed, enter:
 
-        php dev/tools/Magento/Tools/SampleData/install.php –admin_username=<user name>
+        php dev/tools/Magento/Tools/SampleData/install.php --admin_username=<your Magento admin user name>
 
-6.  If you haven't already installed the Magento software, see the following sections:
+6.  If you haven't already installed the Magento software, see the following topics:
 
     *   <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
     *   <a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>

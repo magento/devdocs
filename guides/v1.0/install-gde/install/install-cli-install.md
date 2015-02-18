@@ -307,12 +307,22 @@ You might do this in an development environment especially to get all the latest
 To update the Magento software:
 
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
-3.	Enter the following commands in the order shown:
+3. Save any changes you made to `composer.json` because the following steps will overwrite it:
 
 		cd <your Magento install dir>
-		git reset --hard HEAD
-		git pull origin develop
-		composer update
+		cp composer.json composer.json.old
+
+3.	If you previously installed the optional sample data, enter the following command:
+
+		rm -rf dev/tools/Magento/Tools/SampleData/
+
+3.	Reset your local client to the server's HEAD revision and update your client to get the latest code:
+		
+		git reset --hard HEAD && git pull origin develop
+				
+3.	Restore your previous `composer.json` and update dependencies:
+
+		cp composer.json.old composer.json && composer update
 
 4.	Update the Magento database.
 
@@ -333,11 +343,8 @@ To reinstall the Magento software:
 3.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		git pull origin develop
-		cd setup
-		php index.php uninstall
-		cd ..
-		composer update
+		git reset --hard HEAD && git pull origin develop
+		php setup/index.php uninstall
 
 4.	Install the Magento software:
 
