@@ -1,0 +1,19 @@
+
+<p>To enable sample data, you must:</p>
+<ol><li>Decide the version of <code>magento/sample-data</code> and <code>magento/sample-data-media</code> you want as discussed in <a href="{{ site.gdeurl }}install-gde/install/sample-data.html#instgde-prereq-sample-intro">Introduction to Magento sample data</a>.</li>
+<li>Run the <code>composer package</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
+
+<p>To update <code>composer.json</code>:</p>
+
+<ol><li>Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
+<li>Change to your Magento installation directory.</li>
+<li>Enter the following command to reference Magento packages in <code>composer.json</code>:<br>
+<pre>composer config repositories.magento composer http://packages.magento.com</pre></li>
+<li>Enter the following command to require the current version of the sample data and media packages:<br>
+<pre>composer require magento/sample-data:&lt;version> magento/sample-data-media:&lt;version> --dev</pre>
+where <code>&lt;version></code> is either an exact version or semantic version syntax.<br>
+Exact version example:<br>
+<pre>composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1 --dev</pre>
+Semantic versioning example:<br>
+<pre>composer require magento/sample-data:~0.42.0 magento/sample-data-media:~0.42.0 --dev</pre></li>
+<li>Wait while dependencies are installed.</li></ol>
