@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: During installation, xdebug maximum function nesting level error
 menu_title: During installation, xdebug maximum function nesting level error
 menu_node: 
-menu_order: 20
+menu_order: 500
 github_link: install-gde/trouble/tshoot_xdebug.md
 ---
 

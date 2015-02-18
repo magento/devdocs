@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
 menu_node: 
-menu_order: 20
+menu_order: 400
 github_link: install-gde/trouble/tshoot_install-log.md
 ---
 

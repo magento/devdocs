@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: Cannot run 'composer install'
 menu_title: Cannot run 'composer install'
 menu_node: 
-menu_order: 4
+menu_order: 7
 github_link: install-gde/trouble/tshoot_composer-install.md
 ---
 

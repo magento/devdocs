@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_title: After installing, images and stylesheets do not load; only text displays, no graphics
 menu_node:
-menu_order: 10
+menu_order: 1
 github_link: install-gde/trouble/tshoot_no-styles.md
 ---
 

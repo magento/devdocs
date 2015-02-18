@@ -33,8 +33,8 @@ Next, you can create the /etc directory, within the &lt;ModuleName> directory:
 
 Example: 
 
-	<ModuleName>
-		/etc
+  <ModuleName>
+    /etc
 
 The /etc directory is where the `module.xml` file resides, and this directory is required no matter how you plan to use the module. Additional directories may be needed under the &lt;ModuleName> directory, depending on how you plan to use the module. 
 
@@ -48,7 +48,7 @@ We will look at the additional directories in the next topic, and link to some s
 Along with the directories for those main components, you may need some additional directories for important things like configuration files, optional plugins, i18n files, APIs, and other files.
 
 <div class="bs-callout bs-callout-info" id="info">
-                <p>Be aware that the standard placement of the &lt;ModuleName> directory within the overall Magento file structure is <code>app/code/&lt;Vendor>/&lt;ModuleName>/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName> directory and the required directories within it. </p> 
+  <p>Be aware that the standard placement of the &lt;ModuleName> directory within the overall Magento file structure is <code>app/code/&lt;Vendor>/&lt;ModuleName>/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName> directory and the required directories within it. </p> 
 </div>                
 
 
@@ -67,13 +67,6 @@ Minimal declaration sample:
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-                  <p>Take a look at a <a href="https://github.corp.ebay.com/magento2/magento2-samples"> sample module</a> created by the Magento Core Team. </p>
-                  <p>The team is creating a collection of samples to demonstrate technologies introduced in Magento 2. You can edit your Magneto 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them.
-                  </p>
-               </div>
-
-
-
-
-
-
+  <p>Take a look at a <a href="https://github.corp.ebay.com/magento2/magento2-samples"> sample module</a> created by the Magento Core Team. </p>
+  <p>The team is creating a collection of samples to demonstrate technologies introduced in Magento 2. You can edit your Magneto 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them.</p>
+ </div>

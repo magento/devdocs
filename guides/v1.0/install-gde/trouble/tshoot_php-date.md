@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: During installation, PHP date warning
 menu_title: During installation, PHP date warning
 menu_node: 
-menu_order: 5
+menu_order: 20
 github_link: install-gde/trouble/tshoot_php-date.md
 ---
 
