@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install
-subgroup: R_Installation
+subgroup: Q_Pre-installation
 title: Install Composer and clone the Magento repository
 menu_title: Install Composer and clone the Magento repository
 menu_node:
-menu_order: 2
+menu_order: 1
 github_link: install-gde/install/composer-clone.md
 ---
  
@@ -125,8 +125,11 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 
 4.	Set permissions:
 
-	<pre>find . -type d -exec chmod 700 {} \;
-find . -type f -exec chmod 600 {} \;</pre>
+		find . -type d -exec chmod 700 {} \; && find . -type f -exec chmod 600 {} \;
+
+	If you must enter the commands as `sudo`, use:
+
+		sudo find . -type d -exec chmod 700 {} \; && sudo find . -type f -exec chmod 600 {} \;
 
 #### Next step
 
