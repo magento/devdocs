@@ -166,8 +166,7 @@ features of the release.</p>
 
 <ul>
   <li>
-    <p>PHP and MySQL. Magento 2 supports PHP 5.5, with PHP 5.4 (actually 5.4.11 or
-later) as the minimum requirement, and MySQL 5.6. See <a href="/guides/v1.0/install-gde/system-requirements.html">System
+    <p>PHP and MySQL. Magento 2 supports PHP 5.5 and 5.6, and MySQL 5.6. See <a href="/guides/v1.0/install-gde/system-requirements.html">System
 requirements</a>.</p>
 
   </li>
@@ -243,7 +242,7 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
 <ul>
-  <li><a href="#known-issue-sample">Issue installing optional sample data</a></li>
+  <li><a href="#known-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
   <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
   <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
   <li><a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a></li>
@@ -251,15 +250,15 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 <!-- *   <a href="#known-devbeta-wiz-fail-session-save">session.save_path issue</a> --></li>
 </ul>
 
-<h3 id="known-issue-sample">Issue installing optional sample data</h3>
+<!-- <h3 id="known-issue-sample">Issue installing optional sample data</h3> -->
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
-<p>Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future.</p>
+<!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
 
-<!-- <h3 id="known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</h3>
+<h3 id="known-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
 
-To install the optional Magento 2 sample data, you must update `composer.json`, run `composer update`, and run the Magento 2 installer to update the database.
+<p>To install the optional Magento 2 sample data, you must update <code>composer.json</code>, run <code>composer update</code>, and run the Magento 2 installer to update the database.</p>
 
-See <a href="/guides/v1.0//install-gde/install/sample-data.html">Enable optional Magento sample data</a>. -->
+<p>See <a href="/guides/v1.0//install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
 <p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions:</p>
