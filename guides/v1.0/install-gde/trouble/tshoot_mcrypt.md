@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: The PHP mcrypt extension is not installed properly
 menu_title: The PHP mcrypt extension is not installed properly
 menu_node:
-menu_order: 1
+menu_order: 22
 github_link: install-gde/trouble/tshoot_mcrypt.md
 ---
 

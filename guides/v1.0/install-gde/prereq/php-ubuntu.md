@@ -83,6 +83,8 @@ To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14:
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
 		with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
+3.	<a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.
+
 <h2 id="instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</h2>
 Before continuing, enter the following command to make sure you're running Apache 2.4:
 
