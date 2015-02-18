@@ -13,7 +13,6 @@ github_link: install-gde/install/sample-data.md
 
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
 *	<a href="#instgde-install-sample-enabling">Enable the use of sample data</a>
-*   <a href="#instgde-install-sample-after">Complete the sample data package installation</a>
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
 This section discusses how to enable you to install the optional Magento sample data. If you don't wish to use sample data, skip this topic and continue with:
