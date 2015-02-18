@@ -24,8 +24,7 @@ Welcome to Magento 2.0 Developer Beta documentation! And welcome to Magento 2.0!
 For this first release of Magento 2.0, here is a summary of some important
 features of the release.
 
--   PHP and MySQL. Magento 2 supports PHP 5.5, with PHP 5.4 (actually 5.4.11 or
-    later) as the minimum requirement, and MySQL 5.6. See [System
+-   PHP and MySQL. Magento 2 supports PHP 5.5 as the minimum requirement, and MySQL 5.6. See [System
     requirements][1].
 
     [1]: <{{ site.gdeurl }}install-gde/system-requirements.html>
