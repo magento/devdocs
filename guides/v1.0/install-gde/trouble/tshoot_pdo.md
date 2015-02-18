@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: During installation, fatal PDO error displays
 menu_title: During installation, fatal PDO error displays
 menu_node: 
-menu_order: 6
+menu_order: 21
 github_link: install-gde/trouble/tshoot_pdo.md
 ---
 

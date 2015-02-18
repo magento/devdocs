@@ -5,7 +5,7 @@ subgroup: Z_Troubleshooting
 title: GitHub API rate limit
 menu_title: GitHub API rate limit
 menu_node: 
-menu_order: 16
+menu_order: 199
 github_link: install-gde/trouble/tshoot_rate-limit.md
 ---
 
@@ -51,7 +51,9 @@ github_link: install-gde/trouble/tshoot_rate-limit.md
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>If the command fails, try making the web server user the owner of your web server docroot directory.</p>
-  		<p>For example, on Ubuntu, enter <code>sudo chown www-data /var/www</code>.</p></span>
+  		<p>For example, on Ubuntu, enter <code>sudo chown www-data /var/www</code></p></span>
 	</div>
+
+	If these suggestions don't work, try logging in to GitHub when prompted.
 
 13.	Repeat the task that failed previously (usually running either `composer install` or `composer update`.)
