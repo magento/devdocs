@@ -13,7 +13,7 @@ github_link: extension-dev-guide/create_module.md
 This topic covers the basic steps of creating a new module. Subsequent sections in this Developer's Guide explain how to verify your new module and how to use Composer to package and distribute the module.
 
 <h2 id="create-module-basics">Basic Pre-Requisites</h2>
-Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the Magento [System Requirements](http://://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html>System Requirements).
+Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the Magento [System Requirements]({{ site.gdeurl }}install-gde/system-requirements.html).
 
 Also, Magento recommends that you disable caching while performing the following steps. 
 
@@ -29,14 +29,14 @@ In subsequent topics, we will discuss which configuration files are needed for y
 <h2 id="create-module-file-structure">Build the file structure</h2>
 First let's create the &lt;ModuleName> directory. Use a module name that is descriptive, and not too long.
 
-Next, you can create the /etc directory, within the &lt;ModuleName> directory:
+Next, you can create the `/etc` directory within the `<ModuleName>` directory:
 
 Example: 
 
-  <ModuleName>
-    /etc
+	<ModuleName>
+	  /etc
 
-The /etc directory is where the `module.xml` file resides, and this directory is required no matter how you plan to use the module. Additional directories may be needed under the &lt;ModuleName> directory, depending on how you plan to use the module. 
+The `/etc` directory is where the `module.xml` file resides, and this directory is required no matter how you plan to use the module. Additional directories may be needed under the `<ModuleName>` directory, depending on how you plan to use the module. 
 
 We will look at the additional directories in the next topic, and link to some sample modules showing these directories and the configuration files in each. Typically these components are:
 
@@ -59,12 +59,10 @@ A module declares itself (i.e. defines its name and existence) in the `module.xm
 
 Minimal declaration sample:
 
-<pre>
-&lt;config>
-    &lt;module name="Namespace_Module" schema_version="2.0.0">
-    &lt;/module>
-&lt;/config>
-</pre>
+	<config>
+       <module name="Namespace_Module" schema_version="2.0.0">
+       </module>
+	</config>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.corp.ebay.com/magento2/magento2-samples"> sample module</a> created by the Magento Core Team. </p>
