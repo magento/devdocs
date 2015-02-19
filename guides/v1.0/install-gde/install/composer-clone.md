@@ -56,78 +56,34 @@ To install Composer:
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
-You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 
-*	Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.
-*	Use HTTPS if you don't share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).
+To clone the Magento GitHub repository:
 
-See one of the following section:
+1.	To clone the Magento repository using secure shell (SSH), <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">generate SSH keys</a> and add the public key to GitHub.
 
-*	<a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a>
-*	<a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a>
-
-<h3 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h3>
-
-To clone the Magento GitHub repository using the SSH protocol:
-
-1.	Copy to the clipboard the Magento GitHub repository SSH clone URL.
+1.	Copy to the clipboard the Magento GitHub repository SSH or HTTPS clone URL.
 
 	a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.
 
-	b.	On the right side of the page, under the *clone URL* field, click **SSH**.
+	b.	On the right side of the page, under the *clone URL* field, click either **SSH** or **HTTPS**.
 
 	c.	Click the **Copy to clipboard** button.
 
-	The following figure shows an example.
+	The following figure shows an example of copying the HTTPS clone URL to the clipboard.
 
-	<p><img src="{{ site.baseurl }}common/images/install_mage2_clone-ssh.png" alt="Clone the Magento GitHub repository using SSH"></p>
+	<p><img src="{{ site.baseurl }}common/images/install_mage2_clone-url1.png" alt="Clone the Magento GitHub repository using either HTTPS or SSH"></p>
 
 1.	Change to your web server's docroot directory.
 
 	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
-2.	Enter the following command:
+2.	Enter any of the following commands:
 
-		git clone https://github.com/magento/magento2.git
+	To clone using HTTPS: `git clone https://github.com/magento/magento2.git`
 
-3.	Wait for the repository to clone on your server.
-
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
-			<pre>Cloning into 'magento2'...
-Permission denied (publickey).
-fatal: The remote end hung up unexpectedly</pre>
-	</div>
-
-4.	Continue with <a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>.
-
-<h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
-
-To clone the Magento GitHub repository using the HTTPS protocol:
-
-1.	Copy to the clipboard the Magento GitHub repository HTTPS clone URL.
-
-	a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.
-
-	b.	On the right side of the page, under the *clone URL* field, click **HTTPS**.
-
-	c.	Click the **Copy to clipboard** button.
-
-	The following figure shows an example.
-
-	<p><img src="{{ site.baseurl }}common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS"></p>
-
-1.	Change to your web server's docroot directory.
-
-	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
-
-2.	Enter the following command:
-
-		git clone https://<your GitHub user name>:<your password>@github.com/magento/magento2.git
+	To clone using SSH: `git clone git@github.com:magento/magento2.git`
 
 3.	Wait for the repository to clone on your server.
-
-4.	Continue with the next section.
 
 <h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
 
