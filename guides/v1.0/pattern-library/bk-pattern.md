@@ -34,9 +34,12 @@ Browse the Design Pattern Library here:
 <a href="feedbackToUser/progressIndicator/progressIndicator.html">Progress Indicator</a>
 
 
+####Getting User Input
+<a href="getting-user-input/form_elements/form_elements.html">Form Elements</a>
+
 ####Navigation
 <a href="navigation/links/links.html">Links</a><br>
-<a href="navigation/menu/menu.html">Menu</a>
+<a href="navigation/primary_nav/primary_nav.html">Primary Navigation</a>
 
 
 
