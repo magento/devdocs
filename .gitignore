@@ -31,3 +31,5 @@ ignore
 *.bat
 *.sh
 Rakefile
+Gemfile
+Gemfile.lock
