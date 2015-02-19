@@ -9,6 +9,9 @@ menu_order: 1
 github_link: install-gde/install/sample-data.md
 --- 
 
+## Hello!
+Hello!
+
 #### Contents
 
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
