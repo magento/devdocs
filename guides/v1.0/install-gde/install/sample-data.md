@@ -10,7 +10,7 @@ github_link: install-gde/install/sample-data.md
 --- 
 
 ## Hello!
-Hello!
+Hello! Hello!
 
 #### Contents
 
