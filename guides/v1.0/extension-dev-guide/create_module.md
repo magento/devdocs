@@ -55,16 +55,16 @@ Along with the directories for those main components, you may need some addition
 <h2 id="create-module-naming">Create the new module.xml file</h2>
 Now let's create the module itself, in the /etc directory of the module you just created.
 
-A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<NewModuleName>/etc/`. 
+A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ModuleName>/etc/`. 
 
 Minimal declaration sample:
 
 	<config>
-       <module name="Namespace_Module" schema_version="2.0.0">
+       <module name="Vendor_ModuleName" schema_version="2.0.0">
        </module>
 	</config>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.corp.ebay.com/magento2/magento2-samples"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a collection of samples to demonstrate technologies introduced in Magento 2. You can edit your Magneto 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them.</p>
+  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/m2-sample-minimal"> sample module</a> created by the Magento Core Team. </p>
+  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them!/p>
  </div>
