@@ -10,7 +10,6 @@ github_link: release-notes/release-notes.md
 ---
 
 <h4>Contents</h4>
-These Release Notes have the following contents:
 
 *	<a href="#highlights">Highlights</a>
 *	<a href="#known-devbeta">Known issues</a>
@@ -19,7 +18,7 @@ These Release Notes have the following contents:
 
 <h2 id="highlights">Highlights</h2>
 
-Welcome to Magento 2.0 Developer Beta documentation! And welcome to Magento 2.0!
+Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 
 For this first release of Magento 2.0, here is a summary of some important
 features of the release.
@@ -84,19 +83,19 @@ features of the release.
 See also
 --------
 
--   [XML validation][13].
+-   [XML validation][13]
 
     [13]: <{{ site.gdeurl }}architecture/view/xml-schema-layout.html>
 
--   [Service contracts][14].
+-   [Service contracts][14]
 
     [14]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
 
--   [Translation][15].
+-   [Translation][15]
 
     [15]: <{{ site.gdeurl }}architecture/behavior/xlate.html>
 
--   [Services as web APIs.][16]
+-   [Services as web APIs][16]
 
     [16]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
 	
@@ -255,4 +254,4 @@ Click the "Edit this page on GitHub" link at the top of a documentation page to
 open the file in our GitHub repository, where you are invited to suggest changes
 by creating pull requests, or open a discussion by creating an issue.
 Feel free to contact the documentation team directly at
-DL-Magento-Doc-Feedback@ebay.com.
+<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">DL-Magento-Doc-Feedback@ebay.com</a>
