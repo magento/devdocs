@@ -1,11 +1,10 @@
 ---
 ---
-
 <!-- Title: Responsive Email Developer's Guide for Magento EE 1.14.1 and Magento CE 1.9.1 -->
 <!-- URL: ee1141-ce191-responsive-email -->
 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en>
 
 <head>
@@ -13,8 +12,8 @@
 
 	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
 	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="../{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="../{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
 	<title>Responsive Email Developer's Guide</title>
 
 </head>
@@ -25,9 +24,8 @@
 
 <div id="content">
 
-<h1>Responsive Email Developer's Guide -- DRAFT</h1>
 
-<div class="toc"> --> <h4><!--  class="toc" -->Table of Contents</h4>
+<div class="toc"> <h4><!--  class="toc" -->Table of Contents</h4>
     <ul>
         <li><a href="#intro">Introduction</a></li>
         <li><a href="#cron">Using cron to Send Emails</a></li>
@@ -41,7 +39,7 @@
         <li><a href="#newsletter-template">Using Updated Newsletter Templates</a></li>
         <li><a href="#help">Getting Help</a></li>
     </ul>
-<!-- </div> -->
+</div>
 
 <h2 id="intro">Introduction</h2>
 <p>We improved transactional emails and newsletter templates in Magento Enterprise 1.14.1 and Magento Community 1.9.1 in a number of ways, including:</p>
@@ -55,7 +53,7 @@
 
 <h2 id="cron">Using cron to Send Emails</h2>
 <p>Starting in Magento EE 1.14.1 and CE 1.9.1, your Magento cron job sends <em>all</em> emails, including transactional emails. You must configure cron for emails to work.</p>
-<p>For more information, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-installing#install-cron" target="_blank">Setting Up Cron Jobs</a>.</p>
+<p>For more information, see <a href="{{ site.m1xgdeurl }}install/installing_install.html#install-cron" target="_blank">Setting Up Cron Jobs</a>.</p>
 
 <h2 id="supported">Supported Email Clients and Devices</h2>
 <p>We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues. Refer to the following sections for more information.</p>
@@ -447,3 +445,5 @@ The following figure shows an example.<br>
 <p>If you encounter issues customizing email templates, contact Magento Support. Another option is to post your question on the community <a href="http://magento.stackexchange.com/questions/ask" target="_blank">magento.stackexchange.com</a> site and tag it with <tt>rwd-email</tt> and <tt>rwd-theme</tt>.</p>
 
 
+</body>
+</html>

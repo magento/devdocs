@@ -1,0 +1,21 @@
+<head><style>
+
+table.confluenceTable { margin:5px; border-collapse:collapse; }
+table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
+table.confluenceTable th.confluenceTh,
+table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
+ul { list-style-type: square; }
+
+</style></head>
+
+<!-- url: 10431-ee11202 -->
+<!-- title: Error Using Payflow with Magento Enterprise Edition (EE) 1.12.0.2 -->
+
+
+<h2 id="problem">Problem</h2>
+<p>A customer applies a coupon code when checking out in a web store that runs EE 1.12.0.2 and is configured to use the Payflow Pro or Payflow Express payment methods. The following error displays:</p>
+<code>PayPal gateway rejected the request. Field format error: 10431-Item amount is invalid</code>
+
+<h2 id="solution">Solution</h2>
+<p>To resolve this issue, <a href="http://support.magento.com/" target="_blank">contact Magento Support</a> and request the patch for support issue ID SUPEE-1474.</p>
+<p>Then apply the patch as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches">How to Apply and Revert Magento Patches</a>.</p>
