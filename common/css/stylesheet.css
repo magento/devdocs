@@ -139,7 +139,6 @@ ul li li, ul li li li, ol li li {
 	margin-left: 10px;
 }
 
-
 ul.level1 li, ul li.level1, ol li ol li ul.level1 li
 {
 	background-image: url("bullet-round-orange.png");
@@ -179,6 +178,61 @@ ol ol li, ul li ol li { list-style-type:lower-alpha; }
 ol ol ol li, ul li ol li ol li { list-style-type:lower-roman; padding-left:2px; }
 
 dl { margin-left:0px; }
+
+/* list overrides - SRJ */
+
+/* This sort of works */
+
+ul li
+{
+  background-image: url("bullet-round-orange.png");
+  background-repeat: no-repeat;
+  background-position: 0px 7px;
+  padding-left: 16px;
+  margin-bottom:6px;
+  margin-left: 5px;
+}
+ul li, ul li
+{
+  background-image: url("bullet-round-gold.png");
+  background-repeat: no-repeat;
+  background-position: 0px 6px;
+  padding-left: 16px;
+  margin-bottom:6px;
+  margin-left: 10px;
+}
+ul li, ul li, ul li
+{
+  background-image: url("bullet-round-gray.png");
+  background-repeat: no-repeat;
+  background-position: 0px 6px;
+  padding-left: 16px;
+  margin-bottom:6px;
+}
+
+/*ul:nth-child(1) li {  
+  background-image: url("bullet-round-orange.png");
+  background-repeat: no-repeat;
+  background-position: 0px 7px;
+  padding-left: 16px;
+  margin-bottom:6px;
+}
+
+ul:nth-child(2) li {  
+  background-image: url("bullet-round-gold.png");
+  background-repeat: no-repeat;
+  background-position: 0px 6px;
+  padding-left: 16px;
+  margin-bottom:6px;
+}
+
+ul:nth-child(3) li {  
+  background-image: url("bullet-round-gray.png");
+  bckground-repeat: no-repeat;
+  background-position: 0px 6px;
+  padding-left: 16px;
+  margin-bottom:6px;
+}*/
 
 
 /* NUMBERED CODE */
