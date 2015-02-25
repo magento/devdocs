@@ -214,12 +214,26 @@ table {
 table td, table th, table tr, table tr th {
 	padding:8px;}
 
-table .odd {
+table tr:nth-child(odd) { /*(odd) or (2n 1)*/
     background-color: #F3F6F9; 
     border-bottom: medium none;
+    border-color: transparent #ffffff;
+    border-left: 1px solid #dce5ed;
+    border-right: 1px solid #dce5ed;
+    border-style: solid;
+    border-width: 1px;
+    color: #222222;
+    vertical-align: top;
 }
-table .even {
+table tr:nth-child(even) { /*(even) or (2n 0)*/
     border-bottom: medium none;
+    border-color: transparent #ffffff;
+    border-left: 1px solid #dce5ed;
+    border-right: 1px solid #dce5ed;
+    border-style: solid;
+    border-width: 1px;
+    color: #222222;
+    vertical-align: top;
 }
 table th {	
     border: #dce5ed 1px solid;
@@ -229,7 +243,7 @@ table th {
     vertical-align: top;
 	font-size:13px;
 }
-table .table-headings th {
+/*table .table-headings th {
 	background-color: rgba(220, 229, 237, .50);
     border:1px solid #dce5ed;
 	color: #555555;
@@ -237,8 +251,8 @@ table .table-headings th {
     padding: 10px;
     vertical-align: top;
 	font-size:14px;
-}
-table tr {
+}*/
+/*table tr {
     border-color: transparent #ffffff;
     border-left: 1px solid #dce5ed;
     border-right: 1px solid #dce5ed;
@@ -246,14 +260,14 @@ table tr {
     border-width: 1px;
     color: #222222;
     vertical-align: top;
-}
+}*/
 
-tr.even {
+/*tr.even {
     border-bottom: medium none;
 }
 tr.even, tr.odd {
     padding: 0.1em 0.6em;
-}
+}*/
 td {
     border:1px solid #dce5ed;
     color: #555555;
