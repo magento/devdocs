@@ -1,0 +1,66 @@
+<head><style>
+
+table.confluenceTable { margin:5px; border-collapse:collapse; }
+table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
+table.confluenceTable th.confluenceTh,
+table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
+ul { list-style-type: square; }
+
+</style></head>
+<!-- Title: Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12 -->
+<!-- URL: ee-connect-patches -->
+
+
+<!-- <!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=utf-8>
+
+	<link rel="stylesheet" type="text/css" href="../css/images//stylesheet.css"/>
+	<link rel="stylesheet" href="../css/images/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="../css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<title>Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12 - DRAFT, DO NOT DISTRIBUTE</title>
+
+</head>
+
+<body>
+<a name="top"></a>
+
+<img src="../css/images/header.png" width="1024" height="215" alt="header" />
+
+<div id="content"> 
+
+<h1>Patches for Magento Enterprise Edition (EE) Versions 1.10 - 1.12</h1> -->
+
+
+
+<h2 id="patches">Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12</h2>
+<p>We'd like to draw your attention to new patches that were recently posted to the Partner Portal and Support Center. These patches deliver important improvements, such as improving security of the Magento Connect Manager and making it easier to install community-created translation packages.</p>
+
+<h3 id="ee113-patches-connect-general">General Magento Connect Patches</h3>
+<p><em>Patch name</em>:</p>
+<ul class="level1"><li>PATCH_SUPEE-3941_EE_1.10.1.0_v1-2014-08-12-12-13-15.sh for EE 1.10.x</li>
+<li>PATCH_SUPEE-3941_EE_1.11.2.0_v1-2014-08-12-12-11-32.sh for EE 1.11.x</li>
+<li>PATCH_SUPEE-3941_EE_1.14.0.1_v1-2014-08-12-12-10-06.sh for EE 1.12.x</li></ul>
+<p>Result of applying this patch:</p>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4590" target="_blank">APPSTORE-4590</a> -->When you install a community-created translation package, the translation provided by the package overwrites any existing translations for the same items. This enables you to more easily install packages with translations. </li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><tt>/app/code/community</tt> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
+To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+
+<h4 id="ee113-patches-how-to-get">How to Get This Patch</h4>
+<p>To get this patch:</p>
+<ol><li>Log in to <a href="http://www.magentocommerce.com" target="_blank">www.magentocommerce.com</a>.</li>
+<li>In the left pane, click <strong>Downloads</strong>.</li>
+<li>In the right pane, click <strong>Magento Enterprise Edition</strong>.</li>
+<li>Follow the prompts on your screen to download a patch for your version of EE.</li>
+<li>Apply the patch as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+
+<h3 id="ee113-patches-solr-index">Solr Search Results and Indexing</h3>
+<p><em>Patch name</em>: PATCH_SUPEE-3630_EE_1.12.x_v1.sh for EE 1.12.x. <!-- <a href="https://jira.corp.x.com/browse/MPERF-5050" target="_blank">MPERF-5050</a>, <a href="https://jira.corp.x.com/browse/SUPEE-3630" target="_blank">SUPEE-3630</a>  -->After applying this patch, your search engine returns search results to users on the web store while reindexing is underway. We recommend you install this patch if you're using the Solr search engine. <em>This patch can result in slower performance if you're using the default MySQL Full Text search engine</em>.</p>
+<p>To get this patch, <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">contact Magento Support</a>.</p>
+
+
+
