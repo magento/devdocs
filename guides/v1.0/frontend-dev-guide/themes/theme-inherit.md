@@ -23,22 +23,18 @@ subsequent chapters in this guide.
 
 <h2>Set a parent theme</h2>
 
-A parent theme is specified in the child theme `composer.json` file.
+A parent theme is specified in the child theme `theme.xml` declaration file.
 
-Example
-The Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in composer.json of the Orange theme as follows:
+Example: 
+the Orange theme by OrangeCo inherits from the Magento Blank theme. The inheritance is declared in `app/design/frontend/OrangeCo/orange/theme.xml` as follows:
 <pre>
-{
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;name&quot;:&nbsp;&quot;orangeco/theme-frontend-orange&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;description&quot;:&nbsp;&quot;N/A&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&quot;require&quot;:&nbsp;{
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;php&quot;:&nbsp;&quot;~5.4.11|~5.5.0&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/theme-frontend-blank&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/framework&quot;:&nbsp;&quot;0.42.0-beta1&quot;,
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;magento/magento-composer-installer&quot;:&nbsp;&quot;*&quot;
-&nbsp;&nbsp;&nbsp;&nbsp;},
-...
-}
+&lt;theme xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../lib/internal/Magento/Framework/Config/etc/theme.xsd&quot;&gt;
+     &lt;title&gt;Orange&lt;/title&gt;
+     &lt;parent&gt;Magento/blank&lt;/parent&gt; 
+     &lt;media&gt;
+         &lt;preview_image&gt;media/preview.jpg&lt;/preview_image&gt; 
+     &lt;/media&gt;
+ &lt;/theme&gt;
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
