@@ -44,7 +44,7 @@ To fork a repository on Github, do the following:
 
 First, check the <a href="https://github.com/magento/magento2/pulls?q=is%3Aopen+is%3Apr" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
 
-To create a pull request do the following:
+To create a pull request do the following: 
 
 1. Create a feature branch for your changes and push those changes to the copy of your repository on GitHub. This is the best way to organize and even update your PR.
 2. In your repository, click **Pull requests** on the right, and then click **New pull request**: <br><img src="{{ site.baseurl }}common/images/pr.png" target="_blank">
@@ -59,7 +59,7 @@ If you find a bug in Magento 2 code, you can report it by creating an issue reco
 Note:
 Before creating an issue, please do the following:
 
- 1. Check the <a href="devdocs.magento.com">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.
+ 1. Check the <a href="{{ site.baseurl }}">documentation</a> to make sure the behavior you are reporting is really a bug, not a feature.
  2. Check the <a href="https://github.com/magento/magento2/issues" target="_blank"> existing issues</a> to make sure you are not duplicating somebody's work.
 
 To add an issue:
