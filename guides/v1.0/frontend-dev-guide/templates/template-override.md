@@ -62,9 +62,6 @@ In Magento there's a special template which serves as root template for all page
 Unlike other templates, `root.phtml` contains the `doctype` specification and contributes to <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections of all pages rendered by Magento application. 
 
 But similar to other templates, `root.phtml` can be overridden in a theme. 
-For example, Magento Blank theme contains an overriding root template: 
-
-<code><a href="{{site.mage2000url}}app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml" target="_blank">app/design/frontend/Magento/luma/Magento_Theme/templates/root.phtml</a></code>
 
 
 
