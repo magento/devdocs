@@ -75,18 +75,18 @@ Conventionally layout declaration file can be located in one of the following lo
 </ul>
 
 <br>
-<p>Declare a layout file using the <code>&lt;layout&gt;&lt;/layout&gt;</code> instruction, for which specify the following:
+<p>Declare a layout file using the <code>&lt;layout&gt;&lt;/layout&gt;</code> instruction, for which specify the following:</p>
+
 
 <ul>
- <li><code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the `2columns-left.xml` page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code></li>
+ <li><code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the <code>2columns-left.xml</code> page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code></li>
 
 <li><code>&lt;label&nbsp;translate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code></li>
 </ul>
 
 Sample page layout declaration file:
-<p></p>
 
-<p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b>
+<p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b></p>
 
 <pre>
 &lt;page_layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd&quot;&gt;
@@ -106,7 +106,6 @@ Sample page layout declaration file:
 </pre>
 
 
-
 <h2 id="layout-types-conf">Page configuration</h2>
 
 The page configuration adds content to the wireframe defined in a page layout file. A page configuration also contains page meta-information, and contents of the <code>&lt;head&gt;</code> section.
@@ -119,6 +118,7 @@ Conventionally page configuration files must be located as follows:
 <li> Module page configurations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
 <li> Theme page configurations: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
+
 
 <h3>Page configuration structure and allowed layout instructions</h3>
 
@@ -134,7 +134,7 @@ The following table describes the instructions specific for page configuration f
     </tr>
     <tr>
       <td>
-        <code> <span>&lt;page&gt;&lt;/page&gt;</span> </code>
+        <code><span>&lt;page&gt;&lt;/page&gt;</span></code>
       </td>
       <td colspan="1">
         <ul>
@@ -142,9 +142,7 @@ The following table describes the instructions specific for page configuration f
             <code>layout = {layout}</code>
           </li>
           <li>
-            <code >
-              xsi:noNamespaceSchemaLocation ="{path_to_schema}"</code>
-            
+            <code>xsi:noNamespaceSchemaLocation ="{path_to_schema}"</code>            
           </li>
         </ul>
       </td>
@@ -198,7 +196,7 @@ The following table describes the instructions specific for page configuration f
        <li><code>&lt;attribute&gt;</code></li>
           <li><code>&lt;referenceBlock&gt;</code></li>
           <li><code>&lt;referenceContainer&gt;</code></li>
-          <li><code>&lt;action&gt;</li>
+          <li><code>&lt;action&gt;</code></li>
         </ul>
       </td>
       <td colspan="1"></td>
@@ -207,9 +205,9 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1"><code>&lt;attribute&gt;</code></td>
       <td colspan="1">
         <ul>
-          <li><code>name = <span>{arbitrary_name}</code></span>
+          <li><code>name = {arbitrary_name}</code>
           </li>
-          <li><code>value = <span>{arbitrary_value}</code></span>
+          <li><code>value = {arbitrary_value}</code>
           </li>
         </ul>
       </td>
@@ -217,7 +215,6 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <p>Specified for <code>&lt;html&gt;</code>, rendered like following:</p>
         <p><code>&lt;html name="value'&gt;</code></p>
-        <p></p>
       </td>
     </tr>
     <tr>
@@ -300,7 +297,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"></td>
+      <td colspan="1"> </td>
     </tr>
     <tr>
       <td colspan="1">
