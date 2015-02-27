@@ -205,25 +205,37 @@ mv composer.phar /usr/local/bin/composer</pre>
 </ol>
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
+<p>You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:</p>
 
-<p>To clone the Magento GitHub repository:</p>
+<ul>
+  <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.</li>
+  <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
+</ul>
+
+<p>See one of the following section:</p>
+
+<ul>
+  <li><a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a></li>
+  <li><a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a></li>
+</ul>
+
+<h3 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h3>
+
+<p>To clone the Magento GitHub repository using the SSH protocol:</p>
 
 <ol>
   <li>
-    <p>To clone the Magento repository using secure shell (SSH), <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">generate SSH keys</a> and add the public key to GitHub.</p>
-  </li>
-  <li>
-    <p>Copy to the clipboard the Magento GitHub repository SSH or HTTPS clone URL.</p>
+    <p>Copy to the clipboard the Magento GitHub repository SSH clone URL.</p>
 
     <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
 
-    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click either <strong>SSH</strong> or <strong>HTTPS</strong>.</p>
+    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
 
     <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
 
-    <p>The following figure shows an example of copying the HTTPS clone URL to the clipboard.</p>
+    <p>The following figure shows an example.</p>
 
-    <p><img src="/common/images/install_mage2_clone-url1.png" alt="Clone the Magento GitHub repository using either HTTPS or SSH" /></p>
+    <p><img src="/common/images/install_mage2_clone-ssh.png" alt="Clone the Magento GitHub repository using SSH" /></p>
   </li>
   <li>
     <p>Change to your web server’s docroot directory.</p>
@@ -231,14 +243,60 @@ mv composer.phar /usr/local/bin/composer</pre>
     <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
   </li>
   <li>
-    <p>Enter any of the following commands:</p>
+    <p>Enter the following command:</p>
 
-    <p>To clone using HTTPS: <code>git clone https://github.com/magento/magento2.git</code></p>
-
-    <p>To clone using SSH: <code>git clone git@github.com:magento/magento2.git</code></p>
+    <pre><code>git clone https://github.com/magento/magento2.git
+</code></pre>
   </li>
   <li>
     <p>Wait for the repository to clone on your server.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
+        <pre>Cloning into 'magento2'...
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly</pre>
+</div>
+  </li>
+  <li>
+    <p>Continue with <a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a>.</p>
+  </li>
+</ol>
+
+<h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
+
+<p>To clone the Magento GitHub repository using the HTTPS protocol:</p>
+
+<ol>
+  <li>
+    <p>Copy to the clipboard the Magento GitHub repository HTTPS clone URL.</p>
+
+    <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
+
+    <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
+
+    <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+
+    <p>The following figure shows an example.</p>
+
+    <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS" /></p>
+  </li>
+  <li>
+    <p>Change to your web server’s docroot directory.</p>
+
+    <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+  </li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>git clone https://&lt;your GitHub user name&gt;:&lt;your password&gt;@github.com/magento/magento2.git
+</code></pre>
+  </li>
+  <li>
+    <p>Wait for the repository to clone on your server.</p>
+  </li>
+  <li>
+    <p>Continue with the next section.</p>
   </li>
 </ol>
 

@@ -151,79 +151,134 @@
 
 <ul>
   <li><a href="#instgde-install-sample-intro">Introduction to Magento sample data</a></li>
-  <li><a href="#instgde-install-sample-enabling">Enable the use of sample data</a></li>
+  <li><a href="#instgde-install-sample-enable-before">Enable sample data before you install the Magento software</a></li>
+  <li><a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a></li>
 </ul>
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
-<p>This section discusses how to enable you to install the optional Magento sample data. If you don’t wish to use sample data, skip this topic and continue with:</p>
+<p>This section discusses how to enable you to install the optional Magento sample data. To enable sample data, you must update <code>composer.json</code> in the Magento root installation directory to provide the location of the sample data package. After that you can either run the Magento software installer or you can run a script to install the sample data.</p>
+
+<p>Sample data is versioned like Magento code. Before you begin, you can either either:</p>
 
 <ul>
-  <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
+  <li>Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</li>
+  <li>Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">semantic versioning syntax</a>.</li>
 </ul>
 
-<p>Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p></span>
+</div>
 
-<p>To enable sample data, you must edit <code>composer.json</code> in the Magento root installation directory to provide the location of the sample data package.</p>
-
-<h2 id="instgde-install-sample-enabling">Enable the use of sample data</h2>
+<h2 id="instgde-install-sample-enable-before">Enable sample data before you install the Magento software</h2>
+<p>This section discusses how to install optional sample data <em>before</em> you install the Magento software. If you’ve already installed, see <a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>.</p>
 
 <p>To enable sample data, you must:</p>
-
-<ol>
-  <li>Find the current versions of the <code>magento/sample-data</code> and <code>magento/sample-data-media</code> on <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</li>
-  <li>Run the <code>composer package</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li>
-  <li>Run the Magento 2 installer to update the database.</li>
-</ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-   <p>The sample data Composer package recently changed. If you're using an alpha or beta1 Magento 2 build, we strongly recommend you update to a beta2 build to get the latest code.</p> 
-<p>To update, see <a href="/guides/v1.0/install-gde/install/install-cli.html#instgde-install-magento-update">Updating the Magento software</a>.</p></div>
+<ol><li>Decide the version of <code>magento/sample-data</code> and <code>magento/sample-data-media</code> you want as discussed in <a href="/guides/v1.0/install-gde/install/sample-data.html#instgde-prereq-sample-intro">Introduction to Magento sample data</a>.</li>
+<li>Run the <code>composer package</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
 
 <p>To update <code>composer.json</code>:</p>
 
-<ol>
-  <li>Go to <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a> and write down suitable versions of <code>magento/sample-data</code> and <code>magento/sample-data-media</code> (typically, you should choose the most recent version).</li>
-  <li>Log in to your Magento server as the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
-  <li>Change to your Magento installation directory.</li>
-  <li>
-    <p>Enter the following command to reference Magento packages in <code>composer.json</code>:</p>
+<ol><li>Log in to your Magento server as the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
+<li>Change to your Magento installation directory.</li>
+<li>Make a backup copy of <code>composer.json</code>.
+	<pre>cp composer.json composer.json.bak</pre></li>
+<li>Open <code>composer.json</code> in a text editor.</li>
+<li>In the first section, add <code>"minimum-stability": "beta",</code> before <code>license</code>. A snippet follows:
+	<pre>"name": "magento/project-community-edition",
+    "description": "Magento project (Community Edition)",
+    "type": "project",
+    "minimum-stability": "beta",
+    "version": "0.42.0-beta10",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],</pre></li>
+<li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+<li>Enter the following command to reference Magento packages in <code>composer.json</code>:<br />
+<pre>composer config repositories.magento composer http://packages.magento.com</pre></li>
+<li>Enter the following command to require the current version of the sample data package:<br />
+<pre>composer require magento/sample-data:&lt;version&gt;</pre>
+where <code>&lt;version&gt;</code> is either an exact version or semantic version syntax.<br />
+Exact version example:<br />
+<pre>composer require magento/sample-data:0.42.0-beta10</pre>
+Semantic versioning example:<br />
+<pre>composer require magento/sample-data:~0.42.0-beta9</pre></li>
+<li>Wait while dependencies are installed.</li></ol>
 
-    <pre><code>composer config repositories.magento composer http://packages.magento.com
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If you're installing sample data for a version of Magento 2 earlier than 0.42.0-beta10, you must install the <code>sample-data-media</code> package as well.</p>
+<p>Examples:</p>
+<pre>composer require magento/sample-data:&lt;version&gt; magento/sample-data-media:&lt;version&gt;</pre>
+where <code>&lt;version&gt;</code> is either an exact version or semantic version syntax.<br />
+Exact version example:<br />
+<pre>composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1</pre>
+Semantic versioning example:<br />
+<pre>composer require magento/sample-data:~0.42.0-beta5 magento/sample-data-media:~0.42.0-beta1</pre>
+</span>
+</div>
+
+<p>Continue with one of the following topics:</p>
+
+<ul>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
+</ul>
+
+<h2 id="instgde-install-sample-enable-after">Enable sample data after you install the Magento software</h2>
+<p>This section discusses how to install optional sample data <em>after</em> you install the Magento software. If have not installed yet, see <a href="#instgde-install-sample-enable-before">Enable sample data before you install the Magento software</a>.</p>
+
+<p>To enable sample data, you must:</p>
+<ol><li>Decide the version of <code>magento/sample-data</code> and <code>magento/sample-data-media</code> you want as discussed in <a href="/guides/v1.0/install-gde/install/sample-data.html#instgde-prereq-sample-intro">Introduction to Magento sample data</a>.</li>
+<li>Run the <code>composer package</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
+
+<p>To update <code>composer.json</code>:</p>
+
+<ol><li>Log in to your Magento server as the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with <code>root</code> privileges.</li>
+<li>Change to your Magento installation directory.</li>
+<li>Make a backup copy of <code>composer.json</code>.
+	<pre>cp composer.json composer.json.bak</pre></li>
+<li>Open <code>composer.json</code> in a text editor.</li>
+<li>In the first section, add <code>"minimum-stability": "beta",</code> before <code>license</code>. A snippet follows:
+	<pre>"name": "magento/project-community-edition",
+    "description": "Magento project (Community Edition)",
+    "type": "project",
+    "minimum-stability": "beta",
+    "version": "0.42.0-beta10",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],</pre></li>
+<li>Save your changes to <code>composer.json</code> and exit the text editor.</li>
+<li>Enter the following command to reference Magento packages in <code>composer.json</code>:<br />
+<pre>composer config repositories.magento composer http://packages.magento.com</pre></li>
+<li>Enter the following command to require the current version of the sample data package:<br />
+<pre>composer require magento/sample-data:&lt;version&gt;</pre>
+where <code>&lt;version&gt;</code> is either an exact version or semantic version syntax.<br />
+Exact version example:<br />
+<pre>composer require magento/sample-data:0.42.0-beta10</pre>
+Semantic versioning example:<br />
+<pre>composer require magento/sample-data:~0.42.0-beta9</pre></li>
+<li>Wait while dependencies are installed.</li></ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>If you're installing sample data for a version of Magento 2 earlier than 0.42.0-beta10, you must install the <code>sample-data-media</code> package as well.</p>
+<p>Examples:</p>
+<pre>composer require magento/sample-data:&lt;version&gt; magento/sample-data-media:&lt;version&gt;</pre>
+where <code>&lt;version&gt;</code> is either an exact version or semantic version syntax.<br />
+Exact version example:<br />
+<pre>composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1</pre>
+Semantic versioning example:<br />
+<pre>composer require magento/sample-data:~0.42.0-beta5 magento/sample-data-media:~0.42.0-beta1</pre>
+</span>
+</div>
+
+<p>To install the sample data, enter the following command:</p>
+
+<pre><code>    php dev/tools/Magento/Tools/SampleData/install.php --admin_username=&lt;your Magento admin user name&gt;
 </code></pre>
-  </li>
-  <li>
-    <p>Enter the following command to require the current version of the sample data and media packages:</p>
-
-    <pre><code>composer require magento/sample-data:&lt;version&gt; magento/sample-data-media:&lt;version&gt; --dev
-</code></pre>
-
-    <p>where you found <code>&lt;version&gt;</code> in step 1.</p>
-
-    <p>For example,</p>
-
-    <pre><code>composer require magento/sample-data:0.42.0-beta6 magento/sample-data-media:0.42.0-beta1 --dev
-</code></pre>
-  </li>
-  <li>
-    <p>Wait while dependencies are installed.</p>
-  </li>
-  <li>
-    <p>To optionally install sample data only if the Magento software is already installed, enter:</p>
-
-    <pre><code>php dev/tools/Magento/Tools/SampleData/install.php --admin_username=&lt;your Magento admin user name&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>If you haven’t already installed the Magento software, see the following topics:</p>
-
-    <ul>
-      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-    </ul>
-  </li>
-</ol>
 
 
 		</div>
