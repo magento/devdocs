@@ -1,16 +1,13 @@
 ---
-layout: default
+layout: default 
 group: install
 subgroup: T_SampleData
 title: Optional Magento sample data
 menu_title: Optional Magento sample data
 menu_node: parent
-menu_order: 1
+menu_order: 1 
 github_link: install-gde/install/sample-data.md
 --- 
-
-## Hello!
-Hello! Hello!
 
 #### Contents
 
@@ -26,6 +23,11 @@ Sample data is versioned like Magento code. Before you begin, you can either eit
 
 *	Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.
 *	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">semantic versioning syntax</a>.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p></span>
+</div>
 
 <h2 id="instgde-install-sample-enable-before">Enable sample data before you install the Magento software</h2>
 This section discusses how to install optional sample data *before* you install the Magento software. If you've already installed, see <a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>.
@@ -43,6 +45,6 @@ This section discusses how to install optional sample data *after* you install t
  
 {% include install/sample-data.html %}
 
-1.	Enter the following command to install sample data:
+To install the sample data, enter the following command:
 
         php dev/tools/Magento/Tools/SampleData/install.php --admin_username=<your Magento admin user name>
