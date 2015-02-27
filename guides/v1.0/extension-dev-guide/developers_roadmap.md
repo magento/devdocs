@@ -15,7 +15,7 @@ intro
  
 
 <h2 id="create-module-code-setup">Get started</h2>
-The main steps to create a module are:
+As an extension developer, there are a series of steps you take to create and package your Magento modules and components.
 
 1. text
 2. text
