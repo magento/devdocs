@@ -184,7 +184,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;script&gt;</code></li>
         </ul>
       </td>
-      <td colspan="1"> </td>
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1"><code>&lt;body&gt;&lt;/body&gt;</code></td>
@@ -201,7 +201,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;action&gt;</li>
         </ul>
       </td>
-      <td colspan="1"> </td>
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1"><code>&lt;attribute&gt;</code></td>
@@ -213,11 +213,11 @@ The following table describes the instructions specific for page configuration f
           </li>
         </ul>
       </td>
-      <td colspan="1"> </td>
+      <td colspan="1"></td>
       <td colspan="1">
         <p>Specified for <code>&lt;html&gt;</code>, rendered like following:</p>
         <p><code>&lt;html name="value'&gt;</code></p>
-        <p> </p>
+        <p></p>
       </td>
     </tr>
     <tr>
@@ -254,7 +254,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"> </td>
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1">
@@ -300,7 +300,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"> </td>
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1">
@@ -346,7 +346,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"> </td>
+      <td colspan="1"></td>
     </tr>
     <tr>
       <td colspan="1">
@@ -377,7 +377,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"> </td>
+      <td colspan="1"></td>
     </tr>
   </tbody>
 </table>
