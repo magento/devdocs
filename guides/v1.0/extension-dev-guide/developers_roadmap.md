@@ -1,62 +1,34 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: How To
+subgroup: How to
 title: Developer's Roadmap
 menu_title: Developer's Roadmap
-menu_order: 3
+menu_order: 1
 github_link: extension-dev-guide/create_module.md
 
 ---
 
-<h2 id="create-module-overview">Overview</h2>
+<h2 id="developer_roadmap_overview">Overview</h2>
 
-intro
+This topic is intended to introduce the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.
  
 
-<h2 id="create-module-code-setup">Get started</h2>
-As an extension developer, there are a series of steps you take to create and package your Magento modules and components.
-
-1. text
-2. text
 
 
+<h2 id="developer_roadmap_resources">Developer Resources</h2>
+There are several resources that you might want to take a look at as you consider your workflow:
 
-<h2 id="create-module-file-structure">title here</h2>
-First let's create the &lt;ModuleName> directory. Use a module name that is descriptive, and not too long.
-
-Next, you can create the `/etc` directory within the `<ModuleName>` directory:
-
-Example: 
-
-	<ModuleName>
-	  /etc
-
-text here
-
-* Blocks
-* Controllers
-* Helpers
-* Models
-
-text here
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>NOTE here. </p> 
-</div>                
+1. <a href="https://github.com/magento/magento2-samples"> Sample extensions created by the Magento 2 Core team</a>
+2. Magento 2 Developer's Hub, at <a href="magento.com/developers/magento2">magento.com/developers/magento2</a>
+3. The <a href="{{ site.baseurl }}index.html">Magento 2 Documentation Library</a>, with Guides such as Coding Standards, Front-end Developers Guide, Installation and Configuration, and other documents about issues like our backwards compatibility policy, versioning, and using Magento APIs.
+             
 
 
-<h2 id="create-module-naming">name here</h2>
-Now let's create the module itself, in the /etc directory of the module you just created.
+<h2 id="developer_roadmap_workflow">Workflow and related decisions</h2>
+Now let's take a look at a high-level workflow, and start the process of thinking through any questions that you might have to decide before continuing.
 
-A module declares itself (i.e. defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ModuleName>/etc/`. 
-
-Minimal declaration sample:
-
-	<config>
-       <module name="Vendor_ModuleName" schema_version="2.0.0">
-       </module>
-	</config>
+IMAGE HERE
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/m2-sample-minimal"> sample module</a> created by the Magento Core Team. </p>

@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: How To
+subgroup: How to
 title: Create a Module
 menu_title: Create a Module
-menu_order: 4
+menu_order: 2
 github_link: extension-dev-guide/create_module.md
 ---
 
