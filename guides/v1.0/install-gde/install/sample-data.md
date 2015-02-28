@@ -22,11 +22,12 @@ This section discusses how to enable you to install the optional Magento sample 
 Sample data is versioned like Magento code. Before you begin, you can either either:
 
 *	Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.
-*	Install the latest version using Composer <a https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
+*	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p></span>
+  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
+<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
 </div>
 
 <h2 id="instgde-install-sample-enable-before">Enable sample data before you install the Magento software</h2>
@@ -48,3 +49,8 @@ This section discusses how to install optional sample data *after* you install t
 To install the sample data, enter the following command:
 
 	php dev/tools/Magento/Tools/SampleData/install.php --admin_username=<your Magento admin user name>
+
+<h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
+If you're 
+
+{% include install/sample-data-note.html %}
