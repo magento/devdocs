@@ -22,7 +22,7 @@ This section discusses how to enable you to install the optional Magento sample 
 Sample data is versioned like Magento code. Before you begin, you can either either:
 
 *	Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.
-*	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">semantic versioning syntax</a>.
+*	Install the latest version using Composer <a https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -47,4 +47,4 @@ This section discusses how to install optional sample data *after* you install t
 
 To install the sample data, enter the following command:
 
-        php dev/tools/Magento/Tools/SampleData/install.php --admin_username=<your Magento admin user name>
+	php dev/tools/Magento/Tools/SampleData/install.php --admin_username=<your Magento admin user name>
