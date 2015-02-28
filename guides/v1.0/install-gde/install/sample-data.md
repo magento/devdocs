@@ -51,6 +51,4 @@ To install the sample data, enter the following command:
 	php dev/tools/Magento/Tools/SampleData/install.php --admin_username=<your Magento admin user name>
 
 <h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
-If you're 
-
 {% include install/sample-data-note.html %}
