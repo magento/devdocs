@@ -160,13 +160,13 @@
 
 <h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
 
-<p>Magento enables you to change, or <em>extend</em>, the behavior of any original method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins. </p>
+<p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins. </p>
 
 <p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
 
 <p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict. </p>
 
-<p>Interception ensures that conflicting extensions run without intervention in the system.</p>
+<p>Interception ensures that conflicting extensions run without intervention.</p>
 
 <h2 id="plugin-limit">Limitations</h2>
 
@@ -174,8 +174,9 @@
 
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
 <ul>
-  <li>Final methods.</li>
-  <li>Final classes.</li>
+  <li>Final methods</li>
+  <li>Non-public methods</li>
+  <li>Final classes</li>
 </ul>
 
 <h2 id="plugin-declare">Declare a plug-in</h2>
