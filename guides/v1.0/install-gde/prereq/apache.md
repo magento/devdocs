@@ -117,7 +117,7 @@ See one of the following sections:
 
     <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
-    <p>If you are using VirtualDocumentRoot rather than DocumentRoot, there is a bug in Apache 2.2 with relative rewrites. The <code>pub/media/.htaccess</code> and <code>pub/static/.htaccess</code> files will need to be modified, replacing the <code>../</code> portion of the <code>RewriteRule</code> with the complete path relative to the effective document root. This will usually be simply <code>/</code> but if Magento is installed at a subdirectory of the site such as /shop/ then it should be <code>/shop/</code>.</p></span>
+    <p>Apache 2.2 has a known issue with relative rewrites and VirtualDocumentRoot (as opposed to DocumentRoot). The bug affects the Magento <code>pub/media/.htaccess</code> and <code>pub/static/.htaccess</code>files. You must replace the <code>../</code> portion of the <code>RewriteRule</code> with the complete path relative to the effective document root. For more information about the issue, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=26052#c40" target="_blank">Apache bug 26052</a>.</p></span>
     </div>
 
 <h4 id="apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</h4>

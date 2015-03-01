@@ -19,5 +19,4 @@ Magento static assets should be located under `<your Magento install dir>/pub/st
 
 ### Solution
 
-Verify your server rewrites setting and your base URL and try again.
-This typically happens if you forgot to setup AllowOverride directive in web server configuration, which means the rewrites to compile and serve static files are not working.
+Verify your <a href="{{ site.gdeurl }}install-gde/prereq/apache.html#install-ubuntu-apache-rewrites">server rewrites</a> setting and your Magento server's base URL and try again. If you set up the `AllowOverride` directive incorrectly, rewrites fail to compile and static files aren't served from the correct location.
