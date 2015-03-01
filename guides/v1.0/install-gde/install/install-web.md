@@ -33,6 +33,11 @@ Before you begin, make sure that:
   <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
 </div>
 
+<h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
+The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.
+
+{% include install/enable-disable-modules.html %}
+
 <h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
 
 The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
@@ -177,6 +182,22 @@ To install the Magento software using the Setup Wizard:
 2.	From the **Store Default Currency** list, click the default currency to use in your store.
 
 3.	From the **Store Default Language** list, click the default language to use in your store.
+
+3.	Expand **Advanced Modules Configuraiton** to optionally enable or disable modules before you install the Magento software.
+
+	Before you enable or disable modules, review the information discussed in <a href="#instgde-install-web-enable-mod">Enabling and disabling modules</a>.
+
+	How it works:
+
+	*	To enable a module that is currently disabled, select its check box.
+	*	To disable a module that is currently disable, clear its check box.
+	*	If a module name is unavailable, some other enabled module depends on it. To change the state of that module, you must first perform the corresponding action on the module on which it depends.
+		For example, Magento_GoogleAnalytics can be disabled only if Magento_GoogleOptimizer is disabled first.
+	*	If a dependency error displays, select the **Skip dependency check for individual modules** check box to ignore these dependency checks.
+
+		@@Caution TBD
+
+	The following figure shows an example of TBD.
 
 4.	Click **Next**.
 

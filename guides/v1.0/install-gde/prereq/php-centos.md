@@ -127,6 +127,8 @@ To set your time zone and memory limit:
 
 5.	Add the time zone setting you found in step 1.
 
+6.	Search for `memory_limit`.
+
 2.	Change `memory_limit` to:
 
 		memory_limit = 512M` or more for normal operation
