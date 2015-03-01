@@ -20,22 +20,22 @@ github_link: cextension-dev-guide/plugins.md
 
 <h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
 
-Magento enables you to change, or *extend*, the behavior of any original method in any Magento class. You can change the behavior of an *original method* by creating an extension. These extensions use the `Plugin` class and are therefore referred to as plug-ins. 
+Magento enables you to change, or *extend*, the behavior of any original, public method in any Magento class. You can change the behavior of an *original method* by creating an extension. These extensions use the `Plugin` class and are therefore referred to as plug-ins. 
 
 To ensure that plug-ins work correctly, you must follow declaration and naming rules.
 
 You use *interception* to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the `Plugin` class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict. 
 
-Interception ensures that conflicting extensions run without intervention in the system.
+Interception ensures that conflicting extensions run without intervention.
 
 <h2 id="plugin-limit">Limitations</h2>
 
 You cannot use plug-ins for:
 
 <!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
-* Final methods.
-* non-public methods
-* Final classes.
+* Final methods
+* Non-public methods
+* Final classes
 
 <h2 id="plugin-declare">Declare a plug-in</h2>
 
