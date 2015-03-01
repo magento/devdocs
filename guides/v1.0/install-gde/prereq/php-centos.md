@@ -15,7 +15,6 @@ github_link: install-gde/prereq/php-centos.md
 *	<a href="#centos-verify-php">Verify PHP is installed</a>
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
-*	<a href="#instgde-prereq-php-prereq-centos">Installing required PHP extensions on CentOS</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -66,7 +65,9 @@ To upgrade to PHP 5.6:
 1.	Enter the following commands in the order shown:
 
 		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-		yum install -y php56w php56w-opcache
+		yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-mbstring
+
+2.	Restart Apache: `service httpd restart`
 
 2.	Enter the following command to verify that PHP 5.6 is installed:
 
@@ -79,7 +80,7 @@ To upgrade to PHP 5.6:
 		Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
     	with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
-3.	<a href="#instgde-prereq-php-prereq-centos">Install required PHP extensions on CentOS</a>.
+3.	<a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.
 
 <h2 id="instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</h2>
 There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.
@@ -91,26 +92,17 @@ To upgrade to PHP 5.5:
 		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
 		yum -y remove php-common-5.3.3-40.el6_6.x86_64
 		yum -y install php55w php55w-opcache
+		yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-mbstring
 
 2.	Restart Apache: `service httpd restart`
 
-3.	<a href="#instgde-prereq-php-prereq-centos">Install required PHP extensions on CentOS</a>.
-
-<h2 id="instgde-prereq-php-prereq-centos">Installing required PHP extensions on CentOS</h2>
-
-PHP 5.6:
-
-	yum -y install php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-mbstring
-
-PHP 5.5:
-
-	yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-mbstring
+3.	Continue with the next section.
 
 <h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
 
 Before you install Magento, you might need to set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
-`PHP Warning:  date(): It is not safe to rely on the system's timezone settings.` [more messages follow]
+	PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
 
 We also recommend you increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.
 
