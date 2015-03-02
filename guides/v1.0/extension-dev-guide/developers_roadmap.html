@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a Module</title>
+	<title>Developer's Roadmap</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/create_module.html">
+	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/developers_roadmap.html">
 
 </head>	
 <body>
@@ -136,9 +136,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create a Module</h1>
+		<h1 class="page-heading">Developer's Roadmap</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/create_module.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/developers_roadmap.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -147,71 +147,28 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="create-module-overview">Overview</h2>
+		<h2 id="developer_roadmap_overview">Overview</h2>
 
-<p>This topic covers the basic steps of creating a new module. Subsequent sections in this Developer’s Guide explain how to verify your new module and how to use Composer to package and distribute the module.</p>
+<p>This topic is intended to introduce the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.</p>
 
-<h2 id="create-module-basics">Basic Pre-Requisites</h2>
-<p>Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the Magento <a href="/guides/v1.0/install-gde/system-requirements.html">System Requirements</a>.</p>
-
-<p>Also, Magento recommends that you disable caching while performing the following steps. </p>
-
-<h2 id="create-module-code-setup">Get started</h2>
-<p>The main steps to create a module are:</p>
+<h2 id="developer_roadmap_resources">Developer Resources</h2>
+<p>There are several resources that you might want to take a look at as you consider your workflow:</p>
 
 <ol>
-  <li>Build the file structure for the module, with the appropriate “building block” directories</li>
-  <li>Create the <code>module.xml</code> file, with a namespace and name for the new module </li>
+  <li>See the <a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team</li>
+  <li>Magento 2 Developer’s Hub, at <a href="magento.com/developers/magento2">magento.com/developers/magento2</a></li>
+  <li>The <a href="/index.html">Magento 2 Documentation Library</a>, with Guides such as Coding Standards, Frontend Developers Guide, Installation and Configuration, and other documents about issues like our backwards compatibility policy, versioning, and using Magento APIs.</li>
 </ol>
 
-<p>In subsequent topics, we will discuss which configuration files are needed for your new module. The required configuration files depend on how you plan to use the module: will it be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call?</p>
+<h2 id="developer_roadmap_workflow">Workflow and related decisions</h2>
+<p>Now let’s take a look at a high-level workflow, and consider some questions that you might have to decide before continuing.</p>
 
-<h2 id="create-module-file-structure">Build the file structure</h2>
-<p>First let’s create the &lt;ModuleName&gt; directory. Use a module name that is descriptive, and not too long.</p>
-
-<p>Next, you can create the <code>/etc</code> directory within the <code>&lt;ModuleName&gt;</code> directory:</p>
-
-<p>Example: </p>
-
-<pre><code>&lt;ModuleName&gt;
-  /etc
-</code></pre>
-
-<p>The <code>/etc</code> directory is where the <code>module.xml</code> file resides, and this directory is required no matter how you plan to use the module. Additional directories may be needed under the <code>&lt;ModuleName&gt;</code> directory, depending on how you plan to use the module. </p>
-
-<p>We will look at the additional directories in the next topic, and link to some sample modules showing these directories and the configuration files in each. Typically these components are:</p>
-
-<ul>
-  <li>Blocks</li>
-  <li>Controllers</li>
-  <li>Helpers</li>
-  <li>Models</li>
-</ul>
-
-<p>Along with the directories for those main components, you may need some additional directories for important things like configuration files, optional plugins, i18n files, APIs, and other files.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Be aware that the standard placement of the &lt;ModuleName&gt; directory within the overall Magento file structure is <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName&gt; directory and the required directories within it. </p> 
-</div>
-
-<h2 id="create-module-naming">Create the new module.xml file</h2>
-<p>Now let’s create the module itself, in the /etc directory of the module you just created.</p>
-
-<p>A module declares itself (i.e. defines its name and existence) in the <code>module.xml</code> file, located in the Magento install directory at <code>&lt;ModuleName&gt;/etc/</code>. </p>
-
-<p>Minimal declaration sample:</p>
-
-<pre><code>&lt;config&gt;
-   &lt;module name="Vendor_ModuleName" schema_version="2.0.0"&gt;
-   &lt;/module&gt;
-&lt;/config&gt;
-</code></pre>
+<p><img src="/common/images/EDG_dev_roadmap.png" alt="Developer's roadmap" /></p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/m2-sample-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them!/p&gt;
- 
-</p></div>
+  <p>The Magento core team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
+ </div>
 
 
 		</div>
@@ -363,11 +320,11 @@
 								
 								
 							
-									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
+									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
 						
 								
 							
-									<li class="level-2  active "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
+									<li class="level-2 "><a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
 						
 								
 							
