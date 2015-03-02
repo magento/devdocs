@@ -4,7 +4,7 @@ group: extension-dev-guide
 subgroup: How to
 title: Configure services as web APIs
 menu_title: Configure services as web APIs
-menu_order: 4
+menu_order: 3
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 ---
 
