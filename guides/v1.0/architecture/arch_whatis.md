@@ -18,7 +18,7 @@ Object-oriented programming concepts are inherent in the Magento design, allowin
 
 <h3 id="m2arch-whatis-archi"> Product architecture</h3>
 
-Magento is a modular system, and comprises several key components used to build a custom application or web site. For example, Magento Modules contain logic to fulfill required actions and functions, while Themes, Areas, and Language Packages are used to create the visual design and language capabilities.
+Magento is a modular system, and comprises several key components used to build a custom application or web site. For example, Magento Modules contain logic to fulfill required actions and functions, while Themes and Language Packages are used to create the visual design and language capabilities.
 
 The Magento Framework provides core business logic and functionality, the base classes, resource models, and data access capabilities. The fundamental concepts and rules for how the components of the web site can behave are defined in the Framework. So in keeping with classic object-oriented programming methodology, the Magento Framework provides core components with base functionality which can then be inherited by custom components for a specific web site or application. The final  behavior, look-and-feel, and capabilities of the web site are determined by how the components are extended and customized.
 
