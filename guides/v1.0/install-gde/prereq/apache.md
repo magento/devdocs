@@ -115,6 +115,11 @@ See one of the following sections:
 *	<a href="#apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</a>
 *	<a href="#apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</a>
 
+    <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+    <p>Apache 2.2 has a known issue with relative rewrites and VirtualDocumentRoot (as opposed to DocumentRoot). The bug affects the Magento <code>pub/media/.htaccess</code> and <code>pub/static/.htaccess</code>files. You must replace the <code>../</code> portion of the <code>RewriteRule</code> with the complete path relative to the effective document root. For more information about the issue, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=26052#c40" target="_blank">Apache bug 26052</a>.</p></span>
+    </div>
+
 <h4 id="apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</h4>
 Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.4, which is supported by the default Ubuntu 14 repository.
 
