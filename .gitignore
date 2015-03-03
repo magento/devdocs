@@ -26,6 +26,7 @@ ignore
 /_config.tana.yml
 /_config.public.yml
 /*.yml
+!_config.devdocs.yml
 /gen_public.bat
 /jk.bat
 *.bat
