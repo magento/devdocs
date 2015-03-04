@@ -21,20 +21,23 @@ namespace :site do
 
   desc "Generate and publish blog to gh-pages"
   task :publish => [:generate] do
-    Dir.mktmpdir do |tmp|
-      cp_r "_site/.", tmp
 
-      pwd = Dir.pwd
-      Dir.chdir tmp
-
-      system "git init"
-      system "git add ."
-      message = "Site updated at #{Time.now.utc}"
-      system "git commit -m #{message.inspect}"
-      system "git remote add origin git@github.corp.ebay.com:#{GITHUB_REPONAME}.git"
-      system "git push origin master:refs/heads/gh-pages --force"
-
-      Dir.chdir pwd
+    branches = `git branch`
+    if branches.match("gh-pages")
+      system "git checkout gh-pages" or raise "Error: could not checkout gh-pages"
+    else
+      system "git checkout --track origin/gh-pages" or raise "Error: could not checkout gh-pages"
     end
+
+    cp_r "_site/.", "."
+    rm_r "_site"
+
+    system "git add -A"
+    message = "Site updated at #{Time.now.utc}"
+    system "git commit -m #{message.inspect}"
+    system "git push origin gh-pages"
+    system "git checkout pubs-ux-common"
+
   end
 end
+

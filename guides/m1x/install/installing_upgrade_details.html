@@ -106,7 +106,7 @@ The system should be identical to, if not better than, your current system. The 
 This enables you to enable exception logging so you'll see exceptions in the development environment after the upgrade.</li>
 <li>In the right pane, click <strong>Log Settings</strong> to expand it.<br />
 The following figure shows an example.<br />
-<img src="{filedir_1}upgrade_log.png" height="338px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/upgrade_log.png" height="338px" width="600px"></li>
 <li>From the <strong>Enabled</strong> list, click <strong>Yes</strong>.</li>
 <li>Optionally change the names of the log files.</li>
 <li>Click <strong>Save Config</strong>.</li></ol>
@@ -127,10 +127,10 @@ The following figure shows an example.<br />
 The <strong>Index Mode</strong> list displays.</li>
 <li>From the <strong>Index Mode</strong> list, click <strong>Manual Update</strong>.<br />
 The following figure shows an example.<br />
-<img src="{filedir_1}upgrade_index-management_manual-update2.png" height="156px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/upgrade_index-management_manual-update2.png" height="156px" width="600px"></li>
 <li>At the top right corner, click <strong>Submit</strong>.</li>
 <li>Make sure all indexers are now set for Manual Update as the following figure shows.<br />
-<img src="{filedir_1}upgrade_index-management_manual-update.png" height="156px" width="600px"></li></ol> -->
+<img src="{{ site.baseurl }}common/images/m1x/upgrade_index-management_manual-update.png" height="156px" width="600px"></li></ol> -->
 
 <h4 id="prereq-tasks-prod-index">Setting All Indexers for Update on Save<!--  <em>(EE 1.13.0.0 or 1.13.0.1 only)</em> --></h4>
 <p><em>This section applies to upgrading Magento EE only</em>. Skip this section if you're using Magento CE.</p>
@@ -142,10 +142,10 @@ The following figure shows an example.<br />
 The <strong>Index Mode</strong> list displays.</li>
 <li>From the <strong>Index Mode</strong> list, click <strong>Update on Save</strong>.<br />
 The following figure shows an example.<br />
-<img src="{filedir_1}upgrade_index-management.png" height="156px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/upgrade_index-management.png" height="156px" width="600px"></li>
 <li>At the top right corner, click <strong>Submit</strong>.</li>
 <li>Make sure all indexers are now set for Update on Save as the following figure shows.<br />
-<img src="{filedir_1}upgrade_index-management2.png" height="156px" width="600px"></li></ol>
+<img src="{{ site.baseurl }}common/images/m1x/upgrade_index-management2.png" height="156px" width="600px"></li></ol>
 
 <h4 id="prereq-tasks-prod-clear-cache">Flushing the Cache</h4>
 <p>Clear the Magento cache as follows:</p>
@@ -319,14 +319,14 @@ For example, if your web server address is <tt>http://dev.example.com</tt>, ente
 <li>In the Search tab page, from the <strong>Operator</strong> list, click <strong>LIKE</strong>.</li>
 <li>Enter <tt>%base_url%</tt> in the <strong>Value</strong> field.<br />
 The following figure shows an example.<br />
-<img src="{filedir_1}install_myphpadmin_search.png" height="279px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_myphpadmin_search.png" height="279px" width="600px"></li>
 <li>Click <strong>Go</strong>.<br />
 The following figure shows sample results.<br />
-<img src="{filedir_1}install_myphpadmin_results.png" height="139px" width="600px"></li>
-<li>Click <img src="{filedir_1}install_myphpadmin_edit-icon.png"> (Edit) in the row that includes the path <tt>web/unsecure/base_url</tt>.</li>
+<img src="{{ site.baseurl }}common/images/m1x/install_myphpadmin_results.png" height="139px" width="600px"></li>
+<li>Click <img src="{{ site.baseurl }}common/images/m1x/install_myphpadmin_edit-icon.png"> (Edit) in the row that includes the path <tt>web/unsecure/base_url</tt>.</li>
 <li>Change the value to the host name or IP address of your development server.<br />
 The following figure shows an example.<br />
-<img src="{filedir_1}install_myphpadmin_edit.png" height="333px" width="600px">
+<img src="{{ site.baseurl }}common/images/m1x/install_myphpadmin_edit.png" height="333px" width="600px">
 <li>Click <strong>Go</strong>.</li>
 <li>Repeat these tasks for the path that includes <tt>web/secure/base_url</tt>.</li>
 <li>Exit phpmyadmin.</li></ol>
@@ -505,7 +505,7 @@ You can find errors in the web server's error log or in <tt>[your Magento instal
 <ol><li>Log in to the Admin Panel as an administrator.</li> 
 <li>Click <strong>System</strong> > <strong>Index Management</strong>.<br />
 Verify that all indexers have a status of Ready, as the following figure shows.<br />
-<img src="{filedir_1}upgrade_index-management_after.png" width="600px" height="154px"/></li>
+<img src="{{ site.baseurl }}common/images/m1x/upgrade_index-management_after.png" width="600px" height="154px"/></li>
 <li>If indexers are <em>not</em> Ready, use the following guidelines:
 <table class="confluenceTable">
 <tbody>

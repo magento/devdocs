@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-  <link rel="stylesheet" type="text/css" href="/pages/stevjohnson/rake-test/common/css/stylesheet.css"/>
-  <link rel="stylesheet" href="/pages/stevjohnson/rake-test/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-  <link rel="icon" href="/pages/stevjohnson/rake-test/common/css/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/pages/stevjohnson/rake-test/common/css/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
+  <link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+  <link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
 
 </head>
 <title>How to Use Extend the Magento REST API to Use Coupon Auto Generation</title>
@@ -87,7 +87,7 @@ For example, if your Magento instance host name is <tt>www.example.com</tt> and 
 <pre>http://www.example.com/phpinfo.php</pre></li>
 <li>Search the resulting output for <tt>OAuth</tt>.<br />
 The following figure shows an example of OAuth being properly set up.<br />
-<img src="{filedir_1}ht_magento-REST-API_phpinfo-oauth.png"><br />
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_phpinfo-oauth.png"><br />
 If the preceding does <em>not</em> display, OAuth is not set up so continue with the next section.<br />
 If OAuth is already installed, continue with <a href="#define-coupon-rule">Defining a Magento Coupon Code Generation Rule</a>.</li></ol>
 
@@ -117,7 +117,7 @@ extension=oauth.so</pre></li>
 <h4 id="prereq-software-oauth">Confirming that OAuth Installed Successfully</h4>
 <p>If your <tt>phpinfo.php</tt> page is still open in a web browser, press Control+R to force a refresh; otherwise, enter the URL shown in <a href="#prereq-software-phpinfo">Creating a phpinfo File</a> to view it.</p>
 <p>The following figure shows an example of a properly set up OAuth extension.</p>
-<img src="{filedir_1}ht_magento-REST-API_phpinfo-oauth.png">
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_phpinfo-oauth.png">
 <p class="kb-notes"><strong>Important</strong>: Do not continue until you know that OAuth installed successfully.</p>
 
 <h2 id="define-coupon-rule">Defining a Magento Coupon Code Generation Rule</h2>
@@ -126,7 +126,7 @@ extension=oauth.so</pre></li>
 <li>Click <strong>Promotions</strong> &gt; <strong>Shopping Cart Price Rules</strong>.</li>
 <li>On the Shopping Cart Price Rules page, click <strong>Add New Rule</strong> (in the upper-right corner of the page).<br />
 The General Information page displays as follows.<br />
-<img src="{filedir_1}ht_magento-REST-API_rest_rule_info.png"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_rest_rule_info.png"></li>
 <li>Enter the following information.<br />
 <table class="confluenceTable">
 <tbody>
@@ -199,7 +199,7 @@ The General Information page displays as follows.<br />
 The message <tt>The rule has been saved</tt> displays at the top of the page to indicate that Magento successfully saved the rule you just created.</li>
 <li>In the left navigation bar, click <strong>Actions</strong>.<br />
 The Actions page displays as follows.<br />
-<img src="{filedir_1}ht_magento-REST-API_rest_rule_actions.png" height="303px" width="600px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_rest_rule_actions.png" height="303px" width="600px"></li>
 <li>Enter the following information.<br />
 <table class="confluenceTable">
 <tbody>
@@ -244,7 +244,7 @@ The Actions page displays as follows.<br />
 <li>Click <strong>Save</strong> (in the upper-right corner of the page).<br />
 The message <tt>The rule has been saved</tt> displays to indicate that Magento saved the rule action options you just entered.  Notice that this page now has a row for the Generate Coupons rule you just defined.<br />
 A sample follows.<br />
-<img src="{filedir_1}ht_magento-REST-API_shopping_cart_price_rule.png" height="120px" width="600px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_shopping_cart_price_rule.png" height="120px" width="600px"></li>
 <li>Write down the rule ID (circled in red in the preceding figure). You will use this value later in this guide.</li></ol>
 
 <h2><a name="define-coupon-codes"></a>Generating Coupon Codes</h2>
@@ -286,7 +286,7 @@ A sample follows.<br />
 </table></li>
 <li>Click <strong>Generate</strong>.<br />
 Magento displays the three coupon codes you created in the Coupon Code section as the following figure shows. <br />
-<img src="{filedir_1}ht_magento-REST-API_manage_coupon_codes.png" height="366px" width="600px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_manage_coupon_codes.png" height="366px" width="600px"></li>
 <li>Click <strong>Save</strong>.</li></ol>
 
 <h2 id="extend-rest-api">Extending Magento's REST API to Include Coupon Auto-Generation</h2>
@@ -302,7 +302,7 @@ Magento displays the three coupon codes you created in the Coupon Code section a
 <p>To disable the cache:</p>
 <ol><li>In the Magento Admin Panel, click <strong>System</strong> > <strong>Cache Management</strong>.<br />
 The Cache Storage Management page displays as follows.<br />
-<img src="{filedir_1}ht_magento-REST-API_disable-cache-magement.png" height="133px" width="600px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_disable-cache-magement.png" height="133px" width="600px"></li>
 <li>Click <strong>Select All</strong> (on the upper-left of the page).<br />
 A check mark displays next to each Magento cache in the list.</li>
 <li>From the <strong>Actions</strong> list, click <strong>Disable</strong>.</li>
@@ -332,7 +332,7 @@ For example, if Magento is installed in <tt>/var/www/magento</tt>, create the fo
 /var/www/magento/app/code/community/CouponDemo/AutoGen/etc
 /var/www/magento/app/code/community/CouponDemo/AutoGen/Model/Api2/Coupon/Rest/Admin</pre><br />
 <p id="figure_dir-structure">The following figure shows an example.</p>
-<img src="{filedir_1}ht_magento-REST-API_dir-structure.png"><br />
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_dir-structure.png"><br />
 <p class="kb-notes"><strong>Important</strong>: 
 <ul><li>You must create the files and directories <em>exactly</em> as shown; directory names are case-sensitive.</li>
 <li>Do not change any values in the configuration files discussed in this section.</li>
@@ -410,7 +410,7 @@ The Role Resources page contains a hierarchical list of resources to which you c
 <li>From the <strong>Resource Access</strong> list, click <strong>Custom</strong>.</li>
 <li><p>Select the check box next to the node labeled <strong>CouponDemo API</strong>.</p>
 <p id="figure_check-boxes">Magento automatically checks the child check boxes as the following figure shows.</p>
-<img src="{filedir_1}ht_magento-REST-API_edit_rest_role_api_resources.png" height="203px" width="600px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_edit_rest_role_api_resources.png" height="203px" width="600px"></li>
 <li>Click <strong>Save Role</strong>.<br />
 Magento saves the resource API permissions you granted to the Coupon Auto Generate Demo REST role. <br />
 The Coupon Auto Generate Demo role now has permission to use the Coupon AutoGen API.</li></ol>
@@ -420,7 +420,7 @@ The Coupon Auto Generate Demo role now has permission to use the Coupon AutoGen 
 <ol><li>In the left navigation bar, click <strong>Role Users</strong>.</li>
 <li>Click <strong>Reset Filter</strong> (in the upper-right corner of the page).<br />
 The page displays all registered users as the following figure shows.<br />
-<img src="{filedir_1}ht_magento-REST-API_edit_rest_role_users.png" height="116px" width="600px"><br /></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_edit_rest_role_users.png" height="116px" width="600px"><br /></li>
 <li>Select the check box next to each user to grant the user privileges to access the resources available to the Coupon Auto Generate Demo REST role&mdash;that is, permission to call the Coupon AutoGen API.<br />
 <p class="kb-notes"><strong>Note</strong>: If a warning dialog box displays, click <strong>OK</strong> to dismiss it. This warning is not relevant when adding users to REST roles.</p>
 </li>
@@ -435,7 +435,7 @@ The specified user(s) can now grant an external program the right to call the Co
 <li>In the User Type Resources section, from the <strong>Resource Access</strong> list, click <strong>Custom</strong>.</li>
 <li>Select the <strong>CouponDemo API</strong> check box.<br />
 Doing so selects all the child check boxes, as the following figure shows.<br />
-<img src="{filedir_1}ht_magento-REST-API_rest-api-attributes.png" height="263px" width="600px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_rest-api-attributes.png" height="263px" width="600px"></li>
 <li>Click <strong>Save</strong>.<br />
 Any user with the REST Admin role can now read from and write to the Coupon AutoGen API.</li></ol>
 
@@ -444,7 +444,7 @@ Any user with the REST Admin role can now read from and write to the Coupon Auto
 <ol><li>In the Magento Admin Panel, click <strong>System</strong> > <strong>Web Services</strong> > <strong>REST - OAuth Consumers</strong>.</li>
 <li>Click <strong>Add New</strong> (in the upper-right corner of the page).<br />
 The <strong>New Consumer</strong> page displays as the following figure shows.<br />
-<img src="{filedir_1}ht_magento-REST-API_new_oauth_consumer.png" height="162px" width="600px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_new_oauth_consumer.png" height="162px" width="600px"></li>
 <li>In the <strong>Name</strong> field, enter <tt>Coupon AutoGen Test Driver</tt>.</li>
 <li>Leave the other fields blank.</li>
 <li><em>Write down</em> the values displayed in the <strong>Key</strong> and <strong>Secret</strong> text boxes. <br />
@@ -517,17 +517,17 @@ You must include these values in the test script you will write in the next sect
 <li>When prompted, enter the login credentials of the OAuth consumer you created as discussed in <a href="#secure-role-oauth">Creating an OAuth Consumer for Your Test Script</a>.</li>
 <li>Click <strong>Login</strong>.</li>
 <li>When prompted, click <strong>Authorize</strong> to grant authorization for the script to access your OAuth consumer account, as the following figure shows.<br />
-<img src="{filedir_1}ht_magento-REST-API_oauth-request-access.png"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_oauth-request-access.png"></li>
 <li>When prompted, log in as that user.<br />
 After you log in, two new coupon codes display as follows to confirm you successfully used the API. If your browser displays a page like this one, you've successfully implemented the Coupon AutoGen REST API!<br />
-<img src="{filedir_1}ht_magento-REST-API_new-coupon-codes.png"></li></ol>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_new-coupon-codes.png"></li></ol>
 <p>To optionally see these codes in the Admin Panel:</p>
 <ol><li>Log in to the Admin Panel as an administrator.</li>
 <li>Click <strong>Promotions</strong> > <strong>Shopping Cart Price Rules</strong>.</li>
 <li>Click <strong>Generate Coupons</strong>.</li>
 <li>In the left navigation bar, click <strong>Manage Coupon Codes</strong>.<br />
 The codes you generated manually earlier display with the new codes (highlighted in red) as the following figure shows.<br />
-<img src="{filedir_1}ht_magento-REST-API_verify_view-coupon-codesMock.png" height="331px" width="600px"></li></ol>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/ht_magento-REST-API_verify_view-coupon-codesMock.png" height="331px" width="600px"></li></ol>
 
 <h3 id="test-cache">Re-Enabling Magento's Cache</h3>
 <p>Only after successfully completing the test, you should re-enable Magento's caching system, so performance returns to normal.<p>

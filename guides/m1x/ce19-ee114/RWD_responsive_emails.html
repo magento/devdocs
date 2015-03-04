@@ -8,10 +8,10 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="/pages/stevjohnson/rake-test/common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="/pages/stevjohnson/rake-test/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="/pages/stevjohnson/rake-test/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/pages/stevjohnson/rake-test/common/css/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
 	<title>Responsive Email Developer's Guide</title>
 
 </head>
@@ -19,11 +19,12 @@
 <body>
 <a name="top"></a>
 
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <div id="content">
 
-
-<div class="toc"> <h4><!--  class="toc" -->Table of Contents</h4>
+<h1>Responsive Email Developer's Guide</h1>
+<div class="toc"> <h4 class="toc">Table of Contents</h4>
     <ul>
         <li><a href="#intro">Introduction</a></li>
         <li><a href="#cron">Using cron to Send Emails</a></li>
@@ -51,7 +52,7 @@
 
 <h2 id="cron">Using cron to Send Emails</h2>
 <p>Starting in Magento EE 1.14.1 and CE 1.9.1, your Magento cron job sends <em>all</em> emails, including transactional emails. You must configure cron for emails to work.</p>
-<p>For more information, see <a href="install/installing_install.html#install-cron" target="_blank">Setting Up Cron Jobs</a>.</p>
+<p>For more information, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_install.html#install-cron" target="_blank">Setting Up Cron Jobs</a>.</p>
 
 <h2 id="supported">Supported Email Clients and Devices</h2>
 <p>We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues. Refer to the following sections for more information.</p>
@@ -257,7 +258,7 @@
 </tr>
 </tbody></table><br>
 The following figure shows an example:<br>
-<img src="{filedir_1}resp_email_header-template.png" width="600px" height="502px"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_header-template.png" width="600px" height="502px"></li>
 <li>Click <strong>Preview Template</strong> to look at the HTML code in a separate browser tab page or window, or click <strong>Save Template</strong> to save it.</li></ol>
 
 <h4 id="custom-head-foot-admin-assign">Using the Template in a Website or Store View</h4>
@@ -268,11 +269,11 @@ The following figure shows an example:<br>
 	<li>From the <strong>Current Configuration Scope</strong> in the upper left corner, click the scope.<br>
 Initially, the template is associated with <strong>Default Config</strong>, which means it applies to all websites and store views. You can optionally associate it with a specific website or store view by selecting it from the list.<br>
 The following example shows how to associate a template with the Madison Island English store view.<br>
-<img src="{filedir_1}resp_email_template_scope.png"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_template_scope.png"></li>
     <li>In the right pane, click <strong>Transactional Emails</strong> to expand it.</li>
     <li>From the <strong>Email Header Template</strong> list, click the header template you created earlier.<br>
 	The following figure shows an example:<br>
-	<img src="{filedir_1}resp_email_using-header.png" width="600px" height="542px"></li>
+	<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_using-header.png" width="600px" height="542px"></li>
     <li>Click <strong>Save Config</strong> in the upper right corner of the page.</li></ol>
     <p>Now transactional emails use the header or footer template you created.</p>
 
@@ -367,7 +368,7 @@ The following example shows how to associate a template with the Madison Island 
 	<li>From the <strong>Current Configuration Scope</strong> in the upper left corner, click the scope to display the logo.<br>
 Initially, the logo is associated with <strong>Default Config</strong>, which means it applies to all websites and store views. You can optionally associate it with a specific website or store view by selecting it from the list.<br>
 The following example shows how to associate a logo with the Madison Island English store view.<br>
-<img src="{filedir_1}resp_email_template_scope.png"></li>
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_template_scope.png"></li>
 	<li>In the right pane, click <strong>Transactional Emails</strong> to expand it.</li>
 	<li>Enter the following information:
 	<table class="confluenceTable" class="confluenceTable">
@@ -398,7 +399,7 @@ The following example shows how to associate a logo with the Madison Island Engl
 </tr>
 </tbody></table><br>
 The following figure shows an example.<br>
-<img src="{filedir_1}resp_email_logo.png" width="600px" height="509px"></li>    
+<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_logo.png" width="600px" height="509px"></li>    
     <li>Click <strong>Save Config</strong> in the upper right corner of the page.</li>
 </ol>
 

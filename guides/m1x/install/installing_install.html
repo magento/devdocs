@@ -499,7 +499,7 @@ chown -R myuser:www-data magento</code></li>
 For example, if your web server is <tt>http://www.example.com</tt>, listens on port 80, and Magento is installed in the web server docroot's <tt>magento</tt> subdirectory, enter
 <code>http://www.example.com/magento</code>
 The following page displays.<br >
-<img src="{filedir_1}install_first-page.png" height="353px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_first-page.png" height="353px" width="600px"></li>
 <li>Select the check box that indicates you agree to the terms and conditions, and click <strong>Continue</strong>.</li>
 <li>On the Localization page, enter the following information.<br />
 <table class="confluenceTable">
@@ -523,7 +523,7 @@ The following page displays.<br >
 </tbody>
 </table><br />
 The following figure shows an example of configuring Magento for US English in the US Central time zone and using the US Dollar as the default currency.<br />
-<img src="{filedir_1}install_localization.png" height="307px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_localization.png" height="307px" width="600px"></li>
 <li>Click <strong>Continue</strong>.<br />
 The Configuration page displays. Each of its three sections is discussed in the following step.</li>
 <li>In the Configuration page, enter the following information:
@@ -563,7 +563,7 @@ The Configuration page displays. Each of its three sections is discussed in the 
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="{filedir_1}install_configuration_database.png" height="274px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_configuration_database.png" height="274px" width="600px"></li>
 <li>In the Web Access Options section, enter the following information.<br />
 <table class="confluenceTable">
 <tbody>
@@ -599,7 +599,7 @@ A sample follows.<br />
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="{filedir_1}install_web-access-options.png" height="344px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_web-access-options.png" height="344px" width="600px"></li>
 <li>In the Session Storage Options section, click one of the following options:
 <ul><li><strong>File</strong> to store user session data on the file system in the <tt>[your Magento install dir]/var/session</tt> directory.<br />
 File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
@@ -650,10 +650,10 @@ Choose database storage if you have a clustered database; otherwise, there might
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="{filedir_1}install_create-admin-account.png" height="511px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_create-admin-account.png" height="511px" width="600px"></li>
 <li>Click <strong>Continue</strong>.<br />
 The following page displays to indicate a successful installation.<br />
-<img src="{filedir_1}install_confirm_mock.png" height="308px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_confirm_mock.png" height="308px" width="600px"></li>
 </li></ol>
 
 <h2 id="verify">Verifying that Magento CE or Magento EE Installed Successfully</h2>
@@ -665,7 +665,7 @@ The following page displays to indicate a successful installation.<br />
 <li>Log in to the Admin Panel as an administrator.</li>
 <li>Scroll to the bottom of the page; the version should display as 1.14 (Magento EE) or 1.9.0.0 (Magento CE).<br />
 The following figure shows an example.<br />
-<img src="{filedir_1}install_verify-version_mock.png" height="36px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_verify-version_mock.png" height="36px" width="600px"></li>
 <!-- <li>Create a simple product.
 <ol><li>In the Admin Panel, click <strong>Catalog</strong> > <strong>Manage Products</strong>.</li>
 <li>In the upper right corner, click <strong>Add Product</strong>.</li>
