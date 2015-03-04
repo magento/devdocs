@@ -23,6 +23,8 @@ Composer is a separate application that manages PHP dependencies. Before you can
 
 For the installation to work properly, you *must* run Composer as the web server user. If the web server runs as `root`, you can run Composer as `root`; however, that is typically not the case. In general, *avoid running Composer as the root user*.
 
+NOTE: Do not do this in a secure environment.
+
 In the discussion that follows, it's assumed that the CentOS web server user is `apache` and the Ubuntu web server user is `www-data`.
 
 <h3 id="install-update-depend-apache-ubuntu">Ubuntu</h3>
