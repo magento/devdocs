@@ -21,9 +21,15 @@ Composer is a separate application that manages PHP dependencies. Before you can
 
 <h2 id="install-update-depend-apache">Switching to the Apache user</h2>
 
-For the installation to work properly, you *must* run Composer as the web server user. If the web server runs as `root`, you can run Composer as `root`; however, that is typically not the case. In general, *avoid running Composer as the root user*.
+For the installation to work properly, all files written by Composer *must* be owned by the web server user. There are at least two ways to do this:
 
-NOTE: Do not do this in a secure environment.
+*	Run Composer as the web server user as discussed in this section
+*	Run Composer as another user and change file ownership afterward
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>We suggest running Composer in a web server shell in a development environment <em>only</em>. In a more secure environment, you should change not run a shell; instead, change ownership after you run Composer. </p></span>
+</div>
 
 In the discussion that follows, it's assumed that the CentOS web server user is `apache` and the Ubuntu web server user is `www-data`.
 
@@ -79,6 +85,11 @@ After you completed the tasks discussed in the preceding section, update depende
 		cd /var/www/html/magento2 && composer install
 
 	This command updates package dependencies and can take a few minutes to complete.
+
+3.	(Secure environment). Change ownership to the web server user as follows:
+
+	*	(Ubuntu) `chown -R www-data .`
+	*	(CentOS) `chown -R apache .`
 
 #### Next step
 
