@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Mage JavaScript plugin</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/pages/stevjohnson/rake-test/css/app.css" />
+	<link rel="stylesheet" href="/pages/stevjohnson/rake-test/common/css/override.css" />
+	<link rel="canonical" href="/pages/stevjohnson/rake-test//guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/pages/stevjohnson/rake-test/"> </a>
+				<div class="sub-site-name">
+					<a href="/pages/stevjohnson/rake-test/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Mage JavaScript plugin</h1>
+			
+			<a class="improve-page" href="https://github.corp.ebay.com/stevjohnson/rake-test/tree/master/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="fedg_js-mage_overview">Overview</h2>
+
+<p>The Mage plugin extends JavaScript and modifies initialization parameters on the fly in Magento.</p>
+
+<p>Using the Mage plugin, you can:</p>
+
+<ul>
+  <li>Modify the list of resources for existing components.</li>
+  <li>Add a new component.</li>
+  <li>Extend an existing component.</li>
+  <li>Modify arguments (options) of a component’s initialization method, including modification of the component’s name.</li>
+  <li>Manage the order in which components initialize.</li>
+  <li>Initialize components using the data attribute of a DOM element.</li>
+</ul>
+
+<p>Using Mage plugin decreases the amount of inline JavaScript by loading only the necessary components for a page.</p>
+
+<h2 id="fedg_js-mage_declare">Declare components</h2>
+
+<p>You can declare components for an entire Magento area or for specific pages as discussed in the sections that follow:</p>
+
+<ul>
+  <li><a href="#fedg_js-mage_declare-area">Declare application-area components</a></li>
+  <li><a href="#fedg_js-mage_declare-page">Declare page-specific components</a></li>
+</ul>
+
+<h3 id="fedg_js-mage_declare-area">Declare application-area components</h3>
+
+<p>In a layout file, a block declaring components is added as child <code>&lt;head</code> block.</p>
+
+<p>For example, in the following <code>main.xml</code>, the <code>head.components</code> block, which contains the template with components declaration, is the child block of the <code>head</code> block.</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/977c1bfe19337b30d111.js"></script>
+
+<p>The <code>head.components</code> block template can be like following:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/2050338cfc1735de73fd.js"></script>
+
+<p>This template contains the declaration of all common components for the whole application area. In the template  the <code>$.mage.component helper</code> is called, which stores components’ dependencies on resources.</p>
+
+<p><code>$.mage.component</code> accepts any of the following as arguments:</p>
+
+<ul>
+  <li>An object, where <code>key</code> is a component’s name, and <code>value</code> is an array of resources’ URLs</li>
+  <li>
+    <p>Two arguments: first is a component’s name (string), and second an array of resource URLs.</p>
+
+    <p>(In the preceding example, components and resources URLs are passed to <code>$.mage.component</code> as objects.)</p>
+  </li>
+</ul>
+
+<h3 id="fedg_js-mage_declare-page">Declare page-specific components</h3>
+
+<p>To declare a particular component for a specific page:</p>
+
+<ol>
+  <li>Add a new child block for the <code>head.components</code> block in the module layout file.</li>
+  <li>Declare a new component or extend the existing one in the <code>.phtml</code> template of the newly added block.</li>
+</ol>
+
+<p>Example:</p>
+
+<ol>
+  <li>
+    <p>Add the <code>cms_page_head_components</code> block as a child block of <code>head.components</code>: 	<script src="https://gist.github.com/xcomSteveJohnson/60e6e8b7b9566c09ae22.js"></script></p>
+  </li>
+  <li>
+    <p>Extend the existing form and validation components by adding the components’ resources to the template:</p>
+
+    <script src="https://gist.github.com/xcomSteveJohnson/b8918c00a29cd567506a.js"></script>
+  </li>
+</ol>
+
+<h2 id="fedg_js-mage_widgets">Instantiate widgets</h2>
+
+<p>This section discusses different ways to instantiate widgets:</p>
+
+<ul>
+  <li><a href="#fedg_js-mage_widgets_typ">Typical Widget Instantiation</a></li>
+  <li><a href="#fedg_js-mage_widgets_mage">Instantiating Widgets Using the Mage plugin</a></li>
+  <li><a href="#fedg_js-mage_widgets_dataattrib">Instantiating Widgets Using the data Attribute</a></li>
+</ul>
+
+<h3 id="fedg_js-mage_widgets_typ">Typical widget instantiation</h3>
+
+<p>Typically, widgets are instantiated like this:</p>
+
+<pre>jQuery('#datepicker').datepicker();</pre>
+
+<p>where</p>
+
+<p><code>datepicker</code> is the name of the widget.
+<code>#datepicker</code> is the element’s selector.</p>
+
+<p>You can also pass options to instantiate a widget:</p>
+
+<pre>jQuery('#datepicker').datepicker({showButtonPanel: true});</pre>
+
+<p>And using chaining:</p>
+
+<pre>jQuery('#datepicker')
+.datepicker({showButtonPanel: true})
+.draggable({axis: 'y'});</pre>
+
+<h3 id="fedg_js-mage_widgets_mage">Use the Mage plugin to instantiate widgets</h3>
+
+<p>To instantiate a widget using the Mage plugin, use the following syntax:</p>
+
+<pre>jQuery('#datepicker').mage('datepicker');</pre>
+
+<p>To instantiate a widget, and specify init options using Mage plugin:</p>
+
+<pre>jQuery('#datepicker').mage('datepicker', {showButtonPanel: true});</pre>
+
+<p>Using chaining in widget instantiating with Mage plugin:</p>
+
+<pre>jQuery('#datepicker')
+.mage('datepicker', {showButtonPanel: true})
+.mage('draggable', {axis: 'y'});</pre>
+
+<h3 id="fedg_js-mage_widgets_dataattrib">Use the data attribute to instantiate widgets</h3>
+
+<p>To instantiate a widget using the HTML element <code>data</code> attribute, use the following syntax:</p>
+
+<pre>&lt;input data-mage-init="{datepicker: []}" /&gt;</pre>
+
+<p>To instantiate a widget with options:</p>
+
+<pre>&lt;input data-mage-init="{datepicker: {showButtonPanel: true}}" /&gt;</pre>
+
+<p>Using chaining:</p>
+
+<pre>&lt;input data-mage-init="{datepicker: {showButtonPanel: true}, draggable: {axis: 'y'}}" /&gt;</pre>
+
+<h2 id="fedg_js-mage_widgets_plugin">Instantiate plugins</h2>
+
+<p>Unlike widgets, plugins do not not have a strict structure; plugin constructors accept more than one argument.</p>
+
+<p>Generally, plugins are instantiated like this:</p>
+
+<pre>jQuery('#someElement').myPlugin(options, {width: '70px'}, true);</pre>
+
+<p>Where <code>myPlugin</code> is the plugin name.</p>
+
+<h3 id="fedg_js-mage_widgets_mage">Use the Mage plugin to instantiate Magento plugins</h3>
+
+<p>To instantiate a plugin using the Mage plugin, use the following syntax:</p>
+
+<pre>jQuery('#someElement').mage('myPlugin', {width: '70px'}, true);</pre>
+
+<h3 id="fedg_js-mage_widgets_dataattrib">Use the data attribute to instantiate Magento plugins</h3>
+
+<p>To instantiate a plugin using the data attribute, use the following syntax:</p>
+
+<pre>&lt;input data-mage-init="{myPlugin: [{width: '70px'}, true]}" /&gt;</pre>
+
+<h2 id="fedg_js-mage_init-data">Customize initialization data</h2>
+
+<p>You can use the <code>$.mage.onInit()</code> helper method to customize initialization data.</p>
+
+<p><code>$.mage.onInit()</code> accepts the following parameters:</p>
+
+<ul>
+  <li><code>component</code>—Name of the component to be customized.</li>
+  <li><code>selector</code>—(Optional.) Specify to customize a particular element (in other words, not all components of a certain type).</li>
+  <li><code>handler</code>—Callback function with customization logic.</li>
+</ul>
+
+<p>Pass arguments to a component’s initialization method the callback function the same way as in the original initialization method.</p>
+
+<p>In the handler function, you can modify the following:</p>
+
+<ul>
+  <li>Passed arguments (for the case of scalar argument(s) see next entry)</li>
+  <li>Properties:
+    <ul>
+      <li><code>this.args</code>—Property for accessing scalar arguments. Example of changing such an argument: <code>this.args[1] = false</code></li>
+      <li><code>this.name</code>—Component name</li>
+      <li><code>this.resources</code>—List of resources required for that component.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>See the following sections for more information:</p>
+
+<ul>
+  <li><a href="#fedg_js-mage_init-data_mod">Example of Modifying Options</a></li>
+  <li><a href="#fedg_js-mage_init-data_substitut">Substituting Components</a></li>
+</ul>
+
+<h3 id="fedg_js-mage_init-data_mod">Example - Modify options</h3>
+
+<p>The following sections provide some examples of modifying options:</p>
+
+<ul>
+  <li><a href="#fedg_js-mage_init-data_mod_all">Change initialization options for a specified instance type</a></li>
+  <li><a href="#fedg_js-mage_init-data_mod_el">Change initialization options for a specified element</a></li>
+  <li><a href="#fedg_js-mage_init-data_mod_args">Modify arguments</a></li>
+  <li><a href="#fedg_js-mage_init-data_stop">Stop component from initialization</a></li>
+</ul>
+
+<h4 id="fedg_js-mage_init-data_mod_all">Change initialization options for a specified instance type</h4>
+
+<p>Changing the showButtonPanel option for all instances of the Datepicker widget on a page:</p>
+
+<pre>$.mage.onInit('datepicker', function(options) {
+    options.showButtonPanel = false;
+});</pre>
+
+<h4 id="fedg_js-mage_init-data_mod_el">Change initialization options for a specified element</h4>
+
+<p>To change options of a particular instance on a page, use the second argument of <code>$.mage.onInit()</code> as a jQuery selector.</p>
+
+<p>Example:</p>
+
+<pre>$.mage.onInit('datepicker', '[role=date-of-birth]', function(options) {
+    options.showButtonPanel = false;
+});</pre>
+
+<h4 id="fedg_js-mage_init-data_mod_args">Modify arguments</h4>
+
+<p>If an argument is scalar, you can modify it over a built-in array of arguments:</p>
+
+<pre>$.mage.onInit('myPlugin', function() {
+    this.args[1] = false;
+});</pre>
+
+<h4 id="fedg_js-mage_init-data_stop">Stop component from initialization</h4>
+
+<p>You can stop a component from initializing by deleting the component name.</p>
+
+<p>Example:</p>
+
+<pre>$.mage.onInit('datepicker', '[role=date-of-birth]', function() {
+    this.name = null;
+});</pre>
+
+<h3 id="fedg_js-mage_init-data_substitut">Substitute components</h3>
+
+<p>You can substitute components in the following ways:</p>
+
+<ul>
+  <li><a href="#fedg_js-mage_init-data_substitut_new">Substitute a component by declaring a new one</a></li>
+  <li><a href="#fedg_js-mage_init-data_resource">Substitute a component by modifying a resource list</a></li>
+</ul>
+
+<h4 id="fedg_js-mage_init-data_substitut_new">Substitute a component by declaring a new one</h4>
+
+<p>To modify arguments and business logic, you can declare a new component that extends the original one, and substitute the component name inside the initiation-callback.</p>
+
+<p>Example:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/fd1970f840c255cd27e8.js"></script>
+
+<p>In the preceding example, <code>datepicker</code> is the previously existing component, and <code>datepickerDob</code> is the newly declared one.</p>
+
+<h4 id="fedg_js-mage_init-data_resource">Substitute a component by modifying a resource list</h4>
+
+<p>You can substitute a component by modifying the list of components resources on the fly:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/e6867a6fba96ec49a0d7.js"></script>
+
+<h2 id="fedg_js-mage-attribs">Handle data-mage-init attributes</h2>
+
+<p>To handle all <code>data-mage-init</code> attributes, use the <code>$.mage.init()</code> method. It should be called immediately before the closing <code>&lt;/body&gt;</code> tag, or on the document ready event:</p>
+
+<pre>jQuery(function(){
+    $.mage.init();
+});</pre>
+
+<p><code>$.mage.init()</code> finds all elements with the <code>data-mage-init</code> attribute and initializes them. It also subscribes to the <code>contentUpdated</code> event which enables processing all dynamically modified elements; for example, in the consequence of Ajax request.</p>
+
+<p>When the <code>contentUpdated</code> event is triggered, it goes up to the <code>&lt;body&gt;</code> node, and then is automatically handled by <code>$.mage.init()</code>.</p>
+
+<pre>(function($) {
+    $.ajax({
+        url: 'test.php',
+        context: $('#container')
+    }).done(function(html) {
+        $(this).html(html).trigger('contentUpdated');
+    });
+})(jQuery);</pre>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
+</ul>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Javascript</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/pages/stevjohnson/rake-test/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/pages/stevjohnson/rake-test/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/pages/stevjohnson/rake-test/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/pages/stevjohnson/rake-test/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/pages/stevjohnson/rake-test/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/pages/stevjohnson/rake-test/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/pages/stevjohnson/rake-test/js/app-min.js"></script>
+
+
+</body>
+</html>

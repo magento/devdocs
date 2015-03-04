@@ -1,0 +1,36 @@
+<head><style>
+
+table.confluenceTable { margin:5px; border-collapse:collapse; }
+table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
+table.confluenceTable th.confluenceTh,
+table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
+ul { list-style-type: square; }
+
+</style></head>
+
+<!-- Title: Discover credit card validation issue: Magento EE 1.9.1.1 - 1.13.1.0 and CE 1.4.2.0 - 1.8.1.0  -->
+<!-- url: discover-card-validation -->
+
+<p>Magento has fixed an issue that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
+<p>This fix applies to:</p>
+<ul><li>Magento Enterprise Edition (EE) versions 1.9.1.1&ndash;1.13.1.0</li>
+<li>Magento Community Edition (CE) versions 1.4.2.0&ndash;1.8.1.0</li></ul>
+<!-- <p>To get a fix for the issue, <a href="http://support.magento.com" target="_blank">contact Magento Support</a> and request a patch for Support ID SUPEE-2725.</p>
+ --><p class="kb-notes"><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</p>
+<!-- <p>To get the patch, contact Magento Support.</p>
+<ul><li><a href="http://www.magentocommerce.com/bug-tracking" target="_blank">Magento CE help request</a></li>
+<li><a href="http://support.magentocommerce.com/" target="_blank">Magento EE help request</a></li></ul> -->
+<p>To get the patch for Magento CE, <a href="http://www.magentocommerce.com/bug-tracking" target="_blank">submit a Magento CE help request</a>.</p>
+
+<!-- <ol><li>Go to <a href="http://www.magentocommerce.com/download" target="_blank">www.magentocommerce.com/download</a>.</li>
+<li>Click <strong>My Account</strong> in the upper right corner of the page.</li>
+<li>Log in when prompted.</li>
+<li>Scroll to the Magento Community Edition Patches section.</li>
+<li>Follow the prompts on your screen to get the SUPEE-2725 patch.</li></ol> -->
+<p>To get the patch for Magento EE:</p>
+<ol><li>Log in to <a href="http://www.magentocommerce.com" target="_blank">www.magentocommerce.com</a>.</li>
+<li>In the left pane, click <strong>Downloads</strong>.</li>
+<li>In the right pane, click <strong>Magento Enterprise Edition</strong>.</li>
+<li>Follow the prompts on your screen to download the SUPEE-2725 patch for your version of EE.</li>
+<li>Apply the patch as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<p class="kb-notes"><strong>Important:</strong> If you applied an earlier version of this patch, you must first revert the old patch.</p>

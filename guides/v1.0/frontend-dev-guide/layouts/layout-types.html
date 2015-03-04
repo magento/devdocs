@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Layout file types</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/pages/stevjohnson/rake-test/css/app.css" />
+	<link rel="stylesheet" href="/pages/stevjohnson/rake-test/common/css/override.css" />
+	<link rel="canonical" href="/pages/stevjohnson/rake-test//guides/v1.0/frontend-dev-guide/layouts/layout-types.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/pages/stevjohnson/rake-test/"> </a>
+				<div class="sub-site-name">
+					<a href="/pages/stevjohnson/rake-test/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/stevjohnson/rake-test/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/stevjohnson/rake-test/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Layout file types</h1>
+			
+			<a class="improve-page" href="https://github.corp.ebay.com/stevjohnson/rake-test/tree/master/guides/v1.0/frontend-dev-guide/layouts/layout-types.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<head>
+	<style>
+		table tr td, table tr th {border: 1px solid #ABABAB}
+	</style>
+</head>
+<h2>Overview</h2>
+<p>For a particular page, its layout is defined by two major layout components: <em>page layout</em> file and <em>page configuration</em> file. </p>
+
+<p>A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. Page layouts feature only <a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
+All page layouts used for page rendering should be declared in the page layout declaration file.</p>
+
+<p>Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.</p>
+
+<p>We also distinguish the third type of layout files, <em>generic layouts</em>. They are .xml files which define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.</p>
+
+<p>This article gives a comprehensive description of each layout file type.</p>
+
+<h2 id="layout-types-page">Page layout</h2>
+<p>Page layout declares the wireframe of a page inside the <code>&lt;body&gt;</code> section, for example one-column layout or two-column layout. </p>
+
+<p>Allowed layout instructions:</p>
+
+<ul>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont" target="_blank"> &lt;container&gt;</a></li>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank"> &lt;referenceContainer&gt;</a></li>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv" target="_blank"> &lt;move&gt;</a></li>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank"> &lt;remove&gt;</a></li>
+  <li><a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_upd" target="_blank"> &lt;update&gt;</a> </li>
+</ul>
+
+<p>Sample page layout:</p>
+
+<p><strong><code>magento2/app/code/Magento/Theme/view/frontend/page_layout/2columns-left.xml</code></strong></p>
+
+<pre>
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_layout.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;1column&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;referenceContainer&nbsp;name=&quot;columns&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;div.sidebar.main&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-main&quot;&nbsp;after=&quot;main&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.main&quot;&nbsp;as=&quot;sidebar_main&quot;&nbsp;label=&quot;Sidebar&nbsp;Main&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;div.sidebar.additional&quot;&nbsp;htmlTag=&quot;div&quot;&nbsp;htmlClass=&quot;sidebar&nbsp;sidebar-additional&quot;&nbsp;after=&quot;div.sidebar.main&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;sidebar.additional&quot;&nbsp;as=&quot;sidebar_additional&quot;&nbsp;label=&quot;Sidebar&nbsp;Additional&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/referenceContainer&gt;
+&lt;/layout&gt;
+</pre>
+
+<h3 id="layout-types-page-conv">Page layout files conventional location</h3>
+
+<p>Conventionally page layouts must be located as follows:</p>
+
+<ul>
+  <li>Module page layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code></li>
+  <li>Theme page layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
+</ul>
+
+<h3 id="layout-types-page-dec">Page layouts declaration</h3>
+
+<p>To be able to use a layout for actual page rendering, you need to declare it in <code>layouts.xml</code>.</p>
+
+<p>Conventionally layout declaration file can be located in one of the following locations: </p>
+
+<ul>
+<li>Module layout declarations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layouts.xml</code></li>
+<li>Theme layout declaration: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layouts.xml</code></li>
+
+</ul>
+
+<p><br /></p>
+<p>Declare a layout file using the <code>&lt;layout&gt;&lt;/layout&gt;</code> instruction, for which specify the following:
+
+<ul>
+ <li><code>&lt;layout&nbsp;id=&quot;layout_file_name&quot;&gt;</code>. For example, the `2columns-left.xml` page layout is declared like following: <code>&lt;layout&nbsp;id&nbsp;=&nbsp;&quot;2columns-left&quot;/&gt;</code></li>
+
+<li><code>&lt;label&nbsp;translate=&quot;true|false&quot;&gt;{Label_used_in_Admin}&lt;/label&gt;</code></li>
+</ul>
+
+Sample page layout declaration file:
+<p></p>
+
+<p><b><code>app/code/Magento/Theme/view/frontend/layouts.xml</code></b>
+
+<pre>
+&lt;page_layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;1column&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;1&nbsp;column&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;2columns-left&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;2&nbsp;columns&nbsp;with&nbsp;left&nbsp;bar&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;2columns-right&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;2&nbsp;columns&nbsp;with&nbsp;right&nbsp;bar&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;layout&nbsp;id=&quot;3columns&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label&nbsp;translate=&quot;true&quot;&gt;3&nbsp;columns&lt;/label&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/layout&gt;
+&lt;/page_layouts&gt;
+</pre>
+
+
+
+<h2 id="layout-types-conf">Page configuration</h2>
+
+The page configuration adds content to the wireframe defined in a page layout file. A page configuration also contains page meta-information, and contents of the <code>&lt;head&gt;</code> section.
+
+<h3 id="layout-type-conf-loc">Page configuration file conventional location</h3>
+
+Conventionally page configuration files must be located as follows:
+
+<ul>
+<li> Module page configurations: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
+<li> Theme page configurations: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+</ul>
+
+<h3>Page configuration structure and allowed layout instructions</h3>
+
+The following table describes the instructions specific for page configuration files. For the descriptions of common layout instructions see the <a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+<table>
+  <tbody>
+    <tr>
+      <th>Element</th>
+      <th colspan="1">Attributes</th>
+      <th colspan="1">Parent of</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code> <span>&lt;page&gt;&lt;/page&gt;</span> </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code>layout = {layout}</code>
+          </li>
+          <li>
+            <code>
+              xsi:noNamespaceSchemaLocation ="{path_to_schema}"</code>
+            
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;html&gt;</code></li>
+          <li><code>&lt;head&gt;</code></li>
+          <li><code>&lt;body&gt;</code></li>
+          <li><code>&lt;update&gt;</code></li>
+        </ul>
+      </td>
+      <td>Mandatory root element.</td>
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;html&gt;&lt;/html&gt;</code></td>
+      <td colspan="1">
+        <p>none</p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;attribute&gt;</code></li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>Mandatory element.</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;head&gt;&lt;/head&gt;</code></td>
+      <td colspan="1">none</td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;title&gt;</code></li>
+          <li><code>&lt;meta&gt;</code></li>
+          <li><code>&lt;link&gt;</code></li>
+          <li><code>&lt;css&gt;</code></li>
+          <li><code>&lt;script&gt;</code></li>
+        </ul>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;body&gt;&lt;/body&gt;</code></td>
+      <td colspan="1">none</td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;block&gt;</code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;remove&gt;</code></li>
+          <li><code>&lt;move&gt;</code></li>
+       <li><code>&lt;attribute&gt;</code></li>
+          <li><code>&lt;referenceBlock&gt;</code></li>
+          <li><code>&lt;referenceContainer&gt;</code></li>
+          <li><code>&lt;action&gt;
+        
+      
+      <td colspan="1"> </td>
+    
+    <tr>
+      <td colspan="1"><code>&lt;attribute&gt;</code></td>
+      <td colspan="1">
+        <ul>
+          <li><code>name = <span>{arbitrary_name}</span>
+          
+          <li><code>value = <span>{arbitrary_value}</span>
+          
+        
+      
+      <td colspan="1"> </td>
+      <td colspan="1">
+        <p>Specified for <code>&lt;html&gt;</code>, rendered like following:</p>
+        <p><code>&lt;html name="value'&gt;</code></p>
+        <p> </p>
+      </td>
+    
+    <tr>
+      <td colspan="1">
+        <p><code>&lt;title&gt;</code></p>
+      </td>
+      <td colspan="1">none</td>
+      <td colspan="1">none</td>
+      <td colspan="1">Page title</td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p><code>&lt;meta&gt;</code></p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span><code>content</code></span>
+          </li>
+          <li>
+            <span><code>charset</code></span>
+          </li>
+          <li>
+            <span><code>http-equiv</code></span>
+          </li>
+          <li>
+            <span><code>name</code></span>
+          </li>
+          <li>
+            <span><code>scheme</code></span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p><code>&lt;link&gt;</code></p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span><code>src</code></span>
+          </li>
+          <li>
+            <span><code>defer</code></span>
+          </li>
+          <li>
+            <span><code>ie_condition</code></span>
+          </li>
+          <li>
+            <span><code>charset</code></span>
+          </li>
+          <li>
+            <span><code>hreflang</code></span>
+          </li>
+          <li>
+            <span><code>media</code></span>
+          </li>
+          <li>
+            <span><code>rel</code></span>
+          </li>
+          <li>
+            <span><code>rev</code></span>
+          </li>
+          <li>
+            <span><code>sizes</code></span>
+          </li>
+          <li>
+            <span><code>target</code></span>
+          </li>
+          <li>
+            <span><code>type</code></span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <span><code>&lt;css&gt;</code></span>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span><code>src</code></span>
+          </li>
+          <li>
+            <span><code>defer</code></span>
+          </li>
+          <li>
+            <span><code>ie_condition</code></span>
+          </li>
+          <li>
+            <span><code>charset</code></span>
+          </li>
+          <li>
+            <span><code>hreflang</code></span>
+          </li>
+          <li>
+            <span><code>media</code></span>
+          </li>
+          <li>
+            <span><code>rel</code></span>
+          </li>
+          <li>
+            <span><code>rev</code></span>
+          </li>
+          <li>
+            <span><code>sizes</code></span>
+          </li>
+          <li>
+            <span><code>target</code></span>
+          </li>
+          <li>
+            <span><code>type</code></span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+        <p><code>&lt;script&gt;</code></p>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <span><code>src</code></span>
+          </li>
+          <li>
+            <span><code>defer</code></span>
+          </li>
+          <li>
+            <span><code>ie_condition</code></span>
+          </li>
+          <li>
+            <span><code>async</code></span>
+          </li>
+          <li>
+            <span><code>charset</code></span>
+          </li>
+          <li>
+            <span><code>type</code></span>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <span>none</span>
+      </td>
+      <td colspan="1"> </td>
+    </tr>
+  
+
+
+<h2 id="layout-types-gen">Generic layout</h2>
+
+Generic layouts define the contents and detailed structure inside the <code>&lt;body&gt;</code> section of the HTML page markup. 
+
+<h3 id="layout-type-gen-loc">Generic layout file conventional location</h3>
+
+Conventionally generic layout files must be located as follows:
+
+<ul>
+<li>Module generic layouts: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
+<li>Theme generic layouts: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+</ul>
+
+
+<h3>Generic layout structure and allowed layout instructions</h3>
+
+The following table describes the instructions specific for generic layout files. For the descriptions of common layout instructions see the <a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a> article.
+
+<table>
+  <tbody>
+    <tr>
+      <th>Element</th>
+      <th colspan="1">Attributes</th>
+      <th colspan="1">Parent of</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <code> &lt;layout&gt;&lt;/layout&gt; </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code>
+              xsi:noNamespaceSchemaLocation="{path_to_schema}"
+</code>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;update&gt;</code></li>
+
+        </ul>
+      </td>
+      <td>Mandatory root element.</td>
+    </tr>
+    <tr>
+      <td>
+        <code> &lt;update&gt; </code>
+      </td>
+      <td colspan="1">
+        <ul>
+          <li>
+            <code>handle="{name_of_handle_to_include}"</code>
+          </li>
+        </ul>
+      </td>
+      <td colspan="1">
+none
+      </td>
+<td></td>
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;container&gt;</code></td>
+      <td colspan="1">
+<ul>
+<li><code>name="root"</code></li>
+<li>For complete list of attributes, see <a href="/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#container" target="_blank">Layout instructions</a></li>
+</ul>
+</td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;block&gt;</code></li>
+          <li><code>&lt;container&gt;</code></li>
+          <li><code>&lt;referenceBlock&gt;</code></li>
+          <li><code>&lt;referenceContainer&gt;</code></li>
+          
+        </ul>
+      </td>
+      <td colspan="1"> Mandatory element</td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+Sample generic layout:
+<pre>
+
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../Core/etc/layout_generic.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;formkey&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;update&nbsp;handle=&quot;adminhtml_googleshopping_types_block&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;container&nbsp;name=&quot;root&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;block&nbsp;class=&quot;Magento\Backend\Block\Widget\Grid\Container&quot;&nbsp;name=&quot;googleshopping.types.container&quot;&nbsp;template=&quot;Magento_Backend::widget/grid/container/empty.phtml&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/container&gt;
+&lt;/layout&gt;
+</pre>
+
+
+
+
+
+
+</code></li></code></li></ul></td></tr></code></li></ul></td></tr></tbody></table></p></p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Javascript</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/stevjohnson/rake-test/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/pages/stevjohnson/rake-test/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/pages/stevjohnson/rake-test/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/pages/stevjohnson/rake-test/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/pages/stevjohnson/rake-test/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/pages/stevjohnson/rake-test/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/pages/stevjohnson/rake-test/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/pages/stevjohnson/rake-test/js/app-min.js"></script>
+
+
+</body>
+</html>
