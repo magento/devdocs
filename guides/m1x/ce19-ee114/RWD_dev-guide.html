@@ -1,43 +1,42 @@
-<head><style>
-
-table.confluenceTable { margin:5px; border-collapse:collapse; }
-table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
-table.confluenceTable th.confluenceTh,
-table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
-ul { list-style-type: square; }
-
-</style></head>
-
-<!-- Title: Magento Community Edition (CE) 1.9 and Magento Enterprise Edition (EE) 1.14 Responsive Web Design Developer's Guide-->
-<!-- URL: ee114-ce19-rwd-dev-guide -->
-
-
-<!-- <!DOCTYPE html>
+---
+---
+<!DOCTYPE html>
 <html lang=en>
 
 <head>
-	<meta charset=utf-8>
+    <meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="../../css/images/stylesheet.css"/>
-	<link rel="stylesheet" href="../../css/images/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="../../css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="../../css/favicon.ico" type="image/x-icon">
-	<title>Magento RWD Developer's Guide</title>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+    <title>Responsive Email Developer's Guide</title>
 
 </head>
 
 <body>
 <a name="top"></a>
 
-<img src="../../css/images/header.png" width="1024" height="215" alt="header" />
+<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <div id="content">
 
-<h1>Magento RWD Developer's Guide -- DRAFT</h1>
+
+<div class="toc"> <h4 class="toc">Table of Contents</h4>
+
+<!-- Title: Magento Community Edition (CE) 1.9 and Magento Enterprise Edition (EE) 1.14 Responsive Web Design Developer's Guide-->
+<!-- URL: ee114-ce19-rwd-dev-guide -->
+
+<body>
+<a name="top"></a>
+
+<div id="content">
+
+<h1>Magento RWD Developer's Guide</h1>
 
 
 <div class="toc">
- -->
+
 <h4 class="toc">Contents</h4>
 <ul><li><a href="#intro">Introduction</a></li>
 <li><a href="#support">Supported Devices and Browsers</a></li>
@@ -109,7 +108,8 @@ ul { list-style-type: square; }
 <li>The gift registry <em>(EE only)</em></li>
 <li>Multiple wishlists <em>(EE only)</em></li>
 <li>Place order by SKU <em>(EE only)</em></li></ul>
-<p class="kb-notes"><strong>Note</strong>: Magento still supports other non-responsive themes as well. You don't need to use this guide to customize those themes. For more information, see the <a href="http://info.magento.com/rs/magentocommerce/images/MagentoDesignGuide.pdf" target="_blank">Designer's Guide to Magento</a>.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento still supports other non-responsive themes as well. You don't need to use this guide to customize those themes. For more information, see the <a href="http://info.magento.com/rs/magentocommerce/images/MagentoDesignGuide.pdf" target="_blank">Designer's Guide to Magento</a>.</div>
+
 
 <h2 id="support">Supported Devices and Browsers</h2>
 <p>Magento's responsive theme was developed with full support for the following devices and browsers:</p>
@@ -185,10 +185,10 @@ ul { list-style-type: square; }
 <li>From the <strong>Actions</strong> list in the upper right corner of the page, click <strong>Disable</strong>.</li>
 <li>Click <strong>Submit</strong>.<br />
 The following figure shows an example.<br />
-<img src="{filedir_1}disable-cache.png" width="600px" height="173px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/disable-cache.png" width="600px" height="173px"></li>
 <li>Click <strong>Submit</strong>.<br />
 <p>The following figures shows all cache types disabled.<br />
-<img src="{filedir_1}disable-cache-confirm.png" width="600px" height="173px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/disable-cache-confirm.png" width="600px" height="173px"></li>
 </li></ol>
 
 <h2 id="theme">Copying Files to Create Your Custom Theme</h2>
@@ -204,7 +204,8 @@ The following figure shows an example.<br />
 <h3 id="theme-structure">Step 1: Creating a Directory Structure for Your Responsive Theme</h3>
 <p>You'll do your responsive theme development using a copy of the responsive theme provided with Magento CE and EE. This section discusses how to create new top-level directories for your theme and to copy files to those directories.</p>
 <p>The <tt>rwd/default</tt> theme falls back directly to the <tt>base/default</tt> theme, so themes in the <tt>default</tt> package will never be included as a part of the fallback chain.</p>
-<p class="kb-notes"><strong>Note</strong>: <em>Magento EE only.</em> The <tt>enterprise/default</tt> theme is completely replaced by <tt>rwd/enterprise</tt> and therefore, <tt>enterprise/default</tt> is not included as a part of the fallback chain.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: <em>Magento EE only.</em> The <tt>enterprise/default</tt> theme is completely replaced by <tt>rwd/enterprise</tt> and therefore, <tt>enterprise/default</tt> is not included as a part of the fallback chain.</div>
+
 <!-- <p>Magento CE 1.9 and Magento EE 1.14 have a new theme fallback structure that provides infinite levels of fallback. Learn more about this fallback structure in the <a href="#" style="color: red;">Magento Infinite Theme Fallback Structure</a> article.</p>
  -->
 <p>The top-level directories you'll need are:</p>
@@ -226,7 +227,8 @@ cd app/design/frontend/custompackage/customtheme/etc</pre></li>
 <script src="https://gist.github.com/xcomSteveJohnson/10934766.js"></script></li>
 <li>Magento EE:
 <script src="https://gist.github.com/xcomSteveJohnson/10937099.js"></script></li>
-<p class="kb-notes"><strong>Important</strong>: It's very important you have a <tt>theme.xml</tt> in the <tt>app/design/frontend/custompackage/customtheme/etc</tt> directory with exactly the contents shown. Failure to configure <tt>theme.xml</tt> correctly prevents Magento from loading your theme.</p> 
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: It's very important you have a <tt>theme.xml</tt> in the <tt>app/design/frontend/custompackage/customtheme/etc</tt> directory with exactly the contents shown. Failure to configure <tt>theme.xml</tt> correctly prevents Magento from loading your theme.</span></div>
+
 </ul>
 </li></ol>
 
@@ -238,7 +240,7 @@ cp -R skin/frontend/rwd/default/scss skin/frontend/custompackage/customtheme
 <!-- cp skin/frontend/rwd/default/scss/config.rb skin/frontend/custompackage/customtheme --></pre></li>
 <p>Copying the <tt>images</tt> directory is important because the CSS uses relative image paths. To avoid duplicating Sass files, review the information discussed in <a href="#sass-fallback-structure">Sass Fallback Structure</a>.</p>
 <p>The following figure shows how your custom theme directory structure looks after copying these files and directories.</p>
-<img src="{filedir_1}custom_skin-dir.png">
+<img src="{{ site.baseurl }}common/images/m1x/custom_skin-dir.png">
 
 <h3 id="theme-compass">Step 3: Configuring a Compass Watcher</h3>
 <p>You can configure Compass to watch your skin directories for changes to CSS and JavaScript and to compile them when something changes.</p>
@@ -284,7 +286,7 @@ ls skin/frontend/custompackage/customtheme/scss</pre>
 <li>In the right pane, expand <strong>Themes</strong>.</li>
 <li>In the <strong>Default</strong> field, enter <tt>customtheme</tt><br />
 The following figure shows an example.
-<img src="{filedir_1}admin-panel-custom-theme.png" width="600px" height="481px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/admin-panel-custom-theme.png" width="600px" height="481px"></li>
 <li>In the top right corner of the page, click <strong>Save Config</strong>.<br />
 If an error displays when you attempt to save the configuration, see <a href="#theme-admin-trouble">Troubleshooting Theme Configuration</a>.</li>
 <li>If prompted, flush the cache:
@@ -298,7 +300,8 @@ If an error displays when you attempt to save the configuration, see <a href="#t
 <ol><li>Navigate to your web store in a web browser.</li>
 <li>View the web page source.</li>
 <li>If you see a reference to <tt>/skin/frontend/custompackage/customtheme/css/styles.css</tt>, you are ready to begin building your new theme.</li></ol>
-<p class="kb-notes"><strong>Note</strong>: If your theme fails to load properly, see the next section.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If your theme fails to load properly, see the next section.</div>
+
 
 <h3 id="theme-admin-trouble">Troubleshooting Theme Configuration</h3>
 <p>See one of the following sections for troubleshooting assistance:</p>
@@ -336,7 +339,7 @@ If an error displays when you attempt to save the configuration, see <a href="#t
 
 <h4 id="theme-admin-trouble-files">Directory and File Reference</h4>
 <p>The following figure shows the directory structure in a properly configured system, as well as the location of <tt>theme.xml</tt>, the custom theme configuration file.</p>
-<img src="{filedir_1}custom-theme-dir-structure_image.png">
+<img src="{{ site.baseurl }}common/images/m1x/custom-theme-dir-structure_image.png">
 
 <h2 id="customizing-theme">Responsive Theme Reference</h2>
 <p>This section discusses information you need to customize the responsive theme you started in <a href="#theme">Copying Files to Create Your Custom Theme</a>.</p>
@@ -359,7 +362,7 @@ For more information about this setting, see <a href="http://compass-style.org/h
 <p>In previous versions of Magento, all CSS styles were grouped into a massive <tt>styles.css</tt> file that was cumbersome and difficult to navigate. The CSS in the responsive theme is organized into individual files referred to as <em>Sass partials</em>.</p>
 <p>When Compass compiles the Sass partials, the output is a set of CSS files that are loaded by the browser: <tt>styles-ie8.css</tt> is for Internet Explorer 8 and earlier, and <tt>styles.css</tt> is for all other browsers.</p>
 <p>Following is the directory structure of the <tt>skin/frontend/custompackage/customtheme</tt> directory.</p>
-<p class="kb-notes"><strong>Note</strong>: This structure does not include the sample data assets that you will <a href="#remove-sample-content">remove later in this guide</a>.</p></p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This structure does not include the sample data assets that you will <a href="#remove-sample-content">remove later in this guide</a>.</div>
 
 <p><pre>
 &#x251C;&#x2500;&#x2500; css
@@ -522,7 +525,7 @@ $mq-fixed-value: 1024px;</pre>
 
 <h4 id="customize-theme-images-sprites">Working With Sprites</h4>
 <p>The responsive theme uses two sprites: one for general icons and the other for social icons.</p>
-<p>Both sprite images output at 1x and 2x resolutions (for high-resolution screens). Because sprite files are very difficult to edit without the source files, you should use these Photoshop files to change these sprites: <a href="{filedir_1}RWD_icon_sprite.psd">RWD_icon_sprite.psd</a> and <a href="{filedir_1}RWD_social_icons.psd">RWD_social_icons.psd</a>
+<p>Both sprite images output at 1x and 2x resolutions (for high-resolution screens). Because sprite files are very difficult to edit without the source files, you should use these Photoshop files to change these sprites: <a href="{{ site.baseurl }}common/images/m1x/RWD_icon_sprite.psd">RWD_icon_sprite.psd</a> and <a href="{{ site.baseurl }}common/images/m1x/RWD_social_icons.psd">RWD_social_icons.psd</a>
 <p>Compass provides support</a> for generating sprites from individual image files, but it was not used to generate sprites for the responsive theme. However, you might want to take advantage of that feature for your custom theme. Using this method requires knowledge of Compass.</p>
 
 <h3 id="customize-theme-js">Working With JavaScript</h3>
@@ -626,7 +629,8 @@ The preceding causes Compass to look for Sass files in <tt>skin/frontend/rwd/ent
 
 <h3>High-Definition Images</h3>
 <p>The responsive theme has no high-resolution image solution for product listing pages. Refer to <a href="https://speakerdeck.com/brendanfalkowski/responsive-ecommerce-part-two#114" target="_blank">slides starting at 114</a> of Brendan Falkowski's Imagine 2013 talk for implementation suggestions. For a 2x solution, PictureFill (or similar polyfill) could be used, although it would need to be integrated with ElevateZoom.</p>
-<p class="kb-notes"><strong>Note</strong>: Category banners and product detail pages use a 1.5x image solution.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Category banners and product detail pages use a 1.5x image solution.</div>
+
 <p>Magento does not resize the main product photo on product detail pages, so you must implement high-resolution support in your responsive theme. You must be careful with this if you have very large product photos because it could drastically impact performance.</p>
 <p>To constrain the size of your main product photo, open <tt>app/design/frontend/rwd/default/template/catalog/product/view/media.phtml</tt> and modify this line:
 <pre>&lt;?php echo $this-&gt;helper('catalog/image')-&gt;init($_product, 'image') ?&gt;</pre>
