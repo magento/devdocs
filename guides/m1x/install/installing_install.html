@@ -87,7 +87,8 @@
 <li><a href="#install-create-db">Creating a Magento Database Instance</a></li>
 <li><a href="#install-extract-archive">Extracting the Magento Installation Archive</a></li>
 <li><a href="#install-sample">Installing Optional Sample Data</a></li></ol>
-<p class="kb-notes"><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <code>root</code> privileges.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <code>root</code> privileges.</div>
+
 
 <h3 id="install-prereq-selinux">SELinux Prerequisite</h3>
 <p><a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux <em>and</em> Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
@@ -212,7 +213,8 @@ For example,
 
 <h3 id="install-create-db">Creating a Magento Database Instance</h3>
 <p>This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance. If you choose to do that, skip this section and continue with <a href="#install-sample">Installing Optional Sample Data</a>.</p>
-<p class="kb-notes"><strong>Note</strong>: Before you continue, review the information about MySQL discussed in <a href="#prereq">Prerequisites</a>.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Before you continue, review the information about MySQL discussed in <a href="#prereq">Prerequisites</a>.</div>
+
 <p>To create a new database instance:</p>
 <ol><li>Log in to your database server as any user.</li>
 <li>Enter the following commands in the order shown to create a database instance named <code>magento</code>:
@@ -258,7 +260,8 @@ tar -zxf <em>magento-install-archive</em></pre></li></ul>
 <h3 id="install-sample">Installing Optional Sample Data</h3>
 <p>Magento provides sample data you can optionally install to give you an idea of what products look like in the Admin Panel and in your web store. You can use this sample data to learn how Magento works and to experiment with custom themes.</p>
 <p>You must install sample data on the file system and in the database <em>before</em> you install Magento.</p>
-<p class="kb-notes"><strong>Note</strong>: <em>Only if your database is shared between more than one Magento installation</em>. Database table names used by the sample data are not configurable. To use sample data with a new Magento installation, you must manually add a prefix to all sample data tables and use the same prefix when you install Magento.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: <em>Only if your database is shared between more than one Magento installation</em>. Database table names used by the sample data are not configurable. To use sample data with a new Magento installation, you must manually add a prefix to all sample data tables and use the same prefix when you install Magento.</div>
+
 <p>To skip sample data installation, continue with <a href="#install-privs">Setting File and Directory Ownership and Privileges</a>.</p>
 <p>To install Magento sample data:</p>
 <ol><li>Download the sample data from one of the locations discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#get">Getting Magento CE or EE</a>.</li>
@@ -334,7 +337,8 @@ chown -R myuser:www-data magento</code></li>
 
 <h2 id="install-magento">Installing Magento CE or EE</h2>
 <p>This section discusses how to run the Magento installer, using Magento EE as an example. The Magento CE installer has exactly the same options; only the appearance is different.</p>
-<p class="kb-notes"><strong>Important</strong>: The procedure that follows assumes that your web server and database server are on the same host. If they are installed on different hosts, additional tasks are required. <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#help" target="_blank">Get help</a> before you continue your installation.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The procedure that follows assumes that your web server and database server are on the same host. If they are installed on different hosts, additional tasks are required. <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#help" target="_blank">Get help</a> before you continue your installation.</span></div>
+
 <p>To install Magento CE or EE:</p>
 <ol><li>Complete all of the tasks discussed earlier in this article.</li>
 <li>Enter the following URL in your web browser's address or location field:
@@ -345,23 +349,23 @@ The following page displays.<br >
 <img src="{{ site.baseurl }}common/images/m1x/install_first-page.png" height="353px" width="600px"></li>
 <li>Select the check box that indicates you agree to the terms and conditions, and click <strong>Continue</strong>.</li>
 <li>On the Localization page, enter the following information.<br />
-<table class="confluenceTable">
+<table>
 <tbody>
 <tr>
-  <th class="confluenceTh">Option</th>
-  <th class="confluenceTh">Meaning</th>
+  <th>Option</th>
+  <th>Meaning</th>
 </tr>
 <tr>
-  <td class="confluenceTd">Locale</td>
-  <td class="confluenceTd">From the list, click the option that best matches the locale in which your Magento server resides.</td>
+  <td>Locale</td>
+  <td>From the list, click the option that best matches the locale in which your Magento server resides.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Time Zone</td>
-  <td class="confluenceTd">From the list, click the option that best matches the time zone in which your Magento server resides.</td>
+  <td>Time Zone</td>
+  <td>From the list, click the option that best matches the time zone in which your Magento server resides.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Default currency</td>
-  <td class="confluenceTd">From the list, click the default currency to use on your Magento web store.</td>
+  <td>Default currency</td>
+  <td>From the list, click the default currency to use on your Magento web store.</td>
 </tr>
 </tbody>
 </table><br />
@@ -371,35 +375,35 @@ The following figure shows an example of configuring Magento for US English in t
 The Configuration page displays. Each of its three sections is discussed in the following step.</li>
 <li>In the Configuration page, enter the following information:
 <ol><li>In the Database Configuration section, enter the following information.<br />
-<table class="confluenceTable">
+<table>
 <tbody>
 <tr>
-  <th class="confluenceTh">Option</th>
-  <th class="confluenceTh">Meaning</th>
+  <th>Option</th>
+  <th>Meaning</th>
 </tr>
 <tr>
-  <td class="confluenceTd">Database Type</td>
-  <td class="confluenceTd">From the list, click <strong>MySQL</strong>.</td>
+  <td>Database Type</td>
+  <td>From the list, click <strong>MySQL</strong>.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Host</td>
-  <td class="confluenceTd">Enter the database server's fully qualified host name or IP address. Use the default setting of <strong>localhost</strong> if your database server is on the same host as your web server.</td>
+  <td>Host</td>
+  <td>Enter the database server's fully qualified host name or IP address. Use the default setting of <strong>localhost</strong> if your database server is on the same host as your web server.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Database Name</td>
-  <td class="confluenceTd">Enter the name of the Magento database instance in which you want to install the Magento database tables.</td>
+  <td>Database Name</td>
+  <td>Enter the name of the Magento database instance in which you want to install the Magento database tables.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">User Name</td>
-  <td class="confluenceTd">Enter the user name of the Magento database instance owner.</td>
+  <td>User Name</td>
+  <td>Enter the user name of the Magento database instance owner.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">User Password</td>
-  <td class="confluenceTd">Enter the Magento database owner's password.</td>
+  <td>User Password</td>
+  <td>Enter the Magento database owner's password.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Tables Prefix</td>
-  <td class="confluenceTd"><p><em>(Optional.)</em> Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already. In that case, enter a prefix to identify the Magento tables for this installation.</p>
+  <td>Tables Prefix</td>
+  <td><p><em>(Optional.)</em> Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already. In that case, enter a prefix to identify the Magento tables for this installation.</p>
   <p>Some customers have more than one Magento instance running on a server with all tables in the same database. This option enables those customers to share the database server with more than one Magento installation.</p>
   </td>
 </tr>
@@ -408,36 +412,36 @@ The Configuration page displays. Each of its three sections is discussed in the 
 A sample follows.<br />
 <img src="{{ site.baseurl }}common/images/m1x/install_configuration_database.png" height="274px" width="600px"></li>
 <li>In the Web Access Options section, enter the following information.<br />
-<table class="confluenceTable">
+<table>
 <tbody>
 <tr>
-  <th class="confluenceTh">Option</th>
-  <th class="confluenceTh">Meaning</th>
+  <th>Option</th>
+  <th>Meaning</th>
 </tr>
 <tr>
-  <td class="confluenceTd">Base URL</td>
-  <td class="confluenceTd">Enter the base URL to use to access the Magento Admin Panel and your Magento web store.</td>
+  <td>Base URL</td>
+  <td>Enter the base URL to use to access the Magento Admin Panel and your Magento web store.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Admin Path</td>
-  <td class="confluenceTd">Enter the path to access the Admin Panel. This path is appended to <strong>Base URL</strong>.<br />
+  <td>Admin Path</td>
+  <td>Enter the path to access the Admin Panel. This path is appended to <strong>Base URL</strong>.<br />
   For example, if <strong>Base URL</strong> is <code>http://www.example.com</code> and <strong>Admin Path</strong> is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Enable Charts</td>
-  <td class="confluenceTd">Select the check box to display charts on the Admin Panel.</td>
+  <td>Enable Charts</td>
+  <td>Select the check box to display charts on the Admin Panel.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Skip Base URL Validation Before the Next Step</td>
-  <td class="confluenceTd">Clearing this check box validates your server's base URL by performing an HTTP GET. Clear this check box unless your web server's base URL is not verifiable; for example, in a development or test environment.</td>
+  <td>Skip Base URL Validation Before the Next Step</td>
+  <td>Clearing this check box validates your server's base URL by performing an HTTP GET. Clear this check box unless your web server's base URL is not verifiable; for example, in a development or test environment.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Use Web Server (Apache) Rewrites</td>
-  <td class="confluenceTd">Select this check box to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><code>mod_rewrite</code></a> module. You can select this check box only if you configured Apache to use server rewrites as discussed in <a href="#install-prereq-software">Installing and Configuring Required Prerequisite Software</a>.</td>
+  <td>Use Web Server (Apache) Rewrites</td>
+  <td>Select this check box to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><code>mod_rewrite</code></a> module. You can select this check box only if you configured Apache to use server rewrites as discussed in <a href="#install-prereq-software">Installing and Configuring Required Prerequisite Software</a>.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Use Secure URLs (SSL)</td>
-  <td class="confluenceTd">Select this check box only if your web server supports SSL.</td>
+  <td>Use Secure URLs (SSL)</td>
+  <td>Select this check box only if your web server supports SSL.</td>
 </tr>
 </tbody>
 </table><br />
@@ -452,42 +456,41 @@ Choose database storage if you have a clustered database; otherwise, there might
 </li>
 </li>
 <li>Click <strong>Continue</strong>.<br />
-<p class="kb-notes"><strong>Important</strong>: If errors display, you must resolve them before continuing.</p>
-</li>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: If errors display, you must resolve them before continuing.</span></div></li>
 <li>In the Create Admin Account page, enter the following information.
-<table class="confluenceTable">
+<table>
 <tbody>
 <tr>
-  <th class="confluenceTh">Option</th>
-  <th class="confluenceTh">Meaning</th>
+  <th>Option</th>
+  <th>Meaning</th>
 </tr>
 <tr>
-  <td class="confluenceTd">First Name</td>
-  <td class="confluenceTd">Enter the first name of the user you want to identify as the Magento web store owner.</td>
+  <td>First Name</td>
+  <td>Enter the first name of the user you want to identify as the Magento web store owner.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Last Name</td>
-  <td class="confluenceTd">Enter the user's last name.</td>
+  <td>Last Name</td>
+  <td>Enter the user's last name.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Email</td>
-  <td class="confluenceTd">Enter the user's email address.</td>
+  <td>Email</td>
+  <td>Enter the user's email address.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Username</td>
-  <td class="confluenceTd">Enter the Magento Admin Panel administrator's user name. (You can create additional Magento administrators later.)</td>
+  <td>Username</td>
+  <td>Enter the Magento Admin Panel administrator's user name. (You can create additional Magento administrators later.)</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Password</td>
-  <td class="confluenceTd">Enter the user's password.</td>
+  <td>Password</td>
+  <td>Enter the user's password.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Confirm Password</td>
-  <td class="confluenceTd">Enter the user's password again for verification.</td>
+  <td>Confirm Password</td>
+  <td>Enter the user's password again for verification.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Encryption Key</td>
-  <td class="confluenceTd">If you have one, enter a key to encrypt sensitive data (such as passwords and personally identifiable customer information) in the Magento database. If you don't have one, Magento generates one for you.<br />
+  <td>Encryption Key</td>
+  <td>If you have one, enter a key to encrypt sensitive data (such as passwords and personally identifiable customer information) in the Magento database. If you don't have one, Magento generates one for you.<br />
   The encryption key is stored in <code>[your Magento install dir]/app/etc/local.xml</code>.</td>
 </tr>
 </tbody>
@@ -514,35 +517,35 @@ The following figure shows an example.<br />
 <li>In the upper right corner, click <strong>Add Product</strong>.</li>
 <li>On the Create Product Settings page, accept the defaults and click <strong>Continue</strong>.</li>
 <li>On the General page, enter the following information.
-<table class="confluenceTable">
+<table>
 <tbody>
 <tr>
-  <th class="confluenceTh">Option</th>
-  <th class="confluenceTh">What to enter</th>
+  <th>Option</th>
+  <th>What to enter</th>
 </tr>
 <tr>
-  <td class="confluenceTd">Name</td>
-  <td class="confluenceTd">Enter <code>Sample product</code>.</td>
+  <td>Name</td>
+  <td>Enter <code>Sample product</code>.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">SKU</td>
-  <td class="confluenceTd">Enter <code>1234</code>.</td>
+  <td>SKU</td>
+  <td>Enter <code>1234</code>.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Weight</td>
-  <td class="confluenceTd">Enter <code>1</code>.</td>
+  <td>Weight</td>
+  <td>Enter <code>1</code>.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Status</td>
-  <td class="confluenceTd">Click <strong>Enabled</strong>.</td>
+  <td>Status</td>
+  <td>Click <strong>Enabled</strong>.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Tax Class</td>
-  <td class="confluenceTd">Click <strong>Taxable Goods</strong>.</td>
+  <td>Tax Class</td>
+  <td>Click <strong>Taxable Goods</strong>.</td>
 </tr>
 <tr>
-  <td class="confluenceTd">Visibility</td>
-  <td class="confluenceTd">Click <strong>Catalog, Search</strong>.</td>
+  <td>Visibility</td>
+  <td>Click <strong>Catalog, Search</strong>.</td>
 </tr>
 </tbody>
 </table></li>
@@ -566,7 +569,8 @@ The following figure shows an example.<br />
 <li>Automatic updating of currency rates</li>
 <li><em>Magento EE 1.14.1 and later, Magento CE 1.9.1 and later</em> All Magento e-mails (including order confirmation and transactional)</li>
 </ul>
-<p class="kb-notes"><strong>Important</strong>: Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</div>
+
 <p>Magento recommends running cron every minute for EE and every five minutes for CE.</p>
 <p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". Each user has its  own  crontab, and commands in any given crontab are executed as the user who owns the crontab.</p>
 <p>For Magento, this user is the web server. To determine your web server's user, enter the following command:
@@ -590,25 +594,25 @@ For example, for CentOS,<br />
 
 <h2 id="install-troubleshoot">Troubleshooting</h2>
 <p>This section discusses some suggestions for issues you might encounter when installing Magento.</p>
-<table class="confluenceTable">
+<table>
 <tbody>
 <tr>
-  <th class="confluenceTh">Issue</th>
-  <th class="confluenceTh">Suggested solution</th>
+  <th>Issue</th>
+  <th>Suggested solution</th>
 </tr>
 <tr>
-  <td class="confluenceTd">During the installation, errors like the following display: <br />
+  <td>During the installation, errors like the following display: <br />
   <code>Path "/var/www/html/magento/app/etc" must be writable.</code></td>
-  <td class="confluenceTd">Set privileges and ownership on the Magento installation directory and subdirectories as discussed in <a href="#install-privs">Setting File and Directory Ownership and Privileges</a>.</td>
+  <td>Set privileges and ownership on the Magento installation directory and subdirectories as discussed in <a href="#install-privs">Setting File and Directory Ownership and Privileges</a>.</td>
 </tr>
 <!-- <tr>
-  <td class="confluenceTd">During the installation, errors like the following display: <br />
+  <td>During the installation, errors like the following display: <br />
   <code>TBD - php extension.</code></td>
-  <td class="confluenceTd">TBD</td> -->
+  <td>TBD</td> -->
 </tr>
 <tr>
-  <td class="confluenceTd">You never advance past the installer's Configuration page.</td>
-  <td class="confluenceTd">Try selecting the <strong>Skip Base URL Validation Before the Next Step</strong> check box. If problems persist, <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#help" target="_blank">get help</a>.</td>
+  <td>You never advance past the installer's Configuration page.</td>
+  <td>Try selecting the <strong>Skip Base URL Validation Before the Next Step</strong> check box. If problems persist, <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#help" target="_blank">get help</a>.</td>
 </tr>
 </tbody>
 </table>
