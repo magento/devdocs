@@ -1,41 +1,34 @@
-<head><style>
+---
+---
 
-table.confluenceTable { margin:5px; border-collapse:collapse; }
-table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
-table.confluenceTable th.confluenceTh,
-table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
-ul { list-style-type: square; }
-
-</style></head>
-
-<!-- title: Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE) -->
-<!-- URL: ce18-and-ee113-installing -->
-
-
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en>
 
 <head>
-	<meta charset=utf-8>
+  <meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="../css/images/stylesheet.css"/>
-	<link rel="stylesheet" href="../css/images/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="../css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
-	<title>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</title>
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+  <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+  <title>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</title>
 
 </head>
 
 <body>
-
-<h1>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</h1>
 <a name="top"></a>
 
-<img src="../css/images/header.png" width="1024" height="215" alt="header" />
+<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
-<div id="content"> -->
+<div id="content">
 
-<h4>Table of Contents</h4>
+
+<!-- title: Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE) -->
+<!-- URL: ce18-and-ee113-installing -->
+
+<h1>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</h1>
+
+<div class="toc"> <h4 class="toc">Contents</h4>
 <ul>
 <li><a href="#overview">Overview</a></li>
 <li><a href="#prereq">Prerequisites</a></li>
@@ -45,19 +38,20 @@ ul { list-style-type: square; }
 <li><a href="#install-cron">Setting Up Cron Jobs</a></li>
 <li><a href="#install-privs-after">Setting Magento File System Permissions and Ownership After Installation</a></li>
 <li><a href="#install-troubleshoot">Troubleshooting</a></li>
-</ul>
+</ul></div>
 
 <h2 id="overview">Overview</h2>
 <p>This article discusses how to install:</p>
-<ul><li>Magento Community Edition (CE) 1.8 or 1.9</li>
-<li>Magento Enterprise Edition (EE) 1.13 or 1.14</li></ul>
+<ul><li>Magento Community Edition (CE) 1.8.x or 1.9.x</li>
+<li>Magento Enterprise Edition (EE) 1.13.x or 1.14.x</li></ul>
 <p>To install Magento CE or Magento EE, use the following high-level guidelines:</p>
 <ol><li>Set up a system that meets the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
 <li>Install prerequisite software (web server, PHP, and required PHP extensions).</li>
 <li>Set up a MySQL Magento database instance.</li>
 <li>Run the Magento installer to complete the installation.</li>
 <li>Verify that Magento installed correctly.</li></ol>
-<p class="kb-notes"><strong>Important</strong>: Perform <em>all installations</em> to Magento CE 1.9 or Magento EE 1.14 to get the latest fixes, features, and security updates..</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Perform <em>all installations</em> to Magento the latest version of CE 1.9 or Magento EE 1.14 to get the latest fixes, features, and security updates.</span></div>
+
 
 <h2 id="prereq">Prerequisites</h2>
 <p>Before starting your installation:</p>
@@ -84,162 +78,16 @@ ul { list-style-type: square; }
 <ul><li>Discussing how to configure Secure Sockets Layer (SSL) is beyond the scope of this guide. You can consult some general resources such as <a href="http://httpd.apache.org/docs/2.4/ssl/" target="_blank">Apache</a>, <a href="http://www.zytrax.com/tech/survival/ssl.html" target="_blank">zytrax.com</a>, or the <a href="http://www.openssl.org/docs/ssl/ssl.html" target="_blank">OpenSSL documentation page</a>.</li>
 <li>Discussing how to <a href="http://wiki.nginx.org/Install" target="_blank">install and configure nginx</a> is beyond the scope of this article.</li>
 <li>Review the MySQL developer site's recommendations for <a href="http://dev.mysql.com/doc/refman/5.0/en/password-security-user.html" target="_blank">MySQL password security</a>.</li>
-<li>Before you continue, make sure the system on which you install Magento meets the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
+<li>Before you continue, make sure the system on which you install Magento meets the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li></ul>
 <p>Complete the tasks discussed in the following sections in the order shown:</p>
-<ol><li><a href="#install-prereq-software">Installing and Configuring Required Prerequisite Software</a></li>
-<li><a href="#install-mysql-config">CentOS Only&mdash;Configuring MySQL</a></li>
+<ol><li>Installing and Configuring Required Prerequisite Software for <a href="http://www.magentocommerce.com/knowledge-base/entry/ce-ee-install-ubuntu-prereq" target="_blank">Ubuntu</a> or <a href="http://www.magentocommerce.com/knowledge-base/entry/ce-ee-install-centos-prereq" target="_blank">CentOS</a></li>
 <li><a href="#install-prereq-selinux">SELinux Prerequisite</a></li>
 <li><a href="#install-iptables">Opening Ports In Your Firewall</a></li>
 <li><a href="#install-optional">Installing Optional Software</a></li>
 <li><a href="#install-create-db">Creating a Magento Database Instance</a></li>
 <li><a href="#install-extract-archive">Extracting the Magento Installation Archive</a></li>
 <li><a href="#install-sample">Installing Optional Sample Data</a></li></ol>
-<p class="kb-notes"><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <tt>root</tt> privileges.</p>
-
-<h3 id="install-prereq-software">Installing and Configuring Required Prerequisite Software</h3>
-<p>The following sections discuss how to get and install required prerequisite software for Ubuntu and CentOS:</p>
-<ul><li><a href="#install-prereq-software-ub">Ubuntu&mdash;Installing and Configuring Required Prerequisite Software</a></li>
-<li><a href="#install-prereq-software-cent">CentOS&mdash;Installing and Configuring Required Prerequisite Software</a></li></ul>
-
-<h4 id="install-prereq-software-ub">Ubuntu&mdash;Installing and Configuring Required Prerequisite Software</h4>
-<p>PHP 5.3 is currently the latest PHP version available in the default repositories for Ubuntu and CentOS. PHP 5.3 works with CE 1.8, CE 1.9, EE 1.13, and EE 1.14.</p>
-<p>We recommend PHP 5.4 for all of the preceding CE and EE versions because of the <a href="http://php.net/ChangeLog-5.php#5.4.0" target="_blank">new features and changes</a> in that release.</p>
-<p>CE 1.8 and EE 1.13 both require a <a href="http://www.magentocommerce.com/knowledge-base/entry/php54-patch" target="_blank">PHP 5.4 patch</a>. The patch is listed as <strong>PHP 5.4 Compatibility</strong> in the EE support portal.</p>
-<p>Log in to the machine on which you'll install Magento and enter the following commands in the order shown:</p>
-
-<h5>Updating System Software</h5>
-<p>It's a good practice to update your repositories and system software, if necessary.</p>
-<p>Log in to your Magento server as a user with <tt>root</tt> privileges and enter the commands shown in this section.</p>
-<p>Update repositories:</p>
-<pre>apt-get update</pre>
-<p>Optionally upgrade software. This might require a system reboot.</p>
-<pre>apt-get upgrade</pre>
-
-<h5>Installing the Web Server</h5>
-<p>Install Apache 2 if you haven't already done so; ignore if you use nginx:</p>
-<pre>apt-get install apache2</pre>
-
-<h5>Installing PHP</h5>
-<p>PHP 5.3 is currently the latest PHP version available in the default repositories for Ubuntu and CentOS. PHP 5.3 works with CE 1.8, CE 1.9, EE 1.13, and EE 1.14.</p>
-<p>We recommend PHP 5.4 for all of the preceding CE and EE versions because of the <a href="http://php.net/ChangeLog-5.php#5.4.0" target="_blank">new features and changes</a> in that release.</p>
-<p>CE 1.8 and EE 1.13 require a <a href="http://www.magentocommerce.com/knowledge-base/entry/php54-patch" target="_blank">patch</a> (the patch is listed as <strong>PHP 5.4 Compatibility</strong> in the EE support portal).</p>
-<p><strong>Install PHP 5.4</strong>. Magento CE 1.9, EE 1.14; and CE 1.8, EE 1.13 if <a href="http://www.magentocommerce.com/knowledge-base/entry/php54-patch" target="_blank">patched</a>. Use the instructions on <a href="http://askubuntu.com/questions/109404/how-do-i-install-latest-php-in-supported-ubuntu-versions-like-5-4-x-in-ubuntu-1" target="_blank">askubuntu</a>.</p>
-<p><strong>Upgrade to PHP 5.4</strong>. Use the instructions on <a href="http://phpave.com/upgrade-php-5-3-php-5-5-ubuntu-12-04-lts/" target="_blank">phpave</a>.</p>
-<p><strong>Install PHP 5.3</strong>. Magento CE 1.8, EE 1.13 without the PHP 5.4 patch; also compatible with Magento CE 1.9 and EE 1.14:
-<p>Install PHP 5.3 and extensions required by Magento.</p>
-<pre>apt-get install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd</pre>
-
-<h5>Increasing the PHP memory Limit</h5>
-<p>Increase <tt>memory_limit</tt> in <tt>php.ini</tt> to at least 512MB:</p>
-<ol><li>Open <tt>/etc/php5/apache2/php.ini</tt> in a text editor.</li>
-<li>Change <tt>memory_limit</tt> to:
-<pre>memory_limit = 512M</pre></li>
-<li>Save your changes and exit the text editor.</li></ol>
-
-<h5>Installing MySQL</h5>
-<p>Install the MySQL database:</p>
-<pre>apt-get install mysql-client mysql-server</pre>
-
-<h5>Configuring Apache for Server Rewrites</h5>
-<ol><li>Open the following file for editing.
-<code>vim /etc/apache2/sites-available/default</code></li>
-<li>Locate the following block.
-<code>&lt;Directory /var/www/><br />
-    Options Indexes FollowSymLinks MultiViews<br />
-    AllowOverride None<br />
-    Order allow,deny<br />
-    allow from all<br />
-&lt;/Directory></code></li>
-<li>Change the value of <tt>AllowOverride</tt> to <tt>All</tt>.
-<code>&lt;Directory /var/www/><br />
-    Options Indexes FollowSymLinks MultiViews<br />
-    AllowOverride All<br />
-    Order allow,deny<br />
-    allow from all<br />
-&lt;/Directory></code></li>
-<li>Save the file and exit the text editor.</li>
-<li>Configure Apache to use the <tt>mod_rewrite</tt> module.
-<code>cd /etc/apache2/mods-enabled<br />
-ln -s ../mods-available/rewrite.load</code></li>
-<li>Restart Apache.
-<code>service apache2 restart</code></li>
-</li>
-<li>Continue with <a href="#install-optional">Installing Optional Software</a>.</li></ol>
-
-<h4 id="install-prereq-software-cent">CentOS&mdash;Installing Required Prerequisite Software</h4>
-<p>Log in to the machine on which you'll install Magento and enter the following commands in the order shown:</p>
-
-<h5>Updating System Software</h5>
-<p>It's a good practice to update your repositories and optionally update system software.</p>
-<p>Update repositories:</p>
-<pre>yum -y update</pre>
-<p>Optionally upgrade software. This might cause a system reboot.</p>
-<pre>yum -y upgrade</pre>
-
-<h5>Installing the Web Server</h5>
-<p>Install Apache 2 if you haven't already done so; ignore if you use nginx.</p>
-<pre>yum -y install httpd</pre>
-
-<h5>Installing PHP</h5> 
-<p>PHP 5.3 is currently the latest PHP version available in the default repositories for Ubuntu and CentOS. PHP 5.3 works with CE 1.8, CE 1.9, EE 1.13, and EE 1.14.</p>
-<p>We recommend PHP 5.4 for all of the preceding CE and EE versions because of the <a href="http://php.net/ChangeLog-5.php#5.4.0" target="_blank">new features and changes</a> in that release.</p>
-<p>CE 1.8 and EE 1.13 both require a <a href="http://www.magentocommerce.com/knowledge-base/entry/php54-patch" target="_blank">PHP 5.4 patch</a>. The patch is listed as <strong>PHP 5.4 Compatibility</strong> in the EE support portal.</p>
-<p><strong>Install PHP 5.4</strong>. Magento CE 1.9, EE 1.14; and CE 1.8, EE 1.13 if <a href="http://www.magentocommerce.com/knowledge-base/entry/php54-patch" target="_blank">patched</a>. Install PHP 5.4 from an external repository like <a href="http://blog.famillecollet.com/pages/Config-en" target="_blank">remi</a>.</p>
-<p><strong>Upgrade to PHP 5.4</strong>. Enter the following commands in the order shown as a user with <tt>root</tt> privileges:</p>
-<pre>cd /tmp
-rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm
-yum --enablerepo=remi install httpd php php-common</pre>
-<p>The following resources are also available:</p>
-<ul><li><a href="http://kb.parallels.com/en/115875" target="_blank">kb.parallels</li>
-<li><a href="http://stackoverflow.com/questions/21502656/upgrading-php-on-centos-6-5-final" target="_blank">stackoverflow</a></li>
-<li><a href="http://rpms.famillecollet.com/" target="_blank">remi repository</a></li></ul>
-<p><strong>Install PHP 5.3</strong>. Magento CE 1.8, EE 1.13 without the PHP 5.4 patch; also compatible with Magento CE 1.9 and EE 1.14:
-<pre>yum -y install php php-server php-xml</pre>
-
-<h5>Increasing the PHP Memory Limit</h5>
-<p>Increase <tt>memory_limit</tt> in <tt>php.ini</tt> to at least 512MB.</p>
-<ol><li>Open <tt>/etc/php.ini</tt> in a text editor.</li>
-<li>Change <tt>memory_limit</tt> to:
-<pre>memory_limit = 512M</pre></li>
-<li>Save your changes and exit the text editor.</li></ol>
-
-<h5>Installing Required PHP Extensions</h5>
-<p>To install required PHP extensions on CentOS, enter the following command:</p>
-<pre>yum -y install --enablerepo=remi php-mcrypt gd gd-devel php-gd php-mysql</pre>
-
-<h5>Installing MySQL</h5>
-<p>Install the MySQL database:</p>
-<pre>yum -y install mysql mysql-server</pre>
-<p>Set the MySQL service <a href="http://en.wikipedia.org/wiki/Runlevel" target="_blank">runlevel</a> and start MySQL.</p>
-<pre>chkconfig --level 345 mysqld on; service mysqld start</pre>
-
-<h5>Configuring Apache for Server Rewrites</h5>
-<ol><li>Open <tt>httpd.conf</tt> for editing.
-<pre>vim /etc/httpd/conf/httpd.conf</pre></li>
-<li>Locate the block that starts with:
-<pre>&lt;Directory /var/www/html></pre></li>
-<li>In that block, change the value of <tt>AllowOverride</tt> to <tt>All</tt>.</li>
-<li>Save your changes to <tt>httpd.conf</tt> and exit the text editor.</li>
-<li>Restart Apache.
-<pre>service httpd restart</pre></li></ol></li></ol>
-
-<h3 id="install-mysql-config">CentOS Only&mdash;Configuring MySQL</h3>
-<p>This section applies only to CentOS. If you're installing Magento on Ubuntu, skip this section and continue with <a href="#install-optional">Installing Optional Software</a>.</p>
-<p class="kb-notes"><strong>Note</strong>: Use the tasks that follow only on a <em>new MySQL database</em>. Some of the tasks require you to delete users and should not be performed on a database that has already been set up.</p>
-<p>After you install MySQL and start the service as discussed in <a href="#install-prereq-software-cent">CentOS&mdash;Installing Required Prerequisite Software</a>, use the following steps to configure it:</p>
-<ol><li>Log in as the MySQL <tt>root</tt> user.
-<pre>mysql -u root</pre>
-Enter all of the following commands at the <tt>mysql></tt> prompt.</li>
-<li>Delete all non-<tt>root</tt> users.
-<pre>delete from mysql.user where not (host="localhost" and user="root");</pre></li>
-<li>Set the <tt>root</tt> user's password.
-<pre>SET PASSWORD FOR 'root'@'localhost' = PASSWORD('<em>root-user-password</em>');</pre></li>
-<li>Remove anonymous user access.<br />
-<coprede>DELETE FROM mysql.user WHERE User = '';<br />
-FLUSH PRIVILEGES;</pre></li>
-<li>Optionally perform other tasks discussed <a href="http://centoshelp.org/servers/database/installing-configuring-mysql-server" target="_blank">here</a>.</li>
-</ol>
+<p class="kb-notes"><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <code>root</code> privileges.</p>
 
 <h3 id="install-prereq-selinux">SELinux Prerequisite</h3>
 <p><a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux <em>and</em> Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
@@ -247,7 +95,7 @@ FLUSH PRIVILEGES;</pre></li>
 <p>To enable Apache to initiate a connection to another host with SELinux enabled:</p>
 <ol><li>To determine if SELinux is enabled, use the following command:
 <code>getenforce</code><br />
-<tt>Enforcing</tt> displays to confirm that SELinux is running.</li>
+<code>Enforcing</code> displays to confirm that SELinux is running.</li>
 <li>Enter one of the following commands:
 <code>#CentOS<br />
 setsebool -P httpd_can_network_connect=1<br />
@@ -263,8 +111,8 @@ setsebool -P apache2_can_network_connect=1</code></li></ol>
 <h3 id="install-optional">Installing Optional Software</h3>
 <p>This section discusses how to create or install the following:</p>
 <ul><li>Install and configure Network Time Protocol (NTP) which enables you to synchronize the system clock with pool servers located around the world. NTP is particularly useful for synchronizing the clocks of multiple hosts.</li>
-<li>Create a <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><tt>phpinfo.php</tt></a> file</li>
-<li>Install and configure the <tt>phpmyadmin</tt> database administration utility.</li></ol>
+<li>Create a <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> file</li>
+<li>Install and configure the <code>phpmyadmin</code> database administration utility.</li></ul>
 <p>These optional utilities might assist you with your installation; however, they are not required to install or use Magento.</p>
 <p>To skip installing these utilities, go directly to <a href="#install-create-db">Creating a Magento Database Instance</a>.</p>
 <p>See the following sections:</p>
@@ -279,7 +127,7 @@ setsebool -P apache2_can_network_connect=1</code></li></ol>
 <ol><li><em>CentOS only.</em>
 <ol><li>Enter the following command to find the appropriate NTP software:
 <code>yum search ntp</code></li>
-<li>Select a package to install. For example, <tt>ntp.x86_64</tt>.</li>
+<li>Select a package to install. For example, <code>ntp.x86_64</code>.</li>
 <li>Install the package.
 <code>yum -y install ntp.x86_64</code></li></ol>
 </li>
@@ -287,38 +135,38 @@ setsebool -P apache2_can_network_connect=1</code></li></ol>
 <code>apt-get install ntp</code></li>
 <li>Select the NTP pool servers you wish to use.<br />
 Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use <a href="http://www.pool.ntp.org/en" target="_blank">pool servers</a> that are close to your servers' time zone as discussed on the <a href="http://www.pool.ntp.org/en/use.html" target="_blank">NTP pool project help page</a>. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.</li>
-<li>Open <tt>/etc/ntp.conf</tt> in a text editor.</li>
+<li>Open <code>/etc/ntp.conf</code> in a text editor.</li>
 <li>Look for lines similar to the following:
-<code>server 0.centos.pool.ntp.org<br />
-server 1.centos.pool.ntp.org<br />
-server 2.centos.pool.ntp.org</code></li>
+<pre>server 0.centos.pool.ntp.org
+server 1.centos.pool.ntp.org
+server 2.centos.pool.ntp.org</pre></li>
 <li>Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It's a good idea to specify more than one.<br />
 An example of using three United States-based NTP servers follows:
-<code>server 0.us.pool.ntp.org<br />
-server 1.us.pool.ntp.org<br />
-server 2.us.pool.ntp.org</code></li>
-<li>Save your changes to <tt>/etc/ntp.conf</tt> and exit the text editor.</li>
+<pre>server 0.us.pool.ntp.org
+server 1.us.pool.ntp.org
+server 2.us.pool.ntp.org</pre></li>
+<li>Save your changes to <code>/etc/ntp.conf</code> and exit the text editor.</li>
 <li><em>CentOS only</em>. Enter the following command so that NTP starts when the server starts.<br />
 <pre>chkconfig ntpd on</pre></li>
 <li>Restart the service.
-<code>#CentOS<br />
-service ntpd restart<br />
-<br />
-#Ubuntu<br />
-service ntp restart</code></li>
-<li>Enter the <tt>date</tt> command to check the server's date.<br />
-If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall. Try the <tt>ntpdate <em>pool-server-host-name</em></tt> command. If it fails, search for the error it returns.<br />
+	<ul><li>CentOS
+<pre>service ntpd restart</pre></li>
+<li>Ubuntu
+<pre>service ntp restart</pre></li>
+</ul>
+</li>
+<li>Enter the <code>date</code> command to check the server's date.<br />
+If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall. Try the <code>ntpdate <em>pool-server-host-name</em></code> command. If it fails, search for the error it returns.<br />
 If all else fails, try restarting the server.</li></ol>
 
 <h4 id="install-optional-phpinfo">Creating phpinfo.php</h4>
-<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><tt>phpinfo.php</tt></a> displays a large amount of information about PHP and its extensions. Add the following code anywhere in your web server's docroot:</p>
-<code>&lt;?php<br />
-<br />
-// Show all information, defaults to INFO_ALL<br />
-phpinfo();</code>
+<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions. Add the following code anywhere in your web server's docroot:</p>
+<pre>&lt;?php
+// Show all information, defaults to INFO_ALL
+phpinfo();</pre>
 <p>For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank">phpinfo manual page</a>.</p>
-<p>To view the results, enter the following URL in your browser's location or address field:</p>
-<code>http://<em>web-server-ip-or-host</em>/phpinfo.php</code>
+<p>To view the results, enter the following URL in your browser's location or address field:
+<pre>http://<em>web-server-ip-or-host</em>/phpinfo.php</pre>
 <p>If a 404 (Not Found) error displays, check the following:</p>
 <ul><li>Start the web server if necessary.</li>
 <li>Make sure your firewall allows traffic on port 80.<br />
@@ -326,88 +174,84 @@ phpinfo();</code>
 <a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">Help for CentOS</a></li></ul>
 
 <h4 id="install-optional-phpmyadmin">Installing phpmyadmin</h4>
-<p><tt>phpmyadmin</tt> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <tt>phpmyadmin</tt> as the MySQL database administrative user.</p>
-<p>For more information about <tt>phpmyadmin</tt>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
+<p><code>phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code>phpmyadmin</code> as the MySQL database administrative user.</p>
+<p>For more information about <code>phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
 <p>For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.</p>
 <p>To install phpmyadmin on CentOS:</p>
 <ol><li>Download the epel RPM for the version of CentOS you're using. A sample follows.
-<code>cd /tmp<br />
+<pre>cd /tmp<br />
 wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm<br />
-rpm -ivh epel-release-6-8.noarch.rpm</code></li>
-<li>Install <tt>phpmyadmin</tt> as follows:
-<code>yum -y install phpmyadmin</code></li>
+rpm -ivh epel-release-6-8.noarch.rpm</pre></li>
+<li>Install <code>phpmyadmin</code> as follows:
+<pre>yum -y install phpmyadmin</pre></li>
 <li>Authorize access to phpmyadmin from your machine's IP address.
-<code>#Open the following file for editing:
-vim /etc/httpd/conf.d/phpMyAdmin.conf<br />
-<br />
-#Replace the following IP address with your IP address<br />
-#Require ip 127.0.0.1<br />
-#For example,<br />
-Require ip 192.51.100.101<br />
-<br />
-#Replace the following IP with your IP address<br />
-#Allow from 127.0.0.1<br />
-#For example,<br />
-Allow from 192.51.100.101</code></li>
-<li>Save your changes to <tt>/etc/httpd/conf.d/phpMyAdmin.conf</tt> and exit the text editor.</li>
+	<ol><li>Open the following file for editing:
+<pre>vim /etc/httpd/conf.d/phpMyAdmin.conf</pre></li>
+<li>Replace the following IP address with your IP address
+<pre>#Require ip 127.0.0.1</pre>
+For example,
+<pre>Require ip 192.51.100.101>/pre></li>
+<li>Replace the following IP with your IP address
+<pre>#Allow from 127.0.0.1</pre>
+For example,
+<pre>Allow from 192.51.100.101</pre></li>
+</ol></li>
+<li>Save your changes to <code>/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.</li>
 <li>Restart Apache.
-<code>service httpd restart</code></li>
+<pre>service httpd restart</pre></li>
 <li>To use phpmyadmin, enter the following command in your browser's address or location field:
-<code>http://<em>host-or-ip-address</em>/phpmyadmin</code></li>
-<li>When prompted, log in using your MySQL database <tt>root</tt> or administrative user's user name and password.</li></ol>
+<pre>http://<em>host-or-ip-address</em>/phpmyadmin</pre></li>
+<li>When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.</li></ol>
 <p>To install phpmyadmin on Ubuntu:</p>
 <ol><li>Use the following command:
 <code>apt-get install phpmyadmin</code></li>
 <li>Follow the prompts on your screen to complete the installation.</li>
 <li>To use phpmyadmin, enter the following URL in your browser's address or location field:
 <code>http://<em>host-or-ip-address</em>/phpmyadmin</code>
-<li>When prompted, log in using your MySQL database <tt>root</tt> or administrative user's user name and password.</li></ol>
+<li>When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.</li></ol>
 
 <h3 id="install-create-db">Creating a Magento Database Instance</h3>
 <p>This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance. If you choose to do that, skip this section and continue with <a href="#install-sample">Installing Optional Sample Data</a>.</p>
 <p class="kb-notes"><strong>Note</strong>: Before you continue, review the information about MySQL discussed in <a href="#prereq">Prerequisites</a>.</p>
 <p>To create a new database instance:</p>
 <ol><li>Log in to your database server as any user.</li>
-<li>Enter the following commands in the order shown to create a database instance named <tt>magento</tt>:
-  <code>mysql -u root -p <br />
-#Enter the remaining commands at the mysql> prompt.<br />
-<br />
-create database magento;<br />
-CREATE USER 'magento'@'localhost' IDENTIFIED BY 'magento';
-GRANT USAGE ON *.* TO magento@localhost IDENTIFIED BY 'magento';
-GRANT ALL ON magento.* TO magento@localhost;<br />
-# For MySQL versions later than 5.0.2 but earlier than 5.1.6, the following command is required:<br />
-GRANT SUPER ON *.* TO 'magento'@'localhost';<br />
-exit</code></li>
+<li>Enter the following commands in the order shown to create a database instance named <code>magento</code>:
+<pre>mysql -u root -p 
+#Enter the remaining commands at the mysql> prompt.
+
+create database magento;
+GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';</pre></li>
+<li>For MySQL versions between 5.0.2 and 5.1.6, you must enter this command:
+<pre>GRANT SUPER ON *.* TO 'magento'@'localhost';</pre></li>
+<li>After you're done, enter <code>exit</code></li>
 <li>Test the database instance.
-<code>mysql -u magento -p</code>
+<pre>mysql -u magento -p</pre>
 Messages similar to the following display to confirm you successfully created the database instance. If errors display, repeat the preceding commands.
-<code>Welcome to the MySQL monitor.  Commands end with ; or \g.<br />
-Your MySQL connection id is 20<br />
-Server version: 5.1.67 Source distribution<br />
-<br />
-Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.<br />
-<br />
-Oracle is a registered trademark of Oracle Corporation and/or its<br />
-affiliates. Other names may be trademarks of their respective<br />
-owners.<br />
-<br />
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</code></li></ol>
+<pre>Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 20
+Server version: 5.1.67 Source distribution
+
+Copyright (c) 2000, 2012, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.</pre></li></ol>
 
 <h3 id="install-extract-archive">Extracting the Magento Installation Archive</h3>
 <p>Extract the Magento installation archive on your web server's docroot.</p>
-<p>The path on Ubuntu is typically <tt>/var/www</tt></p>
-<p>The path on CentOS is typically <tt>/var/www/html</tt></p>
+<p>The path on Ubuntu is typically <code>/var/www</code></p>
+<p>The path on CentOS is typically <code>/var/www/html</code></p>
 <p>Examples follow:</p>
-<code>#Ubuntu<br />
-cd /var/www<br />
-cp /<em>path</em>/<em>magento-install-archive</em> .<br />
-tar -zxf <em>magento-install-archive-name</em><br />
-<br />
-#CentOS<br />
-cd /var/www/html<br />
-cp /<em>path</em>/<em>magento-install-archive-name</em> .<br />
-tar -zxf <em>magento-install-archive</em></code>
+<ul><li>Ubuntu
+<pre>cd /var/www
+	cp /<em>path</em>/<em>magento-install-archive</em> .
+tar -zxf <em>magento-install-archive-name</em></pre></li>
+<li>CentOS
+<pre>cd /var/www/html
+cp /<em>path</em>/<em>magento-install-archive-name</em> .
+tar -zxf <em>magento-install-archive</em></pre></li></ul>
 <p>To optionally install Magento sample data, continue with the next section.</p>
 <p>To install Magento without sample data, continue with <a href="#install-privs">Setting File and Directory Ownership and Privileges</a>.</p>
 
@@ -420,37 +264,36 @@ tar -zxf <em>magento-install-archive</em></code>
 <ol><li>Download the sample data from one of the locations discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#get">Getting Magento CE or EE</a>.</li>
 <li>If necessary, transfer the sample data to your Magento server.</li>
 <li>On your Magento server, extract the sample data archive to a directory other than your Magento installation directory.</li>
-<li>Make note of the path to the sample data's <tt>media</tt> subdirectory.</li>
-<li>Change to the <tt>[your Magento install dir]/media</tt> directory.
+<li>Make note of the path to the sample data's <code>media</code> subdirectory.</li>
+<li>Change to the <code>[your Magento install dir]/media</code> directory.
 <pre>#Ubuntu example
 cd /var/www/magento/media
 
 #CentOS example
 cd /var/www/html/magento/media</pre></li>
-<li>As a user with privileges to write to the Magento installation directories (typically the web server user), copy the sample data's <tt>media</tt> directory and subdirectories to your Magento installation directory.<br />
-For example, to copy Magento sample data from <tt>/home/username</tt> to <tt>/var/www/magento</tt>, enter
+<li>As a user with privileges to write to the Magento installation directories (typically the web server user), copy the sample data's <code>media</code> directory and subdirectories to your Magento installation directory.<br />
+For example, to copy Magento sample data from <code>/home/username</code> to <code>/var/www/magento</code>, enter
 <pre>cp -R /home/username/media/* .</pre></li>
-<li><em>Magento CE 1.9 and Magento EE 1.14 only</em>. You must also copy the sample data's <tt>skin</tt> directory to <tt>[your Magento install dir]/skin</tt> as follows:<br />
-For example, to copy Magento skin files from <tt>/home/username/skin</tt> to <tt>/var/www/magento/skin</tt>, enter
+<li><em>Magento CE 1.9 and Magento EE 1.14 only</em>. You must also copy the sample data's <code>skin</code> directory to <code>[your Magento install dir]/skin</code> as follows:<br />
+For example, to copy Magento skin files from <code>/home/username/skin</code> to <code>/var/www/magento/skin</code>, enter
 <pre>cd [your Magento install dir]/skin
 cp -R /home/username/skin/* .</pre></li>
 <li>Import the CE or EE sample data into your MySQL database as follows:
-<pre>mysql -u root -p <em>magento-db-instance-name</em> &lt; <em>path-to-sample-data-extract-dir/sample-data-filename</em>.sql<br />
-#EE 1.13 example<br />
- mysql -u root -p magento &lt; /home/username/magento_enterprise_sample_data_for_1.12.0.0.sql</pre></li></ol>
+<pre>mysql -u root -p <em>magento-db-instance-name</em> &lt; <em>path-to-sample-data-extract-dir/sample-data-filename</em>.sql</pre>
+EE 1.13 example
+<pre>mysql -u root -p magento &lt; /home/username/magento_enterprise_sample_data_for_1.12.0.0.sql</pre></li></ol>
 
 <h3 id="install-privs">Setting File and Directory Ownership and Privileges</h3>
 <p>Magento recommends the following ownership and privilege settings for files and directories in the Magento installation directory:</p>
-<ul>
 <ul><li>The Magento installation directory and all subdirectories are owned by the web server user.<br />
-This enables the web server to change files in these subdirectories but other users cannot access them (except a higher-level user such as <tt>root</tt>).</li>
-<li>All directories have 700 permissions (<tt>drwx------</tt>).<br />
+This enables the web server to change files in these subdirectories but other users cannot access them (except a higher-level user such as <code>root</code>).</li>
+<li>All directories have 700 permissions (<code>drwx------</code>).<br />
 700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</li>
-<li>All files have 600 permissions (<tt>-rw-------</tt>).<br />
+<li>All files have 600 permissions (<code>-rw-------</code>).<br />
 600 permissions mean the owner can read and write but other users have no permissions.</li></ul>
 <p><strong>Note</strong>: The way you set permissions and ownership depends on whether Magento is running on a dedicated or hosted system:</p>
-<ul><li><em>Hosted</em>: A Magento server located on a hosting provider. A <em>hosted</em> system typically does not enable you to elevate to <tt>root</tt>. The web server typically runs as an ordinary user. Magento assumes you log in as this user to start and stop the web server and that you already own all the files and directories in the Magento installation directory. You can use <tt>chmod</tt> to change permissions on files and directories.</li>
-<li><em>Dedicated</em>: A Magento server you control and operate. Unlike a hosted system, you can elevate to <tt>root</tt> and, as <tt>root</tt>, you can use the <tt>chown</tt> and <tt>chmod</tt> commands to set ownership and privileges in the Magento installation directory.</li></ul>
+<ul><li><em>Hosted</em>: A Magento server located on a hosting provider. A <em>hosted</em> system typically does not enable you to elevate to <code>root</code>. The web server typically runs as an ordinary user. Magento assumes you log in as this user to start and stop the web server and that you already own all the files and directories in the Magento installation directory. You can use <code>chmod</code> to change permissions on files and directories.</li>
+<li><em>Dedicated</em>: A Magento server you control and operate. Unlike a hosted system, you can elevate to <code>root</code> and, as <code>root</code>, you can use the <code>chown</code> and <code>chmod</code> commands to set ownership and privileges in the Magento installation directory.</li></ul>
 <p>To set privileges and ownership:</p>
 <ol><li>Log in to your Magento server.</li>
 <li>Change to your Magento installation directory:
@@ -461,7 +304,7 @@ cd /var/www/magento
 cd /var/www/html/magento</pre></li>
 <li><em>Dedicated Magento server only</em>. Enter the following command to set ownership of the Magento installation directory and all its subdirectories:
 <pre>chown -R <em>web-server-user-name</em> .</pre>
-For example, on Ubuntu where Apache usually runs as <tt>www-data</tt>, enter
+For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
 <pre>chown -R www-data .</pre></li>
 <li>Enter the following commands to set directory permissions to 700 and file permissions to 600:
 <pre>find . -type d -exec chmod 700 {} \;
@@ -470,7 +313,7 @@ find . -type f -exec chmod 600 {} \;</pre></li></ol>
 <code>find . -type f -exec chmod 644 {} \;</code></li>
 <li>Set directory permissions.
 <code>find . -type d -exec chmod 755 {} \;</code></li>
-<li>Make the <tt>var</tt>, <tt>app/etc</tt>, and <tt>media</tt> directories and subdirectories world-writable.
+<li>Make the <code>var</code>, <code>app/etc</code>, and <code>media</code> directories and subdirectories world-writable.
 <code>chmod -R 777 media app/etc var var/.htaccess</code></li>
 <li>Change to the directory above the Magento installation directory.<br />
 <code>#Ubuntu example<br />
@@ -495,9 +338,9 @@ chown -R myuser:www-data magento</code></li>
 <p>To install Magento CE or EE:</p>
 <ol><li>Complete all of the tasks discussed earlier in this article.</li>
 <li>Enter the following URL in your web browser's address or location field:
-<code><em>web-server-ip-or-host</em>:<em>port</em>/<em>magento-path</em>/magento</code>
-For example, if your web server is <tt>http://www.example.com</tt>, listens on port 80, and Magento is installed in the web server docroot's <tt>magento</tt> subdirectory, enter
-<code>http://www.example.com/magento</code>
+<pre><em>web-server-ip-or-host</em>:<em>port</em>/<em>magento-path</em>/magento</pre>
+For example, if your web server is <code>http://www.example.com</code>, listens on port 80, and Magento is installed in the web server docroot's <code>magento</code> subdirectory, enter
+<pre>http://www.example.com/magento</pre>
 The following page displays.<br >
 <img src="{{ site.baseurl }}common/images/m1x/install_first-page.png" height="353px" width="600px"></li>
 <li>Select the check box that indicates you agree to the terms and conditions, and click <strong>Continue</strong>.</li>
@@ -578,7 +421,7 @@ A sample follows.<br />
 <tr>
   <td class="confluenceTd">Admin Path</td>
   <td class="confluenceTd">Enter the path to access the Admin Panel. This path is appended to <strong>Base URL</strong>.<br />
-  For example, if <strong>Base URL</strong> is <tt>http://www.example.com</tt> and <strong>Admin Path</strong> is <tt>admin</tt>, the Admin Panel's URL is <tt>http://www.example.com/admin</tt>&mdash;provided you configured your web server for server rewrites.</td>
+  For example, if <strong>Base URL</strong> is <code>http://www.example.com</code> and <strong>Admin Path</strong> is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</td>
 </tr>
 <tr>
   <td class="confluenceTd">Enable Charts</td>
@@ -590,7 +433,7 @@ A sample follows.<br />
 </tr>
 <tr>
   <td class="confluenceTd">Use Web Server (Apache) Rewrites</td>
-  <td class="confluenceTd">Select this check box to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><tt>mod_rewrite</tt></a> module. You can select this check box only if you configured Apache to use server rewrites as discussed in <a href="#install-prereq-software">Installing and Configuring Required Prerequisite Software</a>.</td>
+  <td class="confluenceTd">Select this check box to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><code>mod_rewrite</code></a> module. You can select this check box only if you configured Apache to use server rewrites as discussed in <a href="#install-prereq-software">Installing and Configuring Required Prerequisite Software</a>.</td>
 </tr>
 <tr>
   <td class="confluenceTd">Use Secure URLs (SSL)</td>
@@ -601,7 +444,7 @@ A sample follows.<br />
 A sample follows.<br />
 <img src="{{ site.baseurl }}common/images/m1x/install_web-access-options.png" height="344px" width="600px"></li>
 <li>In the Session Storage Options section, click one of the following options:
-<ul><li><strong>File</strong> to store user session data on the file system in the <tt>[your Magento install dir]/var/session</tt> directory.<br />
+<ul><li><strong>File</strong> to store user session data on the file system in the <code>[your Magento install dir]/var/session</code> directory.<br />
 File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 <li><strong>Database</strong> to store user session data in the database.<br />
 Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
@@ -645,7 +488,7 @@ Choose database storage if you have a clustered database; otherwise, there might
 <tr>
   <td class="confluenceTd">Encryption Key</td>
   <td class="confluenceTd">If you have one, enter a key to encrypt sensitive data (such as passwords and personally identifiable customer information) in the Magento database. If you don't have one, Magento generates one for you.<br />
-  The encryption key is stored in <tt>[your Magento install dir]/app/etc/local.xml</tt>.</td>
+  The encryption key is stored in <code>[your Magento install dir]/app/etc/local.xml</code>.</td>
 </tr>
 </tbody>
 </table><br />
@@ -654,18 +497,18 @@ A sample follows.<br />
 <li>Click <strong>Continue</strong>.<br />
 The following page displays to indicate a successful installation.<br />
 <img src="{{ site.baseurl }}common/images/m1x/install_confirm_mock.png" height="308px" width="600px"></li>
-</li></ol>
+</li></ol></ol>
 
 <h2 id="verify">Verifying that Magento CE or Magento EE Installed Successfully</h2>
 <p>To make sure Magento installed properly, you should log in to the Admin Panel to verify the Magento version.</p>
 <p>You can also import products into Magento or perform other tasks that verify you can write to the database.</p>
 <ol><li>In a web browser's location or address field, enter the URL to the Admin Panel. An example follows:
-<code>http://www.example.com/magento/admin</code>
+<pre>http://www.example.com/magento/admin</pre>
 (The Admin Panel URL is a combination of the <strong>Base URL</strong> and <strong>Admin Path</strong> fields you entered when you installed Magento.</li>
 <li>Log in to the Admin Panel as an administrator.</li>
 <li>Scroll to the bottom of the page; the version should display as 1.14 (Magento EE) or 1.9.0.0 (Magento CE).<br />
 The following figure shows an example.<br />
-<img src="{{ site.baseurl }}common/images/m1x/install_verify-version_mock.png" height="36px" width="600px"></li>
+<img src="{{ site.baseurl }}common/images/m1x/install_verify-version_mock.png" height="36px" width="600px"></li></ol>
 <!-- <li>Create a simple product.
 <ol><li>In the Admin Panel, click <strong>Catalog</strong> > <strong>Manage Products</strong>.</li>
 <li>In the upper right corner, click <strong>Add Product</strong>.</li>
@@ -679,15 +522,15 @@ The following figure shows an example.<br />
 </tr>
 <tr>
   <td class="confluenceTd">Name</td>
-  <td class="confluenceTd">Enter <tt>Sample product</tt>.</td>
+  <td class="confluenceTd">Enter <code>Sample product</code>.</td>
 </tr>
 <tr>
   <td class="confluenceTd">SKU</td>
-  <td class="confluenceTd">Enter <tt>1234</tt>.</td>
+  <td class="confluenceTd">Enter <code>1234</code>.</td>
 </tr>
 <tr>
   <td class="confluenceTd">Weight</td>
-  <td class="confluenceTd">Enter <tt>1</tt>.</td>
+  <td class="confluenceTd">Enter <code>1</code>.</td>
 </tr>
 <tr>
   <td class="confluenceTd">Status</td>
@@ -704,12 +547,12 @@ The following figure shows an example.<br />
 </tbody>
 </table></li>
 <li>In the upper right corner, click <strong>Save and Continue Edit</strong>.</li>
-<li>In the Prices page, in the <strong>Price</strong> field, enter <tt>1</tt>.</li>
+<li>In the Prices page, in the <strong>Price</strong> field, enter <code>1</code>.</li>
 <li>In the upper right corner, click <strong>Save and Continue Edit</strong>.</li>
 <li>In the Description page, enter the required information.</li>
 <li>In the upper right corner, click <strong>Save</strong>.</li></ol>
 </li>
-<li>Verify the product saved successfully without errors.</li>--></ol>
+<li>Verify the product saved successfully without errors.</li>-->
 <p>Congratulations! You successfully installed Magento!</p>
 
 <h2 id="install-cron">Setting Up Cron Jobs</h2>
@@ -720,26 +563,25 @@ The following figure shows an example.<br />
 <li>Customer Alerts/Notifications (product price change, product back in stock)</li>
 <li>Reindexing <em>(Magento EE 1.13 only)</em></li>
 <li>Private sales <em>(Magento EE only)</em></li>
-<li>Automatic updating of currency rates</li></ul>
+<li>Automatic updating of currency rates</li>
+<li><em>Magento EE 1.14.1 and later, Magento CE 1.9.1 and later</em> All Magento e-mails (including order confirmation and transactional)</li>
+</ul>
 <p class="kb-notes"><strong>Important</strong>: Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</p>
 <p>Magento recommends running cron every minute for EE and every five minutes for CE.</p>
 <p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". Each user has its  own  crontab, and commands in any given crontab are executed as the user who owns the crontab.</p>
 <p>For Magento, this user is the web server. To determine your web server's user, enter the following command:
-<code>ps -o "user group command" -C httpd,apache2</code>
-<p>In CentOS, the Apache user is typically <tt>apache</tt>; in Ubuntu, it's typically <tt>www-data</tt>.</p>
+<pre>ps -o "user group command" -C httpd,apache2</pre>
+<p>In CentOS, the Apache user is typically <code>apache</code>; in Ubuntu, it's typically <code>www-data</code>.</p>
 <p>To create a cron job as the user who runs Apache, the following commands in the order shown:</p>
-<ol><!-- <li>Set executable permissions on <tt>[your Magento install dir]/cron.sh</tt>. (This is required to run the <a href="#install-cron">Magento cron job</a>.)
-<code>[your Magento install dir]/chmod +x cron.sh</code></li> -->
+<ol><!-- <li>Set executable permissions on <code>[your Magento install dir]/cron.sh</code>. (This is required to run the <a href="#install-cron">Magento cron job</a>.)
+<pre>[your Magento install dir]/chmod +x cron.sh</pre></li> -->
 <li>Create or edit a crontab for the Apache user:
-<code>crontab -u <em>apache-user-name</em> -e</code></li>
+<pre>crontab -u <em>apache-user-name</em> -e</pre></li>
 <li>A text editor displays. (You might need to choose a text editor first.)<br />
-In the editor, enter one of the following:
-<ul><li>Magento EE:<br />
-<code>* * * * * /bin/sh /[your Magento install dir]/cron.sh</code></li>
-<li>Magento CE:<br />
-<code>*/5 * * * *  /bin/sh /[your Magento install dir]/cron.sh</code></li></ul>
-For example, for CE on CentOS,<br />
-<code>*/5 * * * *  /bin/sh /var/www/html/magento/cron.sh</code></li>
+In the editor, enter the following:
+<pre>* * * * * /bin/sh /[your Magento install dir]/cron.sh</pre><br>
+For example, for CentOS,<br />
+<pre>* * * * *  /bin/sh /var/www/html/magento/cron.sh</pre></li>
 <li>Save your changes to the crontab and exit the editor.</li></ol>
 <p>For additional information, see <a href="http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/how_to_setup_a_cron_job" target="_blank">How to Set Up a Cron Job</a> on the Magento wiki.</p>
 
@@ -756,12 +598,12 @@ For example, for CE on CentOS,<br />
 </tr>
 <tr>
   <td class="confluenceTd">During the installation, errors like the following display: <br />
-  <tt>Path "/var/www/html/magento/app/etc" must be writable.</tt></td>
+  <code>Path "/var/www/html/magento/app/etc" must be writable.</code></td>
   <td class="confluenceTd">Set privileges and ownership on the Magento installation directory and subdirectories as discussed in <a href="#install-privs">Setting File and Directory Ownership and Privileges</a>.</td>
 </tr>
 <!-- <tr>
   <td class="confluenceTd">During the installation, errors like the following display: <br />
-  <tt>TBD - php extension.</tt></td>
+  <code>TBD - php extension.</code></td>
   <td class="confluenceTd">TBD</td> -->
 </tr>
 <tr>
