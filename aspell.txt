@@ -1,0 +1,4 @@
+for f in *.md; do aspell check $f --mode=sgml --dont-backup -p.aspell.srj; done
+
+
+aspell check --mode=sgml --dont-backup -p.aspell.srj webhooks.md
