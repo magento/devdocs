@@ -30,3 +30,6 @@ ignore
 /jk.bat
 *.bat
 *.sh
+Rakefile
+Gemfile
+Gemfile.lock
