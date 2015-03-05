@@ -14,7 +14,7 @@ github_link: config-guide/config/magento-mode.md
 *	<a href="#mode-default">Default mode</a>
 *	<a href="#mode-production">Production mode</a>
 *	<a href="#mode-specify">Specify a mode</a>
-*	<a href="#mode-production-view">Static view file deployment tool</a>
+*	<a href="#mode-production-view">Static view files deployment tool</a>
 
 <h2 id="mode-introduction">Introduction</h2>
 You can run Magento in any of the following *modes*:
@@ -183,7 +183,9 @@ To set the Magento mode using your web server's environment:
 	`service httpd restart`
 
 <h2 id="mode-production-view">Static view files deployment tool</h2>
-In production mode, because static view files are not deployed on the fly, you must write static view files to the Magento docroot manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
+The static view files deployment tool enables you to write static files to the Magento docroot when the Magento software is set for production mode.
+
+Because static view files are not deployed on the fly in production mode, you must write static view files to the Magento docroot manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -200,9 +202,13 @@ See one of the following sections for more information:
 To deploy static view files:
 
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
-4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. Unless you want to enable merging of static view files in Admin Panel: merging happens on the fly and it requires write permissions to `pub/static` directory to write merged files.
+4.	Do any of the following:
+
+	*	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. 
+	*	Enable merging of static view files in the Magento Admin. Merging happens on the fly and it requires write permissions to `pub/static` directory to write merged files.
 
 Following is the command syntax:
 
@@ -241,7 +247,7 @@ The following table discusses the meanings of the options:
 For more information about specifying a mode, see <a href="#mode-specify">Specify a mode</a>.
 
 <h3 id="view-file-trouble">Troubleshooting the static view files deployment tool</h3>
-Currently the static view files deployment tool requires first <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">installing the Magento software</a> and terminates with error otherwise.
+<a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:
 
@@ -253,10 +259,14 @@ Use the following steps:
 
 1.	Install the Magento software in any of the following ways:
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command-line</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Web-based</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup wizard</a>
 
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
-2.	Delete the contents of `<your Magento install dir>/pub/static`.
+	In a more secure environment, you should make the web server user the owner of the files after running the tool.
+2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
 3.	Run the static view files deployment tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
-4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+4.	Do any of the following:
+
+	*	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. 
+	*	Enable merging of static view files in the Magento Admin. Merging happens on the fly and it requires write permissions to `pub/static` directory to write merged files.
