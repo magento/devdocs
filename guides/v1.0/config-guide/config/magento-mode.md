@@ -189,7 +189,7 @@ Because static view files are not deployed on the fly in production mode, you mu
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You must run the static view files deployment tool as the web server user; otherwise, Magento might have issues accessing the files. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
+  <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the tool as the web server user. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
 </div>
 
 See one of the following sections for more information:
@@ -202,13 +202,16 @@ See one of the following sections for more information:
 To deploy static view files:
 
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
-4.	Do any of the following:
-
-	*	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. 
-	*	Enable merging of static view files in the Magento Admin. Merging happens on the fly and it requires write permissions to `pub/static` directory to write merged files.
+4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+	
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
+	</div>
 
 Following is the command syntax:
 
@@ -263,10 +266,13 @@ Use the following steps:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup wizard</a>
 
 1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
 3.	Run the static view files deployment tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
-4.	Do any of the following:
-
-	*	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. 
-	*	Enable merging of static view files in the Magento Admin. Merging happens on the fly and it requires write permissions to `pub/static` directory to write merged files.
+4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+	
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
+	</div>
