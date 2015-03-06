@@ -311,6 +311,10 @@ This section applies to you in the following situation only:
 *	You currently have version 0.42.0-beta10 or earlier
 *	You're updating to version 0.42.0-beta11 or later
 
+<div class="bs-callout bs-callout-info" id="info">
+    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
+</div>
+
 To determine the versions:
 
 *	Your version: View `<your Magento install dir>/CHANGELOG.md` in a text editor.
@@ -321,10 +325,6 @@ To determine the versions:
 
 
 <h3 id="instgde-install-magento-updatebeta11-how">How to update the Magento software</h3>
-<div class="bs-callout bs-callout-warning">
-    <p>Before you continue, back up any changes you made to the database and file system. Uninstalling the Magento software drops and re-creates the database. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
-</div>
-
 To update the Magento software to 0.42.0-beta11 or later from version beta10 or earlier:
 
 1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
@@ -333,15 +333,18 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 		cd <your Magento install dir>/setup
 
-3.	Uninstall the Magento software:
+3.	Uninstall the Magento software and change to your Magento installation directory:
 
-		php index.php uninstall
-
-3.	Change to your Magento installation directory.
+		php index.php uninstall && cd ..
 
 4.	Update the Magento code:
 
-		git reset --hard HEAD && git pull origin develop
+		git pull origin develop
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+	</div>
 
 5.	Run Composer:
 
@@ -357,10 +360,6 @@ This section discusses how to update your Magento software without reinstalling 
 
 You might do this in an development environment especially to get all the latest code changes.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Before you continue, back up any changes you made to the Magento file system. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
-</div>
-
 To update the Magento software:
 
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
@@ -373,9 +372,14 @@ To update the Magento software:
 
 		rm -rf dev/tools/Magento/Tools/SampleData/
 
-3.	Reset your local client to the server's HEAD revision and update your client to get the latest code:
+3.	Update your local repository to get the latest code:
 		
-		git reset --hard HEAD && git pull origin develop
+		git pull origin develop
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+	</div>
 				
 3.	Restore your previous `composer.json` and update dependencies:
 
@@ -400,8 +404,13 @@ To reinstall the Magento software:
 3.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		git reset --hard HEAD && git pull origin develop
+		git pull origin develop
 		php setup/index.php uninstall
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </p></span>
+	</div>
 
 4.	Install the Magento software:
 
