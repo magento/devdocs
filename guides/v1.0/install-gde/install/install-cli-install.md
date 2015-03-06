@@ -343,7 +343,7 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 	</div>
 
 5.	Run Composer:
@@ -378,7 +378,7 @@ To update the Magento software:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 	</div>
 				
 3.	Restore your previous `composer.json` and update dependencies:
@@ -409,7 +409,7 @@ To reinstall the Magento software:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </p></span>
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </p></span>
 	</div>
 
 4.	Install the Magento software:
