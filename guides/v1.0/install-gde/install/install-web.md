@@ -213,7 +213,7 @@ The following figure shows an example of disabling the `Magento_GoogleAnalytics`
 <img src="{{ site.baseurl }}common/images/install_wizard_disable-google.png">
 
 <h4 id="instgde-install-magento-web-step4-depend2">Module dependency errors</h4>
-A dependency error occurs when two inter-dependent modules are disabled at the same time. For example, you could have manually edited `config.php` to disable both the `Magento_Email` and `Magento_Webapi` modules. Because these modules depend on each other, they cannot both be disabled at the same time.
+A dependency error occurs when two inter-dependent modules are disabled at the same time. 
 
 If there is a dependency error, a message similar to the following displays.
 <img src="{{ site.baseurl }}common/images/install_skip-depend-check.png">
@@ -224,7 +224,7 @@ Click **Show details** to display details about the dependency error. You can th
 *	Resolve the issue by taking the action indicated by the message.
 		
 <div class="bs-callout bs-callout-warning">
-	<p>You might use <strong>Skip dependency check for individual modules</strong> if you manually edited <code>config.php</code> to disable modules. However, editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
+	<p>Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited <code>config.php</code>. Editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
 </div>
 
 
