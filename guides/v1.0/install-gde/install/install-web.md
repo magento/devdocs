@@ -205,7 +205,7 @@ You have the following options for any module listed:
 	*	Enable all modules if any module is currently disabled.
 	*	Disable all available modules (that is, all modules that do not depend on other enabled modules).
 
-If a module's check box is unavailable, some other module depends on it or conflicts with it. In the case of a dependency, to change the state of that module, you must first perform the corresponding action on the module on which it depends.
+If a module's check box is unavailable, some other module depends on it. In the case of a dependency, to change the state of that module, you must first perform the corresponding action on the module on which it depends.
 
 For example, `Magento_GoogleAnalytics` can be disabled only if `Magento_GoogleOptimizer` is disabled first. Conversely, if both modules are disabled, you must enable `Magento_GoogleAnalytics` first.
 
