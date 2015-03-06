@@ -398,6 +398,10 @@ To update the Magento software:
 <h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
 This section discusses how to uninstall and then reinstall the Magento software. 
 
+<div class="bs-callout bs-callout-warning">
+    <p>Before you continue, back up any changes you made to the Magento file system. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
+</div>
+
 To reinstall the Magento software:
 
 2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).

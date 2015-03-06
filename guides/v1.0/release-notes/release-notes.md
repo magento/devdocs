@@ -114,7 +114,6 @@ This change applies to the following situation only:
 <div class="bs-callout bs-callout-info" id="info">
     <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
 </div>
-
 {% include install/versionbeta10upgr.html %}
 
 For details, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
