@@ -311,6 +311,10 @@ This section applies to you in the following situation only:
 *	You currently have version 0.42.0-beta10 or earlier
 *	You're updating to version 0.42.0-beta11 or later
 
+<div class="bs-callout bs-callout-info" id="info">
+    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
+</div>
+
 To determine the versions:
 
 *	Your version: View `<your Magento install dir>/CHANGELOG.md` in a text editor.
@@ -393,6 +397,10 @@ To update the Magento software:
 
 <h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
 This section discusses how to uninstall and then reinstall the Magento software. 
+
+<div class="bs-callout bs-callout-warning">
+    <p>Before you continue, back up any changes you made to the Magento file system. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
+</div>
 
 To reinstall the Magento software:
 
