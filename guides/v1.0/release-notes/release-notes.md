@@ -111,7 +111,12 @@ This change applies to the following situation only:
 *   You currently have version 0.42.0-beta10 or earlier
 *   You're updating to version 0.42.0-beta11 or later
 
-As a result of this change, you must uninstall the Magento software and reinstall it.
+<div class="bs-callout bs-callout-info" id="info">
+    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
+</div>
+
+
+
 
 {% include install/versionbeta10upgr.html %}
 
