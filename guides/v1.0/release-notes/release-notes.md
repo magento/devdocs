@@ -102,8 +102,20 @@ See also
 
 <h2 id="changes">Changes</h2>
 
-*   <a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
 *   <a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
+*   <a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
+
+<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
+This change applies to the following situation only:
+
+*   You currently have version 0.42.0-beta10 or earlier
+*   You're updating to version 0.42.0-beta11 or later
+
+As a result of this change, you must uninstall the Magento software and reinstall it.
+
+{% include install/versionbeta10upgr.html %}
+
+For details, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 
 <h3 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
 
@@ -117,8 +129,7 @@ To install the optional Magento 2 sample data, you must update `composer.json`, 
 
 See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 
-<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
-{% include install/versionbeta10upgr.html %}
+
 	
 <h2 id="known-devbeta">Known issues</h2>
 We have identified the following known issues in this release:
