@@ -420,7 +420,7 @@
 <img src="/common/images/install_wizard_disable-google.png" /></p>
 
 <h4 id="instgde-install-magento-web-step4-depend2">Module dependency errors</h4>
-<p>A dependency error occurs when two inter-dependent modules are disabled at the same time. For example, you could have manually edited <code>config.php</code> to disable both the <code>Magento_Email</code> and <code>Magento_Webapi</code> modules. Because these modules depend on each other, they cannot both be disabled at the same time.</p>
+<p>A dependency error occurs when two inter-dependent modules are disabled at the same time. </p>
 
 <p>If there is a dependency error, a message similar to the following displays.
 <img src="/common/images/install_skip-depend-check.png" /></p>
@@ -433,7 +433,7 @@
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-	<p>You might use <strong>Skip dependency check for individual modules</strong> if you manually edited <code>config.php</code> to disable modules. However, editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
+	<p>Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited <code>config.php</code>. Editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
 </div>
 
 <h3 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h3>
