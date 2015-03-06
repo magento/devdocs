@@ -2,20 +2,20 @@
 layout: default
 group: install
 subgroup: Z_Troubleshooting
-title: git pull origin fails when updating the Magento software
-menu_title: git pull origin fails when updating the Magento software
+title: git pull origin develop fails when updating the Magento software
+menu_title: git pull origin develop fails when updating the Magento software
 menu_node:
 menu_order: 10
 github_link: install-gde/trouble/tshoot_git-pull-origin.md
 ---
 
-<h2 id="install-trouble-git">git pull origin fails when updating the Magento software</h2>
+<h2 id="install-trouble-git">git pull origin develop fails when updating the Magento software</h2>
 
 ### Details
 
 One of the steps to updating the Magento 2 software is to update your local repository by running:
 
-	git pull origin
+	git pull origin develop
 
 The following error might display:
 
@@ -45,7 +45,7 @@ Try any of the following:
 
 	After that, continue where you left off with your Magento 2 update.
 
-*	It's possible that a GitHub configuration setting can prevent these errors in the future. By default, GitHub stores content using the operating system-default line ending characters. If you're using Linux but another collaborator committed a change using Mac OS, GitHub converts the Mac OS line endings to Linux when you clone or pull. This gives the appearance of a change to files when in fact, no change was made.
+*	It's possible that a GitHub configuration setting can prevent these errors in the future. By default, GitHub stores content using the operating system-default line ending characters. If you're using Linux but another collaborator committed a change using Windows, GitHub converts the Windows line endings to Linux when you clone or pull. This gives the appearance of a change to files when in fact, no change was made.
 
 	To configure GitHub to ignore line endings, enter the following command in your Git client:
 
