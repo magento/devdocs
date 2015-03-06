@@ -252,7 +252,9 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
   <li>You’re updating to version 0.42.0-beta11 or later</li>
 </ul>
 
-<p>As a result of this change, you must uninstall the Magento software and reinstall it.</p>
+<div class="bs-callout bs-callout-info" id="info">
+    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
+</div>
 
 <p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
 <ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
