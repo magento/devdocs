@@ -17,13 +17,13 @@ See one of the following sections:
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>
-*	<a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later</a>
+*	<a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 *	<a href="#instgde-install-magento-update">Updating the Magento software</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
 
 <div class="bs-callout bs-callout-warning">
 <span class="glyphicon-class">
-  <p>This topic discusses important information that affects you if you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later. For more information, see <a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later</a>.</p></span>
+  <p>This topic discusses important information that affects you if you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later. For more information, see <a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>.</p></span>
 </div>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
@@ -314,45 +314,18 @@ This section applies to you in the following situation only:
 To determine the versions:
 
 *	Your version: View `<your Magento install dir>/CHANGELOG.md` in a text editor.
-*	Current version: Look at the <a href="{{ site.mage2000url }}CHANGELOG.md" target="_blank">changelog</a>.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Uninstalling the software drops and re-creates the database but does <em>not</em> affect the file system. All of your code is preserved.</p></span>
-</div>
+*	Current version: Look at the Magento 2 <a href="{{ site.mage2000url }}CHANGELOG.md" target="_blank">changelog</a> on GitHub.
 
 <h3 id="instgde-install-magento-updatebeta11-why">Why must I uninstall?</h3>
+{% include install/versionbeta10upgr.html %}
 
-We made changes to the Magento database to make it easier for your extensions to install and upgrade. In particular:
-
-*	The `core_resource` is now named `setup_module`
-*	Resources in the table are replaced by module names. For example, `catalog_setup` is now `Magento_Catalog`, which exactly matches the module name. 
-*	The following fields in the `setup_module` table have new names:
-
-	*	`code` is now `module` 
-	*	`version` is now `schema_version`
-
-Old way:
-
-	code                     | version   | data_version|
-	-----------------------------------------------------------
-	catalog_setup            | 2.0.0     | 2.0.0   |
-	checkoutagreements_setup | 2.0.0     | 2.0.0   |
-	checkout_setup           | 2.0.0     | 2.0.0   |
-	cms_setup                | 2.0.0.1   | 2.0.0.1 |
-
-New way:
-
-	module                       | schema_version        | data_version|
-	------------------------------------------------------------------------
-	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
-	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
-	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
-	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
-	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0
 
 <h3 id="instgde-install-magento-updatebeta11-how">How to update the Magento software</h3>
-To update the Magento software to 0.42.0-beta11 or later:
+<div class="bs-callout bs-callout-warning">
+    <p>Before you continue, back up any changes you made to the database and file system. Uninstalling the Magento software drops and re-creates the database. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
+</div>
+
+To update the Magento software to 0.42.0-beta11 or later from version beta10 or earlier:
 
 1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
 
@@ -383,6 +356,10 @@ To update the Magento software to 0.42.0-beta11 or later:
 This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.
 
 You might do this in an development environment especially to get all the latest code changes.
+
+<div class="bs-callout bs-callout-warning">
+    <p>Before you continue, back up any changes you made to the Magento file system. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
+</div>
 
 To update the Magento software:
 
