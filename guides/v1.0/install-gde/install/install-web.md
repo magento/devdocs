@@ -160,7 +160,7 @@ To install the Magento software using the Setup Wizard:
 	</tr>
 	<tr>
 		<td>Encryption Key</td>
-		<td><p>Magento uses an encryption key to encrypt passwords and personally identifiable customer information in the database.</p>
+		<td><p>Magento uses an encryption key to encrypt personally identifiable customer information in the database.</p>
 		<p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
 		<p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 	</tr>
@@ -205,7 +205,7 @@ You have the following options for any module listed:
 	*	Enable all modules if any module is currently disabled.
 	*	Disable all available modules (that is, all modules that do not depend on other enabled modules).
 
-If a module's check box is unavailable, some other module depends on it. To change the state of that module, you must first perform the corresponding action on the module on which it depends.
+If a module's check box is unavailable, some other module depends on it or conflicts with it. In the case of a dependency, to change the state of that module, you must first perform the corresponding action on the module on which it depends.
 
 For example, `Magento_GoogleAnalytics` can be disabled only if `Magento_GoogleOptimizer` is disabled first. Conversely, if both modules are disabled, you must enable `Magento_GoogleAnalytics` first.
 
@@ -223,10 +223,10 @@ Click **Show details** to display details about the dependency error. You can th
 *	Select the **Skip dependency check for individual modules** to ignore the issue and continue with your installation. (Additional dependency checks are performed after you click **Next**.)
 *	Resolve the issue by taking the action indicated by the message.
 		
-<!-- <div class="bs-callout bs-callout-warning">
-	<p>Use <strong>Skip dependency check for individual modules</strong> with caution. Typically, you can use this option if you manually edited <code>config.php</code> to disable modules.</p>
+<div class="bs-callout bs-callout-warning">
+	<p>You might use <strong>Skip dependency check for individual modules</strong> if you manually edited <code>config.php</code> to disable modules. However, editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
 </div>
- -->
+
 
 <h3 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h3>
 
