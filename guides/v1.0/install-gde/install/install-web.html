@@ -176,6 +176,32 @@
   <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
 </div>
 
+<h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
+<p>The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.</p>
+
+<p>Magento enables you to enable or disable currently installed modules; in other words, any Magento-provided module or any third-party module you currently have installed.</p>
+<p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
+<p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
+<p>Examples:</p>
+<ul><li>Module A depends on Module B. You cannot disable Module B unless you first disable Module A.</li>
+	<li>Module A depends on Module B, both of which are disabled. You must enable module B before you can enable module A.</li>
+	<li>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</li></ul>
+
+<p>Dependencies and conflicts are declared in the <code>require</code> field in Magento's <code>composer.json</code> file for each module. Conflicts are declared in the <code>conflict</code> field in modules' <code>composer.json</code> files. We use that information to build a dependency graph:</p>
+<ul><li><code>A-&gt;B</code> means module A depends on module B.</li>
+	<li>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code>A-&gt;B-&gt;C</code>.</li></ul>
+<p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>It's possible that module A's <code>composer.json</code> declares a conflict with module B but not vice versa.</p></span>
+</div>
+
+<p><em>Command line <a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">module enable or disable subcommand</a> only:</em> To force a module to be enabled or disabled regardless of its dependencies, use the optional <code>--force</code> argument.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Using <code>--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
+</div>
+
 <h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
 
 <p>The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You <em>cannot</em> skip pages, and you must enter all required information on every page before you can proceed to the next page.</p>
@@ -322,7 +348,7 @@
 </tr>
 <tr>
     <td>Encryption Key</td>
-    <td><p>Magento uses an encryption key to encrypt passwords and personally identifiable customer information in the database.</p>
+    <td><p>Magento uses an encryption key to encrypt personally identifiable customer information in the database.</p>
     <p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
     <p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 </tr>
@@ -354,9 +380,61 @@
     <p>From the <strong>Store Default Language</strong> list, click the default language to use in your store.</p>
   </li>
   <li>
-    <p>Click <strong>Next</strong>.</p>
+    <p>Expand <strong>Advanced Modules Configuration</strong> to optionally enable or disable modules before you install the Magento software.</p>
+
+    <p>Before you enable or disable modules, review the information discussed in <a href="#instgde-install-web-enable-mod">Enabling and disabling modules</a>.</p>
+
+    <p>See one of the following sections for more information about enabling and disabling modules:</p>
+
+    <ul>
+      <li><a href="#instgde-install-magento-web-step4-depend1">General module configuration options</a></li>
+      <li><a href="instgde-install-magento-web-step4-depend2">Module dependency errors</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>When you’re done configuring this page, click <strong>Next</strong> and continue with <a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>.</p>
   </li>
 </ol>
+
+<h4 id="instgde-install-magento-web-step4-depend1">General module configuration options</h4>
+<p>Modules are listed in <strong>Advanced Modules Configuration</strong> in alphabetical order; the order has nothing to do with dependencies.</p>
+
+<p>You have the following options for any module listed:</p>
+
+<ul>
+  <li>To enable a module that is currently disabled, select its check box.</li>
+  <li>To disable a module that is currently enabled, clear its check box.</li>
+  <li>Use the <strong>Select All</strong> check box to:
+    <ul>
+      <li>Enable all modules if any module is currently disabled.</li>
+      <li>Disable all available modules (that is, all modules that do not depend on other enabled modules).</li>
+    </ul>
+  </li>
+</ul>
+
+<p>If a module’s check box is unavailable, some other module depends on it or conflicts with it. In the case of a dependency, to change the state of that module, you must first perform the corresponding action on the module on which it depends.</p>
+
+<p>For example, <code>Magento_GoogleAnalytics</code> can be disabled only if <code>Magento_GoogleOptimizer</code> is disabled first. Conversely, if both modules are disabled, you must enable <code>Magento_GoogleAnalytics</code> first.</p>
+
+<p>The following figure shows an example of disabling the <code>Magento_GoogleAnalytics</code> and <code>Magento_GoogleOptimizer</code> modules.
+<img src="/common/images/install_wizard_disable-google.png" /></p>
+
+<h4 id="instgde-install-magento-web-step4-depend2">Module dependency errors</h4>
+<p>A dependency error occurs when two inter-dependent modules are disabled at the same time. For example, you could have manually edited <code>config.php</code> to disable both the <code>Magento_Email</code> and <code>Magento_Webapi</code> modules. Because these modules depend on each other, they cannot both be disabled at the same time.</p>
+
+<p>If there is a dependency error, a message similar to the following displays.
+<img src="/common/images/install_skip-depend-check.png" /></p>
+
+<p>Click <strong>Show details</strong> to display details about the dependency error. You can then do any of the following:</p>
+
+<ul>
+  <li>Select the <strong>Skip dependency check for individual modules</strong> to ignore the issue and continue with your installation. (Additional dependency checks are performed after you click <strong>Next</strong>.)</li>
+  <li>Resolve the issue by taking the action indicated by the message.</li>
+</ul>
+
+<div class="bs-callout bs-callout-warning">
+	<p>You might use <strong>Skip dependency check for individual modules</strong> if you manually edited <code>config.php</code> to disable modules. However, editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
+</div>
 
 <h3 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h3>
 
@@ -668,7 +746,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line <font color="#5FB3D2">(IMPORTANT UPDATE)</font></a></li>
 						
 								
 							

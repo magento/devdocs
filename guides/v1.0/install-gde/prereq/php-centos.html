@@ -156,7 +156,6 @@
   <li><a href="#centos-verify-php">Verify PHP is installed</a></li>
   <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
   <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
-  <li><a href="#instgde-prereq-php-prereq-centos">Installing required PHP extensions on CentOS</a></li>
   <li><a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a></li>
 </ul>
 
@@ -217,8 +216,11 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
     <p>Enter the following commands in the order shown:</p>
 
     <pre><code>rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-yum install -y php56w php56w-opcache
+yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-mbstring
 </code></pre>
+  </li>
+  <li>
+    <p>Restart Apache: <code>service httpd restart</code></p>
   </li>
   <li>
     <p>Enter the following command to verify that PHP 5.6 is installed:</p>
@@ -235,7 +237,7 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 </code></pre>
   </li>
   <li>
-    <p><a href="#instgde-prereq-php-prereq-centos">Install required PHP extensions on CentOS</a>.</p>
+    <p><a href="#instgde-prereq-timezone">Set the PHP timezone and memory limit</a>.</p>
   </li>
 </ol>
 
@@ -251,33 +253,23 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
     <pre><code>rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
 yum -y remove php-common-5.3.3-40.el6_6.x86_64
 yum -y install php55w php55w-opcache
+yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-mbstring
 </code></pre>
   </li>
   <li>
     <p>Restart Apache: <code>service httpd restart</code></p>
   </li>
   <li>
-    <p><a href="#instgde-prereq-php-prereq-centos">Install required PHP extensions on CentOS</a>.</p>
+    <p>Continue with the next section.</p>
   </li>
 </ol>
-
-<h2 id="instgde-prereq-php-prereq-centos">Installing required PHP extensions on CentOS</h2>
-
-<p>PHP 5.6:</p>
-
-<pre><code>yum -y install php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-mbstring
-</code></pre>
-
-<p>PHP 5.5:</p>
-
-<pre><code>yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-mbstring
-</code></pre>
 
 <h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
 
 <p>Before you install Magento, you might need to set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
 
-<p><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings.</code> [more messages follow]</p>
+<pre><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+</code></pre>
 
 <p>We also recommend you increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</p>
 
@@ -308,6 +300,9 @@ yum -y install php55w php55w-opcache
   </li>
   <li>
     <p>Add the time zone setting you found in step 1.</p>
+  </li>
+  <li>
+    <p>Search for <code>memory_limit</code>.</p>
   </li>
   <li>
     <p>Change <code>memory_limit</code> to:</p>
@@ -549,7 +544,7 @@ memory_limit = 2G` or more for testing
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line <font color="#5FB3D2">(IMPORTANT UPDATE)</font></a></li>
 						
 								
 							

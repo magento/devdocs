@@ -162,7 +162,17 @@
 
 <h2 id="install-update-depend-apache">Switching to the Apache user</h2>
 
-<p>For the installation to work properly, you <em>must</em> run Composer as the web server user. If the web server runs as <code>root</code>, you can run Composer as <code>root</code>; however, that is typically not the case. In general, <em>avoid running Composer as the root user</em>.</p>
+<p>For the installation to work properly, all files written by Composer <em>must</em> be owned by the web server user. There are at least two ways to do this:</p>
+
+<ul>
+  <li>Run Composer as the web server user as discussed in this section</li>
+  <li>Run Composer as another user and change file ownership afterward</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>We suggest running Composer in a web server shell in a development environment <em>only</em>. In a more secure environment, you should change not run a shell; instead, change ownership after you run Composer. </p></span>
+</div>
 
 <p>In the discussion that follows, it’s assumed that the CentOS web server user is <code>apache</code> and the Ubuntu web server user is <code>www-data</code>.</p>
 
@@ -243,6 +253,14 @@
 </code></pre>
 
     <p>This command updates package dependencies and can take a few minutes to complete.</p>
+  </li>
+  <li>
+    <p>(Secure environment). Change ownership to the web server user as follows:</p>
+
+    <ul>
+      <li>(Ubuntu) <code>chown -R www-data .</code></li>
+      <li>(CentOS) <code>chown -R apache .</code></li>
+    </ul>
   </li>
 </ol>
 
@@ -463,7 +481,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line <font color="#5FB3D2">(IMPORTANT UPDATE)</font></a></li>
 						
 								
 							

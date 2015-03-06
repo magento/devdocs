@@ -152,6 +152,7 @@
 
 <ul>
   <li><a href="#highlights">Highlights</a></li>
+  <li><a href="#changes">Changes</a></li>
   <li><a href="#known-devbeta">Known issues</a></li>
   <li><a href="#install">Installation</a></li>
   <li><a href="#help">Help us improve this documentation</a></li>
@@ -236,13 +237,68 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
   </li>
 </ul>
 
+<h2 id="changes">Changes</h2>
+
+<ul>
+  <li><a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
+  <li><a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
+</ul>
+
+<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
+<p>This change applies to the following situation only:</p>
+
+<ul>
+  <li>You currently have version 0.42.0-beta10 or earlier</li>
+  <li>You’re updating to version 0.42.0-beta11 or later</li>
+</ul>
+
+<p>As a result of this change, you must uninstall the Magento software and reinstall it.</p>
+
+<p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
+<ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
+<li>Resources in the table are replaced by module names. For example, <code>catalog_setup</code> is now <code>Magento_Catalog</code>, which exactly matches the module name. </li>
+<li>The following fields in the <code>setup_module</code> table have new names:
+<ul><li><code>code</code> is now <code>module</code></li>
+<li><code>version</code> is now <code>schema_version</code></li></ul>
+</li>
+</ul>
+<p>Old way:</p>
+<pre>	code                     | version   | data_version|
+	-----------------------------------------------------------
+	catalog_setup            | 2.0.0     | 2.0.0   
+	checkoutagreements_setup | 2.0.0     | 2.0.0   
+	checkout_setup           | 2.0.0     | 2.0.0   
+	cms_setup                | 2.0.0.1   | 2.0.0.1 </pre>
+<p>New way:</p>
+
+<pre>	module                       | schema_version        | data_version|
+	------------------------------------------------------------------------
+	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
+	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
+	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
+	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
+	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0</pre>
+
+<p>For details, see <a href="/guides/v1.0/install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></p>
+
+<h3 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
+
+<p>To install the optional Magento 2 sample data, you must update <code>composer.json</code>, run <code>composer update</code>, and run the Magento 2 installer to update the database.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
+<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
+</div>
+
+<p>See <a href="/guides/v1.0//install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
+
 <h2 id="known-devbeta">Known issues</h2>
 <p>We have identified the following known issues in this release:</p>
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
 <ul>
-  <li><a href="#known-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
   <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
   <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
   <li><a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a></li>
@@ -253,12 +309,6 @@ areas, and performance criteria. See <a href="https://github.com/magento/mtf/blo
 <!-- <h3 id="known-issue-sample">Issue installing optional sample data</h3> -->
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
-
-<h3 id="known-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
-
-<p>To install the optional Magento 2 sample data, you must update <code>composer.json</code>, run <code>composer update</code>, and run the Magento 2 installer to update the database.</p>
-
-<p>See <a href="/guides/v1.0//install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
 <p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions:</p>

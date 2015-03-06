@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install the Magento software using the command line</title>
+	<title>Install the Magento software using the command line (IMPORTANT UPDATE)</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -137,7 +137,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Install the Magento software using the command line</h1>
+		<h1 class="page-heading">Install the Magento software using the command line (IMPORTANT UPDATE)</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/install-cli-install.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -156,9 +156,15 @@
   <li><a href="#instgde-install-cli-prereq">Before you start your installation</a></li>
   <li><a href="#instgde-install-cli-first">First steps</a></li>
   <li><a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a></li>
+  <li><a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
   <li><a href="#instgde-install-magento-update">Updating the Magento software</a></li>
   <li><a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a></li>
 </ul>
+
+<div class="bs-callout bs-callout-warning">
+<span class="glyphicon-class">
+  <p>This topic discusses important information that affects you if you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later. For more information, see <a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>.</p></span>
+</div>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
@@ -455,10 +461,103 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
+<h2 id="instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
+<p>This section applies to you in the following situation only:</p>
+
+<ul>
+  <li>You currently have version 0.42.0-beta10 or earlier</li>
+  <li>You’re updating to version 0.42.0-beta11 or later</li>
+</ul>
+
+<p>To determine the versions:</p>
+
+<ul>
+  <li>Your version: View <code>&lt;your Magento install dir&gt;/CHANGELOG.md</code> in a text editor.</li>
+  <li>Current version: Look at the Magento 2 <a href="https://github.com/magento/magento2/blob/develop/CHANGELOG.md" target="_blank">changelog</a> on GitHub.</li>
+</ul>
+
+<h3 id="instgde-install-magento-updatebeta11-why">Why must I uninstall?</h3>
+<p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
+<ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
+<li>Resources in the table are replaced by module names. For example, <code>catalog_setup</code> is now <code>Magento_Catalog</code>, which exactly matches the module name. </li>
+<li>The following fields in the <code>setup_module</code> table have new names:
+<ul><li><code>code</code> is now <code>module</code></li>
+<li><code>version</code> is now <code>schema_version</code></li></ul>
+</li>
+</ul>
+<p>Old way:</p>
+<pre>	code                     | version   | data_version|
+	-----------------------------------------------------------
+	catalog_setup            | 2.0.0     | 2.0.0   
+	checkoutagreements_setup | 2.0.0     | 2.0.0   
+	checkout_setup           | 2.0.0     | 2.0.0   
+	cms_setup                | 2.0.0.1   | 2.0.0.1 </pre>
+<p>New way:</p>
+
+<pre>	module                       | schema_version        | data_version|
+	------------------------------------------------------------------------
+	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
+	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
+	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
+	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
+	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0</pre>
+
+<h3 id="instgde-install-magento-updatebeta11-how">How to update the Magento software</h3>
+<div class="bs-callout bs-callout-warning">
+    <p>Before you continue, back up any changes you made to the database and file system. Uninstalling the Magento software drops and re-creates the database. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
+</div>
+
+<p>To update the Magento software to 0.42.0-beta11 or later from version beta10 or earlier:</p>
+
+<ol>
+  <li>
+    <p>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</p>
+  </li>
+  <li>
+    <p>Change to the following directory:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;/setup
+</code></pre>
+  </li>
+  <li>
+    <p>Uninstall the Magento software:</p>
+
+    <pre><code>php index.php uninstall
+</code></pre>
+  </li>
+  <li>
+    <p>Change to your Magento installation directory.</p>
+  </li>
+  <li>
+    <p>Update the Magento code:</p>
+
+    <pre><code>git reset --hard HEAD &amp;&amp; git pull origin develop
+</code></pre>
+  </li>
+  <li>
+    <p>Run Composer:</p>
+
+    <pre><code>composer install
+</code></pre>
+  </li>
+  <li>
+    <p>Install the Magento software:</p>
+
+    <ul>
+      <li><a href="#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
+
 <h2 id="instgde-install-magento-update">Updating the Magento software</h2>
 <p>This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.</p>
 
 <p>You might do this in an development environment especially to get all the latest code changes.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Before you continue, back up any changes you made to the Magento file system. The <code>git reset --HARD</code> command effectively removes any code changes you have made.</p>
+</div>
 
 <p>To update the Magento software:</p>
 
@@ -748,7 +847,7 @@ php setup/index.php uninstall
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line <font color="#5FB3D2">(IMPORTANT UPDATE)</font></a></li>
 						
 								
 							
