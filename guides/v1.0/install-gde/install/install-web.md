@@ -33,6 +33,11 @@ Before you begin, make sure that:
   <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
 </div>
 
+<h3 id="instgde-install-web-enable-mod">Enabling and disabling modules</h3>
+The Setup Wizard enables you to enable or disable modules before you install the Magento software. Before you do so, make sure you understand the following.
+
+{% include install/enable-disable-modules.html %}
+
 <h2 id="instgde-install-magento-web">Running the Setup Wizard</h2>
 
 The Setup Wizard is a multi-page wizard that enables you to go back and forward one page at a time. You *cannot* skip pages, and you must enter all required information on every page before you can proceed to the next page.
@@ -155,7 +160,7 @@ To install the Magento software using the Setup Wizard:
 	</tr>
 	<tr>
 		<td>Encryption Key</td>
-		<td><p>Magento uses an encryption key to encrypt passwords and personally identifiable customer information in the database.</p>
+		<td><p>Magento uses an encryption key to encrypt personally identifiable customer information in the database.</p>
 		<p>Click <strong>I want to use a Magento generated key</strong> to have Magento generate an encryption key for you.</p>
 		<p>Click <strong>I want to use my own encryption key</strong> if you already have an encryption key.</p></td>
 	</tr>
@@ -178,7 +183,50 @@ To install the Magento software using the Setup Wizard:
 
 3.	From the **Store Default Language** list, click the default language to use in your store.
 
-4.	Click **Next**.
+3.	Expand **Advanced Modules Configuraiton** to optionally enable or disable modules before you install the Magento software.
+
+	Before you enable or disable modules, review the information discussed in <a href="#instgde-install-web-enable-mod">Enabling and disabling modules</a>.
+
+	See one of the following sections for more information about enabling and disabling modules:
+
+	*	<a href="#instgde-install-magento-web-step4-depend1">General module configuration options</a>
+	*	<a href="instgde-install-magento-web-step4-depend2">Module dependency errors</a>
+
+4.	When you're done configuring this page, click **Next** and continue with <a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>.
+
+<h4 id="instgde-install-magento-web-step4-depend1">General module configuration options</h4>
+Modules are listed in **Advanced Modules Configuraiton** in alphabetical order; the order has nothing to do with dependencies.
+
+You have the following options for any module listed:
+
+*	To enable a module that is currently disabled, select its check box.
+*	To disable a module that is currently enabled, clear its check box.
+*	Use the **Select All** check box to:
+	*	Enable all modules if any module is currently disabled.
+	*	Disable all available modules (that is, all modules that do not depend on other enabled modules).
+
+If a module's check box is unavailable, some other module depends on it or conflicts with it. In the case of a dependency, to change the state of that module, you must first perform the corresponding action on the module on which it depends.
+
+For example, `Magento_GoogleAnalytics` can be disabled only if `Magento_GoogleOptimizer` is disabled first. Conversely, if both modules are disabled, you must enable `Magento_GoogleAnalytics` first.
+
+The following figure shows an example of disabling the `Magento_GoogleAnalytics` and `Magento_GoogleOptimizer` modules.
+<img src="{{ site.baseurl }}common/images/install_wizard_disable-google.png">
+
+<h4 id="instgde-install-magento-web-step4-depend2">Module dependency errors</h4>
+A dependency error occurs when two inter-dependent modules are disabled at the same time. For example, you could have manually edited `config.php` to disable both the `Magento_Email` and `Magento_Webapi` modules. Because these modules depend on each other, they cannot both be disabled at the same time.
+
+If there is a dependency error, a message similar to the following displays.
+<img src="{{ site.baseurl }}common/images/install_skip-depend-check.png">
+
+Click **Show details** to display details about the dependency error. You can then do any of the following:
+
+*	Select the **Skip dependency check for individual modules** to ignore the issue and continue with your installation. (Additional dependency checks are performed after you click **Next**.)
+*	Resolve the issue by taking the action indicated by the message.
+		
+<div class="bs-callout bs-callout-warning">
+	<p>You might use <strong>Skip dependency check for individual modules</strong> if you manually edited <code>config.php</code> to disable modules. However, editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
+</div>
+
 
 <h3 id="instgde-install-magento-web-step5">Step 5: Create Admin Account</h3>
 

@@ -12,6 +12,7 @@ github_link: release-notes/release-notes.md
 <h4>Contents</h4>
 
 *	<a href="#highlights">Highlights</a>
+*   <a href="#changes">Changes</a>
 *	<a href="#known-devbeta">Known issues</a>
 *	<a href="#install">Installation</a>
 *	<a href="#help">Help us improve this documentation</a>
@@ -98,13 +99,32 @@ See also
 -   [Services as web APIs][16]
 
     [16]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
+
+<h2 id="changes">Changes</h2>
+
+*   <a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
+*   <a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
+
+<h3 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
+
+To install the optional Magento 2 sample data, you must update `composer.json`, run `composer update`, and run the Magento 2 installer to update the database.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
+<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
+</div>
+
+See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
+
+<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
+{% include install/versionbeta10upgr.html %}
 	
 <h2 id="known-devbeta">Known issues</h2>
 We have identified the following known issues in this release:
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
-*   <a href="#known-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
 *   <a href="#known-devbeta-xdebug">Known issue with xdebug</a>
 *   <a href="#known-devbeta-storefront-err">Access errors</a>
 *   <a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a>
@@ -115,11 +135,7 @@ We have identified the following known issues in this release:
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
 
-<h3 id="known-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
 
-To install the optional Magento 2 sample data, you must update `composer.json`, run `composer update`, and run the Magento 2 installer to update the database.
-
-See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
 If you use the optional PHP extension `xdebug`, you can encounter exceptions:

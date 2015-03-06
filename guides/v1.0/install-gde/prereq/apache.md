@@ -38,7 +38,9 @@ The result displays similar to the following:
 	Server version: Apache/2.2.22 (Ubuntu)
 	Server built:   Jul 22 2014 14:35:32
 
-*	If Apache is *not* installed, see the next section.
+*	If Apache is *not* installed, see:
+	*	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
+	*	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 *	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use PHP 5.6, see the next section
 *	If Apache is installed and it's the correct version, make sure Apache rewrites are enabled:
 
