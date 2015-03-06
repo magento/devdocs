@@ -183,7 +183,7 @@ To install the Magento software using the Setup Wizard:
 
 3.	From the **Store Default Language** list, click the default language to use in your store.
 
-3.	Expand **Advanced Modules Configuraiton** to optionally enable or disable modules before you install the Magento software.
+3.	Expand **Advanced Modules Configuration** to optionally enable or disable modules before you install the Magento software.
 
 	Before you enable or disable modules, review the information discussed in <a href="#instgde-install-web-enable-mod">Enabling and disabling modules</a>.
 
@@ -195,7 +195,7 @@ To install the Magento software using the Setup Wizard:
 4.	When you're done configuring this page, click **Next** and continue with <a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>.
 
 <h4 id="instgde-install-magento-web-step4-depend1">General module configuration options</h4>
-Modules are listed in **Advanced Modules Configuraiton** in alphabetical order; the order has nothing to do with dependencies.
+Modules are listed in **Advanced Modules Configuration** in alphabetical order; the order has nothing to do with dependencies.
 
 You have the following options for any module listed:
 
