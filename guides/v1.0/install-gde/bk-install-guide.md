@@ -32,7 +32,7 @@ Use the following table to verify you have the correct prerequisites to install 
 		</tr>
 	<tr>
 		<td>Apache 2.2 or 2.4</td>
-		<td>Ubuntu: <code>apache -v</code><br>
+		<td>Ubuntu: <code>apache2 -v</code><br>
 		CentOS: <code>httpd -v</code></td>
 		<td><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></td>
 	</tr>
