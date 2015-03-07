@@ -41,7 +41,8 @@
 <h2 id="overview">Overview</h2>
 <p>This article discusses how to install required prerequisite software for CentOS. You must complete these tasks before you install Magento CE 1.8 or later or Magento EE 1.13 or later.</p>
 <p>Before you continue, make sure you familiarize yourself with the installation process discussed in <a href="{{ site.m1xgdeurl }}install/installing_install.html#prereq">Prerequisites</a>.</p>
-<p class="kb-notes"><strong>Note</strong>: You must install system software on CentOS as a user with <tt>root</tt> privileges.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: You must install system software on CentOS as a user with <code>root</code> privileges.</div>
+
 
 <h2 id="update-system">Updating System Software</h2>
 <p>It's a good practice to update your repositories and optionally update system software.</p>
@@ -51,20 +52,20 @@
 <pre>yum -y upgrade</pre>
 
 <h2 id="apache">Apache</h2>
-<p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <tt>.htaccess</tt>, which Magento uses to specify rewrite rules.</p>
-<p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <tt>.htaccess</tt> directives.</p>
+<p>Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.</p>
+<p>Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.</p>
 
 <h3 id="apache-install">Installing Apache</h3>
 <p>Install Apache 2 if you haven't already done so.</p>
 <pre>yum -y install httpd</pre>
 
 <h3 id="apache-rewrites">Enabling Apache Rewrites</h3>
-<ol><li>Open <tt>httpd.conf</tt> for editing.
+<ol><li>Open <code>httpd.conf</code> for editing.
 <pre>vim /etc/httpd/conf/httpd.conf</pre></li>
 <li>Locate the block that starts with:
 <pre>&lt;Directory /var/www/html></pre></li>
-<li>In that block, change the value of <tt>AllowOverride</tt> to <tt>All</tt>.</li>
-<li>Save your changes to <tt>httpd.conf</tt> and exit the text editor.</li>
+<li>In that block, change the value of <code>AllowOverride</code> to <code>All</code>.</li>
+<li>Save your changes to <code>httpd.conf</code> and exit the text editor.</li>
 <li>Restart Apache.
 <pre>service httpd restart</pre></li></ol>
 
@@ -95,7 +96,8 @@
 <p>If PHP is not installed, install PHP 5.3 using the following command:</p>
 <pre>yum -y install php php-xml</pre>
 <p>Continue with one of the following sections.</p>
-<p class="kb-notes"><strong>Important</strong>: The following sections discuss <em>suggested</em> PHP upgrade paths. Because you're choosing a non-CentOS repository to upgrade PHP, make your choice carefully. Not all repositories work equally well. We don't recommend any particular repository. Consult a system administrator or CentOS reference for more information.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The following sections discuss <em>suggested</em> PHP upgrade paths. Because you're choosing a non-CentOS repository to upgrade PHP, make your choice carefully. Not all repositories work equally well. We don't recommend any particular repository. Consult a system administrator or CentOS reference for more information.</span></div>
+
 
 <h4 id="php-upgrade55">Upgrading to PHP 5.5</h4>
 <p>There is more than one way to upgrade CentOS 6.5 to PHP 5.5; the following is a suggestion only. Consult a reference for additional options.</p>
@@ -125,24 +127,25 @@ yum --enablerepo=remi install httpd php php-common</pre>
 <pre>yum -y install --enablerepo=remi php-mcrypt gd gd-devel php-gd php-mysql</pre>
 
 <h3 id="php-memory">Increasing the PHP Memory Limit</h3>
-<p>Increase <tt>memory_limit</tt> in <tt>php.ini</tt> to at least 512MB.</p>
-<ol><li>Open <tt>/etc/php.ini</tt> in a text editor.</li>
-<li>Change <tt>memory_limit</tt> to:
+<p>Increase <code>memory_limit</code> in <code>php.ini</code> to at least 512MB.</p>
+<ol><li>Open <code>/etc/php.ini</code> in a text editor.</li>
+<li>Change <code>memory_limit</code> to:
 <pre>memory_limit = 512M</pre></li>
 <li>Save your changes and exit the text editor.</li></ol>
 
 <h2 id="mysql">MySQL</h2>
 <p>This section discusses how to install and configure MySQL 5.6. CentOS 6.x repositories have MySQL 5.1; to install a different version of MySQL, see the <a href="http://dev.mysql.com/doc/index.html" target="_blank">MySQL documentation</a>.</p>
-<p class="kb-notes"><strong>Note</strong>: Use the tasks that follow only on a <em>new MySQL database</em>. Some of the tasks require you to delete users and should not be performed on a database that has already been set up.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Use the tasks that follow only on a <em>new MySQL database</em>. Some of the tasks require you to delete users and should not be performed on a database that has already been set up.</div>
+
 <p>The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26/install-mysql-server-5-6-in-centos-6-x-and-red-hat-6-x-linux/" target="_blank">Install MySQL Server 5.6 in CentOS 6.x and Red Hat 6.x Linux</a>.</p>
-<ol><li>Install the MySQL database:</li>
+<ol><li>Install the MySQL database:
 <pre>cd /tmp
 wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
 rpm -ivh mysql-community-release-el6-5.noarch.rpm
-yum -y install mysql-server</pre>
+yum -y install mysql-server</pre></li>
 <li>Start MySQL.
 <pre>service mysqld start</pre>
-<li>Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
+<li>Set a password for the <code>root</code> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
 <pre>mysql_secure_installation</pre></li>
 
 </ol>
