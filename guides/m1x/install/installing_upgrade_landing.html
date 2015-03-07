@@ -1,43 +1,32 @@
-<head><style>
-
-table.confluenceTable { margin:5px; border-collapse:collapse; }
-table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
-table.confluenceTable th.confluenceTh,
-table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
-ul { list-style-type: square; }
-
-</style></head> 
-
+---
+---
 <!-- this URL: ce18-and-ee113-upgrading -->
 <!-- title: Upgrading to and Verifying Magento Community Edition (CE) and Enterprise Edition (EE), Part 1 -->
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang=en>
 
 <head>
-	<meta charset=utf-8>
+    <meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="../css/images/stylesheet.css"/>
-	<link rel="stylesheet" href="../css/images/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="../css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
-	<title>Upgrading to and Verifying Magento Community Edition (CE) and Enterprise Edition (EE), Part 1</title>
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+    <title>Ubuntu: Installing Required Prerequisite Software for Magento CE 1.8 Magento EE 1.13 (or Later)</title>
 
 </head>
 
 <body>
 <a name="top"></a>
+<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
-<h1>Upgrading to and Verifying Magento Community Edition (CE) and Enterprise Edition (EE), Part 1</h1>
+<div id="content"> 
 
-<img src="../css/images/header.png" width="1024" height="215" alt="header" />
-
-<div id="content"> -->
-
-<h4 id="contents">Table of Contents</h4>
+<div class="toc"> <h4 class="toc">Table of Contents</h4>
 <ul><li><a href="#overview">Overview</a></li>
 <li><a href="#upgrade-path">Upgrade Path</a></li>
-<li><a href="#ee1300-11301-upgrade-to-ee11302-start">Understanding the Upgrade to EE 1.13.0.2 or Later</a></li></ul>
+<li><a href="#ee1300-11301-upgrade-to-ee11302-start">Understanding the Upgrade to EE 1.13.0.2 or Later</a></li></ul></div>
 
 <h2 id="overview">Overview</h2>
 <p>This article discusses how to upgrade to:</p>
@@ -45,7 +34,8 @@ ul { list-style-type: square; }
 <li>Magento Enterprise Edition (EE) 1.13 or 1.14</li></ul>
 
 <h2 id="upgrade-path">Upgrade Path</h2>
-<p class="kb-notes"><strong>Important</strong>: Magento recommends CE 1.9.0.0 or later or EE 1.14.0.0 or later for <em>all CE and EE installations and upgrades</em> to get the latest fixes, features, and security updates.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Magento recommends CE 1.9.1.0 or later or EE 1.14.1.0 or later for <em>all CE and EE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
 <p>The following table provides basic information about how you perform your upgrade. More detailed information is discussed later in this article.</p>
 <table>
 <tbody>
@@ -78,7 +68,8 @@ ul { list-style-type: square; }
 <ul><li>Upgrading from EE 1.12 or earlier to EE 1.13.0.2 or later (including to EE 1.14)</li>
 <li>Upgrading from EE 1.13.0.1 to EE 1.13.0.2 or later (including to EE 1.14)</li></ul>
 <p>For more information about these upgrades, see <a href="#ee1300-11301-upgrade-to-ee11302-start">Understanding the Upgrade to EE 1.13.0.2 or EE 1.14</a>.</p>
-<p class="kb-notes"><strong>Note</strong>: If you're upgrading from EE 1.13.0.2 to EE 1.13.1.0 or later, your upgrade doesn't involve changes to URL rewrites and you can skip some of the steps discussed in the other upgrades. Continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">Upgrading to and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)&mdash;Part 2</a>.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>:  If you're upgrading from EE 1.13.0.2 to EE 1.13.1.0 or later, your upgrade doesn't involve changes to URL rewrites and you can skip some of the steps discussed in the other upgrades. Continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">Upgrading to and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)&mdash;Part 2</a>.</div>
+
 
 <h3 id="upgrade-path-ce">Upgrading to Magento CE 1.9</h3>
 <p>Unless you're upgrading from an <a href="#upgrade-path-older">older CE version</a>, skip the remainder of this article and continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-upgrade-roadmap" target="_blank">Upgrade Roadmap for Community Edition (CE)</a>.</p>
@@ -94,7 +85,8 @@ If you're currently using an EE version earlier than EE 1.13.0.0, upgrade <em>di
 <li>Back up the system</li>
 <li>Upgrade to CE 1.9 or EE 1.14</li></ol>
 </p>
-<p class="kb-notes"><strong>Note</strong>: Use caution when upgrading from versions older than CE 1.7 or EE 1.12 because core code on which your extensions are based and database schema have likely changed.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Use caution when upgrading from versions older than CE 1.7 or EE 1.12 because core code on which your extensions are based and database schema have likely changed.</div>
+
 <p>To upgrade to CE 1.8, skip the remainder of this article and continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
 <p>To upgrade from EE 1.13.0.2 to EE 1.13.1.0, skip the remainder of this article and continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
 
@@ -121,7 +113,7 @@ For example, if you have a <tt>shoes</tt> category with URL key <tt>shoes</tt> i
 <ul><li><em>Recommended</em>. Set up a new system (that is, another host) on which to install Magento.<br />
 The system should be identical to, if not better than, your current system. The new system must meet the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
 <li>Install Magento in a new, empty root installation directory on the same server.</li>
-<p class="kb-notes"><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</p></li></ul>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</span></div></li></ul>
 </li>
 <li>In your current production environment:
 <ol><li style="list-style-type:lower-alpha">Back up your Magento database.</li>
@@ -157,7 +149,7 @@ If not, fix issues, retest, and upgrade again.</li></ol>
 <ul><li><em>Recommended</em>. Set up a new system (that is, another host) on which to install Magento.<br />
 The system should be identical to, if not better than, your current system. The new system must meet the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
 <li>Install Magento in a new, empty root installation directory on the same server.</li>
-<p class="kb-notes"><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</p></li></ul>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</span></div></li></ul>
 </li>
 <li>In your current production environment:
 <ol><li style="list-style-type:lower-alpha">Back up your Magento database.</li>
