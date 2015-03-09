@@ -1,8 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
-title: Known issues
+title: Release Notes
 menu_title: Known issues
 menu_node: 
 menu_order: 10
