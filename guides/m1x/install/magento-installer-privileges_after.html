@@ -42,7 +42,7 @@ The instructions might not work with older versions. If you have already install
 <p>This article discusses the following permission and ownership schemes:</p>
 <ul>
 <li><a href="#privs-after">Post-installation</a> for both a hosted Magento server and for a decided Magento server (in other words, you have <code>root</code> access on the server).</li>
-<li><a href="#privs-extensions">Securing extensions</a>, recommended ownership and privilege settings to apply after you install Magento extensions.<br />
+<li><a href="#extensions">Securing extensions</a>, recommended ownership and privilege settings to apply after you install Magento extensions.<br />
 Typically, Magento extensions install with 777 (world-writable) privileges, which is undesirable from a security point of view.</li></ul>
 
 <h2 id="terms">Terminology</h2>
@@ -102,7 +102,7 @@ chmod 700 includes
 chmod 600 includes/config.php</pre></li></ol>
 
 <h2 id="extensions">Securing Magento Extensions</h2>
-<p>If you set permissions and ownership as discussed in this article, you must change permissions temporarily to be able to use the Magento Connect Manager in the Admin Panel. (<strong>System</strong> > <strong>Magento Connect</strong> > <strong>Magento Connect Manager</strong>. (You can still install extensions manually, however; that is beyond the scope of this article.)</p>
+<p>If you set permissions and ownership as discussed in this article, you must change permissions temporarily to be able to use the Magento Connect Manager in the Admin Panel. (<strong>System</strong> > <strong>Magento Connect</strong> > <strong>Magento Connect Manager</strong>). You can still install extensions manually, however; that is beyond the scope of this article.</p>
 <p>You can confirm the issue when you access Magento Connect Manager in the Admin Panel. The following error displays on the <strong>Extensions</strong> tab page:</p>
 <pre>Warning: Your Magento folder does not have sufficient write permissions.</pre>
 <p>To use Magento Connect Manager, you must:</p>
