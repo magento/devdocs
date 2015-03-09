@@ -65,7 +65,7 @@
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
             </ul>
          </li>
@@ -140,7 +140,7 @@
 	<div class="container">
 		<h1 class="page-heading">Release Notes</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/release-notes/release-notes.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/release-notes/bk-release-notes.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,8 +149,95 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Here are the release notes.</p>
+		<h2 id="highlights">Highlights</h2>
 
+<p>Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!</p>
+
+<p>For this first release of Magento 2.0, here is a summary of some important
+features of the release.</p>
+
+<ul>
+  <li>
+    <p>PHP and MySQL. Magento 2 supports PHP 5.5 and 5.6, and MySQL 5.6. See <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/system-requirements.html">System
+requirements</a>.</p>
+
+  </li>
+  <li>
+    <p>HTML5. The reference themes available out of the box are responsive and
+based on HTML5. See <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a> and <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design.</a></p>
+
+  </li>
+  <li>
+    <p>CSS3, and CSS preprocessing. The reference themes use CSS3. Magento 2 uses
+the LESS CSS pre-processor, or you can add support for Sass and Compass. See
+<a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets</a>, and <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS pre-processor.</a></p>
+
+  </li>
+  <li>
+    <p>jQuery. Magento 2 uses jQuery as the primary JavaScript library. Magento
+ships with an extensible set of jQuery widgets. See <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/js-resources.html">Magento JQuery
+widgets</a>.</p>
+
+  </li>
+  <li>
+    <p>RequireJS. The RequireJS library helps load JS resources on demand to
+improve page load times. It’s also intended to encourage modular design of
+frontend components. See <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/js-resources.html">JavaScript resources</a>.</p>
+
+  </li>
+  <li>
+    <p>PSR Compliance. PSR compliance standardizes the use of PHP to allow
+different sets of code libraries to work together. See <a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/code-standard-php.html">PHP coding
+standard</a>.</p>
+
+  </li>
+  <li>
+    <p>Modular architecture. Define your own set of modules. Cross-module
+dependencies are reduced, and interfaces among multiple extensions are
+cleaner and more discrete. See <a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_whatis.html">What is Magento?</a>, <a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular
+system</a>, and <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>.</p>
+
+  </li>
+  <li>
+    <p>Testing framework. Magento 2 includes a pre-packaged series of test scripts,
+including tests for integration, units, static environments, functional
+areas, and performance criteria. See <a href="https://github.com/magento/mtf/blob/master/docs/install-config.md">Magento Test Framework</a>, and the
+<a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/test/test_js-unit.html">JavaScript unit tests</a>.</p>
+
+  </li>
+</ul>
+
+<h2 id="see-also">See also</h2>
+
+<ul>
+  <li>
+    <p><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/xml-schema-layout.html">XML validation</a></p>
+
+  </li>
+  <li>
+    <p><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></p>
+
+  </li>
+  <li>
+    <p><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/xlate.html">Translation</a></p>
+
+  </li>
+  <li>
+    <p><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Services as web APIs</a></p>
+
+  </li>
+</ul>
+
+<h2 id="help">Help improve this documentation</h2>
+
+<p>Magento 2.0 product documentation is hosted on GitHub, and we welcome your
+feedback there.</p>
+
+<p>Click the “Edit this page on GitHub” link at the top of a documentation page to
+open the file in our GitHub repository, where you are invited to suggest changes
+by creating pull requests, or open a discussion by creating an issue.
+Feel free to contact the documentation team directly at
+<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">DL-Magento-Doc-Feedback@ebay.com</a></p>
 
 
 		</div>
@@ -211,6 +298,66 @@
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Release Notes</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/new-features.html">New features</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/changes.html">Changes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/issues-fixed.html">Issues fixed since last release</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			

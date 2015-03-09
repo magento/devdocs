@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Developer's Roadmap</title>
+	<title>Changes</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/extension-dev-guide/developers_roadmap.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/release-notes/changes.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Developer's Roadmap</h1>
+		<h1 class="page-heading">Changes</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/extension-dev-guide/developers_roadmap.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/release-notes/changes.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,28 +149,63 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="developer_roadmap_overview">Overview</h2>
+		<h2 id="changes">Changes in this release</h2>
 
-<p>This topic is intended to introduce the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.</p>
+<ul>
+  <li><a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
+  <li><a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
+</ul>
 
-<h2 id="developer_roadmap_resources">Developer Resources</h2>
-<p>There are several resources that you might want to take a look at as you consider your workflow:</p>
+<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
+<p>This change applies to the following situation only:</p>
 
-<ol>
-  <li>See the <a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team</li>
-  <li>Magento 2 Developer’s Hub, at <a href="magento.com/developers/magento2">magento.com/developers/magento2</a></li>
-  <li>The <a href="/pages/Magento/devdocs_internal/index.html">Magento 2 Documentation Library</a>, with Guides such as Coding Standards, Frontend Developers Guide, Installation and Configuration, and other documents about issues like our backwards compatibility policy, versioning, and using Magento APIs.</li>
-</ol>
-
-<h2 id="developer_roadmap_workflow">Workflow and related decisions</h2>
-<p>Now let’s take a look at a high-level workflow, and consider some questions that you might have to decide before continuing.</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/EDG_dev_roadmap.png" alt="Developer's roadmap" /></p>
+<ul>
+  <li>You currently have version 0.42.0-beta10 or earlier</li>
+  <li>You’re updating to version 0.42.0-beta11 or later</li>
+</ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/m2-sample-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The Magento core team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div>
+    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
+</div>
+<p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
+<ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
+<li>Resources in the table are replaced by module names. For example, <code>catalog_setup</code> is now <code>Magento_Catalog</code>, which exactly matches the module name. </li>
+<li>The following fields in the <code>setup_module</code> table have new names:
+<ul><li><code>code</code> is now <code>module</code></li>
+<li><code>version</code> is now <code>schema_version</code></li></ul>
+</li>
+</ul>
+<p>Old way:</p>
+<pre>	code                     | version   | data_version|
+	-----------------------------------------------------------
+	catalog_setup            | 2.0.0     | 2.0.0   
+	checkoutagreements_setup | 2.0.0     | 2.0.0   
+	checkout_setup           | 2.0.0     | 2.0.0   
+	cms_setup                | 2.0.0.1   | 2.0.0.1 </pre>
+<p>New way:</p>
+
+<pre>	module                       | schema_version        | data_version|
+	------------------------------------------------------------------------
+	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
+	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
+	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
+	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
+	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0</pre>
+
+<p>For details, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></p>
+
+<h3 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
+
+<p>To install the optional Magento 2 sample data, you must update <code>composer.json</code>, run <code>composer update</code>, and run the Magento 2 installer to update the database.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
+<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
+</div>
+
+<p>See <a href="/pages/Magento/devdocs_internal/guides/v1.0//install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
+
 
 
 		</div>
@@ -204,6 +239,34 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -214,21 +277,6 @@
 						
 						
 						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
 							
 							
 						
@@ -247,136 +295,27 @@
 								
 								
 							
-									<li class=""><span class="nav-header">Concepts</span></li>
+									<li class=""><span class="nav-header">Release Notes</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/new-features.html">New features</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/changes.html">Changes</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Fundamentals</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/issues-fixed.html">Issues fixed since last release</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
 						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">How to</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_create_req_config_files.html">Create the required config files (template)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_package_module.html">Package a module (template)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_verify_new_module.html">Verify the new module (template)</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/index-cache/indexing.html">Indexing</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
@@ -387,34 +326,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			

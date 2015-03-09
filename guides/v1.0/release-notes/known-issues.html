@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Developer's Roadmap</title>
+	<title>Known issues</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/extension-dev-guide/developers_roadmap.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/release-notes/known-issues.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Developer's Roadmap</h1>
+		<h1 class="page-heading">Known issues</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/extension-dev-guide/developers_roadmap.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/release-notes/known-issues.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,28 +149,155 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="developer_roadmap_overview">Overview</h2>
+		<h2 id="known-devbeta">Known issues</h2>
+<p>We have identified the following known issues in this release:</p>
 
-<p>This topic is intended to introduce the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.</p>
+<!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
+ -->
+<ul>
+  <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
+  <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
+  <li><a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a></li>
+  <li><a href="#known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</a>
+<!-- *   <a href="#known-devbeta-wiz-fail-session-save">session.save_path issue</a> --></li>
+</ul>
 
-<h2 id="developer_roadmap_resources">Developer Resources</h2>
-<p>There are several resources that you might want to take a look at as you consider your workflow:</p>
+<!-- <h3 id="known-issue-sample">Issue installing optional sample data</h3> -->
+<!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
+<!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
+
+<h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
+<p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions:</p>
+
+<ul>
+  <li>During installation </li>
+  <li>Accessing either the Magento Admin or storefront after a successful installation </li>
+</ul>
+
+<p>Sample exception:</p>
+
+<pre><code>Fatal error: Maximum function nesting level of '100' reached, aborting!
+</code></pre>
+
+<p>To resolve this issue, you can:</p>
+
+<ul>
+  <li>Disable the <code>xdebug</code> extension.</li>
+  <li>Set the value of <code>xdebug.max_nesting_level</code> to a value of 200 or more. For more information, see <a href="http://xdebug.org/docs/basic#max_nesting_level" target="_blank">xdebug documentation</a>.</li>
+</ul>
+
+<p>After you change the configuration of or disable <code>xdebug</code>, restart Apache:</p>
+
+<ul>
+  <li>CentOS: <code>sudo service httpd restart</code></li>
+  <li>Ubuntu: <code>sudo service apache2 restart</code></li>
+</ul>
+
+<h3 id="known-devbeta-storefront-err">Access errors</h3>
+
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31834">MAGETWO-31834</a> and <a href="https://jira.corp.x.com/browse/MAGETWO-31180">MAGETWO-31180</a> -->
+<p>Errors might display when you attempt to access the Magento storefront or Magento Admin after installation:</p>
+
+<p>Storefront:</p>
+
+<pre><code>"Can't create directory /var/www/html/m/var/generation/Magento/Framework/App/PageCache/Identifier/."
+#0 /var/www/html/m/lib/internal/Magento/Framework/Code/Generator/Autoloader.php(34): Magento\Framework\Code\Generator-&gt;generateClass('Magento\\Framewo...')
+#1 [internal function]: Magento\Framework\Code\Generator\Autoloader-&gt;load('Magento\\Framewo...')
+#2 [internal function]: spl_autoload_call('Magento\\Framewo...')
+... more
+</code></pre>
+
+<p>Magento Admin:</p>
+
+<pre><code>"Class Magento\Logging\Model\FlagFactory does not exist"
+"#0 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php(46): Magento\Framework\Code\Reader\ClassReader-&gt;getConstructor('Magento\\Logging...')
+#1 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/Factory/Factory.php(170): Magento\Framework\ObjectManager\Definition\Runtime-&gt;getParameters('Magento\\Logging...')
+#2 /var/www/html/ui/lib/internal/Magento/Framework/ObjectManager/ObjectManager.php(71): Magento\Framework\ObjectManager\Factory\Factory-&gt;create('Magento\\Logging...')
+... more
+</code></pre>
+
+<p>In either case, try accessing the storefront or Magento Admin again.</p>
+
+<h3 id="known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</h3>
+
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31949">MAGETWO-31949</a> -->
+<p>In some cases, the Setup Wizard appears to have failed when it has not failed. </p>
+
+<p>Symptoms:</p>
+
+<ul>
+  <li>The following message displays at the top of your browser on the last page: <code>Installation is incomplete. Check the console log for errors before trying again.</code></li>
+  <li>If you open the console, a success message displays at the bottom with no errors or exceptions.</li>
+</ul>
+
+<p>In this case, the installation <em>was</em> successful. You can access the storefront and Magento Admin as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/verify.html">Verify the installation</a>.</p>
+
+<p>To access your Magento-created encryption key:</p>
 
 <ol>
-  <li>See the <a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team</li>
-  <li>Magento 2 Developer’s Hub, at <a href="magento.com/developers/magento2">magento.com/developers/magento2</a></li>
-  <li>The <a href="/pages/Magento/devdocs_internal/index.html">Magento 2 Documentation Library</a>, with Guides such as Coding Standards, Frontend Developers Guide, Installation and Configuration, and other documents about issues like our backwards compatibility policy, versioning, and using Magento APIs.</li>
+  <li>Log in to your Magento server as a user with <code>root</code> privileges.</li>
+  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/config.php</code> in a text editor.</li>
+  <li>Locate the value of <code>'key' =&gt;</code>.</li>
 </ol>
 
-<h2 id="developer_roadmap_workflow">Workflow and related decisions</h2>
-<p>Now let’s take a look at a high-level workflow, and consider some questions that you might have to decide before continuing.</p>
+<p>This is your encryption key.</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/EDG_dev_roadmap.png" alt="Developer's roadmap" /></p>
+<h3 id="known-devbeta-wiz-fail-installog">Setup Wizard fails because of no installation log</h3>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/m2-sample-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The Magento core team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div>
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31850">MAGETWO-31850</a> -->
+<p>In some cases (such as running the Setup Wizard in two browser windows or tab pages at the same time), the installation fails because it cannot create <code>install.log</code>. </p>
+
+<p>To work around this issue, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></p>
+
+<!-- <h3 id="known-devbeta-wiz-fail-session-save">session.save_path issue</h3>
+
+<!-- <a href="https://jira.corp.x.com/browse/MAGETWO-31851">MAGETWO-31851</a> and <a href="https://github.com/magento/magento2/issues/792">GitHub issue 792</a> -->
+<!-- There is a known issue that prevents the usage of <a href="http://php.net/manual/en/configuration.changes.php" target="_blank">php_admin_value</a> for some session configuration settings. Specifically, we are aware that the <a href="http://php.net/manual/en/session.configuration.php#ini.session.save-path" target="_blank">session.save_path</a> cannot be set with `php_admin_value` at this time.
+
+Workarounds:
+
+*   If you're using a hosting provider that does not allow you to change the value of `php_admin_value`, there is no workaround currently. However, the only known instance that we are aware of at this time is ISPManager/ISPConfig which appears to have a <a href="http://www.howtoforge.com/forums/showthread.php?t=61127" target="_blank">method of disabling</a> the `php_admin_value` setting.
+
+
+*   If you're running the Magento software on your own server and you can log in as a user with `root` privileges, you can replace the `session.save_path` setting with a dependency injection call as follows:
+
+1.  Log in to your Magento server as a user with `root` privileges.
+2.  Open `php.ini` in a text editor.
+3.  Search for `session.save_path`.
+4.  Comment it out.
+5.  Save your changes to `php.ini` and exit the text editor.
+6.  Restart your web server.
+7.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+8.  Add the following:
+
+        ‘session’ => [
+            ‘save_path’ => ‘<your session save path>'
+
+1.  Save your changes and exit the text editor.
+2.  Restart Apache.
+
+    Ubuntu: `sudo service apache2 restart`
+    CentOS: `sudo service httpd restart`
+
+The Magento system now uses dependency injection for session save settings.
+
+<h4>Finding php.ini</h4>
+
+If you don't know where `php.ini` is located, use the following steps:
+
+1.  If you haven't already done so, create <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a>.
+2.  Enter the following URL in your browser's address or location field:
+
+    <code>http://&lt;your web server IP or host name>/&lt;path to docroot>/phpinfo.php</code>
+
+3.  Look for the location of `php.ini`.
+
+    `php.ini` is typically specified as **Loaded Configuration File** in the displayed results.
+
+4.  As a user with <code>root</code> privileges, open `php.ini` in a text editor.
+5.  Locate the value of `open_basedir` and change it.
+6.  Save your changes to `php.ini`.
+7.  Restart the web server. -->
 
 
 		</div>
@@ -204,6 +331,34 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -214,21 +369,6 @@
 						
 						
 						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
 							
 							
 						
@@ -247,136 +387,27 @@
 								
 								
 							
-									<li class=""><span class="nav-header">Concepts</span></li>
+									<li class=""><span class="nav-header">Release Notes</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/new-features.html">New features</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/changes.html">Changes</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Fundamentals</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/issues-fixed.html">Issues fixed since last release</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
 						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">How to</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_create_req_config_files.html">Create the required config files (template)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_package_module.html">Package a module (template)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_verify_new_module.html">Verify the new module (template)</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/index-cache/indexing.html">Indexing</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
@@ -387,34 +418,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			
