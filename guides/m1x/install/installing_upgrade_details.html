@@ -45,14 +45,14 @@
 
 
 <h2 id="upgrade-ee-versions">Upgrade Roadmaps</h2>
-<ul><li>High-level roadmaps for upgrading to EE 1.13.0.2 or later are discussed in <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_landing.html#ee1300-11301-upgrade-to-ee11302-start" target="_blank">Understanding the Upgrade to EE 1.13.0.2 or EE 1.14</a>.</li>
+<ul><li>High-level roadmaps for upgrading to EE 1.13.0.2 or later are discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_landing.html#ee1300-11301-upgrade-to-ee11302-start" target="_blank">Understanding the Upgrade to EE 1.13.0.2 or EE 1.14</a>.</li>
 <li>To upgrade from EE 1.13.0.2 to EE 1.13.1.0 or later (including EE 1.14), see <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</li>
-<li>To upgrade to CE 1.8 or 1.9, see <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_ce18_upgrade-roadmap.html" target="_blank">Upgrade Roadmap for CE 1.8 or 1.9</a></li></ul>
+<li>To upgrade to CE 1.8 or 1.9, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_ce18_upgrade-roadmap.html" target="_blank">Upgrade Roadmap for CE 1.8 or 1.9</a></li></ul>
 
 <h2 id="prereq-tasks">Getting Ready For Your Upgrade</h2>
 <p>This section discusses how to get ready for your upgrade by backing up the database and customizations on the file system. The steps that follow do not affect your current production system. You can continue serving customers with no downtime.</p>
 <p>To get ready for your upgrade:</p>
-<ol><li>Get the Magento installation archive as discussed in <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get" target="_blank">Getting Magento CE or EE</a>.</li>
+<ol><li>Get the Magento installation archive as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get" target="_blank">Getting Magento CE or EE</a>.</li>
 <li>Install Magento in a different directory:
 <ul><li><em>Recommended</em>. Set up a new system (that is, another host) on which to install Magento.<br />
 The system should be identical to, if not better than, your current system. The new system must meet the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
@@ -222,7 +222,7 @@ yum --enablerepo=remi install httpd php php-common</pre>
 <h3 id="upgrade-manual-prereq">Upgrade Requirements</h3>
 <p>Before attempting your Magento upgrade, complete all the tasks discussed in:</p>
 <ul><li><a href="#prereq-tasks">Getting Ready for Your Upgrade</a></li>
-<li><a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get">Getting Magento CE or EE</a></li></ul>
+<li><a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get">Getting Magento CE or EE</a></li></ul>
 
 <h3 id="upgrade-manual-file-sys">Upgrading Assets on the Magento File System</h3>
 <p>This section discusses how to extract the Magento archive in your development system and manually copy over your customizations, themes, and extensions.</p>
@@ -412,14 +412,14 @@ chown -R <em>your-user-name</em>:<em>web-server-group</em> magento<br />
 chown -R myuser:www-data magento</code></li></ol> -->
 
 <h2 id="upgrade-manual-post-upgrade-ee11300">Running the URL Redirect Script (EE 1.13.0.0 and 1.13.0.1 only)</h2>
-<p>If you're upgrading to EE 1.14 from EE 1.13.0.0 or 1.13.0.1, see <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_from-ee11300-or-01.html" target="_blank">EE 1.13.1.0 Upgrade: Running the EE 1.13.0.0 or EE 1.13.0.1 URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
+<p>If you're upgrading to EE 1.14 from EE 1.13.0.0 or 1.13.0.1, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_from-ee11300-or-01.html" target="_blank">EE 1.13.1.0 Upgrade: Running the EE 1.13.0.0 or EE 1.13.0.1 URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
 
 <h2 id="upgrade-manual-run">Completing the Magento Upgrade</h2>
 <p>To complete the upgrade, go to your Magento base URL in a web browser. The first time you go to your Magento base URL, server-side scripts run to update the database. Depending on the amount of data in your database, this process can take a long time.</p>
 <div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Completing the upgrade requires downtime on your production system</em>. If you continue to take orders on your production system, there is no way to reconcile all of the new orders in the replacement development system. You can reduce the amount of downtime to a minimum by thoroughly testing your development system before shutting down production.</span></div>
 
 
-<p>If you're upgrading from a version earlier than CE 1.4 or EE 1.7, Magento <em>strongly recommends</em> the two-step upgrade approach discussed in <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_landing.html#upgrade-path">Upgrade Path</a>. In addition, you should expect the upgrade and testing process to take a long time and to expect more downtime for your production system.</p></p>
+<p>If you're upgrading from a version earlier than CE 1.4 or EE 1.7, Magento <em>strongly recommends</em> the two-step upgrade approach discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_landing.html#upgrade-path">Upgrade Path</a>. In addition, you should expect the upgrade and testing process to take a long time and to expect more downtime for your production system.</p></p>
 <p>Complete the following tasks in the order shown:</p>
 <ol><li><a href="#upgrade-manual-scripts">Running the Upgrade Scripts and Fixing Exceptions</a></li>
 <li><a href="#upgrade-manual-post-upgrade-11302">Running the URL Redirect Script <em>(EE 1.12.x and earlier only)</em></a></li>
@@ -464,7 +464,7 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <p>Continue with <a href="#upgrade-manual-cron">Setting Up Magento Cron Jobs</a>.</p>
 
 <h3 id="upgrade-manual-post-upgrade-11302">Running the URL Redirect Script (EE 1.12.x and Earlier Only)</h3>
-<p>If you're upgrading to EE 1.14 from EE 1.12 or earlier, see <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
+<p>If you're upgrading to EE 1.14 from EE 1.12 or earlier, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
 <!-- <h3 id="upgrade-manual-post-upgrade-ee112">Running a Full Reindex <em>(EE 1.13.0.0 or 1.13.0.1 only)</em></h3>
 <p>If you're upgrading from EE 1.13.0.0 or 1.13.0.1, enter the following commands as a user with <codE>root</code> privileges to fully reindex:</p>
 <ol><li>Change to the Magento installation directory.</li>
@@ -474,7 +474,7 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <li>Clear the Magento <code>var/</code> subdirectories as discussed in the next section.</li></ol> -->
 
 <h3 id="upgrade-manual-cron">Setting Up the Magento Cron Job</h3>
-<p>You should now set up your Magento cron job as discussed <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing_install.html#install-cron" target=_"blank">here</a>.</p>
+<p>You should now set up your Magento cron job as discussed <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_install.html#install-cron" target=_"blank">here</a>.</p>
 
 <h3 id="upgrade-manual-var">Clearing Magento var/ Subdirectories</h3>
 <p>Run the following command to clean the Magento <code>var/</code> subdirectories:</p>
@@ -511,7 +511,7 @@ Verify that all indexers have a status of Ready, as the following figure shows.<
 <ol><li>Test all extensions and customizations thoroughly.<br />
 Make sure the UIs perform as expected, make sure the extensions behave properly, and so on.</li>
 <li>Run some orders, making sure prices are calculated correctly and that orders go through the configured payment mechanisms.</li>
-<li>If you encounter issues, <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">get help</a>.</li>
+<li>If you encounter issues, <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">get help</a>.</li>
 <li>Before making the development system live, back up everything in your production and development environments again.<br />
 The way you make your development system live is up to you; a simple way is to update your DNS server to point to the development IP address.</li></ol>
 
@@ -534,7 +534,7 @@ The way you do this is up to you; typically, you can configure your DNS server t
 <p>Congratulations! You successfully upgraded! Review our <a href="http://www.magentocommerce.com/knowledge-base/entry/ce-19-and-ee-114-documentation-home">welcome page</a> to see the improvements you're getting.</p>
 
 <h2 id="install-privs-after">Setting Magento File System Permissions and Ownership After Upgrade</h2>
-<p>To secure your Magento installation after the upgrade, see <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/magento-installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
+<p>To secure your Magento installation after the upgrade, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/magento-installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
 
 <h2 id="upgrade-troubleshoot">Troubleshooting</h2>
 <p>There is a known issue after upgrading to EE 1.13.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
@@ -547,6 +547,6 @@ The way you do this is up to you; typically, you can configure your DNS server t
 <pre>[your Magento install dir]/app/code/core/Mage/GoogleCheckout/etc</pre></li>
 <li>When you log back in to the Admin Panel, everything works as expected.</li></ol>
 
-<p>In the event of any other issue during the upgrade, see <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</p>
+<p>In the event of any other issue during the upgrade, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</p>
  
 </p>
