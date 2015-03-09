@@ -1,41 +1,26 @@
-<head><style>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-table.confluenceTable { margin:5px; border-collapse:collapse; }
-table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
-table.confluenceTable th.confluenceTh,
-table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
-ul { list-style-type: square; }
-
-</style></head>
-<!-- Title: Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12 -->
-<!-- URL: ee-connect-patches -->
-
-
-<!-- <!DOCTYPE html>
-<html lang=en>
 <head>
-	<meta charset=utf-8>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<link rel="stylesheet" type="text/css" href="../css/images//stylesheet.css"/>
-	<link rel="stylesheet" href="../css/images/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="../css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-	<title>Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12 - DRAFT, DO NOT DISTRIBUTE</title>
+	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<title>Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12</title>
 
 </head>
 
 <body>
+	<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+
 <a name="top"></a>
 
-<img src="../css/images/header.png" width="1024" height="215" alt="header" />
+<h1>Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12</h1>
 
-<div id="content"> 
+<div id="content">
 
-<h1>Patches for Magento Enterprise Edition (EE) Versions 1.10 - 1.12</h1> -->
-
-
-
-<h2 id="patches">Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12</h2>
 <p>We'd like to draw your attention to new patches that were recently posted to the Partner Portal and Support Center. These patches deliver important improvements, such as improving security of the Magento Connect Manager and making it easier to install community-created translation packages.</p>
 
 <h3 id="ee113-patches-connect-general">General Magento Connect Patches</h3>
@@ -48,7 +33,7 @@ ul { list-style-type: square; }
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><tt>/app/code/community</tt> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="http:///pages/Magento/devdocs_internal/guides/m1x/install/magento-installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h4 id="ee113-patches-how-to-get">How to Get This Patch</h4>
 <p>To get this patch:</p>

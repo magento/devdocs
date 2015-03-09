@@ -1,0 +1,80 @@
+<head><style>
+
+table.confluenceTable { margin:5px; border-collapse:collapse; }
+table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
+table.confluenceTable th.confluenceTh,
+table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
+ul { list-style-type: square; }
+
+</style></head>
+
+<!-- url: install-privs-before -->
+<!-- title: Before You Install Magento: Recommended File System Ownership and Privileges -->
+
+ 
+<h4>Table of Contents</h4>
+<ul><li><a href="#overview">Overview</a></li>
+<li><a href="#terms">Terminology</a></li>
+<li><a href="#privs-before">Recommended Privileges and Ownership Before You Install Magento</a></li>
+<li><a href="#more-info">For More Information</a></li>
+</ul>
+
+<h2 id="overview">Overview</h2>
+<p>In a continuing effort to improve security and ease of use, Magento is updating its recommendations for file system permissions and ownership for the following Magento editions:</p>
+<ul><li>Magento Enterprise Edition (EE) versions 1.9 and later</li>
+<li>Magento Community Edition (CE) versions 1.4 and later</li></ul>
+<p>The guidelines discussed in this article apply to:</p>
+<ul><li>New installations of or upgrades to the previously listed Magento versions only.<br />
+The instructions might not work with older versions. If you have already installed Magento, see <a href="http://{{ site.m1xgdeurl }}install/magento-installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li>
+<li><a href="http://www.magentocommerce.com/system-requirements" target="_blank">Supported operating systems</a> only.</li></ul>
+
+<h2 id="terms">Terminology</h2>
+<p>This article uses the following terminology:</p>
+<dl>
+<dt>Hosted system</dt>
+<dd>A Magento server located on a hosting provider. A <em>hosted</em> system typically does not enable you to elevate to <tt>root</tt>. The web server typically runs as an ordinary user. Magento assumes you log in as this user to start and stop the web server and that you already own all the files and directories in the Magento installation directory. You can use <tt>chmod</tt> to change permissions on files and directories.</dd>
+<dt>Dedicated system</dt>
+<dd>A Magento server you control and operate. Unlike a hosted system, you can elevate to <tt>root</tt> and, as <tt>root</tt>, you can use the <tt>chown</tt> and <tt>chmod</tt> commands to set ownership and privileges in the Magento installation directory.</dd>
+</dl>
+
+
+<h2 id="privs-before">Recommended Privileges and Ownership Before You Install Magento</h2>
+<p>This section discusses Magento's pre-installation recommended privilege and ownership settings, which are as follows:</p>
+<ul><li>The Magento installation directory and all subdirectories are owned by the web server user.<br />
+This enables the web server to change files in these subdirectories but other users cannot access them (except a higher-level user such as <tt>root</tt>).</li>
+<li>All directories have 700 permissions (<tt>drwx------</tt>).<br />
+700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</li>
+<li>All files have 600 permissions (<tt>-rw-------</tt>).<br />
+600 permissions mean the owner can read and write but other users have no permissions.</li></ul>
+<p class="kb-notes"><strong>Note</strong>: On a dedicated system, all commands discussed in this article must be entered as a user with <tt>root</tt> privileges.</p>
+<p>After you extract the Magento installation package, set ownership and permissions as follows:</p>
+<ol><li><em>Dedicated Magento server only.</em> Find the web server user:
+<ul><li>Apache:
+<ul class="level3"><li>Ubuntu: <tt>grep User /etc/apache2/apache2.conf</tt></li>
+<li>CentOS: <tt>grep User /etc/httpd/conf/httpd.conf</tt><br />
+<p class="kb-notes"><strong>Note:</strong> The preceding paths are samples only. The paths to these <tt>.conf</tt> files on your system might be different. You can use the command <tt>whereis nginx</tt> to find the location of the configuration files.</p>
+</li></ul>
+<!-- <pre>ps -o "user group command" -C httpd,apache2</pre>
+The value in the USER column is the web server user name.<br /> -->
+Typically, the Apache web server user on CentOS is <tt>apache</tt> and the Apache web server user on Ubuntu is <tt>www-data</tt>.</li>
+<li>nginx: Open the nginx configuration file, typically <tt>/etc/nginx/nginx.conf</tt>. The <tt>user</tt> directive specifies the user name. It might run as the Apache user if Apache is installed on the same system.</li></ul>
+</li>
+<li>Change to the Magento installation directory.</li>
+<li><em>Dedicated Magento server only</em>. Enter the following command to set ownership of the Magento installation directory and all its subdirectories:
+<pre>chown -R <em>web-server-user-name</em> .</pre>
+For example, on Ubuntu where Apache usually runs as <tt>www-data</tt>, enter
+<pre>chown -R www-data .</pre></li>
+<li>Enter the following commands to set directory permissions to 700 and file permissions to 600:
+<pre>find . -type d -exec chmod 700 {} \;
+find . -type f -exec chmod 600 {} \;</pre></li></ol>
+
+<h2 id="more-info">For More Information</h2>
+<p>For more information about UNIX permissions, see the following resources:</p>
+<ul><li><a href="http://www.dartmouth.edu/~rc/help/faq/permissions.html" target="_blank">Tutorial</a></li>
+<li><a href="http://www.statslab.cam.ac.uk/~eva/unixinfo/perms.html" target="_blank">UNIX File Permissions</a></li>
+<li><a href="http://permissions-calculator.org/" target="_blank">Unix Permissions Calculator</a></li>
+<li><a href="http://unix.stackexchange.com/questions/39710/how-to-get-permission-number-by-string-rw-r-r" target="_blank">Article on unix.stackexchange</a></li></ul>
+
+
+</body>
+</html>
