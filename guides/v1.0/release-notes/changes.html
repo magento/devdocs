@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Changes</title>
+	<title>Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -138,7 +138,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Changes</h1>
+		<h1 class="page-heading">Release Notes</h1>
 			
 			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/release-notes/changes.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -154,6 +154,61 @@
 <ul>
   <li><a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
   <li><a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
+</ul>
+
+<h3 id="misc">Miscellaneous changes</h3>
+
+<ul>
+  <li>Refactored Catalog and related module to use mutable data object interface</li>
+  <li>Refactored Sales and related modules to use mutable data interfaces</li>
+  <li>LESS Compiler</li>
+  <li>Added automatic update in “pub/static” of changed “css/js/images” after materialization</li>
+  <li>Variable names are renamed to meet Magento Code Standards</li>
+  <li>Added client-side LESS files compilation to reduce page load time in developer mode</li>
+  <li>Add to cart operation became asynchronous and doesn`t reload page (AJAX call)</li>
+  <li>JS template engine became unified on Backend and Frontend</li>
+  <li>Increased unit test coverage for Magento/Indexer module</li>
+  <li>Version number info became accessible at a public URL</li>
+  <li>Existing Builders were replaced with DataFactories in Customer and Tax modules</li>
+  <li>Refactored controller actions in the Checkout and CMS modules</li>
+  <li>Increased coverage with static tests for <code>.phtml</code> files</li>
+  <li>Moved Cookie related functionality from <code>Theme</code> and <code>Core</code> modules into a new <code>Cookie</code> module</li>
+  <li>Moved minfication configuration settings to the <code>View</code> library level</li>
+</ul>
+
+<h3 id="framework">Changes to the Magento framework</h3>
+<ul>
+  <li>Moved/refactored Magento\IO\Sftp adapter into Filesystem library</li>
+  <li>Removed Magento IO library</li>
+  <li>Implemented Dynamic Types Binding in SOAP</li>
+  <li>Implemented Extensible Attributes generation</li>
+  <li>Improved Web API Related Code Quality</li>
+  <li>Moved Specific Helper Components From the Magento/Core Module to Magento/Framework</li>
+  <li>Replaced \Magento\Framework\Model\Exception with LocalizedException</li>
+  <li>Replaced obsolete exceptions</li>
+  <li>Config components are moved to new Magento_Config module</li>
+  <li>Variables components are moved to new Magento_Variable module</li>
+  <li>Preferences, shared instance creation and compiled factory accelerated by 3%</li>
+  <li>Fixed “HEADERS ALREADY SENT” error when controller action outputs directly</li>
+  <li>Layout Models are moved from Core module to appropriate modules</li>
+  <li>View components are moved from Core to Theme module</li>
+  <li>Rest of theme related configuration files are refactored</li>
+  <li>StoreManagerInterface is moved from Framework to App folder</li>
+  <li>ZF1 controller libraries are updated</li>
+  <li>Class definitions in multi-tenant mode are removed</li>
+  <li>DI configuration became more optimal: OM cached configuration uses the general pattern for all argument types in application</li>
+  <li>Varnish 4 configuration is updated</li>
+  <li>Layout Processing became more fast</li>
+  <li>HTML response minified</li>
+  <li>App Components and Specific Helper Components are moved from the Magento_Core Module</li>
+  <li>Added <code>setCustomAttribute</code> and <code>setCustomAttributes</code> methods to <code>ExtensibleDataInterface</code></li>
+  <li>Added setter methods to data object interfaces</li>
+  <li>Replaced <code>Builders</code> with <code>Factories</code></li>
+  <li>Added <code>DataObjectHelper.php</code> which contains the common set of methods of all builders</li>
+  <li>Refactored <code>__()</code> to return <code>Phrase</code> object</li>
+  <li>Allowed usage of <code>LocalizedException</code> on the framework’s library level</li>
+  <li>Added expiration/lifetime management of frontend resources</li>
+  <li>Unified MTF configurations format for Framework, TestCase variations and TestCase scenario configurations</li>
 </ul>
 
 <h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
@@ -279,46 +334,28 @@
 						
 							
 							
-						
-
-					
-					
-						
-						
-						
-						
+								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Highlights</a></li>
+				
 							
-														
 							
-								
-								
-								
-								
+								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/new-features.html">New features</a></li>
+				
 							
-									<li class=""><span class="nav-header">Release Notes</span></li>
-								
-								
 							
-								
-								
+								<li class=" active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/changes.html">Changes</a></li>
+				
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/new-features.html">New features</a></li>
-						
-								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/changes.html">Changes</a></li>
-						
-								
+								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/issues-fixed.html">Issues fixed since last release</a></li>
+				
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/issues-fixed.html">Issues fixed since last release</a></li>
-						
-								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
-						
-								
-								
-								
+								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/community.html">Community requests</a></li>
+				
+							
+							
+								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
+				
 							
 							
 						
