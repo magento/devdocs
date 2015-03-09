@@ -68,11 +68,11 @@
 <ul><li>Upgrading from EE 1.12 or earlier to EE 1.13.0.2 or later (including to EE 1.14)</li>
 <li>Upgrading from EE 1.13.0.1 to EE 1.13.0.2 or later (including to EE 1.14)</li></ul>
 <p>For more information about these upgrades, see <a href="#ee1300-11301-upgrade-to-ee11302-start">Understanding the Upgrade to EE 1.13.0.2 or EE 1.14</a>.</p>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>:  If you're upgrading from EE 1.13.0.2 to EE 1.13.1.0 or later, your upgrade doesn't involve changes to URL rewrites and you can skip some of the steps discussed in the other upgrades. Continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">Upgrading to and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)&mdash;Part 2</a>.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>:  If you're upgrading from EE 1.13.0.2 to EE 1.13.1.0 or later, your upgrade doesn't involve changes to URL rewrites and you can skip some of the steps discussed in the other upgrades. Continue with <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html" target="_blank">Upgrading to and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)&mdash;Part 2</a>.</div>
 
 
 <h3 id="upgrade-path-ce">Upgrading to Magento CE 1.9</h3>
-<p>Unless you're upgrading from an <a href="#upgrade-path-older">older CE version</a>, skip the remainder of this article and continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-upgrade-roadmap" target="_blank">Upgrade Roadmap for Community Edition (CE)</a>.</p>
+<p>Unless you're upgrading from an <a href="#upgrade-path-older">older CE version</a>, skip the remainder of this article and continue with <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_ce18_upgrade-roadmap.html" target="_blank">Upgrade Roadmap for Community Edition (CE)</a>.</p>
 
 <!-- <p class="kb-notes">&dagger;&mdash;EE 1.13.0.1 fixes a critical security issue and also corrects upgrade issues related to duplicate URL keys. Magento recommends you upgrade to EE 1.13.0.1 directly and as soon as possible to avoid the issues discussed in the <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-later-release-notes#ee113-11301" target="_blank">EE 1.13.0.1 Release Notes</a>.<br>
 If you're currently using EE 1.13.0.0, start over with a fresh installation or upgrade.<br>
@@ -87,8 +87,8 @@ If you're currently using an EE version earlier than EE 1.13.0.0, upgrade <em>di
 </p>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Use caution when upgrading from versions older than CE 1.7 or EE 1.12 because core code on which your extensions are based and database schema have likely changed.</div>
 
-<p>To upgrade to CE 1.8, skip the remainder of this article and continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
-<p>To upgrade from EE 1.13.0.2 to EE 1.13.1.0, skip the remainder of this article and continue with <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
+<p>To upgrade to CE 1.8, skip the remainder of this article and continue with <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
+<p>To upgrade from EE 1.13.0.2 to EE 1.13.1.0, skip the remainder of this article and continue with <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html" target="_blank">Upgrading to and Verifying Magento Community Edition 1.8 and Enterprise Edition 1.13&mdash;Part 2</a>.</p>
 
 <h2 id="ee1300-11301-upgrade-to-ee11302-start">Understanding the Upgrade to EE 1.13.0.2 or EE 1.14</h2>
 <p>The following sections apply <em>only</em> to the following Magento EE upgrades:</p>
@@ -141,7 +141,7 @@ If not, fix issues, retest, and upgrade again.</li></ol>
 <ul><li>Verify all extensions, themes, and customizations work.</li>
 <li>Place orders using all webstores and all payment methods.</li></ol>
 </li></ol>
-<p>Step-by-step instructions for your upgrade start <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">here</a>.</p>
+<p>Step-by-step instructions for your upgrade start <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html" target="_blank">here</a>.</p>
 
 <h3 id="ee11302-upgrade-113">Upgrading From EE 1.13.0.1</h3>
 <p>Following is a high-level roadmap to upgrade to EE 1.13.0.2 or later from EE 1.13.0.1. This upgrade involves tasks not required for other Magento upgrades; these new tasks are indicated in the roadmap.</p>
@@ -179,4 +179,4 @@ If not, fix issues, retest, and upgrade again.</li></ol>
 <ul><li>Only after upgrade is tested and all errors fixed should you consider using it as your production system.</li>
 <li><em>Back up</em> your system frequently during the upgrade process so you can roll back to a previous state in the event of errors or issues.</li>
 <li>To avoid unnecessary downtime and potential issues, <em>never</em> upgrade Magento in a live environment!</li></ul>
-<p>Step-by-step instructions for your upgrade start <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade" target="_blank">here</a>.</p>
+<p>Step-by-step instructions for your upgrade start <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html" target="_blank">here</a>.</p>
