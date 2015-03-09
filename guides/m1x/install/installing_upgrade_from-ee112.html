@@ -30,7 +30,7 @@
 <li>From EE 1.12.x or earlier to EE 1.14.0.0</li></ul>
 <p>If your upgrade is not in the preceding list, go back to <a href="http://www.magentocommerce.com/knowledge-base-/entry/ee11302-ce18-install-upgrade">Upgrading to and Verifying Magento Community Edition (CE) 1.8 and Enterprise Edition (EE) 1.13</a>.</p>
 <p>This article discusses how to run the URL redirect script that creates HTTP 301 (Moved Permanently) redirects for any duplicate product URL keys. This enables <strong>Previous</strong> links in your web store to work, for example.</p>
-<!-- <p>To run the URL redirect script, see <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a>. When you're done, continue with the next section. -->
+<!-- <p>To run the URL redirect script, see <a href="{{ site.m1xgdeurl }}install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a>. When you're done, continue with the next section. -->
 <p>To create redirects for your URLs, perform the following tasks in the order shown:</p>
 <ol><li><a href="#upgrade-manual-post-upgrade-11302-cron-verify">Verifying that cron is Disabled</a></li>
 <li><a href="#upgrade-manual-post-upgrade-11302-indexer">Changing Indexer Settings to Update When Scheduled</a></li>
@@ -117,9 +117,9 @@ This command helps you to determine if each thread behaves correctly. After each
   <ol><li style="list-style-type:lower-alpha">Select another value from the list. You can select any value <em>other than</em> <strong>Global</strong>.</li>
   <li style="list-style-type:lower-alpha">Click <strong>Save Attribute</strong>.</li>
   <li style="list-style-type:lower-alpha">Log out of the Admin Panel.</li>
-  <li style="list-style-type:lower-alpha">Re-export the database as discussed in <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html#prereq-tasks-prod-backup-db" target="_blank">Backing Up the Database</a>.</li>
-  <li style="list-style-type:lower-alpha">In the development system, drop and re-create the database as discussed in <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html#prereq-tasks-dev" target="_blank">Pre-Upgrade Tasks for Your Development Environment</a>.</li>
-  <li style="list-style-type:lower-alpha">Import the database you just exported as discussed in <a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-db" target="_blank">Updating the Magento Database</a>.</li>
+  <li style="list-style-type:lower-alpha">Re-export the database as discussed in <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#prereq-tasks-prod-backup-db" target="_blank">Backing Up the Database</a>.</li>
+  <li style="list-style-type:lower-alpha">In the development system, drop and re-create the database as discussed in <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#prereq-tasks-dev" target="_blank">Pre-Upgrade Tasks for Your Development Environment</a>.</li>
+  <li style="list-style-type:lower-alpha">Import the database you just exported as discussed in <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-db" target="_blank">Updating the Magento Database</a>.</li>
   <li style="list-style-type:lower-alpha">Try running the upgrade script again.</li></ol>
   </li>
   <li>If the value of the <strong>Scope</strong> list is <em>not</em> <strong>Global</strong>, the issue is likely that the category <code>url_key</code> attribute is set to global. To confirm this:
@@ -161,6 +161,6 @@ The following figure shows an example.<br />
 
 <h2 id="complete-upgrade">Completing Your Upgrade</h2>
 <p>Complete your upgrade:</p>
-<ol><li><a href="http://{{ site.m1xgdeurl }}install/installing_install.html#install-cron" target="_blank">Setting Up the Magento Cron Job</a></li>
-<li><a href="http://{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-var">Clearing Magento var/ Subdirectories</a></li>
+<ol><li><a href="{{ site.m1xgdeurl }}install/installing_install.html#install-cron" target="_blank">Setting Up the Magento Cron Job</a></li>
+<li><a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-var">Clearing Magento var/ Subdirectories</a></li>
 <li>Complete the remainder of the tasks on that page in the order shown</li></ol>
