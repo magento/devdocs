@@ -36,7 +36,7 @@ To use a terminal application to remotely access the Magento server:
 
 Here's what it looks like when you're logged in to a server as the `root` user with Cygwin on Windows.
 
-    <p><img src="{{ site.baseurl }}common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows"></p>
+<img src="{{ site.baseurl }}common/images/install_cygwin.png" alt="Logging in with Cygwin on Windows">
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

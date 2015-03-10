@@ -120,9 +120,9 @@ The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26
 
 1.	Install the MySQL database:
 
-		wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm
-		rpm -ivh mysql-community-release-el6-5.noarch.rpm
-		yum -y install mysql-server
+		yum -y update
+		sudo wget http://repo.mysql.com/mysql-community-release-el6-5.noarch.rpm && sudo rpm -ivh mysql-community-release-el6-5.noarch.rpm
+		sudo yum -y install mysql-server
 
 2.	Start MySQL.
 
@@ -131,6 +131,25 @@ The following procedure is based on <a href="http://sharadchhetri.com/2013/12/26
 3.	Set a password for the <tt>root</tt> user and set other security-related options. Enter the following command and follow the prompts on your screen to complete the configuration.
 
 		mysql_secure_installation
+
+4.	Verify the MySQL server version.
+
+		mysql -u root -p
+
+	Messages similar to the following display:
+
+		Welcome to the MySQL monitor.  Commands end with ; or \g.
+		Your MySQL connection id is 15
+		Server version: 5.6.23 MySQL Community Server (GPL)
+
+		Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+
+		Oracle is a registered trademark of Oracle Corporation and/or its
+		affiliates. Other names may be trademarks of their respective
+		owners.
+
+		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
 
 4.	Configure the Magento database instance as discussed in the next section.
 
