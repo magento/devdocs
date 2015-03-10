@@ -33,7 +33,7 @@ Contributions can take the form of new components or features, changes to existi
 
 The Magento 2 development team reviews all issues and contributions submitted by the community of developers in a first-in, first-out basis. During the review we might require clarifications from the contributor. If there is no response from the contributor for two weeks, the issue is closed.
 
-Often when the Magento 2 team works on reviewing the suggested changes, we will add a label to the issue to indicate to our internal team certain information, like status or who is working the issue. If you're ever curious what the differnet labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
+Often when the Magento 2 team works on reviewing the suggested changes, we will add a label to the issue to indicate to our internal team certain information, like status or who is working the issue. If you're ever curious what the different labels mean, see the <a href="#labels">table</a> below for an explanation of each one.
 
 <h2 id="requirements">Contribution requirements</h2>
 
