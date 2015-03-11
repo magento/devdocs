@@ -9,7 +9,7 @@ github_link: release-notes/community.md
 ---
 
 <h2 id="comm-req">Community requests</h2>
-Thanks to the Magento community for the following:
+We thank the Magento community for suggesting the following:
 
 *    [#899](https://github.com/magento/magento2/issues/899)&mdash;When accessing any category - error report generated
 *    [#986](https://github.com/magento/magento2/pull/986)&mdash;Make it possible to exclude classes (directories) for compilation
@@ -30,41 +30,42 @@ Thanks to the Magento community for the following:
 *   [#995](https://github.com/magento/magento2/pull/995)&mdash;Prevent a warning in activated developer mode when 'plugins' is no array
 *   [#866](https://github.com/magento/magento2/issues/866)&mdash;Configurable product attribute scope
 *   [#965](https://github.com/magento/magento2/pull/965)&mdash;extra tests for current interception behavior
-*    [#979](https://github.com/magento/magento2/pull/979) -- Adding OSL license file name
-*    [#978](https://github.com/magento/magento2/pull/978) -- Added ignore rule for media assets in wysiwyg directory
-*    [#877](https://github.com/magento/magento2/pull/877) -- Made Topmenu HTML Editable
-*    [#906](https://github.com/magento/magento2/pull/906) -- Add tests for View\Layout\Reader\Block and slight refactoring
-*    [#682](https://github.com/magento/magento2/issues/682) -- \Magento\Framework\Pricing\PriceCurrencyInterface depends on Magento application code
-*    [#581](https://github.com/magento/magento2/issues/581) -- About ByPercent.php under different currencies
-*    [#964](https://github.com/magento/magento2/pull/964) -- Improving documentation for jMeter performance tests
-*    [#871](https://github.com/magento/magento2/issues/871) -- Replace Symfony2/Yaml in composer
-*    [#990](https://github.com/magento/magento2/pull/990) -- add @see annotation before class to make it recognizable by IDE
-*    [#988](https://github.com/magento/magento2/pull/988) -- Prevent Varnish from creating cache variations of static files
-*    [#792](https://github.com/magento/magento2/issues/792) -- Failed to set ini option "session.save_path" to value
-*    [#796](https://github.com/magento/magento2/issues/796) -- install.log cannot be created with open_basedir restriction
-*    [#823](https://github.com/magento/magento2/issues/823) -- Installation bug
-*    [#920](https://github.com/magento/magento2/issues/920) -- "web setup wizard is not accessible" error message but the setup wizard is actually accessible
-*    [#829](https://github.com/magento/magento2/issues/829) -- [API] OAuth1.0 request token request failing / Consumer key has expired
-*    [#658](https://github.com/magento/magento2/issues/658) -- Inline translate malfunctioning
-*    [#950](https://github.com/magento/magento2/pull/950) -- Fix for the missed trailing end of line in indexer.php usage help text
-*    [#932](https://github.com/magento/magento2/pull/932) -- Migration tool - not all input has comments
-*    [#959](https://github.com/magento/magento2/pull/959) -- Replace UTF8 'en dash' with minus in error message
-*    [#911](https://github.com/magento/magento2/pull/911) -- Fix test assertion and slight cleanup refactoring
-*    [#936](https://github.com/magento/magento2/pull/936) -- Bugfix for regions with single quote in name
-*    [#902](https://github.com/magento/magento2/pull/902) -- Add integration test for View\Page\Config\Reader\Html
-*    [#925](https://github.com/magento/magento2/pull/925) -- Failed test due to Class not following the naming conventions
-*    [#943](https://github.com/magento/magento2/pull/943) -- magento2-925 Failed Test due to Class not following the naming conventions
-*    [#968](https://github.com/magento/magento2/pull/968) -- Apply pattern matching datasource config files
-*    [#949](https://github.com/magento/magento2/pull/949) -- Added 'status' command for cache cli script / Also improved readability
-*    [#876](https://github.com/magento/magento2/pull/876) -- [BUGFIX] Fixed german translation "Warenkorbrn"
-*    [#880](https://github.com/magento/magento2/pull/880) -- Naming fix in DI compiler.php - rename binary to igbinary to stay consistent
-*    [#913](https://github.com/magento/magento2/pull/913) -- Specify date fixture and fix expectations
-*    [#874](https://github.com/magento/magento2/pull/874) -- Prevent special characters finding their way into layout handle due to SKU being used
-*    [#903](https://github.com/magento/magento2/pull/903) -- Small cleanup refactoring
-*    [#905](https://github.com/magento/magento2/pull/905), [#907](https://github.com/magento/magento2/pull/907), [#908](https://github.com/magento/magento2/pull/908) -- Change interpret() return value to conform with Layout\ReaderInterface
-*    [#913](https://github.com/magento/magento2/pull/913) -- Specify date fixture and fix expectations
-*    [#853](https://github.com/magento/magento2/pull/853) -- Fix spelling error in Customer module xml
-*    [#858](https://github.com/magento/magento2/pull/858) -- Clicking CMS page in backend takes you to the dashboard
-*    [#858](https://github.com/magento/magento2/issues/816) -- Clicking CMS page takes you to the dashboard
-*    [#859](https://github.com/magento/magento2/pull/859) -- Fix email template creation date not being persisted
-*    [#860](https://github.com/magento/magento2/pull/860) -- Fix currency and price renderer
+*    [#979](https://github.com/magento/magento2/pull/979)&mdash;Adding OSL license file name
+*    [#978](https://github.com/magento/magento2/pull/978)&mdash;Added ignore rule for media assets in wysiwyg directory
+*    [#877](https://github.com/magento/magento2/pull/877)&mdash;Made Topmenu HTML Editable
+*    [#906](https://github.com/magento/magento2/pull/906)&mdash;Add tests for View\Layout\Reader\Block and slight refactoring
+*    [#682](https://github.com/magento/magento2/issues/682)&mdash;\Magento\Framework\Pricing\PriceCurrencyInterface depends on Magento application code
+*    [#581](https://github.com/magento/magento2/issues/581)&mdash;About ByPercent.php under different currencies
+*    [#964](https://github.com/magento/magento2/pull/964)&mdash;Improving documentation for jMeter performance tests
+*    [#871](https://github.com/magento/magento2/issues/871)&mdash;Replace Symfony2/Yaml in composer
+*    [#990](https://github.com/magento/magento2/pull/990)&mdash;add @see annotation before class to make it recognizable by IDE
+*    [#988](https://github.com/magento/magento2/pull/988)&mdash;Prevent Varnish from creating cache variations of static files
+*    [#792](https://github.com/magento/magento2/issues/792)&mdash;Failed to set ini option "session.save_path" to value
+*    [#796](https://github.com/magento/magento2/issues/796)&mdash;install.log cannot be created with open_basedir restriction
+*    [#823](https://github.com/magento/magento2/issues/823)&mdash;Installation bug
+*    [#920](https://github.com/magento/magento2/issues/920)&mdash;"web setup wizard is not accessible" error message but the setup wizard is actually accessible
+*    [#829](https://github.com/magento/magento2/issues/829)&mdash;[API] OAuth1.0 request token request failing / Consumer key has expired
+*    [#658](https://github.com/magento/magento2/issues/658)&mdash;Inline translate malfunctioning
+*    [#950](https://github.com/magento/magento2/pull/950)&mdash;Fix for the missed trailing end of line in indexer.php usage help text
+*    [#932](https://github.com/magento/magento2/pull/932)&mdash;Migration tool - not all input has comments
+*    [#959](https://github.com/magento/magento2/pull/959)&mdash;Replace UTF8 'en dash' with minus in error message
+*    [#911](https://github.com/magento/magento2/pull/911)&mdash;Fix test assertion and slight cleanup refactoring
+*    [#936](https://github.com/magento/magento2/pull/936)&mdash;Bugfix for regions with single quote in name
+*    [#902](https://github.com/magento/magento2/pull/902)&mdash;Add integration test for View\Page\Config\Reader\Html
+*    [#925](https://github.com/magento/magento2/pull/925)&mdash;Failed test due to Class not following the naming conventions
+*    [#943](https://github.com/magento/magento2/pull/943)&mdash;magento2-925 Failed Test due to Class not following the naming conventions
+*    [#968](https://github.com/magento/magento2/pull/968)&mdash;Apply pattern matching datasource config files
+*    [#949](https://github.com/magento/magento2/pull/949)&mdash;Added 'status' command for cache cli script / Also improved readability
+*    [#876](https://github.com/magento/magento2/pull/876)&mdash;[BUGFIX] Fixed german translation "Warenkorbrn"
+*    [#880](https://github.com/magento/magento2/pull/880)&mdash;Naming fix in DI compiler.php - rename binary to igbinary to stay consistent
+*    [#913](https://github.com/magento/magento2/pull/913)&mdash;Specify date fixture and fix expectations
+*    [#874](https://github.com/magento/magento2/pull/874)&mdash;Prevent special characters finding their way into layout handle due to SKU being used
+*    [#903](https://github.com/magento/magento2/pull/903)&mdash;Small cleanup refactoring
+*    [#905](https://github.com/magento/magento2/pull/905), [#907](https://github.com/magento/magento2/pull/907), [#908](https://github.com/magento/magento2/pull/908)&mdash;Change interpret() return value to conform with Layout\ReaderInterface
+*    [#913](https://github.com/magento/magento2/pull/913)&mdash;Specify date fixture and fix expectations
+*    [#853](https://github.com/magento/magento2/pull/853)&mdash;Fix spelling error in Customer module xml
+*    [#858](https://github.com/magento/magento2/pull/858)&mdash;Clicking CMS page in backend takes you to the dashboard
+*    [#858](https://github.com/magento/magento2/issues/816)&mdash;Clicking CMS page takes you to the dashboard
+*    [#859](https://github.com/magento/magento2/pull/859)&mdash;Fix email template creation date not being persisted
+*    [#860](https://github.com/magento/magento2/pull/860)&mdash;Fix currency and price renderer
+*    [#683](https://github.com/magento/magento2/pull/683)&mdash;CMS Router not routing correctly
