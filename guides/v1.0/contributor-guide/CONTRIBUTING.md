@@ -19,7 +19,7 @@ The following topics are included in the Guide:
 
 * <a href="#pull_request">Create a pull request</a>
 
-* <a href="#report_issue">Report an issue</a>
+* <a href="#report">Report an issue</a>
 
 * <a href="#labels">Labels applied by the Magento team</a>
 
