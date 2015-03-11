@@ -92,8 +92,7 @@ Refer to the following table for a description of each label. These labels are a
 
 <table style="width:100%">
    <colgroup>
-      <col width="10%">
-      <col width="20%">
+      <col width="30%">
       <col width="70%">
    </colgroup>
    <thead>
