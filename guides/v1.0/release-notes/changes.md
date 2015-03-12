@@ -10,13 +10,25 @@ github_link: release-notes/changes.md
 
 <h2 id="changes-contents">Contents</h2>
 
+*   <a href="#change-devrc-unit">Unit tests now located in module directories</a>
 *   <a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 *   <a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
 *	<a href="#admin">Improvments to the Magento Admin and Setup Wizard</a>
 *	<a href="#framework">Changes to the Magento framework</a>
 *	<a href="#misc">Miscellaneous changes</a>
 
-<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
+<h2 id="change-devrc-unit">Unit tests now located in module directories</h2>
+Code for unit tests must be located in a directory named `Test/Unit` in the module's directory structure. A sample follows:
+
+	__/<Magento root dir>
+	  |__/app/code/Magento/Catalog
+	    |__/Controller
+	    |__/Model
+	    |__/Test
+	      |__/Unit
+	        |   |-- SomeUnitTest.php
+
+<h2 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
 This change applies to the following situation only:
 
 *   You currently have version 0.42.0-beta10 or earlier
@@ -29,7 +41,7 @@ This change applies to the following situation only:
 
 For details, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 
-<h3 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
+<h2 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h2>
 
 To install the optional Magento 2 sample data, you must update `composer.json`, run `composer update`, and run the Magento 2 installer to update the database.
 
@@ -41,7 +53,7 @@ To install the optional Magento 2 sample data, you must update `composer.json`, 
 
 See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 
-<h3 id="admin">Improvements to the Magento Admin and Setup Wizard</h3>
+<h2 id="admin">Improvements to the Magento Admin and Setup Wizard</h2>
 *    Compressed and resized images
 *    Added new base styles for the Admin re-design
 *    Added the WAI-ARIA attributes are to the Search Autocomplete on the storefront
@@ -53,7 +65,7 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *	<a href="http://www.w3.org/WAI/intro/aria.php" target="_blank">WAI-ARIA</a> attributes are added to storefront Layered Navigation and Customer Dropdown, Frontend Product Page Tabs, Frontend Cart Summary collapsible panels, Frontend forms and notifications, Frontend Checkout pages
 *    Updated the design of Enable Cookies CMS page
 
-<h3 id="framework">Changes to the Magento framework</h3>
+<h2 id="framework">Changes to the Magento framework</h2>
 *    Moved/refactored the `Magento\IO\Sftp` adapter into the Filesystem library
 *    Removed the Magento IO library
 *    Implemented Extensible Attributes generation
@@ -87,7 +99,7 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *    Moved Debug Hints models from the Core module to the newly added Developer module
 *    Moved URL components, Factory, and EntityFactory from the Core module to the Magento Framework
 
-<h3 id="misc">Miscellaneous changes</h3>
+<h2 id="misc">Miscellaneous changes</h2>
 *	Refactored Catalog and related modules to use mutable data object interfaces
 *	Refactored Sales and related modules to use mutable data interfaces
 *    Added client-side LESS files compilation to reduce page load time in developer mode
