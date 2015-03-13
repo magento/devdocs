@@ -185,7 +185,7 @@ dl { margin-left:0px; }
 
 /* This sort of works */
 
-/*ul li
+ul li
 {
   background-image: url("bullet-round-orange.png");
   background-repeat: no-repeat;
@@ -210,7 +210,7 @@ ul li, ul li, ul li
   background-position: 0px 6px;
   padding-left: 16px;
   margin-bottom:6px;
-}*/
+}
 
 /*ul:nth-child(1) li {  
   background-image: url("bullet-round-orange.png");
