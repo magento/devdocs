@@ -104,9 +104,9 @@ If you're currently using an EE version earlier than EE 1.13.0.0, upgrade <em>di
 <h3 id="overview-ee11302-upgrade-url-keys">Why This Upgrade is Different</h3>
 <p>This section discusses why the upgrade to EE 1.13.0.2 or later requires you to perform different tasks than previous upgrades.</p>
 <p>One of the results of the change to the way URL keys are handled is that URLs for the same products or categories might need to change from the URLs in the version you're upgrading from. Following are scenarios that might cause URL keys to change:</p>
-<ul><li>All product keys must be unique. Any duplicate product URL keys are changed. For example, if two products had the URL key <tt>nike-shoes</tt>, one of them is changed to a URL key like <tt>nike-shoes-1</tt> by the URL redirect scripts. This also resolves any conflicts (for example, if you already had another product with key <tt>nike-shoes-1</tt>).</li>
+<ul><li>All product keys must be unique. Any duplicate product URL keys are changed. For example, if two products had the URL key <code>nike-shoes</code>, one of them is changed to a URL key like <code>nike-shoes-1</code> by the URL redirect scripts. This also resolves any conflicts (for example, if you already had another product with key <code>nike-shoes-1</code>).</li>
 <li>Categories at the same level in the hierarchy in the same store view must have unique URL keys.<br />
-For example, if you have a <tt>shoes</tt> category with URL key <tt>shoes</tt> in English store view, <tt>schuhe</tt> in the German store view and <tt>schuhe</tt> in the Swiss store view, the upgrade scripts change one of the category's URL keys to something like <tt>schuhe-1</tt>.</li></ul>
+For example, if you have a <code>shoes</code> category with URL key <code>shoes</code> in English store view, <code>schuhe</code> in the German store view and <code>schuhe</code> in the Swiss store view, the upgrade scripts change one of the category's URL keys to something like <code>schuhe-1</code>.</li></ul>
 <p>To ensure customers and search engines will be directed to the correct page, Magento provides a script that creates HTTP 301 (Moved Permanently) redirects for URLs that are changed.</p>
 <p>In other words, after the upgrade, all pre-upgrade URLs work but they might be different than they were before you upgraded. </p>
 <p>The way you upgrade depends on what EE version you're starting from. The following roadmaps provide a high-level overview of the upgrade process:</p>
@@ -124,21 +124,24 @@ The system should be identical to, if not better than, your current system. The 
 <li>In your current production environment:
 <ol><li style="list-style-type:lower-alpha">Back up your Magento database.</li>
 <li style="list-style-type:lower-alpha">Archive the file system.<br />
-This includes the <tt>media</tt> directory and subdirectories; all extensions and customizations; and all custom themes.</li></ol>
+This includes the <code>media</code> directory and subdirectories; all extensions and customizations; and all custom themes.</li></ol>
 </li>
 <li>In the development or test environment:
 <ol><li style="list-style-type:lower-alpha">Create a new, empty database instance.</li>
 <li style="list-style-type:lower-alpha">Import the production database tables into the development database instance.</li>
-<li style="list-style-type:lower-alpha">Copy your production <tt>media</tt> directory, extensions, themes, and other customizations to the development system.</li>
-<li style="list-style-type:lower-alpha">Copy <tt>local.xml</tt> to <tt>[your Magento install dir]/app/etc</tt> and edit it if necessary to reference the production database instance.</li>
+<li style="list-style-type:lower-alpha">Copy your production <code>media</code> directory, extensions, themes, and other customizations to the development system.</li>
+<li style="list-style-type:lower-alpha">Copy <code>local.xml</code> to <code>[your Magento install dir]/app/etc</code> and edit it if necessary to reference the production database instance.</li>
 <img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Stop all cron jobs.</li>
 <li style="list-style-type:lower-alpha">In a web browser, go to your new base URL.</li>
 <li style="list-style-type:lower-alpha">Wait for upgrade scripts to run.</li>
 <img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Set all indexers to update when scheduled (<strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Index Management</strong>, <strong>Update when scheduled</strong>.</li>
-<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects: <tt>[your Magento install dir]/php -f shell/url_migration_to_1_13.php - <em>thread-count</em></tt><br />
+<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects: 
+<pre>[your Magento install dir]/php -f shell/url_migration_to_1_13.php - <em>thread-count</em></pre>
 <em>thread-count</em> is the number of CPU cores in your Magento server, minus 1, to a maximum of 15.</li>
-<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line: <tt>[your Magento install dir]/php -f shell/indexer.php -- --reindexall</tt></li>
-<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line: <tt>[your Magento install dir]/var/cache /var/full_page_cache /var/locks</tt></li>
+<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line: 
+<pre>[your Magento install dir]/php -f shell/indexer.php -- --reindexall</pre></li>
+<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line: 
+<pre>[your Magento install dir]/var/cache /var/full_page_cache /var/locks</pre></li>
 <li style="list-style-type:lower-alpha">Enable cron and make sure the Magento cron job is set up.</li>
 <li style="list-style-type:lower-alpha">Verify the upgraded system is now identical to the production system.<br />
 If not, fix issues, retest, and upgrade again.</li></ol>
@@ -160,19 +163,22 @@ The system should be identical to, if not better than, your current system. The 
 <li>In your current production environment:
 <ol><li style="list-style-type:lower-alpha">Back up your Magento database.</li>
 <li style="list-style-type:lower-alpha">Archive the file system.<br />
-This includes the <tt>media</tt> directory and subdirectories; all extensions and customizations; and all custom themes.</li></ol>
+This includes the <code>media</code> directory and subdirectories; all extensions and customizations; and all custom themes.</li></ol>
 </li>
 <li>In the development or test environment:
 <ol><li style="list-style-type:lower-alpha">Create a new, empty database instance.</li>
 <li style="list-style-type:lower-alpha">Import the production database tables into the development database instance.</li>
-<li style="list-style-type:lower-alpha">Copy your production <tt>media</tt> directory, extensions, themes, and other customizations to the development system.</li>
-<li style="list-style-type:lower-alpha">Copy <tt>local.xml</tt> to <tt>[your Magento install dir]/app/etc</tt> and edit it if necessary to reference the production database instance.</li>
+<li style="list-style-type:lower-alpha">Copy your production <code>media</code> directory, extensions, themes, and other customizations to the development system.</li>
+<li style="list-style-type:lower-alpha">Copy <code>local.xml</code> to <code>[your Magento install dir]/app/etc</code> and edit it if necessary to reference the production database instance.</li>
 <img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Stop all cron jobs.</li>
-<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects: <tt>[your Magento install dir]/php -f shell/url_migration_from_1_13_0_0_to_1_13_0_2.php</tt></li>
+<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects: 
+<pre>[your Magento install dir]/php -f shell/url_migration_from_1_13_0_0_to_1_13_0_2.php</pre></li>
 <li style="list-style-type:lower-alpha">In a web browser, go to your new base URL.</li>
 <li style="list-style-type:lower-alpha">Wait for upgrade scripts to run.</li>
-<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line: <tt>[your Magento install dir]/php -f shell/indexer.php -- --reindexall</tt></li>
-<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line: <tt>[your Magento install dir]/var/cache /var/full_page_cache /var/locks</tt></li>
+<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line: 
+<pre>[your Magento install dir]/php -f shell/indexer.php -- --reindexall</pre></li>
+<img src="{{ site.baseurl }}common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Clear the following directories from the command line: 
+<pre>[your Magento install dir]/var/cache /var/full_page_cache /var/locks</pre></li>
 <li style="list-style-type:lower-alpha">Enable cron and make sure the Magento cron job is set up.</li>
 <li style="list-style-type:lower-alpha">Verify the upgraded system is now identical to the production system.<br />
 If not, fix issues, retest, and upgrade again.</li></ol>
