@@ -152,14 +152,48 @@
 		<h2 id="changes-contents">Contents</h2>
 
 <ul>
+  <li><a href="#change-devrc-unit">Unit tests now located in module directories</a></li>
   <li><a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
   <li><a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
-  <li><a href="#admin">Improvments to the Magento Admin and Setup Wizard</a></li>
+  <li><a href="#admin">Improvements to the Magento Admin and Setup Wizard</a></li>
   <li><a href="#framework">Changes to the Magento framework</a></li>
   <li><a href="#misc">Miscellaneous changes</a></li>
 </ul>
 
-<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
+<h2 id="change-devrc-unit">Unit tests now located in module directories</h2>
+<p>Code for unit tests must be located in a directory named <code>Test/Unit</code> in the module’s directory structure. A sample follows:</p>
+
+<pre><code>__/&lt;Magento root dir&gt;
+  |__/app/code/Magento/Catalog
+    |__/Controller
+    |__/Model
+    |__/Test
+      |__/Unit
+        |   |-- SomeUnitTest.php
+</code></pre>
+
+<p>To transition your existing tests to using the new directories, we recommend the following:</p>
+
+<ol>
+  <li>Resolve any conflicts between your working branch and the master or develop branch.</li>
+  <li>
+    <p>Refactor your tests by moving them to the directories.  </p>
+
+    <p>Be sure to update the namespace of the test.</p>
+  </li>
+  <li>
+    <p>Fix any references to the unit <code>TestFramework</code> files.  </p>
+
+    <p>Note that they moved from <code>Magento\TestFramework\</code> to <code>Magento\Framework\TestFramework\Unit\</code></p>
+  </li>
+  <li>
+    <p>Fix any references to classes that were in the same namespace as your tests.  </p>
+
+    <p>Because the test namespace changed, you must add an alias for the old namespace.</p>
+  </li>
+</ol>
+
+<h2 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
 <p>This change applies to the following situation only:</p>
 
 <ul>
@@ -197,7 +231,7 @@
 
 <p>For details, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></p>
 
-<h3 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
+<h2 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h2>
 
 <p>To install the optional Magento 2 sample data, you must update <code>composer.json</code>, run <code>composer update</code>, and run the Magento 2 installer to update the database.</p>
 
@@ -209,7 +243,7 @@
 
 <p>See <a href="/pages/Magento/devdocs_internal/guides/v1.0//install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
 
-<h3 id="admin">Improvements to the Magento Admin and Setup Wizard</h3>
+<h2 id="admin">Improvements to the Magento Admin and Setup Wizard</h2>
 <ul>
   <li>Compressed and resized images</li>
   <li>Added new base styles for the Admin re-design</li>
@@ -223,7 +257,7 @@
   <li>Updated the design of Enable Cookies CMS page</li>
 </ul>
 
-<h3 id="framework">Changes to the Magento framework</h3>
+<h2 id="framework">Changes to the Magento framework</h2>
 <ul>
   <li>Moved/refactored the <code>Magento\IO\Sftp</code> adapter into the Filesystem library</li>
   <li>Removed the Magento IO library</li>
@@ -259,7 +293,7 @@
   <li>Moved URL components, Factory, and EntityFactory from the Core module to the Magento Framework</li>
 </ul>
 
-<h3 id="misc">Miscellaneous changes</h3>
+<h2 id="misc">Miscellaneous changes</h2>
 <ul>
   <li>Refactored Catalog and related modules to use mutable data object interfaces</li>
   <li>Refactored Sales and related modules to use mutable data interfaces</li>
@@ -286,7 +320,7 @@ Added Varnish 4 support </li>
       <li>Moved Validator Factory from the <code>Magento_Core</code> module to the Magento Framework</li>
     </ul>
   </li>
-  <li>Added PHPMD and PHPCS annotations to the codebase</li>
+  <li>Added PHPMD and PHPCS annotations to the code base</li>
   <li>Removed the ability to process online payments</li>
 </ul>
 

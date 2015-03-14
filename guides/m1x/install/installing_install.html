@@ -24,6 +24,8 @@
 <!-- URL: ce18-and-ee113-installing -->
 
 <h1>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</h1>
+<p><a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0//m1x/install/installing_install.html" target="_blank">Edit this page on GitHub <img src="/pages/Magento/devdocs_internal/common/images/github_icon.png" height="15px"></a></p>
+
 
 <div class="toc"> <h4 class="toc">Contents</h4>
 <ul>
@@ -279,9 +281,9 @@ For example, to copy Magento skin files from <code>/home/username/skin</code> to
 <pre>cd [your Magento install dir]/skin
 cp -R /home/username/skin/* .</pre></li>
 <li>Import the CE or EE sample data into your MySQL database as follows:
-<pre>mysql -u root -p <em>magento-db-instance-name</em> &lt; <em>path-to-sample-data-extract-dir/sample-data-filename</em>.sql</pre>
-EE 1.13 example
-<pre>mysql -u root -p magento &lt; /home/username/magento_enterprise_sample_data_for_1.12.0.0.sql</pre></li></ol>
+<pre>mysql -u root -p <em>magento-db-instance-name</em> &lt; <em>path-to-sample-data-extract-dir</em>/<em>sample-data-filename</em>.sql</pre>
+EE 1.14 example
+<pre>mysql -u root -p magento &lt; /home/username/magento_sample_data_for_1.14.0.0.sql</pre></li></ol>
 
 <h3 id="install-privs">Setting File and Directory Ownership and Privileges</h3>
 <p>Magento recommends the following ownership and privilege settings for files and directories in the Magento installation directory:</p>
@@ -586,7 +588,7 @@ For example, for CentOS,<br />
 <li>Save your changes to the crontab and exit the editor.</li></ol>
 
 <h2 id="install-privs-after">Setting Magento File System Permissions and Ownership After Installation</h2>
-<p>To secure your Magento installation after the installation, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/magento-installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
+<p>To secure your Magento installation after the installation, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
 
 <h2 id="install-troubleshoot">Troubleshooting</h2>
 <p>This section discusses some suggestions for issues you might encounter when installing Magento.</p>
