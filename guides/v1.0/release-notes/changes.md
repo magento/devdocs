@@ -28,6 +28,21 @@ Code for unit tests must be located in a directory named `Test/Unit` in the modu
 	      |__/Unit
 	        |   |-- SomeUnitTest.php
 
+To transition your existing tests to using the new directories, we recommend the following:
+
+1. Resolve any conflicts between your working branch and the master or develop branch.
+2. Refactor your tests by moving them to the directories.  
+
+	Be sure to update the namespace of the test.
+
+3. Fix any references to the unit `TestFramework` files.  
+
+	Note that they moved from `Magento\TestFramework\` to `Magento\Framework\TestFramework\Unit\`
+
+4. Fix any references to classes that were in the same namespace as your tests.  
+
+	Because the test namespace changed, you must add an alias for the old namespace.
+
 <h2 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
 This change applies to the following situation only:
 
