@@ -82,7 +82,7 @@
 <li>Review the MySQL developer site's recommendations for <a href="http://dev.mysql.com/doc/refman/5.0/en/password-security-user.html" target="_blank">MySQL password security</a>.</li>
 <li>Before you continue, make sure the system on which you install Magento meets the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li></ul>
 <p>Complete the tasks discussed in the following sections in the order shown:</p>
-<ol><li>Installing and Configuring Required Prerequisite Software for <a href="{{ site.m1xgdeurl }}install/installing_req-prereq_ubuntu.html" target="_blank">Ubuntu</a> or <a href="{{ site.m1xgdeurl }}install/installing_req-prereq_centos.html" target="_blank">CentOS</a></li>
+<ol><li>Installing and configuring required prerequisite Ssoftware for <a href="{{ site.m1xgdeurl }}install/installing_req-prereq_ubuntu.html" target="_blank">Ubuntu</a> or <a href="{{ site.m1xgdeurl }}install/installing_req-prereq_centos.html" target="_blank">CentOS</a></li>
 <li><a href="#install-prereq-selinux">SELinux Prerequisite</a></li>
 <li><a href="#install-iptables">Opening Ports In Your Firewall</a></li>
 <li><a href="#install-optional">Installing Optional Software</a></li>
@@ -94,17 +94,18 @@
 
 <h3 id="install-prereq-selinux">SELinux Prerequisite</h3>
 <p><a href="http://selinuxproject.org/page/Main_Page" target="_blank">Security Enhanced Linux (SELinux)</a> enables CentOS and Ubuntu administrators greater access control over their servers. If you're using SELinux <em>and</em> Apache must initiate a connection to another host, you must run the commands discussed in this section.</p>
-<p>If Apache and the database server are on the same host, you can skip this section and continue with <a href="#install-prereq-software">Installing and Configuring Required Prerequisite Software</a>.</p>
+<p>If Apache and the database server are on the same host, you can skip this section and continue with <a href="#install-iptables">Opening Ports In Your Firewall</a>.</p>
 <p>To enable Apache to initiate a connection to another host with SELinux enabled:</p>
 <ol><li>To determine if SELinux is enabled, use the following command:
-<code>getenforce</code><br />
+<pre>getenforce</pre>
 <code>Enforcing</code> displays to confirm that SELinux is running.</li>
 <li>Enter one of the following commands:
-<code>#CentOS<br />
-setsebool -P httpd_can_network_connect=1<br />
-<br />
-#Ubuntu<br />
-setsebool -P apache2_can_network_connect=1</code></li></ol>
+<ul><li>CentOS
+<pre>setsebool -P httpd_can_network_connect=1</pre></li>
+<li>Ubuntu
+<pre>setsebool -P apache2_can_network_connect=1</pre></li>
+</ul>
+</li></ol>
 
 <h3 id="install-iptables">Opening Ports In Your Firewall</h3>
 <p>Depending on your security requirements, you might find it necessary to open port 80 and other ports in your firewall. Because of the sensitive nature of networking security, Magento strongly recommends you consult with your IT department before proceeding. Following are some suggested references:</p>
@@ -439,7 +440,7 @@ A sample follows.<br />
 </tr>
 <tr>
   <td>Use Web Server (Apache) Rewrites</td>
-  <td>Select this check box to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><code>mod_rewrite</code></a> module. You can select this check box only if you configured Apache to use server rewrites as discussed in <a href="#install-prereq-software">Installing and Configuring Required Prerequisite Software</a>.</td>
+  <td>Select this check box to enable the use of the Apache <a href="http://httpd.apache.org/docs/2.2/rewrite/" target="_blank"><code>mod_rewrite</code></a> module. You can select this check box only if you configured Apache to use server rewrites.</td>
 </tr>
 <tr>
   <td>Use Secure URLs (SSL)</td>
