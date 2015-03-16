@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Templates customization walkthrough</title>
+	<title>Customizing styles illustration</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/ZZZ-ignore/css-practice.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Templates customization walkthrough</h1>
+		<h1 class="page-heading">Customizing styles illustration</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/frontend-dev-guide/templates/template-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/frontend-dev-guide/css-topics/css-practice.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,55 +149,57 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Overview</h2>
-<p>This topic walks you through how to customize a template.</p>
+		<h2 id="practice_over">Overview</h2>
 
-<h2>Template customization walkthrough</h2>
+<p>This topic features a step-by-step illustration of how to change a theme color scheme using Magento UI library.</p>
 
-<p>To customize a template:</p>
+<h2>Changing theme color scheme</h2>
 
-<ol>
-  <li>
-    <p>Locate the template which is associated with the page/block you want to change using <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ" target="_blank">template hints</a>.</p>
-  </li>
-  <li>
-    <p>Copy the template to your theme folder according to the <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-override.html#template-convention" target="_blank">template storing convention</a>.</p>
-  </li>
-  <li>
-    <p>Make the required changes.</p>
-  </li>
-</ol>
+<p>OrangeCo created a custom theme, which inherits from the default Blank theme.
+The following image illustrates how store pages look when the Blank theme is applied:</p>
 
-<p>To add a new template in a theme:</p>
+<p><img src="/pages/Magento/devdocs_internal/common/images/practice_blank.png" alt="product page when Blank applied" /></p>
 
-<ol>
-  <li>
-    <p>Add a template in your theme directory according to the template storing convention. </p>
-  </li>
-  <li>
-    <p>Assign your template to a block in the <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-override.html#template-layout" target="_blank">corresponding layout file</a>. </p>
-  </li>
-</ol>
+<p>In their Grey theme, OrangeCo wants to change the color scheme from white to grey.</p>
 
-<h2>Walkthrough illustration: adding a message to the customer review form</h2>
-<p>A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews. </p>
+<p>The Grey theme directory is <code>app/design/frontend/OrangeCo/grey</code>.</p>
 
-<p>The following image illustrates how the default review form looks like:</p>
+<p>OrangeCo decide to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
+To do this, they added an overriding <code>_theme.less</code> file in the <code>app/design/frontend/OrangeCo/grey/web/css/source</code> directory, with the following content:</p>
+<pre>
+//  Color nesting
+@page__background-color: @color-gray20;
+@primary__color: @color-gray80;
+@border-color__base: @color-gray76;
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/template_walk_without_text.png" alt="a default review form" /></p>
+@link__color: @color-gray56;
+@link__hover__color: darken(@link__color, 6%);
 
-<p>To add the text, OrangeCo needs to override the default review form template in the Orange theme. </p>
+//  Buttons
+@button__color: @color-gray20;
+@button__background: @color-gray80;
+@button__border: 1px solid @border-color__base;
 
-<p>First, they copy the <code>form.phtml</code> template from <code>app/code/Magento/Review/view/frontend/templates</code> to the corresponding subdirectory in the Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Review/templates</code>.</p>
+//  Primary button
+@button-primary__background: @color-orange-red1;
+@button-primary__border: 1px solid @color-orange-red2;
+@button-primary__color: @color-white;
+@button-primary__hover__background: @color-orange-red4;
+@button-primary__hover__border: 1px solid @color-orange-red2;
+@button-primary__hover__color: @color-white;
 
-<p>In the theme <code>form.phtml</code> file they add the HTML snippet with the message before the <code>&lt;form&gt;</code>:</p>
+//  Navigation
+@navigation__background: @color-gray40;
+@navigation-desktop-level0-item__color: @color-gray80;
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/template-sample-code.png" alt="a HTML snippet you need to add" /></p>
+//  Tabs
+@tab-control__background-color: @page-bg-color;
 
-<p>Here’s how the form will look when the Orange theme is applied in a store:</p>
+</pre>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/template_with_text.png" alt="Review form with the new message added" /></p>
+<p>After the Grey theme is applied, store pages will look like following:</p>
 
+<p><img src="/pages/Magento/devdocs_internal/common/images/css_practice.png" alt="product page when Grey applied" /></p>
 
 
 		</div>
@@ -383,7 +385,7 @@
 								
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
 						
 								
 							
@@ -443,7 +445,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-practice.html">Customizing styles illustration</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-practice.html">Customizing styles illustration</a></li>
 						
 								
 								

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Templates customization walkthrough</title>
+	<title>Cascading style sheets (CSS)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/ZZZ-ignore/css-overview.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Templates customization walkthrough</h1>
+		<h1 class="page-heading">Cascading style sheets (CSS)</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/frontend-dev-guide/templates/template-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/frontend-dev-guide/css-topics/css-overview.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,54 +149,61 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Overview</h2>
-<p>This topic walks you through how to customize a template.</p>
+		<h2 id="overview">Overview</h2>
 
-<h2>Template customization walkthrough</h2>
+<p>Magento 2 incorporates <a href="http://lesscss.org/" target="_blank">LESS</a>, a CSS pre-processor that simplifies the management of complex CSS files.
+So to define styles of a Magento store, you can use both, CSS and LESS stylesheets.</p>
 
-<p>To customize a template:</p>
+<p>Magento application provides a built-in LESS UI library, which you can optionally extend and build upon it. </p>
+
+<p>To customize storefront styles, you need to <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html" target="_blank">create a custom design theme</a>. Then you can use one of the following approaches:</p>
+
+<ul>
+  <li>If your theme <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the default Blank or any other theme, you can override the default LESS files. For example to <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files. </li>
+  <li>Create your own LESS files using the built-in LESS preprocessor. </li>
+  <li>Create your own CSS files, optionally having compiled them using the third-party CSS preprocessor.</li>
+</ul>
+
+<h2 id="css_walk">Change styles: walkthrough</h2>
+
+<p>Here is a simple illustration of changing styles using the first approach: changing the color of the buttons of a certain class.
+In the default Blank theme, the buttons of the <code>.action.primary</code> class, so called <em>primary</em> buttons, are blue. The following image illustrates this:</p>
+
+<div style="border: 1px solid #ABABAB">
+<img src="/pages/Magento/devdocs_internal/common/images/css_over1.png" alt="The default view of a product page, with the orange Add to Cart button" />
+</div>
+
+<p>OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:</p>
 
 <ol>
-  <li>
-    <p>Locate the template which is associated with the page/block you want to change using <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/debug-theme.html#debug-theme-templ" target="_blank">template hints</a>.</p>
-  </li>
-  <li>
-    <p>Copy the template to your theme folder according to the <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-override.html#template-convention" target="_blank">template storing convention</a>.</p>
-  </li>
-  <li>
-    <p>Make the required changes.</p>
-  </li>
+  <li>Create a new Orange theme, which inherits from the default Blank theme.</li>
+  <li>In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:</li>
 </ol>
+<pre>
+//  Primary button
+@button-primary-color: @color-white;
+@button-primary-color-hover: @color-white;
+@button-primary-background: @color-orange-red1;
+@button-primary-background-hover: @color-orange-red4;
+@button-primary-border: 1px solid @color-orange-red2;
+@button-primary-border-hover: 1px solid @color-orange-red2;
+</pre>
 
-<p>To add a new template in a theme:</p>
+<p>When OrangeCo <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the primary buttons will look like on the following image:</p>
 
-<ol>
-  <li>
-    <p>Add a template in your theme directory according to the template storing convention. </p>
-  </li>
-  <li>
-    <p>Assign your template to a block in the <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-override.html#template-layout" target="_blank">corresponding layout file</a>. </p>
-  </li>
-</ol>
+<div style="border: 1px solid #ABABAB">
+<img src="/pages/Magento/devdocs_internal/common/images/css_over2.png" alt="The customized view of a product page, with the grey Add to Cart button" />
+</div>
 
-<h2>Walkthrough illustration: adding a message to the customer review form</h2>
-<p>A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews. </p>
+<p>Other topics of this chapter describe the following:</p>
 
-<p>The following image illustrates how the default review form looks like:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/template_walk_without_text.png" alt="a default review form" /></p>
-
-<p>To add the text, OrangeCo needs to override the default review form template in the Orange theme. </p>
-
-<p>First, they copy the <code>form.phtml</code> template from <code>app/code/Magento/Review/view/frontend/templates</code> to the corresponding subdirectory in the Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Review/templates</code>.</p>
-
-<p>In the theme <code>form.phtml</code> file they add the HTML snippet with the message before the <code>&lt;form&gt;</code>:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/template-sample-code.png" alt="a HTML snippet you need to add" /></p>
-
-<p>Here’s how the form will look when the Orange theme is applied in a store:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/template_with_text.png" alt="Review form with the new message added" /></p>
+<ul>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are connected in the Magento application. </li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a>: how the built-in LESS preprocessor works</li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI Library</a>: how to use the Magento styles library in your custom themes</li>
+  <li>Using Custom Fonts: how to add custom fonts <!-- ADDLINK --></li>
+  <li>Practice: an example of solving a typical CSS customization task. <!-- ADDLINK --></li>
+</ul>
 
 
 
@@ -383,7 +390,7 @@
 								
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
 						
 								
 							
@@ -418,7 +425,7 @@
 									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
 									
 								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-overview.html">Cascading style sheets (CSS)</a></li>
+									<li class="  active "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-overview.html">Cascading style sheets (CSS)</a></li>
 									
 								
 								
