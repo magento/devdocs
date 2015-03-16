@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create the required config files (template)</title>
+	<title>Create the required config files (TODO, up for grabs!)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -65,7 +65,7 @@
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
             </ul>
          </li>
@@ -138,7 +138,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create the required config files (template)</h1>
+		<h1 class="page-heading">Create the required config files (TODO, up for grabs!)</h1>
 			
 			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/extension-dev-guide/create_req_config_files.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -156,33 +156,61 @@
 <p>To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request (see instructions) to have your contribution reviewed by the DevDocs team. Your contributions to our Docs, and your experience with using Magento, are very valued and your contributions are appreciated. Let us know if you have any questions!</p>
 
 <h2 id="overview-web-service">Overview</h2>
-<p>PROVIDE OVERVIEW OF TOPIC HERE</p>
+<p>PROVIDE OVERVIEW OF TOPIC HERE.</p>
 
-<h2 id="H2">HEADING 2</h2>
-<p>PROVIDE TEXT HERE FOR FIRST SECTION.</p>
+<p>In this topic, we want to make it clear that the exact config file required depends on what you want your new module to do! For example, if your module will be used to perform a function in the Admin, you will need to create the following config files:</p>
+
+<ul>
+  <li>__.xml</li>
+  <li>__.php</li>
+</ul>
+
+<p>Or, if your module will be used to make a change to the UI, you’ll need the following config files:</p>
+
+<ul>
+  <li>__.xml</li>
+  <li>__.phtml</li>
+</ul>
+
+<p>Another possibility is that the module will be a service that perhaps calls an API, or does someother work that isn’t manifested in the UI. In that case, you will need these files:</p>
+
+<ul>
+  <li>__.xyz</li>
+  <li>__.xyz</li>
+  <li>__.xyz</li>
+</ul>
 
 <div class="bs-callout bs-callout-info" id="info">
 
-  <p>INSERT NOTE TEXT HERE.</p>
+  <p>To look at a sample module that uses these config files, go to 
+
+
+<h2 id="H2">HEADING 2</h2>
+PROVIDE TEXT HERE FOR FIRST SECTION.
+
+<div class="bs-callout bs-callout-info" id="info">
+
+  <p>INSERT NOTE TEXT HEREx.</p>
 
 </div>
 
 <h3 id="H2">HEADING 3</h3>
-<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
+PROVIDE TEXT HERE FOR NEXT SECTION.
 
-<p>TO HYPERLINK TO ANOTHER TOPIC… refer to the <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.</p>
+TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
+
+
 
 <h2 id="H2">HEADING 2</h2>
-<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
+PROVIDE TEXT HERE FOR NEXT SECTION.
 
-<p>ADD DIAGRAM OR ILLUSTRATION &lt;p&gt;<img src="/pages/Magento/devdocs_internal/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE" />&lt;/p&gt;</p>
+ADD DIAGRAM OR ILLUSTRATION <p><img src="/pages/Magento/devdocs_internal/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE" /></p>
 
 <h2 id="book-related">Related topics</h2>
 
-<ul>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a></li>
-</ul>
+* <a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a>
+* <a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a>
+</p></div>
 
 
 		</div>

@@ -364,15 +364,15 @@ For example, if Magento is installed in <code>/var/www/magento</code>, create th
 <script src="https://gist.github.com/4089538.js?file=api.xml"></script></li>
 <li>Save your changes to <code>api.xml</code> and exit the text editor.</li> -->
 <li>Create a file named <code>api2.xml</code> with the following contents.<br />     
-<script src="https://gist.github.com/4089554.js?file=api2.xml"></script></li>
+<script src="https://gist.github.com/xcomSteveJohnson/6a97c176c8ee5d76e0c4.js"></script></li>
 <li>Save your changes to <code>api2.xml</code> and exit the text editor.</li>
 <li>Change to the <code><em>magento-install-dir</em>/app/code/community/CouponDemo/AutoGen/Model/Api2</code> directory.</li>
 <li>Create a file named <code>Coupon.php</code> with the following contents.<br />
-<script src="https://gist.github.com/4262113.js?file=Coupon.php"></script>
+<script src="https://gist.github.com/xcomSteveJohnson/4bfde04ed707610722ee.js"></script>
 <li>Save your changes to <code>Coupon.php</code> and exit the text editor.</li>
 <li>Change to the <code><em>magento-install-dir</em>/app/code/community/CouponDemo/AutoGen/Model/Api2/Coupon/Rest/Admin</code> directory.</li>
 <li>Create a file named <code>V1.php</code> with the following contents.<br />
-<script src="https://gist.github.com/4090906.js?file=V1.php"></script></li>
+<script src="https://gist.github.com/xcomSteveJohnson/551bd796539069a7cf99.js"></script></li>
 <li>Save your changes to <code>V1.php</code> and exit the text editor.</li></ol>
 
 <h3 id="extend-rest-api_permissions">Setting Permissions on the Configuration Files</h3>
@@ -582,7 +582,7 @@ extension=oauth.so</pre></li>
 <p><strong>Description:</strong> The <strong>CouponDemo API Calls</strong> check boxes display to indicate you set up the module correctly. If they don't display, either the Magento cache hasn't been entirely cleared or there's something wrong with the directory structure or configuration files.</p>
 <p><strong>Solution:</strong> Use the following steps to isolate and correct the issue:</p>
 <ol><li>Make sure your directory structure is set up <em>exactly</em> as shown in <a href="#figure_dir-structure">this figure earlier in this guide</a>.</li>
-<li>Make sure you copied the <em>exact text</em> from the sample configuration files discussed in TBD. <em>Do not change anything</em>, and remember that case is important.</li>
+<li>Make sure you copied the <em>exact text</em> from the sample configuration files discussed in <a href="#extend-rest-api_create-files">Creating Configuration Files</a>. <em>Do not change anything</em>, and remember that case is important.</li>
 <li>Clear the Magento cache in all of the following ways:
 <ul><li>As a user with sufficient privileges to delete files and directories in the Magento installation, enter the following commands:<br />
 <pre>rm -r <em>magento-install-dir</em>/var/cache
@@ -634,13 +634,12 @@ The requested URL /magento/oauth/initiate was not found on this server.</pre>
 <p><strong>Solution:</strong> Make sure web server rewrites are enabled. The procedure you use depends on your web server and operating system. An example for Ubuntu can be found <a href="http://www.fontis.com.au/blog/magento/definitive-installation-guide" target="_blank">here</a>.</p>
 
 <h2 id="next">Next Steps</h2>
-<ul class="level1">
-  <li>Refer to <a href="http://www.magentocommerce.com/api/rest/introduction.html#RESTAPIIntroduction-Overview">Magento  APIs - REST</a> for documentation explaining how the Magento's REST API framework works.<br />
-  </li>
+<p>Refer to <a href="http://www.magentocommerce.com/api/rest/introduction.html#RESTAPIIntroduction-Overview">Magento  APIs&mdash;REST</a> for documentation explaining how the Magento's REST API framework works.</p>
+<!--   </li>
   <li>Refer to <a href="https://wiki.corp.x.com/display/MWSAPI/Documentation+REST+API">Documentation REST</a> for instructions explaining how to use the REST APIs included in Magento &quot;out of the box&quot;.<br />
   <a href="https://wiki.corp.x.com/display/MWSAPI/Documentation+REST+API"></a></li>
 
-</ul>
+</ul> -->
 
 
 <!-- End Content -->

@@ -449,7 +449,8 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <li style="list-style-type:lower-alpha">In your development environment, drop the Magento database.</li>
 <li style="list-style-type:lower-alpha">Re-create the development database and import production data into it as discussed in <A href="#upgrade-manual-db">Updating the Magento Database</a>.</li>
 <li style="list-style-type:lower-alpha">Use the following command to delete the contents of the Magento <code>var/</code> subdirectories:
-<code>rm -rf [your Magento install dir]/var/cache [your Magento install dir]/var/full_page_cache [your Magento install dir]/var/locks [your Magento install dir]/var/session</code><br />
+<pre>rm -rf [your Magento install dir]/var/cache [your Magento install dir]/var/full_page_cache \
+	[your Magento install dir]/var/locks [your Magento install dir]/var/session</pre>
 <div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of these directories might be empty; this is normal.</div></li>
 <li style="list-style-type:lower-alpha">Clean up the file system as discussed in <a href="#upgrade-manual-cleanup">Finishing the File System</a>.</li>
 <li style="list-style-type:lower-alpha">Repeat step 1 in this section.</li>
