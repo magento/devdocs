@@ -9,5 +9,9 @@ To contribute, please fork the develop branch. We won't accept pull requests int
 
 We're looking forward to hearing from you!
 
-<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
+*	<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+*	<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">E-mail us</a>
+
+*	<a href="http://devdocs.magento.com">Visit our documentation site, built on GitHub using Jekyll</a>
