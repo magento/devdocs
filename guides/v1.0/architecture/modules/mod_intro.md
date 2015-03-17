@@ -2,7 +2,7 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Magento Architecture
+title: Modules
 menu_title: Modules
 menu_order: 4
 github_link: architecture/modules/mod_intro.md
