@@ -75,7 +75,7 @@ For the default Blank and Luma themes, contains the following:
 
 <div class="bs-callout bs-callout-info" id="info">
 <p><span class="glyphicon-class">
-This is were the main .css files, styles_m.css and styles-l. css are included in the default Magento theme. For example, for the Blank theme, these main stylesheets are included in <code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml</a></code>
+This is where the main <code>.css files</code>, <code>styles_m.css</code> and <code>styles-l.css</code> are included in the default Magento theme. For example, for the Blank theme, these main stylesheets are included in <code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml</a></code>
 </span>
 </p>
 </div>

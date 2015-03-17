@@ -37,11 +37,13 @@ The Magento UI library provides the ability to customize and reuse the following
 
 The following illustration shows a storefront product page containing some of the preceding elements:
 
+<div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}common/images/ui_lib1.png" alt="A product page with user interface elements specified">
+</div>
 
 <h2 id="fedg_using-ui-lib_mixins">Mixin location</h2>
 
- You can find the Magento UI library under <a href="{{site.mage2000url}}lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source `.less` files are stored under the `source` directory, each file contains mixins for configuring a certain element, usually the element coincides with the file name:
+ You can find the Magento UI library under <a href="{{site.mage2000url}}lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source `.less` files are stored under the `source` directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:
 
 <pre>lib/web
     ├── css/
