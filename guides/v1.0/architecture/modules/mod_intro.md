@@ -21,7 +21,7 @@ Specifically, a module is a directory that contains php and xml files (blocks, c
 
 The purpose of each module is to provide specific product features by implementing new functionality or extending the functionality of other modules. Each module is designed to function independently, so the inclusion or exclusion of a particular module does not impact the functionality of other modules.
 
-Modules live in the `/app/code` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `/app/code/<vendor>/<module_name>`, e.g. the Customer module of Magento can be found at `/app/code/Magento/Customer`. Inside of this folder, you will find all of the code and configuration related to this module, including the `etc/module.xml` file, which contains the name and version of the module, as well as any dependencies.
+Modules live in the `/app/code` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `/app/code/<Vendor>/<ModuleName>`, e.g. the Customer module of Magento can be found at `/app/code/Magento/Customer`. Inside of this folder, you will find all of the code and configuration related to this module, including the `etc/module.xml` file, which contains the name and version of the module, as well as any dependencies.
 
 <h2 id="m2devgde-moddep-naming">Name and declare a module</h2>
 

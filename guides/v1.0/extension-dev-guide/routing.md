@@ -13,7 +13,7 @@ github_link: extension-dev-guide/routing.md
 
 In the Magento system, a URL has the following format:
 
-`<area front name>/<VendorName>/<ModuleName>/[controller name]/[action name]`
+`<area front name>/<VendorName>/<ModuleName>/<controller name>/<action name>`
 
 `<area front name>` indicates it is at the "front" of the URL. (The _area name_ is used internally to refer to the area in configuration files. Magento provides areas such as `frontend` for the storefront and `adminhtml` for the administration area.)
 
