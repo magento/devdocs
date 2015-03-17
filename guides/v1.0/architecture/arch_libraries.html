@@ -149,11 +149,30 @@
 		<div class="content-wrap">
 		
 		<h2 id="m2arch-libraries-overview">Overview</h2>
-<p>Libraries consist of reusable logic that is often useful across multiple applications, including application frameworks. They don’t provide any independent business features, but act as building blocks for modules and themes.</p>
+<p>The Magento software can use the following types of libraries:</p>
 
-<p>Libraries are placed in the <code>/lib</code> folder and are also organized by vendor to be PSR-0 compliant.</p>
+<ul>
+  <li>The Magento libraries, which are discussed in the next section.</li>
+  <li>Third-party libraries, which a module can include in its <code>composer.json</code>. </li>
+  <li>UI libraries, which are located in the <a href="https://github.com/magento/magento2/blob/develop/lib/web" target="_blank">lib/web</a> directory.
+For more information, see <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="/guides/v1.0/architecture/view/view-lib.html">View Library</a>.</li>
+  <li>Internal libraries, which are used by the Magento software. They are located in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal" target="_blank">lib/internal</a> directory.
+Internal libraries are organized by vendor to be PSR-0 compliant.</li>
+</ul>
 
-<p>For detailed information, refer to  <a href="/guides/v1.0/architecture/view/view-lib.html">View Library</a>.</p>
+<h2 id="m2arch-libraries-mage">Magento libraries</h2>
+<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is <em>not</em> a library per set because it is aware of Magento as an application. It represents a greater level of abstraction and provides the following:</p>
+
+<ul>
+  <li>Other Magento libraries should not reference <code>Magento\Framework\App</code></li>
+  <li><code>Magento\Framework\App</code> introduces some application level abstractions such as:
+    <ul>
+      <li><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Application areas</a></li>
+      <li><a href="/guides/v1.0/extension-dev-guide/routing.html">Routing requests</a></li>
+      <li>Application state</li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="m2arch-related">Related topics</h2>
 
