@@ -2,7 +2,7 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Magento Architecture
+title: Magento as a modular system
 menu_title: Magento as a modular system
 menu_order: 3
 github_link: architecture/arch_asmodsys.md
