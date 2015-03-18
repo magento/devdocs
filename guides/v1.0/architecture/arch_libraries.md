@@ -11,15 +11,16 @@ github_link: architecture/arch_libraries.md
 <h2 id="m2arch-libraries-overview">Overview</h2>
 The Magento software can use the following types of libraries:
 
-*	The Magento libraries, which are discussed in the next section.
-*	Third-party libraries, which a module can include in its `composer.json`. 
-*	UI libraries, which are located in the <a href="{{ site.mage2000url }}lib/web" target="_blank">lib/web</a> directory.
-	For more information, see <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="{{ site.gdeurl }}architecture/view/view-lib.html">View Library</a>.
-*	Internal libraries, which are used by the Magento software. They are located in the <a href="{{ site.mage2000url }}lib/internal" target="_blank">lib/internal</a> directory.
-	Internal libraries are organized by vendor to be PSR-0 compliant.
+*	Magento PHP libraries, which are discussed in the next section.
+*	Magento UI libraries, which are located in the <a href="{{ site.mage2000url }}lib/web" target="_blank">lib/web</a> directory.
 
-<h2 id="m2arch-libraries-mage">Magento libraries</h2>
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is *not* a library per set because it is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
+	For more information, see <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="{{ site.gdeurl }}architecture/view/view-lib.html">View Library</a>.
+*	Third-party libraries, which are located in the <a href="{{ site.mage2000url }}lib/internal" target="_blank">lib/internal</a> directory. These libraries include all PHP code (including the Zend libraries).
+
+	Third-party libraries are organized by vendor to be PSR-0 compliant.
+
+<h2 id="m2arch-libraries-mage">Magento PHP libraries</h2>
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
 
 * Other Magento libraries should not reference `Magento\Framework\App`
 * `Magento\Framework\App` introduces some application level abstractions such as:
