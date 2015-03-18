@@ -159,23 +159,32 @@
     <p>For more information, see <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="/guides/v1.0/architecture/view/view-lib.html">View Library</a>.</p>
   </li>
   <li>
-    <p>Third-party libraries, which are located in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal" target="_blank">lib/internal</a> directory. These libraries include all PHP code (including the Zend libraries).</p>
+    <p>Third-party libraries<!-- , which are located in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal" target="_blank">lib/internal</a> directory -->. These libraries include all PHP code (including the Zend libraries).</p>
 
     <p>Third-party libraries are organized by vendor to be PSR-0 compliant.</p>
   </li>
 </ul>
 
 <h2 id="m2arch-libraries-mage">Magento PHP libraries</h2>
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:</p>
+<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework" target="_blank">Magento PHP libraries</a> include code that is designed to be independent libraries of code useful to a Magento application. Each library has minimal dependencies on any other library.</p>
+
+<p>For example:</p>
 
 <ul>
-  <li><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Application areas</a></li>
-  <li><a href="/guides/v1.0/extension-dev-guide/routing.html">Routing requests</a></li>
-  <li>Application state</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Filesystem" target="_blank">Magento\Framework\Filesystem</a> has PHP libraries for file system operations such as read, write, directory listing, and so on. We provide drivers for <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Filesystem/Driver/File.php" target="_blank">file</a>, <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Filesystem/Driver/Http.php" target="_blank">HTTP</a>, <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Filesystem/Driver/Https.php" target="_blank">HTTPS</a>, and <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Filesystem/Driver/Zlib.php" target="_blank">Zlib</a>.</li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special PHP library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:</p>
+
+    <ul>
+      <li><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Application areas</a></li>
+      <li><a href="/guides/v1.0/extension-dev-guide/routing.html">Routing requests</a></li>
+      <li>Application state</li>
+    </ul>
+  </li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Other Magento libraries should not reference <code>Magento\Framework\App</code>.</p>
+  <p>Other Magento libraries do not reference <code>Magento\Framework\App</code>.</p>
 </div>
 
 <h2 id="m2arch-related">Related topics</h2>
