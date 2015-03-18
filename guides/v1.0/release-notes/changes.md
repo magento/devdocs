@@ -45,9 +45,7 @@ To transition your existing tests to using the new directories, we recommend the
 
 	Be sure to update the namespace of the test.
 
-3. Fix any references to the unit `TestFramework` files.  
-
-	Note that they moved from `Magento\TestFramework\` to `Magento\Framework\TestFramework\Unit\`
+3. Fix any references to the `TestFramework` files because they moved from `Magento\TestFramework\` to `Magento\Framework\TestFramework\Unit\`
 
 4. Fix any references to classes that were in the same namespace as your tests.  
 

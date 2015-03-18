@@ -10,6 +10,7 @@ github_link: release-notes/issues-fixed.md
 
 <h2 id="fixed">Issues fixed since last release</h2>
 
+*	Changed API search routes to be consistently GET actions
 *    Issue with distance between "Log in" & "or" & "Register" in Frontend header
 *    JavaScript error when clicking on toggle arrow to show fixed product tax (FPT) in shopping cart
 *    PHP Warning when trying to checkout with Multiple Addresses on review order page

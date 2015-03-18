@@ -28,12 +28,16 @@ features of the release.
 *   Services can be exposed as a web API supporting both SOAP & REST
 *   The version is part of the URL
 *   Extended attribute objects are marked as optional in WSDL
-*   <a href="{{ site.gdeurl }}release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module's folder
+*   <a href="{{ site.gdeurl }}release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module's directory
 *   Backward compatibility policy; marked Public APIs coming next quarter
     *   Follows Semantic Versioning 2.0.0
     *   Backward compatible for classes and methods annotated with `@api`
     *   Backward compatible for all client users within minor and patch core updates
     *   We'll use  `@depreciated` to notify you of removal on the next major change
+*   Refactored API code for:
+    *   CatalogInventory module
+    *   Tax module
+
 
 <h3 id="highlights-tech">Technology stack</h3>
 
