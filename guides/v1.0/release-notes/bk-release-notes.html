@@ -176,13 +176,19 @@ features of the release.</p>
   <li>Services can be exposed as a web API supporting both SOAP &amp; REST</li>
   <li>The version is part of the URL</li>
   <li>Extended attribute objects are marked as optional in WSDL</li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module’s folder</li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module’s directory</li>
   <li>Backward compatibility policy; marked Public APIs coming next quarter
     <ul>
       <li>Follows Semantic Versioning 2.0.0</li>
       <li>Backward compatible for classes and methods annotated with <code>@api</code></li>
       <li>Backward compatible for all client users within minor and patch core updates</li>
       <li>We’ll use  <code>@depreciated</code> to notify you of removal on the next major change</li>
+    </ul>
+  </li>
+  <li>Refactored API code for:
+    <ul>
+      <li>CatalogInventory module</li>
+      <li>Tax module</li>
     </ul>
   </li>
 </ul>
