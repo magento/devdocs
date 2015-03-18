@@ -2,7 +2,7 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Magento Architecture
+title: Themes
 menu_title: Themes
 menu_order: 6
 github_link: architecture/arch_themes.md
@@ -22,6 +22,6 @@ For detailed information about working with themes, refer to  <a href="{{ site.g
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_intro.html">Modules</a>
 * <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
-* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language packs</a>
+* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language packages</a>
 
 
