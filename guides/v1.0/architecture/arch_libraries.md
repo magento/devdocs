@@ -22,11 +22,13 @@ The Magento software can use the following types of libraries:
 <h2 id="m2arch-libraries-mage">Magento PHP libraries</h2>
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
 
-* Other Magento libraries should not reference `Magento\Framework\App`
-* `Magento\Framework\App` introduces some application level abstractions such as:
-  * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Application areas</a>
-  * <a href="{{ site.gdeurl}}extension-dev-guide/routing.html">Routing requests</a>
-  * Application state
+* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Application areas</a>
+* <a href="{{ site.gdeurl}}extension-dev-guide/routing.html">Routing requests</a>
+* Application state
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Other Magento libraries should not reference <code>Magento\Framework\App</code>.</p>
+</div>
 
 <h2 id="m2arch-related">Related topics</h2>
 
