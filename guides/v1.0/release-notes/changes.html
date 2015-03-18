@@ -155,12 +155,24 @@
   <li><a href="#change-devrc-unit">Unit tests now located in module directories</a></li>
   <li><a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
   <li><a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
-  <li><a href="#admin">Improvements to the Magento Admin and Setup Wizard</a></li>
+  <li><a href="#admin">Improvments to the Magento Admin and Setup Wizard</a></li>
   <li><a href="#framework">Changes to the Magento framework</a></li>
   <li><a href="#misc">Miscellaneous changes</a></li>
 </ul>
 
 <h2 id="change-devrc-unit">Unit tests now located in module directories</h2>
+<p>For you to run PHPUnit-based tests, you must first run <code>&lt;your Magento root dir&gt;/composer install</code> to download the PHPUnit component and create the <code>vendor/bin/phpunit</code> executable. </p>
+
+<p>This way, you no longer have to download PHPUnit for your operating system; you can use the one provided with Magento instead.</p>
+
+<p>See the following sections for more information:</p>
+
+<ul>
+  <li><a href="#change-devrc-unit-move">Relocate unit test code</a></li>
+  <li><a href="#change-devrc-unit-run">Run unit tests</a></li>
+</ul>
+
+<h3 id="change-devrc-unit-move">Relocate unit test code</h3>
 <p>Code for unit tests must be located in a directory named <code>Test/Unit</code> in the module’s directory structure. A sample follows:</p>
 
 <pre><code>__/&lt;Magento root dir&gt;
@@ -192,6 +204,30 @@
     <p>Because the test namespace changed, you must add an alias for the old namespace.</p>
   </li>
 </ol>
+
+<h3 id="change-devrc-unit-run">Run unit tests</h3>
+<p>To run <em>all</em> unit tests, enter the following commands in the order shown:</p>
+
+<pre><code>cd &lt;your Magento install dir&gt;/dev/Test/Unit
+../../../vendor/bin/phpunit .
+
+cd &lt;your Magento install dir&gt;/dev/Test/Integration
+../../../vendor/bin/phpunit .
+</code></pre>
+
+<ul>
+  <li>This should automatically discover any tests as defined by that phpunit configuration file (which might in turn refer to a test suite implementation)</li>
+  <li>That test suite implementation searches for corresponding tests in known component locations</li>
+</ul>
+
+<p>To run <em>individual</em> tests, enter the following commands in the order shown:</p>
+
+<pre><code>cd &lt;component root dir&gt;
+../bin/phpunit Tests // run defined component tests
+
+cd &lt;your Magento install dir&gt;/app/code/Magento/Catalog/Test/Integration
+../../../../../../vendor/bin/phpunit . // run integration tests defined for the Magento_Catalog module
+</code></pre>
 
 <h2 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
 <p>This change applies to the following situation only:</p>
@@ -285,9 +321,9 @@
   <li>JavaScript test suites divided into frontend, backend and lib suites </li>
   <li>Implemented image compression on server side upload</li>
   <li>Implemented storefront page resources sorting </li>
-  <li>Removed the Magic __call method usage in templates</li>
+  <li>Removed the magic <code>__call</code> method usage in templates</li>
   <li>Introduced Jasmine + PhantomJS JavaScript testing infrastructure</li>
-  <li>Refactored and covered with tests the classes with high CRAP value (&gt;50) </li>
+  <li>Refactored and covered with tests the classes with a <a href="https://phpunit.de/manual/current/en/code-coverage-analysis.html" target="_blank">Change Risk Anti-Patterns</a> index value of more than 50</li>
   <li>Moved Theme Management changes, Design changes, Design\Backend modules, and Observer components from the Core module to the Theme module</li>
   <li>Moved Debug Hints models from the Core module to the newly added Developer module</li>
   <li>Moved URL components, Factory, and EntityFactory from the Core module to the Magento Framework</li>
@@ -320,7 +356,7 @@ Added Varnish 4 support </li>
       <li>Moved Validator Factory from the <code>Magento_Core</code> module to the Magento Framework</li>
     </ul>
   </li>
-  <li>Added PHPMD and PHPCS annotations to the code base</li>
+  <li>Added PHPMD and PHPCS annotations to the codebase</li>
   <li>Removed the ability to process online payments</li>
 </ul>
 
