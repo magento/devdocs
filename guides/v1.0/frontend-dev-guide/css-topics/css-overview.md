@@ -11,26 +11,53 @@ github_link: frontend-dev-guide/css-topics/css-overview.md
 
 ## Overview
 
-You can use cascading style sheets (CSS) to customize Magento themes. You can add your own images and fonts to the CSS.
+Magento 2 incorporates <a href="http://lesscss.org/" target="_blank">LESS</a>, a CSS pre-processor that simplifies the management of complex CSS files.
+To define styles of a Magento store, you can use both - CSS and LESS stylesheets.
 
-Do not use CSS visibility properties to hide Magento blocks and content.
+Magento application provides a built-in LESS UI library, which you can optionally extend. 
 
-To add or remove blocks in Magento, use <a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a> instead.
+To customize storefront styles, you need to <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">create a custom design theme</a>. Then you can use one of the following approaches:
 
-You can customize Magento themes in these ways:
+*	If your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the default Blank or any other theme, you can override the default LESS files; for example to <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files. 
+*	Create your own LESS files using the built-in LESS preprocessor. 
+*	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
-*	Use the built-in Leaner CSS (LESS) preprocessor and the Magento UI library.
-    This is the most effective way to customize your theme, by simply changing the value of required variables from the predefined Blank theme as described here.
-    Doing this causes a new set of CSS parameters set to be compiled from LESS.
-*	Build your own LESS theme using the built-in LESS preprocessor.
-    Optionally, you can use Magento UI library alongside your theme.
-*	Create your own CSS.
-*	Include and use another preprocessor such as SASS.
+<h2 id="css_walk">Change styles: walkthrough</h2>
+
+Here is a simple illustration of changing styles using the first approach: changing the color of the buttons of a certain class.
+In the default Blank theme, the buttons of the `.action.primary` class, so called *primary* buttons, are blue. The following image illustrates this:
+
+<div style="border: 1px solid #ABABAB">
+<img src="{{site.baseurl}}common/images/css_over1.png" alt="The default view of a product page, with the orange Add to Cart button">
+</div>
+
+OrangeCo want to change the color of the primary buttons to orange. To achieve this, they do the following:
+
+1. Create a new Orange theme, which inherits from the default Blank theme.
+2. In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:
+<pre>
+//  Primary button
+@button-primary-color: @color-white;
+@button-primary-color-hover: @color-white;
+@button-primary-background: @color-orange-red1;
+@button-primary-background-hover: @color-orange-red4;
+@button-primary-border: 1px solid @color-orange-red2;
+@button-primary-border-hover: 1px solid @color-orange-red2;
+</pre>
+
+When OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">apply their theme</a>, the primary buttons will look like on the following image:
+
+<div style="border: 1px solid #ABABAB">
+<img src="{{site.baseurl}}common/images/css_over2.png" alt="The customized view of a product page, with the grey Add to Cart button">
+</div>
+
+<h2 id="css_topics">What's in this chapter</h2>
+Other topics of this chapter describe the following:
+
+* <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are organized and included to be used for store pages in the Magento application. 
+* <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a>: how stylesheets are preprocessed and compiled
+* <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI Library</a>: how to use the Magento styles library in your custom themes
+* Using Custom Fonts: how to add custom fonts <!-- ADDLINK -->
+* <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-practice.html" target="_blank">Customizing styles illustration</a>: how to change a theme's color scheme using Magento UI library. 
 
 
-#### Related topics:
-
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a>
