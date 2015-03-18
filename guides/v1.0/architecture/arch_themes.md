@@ -2,7 +2,7 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Magento Architecture
+title: Themes
 menu_title: Themes
 menu_order: 6
 github_link: architecture/arch_themes.md
