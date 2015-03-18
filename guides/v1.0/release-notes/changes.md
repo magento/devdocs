@@ -18,6 +18,16 @@ github_link: release-notes/changes.md
 *	<a href="#misc">Miscellaneous changes</a>
 
 <h2 id="change-devrc-unit">Unit tests now located in module directories</h2>
+For you to run PHPUnit-based tests, you must first run `<your Magento root dir>/composer install` to download the PHPUnit component and create the `vendor/bin/phpunit` executable. 
+
+This way, you no longer have to download PHPUnit for your operating system; you can use the one provided with Magento instead.
+
+See the following sections for more information:
+
+*	<a href="#change-devrc-unit-move">Relocate unit test code</a>
+*	<a href="#change-devrc-unit-run">Run unit tests</a>
+
+<h3 id="change-devrc-unit-move">Relocate unit test code</h3>
 Code for unit tests must be located in a directory named `Test/Unit` in the module's directory structure. A sample follows:
 
 	__/<Magento root dir>
@@ -42,6 +52,28 @@ To transition your existing tests to using the new directories, we recommend the
 4. Fix any references to classes that were in the same namespace as your tests.  
 
 	Because the test namespace changed, you must add an alias for the old namespace.
+
+<h3 id="change-devrc-unit-run">Run unit tests</h3>
+To run *all* unit tests, enter the following commands in the order shown:
+
+	cd <your Magento install dir>/dev/Test/Unit
+	../../../vendor/bin/phpunit .
+
+	cd <your Magento install dir>/dev/Test/Integration
+	../../../vendor/bin/phpunit .
+
+
+*	This should automatically discover any tests as defined by that phpunit configuration file (which might in turn refer to a test suite implementation)
+*	That test suite implementation searches for corresponding tests in known component locations
+
+To run *individual* tests, enter the following commands in the order shown:
+
+	cd <component root dir>
+	../bin/phpunit Tests // run defined component tests
+
+	cd <your Magento install dir>/app/code/Magento/Catalog/Test/Integration
+	../../../../../../vendor/bin/phpunit . // run integration tests defined for the Magento_Catalog module
+
 
 <h2 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
 This change applies to the following situation only:
@@ -107,9 +139,9 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *   JavaScript test suites divided into frontend, backend and lib suites 
 *   Implemented image compression on server side upload
 *   Implemented storefront page resources sorting 
-*   Removed the Magic __call method usage in templates
+*   Removed the magic `__call` method usage in templates
 *   Introduced Jasmine + PhantomJS JavaScript testing infrastructure
-*    Refactored and covered with tests the classes with high CRAP value (>50) 
+*    Refactored and covered with tests the classes with a <a href="https://phpunit.de/manual/current/en/code-coverage-analysis.html" target="_blank">Change Risk Anti-Patterns</a> index value of more than 50
 *    Moved Theme Management changes, Design changes, Design\Backend modules, and Observer components from the Core module to the Theme module
 *    Moved Debug Hints models from the Core module to the newly added Developer module
 *    Moved URL components, Factory, and EntityFactory from the Core module to the Magento Framework

@@ -15,6 +15,28 @@ Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 For this first release of Magento 2.0, here is a summary of some important
 features of the release.
 
+<h3 id="highlights-devrc">Highlights of this release</h3>
+
+*   Services are mutable
+    *   Changed from Builders to Factory Pattern
+    *   Interfaces now have setters
+    *   Repository Objects can now be manipulated and passed
+*   Services can pass extended attributes as an object rather than an array
+    *   Easily extend existing service with additional data objects
+    *   No generated code
+*   Support for Varnish 4
+*   Services can be exposed as a web API supporting both SOAP & REST
+*   The version is part of the URL
+*   Extended attribute objects are marked as optional in WSDL
+*   <a href="{{ site.gdeurl }}release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module's folder
+*   Backward compatibility policy; marked Public APIs coming next quarter
+    *   Follows Semantic Versioning 2.0.0
+    *   Backward compatible for classes and methods annotated with `@api`
+    *   Backward compatible for all client users within minor and patch core updates
+    *   We'll use  `@depreciated` to notify you of removal on the next major change
+
+<h3 id="highlights-tech">Technology stack</h3>
+
 -   PHP and MySQL. Magento 2 supports PHP 5.5 and 5.6, and MySQL 5.6. See [System
     requirements][1].
 
@@ -72,31 +94,14 @@ features of the release.
 
     [12]: <{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html>
 
-See also
---------
 
--   [XML validation][13]
-
-    [13]: <{{ site.gdeurl }}architecture/view/xml-schema-layout.html>
-
--   [Service contracts][14]
-
-    [14]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
-
--   [Translation][15]
-
-    [15]: <{{ site.gdeurl }}architecture/behavior/xlate.html>
-
--   [Services as web APIs][16]
-
-    [16]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
 
 <h2 id="help">Help improve this documentation</h2>
 
 Magento 2.0 product documentation is hosted on GitHub, and we welcome your
 feedback there.
 
-Click the "Edit this page on GitHub" link at the top of a documentation page to
+Click the **Edit this page on GitHub** link at the top of a documentation page to
 open the file in our GitHub repository, where you are invited to suggest changes
 by creating pull requests, or open a discussion by creating an issue.
 Feel free to contact the documentation team directly at
