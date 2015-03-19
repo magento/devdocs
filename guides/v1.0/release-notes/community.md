@@ -22,7 +22,7 @@ We thank the Magento community for suggesting the following:
 *    [#790](https://github.com/magento/magento2/issues/790)&mdash;Magento API fails in a CGI env (zf1 issue)
 *    [#909](https://github.com/magento/magento2/issues/909)&mdash;Manage Titles in popup window front-end issue
 *    [#996](https://github.com/magento/magento2/issues/996)&mdash;Pager block should support url "fragment".
-*    [#985](https://github.com/magento/magento2/pull/985)&mdash;Allow camelcase in vendorname for menus
+*    [#985](https://github.com/magento/magento2/pull/985)&mdash;Allow camel case in vendorname for menus
 *    [#1025](https://github.com/magento/magento2/pull/1025)&mdash;Wrong parameter for getting base url for 'media' path in "Image" form element.
 *   [#593](https://github.com/magento/magento2/issues/593)&mdash;Allow to use "0" as customer group
 *   [#804](https://github.com/magento/magento2/issues/804)&mdash;Comment about VAT number displayed under different field in Customer Configuration
@@ -31,7 +31,7 @@ We thank the Magento community for suggesting the following:
 *   [#866](https://github.com/magento/magento2/issues/866)&mdash;Configurable product attribute scope
 *   [#965](https://github.com/magento/magento2/pull/965)&mdash;extra tests for current interception behavior
 *    [#979](https://github.com/magento/magento2/pull/979)&mdash;Adding OSL license file name
-*    [#978](https://github.com/magento/magento2/pull/978)&mdash;Added ignore rule for media assets in wysiwyg directory
+*    [#978](https://github.com/magento/magento2/pull/978)&mdash;Added ignore rule for media assets in WYSIWYG directory
 *    [#877](https://github.com/magento/magento2/pull/877)&mdash;Made Topmenu HTML Editable
 *    [#906](https://github.com/magento/magento2/pull/906)&mdash;Add tests for View\Layout\Reader\Block and slight refactoring
 *    [#682](https://github.com/magento/magento2/issues/682)&mdash;\Magento\Framework\Pricing\PriceCurrencyInterface depends on Magento application code
