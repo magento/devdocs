@@ -11,13 +11,13 @@ github_link: release-notes/issues-fixed.md
 <h2 id="fixed">Issues fixed since last release</h2>
 
 *	Changed API search routes to be consistently GET actions
-*    Issue with distance between "Log in" & "or" & "Register" in Frontend header
+*    Issue with distance between **Log in**, **or**, and **Register** in the storefront header
 *    JavaScript error when clicking on toggle arrow to show fixed product tax (FPT) in shopping cart
 *    PHP Warning when trying to checkout with Multiple Addresses on review order page
 *	 Fixed fatal error on page that contains a widget with a condition based on "Category"
 *    Compiled definitions can cause unexpected errors compared to runtime definitions
-*   Fixed an issue with image rendering on the CMS page on Frontend when web server rewrites are disabled
-*   Fixed an issue where the "Select all" mass action on the Customers page did not select all customers 
+*   Fixed an issue with image rendering on the CMS page on the storefront when web server rewrites are disabled
+*   Fixed an issue where the **Select all** mass action on the Customers page did not select all customers 
 *   Fixed an issue where values for a customer  attribute of multiple-select type were not saved
 *   Fixed an issue where the parental wakeup() method was not called in interceptors
 *   Fixed an issue where bundle products with the same configurations added from different pages were displayed in the wishlist as separate items 
@@ -40,7 +40,7 @@ github_link: release-notes/issues-fixed.md
 *    Fixed an issue where there was no ability to set category position during creation 
 *    Fixed a CSS issue where certain images were absent on banners
 *    Fixed an issue where the `Date Of Birth` value was reset to current date on the customer form
-*    Fixed an issue where the behavior of the "Terms and Conditions" validation on multiple address checkout was different from the one for the one-page checkout 
+*    Fixed an issue where the behavior of the **Terms and Conditions** validation on multiple address checkout was different from the one for the one-page checkout 
 *    Fixed an issue where it was impossible to check out with multiple addresses
 *    Fixed an issue where the `This is a required field` message was not displayed for "Terms and Conditions" if the latter was not selected
 *    Fixed an issue where the Discounts and Coupons RSS feed had incorrect title
@@ -49,8 +49,8 @@ github_link: release-notes/issues-fixed.md
 *    Fixed an issue where the Unsubscribe link in the Newsletter was broken
 *    Fixed an issue where stock status changed incorrectly after import
 *    Fixed an issue where selected filters and exclude did not work during Export
-*    Fixed an issue where tax details order was different on order/invoice/refund create and view pages 
-*    Fixed a typo in the getCalculationAlgorithm public function
+*    Fixed an issue where tax details order was different on the creation and view pages for orders, invoices, and refunds
+*    Fixed a typo in the `getCalculationAlgorithm` public function
 *    Fixed an issue where the incorrect value of Subtotal Including Tax was displayed in invoices
 *    Fixed an issue where tax details were not displayed on a new order
 *    Improved pricing performance using caching
@@ -86,7 +86,7 @@ github_link: release-notes/issues-fixed.md
 *    Fixed an issue where the Tax Class drop-down on New Customer Group page contained the `none` value when a tax class already existed
 *    Fixed an issue where the Credit Memo button was absent on the Invoice page for payments
 *    Fixed an issue where incorrect totals were shown in the Coupon Usage report
-*    Fixed an issue where an error occurred and the Append Comments check box was cleared when submitting an order in the Admin
+*    Fixed an issue where an error occurred and the **Append Comments** check box was cleared when submitting an order in the Admin
 *    Fixed an issue where the Transactions tab appeared in the Admin for orders where offline payment methods were used
 *    Fixed an issue with the extra empty line appearing in the Customer Address template
 *    Fixed an issue with incorrect price index rounding on bundle product
@@ -113,7 +113,7 @@ github_link: release-notes/issues-fixed.md
 *    Fixed an issue with inability to open the edit page for a CMS page after filtering in the grid
 *    Fixed an issue with inability to expand customer menu if it doesn't contain the categories, if responsive
 *    Fixed an issue with the absence of JS validation for the Zip/Postal code field
-*    Fixed an issue with a 1 cent difference in the tax summary and detail on an invoice and a credit memo for a partial invoice when a discount and fixed product tax are applied
+*    Fixed an issue with a one-cent difference in the tax summary and detail on an invoice and a credit memo for a partial invoice when a discount and fixed product tax are applied
 *    Fixed an issue with throwing validation error for the State field when saving a product with FPT
 *    Fixed an issue with throwing an error when trying to save a timezone
 *    Fixed an issue with Exploited Session ID in second browser leading to Error

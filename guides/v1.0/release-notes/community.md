@@ -64,7 +64,7 @@ We thank the Magento community for suggesting the following:
 *    [#905](https://github.com/magento/magento2/pull/905), [#907](https://github.com/magento/magento2/pull/907), [#908](https://github.com/magento/magento2/pull/908)&mdash;Change interpret() return value to conform with Layout\ReaderInterface
 *    [#913](https://github.com/magento/magento2/pull/913)&mdash;Specify date fixture and fix expectations
 *    [#853](https://github.com/magento/magento2/pull/853)&mdash;Fix spelling error in Customer module xml
-*    [#858](https://github.com/magento/magento2/pull/858)&mdash;Clicking CMS page in backend takes you to the dashboard
+*    [#858](https://github.com/magento/magento2/pull/858)&mdash;Clicking CMS page in the Magento Admin takes you to the dashboard
 *    [#858](https://github.com/magento/magento2/issues/816)&mdash;Clicking CMS page takes you to the dashboard
 *    [#859](https://github.com/magento/magento2/pull/859)&mdash;Fix email template creation date not being persisted
 *    [#860](https://github.com/magento/magento2/pull/860)&mdash;Fix currency and price renderer
