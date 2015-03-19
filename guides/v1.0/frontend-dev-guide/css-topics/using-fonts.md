@@ -9,7 +9,12 @@ github_link: frontend-dev-guide/css-topics/using-fonts.md
 <h2>Overview</h2>
 Magento application contains a set of built-in fonts, but you can easily include your own custom ones. This topic describes how to include a custom font in your Magento theme.
 
-<p class="q">What about Google fonts and similar?</q>
+<p class="q">Are they called embedded fonts?</q>
+
+<h2>What source font files do you need</h2>
+
+<p class="q">Any restrictions on font file extension? Fonts for which browsers are mandatory? I see a .json file in luma, is it required?</p>
+<p class="q">Where are the Blank fonts stored?</p>
 
 <h2>Including custom fonts</h2>
 
@@ -20,7 +25,7 @@ To include a custom font:
 1. Place the font files to your theme directory under: app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/fonts
 2. Include the font to your theme styles files by using one of the following approaches:
 
-* If you build a theme using Magento UI library, use the <code>.font-face</code> mixin to include a font:
+* If you build a theme using Magento UI library, use the <code>.font-face</code> mixin to include a font web/css/source/_typoghraphy:
 <pre>
 .font-face(
     @family-name,
@@ -44,3 +49,4 @@ The mixin generates the CSS including font. For example, here is how the generat
 
 * If your theme does not use the Magento UI library
 You can include the font manually to your theme CSS, for example by using the <code>@font-face</code> CSS rule.
+
