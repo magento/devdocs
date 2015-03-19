@@ -94,7 +94,7 @@ For example, the following illustrates how stylesheets are included in the defau
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p> If the system does not find the included CSS files, it will search for the same files having changed the extension from <code>.css</code> to <code>.less</code>. This is part of the built-in preprocessing mechanism. You can find more information about it in the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a> topic.
+ <p> If the system does not find the included CSS files, it searches for the same file names with a <code>.less</code> extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a> topic.
 </p></span> 
 </div>
 
