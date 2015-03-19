@@ -71,7 +71,7 @@ Contains the following:
 
 <p>In the Magento application, the recommended way to include stylesheets is to specify them in layout files. 
 
-<p>Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CCS in <code>default_head_blocks.xml</code> of the <code>Magento_Theme</code> module, which defines the default <code>&lt;head&gt;</code> page section for all Magento pages. 
+<p>Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CSS in <code>default_head_blocks.xml</code> of the <code>Magento_Theme</code> module, which defines the default <code>&lt;head&gt;</code> page section for all Magento pages. 
 The recommended way to do this is adding an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>default_head_blocks.xml</code> in your theme, and including the required stylesheets in this file. </p>
 
 Your custom <code>default_head_blocks.xml</code> should be located as follows:
