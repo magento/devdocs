@@ -13,7 +13,7 @@ github_link: release-notes/changes.md
 *   <a href="#change-devrc-unit">Unit tests now located in module directories</a>
 *   <a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 *   <a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
-*	<a href="#admin">Improvments to the Magento Admin and Setup Wizard</a>
+*	<a href="#admin">Improvements to the Magento Admin and Setup Wizard</a>
 *	<a href="#framework">Changes to the Magento framework</a>
 *	<a href="#misc">Miscellaneous changes</a>
 
@@ -99,6 +99,8 @@ To install the optional Magento 2 sample data, you must update `composer.json`, 
 See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 
 <h2 id="admin">Improvements to the Magento Admin and Setup Wizard</h2>
+*	You can enable or disable modules when you install the Magento 2 software using either the <a href="{{ site.gdeurl }}install-gde/install/install-web.html#instgde-install-magento-web-step4
+">Setup Wizard</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">command line</a>.
 *    Compressed and resized images
 *    Added new base styles for the Admin re-design
 *    Added the WAI-ARIA attributes are to the Search Autocomplete on the storefront
