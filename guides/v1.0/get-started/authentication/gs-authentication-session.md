@@ -20,7 +20,7 @@ github_link: get-started/authentication/gs-authentication-session.md
 
 <p>For example, if a customer is logged in to the Magento storefront and the JavaScript widget invokes the <code>self</code> API, details for the logged-in customer are fetched:</p>
 
-<pre>GET /rest/V1/customer/me</pre>
+<pre>GET /rest/V1/customers/me</pre>
 
 <p>Similarly, if an admin is logged in to the Magento Admin
 and the JavaScript widget <code>Magento_Customer::group</code> API, details for the logged-in admin are fetched.
