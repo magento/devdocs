@@ -131,7 +131,7 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *   Added `setCustomAttribute` and `setCustomAttributes` methods to `ExtensibleDataInterface`
 *   Added setter methods to data object interfaces
 *   Replaced builders with factories
-*   Added `DataObjectHelper.php` which contains the common set of methods of all builders
+*   Added `DataObjectHelper.php`, which contains the common set of methods of all builders
 *   Refactored `__()` to return `Phrase` object
 *   Allowed usage of `LocalizedException` on the framework's library level
 *   Added expiration/lifetime management of frontend resources
