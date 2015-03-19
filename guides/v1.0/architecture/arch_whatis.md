@@ -2,7 +2,7 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Magento Architecture
+title: What is Magento?
 menu_title: What is Magento?
 menu_order: 1
 github_link: architecture/arch_whatis.md
