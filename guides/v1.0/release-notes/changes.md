@@ -100,7 +100,7 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 
 <h2 id="admin">Improvements to the Magento Admin and Setup Wizard</h2>
 *	You can enable or disable modules when you install the Magento 2 software using either the <a href="{{ site.gdeurl }}install-gde/install/install-web.html#instgde-install-magento-web-step4
-">Setup Wizard</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">command line</a>.
+">Setup Wizard</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">command line</a>.
 *    Compressed and resized images
 *    Added new base styles for the Admin re-design
 *    Added the WAI-ARIA attributes are to the Search Autocomplete on the storefront
@@ -130,7 +130,7 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *    HTML response minified
 *   Added `setCustomAttribute` and `setCustomAttributes` methods to `ExtensibleDataInterface`
 *   Added setter methods to data object interfaces
-*   Replaced `Builders` with `Factories`
+*   Replaced builders with factories
 *   Added `DataObjectHelper.php` which contains the common set of methods of all builders
 *   Refactored `__()` to return `Phrase` object
 *   Allowed usage of `LocalizedException` on the framework's library level

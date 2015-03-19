@@ -37,6 +37,7 @@ features of the release.
 *   Refactored API code for:
     *   CatalogInventory module
     *   Tax module
+*   Removed the `Magento_Core` module; moved functions to other modules
 
 
 <h3 id="highlights-tech">Technology stack</h3>
