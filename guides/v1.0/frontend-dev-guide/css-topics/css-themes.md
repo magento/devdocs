@@ -15,22 +15,22 @@ Technically there is an option to include them in template files, but we strongl
 
 <div class="bs-callout bs-callout-info" id="info">
 <p><span class="glyphicon-class">
-The CSS class names can be assigned in both, templates and layouts.</span></p>
+The CSS class names can be assigned in both templates and layouts.</span></p>
 </div>
 
-This topic describes how stylesheets are conventionally organized in the Magento application file system, and the recommended way to include CSS files in layouts.
+This topic describes how stylesheets are located by default in the Magento application file system, and the recommended way to include CSS files in layouts.
 
 
 <h2>How Magento stylesheet files are organized</h2>
 
-Conventionally, CSS and LESS files are stored only in themes. Modules do not contain any default styles.
+Conventionally, CSS and LESS files are stored only in themes. Module directories do not contain any default styles.
 
-<p>In a theme directory, stylesheets are stored in the following locations:</p>
+<p>In a <a href="{{site.gdeurl}}" target="_blank">theme directory</a>, stylesheets are stored in the following locations:</p>
 
 
 <table>
 <tr>
-<th>Directory</th>
+<th>Directory (relative to <code>app/design/frontend/Magento/&lt;theme&gt;</code>)</th>
 <th>Description</th>
 </tr>
 <tr>
@@ -43,7 +43,7 @@ Conventionally, CSS and LESS files are stored only in themes. Modules do not con
 <td> <code>/web/css</code>
    </td>
    <td> 
-For the default Blank and Luma themes, contains the following:
+Contains the following:
 <ul>
 <li>
 <code>print.less</code>: used to generate styles for the printed version of store pages.
@@ -69,21 +69,14 @@ For the default Blank and Luma themes, contains the following:
 
 <h2 id="fedg_css-in-themes_xml">Include CSS</h2>
 
-<p>In the Magento application, the recommended way to include stylesheets is to specify them in layout files. To include CSS in the <code>&lt;head&gt;</code> section of a page, they should be specified in the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">page configuration files</a>. </p>
+<p>In the Magento application, the recommended way to include stylesheets is to specify them in layout files. 
 
-<p>Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CCS in <code>default_head_blocks.xml</code> of the <code>Magento_Theme</code> module, which defines the default <code>&lt;head&gt;</code> page section for all Magento pages. </p>
+<p>Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CCS in <code>default_head_blocks.xml</code> of the <code>Magento_Theme</code> module, which defines the default <code>&lt;head&gt;</code> page section for all Magento pages. 
+The recommended way to do this, is adding an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> <code>default_head_blocks.xml</code> in your theme, and include the required stylesheets in this file. </p>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p><span class="glyphicon-class">
-This is where the main <code>.css files</code>, <code>styles_m.css</code> and <code>styles-l.css</code> are included in the default Magento theme. For example, for the Blank theme, these main stylesheets are included in <code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml</a></code>
-</span>
-</p>
-</div>
+Your custom <code>default_head_blocks.xml</code> should be located as follows (in case of extending):
 
-<p> We strongly recommend not changing default files. So to make changes in <code>default_head_blocks.xml</code>, you need to add to add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> or <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> one in your theme. It must be located as follows (in case of extending):</p>
-
-<p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>. </p>
-
+<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>. <br>
 Where <code>&lt;Vendor&gt;</code> is your company name (or similar), and <code>&lt;theme&gt;</code> is your theme name.
 
 <p>To include a CSS file, add the <code>&lt;css src=&quot;&quot; media=&quot;&quot;/&gt;</code> block in <code>&lt;head&gt;</code> section in a layout file.
