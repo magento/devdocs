@@ -2,7 +2,7 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Magento Architecture
+title: Architectural diagrams
 menu_title: Architectural diagrams
 menu_order: 2
 github_link: architecture/archi_perspectives/arch_diagrams.md

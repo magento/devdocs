@@ -2,7 +2,7 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Magento Architecture
+title: Libraries
 menu_title: Libraries
 menu_order: 5
 github_link: architecture/arch_libraries.md
@@ -11,21 +11,29 @@ github_link: architecture/arch_libraries.md
 <h2 id="m2arch-libraries-overview">Overview</h2>
 The Magento software can use the following types of libraries:
 
-*	The Magento libraries, which are discussed in the next section.
-*	Third-party libraries, which a module can include in its `composer.json`. 
-*	UI libraries, which are located in the <a href="{{ site.mage2000url }}lib/web" target="_blank">lib/web</a> directory.
+*	Magento PHP libraries, which are discussed in the next section.
+*	Magento UI libraries, which are located in the <a href="{{ site.mage2000url }}lib/web" target="_blank">lib/web</a> directory.
+
 	For more information, see <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="{{ site.gdeurl }}architecture/view/view-lib.html">View Library</a>.
-*	Internal libraries, which are used by the Magento software. They are located in the <a href="{{ site.mage2000url }}lib/internal" target="_blank">lib/internal</a> directory.
-	Internal libraries are organized by vendor to be PSR-0 compliant.
+*	Third-party libraries<!-- , which are located in the <a href="{{ site.mage2000url }}lib/internal" target="_blank">lib/internal</a> directory -->. These libraries include all PHP code (including the Zend libraries).
 
-<h2 id="m2arch-libraries-mage">Magento libraries</h2>
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is *not* a library per set because it is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
+	Third-party libraries are organized by vendor to be PSR-0 compliant.
 
-* Other Magento libraries should not reference `Magento\Framework\App`
-* `Magento\Framework\App` introduces some application level abstractions such as:
-  * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Application areas</a>
-  * <a href="{{ site.gdeurl}}extension-dev-guide/routing.html">Routing requests</a>
-  * Application state
+<h2 id="m2arch-libraries-mage">Magento PHP libraries</h2>
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework" target="_blank">Magento PHP libraries</a> include code that is designed to be independent libraries of code useful to a Magento application. Each library has minimal dependencies on any other library.
+
+For example:
+
+*	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem" target="_blank">Magento\Framework\Filesystem</a> has PHP libraries for file system operations such as read, write, directory listing, and so on. We provide drivers for <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/File.php" target="_blank">file</a>, <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Http.php" target="_blank">HTTP</a>, <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Https.php" target="_blank">HTTPS</a>, and <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Driver/Zlib.php" target="_blank">Zlib</a>.
+*	<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App" target="_blank">Magento\Framework\App</a> is a special PHP library that is aware of Magento as an application. It represents a greater level of abstraction and provides the following:
+
+	* <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Application areas</a>
+	* <a href="{{ site.gdeurl}}extension-dev-guide/routing.html">Routing requests</a>
+	* Application state
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Other Magento libraries do not reference <code>Magento\Framework\App</code>.</p>
+</div>
 
 <h2 id="m2arch-related">Related topics</h2>
 

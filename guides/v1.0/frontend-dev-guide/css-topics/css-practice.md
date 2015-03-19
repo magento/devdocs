@@ -17,7 +17,10 @@ This topic features a step-by-step illustration of how to change a theme's color
 OrangeCo created a custom theme that inherits from the default Blank theme.
 The following image illustrates how store pages look when the Blank theme is applied:
 
+<div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}common/images/practice_blank.png" alt="product page when Blank applied">
+</div>
+
 
 In their Grey theme, OrangeCo want to change the color scheme from white to grey.
 
