@@ -27,7 +27,7 @@ github_link: release-notes/issues-fixed.md
 *   Fixed an issue where the redirect link to continue shopping was absent in the success message after adding product to a wishlist 
 *   Fixed an issue where HTML tags where displayed in product prices on the Customer's Wishlist page in the Magento Admin
 *   Fixed an issue with the redirect after searching product in a customer wishlist in the Admin
-*   Fixed an issue where a configurable product did not go out of stock when last subitem of some option was sold
+*   Fixed an issue where a configurable product did not go out of stock when last sub item of some option was sold
 *   Fixed an issue with Varnish config generation for multiple IPs in access list field
 *   Fixed an issue where changes were not saved when the default billing or shipping address was not selected in customer addresses 
 *   Fixed the issue where the Update Qty button looked disabled during a partial invoice creation
@@ -166,7 +166,7 @@ github_link: release-notes/issues-fixed.md
 *    Fixed an incorrect alignment of fields on the Create Packages pop-up
 *    Fixed an issue where Google Content Experiments was not available for CMS pages
 *    Fixed the New Product Attribute pop-up
-*    Fixed an issue where a product page was not found if an incorrect image URL was inserted using the WYSISYG editor
+*    Fixed an issue where a product page was not found if an incorrect image URL was inserted using the WYSIWYG editor
 *    Fixed an issue with the Search Term Report and Search Term list in the Admin 
 *    Fixed an issue where downloadable links and samples were not saved because of a JavaScript error
 *    Fixed an issue where changes made in tax configuration did not appear in the Admin on the Create New Order page

@@ -169,5 +169,5 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *    Eliminated remnants of the Core module:
      *    Moved Application Emulation from the `Magento_Core` module to the `Magento_Store` module
      *    Moved Validator Factory from the `Magento_Core` module to the Magento Framework
-*    Added PHPMD and PHPCS annotations to the codebase
+*    Added PHPMD and PHPCS annotations to the code base
 *   Removed the ability to process online payments
