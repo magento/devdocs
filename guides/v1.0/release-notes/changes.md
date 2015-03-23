@@ -103,17 +103,34 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 ">Setup Wizard</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">command line</a>.
 *    Compressed and resized images
 *    Added new base styles for the Admin re-design
-*    Added the WAI-ARIA attributes are to the Search Autocomplete on the storefront
+*    Added WAI-ARIA attributes are to the Search Autocomplete on the storefront
 *    Added visual style for the 'skip to content' attribute on the storefront 
 *    Fixed the style of persistent login messages on the storefront for all themes 
 *    Fixed the style of scrolling for Categories with long names in the Admin 
 *    Fixed the "css/print.css" file path on the storefront pages for all themes 
     *	You can enable or disable modules during installation using either the CLI install or the Setup Wizard.
-*	<a href="http://www.w3.org/WAI/intro/aria.php" target="_blank">WAI-ARIA</a> attributes are added to storefront Layered Navigation and Customer Dropdown, storefront Product Page Tabs, storefront Cart Summary collapsible panels, storefront forms and notifications, and storefront Checkout pages
+*	Added <a href="http://www.w3.org/WAI/intro/aria.php" target="_blank">WAI-ARIA</a> attributes to:
+	*	Storefront Layered Navigation
+	*	Customer Dropdown
+	*	Storefront Product Page Tabs
+	*	Storefront Cart Summary collapsible panels
+	*	Storefront forms and notifications
+	*	Storefront Checkout pages
+	*	Category page product item 
+	*	Related products
 *    Updated the design of Enable Cookies CMS page
+*	Utilized Magento error handler in the Setup application to convert errors and warnings to exceptions
 
 <h2 id="framework">Changes to the Magento framework</h2>
+*	Eliminated remnants of the `Magento_Core` module:
+	*	Moved Application Emulation from the `Magento_Core` module to the `Magento_Store` module
+	*	Moved Validator Factory from the `Magento_Core` module to the Magento Framework
+	*	Added a new `Magento_MediaStorage` module to store components of the `Magento_Core` module
+*	Renamed `Magento\Framework\Controller\Result\JSON` to meet PSR standard
+*	Version used in SOAP declarations is now taken from routes declared in `webapi.xml`
 *    Moved/refactored the `Magento\IO\Sftp` adapter into the Filesystem library
+*	Replaced `Zend_Locale` with native PHP implementation
+*	Replaced `Zend_Date` with native PHP `DateTime` object/functions
 *    Removed the Magento IO library
 *    Implemented Extensible Attributes generation
 *    Moved Specific Helper Components From `Magento/Core` to `Magento/Framework`
@@ -147,6 +164,9 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *    Moved URL components, Factory, and EntityFactory from the Core module to the Magento Framework
 
 <h2 id="misc">Miscellaneous changes</h2>
+*	Eliminate inline JavaScript code 
+*	Fixed cross-site scripting vulnerability issues
+*	Addressed naming inconsistencies in REST routes
 *	Refactored Catalog and related modules to use mutable data object interfaces
 *	Refactored Sales and related modules to use mutable data interfaces
 *    Added client-side LESS files compilation to reduce page load time in developer mode
@@ -159,15 +179,13 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
     Added Varnish 4 support 
 *   Added CSS minification 
 *    Implemented caching for WebAPI configuration 
-*    Refactored controller actions in the Sales module 
-*    Refactored controller actions in the Customer module 
-*    Refactored API code for the CheckoutAgreements module 
-*    Refactored API code for the GiftMessage module 
-*    Refactored API for the Checkout module 
-*    Implemented Sales Quote as a standalone Magento module
+*    Refactored controller actions in the `Sales` module 
+*    Refactored controller actions in the `Customer` module 
+*    Refactored API code for the `CheckoutAgreements` module 
+*    Refactored API code for the `GiftMessage` module 
+*    Refactored API for the `Checkout `module 
+*    Implemented `SalesRule` as a standalone Magento module
 *    Performed custom EAV entities code and DB tables cleanup
-*    Eliminated remnants of the Core module:
-     *    Moved Application Emulation from the `Magento_Core` module to the `Magento_Store` module
-     *    Moved Validator Factory from the `Magento_Core` module to the Magento Framework
+
 *    Added PHPMD and PHPCS annotations to the code base
 *   Removed the ability to process online payments

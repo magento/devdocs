@@ -11,6 +11,26 @@ github_link: release-notes/community.md
 <h2 id="comm-req">Community requests</h2>
 We thank the Magento community for suggesting the following:
 
+*    	[#533] (https://github.com/magento/magento2/issues/533) -- Remove Allow all access in .htaccess
+*    	[#850] (https://github.com/magento/magento2/issues/850) -- HTML Profiler and pub/static Resources
+*    	[#919] (https://github.com/magento/magento2/issues/919) -- System information error when error is fixed but page wasn't refreshed
+*    	[#987] (https://github.com/magento/magento2/pull/987) -- Fix mod_expires for dynamic content
+*    	[#1004] (https://github.com/magento/magento2/issues/1004) -- Problem with template luma
+*    	[#1014] (https://github.com/magento/magento2/issues/1014) -- php index.php update - Class Magento\Store\Model\StoreManagerInterface does not exist
+*    	[#1015] (https://github.com/magento/magento2/issues/1015) -- After success setup/index.php update - "Missing required argument $engines of Magento\Framework\View\TemplateEngineFactory"
+*    	[#1016] (https://github.com/magento/magento2/issues/1016) -- Backend Javascript Errors (new instalation)
+*    	[#1020] (https://github.com/magento/magento2/issues/1020) -- Bug generating Sitemap Cron expression
+*    	[#1029] (https://github.com/magento/magento2/issues/1029) -- Admin dashboard Most Viewed Products Tab issue (without product list)
+*    	[#1035] (https://github.com/magento/magento2/issues/1035) -- Bug in Magento\Framework\Simplexml\Element::appendChild
+*    	[#1042] (https://github.com/magento/magento2/issues/1042) -- Lost catalog rewrite url after page/list-mode/limit changed
+*    	[#1045] (https://github.com/magento/magento2/issues/1045) -- Bad rendering frontend category menu
+*    	[#1048] (https://github.com/magento/magento2/pull/1048) -- Make possible to upload SVG logo by admin
+*    	[#1052] (https://github.com/magento/magento2/pull/1052) -- Fix history cleanup for missed cron jobs
+*    	[#1062] (https://github.com/magento/magento2/pull/1062) -- Add check to see if PHP > 5.6 and always_populate_raw_post_data = -1
+*    	[#1082] (https://github.com/magento/magento2/pull/1082) -- Fix incorrect variable name ($schema -> $scheme)
+*    	[#1086] (https://github.com/magento/magento2/issues/1086) -- Email message containing non English character is displayed incorrectly on the receiver
+*    	[#1088] (https://github.com/magento/magento2/pull/1088) -- Add developer mode example to .htaccess
+*    	[#1107] (https://github.com/magento/magento2/issues/1107) -- Serious security issue in Customer Address edit section
 *    [#899](https://github.com/magento/magento2/issues/899)&mdash;When accessing any category - error report generated
 *    [#986](https://github.com/magento/magento2/pull/986)&mdash;Make it possible to exclude classes (directories) for compilation
 *    [#1054](https://github.com/magento/magento2/pull/1054)&mdash;Fix typo in MAGE_MODE
