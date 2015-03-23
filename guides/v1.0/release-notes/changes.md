@@ -109,7 +109,7 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *    Fixed the style of scrolling for Categories with long names in the Admin 
 *    Fixed the "css/print.css" file path on the storefront pages for all themes 
     *	You can enable or disable modules during installation using either the CLI install or the Setup Wizard.
-*	<a href="http://www.w3.org/WAI/intro/aria.php" target="_blank">WAI-ARIA</a> attributes are added to storefront Layered Navigation and Customer Dropdown, Frontend Product Page Tabs, Frontend Cart Summary collapsible panels, Frontend forms and notifications, Frontend Checkout pages
+*	<a href="http://www.w3.org/WAI/intro/aria.php" target="_blank">WAI-ARIA</a> attributes are added to storefront Layered Navigation and Customer Dropdown, storefront Product Page Tabs, storefront Cart Summary collapsible panels, storefront forms and notifications, and storefront Checkout pages
 *    Updated the design of Enable Cookies CMS page
 
 <h2 id="framework">Changes to the Magento framework</h2>
@@ -131,12 +131,12 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 *   Added `setCustomAttribute` and `setCustomAttributes` methods to `ExtensibleDataInterface`
 *   Added setter methods to data object interfaces
 *   Replaced builders with factories
-*   Added `DataObjectHelper.php` which contains the common set of methods of all builders
+*   Added `DataObjectHelper.php`, which contains the common set of methods of all builders
 *   Refactored `__()` to return `Phrase` object
 *   Allowed usage of `LocalizedException` on the framework's library level
-*   Added expiration/lifetime management of frontend resources
+*   Added expiration/lifetime management of storefront resources
 *   Unified Magento Test Framework configurations format for Framework, TestCase variations and TestCase scenario configurations
-*   JavaScript test suites divided into frontend, backend and lib suites 
+*   JavaScript test suites divided into `frontend`, `adminhtml`, and `lib` suites 
 *   Implemented image compression on server side upload
 *   Implemented storefront page resources sorting 
 *   Removed the magic `__call` method usage in templates
