@@ -232,12 +232,12 @@
 <h3>Customer access</h3>
 <p>Customers can access only resources with <code>self</code> permissions.</p>
 <p>For example, to make a web API call with a customer token:</p>
-<pre>curl -X GET "http://magento.ll/index.php/rest/V1/customer/me" \
+<pre>curl -X GET "http://magento.ll/index.php/rest/V1/customers/me" \
      -H "Authorization: Bearer asdf3hjklp5iuytre"</pre>
 <h3>Admin access</h3>
 <p>Admins can access any resources for which they are authorized.</p>
 <p>For example, to make a web API call with an admin token:</p>
-<pre>curl -X GET "http://magento.ll/index.php/rest/V1/customerAccounts/2" \
+<pre>curl -X GET "http://magento.ll/index.php/rest/V1/customers/2" \
      -H "Authorization: Bearer vbnf3hjklp5iuytre"</pre>
 <h3>Guest access</h3>
 <p>The Magento web API framework allows <i>guest users</i> to access resources that are configured with anonymous permission. Guest users are users who the framework cannot authenticate through existing authentication
