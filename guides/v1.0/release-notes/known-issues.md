@@ -23,6 +23,29 @@ We have identified the following known issues in this release:
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
 
+<h3 id="known-devrc-php">Known issue with certain PHP versions</h3>
+There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
+
+*   5.5.10&ndash;5.5.16
+*   5.6.0
+
+This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. 
+
+To work around this issue, after installing the Magento 2 software, edit the following files:
+
+*   `app/code/Magento/Config/Model/Config/Backend/Locale/Timezone.php`
+*   `lib/internal/Magento/Framework/Locale/Lists.php`
+*   `setup/src/Magento/Setup/Model/Lists.php`
+
+In each file, change the value of `$zones` as follows:
+
+from
+
+    $zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL_WITH_BC);
+
+to
+
+    $zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL);
 
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
