@@ -18,7 +18,7 @@ We thank the Magento community for suggesting the following:
 *    	[#1004] (https://github.com/magento/magento2/issues/1004) -- Problem with template luma
 *    	[#1014] (https://github.com/magento/magento2/issues/1014) -- php index.php update - Class Magento\Store\Model\StoreManagerInterface does not exist
 *    	[#1015] (https://github.com/magento/magento2/issues/1015) -- After success setup/index.php update - "Missing required argument $engines of Magento\Framework\View\TemplateEngineFactory"
-*    	[#1016] (https://github.com/magento/magento2/issues/1016) -- Backend Javascript Errors (new instalation)
+*    	[#1016] (https://github.com/magento/magento2/issues/1016) -- Backend JavaScript Errors (new installation)
 *    	[#1020] (https://github.com/magento/magento2/issues/1020) -- Bug generating Sitemap Cron expression
 *    	[#1029] (https://github.com/magento/magento2/issues/1029) -- Admin dashboard Most Viewed Products Tab issue (without product list)
 *    	[#1035] (https://github.com/magento/magento2/issues/1035) -- Bug in Magento\Framework\Simplexml\Element::appendChild
@@ -76,8 +76,8 @@ We thank the Magento community for suggesting the following:
 *    [#943](https://github.com/magento/magento2/pull/943)&mdash;magento2-925 Failed Test due to Class not following the naming conventions
 *    [#968](https://github.com/magento/magento2/pull/968)&mdash;Apply pattern matching datasource config files
 *    [#949](https://github.com/magento/magento2/pull/949)&mdash;Added 'status' command for cache cli script / Also improved readability
-*    [#876](https://github.com/magento/magento2/pull/876)&mdash;[BUGFIX] Fixed german translation "Warenkorbrn"
-*    [#880](https://github.com/magento/magento2/pull/880)&mdash;Naming fix in DI compiler.php - rename binary to igbinary to stay consistent
+*    [#876](https://github.com/magento/magento2/pull/876)&mdash;[BUGFIX] Fixed German translation "Warenkorbrn"
+*    [#880](https://github.com/magento/magento2/pull/880)&mdash;Naming fix in DI compiler.php - rename binary to isbinary to stay consistent
 *    [#913](https://github.com/magento/magento2/pull/913)&mdash;Specify date fixture and fix expectations
 *    [#874](https://github.com/magento/magento2/pull/874)&mdash;Prevent special characters finding their way into layout handle due to SKU being used
 *    [#903](https://github.com/magento/magento2/pull/903)&mdash;Small cleanup refactoring
