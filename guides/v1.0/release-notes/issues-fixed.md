@@ -9,7 +9,17 @@ github_link: release-notes/issues-fixed.md
 ---
 
 <h2 id="fixed">Issues fixed since last release</h2>
-
+*   Profiling of cache operations was permanently disabled
+*   Page cache was invalidated by cron jobs after reindexing, even when nothing was changed
+*   Impossible to add product to the shopping cart with Custom option of `type="file"`
+*  	Removed hard-coded IDs from catalog API code
+*   Postal code is still mandatory for non-US addresses that don't use it
+*  	Removed `adminhtml`-only web service route for using customer user password reset tokens and setting new passwords
+*	Fixed an issue when private content handling did not work with enabled HTML profiler and developer mode 
+*	Fixed an issue where the Magento Composer Installer failed to uninstall the last package 
+*	Fixed an issue where a fatal error was thrown in the Setup application after running composer install with the `--no-dev` option
+*	Fixed a JavaScript issue with expanding the list of modules on the  Customize Your Store step in the Setup Wizard
+*	Fixed a JavaScript issue with returning from the Create Admin Account step in the Customize Your Store step in the Setup Wizard
 *	Changed API search routes to be consistently GET actions
 *    Issue with distance between **Log in**, **or**, and **Register** in the storefront header
 *    JavaScript error when clicking on toggle arrow to show fixed product tax (FPT) in shopping cart
