@@ -1,41 +1,32 @@
-<head><style>
-
-table.confluenceTable { margin:5px; border-collapse:collapse; }
-table.confluenceTable td.confluenceTd { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; vertical-align:top; min-width:.6em; }
-table.confluenceTable th.confluenceTh,
-table.confluenceTable td.highlight { border-width:1px; border-style:solid; border-color:#ddd; padding:5px; background-color:#f0f0f0; text-align:left; vertical-align:top; min-width:.6em; }
-ul { list-style-type: square; }
-
-</style></head>
-
-<!-- Title: Magento Community Edition (CE) 1.9 Release Notes -->
-<!-- URL: ce19-later-release-notes -->
-
-
-<!-- <!DOCTYPE html>
+---
+---
+<!DOCTYPE html> 
 <html lang=en>
-
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="../css/images/stylesheet.css"/>
-	<link rel="stylesheet" href="../css/images/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="../css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="../css/favicon.ico" type="image/x-icon">
-	<title>Magento Community Edition (CE) 1.9.0.0 Release Notes</title>
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="{{ site.baseurl }}common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="{{ site.baseurl }}common/css/favicon.ico" type="image/x-icon"> 
+	<title>Magento Community Edition (CE) Release Notes (1.9 and later)</title>
 
 </head>
 
 <body>
 <a name="top"></a>
 
-<img src="../css/images/header.png" width="1024" height="215" alt="header" />
+<img src="{{ site.baseurl }}common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
-<div id="content">
+<!-- Title: Magento Community Edition (CE) 1.9 Release Notes -->
+<!-- URL: ce19-later-release-notes -->
 
-<h1>Magento Community Edition (CE) 1.9.0.0 Release Notes -- DRAFT</h1>
 
-<div class="toc"> --><!-- <h4 class="toc"> --><h4>Contents</h4>
+
+
+<h1>Magento Community Edition (CE) Release Notes (1.9 and later)</h1>
+
+<div class="toc"><h4 class="toc">Contents</h4>
 <p>These Release Notes contain the following information:</p>
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
@@ -45,10 +36,11 @@ ul { list-style-type: square; }
 <li><a href="#oss">Open Source Software Licensing Agreements</a></li>
 
 
-</ul><!-- </div> -->
+</ul></div>
 
 <h2 id="upgrade">Important Upgrade Information</h2>
-<p class="kb-notes"><strong>Important</strong>: Use CE 1.9.0.1 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.1.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
 
 <h2 id="ce19-1910">Magento CE 1.9.1.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
@@ -84,10 +76,10 @@ ul { list-style-type: square; }
 <p>Magento CE 1.9.1 includes updates to promotions, product import/export capabilities, security, and other features as part of our commitment to continually improve product quality.</p>
 
 <h2 id="ce19-1910-mobile">Solution for Magento Mobile Issue</h2>
-<p>Magento Mobile uses the <tt>XmlConnect</tt> module to provide mobile phone storefront.</p>
-<p><tt>XmlConnect</tt> is disabled by default and, as a result, users who attempt to view your mobile storefront might see the error <tt>The server responded with invalid data</tt>.</p>
+<p>Magento Mobile uses the <code>XmlConnect</code> module to provide mobile phone storefront.</p>
+<p><code>XmlConnect</code> is disabled by default and, as a result, users who attempt to view your mobile storefront might see the error <code>The server responded with invalid data</code>.</p>
 <p>To resolve this issue:</p>
-<ol><li>Log in to your Magento server as a user with <tt>root</tt> privileges.</li>
+<ol><li>Log in to your Magento server as a user with <code>root</code> privileges.</li>
 <li>Open the following file in a text editor:<br>
 <pre>[your Magento install dir]app/etc/modules/Mage_XmlConnect.xml</pre>
 For example,
@@ -96,7 +88,7 @@ For example,
 <pre>&lt;active>false&lt;active/></pre>
 to this:
 <pre>&lt;active>true&lt;active/></pre></li>
-<li>Save your changes to <tt>Mage_XmlConnect.xml</tt> and exit the text editor.</li>
+<li>Save your changes to <code>Mage_XmlConnect.xml</code> and exit the text editor.</li>
 <li>Clear the Magento cache:
 <ol><li>Log in to the Magento Admin Panel as an administrator.</li>
 <li>Click <strong>System</strong> > <strong>Cache Management</strong>.</li>
@@ -108,7 +100,7 @@ to this:
 <h3 id="ce-19-1910-patches">Patch for CE 1.9.1.0</h3>
 <p>Magento recently released the following patch for CE 1.9.1.0:</p>
 <p><!-- <a href="https://jira.corp.x.com/browse/SUPEE-4829" target="_blank">SUPEE-4829</a>  --> Configurable swatch images in search results no longer enlarge when you click them.</p>
-<p>The name of this patch is <tt>PATCH_SUPEE-4829_EE_1.14.1.0_v1-2014-11-21-08-36-31.sh</p>
+<p>The name of this patch is <code>PATCH_SUPEE-4829_EE_1.14.1.0_v1-2014-11-21-08-36-31.sh</code></p>
 
 <h3 id="ce-19-1910-security">Security Enhancements</h3>
 <p>We fixed the following security issues in this release:</p>
@@ -172,7 +164,7 @@ Magento thanks Florinel Chis of Elastera for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5220" target="_blank">MPERF-5220</a>  -->The year field displays in the proper location after a customer enters an invalid credit card expiration date.</li>
 
 <li>Community contributions:
-<ul><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5531" target="_blank">MPERF-5531</a>, <a href="https://jira.corp.x.com/browse/MPERF-5543" target="_blank">MPERF-5543</a>  -->Hard-coded, untranslatable words were removed from <tt>.phtml</tt> templates.<br>
+<ul><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5531" target="_blank">MPERF-5531</a>, <a href="https://jira.corp.x.com/browse/MPERF-5543" target="_blank">MPERF-5543</a>  -->Hard-coded, untranslatable words were removed from <code>.phtml</code> templates.<br>
 Magento thanks Janwillem Oostendorp and Yannis Livasov for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5665" target="_blank">MPERF-5665</a>, <a href="https://jira.corp.x.com/browse/MPERF-5435" target="_blank">MPERF-5435</a>  -->Layout improvements to my account pages.<br>
 Magento thanks Martin Steudter for contributing to this fix.</li>
@@ -260,7 +252,7 @@ Magento thanks Stewart Kelt for contributing to this fix.</li>
 Magento thanks Tim Bezhasvyly for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2794" target="_blank">MPERF-2794</a>  -->Resolved index lock issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1318" target="_blank">MPERF-1318</a>  -->The <strong>Update on Save</strong> option works properly (reindexing is not required).</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1318" target="_blank">MPERF-1318</a>  -->Removed the false message <tt>One or more of the Indexes are not up to date</tt> following a change to product attributes.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1318" target="_blank">MPERF-1318</a>  -->Removed the false message <code>One or more of the Indexes are not up to date</code> following a change to product attributes.</li>
 
 </ul>
 
@@ -269,7 +261,7 @@ Magento thanks Tim Bezhasvyly for contributing to this fix.</li>
  --><ul><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4590" target="_blank">APPSTORE-4590</a> -->When you install a community-created translation package, the translation provided by the package overwrites any existing translations for the same items. This enables you to more easily install packages with translations. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a> -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a> -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a> -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><tt>/app/code/community</tt> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a> -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
 To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h4 id="ce-19-1910-fixes-other">Other Fixes</h4>
@@ -279,7 +271,7 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5721" target="_blank">MPERF-5721</a>  -->If a price rule is applicable to more than one item in the cart, all eligible items get the discount.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5720" target="_blank">MPERF-5720</a>  -->A discount is applied to all members of an eligible customer group.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5185" target="_blank">MPERF-5185</a>  -->Magento correctly calculates the Daylight Savings Time offset.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5103" target="_blank">MPERF-5103</a>  -->Resolved the following issues with URL rewrites in the form <tt>product/{product_id}</tt>:
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5103" target="_blank">MPERF-5103</a>  -->Resolved the following issues with URL rewrites in the form <code>product/{product_id}</code>:
 <ul><li>You can now create more than one such rewrite per store, per product.</li>
 <li>The canonical URL in search results is the actual URL, not the rewrite URL.<br>
 Magento thanks Colin Mollenhour for contributing to this fix.</li>
@@ -324,18 +316,19 @@ Magento thanks Alan Storm for contributing to this fix.</li>
 <li><a href="#ce19-patches-how-to-get">How to Get Patches For Magento EE</a></li> 
 </ul>
 
-<p class="kb-notes"><strong>Note</strong>: Some of the patches discussed in this section have <tt>EE_1.14.0.1</tt> in the name. These patches were all tested against CE 1.9.x as well.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against CE 1.9.x as well.</div>
+
 
 <h3 id="ce19-patches-connect-general">General Magento Connect Patches</h3>
 <p><em>Patch name</em>: SUPEE-3941</p>
 <ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4590" target="_blank">APPSTORE-4590</a> -->When you install a community-created translation package, the translation provided by the package overwrites any existing translations for the same items. This enables you to more easily install packages with translations. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><tt>/app/code/community</tt> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
 To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
-<p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<tt>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</tt>) results in all administrators and customers viewing the Magento installation page.</p>
+<p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
 
 <h3 id="ce19-patches-how-to-get">How to Get Patches For Magento CE</h3>
 <p>This section discusses how to get patches referenced in these Release Notes. </p>
@@ -381,7 +374,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4809" target="_blank">MPERF-4809</a>  -->Addressed a potential cross-site scripting (XSS) vulnerability while creating configurable product variants.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3723" target="_blank">MPERF-3723</a>  -->Addressed a potential security issue that could result in displaying information about a different order to a customer.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3114" target="_blank">MPERF-3114</a>  -->Users can no longer change the currency if the payment method PayPal Website Payments Standard is used.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3076" target="_blank">MPERF-3076</a>  -->Removed an <tt>.swf</tt> file from the Magento distribution because of security issues.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3076" target="_blank">MPERF-3076</a>  -->Removed an <code>.swf</code> file from the Magento distribution because of security issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2119" target="_blank">MPERF-2119</a>  -->Improved file system security.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2498" target="_blank">MPERF-2498</a>  -->Enhanced the security of action URLs, such as billing agreements.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1899" target="_blank">MPERF-1899</a>  -->Addressed a potential session fixation vulnerability during checkout.</li>
@@ -391,12 +384,13 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <h3 id="ce19-1900-changes">Changes</h3>
 <ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4632" target="_blank">MPERF-4632</a>  -->A default setting for configurable and bundled products has changed. When you create a configurable or bundled product in the Admin Panel, click <strong>Manage</strong> > <strong>Products</strong>. Create a new configurable or bundled product and click the <strong>Design</strong> tab. The default option for <strong>Display Product Options In</strong> has changed to <strong>Product Info Column</strong>.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4870" target="_blank">MPERF-4870</a>  -->The Google Websites Optimizer has been disabled because it has been deprecated by Google. (In earlier EE versions, this option was available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Google API</strong> > <strong>Google Website Optimizer</strong>).</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2563" target="_blank">MPERF-2563</a>  -->Two new options to prevent <a href="http://en.wikipedia.org/wiki/Clickjacking" target="_blank">"clickjacking"</a> if you run Magento in a <tt>frame</tt> or <tt>iframe</tt>:
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2563" target="_blank">MPERF-2563</a>  -->Two new options to prevent <a href="http://en.wikipedia.org/wiki/Clickjacking" target="_blank">"clickjacking"</a> if you run Magento in a <code>frame</code> or <code>iframe</code>:
 <ul class="level2"><li>Enable frames only in the same domain.</li>
 <li>Enable frames.</li>
-<p class="kb-notes"><strong>Important</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</span></div>
+
 <p>The options are available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Admin</strong> > <strong>Security</strong> and are named <strong>Allow Magento Backend to run in frame</strong> and <strong> Allow Magento Frontend to run in frame</strong>.</p>
-<p>Enabling the option causes the <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank"><tt>X-Frame-Options</tt></a> request header to be sent.</p></ul>
+<p>Enabling the option causes the <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank"><code>X-Frame-Options</code></a> request header to be sent.</p></ul>
 </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4970" target="_blank">MPERF-4970</a>  -->FedEx changed their endpoints for sandbox and production to the following:
 <ul class="level2"><li>Production: https://ws.fedex.com/web-services</li>
@@ -406,7 +400,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <!-- <li><a href="https://jira.corp.x.com/browse/MPERF-3769" target="_blank">MPERF-3769</a> Added address validation, which enables users to select from multiple matching addresses. For example, if a user enters a partial address or a common street name, they might be presented with matching addresses from which to choose.</li>
  -->
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->CE 1.9 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
-<p class="kb-notes"><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</p></li>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div></li>
 <li>The default values for two configuration options changed. Both options can be found in the Admin Panel under <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Frontend</strong>. The new default values follow:
 <ul class="level2"><li><strong>Products per Page on Grid Allowed Values</strong> is now <strong>12, 24, 36</strong>.</li>
 <li><strong>Products per Page on Grid Default Value</strong> is now <strong>12</strong>.</li></ul>
@@ -486,7 +480,7 @@ To enable product price display including tax: <strong>System</strong> > <strong
 </ul>
 
 <h4 id="ce19-1900fixes-adminpanel">Administrative Ordering, Invoicing, Credit Memo Fixes</h4>
-<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2407" target="_blank">MPERF-2407</a>  -->An administrative user with access to only one website from which a product was deleted no longer sees a stack trace when attempting to create an RMA for that product. In other words, after a customer placed an order for a product on Website1, an administrator with privileges to all websites removes the product. Later, when an administrator with access to only Website1 attempts to create an RMA for the deleted product, that administrator no longer sees an error message; instead, they see an expected <tt>Access Denied</tt> message.</li>
+<ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2407" target="_blank">MPERF-2407</a>  -->An administrative user with access to only one website from which a product was deleted no longer sees a stack trace when attempting to create an RMA for that product. In other words, after a customer placed an order for a product on Website1, an administrator with privileges to all websites removes the product. Later, when an administrator with access to only Website1 attempts to create an RMA for the deleted product, that administrator no longer sees an error message; instead, they see an expected <code>Access Denied</code> message.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4606" target="_blank">MPERF-4606</a>  -->Resolved an issue with incorrectly calculating the amount of an invoice when some items were discounted by a shopping cart price rule.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4607" target="_blank">MPERF-4607</a>  -->Credit memo amount is calculated correctly when processing a partial invoice with a discount.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4041" target="_blank">MPERF-4041</a>  -->Making comments in a credit memo no longer returns items to stock. (Prerequisite: an administrator set <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Inventory</strong> > <strong>Product Stock Options</strong>, option <strong>Automatically Return Credit Memo Item to Stock</strong> set to <strong>Yes</strong>.)</li>
@@ -510,22 +504,22 @@ To enable product price display including tax: <strong>System</strong> > <strong
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4792" target="_blank">MPERF-4792</a>  -->A customer can now initiate a return from the web store.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4749" target="_blank">MPERF-4749</a>  -->An administrative user can subscribe to low stock RSS feeds without errors.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3273" target="_blank">MPERF-3273</a>  -->Category URLs work as expected, regardless of the setting of <strong>Create Custom Redirect for old URL</strong> for the category's URL key.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4247" target="_blank">MPERF-4247</a>  -->Setting <tt>allow_url_fopen = Off</tt> in <tt>php.ini</tt> has no effect on the CMS WYSIWYG editor.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4247" target="_blank">MPERF-4247</a>  -->Setting <code>allow_url_fopen = Off</code> in <code>php.ini</code> has no effect on the CMS WYSIWYG editor.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4351" target="_blank">MPERF-4351</a>  -->No fatal error displays when a role-restricted user previews a newsletter in the Admin Panel.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4266" target="_blank">MPERF-4266</a>  -->Google Sitemap files now include the <tt>.html</tt> suffix for category and product URLs.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4266" target="_blank">MPERF-4266</a>  -->Google Sitemap files now include the <code>.html</code> suffix for category and product URLs.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4267" target="_blank">MPERF-4267</a>  -->Customers can use advanced search on your web store if Magento EE is configured to use the default MySQL Fulltext search engine and the server uses MySQL 5.6.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3511" target="_blank">MPERF-3511</a>  -->A role-restricted user can preview a newsletter in the Admin Panel to which the user has privileges.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2805" target="_blank">MPERF-2805</a>  -->After synchronizing media files with the database, <tt>media/customer/.htaccess</tt> is present with the correct data. (Prerequisite: an administrator set <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>System</strong> > <strong>Storage Configuration for Media</strong> set to <strong>Database</strong>).</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2805" target="_blank">MPERF-2805</a>  -->After synchronizing media files with the database, <code>media/customer/.htaccess</code> is present with the correct data. (Prerequisite: an administrator set <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>System</strong> > <strong>Storage Configuration for Media</strong> set to <strong>Database</strong>).</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3159" target="_blank">MPERF-3159</a>  -->cron now restarts indexers if they previously failed to run.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2146" target="_blank">MPERF-2146</a>  -->You can save changes to a category that has more than 1,000 products.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2492" target="_blank">MPERF-2492</a>  -->Deactivating one of several banners no longer causes exceptions in <tt>system.log</tt>.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2492" target="_blank">MPERF-2492</a>  -->Deactivating one of several banners no longer causes exceptions in <code>system.log</code>.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3025" target="_blank">MPERF-3025</a> --> Resolved issues with the WSDL cache.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2246" target="_blank">MPERF-2246</a>  -->Improved the efficiency of product searches.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3652" target="_blank">MPERF-3652</a>  -->Resolved issues with the DHL International shipping method.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2221" target="_blank">MPERF-2221</a>  -->Resolved 404 (Not Found) errors in layered navigation.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4984" target="_blank">MPERF-4984</a>  -->Resolved a SQL error when attempting to assign a bundled product to another website.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-3749" target="_blank">MPERF-3749</a>  -->Rules-based product relations perform as expected after being saved.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1838" target="_blank">MPERF-1838</a>  -->Resolved an issue with sending duplicate <tt>Content-Type</tt> headers when using <tt>mod_fastcgi</tt> with the Apache web server.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-1838" target="_blank">MPERF-1838</a>  -->Resolved an issue with sending duplicate <code>Content-Type</code> headers when using <code>mod_fastcgi</code> with the Apache web server.</li>
 
 
 
