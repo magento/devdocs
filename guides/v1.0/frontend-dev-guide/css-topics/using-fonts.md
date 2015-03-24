@@ -24,17 +24,21 @@ To include a custom font:
 <li>Place the font files to your theme directory under: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/fonts</code></li>
 <li>Include the font to your theme styles files by using one of the following approaches:
 <ul> 
-<li>If you build a theme using Magento UI library, include the font in web/css/source/_typoghraphy.less</code> in your theme directory, use the <code>.font-face</code> mixin :
+<li>If you build a theme using Magento UI library, in the <code>web/css/source/_typoghraphy.less</code> in your theme directory, use the <code>.font-face</code> mixin :
 <pre>
 .font-face(
-    @family-name,
-    @font-path,
+    @family-name:&lt;any_name&gt;,
+    @font-path: '@{baseDir}fonts/&lt;path_to_font_file&gt;',
     @font-weight,
     @font-style
 )
 </pre>
 
-
+Where:
+<ul>
+	<li><code>{@baseDir}</code> stands for the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory.</li>
+<li><code>&lt;path_to_font_file&gt;</code> includes the font file name, but without the extension. For example, @font-path: '@{baseDir}fonts/Luma-Icons' for the font stored in <code>web/fonts/Luma-Icons.woff</code></li>
+</ul>
 The mixin generates the CSS including font. For example, here is how the generated CSS looks for the Open Sans font used in the Blank theme:
 <pre>
 @font-face {
@@ -46,8 +50,7 @@ The mixin generates the CSS including font. For example, here is how the generat
 }
 </pre>
 </li>
-<li>If your theme does not use the Magento UI library
-You can include the font manually to your theme CSS, for example by using the <code>@font-face</code> CSS rule.</li>
+<li>If your theme does not use the Magento UI library, you can include the font manually to your theme CSS, for example by using the <code>@font-face</code> CSS rule.</li>
 </ul>
 </li>
 </ol>
