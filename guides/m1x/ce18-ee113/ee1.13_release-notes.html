@@ -44,18 +44,18 @@
 <li><a href="#php54">PHP 5.4 Patch Available</a></li>
 <li><a href="#ee113-patches-how-to-get">How to get Patches for Magento EE</a></li> 
 </ul>
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <tt>EE_1.14.0.1</tt> in the name. These patches were all tested against EE 1.13.x as well.</div>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against EE 1.13.x as well.</div>
 
 <h3 id="ee113-patches-connect-general">General Magento Connect Patches</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3941_EE_1.14.0.1_v1-2014-08-12-12-10-06.sh</p>
 <ul class="level1"><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4590" target="_blank">APPSTORE-4590</a> -->When you install a community-created translation package, the translation provided by the package overwrites any existing translations for the same items. This enables you to more easily install packages with translations. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><tt>/app/code/community</tt> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
 To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ee113-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
-<p><em>Patch name</em>: PATCH_SUPEE-3762_EE_1.14.0.1_v1.sh. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<tt>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</tt>) results in all administrators and customers viewing the Magento installation page.</p>
+<p><em>Patch name</em>: PATCH_SUPEE-3762_EE_1.14.0.1_v1.sh. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
 
 <h3 id="ee113-patches-multi-admins">Multiple Simultaneous Magento Administrators</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3819_EE_1.14.0.1_v1.sh. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3819" target="_blank">SUPEE-3819</a>  -->Multiple Magento administrators can simultaneously add new products; or edit descriptions, edit prices, or edit stock quantities of existing products without causing deadlocks, key violations, or critical data errors. Together with applying the patch, you must set all indexers to Update when scheduled as follows:</p>
@@ -140,7 +140,7 @@ Magento thanks Ralf Zimmermann for contributing to this fix. --></li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2156" target="_blank">MPERF-2156</a>)  -->Closed a potential loophole that enables another user to possibly access personal information when viewing billing agreements.<br />
 Magento thanks Darryl Adie and Ampersand Commerce for contributing to this fix.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2119" target="_blank">MPERF-2119</a>)  -->Resolved a remote code execution vulnerability that enabled an attacker to delete files and directories on the Magento installation. (The attack required access to the Admin Panel as a Magento administrator.)</li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1904" target="_blank">MPERF-1904</a>)  -->Fixed the security settings for the <tt>frontend</tt> cookie to protect user sessions. <!-- <br />
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1904" target="_blank">MPERF-1904</a>)  -->Fixed the security settings for the <code>frontend</code> cookie to protect user sessions. <!-- <br />
 Magento thanks Binary Anvil for contributing to this fix. --></li>
 
 </ul>  
@@ -152,7 +152,7 @@ Magento thanks Binary Anvil for contributing to this fix. --></li>
 <!-- <p><strong>Description</strong>: TBD -->
 <p><strong>Solution</strong>:</p>
 <ol><li>Close the Admin Panel browser window.</li>
-<li>As a user with <tt>root</tt> privileges, delete all files <em>except</em> <tt>config.xml</tt> from the following directory:<br />
+<li>As a user with <code>root</code> privileges, delete all files <em>except</em> <code>config.xml</code> from the following directory:<br />
 <pre><em>magento-install-dir</em>/app/code/core/Mage/GoogleCheckout/etc</pre></li>
 <li>When you log back in to the Admin Panel, everything works as expected.<br />
 If you're still encountering errors, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</li></ol>
@@ -175,7 +175,7 @@ For more information, see <a href="http://www.magentocommerce.com/knowledge-base
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-TBD" target="_blank">MPERF-TBD</a>)  -->Magento strongly recommends all merchants set <strong>Apply Customer Tax</strong> to <strong>After Discount</strong>, regardless of all other tax-related settings. This avoids issues with calculating the total product price.</li>
 </li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-348" target="_blank">MPERF-348</a>)  -->When you specify a tax rate, the <strong>State</strong> list is now available whenever you choose a country that has states.</li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-353" target="_blank">MPERF-353</a>)  -->You can now specify the asterisk (<tt>*</tt>) wildcard character for the value of <strong>State</strong> when you set up a a new tax rate. This enables you to apply the same tax rate to all states or provinces in a particular country.</li>
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-353" target="_blank">MPERF-353</a>)  -->You can now specify the asterisk (<code>*</code>) wildcard character for the value of <strong>State</strong> when you set up a a new tax rate. This enables you to apply the same tax rate to all states or provinces in a particular country.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2353" target="_blank">MPERF-2353</a>)  -->Stores now display in the Admin Panel in <strong>System</strong> > <strong>Manage Stores</strong> as a three-column hierarchy, with the website in the left column, all stores associated with the website in the center column, and all store views associated with the store in the right column.<br />
 This makes it easier for you to browse your stores and understand which websites, store views, and stores are associated with each other. The updated Manage Stores page also displays the root category for each store and the code for each website and store view.<br />
 Magento thanks Fabrizio Branca for contributing to this fix. Link to <a href="https://github.com/magento/bugathon_march_2013/pull/231" target="_blank">github pull request</a>. For more information, see <a href="http://www.fabrizio-branca.de/magento-website-store-groups-store-views.html" target="_blank">Fabrizio's blog post</a>.</li>
@@ -217,7 +217,7 @@ Magento thanks Fabrizio Branca for contributing to this fix. Link to <a href="ht
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-463" target="_blank">MPERF-463</a>)  -->Resolved calculation errors when tax and currency conversion are applied. As a result, the price the customer views on a catalog or product page is the same as the price displayed in the shopping cart.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-459" target="_blank">MPERF-459</a>)  -->A customer can now place an order when two tax rules are applied to a product, even if the tax rules specify the same tax rate.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-329" target="_blank">MPERF-329</a>)  -->Resolved issues with calculating taxes on orders that are shipped to different countries that have different tax rates.</li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-3275" target="_blank">MPERF-3275</a>)  -->Product prices, including taxes, display on category and product pages the same for a guest customer as for a logged-in customer. (A guest customer is a customer who does not log in to your web store; this customer belongs to the <tt>NOT LOGGED IN</tt> customer group.)</li>
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-3275" target="_blank">MPERF-3275</a>)  -->Product prices, including taxes, display on category and product pages the same for a guest customer as for a logged-in customer. (A guest customer is a customer who does not log in to your web store; this customer belongs to the <code>NOT LOGGED IN</code> customer group.)</li>
 
 </ul>
 
@@ -296,7 +296,7 @@ The following options are available in the Admin Panel in <strong>System</strong
 <strong>Allow Gift Wrapping on Order Level</strong> set to <strong>No</strong><br />
 <strong> Allow Gift Wrapping for Order Items</strong> set to <strong>Yes</strong></li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-757" target="_blank">MPERF-757</a>)  -->Category and subcategory names display correctly. Before the issue was resolved, subcategory names that were significantly longer than the category name did not display properly.</li>
-<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2361" target="_blank">MPERF-2361</a>) Resolved an issue where <tt>Mage_Adminhtml_CustomerController->viewCartAction</tt> falsely displayed <tt>There are no items in customer's shopping cart at the moment</tt> in the customer's shoppign cart view.<br />
+<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2361" target="_blank">MPERF-2361</a>) Resolved an issue where <code>Mage_Adminhtml_CustomerController->viewCartAction</code> falsely displayed <code>There are no items in customer's shopping cart at the moment</code> in the customer's shoppign cart view.<br />
 Magento thanks Johnathan David Froeming for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/pull/259" target="_blank">github pull request</a>.</li>  -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2350" target="_blank">MPERF-2350</a>)  -->If a customer adds more than one product that requires products to be purchased in increments, only the products that meet the increment requirements are added. Before the fix, all products were added.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2340" target="_blank">MPERF-2340</a>)  -->Scheduled payments work properly.<br />
@@ -343,26 +343,26 @@ Magento thanks Florinel Chis for contributing to this fix. Link to the <a href="
 
 <h4 id="ee113-11310-fixes-other">Other Fixes</h4>
 <ul><li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-872" target="_blank">MPERF-872</a>)  -->Resolved issues that caused spurious errors in the Magento exception log:<br />
-<tt>'Zend_Date_Exception' with message 'Invalid year, it must be between -10000 and 10000'</tt></li>
+<code>'Zend_Date_Exception' with message 'Invalid year, it must be between -10000 and 10000'</code></li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-748" target="_blank">MPERF-748</a>)  -->Merging CMS pages no longer results in errors.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-744" target="_blank">MPERF-744</a>)  -->Widgets display properly on the CMS.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-874" target="_blank">MPERF-874</a>)  -->Previewing a CMS page works properly.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-848" target="_blank">MPERF-848</a>)  -->The product attribute option <strong>Use Default Value</strong> works properly when used in a non-default store view.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-884" target="_blank">MPERF-884</a>)  -->A category attribute set to store view scope displays in layered navigation.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-723" target="_blank">MPERF-723</a>)  -->A store set for British Pound Sterling currency units now displays the correct currency in payment logs.</li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-864" target="_blank">MPERF-864</a>)  -->Resolved an issue with the <tt>Mage_Catalog_Block_Product_Abstract class</tt> that caused errors to display on product view pages in your web store.</li>
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-864" target="_blank">MPERF-864</a>)  -->Resolved an issue with the <code>Mage_Catalog_Block_Product_Abstract class</code> that caused errors to display on product view pages in your web store.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-868" target="_blank">MPERF-868</a>)  -->Fixed issues with customer segments.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-736" target="_blank">MPERF-736</a>)  -->Back-in-stock e-mails contain the correct content.</li>
-<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2357" target="_blank">MPERF-2357</a>) You can now use the <tt>$file</tt> variable in installation scripts without errors.<br />
+<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2357" target="_blank">MPERF-2357</a>) You can now use the <code>$file</code> variable in installation scripts without errors.<br />
 Magento thanks Fabian Blechschmidt Schrank for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/244" target="_blank">github issue</a>.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2358" target="_blank">MPERF-2358</a>) Fixed issues with Magento's use of the Zend TwoLevels backend cache.<br />
 Magento thanks Rouven Alexander Rieker for contributing to this fix. Link to <a href="https://github.com/magento/bugathon_march_2013/pull/247" target="_blank">github pull request</a> for more information.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2359" target="_blank">MPERF-2359</a>) The database cache backend now deletes cache tags when deleting the corresponding cache entry.<br />
 Magento thanks Fabrizio Branca for contrinbuting to this fix.</li> -->
-<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2360" target="_blank">MPERF-2360</a>) Fixed the definition of the store ID in <tt>sendPasswortResetConfirmationEmail()</tt> to specify the current store's ID.<br />
+<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2360" target="_blank">MPERF-2360</a>) Fixed the definition of the store ID in <code>sendPasswortResetConfirmationEmail()</code> to specify the current store's ID.<br />
 Magento thanks Dominik Weber for contributing to this fix.</li> -->
-<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2361" target="_blank">MPERF-2361</a>) <tt>Mage_Page_Block_Html_Header->getIsHomePage</tt> returns <tt>true</tt> when the URL has GET parameters. For example, the following now returns <tt>true</tt>:<br />
-<tt>http://domain.com/?hoge=hoge //Mage_Page_Block_Html_Header->getIsHomePage</tt><br />
+<!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2361" target="_blank">MPERF-2361</a>) <code>Mage_Page_Block_Html_Header->getIsHomePage</code> returns <code>true</code> when the URL has GET parameters. For example, the following now returns <code>true</code>:<br />
+<code>http://domain.com/?hoge=hoge //Mage_Page_Block_Html_Header->getIsHomePage</code><br />
 Magento thanks Johnathan David Froeming for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/pull/259" target="_blank">github pull request</a>.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2339" target="_blank">MPERF-2339</a>) Products sort correctly using a custom attribute.<br />
 Magento thanks Vinai Kopp for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/58" target="_blank">github issue</a>.</li> -->
@@ -371,7 +371,7 @@ Magento thanks Fabian Blechschmidt Schrank for contributing to this fix. Link to
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2342" target="_blank">MPERF-2342</a>) When you create an order using the Admin Panel, the values for the default shipping address and default billing address display properly.<br />
 For example, if you clear the <strong>Same as Billing Address</strong> check box, the default shipping address displays.<br />
 Magento thanks TBD for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/115" target="_blank">github issue</a>.</li> -->
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2354" target="_blank">MPERF-2354</a>)  -->Resolved an issue with <tt>Mage_Page_Block_Template_Links::addLinkBlock</tt> to enable you to sort an array of results by position.<br />
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2354" target="_blank">MPERF-2354</a>)  -->Resolved an issue with <code>Mage_Page_Block_Template_Links::addLinkBlock</code> to enable you to sort an array of results by position.<br />
 Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/37" target="_blank">github issue</a>.</li>
 
 </ul>
@@ -412,7 +412,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 <dt><em>Benefit:</em></dt>
 <dd>A single URL leads uniquely to a product page.</dd>
 <dt><em>Discussion:</em></dt>
-<dd><p>In EE 1.12, it was possible to have multiple products with the same URL key; however, every time the indexer ran, it silently assigned a numerical suffix to duplicates (for example, <tt>shoes</tt> became <tt>shoes-1</tt> and so on).</p>
+<dd><p>In EE 1.12, it was possible to have multiple products with the same URL key; however, every time the indexer ran, it silently assigned a numerical suffix to duplicates (for example, <code>shoes</code> became <code>shoes-1</code> and so on).</p>
 <p>Every time this happened, another URL rewrite was created, resulted in a set of <em>chained redirects</em> for the same product. Having multiple URLs for a product dilutes the effectiveness of URL in search engine weightings, especially if you enabled canonical URLs. (As discussed in <a href="http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html" target="_blank">this article on Google's blog</a>, a <em>canonical URL</em> is a public specification of your preferred URL. The canonical URL is used by any search engine when crawling and indexing your site.)</p>
 <p>This behavior was not clear to merchants and had the effect of diluting search engine weightings.</p>
 <p>In EE 1.13.0.2, there is a single, unique way to access a product (or multiple ways if you use the category path in URLs).</p>
@@ -433,7 +433,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 <dt><em>Benefit:</em></dt> 
 <dd><p>Similar to chained redirects, in EE 1.12, if a product had the same URL key as its parent category, the indexer assigned an incrementing numeric suffix to either the category or the product. This was done without the merchant's knowledge and was confusing as well.</dd>
 <dt><em>Discussion:</em></dt>
-<dd><p>In EE 1.12, if you named a top-level category <tt>slippers</tt> and had product also named <tt>slippers</tt>, the indexer allowed to access to the category using a URL like the following:
+<dd><p>In EE 1.12, if you named a top-level category <code>slippers</code> and had product also named <code>slippers</code>, the indexer allowed to access to the category using a URL like the following:
 <code>http://www.example.com/slippers-1</code></p>
 <p>In EE 1.13.0.2, the same product can be accessed using a URL like:
 <code>http://www.example.com/slippers</code>
@@ -489,7 +489,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 <p class="kb-notes">&dagger;&mdash;<em>Custom URL redirect</em> refers to a product's <strong>Create Custom Redirect for old URL</strong> option.</p>
 
 <h4 id="ee113-11302-seo-key-examples">URL Key Examples</h4>
-<p>The following table shows category URL keys that are allowed. (The URL key is <tt>shoes</tt> for all entities in the table.)</p>
+<p>The following table shows category URL keys that are allowed. (The URL key is <code>shoes</code> for all entities in the table.)</p>
 <table class="confluenceTable"> 
 <tbody>
 <tr class="table-headings">
@@ -497,18 +497,18 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
   <th class="confluenceTh">Reason allowed</th>
 </tr>
 <tr>
-  <td class="confluenceTd"><tt>http://example.com/mens/shoes</tt><br />
-  <tt>http://example.com/womens/shoes</tt></td>
+  <td class="confluenceTd"><code>http://example.com/mens/shoes</code><br />
+  <code>http://example.com/womens/shoes</code></td>
   <td class="confluenceTd">Different category hierarchies.</td>
 </tr>
 <tr>
-  <td class="confluenceTd"><tt>http://example1.com/shoes</tt><br />
-  <tt>http://example2.com/shoes</tt></td>
+  <td class="confluenceTd"><code>http://example1.com/shoes</code><br />
+  <code>http://example2.com/shoes</code></td>
   <td class="confluenceTd">Different domains.</td>
 </tr>
 <tr>
-  <td class="confluenceTd"><tt>http://example.com/shoes (store view 1)</tt><br />
-  <tt>http://example.com/shoes (store view 2)</tt></td>
+  <td class="confluenceTd"><code>http://example.com/shoes (store view 1)</code><br />
+  <code>http://example.com/shoes (store view 2)</code></td>
   <td class="confluenceTd">Different store views.</td>
 </tr>
 </tbody></table>
@@ -545,7 +545,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 </tr>
 </tbody>
 </table>
-<p><strong>Question</strong>: What happens when a web store visitor requests <tt>http://www.example.com/shoes.html</tt>?</p>
+<p><strong>Question</strong>: What happens when a web store visitor requests <code>http://www.example.com/shoes.html</code>?</p>
 <p><strong>Answer</strong>: You control the response in the Admin Panel. Click <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Search Engine Optimizations</strong>. In the right pane, click an option from the <strong>Priority for Duplicated URL Keys</strong> list. Some examples follow:</p>
  <table class="confluenceTable"> 
 <tbody>
@@ -609,31 +609,31 @@ This column specifies the store view for which the URL redirect is defined.</li>
 <li>URL key uniqueness rules apply to inactive categories as well. You cannot use the same URL key for both an active and inactive category at the same level in the category hierarchy.</li>
 <li>The Google sitemap for products and categories is updated with new or updated URL keys at the interval you specify in the Admin Panel: <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Google Sitemap</strong>. In the right pane, expand <strong>Generation Settings</strong>.</li>
 <li>The following apply to new products when you do not explicitly set a value for the <strong>URL key</strong> field:
-<ul><li>Duplicating a results in a URL key with an appended index number. For example, if you duplicate a product with a URL key of <tt>testurlkey</tt>, the new product's URL key might is <tt>testurlkey-1</tt>.</li>
-<li>If you create a new product with a name that matches an existing URL key, the new product's URL key has the product ID appended to it. For example, if there is currently a product with a URL of <tt>product1</tt> and you create a new product with the name <tt>Product1</tt> and the product has an ID of 500, the new product's URL key is <tt>product1-500</tt>.<br />
+<ul><li>Duplicating a results in a URL key with an appended index number. For example, if you duplicate a product with a URL key of <code>testurlkey</code>, the new product's URL key might is <code>testurlkey-1</code>.</li>
+<li>If you create a new product with a name that matches an existing URL key, the new product's URL key has the product ID appended to it. For example, if there is currently a product with a URL of <code>product1</code> and you create a new product with the name <code>Product1</code> and the product has an ID of 500, the new product's URL key is <code>product1-500</code>.<br />
 	<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To avoid having Magento specify a URL key for you, you can enter one yourself. Make sure the URL key you specify is unique among all products, including products across store views.</div>
 </li></ul>
 </li>
 <li>The following apply to enabling the canonical meta tag options for categories and products:
-<ul><li>If <strong>Use Canonical Meta Tag for Categories</strong> is enabled, the category page on your web store includes a canonical URL to the full category URL. For example, <tt>http://www.example.com/mens/shoes</tt></li>
-<li>If <strong>Use Canonical Meta Tag for Products</strong> is enabled, the product page includes a canonical URL to <tt><em>domain-name</em>/<em>product-url-key</em></tt> because product URL keys must be globally unique.<br />
-If you also enable the option <strong>Use Categories Path for Product URLs</strong>, the canonical URL is still <tt><em>domain-name</em>/<em>product-url-key</em></tt> but the product can also be accessed using its full URL (including the category hierarchy). Examples:<br />
-If the product URL key is <tt>producturlkey</tt> and it's assigned to the <strong>Apparel > Womens > Purses</strong> category, the product can be accessed using both of the following URLs:<br />
-<tt>http://www.example.com/producturlkey</tt><br />
-<tt>http://www.example.com/apparel/womens/purses/producturlkey</tt><br />
-The <em>canonical URL</em> for the product is <tt>http://www.example.com/producturlkey</tt>.
+<ul><li>If <strong>Use Canonical Meta Tag for Categories</strong> is enabled, the category page on your web store includes a canonical URL to the full category URL. For example, <code>http://www.example.com/mens/shoes</code></li>
+<li>If <strong>Use Canonical Meta Tag for Products</strong> is enabled, the product page includes a canonical URL to <code><em>domain-name</em>/<em>product-url-key</em></code> because product URL keys must be globally unique.<br />
+If you also enable the option <strong>Use Categories Path for Product URLs</strong>, the canonical URL is still <code><em>domain-name</em>/<em>product-url-key</em></code> but the product can also be accessed using its full URL (including the category hierarchy). Examples:<br />
+If the product URL key is <code>producturlkey</code> and it's assigned to the <strong>Apparel > Womens > Purses</strong> category, the product can be accessed using both of the following URLs:<br />
+<code>http://www.example.com/producturlkey</code><br />
+<code>http://www.example.com/apparel/womens/purses/producturlkey</code><br />
+The <em>canonical URL</em> for the product is <code>http://www.example.com/producturlkey</code>.
 <p><strong>Notes</strong>: <ul><li>The canonical URL options are available in the Admin Panel by clicking <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong>. In the right pane, expand <strong>Search Engine Optimizations</strong>. The options are named <strong>Use Canonical Link Meta Tag For Categories</strong> and <strong> Use Canonical Link Meta Tag For Products</strong>.</li>
 <li>The option to add the category path to a product URL is available in the same location in the Admin Panel. The option name is <strong> Use Categories Path for Product URLs</strong>.</li></ul></p>
 </li></ul>
 
 <h3 id="ee113-11302-fixes">Fixes in Magento EE 1.13.0.2</h3>
 <p>This section discusses fixes made in EE 1.13.0.2.</p>
-<ul><li><!-- (<a href="https://jira.corp.x.com/browse/SUPEE-1686" target="_blank">SUPEE-1686</a>).  -->Resolved a critical database deadlock in the URL rewrite indexer. The deadlock resulted in the following message in the exception log: <tt>SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock</tt>.</li>
+<ul><li><!-- (<a href="https://jira.corp.x.com/browse/SUPEE-1686" target="_blank">SUPEE-1686</a>).  -->Resolved a critical database deadlock in the URL rewrite indexer. The deadlock resulted in the following message in the exception log: <code>SQLSTATE[40001]: Serialization failure: 1213 Deadlock found when trying to get lock</code>.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2221" target="_blank">MPERF-2221</a>).  -->The following layered navigation issues were addressed:
 <ul><li>If a subcategory contains a product that is associated with the parent category, you can view the subcategory in your web store.</li>
 <li>Clicking a link for a product attribute in an anchor category works.</li></ul>
 </li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2575" target="_blank">MPERF-2575</a>)  -->You can now install or upgrade to EE 1.13.0.2 if your Magento database had a table prefix (for example, all tables start with <tt>mage_</tt> because you specified a tables prefix during installation).</li>
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2575" target="_blank">MPERF-2575</a>)  -->You can now install or upgrade to EE 1.13.0.2 if your Magento database had a table prefix (for example, all tables start with <code>mage_</code> because you specified a tables prefix during installation).</li>
 <li>Resolved the following upgrade issues:
 <ul>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2471" target="_blank">MPERF-2471</a>).  -->After upgrading from an earlier version like EE 1.12.0.2, errors such as the following no longer display in the Magento exception log:
@@ -642,13 +642,13 @@ The <em>canonical URL</em> for the product is <tt>http://www.example.com/product
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1778" target="_blank">MPERF-1778</a>)  -->Resolved an issue that prevented web store users from viewing products that had duplicate URL keys before upgrading. <!-- https://jira.corp.x.com/browse/MPERF-1778 --></li>
 <!-- <li>{<a href="https://jira.corp.x.com/browse/MPERF-1744" target="_blank">MPERF-1744</a>) One issue affected a custom URL key assigned to a product that was associated with different store views. After upgrading, the product is viewable on the web store on all store views and, in addition, a new URL key is created for the product. https://jira.corp.x.com/browse/MPERF-1744 <br />
 In EE 1.13.0.1 and later, URL keys are globally unique among all stores&mdash;not just unique in a particular store. You can create products and categories with the same name; Magento assigns duplicates a unique URL key.<br />
-For example, if you already have a category named <strong>Apparel</strong> > <strong>Women's</strong> > <strong>Shoes</strong> and you add another category named <strong>Apparel</strong> > <strong>Men's</strong> > <strong>Shoes</strong>, Magento creates a unique URL key for the second category. The URL key is the category name separated from its ID by a dash character (for example, <tt>shoes-42</tt>). https://jira.corp.x.com/browse/MPERF-1744 </li>--></ul>
+For example, if you already have a category named <strong>Apparel</strong> > <strong>Women's</strong> > <strong>Shoes</strong> and you add another category named <strong>Apparel</strong> > <strong>Men's</strong> > <strong>Shoes</strong>, Magento creates a unique URL key for the second category. The URL key is the category name separated from its ID by a dash character (for example, <code>shoes-42</code>). https://jira.corp.x.com/browse/MPERF-1744 </li>--></ul>
 </li>
 <li>Resolved the following issues with URL keys in store views:
 <ul><li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2215" target="_blank">MPERF-2215</a>, <a href="https://jira.corp.x.com/browse/MPERF-2252" target="_blank">MPERF-2252</a>, <a href="https://jira.corp.x.com/browse/MPERF-2491" target="_blank">MPERF-2491</a>, <a href="https://jira.corp.x.com/browse/MPERF-2505" target="_blank">MPERF-2505</a>).  -->Changing the store view no longer results in product or category 404 (Not Found) errors.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2320" target="_blank">MPERF-2320</a>).  -->Resolved an issue that categories created from a store view had the wrong URL format in the web store. Examples follow:<br />
-<em>Incorrect</em> (before the fix): <tt>/catalog/category/view/s/newcategory/id/36/</tt><br />
-<em>Correct</em>: <tt>/catalog/newcategory/</tt></li>
+<em>Incorrect</em> (before the fix): <code>/catalog/category/view/s/newcategory/id/36/</code><br />
+<em>Correct</em>: <code>/catalog/newcategory/</code></li>
 </ul> 
 </li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1986" target="_blank">MPERF-1986</a>).  -->Resolved an issue where a product could be viewed using a category to which it was not assigned.<br />
@@ -661,13 +661,13 @@ This behavior was associated with the following Admin Panel setting: <strong>Sys
 This includes the case when an administrator sets the following option to <strong>Yes</strong>: <strong>System</strong> > <strong>Configuration</strong> ><strong>CATALOG</strong> > <strong>Catalog</strong> > <strong>Search Engine Optimizations</strong>, option named <strong>Use Categories Path for Product URLs</strong>.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/SUPEE-1542" target="_blank">SUPEE-1542</a>).  -->The category is not included in the URL to a product in your web store when an administrator sets following option to <strong>No</strong>: <strong>System</strong> > <strong>Configuration</strong> ><strong>CATALOG</strong> > <strong>Catalog</strong> > <strong>Search Engine Optimizations</strong>, option named <strong>Use Categories Path for Product URLs</strong>.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2234" target="_blank">MPERF-2234</a>).  -->The URLs for the same category and product, when assigned to multiple store views, are as expected.<br />
-Category URL example: <tt>/<em>parent-category</em>/category-2/</tt><br />
-Product URL example: <tt>/<em>parent-category</em>/category-2/product-1</tt></li>
+Category URL example: <code>/<em>parent-category</em>/category-2/</code><br />
+Product URL example: <code>/<em>parent-category</em>/category-2/product-1</code></li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2252" target="_blank">MPERF-2252</a>).  -->With the option to Add Store Code to URLs option enabled, store codes properly display in URLs and the store view displays properly.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2230" target="_blank">MPERF-2230</a>).  -->After duplicating a product, the product's URL key updates successfully.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2238" target="_blank">MPERF-2238</a>).  -->A product URL key is correct in your web store even if there is a category with the same URL key as the product.</li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2236" target="_blank">MPERF-2236</a>).  -->Adding products without specifying a value for the <strong>URL Key</strong> field no longer results in the exception log entry <tt>SQLSTATE[23000]: Integrity constraint violation</tt>.</li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2216" target="_blank">MPERF-2216</a>).  -->You can create two or more categories with the same URL key without encountering the exception log entry <tt>SQLSTATE[23000]: Integrity constraint violation</tt>.</li>
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2236" target="_blank">MPERF-2236</a>).  -->Adding products without specifying a value for the <strong>URL Key</strong> field no longer results in the exception log entry <code>SQLSTATE[23000]: Integrity constraint violation</code>.</li>
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2216" target="_blank">MPERF-2216</a>).  -->You can create two or more categories with the same URL key without encountering the exception log entry <code>SQLSTATE[23000]: Integrity constraint violation</code>.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2235" target="_blank">MPERF-2235</a>).  -->The value of a product's <strong>URL Key</strong> field is properly validated.<br />
 A URL key can contain only alphanumeric characters (a-z, A-Z, 0-9) and the dash or hyphen character.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2226" target="_blank">MPERF-2226</a>).  -->A caching error that affected changing URL redirects was fixed.</li>
@@ -832,26 +832,26 @@ Starting with this release those additional digits will have no impact on custom
 
 <h3 id="ce18-1800api">API Fixes</h3>
 <p>The following are fixed in the Magento SOAP v2.0 APIs (with exceptions noted):</p>
-<ul><li>Requesting a product using a call like the following returns the product with the specified numeric SKU value (<tt>8888</tt> in the following example):
+<ul><li>Requesting a product using a call like the following returns the product with the specified numeric SKU value (<code>8888</code> in the following example):
 <code>$result = $client->call($sessionId, 'catalog_product.info', '8888', null, null, 'sku');</code> <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-5017" target="_blank">Bug link</a>) --></li>
-<li>Order status is changed correctly using <a href="http://www.magentocommerce.com/api/soap/sales/salesOrder/sales_order.addComment.html" target="_blank"><tt>salesOrderAddComment</tt></a>. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6895" target="_blank">Bug link</a>)--></li>
-<li>The <a href="http://www.magentocommerce.com/api/soap/checkout/cartProduct/cart_product.moveToCustomerQuote.html" target="_blank"><tt>shoppingCartProductMoveToCustomerQuote</tt></a> method works properly. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-7068" target="_blank">Bug link</a>) --></li>
-<li>You can now use <tt>from</tt>-<tt>to</tt> complex filters to perform "window" filtration on a single field. For example, you can use <tt>from</tt> and <tt>to</tt> on the <tt>created_at</tt> return a list of sales orders using the <a href="http://www.magentocommerce.com/api/soap/sales/salesOrder/sales_order.list.html" target="_blank"><tt>salesOrderList</tt></a>.<!--(<a href="https://jira.corp.x.com/browse/MSSUP-3843" target="_blank">Bug link</a>) --></li>
+<li>Order status is changed correctly using <a href="http://www.magentocommerce.com/api/soap/sales/salesOrder/sales_order.addComment.html" target="_blank"><code>salesOrderAddComment</code></a>. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6895" target="_blank">Bug link</a>)--></li>
+<li>The <a href="http://www.magentocommerce.com/api/soap/checkout/cartProduct/cart_product.moveToCustomerQuote.html" target="_blank"><code>shoppingCartProductMoveToCustomerQuote</code></a> method works properly. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-7068" target="_blank">Bug link</a>) --></li>
+<li>You can now use <code>from</code>-<code>to</code> complex filters to perform "window" filtration on a single field. For example, you can use <code>from</code> and <code>to</code> on the <code>created_at</code> return a list of sales orders using the <a href="http://www.magentocommerce.com/api/soap/sales/salesOrder/sales_order.list.html" target="_blank"><code>salesOrderList</code></a>.<!--(<a href="https://jira.corp.x.com/browse/MSSUP-3843" target="_blank">Bug link</a>) --></li>
 <li>When you use the SOAP API v.2.0 with <a href="http://www.magentocommerce.com/api/soap/wsi_compliance.html" target="_blank">WS-I Compliance</a> enabled to retrieve sales orders information, the server responds with the correct <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13" target="_blank">Content-Length</a> header. <!--(<a href="https://jira.corp.x.com/browse/SUP-4766" target="_blank">Bug link</a>) --></li>
-<li>The <tt>productGetSpecialPrice</tt> method returns special price information for a product, whether or not <a href="http://www.magentocommerce.com/api/soap/wsi_compliance.html" target="_blank">WS-I Compliance</a> is enabled. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6360" target="_blank">Bug link</a>) --></li>
-<li>The <a href="http://www.magentocommerce.com/api/soap/checkout/cartPayment/cart_payment.list.html" target="_blank"><tt>shoppingCartPaymentList</tt></a> method returns the list of the available payment methods for the shopping cart appropriately. The following error is no longer returned:
+<li>The <code>productGetSpecialPrice</code> method returns special price information for a product, whether or not <a href="http://www.magentocommerce.com/api/soap/wsi_compliance.html" target="_blank">WS-I Compliance</a> is enabled. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6360" target="_blank">Bug link</a>) --></li>
+<li>The <a href="http://www.magentocommerce.com/api/soap/checkout/cartPayment/cart_payment.list.html" target="_blank"><code>shoppingCartPaymentList</code></a> method returns the list of the available payment methods for the shopping cart appropriately. The following error is no longer returned:
 <code>SOAP-ERROR: Encoding: object has no 'code' property in <em>name</em></code>
 <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6456" target="_blank">Bug link</a>) --></li>
 <li>The following issues with <a href="http://www.w3.org/TR/wsdl" target="_blank">WSDL</a> and <a href="http://www.magentocommerce.com/api/soap/wsi_compliance.html" target="_blank">WS-I Compliance</a> are resolved:
-<ul><li>The <tt>productAttributeAddOption</tt> and <a href="http://www.magentocommerce.com/api/soap/catalog/catalogProductAttribute/product_attribute.update.html" target="_blank"><tt>catalogProductAttributeUpdate</tt></a> methods are now supported when WS-I Compliance is enabled. <!--(<a href="https://jira.corp.x.com/browse/MAGETWO-6362" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MAGETWO-6490" target="_blank">Bug link</a>) --></li>
-<li>The WSDL declaration for <a href="http://www.magentocommerce.com/api/soap/sales/salesOrderCreditMemo/sales_order_creditmemo.create.html" target="_blank"><tt>salesOrderCreditmemoCreate</tt></a> is now correct; that is, it matches the code. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6681" target="_blank">Bug link</a>) --></li>
+<ul><li>The <code>productAttributeAddOption</code> and <a href="http://www.magentocommerce.com/api/soap/catalog/catalogProductAttribute/product_attribute.update.html" target="_blank"><code>catalogProductAttributeUpdate</code></a> methods are now supported when WS-I Compliance is enabled. <!--(<a href="https://jira.corp.x.com/browse/MAGETWO-6362" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MAGETWO-6490" target="_blank">Bug link</a>) --></li>
+<li>The WSDL declaration for <a href="http://www.magentocommerce.com/api/soap/sales/salesOrderCreditMemo/sales_order_creditmemo.create.html" target="_blank"><code>salesOrderCreditmemoCreate</code></a> is now correct; that is, it matches the code. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6681" target="_blank">Bug link</a>) --></li>
 <li>You can now add a C# web reference in Microsoft Visual Studio 2010 using the Magento WSDL. <br />
 For example, this command no longer fails:<br />
 <code>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin> wsdl /out:Magento.cs /v http://magentohost/api/v2_soap/?wsdl</code><!-- <br />
  (<a href="https://jira.corp.x.com/browse/MAGETWO-6354" target="_blank">Bug link</a>) --></li>
-<li>The <a href="http://www.magentocommerce.com/api/soap/wsi_compliance.html" target="_blank">WS-I Compliance</a> mode WSDL now includes <a href="http://www.magentocommerce.com/api/soap/catalog/catalogProduct/catalogProduct.html" target="_blank"><tt>catalogProductAttributeInfo</tt></a>. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6362" target="_blank">Bug link</a>) --></li></ul>
+<li>The <a href="http://www.magentocommerce.com/api/soap/wsi_compliance.html" target="_blank">WS-I Compliance</a> mode WSDL now includes <a href="http://www.magentocommerce.com/api/soap/catalog/catalogProduct/catalogProduct.html" target="_blank"><code>catalogProductAttributeInfo</code></a>. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-6362" target="_blank">Bug link</a>) --></li></ul>
 </li>
-<li><em>XML-RPC API</em>: Using the <tt>product_custom_option.add</tt> operation with <tt>multicall</tt> no longer results in redundant options. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-5273" target="_blank">Bug link</a>) --></li>
+<li><em>XML-RPC API</em>: Using the <code>product_custom_option.add</code> operation with <code>multicall</code> no longer results in redundant options. <!-- (<a href="https://jira.corp.x.com/browse/MAGETWO-5273" target="_blank">Bug link</a>) --></li>
 </ul>
 
 <h3 id="ce18-1800fixes">Fixes</h3>
@@ -867,17 +867,17 @@ For example, this command no longer fails:<br />
 <h4 id="ce18-1800fixes-webstore">Web Store and Shopping Cart Fixes</h4>
 <ul><li>A customer's account created date is correct. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-756" target="_blank">Bug link</a>) --></li>
 <li>When a product price is set with website scope and an administrative user has access to only one website, the default price is taken from that website scope. Also, when saving the product on the website scope, the price is updated only in that scope and not in the default scope. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-630" target="_blank">Bug link</a>) --></li> 
-<li>An error no longer displays on your web store after a customer places an order. (The error message was <tt>There has been an error processing your request. Please contact us or try again later</tt>). <!-- (<a href="https://jira.corp.x.com/browse/MPERF-634" target="_blank">Bug link</a>) --></li> 
+<li>An error no longer displays on your web store after a customer places an order. (The error message was <code>There has been an error processing your request. Please contact us or try again later</code>). <!-- (<a href="https://jira.corp.x.com/browse/MPERF-634" target="_blank">Bug link</a>) --></li> 
 <li>Restricted coupon codes work properly, even if the customer has selected the <strong>Remember me</strong> check box. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-734" target="_blank">Bug link</a>) --></li> 
 <li>Using the Table Rates shipping option, free shipping options work properly. (In the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > <strong>SALES</strong> > <strong>Shipping Methods</strong>. In the right pane, expand <strong>Table Rates</strong>.) <!-- (<a href="https://jira.corp.x.com/browse/MPERF-737" target="_blank">Bug link</a>) --></li> 
 <li>Issues with shipping table rates have been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-870" target="_blank">Bug link</a>) --></li> 
 <li>Reward Points are now granted one time per order, even when comments are added to the order later. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-742" target="_blank">Bug link</a>) --></li> 
-<li>Entering a value such as <tt>10,50</tt> (using a comma character and not a period) for <strong>Adjustment Fee</strong> now results in the correct amount of credit being applied to the transaction. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-763" target="_blank">Bug link</a>) --></li> 
+<li>Entering a value such as <code>10,50</code> (using a comma character and not a period) for <strong>Adjustment Fee</strong> now results in the correct amount of credit being applied to the transaction. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-763" target="_blank">Bug link</a>) --></li> 
 <li>Unit price for bundled products is now calculated correctly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1340" target="_blank">Bug link</a>) --></li> 
 <li>The tiered price of bundled items now displays properly on the web store. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-834" target="_blank">Bug link</a>) --></li> 
 <li>Composite products can be successfully reordered. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-785" target="_blank">Bug link</a>) --></li> 
 <li>You can now use special characters in a product URL key. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-782" target="_blank">Bug link</a>) --></li> 
-<li>After a customer visits the sitemap, web stores URLs are no longer prepended by <tt>/sitemap/catalog/<em>string</em></tt>. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-660" target="_blank">Bug link</a>) --></li> 
+<li>After a customer visits the sitemap, web stores URLs are no longer prepended by <code>/sitemap/catalog/<em>string</em></code>. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-660" target="_blank">Bug link</a>) --></li> 
 <li>Welcome messages now display properly in the web store after a customer's profile information is changed. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1268" target="_blank">Bug link</a>) --></li> 
 <li>Recently viewed products now display updates properly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1247" target="_blank">Bug link</a>) --></li> 
 <li>Armed Forces Middle East is now available for State when checking out. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-831" target="_blank">Bug link</a>) --></li> 
@@ -890,7 +890,7 @@ For example, this command no longer fails:<br />
 <li>FedEx shipping rates are now consistent with Magento discounted rates. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-852" target="_blank">Bug link</a>) --></li> 
 <li>Fixed issues with United Parcel Service (UPS) shipping rates. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1629" target="_blank">Bug link</a>) --></li> 
 <li>An issue that caused a fatal error in the web store for an item in a gift registry has been resolved. The issue occurred when the item was removed from a website after a user had added the item to their gift registry. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-854" target="_blank">Bug link</a>) --></li> 
-<li>UPS shipping labels have the word <tt>SAMPLE</tt> printed on them only when you request a sample label. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-856" target="_blank">Bug link</a>) --></li> 
+<li>UPS shipping labels have the word <code>SAMPLE</code> printed on them only when you request a sample label. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-856" target="_blank">Bug link</a>) --></li> 
 <li>Changes made to United States Post Office (USPS) APIs and rates have been incorporated in Magento. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-717" target="_blank">Bug link</a>) --></li> 
 <li>You can now process a return materials authorization (RMA) for an order that was shipped to multiple addresses. <!--( <a href="https://jira.corp.x.com/browse/MPERF-1688" target="_blank">Bug link</a>) --></li> 
 <li>The products in a customer's wish list no longer disappear after one or more products are edited by an administrator. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1651" target="_blank">Bug link</a>) --></li> 
@@ -929,11 +929,11 @@ For more information about flat catalog options, see <a href="http://www.magento
 </ul>
 
 <h4 id="ce18-1800fixes-importexport">Import Fixes</h4>
-<ul><li>The quantity (<tt>QTY</tt>) of all products imports correctly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-729" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MPERF-760" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MPERF-859" target="_blank">Bug link</a>) --></li>
-<li>The value of Maximum Qty Allowed in Shopping Cart (<tt>use_cfg_max_sale_qty</tt>) is correct. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-754" target="_blank">Bug link</a>) --></li>
+<ul><li>The quantity (<code>QTY</code>) of all products imports correctly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-729" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MPERF-760" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MPERF-859" target="_blank">Bug link</a>) --></li>
+<li>The value of Maximum Qty Allowed in Shopping Cart (<code>use_cfg_max_sale_qty</code>) is correct. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-754" target="_blank">Bug link</a>) --></li>
 <li>The product displays correctly in layered navigation. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-587" target="_blank">Bug link</a>) --></li>
-<li>Importing customer lists with capitalization variations in the e-mail address now imports the customer only once (for example, <tt>user@example.com</tt> and <tt>User@example.com</tt>). <!-- (<a href="https://jira.corp.x.com/browse/MPERF-835" target="_blank">Bug link</a>) --></li>
-<li><!-- NEW -->Issues with importing products with <strong>Append Complex Data</strong> selecting from a comma-separated value (<tt>.csv</tt>) file have been resolved. <!--https://jira.corp.x.com/browse/MPERF-1715, https://jira.corp.x.com/browse/MPERF-1907 -->
+<li>Importing customer lists with capitalization variations in the e-mail address now imports the customer only once (for example, <code>user@example.com</code> and <code>User@example.com</code>). <!-- (<a href="https://jira.corp.x.com/browse/MPERF-835" target="_blank">Bug link</a>) --></li>
+<li><!-- NEW -->Issues with importing products with <strong>Append Complex Data</strong> selecting from a comma-separated value (<code>.csv</code>) file have been resolved. <!--https://jira.corp.x.com/browse/MPERF-1715, https://jira.corp.x.com/browse/MPERF-1907 -->
 </ul>
 
 <h4 id="ce18-1800fixes-payment">Payment Fixes</h4>
@@ -965,29 +965,29 @@ PayPal NVP payment methods include: PayPal Payments Pro (including PayPal Paymen
 <!-- (<a href="https://jira.corp.x.com/browse/MPI-1375" target="_blank">Bug link</a>) -->
 </li>
 <li>The order status Suspected Fraud is now supported by PayPal Payments Pro (hosted) when PayPal fraud protection is enabled. Using the Magento Admin Panel, the merchant can also accept or deny any Suspected Fraud orders and have that decision applied to the PayPal transaction. <!-- (<a href="https://jira.corp.x.com/browse/SAASDEV-6469" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MPERF-1391" target="_blank">Bug link</a>) --></li>
-<li><!-- NEW -->When sending payments in the United Kingdom, PayPal Payments Pro (hosted) now sends the value for <tt>state</tt> correctly. (Before the fix, <tt>city</tt> was sent as the value for <tt>state</tt>.) <!--https://jira.corp.x.com/browse/MPI-889 -->
+<li><!-- NEW -->When sending payments in the United Kingdom, PayPal Payments Pro (hosted) now sends the value for <code>state</code> correctly. (Before the fix, <code>city</code> was sent as the value for <code>state</code>.) <!--https://jira.corp.x.com/browse/MPI-889 -->
 <li>Using the Ogone payment method, transactions display in the Magento Admin Panel after you capture them. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1689 target="_blank">Bug link</a>) --></li>
 <li>When an administrator places an order and uses PSi Gate, then cancels the order, the PSi Gate gateway displays both the order and the void transactions. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1622 target="_blank">Bug link</a>) --></li>
 <li>The following fields related to PayPal's Payflow Pro Gateway payment method are now implemented properly:
-<ul><li><a href="https://cms.paypal.com/cms_content/GB/en_GB/files/developer/PP_PayflowPro_Guide.pdf" target="_blank"><tt>[custref]</tt></a> is the Magento customer's ID</li>
-<li><a href="http://www.paypalobjects.com/en_US/ebook/PP_NVPAPI_DeveloperGuide/Appx_fieldreference.html" target="_blank"><tt>[INVNUM]</tt></a> is Magento's order number</li>
+<ul><li><a href="https://cms.paypal.com/cms_content/GB/en_GB/files/developer/PP_PayflowPro_Guide.pdf" target="_blank"><code>[custref]</code></a> is the Magento customer's ID</li>
+<li><a href="http://www.paypalobjects.com/en_US/ebook/PP_NVPAPI_DeveloperGuide/Appx_fieldreference.html" target="_blank"><code>[INVNUM]</code></a> is Magento's order number</li>
 <!-- (<a href="https://jira.corp.x.com/browse/MPERF-631" target="_blank">Bug link</a>) --></li></ul>
 </li>
-<li>Fixed spurious <tt>Gateway error: Void error: V18A4B18E0F9 has been captured</tt> errors when canceling partially invoiced orders when the Payflow Pro processor was used to process the payment. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1529" target="_blank">Bug link</a>) --></li>
+<li>Fixed spurious <code>Gateway error: Void error: V18A4B18E0F9 has been captured</code> errors when canceling partially invoiced orders when the Payflow Pro processor was used to process the payment. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1529" target="_blank">Bug link</a>) --></li>
 <li><em>3-D secure fixes that affect UK merchants only</em>:
 <ul><li>3-D Secure for UK merchants implementing Direct Payment works properly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1479" target="_blank">Bug link</a>) --></li>
 <li>SagePay Direct with 3-D secure payments are processed correctly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1464" target="_blank">Bug link</a>) --></li></ul>
 </li>
 <li>The Braintree payment method can now be configured properly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1396" target="_blank">Bug link</a>) --></li>
 <li>Partial captures are now supported for the following PayPal payment methods: Express Checkout, Payments Pro Payflow Edition, and PayPal Standard. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1379" target="_blank">Bug link</a>) --></li>
-<li>Using the PayPal Express Checkout method, a recently added customer can check out without the error <tt>This customer email already exists</tt>. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-753" target="_blank">Bug link</a>) --></li>
+<li>Using the PayPal Express Checkout method, a recently added customer can check out without the error <code>This customer email already exists</code>. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-753" target="_blank">Bug link</a>) --></li>
 
 </ul>
 
 <h4 id="ce18-1800fixes-other">Other Fixes</h4>
 <ul><li>MySQL database deadlock issues were resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-721" target="_blank">Bug link</a>, <a href="https://jira.corp.x.com/browse/MPERF-773" target="_blank">Bug link</a>) --></li>
 <li>EE 1.13 is now <a href="http://www.w3.org/standards/" target="_blank">World Wide Web Consortium (W3C) compliant</a>. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-844" target="_blank">Bug link</a>) --></li> 
-<li>A fatal error in <tt>GiftRegistry/Model/Item/Option.php</tt> has been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-586" target="_blank">Bug link</a>) --></li> 
+<li>A fatal error in <code>GiftRegistry/Model/Item/Option.php</code> has been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-586" target="_blank">Bug link</a>) --></li> 
 <li>When an administrative user whose role is restricted to managing products attempts to edit Inventory settings (<strong>Catalog</strong> > <strong>Manage Products</strong>, <strong>Inventory</strong>), only the available options display. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-863" target="_blank">Bug link</a>) --></li> 
 <li>Related product information updates appropriately in the Admin Panel. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-766" target="_blank">Bug link</a>) --></li> 
 <li>Issues with editing product inventory settings and category attributes using the Google Chrome web browser have been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1343" target="_blank">Bug link</a>) --></li> 
@@ -1002,7 +1002,7 @@ For more information about using the Solr search engine with Magento EE, see <a 
 <li><!-- EE -->The correct customer name displays on a gift card. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-633" target="_blank">Bug link</a>) --></li> 
 <li><!-- EE -->Product tags display properly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1434" target="_blank">Bug link</a>) --></li>
 <li><!-- EE -->Related products display properly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-86" target="_blank">Bug link</a>) --></li>
-<li><!-- EE --><tt><em>magento-install-dir</em>/app/code/core/Enterprise/PageCache/Model/Config.php</tt> was modified to enable you to set specific lifetimes for certain blocks. <!-- (<a href="https://jira.corp.x.com/browse/SUP-4974" target="_blank">Bug link</a>) --></li>
+<li><!-- EE --><code><em>magento-install-dir</em>/app/code/core/Enterprise/PageCache/Model/Config.php</code> was modified to enable you to set specific lifetimes for certain blocks. <!-- (<a href="https://jira.corp.x.com/browse/SUP-4974" target="_blank">Bug link</a>) --></li>
 <li><!-- EE -->Automated e-mail marketing reminder rules work properly. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-871" target="_blank">Bug link</a>) --></li>
 <li><!-- EE -->Issues with session cookies have been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1588" target="_blank">Bug link</a>), (<a href="https://jira.corp.x.com/browse/MPERF-1599" target="_blank">Bug link</a>) --></li>
 
@@ -1025,7 +1025,7 @@ The feature behaves the same way; namely, selecting <strong>Yes</strong> creates
 
 </li>
 <li>The options <strong>Product URL Suffix</strong> and <strong>Category URL Suffix</strong> return an error if anything <em>except</em> alphanumerical characters or the underscore character are entered. (In the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Search Engine Optimizations</strong>.) </li>
-<li><!-- EE -->The <tt>catalog_product_entity_url_key</tt> and <tt>catalog_category_entity_url_key</tt> database tables for the corresponding <tt>url_key</tt> attributes have been added. <!-- wrong bug <a href="https://jira.corp.x.com/browse/MPERF-661" target="_blank">Bug link</a>) --></li></ul>
+<li><!-- EE -->The <code>catalog_product_entity_url_key</code> and <code>catalog_category_entity_url_key</code> database tables for the corresponding <code>url_key</code> attributes have been added. <!-- wrong bug <a href="https://jira.corp.x.com/browse/MPERF-661" target="_blank">Bug link</a>) --></li></ul>
 </ul>
 <p><!-- EE -->For more information about indexing changes, go <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-indexing" target="_blank">here</a>.</p>
 
