@@ -52,7 +52,7 @@
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ee113-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3762_EE_1.14.0.1_v1.sh. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -73,13 +73,13 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 <h3 id="discover-fix">Discover Card Validation Patch Available</h3>
 <p>Magento has fixed an issue that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
 <p>The issue affects EE versions 1.9.1.1 through 1.13.1.0.</p>
-<p>To get a fix for the issue, see <a href="http://www.magentocommerce.com/knowledge-base/entry/discover-card-validation" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
+<p>To get a fix for the issue, see <a href="{{ site.m1xgdeurl }}/other/discover-card-validation.html" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
 
 
 <h3 id="php54">PHP 5.4 Patch Available</h3>
 <p>You can use PHP 5.4 with Magento EE versions 11.0.0.0&ndash;1.13.1.0.</p>
-<p>To get the patch, see <a href="http://www.magentocommerce.com/knowledge-base/entry/php54-patch" target="_blank">Getting the PHP 5.4 patch for Magento Enterprise Edition (EE) and Community Edition (CE)</a>.</p>
+<p>To get the patch, see <a href="{{ site.m1xgdeurl }}/other/php5.4_patch.html" target="_blank">Getting the PHP 5.4 patch for Magento Enterprise Edition (EE) and Community Edition (CE)</a>.</p>
 <p>For more information about PHP 5.4, see <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">the PHP migration page</a> and <a href="http://php.net/ChangeLog-5.php#5.4.0" target="blank">the PHP changelog</a>.</p>
 
 <h3 id="ee113-patches-how-to-get">How to get Patches for Magento EE</h3>
@@ -89,7 +89,7 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 <li>In the right pane, click <strong>Magento Enterprise Edition</strong>.</li>
 <li>Follow the prompts on your screen to download a patch for your version of EE.</li>
-<li>Apply the patch as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 
 <h2 id="ee1131-11310">Magento EE 1.13.1.0 Release Notes</h2>
@@ -131,7 +131,7 @@ Magento thanks iSEC Security Consultants for contributing to this fix. For more 
 Magento thanks Ivan Chepurnyi for contributing to this fix.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-373" target="_blank">MPERF-373</a>)  -->Resolved a session fixation issue when registering a user with the web store.<!-- <br />
 Magento thanks iSEC Security Consultants for contributing to this fix. --></li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2120" target="_blank">MPERF-2120</a>)  -->Resolved a <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-later-release-notes#ce18-1800security-advisory" target="_blank">cross-site scripting (XSS) issue reported in EE 1.13.0.0</a>.<br />
+<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2120" target="_blank">MPERF-2120</a>)  -->Resolved a <a href="#ce18-1800security-advisory">cross-site scripting (XSS) issue reported in EE 1.13.0.0</a>.<br />
 Magento thanks Myke Hines, Fox, and Opteros for contributing to this fix.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2123" target="_blank">MPERF-2123</a>)  -->Resolved issues with the expiration of file-based user sessions.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1234" target="_blank">MPERF-1234</a>)  -->Resolved issues that could have resulted in <a href="https://en.wikipedia.org/wiki/File_inclusion_vulnerability" target="_blank">Remote File Inclusion (RFI)</a> vulnerabilities.<!-- <br />
@@ -146,7 +146,7 @@ Magento thanks Binary Anvil for contributing to this fix. --></li>
 </ul>  
 
 <h3 id="11310-changes-upgrade-issue">Potential Issue After Upgrading to EE 1.13.1.0</h3>
-<p>There is a known issue after upgrading to EE 1.13.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
+<p>There is a known issue after upgrading to EE 1.13.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
 <p><strong>Symptom</strong>: After completing the upgrade, when you log in to the Admin Panel and click <strong>System</strong> > <strong>Configuration</strong>, a fatal error similar to the following displays in your browser:</p>
 <pre>Class 'Mage_Googlecheckout_Helper_Data' not found in /var/www/html/magento/app/Mage.php on line 547</pre>
 <!-- <p><strong>Description</strong>: TBD -->
@@ -155,7 +155,7 @@ Magento thanks Binary Anvil for contributing to this fix. --></li>
 <li>As a user with <code>root</code> privileges, delete all files <em>except</em> <code>config.xml</code> from the following directory:<br />
 <pre><em>magento-install-dir</em>/app/code/core/Mage/GoogleCheckout/etc</pre></li>
 <li>When you log back in to the Admin Panel, everything works as expected.<br />
-If you're still encountering errors, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</li></ol>
+If you're still encountering errors, see <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</li></ol>
  
 <h3 id="11310-changes">Changes in This Release</h3>
 <p>See the following sections for a discussion of changes in this release:</p>
@@ -167,7 +167,7 @@ This option specifies how FPT is calculated as follows:<br />
   <li><strong>Taxed</strong>: Click this option if your taxing jurisdiction does tax FPT. (For example, Canada taxes FPT.)</li>
   <li><strong>Loaded and Displayed with Tax</strong>: Click this option if FPT is added to the order total before applying tax (for example, in EU countries).</li></ul>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1902" target="_blank">MPERF-1902</a>)  -->You can now specify a 0% tax rate. (In the Admin Panel, click <strong>Sales</strong> > <strong>Tax</strong> > <strong>Manage Tax Zones & Rates.</strong>).<br />
-For more information, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-setup-taxes-step3#tax_rates" target="_blank">Magento Tax Setup, Step 3: Set Up Tax Rates (CE 1.8/EE 1.13)</a>.</li>
+For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1857" target="_blank">MPERF-1857</a>)  -->Magento changed its recommended setting for <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Calculation Settings</strong>, option <strong>Apply Discount On Prices</strong> as follows:
 <ul><li>US and Canadian merchants: Set the value of <strong>Apply Discount On Prices</strong> to <strong>Excluding Tax</strong>.</li>
 <li>EU merchants: Set the value of <strong>Apply Discount On Prices</strong> to <strong>Including Tax</strong>.</li></ul>
@@ -386,7 +386,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 <li><a href="#ee113-11302-fixes">Fixes in Magento EE 1.13.0.2</a></li></ul>
 
 <p><strong>Important</strong>: <ul><li>Perform <em>all</em> new installations and upgrades to Magento EE 1.13.0.2&mdash;<em>not to Magento EE 1.13.0.0 or 1.13.0.1</em>&mdash;to avoid issues with missing products on your web store due to duplicate URL key issues during the upgrade.</li>
-<li>The upgrade to EE 1.13.0.2 involves tasks not required for other EE upgrades. For more information, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-upgrading#ee1300-11301-upgrade-to-ee11302" target="_blank">Important Information About Upgrading to Magento Enterprise Edition (EE) 1.13.0.2</a>.</li></ul></p>
+<li>The upgrade to EE 1.13.0.2 involves tasks not required for other EE upgrades. For more information, see <a href="{{ site.m1xgdeurl }}install/installing_upgrade_landing.html#ee1300-11301-upgrade-to-ee11302-start" target="_blank">Important Information About Upgrading to Magento Enterprise Edition (EE) 1.13.0.2</a>.</li></ul></p>
 
 <h3 id="ee113-11302-seo">Search Engine Optimization in Magento EE 1.13.0.2</h3>
 <p>This section discusses how search engine optimization (SEO) works in EE 1.13.0.2. This section is <em>not</em> intended to be a tutorial on SEO.</p>
@@ -700,7 +700,7 @@ In earlier EE versions, incorrect behavior was reported when the setting <strong
 <ul><li>Major overhaul of tax calculation formulas, correction of rounding errors, and additional assistance with configuration</li>
 <li><!-- EE -->Most indexing processes now run only to update products, categories, URL redirects, and so on that have changed&mdash;eliminating the need for manual full reindexing</li>
 <li><!-- EE -->Additional option of using Redis NoSQL for cache and session storage in multi-host deployments (recommended for new deployments)<br />
-To set up and use Redis with Magento, see <a href="http://www.magentocommerce.com/knowledge-base/entry/redis-magento-ce-ee" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
+To set up and use Redis with Magento, see <a href="http://devdocs.magento.com/guides/m1x/ce18-ee113/using_redis.html" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
 <li><!-- EE -->Full page caching now invalidates only pages that are affected by product or category changes</li>
 <li>Optimized cache adapters for single-server systems</li>
 <li>Elimination of many types of database deadlocks</li>
@@ -734,7 +734,7 @@ Now, the session ID changes after successful registration, making unauthorized u
 
 <h3 id="ee113-11300-limitation">Upgrade Limitation</h3>
 <p>Magento EE 1.13&mdash;unlike earlier versions&mdash;does not allow duplicate URL keys for products or categories. An issue has been identified that causes problems during upgrades if you already have duplicate URL keys. The issue is being addressed; until a solution is announced, Magento recommends you test your upgrade but do not try to deploy it to a production environment.</p>
-For more information about upgrading in a development environment, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-upgrading" target="_blank">Upgrading to and Verifying Magento Community Edition (CE) 1.8 and Enterprise Edition (EE) 1.13</a>.</p>
+For more information about upgrading in a development environment, see <a href="{{ site.m1xgdeurl }}/install/installing_upgrade_landing.html" target="_blank">Upgrading to and Verifying Magento Community Edition (CE) 1.8 and Enterprise Edition (EE) 1.13</a>.</p>
 
 <h3 id="ee113-11300-improvements">Performance Improvements</h3>
 <ul><li>Limited the way Magento performs large database lookups. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-425" target="_blank">Bug link</a>)</li> -->
@@ -749,7 +749,7 @@ For more information about upgrading in a development environment, see <a href="
 <!-- EE -- Look on Wiki <li>Magento uses <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">Materialized Views</a> for database access, which dramatically reduces processing time and overhead.</li> -->
 <li><!-- EE -->Magento uses <a href="http://dev.mysql.com/doc/refman/5.0/en/triggers.html" target="_blank">MySQL database triggers</a> to improve access to the database during reindexing.</li></ul>
 </ul>
-<p>For more information, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-performance-and-scalability-white-paper" target="_blank">Magento Enterprise Edition 1.13 Benchmarking</a></p>
+<p>For more information, see <a href="{{ site.m1xgdeurl }}ce18-ee113/EE113-benchmark.html" target="_blank">Magento Enterprise Edition 1.13 Benchmarking</a></p>
 
 <h3 id="ce18-1800tax">Tax Calculation Fixes</h3>
 <p>Tax calculation issues can be divided into the following sections:</p>
@@ -764,7 +764,7 @@ For more information about upgrading in a development environment, see <a href="
 <p>The following general fixes were made to Magento tax configuration and calculations:</p>
 <ul><li>Based on Magento testing and merchant experience, certain tax configuration settings have been determined to be susceptible to rounding issues and can be confusing to buyers. To help you avoid issues with those settings, warning messages display in the Admin Panel if you attempt to save such a configuration.<br />
 Administrative users can choose to dismiss the messages and can still save the configuration; however, Magento strongly recommends you change the configuration in a way recommended by the details displayed in the message.<br />
-For details, see <a href="http://www.magentocommerce.com/knowledge-base/entry/magento-ce-18-ee-113-tax-calc" target="_blank">Magento CE 1.8 and EE 1.13: Recommended Tax Configurations and Best Practices</a>.<br />
+For details, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.<br />
 <!-- (<a href="https://jira.corp.x.com/browse/MPERF-404" target="_blank">Bug link</a>) --></li>
 <li>Bundle pricing is more consistent as follows:
 <ul><li>The calculation formula is:
@@ -780,7 +780,7 @@ Starting with this release those additional digits will have no impact on custom
 <li>Goods and Services Tax (GST)</li>
 <li>Taxe de vente du Québec (TVQ)&mdash;also referred to as Quebec Sales Tax (QST)</li></ul>
 </li></ul>
-<p>For details, see <a href="http://www.magentocommerce.com/knowledge-base/entry/magento-ce-18-ee-113-tax-calc" target="_blank">Magento CE 1.8 and EE 1.13: Recommended Tax Configurations and Best Practices</a>.</p>
+<p>For details, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 <!-- <p>(<a href="https://jira.corp.x.com/browse/MPERF-410" target="_blank">Bug link</a>)</p> -->
 
 <h4 id="ce18-1800tax-round">Rounding Error Fixes</h4>
@@ -899,7 +899,7 @@ For example, this command no longer fails:<br />
 <li>Issues with purchasing a product using a gift card created with a custom option have been resolved. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1601" target="_blank">Bug link</a>) --></li> 
 <li><!-- NEW -->When a customer selects a product on your web store, the assigned category is selected in the navigation menu. <!-- https://jira.corp.x.com/browse/MPERF-1708 --></li>
 <li><!-- NEW, EE -->With both flat index options enabled and set to update on save, mass attribute updates now display properly in your web store.<br />
-For more information about flat catalog options, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-indexing#flat" target="_blank">Using the Flat Catalog and Product Reindexing Improvements</a>.<!-- https://jira.corp.x.com/browse/MPERF-1589 --></li>
+For more information about flat catalog options, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.<!-- https://jira.corp.x.com/browse/MPERF-1589 --></li>
 <li><!-- NEW, EE -->With both flat index options disabled, after adding a product to many websites and assigning it to one or more categories, the product displays in the appropriate websites and categories in the web store. <!-- https://jira.corp.x.com/browse/MPERF-1575 --></li>
 <li><!-- NEW, EE -->You can now use multiple selection attributes in a customer segment. <!-- https://jira.corp.x.com/browse/MPERF-1661 --></li>
 </ul>
@@ -995,7 +995,7 @@ PayPal NVP payment methods include: PayPal Payments Pro (including PayPal Paymen
 <li>You can now fetch data for a PayPal Settlement Report using a custom Secure FTP (SFTP) server. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1526" target="_blank">Bug link</a>) --></li> 
 <li><!-- NEW, EE -->Using the Solr search engine with price navigation calculation step set to manual now displays search results properly on your web store. (A fatal error was fixed.)<br />
 (To set price navigation step options in the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > <strong>CATALOG</strong> > <strong>Catalog</strong> > <strong>Layered Navigation</strong>. From the <strong>Price Navigation Step Calculation</strong> list, click <strong>Manual</strong>.)<br />
-For more information about using the Solr search engine with Magento EE, see <a href="http://www.magentocommerce.com/knowledge-base/entry/how-to-use-the-solr-search-engine-with-magento-enterprise-edition" target="_blank">the Knowledge Base article</a>. <!-- https://jira.corp.x.com/browse/MPERF-1627 --></li>
+For more information about using the Solr search engine with Magento EE, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>. <!-- https://jira.corp.x.com/browse/MPERF-1627 --></li>
 <li>You can now save a category with the option <strong>Available Product Listing Sort By: Best value or Price</strong> enabled. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-1342" target="_blank">Bug link</a>) --></li> 
 <li><!-- EE -->The following fixes relate to full page caching:
 <ul><li><!-- EE -->Breadcrumbs to a product work for all categories with which the product is associated. <!-- (<a href="https://jira.corp.x.com/browse/MPERF-740" target="_blank">Bug link</a>) --></li>
@@ -1018,7 +1018,7 @@ For more information about using the Solr search engine with Magento EE, see <a 
 <li>Request Path for any URL Redirect (formerly referred to as <em>URL Rewrite</em></li></ul>
 </li>
 <li><!-- EE -->There is a new management page in the Admin Panel: <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Index Management</strong>.</li>
-<li><!-- EE M-->The options on the <strong>System</strong> > <strong>Index Management</strong> are significantly different. In particular, because manual reindexing is no longer required for most indexers, there are fewer check boxes and the page mostly displays status information. <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-indexing#overview-index-mgmt" target="_blank">More information</a></li>
+<li><!-- EE M-->The options on the <strong>System</strong> > <strong>Index Management</strong> are significantly different. In particular, because manual reindexing is no longer required for most indexers, there are fewer check boxes and the page mostly displays status information. </li>
 <li>In the Admin Panel, <strong>Catalog</strong> > <strong>Manage Products</strong> > <em>edit-product</em> > <strong>General</strong> tab page option <strong>Create Permanent Redirect for old URL if URL key changed</strong> changes to <strong>Create Custom Redirect for old URL</strong>.<br />
 The feature behaves the same way; namely, selecting <strong>Yes</strong> creates a redirect for the old URL that points to the new URL if a page is moved.<br />
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The wording of this option is expected to change back to the previous wording in a subsequent release.</div>
@@ -1027,7 +1027,7 @@ The feature behaves the same way; namely, selecting <strong>Yes</strong> creates
 <li>The options <strong>Product URL Suffix</strong> and <strong>Category URL Suffix</strong> return an error if anything <em>except</em> alphanumerical characters or the underscore character are entered. (In the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Search Engine Optimizations</strong>.) </li>
 <li><!-- EE -->The <code>catalog_product_entity_url_key</code> and <code>catalog_category_entity_url_key</code> database tables for the corresponding <code>url_key</code> attributes have been added. <!-- wrong bug <a href="https://jira.corp.x.com/browse/MPERF-661" target="_blank">Bug link</a>) --></li></ul>
 </ul>
-<p><!-- EE -->For more information about indexing changes, go <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-indexing" target="_blank">here</a>.</p>
+<p><!-- EE -->For more information about indexing changes, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 
 
 

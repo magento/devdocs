@@ -54,7 +54,7 @@ Magento takes security very seriously and will continue to focus on identifying 
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ce18-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -71,13 +71,13 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 <h3 id="discover-fix">Discover Card Validation Patch Available</h3>
 <p>Magento has fixed an issue that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
 <p>The issue affects Magento CE versions 1.4.2.0&ndash;1.8.1.0.</p>
-<p>To get a fix for the issue, see <a href="http://www.magentocommerce.com/knowledge-base/entry/discover-card-validation" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
+<p>To get a fix for the issue, see <a href="{{ site.m1xgdeurl }}other/discover-card-validation.html" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
 
 
 <h3 id="php54">PHP 5.4 Patch Available</h3>
 <p>You can use PHP 5.4 with Magento CE versions 1.6.0.0&ndash;1.8.1.0.</p>
-<p>To get the patch, see <a href="http://www.magentocommerce.com/knowledge-base/entry/php54-patch" target="_blank">Getting the PHP 5.4 patch for Magento Enterprise Edition (EE) and Community Edition (CE)</a>.</p>
+<p>To get the patch, see <a href="{{ site.m1xgdeurl }}other/php5.4_patch.html" target="_blank">Getting the PHP 5.4 patch for Magento Enterprise Edition (EE) and Community Edition (CE)</a>.</p>
 <p>For more information about PHP 5.4, see <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">the PHP migration page</a> and <a href="http://php.net/ChangeLog-5.php#5.4.0" target="blank">the PHP changelog</a>.</p>
 
 <h3 id="ce18-patches-how-to-get">How to Get Patches For Magento CE</h3>
@@ -87,7 +87,7 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 <li>Scroll down to the Magento Community Edition Patches section.</li>
 <li>Follow the prompts on your screen to download a patch for your version of CE.</li>
-<li>Apply the patch as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h2 id="ee1131-11310">Magento Community Edition (CE) 1.8.1.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
@@ -134,8 +134,8 @@ Magento thanks iSEC Security Consultants for contributing to this fix. For more 
 Magento thanks Ivan Chepurnyi for contributing to this fix.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-373" target="_blank">MPERF-373</a>)  -->Resolved a session fixation issue when registering a user with the web store.<!-- <br />
 Magento thanks iSEC Security Consultants for contributing to this fix. --></li>
-<li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2120" target="_blank">MPERF-2120</a>)  -->Resolved a <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-later-release-notes#ce18-1800security-advisory" target="_blank">cross-site scripting (XSS) issue reported in CE 1.8.0.0</a>.<br />
-Magento thanks Myke Hines, Fox, and Opteros for contributing to this fix.</li>
+<!--<li> (<a href="https://jira.corp.x.com/browse/MPERF-2120" target="_blank">MPERF-2120</a>)  Resolved a <a href="{{ site.m1xgdeurl }}ce18-ee113/ce1.8_release-notes.html#ce18-1800security-advisory" target="_blank">cross-site scripting (XSS) issue reported in CE 1.8.0.0</a>.<br />
+Magento thanks Myke Hines, Fox, and Opteros for contributing to this fix.</li> -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2123" target="_blank">MPERF-2123</a>)  -->Resolved issues with the expiration of file-based user sessions.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1234" target="_blank">MPERF-1234</a>)  -->Resolved issues that could have resulted in <a href="https://en.wikipedia.org/wiki/File_inclusion_vulnerability" target="_blank">Remote File Inclusion (RFI)</a> vulnerabilities.<!-- <br />
 Magento thanks Ralf Zimmermann for contributing to this fix. --></li>
@@ -148,7 +148,7 @@ Magento thanks Binary Anvil for contributing to this fix. --></li>
 </ul>  
 
 <h3 id="11810-changes-upgrade-issue">Issue After Upgrading to CE 1.8.1</h3>
-<p><!-- https://jira.corp.x.com/browse/APPSEC-212 -->There is a known Issue After Upgrading to CE 1.8.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
+<p><!-- https://jira.corp.x.com/browse/APPSEC-212 -->There is a known Issue After Upgrading to CE 1.8.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
 <p><strong>Symptom</strong>: After completing the upgrade, when you log in to the Admin Panel and click <strong>System</strong> > <strong>Configuration</strong>, a fatal error similar to the following displays in your browser:</p>
 <pre>Class 'Mage_Googlecheckout_Helper_Data' not found in /var/www/html/magento/app/Mage.php on line 547</pre>
 <!-- <p><strong>Description</strong>: TBD -->
@@ -157,7 +157,7 @@ Magento thanks Binary Anvil for contributing to this fix. --></li>
 <li>As a user with <code>root</code> privileges, delete all files <em>except</em> <code>config.xml</code> from the following directory:<br />
 <pre><em>magento-install-dir</em>/app/code/core/Mage/GoogleCheckout/etc</pre></li>
 <li>When you log back in to the Admin Panel, everything works as expected.<br />
-If you're still encountering errors, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-install-upgrade#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</li></ol>
+If you're still encountering errors, see <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</li></ol>
  
 <h3 id="11310-changes">Changes in This Release</h3>
 <p>See the following sections for a discussion of changes in this release:</p>
@@ -170,7 +170,7 @@ This option specifies how FPT is calculated as follows:<br />
   <li><strong>Loaded and Displayed with Tax</strong>: Click this option if FPT is added to the order total before applying tax (for example, in EU countries).</li></ul>
   </li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1902" target="_blank">MPERF-1902</a>)  -->You can now specify a 0% tax rate. (In the Admin Panel, click <strong>Sales</strong> > <strong>Tax</strong> > <strong>Manage Tax Zones & Rates.</strong>).<br />
-For more information, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-setup-taxes-step3#tax_rates" target="_blank">Magento Tax Setup, Step 3: Set Up Tax Rates (CE 1.8/EE 1.13)</a>.</li>
+For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1857" target="_blank">MPERF-1857</a>)  -->Magento changed its recommended setting for <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Calculation Settings</strong>, option <strong>Apply Discount On Prices</strong> as follows:
 <ul><li>US and Canadian merchants: Set the value of <strong>Apply Discount On Prices</strong> to <strong>Excluding Tax</strong>.</li>
 <li>EU merchants: Set the value of <strong>Apply Discount On Prices</strong> to <strong>Including Tax</strong>.</li></ul>
@@ -395,7 +395,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 <ul><li>Major overhaul of tax calculation formulas, correction of rounding errors, and additional assistance with configuration.</li>
 <li>Optimized cache adapters for single-server systems</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1972" target="_blank">MPERF-1972</a>)  -->Upgraded Redis cache adapters for multi-server systems.<br />
-To set up and use Redis with Magento, see <a href="http://www.magentocommerce.com/knowledge-base/entry/redis-magento-ce-ee" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
+To set up and use Redis with Magento, see <a href="{{ site.m1xgdeurl }}ce18-ee113/using_redis.html" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
 <li>Eliminated many types of database deadlocks.</li>
 </ul>
 
@@ -445,7 +445,7 @@ We thank Bastian Ike for contributing to this fix.<!-- (<a href="https://jira.co
 <p>The following general fixes were made to Magento tax configuration and calculations:</p>
 <ul><li>Based on Magento testing and merchant experience, certain tax configuration settings have been determined to be susceptible to rounding issues and can be confusing to buyers. To help you avoid issues with those settings, warning messages display in the Admin Panel if you attempt to save such a configuration.<br />
 Administrative users can choose to dismiss the messages and can still save the configuration; however, Magento strongly recommends you change the configuration in a way recommended by the details displayed in the message.<br />
-For details, see <a href="http://www.magentocommerce.com/knowledge-base/entry/magento-ce-18-ee-113-tax-calc" target="_blank">Magento CE 1.8 and EE 1.13: Recommended Tax Configurations and Best Practices</a>.<br />
+For details, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.<br />
 <!-- (<a href="https://jira.corp.x.com/browse/MPERF-404" target="_blank">Bug link</a>) --></li>
 <li>Bundle pricing is more consistent as follows:
 <ul><li>The calculation formula is:
@@ -461,7 +461,7 @@ Starting with this release those additional digits will have no impact on custom
 <li>Goods and Services Tax (GST)</li>
 <li>Taxe de vente du Québec (TVQ)&mdash;also referred to as Quebec Sales Tax (QST)</li></ul>
 </li></ul>
-<p>For details, see <a href="http://www.magentocommerce.com/knowledge-base/entry/magento-ce-18-ee-113-tax-calc" target="_blank">Magento CE 1.8 and EE 1.13: Recommended Tax Configurations and Best Practices</a>.</p>
+<p>For details, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 <!-- <p>(<a href="https://jira.corp.x.com/browse/MPERF-410" target="_blank">Bug link</a>)</p> -->
 
 <h4 id="ce18-1800tax-round">Rounding Error Fixes</h4>
