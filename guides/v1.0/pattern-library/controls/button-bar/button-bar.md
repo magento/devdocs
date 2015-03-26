@@ -6,7 +6,7 @@ title: Magento Admin Pattern Library
 menu_title: Button Bar
 menu_order: 2
 menu_node: 
-github_link: pattern-library/controls/buttons-bar/button-bar.md
+github_link: pattern-library/controls/button-bar/button-bar.md
 ---
 
 
@@ -36,7 +36,7 @@ For solutions not described in this article, please refer to other related patte
 
 
 <h3 id="when-not-to-use">When Not to Use</h3>
-* When there is already a button bar exist.
+* When there is already a button bar.
 * When there is a wizard bar.
 * When buttons are needed but they are not page level buttons.
 

@@ -53,14 +53,14 @@ _* “best” is a relative term, but there are User Experience principles and b
 In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form layout – “label-left” and “label-top”. Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
 
 <br />
-_**Example of label-left**_
+_**Example of label-top**_
 <br />
 <br />
 <img src="img/form_sample_horiz.png">
 <br />
 <br />
 <br />
-_**Example of label-top**_
+_**Example of label-left**_
 <br />
 <br />
 <img src="img/form_sample_vert.png">
