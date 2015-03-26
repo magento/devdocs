@@ -61,17 +61,17 @@
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Visual Merchandiser is intended to be used <em>only</em> with EE 1.14.1. To add the Visual Merchandiser to earlier versions, contact <a href="http://www.ontapgroup.com/index.php/app/visual-merchandiser/" target="_blank">On Tap</a>. Magento does not support Visual Merchandiser in versions earlier than EE 1.14.1.</div>
 
 
-<p>For more information, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-visual-merch-overview" target="_blank">Overview of the Visual Merchandizer for Magento Enterprise Edition (EE) 1.14.1</a>.</p>
+<p>For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 
 <h4 id="ee114-11410-highlights-swatch">Configurable Swatches</h4>
 <p>Configurable swatches help you optimize the way products are presented on your site. New "swatch" capabilities make products more appealing&mdash;and boost conversion rates&mdash;by offering shoppers quick access to information, like available colors, fabrics, sizes, and more.</p>
 <p>Clicking on a swatch automatically updates the product image so shoppers see exactly what a color or fabric looks like, giving them confidence to proceed with their purchase.</p>
-<p>For more information, see the <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-ce191-configurable-swatches" target="_blank">Magento EE 1.14.1 and Magento CE 1.9.1 Configurable Swatches Guide</a>.</p>
+<p>For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 
 <h4 id="ee114-11410-highlights-rwd">Responsive Design Improvements</h4>
 <p>It has never been easier to create a mobile-friendly site now that Magento's responsive design reference theme includes <em>all</em> core Magento features, including gift registries, downloadable products, multiple wish lists, add-to-cart by SKU, and private sales.</p>
 <p>It even boasts responsive default email templates so customers can read your order confirmation emails and newsletters on any device.</p>
-<p>For more information, see the <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-ce191-responsive-email" target="_blank">Magento EE 1.14.1 and Magento CE 1.9.1 Responsive Email Developer's Guide</a>.</p>
+<p>For more information, see the <a href="{{ site.m1xgdeurl }}ce19-ee114/RWD_responsive_emails.html" target="_blank">Magento EE 1.14.1 and Magento CE 1.9.1 Responsive Email Developer's Guide</a>.</p>
  
 <h4 id="ee114-11410-highlights-tech">Technology Updates</h4>
 <p>Magento Enterprise Edition boosts performance and security by adding support for MySQL 5.6 and PHP 5.5.</p>
@@ -83,7 +83,7 @@
 <h4 id="ee114-11410-highlights-spt">Magento EE System Reports <em>(EE only)</em></h4>
 <p><em>Magento EE only</em>. Now administrators can generate a detailed report about your installation to help support teams more easily diagnose and resolve issues.</p>
 <p>These reports provide information about your Apache version, MySQL settings, PHP extensions, database corruption status, and much more, giving support teams information needed to start debugging, minimizing back-and-forth conversations with you.</p>
-<p>For more information, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-system-report" target="_blank">Using Magento Enterprise Edition (EE) 1.14.1 System Reports</a>.</p>
+<p>For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 
 <h4 id="ee114-11410-highlights-admins">Multi-Administrator Support</h4>
 <p>This release significantly improves backend scalability and eases administrative tasks by enabling many administrators to make product updates at the same time&mdash;without causing deadlocks or critical data errors.</p>
@@ -130,12 +130,12 @@ The name of this patch is <code>PATCH_SUPEE-4859_EE_1.14.1.0_v1-2014-11-21-08-39
 The name of this patch is <code>translations-1-14-1-0-2014-11-26-11-01-39.zip</code>.</li>
 
 </ul>
-<p>To get Magento patches, see <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches" target="_blank">How to Apply and Revert Magento Patches</a>.</p>
+<p>To get Magento patches, see <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</p>
 
 
 <h3 id="ee114-1410security">Security Enhancements</h3>
 <p>We fixed the following security issues in this release:</p>
-<ul><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5940" target="_blank">MPERF-5940</a>, <a href="https://jira.corp.x.com/browse/MPERF-5770" target="_blank">MPERF-5770</a>  -->Resolved potential issues as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/security-add-handler" target="_blank">Resolving a Remote Code Execution Exploit</a>.<br>
+<ul><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5940" target="_blank">MPERF-5940</a>, <a href="https://jira.corp.x.com/browse/MPERF-5770" target="_blank">MPERF-5770</a>  -->Resolved potential issues as discussed in <a href="{{ site.m1xgdeurl }}/other/appsec-900_addhandler.html" target="_blank">Resolving a Remote Code Execution Exploit</a>.<br>
 Magento thanks Matt Barrah for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5146" target="_blank">MPERF-5146</a>  -->Resolved a potential <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing" target="_blank">XML External Entity Processing (XXE)</a> exploit with the potential to cause a Denial of Service attack.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4459" target="_blank">MPERF-4459</a>  -->Customer passwords are no longer stored in clear text during registration.</li>
@@ -151,7 +151,7 @@ Magento thanks Matt Barrah for contributing to this fix.</li>
 <ul><li><strong>Shortcut on Shopping Cart</strong> renamed to <strong>Display on Shopping Cart</strong> and moved from Basic to Advanced.</li>
 <li>The recommended <strong>Display on Shopping Cart</strong> option is now worded <strong>Yes (PayPal recommends this option)</strong>.</li></ul>
 </li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2662" target="_blank">MPERF-2662</a>  -->It's more important than ever for you to configure a <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-installing#install-cron" target="_blank">Magento cron job</a>. In addition to indexing and other core functions, all Magento e-mails (including order confirmation and transactional) are now queued and sent according to your configured cron schedule.<br>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2662" target="_blank">MPERF-2662</a>  -->It's more important than ever for you to configure a <a href="{{ site.m1xgdeurl }}install/installing_install.html#install-cron" target="_blank">Magento cron job</a>. In addition to indexing and other core functions, all Magento e-mails (including order confirmation and transactional) are now queued and sent according to your configured cron schedule.<br>
 <strong>Important</strong>: You <em>must</em> configure cron to run as the web server user; otherwise, you will experience issues, such as not being able to reindex from the Magento Admin Panel. Consult the preceding Knowledge Base article for more information.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5049" target="_blank">MPERF-5049</a>  -->The <strong>Update on Save</strong> reindexing option works without performance issues when multiple Magento administrators are updating products at the same time.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5593" target="_blank">MPERF-5593</a>  -->The PayPal Bill Me Later logo and name has been replaced by PayPal Credit.</li>
@@ -165,7 +165,7 @@ Magento thanks Florinel Chis of Elastera for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4911" target="_blank">MPERF-4911</a>  -->The PayPal Standard API has been replaced with the newer PayPal Express Checkout API.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4838" target="_blank">MPERF-4838</a>  -->Magento CE and EE now use <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce" target="_blank">Google Universal Analytics</a>.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-353" target="_blank">MPERF-353</a>  -->When defining a tax rate, you can now use a wildcard character for State in any locale.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5137" target="_blank">MPERF-5137</a>  -->Implemented <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-ce191-responsive-email" target="_blank">responsive transactional e-mails</a>.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5137" target="_blank">MPERF-5137</a>  -->Implemented <a href="{{ site.m1xgdeurl }}ce19-ee114/RWD_responsive_emails.html" target="_blank">responsive transactional e-mails</a>.</li>
 
 </ul>
 
@@ -313,7 +313,7 @@ Magento thanks Tim Bezhasvyly for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a> -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a> -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a> -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h4 id="ee114-1410fixes-other">Other Fixes</h4>
 
@@ -378,7 +378,7 @@ Magento thanks Alan Storm for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a> -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a> -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a> -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ee114-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3762_EE_1.14.0.1_v1.sh. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a> -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -403,7 +403,7 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 <li>In the right pane, click <strong>Magento Enterprise Edition</strong>.</li>
 <li>Follow the prompts on your screen to download a patch for your version of EE.</li>
-<li>Apply the patch as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h2 id="ee114-11400">Magento EE 1.14.0.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
@@ -415,14 +415,14 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 </ul> 
 
 <h3 id="ee114-11400-highlights">Highlights</h3>
-<p>This section lists the key new features in Magento EE 1.14. For more information about these new features, see <a href="http://www.magentocommerce.com/knowledge-base/entry/new-features-ce19-ee114" target="_blank">New Features in EE 1.14 and CE 1.9</a>.</p>
+<p>This section lists the key new features in Magento EE 1.14. For more information about these new features, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 <ul><li>The default theme in Magento EE 1.14 uses <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">Responsive Web Design</a> principles to provide a better experience for users of mobile devices in particular. Benefits include:
 <ul><li>You can get a tablet and smart phone friendly responsive site in about half the time as before, speeding time to market and freeing up resources for other projects.</li>
 <li>Your responsive site makes you better able to participate in the fast growing mobile commerce space, gives you the ability to more easily adapt to new opportunities, and is less expensive to maintain.  A responsive site also offers potential search engine optimization (SEO) benefits because it uses Google's preferred approach to mobile-optimizing sites.</li></ul>
 </li>
 <li>Magento EE 1.14 now supports Solr versions up to 3.6.2 natively (that is, without a patch). Catalog indexing happens efficiently and automatically in the background, with no manual intervention required, resulting in better administrative performance. <br />
-For more information about using Solr with Magento EE, see <a href="http://www.magentocommerce.com/knowledge-base/entry/how-to-use-the-solr-search-engine-with-magento-enterprise-edition" target="_blank">How to Use the Solr Search Engine With Magento Enterprise Edition</a>.<br />
-<strong>Note</strong>: If you're using the Solr search engine with EE versions 1.13.1 or earlier, you must perform an additional step during upgrade due to the fact that the Solr schema changes in EE 1.14. You must copy two files to your Solr server&mdash;<code>schema.xml</code> and <code>solrconfig.xml</code>. For details, see <a href="http://www.magentocommerce.com/knowledge-base/entry/ee11302-ce18-install-upgrade#upgrade-manual-solr" target="_blank">the section on upgrading Solr in the Magento upgrade guide</a>.</li>
+For more information about using Solr with Magento EE, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.<br />
+<strong>Note</strong>: If you're using the Solr search engine with EE versions 1.13.1 or earlier, you must perform an additional step during upgrade due to the fact that the Solr schema changes in EE 1.14. You must copy two files to your Solr server&mdash;<code>schema.xml</code> and <code>solrconfig.xml</code>. For details, see <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-solr" target="_blank">the section on upgrading Solr in the Magento upgrade guide</a>.</li>
 <li>Cross-border trade: (Also referred to as <em>pricing consistency</em>.) We support European Union (EU) merchants operating across regions and geographies who want to show their customers a single price. Pricing is clean and uncluttered regardless of tax structures and rates that vary from country to country.<br />
 To enable cross-border trade in the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Calculation Settings</strong>, option <strong>Enable Cross Border Trade</strong>.</li>
 <li>Supports <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">PHP 5.4</a>. For more information, see <a href="http://php.net/ChangeLog-5.php#5.4.0" target="blank">the PHP changelog</a>.</li>

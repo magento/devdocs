@@ -58,12 +58,12 @@
 <h4 id="ce-19-1910-highlights-swatch">Configurable Swatches</h4>
 <p>Configurable swatches help you optimize the way products are presented on your site. New "swatch" capabilities make products more appealing&mdash;and boost conversion rates&mdash;by offering shoppers quick access to information, like available colors, fabrics, sizes, and more.</p>
 <p>Clicking on a swatch automatically updates the product image so shoppers see exactly what a color or fabric looks like, giving them confidence to proceed with their purchase.</p>
-<p>For more information, see the <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-ce191-configurable-swatches" target="_blank">Magento CE 1.9.1 and Magento CE 1.9.1 Configurable Swatches Guide</a>.</p>
+<p>For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 
 <h4 id="ce-19-1910-highlights-rwd">Responsive Design Improvements</h4>
 <p>It has never been easier to create a mobile-friendly site now that Magento's responsive design reference theme includes <em>all</em> core Magento features, including gift registries, downloadable products, multiple wish lists, add-to-cart by SKU, and private sales.</p>
 <p>It even boasts responsive default email templates so customers can read your order confirmation emails and newsletters on any device.</p>
-<p>For more information, see the <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-ce191-responsive-email" target="_blank">Magento CE 1.9.1 and Magento CE 1.9.1 Responsive Email Developer's Guide</a>.</p>
+<p>For more information, see the <a href="{{ site.m1xgdeurl }}ce19-ee114/RWD_responsive_emails.html" target="_blank">Magento CE 1.9.1 and Magento CE 1.9.1 Responsive Email Developer's Guide</a>.</p>
  
 <h4 id="ce-19-1910-highlights-tech">Technology Updates</h4>
 <p>Magento Community Edition boosts performance and security by adding support for MySQL 5.6 and PHP 5.5.</p>
@@ -104,7 +104,7 @@ to this:
 
 <h3 id="ce-19-1910-security">Security Enhancements</h3>
 <p>We fixed the following security issues in this release:</p>
-<ul><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5940" target="_blank">MPERF-5940</a>, <a href="https://jira.corp.x.com/browse/MPERF-5770" target="_blank">MPERF-5770</a>  -->Resolved potential issues as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/security-add-handler" target="_blank">Resolving a Remote Code Execution Exploit</a>.<br>
+<ul><li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5940" target="_blank">MPERF-5940</a>, <a href="https://jira.corp.x.com/browse/MPERF-5770" target="_blank">MPERF-5770</a>  -->Resolved potential issues as discussed in <a href="{{ site.m1xgdeurl }}other/appsec-900_addhandler.html" target="_blank">Resolving a Remote Code Execution Exploit</a>.<br>
 Magento thanks Matt Barrah for contributing to this fix.</li>
 <li><!--  -->To change their password, a Magento administrator must first enter their existing password.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5146" target="_blank">MPERF-5146</a>  -->Resolved a potential <a href="https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing" target="_blank">XML External Entity Processing (XXE)</a> exploit with the potential to cause a Denial of Service attack.</li>
@@ -121,7 +121,7 @@ Magento thanks Matt Barrah for contributing to this fix.</li>
 <ul><li><strong>Shortcut on Shopping Cart</strong> renamed to <strong>Display on Shopping Cart</strong> and moved from Basic to Advanced.</li>
 <li>The recommended <strong>Display on Shopping Cart</strong> option is now worded <strong>Yes (PayPal recommends this option)</strong>.</li></ul>
 </li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2662" target="_blank">MPERF-2662</a>  -->It's more important than ever for you to configure a <a href="http://www.magentocommerce.com/knowledge-base/entry/ce18-and-ee113-installing#install-cron" target="_blank">Magento cron job</a>. In addition to indexing and other core functions, all Magento e-mails (including order confirmation and transactional) are now queued and sent according to your configured cron schedule.<br>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2662" target="_blank">MPERF-2662</a>  -->It's more important than ever for you to configure a <a href="{{ site.m1xgdeurl }}install/installing_install.html#install-cron" target="_blank">Magento cron job</a>. In addition to indexing and other core functions, all Magento e-mails (including order confirmation and transactional) are now queued and sent according to your configured cron schedule.<br>
 <strong>Important</strong>: You <em>must</em> configure cron to run as the web server user; otherwise, you will experience issues, such as not being able to reindex from the Magento Admin Panel. Consult the preceding Knowledge Base article for more information.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5593" target="_blank">MPERF-5593</a>  -->The PayPal Bill Me Later logo and name has been replaced by PayPal Credit.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5347" target="_blank">MPERF-5347</a>  -->Bill Me Later options now display only in U.S. stores.</li>
@@ -133,7 +133,7 @@ Magento thanks Florinel Chis of Elastera for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4911" target="_blank">MPERF-4911</a>  -->The PayPal Standard API has been replaced with the newer PayPal Express Checkout API.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4838" target="_blank">MPERF-4838</a>  -->Magento CE and EE now use <a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce" target="_blank">Google Universal Analytics</a>.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-353" target="_blank">MPERF-353</a>  -->When defining a tax rate, you can now use a wildcard character for State in any locale.</li>
-<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5137" target="_blank">MPERF-5137</a>  -->Implemented <a href="http://www.magentocommerce.com/knowledge-base/entry/ee1141-ce191-responsive-email" target="_blank">responsive transactional e-mails</a>.</li>
+<li><!-- <a href="https://jira.corp.x.com/browse/MPERF-5137" target="_blank">MPERF-5137</a>  -->Implemented <a href="{{ site.m1xgdeurl }}ce19-ee114/RWD_responsive_emails.html" target="_blank">responsive transactional e-mails</a>.</li>
 
 </ul>
 
@@ -262,7 +262,7 @@ Magento thanks Tim Bezhasvyly for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a> -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a> -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a> -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h4 id="ce-19-1910-fixes-other">Other Fixes</h4>
 
@@ -325,7 +325,7 @@ Magento thanks Alan Storm for contributing to this fix.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="http://www.magentocommerce.com/knowledge-base/entry/install-privs-after#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="{{ site.m1xgdeurl }}install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -337,7 +337,7 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 <li>Scroll down to the Magento Community Edition Patches section.</li>
 <li>Follow the prompts on your screen to download a patch for your version of CE.</li>
-<li>Apply the patch as discussed in <a href="http://www.magentocommerce.com/knowledge-base/entry/apply-revert-magento-patches" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="{{ site.m1xgdeurl }}other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h2 id="ce19-1900">Magento CE 1.9.0.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
@@ -349,7 +349,7 @@ To set file system permissions appropriately, see <a href="http://www.magentocom
 </ul> 
 
 <h3 id="ce19-1900-highlights">Highlights</h3>
-<p>This section lists the key new features in Magento CE 1.9. For more information about these new features, see <a href="http://www.magentocommerce.com/knowledge-base/entry/new-features-ce19-ee114" target="_blank">New Features in Magento EE 1.14 and CE 1.9</a>.</p>
+<p>This section lists the key new features in Magento CE 1.9. For more information about these new features, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</p>
 <ul class="level1"><li>The default theme in Magento CE 1.9 uses <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">Responsive Web Design</a> principles to provide a better experience for users of mobile devices in particular. Benefits include:
 <ul class="level2"><li>You can get a tablet and smart phone friendly responsive site in about half the time as before, speeding time to market and freeing up resources for other projects.</li>
 <li>Your responsive site makes you better able to participate in the fast growing mobile commerce space, gives you the ability to more easily adapt to new opportunities, and is less expensive to maintain.  A responsive site also offers potential search engine optimization (SEO) benefits because it uses Google's preferred approach to mobile-optimizing sites.</li></ul>
