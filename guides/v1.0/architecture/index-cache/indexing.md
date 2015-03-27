@@ -1,11 +1,11 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Indexing 
+subgroup: Fundamentals 
 title: Indexing
 menu_title: Indexing
 menu_order: 1
-menu_node: parent
+
 github_link: architecture/index-cache/indexing.md
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Contribute to Magento DevDocs!!
-title: template
-menu_title: template
-menu_order: 10
+subgroup: A_Introduction
+title: template (generic)
+menu_title: template (generic)
+menu_order: 1
 
 
 ---

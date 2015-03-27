@@ -1,15 +1,13 @@
-Magento 2 API Guide - Outline
+Magento 2 Extension Developers Guide - Outline
 =============================
 
-This outline describes the new Magento 2 API Guide.
+This outline describes the new Magento 2 Extension Devlopers Guide.
 
 The goals of this guide are to:
 
-* Introduce developers to Programming concepts and common tasks.
-* Provide guidance for developers who want to extend the Magento APIs.
-* Discuss ways of extending with the Magento APIs
-
-As a model, I plan to use the [Google Developers Guide](http://developer-support-handbook.appspot.com/documentation.html#developers-guide).
+* Introduce developers to Magetno programming concepts and common tasks.
+* Provide guidance for developers who want to extend the Magento platform and modules.
+* Define ways of testing, packaging, and deploying the Magento modules and extensions.
 
 
 CHAPTER: Get started
