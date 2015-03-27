@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customizing styles illustration</title>
+	<title>Using custom fonts</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/css-topics/css-practice.html">
+	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html">
 
 </head>	
 <body>
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Customizing styles illustration</h1>
+		<h1 class="page-heading">Using custom fonts</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/css-topics/css-practice.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -148,59 +148,50 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="practice_over">Overview</h2>
+		<h2>Overview</h2>
+<p>The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento theme.</p>
 
-<p>This topic features a step-by-step illustration of how to change a theme’s color scheme using Magento UI library.</p>
+<h2>Font files location</h2>
 
-<h2>Changing theme color scheme</h2>
+<p>Place the font files to your theme directory under: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/fonts</code>.</p>
 
-<p>OrangeCo created a custom theme that inherits from the default Blank theme.
-The following image illustrates how store pages look when the Blank theme is applied:</p>
+<h2>Including fonts</h2>
 
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/practice_blank.png" alt="product page when Blank applied" />
-</div>
+<p>To ensure stability and secure your customizations from being deleted during upgrade, we recommend not changing default Magento files. That is why custom fonts should be included in the stylesheets of custom themes.</p>
 
-<p>In their Grey theme, OrangeCo want to change the color scheme from white to grey.</p>
+<p>To include a custom font, use one of the following approaches:</p>
 
-<p>The Grey theme directory is <code>app/design/frontend/OrangeCo/grey</code>.</p>
-
-<p>OrangeCo decide to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
-To do this, they added an overriding <code>_theme.less</code> file in the <code>app/design/frontend/OrangeCo/grey/web/css/source</code> directory, with the following content:</p>
+<ul> 
+<li>If you build a theme using Magento UI library, declare the font by adding the <code>.font-face</code> mixin in the <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_typoghraphy.less</code> file:
 <pre>
-//  Color nesting
-@page__background-color: @color-gray20;
-@primary__color: @color-gray80;
-@border-color__base: @color-gray76;
-
-@link__color: @color-gray56;
-@link__hover__color: darken(@link__color, 6%);
-
-//  Buttons
-@button__color: @color-gray20;
-@button__background: @color-gray80;
-@button__border: 1px solid @border-color__base;
-
-//  Primary button
-@button-primary__background: @color-orange-red1;
-@button-primary__border: 1px solid @color-orange-red2;
-@button-primary__color: @color-white;
-@button-primary__hover__background: @color-orange-red4;
-@button-primary__hover__border: 1px solid @color-orange-red2;
-@button-primary__hover__color: @color-white;
-
-//  Navigation
-@navigation__background: @color-gray40;
-@navigation-desktop-level0-item__color: @color-gray80;
-
-//  Tabs
-@tab-control__background-color: @page-bg-color;
-
+.font-face(
+    @family-name:'&lt;any_font_name&gt;',
+    @font-path: '@{baseDir}fonts/&lt;path_to_font_file&gt;',
+    @font-weight: <a href="http://www.w3schools.com/cssref/pr_font_weight.asp" target="_blank">&lt;font_weight&gt;</a>,
+    @font-style: <a href="http://www.w3schools.com/cssref/pr_font_font-style.asp" target="_blank">&lt;font_style&gt;</a>
+)
 </pre>
 
-<p>After the Grey theme is applied, store pages will look like following:</p>
+Where:
+<ul>
+	<li><code>{@baseDir}</code> stands for the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code> directory.</li>
+<li><code>&lt;path_to_font_file&gt;</code> includes the font file name, but without the extension. For example, <code>@font-path: '@{baseDir}fonts/Luma-Icons'</code> for the font stored in <code>web/fonts/Luma-Icons.woff</code></li>
+</ul>
 
-<p><img src="/common/images/css_practice.png" alt="product page when Grey applied" /></p>
+The mixin generates the CSS including font. For example, here is how the generated CSS looks for the Open Sans font used in the Blank theme:
+<pre>
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/opensans/light/opensans-300.eot');
+    src: url('../fonts/opensans/light/opensans-300.eot?#iefix') format('embedded-opentype'), url('../fonts/opensans/light/opensans-300.woff2') format('woff2'), url('../fonts/opensans/light/opensans-300.woff') format('woff'), url('../fonts/opensans/light/opensans-300.ttf') format('truetype'), url('../fonts/opensans/light/opensans-300.svg#Open Sans') format('svg');
+    font-weight: 300;
+    font-style: normal
+}
+</pre>
+</li>
+<li>If your theme does not use the Magento UI library, include the font in your theme <code>.css</code> files by the standard means of CSS, for example the <code>@font-face</code> rule.</li>
+</ul>
+
 
 
 		</div>
@@ -439,11 +430,11 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
 						
 								
 								
