@@ -28,7 +28,13 @@ Before you install Magento, make sure your system meets or exceeds the following
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-  	<p>Magento no longer supports PHP 5.4.</p></span>
+  	<ul><li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
+  		<ul><li>5.5.10&ndash;5.5.16</li>
+		<li>5.6.0</li></ul>
+	</li>
+	<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
+	<p>To work around the issue, see <a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
+	<li>Magento no longer supports PHP 5.4.</li></ul></span>
 	</div>
 
 *	Required PHP extensions:

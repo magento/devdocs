@@ -1,142 +1,19 @@
 ---
 layout: default
 group: release-notes
-subgroup: Release Notes
 title: Release Notes
-menu_title: Release Notes
-menu_node: parent
-menu_order: 1
-github_link: release-notes/release-notes.md
+menu_title: Known issues
+menu_node: 
+menu_order: 10
+github_link: release-notes/known-issues.md
 ---
 
-<h4>Contents</h4>
-
-*	<a href="#highlights">Highlights</a>
-*   <a href="#changes">Changes</a>
-*	<a href="#known-devbeta">Known issues</a>
-*	<a href="#install">Installation</a>
-*	<a href="#help">Help us improve this documentation</a>
-
-<h2 id="highlights">Highlights</h2>
-
-Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
-
-For this first release of Magento 2.0, here is a summary of some important
-features of the release.
-
--   PHP and MySQL. Magento 2 supports PHP 5.5 and 5.6, and MySQL 5.6. See [System
-    requirements][1].
-
-    [1]: <{{ site.gdeurl }}install-gde/system-requirements.html>
-
--   HTML5. The reference themes available out of the box are responsive and
-    based on HTML5. See [Themes][2] and [Responsive web design.][3]
-
-    [2]: <{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html>
-
-    [3]: <{{ site.gdeurl }}frontend-dev-guide/responsive-web-design/rwd_overview.html>
-
--   CSS3, and CSS preprocessing. The reference themes use CSS3. Magento 2 uses
-    the LESS CSS pre-processor, or you can add support for Sass and Compass. See
-    [Cascading style sheets][4], and [CSS pre-processor.][5]
-
-    [4]: <{{ site.gdeurl }}frontend-dev-guide/css-topics/css-overview.html>
-
-    [5]: <{{ site.gdeurl }}frontend-dev-guide/css-topics/css-preprocess.html>
-
--   jQuery. Magento 2 uses jQuery as the primary JavaScript library. Magento
-    ships with an extensible set of jQuery widgets. See [Magento JQuery
-    widgets][6].
-
-    [6]: <{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html>
--   RequireJS. The RequireJS library helps load JS resources on demand to
-    improve page load times. It's also intended to encourage modular design of
-    frontend components. See [JavaScript resources][6].
-
-    [6]: <{{ site.gdeurl }}config-guide/config/js-resources.html>
-
--   PSR Compliance. PSR compliance standardizes the use of PHP to allow
-    different sets of code libraries to work together. See [PHP coding
-    standard][7].
-
-    [7]: <{{ site.gdeurl }}coding-standards/code-standard-php.html>
-
--   Modular architecture. Define your own set of modules. Cross-module
-    dependencies are reduced, and interfaces among multiple extensions are
-    cleaner and more discrete. See [What is Magento?][8], [Magento as a modular
-    system][9], and [Service contracts][10].
-
-    [8]: <{{ site.gdeurl }}architecture/arch_whatis.html>
-
-    [9]: <{{ site.gdeurl }}architecture/arch_asmodsys.html>
-
-    [10]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
-
--   Testing framework. Magento 2 includes a pre-packaged series of test scripts,
-    including tests for integration, units, static environments, functional
-    areas, and performance criteria. See [Magento Test Framework][11], and the
-    [JavaScript unit tests][12].
-
-    [11]: <https://github.com/magento/mtf/blob/master/docs/install-config.md>
-
-    [12]: <{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html>
-
-See also
---------
-
--   [XML validation][13]
-
-    [13]: <{{ site.gdeurl }}architecture/view/xml-schema-layout.html>
-
--   [Service contracts][14]
-
-    [14]: <{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html>
-
--   [Translation][15]
-
-    [15]: <{{ site.gdeurl }}architecture/behavior/xlate.html>
-
--   [Services as web APIs][16]
-
-    [16]: <{{ site.gdeurl }}get-started/bk-get-started-api.html>
-
-<h2 id="changes">Changes</h2>
-
-*   <a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
-*   <a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
-
-<h3 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h3>
-This change applies to the following situation only:
-
-*   You currently have version 0.42.0-beta10 or earlier
-*   You're updating to version 0.42.0-beta11 or later
-
-<div class="bs-callout bs-callout-info" id="info">
-    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
-</div>
-{% include install/versionbeta10upgr.html %}
-
-For details, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
-
-<h3 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h3>
-
-To install the optional Magento 2 sample data, you must update `composer.json`, run `composer update`, and run the Magento 2 installer to update the database.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
-<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
-</div>
-
-See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
-
-
-	
 <h2 id="known-devbeta">Known issues</h2>
 We have identified the following known issues in this release:
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
+*   <a href="#known-devrc-php">Known issue with certain PHP versions</a>
 *   <a href="#known-devbeta-xdebug">Known issue with xdebug</a>
 *   <a href="#known-devbeta-storefront-err">Access errors</a>
 *   <a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a>
@@ -147,6 +24,29 @@ We have identified the following known issues in this release:
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
 
+<h3 id="known-devrc-php">Known issue with certain PHP versions</h3>
+There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
+
+*   5.5.10&ndash;5.5.16
+*   5.6.0
+
+This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. 
+
+To work around this issue, after installing the Magento 2 software, edit the following files:
+
+*   `app/code/Magento/Config/Model/Config/Backend/Locale/Timezone.php`
+*   `lib/internal/Magento/Framework/Locale/Lists.php`
+*   `setup/src/Magento/Setup/Model/Lists.php`
+
+In each file, change the value of `$zones` as follows:
+
+from
+
+    $zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL_WITH_BC);
+
+to
+
+    $zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL);
 
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
@@ -264,22 +164,3 @@ If you don't know where `php.ini` is located, use the following steps:
 5.  Locate the value of `open_basedir` and change it.
 6.  Save your changes to `php.ini`.
 7.  Restart the web server. -->
-
-
-<h2 id="install">Installation</h2>
-
-Installation is simplified, and now uses Composer. See our friendly
-[Installation Guide][17].
-
-[17]: <{{ site.gdeurl }}install-gde/bk-install-guide.html>
-
-<h2 id="help">Help improve this documentation</h2>
-
-Magento 2.0 product documentation is hosted on GitHub, and we welcome your
-feedback there.
-
-Click the "Edit this page on GitHub" link at the top of a documentation page to
-open the file in our GitHub repository, where you are invited to suggest changes
-by creating pull requests, or open a discussion by creating an issue.
-Feel free to contact the documentation team directly at
-<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">DL-Magento-Doc-Feedback@ebay.com</a>
