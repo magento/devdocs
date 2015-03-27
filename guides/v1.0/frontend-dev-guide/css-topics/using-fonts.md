@@ -7,14 +7,12 @@ menu_order: 6
 github_link: frontend-dev-guide/css-topics/using-fonts.md
 ---
 <h2>Overview</h2>
-Magento application contains a set of built-in fonts, but you can easily include your own custom ones. This topic describes how to include a locally stored custom font in your Magento theme.
+The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento theme.
 
 
-<h2>Font source files</h2>
+<h2>Font files location</h2>
 
-Usually you need to have your font in several formats for different browsers.
-
-Place the font files to your theme directory under: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/fonts</code>
+Place the font files to your theme directory under: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/fonts</code>.
 
 <h2>Including fonts</h2>
 
@@ -23,7 +21,7 @@ To ensure stability and secure your customizations from being deleted during upg
 To include a custom font, use one of the following approaches:
 
 <ul> 
-<li>If you build a theme using Magento UI library, declare the font by adding the <code>.font-face</code> mixinin in the <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_typoghraphy.less</code> file:
+<li>If you build a theme using Magento UI library, declare the font by adding the <code>.font-face</code> mixin in the <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_typoghraphy.less</code> file:
 <pre>
 .font-face(
     @family-name:'&lt;any_font_name&gt;',
@@ -50,6 +48,6 @@ The mixin generates the CSS including font. For example, here is how the generat
 }
 </pre>
 </li>
-<li>If your theme does not use the Magento UI library, include the font in your theme <code>.css</code> files by means of standard CSS rules.</li>
+<li>If your theme does not use the Magento UI library, include the font in your theme <code>.css</code> files by the standard means of CSS, for example the <code>@font-face</code> rule.</li>
 </ul>
 
