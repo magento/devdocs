@@ -155,7 +155,7 @@
   <li><a href="#change-devrc-unit">Unit tests now located in module directories</a></li>
   <li><a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
   <li><a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
-  <li><a href="#admin">Improvments to the Magento Admin and Setup Wizard</a></li>
+  <li><a href="#admin">Improvements to the Magento Admin and Setup Wizard</a></li>
   <li><a href="#framework">Changes to the Magento framework</a></li>
   <li><a href="#misc">Miscellaneous changes</a></li>
 </ul>
@@ -279,21 +279,45 @@ cd &lt;your Magento install dir&gt;/app/code/Magento/Catalog/Test/Integration
 
 <h2 id="admin">Improvements to the Magento Admin and Setup Wizard</h2>
 <ul>
+  <li>You can enable or disable modules when you install the Magento 2 software using either the <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-web.html#instgde-install-magento-web-step4 ">Setup Wizard</a> or <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">command line</a>.</li>
   <li>Compressed and resized images</li>
   <li>Added new base styles for the Admin re-design</li>
-  <li>Added the WAI-ARIA attributes are to the Search Autocomplete on the storefront</li>
+  <li>Added WAI-ARIA attributes are to the Search Autocomplete on the storefront</li>
   <li>Added visual style for the ‘skip to content’ attribute on the storefront </li>
   <li>Fixed the style of persistent login messages on the storefront for all themes </li>
   <li>Fixed the style of scrolling for Categories with long names in the Admin </li>
   <li>Fixed the “css/print.css” file path on the storefront pages for all themes 
     *	You can enable or disable modules during installation using either the CLI install or the Setup Wizard.</li>
-  <li><a href="http://www.w3.org/WAI/intro/aria.php" target="_blank">WAI-ARIA</a> attributes are added to storefront Layered Navigation and Customer Dropdown, Frontend Product Page Tabs, Frontend Cart Summary collapsible panels, Frontend forms and notifications, Frontend Checkout pages</li>
+  <li>Added <a href="http://www.w3.org/WAI/intro/aria.php" target="_blank">WAI-ARIA</a> attributes to:
+    <ul>
+      <li>Storefront Layered Navigation</li>
+      <li>Customer Dropdown</li>
+      <li>Storefront Product Page Tabs</li>
+      <li>Storefront Cart Summary collapsible panels</li>
+      <li>Storefront forms and notifications</li>
+      <li>Storefront Checkout pages</li>
+      <li>Category page product item </li>
+      <li>Related products</li>
+    </ul>
+  </li>
   <li>Updated the design of Enable Cookies CMS page</li>
+  <li>Utilized Magento error handler in the Setup application to convert errors and warnings to exceptions</li>
 </ul>
 
 <h2 id="framework">Changes to the Magento framework</h2>
 <ul>
+  <li>Eliminated remnants of the <code>Magento_Core</code> module:
+    <ul>
+      <li>Moved Application Emulation from the <code>Magento_Core</code> module to the <code>Magento_Store</code> module</li>
+      <li>Moved Validator Factory from the <code>Magento_Core</code> module to the Magento Framework</li>
+      <li>Added a new <code>Magento_MediaStorage</code> module to store components of the <code>Magento_Core</code> module</li>
+    </ul>
+  </li>
+  <li>Renamed <code>Magento\Framework\Controller\Result\JSON</code> to meet PSR standard</li>
+  <li>Version used in SOAP declarations is now taken from routes declared in <code>webapi.xml</code></li>
   <li>Moved/refactored the <code>Magento\IO\Sftp</code> adapter into the Filesystem library</li>
+  <li>Replaced <code>Zend_Locale</code> with native PHP implementation</li>
+  <li>Replaced <code>Zend_Date</code> with native PHP <code>DateTime</code> object/functions</li>
   <li>Removed the Magento IO library</li>
   <li>Implemented Extensible Attributes generation</li>
   <li>Moved Specific Helper Components From <code>Magento/Core</code> to <code>Magento/Framework</code></li>
@@ -310,13 +334,13 @@ cd &lt;your Magento install dir&gt;/app/code/Magento/Catalog/Test/Integration
   <li>HTML response minified</li>
   <li>Added <code>setCustomAttribute</code> and <code>setCustomAttributes</code> methods to <code>ExtensibleDataInterface</code></li>
   <li>Added setter methods to data object interfaces</li>
-  <li>Replaced <code>Builders</code> with <code>Factories</code></li>
-  <li>Added <code>DataObjectHelper.php</code> which contains the common set of methods of all builders</li>
+  <li>Replaced builders with factories</li>
+  <li>Added <code>DataObjectHelper.php</code>, which contains the common set of methods of all builders</li>
   <li>Refactored <code>__()</code> to return <code>Phrase</code> object</li>
   <li>Allowed usage of <code>LocalizedException</code> on the framework’s library level</li>
-  <li>Added expiration/lifetime management of frontend resources</li>
+  <li>Added expiration/lifetime management of storefront resources</li>
   <li>Unified Magento Test Framework configurations format for Framework, TestCase variations and TestCase scenario configurations</li>
-  <li>JavaScript test suites divided into frontend, backend and lib suites </li>
+  <li>JavaScript test suites divided into <code>frontend</code>, <code>adminhtml</code>, and <code>lib</code> suites </li>
   <li>Implemented image compression on server side upload</li>
   <li>Implemented storefront page resources sorting </li>
   <li>Removed the magic <code>__call</code> method usage in templates</li>
@@ -329,6 +353,9 @@ cd &lt;your Magento install dir&gt;/app/code/Magento/Catalog/Test/Integration
 
 <h2 id="misc">Miscellaneous changes</h2>
 <ul>
+  <li>Eliminate inline JavaScript code </li>
+  <li>Fixed cross-site scripting vulnerability issues</li>
+  <li>Addressed naming inconsistencies in REST routes</li>
   <li>Refactored Catalog and related modules to use mutable data object interfaces</li>
   <li>Refactored Sales and related modules to use mutable data interfaces</li>
   <li>Added client-side LESS files compilation to reduce page load time in developer mode</li>
@@ -341,20 +368,16 @@ cd &lt;your Magento install dir&gt;/app/code/Magento/Catalog/Test/Integration
 Added Varnish 4 support </li>
   <li>Added CSS minification </li>
   <li>Implemented caching for WebAPI configuration </li>
-  <li>Refactored controller actions in the Sales module </li>
-  <li>Refactored controller actions in the Customer module </li>
-  <li>Refactored API code for the CheckoutAgreements module </li>
-  <li>Refactored API code for the GiftMessage module </li>
-  <li>Refactored API for the Checkout module </li>
-  <li>Implemented Sales Quote as a standalone Magento module</li>
-  <li>Performed custom EAV entities code and DB tables cleanup</li>
-  <li>Eliminated remnants of the Core module:
-    <ul>
-      <li>Moved Application Emulation from the <code>Magento_Core</code> module to the <code>Magento_Store</code> module</li>
-      <li>Moved Validator Factory from the <code>Magento_Core</code> module to the Magento Framework</li>
-    </ul>
+  <li>Refactored controller actions in the <code>Sales</code> module </li>
+  <li>Refactored controller actions in the <code>Customer</code> module </li>
+  <li>Refactored API code for the <code>CheckoutAgreements</code> module </li>
+  <li>Refactored API code for the <code>GiftMessage</code> module </li>
+  <li>Refactored API for the <code>Checkout </code>module </li>
+  <li>Implemented <code>SalesRule</code> as a standalone Magento module</li>
+  <li>
+    <p>Performed custom EAV entities code and DB tables cleanup</p>
   </li>
-  <li>Added PHPMD and PHPCS annotations to the codebase</li>
+  <li>Added PHPMD and PHPCS annotations to the code base</li>
   <li>Removed the ability to process online payments</li>
 </ul>
 

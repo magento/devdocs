@@ -151,33 +151,27 @@
 		
 		<h2 id="fedg_using-ui-lib_overview">Overview</h2>
 
-<p>The Magento UI library is a flexible, modular Magento frontend library designed to assist Magento theme developers. It employs a set of mixins for base elements to ease frontend theme development and customization. The Magento UI library is:</p>
+<p>The Magento UI library is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based frontend library designed to assist Magento theme developers. It employs a set of mixins for base elements to ease frontend theme development and customization. </p>
 
-<ul>
-  <li>Built with a Leaner CSS (LESS) pre-processor</li>
-  <li>Focused on web standard</li>
-  <li>Customizable</li>
-  <li>Easy to maintain</li>
-  <li>Responsive</li>
-  <li>Accessible</li>
-</ul>
+<p>This topic describes how the library is organized, and how to use it. </p>
 
-<p>The library provides the ability to customize all of the following user interface elements:</p>
+<h2 id="library_elements">Components provided by the UI library</h2>
+<p>The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:</p>
 
 <ul>
   <li>actions-toolbar</li>
   <li>breadcrumbs</li>
   <li>buttons</li>
-  <li>dropdowns</li>
+  <li>drop-downs</li>
   <li>forms</li>
   <li>icons</li>
   <li>layout</li>
   <li>loaders</li>
   <li>messages</li>
-  <li>navigation</li>
   <li>pagination</li>
   <li>popups</li>
   <li>ratings</li>
+  <li>sections</li>
   <li>tabs and accordions</li>
   <li>tables</li>
   <li>tooltips</li>
@@ -185,43 +179,48 @@
   <li>list of theme variables</li>
 </ul>
 
-<p>The following figure shows a storefront page containing some of the preceding elements:</p>
+<p>The following illustration shows a storefront product page containing some of the preceding elements:</p>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/library_mixins_in_use.jpg" alt="Here are all the things you can change on a Magento storefront page, including layout, breadcrumbs, ratings, buttons, icons, and text" /></p>
+<div style="border: 1px solid #ABABAB">
+<img src="/pages/Magento/devdocs_internal/common/images/ui_lib1.png" alt="A product page with user interface elements specified" />
+</div>
 
-<h2 id="fedg_using-ui-lib_mixins">Mixin Location</h2>
+<h2 id="fedg_using-ui-lib_mixins">Mixin location</h2>
 
-<p>Each Magento UI library mixin is named after the block or element the mixin configures. You can find the Magento UI library under:</p>
+<p>You can find the Magento UI library under <a href="https://github.com/magento/magento2/blob/develop/lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source <code>.less</code> files are stored under the <code>source</code> directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:</p>
 
-<pre>pub/lib/
-    ├── css-topics/
+<pre>lib/web
+    ├── css/
     │    ├── docs/ (Library documentation)
     │    ├── source/
     │    │    ├── lib/ (Library source files)
-    │    │    │    ├── abstract.less
-    │    │    │    ├── actions-toolbar.less
-    │    │    │    ├── breadcrumbs.less
-    │    │    │    ├── buttons.less
-    │    │    │    ├── dropdowns.less
-    │    │    │    ├── forms.less
-    │    │    │    ├── icons.less
-    │    │    │    ├── layout.less
-    │    │    │    ├── lib.less
-    │    │    │    ├── loaders.less
-    │    │    │    ├── messages.less
-    │    │    │    ├── navigation.less
-    │    │    │    ├── pages.less
-    │    │    │    ├── popups.less
-    │    │    │    ├── rating.less
-    │    │    │    ├── resets.less
-    │    │    │    ├── responsive.less
-    │    │    │    ├── sections.less
-    │    │    │    ├── tables.less
-    │    │    │    ├── tooltips.less
-    │    │    │    ├── typography.less
-    │    │    │    ├── utilities.less
-    │    │    │    └── variables.less
-    │    │    └── theme.less
+    |    |    |    ├── variables/ (Predefined variables for each mixin)
+    │    │    │    ├── _actions-toolbar.less
+    │    │    │    ├── _breadcrumbs.less
+    │    │    │    ├── _buttons.less
+    │    │    │    ├── _dropdowns.less
+    │    │    │    ├── _forms.less
+    |    |    |    ├── _grids.less
+    │    │    │    ├── _icons.less
+    │    │    │    ├── _layout.less
+    │    │    │    ├── _lib.less
+    │    │    │    ├── _loaders.less
+    │    │    │    ├── _messages.less
+    │    │    │    ├── _navigation.less
+    │    │    │    ├── _pages.less
+    │    │    │    ├── _popups.less
+    │    │    │    ├── _rating.less
+    │    │    │    ├── _resets.less
+    │    │    │    ├── _responsive.less
+    │    │    │    ├── _sections.less
+    │    │    │    ├── _tables.less
+    │    │    │    ├── _tooltips.less
+    │    │    │    ├── _typography.less
+    │    │    │    ├── _utilities.less
+    │    │    │    └── _variables.less
+    │    │    └── _extend.less
+    │    │    └── _theme.less
+    │    │    └── _variables.less
     │    └── styles.less
     ├── fonts/
     │    └── Blank-Theme-Icons/ (Library custom icons font)
@@ -229,21 +228,29 @@
     │    └── blank-theme-icons.png (Library icons sprite)
     └── jquery/ (Library javascript files)</pre>
 
-<p>Following is an example of using a mixin for breadcrumbs in <code>/app/design/frontend/[your theme name]/css-topics/source/breadcrumbs.less</code>:</p>
+<h2 id="fedg_using-ui-lib_predef-vars">Predefined variables</h2>
+
+<p>If your theme <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a default theme, for example Blank, you can easily customize any element of a store page without changing any CSS code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.</p>
+
+<p>The complete list of these variables and their default values are stored in <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the <code>breadcrumbs()</code> mixin.</p>
+
+<p>To change the default library variables values, specify the new values for the required variables in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_theme.less</code> file.</p>
+
+<p>The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.</p>
+
+<p><img src="/pages/Magento/devdocs_internal/common/images/ui_lib2.png" alt="Changing design by redefining variables" /></p>
+
+<h2 id="fedg_using-ui-lib_customize">Using mixins</h2>
+
+<p>You can use a mixin with default variables values, or you can redefine them when calling a mixin. The following paragraphs describe the both ways to call a mixin.</p>
+
+<p>To use a mixin with default values, call the mixin without specifying any parameters. For example:</p>
 
 <pre>.breadcrumbs {
     .breadcrumbs();
 }</pre>
 
-<h2 id="fedg_using-ui-lib_customize">Global theme customization options</h2>
-
-<p><code>/app/design/frontend/[your theme name]/css-topics/source/theme.less</code> contains Global theme customization options.</p>
-
-<p>Every mixin called without parameters uses variables from <code>/app/design/frontend/[your theme name]/css-topics/source/lib/variables.less</code>. To call a mixin with custom variables, you must set their values.</p>
-
-<p>For example, to change the styling for all buttons on a page, the easiest way is to call the <code>.button</code> mixin and set new values for variables required for your customization.</p>
-
-<p>A sample follows:</p>
+<p>To call a mixin with parameter values different from default, set these values when calling the mixin, like in the following example:</p>
 
 <pre>.example-button {
     .button(
@@ -253,33 +260,16 @@
     );
 }</pre>
 
-<p>In the preceding example, variables starting with <code>@_</code> are private mixin variables used only in this mixin. Variables starting with <code>@</code> (without the underscore) are global, and are listed in <code>/app/design/frontend/&lt;ThemeName&gt;/css-topics/source/lib/variables.less</code>.</p>
+<p>Variables starting with <code>@_</code> are private mixin variables used only in this mixin. Variables starting with <code>@</code> (without the underscore) are global, and are listed in <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables/</code></a>.</p>
 
-<p>You can find the complete list of mixin private variables and their description in the library documentation under <code>pub/lib/css-topics/docs</code>.</p>
+<h2 id="docs">UI library documentation</h2>
 
-<h2 id="fedg_using-ui-lib_predef-vars">Predefined variables</h2>
+<p>You can find detailed information about the Magento UI library in the documentation provided together with the code:</p>
 
-<p>The Magento UI library has a specific file called <code>pub/lib/css-topics/source/lib/variables.less</code> that includes a list of all predefined variables you can use for theme customization. By using variables and setting your desired value for them, you can easily customize every element on the page without changing any CSS code or templates.</p>
-
-<p>To override the default library variables for your theme customization, you have to copy <code>pub/lib/css-topics/source/lib/variables.less</code> to your theme’s <code>/app/design/frontend/[your custom theme]/css-topics/source/lib/</code> directory. It overrides the library variables file so that you can use it.</p>
-
-<p>The following figure shows how to customize a theme using only variables from <code>variables.less</code>.</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/library_variables_customization.jpg" alt="Example of customizing a theme using variables from variables.less" /></p>
-
-<p>You can find more information on the Magento UI library specific mixins and the list of mixins variables in the <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a>.</p>
-
-<p><code>README.md</code> contains an overview and naming conventions for the documentation, as well as descriptions of the HTML files with mixins description and lists of their variables. Each *.html file is named after the elements block which is configured by this particular set of mixins.</p>
-
-<h4 id="related-topics">Related topics:</h4>
-
-<!-- *	<a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a> -->
 <ul>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/web/css/docs/source/README.md" target="_blank"><code>lib/web/css/docs/source/README.md</code></a>: describes the Magento UI library structure, naming conventions, and code style.</li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/lib/web/css/docs" target="_blank"><code>lib/web/css/docs</code></a>: contains a set of <code>.html</code> files with detailed information about the library mixins. Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins. The documentation is available in a convenient HTML view in the following location in your Magento installation: <code>pub/static/frontend/Magento/blank/en_US/css/docs/index.html</code></li>
 </ul>
-
 
 
 		</div>
@@ -497,23 +487,23 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
 									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-overview.html">Cascading style sheets (CSS)</a></li>
 									
 								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
 						
 								
 							
@@ -530,6 +520,10 @@
 								
 							
 									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-practice.html">Customizing styles illustration</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
 						
 								
 								

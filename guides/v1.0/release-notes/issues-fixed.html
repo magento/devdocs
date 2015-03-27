@@ -150,16 +150,26 @@
 		<div class="content-wrap">
 		
 		<h2 id="fixed">Issues fixed since last release</h2>
-
 <ul>
+  <li>Profiling of cache operations was permanently disabled</li>
+  <li>Page cache was invalidated by cron jobs after reindexing, even when nothing was changed</li>
+  <li>Impossible to add product to the shopping cart with Custom option of <code>type="file"</code></li>
+  <li>Removed hard-coded IDs from catalog API code</li>
+  <li>Postal code is still mandatory for non-US addresses that don’t use it</li>
+  <li>Removed <code>adminhtml</code>-only web service route for using customer user password reset tokens and setting new passwords</li>
+  <li>Fixed an issue when private content handling did not work with enabled HTML profiler and developer mode </li>
+  <li>Fixed an issue where the Magento Composer Installer failed to uninstall the last package </li>
+  <li>Fixed an issue where a fatal error was thrown in the Setup application after running composer install with the <code>--no-dev</code> option</li>
+  <li>Fixed a JavaScript issue with expanding the list of modules on the  Customize Your Store step in the Setup Wizard</li>
+  <li>Fixed a JavaScript issue with returning from the Create Admin Account step in the Customize Your Store step in the Setup Wizard</li>
   <li>Changed API search routes to be consistently GET actions</li>
-  <li>Issue with distance between “Log in” &amp; “or” &amp; “Register” in Frontend header</li>
+  <li>Issue with distance between <strong>Log in</strong>, <strong>or</strong>, and <strong>Register</strong> in the storefront header</li>
   <li>JavaScript error when clicking on toggle arrow to show fixed product tax (FPT) in shopping cart</li>
   <li>PHP Warning when trying to checkout with Multiple Addresses on review order page</li>
   <li>Fixed fatal error on page that contains a widget with a condition based on “Category”</li>
   <li>Compiled definitions can cause unexpected errors compared to runtime definitions</li>
-  <li>Fixed an issue with image rendering on the CMS page on Frontend when web server rewrites are disabled</li>
-  <li>Fixed an issue where the “Select all” mass action on the Customers page did not select all customers </li>
+  <li>Fixed an issue with image rendering on the CMS page on the storefront when web server rewrites are disabled</li>
+  <li>Fixed an issue where the <strong>Select all</strong> mass action on the Customers page did not select all customers </li>
   <li>Fixed an issue where values for a customer  attribute of multiple-select type were not saved</li>
   <li>Fixed an issue where the parental wakeup() method was not called in interceptors</li>
   <li>Fixed an issue where bundle products with the same configurations added from different pages were displayed in the wishlist as separate items </li>
@@ -169,7 +179,7 @@
   <li>Fixed an issue where the redirect link to continue shopping was absent in the success message after adding product to a wishlist </li>
   <li>Fixed an issue where HTML tags where displayed in product prices on the Customer’s Wishlist page in the Magento Admin</li>
   <li>Fixed an issue with the redirect after searching product in a customer wishlist in the Admin</li>
-  <li>Fixed an issue where a configurable product did not go out of stock when last subitem of some option was sold</li>
+  <li>Fixed an issue where a configurable product did not go out of stock when last sub item of some option was sold</li>
   <li>Fixed an issue with Varnish config generation for multiple IPs in access list field</li>
   <li>Fixed an issue where changes were not saved when the default billing or shipping address was not selected in customer addresses </li>
   <li>Fixed the issue where the Update Qty button looked disabled during a partial invoice creation</li>
@@ -182,7 +192,7 @@
   <li>Fixed an issue where there was no ability to set category position during creation </li>
   <li>Fixed a CSS issue where certain images were absent on banners</li>
   <li>Fixed an issue where the <code>Date Of Birth</code> value was reset to current date on the customer form</li>
-  <li>Fixed an issue where the behavior of the “Terms and Conditions” validation on multiple address checkout was different from the one for the one-page checkout </li>
+  <li>Fixed an issue where the behavior of the <strong>Terms and Conditions</strong> validation on multiple address checkout was different from the one for the one-page checkout </li>
   <li>Fixed an issue where it was impossible to check out with multiple addresses</li>
   <li>Fixed an issue where the <code>This is a required field</code> message was not displayed for “Terms and Conditions” if the latter was not selected</li>
   <li>Fixed an issue where the Discounts and Coupons RSS feed had incorrect title</li>
@@ -191,8 +201,8 @@
   <li>Fixed an issue where the Unsubscribe link in the Newsletter was broken</li>
   <li>Fixed an issue where stock status changed incorrectly after import</li>
   <li>Fixed an issue where selected filters and exclude did not work during Export</li>
-  <li>Fixed an issue where tax details order was different on order/invoice/refund create and view pages </li>
-  <li>Fixed a typo in the getCalculationAlgorithm public function</li>
+  <li>Fixed an issue where tax details order was different on the creation and view pages for orders, invoices, and refunds</li>
+  <li>Fixed a typo in the <code>getCalculationAlgorithm</code> public function</li>
   <li>Fixed an issue where the incorrect value of Subtotal Including Tax was displayed in invoices</li>
   <li>Fixed an issue where tax details were not displayed on a new order</li>
   <li>Improved pricing performance using caching</li>
@@ -228,7 +238,7 @@
   <li>Fixed an issue where the Tax Class drop-down on New Customer Group page contained the <code>none</code> value when a tax class already existed</li>
   <li>Fixed an issue where the Credit Memo button was absent on the Invoice page for payments</li>
   <li>Fixed an issue where incorrect totals were shown in the Coupon Usage report</li>
-  <li>Fixed an issue where an error occurred and the Append Comments check box was cleared when submitting an order in the Admin</li>
+  <li>Fixed an issue where an error occurred and the <strong>Append Comments</strong> check box was cleared when submitting an order in the Admin</li>
   <li>Fixed an issue where the Transactions tab appeared in the Admin for orders where offline payment methods were used</li>
   <li>Fixed an issue with the extra empty line appearing in the Customer Address template</li>
   <li>Fixed an issue with incorrect price index rounding on bundle product</li>
@@ -255,7 +265,7 @@
   <li>Fixed an issue with inability to open the edit page for a CMS page after filtering in the grid</li>
   <li>Fixed an issue with inability to expand customer menu if it doesn’t contain the categories, if responsive</li>
   <li>Fixed an issue with the absence of JS validation for the Zip/Postal code field</li>
-  <li>Fixed an issue with a 1 cent difference in the tax summary and detail on an invoice and a credit memo for a partial invoice when a discount and fixed product tax are applied</li>
+  <li>Fixed an issue with a one-cent difference in the tax summary and detail on an invoice and a credit memo for a partial invoice when a discount and fixed product tax are applied</li>
   <li>Fixed an issue with throwing validation error for the State field when saving a product with FPT</li>
   <li>Fixed an issue with throwing an error when trying to save a timezone</li>
   <li>Fixed an issue with Exploited Session ID in second browser leading to Error</li>
@@ -308,7 +318,7 @@
   <li>Fixed an incorrect alignment of fields on the Create Packages pop-up</li>
   <li>Fixed an issue where Google Content Experiments was not available for CMS pages</li>
   <li>Fixed the New Product Attribute pop-up</li>
-  <li>Fixed an issue where a product page was not found if an incorrect image URL was inserted using the WYSISYG editor</li>
+  <li>Fixed an issue where a product page was not found if an incorrect image URL was inserted using the WYSIWYG editor</li>
   <li>Fixed an issue with the Search Term Report and Search Term list in the Admin </li>
   <li>Fixed an issue where downloadable links and samples were not saved because of a JavaScript error</li>
   <li>Fixed an issue where changes made in tax configuration did not appear in the Admin on the Create New Order page</li>

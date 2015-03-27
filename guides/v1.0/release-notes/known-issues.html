@@ -155,6 +155,7 @@
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
 <ul>
+  <li><a href="#known-devrc-php">Known issue with certain PHP versions</a></li>
   <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
   <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
   <li><a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a></li>
@@ -165,6 +166,36 @@
 <!-- <h3 id="known-issue-sample">Issue installing optional sample data</h3> -->
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
+
+<h3 id="known-devrc-php">Known issue with certain PHP versions</h3>
+<p>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:</p>
+
+<ul>
+  <li>5.5.10–5.5.16</li>
+  <li>5.6.0</li>
+</ul>
+
+<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
+
+<p>To work around this issue, after installing the Magento 2 software, edit the following files:</p>
+
+<ul>
+  <li><code>app/code/Magento/Config/Model/Config/Backend/Locale/Timezone.php</code></li>
+  <li><code>lib/internal/Magento/Framework/Locale/Lists.php</code></li>
+  <li><code>setup/src/Magento/Setup/Model/Lists.php</code></li>
+</ul>
+
+<p>In each file, change the value of <code>$zones</code> as follows:</p>
+
+<p>from</p>
+
+<pre><code>$zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL_WITH_BC);
+</code></pre>
+
+<p>to</p>
+
+<pre><code>$zones = \DateTimeZone::listIdentifiers(\DateTimeZone::ALL);
+</code></pre>
 
 <h3 id="known-devbeta-xdebug">Known issue with xdebug</h3>
 <p>If you use the optional PHP extension <code>xdebug</code>, you can encounter exceptions:</p>
