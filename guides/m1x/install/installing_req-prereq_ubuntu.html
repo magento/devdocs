@@ -132,7 +132,7 @@ AllowOverride [value from Apache site]
 <div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The following sections discuss <em>suggested</em> PHP upgrade paths. Because you're choosing a non-Ubuntu repository to upgrade PHP, make your choice carefully. Not all repositories work equally well. We don't recommend any particular repository. Consult a system administrator or Ubuntu reference for more information.</span></div>
 
 <p>To upgrade your version of PHP, see one of the following:</p>
-<ul><li>Upgrade to PHP 5.5: <a href="http://php.net/manual/en/migration55.php" target="_blank">PHP site</a>.</li>
+<ul><li>Upgrade to PHP 5.5: <a href="http://php.net/manual/en/migration55.php" target="_blank">PHP site</a> and <a href="http://www.dev-metal.com/how-to-setup-latest-version-of-php-5-5-on-ubuntu-12-04-lts/" target="_blank">dev-metal</a>.</li>
 <li>Upgrade to PHP 5.4: <a href="http://phpave.com/upgrade-php-5-3-php-5-5-ubuntu-12-04-lts/" target="_blank">phpave</a>.</li></ul>
 
 <h3 id="php-install-install">Installing PHP</h3>
@@ -160,7 +160,7 @@ apt-get install php5</pre>
 
 <h3 id="php-extensions">Installing Required PHP Extensions</h3>
 <p>Enter the following command to install PHP extensions required by Magento:
-<pre>apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd</pre>
+<pre>apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd libapache2-mod-php5</pre>
 
 <h3 id="php-memory">Increasing the PHP memory Limit</h3>
 <p>Increase <code>memory_limit</code> in <code>php.ini</code> to at least 512MB:</p>
