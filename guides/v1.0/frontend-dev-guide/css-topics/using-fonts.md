@@ -21,7 +21,7 @@ To ensure stability and secure your customizations from being deleted during upg
 To include a custom font, use one of the following approaches:
 
 <ul> 
-<li>If you build a theme using Magento UI library, declare the font by adding the <code>.font-face</code> mixin in the <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_typoghraphy.less</code> file:
+<li>If you build a theme using Magento UI library, declare the font by adding the <code>.font-face</code> mixin in the <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_typography.less</code> file:
 <pre>
 .font-face(
     @family-name:'&lt;any_font_name&gt;',
