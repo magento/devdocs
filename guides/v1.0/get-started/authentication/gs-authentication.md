@@ -57,34 +57,12 @@ Permissions required to access particular resource are configured in the <code>w
 acl.xml files across all Magento modules are consolidated to build an ACL tree which is used to select allowed Admin role resources or third party Integration's access (System > Extension > Integration > Add New Integration > Available APIs).
 </p>
 <h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
-e.g., Account management, customer configuration, and customer group resource permissions are defined in the below customer acl.xml
-```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Acl/etc/acl.xsd">
-    <acl>
-        <resources>
-            <resource id="Magento_Adminhtml::admin">
-                <resource id="Magento_Customer::customer" title="Customers" sortOrder="40">
-                    <resource id="Magento_Customer::manage" title="All Customers" sortOrder="10" />
-                </resource>
-                <resource id="Magento_Adminhtml::stores">
-                    <resource id="Magento_Adminhtml::stores_settings">
-                        <resource id="Magento_Adminhtml::config">
-                            <resource id="Magento_Customer::config_customer" title="Customers Section" sortOrder="50" />
-                        </resource>
-                    </resource>
-                    <resource id="Magento_Adminhtml::stores_other_settings">
-                        <resource id="Magento_Customer::group" title="Customer Groups" sortOrder="10" />
-                    </resource>
-                </resource>
-            </resource>
-        </resources>
-    </acl>
-</config>
-```
+For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a>.
 
 When a developer creates the Web API configuration file (webapi.xml), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 <h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
-```xml
+
+{% highlight XML %}
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
     <!-- Customer Group -->
@@ -128,13 +106,13 @@ When a developer creates the Web API configuration file (webapi.xml), the permis
 ..........
 .....
 ...
-```
-e.g.,
-In the above sample webapi.xml, for the customerGroups resource, only a user with a "Magento_Customer::group" can access the GET /V1/customerGroups/:id API. On the other hand, POST /V1/customers (customer creation) can be accessed anonymously (or by a guest) without a need for presenting the identity.
+{% endhighlight %}
+
+For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with a `Magento_Customer::group` can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest) without presenting an identity.
 
 The user here can be an administrator (or an Integration) defined in the Magento Admin with the customer group selected as one of the resource in the ACL tree.
 <div class="bs-callout bs-callout-info" id="info">
-   <p>A guest or anonymous is a special permission that doesn't need to be defined in acl.xml (and will not show up in the acl tree in the Magento Admin). It just indicates that the current resource in webapi.xml can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. e.g. GET /V1/customers/me will fetch the logged in customer's details. This is typically useful for JavaScript based widgets. </p>
+   <p>A guest or anonymous is a special permission that doesn't need to be defined in `acl.xml` (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in `webapi.xml` can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. For example, `GET /V1/customers/me` fetches the logged in customer's details. This is typically useful for JavaScript based widgets. </p>
 </div>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
