@@ -110,9 +110,11 @@ When a developer creates the Web API configuration file (webapi.xml), the permis
 
 For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with `Magento_Customer::group` authorization can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest).
 
-The user here can be an administrator (or an Integration) defined in the Magento Admin with the customer group selected as one of the resource in the ACL tree.
+Authorization is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.
+
 <div class="bs-callout bs-callout-info" id="info">
-   <p>A guest or anonymous is a special permission that doesn't need to be defined in `acl.xml` (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in `webapi.xml` can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. For example, `GET /V1/customers/me` fetches the logged in customer's details. This is typically useful for JavaScript based widgets. </p>
+   <p>A guest or anonymous is a special permission that doesn't need to be defined in <code>acl.xml</code> (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in <code>webapi.xml</code> can be accessed without the need for authentication.</p>
+   <p>Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, <code>GET /V1/customers/me</code> fetches the logged-in customer's details. This is typically useful for JavaScript-based widgets. </p>
 </div>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
