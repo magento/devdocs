@@ -12,7 +12,7 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 <p>For details about OAuth 1.0a, see <a href="https://tools.ietf.org/html/rfc5849">The OAuth 1.0 Protocol</a>.</p>
 <p>To configure your third-party application to use OAuth-based authentication to access the Magento web APIs, read these sections:</p>
 <ul>
-<li><a href="#oauth-process">Integration registration and OAuth-based authentication</a></li>
+   <li><a href="#oauth-process">Integration registration and OAuth-based authentication</a></li>
    <li><a href="#initiate-oauth">Step 1. Oauth handshake initiation</a></li>
    <li><a href="#pre-auth-token">Step 2. Get a request token</a></li>
    <li><a href="#get-access-token">Step 3. Get an access token</a></li>
@@ -21,7 +21,7 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 <h2 id="oauth-process">Integration registration and OAuth-based authentication</h2>
 <p>As an Integration developer, you must register Integration with the Magento Instance. Integration can be registered in the Magento admin (System > Extensions > Integration) OR </p>
 <p>You can register Integration through Magento Connect. After successful registration, Magento Connect generates a configuration file. If you choose not to register the Integration through Magento Connect, you can manually create the configuration file and make it available to merchants.</p>
-<p>An Integration contains details like the endpoint that receives Oauth credentials and list of APIs to which access is requested. Magento POSTs credentials to the endpoint defined in tne configuration file as part of the Ouath handshake. However, you must use these credentials to get an access token in fewer than three minutes or the credentials are disabled. The use of an HTTPS endpoint to pass the credentials eliminates this risk to a certain extent.</p>
+<p>An Integration contains details like the endpoint that receives Oauth credentials and list of APIs to which access is requested. Magento POSTs credentials to the endpoint defined in the configuration file as part of the Ouath handshake. However, you must use these credentials to get an access token in fewer than three minutes or the credentials are disabled. The use of an HTTPS endpoint to pass the credentials eliminates this risk to a certain extent.</p>
 <p>Integrations use the passed credentials to get a request token, which is a pre-authorized token. Integrations then use credentials plus the request token to get a long-lived access token.</p>
 <h3 id="oauth-endpoints">OAuth authentication endpoints</h3>
 <p>The Magento OAuth authentication endpoints are:</p>
