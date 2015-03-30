@@ -163,19 +163,19 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 2.	Locate the following block.
 
 		<Directory /var/www/>
-	    Options Indexes FollowSymLinks MultiViews
-	    AllowOverride None
-	    Order allow,deny
-	    allow from all
+			Options Indexes FollowSymLinks MultiViews
+			AllowOverride None
+			Order allow,deny
+			Allow from all
 		<Directory>
 
 3.	Change the value of `AllowOverride` to `<value from Apache site>`.
 
 		<Directory /var/www/>
-		Options Indexes FollowSymLinks MultiViews
-    	AllowOverride <value from Apache site>
-    	Order allow,deny
-    	allow from all
+			Options Indexes FollowSymLinks MultiViews
+			AllowOverride <value from Apache site>
+			Order allow,deny
+			Allow from all
 		<Directory>
 
 4.	Save the file and exit the text editor.
@@ -190,6 +190,19 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 	<pre>service apache2 restart</pre>
 
 Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>), or start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+
+<h3 id="install-ubuntu-apache-rewrites">403 Forbidden Errors</h3>
+
+If you encounter 403 Forbidden errors when trying to access the Magento site, you may need to update your Apache configuration or your virtual host configuration. You should make sure that Apache is allowing visitors to the site via the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
+
+For instance:
+	
+	<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride <value from Apache site>
+		Order allow,deny
+		Allow from all
+	<Directory>
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
 
