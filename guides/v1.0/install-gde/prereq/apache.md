@@ -15,6 +15,7 @@ github_link: install-gde/prereq/apache.md
 *	<a href="#apache-help-beginner">Help if you're just starting out</a>
 *	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
+*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
 
 <h2 id="apache-support">Apache versions supported</h2>
 
@@ -151,7 +152,11 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 
 	<pre>service apache2 restart</pre>
 
-Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>), or start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+Next steps:
+
+*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	Start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
 
 <h4 id="apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</h4>
 Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.2, which is supported by the default Ubuntu 12 repository.
@@ -163,19 +168,19 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 2.	Locate the following block.
 
 		<Directory /var/www/>
-	    Options Indexes FollowSymLinks MultiViews
-	    AllowOverride None
-	    Order allow,deny
-	    allow from all
+			Options Indexes FollowSymLinks MultiViews
+			AllowOverride None
+			Order allow,deny
+			Allow from all
 		<Directory>
 
 3.	Change the value of `AllowOverride` to `<value from Apache site>`.
 
 		<Directory /var/www/>
-		Options Indexes FollowSymLinks MultiViews
-    	AllowOverride <value from Apache site>
-    	Order allow,deny
-    	allow from all
+			Options Indexes FollowSymLinks MultiViews
+			AllowOverride <value from Apache site>
+			Order allow,deny
+			Allow from all
 		<Directory>
 
 4.	Save the file and exit the text editor.
@@ -189,7 +194,11 @@ Use this section to enable Apache rewrites and specify <code>.htaccess</code> if
 
 	<pre>service apache2 restart</pre>
 
-Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>), or start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+Next steps:
+
+*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	Start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
 
 <h2 id="install-prereq-apache-centos">Installing Apache on CentOS</h2>
 
@@ -220,7 +229,43 @@ Install Apache 2 if you haven't already done so.
 
 	<pre>service httpd restart</pre>
 
-Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">PHP CentOS</a>), or start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+Next steps:
+
+*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
+*	Start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
+
+<h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
+If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
+
+*	<a href="#install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</a>
+*	<a href="#install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</a>
+
+
+<h4 id="install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</h4>
+To enable web site visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.
+
+For example:
+	
+	<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride <value from Apache site>
+		Order allow,deny
+		Require all granted
+	<Directory>
+
+<h4 id="install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</h4>
+To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
+
+For example:
+	
+	<Directory /var/www/>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride <value from Apache site>
+		Order allow,deny
+		Allow from all
+	<Directory>
+
 
 
 #### Related topics:
