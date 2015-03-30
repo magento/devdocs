@@ -108,7 +108,7 @@ When a developer creates the Web API configuration file (webapi.xml), the permis
 ...
 {% endhighlight %}
 
-For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with a `Magento_Customer::group` can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest) without presenting an identity.
+For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with `Magento_Customer::group` authorization can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest).
 
 The user here can be an administrator (or an Integration) defined in the Magento Admin with the customer group selected as one of the resource in the ACL tree.
 <div class="bs-callout bs-callout-info" id="info">
