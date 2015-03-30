@@ -142,12 +142,12 @@ github_link: get-started/authentication/gs-authentication-oauth.md
       <td>The confirmation string does not correspond to the token.</td>
    </tr>
 </table>
-<h2 id="oauth-process">Oauth handshake initiationn</h2>
+<h2 id="oauth-process">Oauth handshake initiation</h2>
 <p>This is the preceding step before the the 2-legged Oauth handshake starts. Only an administrator with access to Integration grid in the backend can initiate this.</p>
 <p>An admin may choose to select "Save and Activate" during integration creation or click on "Activate" against a previosuly saved integration from the Integration grid.</p>
-<p>This action submits the "Consumer key" and "consumer secret" key pair along the "oauth_verifier" and store base url to the endpoint specified when creating the Integration</p>
+<p>This action submits the "Consumer key" and "consumer secret" key pair along the "oauth_verifier" and current store base url to the endpoint specified when creating the Integration</p>
 <h2 id="pre-auth-token">Step 2. Get a request token</h2>
-<p>This is the first step in the 2-legged Oauth handshake. This must happen within a specified window </p>
+<p>This is the first step in the 2-legged Oauth handshake. This must happen within a specified window of 180 seconds else the consumer credentials will be disabled for security reasons. The window can be changed from the backend by the adminstrator.</p>
 <p>A request token is a temporary token that the user exchanges for an access token. To get a request token from Magento:</p>
 <pre>POST /oauth/token/request</pre>
 <p>You must include these request parameters in the <code>Authorization</code> request header in the call:</p>
