@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Themes</title>
+	<title>template (generic)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/frontend-dev-guide/themes/theme-general.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//template.html">
 
 </head>	
 <body>
@@ -138,9 +138,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Themes</h1>
-			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/frontend-dev-guide/themes/theme-general.md" target="_blank">Edit this page on GitHub</a>
+		<h1 class="page-heading">template (generic)</h1>
 		
 	</div>
 </section>
@@ -149,35 +147,41 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="theme-gen-overview">Overview</h2>
-<p>A theme is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images.</p>
+		<p><em>This is a template for a topic that has not yet been written by the Magento Developer Docs team.</em> </p>
 
-<p>Themes are designed to override or customize view layer resources, provided initially by modules or libraries.<!--ADDLINK to Fallback--> Themes are implemented by different vendors (frontend developers) and intended to be distributed as additional packages for Magento system similar to other components.</p>
+<p>We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just a few sentences about something you know of this topic. Don’t worry about perfect grammar or form; just get your brilliance down!!</p>
 
-<p>Out-of-the-box Magento application provides two design themes: Luma, as a demonstration theme, and Blank as a basis for custom theme creation.</p>
+<p>To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team. </p>
 
-<p>There are no restrictions on using the demonstration Luma theme for a live store, but if you want to customize the default design, you need to create a new theme. We strongly recommend not to change the default Luma and Blank theme files, because if you do edit the default files, your changes can be overwritten by the new version of the default files during upgrades.</p>
+<p>Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!</p>
 
-<p>Your new theme can be a standalone new theme, or can inherit from the default or any other existing one. The theme inheritance concept implemented in the Magento system allows you changing only certain theme files, and inheriting the rest necessary files from a parent theme. <!--ADDLINK Magento Theme Inheritance for details. --></p>
+<h2 id="overview">Overview</h2>
+<p>PROVIDE OVERVIEW OF TOPIC HERE</p>
 
-<p>The Create a new theme chapter provides all information, including theoretical concepts and practical references, a frontend developer might need to efficiently create a new theme in Magento application.</p>
+<h2 id="H2">HEADING 2</h2>
+<p>PROVIDE TEXT HERE FOR FIRST SECTION.</p>
 
-<h2 id="theme-gen-walkthrough">Add a theme: walkthrough</h2>
-<p>The high-level steps required to add a new theme in the Magento system are the following:</p>
+<div class="bs-callout bs-callout-info" id="info">
 
-<ol>
-  <li>Create a folder for the theme under <code>app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;</code>.</li>
-  <li>Add a declaration file <code>theme.xml</code> and optionally <code>view.xml</code> to the theme folder.</li>
-  <li>Add a <code>composer.json</code> file.</li>
-  <li>Create folders for CSS, JavaScript, images, and fonts.</li>
-  <li>Configure your theme in the Admin panel.</li>
-</ol>
+  <p>INSERT NOTE TEXT HERE.</p>
 
-<h2 id="theme-gen-read">Recommended reading</h2>
+</div>
+
+<h3 id="H3">HEADING 3</h3>
+<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
+
+<p>TO HYPERLINK TO ANOTHER TOPIC… refer to the <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.</p>
+
+<h2 id="H2">HEADING 2</h2>
+<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
+
+<p>ADD DIAGRAM OR ILLUSTRATION &lt;p&gt;<img src="/pages/Magento/devdocs_internal/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE" />&lt;/p&gt;</p>
+
+<h2 id="book-related">Related topics</h2>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento" target="_blank">Checklist of modules</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/static-process.html" target="_blank">Static view files processing</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a></li>
 </ul>
 
 
@@ -200,56 +204,10 @@
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-							
-								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
-				
-							
-							
-						
-
 					
 					
 						
@@ -261,7 +219,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction to the Extension Developers Guide</a></li>
 									
 								
 								
@@ -270,210 +228,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/theme-ui-lib.html">Magento UI library</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-practice.html">Customizing styles illustration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/Contribute_edg.html">Contribute to Magento DevDocs!</a></li>
 						
 								
 								
@@ -496,34 +251,22 @@
 								
 								
 							
-									<li class=""><span class="nav-header">Javascript</span></li>
+									<li class=""><span class="nav-header">Concepts</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
 						
 								
 								
@@ -543,13 +286,80 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
-									
 								
+								
+							
+									<li class=""><span class="nav-header">Fundamentals</span></li>
 								
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/index-cache/indexing.html">Indexing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">How to</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_create_req_config_files.html">Create required config files (content needed)</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_package_module.html">Package a module (template)</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_verify_new_module.html">Verify the new module (template)</a></li>
+						
 								
 								
 								
@@ -560,6 +370,38 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
