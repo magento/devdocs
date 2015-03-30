@@ -3,7 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: A_Introduction
 title: Extension Developer Guide
-menu_title: Introduction to the Extension Developers Guide
+menu_title: Introduction
 menu_order: 1
 menu_node: parent
 github_link: extension-dev-guide/bk-extension-dev-guide.md

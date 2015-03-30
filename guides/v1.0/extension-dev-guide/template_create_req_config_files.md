@@ -3,21 +3,21 @@ layout: default
 group: extension-dev-guide
 subgroup: How to
 title: Create the required config files (TODO, up for grabs!)
-menu_title: Create required config files (template)
+menu_title: Create the required config files (template)
 menu_order: 3
 github_link: extension-dev-guide/create_req_config_files.md
 
 ---
 *This is a topic that has not yet been written by the Magento Developer Docs team.* 
 
-CONTRIBUTOR: We encourage you to add content; either by writing the full topic, or adding titles of sections that you would like to see, or even just a few sentences about something you know of this topic. Don't worry about perfect grammar or form; just get your brilliance down!!
+We encourage you to add content; either by writing the full topic, or adding titles of sections that you would like to see, or even just a few sentences about something you know of this topic. Don't worry about perfect grammar or form; just get your brilliance down!!
 
-CONTRIBUTOR: To get started, edit your local version of this file, using the markdown language (and HTML where needed). Rewrite or edit any text below; don't be timid! Then, create a Pull Request (see instructions) to have your contribution reviewed by the DevDocs team. Your contributions to our Docs, and your experience with using Magento, are very valued and your contributions are appreciated. Let us know if you have any questions!
+To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request (see instructions) to have your contribution reviewed by the DevDocs team. Your contributions to our Docs, and your experience with using Magento, are very valued and your contributions are appreciated. Let us know if you have any questions!
 
 <h2 id="overview-web-service">Overview</h2>
-CONTRIBUTOR:PROVIDE OVERVIEW OF TOPIC HERE.
+PROVIDE OVERVIEW OF TOPIC HERE.
 
-CONTRIBUTOR: In this topic, we want to make it clear that the exact config file required depends on what you want your new module to do! For example, if your module will be used to perform a function in the Admin, you will need to create the following config files:
+In this topic, we want to make it clear that the exact config file required depends on what you want your new module to do! For example, if your module will be used to perform a function in the Admin, you will need to create the following config files:
 
 * __.xml
 * __.php
