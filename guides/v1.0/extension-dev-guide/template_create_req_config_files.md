@@ -3,7 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: How to
 title: Create the required config files (TODO, up for grabs!)
-menu_title: Create required config files (content needed)
+menu_title: Create required config files (template)
 menu_order: 3
 github_link: extension-dev-guide/create_req_config_files.md
 

@@ -5,7 +5,7 @@ subgroup: A_Introduction
 title: Contribute to Magento DevDocs!
 menu_title: Contribute to Magento DevDocs!
 menu_order: 1
-
+github_link: extension-dev-guide/Contribute_edg.md
 
 ---
 
@@ -20,7 +20,7 @@ Then, review the Table of Contents in the left pane of the Guide, and determine 
 To add your knowledge to our Docs, you can:
 
 * edit your local version of an existing file
-* use the <a href="{{ site.githuburl }}template.md">generic template</a> and write a brand new topic, we will find the right home for it in the approriate Guide.
+* use the <a href="{{ site.githuburl }}template.md">generic template</a> and write a brand new topic, we will find the right home for it in the appropriate Guide
 * use an existing, empty template to write about a topic that we know we need, but haven't yet gotten around to writing
 
 
