@@ -9,28 +9,26 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 ---
 
 <p>Third-party applications that integrate with Magento use OAuth-based authentication to access the Magento web APIs. This authentication method uses an OAuth 1.0a handshake process that exchanges a request token for an access token that enables access to Magento APIs.</p>
-<p>Magento instances can use the OAuth-based authentication process for both SOAP and REST web API calls.</p>
 <p>For details about OAuth 1.0a, see <a href="https://tools.ietf.org/html/rfc5849">The OAuth 1.0 Protocol</a>.</p>
 <p>To configure your third-party application to use OAuth-based authentication to access the Magento web APIs, read these sections:</p>
 <ul>
-<li><a href="#oauth-process">Add-on registration and OAuth-based authentication</a></li>
-   <li><a href="#pre-auth-token">Step 1. Get a request token</a></li>
-   <li><a href="#get-access-token">Step 2. Get an access token</a></li>
-   <li><a href="#web-api-access">Step 3. Access the web APIs</a></li>
+<li><a href="#oauth-process">Integration registration and OAuth-based authentication</a></li>
+   <li><a href="#initiate-oauth">Step 1. Oauth handshake initiation</a></li>
+   <li><a href="#pre-auth-token">Step 2. Get a request token</a></li>
+   <li><a href="#get-access-token">Step 3. Get an access token</a></li>
+   <li><a href="#web-api-access">Step 4. Access the web APIs</a></li>
 </ul>
-<h2 id="oauth-process">Add-on registration and OAuth-based authentication</h2>
-<p>As an add-on developer, you must register add-ons in the Magento system. After registration, you must get a <i>request token</i>, which is a pre-authorized token, and a token secret to authenticate the add-on to make API calls.</p>
-<p>You can register add-ons through Magento Connect. After successful registration, Magento Connect generates a configuration file. If you choose not to register the add-on through Magento Connect, you can manually create the configuration file and make it available to merchants.</p>
-<p>An add-on configuration file contains add-on details like the endpoint that receives credentials and the required permissions. Any metadata that is defined in the configuration file enables Magento to pass credentials to add-ons. However, you must use these credentials to get an access token in fewer than three minutes or the credentials are disabled. The use of an HTTPS endpoint to pass the credentials eliminates this risk to a certain extent. The add-on must expose an HTTPS endpoint to which a Magento instance can POST temporary credentials. Magento can then validate the SSL certificate for the server to confirm its identity.</p>
-<p>Add-ons use the passed credentials to get a request token, which is a pre-authorized token. Add-ons then use credentials plus the request token to get a long-lived access token.</p>
+<h2 id="oauth-process">Integration registration and OAuth-based authentication</h2>
+<p>As an Integration developer, you must register Integration with the Magento Instance. Integration can be registered in the Magento admin (System > Extensions > Integration) OR </p>
+<p>You can register Integration through Magento Connect. After successful registration, Magento Connect generates a configuration file. If you choose not to register the Integration through Magento Connect, you can manually create the configuration file and make it available to merchants.</p>
+<p>An Integration contains details like the endpoint that receives Oauth credentials and list of APIs to which access is requested. Magento POSTs credentials to the endpoint defined in tne configuration file as part of the Ouath handshake. However, you must use these credentials to get an access token in fewer than three minutes or the credentials are disabled. The use of an HTTPS endpoint to pass the credentials eliminates this risk to a certain extent.</p>
+<p>Integrations use the passed credentials to get a request token, which is a pre-authorized token. Integrations then use credentials plus the request token to get a long-lived access token.</p>
 <h3 id="oauth-endpoints">OAuth authentication endpoints</h3>
-<p>The OAuth authentication endpoints are:</p>
+<p>The Magento OAuth authentication endpoints are:</p>
 <ul>
 <li><code>/oauth/token/request</code>. Used to get the <i>request token</i>, which is a pre-authorized token.</li>
 <li><code>/oauth/token/access</code>. Used to get the <i>access token</i>.</li>
 </ul>
-<p>To use the simple form for authentication, add the </code>/simple</code> endpoint to the authentication endpoint. For example:</p>
-<pre>/oauth/authorize/simple</pre>
 <h3 id="oauth-signature">The OAuth signature</h3>
 <p>You concatenate a set of URL-encoded attributes and parameters to construct the signature base string.</p>
 <p>Use the ampersand (<code>&</code>) character to concatenate these attributes and parameters:</p>
@@ -144,9 +142,13 @@ github_link: get-started/authentication/gs-authentication-oauth.md
       <td>The confirmation string does not correspond to the token.</td>
    </tr>
 </table>
-<h2 id="pre-auth-token">Step 1. Get a request token</h2>
-<p>A request token is a temporary token that the user exchanges for an access token.</p>
-<p>To get a request token from Magento:</p>
+<h2 id="oauth-process">Oauth handshake initiationn</h2>
+<p>This is the preceding step before the the 2-legged Oauth handshake starts. Only an administrator with access to Integration grid in the backend can initiate this.</p>
+<p>An admin may choose to select "Save and Activate" during integration creation or click on "Activate" against a previosuly saved integration from the Integration grid.</p>
+<p>This action submits the "Consumer key" and "consumer secret" key pair along the "oauth_verifier" and store base url to the endpoint specified when creating the Integration</p>
+<h2 id="pre-auth-token">Step 2. Get a request token</h2>
+<p>This is the first step in the 2-legged Oauth handshake. This must happen within a specified window </p>
+<p>A request token is a temporary token that the user exchanges for an access token. To get a request token from Magento:</p>
 <pre>POST /oauth/token/request</pre>
 <p>You must include these request parameters in the <code>Authorization</code> request header in the call:</p>
 <ul>
@@ -159,7 +161,7 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 </ul>
 <p>A valid response looks like this:</p>
 <pre>oauth_token=4cqw0r7vo0s5goyyqnjb72sqj3vxwr0h&oauth_token_secret=rig3x3j5a9z5j6d4ubjwyf9f1l21itrr</pre>
-<h2 id="get-access-token">Step 2. Get an access token</h2>
+<h2 id="get-access-token">Step 3. Get an access token</h2>
 <p>To get an access token from Magento:</p>
 <pre>POST /oauth/token/access</pre>
 <p>You must include these request parameters in the <code>Authorization</code> request header in the call:</p>
@@ -179,7 +181,7 @@ github_link: get-started/authentication/gs-authentication-oauth.md
    <li><code>oauth_token</code>. The access token that provides access to protected resources.</li>
    <li><code>oauth_token_secret</code>. The secret that is associated with the access token.</li>
 </ul>
-<h2 id="web-api-access">Step 3. Access the web APIs</h2>
+<h2 id="web-api-access">Step 4. Access the web APIs</h2>
 <p>After the add-on is registered and authorized to make API calls, add-ons can invoke Magento web APIs by using the access token.</p>
 <p>To use the access token to make web API calls:</p>
 <pre>GET /api/rest/v1/products/1234</pre>
