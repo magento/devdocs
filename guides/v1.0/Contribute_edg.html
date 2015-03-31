@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Service contracts</title>
+	<title>Contribute to Magento DevDocs!</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">
+	<link rel="canonical" href="//guides/v1.0/Contribute_edg.html">
 
 </head>	
 <body>
@@ -137,9 +137,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Service contracts</h1>
-			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.md" target="_blank">Edit this page on GitHub</a>
+		<h1 class="page-heading">Contribute to Magento DevDocs!</h1>
 		
 	</div>
 </section>
@@ -148,36 +146,27 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="overview">Overview</h2>
-<p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price.</p>
-<p>Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
-<p>Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento.
-   Also, Magento and third-party developers can find it difficult to track and report the dependencies that customized extensions have on other extensions.
-</p>
-<p>To address these issues, the Magento system introduces <i>service contracts</i>.</p>
-<h2 id="what-is-msc">What is a service contract?</h2>
-<p>A service contract is a set of PHP interfaces that are defined for a module.
-   A service contract includes <a href="/guides/v1.0//extension-dev-guide/service-contracts/design-patterns.html#data-interfaces">data interfaces</a>, which preserve data integrity, and <a href="/guides/v1.0//extension-dev-guide/service-contracts/design-patterns.html#service-interfaces">service interfaces</a>, which hide business logic details from service requestors such as controllers, web services, and other modules.
-</p>
-<p>If developers define data and service interfaces according to a set of <a href="/guides/v1.0//extension-dev-guide/service-contracts/design-patterns.html">design patterns</a>, the result is a well-defined, durable API that other modules and third-party extensions can implement through Magento models and resource models.
-</p>
-<p><img src="/common/images/msc.jpg" /></p>
-<h2 id="msc-benefits">Service contract benefits</h2>
-<p>Service contracts enhance the modularity of Magento. They enable Magento and third-party developers to report system dependencies through <b>composer.json</b> files and, consequently, guarantee compatibility among Magento versions. This compatibility ensures that merchants can easily upgrade Magento.</p>
-<p>These contracts ensure a well-defined, durable API that other modules and third-party extensions can implement. Also, these contracts make it easy to <a href="/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">configure services as web APIs</a>.
-</p>
-<p>Data entities are a side benefit of service contracts.
-   The database tables that normally support these entities can be complicated.
-   For example, some attributes might be stored in an EAV table, so a set of MySQL database tables might define a single data entity.
-   Data entities in a service contract reveal a simpler data model than the data model in an underlying relational database schema.
-   Eventually, you will be able to use different storage technologies for different data collections. For example, you could use a NoSQL database to replace product tables.
-</p>
-<h3 id="related-topics">Related topics</h3>
+		<p>We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just adding a few sentences about something you know on an existing topic. Don’t worry about perfect grammar or form; just get your brilliance down!!</p>
+
+<p>The files are mostly written in the markdown language (and HTML where needed). </p>
+
+<p>To get started, review the <a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a> to learn about the process for code and doc contributions, including how to fork the repository and do a Pull Request to have your work submitted and reviewed.</p>
+
+<p>Then, review the Table of Contents in the left pane of the Guide, and determine which topic areas you can contribute to, or any that might be missing.</p>
+
+<p>To add your knowledge to our Docs, you can:</p>
+
 <ul>
-   <li><a href="/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
-   <li><a href="/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
-   </li>
+  <li>edit your local version of an existing file</li>
+  <li>use the <a href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/&lt;path&gt;/file.md">generic template</a></li>
+  <li><a href="/guides/v1.0/extension-dev-guide/template.md">generic template</a> and write a brand new topic, we will find the right home for it in the approriate Guide.</li>
+  <li>use an existing, empty template to write about a topic that we know we need, but haven’t yet gotten around to writing</li>
 </ul>
+
+<p>Create a Pull Request to have your contribution reviewed by the DevDocs team. </p>
+
+<p>Your contributions to our Docs and your experience with using Magento are very valued and appreciated. Let us know if you have any questions!</p>
+
 
 
 		</div>
@@ -223,7 +212,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/Contribute_edg.html">Contribute to Magento DevDocs!</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/Contribute_edg.html">Contribute to Magento DevDocs!</a></li>
 						
 								
 							
@@ -261,7 +250,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
 						
 								
 							
