@@ -161,7 +161,7 @@ Where:
 <h2 id="m2devgde-pricelib-ins">Insert price rendering into PHTML templates</h2>
 To invoke the price rendering block, you need to add the following code to a page template:
 <pre>
-$this->getLayout()>getBlock('product.price.render.default')>render(
+$this->getLayout()->getBlock('product.price.render.default')->render(
     '&lt;price type>',
     $product
     $arguments
