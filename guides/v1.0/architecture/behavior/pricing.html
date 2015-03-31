@@ -309,7 +309,7 @@ An example of Catalog module price configuration in its <a href="https://github.
 <h2 id="m2devgde-pricelib-ins">Insert price rendering into PHTML templates</h2>
 <p>To invoke the price rendering block, you need to add the following code to a page template:</p>
 <pre>
-$this-&gt;getLayout()&gt;getBlock('product.price.render.default')&gt;render(
+$this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
     '&lt;price type&gt;',
     $product
     $arguments
