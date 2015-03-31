@@ -29,6 +29,7 @@
 <div class="toc"> <h4 class="toc">Contents</h4>
 <p>These Release Notes contain the following information:</p>
 <ul><li><a href="#upgrade">Important Upgrade Information</a></li>
+<li><a href="#ee114-11420">Magento EE 1.14.2.0 Release Notes</a></li>
 <li><a href="#ee114-11410">Magento EE 1.14.1.0 Release Notes</a></li>
 <li><a href="#ee114-11401">Magento EE 1.14.0.1 Release Notes</a></li>
 <li><a href="#ee114-patches">Recent Patches</a></li>
@@ -40,6 +41,74 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use EE 1.14.1.0 or later for <em>all new EE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+<h2 id="ee114-11420">Magento EE 1.14.2.0 Release Notes</h2>
+<p>See the following sections for information about changes in this release:</p>
+<ul><li><a href="#ee114-11420-highlights">Highlights</a></li>
+<li><a href="#ee114-1420security">Security Enhancements</a></li>
+<li><a href="#ee114-11420-changes">Changes</a></li>
+<li><a href="#ee114-1420fixes">Fixes</a></li>
+</ul> 
+
+<h3 id="ee114-11420-highlights">Highlights</h3>
+<p>TBD</p>
+
+<h3 id="ee114-1420security">Security Enhancements</h3>
+<p>We resolved the following security issues</p>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-7103" target="_blank">MPERF-7103</a> Resolved a <a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29" target="_blank">Cross-Site Scripting (XSS)</a> exploit that used <code>CACHED_FRONT_FORM_KEYM</code>.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6797" target="_blank">MPERF-6797</a> Resolved potential exploits related to data deserialization.</li>
+
+
+</ul>
+
+<h3 id="ee114-11420-changes">Changes</h3>
+<p>We introduced the following changes in this release:</p>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6413" target="_blank">MPERF-6413</a> You can now specify newsletter subscriptions per website. Customers can now subscribe themselves to any newsletter on multi-website store.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5949" target="_blank">MPERF-5949</a> We added additional sort options to the Visual Merchandizer.<br />
+For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</li>
+
+</ul>
+
+<h3 id="ee114-1420fixes">Fixes</h3>
+<p>The following sections discuss fixes in this release:</p>
+<li><a href="#ee114-1420fixes-pymt">Payment Processor Fixes</a></li>
+<li><a href="#ee114-1420fixes-import">Import and Export Fixes</a></li>
+<li><a href="#ee114-1420fixes-solr">Solr Search Engine Fixes</a></li>
+<li><a href="#ee114-1420fixes-target">Rule-Based Product Relation Fixes</a></li>
+<li><a href="#ee114-1420fixes-catalog">Catalog Price Rule Fixes</a></li>
+<li><a href="#ee114-1420fixes-xlate">Translation Fixes</a></li>
+<li><a href="#ee114-1420fixes-other">Other Fixes</a></li></ul>
+
+
+<h4 id="ee114-1420fixes-import">Import and Export Fixes</h4>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-5932" target="_blank">MPERF-5932</a>  Dataflow now exports products where images are <em>not</em> used as media attributes.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-4030" target="_blank">MPERF-4030</a> Importing and exporting postal codes set to <code>*</code> (asterisk, wildcard character) now works as expected.</li>
+</ul>
+
+<h4 id="ee114-1420fixes-xlate">Translation Fixes</h4>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-5493" target="_blank">MPERF-5493</a> French language translations were corrected and updated.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5902" target="_blank">MPERF-5902</a> You can now use international characters in a Magento storefront domain name.<br />
+Magento thanks Yihao Peng for contributing to this fix.</li>
+
+
+</ul>
+
+<h4 id="ee114-1420fixes-other">Other Fixes</h4>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-7254" target="_blank">MPERF-7254</a> JavaScript errors no longer display after you create an order and perform a return in the Admin Panel.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7245" target="_blank">MPERF-7245</a> You can add products to a shopping cart without errors related to Google Analytics.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6091" target="_blank">MPERF-6091</a> Resolved JavaScript errors with one-page checkout (for example, issues with reward points).</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7191" target="_blank">MPERF-7191</a> You can now add widgets to CMS pages.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7114" target="_blank">MPERF-7114</a> Recently Viewed items display on the storefront.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5889" target="_blank">MPERF-5889</a> You can now load small web format (SWF) files from a content delivery network (CDN)<br />
+	Magento thanks TBD.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5007" target="_blank">MPERF-5007</a> The storefront displays normally if the store cookie is not set.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5960" target="_blank">MPERF-5960</a> A customer's middle name or initial now displays in both the Admin Panel and the storefront.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-3757" target="_blank">MPERF-3757</a> When an extension adds permissions to the access control list (ACL), the requested permissions are denied by default. (In other words, to access the resource, the requestor must authenticate.)</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5924" target="_blank">MPERF-5924</a> The CMS preview page uses the configured theme.</li>
+
+
+</ul>
+
 
 
 <h2 id="ee114-11410">Magento EE 1.14.1.0 Release Notes</h2>
