@@ -25,7 +25,7 @@ github_link: get-started/authentication/gs-authentication-oauth.md
    <li><a href="#oauth-error-codes">Oauth Error Codes</a></li>
 </ul>
 <h2 id="oauth-process">Integration registration</h2>
-<p>As an Integration developer, you must register your external application as an Integration with the Magento Instance. Integration can be registered in the Magento admin (System > Extensions > Integration) OR </p>
+<p>As a merchant,, you must register your external application as an Integration with the Magento Instance. Integration can be registered in the Magento admin (System > Extensions > Integration) OR </p>
 <p>You can register Integration through Magento Connect. After successful registration, Magento Connect generates a configuration file. If you choose not to register the Integration through Magento Connect, you can manually create the configuration file and make it available to merchants.</p>
 <p>An Integration contains details like the endpoint that receives Oauth credentials and list of APIs to which access is requested.</p>
 
@@ -36,7 +36,7 @@ github_link: get-started/authentication/gs-authentication-oauth.md
 <p>The use of an HTTPS for the endpoint to pass credentials eliminates this risk to a certain extent.</p>
 <p>HTTP POST from Magento to the Integration endpoint will contain these attributes:</p>
 <ul>
-<li>Magento store URL. For example, <code>http://mystore.magentogo.com</code>.</li>
+<li>Magento store URL. For example, <code>http://my-magento-store.com</code>.</li>
 <li>oauth_verifier</li>
 <li>OAuth consumer key</li>
 <li>OAuth consumer key secret</li>
