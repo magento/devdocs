@@ -3,114 +3,156 @@ layout: default
 group: fedg
 subgroup: D_CSS
 title: CSS preprocessing
-menu_order: 2
+menu_order: 3
 menu_title: CSS preprocessing
 github_link: frontend-dev-guide/css-topics/css-preprocess.md
 ---
 
-<p>The Magento publisher supports CSS preprocessing and uses the composite CSS preprocessor.</p>
-<p>The composite CSS preprocessor consists of these independent preprocessors:</p>
+<h2 id="preproc_over">Overview</h2>
 
-*	LESS preprocessor&mdash;enables the use of LESS in the Magento application.
-*	CSS URL resolver&mdash;resolves links found in CSS source files. Corrects links that are not valid.
+The topic describes how stylesheets are preprocessed and compiled to CSS in the Magento application. It provides the theoretical background a frontend developer needs to debug stylesheets effectively. 
 
-<p>By default, the Magento publisher finds and publishes CSS and other view static files in the <code>&lt;your Magento install dir&gt;/pub</code> directory.</p>
 
-<h2 id="fedg_css-less-intro">Leaner CSS (LESS) preprocessor</h2>
 
-LESS brings dynamic behavior to CSS, and extends CSS with new features such as variables, functions, mixins, nested rules and others.
+<h2 id="css_preprocess_terms">Terms used</h2>
+<table>
+<tr>
+<th>
+Term
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+Main source files
+</td>
+<td>
+The <code>.less</code> files from which the <code>.css</code> files <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled. 
 
-You can use the Magento fallback mechanism to override existing LESS files when the default instructions do not meet your needs, just as you can for regular CSS. As another option, you can extend existing libraries by creating a new LESS file that is automatically included by LESS preprocessing.
+For example, in one of the <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included: 
 
-For example, if you need to change the color of some page element, you can do this by simply redefining the corresponding variable.
+<pre>
+    &lt;head&gt;
+        &lt;css src=&quot;css/styles-m.css&quot; /&gt;
+        &lt;css src=&quot;css/styles-l.css&quot; media=&quot;screen and (min-width: 768px)&quot;/&gt;
+        &lt;css src=&quot;css/print.css&quot; media=&quot;print&quot; /&gt;
+    &lt;/head&gt;
+</pre>
 
-<p>The Magento system provides LESS preprocessor out of the box. It is located in your <code>[Magento install dir]/lib/internal/Magento/Framework/css/PreProcessor</code>.</p>
+The main source files for the Blank theme:
 
-<p class="q">Reviewer: What does the reader need to know about the LESS preprocessor? The following list seems random to me and doesn't spell out how the user can use the LESS processor.</p>
+<ul>
+<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">app/design/frontend/Magento/blank/web/css/styles-m.less</a></code></li>
+<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank">app/design/frontend/Magento/blank/web/css/styles-l.less</a></code></li>
+<li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/print.less" target="_blank">app/design/frontend/Magento/blank/web/css/print.less</a></code></li>
+</ul>
+</td>
+</tr>
+</table>
 
-The LESS preprocessor provides these benefits:
 
-*	A built-in compilation in Magento to support multi-level theme inheritance and Magento publisher behavior.
-*	Possible to use the client-side LESS.js compiler, which is the easiest way to get started and is good for developing with LESS.
-*	Compatibility of extensions across all Magento instances.
-*	Stable PHP LESS compiler that meets our internal quality requirements.
-*	Ability to use regular CSS.
-*	<p>LESS implementation does not extend Magento requirements with any external libraries such as <code>node.js</code>.</p>
-*	<p>A third-party LESS library (Oyejorge LESS parser) is located in <code><your Magento install dir>/lib/internal/Magento/Framework/css/PreProcessor/Adapter</code>.</p>
+<h2 id="less_modes">LESS compilation modes</h2>
 
-<h3 id="fedg_css-magento-import">The @magento_import instruction</h3>
-
-<p>Specify the <code>@magento_import</code> instruction to collect LESS files in a common library over your Magento system.</p>
-
-<p>You do not need to worry about editing layouts or templates to include your custom styles.
-</p>
-
-To use the @magento_import feature:
+In the Magento application, the following modes of compiling <code>.less</code> files to CSS are implemented:
 
 <ol>
-<li><p><code>@magento_import</code> must contain the file path. You can omit the file extension.</p>
-<p>The file path can be written with either single or double quotes.</p>
-<p><b>Example:</b></p>
-<pre>//@magento_import "path_to/some/file";
-//@magento_import 'path_to/some/other_file.less';</pre>
-    </li>
-<li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
-<p><b>Example:</b></p>
-<script src="https://gist.github.com/xcomSteveJohnson/f03b22f16fa2022cb0d7.js"></script></li>
+<li>Server-side LESS compilation.<br>
+This is the default compilation mode, and is the only option in <a href="config-guide/config/magento-mode.html#mode-production" target="_blank"> production application mode</a>.
+In this case the compilation is performed on the server, using the <a href="https://github.com/oyejorge/less.php" target="_blank">LESS PHP library</a>.
+</li>
 
-<li><p>Create a file in a view folder of your module by the path specified by a <code>@magento_import</code> instruction.</p></li>
-<li><p>Enable this module.</p></li>
+<li>Client-side LESS compilation. <br>
+When your application is not in the production mode, you can set Magento to compile <code>.less</code> files in a browser, using the <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">native <code>less.js</code> library</a>  
+</li>
 </ol>
 
-The LESS preprocessor:
+To set the compilation mode, do the following:
+<ol>
+<li>In the Magento Admin, navigate to <b>Stores</b> > <b>Configuration</b> > ADVANCED > <b>Developer</b>.</li>
+<li>In the <b>Store View</b> drop-down field, select the store view you are working on.</li>
+<li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
+<li>To save the settings, click <b>Save Config</b>.</li>
+</ol>
 
-1.	Searches for all `@magento_import` instructions.
-2.	Aggregates LESS across all of Magento.
-3.	Replaces the original `@magento_import` instructions one by one in a list of typical LESS imports.
+<h3 id="server-side">Server-side LESS compilation</h3>
 
-Example before and after processing:
+The following paragraph describes how the LESS preprocessor works in server-side compilation mode.
+For each CSS file included in the layouts, LESS preprocessor does the following: 
 
-<table>
-   <tbody>
-      <tr>
-         <th>Before</th>
-         <th>After</th>
-      </tr>
-      <tr class="even">
-         <td>
-            <pre>//@magento_import "[id]";</pre>
-         </td>
-         <td>
-            <pre>@import "path/to/dir1/some_file";
-@import "path/to/file/file1.less";
-@import "path/to/file/file2.less";</pre>
-         </td>
-      </tr>
-   </tbody>
-</table>
+<ol>
+<li>Checks if the requested <code>.css</code> file is found. If it is found, the preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
+<li>Changes the extension of the requested file to <code>.less</code> and tries to find the file using the <a href="{{site.gdeurl}}v1.0/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static" target="_blank">Magento fallback mechanism</a>. If the <code>.less</code> file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
+<li>Reads <code>.less</code> file contents and resolves <a href="#fedg_css-magento-import"><code>@magento_import</code></a> and default LESS <code>@import</code> directives.</code></li>
+
+<li>Resolves all paths in <code>.less</code> files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to <code>var/view_preprocessed/less</code>. Imported files are processed recursively.</li>
+
+<li id="compile_last">All source files are passed to the PHP LESS compiler. The resulting compiled <code>.css</code> files are published to <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code>.</li>
+
+</ol>
 
 
-<h2 id="fedg_css-preprocess_less-example">LESS example</h2>
+<h3 id="client-side">Client-side LESS compilation</h3>
+The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
 
-The LESS preprocessor:
+<ul>
+<li>main source (.less) files with resolved <code>@magento-import</code> directive </li>
+<li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the main source file that do not contain <code>@magento-import</code></li>
+<li>symlinks to the <code>.less</code> files included to the main source files using the imported by <code>@magento-import</code> and <code>@import</code> directives</li>
+</ul>
 
-1.	Checks if the requested CSS file is found. If the CSS file is found, LESS preprocessor stops its execution. Otherwise, continue with the next step.
-2.	Changes the extension of the requested file to `.less` and tries to find the file using the Magento fallback mechanism. If the `.less` file is not found, LESS preprocessor stops its execution. Otherwise, continue with the next step.
-3.	<p>Reads LESS file contents and resolves <code>@magento_import</code> and default LESS import instructions. Imported files are processed recursively.</p>
-4.	Resolves all paths in `.less` files to absolute paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to `var/temp/less/` with a unique file path that covers theme, locale, area, and so on.
+<h2 id="fedg_css-magento-import">The @magento_import directive</h2>
 
-To compile LESS sources files into CSS, the Magento LESS preprocessor uses the LESS PHP adapter.
+<p><code>@magento_import</code> is a Magento-specific LESS directive that allows including multiple files by a name pattern. It is used to include files with the same name from the different locations, for example, different modules.
+The standard <code>@import</code> directive includes a single file, which is found according to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
 
-The LESS PHP adapter works with the Oyejorge LESS parser, which is compatible with `less.js` version 1.7.
 
-The generated CSS file is located in the same directory where the compilation ran.
+<code>@magento_import</code> can be used in the main source files of a theme only. 
 
-<h2 id="fedg_css-preprocess-url-resolver">CSS URL resolver</h2>
 
-<p>The CSS URL resolver looks for links in CSS content (that is, links to images, fonts, backgrounds, and so on).</p>
+<h3 id="magento-import-usage">@magento_import rules of usage</h3>
 
-<p>When links are found, the CSS URL resolver publishes them. After that, the CSS URL resolver replaces the old links with URLs to the published files.</p>
+To include a <code>.less</code> file using the <code>@magento_import</code> directive:
+
+<ol>
+<li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
 <p><b>Example:</b></p>
+<pre>
+// Comment in a LESS document
+
+// Standard LESS import directive 
+//  ---------------------------------------------
+
+@import 'source/_reset';
+@import '_styles';
+
+//
+// Custom Magento LESS import directives
+//  ---------------------------------------------
+
+//@magento_import 'source/_module.less'; // Theme modules
+//@magento_import 'source/_widgets.less'; // Theme widgets
+//@magento_import 'source/_extend.less'; // Extend for minor customization
+</pre>
+</li>
+<li><p><code>@magento_import</code> must contain the file path. The path is specified relatively to the file, where the directive is called and put in either single ('') or double quotes (""). </p>
+
+The best practice is to specify the file extension in the path, though technically you can omit this.
+</li>
+
+</ol>
+
+<h3 id="magento_import_example">@magento_import processing</h3>
+
+In the scope of static resources preprocessing, the built-in LESS preprocessor does the following:
+
+<ol>
+<li>Searches for all <code>@magento_import</code> directives.</li>
+<li>Replaces the original <code>@magento_import</code> directives with the standard <code>@import</code> directives. The latter specify the paths to the particular files that correspond to the pattern specified in <code>@magento_import</code>.</li>
+</ol>
+Example of how <code>@magento-import</code> is used and processed in <code>app/design/frontend/Magento/blank/web/css/styles-l.less</code>:
+
 <table>
    <tbody>
       <tr>
@@ -118,18 +160,23 @@ The generated CSS file is located in the same directory where the compilation ra
          <th>After</th>
       </tr>
       <tr class="even">
-         <td>
-            <script src="https://gist.github.com/xcomSteveJohnson/00b91311155da6aa95fc.js"></script>
+         <td> In <code>app/design/frontend/Magento/blank/web/css/styles-l.less</code> there's a following directive:
+            <pre> ..
+//@magento_import 'source/_widgets.less'; // Theme widgets
+..
+</pre>
          </td>
-         <td>
-            <script src="https://gist.github.com/xcomSteveJohnson/840d2750624894c44f9a.js"></script>
+         <td> In the processed file, this results in the following:
+            <pre>
+@import '../Magento_Catalog/css/source/_widgets.less';
+@import '../Magento_Cms/css/source/_widgets.less';
+@import '../Magento_Reports/css/source/_widgets.less';
+@import '../Magento_Sales/css/source/_widgets.less';
+ // Theme widgets
+</pre>
          </td>
       </tr>
    </tbody>
 </table>
 
-#### Related topics:
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-general.html">Themes</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>
 
