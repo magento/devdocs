@@ -134,7 +134,8 @@ This includes the <code>media</code> directory and subdirectories; all extension
 <li style="list-style-type:lower-alpha">Wait for upgrade scripts to run.</li>
 <img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Set all indexers to update when scheduled (<strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Index Management</strong>, <strong>Update when scheduled</strong>.</li>
 <img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run the URL redirect script to create 301 redirects: 
-<pre>[your Magento install dir]/php -f shell/url_migration_to_1_13.php - <em>thread-count</em></pre>
+<pre>cd [your Magento install dir]
+php -f shell/url_migration_to_1_13.php - <em>thread-count</em></pre>
 <em>thread-count</em> is the number of CPU cores in your Magento server, minus 1, to a maximum of 15.</li>
 <img src="/common/images/m1x/new.png" style="position:absolute;margin:1px 0 0 -75px;" /><li style="list-style-type:lower-alpha">Run a full reindex from the command line: 
 <pre>[your Magento install dir]/php -f shell/indexer.php -- --reindexall</pre></li>
