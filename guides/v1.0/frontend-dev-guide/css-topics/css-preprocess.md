@@ -26,7 +26,7 @@ Description
 </tr>
 <tr>
 <td>
-Main source files
+Root source files
 </td>
 <td>
 The <code>.less</code> files from which the <code>.css</code> files <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled. 
@@ -41,7 +41,7 @@ For example, in one of the <a href="https://github.com/magento/magento2/blob/dev
     &lt;/head&gt;
 </pre>
 
-The main source files for the Blank theme:
+The root source files for the Blank theme:
 
 <ul>
 <li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less" target="_blank">app/design/frontend/Magento/blank/web/css/styles-m.less</a></code></li>
@@ -97,9 +97,9 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 The client-side compilation flow is similar to server-side. The difference is in the set of files, published to <code>pub/static</code> on the <a href="#compile_last">last step</a>. In the client-side mode, the following files are published to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory:
 
 <ul>
-<li>main source (.less) files with resolved <code>@magento-import</code> directive </li>
-<li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the main source file that do not contain <code>@magento-import</code></li>
-<li>symlinks to the <code>.less</code> files included to the main source files using the imported by <code>@magento-import</code> and <code>@import</code> directives</li>
+<li>root source (.less) files with resolved <code>@magento-import</code> directive </li>
+<li> <a href="http://en.wikipedia.org/wiki/Symbolic_link" target="_blank">symlinks</a> to the root source file that do not contain <code>@magento-import</code></li>
+<li>symlinks to the <code>.less</code> files included to the root source files using the imported by <code>@magento-import</code> and <code>@import</code> directives</li>
 </ul>
 
 <h2 id="fedg_css-magento-import">The @magento_import directive</h2>
@@ -108,7 +108,7 @@ The client-side compilation flow is similar to server-side. The difference is in
 The standard <code>@import</code> directive includes a single file, which is found according to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">static files fallback</a>.</p>
 
 
-<code>@magento_import</code> can be used in the main source files of a theme only. 
+<code>@magento_import</code> can be used in the root source files of a theme only. 
 
 
 <h3 id="magento-import-usage">@magento_import rules of usage</h3>
