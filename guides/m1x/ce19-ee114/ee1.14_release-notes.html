@@ -62,20 +62,32 @@
 (Access the configuration setting at <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Admin</strong> > <strong>Security</strong>.)</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7001" target="_blank">MPERF-7001</a> Resolved potential JavaScript injection exploits with the wishlist.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6897" target="_blank">MPERF-6897</a> Resolved potential remote code execution exploits.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6303" target="_blank">MPERF-6303</a> All pages served using the HTTPS protocol now POST using HTTPS.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5750" target="_blank">MPERF-5750</a> Resolved potential SQL injection vulnerabilities related to advanced search.</li>
+
 
 
 
 </ul>
 
 <h3 id="ee114-11420-perf">Performance Enhancements</h3>
-<p>Magento thanks for contributing <a href="https://github.com/quafzi/magento-performance-tweaks" target="_blank">performance enhancements</a>.</p>
+<ul><li>Magento thanks for contributing <a href="https://github.com/quafzi/magento-performance-tweaks" target="_blank">several performance enhancements</a>.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6759" target="_blank">MPERF-6759</a> Addressed performance degradation with downloadable products.</li>
 
+
+</ul>
 
 <h3 id="ee114-11420-changes">Changes</h3>
 <p>We introduced the following changes in this release:</p>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-6413" target="_blank">MPERF-6413</a> You can now specify newsletter subscriptions per website. Customers can now subscribe themselves to any newsletter on multi-website store.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5949" target="_blank">MPERF-5949</a> We added additional sort options to the Visual Merchandizer.<br />
 For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5769" target="_blank">MPERF-5769</a> We updated the Zend framework version to 1.12.10.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-3786" target="_blank">MPERF-3786</a> Customer created dates and customer address created dates are now correct.<br />
+<strong>Note</strong>: Any customers created before you upgrade to EE 1.14.2 are unaffected; only customers and addresses created <em>after</em> you upgrade show the correct dates.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6372" target="_blank">MPERF-6372</a> You can now download products over HTTPS.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-1212" target="_blank">MPERF-1212</a> Magento now supports ipv6 addressing.</li>
+
 
 </ul>
 
@@ -84,21 +96,34 @@ For more information, see the <a href="http://www.magentocommerce.com/resources/
 <li><a href="#ee114-1420fixes-pymt">Payment Processor Fixes</a></li>
 <li><a href="#ee114-1420fixes-import">Import and Export Fixes</a></li>
 <li><a href="#ee114-1420fixes-vm">Visual Merchandizer Fixes</a></li>
+<li><a href="#ee114-1420fixes-cache">Full Page Caching Issues</a></li>
 <li><a href="#ee114-1420fixes-solr">Solr Search Engine Fixes</a></li>
 <li><a href="#ee114-1420fixes-target">Rule-Based Product Relation Fixes</a></li>
 <li><a href="#ee114-1420fixes-catalog">Catalog Price Rule Fixes</a></li>
 <li><a href="#ee114-1420fixes-xlate">Translation Fixes</a></li>
 <li><a href="#ee114-1420fixes-shop">Shopping Cart Fixes</a></li>
+<li><a href="#ee114-1420fixes-api">API Fixes</a></li>
 <li><a href="#ee114-1420fixes-other">Other Fixes</a></li></ul>
 
 
 <h4 id="ee114-1420fixes-import">Import and Export Fixes</h4>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-5932" target="_blank">MPERF-5932</a>  Dataflow now exports products where images are <em>not</em> used as media attributes.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-4030" target="_blank">MPERF-4030</a> Importing and exporting postal codes set to <code>*</code> (asterisk, wildcard character) now works as expected.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6189" target="_blank">MPERF-6189</a> Custom options are preserved on import.</li>
+
+
 </ul>
 
 <h4 id="ee114-1420fixes-vm">Visual Merchandizer Fixes</h4>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-6277" target="_blank">MPERF-6277</a> When you add or remove products in the Visual Merchandizer windows using a mass product assignment, the SKU dialog box displays regardless of whether SKUs were added or not.</li>
+
+
+</ul>
+
+<h4 id="ee114-1420fixes-cache">Full Page Caching Issues</h4>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6895" target="_blank">MPERF-6895</a> Subcategory ordering changes made in the Magento Admin are now reflected on the storefront.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6827" target="_blank">MPERF-6827</a> Users with different tax rates now see their own tax rates and not the rates for a previously cached user.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6824" target="_blank">MPERF-6824</a> A disabled product no longer displays on a previously cached category page.</li>
 
 
 </ul>
@@ -110,11 +135,21 @@ For more information, see the <a href="http://www.magentocommerce.com/resources/
 
 </ul>
 
+<h4 id="ee114-1420fixes-target">Rule-Based Product Relation Fixes</h4>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6894" target="_blank">MPERF-6894</a> A product with 0 price no longer displays in the related products block after the block has been disabled.</li>
+
+
+</ul>
+
 <h4 id="ee114-1420fixes-xlate">Translation Fixes</h4>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-5493" target="_blank">MPERF-5493</a> French language translations were corrected and updated.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5902" target="_blank">MPERF-5902</a> You can now use international characters in a Magento storefront domain name.<br />
 Magento thanks Yihao Peng for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-1819" target="_blank">MPERF-1819</a> Resolved issues with inline translation links and the Chrome browser.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5925" target="_blank">MPERF-5925</a> Fixed a typo in the Austrian province Voralberg.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5557" target="_blank">MPERF-5557</a> Fixed missing translation for a shipping method error message.</li>
+
+
 
 </ul>
 
@@ -124,6 +159,13 @@ Magento thanks Yihao Peng for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5726" target="_blank">MPERF-5726</a> Customers can move an unconfigured item from the wishlist to the shopping cart without errors.</li>
 
 </ul>
+
+<h4 id="ee114-1420fixes-api">API Fixes</h4>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6768" target="_blank">MPERF-6768</a> The SOAP API now properly populates the <code>min_sale_qty</code> field.</li>
+
+
+</ul>
+
 
 <h4 id="ee114-1420fixes-other">Other Fixes</h4>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-7254" target="_blank">MPERF-7254</a> JavaScript errors no longer display after you create an order and perform a return in the Admin Panel.</li>
@@ -151,6 +193,14 @@ Magento thanks Yihao Peng for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5205" target="_blank">MPERF-5205</a> Resolved an issue that caused the <code>core_cache_tags</code> database table to grow in size.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6986" target="_blank">MPERF-6986</a> The customer segment option <strong>Customer Created At</strong> now creates a from and to date.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5624" target="_blank">MPERF-5624</a> Deleting large numbers of products in the Admin Panel no longer results in SQLSTATE errors.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5872" target="_blank">MPERF-5872</a> Reindexing from the command line no longer results in errors in <code>system.log</code>.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6002" target="_blank">MPERF-6002</a> The Bestseller dashboard displays the correct prices.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5127" target="_blank">MPERF-5127</a> You can change the price of a product using the website scope without errors.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6492" target="_blank">MPERF-6492</a> Resolved an issue where <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29_Prevention_Cheat_Sheet" target="_blank">Cross-Site Request Forgery (CSRF)</a> protection caused issues with Varnish caching.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6765" target="_blank">MPERF-6765</a> The correct content now displays in the storefront when the store cookie is set.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6760" target="_blank">MPERF-6760</a> Duplicate attribute sets no longer display if they are several pages long.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6488" target="_blank">MPERF-6488</a> Configurable swatch images no longer change size when you click on them in search results.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6796" target="_blank">MPERF-6796</a> Printed invoices display the correct price for bundled products.</li>
 
 
 
