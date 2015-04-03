@@ -12,11 +12,16 @@ github_link: frontend-dev-guide/css-topics/styles_node.md
 
 This topic describes how the changes in stylesheets are applied in different LESS compilation modes, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. 
 
-<h2 id="general_debug">How changes are applied</h2>
 
-Irrespective of the compilation mode, most of the customizations you do in stylesheets are displayed immediately after you reload a store page. 
+<h2 id="css_debug_client">Styles debugging in the client-side compilation mode</h2>
 
-<span id="css_exception">But there are certian customizations, for which to be applied you need to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&lt;/&lt;locale&lt;</code> directory and trigger the compilation and publication processes anew.
+Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in <code>lib/web/less/config.less.js</code>, you can change it as needed. 
+
+You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.
+
+In the client-side compilation mode, most of the customizations you do in your stylesheets are displayed immediately after you reload a store page. 
+
+<span id="css_exception">But there are certain customizations, for which to be applied you need to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and publication processes anew.
 
 This is required in the following cases:
 <ul>
@@ -25,22 +30,19 @@ This is required in the following cases:
 
 </ul>
 
-In any compilation mode, you can clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory by manually deleting the directory in the file system, and reload the store pages to trigger compilation and publication. In the server-side compilation, if used with <code>node.js</code>, the task of cleaning and triggering can be performed by running corresponding Grunt tasks. See the <a href="#server_with_node">Using node.js for server-side compilation</a> section for details.
-
-<h2 id="css_debug_client">Styles debugging in the client-side compilation mode</h2>
-
-Client-side LESS compilation is implemented using the native `less.js` library. The default configuration is set in <code>lib/web/less/config.less.js</code>, you can change it as needed. 
-
-You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.
+To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages to trigger compilation and publication.
 
 <h2 id="css_debug_server">Styles debugging in the server-side compilation mode</h2>
 
-In the server-side LESS compilation mode, you can perform customizations and see your changes applied by simply reloading the store pages. In <a href="#css_exception">some cases</a>, you need to manually clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&lt;/&lt;locale&lt;</code> directory to apply the changes.
+In the server-side LESS compilation mode, to have your changes applied, you need to do clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. 
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
+</div>
 
 Alternatively, to streamline the process of applying and debugging styles customizations, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
 
-<!--
-The Styles debugging with Grunt topic (coming soon) describes in details how to install, configure and use Grunt for styles debugging. -->
+The following section describes in details how to install, configure and use Grunt for styles debugging.
 
 <h3 id="grunt_prereq">Installing and configuring Grunt</h3>
 
@@ -74,7 +76,7 @@ npm update
 </li>
 
 <li>
-Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/theme.js</code> file, add your theme to <code>module.exports</code> like following:l
+Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/theme.js</code> file, add your theme to <code>module.exports</code> like following:
 <pre>
 module.exports = {
     &lt;theme&gt;: {
@@ -90,7 +92,7 @@ module.exports = {
 </pre>
 
 </li>
-<p class="q">What if a custom theme does not have own root source files (it inherits from Blank for example)</p>
+
 
 Where the following notation is used:
 <ul>
@@ -107,14 +109,14 @@ Where the following notation is used:
 
 </ul>
 <li id="livereload">
-(optional) If you want to use Grunt for "watching" changes automatically, without necessity to reload pages in a browser each time, install the <a href="http://livereload.com/" target="_blank">LiveReload extension</a> for your browser. 
+(optional) If you want to use Grunt for "watching" changes automatically, without necessity to reload pages in a browser each time, install the <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions" target="_blank">LiveReload extension</a> for your browser. 
 
 </li>
 </ol>
 
 
 
-<h2 id="grunt_commands">Grunt commands</h2>
+<h3 id="grunt_commands">Grunt commands</h3>
 
 The following table describes the grunt commands you can use performing different customization tasks. All commands are run in a command prompt, having changed to the directory where the Magento instance is installed.
 
@@ -129,9 +131,23 @@ Grunt task
 </tr>
 <tr>
 <td>
-Customize the content of any <code>.less</code> file, except the root source files
+Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
+
 </td>
 <td>
+<pre>
+grunt exec:&lt;theme&gt;
+</pre>
+
+</td>
+<tr>
+<td>
+Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
+
+
+</td>
+<td>
+
 <pre>
 grunt less:&lt;theme&gt;
 </pre>
@@ -139,41 +155,24 @@ For example,
 <pre>
 grunt less:blank
 </pre>
+</td>
+</tr>
 
-Reload page to see changes.
-<p class="q">So do we need to do both, run the command and reload the page?</q>
-</td>
 <tr>
 <td>
-Clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&lt;/&lt;locale&lt;</code> directory
-</td>
-<td>
-<pre>
-grunt clean:&lt;theme&gt;
-</pre>
-</td>
-</tr>
-<tr>
-<td>
-Recompile <code>.less</code> files
-</td>
-<td>
-<pre>
-grunt exec:&lt;theme&gt;
-</pre>
-</td>
-</tr>
-<tr>
-<td>
-Update the browser pages
+Tracks the changes in the source files, recompiles <code>.css</code> files, and reloads the page in the browser pages
 (you need to have <a href="#livereload">LiveReload</a> installed for you browser)
 </td>
 <td>
 <pre>
-grunt watch:&lt;theme&gt;
+grunt watch
 </pre>
 </td>
 </tr>
 </table>
 
-<h2>Recommended Reading</h2>
+<h3>Use cases of tracking changes using Grunt</h3> (to be continued, not ready)
+
+After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page.
+
+After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clear</code> and <code>exec</code> commands and reload the page.
