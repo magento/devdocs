@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Routing</title>
+	<title>template (generic)</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/extension-dev-guide/routing.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/template.html">
 
 </head>	
 <body>
@@ -138,9 +138,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Routing</h1>
-			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/extension-dev-guide/routing.md" target="_blank">Edit this page on GitHub</a>
+		<h1 class="page-heading">template (generic)</h1>
 		
 	</div>
 </section>
@@ -149,108 +147,42 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="overview">Overview</h2>
+		<p><em>This is a template for a topic that has not yet been written by the Magento Developer Docs team.</em> </p>
 
-<p>In the Magento system, a URL has the following format:</p>
+<p>We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just a few sentences about something you know of this topic. Don’t worry about perfect grammar or form; just get your brilliance down!!</p>
 
-<p><code>&lt;area front name&gt;/&lt;VendorName&gt;/&lt;ModuleName&gt;/&lt;controller name&gt;/&lt;action name&gt;</code></p>
+<p>To get started, edit your local version of this file, using the markdown language (and HTML where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team. </p>
 
-<p><code>&lt;area front name&gt;</code> indicates it is at the “front” of the URL. (The <em>area name</em> is used internally to refer to the area in configuration files. Magento provides areas such as <code>frontend</code> for the storefront and <code>adminhtml</code> for the administration area.)</p>
+<p>Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!</p>
 
-<p>To assign a URL to a corresponding controller and action, use the router class.</p>
+<h2 id="overview">Overview</h2>
+<p>PROVIDE OVERVIEW OF TOPIC HERE</p>
 
-<p>Router has an algorithm to find a matching controller, determined by request.</p>
+<h2 id="H2">HEADING 2</h2>
+<p>PROVIDE TEXT HERE FOR FIRST SECTION.</p>
 
-<p>Then, according to a route rule, controller is assigned to URL. Use the <code>routes.xml</code> file to review or change the route rules.</p>
+<div class="bs-callout bs-callout-info" id="info">
 
-<h3>Routers</h3>
+  <p>INSERT NOTE TEXT HERE.</p>
 
-<p>The routers information for the modules is described in the <code>routerList</code> parameter of <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/RouterList.php" target="_blank">Magento\Framework\App\RouterList</a> type in your <code>di.xml</code>.</p>
+</div>
 
-<p>Each area has its own set of the routers. The <code>Magento\Framework\App\RouterList</code> model is injected into <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/FrontController.php" target="_blank">FrontController</a>.</p>
+<h3 id="H3">HEADING 3</h3>
+<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
 
-<p>You might need to customize the routers to change either the standard logic of processing the requests or the native Magento routers
-(such as, CMS router, default router, and so on).
-However, you must not customize the routers that are used in Magento core modules.</p>
+<p>TO HYPERLINK TO ANOTHER TOPIC… refer to the <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.</p>
 
-<h3>Routes</h3>
+<h2 id="H2">HEADING 2</h2>
+<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
 
-<p>Configurations of the routes are stored in <code>routes.xml</code> in the scopes area.</p>
+<p>ADD DIAGRAM OR ILLUSTRATION &lt;p&gt;<img src="/pages/Magento/devdocs_internal/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE" />&lt;/p&gt;</p>
 
-<p>Only the standard frontend and backend routers use routes. Typically, the configuration for a route is in the following format:</p>
-
-<pre>
-&lt;config&gt;
-    &lt;router id="%routerId%"&gt;
-        &lt;route id="%routeId%" frontName="%frontName%"&gt;
-            &lt;module name="%moduleName%" before="%moduleName%"/&gt;
-        &lt;/route&gt;
-    &lt;/router&gt;
-&lt;/config&gt;
-</pre>
-
-<p>To retrieve the configuration for route for an area by the specified router, use the <code>Magento\App\Framework\Route\Config</code>.</p>
-
-<p>To replace the controller action in a route with custom one, add the custom controller class before the original controller.</p>
-
-<p>The custom controller and action should share the same names with the original ones.</p>
-
-<p>The system processes the custom controller before the original, while a route remains the same.</p>
-
-<p>If you must reset a route and design, forward the request processing to another route:</p>
-
-<p><code>$this-&gt;_forward('other/controller/action')</code></p>
-
-<p>To remove the controller action, forward to <code>noroute</code>, for instance, in <code>app/code/Company/SomeExtension/Controller/Account.php</code>:</p>
-
-<pre>
-namespace Company\SomeExtension\Controller;
-
-class Account extends \Magento\Framework\App\Action\Action
-{
-    public function loginAction()
-    {
-        ...
-    }
-
-    public function createAction()
-    {
-        $this-&gt;_forward('noroute');
-    }
-
-    public function forgotpasswordAction()
-    {
-        $this-&gt;_forward('noroute');
-    }
-}
-</pre>
-
-<h3>Routing processing</h3>
-
-<p>Routing is processed in the following way:</p>
+<h2 id="book-related">Related topics</h2>
 
 <ul>
-  <li>Modules provide information on their routers through the <code>routerList</code> parameter of <code>Magento\Framework\App\RouterList</code> type in <code>di.xml</code>.</li>
-  <li><code>FrontController</code> obtains active routers and checks whether a request can be processed.</li>
-  <li>If a request cannot be processed by any router, the default router is used.</li>
-  <li>If a request can be processed by a router, the router finds a route with matching <code>frontName</code> and looks through corresponding modules. If a module has matching controller and action names, a router instantiates this controller.</li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/_____/_____.html">Title of related topic</a></li>
 </ul>
-
-<p>The <code>dispatch()</code> method of the <code>Magento\Framework\App\Action\Action</code> class requests an instance and returns its response.</p>
-
-<p>For this class, the <code>Magento\Framework\App\ActionInterface</code> processes the requests through its actions. Also, the following classes participate in processing the requests:</p>
-
-<ul>
-  <li>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/State.php" target="_blank">Magento\Framework\App\State</a>  class provides information on the state of the application, that is, current mode, installation date, and so on.</li>
-  <li>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/AreaList.php" target="_blank">Magento\Framework\App\Arealist</a> class serves to configure the application areas through the <code>di.xml</code> file</li>
-  <li>The <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Area/FrontNameResolverInterface.php" target="_blank">Magento\App\Area\FrontNameResolverInterface</a> class resolves the dynamic area’s front names</li>
-</ul>
-
-<h2>Default router</h2>
-
-<p>If a request cannot be processed by any router, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Router/DefaultRouter.php" target="_blank">Magento\App\Framework\Router\DefaultRouter</a> default router lists handlers for processing such request.</p>
-
-<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php" target="_blank">Magento\App\Router\NoRouteHandlerList</a> contains the list of handlers.</p>
 
 
 		</div>
@@ -300,7 +232,7 @@ class Account extends \Magento\Framework\App\Action\Action
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/template.html">template (generic)</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/template.html">template (generic)</a></li>
 						
 								
 								
@@ -376,7 +308,7 @@ class Account extends \Magento\Framework\App\Action\Action
 						
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
 						
 								
 								

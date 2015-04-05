@@ -197,85 +197,63 @@ Permissions required to access particular resource are configured in the <code>w
 acl.xml files across all Magento modules are consolidated to build an ACL tree which is used to select allowed Admin role resources or third party Integration's access (System &gt; Extension &gt; Integration &gt; Add New Integration &gt; Available APIs).
 </p>
 <h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
-<p>e.g., Account management, customer configuration, and customer group resource permissions are defined in the below customer acl.xml
-<code>xml
-&lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Acl/etc/acl.xsd"&gt;
-    &lt;acl&gt;
-        &lt;resources&gt;
-            &lt;resource id="Magento_Adminhtml::admin"&gt;
-                &lt;resource id="Magento_Customer::customer" title="Customers" sortOrder="40"&gt;
-                    &lt;resource id="Magento_Customer::manage" title="All Customers" sortOrder="10" /&gt;
-                &lt;/resource&gt;
-                &lt;resource id="Magento_Adminhtml::stores"&gt;
-                    &lt;resource id="Magento_Adminhtml::stores_settings"&gt;
-                        &lt;resource id="Magento_Adminhtml::config"&gt;
-                            &lt;resource id="Magento_Customer::config_customer" title="Customers Section" sortOrder="50" /&gt;
-                        &lt;/resource&gt;
-                    &lt;/resource&gt;
-                    &lt;resource id="Magento_Adminhtml::stores_other_settings"&gt;
-                        &lt;resource id="Magento_Customer::group" title="Customer Groups" sortOrder="10" /&gt;
-                    &lt;/resource&gt;
-                &lt;/resource&gt;
-            &lt;/resource&gt;
-        &lt;/resources&gt;
-    &lt;/acl&gt;
-&lt;/config&gt;
-</code></p>
+<p>For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a>.</p>
 
 <p>When a developer creates the Web API configuration file (webapi.xml), the permissions defined in acl.xml are referenced to create access rights for each API resource.
-&lt;h4 id="acl-webapi-relation"&gt;Sample (truncated) customer webapi.xml&lt;/h4&gt;
-<code>xml
-&lt;routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd"&gt;
-    &lt;!-- Customer Group --&gt;
-    &lt;route url="/V1/customerGroups/:id" method="GET"&gt;
-        &lt;service class="Magento\Customer\Api\GroupRepositoryInterface" method="getById"/&gt;
-        &lt;resources&gt;
-            &lt;resource ref="Magento_Customer::group"/&gt;
-        &lt;/resources&gt;
-    &lt;/route&gt;
+&lt;h4 id="acl-webapi-relation"&gt;Sample (truncated) customer webapi.xml&lt;/h4&gt;</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;routes</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../app/code/Magento/Webapi/etc/webapi.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- Customer Group --&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customerGroups/:id&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\GroupRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;getById&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Customer::group&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
 ............
 .......
 .....
-    &lt;!-- Customer Account --&gt;
-    &lt;route url="/V1/customers/:customerId" method="GET"&gt;
-        &lt;service class="Magento\Customer\Api\CustomerRepositoryInterface" method="getById"/&gt;
-        &lt;resources&gt;
-            &lt;resource ref="Magento_Customer::customer"/&gt;
-        &lt;/resources&gt;
-    &lt;/route&gt;
-    &lt;route url="/V1/customers" method="POST"&gt;
-        &lt;service class="Magento\Customer\Api\AccountManagementInterface" method="createAccount"/&gt;
-        &lt;resources&gt;
-            &lt;resource ref="anonymous"/&gt;
-        &lt;/resources&gt;
-    &lt;/route&gt;
-    &lt;route url="/V1/customers/:id" method="PUT"&gt;
-        &lt;service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/&gt;
-        &lt;resources&gt;
-            &lt;resource ref="Magento_Customer::manage"/&gt;
-        &lt;/resources&gt;
-    &lt;/route&gt;
-    &lt;route url="/V1/customers/me" method="PUT"&gt;
-        &lt;service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/&gt;
-        &lt;resources&gt;
-            &lt;resource ref="self"/&gt;
-        &lt;/resources&gt;
-        &lt;data&gt;
-            &lt;parameter name="customer.id" force="true"&gt;%customer_id%&lt;/parameter&gt;
-        &lt;/data&gt;
-    &lt;/route&gt;
+    <span class="c">&lt;!-- Customer Account --&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers/:customerId&quot;</span> <span class="na">method=</span><span class="s">&quot;GET&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\CustomerRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;getById&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Customer::customer&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers&quot;</span> <span class="na">method=</span><span class="s">&quot;POST&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\AccountManagementInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;createAccount&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;anonymous&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers/:id&quot;</span> <span class="na">method=</span><span class="s">&quot;PUT&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\CustomerRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;save&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_Customer::manage&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
+    <span class="nt">&lt;route</span> <span class="na">url=</span><span class="s">&quot;/V1/customers/me&quot;</span> <span class="na">method=</span><span class="s">&quot;PUT&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;service</span> <span class="na">class=</span><span class="s">&quot;Magento\Customer\Api\CustomerRepositoryInterface&quot;</span> <span class="na">method=</span><span class="s">&quot;save&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;resources&gt;</span>
+            <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;self&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+        <span class="nt">&lt;data&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;customer.id&quot;</span> <span class="na">force=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>%customer_id%<span class="nt">&lt;/parameter&gt;</span>
+        <span class="nt">&lt;/data&gt;</span>
+    <span class="nt">&lt;/route&gt;</span>
 ..........
 .....
-...
-</code>
-e.g.,
-In the above sample webapi.xml, for the customerGroups resource, only a user with a “Magento_Customer::group” can access the GET /V1/customerGroups/:id API. On the other hand, POST /V1/customers (customer creation) can be accessed anonymously (or by a guest) without a need for presenting the identity.</p>
+...</code></pre></div>
 
-<p>The user here can be an administrator (or an Integration) defined in the Magento Admin with the customer group selected as one of the resource in the ACL tree.
-&lt;div class="bs-callout bs-callout-info" id="info"&gt;</p>
-<p>A guest or anonymous is a special permission that doesn't need to be defined in acl.xml (and will not show up in the acl tree in the Magento Admin). It just indicates that the current resource in webapi.xml can be accessed without the need for authentication. Similarly self is a special access if you already have an authenticated session with the system and allows the user to access resources they own. e.g. GET /V1/customers/me will fetch the logged in customer's details. This is typically useful for JavaScript based widgets. </p>
-<p>&lt;/div&gt;</p>
+<p>For example, in the preceding <code>webapi.xml</code> for the customerGroups resource, only a user with <code>Magento_Customer::group</code> authorization can <code>GET /V1/customerGroups/:id</code>. On the other hand, you can create a customer using <code>POST /V1/customers</code> anonymously (or by a guest).</p>
+
+<p>Authorization is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+   <p>A guest or anonymous is a special permission that doesn't need to be defined in <code>acl.xml</code> (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in <code>webapi.xml</code> can be accessed without the need for authentication.</p>
+   <p>Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, <code>GET /V1/customers/me</code> fetches the logged-in customer's details. This is typically useful for JavaScript-based widgets. </p>
+</div>
 
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
 <p>You use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.</p>
