@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create a Module</title>
+	<title>Backwards compatibiliy</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/extension-dev-guide/create_module.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/extension-dev-guide/backward-compatibility.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create a Module</h1>
+		<h1 class="page-heading">Backwards compatibiliy</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/extension-dev-guide/create_module.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/extension-dev-guide/backward-compatibility.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,71 +149,218 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="create-module-overview">Overview</h2>
+		<h1>Backwards Compatibility Policy</h1>
 
-<p>This topic covers the basic steps of creating a new module. Subsequent sections in this Developer’s Guide explain how to verify your new module and how to use Composer to package and distribute the module.</p>
+<p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible. </p>
 
-<h2 id="create-module-basics">Basic Pre-Requisites</h2>
-<p>Before you begin creating your new module, make sure that you have a working installation of Magento 2.0, and the Magento <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/system-requirements.html">System Requirements</a>.</p>
-
-<p>Also, Magento recommends that you disable caching while performing the following steps. </p>
-
-<h2 id="create-module-code-setup">Get started</h2>
-<p>The main steps to create a module are:</p>
-
-<ol>
-  <li>Build the file structure for the module, with the appropriate “building block” directories</li>
-  <li>Create the <code>module.xml</code> file, with a namespace and name for the new module </li>
-</ol>
-
-<p>In subsequent topics, we will discuss which configuration files are needed for your new module. The required configuration files depend on how you plan to use the module: will it be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call?</p>
-
-<h2 id="create-module-file-structure">Build the file structure</h2>
-<p>First let’s create the &lt;ModuleName&gt; directory. Use a module name that is descriptive, and not too long.</p>
-
-<p>Next, you can create the <code>/etc</code> directory within the <code>&lt;ModuleName&gt;</code> directory:</p>
-
-<p>Example: </p>
-
-<pre><code>&lt;ModuleName&gt;
-  /etc
-</code></pre>
-
-<p>The <code>/etc</code> directory is where the <code>module.xml</code> file resides, and this directory is required no matter how you plan to use the module. Additional directories may be needed under the <code>&lt;ModuleName&gt;</code> directory, depending on how you plan to use the module. </p>
-
-<p>We will look at the additional directories in the next topic, and link to some sample modules showing these directories and the configuration files in each. Typically these components are:</p>
+<p>To help mitigate these concerns, this release introduces a backwards compatibility (BC) policy for PHP code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
 
 <ul>
-  <li>Blocks</li>
-  <li>Controllers</li>
-  <li>Helpers</li>
-  <li>Models</li>
+  <li>
+    <p>MAJOR indicates incompatible API changes</p>
+  </li>
+  <li>
+    <p>MINOR indicates backwards-compatible functionality has been added</p>
+  </li>
+  <li>
+    <p>PATCH indicates backward compatible bug fixes</p>
+  </li>
 </ul>
 
-<p>Along with the directories for those main components, you may need some additional directories for important things like configuration files, optional plugins, i18n files, APIs, and other files.</p>
+<p>The backwards compatibility policy applies to PHP code annotated with <code>@api</code> </p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Be aware that the standard placement of the &lt;ModuleName&gt; directory within the overall Magento file structure is <code>app/code/&lt;Vendor&gt;/&lt;ModuleName&gt;/etc/</code>. However, if you are creating a new module for distribution, you can just create the &lt;ModuleName&gt; directory and the required directories within it. </p> 
-</div>
+<blockquote>
+  <p>We promise to be backwards compatible for classes and methods annotated with <code>@api</code> within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with <code>@deprecated</code>.  The methods will only be removed with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
+</blockquote>
 
-<h2 id="create-module-naming">Create the new module.xml file</h2>
-<p>Now let’s create the module itself, in the /etc directory of the module you just created.</p>
+<p>We will also run a tool on the code that analyzes two code bases and determines what part of the version (MAJOR, MINOR, or PATCH) needs updating . If the tool determines that a MAJOR change has been detected and this change is outside the window of introducing a backwards-incompatible change, then the delivery process must be stopped and a bug opened against to code to address this breaking change.</p>
 
-<p>A module declares itself (i.e. defines its name and existence) in the <code>module.xml</code> file, located in the Magento install directory at <code>&lt;ModuleName&gt;/etc/</code>. </p>
+<h2>What code is affected?</h2>
+<p>The backwards compatibility policy applies to PHP code annotated with <code>@api</code>. This includes the following:</p>
 
-<p>Minimal declaration sample:</p>
+<ul>
+  <li>Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.</li>
+  <li>Any Service Contract</li>
+  <li>Public classes that are stable and likely extension points within the framework.</li>
+  <li>Events</li>
+  <li>Popular extension points, based on customer feedback</li>
+</ul>
 
-<pre><code>&lt;config&gt;
-   &lt;module name="Vendor_ModuleName" schema_version="2.0.0"&gt;
-   &lt;/module&gt;
-&lt;/config&gt;
-</code></pre>
+<h2>Service Provider Interfaces</h2>
+<p>A PHP Interface in Magento can be used several ways by the core product and extension developers.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/m2-sample-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them!/p&gt;
- 
-</p></div>
+<ul>
+  <li>
+    <p>As an API. An interface is called by PHP code.</p>
+  </li>
+  <li>
+    <p>As a Service Provider Interface (SPI). An interface can be implemented, allowing code to provide functionality to the platform. </p>
+  </li>
+  <li>
+    <p>As both. For example, in a Service Contract, we expect all calls to a module to be done through the Interface (API), but we also have support for 3rd parties to provide alternate implementations (SPI).</p>
+  </li>
+</ul>
+
+<p>APIs and SPIs are not mutually exclusive. Therefore, we will not distinguish them separately. SPIs are annotated the same as APIs.</p>
+
+<p>However, the dependency rules are different:</p>
+
+<ul>
+  <li>
+    <p>If a module uses (calls) an API, it should be dependent on the MAJOR version and system provides backward compatibility in scope of current major version.</p>
+
+    <p><strong>API dependency example</strong></p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+<span class="p">}</span></code></pre></div>
+
+<ul>
+  <li>
+    <p>If a module implements an API/SPI, it should be dependent on MAJOR+MINOR version and system provides backward compatibility in scope of current minor version.</p>
+
+    <p><strong>SPI dependency example</strong></p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0.0&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+<span class="p">}</span></code></pre></div>
+
+<h2>Versions</h2>
+
+<p>To reduce complexities, for Magento 2.0 GA, all components will be versioned together. This does limit the value of our policy since a change in one module’s public API will affect the version of the entire set. Additionally, we will likely extract the <code>@api</code> PHP interfaces into a separate package allowing more stability to 3rd parties. We will mature in this area and be able to further reduce coupling of our components post 2.0.  </p>
+
+<h2>What other code changes can cause backwards incompatibility?</h2>
+
+<p>Changes to the database can cause code to break.  As with PHP code, within a MAJOR version changes must be backwards compatible. This means:</p>
+
+<ul>
+  <li>Database tables or columns will not be removed.</li>
+  <li>The format of data in a column will not be restructed. </li>
+</ul>
+
+<p>This may require redundancy in table structure and data until a clean occurs with next MAJOR release. Unlike the PHP code, there is no current plan for annotation and tooling to highlight breaking changes.</p>
+
+<p>Changes in configuration files can potentially cause problems. As a result, these files will be monitored to ensure backward incompatible changes are not introduced.</p>
+
+<h2>How does the @api impact the version?</h2>
+<ul>
+  <li>Adding  <code>@api</code> - will lead to increasing minor version.</li>
+  <li>Removing <code>@api</code> - will lead to increasing major version and therefore break compatibility.</li>
+</ul>
+
+<h2>Example Lifecycle</h2>
+<p>The following steps demonstrate the packaging and backwards compatibility story from the view of Magento, SI, and extension developer. This example uses several composer packages on public github to simulate a merchant site, 2 core Magenot modules and a 3rd party extension.</p>
+<ol>
+<li>Start by cloning the master branch from github.
+
+
+   This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
+   
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run the <code>composer update</code> command. Core modules a &amp; b are pulled down from the repository.</li>
+
+
+<li>Now the SI includes a 3rd-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
+
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code> and see the new extension downloaded.</li>
+
+<li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
+
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy. 
+
+   This step will be repeated with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
+</li>
+
+<li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
+
+   
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
+
+<li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
+
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code> and see updates to core modules are as a 3rd-party extension.</li>
+
+</ol>
+
 
 
 		</div>
@@ -305,7 +452,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/backward-compatibility.html">Backwards compatibiliy</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/backward-compatibility.html">Backwards compatibiliy</a></li>
 						
 								
 								
@@ -377,7 +524,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
 						
 								
 							

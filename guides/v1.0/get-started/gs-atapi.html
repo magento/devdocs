@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Blocks in a responsive design</title>
+	<title>Step 3. Use cURL to run the request</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
 	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
-	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/get-started/gs-atapi.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Blocks in a responsive design</h1>
+		<h1 class="page-heading">Step 3. Use cURL to run the request</h1>
 			
-			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/get-started/gs-curl.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,80 +149,7 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="fedg_rwd_blocks_overview">Overview</h2>
-
-<p>This topic discusses:</p>
-
-<ul>
-  <li>Examples of the typical sequence of blocks on a page for both desktop and mobile versions of the responsive Blank theme</li>
-  <li>HTML and CSS requirements for responsive tables
-Specific form attributes you must use to make form elements responsive on mobile devices</li>
-</ul>
-
-<p>In the Blank theme, the breakpoint is at a 768px viewport.</p>
-
-<p>For more information about XML instructions related to blocks, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
-
-<h2 id="fedg_rwd_resp-table-class">Implement responsive tables</h2>
-
-<p>If you want to make tables in storefront responsive, wrap your HTML code of each table in a <code>&lt;div class=”table wrapper”&gt;</code> tag as shown in the following example:</p>
-
-<pre>&lt;!-- HTML markup for table with a wrapper for RWD --&gt;
-&lt;div class="table wrapper"&gt;
-    &lt;table class=" data table"&gt;
-        ...
-    &lt;/table&gt;
-&lt;/div&gt;</pre>
-
-<p>The Blank theme displays a horizontal scroll bar on a mobile device only when the table is wider than the screen size. The theme uses the following CSS to style the scroll bar:</p>
-
-<pre>.table.wrapper {
-    overflow-x: auto;
-}</pre>
-
-<p>The following figure shows the resulting scroll bar:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_blocks_scrollbar.png" alt="Sample horizontal scroll bar that displays when the width of a table is larger than a mobile device screen size." /></p>
-
-<h2 id="fedg_rwd_form">Responsive forms</h2>
-
-<p>If you create custom forms, consider the type of data that the field in the form is expected to receive. If the expected data is e-mail, use <code>&lt;input type=”email”&gt;</code> instead of <code>&lt;input type=”text”&gt;</code>.</p>
-
-<p>When the user selects this field on a mobile device, a keyboard containing Latin characters and the <code>@</code> character displays.</p>
-
-<h2 id="fedg_rwd_images">Responsive images</h2>
-
-<p>Product images on product pages in your store are also fully responsive, and can adapt to different screen sizes.</p>
-
-<p>The image responsiveness is provided by the following CSS:</p>
-
-<pre>.product.media .product.photo .photo.image {
-    display: block;
-    height: auto;
-    max-width: 100%;
-}</pre>
-
-<p>For example, a 100% wide product image container in the mobile version adjusts to 57% to fit the desktop layout after the breakpoint is reached.</p>
-
-<p>Mobile image:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_images_mobile.png" alt="A responsive image is set at 100% the container width." /></p>
-
-<p>Desktop image:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_images_desktop.png" alt="The same responsive image is set to 57% the container width on a desktop device." /></p>
-
-<h4 id="related-topics">Related topics:</h4>
-
-<ul>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/containers-blocks.html">Containers and blocks</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
-</ul>
-
+		
 
 
 		</div>
@@ -276,338 +203,157 @@ Specific form attributes you must use to make form elements responsive on mobile
 			
 				
 				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-							
-								<li class=""><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
-				
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/theme-ui-lib.html">Magento UI library</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-practice.html">Customizing styles illustration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Javascript</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-
-
-				
 			
 			
 				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/authentication/gs-authentication.html">Step 1. Authenticate</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/authentication/gs-authentication-session.html">Session-based authentication</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/gs-atapi.html">Step 3. Use cURL to run the request</a></li>
+									
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/gs-curl.html">Step 3. Use cURL to run the request</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
 				
 			
 			
