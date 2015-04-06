@@ -171,8 +171,24 @@ grunt watch
 </tr>
 </table>
 
-<h3>Use cases of tracking changes using Grunt</h3> (to be continued, not ready)
+<h3>Use cases of tracking changes using Grunt</h3> 
 
-After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page.
+The following describes which Grunt tasks should be used to debug the changes depending on the type of customization you perform:
 
-After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clear</code> and <code>exec</code> commands and reload the page.
+<ul>
+<li>
+After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
+
+<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clear</code> and <code>exec</code> commands and reload the page.</li>
+
+<li>Having switched the compilation mode from client-side to server-side, run the <code>clear</code> and <code>exec</code> commands.</li>
+</ul>
+
+If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:
+<ul>
+<li>
+After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. </li>
+
+<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clear</code> and <code>exec</code> commands, the browser page reloads automatically.</li>
+
+</ul>
