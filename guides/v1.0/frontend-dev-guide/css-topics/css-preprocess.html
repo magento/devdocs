@@ -208,9 +208,11 @@ When your application is not in the production mode, you can set Magento to comp
 <p>To set the compilation mode, do the following:</p>
 <ol>
 <li>In the Magento Admin, navigate to <b>Stores</b> &gt; <b>Configuration</b> &gt; ADVANCED &gt; <b>Developer</b>.</li>
-<li>In the <b>Store View</b> drop-down field, select the store view you are working on.</li>
+<li>In the <b>Store View</b> drop-down field, select <b>Default Config</b>.</li>
 <li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
 <li>To save the settings, click <b>Save Config</b>.</li>
+
+<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the website scope first, and then to the store view. Change the option to match the default config if it is different.</li>
 </ol>
 
 <h3 id="server-side">Server-side LESS compilation</h3>
