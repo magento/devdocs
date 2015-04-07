@@ -57,7 +57,7 @@ Other topics of this chapter describe the following:
 * <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are organized and included to be used for store pages in the Magento application. 
 * <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a>: how stylesheets are preprocessed and compiled
 * <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI Library</a>: how to use the Magento styles library in your custom themes
-* Using Custom Fonts: how to add custom fonts <!-- ADDLINK -->
+* <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/using-fonts.html" target="_blank">Using Custom Fonts</a>: how to add custom fonts 
 * <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-practice.html" target="_blank">Customizing styles illustration</a>: how to change a theme's color scheme using Magento UI library. 
 
 
