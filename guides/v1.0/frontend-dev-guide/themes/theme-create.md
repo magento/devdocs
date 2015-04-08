@@ -155,8 +155,8 @@ app/design/frontend/&lt;Vendor&gt;/
 <h2>Theme logo</h2>
 
 The default format of a logo image is <code>.svg</code>.
-If you put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. 
-<p class="q">And what? Especially if a theme does not inherit from Blank</code>
+If you put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. And displayed in page header once the theme is applied.
+
 
 If your logo image format is different from <code>.svg</code>, you need to declare it in layout.
 Namely, you need to add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. For example, if your logo file is <code>logo.png</code>, you need to declare it as follows: 
