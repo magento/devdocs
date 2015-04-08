@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Backwards compatibiliy</title>
+	<title>Backward compatibiliy</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -138,7 +138,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Backwards compatibiliy</h1>
+		<h1 class="page-heading">Backward compatibiliy</h1>
 			
 			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/extension-dev-guide/backward-compatibility.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -149,65 +149,62 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h1>Backwards Compatibility Policy</h1>
+		<h2>Backward Compatibility Policy</h2>
 
 <p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible. </p>
 
-<p>To help mitigate these concerns, this release introduces a backwards compatibility (BC) policy for PHP code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
+<p>To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
 
 <ul>
   <li>
     <p>MAJOR indicates incompatible API changes</p>
   </li>
   <li>
-    <p>MINOR indicates backwards-compatible functionality has been added</p>
+    <p>MINOR indicates backward-compatible functionality has been added</p>
   </li>
   <li>
-    <p>PATCH indicates backward compatible bug fixes</p>
+    <p>PATCH indicates backward-compatible bug fixes</p>
   </li>
 </ul>
 
-<p>The backwards compatibility policy applies to PHP code annotated with <code>@api</code> </p>
+<p>The backward compatibility policy applies to PHP code annotated with <code>@api</code> </p>
 
 <blockquote>
-  <p>We promise to be backwards compatible for classes and methods annotated with <code>@api</code> within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with <code>@deprecated</code>.  The methods will only be removed with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
+  <p>We promise to be backward compatible for classes and methods annotated with <code>@api</code> within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with <code>@deprecated</code>.  The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
 </blockquote>
 
-<p>We will also run a tool on the code that analyzes two code bases and determines what part of the version (MAJOR, MINOR, or PATCH) needs updating . If the tool determines that a MAJOR change has been detected and this change is outside the window of introducing a backwards-incompatible change, then the delivery process must be stopped and a bug opened against to code to address this breaking change.</p>
-
-<h2>What code is affected?</h2>
-<p>The backwards compatibility policy applies to PHP code annotated with <code>@api</code>. This includes the following:</p>
+<h3>What code is affected?</h3>
+<p>The backward compatibility policy applies to PHP code annotated with <code>@api</code>. This includes the following:</p>
 
 <ul>
   <li>Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.</li>
-  <li>Any Service Contract</li>
+  <li>Any service contract</li>
   <li>Public classes that are stable and likely extension points within the framework.</li>
-  <li>Events</li>
   <li>Popular extension points, based on customer feedback</li>
 </ul>
 
-<h2>Service Provider Interfaces</h2>
+<h3>Service Provider Interfaces</h3>
 <p>A PHP Interface in Magento can be used several ways by the core product and extension developers.</p>
 
 <ul>
   <li>
-    <p>As an API. An interface is called by PHP code.</p>
+    <p><strong>As an API</strong>. An interface is called by PHP code.</p>
   </li>
   <li>
-    <p>As a Service Provider Interface (SPI). An interface can be implemented, allowing code to provide functionality to the platform. </p>
+    <p><strong>As a Service Provider Interface (SPI)</strong>. An interface can be implemented, allowing code to provide functionality to the platform. </p>
   </li>
   <li>
-    <p>As both. For example, in a Service Contract, we expect all calls to a module to be done through the Interface (API), but we also have support for 3rd parties to provide alternate implementations (SPI).</p>
+    <p><strong>As both</strong>. For example, in a service contract, we expect all calls to a module to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).</p>
   </li>
 </ul>
 
-<p>APIs and SPIs are not mutually exclusive. Therefore, we will not distinguish them separately. SPIs are annotated the same as APIs.</p>
+<p>APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.</p>
 
 <p>However, the dependency rules are different:</p>
 
 <ul>
   <li>
-    <p>If a module uses (calls) an API, it should be dependent on the MAJOR version and system provides backward compatibility in scope of current major version.</p>
+    <p>If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.</p>
 
     <p><strong>API dependency example</strong></p>
   </li>
@@ -223,7 +220,7 @@
 
 <ul>
   <li>
-    <p>If a module implements an API/SPI, it should be dependent on MAJOR+MINOR version and system provides backward compatibility in scope of current minor version.</p>
+    <p>If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.</p>
 
     <p><strong>SPI dependency example</strong></p>
   </li>
@@ -237,31 +234,31 @@
     <span class="err">...</span>
 <span class="p">}</span></code></pre></div>
 
-<h2>Versions</h2>
+<h3>Versions</h3>
 
-<p>To reduce complexities, for Magento 2.0 GA, all components will be versioned together. This does limit the value of our policy since a change in one module’s public API will affect the version of the entire set. Additionally, we will likely extract the <code>@api</code> PHP interfaces into a separate package allowing more stability to 3rd parties. We will mature in this area and be able to further reduce coupling of our components post 2.0.  </p>
+<p>To reduce complexities, for Magento 2.0 GA, all components are versioned together. This does limit the value of our policy since a change in one module’s public API affects the version of the entire set. Additionally, we expect to extract the <code>@api</code> PHP interfaces into a separate package, allowing more stability to third parties. Magento expects to be able to further reduce coupling of components after the 2.0 release.  </p>
 
-<h2>What other code changes can cause backwards incompatibility?</h2>
+<h3>What other code changes can cause backward incompatibility?</h3>
 
-<p>Changes to the database can cause code to break.  As with PHP code, within a MAJOR version changes must be backwards compatible. This means:</p>
+<p>Changes to the database can cause code to break.  As with PHP code, within a MAJOR version changes must be backward compatible. This means:</p>
 
 <ul>
   <li>Database tables or columns will not be removed.</li>
-  <li>The format of data in a column will not be restructed. </li>
+  <li>The format of data in a column will not be restructured. </li>
 </ul>
 
-<p>This may require redundancy in table structure and data until a clean occurs with next MAJOR release. Unlike the PHP code, there is no current plan for annotation and tooling to highlight breaking changes.</p>
+<p>This may require redundancy in table structure and data until a clean occurs with next MAJOR release. Unlike the PHP code, this code does not have automated identification of breaking changes.</p>
 
-<p>Changes in configuration files can potentially cause problems. As a result, these files will be monitored to ensure backward incompatible changes are not introduced.</p>
+<p>Changes in configuration files can potentially cause problems. As a result, Magento will monitor these files to ensure backward incompatible changes are not introduced.</p>
 
-<h2>How does the @api impact the version?</h2>
+<h3>How does the @api impact the version?</h3>
 <ul>
-  <li>Adding  <code>@api</code> - will lead to increasing minor version.</li>
-  <li>Removing <code>@api</code> - will lead to increasing major version and therefore break compatibility.</li>
+  <li>Adding  <code>@api</code> - Leads to increasing minor version.</li>
+  <li>Removing <code>@api</code> - Leads to increasing major version and therefore break compatibility.</li>
 </ul>
 
-<h2>Example Lifecycle</h2>
-<p>The following steps demonstrate the packaging and backwards compatibility story from the view of Magento, SI, and extension developer. This example uses several composer packages on public github to simulate a merchant site, 2 core Magenot modules and a 3rd party extension.</p>
+<h3>Example Lifecycle</h3>
+<p>The following steps demonstrate the packaging and backward compatibility story from the view of Magento, SI, and extension developer. This example uses several composer packages on public github to simulate a merchant site, 2 core Magenot modules and a third-party extension.</p>
 <ol>
 <li>Start by cloning the master branch from github.
 
@@ -270,12 +267,12 @@
    
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
@@ -284,17 +281,17 @@
 <li>Run the <code>composer update</code> command. Core modules a &amp; b are pulled down from the repository.</li>
 
 
-<li>Now the SI includes a 3rd-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
+<li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
 
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
@@ -306,13 +303,13 @@
 
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
@@ -320,20 +317,20 @@
 
 <li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy. 
 
-   This step will be repeated with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
+   This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
 </li>
 
 <li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
 
    
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
@@ -345,19 +342,19 @@
 
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;texanhogman/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
   <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
   <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
   <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;texanhogman/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;texanhogman/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
 </li>
 
-<li>Run <code>composer update</code> and see updates to core modules are as a 3rd-party extension.</li>
+<li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
 
 </ol>
 
@@ -452,7 +449,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/backward-compatibility.html">Backwards compatibiliy</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/backward-compatibility.html">Backward compatibiliy</a></li>
 						
 								
 								
