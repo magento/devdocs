@@ -179,7 +179,7 @@ The following describes which Grunt tasks should be used to debug the changes de
 <li>
 After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
 
-<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clear</code> and <code>exec</code> commands and reload the page.</li>
+<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
 
 <li>Having switched the compilation mode from client-side to server-side, run the <code>clear</code> and <code>exec</code> commands.</li>
 </ul>
