@@ -45,6 +45,7 @@
 <ul><li><a href="#ee114-11420-highlights">Highlights</a></li>
 <li><a href="#ee114-1420security">Security Enhancements</a></li>
 <li><a href="#ee114-11420-perf">Performance Enhancements</a></li>
+<li><a href="#ee114-11420-known">Known Issues</a></li>
 <li><a href="#ee114-11420-changes">Changes</a></li>
 <li><a href="#ee114-1420fixes">Fixes</a></li>
 </ul> 
@@ -63,7 +64,8 @@
 <li><a href="https://jira.corp.x.com/browse/MPERF-6303" target="_blank">MPERF-6303</a> All pages served using the HTTPS protocol now POST using HTTPS.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5750" target="_blank">MPERF-5750</a> Resolved potential SQL injection vulnerabilities related to advanced search.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5007" target="_blank">MPERF-5007</a> Resolved a potential exploit using the store cookie (which is now a session cookie that has an expiration date).</li>
-
+<li><a href="https://jira.corp.x.com/browse/MPERF-7052" target="_blank">MPERF-7052</a> Addressed a potential security issue with <code>local.xml</code>.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7189" target="_blank">MPERF-7189</a> Added <code>.htaccess</code> to the <code>shell</code> subdirectory.</li>
 
 
 
@@ -77,9 +79,17 @@
 
 </ul>
 
+<h3 id="ee114-11420-known">Known Issues</h3>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-7284" target="_blank">MPERF-7284</a> Products from shopping cart display in the related products block.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6413" target="_blank">MPERF-6413</a> Customers cannot subscribe <em>themselves</em> to multi-website store newsletters. Only an administrator can subscribe a customer to such a newsletter.<br />
+See also <a href="#ee114-11420-changes">Changes</a>.</li>
+
+</ul>
+
 <h3 id="ee114-11420-changes">Changes</h3>
 <p>We introduced the following changes in this release:</p>
-<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6413" target="_blank">MPERF-6413</a> You can now specify newsletter subscriptions per website. Customers can now subscribe themselves to any newsletter on multi-website store.</li>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6413" target="_blank">MPERF-6413</a> You can now specify newsletter subscriptions per website. Administrators can now subscribe customers to any newsletter on multi-website store.<br />
+See also <a href="#ee114-11420-known">Known Issues</a>.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5949" target="_blank">MPERF-5949</a> We added additional sort options to the Visual Merchandizer.<br />
 For more information, see the <a href="http://www.magentocommerce.com/resources/magento-user-guide" target="_blank">Magento User Guide</a>.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5769" target="_blank">MPERF-5769</a> We updated the Zend framework version to 1.12.10.</li>
@@ -176,6 +186,10 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6514" target="_blank">MPERF-6514</a> The blocks cache now works when full page caching is enabled.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6513" target="_blank">MPERF-6513</a> The XmlConnect module now works properly when full page caching is enabled.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6153" target="_blank">MPERF-6153</a> Full page caching now works consistently for all themes, including the responsive theme.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5787" target="_blank">MPERF-5787</a> Resolved several issues related to full page cache invalidation related to saving products.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6894" target="_blank">MPERF-6894</a> A product with 0 price no longer displays in the related products block after the block has been disabled.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6896" target="_blank">MPERF-6896</a> When the indexing mode is set to <strong>Update when scheduled</strong>, the cache flushes properly.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6915" target="_blank">MPERF-6915</a> Resolved an issue with the gift cards price block after flusing the cache.</li>
 
 
 </ul>
@@ -188,8 +202,8 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 </ul>
 
 <h4 id="ee114-1420fixes-target">Rule-Based Product Relation Fixes</h4>
-<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6894" target="_blank">MPERF-6894</a> A product with 0 price no longer displays in the related products block after the block has been disabled.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-5046" target="_blank">MPERF-5046</a> Resolved an issue with a rule-based relation not displaying related products in the storefront.</li>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-5046" target="_blank">MPERF-5046</a> Resolved an issue with a rule-based relation not displaying related products in the storefront.</li>
+
 
 
 
@@ -233,7 +247,7 @@ Magento thanks Yihao Peng for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6461" target="_blank">MPERF-6461</a> The <strong>form_key</strong> field now displays on the OAuth login page.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6273" target="_blank">MPERF-6273</a> Creating a partial invoice using SOAP V2 <code>salesOrderInvoiceCreate</code> no longer changes the value of <code>$itemsQty</code> of subsequent orders.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5980" target="_blank">MPERF-5980</a> Added fields to the SOAP API <code>CategoryInfo</code> method: <code>Include_in_menu</code>, <code>UseParentSettings</code>, and <code>ApplyToProducts</code>.</li>
-
+<li><a href="https://jira.corp.x.com/browse/MPERF-5897" target="_blank">MPERF-5897</a> The SOAP WSDL URL (<code>/api/v2_soap?wsdl</code> no longer displays the Admin Panel, which is unreachable by SOAP.</li>
 
 
 
@@ -245,15 +259,16 @@ Magento thanks Yihao Peng for contributing to this fix.</li>
 
 <h4 id="ee114-1420fixes-other">Other Fixes</h4>
 <ul>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7247" target="_blank">MPERF-7247</a> Removed extraneous fields from Google Universal Analytics settings.<br />
+You can access these settings in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Google API</strong>, option <strong>Google Analytics Enhanced Ecommerce</strong> section.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7114" target="_blank">MPERF-7114</a> Recently Viewed items display on the storefront.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5889" target="_blank">MPERF-5889</a> You can now load small web format (SWF) files from a content delivery network (CDN)<br />
-	Magento thanks TBD.</li>
+	Magento thanks Sean N. Heukels for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5960" target="_blank">MPERF-5960</a> A customer's middle name or initial now displays in both the Admin Panel and the storefront.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5166" target="_blank">MPERF-5166</a> One error saving a product no longer causes errors on all other products you attempt to save.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7012" target="_blank">MPERF-7012</a> The correct date now displays in reports configured to run for a period of a month or a year.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5922" target="_blank">MPERF-5796</a> Scheduled index cleanup no longer results in errors.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6961" target="_blank">MPERF-6961</a> Opening a staging website no longer results in errors.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-5787" target="_blank">MPERF-5787</a> Resolved several issues related to full page cache invalidation related to saving products.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5545" target="_blank">MPERF-5545</a> Password reset e-mails now enable customers to reset the password for the correct store view.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-4762" target="_blank">MPERF-4762</a> Administrators no longer must enter a postal code if the customer's locale does not require one.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6989" target="_blank">MPERF-6989</a> Errors no longer display when reindexing data if there are duplicate values for multi-select attribute values.</li>
@@ -272,7 +287,8 @@ Magento thanks Yihao Peng for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6478" target="_blank">MPERF-6478</a> The <strong>Add New Review</strong> link now works with multiple configured stores.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-3305" target="_blank">MPERF-3305</a> Automated e-mail reminders now work properly.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6438" target="_blank">MPERF-6438</a> Rollback now completes without error with PHP 5.5.</li>
-
+<li><a href="https://jira.corp.x.com/browse/MPERF-5907" target="_blank">MPERF-5907</a> You can change the value of <code>php_value memory_limit</code> in <code>.htaccess</code> without encountering "out of memory" errors.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5877" target="_blank">MPERF-5877</a>, <a href="https://jira.corp.x.com/browse/MPERF-5877" target="_blank">MPERF-5877</a> Fixed potential issues with extensions.</li>
 
 
 
