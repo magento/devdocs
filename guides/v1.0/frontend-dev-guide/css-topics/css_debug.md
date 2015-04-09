@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/css-topics/styles_node.md
 <h2>Overview</h2>
 
 <p>
-The topic describes how the changes in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
+The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
 
 <h2 id="css_debug_client">Styles debugging in the client-side compilation mode</h2>
@@ -22,11 +22,11 @@ You can find the detailed information about the configuration and other options 
 
 In the client-side compilation mode, most of the stylesheet customizations are displayed immediately after you reload a page in a browser. 
 
-<span id="css_exception">But there are certain types of changes</span>, for which to be applied you need to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and publication processes anew.
+<span id="css_exception">But there are certain types of changes</span>, for which to be applied you need to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{site.gdeurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
 
 This is required in the following cases:
 <ul>
-<li>If you change the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento-import</code> directive, or the <code>@import</code> directive where the imported file is specified without the extension.</li>
+<li>If you change the <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento-import</code> directive, or the <code>@import</code> directive, where the imported file is specified without the extension.</li>
 <li>If you rename, remove or add a <code>.less</code> file imported with a <code>@magento-import</code> or <code>@import</code> directive, having not corrected the directives accordingly.</li>
 
 </ul>
@@ -35,13 +35,13 @@ To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&g
 
 <h2 id="css_debug_server">Styles debugging in the server-side compilation mode</h2>
 
-In the server-side LESS compilation mode, to have your changes applied, you need to do clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. 
+In the server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. 
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
 </div>
 
-Alternatively, to streamline the process of applying and debugging styles customizations in the server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
+Alternatively, to streamline the process of applying and debugging styles customizations, in the server-side compilation mode you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
 
 The following section describes in details how to install, configure and use Grunt for styles debugging.
 
@@ -125,30 +125,38 @@ The following table describes the grunt commands you can use performing differen
 <table>
 <tr>
 <th>
-Action
+Grunt task
 </th>
 <th>
-Grunt task
+Action
 </th>
 </tr>
 <tr>
+
 <td>
-Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
+<pre>
+grunt clean:&lt;theme&gt;
+</pre>
 
 </td>
+<td>
+Removes the theme related static files in the <code>pub/static</code> and <code>var</code> directories.
+</td>
+</tr>
+<tr>
+
 <td>
 <pre>
 grunt exec:&lt;theme&gt;
 </pre>
 
 </td>
-</tr>
-<tr>
 <td>
-Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
-
+Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
 
 </td>
+</tr>
+<tr>
 <td>
 
 <pre>
@@ -159,17 +167,21 @@ For example,
 grunt less:blank
 </pre>
 </td>
+<td>
+Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
+</td>
 </tr>
 
 <tr>
-<td>
-Tracks the changes in the source files, recompiles <code>.css</code> files, and reloads the page in the browser pages
-(you need to have <a href="#livereload">LiveReload</a> installed for you browser)
-</td>
+
 <td>
 <pre>
 grunt watch
 </pre>
+</td>
+<td>
+Tracks the changes in the source files, recompiles <code>.css</code> files, and reloads the page in the browser pages
+(you need to have <a href="#livereload">LiveReload</a> installed for you browser)
 </td>
 </tr>
 </table>
@@ -179,12 +191,13 @@ grunt watch
 The following describes which Grunt tasks should be used to debug the changes depending on the type of customization you perform:
 
 <ul>
+<li>Having switched the compilation mode from client-side to server-side, run the <code>exec</code> command.</li>
 <li>
 After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
 
 <li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
 
-<li>Having switched the compilation mode from client-side to server-side, run the <code>clear</code> and <code>exec</code> commands.</li>
+
 </ul>
 
 If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:
@@ -192,6 +205,6 @@ If you have LiveReload installed, run the <code>grunt watch</code> command, and 
 <li>
 After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. </li>
 
-<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clear</code> and <code>exec</code> commands, the browser page reloads automatically.</li>
+<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, the browser page reloads automatically.</li>
 
 </ul>
