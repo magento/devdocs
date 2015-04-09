@@ -10,7 +10,8 @@ github_link: frontend-dev-guide/css-topics/styles_node.md
 
 <h2>Overview</h2>
 
-The topic describes how the changes in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. 
+<p>
+The topic describes how the changes in stylesheets are applied in the client-side and server-side LESS <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
 
 <h2 id="css_debug_client">Styles debugging in the client-side compilation mode</h2>
@@ -21,7 +22,7 @@ You can find the detailed information about the configuration and other options 
 
 In the client-side compilation mode, most of the stylesheet customizations are displayed immediately after you reload a page in a browser. 
 
-<span id="css_exception"/>But there are certain types of changes, for which to be applied you need to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and publication processes anew.
+<span id="css_exception">But there are certain types of changes</span>, for which to be applied you need to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and publication processes anew.
 
 This is required in the following cases:
 <ul>
@@ -108,6 +109,7 @@ Where the following notation is used:
 </li> 
 
 </ul>
+</li>
 <li id="livereload">
 (optional) If you want to use Grunt for "watching" changes automatically, without necessity to reload pages in a browser each time, install the <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions" target="_blank">LiveReload extension</a> for your browser. 
 
@@ -140,6 +142,7 @@ grunt exec:&lt;theme&gt;
 </pre>
 
 </td>
+</tr>
 <tr>
 <td>
 Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
