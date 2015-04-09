@@ -155,16 +155,15 @@ app/design/frontend/&lt;Vendor&gt;/
 <h2>Theme logo</h2>
 
 The default format of a logo image is <code>.svg</code>.
-If you put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. And displayed in page header once the theme is applied.
+If you put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
 
-
-If your logo image format is different from <code>.svg</code>, you need to declare it in layout.
+If your logo image format is different from <code>.svg</code>, you need to declare it in the theme layout.
 Namely, you need to add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. For example, if your logo file is <code>logo.png</code>, you need to declare it as follows: 
 
 <pre>
 &lt;referenceBlock name=&quot;logo&quot;&gt;
 	&lt;arguments&gt;
-		&lt;argument name=&quot;logo_file&quot; xsi:type=&quot;string&quot;&gt;images/logo.png/argument&gt;
+		&lt;argument name=&quot;logo_file&quot; xsi:type=&quot;string&quot;&gt;images/logo.png&lt;/argument&gt;
 	&lt;/arguments&gt;
 &lt;/referenceBlock&gt;
 </pre>
@@ -172,7 +171,7 @@ Namely, you need to add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/la
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>If your theme inherits from a certain other theme, where the logo is already declared in <code>default.xml</code>, and your theme logo image has the same extension, there is no need to declare it.</p></span>
+ <p>There is no need to declare a logo image of not default format, if the same logo format is already declared in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>.</p></span>
 </div>
 
 To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
