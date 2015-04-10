@@ -155,6 +155,25 @@ app/design/frontend/&lt;Vendor&gt;/
 <h2>Theme logo</h2>
 
 The default format of a logo image is <code>.svg</code>.
+In your custom theme, you can use an image of other format, but you might need to declare it. 
+Depending on whether your theme has a parent theme and the logo format in the parent theme, you should:
+<ul>
+<li>
+If your theme does not have a parent theme:
+<ul>
+<li> and your logo image format is .svg, put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.   </li>
+<li>If you logo image format is not default, you need to declare it in layout</li>
+</ul>
+</li>
+<li>If your theme has a parent theme with a declared not default logo format:
+<ul>
+<li>There is no need to declare a logo image of not default format, if the same logo format is already declared in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>.</p></span><li>
+<li>If your theme logo is default, you need to declare it<li>
+</ul>
+</li>
+<li>If your theme has a parent uses the default logo format, your flow for logo declaring is the same as in case that your theme does not have a parent</li>
+</ul>
+
 If you put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
 
 If your logo image format is different from <code>.svg</code>, you need to declare it in the theme layout.
