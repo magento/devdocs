@@ -390,7 +390,7 @@ The `@api` tag indicates the code is part of the public API and is subject to th
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.  If the `@api` tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.
 
-See [Semantic Versioning 2.0.0](http://semver.org/) for information about semantic version and how code can be changed while maintaining backward compatibility.
+See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.
 
 <h3 id="deprecated">@deprecated tag</h3>
 
