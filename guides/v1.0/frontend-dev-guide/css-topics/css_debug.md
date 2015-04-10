@@ -138,6 +138,10 @@ Action
 grunt clean:&lt;theme&gt;
 </pre>
 
+For example: 
+<pre>
+grunt clean:blank
+</pre>
 </td>
 <td>
 Removes the theme related static files in the <code>pub/static</code> and <code>var</code> directories.
@@ -161,10 +165,6 @@ Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Ve
 
 <pre>
 grunt less:&lt;theme&gt;
-</pre>
-For example, 
-<pre>
-grunt less:blank
 </pre>
 </td>
 <td>
