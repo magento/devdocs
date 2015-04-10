@@ -180,8 +180,11 @@
   <li>Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.</li>
   <li>Any service contract</li>
   <li>Public classes that are stable and likely extension points within the framework.</li>
+  <li>Individual methods or constants</li>
   <li>Popular extension points, based on customer feedback</li>
 </ul>
+
+<p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.  If the <code>@api</code> tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.</p>
 
 <h3>Service Provider Interfaces</h3>
 <p>A PHP Interface in Magento can be used several ways by the core product and extension developers.</p>
