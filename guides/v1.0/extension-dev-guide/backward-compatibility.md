@@ -20,7 +20,9 @@ Merchants and developers want the process of upgrading between revisions of Mage
 <h3>What code is affected?</h3>
 The backward compatibility policy applies to PHP code annotated with `@api`. This includes the following:
 
-* Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.* Any service contract* Public classes that are stable and likely extension points within the framework.* Popular extension points, based on customer feedback
+* Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.* Any service contract* Public classes that are stable and likely extension points within the framework.
+* Individual methods or constants* Popular extension points, based on customer feedback
+The `@api` tag can be applied to a constant, a method, or to the entire class/interface.  If the `@api` tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.
 
 <h3>Service Provider Interfaces</h3>A PHP Interface in Magento can be used several ways by the core product and extension developers.* **As an API**. An interface is called by PHP code.
 * **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform. 

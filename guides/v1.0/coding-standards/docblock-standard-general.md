@@ -385,6 +385,13 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
 `@category`, `@package`, and `@subpackage` MUST NOT be used. Documentation is organized with the use of namespaces.
 
 <h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
+<h3 id="api">@api tag</h3>
+The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy](http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide/backward-compatibility.html.html).
+
+The `@api` tag can be applied to a constant, a method, or to the entire class/interface.  If the `@api` tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.
+
+See [Semantic Versioning 2.0.0](http://semver.org/) for information about semantic version and how code can be changed while maintaining backward compatibility.
+
 <h3 id="deprecated">@deprecated tag</h3>
 
 The `@deprecated` tag must be used for a structural element or file, if it is not used anymore and not supposed to be used anymore, but retained because of backwards compatibility requirements.
