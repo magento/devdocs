@@ -15,12 +15,12 @@ github_link: install-gde/install/install-cli-subcommands-deployment.md
 *	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
 *	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a> -->
   
-<h2 id="instgde-cli-subcommands-configphp">Creating pr updating the Magento deployment configuration</h2>
+<h2 id="instgde-cli-subcommands-configphp">Creating or updating the Magento deployment configuration</h2>
 Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.
 
 You can use this subcommand if:
 
-*	You previously uninstalled the Magento software and you want to modify the deployment configuration
+*	You previously installed the Magento software and you want to modify the deployment configuration
 *	If you want to create only `config.php` and continue the Magento installation some other way
 
 To install the deployment configuration:
