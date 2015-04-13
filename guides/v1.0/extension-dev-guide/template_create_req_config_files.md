@@ -27,7 +27,7 @@ Or, if your module will be used to make a change to the UI, you'll need the foll
 * __.xml
 * __.phtml
 
-Another possibility is that the module will be a service that perhaps calls an API, or does someother work that isn't manifested in the UI. In that case, you will need these files:
+Another possibility is that the module will be a service that perhaps calls an API, or does some other work that isn't manifested in the UI. In that case, you will need these files:
 
 * __.xyz
 * __.xyz
