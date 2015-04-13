@@ -10,10 +10,10 @@ github_link: install-gde/install/install-cli-subcommands-deployment.md
 ---
 
 
-#### Contents
+<!-- #### Contents
 
 *	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
-*	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>
+*	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a> -->
   
 <h2 id="instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</h2>
 Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.
@@ -27,9 +27,16 @@ To install the deployment configuration:
 
 1.	Complete the tasks discussed in <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-prereq">Before you start your installation</a>. 
 
-2.	Enter the following command:
+2.	Enter the following commands in the order shown:
 
-		php index.php install-configuration <options>
+		cd <your Magento install dir>/bin
+		./magento setup:config:set <options>
+
+	<div class="bs-callout bs-callout-warning">
+		<span class="glyphicon-class">
+  		<p>This command is the first to use a new syntax. This command must be run from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. The new syntax will soon be used by all installer commands.</p>
+  		<p>This command replaces <code>php index.php install-configuration &lt;options></code>.</p></span>
+	</div>
 
 	The following table discusses the meanings of installation option names and values. 
 
@@ -91,7 +98,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</td>
 		<td>No</td>
 	</tr>
-	<tr> 
+	<!-- <tr> 
 		<td>enable_modules=&lt;list></td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
@@ -102,7 +109,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
-	</tr>
+	</tr> -->
 	<tr>
 		<td>db_init_statements</td>
 		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
@@ -116,8 +123,8 @@ If applicable, continue your Magento software installation:
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Command line installation</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
 
-<h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
-{% include install/enable-disable-modules.html %}
+<!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
+{% include install/enable-disable-modules.html %} -->
 
 #### Related topics
 
