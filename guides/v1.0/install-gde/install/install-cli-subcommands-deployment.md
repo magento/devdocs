@@ -2,8 +2,8 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Create the deployment configuration, config.php
-menu_title: Create the deployment configuration, config.php
+title: Create or update the deployment configuration, config.php
+menu_title: Create or update the deployment configuration, config.php
 menu_node: 
 menu_order: 10
 github_link: install-gde/install/install-cli-subcommands-deployment.md
@@ -15,12 +15,12 @@ github_link: install-gde/install/install-cli-subcommands-deployment.md
 *	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
 *	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a> -->
   
-<h2 id="instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</h2>
+<h2 id="instgde-cli-subcommands-configphp">Creating pr updating the Magento deployment configuration</h2>
 Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.
 
 You can use this subcommand if:
 
-*	You previously uninstalled the Magento software and you don't want to run the entire installation again
+*	You previously uninstalled the Magento software and you want to modify the deployment configuration
 *	If you want to create only `config.php` and continue the Magento installation some other way
 
 To install the deployment configuration:
@@ -30,7 +30,7 @@ To install the deployment configuration:
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>/bin
-		./magento setup:config:set <options>
+		php magento setup:config:set <options>
 
 	<div class="bs-callout bs-callout-warning">
 		<span class="glyphicon-class">
@@ -75,7 +75,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>Yes</td>
 	</tr>
 	<tr>
-		<td>db_pass</td>
+		<td>db_password</td>
 		<td>Magento database instance owner's password.</td>
 		<td>No</td>
 	</tr>
@@ -89,8 +89,8 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	<tr>
 		<td>session_save</td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
-		<li><code>db.files</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li></ul></td>
+		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
+		<li><code>db.files</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -112,7 +112,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tr> -->
 	<tr>
 		<td>db_init_statements</td>
-		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
+		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Default is <code>SET NAMES utf8;</code>. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
 		<td>No</td>
 	</tr>
 	</tbody>
