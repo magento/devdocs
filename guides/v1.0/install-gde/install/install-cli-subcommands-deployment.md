@@ -90,7 +90,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>session_save</td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
-		<li><code>db.files</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
+		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
 		<td>No</td>
 	</tr>
 	<tr>
