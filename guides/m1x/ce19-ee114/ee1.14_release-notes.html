@@ -58,31 +58,33 @@
 <h3 id="ee114-1420security">Security Enhancements</h3>
 <p>We resolved the following security issues</p>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-7103" target="_blank">MPERF-7103</a> Resolved a <a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29" target="_blank">Cross-Site Scripting (XSS)</a> exploit that used <code>CACHED_FRONT_FORM_KEYM</code>.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-6797" target="_blank">MPERF-6797</a> Resolved potential exploits related to data deserialization.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6797" target="_blank">MPERF-6797</a> Resolved potential exploits related to data deserialization.<br />
+Magento thanks security researcher Matthew Berry for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5572" target="_blank">MPERF-5572</a> Passwords in the Magento Admin Panel now expire at the specified time.<br />
 (Access the configuration setting at <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Admin</strong> > <strong>Security</strong>.)</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7001" target="_blank">MPERF-7001</a> Resolved potential JavaScript injection exploits with the wishlist.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-6897" target="_blank">MPERF-6897</a> Resolved potential remote code execution exploits.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6897" target="_blank">MPERF-6897</a> Resolved potential remote code execution exploits.<br />
+Magento thanks <a href="https://www.linkedin.com/pub/netanel-rubin/99/795/939" target="_blank">Netanel Rubin</a> for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6303" target="_blank">MPERF-6303</a> All pages served using the HTTPS protocol now POST using HTTPS.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5750" target="_blank">MPERF-5750</a> Resolved potential SQL injection vulnerabilities related to advanced search.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-5007" target="_blank">MPERF-5007</a> Resolved a potential exploit using the store cookie (which is now a session cookie that has an expiration date).</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-7052" target="_blank">MPERF-7052</a> Addressed a potential security issue with <code>local.xml</code>.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-7189" target="_blank">MPERF-7189</a> Added <code>.htaccess</code> to the <code>shell</code> subdirectory.</li>
-
+<li><a href="https://jira.corp.x.com/browse/MPERF-7052" target="_blank">MPERF-7052</a> Resolved a PHP bug in <code>libxml</code> that could cause the site to crash.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7189" target="_blank">MPERF-7189</a> Added <code>.htaccess</code> to the <code>shell</code> subdirectory.<br />
+Magento thanks Phillip Jackson for contributing to this fix.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-3757" target="_blank">MPERF-3757</a> The default access for access control list (ACL) nodes for which there is no value is now DENY by default.</li>
 
 
 
 </ul>
 
 <h3 id="ee114-11420-perf">Performance Enhancements</h3>
-<ul><li>Magento thanks Thomas Birke for contributing <a href="https://github.com/quafzi/magento-performance-tweaks" target="_blank">several performance enhancements</a>.</li>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-6496" target="_blank">MPERF-6496</a> Magento thanks Thomas Birke for contributing <a href="https://github.com/quafzi/magento-performance-tweaks" target="_blank">several performance enhancements</a> and Ivan Chepurnty for inspiration.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6759" target="_blank">MPERF-6759</a> Addressed performance degradation with downloadable products.</li>
 
 
 </ul>
 
 <h3 id="ee114-11420-known">Known Issues</h3>
-<ul><li><a href="https://jira.corp.x.com/browse/MPERF-7284" target="_blank">MPERF-7284</a> Products from shopping cart display in the related products block.</li>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-7284" target="_blank">MPERF-7284</a> Products from shopping cart display in the related products block when full page caching is enabled.</li>
 
 
 </ul>
@@ -95,12 +97,12 @@ For more information, see the <a href="http://www.magentocommerce.com/resources/
 <li><a href="https://jira.corp.x.com/browse/MPERF-3786" target="_blank">MPERF-3786</a> Customer created dates and customer address created dates are now correct.<br />
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Any customers created before you upgrade to EE 1.14.2 are unaffected; only customers and addresses created <em>after</em> you upgrade show the correct dates.</div></li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6372" target="_blank">MPERF-6372</a> You can now download products over HTTPS.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-1212" target="_blank">MPERF-1212</a> Magento now supports ipv6 addressing.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-1212" target="_blank">MPERF-1212</a> Magento now supports IPv6 addressing.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6631" target="_blank">MPERF-6631</a> Cron jobs now execute at the time they're scheduled, not at in the order in which they were created.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7113" target="_blank">MPERF-7113</a> Resolved issues with the compare list. After the fix, the comparison block displays only if the customer selects at least one product to compare. (Previously, the compare list always displayed, even if no products were selected.)<br />
 Magento thanks Thomas Birke for contributing to this fix.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-5800" target="_blank">MPERF-5800</a> We verified that errors display when adding a product to the shopping cart if the product displays in the category because of a rule-based product relation that uses more than one value for <strong>Set Products to Dispay</strong>, <strong>Product Category</strong>.<br />
-<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To eliminate this error, you must delete all such rule-based product relations and create new ones with only one value for <strong>Set Products to Dispay</strong>, <strong>Product Category</strong>.</div>
+<li><a href="https://jira.corp.x.com/browse/MPERF-5800" target="_blank">MPERF-5800</a> Fixed a fatal error when you provide more values for a constant value condition for product relation rule; for example, a category has a constant value like 4. <br />
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you have product relation rules like this already, you must delete and re-create them.</div>
 </li>
 
 
@@ -129,7 +131,6 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-1955" target="_blank">MPERF-1955</a> The <strong>Fetch</strong> button now works properly for the Authorize.Net/Direct Post payment method.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7254" target="_blank">MPERF-7254</a> JavaScript errors no longer display after you create an order and perform a return in the Admin Panel.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7191" target="_blank">MPERF-7191</a> You can now add widgets to CMS pages.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-3757" target="_blank">MPERF-3757</a> When an extension adds permissions to the access control list (ACL), the requested permissions are denied by default. (In other words, to access the resource, the requestor must authenticate.)</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6000" target="_blank">MPERF-6000</a> Newly created ACL resources are now enabled.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5924" target="_blank">MPERF-5924</a> The CMS preview page uses the configured theme.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-7087" target="_blank">MPERF-7087</a> You can now view orders in the Admin Panel without errors.</li>
@@ -139,7 +140,6 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6002" target="_blank">MPERF-6002</a> The Bestseller dashboard displays the correct prices.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6760" target="_blank">MPERF-6760</a> Duplicate attribute sets no longer display if they are several pages long.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6617" target="_blank">MPERF-6617</a> Saving a customer in the Admin Panel no longer results in errors.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-6342" target="_blank">MPERF-6342</a> You can save a price using a comma as the separator.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6342" target="_blank">MPERF-6342</a> You can save a price using a comma as the separator.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-3716" target="_blank">MPERF-3716</a> Resolved an issue with reindexing flat category data.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6265" target="_blank">MPERF-6265</a> Scheduled reindexing does not affect the value of store scope.</li>
@@ -216,7 +216,7 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 </ul>
 
 <h4 id="ee114-1420fixes-xlate">Translation Fixes</h4>
-<ul><li><a href="https://jira.corp.x.com/browse/MPERF-5493" target="_blank">MPERF-5493</a> French language translations were corrected and updated.</li>
+<ul><li><a href="https://jira.corp.x.com/browse/MPERF-5493" target="_blank">MPERF-5493</a> Implemented proper escaping for translations.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5902" target="_blank">MPERF-5902</a> You can now use international characters in a Magento storefront domain name.<br />
 Magento thanks Yihao Peng for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-1819" target="_blank">MPERF-1819</a> Resolved issues with inline translation links and the Chrome browser.</li>
