@@ -14,19 +14,14 @@ Responsive design uses <a href="http://www.w3.org/TR/css3-mediaqueries/" target=
 
 Breakpoints are used in the CSS code to set up a viewport at which the design switches from the mobile to the desktop version.
 
-The Blank theme implements three breakpoints:
+The Blank theme implements a breakpoint at 768px. This breakpoint switches between mobile and desktop views.
+<p class="q">is it true?</p>
 
-*	The main one at 768px
+The Blank and Luma themes are based on Magento UI library. Magento UI library provides a strong approach for working with media queries. It`s based on recursive call of .media-width() mixin defined anywhere in project but invoked in one place in lib/web/css/source/lib/_responsive.less. That's why in the resulting styles.css we have every media query only once with all the rules there, not a multiple calls for the same query.
+More on Magento UI library responsive mixin usage you can find in the Magento UI library documentation <your_Magento_instance>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html
+In Blank and Luma themes mobile first approach is used. 
 
-	This breakpoints switches between mobile and desktop views.
-
-*	600px and 800px
-
-	These breakpoints affect how your catalog displays.
-
-CSS snippet:
-
-<script src="https://gist.github.com/xcomSteveJohnson/be946288f49b228e04df.js"></script>
+<img src="{{site.baseurl}}common/images/css_responsive1.jgp">
 
 <h2 id="fedg_rwd_ex">Blank theme CSS examples</h2>
 
