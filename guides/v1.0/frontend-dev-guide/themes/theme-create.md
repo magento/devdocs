@@ -172,6 +172,7 @@ Your theme does not have a parent theme:
 <li>if your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it;</li>
 <li>if your logo image has different name or format, declare it in layout.</li>
 </ul>
+</li>
 </ul>
 
 <h3 id="logo_declare">Declaring theme logo</h3>
