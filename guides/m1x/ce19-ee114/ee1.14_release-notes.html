@@ -47,13 +47,40 @@
 <ul><li><a href="#ee114-11420-highlights">Highlights</a></li>
 <li><a href="#ee114-1420security">Security Enhancements</a></li>
 <li><a href="#ee114-11420-perf">Performance Enhancements</a></li>
-<li><a href="#ee114-11420-known">Known Issues</a></li>
+<li><a href="#ee114-11420-known">Known Issue</a></li>
 <li><a href="#ee114-11420-changes">Changes</a></li>
 <li><a href="#ee114-1420fixes">Fixes</a></li>
 </ul> 
 
 <h3 id="ee114-11420-highlights">Highlights</h3>
-<p>TBD</p>
+<p>Magento Enterprise Edition 1.14.2 gives merchants even more power to efficiently drive customer engagement and incremental revenue from category pages with five new automated category sorting rules.</p>
+<p>By simply selecting a sorting rule, a merchant can completely re-arrange a category page to feature best sellers, high margin products, low stock items, or new products at the top of the page to help increase sales revenue. They can also sort products by color within a category to easily implement seasonal campaigns.</p>
+<p>As products are added, removed, or changed, the category sorting rules continue to make adjustments, so the merchandising strategy is maintained without any intervention from the merchant required.</p>
+<h4>Visual Merchandizer</h4>
+<p>Visual Merchandiser was first released in Magento Enterprise Edition 1.14.1, and many merchants have been praising its ability to streamline their merchandising tasks.</p>
+<h4>Google Tag Manager</h4>
+<p>Magento Enterprise Edition 1.14.2 now comes with Google Tag Manager so merchants can easily add multiple tracking tags to a Magento site for audience measurement, personalization, retargeting, search engine marketing, and more without modifying code.</p>
+<p>Using Google Tag Manager can enable faster time to market for new marketing campaigns and analytic capabilities, faster web site performance, and better marketing results.</p>
+<ul><li>Google Tag Manager enables a faster time to market for new tracking capabilities by enabling marketers to directly update tags without waiting for IT help. A survey conducted by eConsultancy and Tealium in January 2015 found that 39% of merchants say it takes less than 1 hour to implement or modify tags when using tag management, while 47% say it takes 6 days or more for manual tagging. </li>
+<li>Google Tag Manager also helps to boost site performance by preventing pages from being slowed down by too many tags. The eConsultancy and Tealium study revealed that 61% saw an increase in site speed from implementing a managed tagging solution and 30% described that increase as "significantly faster."</li>
+<li>Google Tag Manager can also improve marketing results by insuring tags are implemented properly so you are collecting accurate information for optimizing your marketing campaigns. </li>
+<li>With Google tags in place, merchants can now get a clearer picture of how well their site, products, and promotions are working using Enhanced Ecommerce reports from Google Analytics.</li></ul> 
+<h4>New Relic</h4>
+<p>Magento, a global ecommerce solution that powers more than 240,000 sites and is recognized as the leading ecommerce platform on the 2014 Internet Retailer Top 1000 and Hot 100 lists, is proud to announce New Relic, a leading software analytics provider, is now a Magento Gold Technology Partner.</p>
+<p>The partnership provides merchants with the opportunity to more easily gain visibility into Magento application performance and business metrics than ever before, empowering them to manage their growth, improve their shopping experience, and answer critical business questions.</p>
+<p>To provide seamless merchant access to this valuable data, Magento has created the New Relic Reporting extension that enables tighter integration between the two solutions. With the extension, Magento merchants can:</p>
+<ul><li>Use the powerful New Relic Application Performance Monitoring (APM) solution to improve site speed and stability through end-to-end transaction tracing, code-level performance analysis, and easy-to-use dashboards and alerts.</li>
+<li>Easily see the impact of Magento code changes in APM by displaying dashboard “markers” whenever there is a flush cache event or module update.</li>
+<li>Combine APM metrics with a rich set of Magento data in New Relic Insights to create real-time, customized dashboards that show how software performance impacts the business.</li>
+<li>Take advantage of New Relic Insights’ powerful data visualization tools, like funnel and segmentation analysis, to provide actionable insights into important business questions.</li>
+<li>In addition, this partnership allows Magento merchants to test out New Relic APM Pro in a special extended 60-day free trial.</li></ul>
+<h4>Lagrange Partnership</h4>
+<p>Magento continues to invest in key cloud partnerships to ensure Magento merchants have unrivaled flexibility and control over how they host their sites. Augmenting the cloud hosting partnerships with IBM Cloud, Microsoft Azure, and Joyent that we announced at NRF, is a new Magento Gold Technology Partnership with Lagrange Systems, who has developed a powerful solution for improving web application performance and availability in cloud deployments.</p>
+<p>Lagrange Systems' CloudMaestro solution uses predictive analytics to dynamically autoscale Magento servers and balance traffic loads to ensure cloud-hosted Magento sites have the capacity they need – even during periods of peak demand.</p>
+<p>CloudMaestro also helps to accelerate web site performance through caching, compressing and optimizing web page assets, and by intelligently routing traffic across the distributed network.</p>
+<p>CloudMaestro can be employed in one or more public clouds, hybrid or private clouds. If one server (or server farm) goes down, CloudMaestro can move traffic to another server (or server farm), removing a single point of failure and ensuring the site is up and running, no matter what is happening on the ground.</p>
+
+
 
 <h3 id="ee114-1420security">Security Enhancements</h3>
 <p>We resolved the following security issues</p>
@@ -71,6 +98,7 @@ Magento thanks <a href="https://www.linkedin.com/pub/netanel-rubin/99/795/939" t
 <li><a href="https://jira.corp.x.com/browse/MPERF-7189" target="_blank">MPERF-7189</a> Added <code>.htaccess</code> to the <code>shell</code> subdirectory.<br />
 Magento thanks Phillip Jackson for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-3757" target="_blank">MPERF-3757</a> The default access for access control list (ACL) nodes for which there is no value is now DENY by default.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6270" target="_blank">MPERF-6270</a> Resolved a potential XSS exploit using JavaScript in the Visual Merchandizer window.</li>
 
 
 
@@ -83,8 +111,8 @@ Magento thanks Phillip Jackson for contributing to this fix.</li>
 
 </ul>
 
-<h3 id="ee114-11420-known">Known Issues</h3>
-<ul><li><a href="https://jira.corp.x.com/browse/MPERF-7284" target="_blank">MPERF-7284</a> Products from shopping cart display in the related products block when full page caching is enabled.</li>
+<h3 id="ee114-11420-known">Known Issue</h3>
+<p><a href="https://jira.corp.x.com/browse/MPERF-7284" target="_blank">MPERF-7284</a> Products from shopping cart display in the related products block when full page caching is enabled.</p>
 
 
 </ul>
@@ -99,8 +127,7 @@ For more information, see the <a href="http://www.magentocommerce.com/resources/
 <li><a href="https://jira.corp.x.com/browse/MPERF-6372" target="_blank">MPERF-6372</a> You can now download products over HTTPS.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-1212" target="_blank">MPERF-1212</a> Magento now supports IPv6 addressing.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6631" target="_blank">MPERF-6631</a> Cron jobs now execute at the time they're scheduled, not at in the order in which they were created.</li>
-<li><a href="https://jira.corp.x.com/browse/MPERF-7113" target="_blank">MPERF-7113</a> Resolved issues with the compare list. After the fix, the comparison block displays only if the customer selects at least one product to compare. (Previously, the compare list always displayed, even if no products were selected.)<br />
-Magento thanks Thomas Birke for contributing to this fix.</li>
+
 <li><a href="https://jira.corp.x.com/browse/MPERF-5800" target="_blank">MPERF-5800</a> Fixed a fatal error when you provide more values for a constant value condition for product relation rule; for example, a category has a constant value like 4. <br />
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you have product relation rules like this already, you must delete and re-create them.</div>
 </li>
@@ -114,7 +141,7 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 <ul><li><a href="#ee114-1420fixes-pymt-admin">Admin Panel Fixes</a></li>
 <li><a href="#ee114-1420fixes-pymt">Payment Processor Fix</a></li>
 <li><a href="#ee114-1420fixes-import">Import and Export Fixes</a></li>
-<li><a href="#ee114-1420fixes-vm">Visual Merchandizer Fix</a></li>
+<li><a href="#ee114-1420fixes-vm">Visual Merchandizer Fixes</a></li>
 <li><a href="#ee114-1420fixes-cache">Full Page Caching Issues</a></li>
 <li><a href="#ee114-1420fixes-solr">Solr Search Engine Fix</a></li>
 <li><a href="#ee114-1420fixes-target">Rule-Based Product Relation Fixes</a></li>
@@ -154,6 +181,8 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5484" target="_blank">MPERF-5484</a> <strong>Search</strong> product visibility now works as expected.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-6517" target="_blank">MPERF-6517</a> Alerts are now sent for configurable products.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-1983" target="_blank">MPERF-1983</a> Returns now refund money to a gift card used to make the purchase after the order is edited in the Admin Panel.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7274" target="_blank">MPERF-7274</a> Enabling compilation now allows a customer to register with a site and check out.</li>
+
 
 </ul>
 
@@ -172,9 +201,12 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 
 </ul>
 
-<h4 id="ee114-1420fixes-vm">Visual Merchandizer Fix</h4>
+<h4 id="ee114-1420fixes-vm">Visual Merchandizer Fixes</h4>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-6277" target="_blank">MPERF-6277</a> When you add or remove products in the Visual Merchandizer window using a mass product assignment, the SKU dialog box displays regardless of whether SKUs were added or not.</li>
-
+<li><a href="https://jira.corp.x.com/browse/MPERF-7084" target="_blank">MPERF-7084</a> The down arrow button and attribute labels are now visible when moving a search product into the Visual Merchandizer window.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6969" target="_blank">MPERF-6969</a> Products are not cleared with a smart rule defined when you enable <strong>System</strong> > <strong>Configuration</strong> > <strong>Catalog</strong> > <strong>Visual Merchandiser</strong>, <strong>Rebuild Category Products for Smart Categories</strong> or using the Visual Merchandizer cron job.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6215" target="_blank">MPERF-6215</a> You can configure a maximum of seven columns in the Visual Merchandizer window. (Validation was added.)<br />
+Configure this option in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > <strong>Catalog</strong> > <strong>Catalog</strong> > <strong>Visual Merchandiser Options</strong>, <strong>Set Column Count</strong>.</li>
 
 </ul>
 
@@ -202,6 +234,7 @@ Magento thanks Thomas Birke for contributing to this fix.</li>
 
 <h4 id="ee114-1420fixes-target">Rule-Based Product Relation Fixes</h4>
 <ul><li><a href="https://jira.corp.x.com/browse/MPERF-5046" target="_blank">MPERF-5046</a> Resolved an issue with a rule-based relation not displaying related products in the storefront.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-6964" target="_blank">MPERF-6964</a> Saving a rule-based product relation now prompts the administrator to flush the Magento cache.</li>
 
 
 
@@ -288,8 +321,10 @@ You can access these settings in the Admin Panel at <strong>System</strong> > <s
 <li><a href="https://jira.corp.x.com/browse/MPERF-6438" target="_blank">MPERF-6438</a> Rollback now completes without error with PHP 5.5.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5907" target="_blank">MPERF-5907</a> You can change the value of <code>php_value memory_limit</code> in <code>.htaccess</code> without encountering "out of memory" errors.</li>
 <li><a href="https://jira.corp.x.com/browse/MPERF-5877" target="_blank">MPERF-5877</a>, <a href="https://jira.corp.x.com/browse/MPERF-5877" target="_blank">MPERF-5877</a> Fixed potential issues with extensions.</li>
-
-
+<li><a href="https://jira.corp.x.com/browse/MPERF-7345" target="_blank">MPERF-7345</a> Customer who uses the same e-mail address to register with two websites no longer receives an e-mail stating they have unsubscribed from a newsletter after placing an order.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7275" target="_blank">MPERF-7275</a> Customers who use the same e-mail address to subscribe to a newsletter now all receive newsletters to which they subscribed.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7312" target="_blank">MPERF-7312</a> Google Analytics&mdash;Universal Version now displays information about customer orders.</li>
+<li><a href="https://jira.corp.x.com/browse/MPERF-7237" target="_blank">MPERF-7237</a> No fatal errors choosing the FedEx shipping method during checkout.</li>
 
 
 </ul>
