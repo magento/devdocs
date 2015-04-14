@@ -171,11 +171,12 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 <pre>
 //  Color nesting
 @page__background-color: @color-gray20;
+@sidebar__background-color: @color-gray40;
 @primary__color: @color-gray80;
 @border-color__base: @color-gray76;
 
 @link__color: @color-gray56;
-@link__hover__color: darken(@link__color, 6%);
+@link__hover__color: @color-gray60;
 
 //  Buttons
 @button__color: @color-gray20;
@@ -186,16 +187,29 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 @button-primary__background: @color-orange-red1;
 @button-primary__border: 1px solid @color-orange-red2;
 @button-primary__color: @color-white;
-@button-primary__hover__background: @color-orange-red4;
+@button-primary__hover__background: darken(@color-orange-red1, 5%);
 @button-primary__hover__border: 1px solid @color-orange-red2;
 @button-primary__hover__color: @color-white;
 
 //  Navigation
+@navigation-level0-item__color: @color-gray80;
+@submenu-item__color: @color-gray80;
+
 @navigation__background: @color-gray40;
 @navigation-desktop-level0-item__color: @color-gray80;
+@navigation-desktop-level0-item__hover__color: @color-gray34;
+@navigation-desktop-level0-item__active__color: @navigation-desktop-level0-item__color;
 
 //  Tabs
-@tab-control__background-color: @page-bg-color;
+@tab-control__background-color: @page__background-color;
+
+//  Forms
+@form-element-input__background: @color-gray89;
+@form-element-input-placeholder__color: @color-gray60;
+
+//  Header icons
+@header-icons-color: @color-gray89;
+@header-icons-color-hover: @color-gray60;
 
 </pre>
 

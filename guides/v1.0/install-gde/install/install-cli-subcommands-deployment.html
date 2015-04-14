@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create the deployment configuration, config.php</title>
+	<title>Create or update the deployment configuration, config.php</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -138,7 +138,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create the deployment configuration, config.php</h1>
+		<h1 class="page-heading">Create or update the deployment configuration, config.php</h1>
 			
 			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -149,20 +149,18 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<!-- #### Contents
 
-<ul>
-  <li><a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a></li>
-  <li><a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a></li>
-</ul>
+*	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
+*	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a> -->
 
-<h2 id="instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</h2>
+<h2 id="instgde-cli-subcommands-configphp">Creating or updating the Magento deployment configuration</h2>
 <p>Magento’s deployment configuration, <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.</p>
 
 <p>You can use this subcommand if:</p>
 
 <ul>
-  <li>You previously uninstalled the Magento software and you don’t want to run the entire installation again</li>
+  <li>You previously installed the Magento software and you want to modify the deployment configuration</li>
   <li>If you want to create only <code>config.php</code> and continue the Magento installation some other way</li>
 </ul>
 
@@ -173,10 +171,17 @@
     <p>Complete the tasks discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html#instgde-install-cli-prereq">Before you start your installation</a>. </p>
   </li>
   <li>
-    <p>Enter the following command:</p>
+    <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>php index.php install-configuration &lt;options&gt;
+    <pre><code>cd &lt;your Magento install dir&gt;/bin
+php magento setup:config:set &lt;options&gt;
 </code></pre>
+
+    <div class="bs-callout bs-callout-warning">
+    <span class="glyphicon-class">
+  		<p>This command is the first to use a new syntax. This command must be run from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. The new syntax will soon be used by all installer commands.</p>
+  		<p>This command replaces <code>php index.php install-configuration &lt;options&gt;</code>.</p></span>
+</div>
 
     <p>The following table discusses the meanings of installation option names and values. </p>
   </li>
@@ -217,7 +222,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>Yes</td>
 	</tr>
 	<tr>
-		<td>db_pass</td>
+		<td>db_password</td>
 		<td>Magento database instance owner's password.</td>
 		<td>No</td>
 	</tr>
@@ -231,8 +236,8 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	<tr>
 		<td>session_save</td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
-		<li><code>db.files</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li></ul></td>
+		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
+		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -240,21 +245,21 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</td>
 		<td>No</td>
 	</tr>
-	<tr> 
-		<td>enable_modules=&lt;list&gt;</td>
-		<td><p>Enable modules that are installed but disabled where <code>&lt;list&gt;</code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+	<!-- <tr> 
+		<td>enable_modules=&lt;list></td>
+		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>disable_modules=&lt;list&gt;</td>
-		<td><p>Disable modules that are installed and enabled where <code>&lt;list&gt;</code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<td>disable_modules=&lt;list></td>
+		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
-	</tr>
+	</tr> -->
 	<tr>
 		<td>db_init_statements</td>
-		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
+		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Default is <code>SET NAMES utf8;</code>. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
 		<td>No</td>
 	</tr>
 	</tbody>
@@ -267,7 +272,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
 </ul>
 
-<h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
+<!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 <p>Magento enables you to enable or disable currently installed modules; in other words, any Magento-provided module or any third-party module you currently have installed.</p>
 <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
 <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
@@ -277,8 +282,8 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	<li>Module A conflicts with Module B. You can disable Module A and Module B, or you can disable either module but you <em>cannot</em> enable Module A and Module B at the same time.</li></ul>
 
 <p>Dependencies are declared in the <code>require</code> field in Magento's <code>composer.json</code> file for each module. Conflicts are declared in the <code>conflict</code> field in modules' <code>composer.json</code> files. We use that information to build a dependency graph:</p>
-<ul><li><code>A-&gt;B</code> means module A depends on module B.</li>
-	<li>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code>A-&gt;B-&gt;C</code>.</li></ul>
+<ul><li><code>A->B</code> means module A depends on module B.</li>
+	<li>A <em>dependency chain</em> is the path from a module to another one. For example, if module A depends on module B and module B depends on module C, then the dependency chain is <code>A->B->C</code>.</li></ul>
 <p>If you attempt to enable or disable a module that depends on other modules, the dependency graph displays in the error message.</p>
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -290,6 +295,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 <div class="bs-callout bs-callout-warning">
     <p>Using <code>--force</code> can disable your Magento store and cause problems accessing the Magento Admin.</p>
 </div>
+ -->
 
 <h4 id="related-topics">Related topics</h4>
 
@@ -517,7 +523,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line <font color="#5FB3D2">(IMPORTANT UPDATE)</font></a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
 						
 								
 							
@@ -525,7 +531,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 						
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
 						
 								
 								
