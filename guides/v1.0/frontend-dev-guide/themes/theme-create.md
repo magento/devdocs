@@ -154,14 +154,14 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <h2>Theme logo</h2>
 
-The default format of a logo image is <code>.svg</code>.
+In the Magento application, the default format of a logo image is <code>.svg</code>.
 In your custom theme, you can use an image of other format, but you might need to declare it. 
-Depending on whether your theme has a parent theme and the logo format in the parent theme, you should:
+The necessity of declaration depends on whether your theme has a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a> theme and the logo format in the parent theme:
 <ul>
 <li>
 If your theme does not have a parent theme:
 <ul>
-<li> and your logo image format is .svg, put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.   </li>
+<li> if your logo image format is <code>.svg</code>, put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.   </li>
 <li>If you logo image format is not default, you need to declare it in layout</li>
 </ul>
 </li>
