@@ -23,9 +23,6 @@ In Blank and Luma themes mobile first approach is used.
 
 <img src="{{site.baseurl}}common/images/css_responsive1.jgp">
 
-<h2 id="fedg_rwd_ex">Blank theme CSS examples</h2>
-
-To change the position of elements depending on the screen width, you must redefine which styles control their behavior. The following example compares a two-column display for mobile and desktop viewports.
 
 Mobile version: The following figure shows the main and sidebar columns defined one after the other.
 
