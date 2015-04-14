@@ -154,36 +154,36 @@ app/design/frontend/&lt;Vendor&gt;/
 
 <h2>Theme logo</h2>
 
-In the Magento application, the default format of a logo image is <code>.svg</code>.
-In your custom theme, you can use an image of other format, but you might need to declare it. 
-The necessity of declaration depends on whether your theme has a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a> theme and the logo format in the parent theme:
+In the Magento application, the default format and name of a logo image is <code>logo.svg</code>. When you put a <code>logo.svg</code> image to the conventional location, which is <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in your store page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
+
+In your custom theme, you can use a logo file with other name and format, but you might need to declare it. 
+
+The necessity of declaration depends on whether your theme has a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a> theme and its logo image. The following cases are possible:
 <ul>
 <li>
-If your theme does not have a parent theme:
+Your theme does not have a parent theme:
 <ul>
-<li> if your logo image format is <code>.svg</code>, put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.   </li>
-<li>If you logo image format is not default, you need to declare it in layout</li>
+<li> if your logo image name and format is default, <code>logo.svg</code>, there is no need to declare it; </li>
+<li>if you logo image name or format is not default, you need to <a href="#logo_declare">declare it in layout</a>.</li>
 </ul>
 </li>
-<li>If your theme has a parent theme with a declared not default logo format:
+<li>Your theme has a parent theme:
 <ul>
-<li>There is no need to declare a logo image of not default format, if the same logo format is already declared in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>.</p></li>
-<li>If your theme logo is default, you need to declare it</li>
+<li>if your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it;</li>
+<li>if your logo image has different name or format, declare it in layout.</li>
 </ul>
-</li>
-<li>If your theme has a parent uses the default logo format, your flow for logo declaring is the same as in case that your theme does not have a parent</li>
 </ul>
 
-<h3>Declaring theme logo format</h3>
+<h3 id="logo_declare">Declaring theme logo</h3>
 
 To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. 
 
-For example, if your logo file is <code>logo.png</code>, you need to declare it as follows: 
+For example, if your logo file is <code>my_logo.png</code>, you need to declare it as follows: 
 
 <pre>
 &lt;referenceBlock name=&quot;logo&quot;&gt;
 	&lt;arguments&gt;
-		&lt;argument name=&quot;logo_file&quot; xsi:type=&quot;string&quot;&gt;images/logo.png&lt;/argument&gt;
+		&lt;argument name=&quot;logo_file&quot; xsi:type=&quot;string&quot;&gt;images/my_logo.png&lt;/argument&gt;
 	&lt;/arguments&gt;
 &lt;/referenceBlock&gt;
 </pre>
