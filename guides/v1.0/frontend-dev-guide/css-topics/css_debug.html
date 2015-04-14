@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Layout overview</title>
+	<title>Styles debugging</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">
+	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/css-topics/css_debug.html">
 
 </head>	
 <body>
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Layout overview</h1>
+		<h1 class="page-heading">Styles debugging</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/layouts/layout-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/css-topics/styles_node.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -148,115 +148,203 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Introduction</h2>
+		<h2>Overview</h2>
 
-<p>Magento application implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into <em>layers</em>, including the <em>view layer</em>.</p>
+<p>
+The topic describes how the changes you make in stylesheets are applied in the client-side and server-side LESS <a href="/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">compilation modes</a>, and suggests the approaches and tools you can use to streamline the process of applying and debugging customizations. </p>
 
-<p>The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.</p>
+<h2 id="css_debug_client">Styles debugging in client-side compilation mode</h2>
 
-<p>This article describes the basic concepts you need to know to create layouts for your custom theme.</p>
+<p>Client-side LESS compilation is implemented using the native <code>less.js</code> library. The default configuration is set in <code>lib/web/less/config.less.js</code>; you can change it as needed. </p>
 
-<h2 id="layout-over-terms">Terms used</h2>
+<p>You can find the detailed information about the configuration and other options of the <code>less.js</code> used in a browser at <a href="http://lesscss.org/usage/#using-less-in-the-browser" target="_blank">http://lesscss.org/usage/#using-less-in-the-browser</a>.</p>
 
-<p><span id="handle"><em>Layout handle</em></span></p>
+<p>In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser. </p>
 
-<p>A <em>layout handle</em> is a uniquely identified set of layout instructions that serves as a name of a layout file.</p>
+<p><span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="/guides/v1.0/architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.</p>
 
-<p>There are three kinds of layout handles:
-page type layout handles –  synonyms of the page type identifiers. Correspond to “full action names” of controller actions, for example, catalog_product_view.
-page layout handles – identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.
-arbitrary handles. Do not correspond to any page type, but other handles use them by including.</p>
-
-<h2 id="layout_overview_blocks">Basic layout elements</h2>
-
-<p>The basic components of Magento page design are blocks and containers. </p>
-
-<p>A <em>container</em> exists for the sole purpose of assigning content structure to a page. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.</p>
-
-<p>The following figure shows an example:</p>
-
-<p><img src="/common/images/layouts_containers_defn.jpg" /></p>
-
-<p>A <em>block</em> represents each feature on a page and employs templates to generate the HTML to insert into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
-
-<p>The following figure shows an example:</p>
-
-<p><img src="/common/images/layouts_block_defn.jpg" />.</p>
-
-<h2>Layout files types and conventions</h2>
-
-<h3>Layout file types: by role</h3>
-
-<p>For a particular page, its layout is defined by two major layout components: <em>page layout</em> file and <em>page configuration</em> file (or <em>generic layout</em> for pages returned in AJAX requests, emails, and so on).</p>
-
-<p>Following are the definitions of each layout file type:</p>
-
+<p>This is required in the following cases:</p>
 <ul>
-  <li><em>Page layout</em>: an XML file declaring a page wireframe inside the <code>&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout. </li>
-  <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> sections of the HTML page markup).</li>
-  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code>body</code> section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
+<li>If you change the <a href="/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files</a> that contain the <code>@magento-import</code> directive, or the <code>@import</code> directive where the imported file is specified without extension.</li>
+<li>If you rename, remove, or add a <code>.less</code> file imported with a <code>@magento-import</code> or <code>@import</code> directive but you did not correct the directives accordingly.</li>
+
 </ul>
 
-<p>For details, refer to <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.</p>
+<p>To clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory, delete the directory in the file system, and reload the store pages in a browser to trigger compilation and publication.</p>
 
-<p>In this guide we use <em>layout files</em> when talking about concepts which are similarly applied to all of these types of layout files.</p>
+<h2 id="css_debug_server">Styles debugging in server-side compilation mode</h2>
 
-<h3 id="layout-loc">Module and theme layout files</h3>
-
-<p>The following terms are used to distinguish layouts provided by different application components:</p>
-
-<ul>
-  <li><em>Base layouts</em>: Layout files provided by modules. Conventional location: 
-    <ul>
-      <li>Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout`</code></li>
-      <li>Page layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code></li>
-    </ul>
-  </li>
-  <li><em>Theme layouts</em>: Layout files provided by themes. Conventional location:
-    <ul>
-      <li>Page configuration and generic layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
-      <li>Page layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/page_layout</code></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="layout-custom">Customize layout</h2>
-
-<p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts.</p>
-
-<p>To make the necessary changes, create <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme. </p>
-
-<h2 id="layout_processing">Layout files processing</h2>
-
-<p>The Magento application processes layout files in the following order:</p>
-
-<ol>
-  <li>Collects all layout files from modules. The order is determined by the modules order in the module list from <code>app/etc/config.php</code>.</li>
-  <li>Determines the sequence of <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherited</a> themes <code>[&lt;parent_theme&gt;, ..., &lt;parent1_theme&gt;] &lt;current_theme&gt;</code></li>
-  <li>
-    <p>Iterates the sequence of themes from last ancestor to current:</p>
-
-    <p>a.	Adds all extending theme layout files to the list.</p>
-
-    <p>b.	Replaces overridden layout files in the list.</p>
-  </li>
-  <li>Merges all layout files from the list.</li>
-</ol>
+<p>In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication. </p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Layout files that belong to inactive modules or modules with disabled output are ignored.</p>
+  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessing</code> directories.</p>
 </div>
 
-<h4 id="related-topics">Related topics:</h4>
+<p>Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.</p>
+
+<p>The following section describes in details how to install, configure and use Grunt for styles debugging.</p>
+
+<h3 id="grunt_prereq">Installing and configuring Grunt</h3>
+
+<p>Magento has built-in Grunt tasks configured, but there are still several prerequisite steps you need to take to be able to use it:</p>
+
+<ol>
+<li>
+Install <a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager)" target="_blank">node.js</a> to any location on your machine.
+</li>
+<li>Install Grunt CLI tool globally. To do this, run the following command in a command prompt:<br />
+<pre>
+npm install -g grunt-cli
+</pre>
+</li>
+<li>
+Install Grunt in your Magento directory. To do this, run the following commands in a command prompt:<br />
+<pre>
+cd &lt;your_Magento_instance_directory&gt;
+npm install grunt --save-dev
+</pre>
+</li>
+
+<li>
+Install (or refresh) the <code>node.js</code> project dependency for your Magento instance. To do this, run the following commands in a command prompt:<br />
+
+<pre>
+cd &lt;your_Magento_instance_directory&gt;
+npm install
+npm update
+</pre>
+</li>
+
+<li>
+Add your theme to Grunt configuration. To do this, in the <code>dev/tools/grunt/configs/theme.js</code> file, add your theme to <code>module.exports</code> like following:
+<pre>
+module.exports = {
+    &lt;theme&gt;: {
+        area: 'frontend',
+        name: '&lt;Vendor&gt;/&lt;theme&gt;',
+        locale: '&lt;language&gt;', 
+        files: [
+            '&lt;path_to_file1&gt;', //path to root source file
+            '&lt;path_to_file2&gt;'
+        ],
+    dsl: 'less'
+    },
+</pre>
+
+
+
+
+Where the following notation is used:
+<ul>
+<li>
+<code>&lt;theme&gt;</code>: your theme code, conventionally should correspond to the theme directory name.
+</li>
+<li>
+<code>&lt;language&gt;</code>: specified in the 'code_subtag' format, for example <code>en_US</code>. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for <code>language</code>
+</li>
+<li>
+<code>&lt;path_to_file&gt;</code>: path to the root source file, relative to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme/&gt;web</code> directory. You need to specify all <a href="/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms" target="_blank">root source files of the theme</a>. If your theme <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
+
+</li> 
+
+</ul>
+</li>
+<li id="livereload">
+(Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions" target="_blank">LiveReload extension</a> in your browser. 
+
+</li>
+</ol>
+
+<h3 id="grunt_commands">Grunt commands</h3>
+
+<p>The following table describes the grunt commands you can use performing different customization tasks. Run all commands from your Magento installation directory.</p>
+
+<table>
+<tr>
+<th>
+Grunt task
+</th>
+<th>
+Action
+</th>
+</tr>
+<tr>
+
+<td>
+<pre>
+grunt clean:&lt;theme&gt;
+</pre>
+
+For example: 
+<pre>
+grunt clean:blank
+</pre>
+</td>
+<td>
+Removes the theme related static files in the <code>pub/static</code> and <code>var</code> directories.
+</td>
+</tr>
+<tr>
+
+<td>
+<pre>
+grunt exec:&lt;theme&gt;
+</pre>
+
+</td>
+<td>
+Republishes symlinks to the source files to the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory.
+
+</td>
+</tr>
+<tr>
+<td>
+
+<pre>
+grunt less:&lt;theme&gt;
+</pre>
+</td>
+<td>
+Compiles <code>.css</code> files using the symlinks published in the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory
+</td>
+</tr>
+
+<tr>
+
+<td>
+<pre>
+grunt watch
+</pre>
+</td>
+<td>
+Tracks the changes in the source files, recompiles <code>.css</code> files, and reloads the page in the browser pages
+(you need to have <a href="#livereload">LiveReload</a> installed for you browser)
+</td>
+</tr>
+</table>
+
+<h3>Use cases of tracking changes using Grunt</h3>
+
+<p>The following shows which Grunt tasks to use for debugging:</p>
 
 <ul>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html" target="_blank">Common layout customization tasks</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">Extend a layout</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html" target="_blank">Customizing layout - step-by-step illustration</a></li>
+<li>After you switch the compilation mode from client-side to server-side, run the <code>exec</code> command.</li>
+<li>
+After you customize the content of any <code>.less</code> file, except the root source files, run the <code>less</code> task and reload the page. </li>
+
+<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
+
+
 </ul>
 
+<p>If you have LiveReload installed, run the <code>grunt watch</code> command, and the flow is even simpler:</p>
+<ul>
+<li>
+After you customize the content of any <code>.less</code> file, changes are applied and the page reloads automatically. No additional changes are required.</li>
+
+<li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
+
+</ul>
 
 
 		</div>
@@ -384,7 +472,7 @@ arbitrary handles. Do not correspond to any page type, but other handles use the
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
 									
 								
 								
@@ -495,7 +583,7 @@ arbitrary handles. Do not correspond to any page type, but other handles use the
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
 						
 								
 							
