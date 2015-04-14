@@ -2,8 +2,8 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Install the Magento software using the command line (IMPORTANT UPDATE)
-menu_title: Install the Magento software using the command line <font color="#5FB3D2">(IMPORTANT UPDATE)</font>
+title: Install the Magento software using the command line
+menu_title: Install the Magento software using the command line 
 menu_node: 
 menu_order: 4
 github_link: install-gde/install/install-cli-install.md
