@@ -167,17 +167,18 @@ If your theme does not have a parent theme:
 </li>
 <li>If your theme has a parent theme with a declared not default logo format:
 <ul>
-<li>There is no need to declare a logo image of not default format, if the same logo format is already declared in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>.</p></span><li>
-<li>If your theme logo is default, you need to declare it<li>
+<li>There is no need to declare a logo image of not default format, if the same logo format is already declared in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>.</p></li>
+<li>If your theme logo is default, you need to declare it</li>
 </ul>
 </li>
 <li>If your theme has a parent uses the default logo format, your flow for logo declaring is the same as in case that your theme does not have a parent</li>
 </ul>
 
-If you put a <code>logo.svg</code> image to the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/images</code> directory, it is automatically recognized as theme logo. It is displayed in page header once the theme is <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applied</a>.
+<h3>Declaring theme logo format</h3>
 
-If your logo image format is different from <code>.svg</code>, you need to declare it in the theme layout.
-Namely, you need to add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. For example, if your logo file is <code>logo.png</code>, you need to declare it as follows: 
+To declare a theme logo, add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default.xml</code> layout. 
+
+For example, if your logo file is <code>logo.png</code>, you need to declare it as follows: 
 
 <pre>
 &lt;referenceBlock name=&quot;logo&quot;&gt;
@@ -188,10 +189,7 @@ Namely, you need to add an <a href="{{site.gdeurl}}frontend-dev-guide/layouts/la
 </pre>
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>There is no need to declare a logo image of not default format, if the same logo format is already declared in the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>.</p></span>
-</div>
+
 
 To learn more about theme layouts, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-overview.html" target="_blank">Layout section</a> of this guide.
 
