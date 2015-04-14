@@ -5,7 +5,7 @@ subgroup: Fundamentals
 title: Plug-ins
 menu_title: Plug-ins
 menu_order: 2
-github_link: cextension-dev-guide/plugins.md
+github_link: extension-dev-guide/plugins.md
 ---
 
 #### Contents
