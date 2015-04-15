@@ -41,15 +41,15 @@ The installer is designed to be run multiple times if necessary so you can:
 <h2 id="instgde-cli-help">Command-line installer help commands</h2>
 To display a complete list of installer subcommands, enter:
 
-	php index.php help
+	php magento list
 
-To get help on a particular subcommand, enter:
+To get help for a particular subcommand, enter:
 
-	php index.php help <subcommand>
+	php magento help <subcommand>
 
 For example,
 
-	php index.php help install-configuration
+	php magento help setup:config:set
 
 <h2 id="instgde-cli-subcommands">Command line installer subcommands</h2>
 The following sections discuss the available subcommands.
