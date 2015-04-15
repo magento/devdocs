@@ -8,6 +8,11 @@ menu_order: 3
 github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
 ---
 
+<h2>Overview</h2>
+The Blank and Luma themes are based on the <a href="{{site.gdeurl}}/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>. Magento UI library provides a strong approach for working with media queries. It is based on a recursive call of <code>.media-width()</code> mixin defined anywhere in the project, but invoked in one place in <code>lib/web/css/source/lib/_responsive.less</code>. That is why in the resulting <code>styles.css</code> there is only one call of each media query with all the rules there, instead of multiple calls for the same query.
+
+More on Magento UI library responsive mixin usage you can find in the Magento UI library documentation <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code>.
+
 <h2 id="fedg_rwd_css_break">Breakpoints</h2>
 
 Responsive design uses <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">CSS3 media queries</a> (an extension of the `@media` rule) to adapt the layout to the viewport.
@@ -22,11 +27,13 @@ The Blank theme implements the following breakpoints:
 <li>1024px</li>
 </ul>
 
-The Blank and Luma themes are based on Magento UI library. Magento UI library provides a strong approach for working with media queries. It`s based on recursive call of .media-width() mixin defined anywhere in project but invoked in one place in lib/web/css/source/lib/_responsive.less. That's why in the resulting styles.css we have every media query only once with all the rules there, not a multiple calls for the same query.
-More on Magento UI library responsive mixin usage you can find in the Magento UI library documentation <your_Magento_instance>/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html
-In Blank and Luma themes mobile first approach is used. 
+<h2>Mobile first</h2>
 
-<img src="{{site.baseurl}}common/images/css_responsive1.jgp">
+In the Blank and Luma themes mobile first approach is used. Which means that the styles for mobile devices (640px breakpoint) are extended by the styles for the bigger breakpoints. As the result the extra styles are never loaded when a store is viewed on a mobile device.
+
+<p class="q">Should we mention styles-l and styles-m here?</p>
+
+<img src="{{site.baseurl}}common/images/css_responsive1.jpg">
 
 
 Mobile version: The following figure shows the main and sidebar columns defined one after the other.

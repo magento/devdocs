@@ -36,7 +36,7 @@ The articles in this chapter describe the particular approaches used in the Blan
 
 <ul>
 <li> 
-<a href="{{site.gdeurl}frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a>
+<a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a>
 </li>
 <li>
 <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design//rwd_blocks.html" target="_blank">Layout (HTML?) in Magento responsive design</a>
