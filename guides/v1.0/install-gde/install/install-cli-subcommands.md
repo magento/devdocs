@@ -74,19 +74,29 @@ The following arguments are common to all installer commands:
 		<td>Quiet mode; no output.</td>
 	</tr>
 	<tr>
+		<td>--no-interaction</td>
+		<td>-n</td>
+		<td>No interactive questions.</td>
+	</tr>
+	<tr>
 		<td>--verbose=1|2|3</td>
 		<td>-v|vv|vvv</td>
 		<td>Verbosity level. For example, <code>--verbose=3</code> or <code>-vvv</code> displays debug verbosity, which is the most verbose output. Default is <code>--verbose=1</code> or <code>-v</code>.</td>
 	</tr>
 	<tr>
-		<td>db_user</td>
-		<td>User name of the Magento database instance owner.</td>
-		<td>Yes</td>
+		<td>--version</td>
+		<td>-V</td>
+		<td>Display this application version</td>
 	</tr>
 	<tr>
-		<td>db_password</td>
-		<td>Magento database instance owner's password.</td>
-		<td>No</td>
+		<td>--ansi</td>
+		<td>n/a</td>
+		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Force ANSI output</a></td>
+	</tr>
+		<tr>
+		<td>--no-ansi</td>
+		<td>n/a</td>
+		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Disable ANSI output</a></td>
 	</tr>
 	<tr>
 		<td>db_prefix</td>
@@ -95,45 +105,16 @@ The following arguments are common to all installer commands:
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td>No</td>
 	</tr>
-	<tr>
-		<td>session_save</td>
-		<td><p>Use any of the following:</p>
-		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
-		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>key</td>
-		<td>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</td>
-		<td>No</td>
-	</tr>
-	<!-- <tr> 
-		<td>enable_modules=&lt;list></td>
-		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
-		<td>No</td>
-	</tr>
-	<tr>
-		<td>disable_modules=&lt;list></td>
-		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>For important information about module dependencies, see <a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>.</p></td>
-		<td>No</td>
-	</tr> -->
-	<tr>
-		<td>db_init_statements</td>
-		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Default is <code>SET NAMES utf8;</code>. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
-		<td>No</td>
-	</tr>
+	
 	</tbody>
 </table>
 
  --magento_init_params           Add to any command to customize Magento initialization parameters
                                  For example: 'MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/examp                          le.com&MAGE_DIRS[cache][path]=/var/tmp/cache'
  
- --version (-V)                  Display this application version
- --ansi                          Force ANSI output
- --no-ansi                       Disable ANSI output
- --no-interaction (-n)           Do not ask any interactive question
+ 
+ 
+ 
 
 
 <h2 id="instgde-cli-subcommands">Command line installer arguments</h2>
