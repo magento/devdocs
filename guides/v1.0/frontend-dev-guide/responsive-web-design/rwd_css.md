@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
 
 <h2>Overview</h2>
 
-Stylesheets are the main tool in responsive web design. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use this mechanisms and approaches in your custom theme, make your theme inherit from the main default Blank theme.
+Stylesheets are the main tool in responsive web design implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme inherit from the main default Blank theme.
 
 <h2 id="lib_rwd">Media queries in Magento default themes</h2>
 
@@ -20,11 +20,9 @@ The approach used in the Magento UI library is based on a recursive call of the 
 
 <p class="q">need clarification to rephrase about the recursive call</p>
 
-You can find more information about the Magento UI library responsive mixin usage at <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code>.
+You can find more information about the Magento UI library responsive mixin usage at <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code> (view in a browser).
 
 <h2 id="fedg_rwd_css_break">Breakpoints</h2>
-
-Responsive design uses <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">CSS3 media queries</a> (an extension of the `@media` rule) to adapt the layout to the viewport.
 
 Breakpoints are used in the CSS code to set up a viewport at which the design switches from the mobile to the desktop version.
 
@@ -33,21 +31,35 @@ The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-gu
   <li>320px</li>
   <li>480px</li>
   <li>640px</li>
-  <li>768px</li> This breakpoint switches between mobile and desktop views.
-<p class="q">is it true?</p></li>
+  <li>768px</li> 
   <li>1024px</li>
   <li>1440px</li>
 </ul>
+
+These breakpoints switch page layouts and separate blocks layouts between mobile and desktop views.
 
 <h2>Mobile first</h2>
 
 In the Blank and Luma themes mobile first approach is used. It means that the styles for mobile devices (640px breakpoint) are extended by the styles for the bigger breakpoints. As the result the extra styles are never loaded when a store is viewed on a mobile device.
 
-<p class="q">Should we mention styles-l and styles-m here?</p>
+
+<p class="q">Is it only 640, or 320 and 480 px as well?</p>
+
+In the Blank theme, The mobile and desktop styles are defined in separate files:
+
+<ul>
+<li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles.</li>
+<li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate mobile-specific styles.</li>
+</ul>
+
+<p class="q">can we specify, what breakpoints are "covered" by each file?</p>
+
+
+
 
 <img src="{{site.baseurl}}common/images/css_responsive1.jpg">
 
-
+<p class="q">I guess there's no sense in this image here, as we have it in the RWD Overview?</p>
 
 
 #### Related topics:
