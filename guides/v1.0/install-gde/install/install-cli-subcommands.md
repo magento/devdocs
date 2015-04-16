@@ -57,6 +57,9 @@ The following arguments are common to all installer commands:
 
 <table>
 	<tbody>
+		<col width="15%">
+  		<col width="10%">
+  		<col width="75%">
 		<tr>
 			<th>Long version</th>
 			<th>Short version</th>
@@ -98,23 +101,10 @@ The following arguments are common to all installer commands:
 		<td>n/a</td>
 		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Disable ANSI output</a></td>
 	</tr>
-	<tr>
-		<td>db_prefix</td>
-		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
-		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
-		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
-		<td>No</td>
-	</tr>
+	
 	
 	</tbody>
 </table>
-
- --magento_init_params           Add to any command to customize Magento initialization parameters
-                                 For example: 'MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/examp                          le.com&MAGE_DIRS[cache][path]=/var/tmp/cache'
- 
- 
- 
- 
 
 
 <h2 id="instgde-cli-subcommands">Command line installer arguments</h2>
