@@ -20,6 +20,7 @@ See one of the following sections:
 *	<a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 *	<a href="#instgde-install-magento-update">Updating the Magento software</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
+*	<a href="#instgde-install-uninstall">Uninstalling the Magento software</a>
 
 <div class="bs-callout bs-callout-warning">
 <span class="glyphicon-class">
@@ -169,7 +170,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>admin_username</p></td>
+		<td><p>admin_user</p></td>
 		<td><p>Magento administrator user name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
@@ -279,7 +280,9 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p></span>
 </div>
 
-<h4 id="install-cli-example">Sample localhost installation</h4>
+<h4 id="install-cli-example">Sample localhost installations</h4>
+
+**Example 1**
 
 The following example installs Magento with the following options:
 
@@ -295,7 +298,7 @@ The following example installs Magento with the following options:
 
 *	The Magento administrator has the following properties:
 
-	*	First and last name are is `Magento User`
+	*	First and last name are `Magento User`
 	*	User name is `admin` and the password is `iamtheadmin`
 	*	E-mail address is `user@example.com`
 
@@ -307,8 +310,41 @@ The following example installs Magento with the following options:
 		--backend_frontname=admin \
 		--db_host=localhost --db_name=magento --db_user=magento --db_password=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
-		--admin_username=admin --admin_password=iamtheadmin --language=en_US \
-		--currency=USD --timezone=America/Chicago
+		--admin_user=admin --admin_password=iamtheadmin --language=en_US \
+		--currency=USD --timezone=America/Chicago --use_sample_data
+
+**Example 2** (with additional options)
+
+The following example installs Magento with the following options:
+
+*	The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
+
+	Your storefront URL is `http://localhost` and you can access the Magento Admin at `http://localhost/admin`
+
+*	The database server is on the same host as the web server.
+
+	The database name is `magento`, and the user name and password are both `magento`
+
+*	The Magento administrator has the following properties:
+
+	*	First and last name are is `Magento User`
+	*	User name is `admin` and the password is `iamtheadmin`
+	*	E-mail address is `user@example.com`
+
+*	Default language is `en_US` (U.S. English)
+*	Default currency is U.S. dollars
+*	Default time zone is U.S. Central (America/Chicago)
+*	The installer first cleans up the database before installing the tables and schema
+*	You use a sales order increment prefix `ORD$` and because it contains a special character (`$`), the value must be enclosed in double quotes
+*	Session data is saved in the database
+
+		php -f index.php install --base_url=http://localhost/magento2/ \
+		--backend_frontname=admin --db_host=localhost --db_name=magento \
+		--db_user=magento --db_password=magento \
+		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
+		--admin_user=admin --admin_password=iamtheadmin --language=en_US \
+		--currency=USD --timezone=America/Chicago --cleanup_database \
+		--sales_order_increment_prefix="ORD$" --session_save=db
 
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -342,11 +378,11 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 2.	Change to the following directory:
 
-		cd <your Magento install dir>/setup
+		cd <your Magento install dir>/bin
 
 3.	Uninstall the Magento software and change to your Magento installation directory:
 
-		php index.php uninstall && cd ..
+		php magento setup:uninstall && cd ..
 
 4.	Update the Magento code:
 
@@ -416,7 +452,7 @@ To reinstall the Magento software:
 
 		cd <your Magento install dir>
 		git pull origin develop
-		php setup/index.php uninstall
+		php bin/magento setup:uninstall
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
@@ -427,6 +463,17 @@ To reinstall the Magento software:
 
 	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+
+<h2 id="instgde-install-uninstall">Uninstalling the Magento software</h2>
+Uninstalling the Magento software removes database assets and file system assets but does <em>not</em> drop the Magento database.
+
+To uninstall the Magento software, enter the following command:
+
+	magento setup:uninstall
+
+The following message displays to confirm a successful uninstallation:
+
+	[SUCCESS]: Magento uninstallation complete.
 
 #### Next steps
 
