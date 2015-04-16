@@ -306,7 +306,7 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		php -f index.php install --base_url=http://localhost/magento2/ \
+		php magento setup:install --base_url=http://localhost/magento2/ \
 		--backend_frontname=admin \
 		--db_host=localhost --db_name=magento --db_user=magento --db_password=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
@@ -338,7 +338,7 @@ The following example installs Magento with the following options:
 *	You use a sales order increment prefix `ORD$` and because it contains a special character (`$`), the value must be enclosed in double quotes
 *	Session data is saved in the database
 
-		php -f index.php install --base_url=http://localhost/magento2/ \
+		php magento setup:install --base_url=http://localhost/magento2/ \
 		--backend_frontname=admin --db_host=localhost --db_name=magento \
 		--db_user=magento --db_password=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
@@ -435,7 +435,7 @@ To update the Magento software:
 4.	Update the Magento database.
 
 		cd setup
-		php -f index.php update
+		php magento setup:upgrade
 
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
 
