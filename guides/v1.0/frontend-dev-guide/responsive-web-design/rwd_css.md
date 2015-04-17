@@ -57,11 +57,6 @@ In the Blank theme, The mobile and desktop styles are defined in separate files:
 
 
 
-<img src="{{site.baseurl}}common/images/css_responsive1.jpg">
-
-<p class="q">I guess there's no sense in this image here, as we have it in the RWD Overview?</p>
-
-
 #### Related topics:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
