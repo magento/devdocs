@@ -48,11 +48,11 @@ In the Blank and Luma themes mobile first approach is used. It means that the st
 In the Blank theme, The mobile and desktop styles are defined in separate files:
 
 <ul>
-<li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles.</li>
+<li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles (768px and higher).</li>
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate mobile-specific styles.</li>
 </ul>
 
-<p class="q">can we specify, what breakpoints are "covered" by each file?</p>
+
 
 
 
