@@ -32,12 +32,6 @@ To install the deployment configuration:
 		cd <your Magento install dir>/bin
 		php magento setup:config:set <options>
 
-	<div class="bs-callout bs-callout-warning">
-		<span class="glyphicon-class">
-  		<p>This command is the first to use a new syntax. This command must be run from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. The new syntax will soon be used by all installer commands.</p>
-  		<p>This command replaces <code>php index.php install-configuration &lt;options></code>.</p></span>
-	</div>
-
 	The following table discusses the meanings of installation option names and values. 
 
 <table>
@@ -129,6 +123,8 @@ If applicable, continue your Magento software installation:
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+
+<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+ -->
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
 
