@@ -65,7 +65,7 @@ To upgrade to PHP 5.6:
 1.	Enter the following commands in the order shown:
 
 		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
-		yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-mbstring
+		yum install -y php56w php56w-opcache php56w-xml php56w-mcrypt php56w-gd php56w-devel php56w-mysql php56w-intl php56w-mbstring
 
 2.	Restart Apache: `service httpd restart`
 
@@ -92,7 +92,7 @@ To upgrade to PHP 5.5:
 		rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm
 		yum -y remove php-common-5.3.3-40.el6_6.x86_64
 		yum -y install php55w php55w-opcache
-		yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-mbstring
+		yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php55w-intl php55w-mbstring
 
 2.	Restart Apache: `service httpd restart`
 

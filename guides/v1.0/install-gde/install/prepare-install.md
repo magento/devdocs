@@ -61,13 +61,13 @@ To switch to the web server user on CentOS:
 
 		su - apache
 
-	If the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
+	If you don't know the user's password or if the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.
 
 		This account is currently not available.
 
 2.	To give `apache` a valid shell account so you can switch to it, enter the following command:
 
-		sudo chsh -s /bin/bash apache
+		sudo chsh -s /bin/bash apache && sudo passwd apache
 
 3.	Run the following command again; this time, it should work:
 
