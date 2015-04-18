@@ -16,11 +16,11 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a>
-*	<a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
-*	<a href="#instgde-install-magento-update">Updating the Magento software</a>
-*	<a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a>
-*	<a href="#instgde-install-uninstall">Uninstalling the Magento software</a>
+*	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
+*	<a href="#instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</a>
+*	<a href="#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="#instgde-install-uninstall">Uninstall the Magento software</a>
 
 <div class="bs-callout bs-callout-warning">
 <span class="glyphicon-class">
@@ -87,12 +87,12 @@ Optionally run the following commands to find values for some required options:
 </div>
 
 	
-<h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
+<h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
 The format of the install command follows:
 
-	php magento setup:install --<argument>=<option> ...
+	php magento setup:install --<option>=<value> ...
 
-The following table discusses the meanings of installation argument names and option values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.
+The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -181,17 +181,17 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tr>
 	<tr>
 		<td><p>language</p></td>
-		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php magento info:language:list</code> from the <code>setup</code> directory.)</p></td>
+		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>currency</p></td>
-		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php magento info:currency:list</code> from the <code>setup</code> directory.)</p></td>
+		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>timezone</p></td>
-		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php magento info:timezone:list</code> from the <code>setup</code> directory.)</p></td>
+		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -306,7 +306,7 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		php magento setup:install --base_url=http://localhost/magento2/ \
+		php bin/magento setup:install --base_url=http://localhost/magento2/ \
 		--backend_frontname=admin \
 		--db_host=localhost --db_name=magento --db_user=magento --db_password=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
@@ -338,7 +338,7 @@ The following example installs Magento with the following options:
 *	You use a sales order increment prefix `ORD$` and because it contains a special character (`$`), the value must be enclosed in double quotes
 *	Session data is saved in the database
 
-		php magento setup:install --base_url=http://localhost/magento2/ \
+		php bin/magento setup:install --base_url=http://localhost/magento2/ \
 		--backend_frontname=admin --db_host=localhost --db_name=magento \
 		--db_user=magento --db_password=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
@@ -352,7 +352,7 @@ The following example installs Magento with the following options:
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-<h2 id="instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
+<h2 id="instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</h2>
 This section applies to you in the following situation only:
 
 *	You currently have version 0.42.0-beta10 or earlier
@@ -402,7 +402,7 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
-<h2 id="instgde-install-magento-update">Updating the Magento software</h2>
+<h2 id="instgde-install-magento-update">Update the Magento software</h2>
 This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.
 
 You might do this in an development environment especially to get all the latest code changes.
@@ -428,13 +428,15 @@ To update the Magento software:
   			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 	</div>
 				
-3.	Restore your previous `composer.json` and update dependencies:
+3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
 
-		cp composer.json.old composer.json && composer update
+4.	Enter the following command:
+
+		composer update
 
 4.	Update the Magento database.
 
-		cd setup
+		cd bin
 		php magento setup:upgrade
 
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
@@ -442,7 +444,7 @@ To update the Magento software:
 	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
-<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
+<h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
 This section discusses how to uninstall and then reinstall the Magento software. 
 
 To reinstall the Magento software:
@@ -464,7 +466,7 @@ To reinstall the Magento software:
 	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
-<h2 id="instgde-install-uninstall">Uninstalling the Magento software</h2>
+<h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
 Uninstalling the Magento software removes database assets and file system assets but does <em>not</em> drop the Magento database.
 
 To uninstall the Magento software, enter the following command:

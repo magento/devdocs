@@ -19,9 +19,9 @@ See one of the following sections:
 *	<a href="#instgde-cli-help">Command-line installer help commands</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
-*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
-*	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
+
+<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a> -->
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 {% include install/before-you-begin-cli.html %}
@@ -112,10 +112,12 @@ The following sections discuss the available arguments.
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+
+<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
 *	<a href="#instgde-cli-subcommands-update">Update the database</a>
-*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a>
-*	<a href="#instgde-cli-subcommands-uninstall">Uninstall</a>
+*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a> -->
+
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-uninstall">Uninstall the Magento software</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -127,6 +129,8 @@ The following sections discuss the available arguments.
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+
+<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+ -->
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
