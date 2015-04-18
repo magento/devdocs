@@ -23,6 +23,11 @@ If a 404 (Not Found) error displays, Magento probably isn't installed. You shoul
 
 If Magento is installed, you should see something like the following:
 
+Magento Admin Login:
+
+<p><img src="{{ site.baseurl }}common/images/install_login_admin.png" alt="Magento Admin Login which verifies a successful installation"></p>
+
+
 Magento Admin:
 
 <p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
