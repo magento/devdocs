@@ -218,7 +218,7 @@
     <pre><code>su - apache
 </code></pre>
 
-    <p>If the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.</p>
+    <p>If you don’t know the user’s password or if the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.</p>
 
     <pre><code>This account is currently not available.
 </code></pre>
@@ -226,7 +226,7 @@
   <li>
     <p>To give <code>apache</code> a valid shell account so you can switch to it, enter the following command:</p>
 
-    <pre><code>sudo chsh -s /bin/bash apache
+    <pre><code>sudo chsh -s /bin/bash apache &amp;&amp; sudo passwd apache
 </code></pre>
   </li>
   <li>
@@ -490,10 +490,6 @@
 								
 							
 									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
 						
 								
 							
