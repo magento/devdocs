@@ -21,7 +21,7 @@ Then open a web browser and go to the URL you were provided. Some examples follo
 	
 If a 404 (Not Found) error displays, Magento probably isn't installed. You should confirm that with your system administrator or hosting provider.
 
-If Magento is installed, you should see something like the following:
+If Magento is installed, you should see something like the following after you log in:
 
 Magento Admin:
 
