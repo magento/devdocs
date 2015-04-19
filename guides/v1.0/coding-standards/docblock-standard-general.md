@@ -385,15 +385,20 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
 `@category`, `@package`, and `@subpackage` MUST NOT be used. Documentation is organized with the use of namespaces.
 
 <h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
+<h3 id="api">@api tag</h3>
+The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy](../extension-dev-guide/backward-compatibility.html).
+
+The `@api` tag can be applied to a constant, a method, or to the entire class/interface.  If the `@api` tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.
+
+See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.
+
 <h3 id="deprecated">@deprecated tag</h3>
 
-The `@deprecated` tag must be used for a structural element or file, if it is not used anymore and not supposed to be used anymore, but retained because of backwards compatibility requirements.
+A deprecated class or method is one that has been superseded and may cease to exist in the future.  It will be retained to provide backward compatibility until next major component release.
 
-The value for tag must contain fully qualified version of product or component it belongs to, since which the element is deprecated:
+Use the `@deprecated` tag to indicate an element is to be deprecated. The text of the `@deprecated` tag should indicate the version the element was deprecated as well as the version it will be removed. If applicable, also specify what has replaced the deprecated element.
 
-`@deprecated since 1.2.0.0`
-
-The `since` implies any version above the specified, not including it. Thus, in the example above the element is not deprecated in version 1.2.0.0, but in general case is deprecated in 1.2.0.1 or 1.3, and so on.
+To maintain backward compatibility, an element should be removed only on major revisions.  
 
 <h3 id="var">@var inline tag</h3>
 
