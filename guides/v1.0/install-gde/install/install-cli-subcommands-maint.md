@@ -1,0 +1,76 @@
+---
+layout: default
+group: install 
+subgroup: T_Command-line installation
+title: Maintenance mode
+menu_title: Maintenance mode
+menu_node: 
+menu_order: 5
+github_link: install-gde/install/install-cli-subcommands-maint.md
+---
+
+  
+<h4>Contents</h4>
+
+See one of the following sections:
+
+*	<a href="#instgde-install-cli-first">First steps</a>
+*	<a href="#instgde-cli-maint">Enable or disable maintenance mode</a>
+*	<a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>
+
+
+<h2 id="instgde-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+
+<h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
+
+Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site. 
+
+Magento detects maintenance mode as follows:
+
+*	If `var/.maintenance.flag` does not exist, maintenance mode is off and Magento operates normally.
+*	Otherwise, maintenance mode is on unless `var/.maintenance.ip` exists:
+
+	`var/.maintenance.ip` can contain a list of comma-separated IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.
+
+Command usage:
+
+	magento maintenance:enable [--ip=<ip list>]
+	magento maintenance:disable [--ip=<ip list>]
+	magento maintenance:status
+
+where
+
+`[--ip=<ip list>]` is an optional comma-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). Using [--ip=<ip list>] with `disable` means only that you're saving the list of IPs for later use.
+
+`magento maintenance:status` displays the current status of maintenance mode.
+
+For example, to enable maintenance mode with no IP address exemptions:
+
+	magento maintenance:enable
+
+To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
+
+	magento maintenance:enable --ip=192.0.2.10,192.0.2.11
+
+
+<h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
+To maintain the list of exempt commands, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
+
+	magento maintenance:allow-ips [--ip=<ip list>] [--none]
+
+where 
+
+`--ip=<ip list>` is an optional comma-delimited list of IP addresses to exempt. 
+
+`--none` clears the list.
+
+
+#### Related topics
+
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
+
+<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+ -->
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
