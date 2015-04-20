@@ -13,18 +13,27 @@ This topic features a step-by-step illustration of how to change the number of p
 <h2 id="rwd_practice">Changing the number of columns</h2>
 
 
-OrangeCo want to make their products more visible by decreasing the quantity of columns on a catalog page, so that each product takes more space. (for 2 column layout only)
+OrangeCo want to make their products more visible by decreasing the quantity of columns on a catalog page, so that each product takes more space. 
 
-In the default Blank theme, the number of columns for each :
--	Desktop () 4 columns
--	Tablet (768px) 3 columns
--	Mobile 2 columns
-They want:
--	Desktop 3 columns
--	Tablet (768px) 2 columns
--	Mobile 2 columns
+In the default Blank theme, the number of columns for each breakpoint is the following (for the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page">2-column page layout</a>):
 
-To change columns quantity, you should override \app\design\frontend\Magento\blank\Magento_Catalog\web\css\source\module\_listings.less
+<ul>
+<li>1024px and higher (desktop): 4 columns</li>
+<li>768px (tablet): 3 columns</li>
+<li>640px and less (mobile): 2 columns</li>
+</ul>
+
+<p class="q">Can we change the wording of "columns"? cause it looks confusing about the 2-column layout and changing the number of columns at the same time</p>
+
+In their custom Orange theme, OrangeCo want to have the least number of columns, namely:
+<ul>
+<li>Desktop: 3 columns</li>
+<li>Tablet: 2 columns</li>
+<li>Mobile: 2 columns</li>
+</ul>
+
+The Orange theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the Blank theme.
+To change columns quantity, OrangeCo add an overriding <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less </code></a>, where they changed the following:
 In your theme and change
 …
 <pre>
