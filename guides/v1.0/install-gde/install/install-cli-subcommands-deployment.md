@@ -5,17 +5,25 @@ subgroup: T_Command-line installation
 title: Create or update the deployment configuration, config.php
 menu_title: Create or update the deployment configuration, config.php
 menu_node: 
-menu_order: 10
+menu_order: 6
 github_link: install-gde/install/install-cli-subcommands-deployment.md
 ---
 
 
-<!-- #### Contents
+#### Contents
 
+*	<a href="#instgde-cli-before">First steps</a>
+*	<a href="#instgde-cli-subcommands-configphp-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
-*	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a> -->
+*	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a>
+
+<h2 id="instgde-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+
+<h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
+There are no prerequisites for using this command.
   
-<h2 id="instgde-cli-subcommands-configphp">Creating or updating the Magento deployment configuration</h2>
+<h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
 Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.
 
 You can use this subcommand if:

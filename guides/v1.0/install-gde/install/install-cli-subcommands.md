@@ -16,7 +16,9 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-first">First steps</a>
-*	<a href="#instgde-cli-help">Command-line installer help commands</a>
+*	<a href="#instgde-cli-summary">Command summary</a>
+*	<a href="#instgde-cli-help">Help commands</a>
+*	<a href="#instgde-cli-subcommands-common">Common arguments</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
 
@@ -25,8 +27,6 @@ See one of the following sections:
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 {% include install/before-you-begin-cli.html %}
-
-
 
 The installer is designed to be run multiple times if necessary so you can:
 
@@ -40,7 +40,73 @@ The installer is designed to be run multiple times if necessary so you can:
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="instgde-cli-help">Command-line installer help commands</h2>
+<h2 id="instgde-cli-summary">Command summary</h2>
+The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
+
+<table>
+	<tbody>
+		<tr>
+			<th>Command</th>
+			<th>Description</th>
+			<th>Prerequisites</th>
+		</tr>
+		
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">magento setup:install</a></td>
+		<td>Installs the Magento software</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-uninstall">magento setup:uninstall</a></td>
+		<td>Removes the Magento software.</td>
+		<td>Magento software installed</td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-update">magento setup:upgrade</a></td>
+		<td>Updates the Magento software.</td>
+		<td>Magento software installed</td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">magento maintenance:{enable|disable}</a></td>
+		<td>Enables or disables maintenance mode (in maintenance mode, only exempt IP addresses can access the Magento Admin or storefront).</td>
+		<td>Magento software installed</td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">magento config:set</a></td>
+		<td>Creates the deployment configuration file, <code>config.php</code>.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td>magento setup:store-config:set</td>
+		<td>Sets storefront-related options, such as base URL, language, timezone, and so on.</td>
+		<td>Deployment configuration</td>
+	</tr>
+	<tr>
+		<td>magento setup:db-schema:upgrade</td>
+		<td>Upgrades the Magento database.</td>
+		<td>Magento database schema</td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">magento admin:user:create</a></td>
+		<td>Creates a Magento administrator.</td>
+		<td>Deployment configuration and database schema</td>
+	</tr>
+	<tr>
+		<td><a href="#instgde-cli-help">php magento list</a></td>
+		<td>Lists all available commands.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td><a href="#instgde-cli-help">php magento help &lt;command>[:&lt;option>]:&lt;argument></a></td>
+		<td>Provides help for the specified command.</td>
+		<td>None</td>
+	</tr>
+	
+	
+	</tbody>
+</table>
+
+<h2 id="instgde-cli-help">Help commands</h2>
 To display a complete list of installer arguments, enter:
 
 	php magento list
@@ -55,7 +121,7 @@ For example,
 	php magento help setup:config:set
 
 <h2 id="instgde-cli-subcommands-common">Common arguments</h2>
-The following arguments are common to all installer commands:
+The following arguments are common to all installer commands. These commands can be run either before or after the Magento software is installed:
 
 <table>
 	<tbody>

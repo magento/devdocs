@@ -15,6 +15,7 @@ github_link: install-gde/install/install-cli-subcommands-maint.md
 See one of the following sections:
 
 *	<a href="#instgde-install-cli-first">First steps</a>
+*	<a href="#instgde-cli-subcommands-maint-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-maint">Enable or disable maintenance mode</a>
 *	<a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>
 
@@ -22,8 +23,10 @@ See one of the following sections:
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
+<h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
+Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
 
+<h2 id="instgde-cli-maint">Enable or disable maintenance mode</h2>
 Magento uses *maintenance mode* to disable bootstrapping; for example, while you're maintaining, upgrading, or reconfiguring your site. 
 
 Magento detects maintenance mode as follows:
@@ -41,7 +44,7 @@ Command usage:
 
 where
 
-`[--ip=<ip list>]` is an optional comma-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). Using [--ip=<ip list>] with `disable` means only that you're saving the list of IPs for later use.
+`--ip=<ip list>` is an optional comma-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). Using [--ip=<ip list>] with `disable` means only that you're saving the list of IPs for later use.
 
 `magento maintenance:status` displays the current status of maintenance mode.
 

@@ -1,6 +1,6 @@
 ---
 layout: default 
-group:  
+group:  install
 subgroup: T_Command-line installation
 title: Enable and disable modules
 menu_title: Enable and disable modules
@@ -13,26 +13,41 @@ github_link: install-gde/install/install-cli-subcommands-enable.md
 #### Contents
 
 *	<a href="#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
+*	<a href="#instgde-cli-subcommands-enable-disable-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>
 
+<h2 id="instgde-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+
+<h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
+Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
 
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
 To enable or disable currently installed modules, use the following command:
 
-	php index.php {module-enable|module-disable} {--modules="<list>"} [--force]
+	magento module:enable <module-list> [-c|--clear-static-content] [-f|--force] [--all] 
+	magento module:disable <module-list> [-c|--clear-static-content] [-f|--force] [--all]
+
+where
+
+*	`<module-list>` is a space-delimited list of modules to enable or disable. If any module name contains special characters, enclose the name in either single or double quotes.
+*	`-c` or `--clear-static-content` clears generated static view files after enabling or disabling modules. 
+
+	This option can result in issues if there are multiple files with the same name and you don't restore all of them. 
+
+	In other words, because of <a href="{{ site.gdeurl }}architecture/view/static-process.html">static file fallback</a> rules, if you clear static files and there is more than one file named `logo.gif` that are different, and if you don't restore all of them to their original locations, the incorrect static file might display.
+
+*	`-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
+
+*	`--all` to enable or disable all modules at the same time.
 
 Use the following command to list enabled and disabled modules:
 
-	php index.php help module-list
+	magento module:status
 
 For example, to disable the Weee module, enter:
 
 	php index.php module-disable --modules=Magento_Weee
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To enable or disable more than one module at a time, enter module names as a comma-separated list (no spaces).</p></span>
-</div>
 
 For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 

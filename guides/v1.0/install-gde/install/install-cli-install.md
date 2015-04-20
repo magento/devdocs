@@ -98,8 +98,6 @@ The following table discusses the meanings of installation option names and valu
 <span class="glyphicon-class">
   <p>Any options that contain spaces or special characters must be enclosed in either single or double quotes.</p></span>
 </div>
-
-
 <table>
 	<tbody>
 		<tr>
@@ -193,6 +191,12 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>timezone</p></td>
 		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>use_rewrites</p></td>
+		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
+		<p><code>0</code> disables the use of web server rewrites.</p></td>
+		<td><p>1</p></td>
 	</tr>
 	<tr>
 		<td><p>use_secure</p></td>
