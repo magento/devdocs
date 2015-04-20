@@ -8,12 +8,15 @@ menu_order: 6
 github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
 ---
 <h2>Overview</h2>
-This topic features a step-by-step illustration of how to change the number of products displayed on a product page keeping up with the responsive desing approach. 
+This topic features a step-by-step illustration of how to change the number of products displayed on a product page keeping up with the responsive design approach. 
 
-Responsive practice
-Guys want to make their products more visible by decreasing the quantity of columns on a page, so that each product takes more space. (for 2 column layout only)
-In the Blank theme, the number of columns is:
--	Desktop 4 columns
+<h2 id="rwd_practice">Changing the number of columns</h2>
+
+
+OrangeCo want to make their products more visible by decreasing the quantity of columns on a catalog page, so that each product takes more space. (for 2 column layout only)
+
+In the default Blank theme, the number of columns for each :
+-	Desktop () 4 columns
 -	Tablet (768px) 3 columns
 -	Mobile 2 columns
 They want:
