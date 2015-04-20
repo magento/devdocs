@@ -35,9 +35,12 @@ Command options:
 
 	php magento setup:config:set [--<parameter>=<value>, ...]
 
-	The following table discusses the meanings of installation parameters and values. 
+The following table discusses the meanings of installation parameters and values. 
 
 <table>
+	<col width="25%">
+	<col width="65%">
+	<col width="10%">
 	<tbody>
 		<tr>
 			<th>Parameter</th>

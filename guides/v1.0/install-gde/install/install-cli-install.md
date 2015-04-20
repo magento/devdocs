@@ -22,9 +22,9 @@ See one of the following sections:
 *	<a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a>
 *	<a href="#instgde-install-uninstall">Uninstall the Magento software</a>
 
-<div class="bs-callout bs-callout-warning">
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This topic discusses important information that affects you if you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later. For more information, see <a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>.</p></span>
+  <p>If you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later, see <a href="#instgde-install-magento-updatebeta11">this section</a>.</p></span>
 </div>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
