@@ -2,8 +2,8 @@
 layout: default 
 group:  install
 subgroup: T_Command-line installation
-title: Enable and disable modules
-menu_title: Enable and disable modules
+title: Enable or disable modules
+menu_title: Enable or disable modules
 menu_node: 
 menu_order: 5
 github_link: install-gde/install/install-cli-subcommands-enable.md
@@ -25,8 +25,8 @@ Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/inst
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
 To enable or disable currently installed modules, use the following command:
 
-	magento module:enable <module-list> [-c|--clear-static-content] [-f|--force] [--all] 
-	magento module:disable <module-list> [-c|--clear-static-content] [-f|--force] [--all]
+	php magento module:enable <module-list> [-c|--clear-static-content] [-f|--force] [--all] 
+	php magento module:disable <module-list> [-c|--clear-static-content] [-f|--force] [--all]
 
 where
 
@@ -43,18 +43,19 @@ where
 
 Use the following command to list enabled and disabled modules:
 
-	magento module:status
+	php magento module:status
 
 For example, to disable the Weee module, enter:
 
-	php index.php module-disable --modules=Magento_Weee
+	php magento module:disable Magento_Weee
 
 For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 
 <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
 If you enabled one or more modules, run the following command to update the database:
 
-	php index.php update
+	magento setup:db-schema:upgrade
+	magento setup:db-data:upgrade
 
 <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %}

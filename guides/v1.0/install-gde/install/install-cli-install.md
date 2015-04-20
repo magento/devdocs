@@ -440,8 +440,7 @@ To update the Magento software:
 
 4.	Update the Magento database.
 
-		cd bin
-		php magento setup:upgrade
+		bin/php magento setup:upgrade
 
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
 
@@ -475,7 +474,7 @@ Uninstalling the Magento software removes database assets and file system assets
 
 To uninstall the Magento software, enter the following command:
 
-	magento setup:uninstall
+	php magento setup:uninstall
 
 The following message displays to confirm a successful uninstallation:
 

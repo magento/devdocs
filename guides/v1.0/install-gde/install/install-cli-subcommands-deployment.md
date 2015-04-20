@@ -31,33 +31,28 @@ You can use this subcommand if:
 *	You previously installed the Magento software and you want to modify the deployment configuration
 *	If you want to create only `config.php` and continue the Magento installation some other way
 
-To install the deployment configuration:
+Command options:
 
-1.	Complete the tasks discussed in <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-prereq">Before you start your installation</a>. 
+	php magento setup:config:set [--<parameter>=<value>, ...]
 
-2.	Enter the following commands in the order shown:
-
-		cd <your Magento install dir>/bin
-		php magento setup:config:set <options>
-
-	The following table discusses the meanings of installation option names and values. 
+	The following table discusses the meanings of installation parameters and values. 
 
 <table>
 	<tbody>
 		<tr>
-			<th>Name</th>
+			<th>Parameter</th>
 			<th>Value</th>
 			<th>Required?</th>
 		</tr>
 		
 	<tr>
-		<td>backend_frontname</td>
+		<td>--backend_frontname</td>
 		<td>Path to access the Magento Admin. This path is appended to Base URL.
 For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</td>
 		<td>Yes</td>
 	</tr>
 	<tr>
-		<td>db_host</td>
+		<td>--db_host</td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
 		<li><code>localhost</code> if your database serve is on the same host as your web server.</li>
@@ -67,36 +62,36 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>Yes</td>
 	</tr>
 	<tr>
-		<td>db_name</td>
+		<td>--db_name</td>
 		<td>Name of the Magento database instance in which you want to install the Magento database tables.</td>
 		<td>Yes</td>
 	</tr>
 	<tr>
-		<td>db_user</td>
+		<td>--db_user</td>
 		<td>User name of the Magento database instance owner.</td>
 		<td>Yes</td>
 	</tr>
 	<tr>
-		<td>db_password</td>
+		<td>--db_password</td>
 		<td>Magento database instance owner's password.</td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>db_prefix</td>
+		<td>--db_prefix</td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>session_save</td>
+		<td>--session_save</td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
 		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>key</td>
+		<td>--key</td>
 		<td>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</td>
 		<td>No</td>
 	</tr>
@@ -113,7 +108,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr> -->
 	<tr>
-		<td>db_init_statements</td>
+		<td>--db_init_statements</td>
 		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Default is <code>SET NAMES utf8;</code>. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
 		<td>No</td>
 	</tr>

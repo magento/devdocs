@@ -31,7 +31,7 @@ Before you run this command, you must do all of the following *or* you must <a h
 <h2 id="instgde-cli-storeconfig">Set store configuration options</h2>
 Command usage:
 
-	magento setup:store-config:set [--<parameter_name>=<value>, ...]
+	php magento setup:store-config:set [--<parameter_name>=<value>, ...]
 
 where the following table defines parameters and values.
 

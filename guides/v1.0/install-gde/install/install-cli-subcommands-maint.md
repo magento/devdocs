@@ -2,8 +2,8 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Maintenance mode
-menu_title: Maintenance mode
+title: Enable or disable maintenance mode
+menu_title: Enable or disable maintenance mode
 menu_node: 
 menu_order: 5
 github_link: install-gde/install/install-cli-subcommands-maint.md
@@ -38,9 +38,9 @@ Magento detects maintenance mode as follows:
 
 Command usage:
 
-	magento maintenance:enable [--ip=<ip list>]
-	magento maintenance:disable [--ip=<ip list>]
-	magento maintenance:status
+	php magento maintenance:enable [--ip=<ip list>]
+	php magento maintenance:disable [--ip=<ip list>]
+	php magento maintenance:status
 
 where
 
@@ -50,17 +50,17 @@ where
 
 For example, to enable maintenance mode with no IP address exemptions:
 
-	magento maintenance:enable
+	ohp magento maintenance:enable
 
 To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 
-	magento maintenance:enable --ip=192.0.2.10,192.0.2.11
+	php magento maintenance:enable --ip=192.0.2.10,192.0.2.11
 
 
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
 To maintain the list of exempt commands, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
-	magento maintenance:allow-ips [--ip=<ip list>] [--none]
+	php magento maintenance:allow-ips [--ip=<ip list>] [--none]
 
 where 
 

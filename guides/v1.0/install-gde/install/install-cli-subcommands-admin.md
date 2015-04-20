@@ -22,9 +22,7 @@ See one of the following sections:
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="instgde-cli-storeconfig">Set store configuration options</h2>
-
-
+<h2 id="instgde-cli-storeconfig">Create an administrator</h2>
 Command usage:
 
 	magento setup:store-config:set [--<parameter_name>=<value>, ...]
@@ -33,7 +31,6 @@ Command usage:
 <span class="glyphicon-class">
   <p>Before you can run this command, you must have already created the deployment configuration file, <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">config.php</a>. </p></span>
 </div>
-
 
 where the following table defines parameters and values.
 
