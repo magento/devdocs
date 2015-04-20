@@ -33,7 +33,14 @@ In their custom Orange theme, OrangeCo want to have the least number of columns,
 </ul>
 
 The Orange theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the Blank theme.
-To change columns quantity, OrangeCo add an overriding <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less </code></a>, where they changed the following:
+To change columns quantity, OrangeCo add an overriding <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less </code></a>, where they changed the following: 
+
+<p class="q"> Can we describe it somehow, the changes we make? </p>
+
+The changed lines are highlighted.
+
+<img src="{{site.baseurl}}common/images/rwd_pract1.png">
+
 In your theme and change
 …
 <pre>
@@ -64,5 +71,8 @@ In your theme and change
 }
 
 </pre>
+
+
+<p class="q">Do we change the Desktop section only, and it applies to all the breakpoints?</p>
 
 <img src="{{site.baseurl}}common/images/rwd_practice.jpg">
