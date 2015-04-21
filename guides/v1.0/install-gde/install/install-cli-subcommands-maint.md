@@ -38,13 +38,13 @@ Magento detects maintenance mode as follows:
 
 Command usage:
 
-	php magento maintenance:enable [--ip=<ip list>]
-	php magento maintenance:disable [--ip=<ip list>]
+	php magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>]
+	php magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>]
 	php magento maintenance:status
 
 where
 
-`--ip=<ip list>` is an optional comma-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). Using [--ip=<ip list>] with `disable` means only that you're saving the list of IPs for later use.
+`----ip=<ip address>` is an optional space-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). Using [--ip=<ip address>] with `disable` means only that you're saving the list of IPs for later use.
 
 `magento maintenance:status` displays the current status of maintenance mode.
 
@@ -54,17 +54,17 @@ For example, to enable maintenance mode with no IP address exemptions:
 
 To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 
-	php magento maintenance:enable --ip=192.0.2.10,192.0.2.11
+	php magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 
 
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
 To maintain the list of exempt commands, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
-	php magento maintenance:allow-ips [--ip=<ip list>] [--none]
+	php magento maintenance:allow-ips <ip address>,..<ip address> [--none]
 
 where 
 
-`--ip=<ip list>` is an optional comma-delimited list of IP addresses to exempt. 
+`<ip address>,..<ip address>` is an optional comma-delimited list of IP addresses to exempt. 
 
 `--none` clears the list.
 
