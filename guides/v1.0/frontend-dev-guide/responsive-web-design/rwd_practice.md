@@ -39,11 +39,11 @@ To change the products quantity, OrangeCo take the following steps:
 
 <li>Put in the corresponding location in their Orange theme folder: <code>app/design/frontend/OrangeCo/orange/Magento_Catalog/web/css/source/module/_listings.less </code> </li>
 
-<li>Make the changes in the code. The following image illustates which section of the file they change, the modified lines are highlighted:
-
-<img src="{{site.baseurl}}common/images/rwd_pract1.png">
-</li>
+<li>Make the changes in the code. The following image illustates which section of the file they change, the modified lines are highlighted:</li>
 </ol>
+<p><img src="{{site.baseurl}}common/images/rwd_pract1.png"></p>
+
+
 
 <!---
 In your theme and change
@@ -79,8 +79,9 @@ In your theme and change
 
 -->
 
+
 When OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">apply their theme</a>, the catalog page of their store will look like following:
 
-<img src="{{site.baseurl}}common/images/rwd_practice.jpg">
+<p><img src="{{site.baseurl}}common/images/rwd_practice.jpg"></p>
 
-(compare to the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>)
+(compare to the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>.)
