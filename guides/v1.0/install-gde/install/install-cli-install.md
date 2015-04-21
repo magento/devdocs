@@ -92,7 +92,7 @@ The format of the install command follows:
 
 	php magento setup:install --<option>=<value> ...
 
-The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.
+The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installations</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -152,7 +152,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
-
+	<tr>
 		<td><p>admin_firstname</p></td>
 		<td><p>Magento administrator user's first name.</p></td>
 		<td><p>Yes</p></td>
@@ -196,7 +196,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>use_rewrites</p></td>
 		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
 		<p><code>0</code> disables the use of web server rewrites.</p></td>
-		<td><p>1</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>use_secure</p></td>

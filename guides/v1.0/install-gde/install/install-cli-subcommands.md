@@ -90,6 +90,11 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td>Deployment configuration</td>
 	</tr>
 	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html#instgde-cli-dbconfig">php magento setup:db:status</a></td>
+		<td>View the configured Magento database.</td>
+		<td>Deployment configuration</td>
+	</tr>
+	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">php magento admin:user:create</a></td>
 		<td>Creates a Magento administrator.</td>
 		<td>Deployment configuration and database schema</td>
@@ -102,11 +107,6 @@ The following table summarizes the available commands. Commands are shown in sum
 	<tr>
 		<td><a href="#instgde-cli-help">php magento help &lt;command>[:&lt;option>]:&lt;argument></a></td>
 		<td>Provides help for the specified command.</td>
-		<td>None</td>
-	</tr>
-	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html#instgde-cli-dbconfig">php magento setup:db:status</a></td>
-		<td>View the configured Magento database.</td>
 		<td>None</td>
 	</tr>
 	

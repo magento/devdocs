@@ -70,7 +70,7 @@ where the following table defines parameters and values.
 		<td><p>use_rewrites</p></td>
 		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
 		<p><code>0</code> disables the use of web server rewrites.</p></td>
-		<td><p>1</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>use_secure</p></td>
