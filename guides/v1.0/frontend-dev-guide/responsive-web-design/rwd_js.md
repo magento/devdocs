@@ -8,11 +8,14 @@ menu_order: 4
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 ---
 
+<h2>Overview</h2>
+
+
 To enable pages to load, we excluded JavaScript from the page head block and integrated the Magento system with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load time and enables you to specify dependencies between JavaScript resources in your responsive theme.
 
-For an example of how to include JavaScript in your responsive theme, see <!-- <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>--> bootstrap.js.
+<h2>JavaScript for responsiveness in the Blank theme</h2>
 
-The Blank theme uses the following JavaScript to responsively relocate page elements by viewport:
+The Blank theme uses the following JavaScript to responsively relocate page elements by <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">viewport</a>:
 
 <pre>
 ├── app/design/frontend/Magento/blank/web/js/
@@ -20,6 +23,10 @@ The Blank theme uses the following JavaScript to responsively relocate page elem
     ├── navigation-menu.js
 ├── lib/web/
     ├── matchMedia.js</pre>
+
+If your theme inherit from Blank, you do not need to additionally include these files. In other case to be able to use the scripts, you need to include them in the default.head.blocks.xml as described at ....
+
+<p class="q">What about the ones which are not in lib, can they include them as well?</p>
 
 See one of the following sections for more information
 
