@@ -38,7 +38,22 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Install Magento in a different database instance
 
 <h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+<ol><li>Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
+<li>Change to the following directory:<br>
+<pre>cd &lt;your Magento install dir>/bin</pre>
+Examples:
+<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
+<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
+</ul>
+</li>
+</ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can run the commands in any of the following ways:</p>
+<ul><li><code>php magento &lt;command></code></li>
+<li><code>magento &lt;command></code></li></ul></span>
+</div>
 
 <h2 id="instgde-cli-summary">Command summary</h2>
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
@@ -108,10 +123,10 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">php magento admin:user:create</a></td>
 		<td>Creates a Magento administrator.</td>
 		<td><p>All of the following:</p>
-			<ol><li>Deployment configuration</li>
+			<ul><li>Deployment configuration</li>
 				<li>Enable modules</li>
 				<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
-				</ol></td>
+				</ul></td>
 	</tr>
 	<tr>
 		<td><a href="#instgde-cli-help">php magento list</a></td>
@@ -119,7 +134,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td>None</td>
 	</tr>
 	<tr>
-		<td><a href="#instgde-cli-help">php magento help &lt;command>[:&lt;option>]:&lt;argument></a></td>
+		<td><a href="#instgde-cli-help">php magento help</a></td>
 		<td>Provides help for the specified command.</td>
 		<td>None</td>
 	</tr>
@@ -201,26 +216,12 @@ The following arguments are common to all installer commands. These commands can
 The following sections discuss the available arguments.
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
-
-<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
-*	<a href="#instgde-cli-subcommands-update">Update the database</a>
-*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a> -->
-
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-uninstall">Uninstall the Magento software</a>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Not all arguments are currently documented. Provide us input by <a href="{{ site.githuburl }}install-gde/install/install-cli-subcommands.md }}">editing this page on GitHub</a>.</p></span>
-</div>
-
-
-
-#### Related topics
-
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
-
-<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
- -->
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>

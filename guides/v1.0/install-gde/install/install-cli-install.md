@@ -15,7 +15,6 @@ github_link: install-gde/install/install-cli-install.md
 See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
 *	<a href="#instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</a>
 *	<a href="#instgde-install-magento-update">Update the Magento software</a>
