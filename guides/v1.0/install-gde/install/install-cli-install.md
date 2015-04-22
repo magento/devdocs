@@ -2,7 +2,7 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Install the Magento software using the command line
+title: Install the Magento software using the command line 
 menu_title: Install the Magento software using the command line 
 menu_node: 
 menu_order: 4
