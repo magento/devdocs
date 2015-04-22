@@ -20,7 +20,7 @@ github_link: install-gde/install/install-cli-subcommands-enable.md
 {% include install/first-steps-cli.html %}
 
 <h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
-Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
+This command has no prerequisites.
 
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
 To enable or disable currently installed modules, use the following command:
@@ -33,9 +33,9 @@ where
 *	`<module-list>` is a space-delimited list of modules to enable or disable. If any module name contains special characters, enclose the name in either single or double quotes.
 *	`-c` or `--clear-static-content` clears generated static view files after enabling or disabling modules. 
 
-	This option can result in issues if there are multiple files with the same name and you don't restore all of them. 
+	Failure to clear static view viles might result in issues if there are multiple files with the same name and you don't clear all of them. 
 
-	In other words, because of <a href="{{ site.gdeurl }}architecture/view/static-process.html">static file fallback</a> rules, if you clear static files and there is more than one file named `logo.gif` that are different, and if you don't restore all of them to their original locations, the incorrect static file might display.
+	In other words, because of <a href="{{ site.gdeurl }}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
 *	`-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 

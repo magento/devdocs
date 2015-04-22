@@ -80,13 +80,23 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td>None</td>
 	</tr>
 	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">php magento module:{enable|disable}</a></td>
+		<td>Enable or disable modules.</td>
+		<td>None</td>
+	</tr>
+	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">php magento setup:store-config:set</a></td>
 		<td>Sets storefront-related options, such as base URL, language, timezone, and so on.</td>
 		<td>Deployment configuration</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">php magento setup:db-schema:upgrade</a></td>
-		<td>Updates the Magento database.</td>
+		<td>Updates the Magento database schema.</td>
+		<td>Deployment configuration</td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">php magento setup:db-data:upgrade</a></td>
+		<td>Updates the Magento database data.</td>
 		<td>Deployment configuration</td>
 	</tr>
 	<tr>
@@ -97,7 +107,11 @@ The following table summarizes the available commands. Commands are shown in sum
 	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">php magento admin:user:create</a></td>
 		<td>Creates a Magento administrator.</td>
-		<td>Deployment configuration and database schema</td>
+		<td><p>All of the following:</p>
+			<ol><li>Deployment configuration</li>
+				<li>Enable modules</li>
+				<li>Database schema</li>
+				</ol></td>
 	</tr>
 	<tr>
 		<td><a href="#instgde-cli-help">php magento list</a></td>
