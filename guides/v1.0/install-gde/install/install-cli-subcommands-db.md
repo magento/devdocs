@@ -16,7 +16,7 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-cli-subcommands-store-prereq">Prerequisites</a>
-*	TBD
+*	<a href="#instgde-cli-dbconfig">Configure the database and add data</a>
 
 
 <h2 id="instgde-cli-before">First steps</h2>

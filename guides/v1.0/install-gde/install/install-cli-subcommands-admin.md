@@ -15,6 +15,7 @@ github_link: install-gde/install/install-cli-subcommands-admin.md
 See one of the following sections:
 
 *	<a href="#instgde-install-cli-first">First steps</a>
+*	<a href="#instgde-cli-admin-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-admin">Create an administrator</a>
 
 

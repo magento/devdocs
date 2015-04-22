@@ -31,15 +31,13 @@ To enable or disable currently installed modules, use the following command:
 where
 
 *	`<module-list>` is a space-delimited list of modules to enable or disable. If any module name contains special characters, enclose the name in either single or double quotes.
+*	`--all` to enable or disable all modules at the same time.
+*	`-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 *	`-c` or `--clear-static-content` clears generated static view files after enabling or disabling modules. 
 
 	Failure to clear static view viles might result in issues if there are multiple files with the same name and you don't clear all of them. 
 
 	In other words, because of <a href="{{ site.gdeurl }}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
-
-*	`-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
-
-*	`--all` to enable or disable all modules at the same time.
 
 Use the following command to list enabled and disabled modules:
 
