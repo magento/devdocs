@@ -110,7 +110,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>All of the following:</p>
 			<ol><li>Deployment configuration</li>
 				<li>Enable modules</li>
-				<li>Database schema</li>
+				<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
 				</ol></td>
 	</tr>
 	<tr>

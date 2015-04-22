@@ -44,13 +44,19 @@ Command usage:
 
 where
 
-`----ip=<ip address>` is an optional space-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). Using [--ip=<ip address>] with `disable` means only that you're saving the list of IPs for later use.
+`----ip=<ip address>` is an optional space-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). 
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <ul><li>Using <code>--ip=<ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
+  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</span>
+</div>
 
 `magento maintenance:status` displays the current status of maintenance mode.
 
 For example, to enable maintenance mode with no IP address exemptions:
 
-	ohp magento maintenance:enable
+	php magento maintenance:enable
 
 To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 

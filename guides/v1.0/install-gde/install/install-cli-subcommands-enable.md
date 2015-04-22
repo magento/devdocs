@@ -54,8 +54,7 @@ For important information about enabling and disabling modules, see <a href="#in
 <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
 If you enabled one or more modules, run the following command to update the database:
 
-	magento setup:db-schema:upgrade
-	magento setup:db-data:upgrade
+	magento setup:upgrade
 
 <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %}
