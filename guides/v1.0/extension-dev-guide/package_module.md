@@ -24,11 +24,28 @@ The Magento `composer.json` file defines the name, requirements, version, and ot
 
 The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc/04-schema.md), with the following restrictions:
 
-`name` - A fully-qualified module name, in the format `<vendor_name>/module-<module-name>`. All letters must be in lowercase. Use dashes in the `<module-name>` to separate words.
+<table>
+<tbody>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>A fully-qualified module name, in the format <code>&lt;vendor_name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
+</tr>
+<tr>
+<td><code>type</code> </td>
+<td>For extensions, this value must be set to <code>magento2-module</code>. </td>
+</tr>
+<tr>
+<td><code>extra-&gt;map</code>  </td>
+<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>app/code/&lt;Vendor&gt;</code> directory. </td>
+</tr>
 
-`type` - For extensions, this value must be set to `magento2-module`.
+</tbody>
+</table>
 
-`extra->map` - The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify `"*"` to marshall all files. The second line specifies where to place them, relative to the `app/code/<Vendor>` directory.  
 
 The following example is a `composer.json` file for a module:
 
@@ -63,16 +80,16 @@ Prerequisite: git must be set up on your machine.
 1. Navigate to your extension directory, with the `composer.json` file in the root, and make it a new git repository. See the [GitHub documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) for details. 
 2. When you have committed and pushed your extension to your GitHub repository, you can either:
   * Use [Composer to refer to it directly](https://getcomposer.org/doc/05-repositories.md#vcs), or 
-  * Use the following steps to refer to the package through Packagist
+  * Use the following steps to refer to the package through Packagist.
     1. Register an account at [packagist.org](https://packagist.org/).
-    2. Click the Submit Package button and paste your GitHub repository link. Packagist will automatically gather the information from the extension's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/extension` without any additional repository information, as is required solely using GitHub.
+    2. Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the extension's `composer.json` file and link it to the GitHub repository, allowing you to reference the package as `vendor/extension` without any additional repository information, as is required solely using GitHub.
 
 <h3 id="private_repos">Hosting on a private packaging repository</h3>
 
 1. Set up your own Composer packaging repository using a system such as [Satis](https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md) or [Toran](https://toranproxy.com/).
 2. Create the package in a way similar to the described above.
 3. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
-4. To use the private packaging repository in a project, add the following to your `composer.json`:
+4. To use the private packaging repository in a project, add the following to your `composer.json`file:
 
 {% highlight JSON %}
 
@@ -86,10 +103,10 @@ Prerequisite: git must be set up on your machine.
 }
 {% endhighlight %}
 
-All packages on the private packaging repository can now be referenced within the `require`	 field.
+All packages on the private packaging repository can now be referenced within the `require` field.
 
 <h2 id="test">Test your extension</h2>
-Test your extension by deploying a Magento Community Edition and adding it to the project's <code>composer.json</code>. The extension should be marshalled into the <code>app/code</code> directory.
+Test your extension by deploying a Magento Community Edition and adding it to the project's <code>composer.json</code>. Marshall the extension into the <code>app/code</code> directory.
 
 {% highlight JSON %}
 "require": {
