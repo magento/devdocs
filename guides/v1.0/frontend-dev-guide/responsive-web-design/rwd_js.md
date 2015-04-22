@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: E_rwd
-title: JavaScript in a responsive design
-menu_title: JavaScript in a responsive design
+title: JavaScript in Magento responsive design
+menu_title: JavaScript in Magento responsive design
 menu_order: 4
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 ---
@@ -28,7 +28,8 @@ The script files are located in the file system as follows:
     ├── responsive.js
     ├── navigation-menu.js
 ├── lib/web/
-    ├── matchMedia.js</pre>
+    ├── matchMedia.js
+</pre>
 
 If your theme inherit from Blank, you do not need to additionally include these files. In other case to be able to use the scripts, you need to include them in the default.head.blocks.xml as described in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">Add Javascript and CSS</a>.
 
@@ -51,14 +52,20 @@ See one of the following sections for more information
 <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank">responsive.js</a> implements specific responsive functions for the Blank theme. This file also contains a call of the `mediaCheck` anonymous function from `matchMedia.js`, which is responsible for reaching breakpoints.
 
 The `mediaCheck` call follows:
+<p class="q">Do we need this code sample?</p>
 
 <script src="https://gist.github.com/xcomSteveJohnson/16b30d482f0512f88d89.js"></script>
 
-In `responsive.js`, you can see how the following elements are toggled from the mobile to the desktop version.
+In `responsive.js`, you can see how the following elements are toggled from the mobile to the desktop version:
+<p class="q">should we mention tablet version as well?</p>
 <ul>
-<li>Checkout progress: For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps, and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.</li>
+<li>Checkout progress. <br>
+For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps (for the desktop, it is displayed on the left-hand side), and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.</li>
 
-<li>Product image zoom on product page: This element is switched off for the mobile viewport and is switched on for the desktop viewport.</li>
+
+
+<li>Product image zoom on product page.<br> This element is switched off for the mobile viewport and is switched on for the desktop viewport.</li>
+<p class="q">Is it correct to call it "element"?</p>
 </ul>
 
 <h2 id="fedg_rwd_js_nav">navigation-menu.js</h2>
