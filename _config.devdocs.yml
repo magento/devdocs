@@ -18,6 +18,7 @@ namem2install: "Magento 2 Installation Guide"
 mage2000url: "https://github.com/magento/magento2/blob/develop/"
 # toc_baseurl: "http://devdocs.magento.com"
 m1xgdeurl: "/guides/m1x/"
+m1xgithuburl: "http://github.com/magento/devdocs/blob/develop/guides/m1x/"
 
 
 # Build settings
