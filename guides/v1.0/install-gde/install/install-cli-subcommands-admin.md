@@ -5,7 +5,7 @@ subgroup: T_Command-line installation
 title: Create a Magento administrator
 menu_title: Create a Magento administrator
 menu_node: 
-menu_order: 19
+menu_order: 50
 github_link: install-gde/install/install-cli-subcommands-admin.md
 ---
 
@@ -44,6 +44,9 @@ Command usage:
 where the following table defines parameters and values.
 
 <table>
+	<col width="25%">
+	<col width="65%">
+	<col width="10%">
 	<tbody>
 		<tr>
 			<th>Name</th>
@@ -51,27 +54,27 @@ where the following table defines parameters and values.
 			<th>Required?</th>
 		</tr>
 		<tr>
-		<td><p>admin_firstname</p></td>
+		<td><p>--admin_firstname</p></td>
 		<td><p>Magento administrator user's first name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>admin_lastname</p></td>
+		<td><p>--admin_lastname</p></td>
 		<td><p>Magento administrator user's last name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>admin_email</p></td>
+		<td><p>--admin_email</p></td>
 		<td><p>Magento administrator user's e-mail address.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>admin_user</p></td>
+		<td><p>--admin_user</p></td>
 		<td><p>Magento administrator user name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>admin_password</p></td>
+		<td><p>--admin_password</p></td>
 		<td><p>Magento administrator user password.</p></td>
 		<td><p>Yes</p></td>
 	</tr>

@@ -5,7 +5,7 @@ subgroup: T_Command-line installation
 title: Enable or disable maintenance mode
 menu_title: Enable or disable maintenance mode
 menu_node: 
-menu_order: 5
+menu_order: 7
 github_link: install-gde/install/install-cli-subcommands-maint.md
 ---
 

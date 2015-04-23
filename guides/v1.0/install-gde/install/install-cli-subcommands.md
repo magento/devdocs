@@ -5,7 +5,7 @@ subgroup: T_Command-line installation
 title: Get started with the command-line installation
 menu_title: Get started with the command-line installation
 menu_node: 
-menu_order: 1
+menu_order: 2
 github_link: install-gde/install/install-cli-subcommands.md
 ---
 

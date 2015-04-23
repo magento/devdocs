@@ -48,54 +48,54 @@ The following table discusses the meanings of installation parameters and values
 		</tr>
 		
 	<tr>
-		<td>--backend_frontname</td>
-		<td>Path to access the Magento Admin. This path is appended to Base URL.
-For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</td>
-		<td>Yes</td>
+		<td><p>--backend_frontname</p></td>
+		<td><p>Path to access the Magento Admin. This path is appended to Base URL.
+For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>--db_host</td>
+		<td><p>--db_host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
 		<li><code>localhost</code> if your database serve is on the same host as your web server.</li>
 		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
-		<td>Yes</td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>--db_name</td>
-		<td>Name of the Magento database instance in which you want to install the Magento database tables.</td>
-		<td>Yes</td>
+		<td><p>--db_name</p></td>
+		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>--db_user</td>
-		<td>User name of the Magento database instance owner.</td>
-		<td>Yes</td>
+		<td><p>--db_user</p></td>
+		<td><p>User name of the Magento database instance owner.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>--db_password</td>
-		<td>Magento database instance owner's password.</td>
-		<td>No</td>
+		<td><p>--db_password</p></td>
+		<td><p>Magento database instance owner's password.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>--db_prefix</td>
+		<td><p>--db_prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>--session_save</td>
+		<td><p>--session_save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
 		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>--key</td>
-		<td>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</td>
-		<td>No</td>
+		<td><p>--key</p></td>
+		<td><p>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<!-- <tr> 
 		<td>enable_modules=&lt;list></td>
@@ -110,9 +110,9 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr> -->
 	<tr>
-		<td>--db_init_statements</td>
-		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Default is <code>SET NAMES utf8;</code>. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
-		<td>No</td>
+		<td><p>--db_init_statements</p></td>
+		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Default is <code>SET NAMES utf8;</code>. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	</tbody>
 </table>

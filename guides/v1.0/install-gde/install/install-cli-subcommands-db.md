@@ -5,7 +5,7 @@ subgroup: T_Command-line installation
 title: Create the Magento database
 menu_title: Create the Magento database
 menu_node: 
-menu_order: 30
+menu_order: 15
 github_link: install-gde/install/install-cli-subcommands-db.md
 ---
 
