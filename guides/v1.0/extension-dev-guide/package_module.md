@@ -36,7 +36,7 @@ The `composer.json` uses [Composer's generic schema](https://getcomposer.org/doc
 </tr>
 <tr>
 <td><code>type</code> </td>
-<td>For extensions, this value must be set to <code>magento2-module</code>. </td>
+<td>For extensions, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
 </tr>
 <tr>
 <td><code>extra-&gt;map</code>  </td>
@@ -72,7 +72,7 @@ The following example is a `composer.json` file for a module:
 
 <h2 id="packaging">Package and publish an extension</h2>
 
-After you have created the `composer.json` file and placed it in the root directory of the extension, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.
+After you have created the extension's `composer.json` file in the root directory of the extension, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.
 
 <h3 id="hosting">Hosting on GitHub and Packagist</h3>
 Prerequisite: git must be set up on your machine.
@@ -106,7 +106,7 @@ Prerequisite: git must be set up on your machine.
 All packages on the private packaging repository can now be referenced within the `require` field.
 
 <h2 id="test">Test your extension</h2>
-Test your extension by deploying a Magento Community Edition and adding it to the project's <code>composer.json</code>. Marshall the extension into the <code>app/code</code> directory.
+Test your extension by deploying a Magento Community Edition and adding the extension to the project's <code>composer.json</code>. Marshall the extension into the <code>app/code</code> directory.
 
 {% highlight JSON %}
 "require": {
