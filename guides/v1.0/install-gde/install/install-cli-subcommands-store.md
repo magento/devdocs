@@ -16,7 +16,7 @@ See one of the following sections:
 
 *	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-cli-subcommands-store-prereq">Prerequisites</a>
-*	<a href="#instgde-cli-storeconfig">Set store configuration options</a>
+*	<a href="#instgde-cli-storeconfig">Configure the store</a>
 
 
 <h2 id="instgde-cli-before">First steps</h2>
@@ -28,7 +28,7 @@ Before you run this command, you must do all of the following *or* you must <a h
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a>
 *	<a href="{{ site.gdeurl }}#">Create the Magento database</a>
 
-<h2 id="instgde-cli-storeconfig">Set store configuration options</h2>
+<h2 id="instgde-cli-storeconfig">Configure the store</h2>
 Command usage:
 
 	php magento setup:store-config:set [--<parameter_name>=<value>, ...]

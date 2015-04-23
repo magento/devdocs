@@ -57,12 +57,12 @@ The installer is designed to be run multiple times if necessary so you can:
 
 <h2 id="instgde-cli-help-cmds">Installer help commands</h2>
 
-Optionally run the following commands to find values for some required options:
+You can run the following commands to find values for some required arguments:
 
 <table>
 <tbody>
 	<tr>
-		<th>Installer option</th>
+		<th>Installer argument</th>
 		<th>Command</th>
 	</tr>
 <tr>

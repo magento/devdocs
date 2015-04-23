@@ -19,6 +19,7 @@ See one of the following sections:
 *	<a href="#instgde-cli-summary">Command summary</a>
 *	<a href="#instgde-cli-help">Help commands</a>
 *	<a href="#instgde-cli-subcommands-common">Common arguments</a>
+*	<a href="#instgde-cli-subcommands">Commands</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
 
@@ -148,7 +149,7 @@ To display a complete list of installer arguments, enter:
 
 	php magento list
 
-To get help for a particular argument, enter:
+To get help for a particular command, option, or argument, enter:
 
 	php magento help <command>[:<option>]:<argument>
 
@@ -212,8 +213,8 @@ The following arguments are common to all installer commands. These commands can
 </table>
 
 
-<h2 id="instgde-cli-subcommands">Command line installer arguments</h2>
-The following sections discuss the available arguments.
+<h2 id="instgde-cli-subcommands">Commands</h2>
+The following sections discuss the available commands.
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>

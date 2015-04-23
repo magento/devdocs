@@ -34,7 +34,7 @@ Magento detects maintenance mode as follows:
 *	If `var/.maintenance.flag` does not exist, maintenance mode is off and Magento operates normally.
 *	Otherwise, maintenance mode is on unless `var/.maintenance.ip` exists:
 
-	`var/.maintenance.ip` can contain a list of comma-separated IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.
+	`var/.maintenance.ip` can contain a list of IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.
 
 Command usage:
 
@@ -44,12 +44,12 @@ Command usage:
 
 where
 
-`----ip=<ip address>` is an optional space-delimited list of IP addresses to exempt from maintenance mode (for example, developers doing the maintenance). 
+`--ip=<ip address>` is an IP address to exempt from maintenance mode (for example, developers doing the maintenance). To exempt more than one IP address in the same command, use the option multiple times.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <ul><li>Using <code>--ip=<ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
-  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</span>
+  <ul><li>Using <code>--ip=&lt;ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
+  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul></span>
 </div>
 
 `magento maintenance:status` displays the current status of maintenance mode.
@@ -62,15 +62,14 @@ To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 
 	php magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 
-
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
 To maintain the list of exempt commands, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
-	php magento maintenance:allow-ips <ip address>,..<ip address> [--none]
+	php magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
 where 
 
-`<ip address>,..<ip address>` is an optional comma-delimited list of IP addresses to exempt. 
+`<ip address> .. <ip address>` is an optional space-delimited list of IP addresses to exempt. 
 
 `--none` clears the list.
 
