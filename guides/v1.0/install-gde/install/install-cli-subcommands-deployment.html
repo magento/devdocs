@@ -92,9 +92,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -148,95 +148,109 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<!-- #### Contents
+		<h4 id="contents">Contents</h4>
 
-*	<a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a>
-*	<a href="#instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</a> -->
+<ul>
+  <li><a href="#instgde-cli-before">First steps</a></li>
+  <li><a href="#instgde-cli-subcommands-configphp-prereq">Prerequisites</a></li>
+  <li><a href="#instgde-cli-subcommands-configphp">Creating the Magento deployment configuration</a></li>
+</ul>
 
-<h2 id="instgde-cli-subcommands-configphp">Creating or updating the Magento deployment configuration</h2>
+<h2 id="instgde-cli-before">First steps</h2>
+<p>First steps:</p>
+<ol><li>Log in to the Magento server as, or <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
+<li>Change to the following directory:<br />
+<pre>cd &lt;your Magento install dir&gt;/bin</pre>
+Examples:
+<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
+<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
+</ul>
+</li>
+</ol>
+<p>For some tips about using the command line, see <a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a>.</p>
+
+<h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
+<p>There are no prerequisites for using this command.</p>
+
+<h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
 <p>Magento’s deployment configuration, <a href="/guides/v1.0/config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.</p>
 
-<p>You can use this subcommand if:</p>
+<p>You can use this command if:</p>
 
 <ul>
   <li>You previously installed the Magento software and you want to modify the deployment configuration</li>
   <li>If you want to create only <code>config.php</code> and continue the Magento installation some other way</li>
 </ul>
 
-<p>To install the deployment configuration:</p>
+<p>Command options:</p>
 
-<ol>
-  <li>
-    <p>Complete the tasks discussed in <a href="/guides/v1.0/install-gde/install/install-cli-install.html#instgde-install-cli-prereq">Before you start your installation</a>. </p>
-  </li>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;/bin
-php magento setup:config:set &lt;options&gt;
+<pre><code>php magento setup:config:set [--&lt;parameter&gt;=&lt;value&gt;, ...]
 </code></pre>
 
-    <p>The following table discusses the meanings of installation option names and values. </p>
-  </li>
-</ol>
+<p>The following table discusses the meanings of installation parameters and values. </p>
 
 <table>
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
 	<tbody>
 		<tr>
-			<th>Name</th>
+			<th>Parameter</th>
 			<th>Value</th>
 			<th>Required?</th>
 		</tr>
 		
 	<tr>
-		<td>backend_frontname</td>
-		<td>Path to access the Magento Admin. This path is appended to Base URL.
-For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</td>
-		<td>Yes</td>
+		<td><p>--backend_frontname</p></td>
+		<td><p>Path to access the Magento Admin. This path is appended to the base URL. Default is <code>admin</code>. 
+For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_host</td>
+		<td><p>--db_host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> if your database serve is on the same host as your web server.</li>
+		<li><code>localhost</code> (default) if your database server ison the same host as your web server.</li>
 		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
-		<td>Yes</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_name</td>
-		<td>Name of the Magento database instance in which you want to install the Magento database tables.</td>
-		<td>Yes</td>
+		<td><p>--db_name</p></td>
+		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
+			<p>Default is <code>magento2</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_user</td>
-		<td>User name of the Magento database instance owner.</td>
-		<td>Yes</td>
+		<td><p>--db_user</p></td>
+		<td><p>User name of the Magento database instance owner.</p>
+			<p>Default is <code>root</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_password</td>
-		<td>Magento database instance owner's password.</td>
-		<td>No</td>
+		<td><p>--db_password</p></td>
+		<td><p>Magento database instance owner's password.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_prefix</td>
+		<td><p>--db_prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>session_save</td>
+		<td><p>--session_save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
 		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>key</td>
-		<td>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</td>
-		<td>No</td>
+		<td><p>--key</p></td>
+		<td><p>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<!-- <tr> 
 		<td>enable_modules=&lt;list></td>
@@ -251,9 +265,11 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr> -->
 	<tr>
-		<td>db_init_statements</td>
-		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Default is <code>SET NAMES utf8;</code>. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
-		<td>No</td>
+		<td><p>--db_init_statements</p></td>
+		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.</p>
+			<p>Default is <code>SET NAMES utf8;</code>.</p> 
+			<p>Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	</tbody>
 </table>
@@ -266,7 +282,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 </ul>
 
 <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
-<p>Magento enables you to enable or disable currently installed modules; in other words, any Magento-provided module or any third-party module you currently have installed.</p>
+<p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module you that is currently available.</p>
 <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
 <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
 <p>Examples:</p>
@@ -293,15 +309,16 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
 </ul>
-
-<!-- *	<a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
- -->
-<ul>
-  <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-</ul>
-
 
 
 		</div>
@@ -524,7 +541,31 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
+						
+								
+							
 									<li class="level-2  active "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
 						
 								
 								
