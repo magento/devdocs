@@ -21,27 +21,25 @@ In the Magento application, to optimize page loading, the <a href="http://requir
 The Blank theme uses the following scripts to responsively relocate page elements by <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">viewport</a>:
 <ul>
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
-<li><a href="https://github.com/paulirish/matchMedia.js/" target="_blank"><code>matchMedia.js</code></a>, used by <code>responsive.js</code></li>
-<li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/navigation-menu.js" target="_blank"><code>navigation-menu.js</code></a></li>
+<li><a href="{{site.mage2000url}}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
+
+<li><a href="https://github.com/paulirish/matchMedia.js/" target="_blank"><code>matchMedia.js</code></a>, used by <code>responsive.js</code> and <code>menu.js</code></li>
 </ul>
 
 The script files are located in the file system as follows:
 <pre>
 ├── app/design/frontend/Magento/blank/web/js/
     ├── responsive.js
-    ├── navigation-menu.js
 ├── lib/web/
     ├── matchMedia.js
+	├── mage/
+		├── menu.js
 </pre>
-
-If your theme inherits from Blank, you do not need to additionally include these files. In other case to be able to use the scripts, you need to include them in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code> file as described in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">Add Javascript and CSS</a>. The script files should be copied to <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js/</code>, except <code>matchMedia.js</code>, which is located in the library, and can be included from its original location.
-
-
 
 See one of the following sections for more information:
 
 *	<a href="#fedg_rwd_js_resp">responsive.js</a>
-*	<a href="#fedg_rwd_js_nav">navigation-menu.js</a>
+*	<a href="#fedg_rwd_js_nav">menu.js</a>
 
 
 <h2 id="fedg_rwd_js_resp">responsive.js</h2>
@@ -52,7 +50,6 @@ The <code>responsive.js</code> script implements specific responsive functions f
 
 The <code>mediaCheck</code> call follows:
 
-<script src="https://gist.github.com/xcomSteveJohnson/16b30d482f0512f88d89.js"></script>
 <pre>
 // mediaCheck call that handles adjusting the position of page elements at a breakpoint
  
@@ -68,7 +65,7 @@ The <code>mediaCheck</code> call follows:
     });
 /*...*/
 </pre>
-<p class="q">It looks different now (see below)</p>
+It looks different now (see below)
 
 <pre>
 mediaCheck({
@@ -152,40 +149,23 @@ For the mobile viewport, the checkout progress block on the checkout page is mov
 <p class="q">Is it correct to call it "element"?</p>
 </ul>
 
-<h2 id="fedg_rwd_js_nav">navigation-menu.js</h2>
-
-Responsible for rearranging navigation and header links for the desktop and mobile viewports. See one of the following sections for more information:
-
-*	<a href="#fedg_rwd_js_nav_mobile">Mobile navigation</a>
-*	<a href="#fedg_rwd_js_nav_desktop">Desktop navigation</a>
-
-<h3 id="fedg_rwd_js_nav_mobile">Mobile navigation</h3>
-
-In a mobile viewport, <code>navigation-menu.js</code> copies the existing navigation menu `<nav class="navigation">`, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag `<div class="page wrapper">`.
-
-`navigation-menu.js` also adds the links (**Sign in**, **Register**, and so on) and the Settings block (language switcher, currency switcher) to the Mobile navigation.
-
-The Mobile navigation moves left and it slides from the left side when the navigation menu button is clicked.
-
-Sample HTML:
-
-<script src="https://gist.github.com/xcomSteveJohnson/6e00b3139e039bf8c966.js"></script>
-
-Sample of how it might look:
-
-![In a mobile viewport, navigation displays on the left.]({{ site.baseurl }}common/images/rwd_js_nav_mobile.png)
-
-<h3 id="fedg_rwd_js_nav_desktop">Desktop navigation</h3>
-
-In a desktop viewport, the script returns the default elements sequence in the source code:
-
-<script src="https://gist.github.com/xcomSteveJohnson/eadce4824923cf19f412.js"></script>
-
-Sample of how it might look:
-
-![In a desktop viewport, navigation displays at the top.]({{ site.baseurl }}common/images/rwd_js_nav_desktop.png)
+<h2 id="fedg_rwd_js_nav">menu.js</h2>
 
 
+In a mobile viewport, on the 640px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
+<ul>
+<li>Category menu items are not displayed by default, but are accessible after clicking the "menu" icon</li>
+<li>When clicking a category link, a user is not redirected to the category page immediately, but the list of sub-categories is displayed instead, including the "All category products" option. </li>
 
+</ul>
 
+I would add two screenshots, to illustrate the difference.
 
+<h2 id="rwd_js_reuse">Re-using Magento scripts in your theme</h2>
+
+You can use the <code>menu.js</code>, <code>navigation.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom theme. 
+If your theme inherits from Blank, you do not even need to additionally include the script files in your theme.
+
+In other case, to be able to use the scripts, you need to include them in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code> file as described in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">Add Javascript and CSS</a>. 
+
+If including <code>navigation.js</code>, you also need to copy the file itself to your <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js/</code> directory. <code>matchMedia.js</code> and <code>menu.js</code> are located in the library, and can be included from its original location.
