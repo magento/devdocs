@@ -110,35 +110,37 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://localhost/&lt;your Magento install dir>/</code> or <code>http://localhost/&lt;your Magento install dir>/</code>.</p>
+		<p>To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir>/</code> or <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</p>
 		</td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--backend_frontname</p></td>
-		<td><p>Path to access the Magento Admin. This path is appended to Base URL.
+		<td><p>Path to access the Magento Admin. This path is appended to base URL. Default is <code>admin</code>. 
 For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
-		<td><p>Yes</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--db_host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> if your database serve is on the same host as your web server.</li>
+		<li><code>localhost</code> )default) if your database server ison the same host as your web server.</li>
 		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
-		<td><p>Yes</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--db_name</p></td>
-		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p></td>
-		<td><p>Yes</p></td>
+		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
+			<p>Default is <code>magento2</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--db_user</p></td>
-		<td><p>User name of the Magento database instance owner.</p></td>
-		<td><p>Yes</p></td>
+		<td><p>User name of the Magento database instance owner.</p>
+			<p>Default is <code>root</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--db_password</p></td>
@@ -251,7 +253,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tr>
 	<tr>
 		<td><p>--use_sample_data</p></td>
-		<td><p>Use this parameter to install optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+		<td><p>Use this parameter to install optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
 		<p>Sample data installs only if you already enabled the package as discussed in <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
 		<td><p>No</p></td>
 	</tr>
@@ -262,7 +264,8 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tr>
 	<tr>
 		<td><p>--db_init_statements</p></td>
-		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
+		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p>
+			<p>Default is <code>SET NAMES utf8;</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -292,7 +295,7 @@ The following example installs Magento with the following options:
 
 *	The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
 
-	Your storefront URL is `http://localhost` and you can access the Magento Admin at `http://localhost/admin`
+	Your storefront URL is `http://127.0.0.1` and you can access the Magento Admin at `http://127.0.0.1/admin`
 
 *	The database server is on the same host as the web server.
 
@@ -310,7 +313,7 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		php bin/magento setup:install --base_url=http://localhost/magento2/ \
+		php bin/magento setup:install --base_url=http://127.0.0.1/magento2/ \
 		--backend_frontname=admin \
 		--db_host=localhost --db_name=magento --db_user=magento --db_password=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
@@ -323,7 +326,7 @@ The following example installs Magento with the following options:
 
 *	The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
 
-	Your storefront URL is `http://localhost` and you can access the Magento Admin at `http://localhost/admin`
+	Your storefront URL is `http://127.0.0.1` and you can access the Magento Admin at `http://127.0.0.1/admin`
 
 *	The database server is on the same host as the web server.
 
@@ -342,7 +345,7 @@ The following example installs Magento with the following options:
 *	You use a sales order increment prefix `ORD$` and because it contains a special character (`$`), the value must be enclosed in double quotes
 *	Session data is saved in the database
 
-		php bin/magento setup:install --base_url=http://localhost/magento2/ \
+		php bin/magento setup:install --base_url=http://127.0.0.1/magento2/ \
 		--backend_frontname=admin --db_host=localhost --db_name=magento \
 		--db_user=magento --db_password=magento \
 		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \

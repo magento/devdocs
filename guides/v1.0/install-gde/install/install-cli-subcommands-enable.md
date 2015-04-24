@@ -23,10 +23,10 @@ github_link: install-gde/install/install-cli-subcommands-enable.md
 This command has no prerequisites.
 
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
-To enable or disable currently installed modules, use the following command:
+To enable or disable available modules, use the following command:
 
-	php magento module:enable <module-list> [-c|--clear-static-content] [-f|--force] [--all] 
-	php magento module:disable <module-list> [-c|--clear-static-content] [-f|--force] [--all]
+	php magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
+	php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
 
 where
 
@@ -35,7 +35,7 @@ where
 *	`-f` or `--force` to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 *	`-c` or `--clear-static-content` clears generated static view files after enabling or disabling modules. 
 
-	Failure to clear static view viles might result in issues if there are multiple files with the same name and you don't clear all of them. 
+	Failure to clear static view files might result in issues if there are multiple files with the same name and you don't clear all of them. 
 
 	In other words, because of <a href="{{ site.gdeurl }}architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
 
@@ -65,6 +65,6 @@ If you enabled one or more modules, run the following command to update the data
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>

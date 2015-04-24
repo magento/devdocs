@@ -59,7 +59,7 @@ To update the Magento software:
 
 4.	Update the Magento database.
 
-		bin/php magento setup:upgrade
+		php bin/magento setup:upgrade
 
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
 
@@ -67,7 +67,7 @@ To update the Magento software:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
-This section discusses how to uninstall and then reinstall the Magento software. 
+This section discusses how to uninstall and then reinstall the Magento software with the latest version.
 
 To reinstall the Magento software:
 
@@ -80,7 +80,8 @@ To reinstall the Magento software:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </p></span>
+  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
+  				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 	</div>
 
 4.	Install the Magento software:
@@ -125,7 +126,7 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 2.	Change to the following directory:
 
-		cd <your Magento install dir>/bin
+		cd <your Magento install dir>/setup
 
 3.	Uninstall the Magento software and change to your Magento installation directory:
 

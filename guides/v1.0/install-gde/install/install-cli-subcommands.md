@@ -76,14 +76,14 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td>None</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-uninstall">php magento setup:uninstall</a></td>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">php magento setup:uninstall</a></td>
 		<td>Removes the Magento software.</td>
 		<td>Magento software installed</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-update">php magento setup:upgrade</a></td>
+		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">php magento setup:upgrade</a></td>
 		<td>Updates the Magento software.</td>
-		<td>Magento software installed</td>
+		<td>Deployment configuration</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">php magento maintenance:{enable|disable}</a></td>
@@ -103,7 +103,9 @@ The following table summarizes the available commands. Commands are shown in sum
 	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">php magento setup:store-config:set</a></td>
 		<td>Sets storefront-related options, such as base URL, language, timezone, and so on.</td>
-		<td>Deployment configuration</td>
+		<td><ul><li>Deployment configuration</li>
+			<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
+				</ul></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">php magento setup:db-schema:upgrade</a></td>
@@ -117,7 +119,7 @@ The following table summarizes the available commands. Commands are shown in sum
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html#instgde-cli-dbconfig">php magento setup:db:status</a></td>
-		<td>View the configured Magento database.</td>
+		<td>Checks if the database is up-to-date with the code.</td>
 		<td>Deployment configuration</td>
 	</tr>
 	<tr>
@@ -125,7 +127,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td>Creates a Magento administrator.</td>
 		<td><p>All of the following:</p>
 			<ul><li>Deployment configuration</li>
-				<li>Enable modules</li>
+				<li>Enable at minimum the <code>Magento_User</code> and <code>Magento_Authorization</code> modules</li>
 				<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
 				</ul></td>
 	</tr>
@@ -145,13 +147,13 @@ The following table summarizes the available commands. Commands are shown in sum
 </table>
 
 <h2 id="instgde-cli-help">Help commands</h2>
-To display a complete list of installer arguments, enter:
+To display a complete list of installer commands, enter:
 
 	php magento list
 
-To get help for a particular command, option, or argument, enter:
+To get help for a particular command, enter:
 
-	php magento help <command>[:<option>]:<argument>
+	php magento help <command>
 
 For example,
 
@@ -175,7 +177,7 @@ The following arguments are common to all installer commands. These commands can
 	<tr>
 		<td>--help</td>
 		<td>-h</td>
-		<td>Get help for any argument. For example, <code>php magento help setup:install</code> or <code>php magento help setup:config:set</code>.</td>
+		<td>Get help for any command. For example, <code>php magento help setup:install</code> or <code>php magento help setup:config:set</code>.</td>
 	</tr>
 	<tr>
 		<td>--quiet</td>
@@ -223,6 +225,6 @@ The following sections discuss the available commands.
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>

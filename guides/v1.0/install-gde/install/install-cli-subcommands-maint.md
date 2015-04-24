@@ -38,8 +38,8 @@ Magento detects maintenance mode as follows:
 
 Command usage:
 
-	php magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>]
-	php magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>]
+	php magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
+	php magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
 	php magento maintenance:status
 
 where
@@ -49,7 +49,7 @@ where
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <ul><li>Using <code>--ip=&lt;ip address></code> with <code>magento maintenance:disable</code> means only that you're saving the list of IPs for later use.</li>
-  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul></span>
+  	<li>To clear the list of exempt IPs, you can use <code>magento maintenance:enable --ip=none</code> or see <a href="#instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</a>.</li></ul></span>
 </div>
 
 `magento maintenance:status` displays the current status of maintenance mode.
@@ -63,7 +63,7 @@ To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 	php magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
-To maintain the list of exempt commands, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
+To maintain the list of exempt IP addresses, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
 	php magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
@@ -82,6 +82,6 @@ where
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
