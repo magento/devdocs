@@ -2,10 +2,10 @@
 layout: default
 group: fedg
 subgroup: E_rwd
-title: Create a responsive mobile theme
-menu_title: Create a responsive mobile theme
+title: Create a responsive mobile theme based on Blank
+menu_title: Create a responsive mobile theme based on Blank
 menu_order: 4
-github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
+github_link: frontend-dev-guide/responsive-web-design/rwd_mobile.md
 ---
 <h2>Overview</h2>
 This topic describes how to create a responsive mobile-specific theme using the default Magento approaches. 
