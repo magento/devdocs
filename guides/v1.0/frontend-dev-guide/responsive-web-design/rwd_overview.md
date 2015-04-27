@@ -37,7 +37,11 @@ The articles in this chapter describe the particular approaches used in the Blan
 <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_blocks.html" target="_blank">JavaScript in Magento responsive design</a>
 </li>
 <li>
-<a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_blocks.html" target="_blank">Layout (HTML?) in Magento responsive design</a>
+<a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_practice.html" target="_blank">Customizing RWD illustration</a>
+</li>
+
+<li>
+<a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_practice.html" target="_blank">Create a mobile theme</a>
 </li>
 
 </ul>
