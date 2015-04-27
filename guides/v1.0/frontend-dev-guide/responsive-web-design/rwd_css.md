@@ -31,13 +31,10 @@ The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-gu
   <li>320px</li>
   <li>480px</li>
   <li>640px</li>
-  <li>768px (this breakpoint switches between mobile and desktop views)</li> 
-  <li>1024px</li>
+  <li>768px (this breakpoint switches between mobile and desktop views)</li> <li>1024px</li>
   <li>1440px</li>
 </ul>
 
-
-<p class="q">Are they all breakpoints? we never mention most of them when talking about switching views in our articles, only about 748</p>
 
 <h2>Mobile first</h2>
 
