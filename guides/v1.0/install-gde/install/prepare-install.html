@@ -247,9 +247,16 @@
 <ol>
   <li>Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>.</li>
   <li>
-    <p>Change to the Magento installation directory and run <code>composer install</code>. For example,</p>
+    <p>Change to the Magento installation directory and run <code>composer install</code>. Examples:</p>
+
+    <p>CentOS:</p>
 
     <pre><code>cd /var/www/html/magento2 &amp;&amp; composer install
+</code></pre>
+
+    <p>Ubuntu:</p>
+
+    <pre><code>cd /var/www/magento2 &amp;&amp; composer install
 </code></pre>
 
     <p>This command updates package dependencies and can take a few minutes to complete.</p>
