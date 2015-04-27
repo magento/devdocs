@@ -15,5 +15,5 @@ github_link: install-gde/trouble/tshoot_pdo.md
 
 ### Solution:
 
-Make sure you installed all required PHP extensions (<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html#instgde-prereq-php-prereq-centos">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html#instgde-prereq-php-ubuntu-ext">Ubuntu</a>). 
+Make sure you installed all required PHP extensions (<a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">CentOS</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">Ubuntu</a>). 
 
