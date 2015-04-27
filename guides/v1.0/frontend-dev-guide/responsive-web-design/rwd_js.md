@@ -10,11 +10,9 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 
 <h2>Overview</h2>
 
-In the Magento application, to optimize page loading, the <a href="http://requirejs.org/" target="_blank">RequireJS</a> module loader is integrated, and JavaScript is excluded from the page head block. RequireJS uses asynchronous loading to decrease page load time. It also enables you to specify dependencies between JavaScript resources in your theme.
+In Magento default themes, JavaScript is used to relocate certain elements and change their behavior depending on the viewport.
 
-<p class="q">Where do we specify dependencies? should we add this info? is it only for responsive theme, or we can just say "theme"?...</p>
-
-<p class="q">We say here that JS is excluded from the page header, and then later suggest to include in default.head.block....</p>
+This topic describes the scripts, and provides instructions how to use them in your custom theme.
 
 <h2>JavaScript for responsiveness in the Blank theme</h2>
 
@@ -45,109 +43,34 @@ See one of the following sections for more information:
 
 <h2 id="fedg_rwd_js_resp">responsive.js</h2>
 
-The <code>responsive.js</code> script implements specific responsive functions for the Blank theme. To manipulate JavaScript for the desktop or mobile viewports, <code>responsive.js</code> calls the <code>mediaCheck()</code> anonymous function from <code>matchMedia.js</code>.
+The <code>responsive.js</code> script implements specific responsive functions for the Blank and Luma themes. To manipulate JavaScript for the desktop or mobile viewports, <code>responsive.js</code> calls the <code>mediaCheck()</code> anonymous function from <code>matchMedia.js</code>.
 
-<p class="q">Or "which is responsible for reaching breakpoints"</p>
 
 The <code>mediaCheck</code> call follows:
 
 <pre>
-// mediaCheck call that handles adjusting the position of page elements at a breakpoint
- 
  /*...*/
     mediaCheck({
-          media: '(min-width: 768px)',
-          entry: $.proxy(function() {
-            /* Here the function which toggles page elements from desktop to mobile mode is called */
-          },this),
-          exit: $.proxy(function() {
-            /* Here the function which toggles page elements from mobile to desktop mode is called */
-          },this)
-    });
-/*...*/
-</pre>
-It looks different now (see below)
-
-<pre>
-mediaCheck({
         media: '(min-width: 768px)',
         // Switch to Desktop Version
         entry: function () {
-            (function () {
-
-                var productInfoMain = $('.product-info-main'),
-                    productInfoAdditional = $('#product-info-additional');
-
-                if (productInfoAdditional.length) {
-                    productInfoAdditional.addClass('hidden');
-                    productInfoMain.removeClass('responsive');
-                }
-
-            })();
-
-            var galleryElement = $('[data-role=media-gallery]');
-
-            if (galleryElement.length &amp;&amp; galleryElement.data('mageZoom')) {
-                galleryElement.zoom('enable');
-            }
-
-            if (galleryElement.length &amp;&amp; galleryElement.data('mageGallery')) {
-                galleryElement.gallery('option', 'disableLinks', true);
-                galleryElement.gallery('option', 'showNav', false);
-                galleryElement.gallery('option', 'showThumbs', true);
-            }
-
-            setTimeout(function () {
-                $('.product.data.items').tabs('option', 'openOnFocus', true);
-            }, 500);
+            /* The function which toggles page elements from desktop to mobile mode is called here */
         },
         // Switch to Mobile Version
         exit: function () {
-            $('.action.toggle.checkout.progress')
-                .on('click.gotoCheckoutProgress', function () {
-                    var myWrapper = '#checkout-progress-wrapper';
-                    scrollTo(myWrapper + ' .title');
-                    $(myWrapper + ' .title').addClass('active');
-                    $(myWrapper + ' .content').show();
-                });
-
-            $('body')
-                .on('click.checkoutProgress', '#checkout-progress-wrapper .title', function () {
-                    $(this).toggleClass('active');
-                    $('#checkout-progress-wrapper .content').toggle();
-                });
-
-            var galleryElement = $('[data-role=media-gallery]');
-
-            setTimeout(function () {
-                if (galleryElement.length &amp;&amp; galleryElement.data('mageZoom')) {
-                    galleryElement.zoom('disable');
-                }
-
-                if (galleryElement.length &amp;&amp; galleryElement.data('mageGallery')) {
-                    galleryElement.gallery('option', 'disableLinks', false);
-                    galleryElement.gallery('option', 'showNav', true);
-                    galleryElement.gallery('option', 'showThumbs', false);
-                }
-            }, 2000);
-
-            setTimeout(function () {
-                $('.product.data.items').tabs('option', 'openOnFocus', false);
-            }, 500);
+            /* The function which toggles page elements from mobile to desktop mode is called here*/
         }
-    });
+    }); /*...*/
+
 </pre>
 
-In <code>responsive.js</code>, you can see how the following elements are toggled from the mobile to the desktop version:
+
+In <code>responsive.js</code>, you can see how the checkout progress is toggled from the mobile to the desktop version:
 
 <ul>
-<li>Checkout progress. <br>
+<li>
 For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps (for the desktop, it is displayed on the left-hand side), and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.</li>
 
-
-
-<li>Product image zoom on product page.<br> This element is switched off for the mobile viewport and is switched on for the desktop viewport.</li>
-<p class="q">Is it correct to call it "element"?</p>
 </ul>
 
 <h2 id="fedg_rwd_js_nav">menu.js</h2>
@@ -156,17 +79,22 @@ For the mobile viewport, the checkout progress block on the checkout page is mov
 In a mobile viewport, on the 640px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
 <ul>
 <li>Category menu items are not displayed by default, but are accessible after clicking the "menu" icon</li>
-<li>When clicking a category link, a user is not redirected to the category page immediately, but the list of sub-categories is displayed instead, including the "All category products" option. </li>
-
+<li>The behaviour of a category link depends on whether the category has sub-categories:
+<ul>
+<li>If sub-categories exist, when a user clicks a category link, they are not redirected to the category page immediately, but the list of sub-categories is displayed instead, including the "All category products" option. The category link behaves as collapsible block.</li>
+<li>If there are no sub-categories, the category link behaves as usual.</li>
+</ul>
+</li>
 </ul>
 
-I would add two screenshots, to illustrate the difference.
+The following image illustrates the mobile-view navigation menu.
+<img src="{{site.baseurl}}common/images/js_rwd_menu.png">
 
 <h2 id="rwd_js_reuse">Re-using Magento scripts in your theme</h2>
 
-You can use the <code>menu.js</code>, <code>navigation.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom theme. 
+You can use the <code>menu.js</code>, <code>responsive.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom theme. 
 If your theme inherits from Blank, you do not even need to additionally include the script files in your theme.
 
 In other case, to be able to use the scripts, you need to include them in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code> file as described in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">Add Javascript and CSS</a>. 
 
-If including <code>navigation.js</code>, you also need to copy the file itself to your <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js/</code> directory. <code>matchMedia.js</code> and <code>menu.js</code> are located in the library, and can be included from its original location.
+If including <code>responsive.js</code>, you also need to copy the file itself to your <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js/</code> directory. <code>matchMedia.js</code> and <code>menu.js</code> are located in the library, and can be included from its original location.
