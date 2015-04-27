@@ -36,7 +36,6 @@ The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-gu
   <li>1440px</li>
 </ul>
 
-These breakpoints switch page layouts and separate blocks layouts between mobile and desktop views.
 
 <p class="q">Are they all breakpoints? we never mention most of them when talking about switching views in our articles, only about 748</p>
 
