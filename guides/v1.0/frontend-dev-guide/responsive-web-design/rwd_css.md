@@ -4,13 +4,13 @@ group: fedg
 subgroup: E_rwd
 title: CSS in a responsive design
 menu_title: CSS in a responsive design
-menu_order: 3
+menu_order: 2
 github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
 ---
 
 <h2>Overview</h2>
 
-Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme inherit from the main default Blank theme.
+Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the main default Blank theme.
 
 <h2 id="lib_rwd">Media queries in Magento default themes</h2>
 
@@ -38,9 +38,11 @@ The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-gu
 
 These breakpoints switch page layouts and separate blocks layouts between mobile and desktop views.
 
+<p class="q">Are they all breakpoints? we never mention most of them when talking about switching views in our articles, only about 748</p>
+
 <h2>Mobile first</h2>
 
-In the Blank and Luma themes mobile first approach is used. It means that the styles for mobile devices (640px and lower breakpoint) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
+In the Blank and Luma themes, the mobile first approach is used. It means that the styles for mobile devices (640px and lower breakpoint) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
 
 
 In the Blank theme, the mobile and desktop styles are defined in separate files:
