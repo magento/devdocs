@@ -74,18 +74,7 @@ The viewport size at which the width of the user’s screen causes your responsi
 </tr>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<p class="q">Need update for "viewport"</p>
 
 <h2>Recommended reading</h2>
 
