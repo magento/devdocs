@@ -98,7 +98,7 @@ Example of a theme `composer.json`:
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
-If product image sizes of your theme differ from those of the default theme, you need to add a `view.xml` file which contains configuration of all product image sizes used on the storefront.
+If product image sizes of your theme differ from those of the parent theme, you need to add a `view.xml` file which contains configuration of all product image sizes used on the storefront.
 
 Use the following steps:
 
