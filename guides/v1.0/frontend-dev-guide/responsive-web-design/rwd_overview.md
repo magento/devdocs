@@ -14,7 +14,7 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 <!-- 
 <a href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">Responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as *viewports*) without maintaining completely separate style sheets for each. -->
 
-Responsive web design (RWD, <i>responsive design</i>) crafts web sites to provide an optimal viewing experienc e&mdash; easy reading and navigation with a minimum of resizing, panning, and scrolling, across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).
+Responsive web design (RWD, <i>responsive design</i>) crafts web sites to provide an optimal viewing experience &mdash; easy reading and navigation with a minimum of resizing, panning, and scrolling, across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).
 
 The built-in Magento Blank and Luma (which <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from Blank) themes use the mobile first RWD approach. It is ensured by means of CSS, JavaScript and HTML.
 
@@ -27,18 +27,19 @@ The following figures show the same page built on the Blank theme on mobile and 
 
 We recommend to use the Blank theme, as a starting point for your customizations. That is, your custom theme should <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from Blank.
 
-The articles in this chapter describe the particular approaches used in the Blank theme, with code samples:
+The articles in this chapter describe the particular approaches used in the Blank theme, and provide practical recommendation how to use these approaches in your themes:
 
 <ul>
 <li> 
 <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a>
 </li>
 <li>
-<a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_blocks.html" target="_blank">Layout (HTML?) in Magento responsive design</a>
-</li>
-<li>
 <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_blocks.html" target="_blank">JavaScript in Magento responsive design</a>
 </li>
+<li>
+<a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_blocks.html" target="_blank">Layout (HTML?) in Magento responsive design</a>
+</li>
+
 </ul>
 
 
