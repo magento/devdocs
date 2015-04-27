@@ -319,5 +319,5 @@ Command usage:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Incrememtal migration runs continuously until you stop it by pressing Control+C.</p></span>
+  <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
 
