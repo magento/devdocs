@@ -4,13 +4,13 @@ group: fedg
 subgroup: E_rwd
 title: JavaScript in Magento responsive design
 menu_title: JavaScript in Magento responsive design
-menu_order: 4
+menu_order: 3
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 ---
 
 <h2>Overview</h2>
 
-In the Magento application, to optimize page loading, the <a href="http://requirejs.org/" target="_blank">RequireJS</a> module loader is integrated, and JavaScript is excluded from the page head block. RequireJS uses asynchronous loading to decrease page load time and enables you to specify dependencies between JavaScript resources in your responsive theme.
+In the Magento application, to optimize page loading, the <a href="http://requirejs.org/" target="_blank">RequireJS</a> module loader is integrated, and JavaScript is excluded from the page head block. RequireJS uses asynchronous loading to decrease page load time. It also enables you to specify dependencies between JavaScript resources in your theme.
 
 <p class="q">Where do we specify dependencies? should we add this info? is it only for responsive theme, or we can just say "theme"?...</p>
 
@@ -19,6 +19,7 @@ In the Magento application, to optimize page loading, the <a href="http://requir
 <h2>JavaScript for responsiveness in the Blank theme</h2>
 
 The Blank theme uses the following scripts to responsively relocate page elements by <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">viewport</a>:
+<p class="q">viewport or breakpoint?</p>
 <ul>
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
 <li><a href="{{site.mage2000url}}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
@@ -32,8 +33,8 @@ The script files are located in the file system as follows:
     ├── responsive.js
 ├── lib/web/
     ├── matchMedia.js
-	├── mage/
-		├── menu.js
+    ├── mage/
+	    ├── menu.js
 </pre>
 
 See one of the following sections for more information:
