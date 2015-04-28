@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/themes/theme-apply.md
 <h2 id="theme-apply-overview">Overview</h2>
 The article describes how to apply a theme for your store, disable cache and add a theme-independent logo.
 
-<h2 id="theme-apply-apply">Disable the system cache</h2>
+<h2 id="theme-apply-cache">Disable the system cache</h2>
 
 When Magento system cache is enabled, you must clear it each time to see your design changes reflected on a store front. To avoid this, disable certain system cache types while you make design changes.
 To do this:

@@ -93,6 +93,10 @@ The complete list of these variables and their default values are stored in <a h
 
 To change the default library variables values, specify the new values for the required variables in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_theme.less</code> file.
 
+<div class="bs-callout bs-callout-info" id="info">
+<p>Please mind, that your <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_theme.less</code> file overrides <code>_theme.less</code> of the parent theme (if your theme has a parent). So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s <code>_theme.less</code> to your file as well.</p>
+</div>
+
 The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.
 
 <img src="{{site.baseurl}}common/images/ui_lib2.png" alt="Changing design by redefining variables">
