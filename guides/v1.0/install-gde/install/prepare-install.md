@@ -80,9 +80,15 @@ To switch to the web server user on CentOS:
 After you completed the tasks discussed in the preceding section, update dependencies as follows:
 
 1.	Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>.
-2.	Change to the Magento installation directory and run `composer install`. For example,
+2.	Change to the Magento installation directory and run `composer install`. Examples:
+
+	CentOS:
 
 		cd /var/www/html/magento2 && composer install
+
+	Ubuntu:
+
+		cd /var/www/magento2 && composer install
 
 	This command updates package dependencies and can take a few minutes to complete.
 

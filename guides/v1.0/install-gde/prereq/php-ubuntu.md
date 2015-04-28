@@ -18,7 +18,6 @@ github_link: install-gde/prereq/php-ubuntu.md
 *	<a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14</a>
 *	<a href="#instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</a>
 *	<a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</a>
-*	<a href="#instgde-prereq-php-ubuntu-ext">Installing required PHP extensions on Ubuntu</a>
 *	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
 
 <div class="bs-callout bs-callout-info" id="info">
