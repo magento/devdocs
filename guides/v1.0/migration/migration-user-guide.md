@@ -17,7 +17,7 @@ See one of the following sections:
 *	<a href="#migrate-overview">Overview</a>
 *	<a href="#migrate-prereq">Prerequisites</a>
 *	<a href="#migrate-install">Install the migration tool</a>
-*	<a href="#migration-config">Working with configuration and mapping files</a>
+*	<a href="#migration-config">Work with configuration and mapping files</a>
 *	<a href="#migration-notes">General notes about using the migration tool</a>
 *	<a href="#migration-command">Migrating data, settings, and changes</a>
 
@@ -44,7 +44,7 @@ The migration tool does *not* automatically migrate the following.
 #### Extensions and custom code
 Design differences between Magento 1 and Magento 2 are so large that custom code and extensions must be manually ported to Magento 2. 
 
-####Media
+#### Media
 Media assets include, for example, images for products, categories, WYSIWYG editor, and so on. You must copy these manually from `<your Magento 1 install dir>/media` directory to `<your Magento 2 install dir>/pub/media` directory.
 
 #### Storefront design
@@ -146,7 +146,7 @@ To update `composer.json`:
 
 9.	Wait while dependencies are installed.
 
-<h2 id="migration-config">Working with configuration and mapping files</h2>
+<h2 id="migration-config">Work with configuration and mapping files</h2>
 The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
 
 *	Changing table names
