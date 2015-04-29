@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Bootstrap
-title: Configure Magento bootstrap parameters
-menu_title: Configure Magento bootstrap parameters
+title: Magento application initialization and bootstrap
+menu_title: Magento application initialization and bootstrap
 menu_order: 1
 menu_node: parent
 github_link: config-guide/bootstrap/magento-bootstrap.md
@@ -12,6 +12,8 @@ github_link: config-guide/bootstrap/magento-bootstrap.md
 #### Contents
 *	<a href="#config-boot-overview">Overview of boostrapping</a>
 *	<a href="#config-boot-logic">Bootstrap run logic</a>
+*	<a href="#config-boot-exception">Default exception handling</a>
+*	<a href="#config-boot-entry">Entry point applications</a>
 
 
 <h2 id="config-boot-overview">Overview of boostrapping</h2>
@@ -106,7 +108,7 @@ When the request is redirected to the entry point, the Magento application parse
 	In this case all future requests for the static resource are processed as for static files by the server; that is, without involving the entry point. If it's necessary to synchronize published files with original ones, the `pub/static` directory should be removed and the files will be republished automatically with the next request.
 
 <h3 id="config-boot-entry-media">Media resource entry point</h3>
-<a href="{{ site.mage2000url }}app/code/Magento/MediaStorage/App/Media.php" target="_blank">\Magento\Core\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a media storage.
+<a href="{{ site.mage2000url }}app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a media storage.
 
 `\Magento\Core\App\Media` attempts to find the media file in the configured database storage and write it into the `pub/static` directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.
 

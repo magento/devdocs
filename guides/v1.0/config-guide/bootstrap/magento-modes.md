@@ -10,10 +10,7 @@ github_link: config-guide/bootstrap/magento-modes.md
 ---
 
 #### Contents
-*	<a href="#mode-introduction">Introduction</a>
-*	<a href="#mode-developer">Developer mode</a>
-*	<a href="#mode-default">Default mode</a>
-*	<a href="#mode-production">Production mode</a>
+*	TBD
 
 
 <h2 id="mode-introduction">Introduction</h2>
@@ -76,9 +73,5 @@ In production mode:
 *	The Magento docroot can have read-only permissions
 *	Errors are logged to the file system and are never displayed to the user
 
-
-See one of the following sections for more information about each mode:
-
-*	<a href="#mode-developer">Developer mode</a>
-*	<a href="#mode-default">Default mode</a>
-*	<a href="#mode-production">Production mode</a>
+### Next step
+To set a mode, see <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
