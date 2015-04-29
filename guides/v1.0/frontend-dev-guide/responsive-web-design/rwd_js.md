@@ -16,8 +16,8 @@ This topic describes the scripts, and provides instructions how to use them in y
 
 <h2>JavaScript for responsiveness in the Blank theme</h2>
 
-The Blank theme uses the following scripts to responsively relocate page elements by <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">viewport</a>:
-<p class="q">viewport or breakpoint?</p>
+The Blank theme uses the following scripts to responsively relocate page elements by a <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>:
+
 <ul>
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
 <li><a href="{{site.mage2000url}}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
