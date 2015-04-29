@@ -75,7 +75,7 @@ In <code>responsive.js</code>, you can see how the checkout progress is toggled 
 In a mobile viewport, on the 640px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
 <ul>
 <li>Category menu items are not displayed, but are accessible after clicking the "menu" icon.</li>
-<li>The behaviour of a category link depends on whether the category has sub-categories:
+<li>The behavior of a category link depends on whether the category has sub-categories:
 <ul>
 <li>If sub-categories exist, the category link behaves as collapsible block. Clicking a category link does not redirect to the category page immediately. Instead it opens a list of sub-categories, including the "All category products" option. </li>
 <li>If there are no sub-categories, the category link behaves as usual.</li>
@@ -94,6 +94,6 @@ The following image illustrates the mobile-view navigation menu.
 You can use the <code>menu.js</code>, <code>responsive.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom theme. 
 If your theme inherits from Blank, you do not even need to additionally include the script files in your theme.
 
-In other case, to be able to use the scripts, you need to include them in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code> file as described in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" target="_blank">Add Javascript and CSS</a>. 
+In other case, to be able to use the scripts, you need to include them in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code> file as described in <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css" target="_blank">Add JavaScript and CSS</a>. 
 
 If including <code>responsive.js</code>, you also need to copy the file itself to your <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js/</code> directory. <code>matchMedia.js</code> and <code>menu.js</code> are located in the library, and can be included from its original location.
