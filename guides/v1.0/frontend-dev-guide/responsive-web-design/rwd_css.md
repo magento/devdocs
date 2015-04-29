@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: E_rwd
-title: CSS in a responsive design
-menu_title: CSS in a responsive design
+title: CSS in responsive design
+menu_title: CSS in responsive design
 menu_order: 2
 github_link: frontend-dev-guide/responsive-web-design/rwd_css.md
 ---

@@ -14,12 +14,12 @@ Responsive web design (RWD, <i>responsive design</i>) crafts web sites to provid
 The built-in Magento Blank and Luma (which <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from Blank) themes use the mobile first RWD approach. It is ensured mostly by means of CSS and JavaScript.
 
 
-The following figures show the same page built on the Blank theme on mobile and desktop devices.
+The following image illustrates how the same page built on the Blank theme looks on mobile and desktop devices.
 
 <img src="{{site.baseurl}}common/images/css_responsive1.jpg">
 
 
-We recommend to use the Blank theme, as a starting point for your customizations. That is, your custom theme should <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from Blank.
+We recommend using the Blank theme, as a starting point for your customizations. That is, your custom theme should <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from Blank.
 
 The articles in this chapter describe the particular approaches used in the Blank theme, and provide practical recommendation how to use these approaches in your themes:
 
