@@ -9,7 +9,7 @@ menu_node: parent
 github_link: config-guide/bk-config-guide.md
 ---
 
-<h2 id="configuration">Configuration</h2>
+<h2 id="configuration">Configure the Magento application</h2>
 <p>To learn about configuration, read these topics:</p>
 <ul>
    <li>
