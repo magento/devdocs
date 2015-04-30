@@ -23,7 +23,7 @@ See one of the following sections:
 
 This topic discusses configuring the Magento software using the CLI. For information about installing Magento, see TBD.
 
-<h2 id="config-install-cli-prereq">Before you start your installation</h2>
+<h2 id="config-install-cli-prereq">Before you start configuring Magento</h2>
 {% include install/before-you-begin-cli.html %}
 
 

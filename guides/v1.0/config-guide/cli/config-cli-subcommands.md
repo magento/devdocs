@@ -61,148 +61,53 @@ The following table summarizes the available commands. Commands are shown in sum
 		</tr>
 		
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">php magento setup:install</a></td>
-		<td>Installs the Magento software</td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">php magento setup:cache:{enable|disable|clean|flush|status}</a></td>
+		<td>Manages the cache</td>
 		<td>None</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-uninstall">php magento setup:uninstall</a></td>
-		<td>Removes the Magento software.</td>
-		<td>Magento software installed</td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">php magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
+		<td>Manages the indexers</td>
+		<td>TBD</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-magento-update">php magento setup:upgrade</a></td>
-		<td>Updates the Magento software.</td>
-		<td>Deployment configuration</td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">php setup:di:compile-multi-tenant</a></td>
+		<td>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites</td>
+		<td>TBD</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">php magento maintenance:{enable|disable}</a></td>
-		<td>Enables or disables maintenance mode (in maintenance mode, only exempt IP addresses can access the Magento Admin or storefront).</td>
-		<td>Magento software installed</td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">php setup:di:compile</a></td>
+		<td>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website</td>
+		<td>TBD</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">php magento config:set</a></td>
-		<td>Creates the deployment configuration file, <code>config.php</code>.</td>
-		<td>None</td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">php log:{status|clean}</a></td>
+		<td>Clears the logs</td>
+		<td>TBD</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">php magento module:{enable|disable}</a></td>
-		<td>Enable or disable modules.</td>
-		<td>None</td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">php i18n:{collect-phrases|pack}</a></td>
+		<td>Creates a translation dictionary or a translation package</td>
+		<td>TBD</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">php magento setup:store-config:set</a></td>
-		<td>Sets storefront-related options, such as base URL, language, timezone, and so on.</td>
-		<td><ul><li>Deployment configuration</li>
-			<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
-				</ul></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">php setup:static-content:deploy</a></td>
+		<td>Deploys static view files</td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">php magento setup:db-schema:upgrade</a></td>
-		<td>Updates the Magento database schema.</td>
-		<td>Deployment configuration</td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">php dev:css:deploy</a></td>
+		<td>Compiles LESS or SASS files</td>
+		<td>TBD</td>
 	</tr>
-	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">php magento setup:db-data:upgrade</a></td>
-		<td>Updates the Magento database data.</td>
-		<td>Deployment configuration</td>
-	</tr>
-	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html#config-cli-dbconfig">php magento setup:db:status</a></td>
-		<td>Checks if the database is up-to-date with the code.</td>
-		<td>Deployment configuration</td>
-	</tr>
-	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">php magento admin:user:create</a></td>
-		<td>Creates a Magento administrator.</td>
-		<td><p>All of the following:</p>
-			<ul><li>Deployment configuration</li>
-				<li>Enable at minimum the <code>Magento_User</code> and <code>Magento_Authorization</code> modules</li>
-				<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
-				</ul></td>
-	</tr>
-	<tr>
-		<td><a href="#config-cli-help">php magento list</a></td>
-		<td>Lists all available commands.</td>
-		<td>None</td>
-	</tr>
-	<tr>
-		<td><a href="#config-cli-help">php magento help</a></td>
-		<td>Provides help for the specified command.</td>
-		<td>None</td>
-	</tr>
-	
 	
 	</tbody>
 </table>
 
 <h2 id="config-cli-help">Help commands</h2>
-To display a complete list of commands, enter:
-
-	php magento list
-
-To get help for a particular command, enter:
-
-	php magento help <command>
-
-For example,
-
-	php magento help setup:install
-	php magento help setup:config:set
+{% include install/cli_help-commands.html %}
 
 <h2 id="config-cli-subcommands-common">Common arguments</h2>
-The following arguments are common to all installer commands. These commands can be run either before or after the Magento software is installed:
-
-<table>
-	<tbody>
-		<col width="15%">
-  		<col width="10%">
-  		<col width="75%">
-		<tr>
-			<th>Long version</th>
-			<th>Short version</th>
-			<th>Meaning</th>
-		</tr>
-		
-	<tr>
-		<td>--help</td>
-		<td>-h</td>
-		<td>Get help for any command. For example, <code>php magento help setup:install</code> or <code>php magento help setup:config:set</code>.</td>
-	</tr>
-	<tr>
-		<td>--quiet</td>
-		<td>-q</td>
-		<td>Quiet mode; no output.</td>
-	</tr>
-	<tr>
-		<td>--no-interaction</td>
-		<td>-n</td>
-		<td>No interactive questions.</td>
-	</tr>
-	<tr>
-		<td>--verbose=1|2|3</td>
-		<td>-v|vv|vvv</td>
-		<td>Verbosity level. For example, <code>--verbose=3</code> or <code>-vvv</code> displays debug verbosity, which is the most verbose output. Default is <code>--verbose=1</code> or <code>-v</code>.</td>
-	</tr>
-	<tr>
-		<td>--version</td>
-		<td>-V</td>
-		<td>Display this application version</td>
-	</tr>
-	<tr>
-		<td>--ansi</td>
-		<td>n/a</td>
-		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Force ANSI output</a></td>
-	</tr>
-		<tr>
-		<td>--no-ansi</td>
-		<td>n/a</td>
-		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Disable ANSI output</a></td>
-	</tr>
-	
-	
-	</tbody>
-</table>
+{% include install/cli_common-commands.html %}
 
 
 <h2 id="config-cli-subcommands">Commands</h2>

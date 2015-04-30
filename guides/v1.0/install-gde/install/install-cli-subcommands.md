@@ -147,72 +147,11 @@ The following table summarizes the available commands. Commands are shown in sum
 </table>
 
 <h2 id="instgde-cli-help">Help commands</h2>
-To display a complete list of commands, enter:
+{% include install/cli_help-commands.html %}
 
-	php magento list
-
-To get help for a particular command, enter:
-
-	php magento help <command>
-
-For example,
-
-	php magento help setup:install
-	php magento help setup:config:set
 
 <h2 id="instgde-cli-subcommands-common">Common arguments</h2>
-The following arguments are common to all installer commands. These commands can be run either before or after the Magento software is installed:
-
-<table>
-	<tbody>
-		<col width="15%">
-  		<col width="10%">
-  		<col width="75%">
-		<tr>
-			<th>Long version</th>
-			<th>Short version</th>
-			<th>Meaning</th>
-		</tr>
-		
-	<tr>
-		<td>--help</td>
-		<td>-h</td>
-		<td>Get help for any command. For example, <code>php magento help setup:install</code> or <code>php magento help setup:config:set</code>.</td>
-	</tr>
-	<tr>
-		<td>--quiet</td>
-		<td>-q</td>
-		<td>Quiet mode; no output.</td>
-	</tr>
-	<tr>
-		<td>--no-interaction</td>
-		<td>-n</td>
-		<td>No interactive questions.</td>
-	</tr>
-	<tr>
-		<td>--verbose=1|2|3</td>
-		<td>-v|vv|vvv</td>
-		<td>Verbosity level. For example, <code>--verbose=3</code> or <code>-vvv</code> displays debug verbosity, which is the most verbose output. Default is <code>--verbose=1</code> or <code>-v</code>.</td>
-	</tr>
-	<tr>
-		<td>--version</td>
-		<td>-V</td>
-		<td>Display this application version</td>
-	</tr>
-	<tr>
-		<td>--ansi</td>
-		<td>n/a</td>
-		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Force ANSI output</a></td>
-	</tr>
-		<tr>
-		<td>--no-ansi</td>
-		<td>n/a</td>
-		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Disable ANSI output</a></td>
-	</tr>
-	
-	
-	</tbody>
-</table>
+{% include install/cli_common-commands.html %}
 
 
 <h2 id="instgde-cli-subcommands">Commands</h2>
