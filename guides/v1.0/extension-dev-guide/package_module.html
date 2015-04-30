@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Plug-ins</title>
+	<title>Package an extension</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/plugins.html">
+	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/package_module.html">
 
 </head>	
 <body>
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Plug-ins</h1>
+		<h1 class="page-heading">Package an extension</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/plugins.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/package_extension.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -148,175 +148,113 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<p>The Magento system uses Composer packages to distribute, install, and upgrade extensions in an application instance.</p>
+
+<p>To package an extension, you must:</p>
 
 <ul>
-  <li><a href="#plugin-intro">Introduction to Magento plug-ins</a></li>
-  <li><a href="#plugin-limit">Limitations</a></li>
-  <li><a href="#plugin-declare">Declare a plug-in</a></li>
-  <li><a href="#plugin-priority">Prioritize plug-ins</a></li>
-  <li><a href="#plugin-example">Example plug-ins</a></li>
-  <li><a href="#config-inheritance">Configuration inheritance</a></li>
+  <li>Create a Magento Composer file (<code>composer.json</code>).</li>
+  <li>Package and publish the extension. </li>
 </ul>
 
-<h2 id="plugin-intro">Introduction to Magento plug-ins</h2>
+<h2 id="composer">Create a Magento Composer file</h2>
 
-<p>Magento enables you to change, or <em>extend</em>, the behavior of any original, public method in any Magento class. You can change the behavior of an <em>original method</em> by creating an extension. These extensions use the <code>Plugin</code> class and are therefore referred to as plug-ins. </p>
+<p>The Magento <code>composer.json</code> file defines the name, requirements, version, and other basic information about the extension. This file must be placed in the root directory of the extension.</p>
 
-<p>To ensure that plug-ins work correctly, you must follow declaration and naming rules.</p>
+<p>The <code>composer.json</code> uses <a href="https://getcomposer.org/doc/04-schema.md">Composer’s generic schema</a>, with the following restrictions:</p>
 
-<p>You use <em>interception</em> to reduce conflicts among extensions that change the behavior of the same class or method. You implement interception using the <code>Plugin</code> class, which observes public methods, and listener methods in this class. A plug-in changes behavior of an original class, but does not change a class itself. Because they can be called sequentially, according to a configured sort order, these plug-ins do not conflict. </p>
+<table>
+<tbody>
+<tr>
+<th>Element</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>A fully-qualified module name, in the format <code>&lt;vendor_name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
+</tr>
+<tr>
+<td><code>type</code> </td>
+<td>For extensions, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
+</tr>
+<tr>
+<td><code>extra-&gt;map</code>  </td>
+<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>app/code/&lt;Vendor&gt;</code> directory. </td>
+</tr>
 
-<p>Interception ensures that conflicting extensions run without intervention.</p>
+</tbody>
+</table>
 
-<h2 id="plugin-limit">Limitations</h2>
+<p>The following example is a <code>composer.json</code> file for a module:</p>
 
-<p>You cannot use plug-ins for:</p>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;foovendor/module-one&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;5.4.*|5.5.*&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">[</span>
+                <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Foovendor/ModuleOne&quot;</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 
-<!-- * Classes created without dependency injection. That is, you cannot use plugins with classes that you create directly through the new operator. -->
-<ul>
-  <li>Final methods</li>
-  <li>Non-public methods</li>
-  <li>Final classes</li>
-</ul>
+<h2 id="packaging">Package and publish an extension</h2>
 
-<h2 id="plugin-declare">Declare a plug-in</h2>
+<p>After you have created the extension’s <code>composer.json</code> file in the root directory of the extension, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.</p>
 
-<p>You declare a plugin for an object in the <code>di.xml</code> file for a module:</p>
+<h3 id="hosting">Hosting on GitHub and Packagist</h3>
+<p>Prerequisite: git must be set up on your machine.</p>
 
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
-
-<p>You must specify these elements:</p>
-
-<ul>
-  <li><code>type name</code>. A class, interface, or virtual type, which the plug-in observes.</li>
-  <li><code>plugin name</code>. An arbitrary plug-in name that identifies a plug-in. Also used to merge the configurations for the plug-in.</li>
-  <li><code>plugin type</code>. The name of a plug-in’s class or its virtual type. Use the following schema when you specify this element: <modelname>\Plugin.</modelname></li>
-  <li><code>plugin sortOrder</code>. The order in which plug-ins that call the same method are run.</li>
-  <li><code>plugin disabled</code>. To disable a plug-in, set this element to <code>true</code>.</li>
-</ul>
-
-<h2 id="plugin-priority">Prioritize plug-ins</h2>
-
-<p>Several conditions influence how plug-ins apply to the same class or interface:</p>
-
-<ul>
-  <li>
-    <p>Whether a listener method in a plug-in should apply before, after, or around an original method.</p>
-
-    <p>Use one or more of the following methods to extend/modify an original method’s behavior with the interception functionality:</p>
-
+<ol>
+  <li>Navigate to your extension directory, with the <code>composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details. </li>
+  <li>When you have committed and pushed your extension to your GitHub repository, you can either:
     <ul>
-      <li>
-        <p>Change the arguments of an original method through the before-listener.</p>
-      </li>
-      <li>Change the values returned by an original method through the after-listener.</li>
-      <li>Change both the arguments and returned values of an original method through the around-listener.</li>
-      <li>
-        <p>Override an original method (a conflicting change).</p>
-
-        <div class="bs-callout bs-callout-info" id="info">
-    <p>Overriding a class is a conflicting change. Extending a class's behavior is non-conflicting change.
-
-
-</p></div>
+      <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or </li>
+      <li>Use the following steps to refer to the package through Packagist.
+        <ol>
+          <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
+          <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the extension’s <code>composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code>vendor/extension</code> without any additional repository information, as is required solely using GitHub.</li>
+        </ol>
       </li>
     </ul>
   </li>
-  <li>
-    <p>The sort order of a plug-in.</p>
+</ol>
 
-    <p>This parameter defines the order in which the plugins that use the same type of listener and call the same method are run.</p>
+<h3 id="private_repos">Hosting on a private packaging repository</h3>
 
-    <p>If several plug-ins apply to the same original method, the following sequence is observed:</p>
+<ol>
+  <li>Set up your own Composer packaging repository using a system such as <a href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">Satis</a> or <a href="https://toranproxy.com/">Toran</a>.</li>
+  <li>Create the package in a way similar to the described above.</li>
+  <li>Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.</li>
+  <li>To use the private packaging repository in a project, add the following to your <code>composer.json</code>file:</li>
+</ol>
 
-    <ul>
-      <li>The before listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>The around listener in a plug-in with the highest priority (that is, with the smallest value of <code>sortOrder</code> argument).</li>
-      <li>Other before listeners in plug-ins according to sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>Other around listeners in plug-ins according to the sort order specified for them (that is, from the smallest to the greatest value).</li>
-      <li>The after listener in a plug-in with the lowest priority (that is, with the greatest value of <code>sortOrder</code> argument).</li>
-      <li>Other after listeners in plug-ins, in the reverse sort order specified for them (that is, from the greatest to the smallest value).</li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="plugin-example">Example plug-ins</h2>
-
-<p>To change the arguments of an original method or add some behavior before an original method is called, use the before-listener method.</p>
-
-<p>Prefix the name of the original method with <code>before</code> as the following sample shows:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
- 
-<span class="k">class</span> <span class="nc">Plugin</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">beforeSetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$name</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;(&#39;</span> <span class="o">.</span> <span class="nv">$name</span> <span class="o">.</span> <span class="s1">&#39;)&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">[</span><span class="err">repository</span> <span class="err">url</span> <span class="err">here</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
 <span class="p">}</span></code></pre></div>
 
-<p>To change the values returned by an original method or add some behavior after an original method is called, use the after-listener method.</p>
+<p>All packages on the private packaging repository can now be referenced within the <code>require</code> field.</p>
 
-<p>Prefix the name of the original method with <code>after</code> as the following sample shows:</p>
+<h2 id="test">Test your extension</h2>
+<p>Test your extension by deploying a Magento Community Edition and adding the extension to the project’s <code>composer.json</code>. Marshall the extension into the <code>app/code</code> directory.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
-
-<span class="k">class</span> <span class="nc">Plugin</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetName</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nv">$result</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;|&#39;</span> <span class="o">.</span> <span class="nv">$result</span> <span class="o">.</span> <span class="s1">&#39;|&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>To change both the arguments and returned values of an original method or add some behavior before and after an original method is called, use the around-listener method.</p>
-
-<p>Prefix the name of the original listener with <code>around</code> as the following sample shows:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">namespace</span> <span class="nx">My\Module\Model\Product</span><span class="p">;</span>
- 
-<span class="k">class</span> <span class="nc">Plugin</span>
-<span class="p">{</span>
- <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
- <span class="p">{</span>
-   <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
-    <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
-   <span class="p">}</span>
-        <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<p>The around-listener method receives two parameters (<code>$subject</code> and <code>$proceed</code>), followed by the arguments belonging to an original method.</p>
-
-<p>The <code>$subject</code> parameter provides access to all public methods of the original class.</p>
-
-<p>The <code>$proceed</code> parameter calls the next plug-in or method.</p>
-
-<h2 id="config-inheritance">Configuration inheritance</h2>
-
-<p>The configuration inheritance implies that a plug-in applied to a class or interface is derived by the classes or interfaces, which implement or inherit an original class or interface.</p>
-
-<p>You can use the configuration inheritance to implement AOP-like functionality with plug-ins, for instance, to observe the same methods of all models.</p>
-
-<p>You can override the plug-ins defined in the global scope by changing <code>di.xml</code> file of an area.</p>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v1.0/config-guide/config/depend-inj.html#dep-inj-compile">Definition compiler tool</a></li>
-  <li><a href="/guides/v1.0/config-guide/config/depend-inj.html">Dependency injection</a></li>
-</ul>
-
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;foovendor/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
+<span class="p">}</span><span class="err">,</span></code></pre></div>
 
 
 		</div>
@@ -442,7 +380,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
 						
 								
 							
@@ -484,7 +422,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/package_module.html">Package an extension</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/extension-dev-guide/package_module.html">Package an extension</a></li>
 						
 								
 							
