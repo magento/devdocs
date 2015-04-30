@@ -60,7 +60,7 @@ A module declares itself (i.e. defines its name and existence) in the `module.xm
 Minimal declaration sample:
 
 	<config>
-       <module name="Vendor_ModuleName" schema_version="2.0.0">
+       <module name="Vendor_ModuleName" schema_version="2.0.0" setup_version="2.0.0">
        </module>
 	</config>
 
