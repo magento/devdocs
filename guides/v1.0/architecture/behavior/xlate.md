@@ -1,26 +1,36 @@
 ---
 layout: default
-group: fedg
-subgroup: Translation
+group: arch-guide
+subgroup: Behavior
 title: Translation
 menu_title: Translation
-menu_order: 1
-menu_node: parent
+menu_order: 5
+menu_node: 
 github_link: architecture/behavior/xlate.md
 ---
 
-<h2 id="m2devgde-xlate-intro">Introduction</h2>
+#### Contents
 
-The Magento translation functionality enables you to customize and localize your store for multiple regions and markets.
+*	<a href="#m2devgde-xlate-intro">Overview of translations</a>
+*	<a href="#m2devgde-xlate-translating">Manually translate words and phrases</a>
 
-The translation functionality was changed to improve the localization and customization of Magento instances. Specifically, the dictionaries are easier to update and maintain and the code coupling and duplication are reduced.
 
-How you can benefit from translation feature in Magento
+<h2 id="m2devgde-xlate-intro">Overview of translations</h2>
 
-*	You can translate any part of your store (that is, a module, theme) without influencing other parts.
+Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.
+
+Benefits include:
+
+*	Two types of translation packages:
+
+	*	Module and theme packages. Included in the `i18n` directory of a module or theme, the Magento application auto-discovers these packages.
+	*	An entire dictionary in one directory. 
+
+		This is intended to be used and distributed as a standalone component (similar to modules and themes).
+
 *	You can use the ready-to-use language packages prepared by other users or create your own.
-*	You can create localized version based on existing, or parent, translations by using language inheritance feature. Thus, if you missed or omitted localizing some phrases/terms, parent translations are used.
-*	You can customize you translations even further by creating more than one version of translation for the same language.
+*	You can create localized version based on existing, or parent, translations using language inheritance. Thus, if you missed or omitted localizing some phrases or terms, parent translations are used.
+*	You can customize you translations even further by creating more than one version of a translation for the same language.
 
 Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.
 
@@ -28,11 +38,14 @@ Changes made:
 
 *	The language package (`i18n` folder) can now be moved and saved to any directory of your extension.
 *	The phrases for translation are embodied in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
-*	The translation tool has been divided into two tools: one for the dictionary generator and one for uploading the language package.
-*	The translation tool uses lazy loading.
+
+We provide a <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">translation tool</a> that:
+
+*	Creates a translation dictionary and a translation package.
+*	Uses lazy loading.
 
 
-<h2 id="m2devgde-xlate-translating">Manually translate Magento</h2>
+<h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
 
 Translating the names, titles and phrases used in Magento involves the following steps:
 

@@ -15,7 +15,33 @@ github_link: config-guide/bootstrap/magento-how-to-set.md
 *	<a href="#mode-specify-var">Specifying a parameter value using your web server environment</a>
 
 <h2 id="config-bootparam-overview">Overview of setting bootstrap parameter values</h2>
-This topic discusses how to set the values of Magento application bootstrap parameters. For more information, see <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a>.
+This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
+
+The following table discusses the bootstrap parameters you can set:
+
+<table>
+	<col width="40%">
+  	<col width="30%">
+  	<col width="30%">
+	<tbody>
+		<tr>
+			<th>Bootstrap parameter</th>
+			<th>Description</th>
+		</tr>
+		
+	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">php magento setup:cache:{enable|disable|clean|flush|status}</a></td>
+		<td>Manages the cache</td>
+		<td>None</td>
+	</tr>
+	
+	</tbody>
+</table>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Not all bootstrap parameters are documented at this time.</p></span>
+</div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
 This section discusses how to set the values of bootstrap parameters using environment variables.

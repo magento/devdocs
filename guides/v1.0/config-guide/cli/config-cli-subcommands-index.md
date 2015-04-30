@@ -15,6 +15,8 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-configphp-prereq">Prerequisites</a>
 *	<a href="#config-cli-subcommands-index-status">View indexer status</a>
+*	<a href="#config-cli-subcommands-index-reindex">Reindex</a>
+*	<a href="#config-cli-subcommands-index-conf">Configure indexers</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -23,45 +25,113 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 TBD
   
 <h2 id="config-cli-subcommands-index-status">View indexer status</h2>
-TBD
+This command enables you to view the status of all or selected indexers (for example, shows whether indexers need to be reindexed).
 
 Command options:
 
-	php magento status <indexer>
+	php magento indexer:status <indexer>
 
-The following table discusses the meanings of this command's parameters and values. 
+where `<indexer>` is either `--all` to display the status of all indexers, or a space-separated list of indexers.
 
-<table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-		
-	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-	</tr>
-	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p>
-</td>
-		<td><p>TBD</p></td>
-	</tr>
-	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-	</tr>
-	
-	</tbody>
-</table>
+To view the list of indexers, enter
 
+	php magento indexer:info
+
+A sample follows:
+
+	php magento indexer:status --all
+
+	Category Products:                                 Reindex required
+	Product Categories:                                Reindex required
+	Product Price:                                     Reindex required
+	Product EAV:                                       Reindex required
+	Stock:                                             Reindex required
+	Catalog Rule Product:                              Reindex required
+	Catalog Product Rule:                              Reindex required
+	Catalog Search:                                    Reindex required
+
+Reindexing is discussed in the next section.
+
+<h2 id="config-cli-subcommands-index-reindex">Reindex</h2>
+This command enables you to reindex all or selected indexers.
+
+Command options:
+
+	php magento reindex <indexer>
+
+where `<indexer>` is either `--all` to reindex all indexers, or a space-separated list of indexers.
+
+To view the list of indexers, enter
+
+	php magento indexer:info
+
+A sample follows:
+
+	php magento indexer:reindex --all
+
+	Category Products index has been rebuilt successfully in <time>
+	Product Categories index has been rebuilt successfully in <time>
+	Product Price index has been rebuilt successfully in <time>
+	Product EAV index has been rebuilt successfully in <time>
+	Stock index has been rebuilt successfully in <time>
+	Catalog Rule Product index has been rebuilt successfully in <time>
+	Catalog Product Rule index has been rebuilt successfully in <time>
+	Catalog Search index has been rebuilt successfully in <time>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules.</p></span>
+</div>
+
+<h2 id="config-cli-subcommands-index-conf">Configure indexers</h2>
+This command enables you to set the following indexer options:
+
+*	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the Admin. This is the default.
+*	Update by schedule (`schedule`): Data is indexed according to the schedule set by your Magento cron job.
+
+<a href="{{ site.gdeurl }}architecture/index-cache/indexing.html">More information about indexing</a>.
+
+<h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
+To view the current indexer configuration, enter
+
+	php magento indexer:show-mode <indexer>
+
+where `<indexer>` is either `--all` to display the configuration of all indexers, or a space-separated list of indexers.
+
+For example,
+
+	php magento indexer:show-mode --all
+
+	Category Products:                                 Update on Save
+	Product Categories:                                Update on Save
+	Product Price:                                     Update on Save
+	Product EAV:                                       Update on Save
+	Stock:                                             Update on Save
+	Catalog Rule Product:                              Update on Save
+	Catalog Product Rule:                              Update on Save
+	Catalog Search:                                    Update on Save
+
+<h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
+To specify the indexer configuration, enter
+
+	php magento indexer:set-mode {realtime|schedule} <indexer>
+
+where
+
+`realtime` sets the selected indexers to update on save.
+`schedule` sets the specified indexers to save according to the cron schedule.
+`indexer` is either `--all` to display the status of all indexers, or a space-separated list of indexers.
+
+To view the list of indexers, enter
+
+	php magento indexer:info
+
+For example, to change only the category products and product categories indexers to update on schedule, enter
+
+	php magento indexer:set-mode schedule catalog_category_product catalog_product_category
+
+	Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
+	Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule
 
 #### Related topics
 
