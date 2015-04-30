@@ -20,7 +20,7 @@ The approach used in the Magento UI library is based on a recursive call of the 
 
 <p class="q">need clarification to rephrase about the recursive call</p>
 
-You can find more information about the Magento UI library responsive mixin usage at <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code> (view in a browser).
+You can find more information about the Magento UI library responsive mixin usage in <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code> (view in a browser).
 
 <h2 id="fedg_rwd_css_break">Breakpoints</h2>
 
@@ -48,6 +48,7 @@ In the Blank theme, the mobile and desktop styles are defined in separate files:
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate mobile-specific styles.</li>
 </ul>
 
+<p class="q">Which makes me wonder why do we describe creating a "mobile-specific" theme at all;)</p>
 
 
 #### Related topics:
