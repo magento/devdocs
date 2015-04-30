@@ -8,7 +8,9 @@ menu_order: 6
 github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
 ---
 <h2>Overview</h2>
-This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach. 
+This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used in Magento default themes. 
+
+The described flow is applicable only for themes, which <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the default Blank or Luma theme.
 
 <h2 id="rwd_practice">Changing the number of products in a row</h2>
 
@@ -31,7 +33,7 @@ In their custom Orange theme, OrangeCo want to have the least number of products
 <li>Mobile: two products</li>
 </ul>
 
-The Orange theme <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the Blank theme.
+The Orange theme inherits from the Blank theme.
 
 To change the products quantity, OrangeCo take the following steps:
 <ol>
