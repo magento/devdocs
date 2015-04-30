@@ -10,7 +10,7 @@ github_link: config-guide/bootstrap/magento-bootstrap.md
 ---
 
 #### Contents
-*	<a href="#config-boot-overview">Overview of boostrapping</a>
+*	<a href="#config-boot-overview">Overview of bootstrapping</a>
 *	<a href="#config-boot-logic">Bootstrap run logic</a>
 *	<a href="#config-boot-exception">Default exception handling</a>
 *	<a href="#config-boot-entry">Entry point applications</a>
@@ -45,7 +45,7 @@ To run the Magento application, the following actions are implemented in <a href
   <p>The assertions that the Magento application is installed and not in maintenance mode is the default behavior of the <code>\Magento\Framework\App\Bootstrap</code> class. You can modify it using an entry point script when creating the bootstrap object.</p></span>
 </div>
 
-Sample entry point script that modifies the boostrap object:
+Sample entry point script that modifies the bootstrap object:
 
 {% highlight php %}
 <? php
@@ -62,7 +62,7 @@ $bootstrap->run($app);
 {% endhighlight %}
 
 <h2 id="config-boot-exception">Default exception handling</h2>
-The boostrap object specifies how the Magento application handles uncaught exceptions as follows:
+The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:
 
 *	In <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>, displays the exception as-is.
 *	In any other mode, attempts to log exception and display a generic error message.
