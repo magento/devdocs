@@ -23,7 +23,11 @@ github_link: config-guide/cli/config-cli-subcommands-i18n.md
 TBD
 
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
-TBD
+Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.
+
+For more information, see <a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>.
+
+This topic discusses how to generate translation dictionaries and language packages.
   
 <h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
 TBD
