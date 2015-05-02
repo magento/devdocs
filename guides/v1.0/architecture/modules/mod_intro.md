@@ -41,14 +41,26 @@ Minimal declaration sample:
 
 <pre>
 &lt;config>
-    &lt;module name="Namespace_Module" schema_version="2.0.0">
+    &lt;module name="Namespace_Module" setup_version="2.0.0">
     &lt;/module>
 &lt;/config>
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The enabled/disabled flag for a module is no longer set within a module; it is controlled by the deployment configuration file, with enabled=1, disabled=0. This is controlled by administrators and integrators, not by module developers.</p>
+  
+<p>
+    To enable a module manually, the following commands can be used.
+</p>
+
+<ol>
+    <li><code>php -f setup/index.php module-enable --modules=Vendor_ModuleName # enable module</code></li>
+    <li><code>php -f setup/index.php update # flush appropriate caches</code></li>
+</ol>  
+
 </div>
+
+
 
 
 <h3 id="arch-modules-working-with">Working with modules</h3>
