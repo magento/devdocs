@@ -68,8 +68,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-        <p>
-          Module-specific styles, layouts, and templates.</p>
+          Module-specific styles, layouts, and templates.
       </td>
     </tr>
     <tr>
@@ -82,8 +81,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-        <p>
-          Module-</span>specific styles (<code>.css</code> and/or <code>.less</code> file). General styles for the module are in the <code>module.less</code> file, and styles for widgets are in <code>widgets.less</code>.</p>
+          Module-</span>specific styles (<code>.css</code> and/or <code>.less</code> file). General styles for the module are in the <code>module.less</code> file, and styles for widgets are in <code>widgets.less</code>.
       </td>
     </tr>
     <tr>
@@ -94,7 +92,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-        <p>Layout files which extend the default module or parent theme layouts. <!--ADDLINK--></p>
+        Layout files which extend the default module or parent theme layouts. <!--ADDLINK-->
       </td>
     </tr>
     <tr>
@@ -105,7 +103,7 @@ Let's have a closer look at each particular sub-directory.
         optional
       </td>
       <td colspan="1">
-        <p>Layouts that override the default module layouts.</p>
+        Layouts that override the default module layouts.
       </td>
     </tr>
     <tr>
@@ -152,8 +150,7 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        <p>This directory contains a theme preview (a screenshot of your theme).
-        </p>
+        This directory contains a theme preview (a screenshot of your theme).
       </td>
     </tr>
     <tr>
@@ -245,8 +242,7 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">
-        <p>Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package<!--ADDLINK-->
-        </p>
+        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package<!--ADDLINK-->
       </td>
     </tr>
   </tbody>
