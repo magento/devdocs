@@ -82,12 +82,12 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 
 In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and a themes at the same time.
 
-The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portugese (`pt_BR`) translation dictionaries night be located in module and theme directories similar to the following:
+The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries night be located in module and theme directories similar to the following:
 
 	app/code/Magento/Checkout/i18n/pt_BR.csv
 	app/design/frontend/Magento/demo/i18n/pt_BR.csv
 
-Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portugese translation of the entire application area (storefront or the Admin).
+Assembling the preceding `pt_BR.csv` files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
 <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.
