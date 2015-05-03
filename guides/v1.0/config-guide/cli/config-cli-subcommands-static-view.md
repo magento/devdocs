@@ -13,15 +13,11 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-configphp-prereq">Prerequisites</a>
 *	<a href="#config-cli-static-overview">Overview of static view files deployment</a>
 *	<a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-
-<h2 id="config-cli-subcommands-configphp-prereq">Prerequisites</h2>
-TBD
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 TBD

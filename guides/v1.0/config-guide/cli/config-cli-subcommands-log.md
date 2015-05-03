@@ -13,15 +13,11 @@ github_link: config-guide/cli/config-cli-subcommands-log.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-configphp-prereq">Prerequisites</a>
 *	<a href="#config-cli-subcommands-log-status">View log status</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-subcommands-configphp-prereq">Prerequisites</h2>
-TBD
-  
 <h2 id="config-cli-subcommands-log-status">View log status</h2>
 TBD
 

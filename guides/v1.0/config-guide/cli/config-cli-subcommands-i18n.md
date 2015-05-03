@@ -2,8 +2,8 @@
 layout: default
 group: config-guide 
 subgroup: CLI
-title: Translation dictionaries and packages
-menu_title: Translation dictionaries and packages
+title: Translation dictionaries and language packages
+menu_title: Translation dictionaries and languages packages
 menu_node: 
 menu_order: 15
 github_link: config-guide/cli/config-cli-subcommands-i18n.md
@@ -13,7 +13,6 @@ github_link: config-guide/cli/config-cli-subcommands-i18n.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-configphp-prereq">Prerequisites</a>
 *	<a href="#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>
 *	<a href="#config-cli-subcommands-xlate-pack">Create a language package</a>
 *	<a href="#config-cli-subcommands-xlate-examples">Examples of using translation commands</a>
@@ -31,11 +30,8 @@ This topic discusses how to generate translation dictionaries and language packa
 <h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
 See one of the following sections:
 
-*	<a href="#config-cli-subcommands-xlate-dict-whatis">About translation dictionaries</a>
+*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
 *	<a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a>
-
-<h3 id="config-cli-subcommands-xlate-dict-whatis">About translation dictionaries</h3>
-More information about <a href="{{ site.gdeurl }}architecture/behavior/xlate.html#m2devgde-xlate-dictionaries">translation dictionaries</a>.
 
 <h3 id="config-cli-subcommands-xlate-dict-dict">Working with translation dictionaries</h3>
 To translate words and phrases, you must:
@@ -45,7 +41,7 @@ To translate words and phrases, you must:
 
 After that,
 
-1.	You package the translation dictionaries into translation packages and provide them to the Magento store administrator.
+1.	You can package the translation dictionaries into a language package and provide the package to the Magento store administrator.
 2.	The store administrator configures the translations to be used in the Magento Admin.
 
 Command options:
@@ -73,7 +69,8 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	<tr>
 		<td><p>-m|--magento</p></td>
-		<td><p>If used, indicates the path you specified is the Magento installation root. This option adds themes or modules to each line in the dictionary. A sample follows:</p>
+		<td><p>If used, indicates the path you specified is the Magento installation root. This option adds themes or modules to each line in the dictionary. <em>Required to create a language package</em>.</p>
+			<p>A sample follows:</p>
 			<p><pre>"No Items Found","No Items Found",module,Magento_Wishlist</pre></p></td>
 			<td><p>No</p></td>
 </tr>
@@ -96,16 +93,16 @@ The following table discusses the meanings of this command's parameters and valu
 <h3 id="config-cli-subcommands-xlate-dict-trans">Translation guidelines</h3>
 Use the following guidelines when translating words and phrases:
 
-*	Change only contents of 2nd column. Translate the phrases from English (`US`) to the desired language.
-*	While translating, pay attention to the placeholders like `%1`, `%2` and so on. 
+*	Change the contents of the second column only. Translate the phrases from English (`US`) to the desired language.
+*	While translating, pay attention to placeholders like `%1`, `%2` and so on. 
 
-	They are used by the Magento application to insert context values instead of placeholders at the point when the phrase is displayed in user interface. For example:
+	They are used by the Magento application to insert context values; they are *not* used for translations. For example:
 
     	Product '%1' has been added to shopping cart.
     	->
     	Product 'Multimeter-2000' has been added to shopping cart.
 
-    The resulting phrase must contain at least one of each placeholders. For example, suppose there are placeholders from `%1` to `%3` in the original phrase. The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, and `%3`. The translation cannot contain placeholder numbers that were not present in the original value (for example, `%4`, `%5`, and so on). 
+    The resulting phrase must contain at least one of each placeholders. For example, suppose there are placeholders from `%1` to `%3` in the original phrase. The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, and `%3`. The translation cannot contain placeholder values not present in the original value (for example, `%4`, `%5`, and so on). 
 
     An example of translating a phrase:
 
@@ -117,10 +114,10 @@ Use the following guidelines when translating words and phrases:
 To create a language package, you must perform the tasks discussed in the following sections:
 
 1.	<a href="#config-cli-subcommands-xlate-dict">Translate words and phrases</a>.
-2.	<a href="#config-cli-subcommands-xlate-pack-cmd">Run the language pack command</a>.
+2.	<a href="#config-cli-subcommands-xlate-pack-cmd">Run the language package command</a>.
 2.	<a href="#config-cli-subcommands-xlate-pack-meta">Add meta information to the language package</a>.
 
-<h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language pack command</h3>
+<h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
 Command usage:
 
 	php magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <pack> <locale>
@@ -140,7 +137,8 @@ The following table discusses the meanings of this command's parameters and valu
 		
 	<tr>
 		<td><p>&lt;source></p></td>
-		<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package. The file must have been generated using <code>generator.php with -m|--magento</code>.  </p></td>
+		<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.</p>.
+		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">php magento:i18n-collect</a> to create the .csv file then create the language package as discussed in <a href="#config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</a>. </p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -150,7 +148,7 @@ The following table discusses the meanings of this command's parameters and valu
 </tr>
 <tr>
 		<td><p>&lt;locale></p></td>
-		<td><p><a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm" target="_blank">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: `de_DE`, `pt_PT`, `pt_BR` </p>
+		<td><p><a href="http://www.iso.org/iso/home/standards/language_codes.htm" target="_blank">ISO 639-1</a> (language) and <a href="http://www.iso.org/iso/country_codes.htm" target="_blank">ISO 3166</a> (country) identifier of language used as file name for all resulting .csv files. Examples: <code>de_DE</code>, <code>pt_PT</code>, <code>pt_BR</code>. </p>
 		</td>
 		<td>
 			<p>Yes</p>
@@ -158,7 +156,7 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	<tr>
 		<td><p>-m|--mode</p></td>
-		<td><p>If a target file already exists, specifies whether to replace the existing language pack or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. </p>
+		<td><p>If a target file already exists, specifies whether to replace the existing language package or merge with the new language pack. Merging overrides any phrases that existed and adds new ones. </p>
 			<p>Values: <code>merge</code> or <code>replace</code> (the default).</p>
 		</td>
 		<td>
@@ -180,7 +178,7 @@ The following table discusses the meanings of this command's parameters and valu
 <h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
 To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packages for different parts of your store because the system compiles a single pack from all packages that are available for a language.
 
-To enable additional package for existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package's `language.xml` meta-information file as discussed in the the next section.
+To enable an additional package for an existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a package in the language package's `language.xml` meta-information file as discussed in the the next section.
 
 <h3 id="config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</h3>
 Language package meta-information consists of the following:
@@ -195,9 +193,42 @@ Language package meta-information consists of the following:
 
 See one of the following sections for more information:
 
+*	<a href="#m2devgde-xlate-inheritancework">Example of language inheritance</a>
 *	<a href="#config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</a>
 *	<a href="#config-cli-subcommands-xlate-pack-json">Language package composer.json</a>
-*	<a href="#m2devgde-xlate-inheritancework">Example of language inheritance</a>
+
+<h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
+Suppose a language package descends from two other packages, and that those packages also have parent and "grand-parent" packages.
+
+If a language package descends from two packages, its `language.xml` might look like the following:
+
+{% highlight xml %}
+
+<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../<path>/Magento/Framework/App/Language/package.xsd">
+    <code>en_GB</code>
+    <vendor>Magento</vendor>
+    <package>language_pack</package>
+    <sort_order>100</sort_order>
+    <use vendor="parent-package-one" package="language_package_one"/>
+    <use vendor= "parent-package-two" package="language_package_two"/>
+</language>
+{% endhighlight %}
+
+In the preceding example:
+
+*	`language_package_one` descends from `en_au_package` and `en_au_package` descends from `en_ie_package`
+*	`language_package_two` descends from `en_ca_package` and `en_ca_package` descends from `en_us_package`
+
+If the Magento application cannot find word or phrase in the `en_GB` package, it looks in other packages in following sequence:
+
+1.	`parent-package-one/language_package_one`
+1.	`<VendorName>/en_au_package`
+1.	`<VendorName>/en_ie_package`
+1.	`parent-package-two/language_package_two`
+1.	`<VendorName>/en_ca_package`
+1.	`<VendorName>/en_us_package`
+
+Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
 
 <h4 id="config-cli-subcommands-xlate-pack-meta-xml">Language package language.xml</h4>
 When declaring a language package in the `language.xml` configuration file, you must specify the sequence of the language inheritance for this package.
@@ -234,39 +265,6 @@ If a package "uses" another package, then the dependency on it must be declared 
 
 The format of the name of a language package's `composer.json` must be the same as that of the language package.
 
-<h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
-Suppose a language package descends from two other packages, and that those packages also have parent and "grand-parent" packages.
-
-If a language package descends from two packages, its `language.xml` might look like the following:
-
-{% highlight xml %}
-
-<language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../<path>/Magento/Framework/App/Language/package.xsd">
-    <code>en_GB</code>
-    <vendor>Magento</vendor>
-    <package>language_pack</package>
-    <sort_order>100</sort_order>
-    <use vendor="parent-package-one" package="language_package_one"/>
-    <use vendor= "parent-package-two" package="language_package_two"/>
-</language>
-{% endhighlight %}
-
-In the preceding example:
-
-*	`language_package_one` descends from `en_au_package` and `en_au_package` descends from `en_ie_package`
-*	`language_package_two` descends from `en_ca_package` and `en_ca_package` descends from `en_us_package`
-
-If the Magento application cannot find word or phrase in the `en_GB` package, it looks in other packages in following sequence:
-
-1.	`parent-package-one/language_package_one`
-1.	`<VendorName>/en_au_package`
-1.	`<VendorName>/en_ie_package`
-1.	`parent-package-two/language_package_two`
-1.	`<VendorName>/en_ca_package`
-1.	`<VendorName>/en_us_package`
-
-Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use <a href="{{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.
-
 <h2 id="config-cli-subcommands-xlate-examples">Examples of using translation commands</h2>
 The following sections provide end-to-end examples of using the commands discussed in this topic to create translation dictionaries and translation packages:
 
@@ -281,16 +279,18 @@ To add a German translation to module or theme you want to distribute to other m
 		php magento i18n:collect-phrases -o=de_DE.csv /var/www/html/magento2/ExampleCorp/SampleModule
 
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
-3.	Copy 'de_DE.csv' to `/var/www/html/magento2/ExampleCorp/SampleModule` or to the module's theme directory.
+3.	Copy `de_DE.csv` to `/var/www/html/magento2/ExampleCorp/SampleModule` or to the module's theme directory.
 
 <h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
-Similar to previous example, generate a CSV file, but instead of a module or theme directory, specify the entire Magento application root directory. The "generated.csv" would contain any phrases that the command could find across the board.
+Similar to preceding example, generate a CSV file, but instead of a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.
 
-    Edit the file as you see fit (you may break it down into multiple files, delete or add lines – anything)
-    Enclose the result into a directory
-    Add package meta-information files – as described at the Language Packages spec
+1.	Edit the file as you see fit (you can break it down into multiple files, delete or add lines, and so on.)
+2.	Put the result in a directory.
+3.	<a href="#config-cli-subcommands-xlate-pack-meta">Add package meta-information files</a>.
 
-The resulting directory with files constitutes a language package. Deploying it into app/i18n would make Magento system automatically discover it.
+	The resulting directory and containing files constitutes the language package. 
+
+4.	Copy the file to `<your Magento install dir>/app/i18n` to enable the Magento application to automatically discover it.
 
 
 #### Related topic

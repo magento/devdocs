@@ -49,6 +49,11 @@ Examples:
 <h2 id="config-cli-summary">Command summary</h2>
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Before you run any of these commands, you must either <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">install the Magento application</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">enable some modules</a>.</span>
+</div>
+
 <table>
 	<col width="40%">
   	<col width="30%">
@@ -57,38 +62,31 @@ The following table summarizes the available commands. Commands are shown in sum
 		<tr>
 			<th>Command</th>
 			<th>Description</th>
-			<th>Prerequisites</th>
 		</tr>
 		
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">php magento setup:cache:{enable|disable|clean|flush|status}</a></td>
 		<td>Manages the cache</td>
-		<td>None</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">php magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
 		<td>Manages the indexers</td>
-		<td>TBD</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">php setup:di:compile-multi-tenant</a></td>
 		<td>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites</td>
-		<td>TBD</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">php setup:di:compile</a></td>
 		<td>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website</td>
-		<td>TBD</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">php log:{status|clean}</a></td>
 		<td>Clears the logs</td>
-		<td>TBD</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">php i18n:{collect-phrases|pack}</a></td>
 		<td>Creates a translation dictionary or a translation package</td>
-		<td>TBD</td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">php setup:static-content:deploy</a></td>
@@ -97,7 +95,6 @@ The following table summarizes the available commands. Commands are shown in sum
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">php dev:css:deploy</a></td>
 		<td>Compiles LESS or SASS files</td>
-		<td>TBD</td>
 	</tr>
 	
 	</tbody>

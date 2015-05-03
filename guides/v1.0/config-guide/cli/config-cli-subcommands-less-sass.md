@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide 
+group: 
 subgroup: CLI
 title: Compile LESS and SASS
 menu_title: Compile LESS and SASS
@@ -13,14 +13,10 @@ github_link: config-guide/cli/config-cli-subcommands-less-sass.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-configphp-prereq">Prerequisites</a>
 *	<a href="#config-cli-config-cli-subcommands-less-sass">Compile LESS and SASS</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-
-<h2 id="config-cli-subcommands-configphp-prereq">Prerequisites</h2>
-TBD
 
 <h2 id="config-cli-subcommands-less-sass">Compile LESS and SASS</h2>
 TBD

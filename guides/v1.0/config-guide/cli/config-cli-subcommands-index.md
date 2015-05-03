@@ -13,7 +13,6 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-configphp-prereq">Prerequisites</a>
 *	<a href="#config-cli-subcommands-index-status">View indexer status</a>
 *	<a href="#config-cli-subcommands-index-reindex">Reindex</a>
 *	<a href="#config-cli-subcommands-index-conf">Configure indexers</a>
@@ -21,9 +20,7 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-subcommands-configphp-prereq">Prerequisites</h2>
-TBD
-  
+ 
 <h2 id="config-cli-subcommands-index-status">View indexer status</h2>
 This command enables you to view the status of all or selected indexers (for example, shows whether indexers need to be reindexed).
 
