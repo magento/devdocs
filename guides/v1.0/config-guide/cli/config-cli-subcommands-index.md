@@ -91,7 +91,7 @@ This command enables you to set the following indexer options:
 <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
 To view the current indexer configuration, enter
 
-	php magento indexer:show-mode <indexer>
+	php magento indexer:show-mode <indexer> [--all]
 
 where `<indexer>` is either `--all` to display the configuration of all indexers, or a space-separated list of indexers.
 

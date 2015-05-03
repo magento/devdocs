@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide 
+group: 
 subgroup: CLI
 title: Single-store compiler
 menu_title: Single-store compiler

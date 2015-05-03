@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide 
+group: 
 subgroup: CLI
 title: Clear the logs
 menu_title: Clear the logs

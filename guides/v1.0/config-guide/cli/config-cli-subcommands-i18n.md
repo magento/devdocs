@@ -198,7 +198,7 @@ See one of the following sections for more information:
 *	<a href="#config-cli-subcommands-xlate-pack-json">Language package composer.json</a>
 
 <h4 id="m2devgde-xlate-inheritancework">Example of language inheritance</h4>
-Suppose a language package descends from two other packages, and that those packages also have parent and "grand-parent" packages.
+Suppose a language package descends from two other packages, and that those packages also have parent and "grandparent" packages.
 
 If a language package descends from two packages, its `language.xml` might look like the following:
 

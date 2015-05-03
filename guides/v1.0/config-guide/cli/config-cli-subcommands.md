@@ -26,8 +26,6 @@ See one of the following sections:
 <h2 id="config-install-cli-prereq">Before you configure the Magento application</h2>
 {% include install/before-you-begin-cli.html %}
 
-TBD
-
 <h2 id="config-cli-before">First steps</h2>
 <ol><li>Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
 <li>Change to the following directory:<br>
@@ -51,7 +49,7 @@ The following table summarizes the available commands. Commands are shown in sum
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Before you run any of these commands, you must either <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">install the Magento application</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">enable some modules</a>.</span>
+  <p>Before you run any of these commands, you must either <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">install the Magento application</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">enable some modules</a>.</p></span>
 </div>
 
 <table>
@@ -66,35 +64,35 @@ The following table summarizes the available commands. Commands are shown in sum
 		
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">php magento setup:cache:{enable|disable|clean|flush|status}</a></td>
-		<td>Manages the cache</td>
+		<td><p>Manages the cache</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">php magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
-		<td>Manages the indexers</td>
+		<td><p>Manages the indexers</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">php setup:di:compile-multi-tenant</a></td>
-		<td>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites</td>
+		<td><p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">php setup:di:compile</a></td>
-		<td>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website</td>
+		<td><p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">php log:{status|clean}</a></td>
-		<td>Clears the logs</td>
+		<td><p>Clears the logs</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">php i18n:{collect-phrases|pack}</a></td>
-		<td>Creates a translation dictionary or a translation package</td>
+		<td><p>Creates a translation dictionary or a translation package</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">php setup:static-content:deploy</a></td>
-		<td>Deploys static view files</td>
+		<td><p>Deploys static view files</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">php dev:css:deploy</a></td>
-		<td>Compiles LESS or SASS files</td>
+		<td><p>Compiles LESS and SASS files</p></td>
 	</tr>
 	
 	</tbody>

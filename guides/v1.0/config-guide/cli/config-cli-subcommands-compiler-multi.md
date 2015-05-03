@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide 
+group: 
 subgroup: CLI
 title: Multi-store compiler
 menu_title: Multi-store compiler

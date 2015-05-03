@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide 
+group:  
 subgroup: CLI
 title: Deploy static view files
 menu_title: Deploy static view files
