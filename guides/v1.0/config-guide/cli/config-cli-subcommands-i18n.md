@@ -46,7 +46,7 @@ After that,
 
 Command options:
 
-	php magento i18n:collect-phrases [-o|--output="<csv file path and name"] [-m|--magento] <path to directory to translate>
+	php magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -75,7 +75,7 @@ The following table discusses the meanings of this command's parameters and valu
 			<td><p>No</p></td>
 </tr>
 <tr>
-		<td><p>-o|--output</p></td>
+		<td><p>-o|--output=</p></td>
 		<td><p>Specifies the absolute file system path and file name of the translation dictionary .csv file to create. <em>The value you enter is case-sensitive</em>.</p>
 			<p>If you omit this parameter, the output is directed to stdout.</p>
 		</td>
@@ -276,10 +276,10 @@ To add a German translation to module or theme you want to distribute to other m
 
 1.	Collect phrases from your module:
 
-		php magento i18n:collect-phrases -o=de_DE.csv /var/www/html/magento2/ExampleCorp/SampleModule
+		php magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
 
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
-3.	Copy `de_DE.csv` to `/var/www/html/magento2/ExampleCorp/SampleModule` or to the module's theme directory.
+3.	If necessary, copy `XX_XX.csv` to `/var/www/html/magento2/ExampleCorp/SampleModule` or to the module's theme directory.
 
 <h3 id="config-cli-subcommands-xlate-example2">Example: Create a language package</h3>
 Similar to preceding example, generate a CSV file, but instead of a module or theme directory, specify the entire Magento application root directory. The resulting .csv contains any phrases that the command could find in the code.

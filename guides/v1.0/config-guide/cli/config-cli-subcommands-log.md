@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group: config-guide
 subgroup: CLI
 title: Clear the logs
 menu_title: Clear the logs
@@ -19,44 +19,29 @@ github_link: config-guide/cli/config-cli-subcommands-log.md
 {% include install/first-steps-cli.html %}
 
 <h2 id="config-cli-subcommands-log-status">View log status</h2>
-TBD
-
 Command options:
 
 	php magento log:status
 
-The following table discusses the meanings of this command's parameters and values. 
+	-----------------------------------+------------+------------+------------+
+	Table Name                         | Rows       | Data Size  | Index Size |
+	-----------------------------------+------------+------------+------------+
+	log_customer                       | 0          | 16.00Kb    | 16.00Kb    |
+	log_visitor                        | 0          | 16.00Kb    | 0 b        |
+	log_visitor_info                   | 0          | 16.00Kb    | 0 b        |
+	catalog_compare_item               | 0          | 16.00Kb    | 64.00Kb    |
+	-----------------------------------+------------+------------+------------+
+	Total                              | 0          | 64.00Kb    | 80.00Kb    |
+	-----------------------------------+------------+------------+------------+
 
-<table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-		
-	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-	</tr>
-	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p>
-</td>
-		<td><p>TBD</p></td>
-	</tr>
-	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-	</tr>
-	
-	</tbody>
-</table>
+<h2 id="config-cli-subcommands-log-clean">Clean the logs</h2>
+Command options:
+
+	php magento log:clean [--days=<clean logs older than>]
+
+where `days` is the number of days to keep. The default is `1`; in other words, logs older than one day are cleaned.
+
+
 
 
 #### Related topics
