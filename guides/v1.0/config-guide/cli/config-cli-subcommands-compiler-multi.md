@@ -23,11 +23,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 <h2 id="config-cli-subcommands-multi">Introduction to the multi-store compiler</h2>
 Use this command if you have multiple websites and stores. If you have one website and store, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-store compiler</a> instead.
 
-This command generates non-existent classes such as factories and interceptors for plug-ins. It also generates the <a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">dependency injection</a> configuration for the object manager. Generated code and the dependency injection configuration is written to the `<your Magento install dir>/var/generation` and `<your Magento install dir>/var/di` directories, respectively.
-
-If `<your Magento install dir>/var/di/definitions.php` exists, it is used by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>; otherwise, the much slower <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. (This class uses reflection based the definition builder.) 
-
-Runtime definition compilation is fine in a development environment but you should use the compiler in a production environment.
+{% include install/cli_tenant-compiler.html %}
 
 The multi-store compiler does the following:
 
