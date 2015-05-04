@@ -28,6 +28,8 @@ Command options:
 
 	php magento setup:di:compile
 
+The following message displays to confirm success:
+
 	Generated code and dependency injection configuration successfully.
 
 #### Related topics

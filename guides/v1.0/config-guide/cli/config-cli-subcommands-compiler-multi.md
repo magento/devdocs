@@ -100,7 +100,9 @@ The following table discusses the meanings of this command's parameters and valu
 	</tbody>
 </table>
 
+For example, to run the compiler and specify the `igbinary` serializer:
 
+	php magento setup:di:compile-multi-tenant --serializer=igbinary
 
 
 #### Related topics

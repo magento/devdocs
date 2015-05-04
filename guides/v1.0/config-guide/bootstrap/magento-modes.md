@@ -10,10 +10,14 @@ github_link: config-guide/bootstrap/magento-modes.md
 ---
 
 #### Contents
-*	TBD
+*	<a href="#mode-introduction">Introduction to Magento modes</a>
+*	<a href="#mode-developer">Developer mode</a>
+*	<a href="#mode-default">Default mode</a>
+*	<a href="#mode-production">Production mode</a>
 
 
-<h2 id="mode-introduction">Introduction</h2>
+
+<h2 id="mode-introduction">Introduction to Magento modes</h2>
 You can run Magento in any of the following *modes*:
 
 <table>

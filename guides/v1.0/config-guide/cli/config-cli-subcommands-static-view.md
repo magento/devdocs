@@ -30,11 +30,6 @@ Because static view files are not deployed on the fly in production mode, you mu
   <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the tool as the web server user. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
 </div>
 
-See one of the following sections for more information:
-
-*	<a href="#mode-production-view-run">Running the static view files deployment tool</a>
-*	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
-
 <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
 To deploy static view files:
 
@@ -84,7 +79,7 @@ For example, to deploy static view files for the `pt_BR` language, enter
 
 	php magento --ansi setup:static-content:deploy pt_BR
 
-Following are some of the messages that display to indicate successful deployment:
+Following are some sample messages that display to indicate successful deployment:
 
 	Requested languages: pt_BR
 	=== frontend -> Magento/luma -> pt_BR ===

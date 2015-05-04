@@ -68,6 +68,8 @@ For example, to disable the full page cache and the DDL cache, enter
 
 	php magento cache:disable db_ddl full_page
 
+Sample result:
+
 	Changed cache status:	
                         db_ddl: 1 -> 0
                      full_page: 1 -> 0
@@ -99,6 +101,8 @@ where
 For example, to flush all cache types, enter
 
 	php magento cache:flush --all
+
+Sample result:
 
 	Flushed cache types:
 	config

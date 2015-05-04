@@ -38,6 +38,8 @@ A sample follows:
 
 	php magento indexer:status --all
 
+Sample result:
+
 	Category Products:                                 Reindex required
 	Product Categories:                                Reindex required
 	Product Price:                                     Reindex required
@@ -65,6 +67,8 @@ To view the list of indexers, enter
 A sample follows:
 
 	php magento indexer:reindex --all
+
+Sample result:
 
 	Category Products index has been rebuilt successfully in <time>
 	Product Categories index has been rebuilt successfully in <time>
@@ -95,9 +99,11 @@ To view the current indexer configuration, enter
 
 where `<indexer>` is either `--all` to display the configuration of all indexers, or a space-separated list of indexers.
 
-For example,
+For example, to show the mode of all indexers:
 
 	php magento indexer:show-mode --all
+
+Sample result:
 
 	Category Products:                                 Update on Save
 	Product Categories:                                Update on Save

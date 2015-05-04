@@ -20,8 +20,6 @@ See one of the following sections:
 *	<a href="#config-cli-help">Help commands</a>
 *	<a href="#config-cli-subcommands-common">Common arguments</a>
 *	<a href="#config-cli-subcommands">Commands</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
 
 <h2 id="config-install-cli-prereq">Before you configure the Magento application</h2>
 {% include install/before-you-begin-cli.html %}
@@ -92,7 +90,11 @@ The following table summarizes the available commands. Commands are shown in sum
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">php dev:css:deploy</a></td>
-		<td><p>Compiles LESS and SASS files</p></td>
+		<td><p>Creates CSS from LESS</p></td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-tests.html">php magento dev:tests:run</a></td>
+		<td><p>Runs automated tests</p></td>
 	</tr>
 	
 	</tbody>
@@ -108,7 +110,7 @@ The following table summarizes the available commands. Commands are shown in sum
 <h2 id="config-cli-subcommands">Commands</h2>
 The following sections discuss the available commands.
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
+<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
@@ -117,4 +119,4 @@ The following sections discuss the available commands.
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-uninstall">Uninstall the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-magento-update">Update the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-magento-reinstall">Reinstall the Magento software</a> -->

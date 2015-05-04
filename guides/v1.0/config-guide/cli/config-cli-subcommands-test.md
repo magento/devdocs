@@ -13,17 +13,24 @@ github_link: config-guide/cli/config-cli-subcommands-tests.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-config-cli-subcommands-less-sass">Compile LESS and SASS</a>
+*	<a href="#config-cli-subcommands-tests-prereq">Prerequisites</a>
+*	<a href="#config-cli-subcommands-tests-overview">Overview of unit tests</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-subcommands-tests-prereq">Prerequisite</h2>
-Before you run this command, the `Magento_Developer` module must be enabled. You can enable it as follows:
+<h2 id="config-cli-subcommands-tests-prereq">Prerequisites</h2>
+Before you run this command, all of the following must be true:
 
-	magento module:enable [--force] Magento_Developer
+*	The `Magento_Developer` module must be enabled. You can enable it as follows:
 
-Use the `--force` option only if it's necessary.
+		magento module:enable [--force] Magento_Developer
+
+	Use the `--force` option only if it's necessary.
+
+*	Your system must be set up to run the desired tests.
+
+	For example, to run integration tests, you should copy `dev/tests/integration/etc/install-config-mysql.php.dist` to `dev/tests/integration/etc/install-config-mysql.php` and modify it to suit your environment.
 
 <h2 id="config-cli-subcommands-tests-overview">Overview of unit tests</h2>
 This command runs a set of unit tests defined in the Magento 2 code base. You can either run all tests or tests you select.

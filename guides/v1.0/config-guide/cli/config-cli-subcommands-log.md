@@ -14,6 +14,7 @@ github_link: config-guide/cli/config-cli-subcommands-log.md
 
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-log-status">View log status</a>
+*	<a href="#config-cli-subcommands-log-clean">Clean the logs</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -22,6 +23,8 @@ github_link: config-guide/cli/config-cli-subcommands-log.md
 Command options:
 
 	php magento log:status
+
+Sample result:
 
 	-----------------------------------+------------+------------+------------+
 	Table Name                         | Rows       | Data Size  | Index Size |
@@ -40,9 +43,6 @@ Command options:
 	php magento log:clean [--days=<clean logs older than>]
 
 where `days` is the number of days to keep. The default is `1`; in other words, logs older than one day are cleaned.
-
-
-
 
 #### Related topics
 
