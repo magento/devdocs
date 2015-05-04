@@ -4,7 +4,7 @@ group: release-notes
 title: Release Notes
 menu_title: Known issues
 menu_node: 
-menu_order: 10
+menu_order: 2
 github_link: release-notes/known-issues.md
 ---
 
