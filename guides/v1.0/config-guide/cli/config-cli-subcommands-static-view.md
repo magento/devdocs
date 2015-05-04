@@ -79,12 +79,38 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	</tbody>
 </table>
+
+For example, to deploy static view files for the `pt_BR` language, enter
+
+	php magento --ansi setup:static-content:deploy pt_BR
+
+Following are some of the messages that display to indicate successful deployment:
+
+	Requested languages: pt_BR
+	=== frontend -> Magento/luma -> pt_BR ===
+	... progress indicator ...
+	Successful: 1613 files; errors: 0
+
+	=== frontend -> Magento/blank -> pt_BR ===
+	... progress indicator ...
+	Successful: 1620 files; errors: 0
+
+	=== adminhtml -> Magento/backend -> pt_BR ===
+	... progress indicator ...
+	Successful: 1626 files; errors: 0
+
+	=== Minify templates ===
+	... progress indicator ...
+	Successful: 858 files modified
+	---
+	New version of deployed files: 1430773903
+
 <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
 <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
 
 **Symptom**: The following error is displayed when you run the static view files deployment tool:
 
-ERROR: You need to install the Magento application before running this utility.
+	ERROR: You need to install the Magento application before running this utility.
 
 **Solution**:
 

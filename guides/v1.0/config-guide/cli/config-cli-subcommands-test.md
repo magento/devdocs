@@ -1,0 +1,50 @@
+---
+layout: default
+group: config-guide
+subgroup: CLI
+title: Run unit tests
+menu_title: Run unit tests
+menu_node: 
+menu_order: 60
+github_link: config-guide/cli/config-cli-subcommands-tests.md
+---
+
+
+#### Contents
+
+*	<a href="#config-cli-before">First steps</a>
+*	<a href="#config-cli-config-cli-subcommands-less-sass">Compile LESS and SASS</a>
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+
+<h2 id="config-cli-subcommands-tests-prereq">Prerequisite</h2>
+Before you run this command, the `Magento_Developer` module must be enabled. You can enable it as follows:
+
+	magento module:enable [--force] Magento_Developer
+
+Use the `--force` option only if it's necessary.
+
+<h2 id="config-cli-subcommands-tests-overview">Overview of unit tests</h2>
+This command runs a set of unit tests defined in the Magento 2 code base. You can either run all tests or tests you select.
+
+Whenever a not supported type is specified, the program terminates and lists all available types.
+
+Following execution, a detailed report displays showing the test run and results.
+
+<h2 id="config-cli-subcommands-tests-run">Run unit tests</h2>
+Command usage:
+
+	php magento dev:tests:run [--all] <test>
+
+To list the available tests, enter
+
+	php magento dev:tests:run --help
+
+For example, to run integration tests, enter
+
+	php magento dev:tests:run integration
+
+#### Related topics
+
+

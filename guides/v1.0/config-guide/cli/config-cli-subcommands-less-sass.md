@@ -1,9 +1,9 @@
 ---
 layout: default
-group: 
+group: config-guide
 subgroup: CLI
-title: Compile LESS and SASS
-menu_title: Compile LESS and SASS
+title: Create LESS from CSS
+menu_title: Create LESS from CSS
 menu_node: 
 menu_order: 50
 github_link: config-guide/cli/config-cli-subcommands-less-sass.md
@@ -13,17 +13,17 @@ github_link: config-guide/cli/config-cli-subcommands-less-sass.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-config-cli-subcommands-less-sass">Compile LESS and SASS</a>
+*	<a href="#config-cli-config-cli-subcommands-less-sass">Create LESS files</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-subcommands-less-sass">Compile LESS and SASS</h2>
-TBD
+<h2 id="config-cli-subcommands-less-sass">Create LESS files</h2>
+This command enables you to create LESS files from existing CSS files.
 
 Command options:
 
-	php magento dev:css:deploy [--locale="..."] [--area="..."] [--theme="..."] type [file1] ... [fileN]
+	php magento dev:css:deploy less <file> [--locale="<locale>" ... "<locale>"] [--area="{adminhtml|frontend}"] [--theme="<theme name>" ... "<theme name>"] 
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -39,24 +39,43 @@ The following table discusses the meanings of this command's parameters and valu
 		</tr>
 		
 	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
+		<td><p><code>less</code></p></td>
+		<td><p>Currently, LESS is the only file type supported.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p>
-</td>
-		<td><p>TBD</p></td>
+		<td><p>&lt;file></p></td>
+		<td><p>CSS file to convert to LESS without the <code>.css</code> extension.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
-		<td><p>TBD</p></td>
+		<td><p>--locale</p></td>
+		<td><p>Space-separated list of locale codes.</p>
+			<p>To display the list of locale codes, enter <code>magento info:language:list</code></p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--area</p></td>
+		<td><p>Space-separated list of areas (<code>adminhtml</code> for the administrative area, <code>frontend</code> for the storefront).</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--theme</p></td>
+		<td><p>Space-separated list of theme names in <code>&lt;VendorName>/&lt;theme name></code> format. For example, <code>Magento/blank</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	
 	</tbody>
 </table>
+
+For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<your Magento install dir>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
+
+	php magento dev:css:deploy sass css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
+
+The following messages display to confirm success:
+
+	Gathering css/styles-l.less sources.
+	Successfully processed LESS files
 
 
 #### Related topics
