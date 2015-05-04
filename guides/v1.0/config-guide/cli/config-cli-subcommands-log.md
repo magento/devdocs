@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: CLI
-title: Clear the logs
-menu_title: Clear the logs
+title: Clean the logs
+menu_title: Clean the logs
 menu_node: 
 menu_order: 12
 github_link: config-guide/cli/config-cli-subcommands-log.md

@@ -69,9 +69,12 @@ This improves performance because static files don't go through the fallback mec
 
 In production mode:
 
-*	View files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
+*	Static view files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
 *	The Magento docroot can have read-only permissions
 *	Errors are logged to the file system and are never displayed to the user
 
-### Next step
+#### Next step
 To set a mode, see <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
+
+#### Related topic
+To generate static view files for production mode, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>

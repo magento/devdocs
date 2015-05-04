@@ -22,7 +22,6 @@ The following table discusses the bootstrap parameters you can set:
 <table>
 	<col width="40%">
   	<col width="30%">
-  	<col width="30%">
 	<tbody>
 		<tr>
 			<th>Bootstrap parameter</th>
@@ -30,8 +29,8 @@ The following table discusses the bootstrap parameters you can set:
 		</tr>
 		
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">php magento setup:cache:{enable|disable|clean|flush|status}</a></td>
-		<td>Manages the cache</td>
+		<td><a href="#config-bootparam-mode">MAGE_MODE</a></td>
+		<td>Sets the mode (default, developer, production)</td>
 		<td>None</td>
 	</tr>
 	
