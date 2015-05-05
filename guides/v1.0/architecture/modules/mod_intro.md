@@ -47,15 +47,13 @@ Minimal declaration sample:
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The enabled/disabled flag for a module is no longer set within a module. Instead, use the following commands from the root Magento install directory to enable a module manually:</p>
-
+<p>To enable a module, use the following commands:</p>
 <pre><code>
-# Enable Module
+# Enable a module
 php -f bin/magento module:enable Vendor_ModuleName 
-# Run Enabled Module Setup Scripts
-php -f bin/magento setup:upgrade
-</code></pre>
-
+# Update the database
+php -f bin/magento setup:upgrade</code></pre>
+<p>For more information, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
 </div>
 
 
