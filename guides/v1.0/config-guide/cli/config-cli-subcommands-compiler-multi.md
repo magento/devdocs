@@ -25,7 +25,7 @@ Use this command if you have multiple websites and stores. If you have one websi
 
 {% include install/cli_tenant-compiler.html %}
 
-The multi-store compiler does the following:
+<!-- The multi-store compiler does the following:
 
 *	Generates factories declared in `<your Magento install dir>/app/code`
 *	Generates proxies declared in `di.xml` files
@@ -51,7 +51,7 @@ Naming Rules for auto-generated classes for a module:
 
 <div class="bs-callout bs-callout-warning">
     <p>Failure to follow the preceding naming convention results in exceptions.</p>
-</div>
+</div> -->
 
 <h2 id="config-cli-subcommands-run">Running the multi-store compiler</h2>
 Command options:
