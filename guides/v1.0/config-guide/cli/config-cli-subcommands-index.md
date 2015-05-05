@@ -133,6 +133,8 @@ For example, to change only the category products and product categories indexer
 
 	php magento indexer:set-mode schedule catalog_category_product catalog_product_category
 
+Sample result:
+
 	Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
 	Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule
 

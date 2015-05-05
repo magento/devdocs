@@ -23,7 +23,8 @@ This command enables you to create LESS files from existing CSS files.
 
 Command options:
 
-	php magento dev:css:deploy less <file> [--locale="<locale>" ... "<locale>"] [--area="{adminhtml|frontend}"] [--theme="<theme name>" ... "<theme name>"] 
+	php magento dev:css:deploy less <file> [--locale="<locale>" ... "<locale>"] [--area="{adminhtml|frontend}"] [--theme="<theme name>" ... 
+	"<theme name>"] 
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -45,7 +46,7 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	<tr>
 		<td><p>&lt;file></p></td>
-		<td><p>Space-separated list of CSS files to convert to LESS without the <code>.css</code> extension. (Default is <code>css/styles-m</code></p></td>
+		<td><p>Space-separated list of CSS files to convert to LESS without the <code>.css</code> extension. (Default is <code>css/styles-m</code>)</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -70,7 +71,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<your Magento install dir>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
 
-	php magento dev:css:deploy sass css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
+	php magento dev:css:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
 
 The following messages display to confirm success:
 

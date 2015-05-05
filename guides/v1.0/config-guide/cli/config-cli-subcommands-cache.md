@@ -26,7 +26,9 @@ TBD
 <h2 id="config-cli-subcommands-cache-status">Viewing the cache status</h2>
 To view the status of the cache, enter
 
-	php magento cache:status [--bootstrap="..."]
+	php magento cache:status [--bootstrap="<url-encoded array>"]
+
+where `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
 
 A sample follows:
 
@@ -49,7 +51,7 @@ This command enables you to enable or disable all cache types or only the ones y
 
 Command options:
 
-	php magento cache:enable [--all] [--bootstrap="<url-encoded array>""] [type] ... [type]
+	php magento cache:enable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
 	php magento cache:disable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
 
 where

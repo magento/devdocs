@@ -39,7 +39,7 @@ Examples:
 <span class="glyphicon-class">
   <p>You can run the commands in any of the following ways:</p>
 <ul><li><code>php magento &lt;command></code></li>
-<li><code>magento &lt;command></code></li></ul></span>
+<li><code>./magento &lt;command></code></li></ul></span>
 </div>
 
 <h2 id="config-cli-summary">Command summary</h2>
@@ -108,7 +108,7 @@ The following table summarizes the available commands. Commands are shown in sum
 
 
 <h2 id="config-cli-subcommands">Commands</h2>
-The following sections discuss the available commands.
+The following sections discuss the available commands. TBD
 
 <!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>

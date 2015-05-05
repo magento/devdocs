@@ -56,7 +56,8 @@ Naming Rules for auto-generated classes for a module:
 <h2 id="config-cli-subcommands-run">Running the multi-store compiler</h2>
 Command options:
 
-	php magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
+	php magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
+	filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -88,7 +89,7 @@ The following table discusses the meanings of this command's parameters and valu
 	</tr>
 	<tr>
 		<td><p>--di</p></td>
-		<td><p>Absolute file system path to a directory for the object manager configuration. Default is <code>&lt;your Magento install dir>/var/di</code></p></td>
+		<td><p>Absolute file system path to a directory to generate the object manager configuration. Default is <code>&lt;your Magento install dir>/var/di</code></p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -103,6 +104,27 @@ The following table discusses the meanings of this command's parameters and valu
 For example, to run the compiler and specify the `igbinary` serializer:
 
 	php magento setup:di:compile-multi-tenant --serializer=igbinary
+
+Messages similar to the following display:
+
+	Generated classes:
+        Magento\Rss\Controller\Adminhtml\Feed\Interceptor
+        Magento\Quote\Model\Quote\Config\Interceptor
+        Magento\Checkout\Block\Cart\Shipping\Interceptor
+        Magento\Framework\View\Layout\Interceptor
+        Magento\Integration\Service\V1\Integration\Interceptor
+        Magento\Catalog\Block\Product\Compare\ListCompare\Interceptor
+        Magento\Framework\View\TemplateEngineFactory\Interceptor
+        Magento\Catalog\Model\Product\Attribute\Backend\Price\Interceptor
+        Magento\Catalog\Api\ProductRepositoryInterface\Interceptor
+        Magento\Catalog\Model\Product\Interceptor
+        Magento\Quote\Model\Quote\Item\ToOrderItem\Interceptor
+        Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper\Interceptor
+        Magento\Catalog\Model\Product\CartConfiguration\Interceptor
+        Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
+        Magento\Catalog\Model\Product\Type\Interceptor
+        ... more messages ...
+        On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user (example command: "chown -R www-data:www-data <MAGENTO_ROOT>/var" where MAGENTO_ROOT is the Magento root directory).
 
 
 #### Related topics
