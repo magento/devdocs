@@ -13,14 +13,14 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-multi">Introduction to the multi-store compiler</a>
-*	<a href="#config-cli-subcommands-run">Running the multi-store compiler</a>
+*	<a href="#config-cli-subcommands-multi">Overview of the multi-store compiler</a>
+*	<a href="#config-cli-subcommands-run">Run the multi-store compiler</a>
 
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-subcommands-multi">Introduction to the multi-store compiler</h2>
+<h2 id="config-cli-subcommands-multi">Overview of the multi-store compiler</h2>
 Use this command if you have multiple websites and stores. If you have one website and store, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-store compiler</a> instead.
 
 {% include install/cli_tenant-compiler.html %}
@@ -53,7 +53,7 @@ Naming Rules for auto-generated classes for a module:
     <p>Failure to follow the preceding naming convention results in exceptions.</p>
 </div> -->
 
-<h2 id="config-cli-subcommands-run">Running the multi-store compiler</h2>
+<h2 id="config-cli-subcommands-run">Run the multi-store compiler</h2>
 Command options:
 
 	php magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
