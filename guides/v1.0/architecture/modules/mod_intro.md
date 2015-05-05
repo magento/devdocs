@@ -53,14 +53,14 @@ Minimal declaration sample:
     To enable a module manually, the following commands can be used.
 </p>
 
-<ol>
-    <li><code>php -f setup/index.php module-enable --modules=Vendor_ModuleName # enable module</code></li>
-    <li><code>php -f setup/index.php update # flush appropriate caches</code></li>
-</ol>  
+<pre><code>
+# Enable Module
+php -f bin/magento module:enable Vendor_ModuleName 
+# Run Enabled Module Setup Scripts
+php -f bin/magento setup:upgrade
+</code></pre>
 
 </div>
-
-
 
 
 <h3 id="arch-modules-working-with">Working with modules</h3>
@@ -75,6 +75,7 @@ For 'How To' topics such as instructions for adding modules, extending modules, 
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
+* <a href="{{ site.gdeurl }}guides/v1.0/install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
 * <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
 * <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
