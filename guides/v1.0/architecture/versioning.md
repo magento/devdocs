@@ -8,22 +8,16 @@ menu_order: 8
 github_link: architecture/versioning.md
 ---
 
-<h2 id="verpol">Versioning</h2>
+<h2 id="verpol">Overview</h2>
 
-The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on code level). By comparing two versions of the same component, one can tell whether it has any backwards-incompatible changes in the public API or other significant code changes.
+The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.
 
-Magento software version complies with the following specifications:
+Magento software versioning complies with the following specifications:
 
 * [Semantic Versioning 2.0.0](http://semver.org/)
 * [Versioning specification of Composer system](https://getcomposer.org/doc/04-schema.md#version)
 * [PHP version_compare()](http://php.net/version_compare)
 
-
-<h3>Public APIs</h3>
-
-Source code is considered public API only if it is explicitly marked as such using the `@api` docblock tag. This indicates the code is intended to be used or customized by other components or subsystems, such as formal interfaces, APIs, service contracts, and dependency injection points.
-
-For PHP code, compatibility of `@api` may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, deleted or renamed).
 
 <h3>Version formats</h3>
 
@@ -39,6 +33,13 @@ Stable release versions are in the format `MAJOR.MINOR.PATCH`, where:
 
 The pre-release version format is: `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`, where `alpha`, `beta` or `rc` are stability indications, as described in the `version_compare()` specification, and
 `n` is an increment number to distinguish releases of the non-stable versions.
+
+<h3>Public APIs</h3>
+
+Source code is considered public API only if it is explicitly marked as such using the `@api` docblock tag. This indicates the code is intended to be used or customized by other components or subsystems, such as formal interfaces, APIs, service contracts, and dependency injection points.
+
+For PHP code, compatibility of `@api` may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).
+
 
 <h2>Where versioning is used</h2>
 The software version can be found in the source code of any Magento component or bundle, inside the `composer.json` file.
@@ -137,7 +138,7 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 
 <h3>Maintenance releases</h3>
 
-**Note to reviewer: The first sentence below doesn't seem like something we should be saying. **
+<b>Note to reviewer: The first sentence below doesn't seem like something we should be saying. </b>
 
 A maintenance release inherits all properties of a stable release, although the maintenance releases are supposed to introduce only backwards-compatible bugfixes. The version number will be changed only in components that have actually changed. The unchanged components will have the version unchanged.
 
@@ -176,7 +177,7 @@ Depending on a nature of change, there might be necessity to update version in t
 </table>
 
 <h3>Example Lifecycle</h3>
-The following steps demonstrate the packaging and backward compatibility story from the view of Magento, SI, and extension developer. This example uses several composer packages on public github to simulate a merchant site, 2 core Magento modules and a third-party extension.
+The following steps demonstrate the packaging and backward compatibility story from the view of Magento, system integrators, and extension developers. This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
 <ol>
 <li>Start by cloning the master branch from github.
 
@@ -274,4 +275,6 @@ The following steps demonstrate the packaging and backward compatibility story f
 <li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
 
 </ol>
+<h2>Related Topics</h2>
+* <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Backward compability</a>
 
