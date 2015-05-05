@@ -50,7 +50,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
-`app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml`
+<code>app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml</code>
 
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
@@ -64,6 +64,19 @@ The following file is a sample of a file you must add:
 </pre>
 
 You can use either `<link src="sample.js"/>` or `<script src="sample.js"/>` instruction to add a JavaScript file to your theme.
+
+The files themselves should reside in one of the following locations:
+<ul>
+<li><code>app/design/frontend/<Vendor>/<theme>/web</code> directory in a corresponding</li>
+<li></li>
+<li></li>
+</ul>
+
+<h3>Adding conditional comments</h3>
+<a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
+In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer only. 
+A sample follows:
+
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
