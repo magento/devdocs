@@ -41,13 +41,21 @@ Minimal declaration sample:
 
 <pre>
 &lt;config>
-    &lt;module name="Namespace_Module" schema_version="2.0.0">
+    &lt;module name="Namespace_Module" setup_version="2.0.0">
     &lt;/module>
 &lt;/config>
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The enabled/disabled flag for a module is no longer set within a module; it is controlled by the deployment configuration file, with enabled=1, disabled=0. This is controlled by administrators and integrators, not by module developers.</p>
+  <p>The enabled/disabled flag for a module is no longer set within a module. Instead, use the following commands from the root Magento install directory to enable a module manually:</p>
+
+<pre><code>
+# Enable Module
+php -f bin/magento module:enable Vendor_ModuleName 
+# Run Enabled Module Setup Scripts
+php -f bin/magento setup:upgrade
+</code></pre>
+
 </div>
 
 
@@ -63,6 +71,7 @@ For 'How To' topics such as instructions for adding modules, extending modules, 
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
+* <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
 * <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
 * <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
