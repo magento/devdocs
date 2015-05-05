@@ -47,9 +47,7 @@ Minimal declaration sample:
 </pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The enabled/disabled flag for a module is no longer set within a module; it is controlled by the deployment configuration file, with enabled=1, disabled=0. This is controlled by administrators and integrators, not by module developers.</p>
-  
-<p>To enable a module manually, use the following commands:</p>
+<p>To enable a module, use the following commands:</p>
 <pre><code>
 # Enable a module
 php -f bin/magento module:enable Vendor_ModuleName 
