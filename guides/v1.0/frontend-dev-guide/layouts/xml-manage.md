@@ -65,16 +65,16 @@ The following file is a sample of a file you must add:
 
 You can use either `<link src="sample.js"/>` or `<script src="sample.js"/>` instruction to add a JavaScript file to your theme.
 
-The path to assets is specified relatively to one the following location:
+The path to assets is specified relatively to one the following locations:
 <ul>
 <li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
-<li><code>app/design/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;theme&amp;gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>, if an asset is specified in the layout with a module context
+<li><code>app/design/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;theme&amp;gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code>, if an asset is specified in the layout with a module context</li>
 
 </ul>
 
 <h3>Adding conditional comments</h3>
 <a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
-In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer only. 
+In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
 
 <pre>
