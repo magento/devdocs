@@ -65,11 +65,11 @@ The following file is a sample of a file you must add:
 
 You can use either `<link src="sample.js"/>` or `<script src="sample.js"/>` instruction to add a JavaScript file to your theme.
 
-The files themselves should reside in one of the following locations:
+The path to assets is specified relatively to one the following location:
 <ul>
-<li><code>app/design/frontend/<Vendor>/<theme>/web</code> directory in a corresponding</li>
-<li></li>
-<li></li>
+<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
+<li><code>app/design/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;theme&amp;gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>, if an asset is specified in the layout with a module context
+
 </ul>
 
 <h3>Adding conditional comments</h3>
@@ -77,6 +77,16 @@ The files themselves should reside in one of the following locations:
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer only. 
 A sample follows:
 
+<pre>
+&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;css src=&quot;css/ie-9.css&quot; ie_condition=&quot;IE 9&quot; /&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
+&lt;/page&gt;
+
+</pre>
+
+The <code>ie-9.css</code> stylesheet will be applied for the Internet Explorer v.9 only.
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
