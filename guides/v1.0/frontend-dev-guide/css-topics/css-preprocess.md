@@ -26,10 +26,10 @@ Description
 </tr>
 <tr>
 <td>
-Root source files
+<p>Root source files</p>
 </td>
 <td>
-The <code>.less</code> files from which the <code>.css</code> files <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled. 
+<p>The <code>.less</code> files from which the <code>.css</code> files <a href="{{site.gdeurl}}frontend-dev-guide/css-topics/css-themes.html" target="_blank">included in layout</a> are compiled. 
 
 For example, in one of the <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included: 
 
@@ -48,6 +48,7 @@ The root source files for the Blank theme:
 <li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less" target="_blank">app/design/frontend/Magento/blank/web/css/styles-l.less</a></code></li>
 <li><code><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/print.less" target="_blank">app/design/frontend/Magento/blank/web/css/print.less</a></code></li>
 </ul>
+</p>
 </td>
 </tr>
 </table>
