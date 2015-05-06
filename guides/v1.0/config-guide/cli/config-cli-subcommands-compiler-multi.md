@@ -2,30 +2,35 @@
 layout: default
 group: config-guide
 subgroup: CLI
-title: Multi-store compiler
-menu_title: Multi-store compiler
+title: Multi-tenant compiler
+menu_title: Multi-tenant compiler
 menu_node: 
 menu_order: 10
 github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 ---
 
-
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-multi">Overview of the multi-store compiler</a>
-*	<a href="#config-cli-subcommands-run">Run the multi-store compiler</a>
+*	<a href="#config-cli-subcommands-multi">Overview of the multi-tenant compiler</a>
+*	<a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a>
 
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-subcommands-multi">Overview of the multi-store compiler</h2>
-Use this command if you have multiple websites and stores. If you have one website and store, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-store compiler</a> instead.
+<h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
+Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
+
+*	There is one database instance per tenant
+*	Independent configurations in the Magneto Admin per tenant
+*	The storefronts are independent of each other
+
+If you do not have multiple tenants, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-tenant compiler</a> instead.
 
 {% include install/cli_tenant-compiler.html %}
 
-<!-- The multi-store compiler does the following:
+<!-- The multi-tenant compiler does the following:
 
 *	Generates factories declared in `<your Magento install dir>/app/code`
 *	Generates proxies declared in `di.xml` files
@@ -35,7 +40,7 @@ Use this command if you have multiple websites and stores. If you have one websi
 *	Compiles plug-in definitions (that is, the list of declared public methods)
 
 <div class="bs-callout bs-callout-warning">
-    <p>The multi-store compiler does not analyze usage of auto-generated factory classes in files that are located in the <code>lib/internal/Magento</code> directory structure because use of auto-generated factory classes on the library level is prohibited. If you need to use a factory on the library level, please generate the class manually.</p>
+    <p>The multi-tenant compiler does not analyze usage of auto-generated factory classes in files that are located in the <code>lib/internal/Magento</code> directory structure because use of auto-generated factory classes on the library level is prohibited. If you need to use a factory on the library level, please generate the class manually.</p>
 </div>
 
 ### Tips
@@ -53,7 +58,7 @@ Naming Rules for auto-generated classes for a module:
     <p>Failure to follow the preceding naming convention results in exceptions.</p>
 </div> -->
 
-<h2 id="config-cli-subcommands-run">Run the multi-store compiler</h2>
+<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Command options:
 
 	php magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
@@ -124,7 +129,9 @@ Messages similar to the following display:
         Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
         Magento\Catalog\Model\Product\Type\Interceptor
         ... more messages ...
-        On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user (example command: "chown -R www-data:www-data <MAGENTO_ROOT>/var" where MAGENTO_ROOT is the Magento root directory).
+        On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. 
+        For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
+        (example command: "chown -R www-data:www-data <MAGENTO_ROOT>/var" where MAGENTO_ROOT is the Magento root directory).
 
 
 #### Related topics
