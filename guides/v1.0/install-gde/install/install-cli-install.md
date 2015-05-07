@@ -68,12 +68,12 @@ You can run the following commands to find values for some required arguments:
 	<td><code>php magento info:language:list</code></td>
 </tr>
 <tr>
-	<td>Time zone</td>
-	<td><code>php  magento info:timezone:list</code></td>
-</tr>
-<tr>
 	<td>Currency</td>
 	<td><code>php magento info:currency:list</code></td>
+</tr>
+<tr>
+	<td>Time zone</td>
+	<td><code>php  magento info:timezone:list</code></td>
 </tr>
 </tbody>
 </table>
