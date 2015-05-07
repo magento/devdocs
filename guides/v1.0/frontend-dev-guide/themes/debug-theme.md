@@ -76,7 +76,7 @@ To locate a CSS rule that is applied to a certain element, find the template for
 After you find the class name, use text search in the theme and module styles directories to locate the .less or .css file that defines the class. Perform the search according to the following fallback scheme:
 
 1. Theme styles `app/design/<area>/<Vendor>/<current_theme>/web/css`
-2. Module theme styles `app/design/<area>/<Vendor>/<current_theme>/<Namespace_Module>/web/css`
+2. Module theme styles `app/design/<area>/<Vendor>/<current_theme>/<Namespace>_<Module>/web/css`
 3. Parent theme styles `app/design/<area>/<Vendor>/<parent_theme>/web/css`
 4. Module styles `app/code/<Vendor>/<Module>/view/<area>/web/`
 
