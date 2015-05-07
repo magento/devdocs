@@ -10,12 +10,12 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 
 <h2>Overview</h2>
 
-This topic describes the JavaScript used in Magento default themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html" target="_blank">breakpoint</a>.
+This topic describes the JavaScript used in Magento default themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
 
 
 <h2>Scripts general overview</h2>
 
-The Blank and Luma themes use the following scripts to responsively relocate page elements by a <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>:
+The Blank and Luma themes use the following scripts to responsively relocate page elements by a breakpoint:
 
 <ul>
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
@@ -71,7 +71,7 @@ In <code>responsive.js</code>, you can see how the checkout progress is toggled 
 <h2 id="fedg_rwd_js_nav">menu.js</h2>
 
 
-In a mobile viewport, on the 640px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
+In a mobile viewport, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
 <ul>
 <li>Category menu items are not displayed, but are accessible after clicking the "menu" icon.</li>
 <li>The behavior of a category link depends on whether the category has sub-categories:
