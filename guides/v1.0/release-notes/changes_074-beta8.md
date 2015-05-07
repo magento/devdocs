@@ -27,6 +27,7 @@ github_link: release-notes/changes_074-beta8.md
 *	<a href="#rn-074b8-tax">Backward incompatible changes in Magento_Tax</a>
 *	<a href="#rn-074b8-ups">Backward incompatible changes in Magento_Ups</a>
 *	<a href="#rn-074b8-usps">Backward incompatible changes in Magento_Usps</a>
+*	<a href="#rn-074b8-except">Backward incompatible changes in exceptions</a>
 
 <h2 id="rn-074b8-compat">Backward compatible changes</h2>
 *	Added interface `\Magento\Payment\Model\InfoInterface` which should be used instead of `\Magento\Payment\Model\Info` which expects both `\Magento\Sales\Model\Order\Payment\Info` and `\Magento\Quote\Model\Quote\Payment\Info`
@@ -147,7 +148,7 @@ In `app/code/Magento/Fedex/Model/Carrier.php` method `collectRates()`, changed p
 	*	`\Magento\MediaStorage\Model\File\Storage\Response`
 
 <h2 id="rn-074b8-giftmessage">Backward incompatible changes in Magento_GiftMessage</h2>
-In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>, we made the following changes:
+In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>:
 
 *	Renamed method `isMessagesAvailable` to `isMessagesAllowed`
 *	Removed method `getIsMessagesAvailable` because it was a alias for `isMessagesAvailable`
@@ -200,7 +201,7 @@ Under namespace <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api" targe
 *	`GuestShippingAddressManagementInterface`
 *	`GuestShippingMethodManagementInterface`
 
-Under namespace <a href="{{ site.mage2000url }}app/code/Magento/Quote/Model/GuestCart" target="_blank">Magento\Quote\Model\GuestCart</a>, we added the following classes or implementations: 
+Under namespace <a href="{{ site.mage2000url }}app/code/Magento/Quote/Model/GuestCart" target="_blank">Magento\Quote\Model\GuestCart</a>, added the following classes or implementations: 
 
 *	`GuestBillingAddressManagement`
 *	`GuestCartItemRepository`
@@ -390,6 +391,7 @@ See the following table.
 
 <h2 id="rn-074b8-ship">Backward incompatible changes in Magento_Shipping</h2>
 *	In `app/code/Magento/Shipping/Model/Carrier/AbstractCarrier.php`:
+
 	*	In method `collectRates()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 	*	In method `checkAvailableShipCountries()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 	*	In method `proccessAdditionalValidation()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
@@ -440,9 +442,48 @@ In `app/code/Magento/Usps/Model/Carrier.php` method `collectRates()`, renamed pa
  	*	Added new class `\Magento\Framework\Reflection\TypeCaster`
 *	Added an additional parameter `$methodsMapProcessor` for the constructor of Magento\Framework\Webapi\ServiceOutputProcessor
 
+<h2 id="rn-074b8-except">Backward incompatible changes in exceptions</h2>
+*	Eliminated the following exceptions and replaced with `\Magento\Framework\Exception\LocalizedException`:
 
+	*	`\Magento\Backup\Exception`
+	*	`\Magento\Catalog\Exception`
+	*	`\Magento\Reports\Exception`
+	*	`\Magento\Sales\Exception`
+	*	`\Magento\SalesRule\Exception`
+	*	`\Magento\Exception`
+	*	`\Magento\Framework\Exception`
+	*	`\Magento\UrlRewrite\Model\EntityNotAssociatedWithWebsiteException`
+	*	`\Magento\Framework\App\Action\Exception`
+	*	`\Magento\Framework\App\Action\NotFoundException`
+	*	`\Magento\Framework\Code\ValidationException`
+	*	`\Magento\Framework\Css\PreProcessor\Adapter\AdapterException`
+	*	`\Magento\Framework\Mail\Exception`
+	*	`\Magento\Framework\Stdlib\DateTime\Timezone\ValidationException`
+	*	`\Magento\Framework\Module\Exception`
+	*	`\Magento\Framework\Data\Argument\MissingOptionalValueException`
+	*	`\Magento\Framework\Session\SaveHandlerException`
+	*	`\Magento\Framework\ForeignKey\Exception`
+	*	`\Magento\CatalogInventory\Exception`
+	*	`\Magento\CatalogRule\CatalogRuleException`
+	*	`\Magento\Payment\Exception`
+	*	`\Magento\UrlRewrite\Model\Storage\DuplicateEntryException
 
+Eliminated the following and replaced with `\Magento\Framework\Exception\LocalizedException`:
 
+	*	`\Magento\Eav\Exception`
+	*	`\Magento\Shipping\Exception`
+	*	`\Magento\Framework\Filesystem\FilesystemException`
+	*	`\Magento\Framework\Filesystem\Io\IoException`
+	*	`\Magento\Framework\DB\DBException`
+	*	`\Magento\Framework\DB\Tree\Node\NodeException`
+	*	`\Magento\Framework\DB\Tree\NodeSet\NodeSetException`
+	*	`\Magento\Framework\DB\Tree\TreeException`
+	*	`\Magento\Framework\Exception\File\ValidatorException`
+	*	`\Magento\Framework\Exception\File\LargeSizeException`
 
+*	Other replaced exceptions:
 
+	*	`\Magento\BootstrapException` replaced with `\Magento\Framework\Exception\State\InitException`
+	*	`\Magento\Framework\BootstrapException` replaced with `\Magento\Framework\Exception\State\InitException`
 
+*	Direct dependency of `\Magento\Framework\Controller\Result\RedirectFactory` on `AbstractAction` removed and now `RedirectFactory` is injected using the context
