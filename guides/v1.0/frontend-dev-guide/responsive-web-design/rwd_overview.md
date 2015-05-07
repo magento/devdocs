@@ -3,7 +3,7 @@ layout: default
 group: fedg
 subgroup: E_rwd
 title: Overview of responsive web design in Magento 
-menu_title: Responsive web design
+menu_title: How to Make Your Theme Responsive and Mobile
 menu_order: 1
 menu_node: parent
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
