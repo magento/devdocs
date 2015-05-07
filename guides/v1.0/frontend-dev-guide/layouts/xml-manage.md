@@ -50,25 +50,25 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 JavaScript, CSS and other static assets are added in the `<head>` section of a <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
 
-<code>app/design/frontend/<Vendor>/<theme>/Magento_Theme/layout/default_head_blocks.xml</code>
+<code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code>
 
 <pre>
 &lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;css&nbsp;src=&quot;css/my-styles.css&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;src=&quot;sample.js&quot;/&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;src=&quot;js/sample.js&quot;/&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;Magento_Catalog::js/sample1.js&quot;/&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
 &lt;/page&gt;
 
 </pre>
 
-You can use either `<link src="sample.js"/>` or `<script src="sample.js"/>` instruction to add a JavaScript file to your theme.
+You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a JavaScript file to your theme.
 
 The path to assets is specified relatively to one the following locations:
 <ul>
 <li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
-<li><code>app/design/frontend/&amp;lt;Vendor&amp;gt;/&amp;lt;theme&amp;gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code>, if an asset is specified in the layout with a module context</li>
+<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code>, if an asset is specified in the layout with a module context</li>
 
 </ul>
 
@@ -86,7 +86,14 @@ A sample follows:
 
 </pre>
 
-The <code>ie-9.css</code> stylesheet will be applied for the Internet Explorer v.9 only.
+This adds an Ie conditional comment in the generated HTML, like in the following example:
+<pre>
+&lt;!--[if IE 9]&gt;
+&lt;link  rel=&quot;stylesheet&quot; type=&quot;text/css&quot;  media=&quot;all&quot; href=&quot;http://magento2.loc/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css&quot; /&gt;
+&lt;![endif]--&gt;
+</pre>
+
+In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.
 
 <h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
 
