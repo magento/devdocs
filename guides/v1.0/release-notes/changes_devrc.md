@@ -10,11 +10,17 @@ github_link: release-notes/changes_devrc.md
 
 <h2 id="changes-contents">Contents</h2>
 
+*	<a href="#change-devrc-overview">Overview of the Developer RC release</a>
 *   <a href="#change-devrc-unit">Unit tests now located in module directories</a>
 *   <a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>
 *   <a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a>
-*	<a href="#other">Other changes in this release</a>
 
+<h2 id="change-devrc-overview">Overview of the Developer RC release</h2>
+These Release Notes discuss important changes in this release. For additional details, see the following:
+
+*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta1" target="_blank">Changelog</a>
+*	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
+*	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h2 id="change-devrc-unit">Unit tests now located in module directories</h2>
 For you to run PHPUnit-based tests, you must first run `<your Magento root dir>/composer install` to download the PHPUnit component and create the `vendor/bin/phpunit` executable. 
@@ -97,5 +103,3 @@ To install the optional Magento 2 sample data, you must update `composer.json`, 
 
 See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.
 
-<h2 id="other">Other changes in this release</h2>
-For other changes in this release, see the <a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta1" target="_blank">changelog</a>.

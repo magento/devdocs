@@ -9,6 +9,8 @@ github_link: release-notes/changes_074-beta8.md
 ---
 
 <h2 id="changes-contents">Contents</h2>
+
+*	<a href="#rn-074b8-overview">Overview of the 0.74-beta8 release</a>
 *	<a href="#rn-074b8-compat">Backward compatible changes</a>
 *	<a href="#rn-074b8-bundle">Backward incompatible changes in Magento_Bundle</a>
 *	<a href="#rn-074b8-catalog">Backward incompatible changes in Magento_Catalog</a>
@@ -28,6 +30,13 @@ github_link: release-notes/changes_074-beta8.md
 *	<a href="#rn-074b8-ups">Backward incompatible changes in Magento_Ups</a>
 *	<a href="#rn-074b8-usps">Backward incompatible changes in Magento_Usps</a>
 *	<a href="#rn-074b8-except">Backward incompatible changes in exceptions</a>
+
+<h2 id="rn-074b8-overview">Overview of the 0.74-beta8 release</h2>
+These Release Notes discuss important changes in this release. For additional details, see the following:
+
+*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta8" target="_blank">Changelog</a>
+*	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
+*	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h2 id="rn-074b8-compat">Backward compatible changes</h2>
 *	Added interface `\Magento\Payment\Model\InfoInterface` which should be used instead of `\Magento\Payment\Model\Info` which expects both `\Magento\Sales\Model\Order\Payment\Info` and `\Magento\Quote\Model\Quote\Payment\Info`
@@ -173,7 +182,7 @@ In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.ph
 	*	In method `_canUseMethod()`, changed parameter `\Magento\Quote\Model\Quote` to `\Magento\Quote\Api\Data\CartInterface`
 
 <h2 id="rn-074b8-quoteapi">Backward incompatible changes in Magento_Quote</h2>
-*	In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation, we made the following changes:
+*	In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation:
 
 	*	Removed method `delete`
 	*	Added methods `getListForCustomer`, `saveForCustomer`, and `deleteByIdForCustomer`
@@ -184,12 +193,12 @@ In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.ph
 
 *	In `app/code/Magento/Quote/Model/Resource/Quote/Address/Rate/Collection.php` method `__construct()`, changed parameter `\Magento\Quote\Model\Quote\Address\CarrierFactoryInterface` to `\Magento\Shipping\Model\CarrierFactoryInterface`
 
-In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartManagementInterface.php" target="_blank">\Magento\Quote\Api\CartManagementInterface</a> and its implementation, we made the following changes:
+In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartManagementInterface.php" target="_blank">\Magento\Quote\Api\CartManagementInterface</a> and its implementation:
 
 *	Removed parameter `$storeId` for method `createEmptyCart`
 *	Added method `createEmptyCartForCustomer`
 
-Under namespace <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api" target="_blank">Magento\Quote\Api</a>, we added the following classes or interfaces:
+Added the following classes or interfaces under namespace <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api" target="_blank">Magento\Quote\Api</a>:
 
 *	`GuestBillingAddressManagementInterface`
 *	`GuestCartItemRepositoryInterface`

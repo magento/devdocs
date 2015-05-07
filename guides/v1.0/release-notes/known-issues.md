@@ -9,6 +9,8 @@ github_link: release-notes/known-issues.md
 ---
 
 <h2 id="known-devbeta">Known issues</h2>
+This page discusses known issues in all Magento 2 releases starting with Developer Beta in December, 2014.
+
 We have identified the following known issues in this release:
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
