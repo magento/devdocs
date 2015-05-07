@@ -10,19 +10,23 @@ github_link: release-notes/changes_074-beta8.md
 
 <h2 id="changes-contents">Contents</h2>
 *	<a href="#rn-074b8-compat">Backward compatible changes</a>
-*	<a href="#rn-074b8-giftmessage">Backward incompatible changes in Magento_GiftMessage</a>
-*	<a href="#rn-074b8-quoteapi">Backward incompatible changes in Magento_Quote</a>
-*	<a href="#rn-074b8-webapi">Backward incompatible changes in Magento_Webapi and \Magento\Framework\Webapi</a>
-*	<a href="#rn-074b8-sales-model">Backward incompatible changes in Magento_Sales</a>
-*	<a href="#rn-074b8-catalog">Backward incompatible changes in Magento_Catalog</a>
 *	<a href="#rn-074b8-bundle">Backward incompatible changes in Magento_Bundle</a>
+*	<a href="#rn-074b8-catalog">Backward incompatible changes in Magento_Catalog</a>
+*	<a href="#rn-074b8-checkout">Backward incompatible changes in Magento_Checkout</a>
+*	<a href="#rn-074b8-cms">Backward incompatible changes in Magento_Cms</a>
 *	<a href="#rn-074b8-config">Backward incompatible changes in Magento_ConfigurableProduct</a>
+*	<a href="#rn-074b8-dhl">Backward incompatible changes in Magento_Dhl</a>
 *	<a href="#rn-074b8-down">Backward incompatible changes in Magento_Downloadable</a>
-*	<a href="rn-074b8-sales-tax">Backward incompatible changes in Magento_Tax</a>
-*	<a href="#rn-074b8-sales-frame">Backward incompatible changes in the Framework</a>
-*	<a href="#rn-074b8-sales-cms">Backward incompatible changes in Magento_Cms</a>
-*	<a href="#rn-074b8-sales-checkout">Backward incompatible changes in Magento_Checkout</a>
-*	<a href="#rn-074b8-other">Other backward incompatible changes</a>
+*	<a href="#rn-074b8-fedex">Backward incompatible changes in Magento_Fedex</a>
+*	<a href="#rn-074b8-giftmessage">Backward incompatible changes in Magento_GiftMessage</a>
+*	<a href="#rn-074b8-offline">Backward incompatible changes in Magento_OfflineShipping</a>
+*	<a href="#rn-074b8-payment">Backward incompatible changes in Magento_Payment</a>
+*	<a href="#rn-074b8-quoteapi">Backward incompatible changes in Magento_Quote</a>
+*	<a href="#rn-074b8-sales-model">Backward incompatible changes in Magento_Sales</a>
+*	<a href="#rn-074b8-ship">Backward incompatible changes in Magento_Shipping</a>
+*	<a href="#rn-074b8-tax">Backward incompatible changes in Magento_Tax</a>
+*	<a href="#rn-074b8-ups">Backward incompatible changes in Magento_Ups</a>
+*	<a href="#rn-074b8-usps">Backward incompatible changes in Magento_Usps</a>
 
 <h2 id="rn-074b8-compat">Backward compatible changes</h2>
 *	Added interface `\Magento\Payment\Model\InfoInterface` which should be used instead of `\Magento\Payment\Model\Info` which expects both `\Magento\Sales\Model\Order\Payment\Info` and `\Magento\Quote\Model\Quote\Payment\Info`
@@ -41,6 +45,106 @@ github_link: release-notes/changes_074-beta8.md
 	*	`<attribute code="downloadable_product_links" type="Magento\Downloadable\Api\Data\LinkInterface[]" />`
 	*	`<attribute code="downloadable_product_samples" type="Magento\Downloadable\Api\Data\SampleInterface[]" />`
 
+<h2 id="rn-074b8-bundle">Backward incompatible changes in Magento_Bundle</h2>
+*	Added saveChild method to `app/code/Magento/Bundle/Api/ProductLinkManagementInterface.php`
+*	Made following changes to `app/code/Magento/Bundle/Api/Data/LinkInterface.php`:
+	*	Added method `getId`
+	*	Added method `setId`
+ 	*	Removed method `getIsDefined`
+	*	Removed method `setIsDefined`
+
+<h2 id="rn-074b8-catalog">Backward incompatible changes in Magento_Catalog</h2>
+*	Added `setCreatedAt` method to `app/code/Magento/Catalog/Api/Data/CategoryInterface.php`
+*	Added the following methods to `app/code/Magento/Catalog/Api/Data/ProductInterface.php`
+	*	`getProductLinks`
+	*	`setProductLinks`
+	*	`getOptions`
+	*	`setOptions`
+	*	`getMediaGalleryEntries`
+	*	`setMediaGalleryEntries`
+	*	`getGroupPrices`
+	*	`setGroupPrices`
+	*	`getTierPrices`
+	*	`setTierPrices`
+*	Added the following methods to `app/code/Magento/Catalog/Api/Data/ProductTierPriceInterface.php`
+	*	`getCustomerGroupId`
+	*	`setCustomerGroupId`
+*	Changed method signature for method `create` in `app/code/Magento/Catalog/Api/ProductAttributeMediaGalleryManagementInterface.php`
+
+<h2 id="rn-074b8-checkout">Backward incompatible changes in Magento_Checkout</h2>
+Removed the following methods in `\Magento\Checkout\Controller\Sidebar\UpdateItemQty`:
+
+*	`checkQuoteItem`
+*	`updateQuoteItem`
+*	`normalize`
+*	`getSummaryQty`
+*	`getSummaryText`
+*	`getSubtotalHtml`
+
+In the `__construct()` method in `app/code/Magento/Checkout/Block/Cart/Shipping.php`, changed the parameter `\Magento\Quote\Model\Quote\Address\CarrierFactoryInterface` to `\Magento\Shipping\Model\CarrierFactoryInterface`
+
+<h2 id="rn-074b8-cms">Backward incompatible changes in Magento_Cms</h2>
+*	`\Magento\Cms\Model\BlockRepository` method name `get` renamed to `getById`
+*	`\Magento\Cms\Model\Resource\Block\Collection` method name `init` renamed to `_renderFiltersBefore`
+*	`\Magento\Cms\Model\Resource\Page\Collection` method name `init` renamed to `_construct`
+*	`\Magento\Cms\Model\Resource\Page\Collection` method signature `addStoreFilter` changed
+
+Removed the following methods:
+
+*	`\Magento\Cms\Model\Resource\Block\Grid\Collection`
+*	`\Magento\Cms\Model\Resource\Page\Grid\Collection`
+*	`\Magento\Cms\Model\DataSource\BlockCollection`
+*	`\Magento\Cms\Model\DataSource\PageCollection`
+*	`\Magento\Cms\Model\Resource\BlockCriteria`
+*	`\Magento\Cms\Model\Resource\BlockCriteriaMapper`
+*	`\Magento\Cms\Model\Resource\CmsAbstractCriteria`
+*	`\Magento\Cms\Model\Resource\CmsCriteriaMapper`
+*	`\Magento\Cms\Model\Resource\PageCriteria`
+*	`\Magento\Cms\Model\BlockCriteriaInterface`
+*	`\Magento\Cms\Model\PageCriteriaInterface`
+*	`\Magento\Cms\Model\Resource\PageCriteriaMapper`
+
+<h2 id="rn-074b8-config">Backward incompatible changes in Magento_ConfigurableProduct</h2>
+*	Removed interface `app/code/Magento/ConfigurableProduct/Api/OptionTypesListInterface.php`, also removed the associated API from `webapi.xml`
+*	Removed the following methods from `app/code/Magento/ConfigurableProduct/Api/OptionTypesListInterface.php`:
+	*	`getType`
+	*	`setType`
+
+<h2 id="rn-074b8-dhl">Backward incompatible changes in Magento_Dhl</h2>
+In `app/code/Magento/Dhl/Model/Carrier.php`, made the following changes:
+
+*	In the `collectRates()` method, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+*	In the `proccessAdditionalValidation()` method, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+
+<h2 id="rn-074b8-down">Backward incompatible changes in Magento_Downloadable</h2>
+*	Removed the following interfaces:
+	*	`app/code/Magento/Downloadable/Api/Data/LinkContentInterface.php`
+	*	`app/code/Magento/Downloadable/Api/Data/SampleContentInterface.php`
+*	Added the following methods in `app/code/Magento/Downloadable/Api/Data/LinkInterface.php`
+	*	`getLinkFileContent`
+	*	`setLinkFileContent`
+	*	`getSampleFileContent`
+	*	`setSampleFileContent`
+*	Added the following methods in `app/code/Magento/Downloadable/Api/Data/SampleInterface.php`
+	*	`getSampleFileContent`
+	*	`setSampleFileContent`
+*	Added the following methods in `app/code/Magento/Downloadable/Api/LinkRepositoryInterface.php`
+	*	`getSamplesByProduct`
+	*	`getLinksByProduct`
+*	Change the method signature in `app/code/Magento/Downloadable/Api/LinkRepositoryInterface.php`
+*	Changed parameter type from `\Magento/Downloadable/Api/Data/LinkContentInterface.php` to `\Magento/Downloadable/Api/Data/LinkContentInterface.php`
+*	Change the method signature in `app/code/Magento/Downloadable/Api/SampleRepositoryInterface.php`
+*	Changed parameter type from `\Magento\Downloadable\Api\Data\SampleContentInterface` to `\Magento\Downloadable\Api\Data\SampleInterface`
+
+<h2 id="rn-074b8-fedex">Backward incompatible changes in Magento_Fedex</h2>
+In `app/code/Magento/Fedex/Model/Carrier.php` method `collectRates()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+
+<h2 id="rn-074b8-frame">Backward incompatible changes in the Framework</h2>
+*	Added the `getCurrencySymbol` method to `lib/internal/Magento/Framework/Pricing/PriceCurrencyInterface.php`        
+*	Added the `getDisplayCurrencySymbol` method to `lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php`
+*	Added required parameter `\Magento\Framework\Stdlib\DateTime` to the constructor in:
+	*	`\Magento\Framework\App\Response\Http`
+	*	`\Magento\MediaStorage\Model\File\Storage\Response`
 
 <h2 id="rn-074b8-giftmessage">Backward incompatible changes in Magento_GiftMessage</h2>
 In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>, we made the following changes:
@@ -50,11 +154,34 @@ In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.ph
 
 	All usages of `isMessagesAvailable` and `getIsMessagesAvailable` are now replaced by `isMessagesAllowed`
 
-<h2 id="rn-074b8-quoteapi">Backward incompatible changes in Magento_Quote</h2>
-In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation, we made the following changes:
+<h2 id="rn-074b8-offline">Backward incompatible changes in Magento_OfflineShipping</h2>
+*	In `app/code/Magento/OfflineShipping/Model/Carrier/Flatrate.php` method `collectRates()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+*	In `app/code/Magento/OfflineShipping/Model/Carrier/Freeshipping.php` method `collectRates()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+*	In `app/code/Magento/OfflineShipping/Model/Carrier/Pickup.php` method `collectRates()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+*	In `app/code/Magento/OfflineShipping/Model/Carrier/Tablerate.php` method `collectRates()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 
-*	Removed method `delete`
-*	Added methods `getListForCustomer`, `saveForCustomer`, and `deleteByIdForCustomer`
+<h2 id="rn-074b8-payment">Backward incompatible changes in Magento_Payment</h2>
+*	In `app/code/Magento/Payment/Model/Cart/SalesModel/Factory.php` method `create()`, changed parameter `\Magento\Sales\Model\Order|Magento\Quote\Model\Quote` to `\Magento\Quote\Api\Data\CartInterface`
+*	In `app/code/Magento/Payment/Model/Cart/SalesModel/SalesModelInterface.php` method `getTaxContainer()`, changed return `\Magento\Sales\Model\Order|\Magento\Quote\Model\Quote\Address` to `\Magento\Sales\Api\Data\OrderInterface|\Magento\Quote\Api\Data\AddressInterface `
+*	In `app/code/Magento/Payment/Model/Method/AbstractMethod.php`:
+	*	In method `getInfoInstance()`, changed return `\Magento\Payment\Model\Info` to `\Magento\Payment\Model\InfoInterface`
+	*	In method `isAvailable()`, changed return `\Magento\Quote\Model\Quote` to `\Magento\Quote\Api\Data\CartInterface`
+*	In `app/code/Magento/Payment/Model/Method/Cc.php` method `isAvailable()`, changed parameter `\Magento\Quote\Model\Quote` to `\Magento\Quote\Api\Data\CartInterface`
+*	In `app/code/Magento/Payment/Model/MethodList.php`:
+	*	In method `getAvailableMethods()`, changed parameter `\Magento\Quote\Model\Quote` to `\Magento\Quote\Api\Data\CartInterface`
+	*	In method `_canUseMethod()`, changed parameter `\Magento\Quote\Model\Quote` to `\Magento\Quote\Api\Data\CartInterface`
+
+<h2 id="rn-074b8-quoteapi">Backward incompatible changes in Magento_Quote</h2>
+*	In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartItemRepositoryInterface.php" target="_blank">\Magento\Quote\Api\CartItemRepositoryInterface</a> and its implementation, we made the following changes:
+
+	*	Removed method `delete`
+	*	Added methods `getListForCustomer`, `saveForCustomer`, and `deleteByIdForCustomer`
+
+*	In `app/code/Magento/Quote/Model/Resource/Quote.php`:
+	*	In method `__construct()`, changed parameter `\Magento\Eav\Model\Config` to `\Magento\SalesSequence\Model\Manager`
+	*	Removed method `isOrderIncrementIdUsed()`
+
+*	In `app/code/Magento/Quote/Model/Resource/Quote/Address/Rate/Collection.php` method `__construct()`, changed parameter `\Magento\Quote\Model\Quote\Address\CarrierFactoryInterface` to `\Magento\Shipping\Model\CarrierFactoryInterface`
 
 In <a href="{{ site.mage2000url }}app/code/Magento/Quote/Api/CartManagementInterface.php" target="_blank">\Magento\Quote\Api\CartManagementInterface</a> and its implementation, we made the following changes:
 
@@ -92,93 +219,82 @@ Other changes:
 *	Added new class `\Magento\Quote\Model\QuoteIdMask`
 *	In `\Magento\Quote\Setup\InstallSchema`, added code to create table for storing cartId and obscured UUID based cartId mapping
 *	Added new interface `\Magento\Framework\Webapi\Rest\Request\ParamOverriderInterface,` with the following two classes implementing it:
+
 	*	Added new class `\Magento\Quote\Model\Webapi\ParamOverriderCartId`
 	*	Added new class `\Magento\Webapi\Controller\Rest\ParamOverriderCustomerId`
 *	Changed the constructor parameter for `\Magento\Webapi\Controller\Rest\ParamsOverrider`
 
-<h2 id="rn-074b8-webapi">Backward incompatible changes in Magento_Webapi and \Magento\Framework\Webapi</h2>
-*	Added an additional parameter `$methodsMapProcessor` for the constructor of <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/Soap/Request/Handler.php" target="_blank">Magento\Webapi\Controller\Soap\Request\Handler</a>
-*	Removed protected method `_formatRoutePath` from Magento\Webapi\Model\Rest\Config
-*	Added an additional parameter `$methodsMapProcessor` for the constructor of `\Magento\Framework\Api\DataObjectHelper`
-*	Refactored class <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:
- 	*	Added new class `\Magento\Framework\Reflection\CustomAttributesProcessor`
- 	*	Added new class `\Magento\Framework\Reflection\ExtensionAttributesProcessor`
- 	*	Added new class `\Magento\Framework\Reflection\FieldNamer`
- 	*	Added new class `\Magento\Framework\Reflection\MethodsMap`
- 	*	Added new class `\Magento\Framework\Reflection\TypeCaster`
-*	Added an additional parameter `$methodsMapProcessor` for the constructor of Magento\Framework\Webapi\ServiceOutputProcessor
-
 <h2 id="rn-074b8-sales-model">Backward incompatible changes in Magento_Sales</h2>
-Removed a dependency on `gridAggregator` from <a href="{{ site.mage2000url }}app/code/Magento/Sales/Model" target="_blank">\Magento\Sales\Model</a> resource models, which changed the constructor signature in the following classes: 
+*	Removed a dependency on `gridAggregator` from <a href="{{ site.mage2000url }}app/code/Magento/Sales/Model" target="_blank">\Magento\Sales\Model</a> resource models, which changed the constructor signature in the following classes: 
 
-*	`\Magento\Sales\Model\Resource\Order`
-*	`\Magento\Sales\Model\Resource\Order\Item`
-*	`\Magento\Sales\Model\Resource\Order\Address`
-*	`\Magento\Sales\Model\Resource\Order\Payment`
-*	`\Magento\Sales\Model\Resource\Order\Payment\Transaction`
-*	`\Magento\Sales\Model\Resource\Order\Status\History`
-*	`\Magento\Sales\Model\Resource\Order\Shipment`
-*	`\Magento\Sales\Model\Resource\Order\Shipment\Item`
-*	`\Magento\Sales\Model\Resource\Order\Shipment\Track`
-*	`\Magento\Sales\Model\Resource\Order\Shipment\Comment`
-*	`\Magento\Sales\Model\Resource\Order\Invoice`
-*	`\Magento\Sales\Model\Resource\Order\Invoice\Item`
-*	`\Magento\Sales\Model\Resource\Order\Invoice\Comment`
-*	`\Magento\Sales\Model\Resource\Order\Creditmemo`
-*	`\Magento\Sales\Model\Resource\Order\Creditmemo\Item`
-*	`\Magento\Sales\Model\Resource\Order\Creditmemo\Comment`
+	*	`\Magento\Sales\Model\Resource\Order`
+	*	`\Magento\Sales\Model\Resource\Order\Item`
+	*	`\Magento\Sales\Model\Resource\Order\Address`
+	*	`\Magento\Sales\Model\Resource\Order\Payment`
+	*	`\Magento\Sales\Model\Resource\Order\Payment\Transaction`
+	*	`\Magento\Sales\Model\Resource\Order\Status\History`
+	*	`\Magento\Sales\Model\Resource\Order\Shipment`
+	*	`\Magento\Sales\Model\Resource\Order\Shipment\Item`
+	*	`\Magento\Sales\Model\Resource\Order\Shipment\Track`
+	*	`\Magento\Sales\Model\Resource\Order\Shipment\Comment`
+	*	`\Magento\Sales\Model\Resource\Order\Invoice`
+	*	`\Magento\Sales\Model\Resource\Order\Invoice\Item`
+	*	`\Magento\Sales\Model\Resource\Order\Invoice\Comment`
+	*	`\Magento\Sales\Model\Resource\Order\Creditmemo`
+	*	`\Magento\Sales\Model\Resource\Order\Creditmemo\Item`
+	*	`\Magento\Sales\Model\Resource\Order\Creditmemo\Comment`
 
-Added dependency on `\Magento\Sales\Model\Order\Address\Renderer` to the following:
+*	Added dependency on `\Magento\Sales\Model\Order\Address\Renderer` to the following:
 
-*	`\Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\ShippingAddress`
-*	`\Magento\Rma\Block\Returns\Create`
-*	`\Magento\Rma\Model\Pdf\Rma`
-*	`\Magento\Rma\Model\Rma\Status\History`
-*	`\Magento\Sales\Block\Adminhtml\Order\View\Info`
-*	`\Magento\Sales\Block\Order\Info`
-*	`\Magento\Sales\Block\Order\PrintOrder\Creditmemo`
-*	`\Magento\Sales\Block\Order\PrintOrder\Invoice`
-*	`\Magento\Sales\Block\Order\PrintOrder\Shipment`
-*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoCommentSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender`
-*	`\Magento\Sales\Block\Order\PrintOrder\Invoice`
-*	`\Magento\Sales\Block\Order\PrintOrder\Shipment`
-*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoCommentSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\InvoiceCommentSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\InvoiceSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\OrderCommentSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\OrderSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\ShipmentCommentSender`
-*	`\Magento\Sales\Model\Order\Email\Sender\ShipmentSender`
-*	`\Magento\Sales\Model\Order\Pdf\AbstractPdf`
-*	`\Magento\Sales\Model\Order\Pdf\Creditmemo`
-*	`\Magento\Sales\Model\Order\Pdf\Invoice`
-*	`\Magento\Sales\Model\Order\Pdf\Shipment`
-*	`\Magento\Shipping\Model\Order\Pdf\Packaging`
+	*	`\Magento\Rma\Block\Adminhtml\Rma\Edit\Tab\General\ShippingAddress`
+	*	`\Magento\Rma\Block\Returns\Create`
+	*	`\Magento\Rma\Model\Pdf\Rma`
+	*	`\Magento\Rma\Model\Rma\Status\History`
+	*	`\Magento\Sales\Block\Adminhtml\Order\View\Info`
+	*	`\Magento\Sales\Block\Order\Info`
+	*	`\Magento\Sales\Block\Order\PrintOrder\Creditmemo`
+	*	`\Magento\Sales\Block\Order\PrintOrder\Invoice`
+	*	`\Magento\Sales\Block\Order\PrintOrder\Shipment`
+	*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoCommentSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender`
+	*	`\Magento\Sales\Block\Order\PrintOrder\Invoice`
+	*	`\Magento\Sales\Block\Order\PrintOrder\Shipment`
+	*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoCommentSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\CreditmemoSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\InvoiceCommentSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\InvoiceSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\OrderCommentSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\OrderSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\ShipmentCommentSender`
+	*	`\Magento\Sales\Model\Order\Email\Sender\ShipmentSender`
+	*	`\Magento\Sales\Model\Order\Pdf\AbstractPdf`
+	*	`\Magento\Sales\Model\Order\Pdf\Creditmemo`
+	*	`\Magento\Sales\Model\Order\Pdf\Invoice`
+	*	`\Magento\Sales\Model\Order\Pdf\Shipment`
+	*	`\Magento\Shipping\Model\Order\Pdf\Packaging`
 
-Removed dependency on `\Magento\Framework\Stdlib\DateTime\TimezoneInterface` and `\Magento\Framework\Stdlib\DateTime\DateTime` from the following:
+*	Removed dependency on `\Magento\Framework\Stdlib\DateTime\TimezoneInterface` and `\Magento\Framework\Stdlib\DateTime\DateTime` from the following:
 
-*	`\Magento\Sales\Model\AbstractModel`
-*	`\Magento\Sales\Model\Order`
-*	`\Magento\Sales\Model\Order\Comment`
-*	`\Magento\Sales\Model\Order\Item`
-*	`\Magento\Sales\Model\Order\Address`
-*	`\Magento\Sales\Model\Order\Payment`
-*	`\Magento\Sales\Model\Order\Payment\Info`
-*	`\Magento\Sales\Model\Order\Payment\Transaction`
-*	`\Magento\Sales\Model\Order\Invoice`
-*	`\Magento\Sales\Model\Order\Invoice\Item`
-*	`\Magento\Sales\Model\Order\Invoice\Comment`
-*	`\Magento\Sales\Model\Order\Shipment`
-*	`\Magento\Sales\Model\Order\Shipment\Item`
-*	`\Magento\Sales\Model\Order\Shipment\Comment`
-*	`\Magento\Sales\Model\Order\Creditmemo`
-*	`\Magento\Sales\Model\Order\Creditmemo\Item`
-*	`\Magento\Sales\Model\Order\Creditmemo\Track`
-*	`\Magento\Sales\Model\Order\Creditmemo\Comment`
+	*	`\Magento\Sales\Model\AbstractModel`
+	*	`\Magento\Sales\Model\Order`
+	*	`\Magento\Sales\Model\Order\Comment`
+	*	`\Magento\Sales\Model\Order\Item`
+	*	`\Magento\Sales\Model\Order\Address`
+	*	`\Magento\Sales\Model\Order\Payment`
+	*	`\Magento\Sales\Model\Order\Payment\Info`
+	*	`\Magento\Sales\Model\Order\Payment\Transaction`
+	*	`\Magento\Sales\Model\Order\Invoice`
+	*	`\Magento\Sales\Model\Order\Invoice\Item`
+	*	`\Magento\Sales\Model\Order\Invoice\Comment`
+	*	`\Magento\Sales\Model\Order\Shipment`
+	*	`\Magento\Sales\Model\Order\Shipment\Item`
+	*	`\Magento\Sales\Model\Order\Shipment\Comment`
+	*	`\Magento\Sales\Model\Order\Creditmemo`
+	*	`\Magento\Sales\Model\Order\Creditmemo\Item`
+	*	`\Magento\Sales\Model\Order\Creditmemo\Track`
+	*	`\Magento\Sales\Model\Order\Creditmemo\Comment`
 
-Renamed `\Magento\Sales\Model\Resource\Entity` to `\Magento\Sales\Model\Resource\EntityAbstract`
+*	Renamed `\Magento\Sales\Model\Resource\Entity` to `\Magento\Sales\Model\Resource\EntityAbstract`
 
 *	Added the `setCreatedAt` method to the following interfaces:
 
@@ -195,7 +311,6 @@ Renamed `\Magento\Sales\Model\Resource\Entity` to `\Magento\Sales\Model\Resource
 	*	`pp/code/Magento/Sales/Api/Data/TransactionInterface.php`
 
 *	Added the `setTransactionId` method to interface `app/code/Magento/Sales/Api/Data/TransactionInterface.php`
-
 
 See the following table.
 
@@ -273,59 +388,24 @@ See the following table.
 </tbody>
 </table>
 
-<h2 id="rn-074b8-catalog">Backward incompatible changes in Magento_Catalog</h2>
-*	Added `setCreatedAt` method to `app/code/Magento/Catalog/Api/Data/CategoryInterface.php`
-*	Added the following methods to `app/code/Magento/Catalog/Api/Data/ProductInterface.php`
-	*	`getProductLinks`
-	*	`setProductLinks`
-	*	`getOptions`
-	*	`setOptions`
-	*	`getMediaGalleryEntries`
-	*	`setMediaGalleryEntries`
-	*	`getGroupPrices`
-	*	`setGroupPrices`
-	*	`getTierPrices`
-	*	`setTierPrices`
-*	Added the following methods to `app/code/Magento/Catalog/Api/Data/ProductTierPriceInterface.php`
-	*	`getCustomerGroupId`
-	*	`setCustomerGroupId`
-*	Changed method signature for method `create` in `app/code/Magento/Catalog/Api/ProductAttributeMediaGalleryManagementInterface.php`
+<h2 id="rn-074b8-ship">Backward incompatible changes in Magento_Shipping</h2>
+*	In `app/code/Magento/Shipping/Model/Carrier/AbstractCarrier.php`:
+	*	In method `collectRates()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+	*	In method `checkAvailableShipCountries()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+	*	In method `proccessAdditionalValidation()`, changed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+	*	In method `proccessAdditionalValidation()`, changed return `\$this|bool|Magento\Quote\Model\Quote\Address\RateResult\Error` to `$this|bool|\Magento\Framework\Object`
 
-<h2 id="rn-074b8-bundle">Backward incompatible changes in Magento_Bundle</h2>
-*	Added saveChild method to `app/code/Magento/Bundle/Api/ProductLinkManagementInterface.php`
-*	Made following changes to `app/code/Magento/Bundle/Api/Data/LinkInterface.php`:
-	*	Added method `getId`
-	*	Added method `setId`
- 	*	Removed method `getIsDefined`
-	*	Removed method `setIsDefined`
+*	Moved `app/code/Magento/Quote/Model/Quote/Address/AbstractCarrierInterface.php` to `app/code/Magento/Shipping/Model/Carrier/AbstractCarrierInterface.php`
+*	In `app/code/Magento/Shipping/Model/Carrier/AbstractCarrierInterface.php`:
 
-<h2 id="rn-074b8-config">Backward incompatible changes in Magento_ConfigurableProduct</h2>
-*	Removed interface `app/code/Magento/ConfigurableProduct/Api/OptionTypesListInterface.php`, also removed the associated API from `webapi.xml`
-*	Removed the following methods from `app/code/Magento/ConfigurableProduct/Api/OptionTypesListInterface.php`:
-	*	`getType`
-	*	`setType`
+	*	In method `collectRates()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+	*	In method `checkAvailableShipCountries()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+	* 	In method `proccessAdditionalValidation()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 
-<h2 id="rn-074b8-down">Backward incompatible changes in Magento_Downloadable</h2>
-*	Removed the following interfaces:
-	*	`app/code/Magento/Downloadable/Api/Data/LinkContentInterface.php`
-	*	`app/code/Magento/Downloadable/Api/Data/SampleContentInterface.php`
-*	Added the following methods in `app/code/Magento/Downloadable/Api/Data/LinkInterface.php`
-	*	`getLinkFileContent`
-	*	`setLinkFileContent`
-	*	`getSampleFileContent`
-	*	`setSampleFileContent`
-*	Added the following methods in `app/code/Magento/Downloadable/Api/Data/SampleInterface.php`
-	*	`getSampleFileContent`
-	*	`setSampleFileContent`
-*	Added the following methods in `app/code/Magento/Downloadable/Api/LinkRepositoryInterface.php`
-	*	`getSamplesByProduct`
-	*	`getLinksByProduct`
-*	Change the method signature in `app/code/Magento/Downloadable/Api/LinkRepositoryInterface.php`
-*	Changed parameter type from `\Magento/Downloadable/Api/Data/LinkContentInterface.php` to `\Magento/Downloadable/Api/Data/LinkContentInterface.php`
-*	Change the method signature in `app/code/Magento/Downloadable/Api/SampleRepositoryInterface.php`
-*	Changed parameter type from `\Magento\Downloadable\Api\Data\SampleContentInterface` to `\Magento\Downloadable\Api\Data\SampleInterface`
+*	In `app/code/Magento/Shipping/Model/Carrier/AbstractCarrierOnline.php` method `proccessAdditionalValidation()`, rename parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+*	Moved `app/code/Magento/Quote/Model/Quote/Address/CarrierFactoryInterface.php` to `app/code/Magento/Shipping/Model/CarrierFactoryInterface.php`
 
-<h2 id="rn-074b8-sales-tax">Backward incompatible changes in Magento_Tax</h2>
+<h2 id="rn-074b8-tax">Backward incompatible changes in Magento_Tax</h2>
 Removed constants from the following interfaces:
 
 *	`app/code/Magento/Tax/Api/Data/AppliedTaxInterface.php`
@@ -342,44 +422,25 @@ Removed constants from the following interfaces:
 *	`app/code/Magento/Tax/Api/Data/TaxRateInterface.php`
 *	`app/code/Magento/Tax/Api/Data/TaxRateTitleInterface.php`
 
-<h2 id="rn-074b8-sales-frame">Backward incompatible changes in the Framework</h2>
-*	Added the `getCurrencySymbol` method to `lib/internal/Magento/Framework/Pricing/PriceCurrencyInterface.php`        
-*	Added the `getDisplayCurrencySymbol` method to `lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php`
+<h2 id="rn-074b8-ups">Backward incompatible changes in Magento_Ups</h2>
+In `app/code/Magento/Ups/Model/Carrier.php` method `collectRates()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 
-<h2 id="rn-074b8-sales-cms">Backward incompatible changes in Magento_Cms</h2>
-*	`\Magento\Cms\Model\BlockRepository` method name `get` renamed to `getById`
-*	`\Magento\Cms\Model\Resource\Block\Collection` method name `init` renamed to `_renderFiltersBefore`
-*	`\Magento\Cms\Model\Resource\Page\Collection` method name `init` renamed to `_construct`
-*	`\Magento\Cms\Model\Resource\Page\Collection` method signature `addStoreFilter` changed
+<h2 id="rn-074b8-usps">Backward incompatible changes in Magento_Usps</h2>
+In `app/code/Magento/Usps/Model/Carrier.php` method `collectRates()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 
-Removed the following methods:
-*	`\Magento\Cms\Model\Resource\Block\Grid\Collection`
-*	`\Magento\Cms\Model\Resource\Page\Grid\Collection`
-*	`\Magento\Cms\Model\DataSource\BlockCollection`
-*	`\Magento\Cms\Model\DataSource\PageCollection`
-*	`\Magento\Cms\Model\Resource\BlockCriteria`
-*	`\Magento\Cms\Model\Resource\BlockCriteriaMapper`
-*	`\Magento\Cms\Model\Resource\CmsAbstractCriteria`
-*	`\Magento\Cms\Model\Resource\CmsCriteriaMapper`
-*	`\Magento\Cms\Model\Resource\PageCriteria`
-*	`\Magento\Cms\Model\BlockCriteriaInterface`
-*	`\Magento\Cms\Model\PageCriteriaInterface`
-*	`\Magento\Cms\Model\Resource\PageCriteriaMapper`
-
-<h2 id="rn-074b8-sales-checkout">Backward incompatible changes in Magento_Checkout</h2>
-Removed the following methods in `\Magento\Checkout\Controller\Sidebar\UpdateItemQty`:
-*	`checkQuoteItem`
-*	`updateQuoteItem`
-*	`normalize`
-*	`getSummaryQty`
-*	`getSummaryText`
-*	`getSubtotalHtml`
+<h2 id="rn-074b8-webapi">Backward incompatible changes in Magento_Webapi and \Magento\Framework\Webapi</h2>
+*	Added an additional parameter `$methodsMapProcessor` for the constructor of <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/Soap/Request/Handler.php" target="_blank">Magento\Webapi\Controller\Soap\Request\Handler</a>
+*	Removed protected method `_formatRoutePath` from Magento\Webapi\Model\Rest\Config
+*	Added an additional parameter `$methodsMapProcessor` for the constructor of `\Magento\Framework\Api\DataObjectHelper`
+*	Refactored class <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:
+ 	*	Added new class `\Magento\Framework\Reflection\CustomAttributesProcessor`
+ 	*	Added new class `\Magento\Framework\Reflection\ExtensionAttributesProcessor`
+ 	*	Added new class `\Magento\Framework\Reflection\FieldNamer`
+ 	*	Added new class `\Magento\Framework\Reflection\MethodsMap`
+ 	*	Added new class `\Magento\Framework\Reflection\TypeCaster`
+*	Added an additional parameter `$methodsMapProcessor` for the constructor of Magento\Framework\Webapi\ServiceOutputProcessor
 
 
-<h2 id="rn-074b8-other">Other backward incompatible changes</h2>
-*	Added required parameter `\Magento\Framework\Stdlib\DateTime` to the constructor in:
-	*	`\Magento\Framework\App\Response\Http`
-	*	`\Magento\MediaStorage\Model\File\Storage\Response`
 
 
 
