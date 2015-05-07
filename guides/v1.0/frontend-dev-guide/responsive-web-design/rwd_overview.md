@@ -9,19 +9,19 @@ menu_node: parent
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
 ---
 
-Responsive web design (RWD, <i>responsive design</i>) crafts web sites to provide an optimal viewing experience &mdash; easy reading and navigation with a minimum of resizing and scrolling, across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).
+Responsive web design (RWD, also referred as<i>responsive design</i>) crafts web sites to provide an optimal viewing experience &mdash; easy reading and navigation with a minimum of resizing and scrolling, across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).
 
-The built-in Magento Blank and Luma (which <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from Blank) themes use the mobile first RWD approach. It is ensured mostly by means of CSS and JavaScript.
+The built-in Magento Blank and Luma themes (Luma <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from Blank) use the mobile first RWD approach. It is ensured mostly by means of CSS and JavaScript.
 
 
-The following image illustrates how the same page built on the Blank theme looks on mobile and desktop devices.
+The following image illustrates how the same page built on the Blank theme looks on mobile, tablet and desktop devices.
 
 <img src="{{site.baseurl}}common/images/css_responsive1.jpg">
 
 
 We recommend using the Blank theme, as a starting point for your customizations. That is, your custom theme should <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from Blank.
 
-The articles in this chapter describe the particular approaches used in the Blank theme, and provide practical recommendation how to use these approaches in your themes:
+The articles in this chapter describe the particular approaches used in the Blank theme, and provide practical recommendations on how to use these approaches in your themes:
 
 <ul>
 <li> 
@@ -54,27 +54,16 @@ Description
 </tr>
 <tr>
 <td>
-<i>Viewport</i>
-</td>
-<td>
-
-The viewing region or screen size for which your responsive design is implemented.
-
-</td>
-</tr>
-<tr>
-<td>
 <i>Breakpoint</i>
 </td>
 <td>
 
-The viewport size at which the width of the user’s screen causes your responsive layout to change.
+The width of the user’s screen that causes your responsive layout to change.
 
 </td>
 </tr>
 </table>
 
-<p class="q">Need update for "viewport"</p>
 
 <h2>Recommended reading</h2>
 
