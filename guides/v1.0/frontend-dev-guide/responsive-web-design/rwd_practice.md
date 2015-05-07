@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
 <h2>Overview</h2>
 This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used in Magento default themes. 
 
-The described flow is applicable only for themes, which <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the default Blank or Luma theme.
+The described flow is applicable only for themes that <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the default Blank or Luma theme.
 
 <h2 id="rwd_practice">Changing the number of products in a row</h2>
 
@@ -37,7 +37,7 @@ The Orange theme inherits from the Blank theme.
 
 To change the products quantity, OrangeCo take the following steps:
 <ol>
-<li>Copy the <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less </code></a> file.
+<li>Copy the <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less</code></a> file.
 
 <li>Put it in the corresponding location in their Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Catalog/web/css/source/module/_listings.less </code> </li>
 
@@ -45,7 +45,7 @@ To change the products quantity, OrangeCo take the following steps:
 </ol>
 <p><img src="{{site.baseurl}}common/images/rwd_pract1.png"></p>
 
-When OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">apply their theme</a>, the catalog page of their store will look like following:
+After OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">apply their theme</a>, the catalog page of their store looks like following:
 
 <p><img src="{{site.baseurl}}common/images/rwd_practice.jpg"></p>
 
