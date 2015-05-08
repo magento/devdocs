@@ -148,244 +148,164 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="m2devgde-xlate-intro">Introduction</h2>
-
-<p>The Magento translation functionality enables you to customize and localize your store for multiple regions and markets.</p>
-
-<p>The translation functionality was changed to improve the localization and customization of Magento instances. Specifically, the dictionaries are easier to update and maintain and the code coupling and duplication are reduced.</p>
-
-<p>How you can benefit from translation feature in Magento</p>
+		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li>You can translate any part of your store (that is, a module, theme) without influencing other parts.</li>
-  <li>You can use the ready-to-use language packages prepared by other users or create your own.</li>
-  <li>You can create localized version based on existing, or parent, translations by using language inheritance feature. Thus, if you missed or omitted localizing some phrases/terms, parent translations are used.</li>
-  <li>You can customize you translations even further by creating more than one version of translation for the same language.</li>
+  <li><a href="#m2devgde-xlate-intro">Overview of translations</a></li>
+  <li><a href="#m2devgde-xlate-translating">Manually translate words and phrases</a></li>
+  <li><a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a></li>
+  <li><a href="#m2devgde-xlate-languagepack">Language packages</a></li>
+</ul>
+
+<h2 id="m2devgde-xlate-intro">Overview of translations</h2>
+<p>The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.</p>
+
+<h3 id="terms-used">Terms used</h3>
+<p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code>en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code>en_US</code>) to German (<code>de_DE</code>):</p>
+
+<pre><code>"Add to Cart","Zum Warenkobrn hinzufügen"
+"Add to Compare","Hinzufügen um zu vergleichen"
+"Add to Wishlist","Zum Wunschzettel hinzufügen"
+"Additional Product Info","Zusätzliche Angaben zum Produkt"
+"Address","Adresse"
+"Address %1 of %2","Adresse %1 von %2"
+</code></pre>
+
+<p>A <em>language package</em> is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
+</div>
+
+<h3 id="benefits">Benefits</h3>
+<p>Benefits include:</p>
+
+<ul>
+  <li>
+    <p>Two types of language packages:</p>
+
+    <ul>
+      <li>Module and theme packages. Included in the <code>i18n</code> directory of a module or theme, the Magento application auto-discovers these packages.</li>
+      <li>
+        <p>An entire dictionary in one directory. </p>
+
+        <p>This is intended to be used and distributed as a standalone component (similar to modules and themes).</p>
+      </li>
+    </ul>
+  </li>
+  <li>You can use the ready-to-use language packages prepared by other users or you can create your own.</li>
+  <li>You can create localizations based on existing, or parent, translations using <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework">language inheritance</a>. Inheritance means (among other things) that if you missed or omitted localizing some phrases or terms, parent translations are used.</li>
+  <li>You can customize your translations even further by creating more than one version of a translation for the same language.</li>
 </ul>
 
 <p>Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.</p>
 
+<h3 id="changes-in-magento-2">Changes in Magento 2</h3>
 <p>Changes made:</p>
 
 <ul>
-  <li>The language package (<code>i18n</code> folder) can now be moved and saved to any directory of your extension.</li>
-  <li>The phrases for translation are embodied in <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.</li>
-  <li>The translation tool has been divided into two tools: one for the dictionary generator and one for uploading the language package.</li>
-  <li>The translation tool uses lazy loading.</li>
+  <li>The language package (<code>i18n</code> directory) can now be moved and saved to any directory of your extension.</li>
+  <li>The phrases for translations are enabled in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.</li>
 </ul>
 
-<h2 id="m2devgde-xlate-translating">Manually translate Magento</h2>
+<h3 id="more-information">More information</h3>
+<p>See one of the following sections for more information:</p>
 
+<ul>
+  <li><a href="#m2devgde-xlate-translating">Manually translate words and phrases</a></li>
+  <li><a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a></li>
+  <li><a href="#m2devgde-xlate-languagepack">Language packages</a></li>
+</ul>
+
+<h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
 <p>Translating the names, titles and phrases used in Magento involves the following steps:</p>
 
 <ol>
-  <li>Generate a dictionary of your instance by using the <a href="#m2devgde-xlate-generatortool">dictionary generator tool</a>.</li>
+  <li>Generate a dictionary of your instance using the <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">translation dictionary tool</a>.</li>
   <li>Translate the terms.</li>
-  <li>Upload your new dictionary to Magento using the <a href="#m2devgde-xlate-packtool">language package tool</a>.</li>
+  <li>If desired, package your translations in a <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack">language package</a>.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Only one variant of translation can be used for a word or phrase in a pack. Otherwise, the system returns an error.</p>
+  <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
 </div>
 
-<p>Inline translation via the Text Editor is a customization tool used in the storefront. Changes made in the Text Editor are not recorded in an instance’s dictionary; they are stored in the library in an instance’s database.</p>
+<p>Anyone can submit translations on the storefront using the Text Editor. Changes made in the Text Editor are not recorded in an instance’s dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.</p>
 
-<p>In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.</p>
-
-<h2 id="m2devgde-xlate-dictionaries">What is a dictionary?</h2>
-
-<p>A dictionary is a .csv file containing names/titles/phrases used in Magento. Depending on your configurations, a dictionary can contain all phrases used in Magento or phrases belonging to specified modules/themes.</p>
-
-<p>In a dictionary, every phrase, name and title is mentioned only once, even if belongs to different modules or themes. The only exception to this rule is when a duplicate phrase belongs to a module(s) and a theme(s) at the same time.</p>
-
-<p>Typically, a dictionary contains three columns:</p>
+<h2 id="m2devgde-xlate-dictionaries">Translation dictionaries</h2>
+<p>Magento translates words and phrases when all of the following conditions are met:</p>
 
 <ul>
-  <li>Key. Contains the default/key meaning of a phrase (in en_US locale) and is used to assign a phrase’s translation properly. Should not be changed.</li>
-  <li>Translation. Contains the translated/customized variant of a phrase. This is the only column a translator should edit.</li>
-  <li>Meta information. Retrieves the module(s) and theme(s) where a phrase is used. Should not be changed. You can opt to generate a dictionary without meta information for reference purposes only (refer to <a href="#m2devgde-xlate-generatortool">Using the dictionary generator tool</a> section for details).</li>
+  <li>The Magento code base has the necessary translation dictionaries for a language</li>
+  <li>This language is configured by the store administrator to be used in specified scope (that is, storefront)</li>
 </ul>
 
-<p>Sample of a dictionary with meta information:</p>
+<p>In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and a themes at the same time.</p>
 
-<pre>"Add New Block","Add New Block","module","Mage_Cms"
-"Add New Page","Add New Page","module","Mage_Cms"
-"All Countries","All Countries","theme","demo"
-"An error occurred while saving the page.","An error occurred while saving the page.","module","Mage_Cms"
-</pre>
+<p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries night be located in module and theme directories similar to the following:</p>
 
-<p>Dictionary files can be located in different parts of the code base and are assembled into single language-specific dictionary automatically in the runtime.</p>
+<pre><code>app/code/Magento/Checkout/i18n/pt_BR.csv
+app/design/frontend/Magento/demo/i18n/pt_BR.csv
+</code></pre>
 
-<p>Meta information in a dictionary file is necessary for defining where the translation of a phrase should be assigned. A dictionary file without the meta information must be uploaded manually to appropriate module. For example, if you create a dictionary file for a custom/extension module, this file does not have the meta information. Thus, to make a new dictionary available in a custom module, upload a dictionary file to <code>i18n</code> folder of this module, for instance: <code>app/code/&lt;ModuleName&gt;/&lt;VendorName&gt;/i18n/fr_FR.csv</code>.</p>
+<p>Assembling the preceding <code>pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
 
 <h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
+<p><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.</p>
 
-<p>The dictionary generator tool compiles a list of all phrases, names, and titles used in Magento, that is, a dictionary. The generator tool gathers phrases and terms throughout entire Magento, that is, from all supported file types.</p>
-
-<p>To generate a dictionary, use the command line:</p>
-
-<pre>php&nbsp;-f&nbsp;generator.php&nbsp;--&nbsp;-d&nbsp;&lt;directory&gt;&nbsp;[-m&nbsp;y]&nbsp;[-o&nbsp;&lt;filename&gt;]
-php&nbsp;-f&nbsp;generator.php&nbsp;--&nbsp;--directory=&lt;directory&gt;&nbsp;[--magento=y]&nbsp;[--output=&lt;filename&gt;]
-</pre>
-
-<p>For generating a dictionary, you should specify the following parameters:</p>
+<h2 id="m2devgde-xlate-languagepack">Language packages</h2>
+<p>Magento enables you to create the following types of language packages:</p>
 
 <ul>
-  <li><code>-d|directory</code> defines path to a directory to be parsed. This parameter is required.</li>
-  <li><code>-o|output</code> defines the name of the output file (a dictionary); by default, the output file (dictionary) is saved in the directory from which the script was launched. This parameter is optional.</li>
-  <li><code>-m|magento</code> defines whether a directory belongs to the root code base, that is, whether the meta information should be included into a dictionary; by default, the value is set to ‘no’. The value can be set to ‘yes’ only for the Magento root directory, otherwise the parser cannot find the correct path. This parameter is optional.</li>
+  <li>
+    <p>A set of .csv files for modules and themes. These packages files are intended to be deployed in modules. For example:</p>
+
+    <pre><code>__/app
+ |__/code
+ | |__/Magento
+ |   |__/Catalog
+ |   | |__/i18n
+ |   |   |-- pt_BR.csv
+ |   |__/Checkout
+ |   | |__/i18n
+ |   |   |-- pt_BR.csv
+ |   |__/Customer
+ |     |__/i18n
+ |       |-- pt_BR.csv
+ |__/design
+   |__/frontend
+     |__/Magento
+       |__/demo
+         |__/i18n
+           |-- pt_BR.csv
+</code></pre>
+  </li>
+  <li>
+    <p>Language packages that contain a entire dictionary in one directory. </p>
+
+    <p>You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento’s modularity principles on purpose; that is, so that a system integrator can translations variations provided by extensions. </p>
+  </li>
 </ul>
 
-<h2 id="m2devgde-xlate-languagepack">Language packs</h2>
-
-<p>The language pack is a dictionary divided into separate module-specific files. You can download the ready-to-use language packs and customize them, even if you do not have a Magento instance installed.</p>
-
-<p>After the customization is done, copy the language pack and paste it in the appropriate directory in your Magento instance or use the <a href="#m2devgde-xlate-packtool">language pack tool</a>.</p>
-
-<p>Find the language packs in the <code>app/i18n/&lt;ModuleName&gt;/&lt;VendorName&gt;</code> directory.</p>
-
-<pre>__/app/i18n
-&nbsp;|__/magento
-&nbsp;|&nbsp;|__/de_de
-&nbsp;|&nbsp;|&nbsp;|--&nbsp;language.xml
-&nbsp;|&nbsp;|&nbsp;|--&nbsp;composer.json
-&nbsp;|&nbsp;|&nbsp;|--&nbsp;*.csv
-&nbsp;|&nbsp;|__/fr_fr
-&nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;language.xml
-&nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;composer.json
-&nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;*.csv
-&nbsp;|__/oxford-university
-&nbsp;|&nbsp;|__/en_gb
-&nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;language.xml
-&nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;composer.json
-&nbsp;|&nbsp;&nbsp;&nbsp;|--&nbsp;*.csv
-</pre>
-
-<p>Apart from the <code>.csv</code> file that contains the language pack, the directory encompasses <code>composer.json</code> file, which allows the system composer to recognize a pack, and <code>language.xml</code> file, in which you declare a language pack.</p>
-
-<h3 id="m2devgde-xlate-inheritance">Declare a package and configure language inheritance</h3>
-
-<p>When declaring a language pack in <code>language.xml</code> configuration file, you must specify the sequence of the language inheritance for this pack.</p>
-
-<p>Language inheritance ensures sustainability of localization and translations in your store. Also, it facilitates translating and customizing Magento for your needs. Inheritance means that you can create a new locale/translation based on the existing one (also known as <em>parent</em>). The child locales/translations override the parent. However, if the child locale/translation fails to upload or display for a user, parent locale/translation is used instead. Also, if some child translation lacks a phrase or a word, this phrase or word is taken from the parent locale.</p>
-
-<p>To declare a pack, specify the following information:</p>
-
-<pre>&lt;?xml&nbsp;version=&quot;1.0&quot;?&gt;
-&lt;language&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;en_GB&lt;/code&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;vendor&gt;magento&lt;/vendor&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;package&gt;en_gb&lt;/package&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;sort_order&gt;100&lt;/sort_order&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;use&nbsp;vendor=&quot;oxford-university&quot;&nbsp;package=&quot;en_us&quot;/&gt;
-&lt;/language&gt;
-</pre>
+<p>In addition to the <code>.csv</code> file that contains the language dictionary, the language package contains meta-information:</p>
 
 <ul>
-  <li><code>&lt;code&gt;</code> - code of the language pack; this parameter is mandatory</li>
-  <li><code>&lt;vendor&gt;</code> - name of a vendor, who created a package; this parameter is mandatory</li>
-  <li><code>&lt;package&gt;</code> - name of the language pack; this parameter is mandatory</li>
-  <li><code>&lt;sort_order&gt;</code> - priority of uploading a pack when there are several language packs available for a store; this parameter is optional</li>
-  <li><code>&lt;use&gt;</code> - name and code of the parent language package; this parameter is optional</li>
+  <li>
+    <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined locale </p>
+
+    <p><a href="https://github.com/magento/magento2/blob/develop/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
+  </li>
+  <li>
+    <p><code>language.xml</code>, in which you declare a language package.</p>
+
+    <p><a href="https://github.com/magento/magento2/blob/develop/app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a></p>
+  </li>
 </ul>
 
-<p>If necessary, you can specify several parent packs. The parent packs are applied on ‘first listed - first used’ basis.</p>
+<h4 id="next-step">Next step</h4>
 
-<h4 id="m2devgde-xlate-inheritancework">Example: how language inheritance works</h4>
+<p>To create translation dictionaries and language packages, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and packages</a>.</p>
 
-<p>To understand how the language inheritance works, imagine a language pack that descends from two other packs, and those packs also have parent and ‘grand-parent’ packs.</p>
-
-<p><strong>If a language pack descends from two packs:</strong></p>
-
-<pre>&lt;language&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../&lt;path&gt;/Magento/Framework/App/Language/package.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;code&gt;en_GB&lt;/code&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;vendor&gt;Magento&lt;/vendor&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;package&gt;language_pack&lt;/package&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;sort_order&gt;100&lt;/sort_order&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;use&nbsp;vendor=&quot;parent-pack-one&quot;&nbsp;package=&quot;language_pack_one&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;use&nbsp;vendor=&nbsp;&quot;parent-pack-two&quot;&nbsp;package=&quot;language_pack_two&quot;/&gt;
-&lt;/language&gt;
-</pre>
-
-<ul>
-  <li>language_pack_one descends from en_au_pack and en_au_pack descends from en_ie_pack</li>
-  <li>language_pack_two descends from en_ca_pack and en_ca_pack descends from en_us_pack</li>
-</ul>
-
-<p><strong>Then</strong> after system fails to find a term in en_GB pack, it looks in other packs in following sequence:</p>
-
-<ol>
-  <li>parent_pack_one/language_pack_one</li>
-  <li>
-    <vendorname>/en_au_pack
-</vendorname>
-  </li>
-  <li>
-    <vendorname>/en_ie_pack
-</vendorname>
-  </li>
-  <li>parent_pack_two/language_pack_two</li>
-  <li>
-    <vendorname>/en_ca_pack
-</vendorname>
-  </li>
-  <li>
-    <vendorname>/en_us_pack
-
-</vendorname>
-  </li>
-</ol>
-<p>Specifying all inheritances between the language packs might result in creating circular inheritance chains. Use <a href="https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php" target="_blank">Magento\Test\Integrity\App\Language\CircularDependencyTest</a> test to locate and fix such chains.</p>
-
-<h3 id="m2devgde-xlate-severalpacks">Configure multiple packages for a language</h3>
-
-<p>To help you to make your store more flexible, you can upload several language packages for the same language in your store. Thus, you can use different custom packs for different parts of your store because the system compiles a single pack from all packs that are available for a language.</p>
-
-<p>To enable additional package for existing language, name the new package any name except for an existing language code name (to avoid confusion). Specify configurations of a pack in <code>language.xml</code> file as described in the <a href="#m2devgde-xlate-inheritance">Declaring a Pack and Configuring Language Inheritance</a>.</p>
-
-<h3 id="m2devgde-xlate-packtool">The language package tool</h3>
-
-<p>Use the language pack tool to upload the translated dictionary to your Magento instance. The language pack tool distributes translated names, titles, and phrases to appropriate modules.</p>
-
-<p>Use the command line to invoke the language pack tool:</p>
-
-<pre>php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;-s&nbsp;&lt;source_file&gt;&nbsp;-l&nbsp;&lt;language_code&gt;&nbsp;-p&nbsp;&lt;target_dir&gt;&nbsp;[-m&nbsp;{replace|merge}]&nbsp;[-d&nbsp;{yes|no}]
-php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--locale=&lt;language_code&gt;&nbsp;--pack=&lt;target_dir&gt;&nbsp;[--mode={replace|merge}]&nbsp;[--allow_duplicates={yes|no}]
-</pre>
-
-<p>To invoke the language pack tool, specify the following parameters:</p>
-
-<ul>
-  <li><code>s|source</code> defines the path to the source dictionary file containing translation and meta information. This parameter is required.</li>
-  <li><code>-l|locale</code> retrieves the locale of the target language of translation. This parameter is required.</li>
-  <li><code>-p|pack</code> defines the path where the language package is to be located. This parameter is required.</li>
-  <li><code>-m|mode</code> defines the save mode for a dictionary. Use <code>replace</code> to overwrite the old language pack with a new one (default option), or use <code>merge</code> to merge the old and new language packs. This parameter is optional.</li>
-  <li><code>-d|allow_duplicates</code> defines whether the duplicates in translation should be saved; by default, the value is set to ‘no.’ This parameter is optional.</li>
-</ul>
-
-<h2 id="m2devgde-xlate-howtos">How-to scenarios</h2>
-
-<h3 id="m2devgde-xlate-newpack">Create and upload a language pack to Magento</h3>
-
-<p>To create custom language package:</p>
-
-<ol>
-  <li>Find a language pack on Magento-related websites or generate it from Magento by using <a href="#m2devgde-xlate-generatortool">generator tool</a>.</li>
-  <li>Translate the terms/phrases as appropriate.</li>
-  <li>Declare the pack in <code>app/i18n/&lt;VendorName&gt;/[Package name]/language.xml</code> file.</li>
-  <li>Upload your language pack to appropriate directory in your Magento instance, for example, <code>app/i18n/&lt;VendorName&gt;/[Package name]</code>.</li>
-  <li>Alternatively, run the <a href="#m2devgde-xlate-packtool">language pack tool</a> to upload the newly created pack.</li>
-</ol>
-
-<h3 id="m2devgde-xlate-translatetheme">Create a translation for a module or theme</h3>
-
-<p>To create a translation for a module or a theme:</p>
-
-<ol>
-  <li>Run the <a href="#m2devgde-xlate-generatortool">dictionary generator tool</a> for a directory or a theme, for which you need to create a translation.</li>
-  <li>Make the necessary translations for a module or a theme.</li>
-  <li>Run the <a href="#m2devgde-xlate-packtool">language pack tool</a> to upload a dictionary. Alternatively, upload a dictionary file to <code>i18n</code> folder of a module or a theme, for instance: <code>app/code/Vendor/CustomModule/i18n/fr_FR.csv</code>.</li>
-</ol>
 
 
 		</div>
@@ -423,22 +343,6 @@ php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--local
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -449,10 +353,6 @@ php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--local
 						
 						
 						
-							
-							
-								<li class=""><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
-				
 							
 							
 						
@@ -468,212 +368,41 @@ php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--local
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
-									
 								
+								
+							
+									<li class=""><span class="nav-header">Architecture</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_whatis.html">What is Magento?</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular system</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_intro.html">Modules</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_libraries.html">Libraries</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_themes.html">Themes</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_translations.html">Language packages</a></li>
 						
 								
 								
@@ -696,34 +425,26 @@ php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--local
 								
 								
 							
-									<li class=""><span class="nav-header">Javascript</span></li>
+									<li class=""><span class="nav-header">Behavior</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-calc.html">How Magento calculates prices</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-render.html">How Magento renders prices</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-tabs.html">jQuery tabs widget</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
 						
 								
 								
@@ -743,13 +464,84 @@ php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--local
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
-									
 								
+								
+							
+									<li class=""><span class="nav-header">Modules</span></li>
 								
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_conventions.html">Module naming and location conventions</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">View library</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/view-lib.html">View library</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/design-abstract.html">Design abstractions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-assets.html">Page assets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-type.html">Page types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/template-engine.html">Template engine</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/static-process.html">Static file processing</a></li>
+						
 								
 								
 								
@@ -760,6 +552,22 @@ php&nbsp;-f&nbsp;pack.php&nbsp;--&nbsp;--source=&lt;source_file&gt;&nbsp;--local
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

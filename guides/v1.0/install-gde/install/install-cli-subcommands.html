@@ -171,13 +171,13 @@
 <ol><li>Your system meets the requirements discussed in <a href="/guides/v1.0/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
 <li>You completed all prerequisite tasks discussed in <a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
 <li>You installed Composer and cloned the Magento GitHub repository as discussed in <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.</li>
-<li>After you log in to the Magento server, switch to the web server user as discussed in <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li></ol>
+<li>After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li></ol>
 
-<div class="bs-callout bs-callout-warning">
+<!-- <div class="bs-callout bs-callout-warning">
 	<span class="glyphicon-class">
 		<p>The Magento command-line installer now uses a new syntax. You must install the Magento software from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. </p>
   		<p>The new syntax replaces <code>setup/php -f index.php</code>.</p></span>
-</div>
+</div> -->
 
 <p>The installer is designed to be run multiple times if necessary so you can:</p>
 
@@ -300,25 +300,16 @@ Examples:
 </table>
 
 <h2 id="instgde-cli-help">Help commands</h2>
-<p>To display a complete list of installer commands, enter:</p>
-
-<pre><code>php magento list
-</code></pre>
-
+<p>To display a complete list of commands, enter:</p>
+<pre>php magento list</pre>
 <p>To get help for a particular command, enter:</p>
-
-<pre><code>php magento help &lt;command&gt;
-</code></pre>
-
+<pre>php magento help &lt;command&gt;</pre>
 <p>For example,</p>
-
-<pre><code>php magento help setup:install
-php magento help setup:config:set
-</code></pre>
+<pre>php magento help setup:install
+php magento help cache:enable</pre>
 
 <h2 id="instgde-cli-subcommands-common">Common arguments</h2>
-<p>The following arguments are common to all installer commands. These commands can be run either before or after the Magento software is installed:</p>
-
+<p>The following arguments are common to all commands. These commands can be run either before or after the Magento software is installed:</p>
 <table>
 	<tbody>
 		<col width="15%" />
