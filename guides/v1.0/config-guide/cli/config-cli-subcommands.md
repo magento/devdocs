@@ -70,11 +70,13 @@ The following table summarizes the available commands. Commands are shown in sum
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">php setup:di:compile-multi-tenant</a></td>
-		<td><p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites</p></td>
+		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
+			Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">php setup:di:compile</a></td>
-		<td><p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website</p></td>
+		<td><p>Use if you have one instance of the Magento application.</p>
+			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">php log:{status|clean}</a></td>
@@ -108,15 +110,14 @@ The following table summarizes the available commands. Commands are shown in sum
 
 
 <h2 id="config-cli-subcommands">Commands</h2>
-The following sections discuss the available commands. TBD
+The following sections discuss the available commands. 
 
-<!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-magento-update">Update the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#config-install-magento-reinstall">Reinstall the Magento software</a> -->
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>

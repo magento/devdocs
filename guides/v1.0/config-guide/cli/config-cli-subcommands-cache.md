@@ -13,17 +13,16 @@ github_link: config-guide/cli/config-cli-subcommands-cache.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-cache-clean">Overview of cache types</a>
-*	<a href="#config-cli-subcommands-cache-en">Enable or disable the cache</a>
+*	<a href="#config-cli-subcommands-cache-status">View the cache status</a>
+*	<a href="#config-cli-subcommands-cache-en">Enable or disable the cache</a> 
 *	<a href="#config-cli-subcommands-cache-clean">Clean and flush cache types</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-subcommands-cache-clean">Overview of cache types</h2>
-TBD
- 
-<h2 id="config-cli-subcommands-cache-status">Viewing the cache status</h2>
+<!-- <h2 id="config-cli-subcommands-cache-clean">Overview of cache types</h2> -->
+
+<h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
 To view the status of the cache, enter
 
 	php magento cache:status [--bootstrap="<url-encoded array>"]
@@ -47,7 +46,7 @@ A sample follows:
              config_webservice: 1
 
 <h2 id="config-cli-subcommands-cache-en">Enable or disable cache types</h2>
-This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you immediately see the results of your changes; however, disabling cache types has an adverse affect on performance in a production system.
+This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.
 
 Command options:
 
@@ -129,4 +128,11 @@ Sample result:
 
 #### Related topics
 
-
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>

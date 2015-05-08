@@ -3,7 +3,7 @@ layout: default
 group: config-guide 
 subgroup: CLI
 title: Translation dictionaries and language packages
-menu_title: Translation dictionaries and languages packages
+menu_title: Translation dictionaries and language packages
 menu_node: 
 menu_order: 15
 github_link: config-guide/cli/config-cli-subcommands-i18n.md
@@ -293,6 +293,14 @@ Similar to preceding example, generate a CSV file, but instead of a module or th
 4.	Copy the file to `<your Magento install dir>/app/i18n` to enable the Magento application to automatically discover it.
 
 
-#### Related topic
+#### Related topics
 
 *	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>

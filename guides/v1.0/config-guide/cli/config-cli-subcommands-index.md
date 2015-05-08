@@ -102,7 +102,7 @@ Sample result:
 <h2 id="config-cli-subcommands-index-conf">Configure indexers</h2>
 This command enables you to set the following indexer options:
 
-*	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the Admin. This is the default.
+*	Update on save (`realtime`): Indexed data is updated as soon as a change is made in the Admin. (For example, the category products index is reindex after products are added to a category in the Admin.) This is the default.
 *	Update by schedule (`schedule`): Data is indexed according to the schedule set by your Magento cron job.
 
 <a href="{{ site.gdeurl }}architecture/index-cache/indexing.html">More information about indexing</a>.
@@ -155,4 +155,11 @@ Sample result:
 
 #### Related topics
 
-
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
