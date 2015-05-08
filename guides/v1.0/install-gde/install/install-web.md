@@ -190,7 +190,7 @@ To install the Magento software using the Setup Wizard:
 	See one of the following sections for more information about enabling and disabling modules:
 
 	*	<a href="#instgde-install-magento-web-step4-depend1">General module configuration options</a>
-	*	<a href="instgde-install-magento-web-step4-depend2">Module dependency errors</a>
+	*	<a href="#instgde-install-magento-web-step4-depend2">Module dependency errors</a>
 
 4.	When you're done configuring this page, click **Next** and continue with <a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>.
 
