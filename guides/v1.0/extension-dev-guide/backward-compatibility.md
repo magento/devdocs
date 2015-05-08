@@ -3,7 +3,7 @@ layout: default
 group: extension-dev-guide
 subgroup: Concepts
 title: Backward compatibiliy
-menu_title: Backward compatibiliy
+menu_title: Backward compatibility
 menu_order: 4
 github_link: extension-dev-guide/backward-compatibility.md
 ---
