@@ -58,7 +58,7 @@ where
 
 `--all` enables or disables all cache types at the same time.
 
-`--type` is a space-separated list of cache types.
+`type` is a space-separated list of cache types.
 
 `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
 
@@ -75,6 +75,11 @@ Sample result:
 	Changed cache status:	
                         db_ddl: 1 -> 0
                      full_page: 1 -> 0
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Enabling a cache type automatically clears that cache type.</p></span>
+</div> 
 
 <h2 id="config-cli-subcommands-cache-clean">Clean and flush cache types</h2>
 To purge out-of-date items from the cache, you can *clean* or *flush* cache types:
@@ -96,7 +101,7 @@ where
 
 `--all` cleans or flushes all cache types at the same time.
 
-`--type` is a space-separated list of cache types.
+`type` is a space-separated list of cache types.
 
 `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
 

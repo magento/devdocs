@@ -20,7 +20,22 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
- 
+<h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
+To view the list of indexers to use in the commands discussed in this topic, enter
+
+	php magento indexer:info
+
+The list displays as follows:
+
+	catalog_category_product                 Category Products
+	catalog_product_category                 Product Categories
+	catalog_product_price                    Product Price
+	catalog_product_attribute                Product EAV
+	cataloginventory_stock                   Stock
+	catalogrule_rule                         Catalog Rule Product
+	catalogrule_product                      Catalog Product Rule
+	catalogsearch_fulltext                   Catalog Search
+
 <h2 id="config-cli-subcommands-index-status">View indexer status</h2>
 This command enables you to view the status of all or selected indexers (for example, shows whether indexers need to be reindexed).
 
@@ -136,7 +151,7 @@ For example, to change only the category products and product categories indexer
 Sample result:
 
 	Index mode for Indexer Category Products was changed from 'Update on Save' to 'Update by Schedule'
-	Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule
+	Index mode for Indexer Product Categories was changed from 'Update on Save' to 'Update by Schedule'
 
 #### Related topics
 
