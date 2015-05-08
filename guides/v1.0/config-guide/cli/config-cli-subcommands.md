@@ -95,7 +95,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Creates CSS from LESS</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-tests.html">php magento dev:tests:run</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">php magento dev:tests:run</a></td>
 		<td><p>Runs automated tests</p></td>
 	</tr>
 	

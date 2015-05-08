@@ -78,7 +78,7 @@ We have the following entry point applications (that is, applications defined by
 <h3 id="config-boot-entry-http">HTTP entry point</h3>
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Http" target="_blank">\Magento\Framework\App\Http</a> operates as follows:
 
-1.	Determines the <a href="{{ site.gdeurl }}rchitecture/modules/mod_and_areas.html">application area</a>.
+1.	Determines the <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">application area</a>.
 2.	Starts the front controller and touting systems in order to find and execute a controller action.
 3.	Uses an HTTP response object to return result obtained from the controller action.
 4.	Error handling (in the following priority order):
