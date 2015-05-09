@@ -1,10 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: Configuration
+subgroup: JavaScript resources
 title: JavaScript resources
 menu_title: JavaScript resources
-menu_order: 10
+menu_order: 1
+menu_node: parent
 github_link: config-guide/config/js-resources.md
 ---
 
