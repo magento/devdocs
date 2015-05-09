@@ -25,6 +25,7 @@ github_link: release-notes/changes_074-beta8.md
 *	<a href="#rn-074b8-payment">Backward incompatible changes in Magento_Payment</a>
 *	<a href="#rn-074b8-quoteapi">Backward incompatible changes in Magento_Quote</a>
 *	<a href="#rn-074b8-sales-model">Backward incompatible changes in Magento_Sales</a>
+*	<a href="#rn-074b8-search">Backward incompatible changes in Magento_Search</a>
 *	<a href="#rn-074b8-ship">Backward incompatible changes in Magento_Shipping</a>
 *	<a href="#rn-074b8-tax">Backward incompatible changes in Magento_Tax</a>
 *	<a href="#rn-074b8-ups">Backward incompatible changes in Magento_Ups</a>
@@ -80,6 +81,20 @@ These Release Notes discuss important changes in this release. For additional de
 	*	`getCustomerGroupId`
 	*	`setCustomerGroupId`
 *	Changed method signature for method `create` in `app/code/Magento/Catalog/Api/ProductAttributeMediaGalleryManagementInterface.php`
+`
+*	Protected properties now private, accessible using protected lazy loading methods:
+
+	*	`/Magento/Catalog/Model/Resource/Category/Collection`
+		*	property: `_productTable`
+
+            method: `getProductTable()`
+		*	property: `_productWebsiteTable`
+
+            method: `getProductWebsiteTable()`
+    *	`/Magento/Catalog/Model/Observer`
+    	*	property: `_catalogLayer`
+
+			method: `getCatalogLayer`
 
 <h2 id="rn-074b8-checkout">Backward incompatible changes in Magento_Checkout</h2>
 Removed the following methods in `\Magento\Checkout\Controller\Sidebar\UpdateItemQty`:
@@ -153,8 +168,27 @@ In `app/code/Magento/Fedex/Model/Carrier.php` method `collectRates()`, changed p
 *	Added the `getCurrencySymbol` method to `lib/internal/Magento/Framework/Pricing/PriceCurrencyInterface.php`        
 *	Added the `getDisplayCurrencySymbol` method to `lib/internal/Magento/Framework/Pricing/Render/AmountRenderInterface.php`
 *	Added required parameter `\Magento\Framework\Stdlib\DateTime` to the constructor in:
+
 	*	`\Magento\Framework\App\Response\Http`
 	*	`\Magento\MediaStorage\Model\File\Storage\Response`
+
+*	Removed constants:
+
+	*	`\Magento\Framework\App\Config\ValueInterface:: ENTITY`
+	*	`\Magento\Framework\Locale\CurrencyInterface ::XML_PATH_ALLOW_CURRENCIES_INSTALLED`
+*	Moved constants:
+
+	*	from `\Magento\Framework\Locale\CurrencyInterface::DEFAULT_CURRENCY` to `\Magento\Framework\Locale\Currency::DEFAULT_CURRENCY`
+	*	from `\Magento\Framework\Locale\ResolverInterface:: DEFAULT_LOCALE` to `\Magento\Framework\Locale\Resolver::DEFAULT_LOCALE`
+	*	from `\Magento\Framework\Message\ManagerInterface:: DEFAULT_GROUP` to `\Magento\Framework\Message\Manager::DEFAULT_GROUP`
+	*	from `\Magento\Framework\App\ScopeInterface:: SCOPE_DEFAULT` to `\Magento\Framework\App\Config\ScopeConfigInterface::SCOPE_TYPE_DEFAULT`
+
+*	Protected properties now private, accessible using protected lazy loading methods:
+
+	*	`/Magento/Framework/Url`
+	
+		property: `_routeParamsResolver`
+		method: `getRouteParamsResolver()`
 
 <h2 id="rn-074b8-giftmessage">Backward incompatible changes in Magento_GiftMessage</h2>
 In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>:
@@ -397,6 +431,15 @@ See the following table.
 	</tr>
 </tbody>
 </table>
+
+<h2 id="rn-074b8-search">Backward incompatible changes in Magento_Search</h2>
+Protected properties now private, accessible using protected lazy loading methods:
+
+`/Magento/Search/Model/SearchEngine`
+
+property: `adapter`
+
+method: `getAdapter`
 
 <h2 id="rn-074b8-ship">Backward incompatible changes in Magento_Shipping</h2>
 *	In `app/code/Magento/Shipping/Model/Carrier/AbstractCarrier.php`:
