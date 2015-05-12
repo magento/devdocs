@@ -26,7 +26,7 @@ See one of the following sections:
 </div>
 
 <h2 id="migrate-overview">Overview</h2>
-We’re pleased you’re considering moving from the world’s #1 eCommerce platform—Magento 1.x—to the eCommerce platform of the future, Magento 2. We’re excited to tell you about this process, which we refer to as migration.
+We’re pleased you’re considering moving from the world’s #1 eCommerce platform&mdash;Magento 1.x&mdash;to the eCommerce platform of the future, Magento 2. We’re excited to tell you about this process, which we refer to as migration.
 
 Why a migration rather than an upgrade? Because it’s not automated; you’ll set up a parallel Magento 2 system and migrate data, media files, configuration, themes, code, and so on to it. 
 
@@ -68,21 +68,26 @@ Google Shopping shipped in some older Magento 1 versions but has since been remo
 #### Data that is not supported in Magento 2
 Poll, tag, staging modules, and recurring profiles are not currently supported in Magento 2.
 
-
 <h2 id="migrate-prereq">Prerequisites</h2>
 Before you start your migration, you must do all of the following:
 
-*	Set up a Magento 2 system that meets our <a href="{{ site.gdeurl }}/install-gde/system-requirements.html">system requirements</a>.
+*	Set up a Magento 2.0 system that meets our <a href="{{ site.gdeurl }}/install-gde/system-requirements.html">system requirements</a>.
 
-	Do not start Magento 2 cron jobs.
+	Set up your system using a topology and design that at least matches your existing Magento 1.x system.
+
+*	Do not start Magento 2.0 cron jobs.
 
 *	Back up or <a href="https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html" target="_blank">dump</a> your Magento 2 database as soon after installation as possible.
 
 *	The Magento 1.x and Magento 2 systems must be reachable on the internet.
 
-	We recommend installing Magento 2 on the same host as Magento 1.x if possible or at least on the same network segment. This helps migration performance.
+	Reduce network latency between your Magento 1.x and 2.0 systems as much as possible to improve migration performance.
 
-*	Replicate your Magento 1.x database and perform all migration tasks on this replicated database.
+*	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database.
+
+*	Migrate Magento 1.x extension code to Magento 2.0.
+
+	Reach out to your extension providers to see if they have been ported yet.
 
 <h2 id="migrate-install">Install the migration tool</h2>
 This section discusses how to install the Magento migration tool. To install the migration tool, you must update `composer.json` in the Magento root installation directory to provide the location of the migration tool package. 
@@ -224,12 +229,11 @@ The following table discusses each mapping file.
 <h2 id="migration-notes">General notes about using the migration tool</h2>
 During the time you're migrating:
 
-*	Do not make any changes in the Magento 1.x Admin Panel
+*	Do not make any changes in the Magento 1.x Admin Panel except for except for order management and shipping
+*	Stop all Magento 1.x cron jobs
 *	Do not alter any code
 *	Do not delete any data
 *	Do not make any changes in the Magento 2 Admin
-
-You *can*, however, manage orders in your Magento 1.x system.
 
 After performing migration:
 
@@ -270,11 +274,12 @@ where `[options]` can be:
 *	`--verbose <level>` DEBUG, INFO, NONE
 *	`--help` Help
 
-See one of the following sections:
+See the following sections in the order shown:
 
-*	<a href="#migrate-command-settings">Migrating settings</a>
-*	<a href="#migrate-command-data">Migrating data</a>
-*	<a href="#migrate-command-delta">Incremental migration (delta mode)</a>
+1.	<a href="#migrate-command-settings">Migrating settings</a>
+2.	<a href="#migrate-command-media">Manually migrating media</a>
+3.	<a href="#migrate-command-data">Migrating data</a>
+4.	<a href="#migrate-command-delta">Incremental migration (delta mode)</a>
 
 <h3 id="migrate-command-settings">Migrating settings</h3>
 You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment and some tax settings. 
@@ -289,6 +294,9 @@ Command usage:
 <span class="glyphicon-class">
   <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
 </div>
+
+<h3 id="migrate-command-media">Manually migrating media</h3>
+
 
 <h3 id="migrate-command-data">Migrating data</h3>
 When you migrate data, the migration tool verifies that tables and fields are consistent between  Magento 1 and Magento 2. If not, an error displays that lists the problematic tables and fields. These entities, for example, can belong to some extensions from Magento 1 that do not exist in the Magento 2 database.
