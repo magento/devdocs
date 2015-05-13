@@ -12,7 +12,7 @@ This topic describes how to create a responsive mobile-specific theme using the 
 
 <h2>Creating a mobile-specific theme</h2>
 
-To use all the responsive approaches used in Magento default Blank and Luma themes, your theme should declare one of them as a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a>. 
+To use all the responsive approaches used in the Magento default Blank and Luma themes, your theme should declare one of them as a <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a>. 
 
 To create a mobile-specific theme:
 <ol>
