@@ -46,7 +46,7 @@ To install the migration tool from GitHub, use the following steps:
 2.	Create or navigate to an empty directory on your Magento 2 server.
 2.	Clone the repository using either the <a href="https://help.github.com/articles/which-remote-url-should-i-use/">SSH or HTTPS protocol</a>.
 
-### Install the tool from package.magento.com
+### Install the tool from packages.magento.com
 To install the migration tool, you must update `composer.json` in the Magento root installation directory to provide the location of the migration tool package. 
 
 Sample data is versioned like Magento code. Before you begin, you can either either:

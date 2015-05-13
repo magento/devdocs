@@ -26,10 +26,18 @@ See one of the following sections:
 </div>
 
 <h2 id="migrate-overview">Overview</h2>
-We’re pleased you’re considering moving from the world’s #1 eCommerce platform&mdash;Magento 1.x&mdash;to the eCommerce platform of the future, Magento 2. We’re excited to tell you about this process, which we refer to as migration.
+We’re pleased you’re considering moving from the world’s #1 eCommerce platform—Magento 1.x—to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.
 
-Why a migration rather than an upgrade? Because it’s not automated; you’ll set up a parallel Magento 2 system and migrate data, media files, configuration, themes, code, and so on to it. 
+Magento 2 migration involves four components: data, extensions, themes, and customizations. 
 
+*	Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data
+
+*	Extensions: We are actively working with the Magento development community to help ensure the most widely used extensions will be updated, vetted, and available on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in Magento 2 Extension Developer Guide
+
+*	Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 themes, layouts, and customizations.
+
+Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1.x to Magento 2.0 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. 
+ 
 <h3 id="migrate-overview-versions">Supported versions</h3>
 We support the following versions for migration:
 
