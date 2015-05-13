@@ -1,10 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: Configuration
+subgroup: Caching
 title: Caching
 menu_title: Caching
-menu_order: 5
+menu_order: 1
+menu_node: parent
 github_link: config-guide/config/caching.md
 ---
 
@@ -64,24 +65,11 @@ You must specify the following parameters:
 *	`%cache_type_tag%` defines unique tag to be used in the cache type scoping.
 
 <h2 id="m2devgde-cache-more">More information about caching</h2>
-At this time, you can get more information about caching by looking at the code. To start, look for `const CONFIG_KEY =` in the following classes. Specify each key in `config.php` and add configuration detail (including cache storage) under that key.
+You can get more information about caching by looking at the code. We suggest you locate classes that extend <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php" target="_blank">Magento\Framework\Cache\Frontend\Decorator\TagScope</a>.
 
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Cache/Type/ConfigSegment.php" target="_blank">ConfigSegment.php</a> for the cache segments (that is, cache types).
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/CacheConfig.php" target="_blank">CacheConfig.php</a> for the frontend cache.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/BackendConfig.php" target="_blank">BackendConfig.php</a> for the backend cache.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/DbConfig.php" target="_blank">DbConfig.php</a> for database caching.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/EncryptConfig.php" target="_blank">EncryptConfig.php</a> for the `encrypt` cache.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/InstallConfig.php" target="_blank">InstallConfig.php</a> for the `installconfig` cache.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/ResourceConfig.php" target="_blank">ResourceConfig.php</a> for the `resourceconfig` cache.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/SegmentInterface.php" target="_blank">SegmentInterface.php</a> for the `segmentinterface` cache.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig/SessionConfig.php" target="_blank">SessionConfig.php</a> for the session cache.
-
+For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Eav/Model/Cache/Type.php" target="_blank">Magento\Eav\Model\Cache\Type</a> to understand more about the EAV cache type.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Please help us improve this topic by suggesting details using the <strong>Edit this page in GitHub</strong> link at the top of the page. </p>
 </div>
-
-
-
-
 

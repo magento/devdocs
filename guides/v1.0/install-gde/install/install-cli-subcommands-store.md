@@ -26,7 +26,7 @@ See one of the following sections:
 Before you run this command, you must do all of the following *or* you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a>
-*	<a href="{{ site.gdeurl }}#">Create the Magento database</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a>
 
 <h2 id="instgde-cli-storeconfig">Configure the store</h2>
 Command usage:
