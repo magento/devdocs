@@ -20,6 +20,8 @@ See one of the following sections:
 *	<a href="#migration-config">Work with configuration and mapping files</a>
 *	<a href="#migration-notes">General notes about using the migration tool</a>
 *	<a href="#migration-command">Migrating data, settings, and changes</a>
+*	<a href="#migrate-command-media">Manual migration of non-migratable assets</a>
+*	<a href="#migrate-command-after">Post-migration tasks</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span>This topic is in draft form. Information in this topic might be incorrect or incomplete. Use the <strong>Edit this page on GitHub</strong> link at the top of this topic to send us feedback and suggestions.</p></span>
@@ -108,14 +110,14 @@ The migration tool uses *mapping files* to enable you to perform custom database
 *	Changing field names
 *	Ignoring tables or fields
 
-Mapping files for supported Magento versions are located in subdirectories of `<your Magento install dir>/vendor/magento/migration-tool/etc`.
+Mapping files for supported Magento versions are located in subdirectories of `<data migration tool install dir>/etc`.
 
 To use the mapping files:
 
 1.	Rename or copy them to remove the `.dist` extension.
-2.	Edit them using the schema located in `<your Magento install dir>vendor/magento/migration-tool/etc`.
+2.	Edit them using the schema located in `<data migration tool install dir>/etc`.
 
-The `<your Magento install dir>/vendor/magento/migration-tool/etc` directory contains the following configuration files:
+The `<data migration tool install dir>/<ce or ee version>/etc` directory contains the following configuration files:
 
 <table>
 <tbody>
@@ -126,10 +128,6 @@ The `<your Magento install dir>/vendor/magento/migration-tool/etc` directory con
 <tr>
 	<td>class_map.php</td>
 	<td>Magento 1 to Magento 2 class map dictionary. </td>
-</tr>
-<tr>
-	<td>magento_path.php</td>
-	<td></td>
 </tr>
 </tbody>
 </table>
@@ -143,16 +141,31 @@ The following table discusses each mapping file.
 		<th>Description</th>
 	</tr>
 <tr>
+	<td>class-map.xml.dist</td>
+	<td>Dictionary of class mappings between Magento 1 and Magento 2</td>
+</tr>
+<tr>
 	<td>config.xml.dist</td>
 	<td>Main configuration file that specifies the Magento 1.x and Magento 2 database configurations, step configuration, and links to mapping files</td>
 </tr>
 <tr>
-	<td>map.xml.dist</td>
-	<td>Map file required for the map step.</td>
+	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>
+	<td>TBD</td>
 </tr>
 <tr>
-	<td>map-eav.xml.dist<br />
-	list-eav.xml.dist</td>
+	<td>deltalog.xml.dist</td>
+	<td>Contains the list of tables required for database routines setup.</td>
+</tr>
+<tr>
+	<td>eav-document-groups.xml.dist</td>
+	<td>List of tables required to process the EAV step.</td>
+</tr>
+<tr>
+	<td>log-document-groups.xml.dist</td>
+	<td>List of tables required to process the log step.</td>
+</tr>
+<tr>
+	<td>map-eav.xml.dist
 	<td>EAV mapping files.</td>
 </tr>
 <tr>
@@ -160,16 +173,16 @@ The following table discusses each mapping file.
 	<td>Log mapping file.</td>
 </tr>
 <tr>
-	<td>changelog.xml.dist</td>
-	<td>Configuration file that specifies the list of tables required for database routines setup.</td>
+	<td><em>EE only</em>. map-sales.xml.dist</td>
+	<td>Log mapping file.</td>
+</tr>
+<tr>
+	<td>map.xml.dist</td>
+	<td>Mapping file required for the map step.</td>
 </tr>
 <tr>
 	<td>settings.xml.dist</td>
 	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
-</tr>
-<tr>
-	<td>deltalog.xml.dist</td>
-	<td>Log settings for delta migration.</td>
 </tr>
 
 </tbody>
@@ -187,10 +200,10 @@ During the time you're migrating:
 After performing migration:
 
 1.	In the Magento 2 Admin, flush all caches and reindex all indexes.
-2.	Run your Magento 2 cron jobs twice.
+2.	Run your Magento 2 cron jobs.
 
 <h2 id="migration-configure">Configuring the migration</h2>
-Before you migrate any data, you must edit `<your Magento install dir>/vendor/magento/migration-tool/etc/<magento-version>/config.xml` to specify at minimum values for the following:
+Before you migrate any data, you must edit `<data migration tool install dir>/etc/<magento-version>/config.xml` to specify at minimum values for the following:
 
 {% highlight xml %}
 	<source version="1.9.1">
@@ -204,7 +217,7 @@ Before you migrate any data, you must edit `<your Magento install dir>/vendor/ma
 If you use table prefixes, specify them using `<source_prefix>` and `<dest_prefix>` elements.
 
 <h2 id="migration-command">Migrating data, settings, and changes</h2>
-Run the migration tool from the `<your Magento install dir>/vendor/magento/migration-tool/bin` directory.
+Run the migration tool from the `<data migration tool install dir>/bin` directory.
 
 Command syntax:
 
@@ -220,13 +233,17 @@ where `[options]` can be:
 
 *	`--reset` to start the migration from the beginning
 *	`--config <value>` path to `config.xml`
-*	`--verbose <level>` DEBUG, INFO, NONE
+*	`--verbose <level>` DEBUG, INFO, NONE (default is INFO)
 *	`--help` Help
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Logs are written to the <code>&lt;your Magento install dir>/vendor/magento/migration-tool/var</code> directory.</p></span>
+</div>
 
 See the following sections in the order shown:
 
 1.	<a href="#migrate-command-settings">Migrating settings</a>
-2.	<a href="#migrate-command-media">Manually migrating media</a>
 3.	<a href="#migrate-command-data">Migrating data</a>
 4.	<a href="#migrate-command-delta">Incremental migration (delta mode)</a>
 
@@ -237,15 +254,12 @@ To change how settings are migrated, either edit `etc/map/settings.xml` or creat
 
 Command usage:
 
-	<your Magento install dir>/vendor/magento/migration-tool/bin/migrate settings --config=<path to config.xml>
+	<data migration tool install dir>/bin/migrate settings --config=<path to config.xml>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
 </div>
-
-<h3 id="migrate-command-media">Manually migrating media</h3>
-
 
 <h3 id="migrate-command-data">Migrating data</h3>
 When you migrate data, the migration tool verifies that tables and fields are consistent between  Magento 1 and Magento 2. If not, an error displays that lists the problematic tables and fields. These entities, for example, can belong to some extensions from Magento 1 that do not exist in the Magento 2 database.
@@ -259,7 +273,7 @@ After resolving issues, run the migration tool again.
 
 Command usage:
 
-	<your Magento install dir>/vendor/magento/migration-tool/bin/migrate data --config=<path to config.xml> [--reset]
+	<data migration tool install dir>/bin/migrate data --config=<path to config.xml> [--reset]
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -272,9 +286,40 @@ Incremental migration enables you to migrate only the changes since you migrated
 
 Command usage:
 
-	<your Magento install dir>/vendor/magento/migration-tool/bin/migrate delta --config=<path to config.xml>
+	<data migration tool install dir>/bin/migrate delta --config=<path to config.xml>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
+</div>
 
+<h2 id="migrate-command-media">Manual migration of non-migratable assets</h2>
+You must manually migrate all of the following:
+
+### Media
+*	If media files are stored in the Magento 1 database, log in to the Magento 2 Admin and click TBD (Synchronize). 
+
+*	All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`. 
+
+	However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved. 
+
+### Templates and layouts        
+Templates and layouts (that is, CSS, JavaScript, and XML layout files) changed location and format between Magento 1 and Magento 2. 
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Layout updates implemented in Magento 1 <em>cannot</em> be used in Magento 2 (namely, XML placed in the Magento Admin in CMS category pages and layout updates specified in widget instances.</p></span>
+</div>
+
+### ACLs
+
+You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
+
+<h2 id="migrate-command-after">Post-migration tasks</h2>
+After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:
+
+*	Put Magento 1 in maintenance mode and permanently stop all Admin Panel activities
+*	Start Magento 2 cron jobs
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean" target="_blank">Flush all Magento 2 cache types</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex" target="_blank">Reindex all Magento 2 indexers</a>
+*	Change DNS, load balancers, and so on to point to Magento 2 production hardware
