@@ -203,7 +203,7 @@ After performing migration:
 2.	Run your Magento 2 cron jobs.
 
 <h2 id="migration-configure">Configuring the migration</h2>
-Before you migrate any data, you must edit `<data migration tool install dir>/etc/<magento-version>/config.xml` to specify at minimum values for the following:
+Before you migrate any data, you must edit `<data migration tool install dir>/etc/<ce-or-ee-version>/<magento-version>/config.xml` to specify at minimum values for the following:
 
 {% highlight xml %}
 	<source version="1.9.1">
