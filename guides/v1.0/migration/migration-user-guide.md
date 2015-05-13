@@ -1,6 +1,6 @@
 ---
 layout: default
-group:  
+group:  migration
 subgroup: Migration
 title: Migration user guide&mdash;DRAFT 
 menu_title: Migration user guide&mdash;DRAFT 
@@ -98,66 +98,7 @@ Before you start your migration, you must do all of the following:
 	Reach out to your extension providers to see if they have been ported yet.
 
 <h2 id="migrate-install">Install the migration tool</h2>
-This section discusses how to install the Magento migration tool. To install the migration tool, you must update `composer.json` in the Magento root installation directory to provide the location of the migration tool package. 
-
-Sample data is versioned like Magento code. Before you begin, you can either either:
-
-*	Find the exact version you want at <a href="http://packages.magento.com/#magento/migration-tool" target="_blank">packages.magento.com</a>.
-*	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
-
-To install the migration tool, you must:
-
-1.	Decide the version of `magento/migration-tool` you want as discussed in the preceding section.
-
-2.	Add `"minimum-stability": "beta",` to `composer.json`.
-
-2.	Run the `composer package` and `composer require` commands to update `composer.json`.
-
-To update `composer.json`:
-
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with `root` privileges.
-
-2.	Change to your Magento installation directory.
-
-3.	Make a backup copy of `composer.json`.
-
-		cp composer.json composer.json.bak
-
-4.	Open `composer.json` in a text editor.
-
-5.	In the first section, add `"minimum-stability": "beta",` before `version`. A snippet follows:
-
-		"name": "magento/project-community-edition",
-	    "description": "Magento project (Community Edition)",
-	    "type": "project",
-	    "minimum-stability": "beta",
-	    "version": "0.74.0-beta5",
-	    "license": [
-	        "OSL-3.0",
-	        "AFL-3.0"
-	    ],
-
-6.	Save your changes to <code>composer.json</code> and exit the text editor.
-
-7.	Enter the following command to reference Magento packages in `composer.json`:
-
-		composer config repositories.magento composer http://packages.magento.com
-
-8.	Enter the following command to require the current version of the sample data package:
-
-		composer require magento/migration-tool:<version>
-
-	where `<version>` is either an exact version or next significant release syntax.
-
-	Exact version example:
-
-		composer require magento/migration-tool:0.74.0-beta4
-
-	Next significant release example:
-
-		composer require magento/migration-tool:~0.74.0-beta4
-
-9.	Wait while dependencies are installed.
+Installation is discussed in the <a href="TBD">README.md</a>.
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
