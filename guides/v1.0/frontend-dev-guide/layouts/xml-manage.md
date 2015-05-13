@@ -86,10 +86,10 @@ A sample follows:
 
 </pre>
 
-This adds an Ie conditional comment in the generated HTML, like in the following example:
+This adds an IE conditional comment in the generated HTML, like in the following example:
 <pre>
 &lt;!--[if IE 9]&gt;
-&lt;link  rel=&quot;stylesheet&quot; type=&quot;text/css&quot;  media=&quot;all&quot; href=&quot;http://magento2.loc/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;all&quot; href=&quot;&lt;your_store_web_address&gt;/pub/static/frontend/OrangeCo/orange/en_US/css/ie-9.css&quot; /&gt;
 &lt;![endif]--&gt;
 </pre>
 
