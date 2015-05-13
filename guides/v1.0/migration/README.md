@@ -3,11 +3,11 @@ We’re pleased you’re considering moving from the world’s #1 eCommerce plat
 
 Magento 2 migration involves four components: data, extensions, themes, and customizations. 
 
-*	Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data
+*	Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. 
 
-*	Extensions: We are actively working with the Magento development community to help ensure the most widely used extensions will be updated, vetted, and available on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in Magento 2 Extension Developer Guide
+*	Extensions: We are actively working with the Magento development community to help ensure the most widely used extensions will be updated, vetted, and available on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide</a>.
 
-*	Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 themes, layouts, and customizations.
+*	Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">themes</a>, <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/layout-overview.html">layouts</a>, and <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-manage.html">customizations</a>.
 
 ### Supported versions
 We support the following versions for migration:
@@ -37,14 +37,14 @@ Before you start your migration, you must do all of the following:
 	Reach out to your extension providers to see if they have been ported yet.
 
 ## Install the migration tool
-This section discusses how to install the Magento migration tool. You can install from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from the TBD GitHub repository.
+This section discusses how to install the Magento migration tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from the TBD GitHub repository.
 
 ### Install the tool from a GitHub repository
 To install the migration tool from GitHub, use the following steps:
 
 1.	Go to TBD.
 2.	Create or navigate to an empty directory on your Magento 2 server.
-2.	Clone the repository using either the <a href="https://help.github.com/articles/which-remote-url-should-i-use/">SSH or HTTPS protocol</a>.
+2.	<a href="http://gitref.org/creating/">Clone the repository</a> using either the <a href="https://help.github.com/articles/which-remote-url-should-i-use/">SSH or HTTPS protocol</a>.
 
 ### Install the tool from packages.magento.com
 To install the migration tool, you must update `composer.json` in the Magento root installation directory to provide the location of the migration tool package. 
