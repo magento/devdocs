@@ -29,6 +29,9 @@ Browse the Design Pattern Library here:
 <a href="controls/buttons/buttons.html">Buttons</a><br>
 <a href="controls/button-bar/button-bar.html">Button Bar</a>
 
+####Displaying and Dealing with Data
+<a href="filters/data-table-filters/filtering.html">Filters</a>
+
 
 ####Feedback to User
 <a href="feedbackToUser/progressIndicator/progressIndicator.html">Progress Indicator</a>
