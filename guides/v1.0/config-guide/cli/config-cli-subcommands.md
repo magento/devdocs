@@ -69,29 +69,29 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Manages the indexers</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">php setup:di:compile-multi-tenant</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">php magento setup:di:compile-multi-tenant</a></td>
 		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
 			Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">php setup:di:compile</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">php magento setup:di:compile</a></td>
 		<td><p>Use if you have one instance of the Magento application.</p>
 			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">php log:{status|clean}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">php magento log:{status|clean}</a></td>
 		<td><p>Clears the logs</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">php i18n:{collect-phrases|pack}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">php magento i18n:{collect-phrases|pack}</a></td>
 		<td><p>Creates a translation dictionary or a translation package</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">php setup:static-content:deploy</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">php magento setup:static-content:deploy</a></td>
 		<td><p>Deploys static view files</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">php dev:css:deploy</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">php magento dev:css:deploy</a></td>
 		<td><p>Creates CSS from LESS</p></td>
 	</tr>
 	<tr>
