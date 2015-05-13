@@ -15,7 +15,7 @@ This topic describes the JavaScript used in Magento default themes to relocate c
 
 <h2>Scripts general overview</h2>
 
-The Blank and Luma themes use the following scripts to responsively relocate page elements by a breakpoint:
+The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:
 
 <ul>
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
@@ -53,18 +53,18 @@ The <code>mediaCheck</code> call looks as follows:
         media: '(min-width: 768px)',
         // Switch to Desktop Version
         entry: function () {
-            /* The function which toggles page elements from desktop to mobile mode is called here */
+            /* The function that toggles page elements from desktop to mobile mode is called here */
         },
         // Switch to Mobile Version
         exit: function () {
-            /* The function which toggles page elements from mobile to desktop mode is called here*/
+            /* The function that toggles page elements from mobile to desktop mode is called here*/
         }
     }); /*...*/
 
 </pre>
 
 
-In <code>responsive.js</code>, you can see how the checkout progress is toggled from the mobile to the desktop version. For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps (for the desktop, it is displayed on the left-hand side), and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.
+In <code>responsive.js</code>, you can see how the checkout progress is toggled from the mobile to the desktop version. For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps (for the desktop, it is displayed on the left-hand side), and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it becomes visible after you click it.
 
 
 
@@ -73,10 +73,10 @@ In <code>responsive.js</code>, you can see how the checkout progress is toggled 
 
 In a mobile viewport, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
 <ul>
-<li>Category menu items are not displayed, but are accessible after clicking the "menu" icon.</li>
+<li>Category menu items are not displayed, but are accessible after clicking the menu icon.</li>
 <li>The behavior of a category link depends on whether the category has sub-categories:
 <ul>
-<li>If sub-categories exist, the category link behaves as collapsible block. Clicking a category link does not redirect to the category page immediately. Instead it opens a list of sub-categories, including the "All category products" option. </li>
+<li>If sub-categories exist, the category link behaves as collapsible block. Clicking a category link does not redirect to the category page immediately. Instead it opens a list of sub-categories, including the <b>All category products</b> option. </li>
 <li>If there are no sub-categories, the category link behaves as usual.</li>
 </ul>
 </li>
@@ -93,4 +93,4 @@ The following image illustrates the mobile-view navigation menu.
 You can use the <code>menu.js</code>, <code>responsive.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom theme. 
 If your theme inherits from Blank or Luma, you do not even need to additionally include the script files in your theme.
 
-In other case, to be able to use the scripts, you need to configure RequireJS for your theme.
+If your theme does not inherit from Blank or Luma, to be able to use the scripts, you must configure RequireJS for your theme.
