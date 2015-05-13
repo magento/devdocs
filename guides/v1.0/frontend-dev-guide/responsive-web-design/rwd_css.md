@@ -37,7 +37,7 @@ The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-gu
 
 <h2>Mobile first</h2>
 
-In the Blank and Luma themes, the mobile first approach is used. It means that the styles for mobile devices (640px and less breakpoint) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
+In the Blank and Luma themes, the mobile first approach is used. It means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
 
 
 In the Blank theme, the mobile and desktop styles are defined in separate files:
@@ -47,7 +47,7 @@ In the Blank theme, the mobile and desktop styles are defined in separate files:
 <li><a href="{{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate basic and mobile-specific styles.</li>
 </ul>
 
-<p class="q">Which makes me wonder why do we describe creating a "mobile-specific" theme at all;)</p>
+
 
 
 #### Related topics:
