@@ -8,25 +8,25 @@ menu_order: 6
 github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
 ---
 <h2>Overview</h2>
-This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used in Magento default themes. 
+This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento default themes. 
 
 The described flow is applicable only for themes that <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the default Blank or Luma theme.
 
 <h2 id="rwd_practice">Changing the number of products in a row</h2>
 
 
-OrangeCo want to make their products more visible by decreasing the quantity of products in a row displayed on a catalog page, so that each product takes more space. 
+OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a catalog page, so that each product takes more space. 
 
 In the default Blank theme, the number of products in a row for each breakpoint is the following (for the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">2-column page layout</a>):
 
 <ul>
-<li>1024px and higher (desktop): four products</li>
+<li>1024px and more (desktop): four products</li>
 <li>768px (tablet): three products</li>
 <li>640px and less (mobile): two products</li>
 </ul>
 
 
-In their custom Orange theme, OrangeCo want to have the least number of products in a row for the desktop and tablet view, namely:
+In their custom Orange theme, OrangeCo wants to have the least number of products in a row for the desktop and tablet view, namely:
 <ul>
 <li>Desktop: three products</li>
 <li>Tablet: two products</li>
@@ -45,7 +45,7 @@ To change the products quantity, OrangeCo take the following steps:
 </ol>
 <p><img src="{{site.baseurl}}common/images/rwd_pract1.png"></p>
 
-After OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">apply their theme</a>, the catalog page of their store looks like following:
+After OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the catalog page of their store looks like following:
 
 <p><img src="{{site.baseurl}}common/images/rwd_practice.jpg"></p>
 
