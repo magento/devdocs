@@ -37,14 +37,18 @@ Before you start your migration, you must do all of the following:
 	Reach out to your extension providers to see if they have been ported yet.
 
 ## Install the migration tool
-This section discusses how to install the Magento migration tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from the TBD GitHub repository.
+This section discusses how to install the Magento migration tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from a GitHub repository.
 
-### Install the tool from a GitHub repository
+### Install the tool from GitHub
 To install the migration tool from GitHub, use the following steps:
 
-1.	Go to TBD.
-2.	Create or navigate to an empty directory on your Magento 2 server.
-2.	<a href="http://gitref.org/creating/">Clone the repository</a> using either the <a href="https://help.github.com/articles/which-remote-url-should-i-use/">SSH or HTTPS protocol</a>.
+1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to the web server user</a>.
+2. Enter the following commands in the order shown:
+
+		cd <Magento 2 install dir>
+		composer config repositories.migration-tool git https://github.com/magento/data-migration-tool
+		composer require magento/migration-tool:dev-develop
+3.	Wait while dependencies are updated.
 
 ### Install the tool from packages.magento.com
 To install the migration tool, you must update `composer.json` in the Magento root installation directory to provide the location of the migration tool package. 

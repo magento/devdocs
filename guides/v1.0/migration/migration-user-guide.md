@@ -20,7 +20,7 @@ See one of the following sections:
 *	<a href="#migration-config">Work with configuration and mapping files</a>
 *	<a href="#migration-notes">General notes about using the migration tool</a>
 *	<a href="#migration-command">Migrating data, settings, and changes</a>
-*	<a href="#migrate-command-media">Manual migration of non-migratable assets</a>
+*	<a href="#migrate-command-media">Manual migration</a>
 *	<a href="#migrate-command-after">Post-migration tasks</a>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -150,7 +150,11 @@ The following table discusses each mapping file.
 </tr>
 <tr>
 	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>
-	<td>TBD</td>
+	<td>List of tables used in the custom customer attributes step.</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. customer-attr-map.xml.dist</td>
+	<td>Map file for the custom customer attributes step.</td>
 </tr>
 <tr>
 	<td>deltalog.xml.dist</td>
@@ -165,7 +169,7 @@ The following table discusses each mapping file.
 	<td>List of tables required to process the log step.</td>
 </tr>
 <tr>
-	<td>map-eav.xml.dist
+	<td>map-eav.xml.dist</td>
 	<td>EAV mapping files.</td>
 </tr>
 <tr>
@@ -293,13 +297,19 @@ Command usage:
   <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
 </div>
 
-<h2 id="migrate-command-media">Manual migration of non-migratable assets</h2>
+<h2 id="migrate-command-media">Manual migration</h2>
 You must manually migrate all of the following:
 
 ### Media
-*	If media files are stored in the Magento 1 database, log in to the Magento 2 Admin and click TBD (Synchronize). 
+*	If media files are stored in the Magento 1 database, use the following steps:
 
-*	All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`. 
+	1.	Log in to the Magento 2 Admin as an administrator.
+	2.	Click **Stores** > **Configuration** > **System**. 
+	3.	In the right pane, scroll to **Storage Configuration for Media**.
+	4.	From the **Select Media Database** list, click the name of your media storage database. 
+	5.	Click **Synchronize**.
+
+*	All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`. 
 
 	However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved. 
 
@@ -312,8 +322,8 @@ Templates and layouts (that is, CSS, JavaScript, and XML layout files) changed l
 </div>
 
 ### ACLs
-
-You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
+*	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
+*	You must manually re-create all administrative users and associate them with access privileges.
 
 <h2 id="migrate-command-after">Post-migration tasks</h2>
 After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:
