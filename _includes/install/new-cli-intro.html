@@ -1,0 +1,14 @@
+<p>Magento has one command-line interface that performs both installation and configuration tasks: <code>&lt;your Magento install dir>/bin/magento</code>. The new interface performs multiple tasks, including:</p>
+<ul><li>Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on)</li>
+	<li>Clearing the cache</li>
+	<li>Managing indexes, including reindexing</li>
+	<li>Creating translation dictionaries and translation packages</li>
+	<li>Generating non-existent classes such as factories and interceptors for plug-ins, generating the dependency injection configuration for the object manager.</li>
+	<li>Deploying static view files</li>
+	<li>Creating CSS from LESS</li></ul>
+<p>Other benefits:</p>
+<ul><li>A single command (php <code>&lt;your Magento install dir>/bin/magento list</code>) lists all available installation and configuration commands</li>
+<li>Consistent user interface based on Symfony</li>
+<li>The CLI is extensible so third party developers can "plug in" to it<br />
+This has the additional benefit of eliminating users' learning curve</li>
+<li>Commands for disabled modules do not display.</li></ul>

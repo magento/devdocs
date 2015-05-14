@@ -10,11 +10,11 @@ github_link: architecture/arch_translations.md
 
 <h2 id="m2arch-translations-overview">Overview</h2>
 
-Magento can present the user interface (UI) in different languages without modifying the actual application source code. It translates the system messages, error messages, and labels for display in the UI. Some messages may be displayed in logs for a system administrator or a developer—those don't need to be translated. By convention, in the source code, the labels and system messages for the UI are expressed in English (`en_US`).
+Any text that's presented to the user can have a variety of captions or labels on the control elements, notifications, and error messages. The Magento application renders all these phrases in English (`US`) language (`en_US`). But if you deploy a storefront in a different language (or use the Magento Admin in different language), you can use other dictionaries for translations.
 
-To replace these phrases with alternatives in different languages when the source code is interpreted, Magento has a layer of indirection. It allows for translation by providing dictionary files that contain phrases from `en_US` translated into a different language. The dictionary packages in other languages either ship with Magento code out-of-the-box or are provided by the community.
+You can either use translation packages provided with the Magento application, create your own, or obtain packages from the community.
 
-For more information, refer to <a href="{{ site.gdeurl }}architecture/modules/xlate.html">Translation packages</a>.
+For more information, refer to <a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>.
 
 <h2 id="m2arch-related">Related topics</h2>
 
