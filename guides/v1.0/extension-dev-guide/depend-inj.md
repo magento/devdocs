@@ -423,7 +423,7 @@ Non-injectable
 :	Object that *cannot* be instantiated by the object manager. Typically, this object:
 
 	*	Has a transient lifecycle
-	*	Requires external (such as data user input or data from database) to be properly created
+	*	Requires external input (such as data user input or data from database) to be properly created
 
 	Most models are non-injectable (for example, <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="{{ site.mage2000url }}app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).
 	
