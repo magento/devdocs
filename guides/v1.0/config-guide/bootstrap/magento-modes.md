@@ -47,7 +47,7 @@ You should run the Magento software in developer mode when you're extending or c
 
 In developer mode:
 
-*	Static view files are not cached; they are written to the Magento docroot every time they're called
+*	Static view files are not cached; they are written to the Magento `pub/static` directory every time they're called
 *	Uncaught exceptions display in the browser
 *	System logging in `var/report` is verbose
 *	An exception is thrown in the error handler, rather than being logged
@@ -67,14 +67,14 @@ In default mode:
 For more information, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="mode-production">Production mode</h2>
-You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="#mode-production-view">view files creation tool</a> to write static files to the Magento docroot.
+You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="#mode-production-view">view files creation tool</a> to write static view files to the Magento `pub/static` directory.
 
 This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
 
 In production mode:
 
 *	Static view files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
-*	The Magento docroot can have read-only permissions
+*	The Magento installation directory can have read-only permissions
 *	Errors are logged to the file system and are never displayed to the user
 
 #### Next step

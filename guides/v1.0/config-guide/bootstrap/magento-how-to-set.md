@@ -31,7 +31,6 @@ The following table discusses the bootstrap parameters you can set:
 	<tr>
 		<td><a href="#config-bootparam-mode">MAGE_MODE</a></td>
 		<td>Sets the mode (default, developer, production)</td>
-		<td>None</td>
 	</tr>
 	
 	</tbody>

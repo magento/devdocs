@@ -25,7 +25,7 @@ Use this command if you have one website and store. If you have multiple website
 {% include install/cli_tenant-compiler.html %}
   
 <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
-Command options:
+Run the command as follows (there are no options):
 
 	php magento setup:di:compile
 
