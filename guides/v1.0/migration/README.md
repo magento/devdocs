@@ -80,10 +80,6 @@ To update `composer.json`:
 
 2.	Change to your Magento installation directory.
 
-3.	Make a backup copy of `composer.json`.
-
-		cp composer.json composer.json.bak
-
 7.	Enter the following command to reference Magento packages in `composer.json`:
 
 		composer config repositories.magento composer http://packages.magento.com
