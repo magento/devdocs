@@ -16,14 +16,14 @@ Stylesheets are the main tool in responsive web design (RWD) implementation. Thi
 
 The Blank and Luma theme styles are based on the <a href="{{site.gdeurl}}/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>. The library uses <a href="http://en.wikipedia.org/wiki/Media_queries" target="_blank">CSS3 media queries</a>, an extension of the <code>@media</code> rule, to adapt the layout to the screen width.
 
-According to the approach implemented in the Magento UI library, the <code>.media-width()</code> mixin can be used in any .less file in your theme, as many times as you need, but it is invoked only once, in <code>lib/web/css/source/lib/_responsive.less</code>. The resulting <code>styles.css</code> has only one call of each media query with all the rules there, instead of multiple calls for the same query.
+According to the approach implemented in the library, the <code>.media-width()</code> mixin can be used in any <code>.less</code> file in your theme, as many times as you need, but it is invoked only once, in <code>lib/web/css/source/lib/_responsive.less</code>. The resulting <code>styles.css</code> has only one call of each media query with all the rules there, instead of multiple calls for the same query.
 
 
 You can find more information about the Magento UI library responsive mixin usage in <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code> (view in a browser).
 
 <h2 id="fedg_rwd_css_break">Breakpoints</h2>
 
-Breakpoints are used in the CSS code to set up a viewport at which the design switches from the mobile to the desktop version.
+Breakpoints are used in the CSS code to set up the screen width at which the design switches from the mobile to the desktop version.
 
 The Blank theme implements the following <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoints</a>:
 <ul>
@@ -50,7 +50,7 @@ In the Blank theme, the mobile and desktop styles are defined in separate files:
 
 
 
-#### Related topics:
+<h2>Related topics</h2>
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html">Create a theme</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a>
