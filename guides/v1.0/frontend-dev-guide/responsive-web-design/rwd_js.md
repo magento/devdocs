@@ -64,8 +64,11 @@ The <code>mediaCheck</code> call looks as follows:
 </pre>
 
 
-In <code>responsive.js</code>, you can see how the checkout progress is toggled from the mobile to the desktop version. For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps (for the desktop, it is displayed on the left-hand side), and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it becomes visible after you click it.
-
+In <code>responsive.js</code>, you can see how the checkout progress is toggled from the mobile to the desktop version:
+<ul>
+ <li>For the desktop version, the checkout progress block on the checkout page is permanently displayed on the left-hand side.</li>
+<li>For the mobile version, it is moved by CSS to be displayed under the checkout steps, and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it becomes visible after you click it. </li>
+</ul>
 
 
 <h2 id="fedg_rwd_js_nav">menu.js</h2>
