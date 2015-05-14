@@ -303,8 +303,16 @@ You must manually migrate all of the following:
 ### Media
 *	If media files are stored in the Magento 1 database, use the following steps:
 
+	1.	Log in to the Magento 1 Admin Panel as an administrator.
+	2.	Click **System** > **Configuration** > ADVANCED > **System**. 
+	3.	In the right pane, scroll to **Storage Configuration for Media**.
+	4.	From the **Select Media Database** list, click the name of your media storage database. 
+	5.	Click **Synchronize**.
+
+After that, use the following steps:
+
 	1.	Log in to the Magento 2 Admin as an administrator.
-	2.	Click **Stores** > **Configuration** > **System**. 
+	2.	Click **Stores** > **Configuration** > ADVANCED > **System**. 
 	3.	In the right pane, scroll to **Storage Configuration for Media**.
 	4.	From the **Select Media Database** list, click the name of your media storage database. 
 	5.	Click **Synchronize**.

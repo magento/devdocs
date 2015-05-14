@@ -26,9 +26,9 @@ Before you start your migration, you must do all of the following:
 
 *	Back up or <a href="https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html">dump</a> your Magento 2 database as soon after installation as possible.
 
-*	The Magento 1.x and Magento 2 systems must be reachable on the internet.
+*	The Magento 1.x and Magento 2 databases must be able to communicate with each other.
 
-	Reduce network latency between your Magento 1.x and 2.0 systems as much as possible to improve migration performance.
+	Open firewall ports for MySQL and reduce network latency between your Magento 1.x and 2.0 databases as much as possible to improve migration performance.
 
 *	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database.
 
@@ -39,15 +39,25 @@ Before you start your migration, you must do all of the following:
 ## Install the migration tool
 This section discusses how to install the Magento migration tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from a GitHub repository.
 
+**Note**: The versions of both the migration tool and the Magento 2 code must be identical (for example, 0.74-beta8). To find the version of either package, open `composer.json` and find the value of `"version"`.
+
 ### Install the tool from GitHub
 To install the migration tool from GitHub, use the following steps:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to the web server user</a>.
-2. Enter the following commands in the order shown:
+2. Change to your Magento 2 installation directory.
+3.	Enter one of the following commands:
 
-		cd <Magento 2 install dir>
-		composer config repositories.migration-tool git https://github.com/magento/data-migration-tool
-		composer require magento/migration-tool:dev-develop
+	*	Magento CE:
+
+			composer config repositories.migration-tool git https://github.com/magento/data-migration-tool-ce
+			composer require magento/data-migration-tool:dev-develop
+
+	*	Magento EE:
+
+			composer config repositories.migration-tool git <ee-github-repo>
+			composer require magento/data-migration-tool:dev-develop
+
 3.	Wait while dependencies are updated.
 
 ### Install the tool from packages.magento.com
@@ -62,35 +72,17 @@ To install the migration tool, you must:
 
 1.	Decide the version of `magento/data-migration-tool` you want as discussed in the preceding section.
 
-2.	Add `"minimum-stability": "beta",` to `composer.json`.
-
-2.	Run the `composer package` and `composer require` commands to update `composer.json`.
+2.	Run the `composer config` and `composer require` commands to update `composer.json`.
 
 To update `composer.json`:
 
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with `root` privileges.
+1.	Log in to your Magento server as the <a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with `root` privileges.
 
 2.	Change to your Magento installation directory.
 
 3.	Make a backup copy of `composer.json`.
 
 		cp composer.json composer.json.bak
-
-4.	Open `composer.json` in a text editor.
-
-5.	In the first section, add `"minimum-stability": "beta",` before `version`. A snippet follows:
-
-		"name": "magento/project-community-edition",
-	    "description": "Magento project (Community Edition)",
-	    "type": "project",
-	    "minimum-stability": "beta",
-	    "version": "0.74.0-beta5",
-	    "license": [
-	        "OSL-3.0",
-	        "AFL-3.0"
-	    ],
-
-6.	Save your changes to <code>composer.json</code> and exit the text editor.
 
 7.	Enter the following command to reference Magento packages in `composer.json`:
 
