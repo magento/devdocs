@@ -36,7 +36,7 @@ The pre-release version format is: `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`, whe
 
 <h3>Public APIs</h3>
 
-Source code is considered public API only if it is explicitly marked as such using the `@api` docblock tag. This indicates the code is intended to be used or customized by other components or subsystems, such as formal interfaces, APIs, service contracts, and dependency injection points.
+Source code is considered public API only if it is explicitly marked as such using the `@api` docblock tag. This designation indicates the code can be used or customized by other components, such as formal interfaces and dependency injection points.
 
 For PHP code, compatibility of `@api` may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).
 
@@ -69,7 +69,7 @@ The software version will always change with any release of Magento source code.
 <h3>Development releases</h3>
 In every development release ("pre-release" version), **the same value of version number will be propagated in all Magento components and their dependencies**.
 
-Magento may update the `x.y.z` version in way perscribed by SemVer, but also could release the same `x.y.z` with different stability and/or index numbers, For example, `0.1.0-alpha1 -> 0.1.0-alpha2`, `0.1.0-alpha3` or `2.0.0-alpha3 -> 2.1.0-beta1 -> 2.1.0-beta2`
+Magento may update the `x.y.z` version in way perscribed by Semantic Versioning, but also could release the same `x.y.z` with different stability and/or index numbers, For example, `0.1.0-alpha1 -> 0.1.0-alpha2`, `0.1.0-alpha3` or `2.0.0-alpha3 -> 2.1.0-beta1 -> 2.1.0-beta2`
 
 <table>
 <tbody>
@@ -116,7 +116,7 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 <tr>
 <td>Component Version</td>
 <td><pre>"name": "magento/foo",
-"version": 1.2.0
+"version": ~1.2
 </pre></td>
 <td><pre>"name": "magento/foo",
 "version": 1.3.0
@@ -135,46 +135,6 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 </tbody>
 </table>
 
-
-<h3>Maintenance releases</h3>
-
-<b>Note to reviewer: The first sentence below doesn't seem like something we should be saying. </b>
-
-A maintenance release inherits all properties of a stable release, although the maintenance releases are supposed to introduce only backwards-compatible bugfixes. The version number will be changed only in components that have actually changed. The unchanged components will have the version unchanged.
-
-Depending on a nature of change, there might be necessity to update version in the dependent components – so instead of specifying a wildcard  (*), the patch number will be updated to an exact value. For example:
-
-<table>
-<tbody>
-<tr>
-<th></th>
-<th>Before the Patch</th>
-<th>After the Patch</th>
-<th>Across the Board</th>
-</tr>
-<tr>
-<td>Component Version</td>
-<td><pre>"name": "magento/foo",
-"version": 1.2.0
-</pre></td>
-<td><pre>"name": "magento/foo",
-"version": 1.2.1
-</pre></td>
-<td>1.2.0</td>
-</tr>
-<tr>
-<td>Dependency in Other Components</td>
-<td><pre>"require": {
-    "magento/foo": "1.2.*"
-}
-</pre></td>
-<td><pre>"require": {
-    "magento/foo": ">=1.2.1"
-}</pre></td>
-<td>1.2.0 (stays the same in the rest of components)</td>
-</tr>
-</tbody>
-</table>
 
 <h3>Example Lifecycle</h3>
 The following steps demonstrate the packaging and backward compatibility story from the view of Magento, system integrators, and extension developers. This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
