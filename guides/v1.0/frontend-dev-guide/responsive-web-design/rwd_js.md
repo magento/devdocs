@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
 
 <h2>Overview</h2>
 
-This topic describes the JavaScript used in Magento default themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
+This topic describes the JavaScript used in Magento default Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="{{site.gdeurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.
 
 
 <h2>Scripts general overview</h2>
@@ -42,7 +42,7 @@ See one of the following sections for more information:
 
 <h2 id="fedg_rwd_js_resp">responsive.js</h2>
 
-The <code>responsive.js</code> script implements specific responsive functions for the Blank and Luma themes. To manipulate JavaScript for the desktop or mobile viewports, <code>responsive.js</code> calls the <code>mediaCheck()</code> anonymous function from <code>matchMedia.js</code>.
+The <code>responsive.js</code> script implements specific responsive functions for the Blank and Luma themes. To manipulate JavaScript for the desktop or mobile view, <code>responsive.js</code> calls the <code>mediaCheck()</code> anonymous function from <code>matchMedia.js</code>.
 
 
 The <code>mediaCheck</code> call looks as follows:
@@ -64,17 +64,17 @@ The <code>mediaCheck</code> call looks as follows:
 </pre>
 
 
-In <code>responsive.js</code>, you can see how the checkout progress is toggled from the mobile to the desktop version:
+For example, <code>responsive.js</code> changes the view of the checkout progress block on the checkout page:
 <ul>
- <li>For the desktop version, the checkout progress block on the checkout page is permanently displayed on the left-hand side.</li>
-<li>For the mobile version, it is moved by CSS to be displayed under the checkout steps, and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it becomes visible after you click it. </li>
+ <li>For the desktop view, the checkout progress block is permanently displayed on the left-hand side.</li>
+<li>For the mobile view, it is moved by CSS to be displayed under the checkout steps. <code>responsive.js</code> makes it a toggled block: by default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it is visible after you click it.</li>
 </ul>
 
 
 <h2 id="fedg_rwd_js_nav">menu.js</h2>
 
 
-In a mobile viewport, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
+In a mobile view, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: 
 <ul>
 <li>Category menu items are not displayed, but are accessible after clicking the menu icon.</li>
 <li>The behavior of a category link depends on whether the category has sub-categories:
