@@ -2,11 +2,11 @@
 layout: default
 group:  migration
 subgroup: Migration
-title: Migration guide&mdash;DRAFT 
-menu_title: Migration guide&mdash;DRAFT 
+title: Migration guide
+menu_title: Migration guide
 menu_node: parent
 menu_order: 1
-github_link: install-gde/bk-migration-guide.md
+github_link: migration/bk-migration-guide.md
 ---
 
   
