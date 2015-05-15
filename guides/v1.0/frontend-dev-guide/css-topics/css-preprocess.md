@@ -60,7 +60,7 @@ In the Magento application, the following modes of compiling <code>.less</code> 
 
 <ol>
 <li>Server-side LESS compilation.<br>
-This is the default compilation mode, and is the only option in <a href="config-guide/config/magento-mode.html#mode-production" target="_blank"> production application mode</a>.
+This is the default compilation mode, and is the only option in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-mode.html#mode-production" target="_blank"> production application mode</a>.
 In this case the compilation is performed on the server, using the <a href="https://github.com/oyejorge/less.php" target="_blank">LESS PHP library</a>.
 </li>
 
@@ -86,7 +86,7 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 <ol>
 <li>Checks if the requested <code>.css</code> file is found. If it is found, the preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
-<li>Changes the extension of the requested file to <code>.less</code> and tries to find the file using the <a href="{{site.gdeurl}}v1.0/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static" target="_blank">Magento fallback mechanism</a>. If the <code>.less</code> file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
+<li>Changes the extension of the requested file to <code>.less</code> and tries to find the file using the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static" target="_blank">Magento fallback mechanism</a>. If the <code>.less</code> file is not found, LESS preprocessor stops its execution. Otherwise, it proceeds to the next step.</li>
 <li>Reads <code>.less</code> file contents and resolves <a href="#fedg_css-magento-import"><code>@magento_import</code></a> and default LESS <code>@import</code> directives.</code></li>
 
 <li>Resolves all paths in <code>.less</code> files to relative paths in the system using the Magento fallback mechanism. All files resolved by the LESS preprocessor are copied to <code>var/view_preprocessed/less</code>. Imported files are processed recursively.</li>
