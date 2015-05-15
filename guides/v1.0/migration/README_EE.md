@@ -18,7 +18,7 @@ We support the following versions for migration:
 
 We also plan to support:
 
-*  EE 1.11.x, EE-1.12.x, EE-1.13.x, and EE-1.14.x
+*  EE 1.11.x, EE 1.12.x, EE 1.13.x, and EE 1.14.x
 
 ## Prerequisites
 Before you start your migration, you must do all of the following:
