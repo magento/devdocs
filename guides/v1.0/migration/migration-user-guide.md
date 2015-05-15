@@ -285,7 +285,7 @@ Command usage:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The migration tool saves its current progress as it runs. If errors or user intervention stop it from running, the migration tool resumes progress at the last known good state.</p>
-  <p>To force the migration tool to run from the beginning, use the <code>--reset</code>. In that case, we recommend you restore your Magento 2 database dump to prevent duplication of previously migrated data.</p></span>
+  <p>To force the migration tool to run from the beginning, use the <code>--reset</code>. In that case, we recommend you restore your Magento 2 database dump to prevent duplicatingfv previously migrated data.</p></span>
 </div>
 
 <h3 id="migrate-command-delta">Incremental migration (delta mode)</h3>
@@ -329,7 +329,7 @@ Templates and layouts (that is, CSS, JavaScript, and XML layout files) changed l
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Layout updates implemented in Magento 1 <em>cannot</em> be used in Magento 2 (namely, XML placed in the Magento Admin in CMS category pages and layout updates specified in widget instances.</p></span>
+  <p>Layout updates implemented in Magento 1 <em>cannot</em> be used in Magento 2 (namely, XML placed in the Magento Admin in CMS category pages and layout updates specified in widget instances).</p></span>
 </div>
 
 ### ACLs

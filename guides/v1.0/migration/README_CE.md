@@ -49,17 +49,16 @@ To install the migration tool from GitHub, use the following steps:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to the web server user</a>.
 2. Change to your Magento 2 installation directory.
-3.	Enter one of the following commands:
 
-	*	Magento CE:
+	Examples:
 
-			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool-ce
-			composer require magento/data-migration-tool:dev-develop
+	*	Ubuntu: `/var/www/magento2`
+	*	CentOS: `/var/www/html/magento2`
+	
+3.	Enter the following commands:
 
-	*	Magento EE:
-
-			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool-ee
-			composer require magento/data-migration-tool:dev-develop
+	composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool-ce
+	composer require magento/data-migration-tool:dev-develop
 
 3.	Wait while dependencies are updated.
 
@@ -77,7 +76,7 @@ To install the migration tool, you must:
 
 2.	Run the `composer config` and `composer require` commands to update `composer.json`.
 
-To update `composer.json`: @@@
+To update `composer.json`: 
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to the web server user</a>.
 
@@ -95,11 +94,11 @@ To update `composer.json`: @@@
 
 	Exact version example:
 
-		composer require magento/data-migration-tool:0.74.0-beta4
+		composer require magento/data-migration-tool:0.74.0-beta8
 
 	Next significant release example:
 
-		composer require magento/data-migration-tool:~0.74.0-beta4
+		composer require magento/data-migration-tool:~0.74.0-beta8
 
 9.	Wait while dependencies are installed.
 
