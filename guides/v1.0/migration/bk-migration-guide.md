@@ -223,6 +223,18 @@ Optional parameters:
 *	Database user password: `password=<password>`
 *	Table prefix: `<source_prefix>`, `<dest_prefix>`.
 
+For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
+
+{% highlight xml %}
+	<source version="1.9.1">
+        <database host="localhost" name="magento1" user="root" password="pass"/>
+        <source_prefix>magento1</source_prefix>
+    </source>
+    <destination version="2.0.0.0">
+        <database host="localhost" name="magento2" user="root"/>
+    </destination>
+{% endhighlight %}
+
 <h2 id="migration-command">Migrating data, settings, and changes</h2>
 Run the migration tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
 
