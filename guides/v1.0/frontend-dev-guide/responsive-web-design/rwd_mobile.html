@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento UI library</title>
+	<title>Create a responsive mobile theme based on a default theme</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">
+	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html">
 
 </head>	
 <body>
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Magento UI library</h1>
+		<h1 class="page-heading">Create a responsive mobile theme based on a default theme</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -148,130 +148,32 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="fedg_using-ui-lib_overview">Overview</h2>
+		<h2>Overview</h2>
+<p>The topic describes how to create a responsive mobile-specific theme using the default Magento approaches. </p>
 
-<p>The Magento UI library is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based frontend library designed to assist Magento theme developers. It employs a set of mixins for base elements to ease frontend theme development and customization. </p>
+<h2>Creating a mobile-specific theme</h2>
 
-<p>This topic describes how the library is organized, and how to use it. </p>
+<p>To use all the responsive approaches implemented in the Magento default Blank and Luma themes, your theme should declare one of them as a <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">parent</a>. </p>
 
-<h2 id="library_elements">Components provided by the UI library</h2>
-<p>The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:</p>
+<p>To create a mobile-specific theme:</p>
+<ol>
+<li>Create a theme as described in <a href="/guides/v1.0/frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a>, having specified Blank or Luma as a parent theme.</li>
+<li>Add a <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code> layout file with the following content:
+<pre>
+&lt;page xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+    &lt;head&gt;
+        &lt;remove src=&quot;css/styles-l.css&quot; /&gt;
+    &lt;/head&gt;
+&lt;/page&gt;
+</pre>
 
+This will remove the desktop-specific files from your theme.
+</li>
+</ol>
+
+<h2>Recommended reading</h2>
 <ul>
-  <li>actions-toolbar</li>
-  <li>breadcrumbs</li>
-  <li>buttons</li>
-  <li>drop-downs</li>
-  <li>forms</li>
-  <li>icons</li>
-  <li>layout</li>
-  <li>loaders</li>
-  <li>messages</li>
-  <li>pagination</li>
-  <li>popups</li>
-  <li>ratings</li>
-  <li>sections</li>
-  <li>tabs and accordions</li>
-  <li>tables</li>
-  <li>tooltips</li>
-  <li>typography</li>
-  <li>list of theme variables</li>
-</ul>
-
-<p>The following illustration shows a storefront product page containing some of the preceding elements:</p>
-
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/ui_lib1.png" alt="A product page with user interface elements specified" />
-</div>
-
-<h2 id="fedg_using-ui-lib_mixins">Mixin location</h2>
-
-<p>You can find the Magento UI library under <a href="https://github.com/magento/magento2/blob/develop/lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source <code>.less</code> files are stored under the <code>source</code> directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:</p>
-
-<pre>lib/web
-    ├── css/
-    │    ├── docs/ (Library documentation)
-    │    ├── source/
-    │    │    ├── lib/ (Library source files)
-    |    |    |    ├── variables/ (Predefined variables for each mixin)
-    │    │    │    ├── _actions-toolbar.less
-    │    │    │    ├── _breadcrumbs.less
-    │    │    │    ├── _buttons.less
-    │    │    │    ├── _dropdowns.less
-    │    │    │    ├── _forms.less
-    |    |    |    ├── _grids.less
-    │    │    │    ├── _icons.less
-    │    │    │    ├── _layout.less
-    │    │    │    ├── _lib.less
-    │    │    │    ├── _loaders.less
-    │    │    │    ├── _messages.less
-    │    │    │    ├── _navigation.less
-    │    │    │    ├── _pages.less
-    │    │    │    ├── _popups.less
-    │    │    │    ├── _rating.less
-    │    │    │    ├── _resets.less
-    │    │    │    ├── _responsive.less
-    │    │    │    ├── _sections.less
-    │    │    │    ├── _tables.less
-    │    │    │    ├── _tooltips.less
-    │    │    │    ├── _typography.less
-    │    │    │    ├── _utilities.less
-    │    │    │    └── _variables.less
-    │    │    └── _extend.less
-    │    │    └── _theme.less
-    │    │    └── _variables.less
-    │    └── styles.less
-    ├── fonts/
-    │    └── Blank-Theme-Icons/ (Library custom icons font)
-    ├── images/
-    │    └── blank-theme-icons.png (Library icons sprite)
-    └── jquery/ (Library javascript files)</pre>
-
-<h2 id="fedg_using-ui-lib_predef-vars">Predefined variables</h2>
-
-<p>If your theme <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from a default theme, for example Blank, you can easily customize any element of a store page without changing any CSS code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.</p>
-
-<p>The complete list of these variables and their default values are stored in <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the <code>breadcrumbs()</code> mixin.</p>
-
-<p>To change the default library variables values, specify the new values for the required variables in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_theme.less</code> file.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<p>Please mind, that your <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_theme.less</code> file overrides <code>_theme.less</code> of the parent theme (if your theme has a parent). So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s <code>_theme.less</code> to your file as well.</p>
-</div>
-
-<p>The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.</p>
-
-<p><img src="/common/images/ui_lib2.png" alt="Changing design by redefining variables" /></p>
-
-<h2 id="fedg_using-ui-lib_customize">Using mixins</h2>
-
-<p>You can use a mixin with default variables values, or you can redefine them when calling a mixin. The following paragraphs describe the both ways to call a mixin.</p>
-
-<p>To use a mixin with default values, call the mixin without specifying any parameters. For example:</p>
-
-<pre>.breadcrumbs {
-    .breadcrumbs();
-}</pre>
-
-<p>To call a mixin with parameter values different from default, set these values when calling the mixin, like in the following example:</p>
-
-<pre>.example-button {
-    .button(
-        @_button-padding: @button-padding,
-        @_button-color: #fff,
-        @_button-color-hover: #ccc
-    );
-}</pre>
-
-<p>Variables starting with <code>@_</code> are private mixin variables used only in this mixin. Variables starting with <code>@</code> (without the underscore) are global, and are listed in <a href="https://github.com/magento/magento2/blob/develop/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables/</code></a>.</p>
-
-<h2 id="docs">UI library documentation</h2>
-
-<p>You can find detailed information about the Magento UI library in the documentation provided together with the code:</p>
-
-<ul>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/web/css/docs/source/README.md" target="_blank"><code>lib/web/css/docs/source/README.md</code></a>: describes the Magento UI library structure, naming conventions, and code style.</li>
-  <li><a href="https://github.com/magento/magento2/blob/develop/lib/web/css/docs" target="_blank"><code>lib/web/css/docs</code></a>: contains a set of <code>.html</code> files with detailed information about the library mixins. Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins. The documentation is available in a convenient HTML view in the following location in your Magento installation: <code>pub/static/frontend/Magento/blank/en_US/css/docs/index.html</code></li>
+<li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a></li>
 </ul>
 
 
@@ -511,7 +413,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
 						
 								
 							
@@ -560,7 +462,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
 						
 								
 							
