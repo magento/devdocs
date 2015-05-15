@@ -42,4 +42,5 @@ The following diagram shows the perspective of a user who wants to build an onli
 <h2 id="m2arch-related">Related topics</h2>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
+* <a href="{{ site.gdeurl }}arch_layers.html">Architecture layers</a>
 
