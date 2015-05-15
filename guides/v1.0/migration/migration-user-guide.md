@@ -107,8 +107,8 @@ Before you start your migration, you must do all of the following:
 <h2 id="migrate-install">Install the migration tool</h2>
 Installation is discussed in:
 
-*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/README_CE.md">README_CE.md</a>
-*	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README_EE.md">README_EE.md</a>
+*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/README_CE.md" target="_blank">README_CE.md</a>
+*	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README_EE.md" target="_blank">README_EE.md</a>
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
@@ -118,14 +118,14 @@ The migration tool uses *mapping files* to enable you to perform custom database
 *	Changing field names
 *	Ignoring tables or fields
 
-Mapping files for supported Magento versions are located in subdirectories of `<your Magento 2 install dir>/vendor/magento/data-migration-tool>/etc`.
+Mapping files for supported Magento versions are located in subdirectories of `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`
 
 To use the mapping files:
 
 1.	Rename or copy them to remove the `.dist` extension.
-2.	Edit them using the schema located in `<your Magento 2 install dir>/vendor/magento/data-migration-tool>/etc`.
+2.	Edit them using the schema located in `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`.
 
-The `<your Magento 2 install dir>/vendor/magento/data-migration-tool>/<ce or ee version>/etc` directory contains the following configuration files:
+The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/<ce or ee version>/etc` directory contains the following configuration files:
 
 <table>
 <tbody>
@@ -215,7 +215,7 @@ After performing migration:
 2.	Run your Magento 2 cron jobs.
 
 <h2 id="migration-configure">Configuring the migration</h2>
-Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/magento/data-migration-tool>/etc/<ce-or-ee-version>/<magento-version>/config.xml` to specify at minimum values for the following:
+Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce or ee version>/config.xml` to specify at minimum values for the following:
 
 {% highlight xml %}
 	<source version="1.9.1">
@@ -229,7 +229,7 @@ Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/
 If you use table prefixes, specify them using `<source_prefix>` and `<dest_prefix>` elements.
 
 <h2 id="migration-command">Migrating data, settings, and changes</h2>
-Run the migration tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool>/bin` directory.
+Run the migration tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
 
 Command syntax:
 
@@ -266,7 +266,7 @@ To change how settings are migrated, either edit `etc/map/settings.xml` or creat
 
 Command usage:
 
-	<your Magento 2 install dir>/vendor/magento/data-migration-tool>/bin/migrate settings --config=<path to config.xml>
+	<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin/migrate settings --config=<path to config.xml>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -285,7 +285,7 @@ After resolving issues, run the migration tool again.
 
 Command usage:
 
-	<your Magento 2 install dir>/vendor/magento/data-migration-tool>/bin/migrate data --config=<path to config.xml> [--reset]
+	<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin/migrate data --config=<path to config.xml> [--reset]
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -298,7 +298,7 @@ Incremental migration enables you to migrate only the changes since you migrated
 
 Command usage:
 
-	<your Magento 2 install dir>/vendor/magento/data-migration-tool>/bin/migrate delta --config=<path to config.xml>
+	<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin/migrate delta --config=<path to config.xml>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
