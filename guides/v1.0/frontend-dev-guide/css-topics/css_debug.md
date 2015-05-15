@@ -5,7 +5,7 @@ subgroup: D_CSS
 title: Styles debugging
 menu_order: 4
 menu_title: Styles debugging
-github_link: frontend-dev-guide/css-topics/styles_node.md
+github_link: frontend-dev-guide/css-topics/css_debug.md
 ---
 
 <h2>Overview</h2>
