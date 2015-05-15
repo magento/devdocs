@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Responsive web design</title>
+	<title>Overview of responsive web design in Magento</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -137,7 +137,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Responsive web design</h1>
+		<h1 class="page-heading">Overview of responsive web design in Magento</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -148,78 +148,62 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="fedg_rwd_overview">Overview</h2>
+		<p>Responsive web design (RWD, also referred as<i>responsive design</i>) crafts web sites to provide an optimal viewing experience across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).</p>
 
-<p><a href="http://www.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/" target="_blank">Responsive web design</a> is a set of techniques that enable you to display the same content on multiple device sizes (referred to as <em>viewports</em>) without maintaining completely separate style sheets for each.</p>
+<p>The built-in Magento Blank and Luma themes (Luma <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from Blank) use the mobile first RWD approach. It is ensured mostly by means of CSS and JavaScript.</p>
 
-<p>The Magento system ships with a blank responsive theme. To build a responsive design, see <a href="/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">cascading style sheets (CSS)</a>, <a href="/guides/v1.0/frontend-dev-guide/javascript/js-mage-plugin.html">Mage JavaScript plugin</a>, and <a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">blocks in a responsive design</a>.</p>
+<p>The following image illustrates how the same page built on the Blank theme looks on mobile, tablet and desktop devices.</p>
 
-<h3 id="fedg_rwd_terms">Terms used</h3>
+<p><img src="/common/images/css_responsive1.jpg" /></p>
 
-<dl>
-  <dt>Responsive web design</dt>
-  <dd>
-    <p>(Also referred to as <em>responsive design</em>)—a web design approach aimed at creating sites with an optimal viewing experience for all screen sizes. This means that a responsive web site is easy for reading and has navigation with a minimum of resizing, panning, and scrolling across a wide range of devices—from desktop computers to mobile phones.</p>
-  </dd>
-  <dt>Viewport</dt>
-  <dd>
-    <p>The viewing region or screen size for which your responsive design is implemented.</p>
-  </dd>
-  <dt>Breakpoint</dt>
-  <dd>
-    <p>The viewport size at which the width of the user’s screen causes your responsive layout to change.</p>
-  </dd>
-</dl>
+<p>We recommend using the Blank theme, as a starting point for your customizations. That is, your custom theme should <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from Blank.</p>
 
-<h2 id="fedg_rwd_blank">The Blank theme</h2>
-
-<p>You should use the Blank responsive theme as your template for theme development. It contains examples of mobile-first responsive design, including:</p>
+<p>The articles in this chapter describe the particular approaches used in the Blank theme, and provide practical recommendations on how to use these approaches in your themes:</p>
 
 <ul>
-  <li>navigation menu</li>
-  <li>page header</li>
-  <li>catalog page</li>
-  <li>product pages for different product types</li>
-  <li>customer account</li>
-  <li>shopping cart</li>
-  <li>checkout progress</li>
-  <li>different page elements (such as forms, tables, predefined properties for moving and showing or hiding elements depending on the device’s screen width, and so on)</li>
+<li> 
+<a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html" target="_blank">CSS in Magento responsive design</a>
+</li>
+<li>
+<a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html" target="_blank">JavaScript in Magento responsive design</a>
+</li>
+<li>
+<a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html" target="_blank">Customizing RWD: illustration</a>
+</li>
+
+<li>
+<a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html" target="_blank">Create a responsive mobile theme based on Blank</a>
+</li>
+
 </ul>
 
-<h3 id="fedg_rwd_blank_location">Blank theme location</h3>
+<h2 id="fedg_rwd_terms">Terms used</h2>
 
-<p>The blank theme is located as follows:</p>
+<table>
+<tr>
+<th>
+Term
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<i>Breakpoint</i>
+</td>
+<td>
 
-<pre>app/
-├── design/
-│    ├── frontend/
-│    │    ├── Magento/
-│    │    │   ├── blank/
-│    │    │   │   ├── css-topics/
-│    │    │   │   ├── fonts/
-│    │    │   │   ├── js/
-│    │    │   │   ├── Magento_[your module name]/
-│    │    │   │   ...
-│    │    │   │   ├── media/</pre>
+The width of the user’s screen that causes your responsive layout to change.
 
-<h3 id="fedg_rwd_blank_ex">Blank theme examples</h3>
+</td>
+</tr>
+</table>
 
-<p>The following figures show the same page built on the Blank theme on mobile and desktop devices.</p>
-
-<p>Mobile:</p>
-
-<p><img src="/common/images/rwd_blank_mobile.png" alt="Viewing a product catalog page on a mobile device using the Blank responsive theme." /></p>
-
-<p>Desktop:</p>
-
-<p><img src="/common/images/rwd_blank_desktop.png" alt="Viewing a product catalog page on a desktop device using the Blank responsive theme." /></p>
-
-<h4 id="related-topics">Related topics:</h4>
+<h2>Recommended reading</h2>
 
 <ul>
-  <li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/themes/theme-general.html" target="_blank">Magento Themes</a></li>
 </ul>
 
 
@@ -488,7 +472,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
 									
 								
 								
@@ -501,7 +485,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
 						
 								
 							

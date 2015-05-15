@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>CSS in a responsive design</title>
+	<title>CSS in responsive design</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -137,7 +137,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">CSS in a responsive design</h1>
+		<h1 class="page-heading">CSS in responsive design</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -148,54 +148,46 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="fedg_rwd_css_break">Breakpoints</h2>
+		<h2>Overview</h2>
 
-<p>Responsive design uses <a href="http://www.w3.org/TR/css3-mediaqueries/" target="_blank">CSS3 media queries</a> (an extension of the <code>@media</code> rule) to adapt the layout to the viewport.</p>
+<p>Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the main default Blank theme.</p>
 
-<p>Breakpoints are used in the CSS code to set up a viewport at which the design switches from the mobile to the desktop version.</p>
+<h2 id="lib_rwd">Media queries in Magento default themes</h2>
 
-<p>The Blank theme implements three breakpoints:</p>
+<p>The Blank and Luma theme styles are based on the <a href="/guides/v1.0//css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a>. The library uses <a href="http://en.wikipedia.org/wiki/Media_queries" target="_blank">CSS3 media queries</a>, an extension of the <code>@media</code> rule, to adapt the layout to the screen width.</p>
 
+<p>According to the approach implemented in the library, the <code>.media-width()</code> mixin can be used in any <code>.less</code> file in your theme, as many times as you need, but it is invoked only once, in <code>lib/web/css/source/lib/_responsive.less</code>. The resulting <code>styles.css</code> has only one call of each media query with all the rules there, instead of multiple calls for the same query.</p>
+
+<p>You can find more information about the Magento UI library responsive mixin usage in <code>&lt;your_Magento_instance&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code> (view in a browser).</p>
+
+<h2 id="fedg_rwd_css_break">Breakpoints</h2>
+
+<p>Breakpoints are used in the CSS code to set up the screen width at which the design switches from the mobile to the desktop version.</p>
+
+<p>The Blank theme implements the following <a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoints</a>:</p>
 <ul>
-  <li>
-    <p>The main one at 768px</p>
-
-    <p>This breakpoints switches between mobile and desktop views.</p>
-  </li>
-  <li>
-    <p>600px and 800px</p>
-
-    <p>These breakpoints affect how your catalog displays.</p>
-  </li>
+  <li>320px</li>
+  <li>480px</li>
+  <li>640px</li>
+  <li>768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)</li> <li>1024px</li>
+  <li>1440px</li>
 </ul>
 
-<p>CSS snippet:</p>
+<h2>Mobile first</h2>
 
-<script src="https://gist.github.com/xcomSteveJohnson/be946288f49b228e04df.js"></script>
+<p>In the Blank and Luma themes, the mobile first approach is used. It means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.</p>
 
-<h2 id="fedg_rwd_ex">Blank theme CSS examples</h2>
+<p>In the Blank theme, the mobile and desktop styles are defined in separate files:</p>
 
-<p>To change the position of elements depending on the screen width, you must redefine which styles control their behavior. The following example compares a two-column display for mobile and desktop viewports.</p>
+<ul>
+<li><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles (768px and higher).</li>
+<li><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate basic and mobile-specific styles.</li>
+</ul>
 
-<p>Mobile version: The following figure shows the main and sidebar columns defined one after the other.</p>
-
-<p><img src="/common/images/rwd_css_resp_mobile.png" alt="In the mobile viewport, the columns display one on top of the other." /></p>
-
-<p>Desktop version: After the breakpoint of 768px is reached, the page uses CSS provided in the <code>@media</code> query to display the same columns side by side.</p>
-
-<p>CSS snippet:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/787060623b87ef506bc0.js"></script>
-
-<p>How it displays in a desktop browser:</p>
-
-<p><img src="/common/images/rwd_css_resp_desktop.png" alt="In the desktop viewport, the columns display side by side." /></p>
-
-<h4 id="related-topics">Related topics:</h4>
+<h2>Related topics</h2>
 
 <ul>
   <li><a href="/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
   <li><a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
   <li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
 </ul>
@@ -466,7 +458,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
 									
 								
 								
@@ -479,7 +471,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
 						
 								
 							
