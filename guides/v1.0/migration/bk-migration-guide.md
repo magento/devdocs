@@ -107,8 +107,9 @@ Before you start your migration, you must do all of the following:
 <h2 id="migrate-install">Install the migration tool</h2>
 Installation is discussed in:
 
-*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/README_CE.md" target="_blank">README_CE.md</a>
-*	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README_EE.md" target="_blank">README_EE.md</a>
+*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/blob/master/README.md" target="_blank">README_CE.md</a>
+<!-- *	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README.md" target="_blank">README_EE.md</a>
+ -->
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
@@ -126,19 +127,6 @@ To use the mapping files:
 2.	Edit them using the schema located in `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`.
 
 The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/<ce or ee version>/etc` directory contains the following configuration files:
-
-<table>
-<tbody>
-	<tr>
-		<th>Configuration file name</th>
-		<th>Description</th>
-	</tr>
-<tr>
-	<td>class_map.php</td>
-	<td>Magento 1 to Magento 2 class map dictionary. </td>
-</tr>
-</tbody>
-</table>
 
 The following table discusses each mapping file.
 
@@ -167,6 +155,10 @@ The following table discusses each mapping file.
 <tr>
 	<td>deltalog.xml.dist</td>
 	<td>Contains the list of tables required for database routines setup.</td>
+</tr>
+<tr>
+	<td>eav-attribute-groups.xml.dist</td>
+	<td>List of tables required to process the EAV step.</td>
 </tr>
 <tr>
 	<td>eav-document-groups.xml.dist</td>
@@ -226,14 +218,17 @@ Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/
     </destination>
 {% endhighlight %}
 
-If you use table prefixes, specify them using `<source_prefix>` and `<dest_prefix>` elements.
+Optional parameters:
+
+*	Database user password: `password=<password>`
+*	Table prefix: `<source_prefix>`, `<dest_prefix>`.
 
 <h2 id="migration-command">Migrating data, settings, and changes</h2>
 Run the migration tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
 
 Command syntax:
 
-	migrate <mode> --config=path/to/config.xml [options]
+	php migrate <mode> --config=path/to/config.xml [options]
 
 where `<mode>` can be:
 
@@ -246,7 +241,7 @@ where `[options]` can be:
 *	`--reset` to start the migration from the beginning
 *	`--config <value>` path to `config.xml`
 *	`--verbose <level>` DEBUG, INFO, NONE (default is INFO)
-*	`--help` Help
+*	`--help` Displays help for the command
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -266,7 +261,8 @@ To change how settings are migrated, either edit `etc/map/settings.xml` or creat
 
 Command usage:
 
-	<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin/migrate settings --config=<path to config.xml>
+	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
+	php migrate settings --config=<path to config.xml>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -285,7 +281,8 @@ After resolving issues, run the migration tool again.
 
 Command usage:
 
-	<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin/migrate data --config=<path to config.xml> [--reset]
+	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
+	php migrate data --config=<path to config.xml> [--reset]
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -298,7 +295,8 @@ Incremental migration enables you to migrate only the changes since you migrated
 
 Command usage:
 
-	<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin/migrate delta --config=<path to config.xml>
+	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
+	php migrate delta --config=<path to config.xml>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -309,25 +307,31 @@ Command usage:
 You must manually migrate all of the following:
 
 ### Media
-*	If media files are stored in the Magento 1 database, use the following steps:
+This section discusses how to manually migrate media files.
 
-	1.	Log in to the Magento 1 Admin Panel as an administrator.
-	2.	Click **System** > **Configuration** > ADVANCED > **System**. 
-	3.	In the right pane, scroll to **Storage Configuration for Media**.
-	4.	From the **Select Media Database** list, click the name of your media storage database. 
-	5.	Click **Synchronize**.
+#### Media files stored in the database
+This section applies to you *only* if you store media files in the Magento database.
+
+If media files are stored in the Magento 1 database, use the following steps:
+
+1.	Log in to the Magento 1 Admin Panel as an administrator.
+2.	Click **System** > **Configuration** > ADVANCED > **System**. 
+3.	In the right pane, scroll to **Storage Configuration for Media**.
+4.	From the **Select Media Database** list, click the name of your media storage database. 
+5.	Click **Synchronize**.
 
 After that, use the following steps:
 
-	1.	Log in to the Magento 2 Admin as an administrator.
-	2.	Click **Stores** > **Configuration** > ADVANCED > **System**. 
-	3.	In the right pane, scroll to **Storage Configuration for Media**.
-	4.	From the **Select Media Database** list, click the name of your media storage database. 
-	5.	Click **Synchronize**.
+1.	Log in to the Magento 2 Admin as an administrator.
+2.	Click **Stores** > **Configuration** > ADVANCED > **System**. 
+3.	In the right pane, scroll to **Storage Configuration for Media**.
+4.	From the **Select Media Database** list, click the name of your media storage database. 
+5.	Click **Synchronize**.
 
-*	All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`. 
+#### Media files on the file system
+All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`. 
 
-	However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved. 
+However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved. 
 
 ### Templates and layouts        
 Templates and layouts (that is, CSS, JavaScript, and XML layout files) changed location and format between Magento 1 and Magento 2. 
