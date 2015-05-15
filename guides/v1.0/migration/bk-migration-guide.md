@@ -107,8 +107,8 @@ Before you start your migration, you must do all of the following:
 <h2 id="migrate-install">Install the migration tool</h2>
 Installation is discussed in:
 
-*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/blob/master/README.md" target="_blank">README_CE.md</a>
-<!-- *	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README.md" target="_blank">README_EE.md</a>
+*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/blob/master/README.md" target="_blank">README.md</a>
+<!-- *	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README.md" target="_blank">README.md</a>
  -->
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
@@ -299,7 +299,7 @@ Command usage:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The migration tool saves its current progress as it runs. If errors or user intervention stop it from running, the migration tool resumes progress at the last known good state.</p>
-  <p>To force the migration tool to run from the beginning, use the <code>--reset</code>. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
+  <p>To force the migration tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
 </div>
 
 <h3 id="migrate-command-delta">Incremental migration (delta mode)</h3>
