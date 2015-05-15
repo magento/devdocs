@@ -68,7 +68,7 @@ You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>
 The path to assets is specified relatively to one the following locations:
 <ul>
 <li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
-<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code>, if an asset is specified in the layout with a module context</li>
+<li><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
 
 </ul>
 
