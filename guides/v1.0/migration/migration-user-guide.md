@@ -34,7 +34,7 @@ Magento 2 migration involves four components: data, extensions, themes, and cust
 
 *	Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data
 
-*	Extensions: We are actively working with the Magento development community to help ensure the most widely used extensions will be updated, vetted, and available on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in Magento 2 Extension Developer Guide
+*	Custom code: Code is not ported because it cannot be automated.
 
 *	Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 themes, layouts, and customizations.
 
@@ -43,8 +43,13 @@ Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), th
 <h3 id="migrate-overview-versions">Supported versions</h3>
 We support the following versions for migration:
 
-*	Community Edition (CE) versions 1.6, 1.7, 1.8, and 1.9
-*	Enterprise Edition (EE) versions 1.11, 1.12, 1.13, and 1.14
+*	Enterprise Edition (EE) version 1.9.1.0 
+*	Community Edition (CE) version 1.9.1.0 
+
+We also plan to support:
+
+*  EE 1.11.x, EE 1.12.x, EE 1.13.x, and EE 1.14.x
+*  CE 1.6.x, CE 1.7.x, CE 1.8.x, and CE 1.9.x
 
 <h3 id="migrate-overview-not">What migration does not cover</h3>
 Magento 2 takes advantage of several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences, rapidly respond to changing market dynamics, and scale to new levels. But, these valuable changes mean that some custom code, extensions, and themes cannot be automatically migrated to the new platform. They might need to be adjusted or rebuilt to fit the enhanced Magento 2 architecture.
@@ -89,9 +94,9 @@ Before you start your migration, you must do all of the following:
 
 *	Back up or <a href="https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html" target="_blank">dump</a> your Magento 2 database as soon after installation as possible.
 
-*	The Magento 1.x and Magento 2 databases must be able to communicate with each other.
+*	Check that the data migration tool has a network connection the Magento 1.x and Magento 2 databases.
 
-	Open firewall ports for MySQL and reduce network latency between your Magento 1.x and 2.0 databases as much as possible to improve migration performance.
+	Open ports in your firewall so the migration tool can communicate with the databases and so the databases can communicate with each other.
 
 *	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database.
 
@@ -102,8 +107,8 @@ Before you start your migration, you must do all of the following:
 <h2 id="migrate-install">Install the migration tool</h2>
 Installation is discussed in:
 
-*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/README.md">README.md</a>
-*	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README.md">README.md</a>
+*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/README_CE.md">README_CE.md</a>
+*	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README_EE.md">README_EE.md</a>
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
