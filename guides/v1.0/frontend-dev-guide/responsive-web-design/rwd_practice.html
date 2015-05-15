@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Extend a layout</title>
+	<title>Customizing RWD illustration</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">
+	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">
 
 </head>	
 <body>
@@ -137,9 +137,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Extend a layout</h1>
+		<h1 class="page-heading">Customizing RWD illustration</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/layouts/layout-extend.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -148,75 +148,48 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="fedg_layout_extend_merge">Create a theme extending file</h2>
+		<h2>Overview</h2>
+<p>This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento default themes. </p>
 
-<p>Rather than copy extensive page layout or page configuration code and then modify what you want to change, in the Magento system, you only need to create an <em>extending layout file</em> that contains the changes you want. </p>
+<p>The described flow is applicable only for themes that <a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherit</a> from the default Blank or Luma theme.</p>
 
-<p>To add an extending <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> or <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layout</a> file:</p>
+<h2 id="rwd_practice">Changing the number of products in a row</h2>
 
-<ol>
-  <li>Put the layout file in the following location:</li>
-</ol>
-<pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
-&nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
-&nbsp;&nbsp;&nbsp;|__/layout
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
-</pre>
+<p>OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a catalog page, so that each product takes more space. </p>
 
-<p>For example, to customize the layout defined in <code>magento2/app/code/Magento/Catalog/view/frontend/layout/catalog_product_view.xml</code>, you need to add a layout files with the same name in your custom theme, like following:</p>
-
-<p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Catalog/layout/catalog_product_view.xml</code></p>
-
-<p>To add an extending <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layout</a> file:</p>
-
-<ol>
-  <li>Put the file in the following location:</li>
-</ol>
-<pre>
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;
-&nbsp;|__/&lt;Namespace&gt;_&lt;Module&gt;
-&nbsp;&nbsp;&nbsp;|__/page_layout
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout1&gt;.xml
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--&lt;layout2&gt;.xml
-</pre>
-
-<!--
-
-<h2 id="fedg_layout_extend_merge">Processing extending layouts</h2>
-
-Magento merges layout files as follows:
-
-1. For each layout file in the list:
-	1. Loads layout handle declaration and layout instructions.
-	2. Appends to the result in the following format:
-
-<pre>
-&lt;layouts&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_cart_index&quot;&nbsp;label=&quot;Shopping&nbsp;Cart&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_cart_index.xml&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;handle&nbsp;id=&quot;checkout_onepage_index&quot;&nbsp;label=&quot;One&nbsp;Page&nbsp;Checkout&quot;&nbsp;type=&quot;page&quot;&nbsp;parent=&quot;default&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Layout&nbsp;instructions&nbsp;from&nbsp;checkout_onepage_index.xml&nbsp;--&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/handle&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;...&nbsp;--&gt;
-&lt;/layouts&gt;
-</pre>
-Where a `handle ID` is defined by the name of the corresponding layout file, and handle attributes are defined by the attributes of the root layout node of this layout file.
-
-2. Replaces the base URL placeholders in the result. -->
-
-<h4 id="related-topics">Related topics:</h4>
+<p>In the default Blank theme, the number of products in a row for each breakpoint is the following (for the <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">2-column page layout</a>):</p>
 
 <ul>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">Override a layout</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">XML instructions</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html" target="_blank">Theme design best practices</a></li>
-  <li><a href="/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a></li>
+<li>1024px and more (desktop): four products</li>
+<li>768px (tablet): three products</li>
+<li>640px and less (mobile): two products</li>
 </ul>
 
+<p>In their custom Orange theme, OrangeCo wants to have the least number of products in a row for the desktop and tablet view, namely:</p>
+<ul>
+<li>Desktop: three products</li>
+<li>Tablet: two products</li>
+<li>Mobile: two products</li>
+</ul>
+
+<p>The Orange theme inherits from the Blank theme.</p>
+
+<p>To change the products quantity, OrangeCo take the following steps:</p>
+<ol>
+<li>Copy the <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less" target="_blank"><code>app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less</code></a> file.
+
+<li>Put it in the corresponding location in their Orange theme directory: <code>app/design/frontend/OrangeCo/orange/Magento_Catalog/web/css/source/module/_listings.less </code> </li>
+
+<li>Make the changes in the code. The following image illustrates which section of the file they change, the modified lines are highlighted:</li>
+
+<p><img src="/common/images/rwd_pract1.png" /></p>
+
+After OrangeCo <a href="/guides/v1.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the catalog page of their store looks like following:
+
+<p><img src="/common/images/rwd_practice.jpg" /></p>
+
+(compare to the <a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>.)
+</li></ol>
 
 
 		</div>
@@ -361,7 +334,7 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
 						
 								
 							
@@ -504,7 +477,7 @@ Where a `handle ID` is defined by the name of the corresponding layout file, and
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
 						
 								
 								
