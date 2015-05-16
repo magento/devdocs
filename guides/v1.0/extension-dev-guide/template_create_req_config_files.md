@@ -5,7 +5,7 @@ subgroup: How to
 title: Create the required config files (TODO, up for grabs!)
 menu_title: Create the required config files (template)
 menu_order: 3
-github_link: extension-dev-guide/create_req_config_files.md
+github_link: extension-dev-guide/template_create_req_config_files.md
 
 ---
 *This is a topic that has not yet been written by the Magento Developer Docs team.* 

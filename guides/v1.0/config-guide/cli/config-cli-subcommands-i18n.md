@@ -46,7 +46,7 @@ After that,
 
 Command options:
 
-	php magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
+	php magento i18n:collect-phrases [-o|--output "<csv file path and name>"] [-m|--magento] <path to directory to translate>
 
 The following table discusses the meanings of this command's parameters and values. 
 

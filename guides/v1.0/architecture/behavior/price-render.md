@@ -25,7 +25,7 @@ This section discusses the following APIs:
 
 <h3 id="m2devgde-pricerend-base-rend">Base Renderer</h3>
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render.php" target="_blank">Magento\Framework\Pricing\Render</a> extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> and servers as an entry point.
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render.php" target="_blank">Magento\Framework\Pricing\Render</a> extends <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/AbstractBlock.php" target="_blank">Magento\Framework\View\Element\AbstractBlock</a> and serves as an entry point.
 
 <table>
   <tbody>
