@@ -54,22 +54,22 @@ where the following table defines parameters and values.
 			<th>Required?</th>
 		</tr>
 		<tr>
-		<td><p>--admin_firstname</p></td>
+		<td><p>--admin-firstname</p></td>
 		<td><p>Magento administrator user's first name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_lastname</p></td>
+		<td><p>--admin-lastname</p></td>
 		<td><p>Magento administrator user's last name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_email</p></td>
+		<td><p>--admin-email</p></td>
 		<td><p>Magento administrator user's e-mail address.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_user</p></td>
+		<td><p>--admin-user</p></td>
 		<td><p>Magento administrator user name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>

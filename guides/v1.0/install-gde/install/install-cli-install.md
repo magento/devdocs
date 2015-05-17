@@ -49,7 +49,7 @@ The installer is designed to be run multiple times if necessary so you can:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup_database</code> parameter to change this behavior.</li>
+  <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
   <li>If you get errors during the installation, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
 </div>
 
@@ -106,7 +106,7 @@ The following table discusses the meanings of installation option names and valu
 			<th>Required?</th>
 		</tr>
 		<tr>
-		<td><p>--base_url</p></td>
+		<td><p>--base-url</p></td>
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
@@ -115,13 +115,13 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--backend_frontname</p></td>
+		<td><p>--backend-frontname</p></td>
 		<td><p>Path to access the Magento Admin. This path is appended to base URL. Default is <code>admin</code>. 
 For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_host</p></td>
+		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
 		<li><code>localhost</code> )default) if your database server ison the same host as your web server.</li>
@@ -131,46 +131,46 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_name</p></td>
+		<td><p>--db-name</p></td>
 		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
 			<p>Default is <code>magento2</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_user</p></td>
+		<td><p>--db-user</p></td>
 		<td><p>User name of the Magento database instance owner.</p>
 			<p>Default is <code>root</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_password</p></td>
+		<td><p>--db-password</p></td>
 		<td><p>Magento database instance owner's password.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_prefix</p></td>
+		<td><p>--db-prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_firstname</p></td>
+		<td><p>--admin-firstname</p></td>
 		<td><p>Magento administrator user's first name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_lastname</p></td>
+		<td><p>--admin-lastname</p></td>
 		<td><p>Magento administrator user's last name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_email</p></td>
+		<td><p>--admin-email</p></td>
 		<td><p>Magento administrator user's e-mail address.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_user</p></td>
+		<td><p>--admin-user</p></td>
 		<td><p>Magento administrator user name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
@@ -195,32 +195,32 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--use_rewrites</p></td>
+		<td><p>--use-rewrites</p></td>
 		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
 		<p><code>0</code> disables the use of web server rewrites.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--use_secure</p></td>
+		<td><p>--use-secure</p></td>
 		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--base_url_secure</p></td>
+		<td><p>--base-url-secure</p></td>
 		<td><p><code>1</code> means SSL is preferred in Magento URLs designed to use it (for example, the checkout page). Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> means SSL is not used.</p></td>
 		<td><p>No</p></td>
 	</tr>
 
 	<tr>
-		<td><p>--use_secure_admin</p></td>
+		<td><p>--use-secure-admin</p></td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> means you do not use SSL with the Admin.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_use_security_key</p></td>
+		<td><p>--admin-use-security-key</p></td>
 		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>.</p>
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td><p>No</p></td>
@@ -240,7 +240,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr> -->
 	<tr>
-		<td><p>--session_save</p></td>
+		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li></ul></td>
@@ -252,24 +252,24 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--use_sample_data</p></td>
+		<td><p>--use-sample-data</p></td>
 		<td><p>Use this parameter to install optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
 		<p>Sample data installs only if you already enabled the package as discussed in <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--cleanup_database</p></td>
+		<td><p>--cleanup-database</p></td>
 		<td><p>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_init_statements</p></td>
+		<td><p>--db-init-statements</p></td>
 		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p>
 			<p>Default is <code>SET NAMES utf8;</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--sales_order_increment_prefix</p></td>
+		<td><p>--sales-order-increment-prefix</p></td>
 		<td><p>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -313,12 +313,12 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		php bin/magento setup:install --base_url=http://127.0.0.1/magento2/ \
-		--backend_frontname=admin \
-		--db_host=localhost --db_name=magento --db_user=magento --db_password=magento \
-		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
-		--admin_user=admin --admin_password=iamtheadmin --language=en_US \
-		--currency=USD --timezone=America/Chicago --use_sample_data
+		php bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
+		--backend-frontname=admin \
+		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+		--admin-user=admin --admin_password=iamtheadmin --language=en_US \
+		--currency=USD --timezone=America/Chicago --use-sample-data
 
 **Example 2** (with additional options)
 
@@ -345,13 +345,13 @@ The following example installs Magento with the following options:
 *	You use a sales order increment prefix `ORD$` and because it contains a special character (`$`), the value must be enclosed in double quotes
 *	Session data is saved in the database
 
-		php bin/magento setup:install --base_url=http://127.0.0.1/magento2/ \
-		--backend_frontname=admin --db_host=localhost --db_name=magento \
-		--db_user=magento --db_password=magento \
-		--admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
-		--admin_user=admin --admin_password=iamtheadmin --language=en_US \
-		--currency=USD --timezone=America/Chicago --cleanup_database \
-		--sales_order_increment_prefix="ORD$" --session_save=db
+		php bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
+		--backend-frontname=admin --db-host=localhost --db-name=magento \
+		--db-user=magento --db-password=magento \
+		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+		--admin-user=admin --admin_password=iamtheadmin --language=en_US \
+		--currency=USD --timezone=America/Chicago --cleanup-database \
+		--sales-order-increment-prefix="ORD$" --session-save=db
 
 
 <div class="bs-callout bs-callout-info" id="info">

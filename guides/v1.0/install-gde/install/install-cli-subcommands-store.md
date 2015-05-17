@@ -46,7 +46,7 @@ where the following table defines parameters and values.
 			<th>Required?</th>
 		</tr>
 		<tr>
-		<td><p>--base_url</p></td>
+		<td><p>--base-url</p></td>
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
@@ -70,26 +70,26 @@ where the following table defines parameters and values.
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--use_rewrites</p></td>
+		<td><p>--use-rewrites</p></td>
 		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
 		<p><code>0</code> disables the use of web server rewrites.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--use_secure</p></td>
+		<td><p>--use-secure</p></td>
 		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--base_url_secure</p></td>
+		<td><p>--base-url-secure</p></td>
 		<td><p><code>1</code> means SSL is preferred in Magento URLs designed to use it (for example, the checkout page). Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> means SSL is not used.</p></td>
 		<td><p>No</p></td>
 	</tr>
 
 	<tr>
-		<td><p>--use_secure_admin</p></td>
+		<td><p>--use-secure-admin</p></td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> means you do not use SSL with the Admin.</p></td>
 		<td><p>No</p></td>
