@@ -5,7 +5,7 @@ subgroup: CLI
 title: Clean the logs
 menu_title: Clean the logs
 menu_node: 
-menu_order: 12
+menu_order: 7
 github_link: config-guide/cli/config-cli-subcommands-log.md
 ---
 
