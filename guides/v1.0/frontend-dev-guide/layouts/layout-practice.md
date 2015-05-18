@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/layouts/layout-practice.md
 This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
 <h2>Moving customer account links</h2>
-In their Orange theme, OrangeCo want to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
+In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}common/images/layout_transform.png">
@@ -35,7 +35,7 @@ Needed:
 <br>
 <u>Step 1: Define the blocks</u>
 
-OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">apply the Luma theme</a>. Using the approach described in <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `app/code/Magento/Customer/view/frontend/layout/default.xml`:
+OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{site.gdeurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `app/code/Magento/Customer/view/frontend/layout/default.xml`:
 
 <pre>
 ...
@@ -61,7 +61,7 @@ OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" tar
 <u>Step 2: Define the templates</u>
 
 Similar to the way they defined the layout on the previous step, OrangeCo 
-define the template which is used for rearranging the links:
+defines the template which is used for rearranging the links:
 
 **`app/code/Magento/Customer/view/frontend/templates/account/customer.phtml`**
 
@@ -106,7 +106,7 @@ So the following <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-exten
 
 <u>Step 4: Move links</u>
 
-To move the links to the `header.links` block OrangeCo add an extending layout:
+To move the links to the `header.links` block, OrangeCo adds an extending layout:
 
 **`app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml`**
 
