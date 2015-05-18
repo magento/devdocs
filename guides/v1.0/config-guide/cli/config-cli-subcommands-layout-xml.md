@@ -2,11 +2,11 @@
 layout: default
 group: config-guide 
 subgroup: CLI
-title: Generate data for performance testing
-menu_title: Generate data for performance testing
+title: Update layout XML files
+menu_title: Update layout XML files
 menu_node: 
-menu_order: 600
-github_link: config-guide/cli/config-cli-subcommands-perf-data.md
+menu_order: 500
+github_link: config-guide/cli/config-cli-subcommands-layout-xml.md
 ---
 
 

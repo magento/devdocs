@@ -22,6 +22,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 <h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
 
+*	There is one Magento 2 code base instance
 *	There is one database instance per tenant
 *	Independent configurations in the Magneto Admin per tenant
 *	The storefronts are independent of each other

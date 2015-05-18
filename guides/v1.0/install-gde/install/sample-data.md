@@ -14,6 +14,7 @@ github_link: install-gde/install/sample-data.md
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
 *	<a href="#instgde-install-sample-enable-before">Enable sample data before you install the Magento software</a>
 *	<a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>
+*	<a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>
  
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
