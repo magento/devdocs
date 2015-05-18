@@ -128,7 +128,7 @@ If you're implementing cron for a custom module, it's your choice of whether or 
 <h3 id="config-cli-cron-group-conf">Configure cron groups</h3>
 This section discusses how to optionally create a cron group for a custom module. If you don't need to do this, continue with the next section.
 
-To configure a cron group for your module, create `<your Magento install dir>/app/code/<VendorName>/<ModuleName>/etc/crontab.xml with the following contents:
+To configure a cron group for your module, create `<your Magento install dir>/app/code/<VendorName>/<ModuleName>/etc/crontab.xml` with the following contents:
 
 	<config>
     	<group id="%group_name%">
@@ -220,7 +220,7 @@ In addition, the `<group>` element supports the following options, all of which 
 </table>
 
 
-<a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.
+As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>
 
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:
