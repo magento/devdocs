@@ -14,7 +14,8 @@ github_link: config-guide/cli/config-cli-subcommands-cron.md
 
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-overview">Overview of cron</a>
-*	<a href="#config-cli-cron-browser"Run cron from a web browser</a>
+*	<a href="#config-cli-cron-bkg">Run cron in the background</a>
+*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
 
 
@@ -44,16 +45,37 @@ Several Magento features require at least one cron job, which schedules activiti
 
 UNIX systems schedule tasks to be performed by particular users using a *crontab*, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". Each user has its own crontab, and commands in any given crontab are executed as the user who owns the crontab.
 
-For Magento, this user is the web server. To determine your web server's user, enter the following command:
+See one of the following sections:
+
+*	<a href="#config-cli-cron-bkg">Run cron in the background</a>
+*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
+*	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
+
+<h2 id="config-cli-cron-bkg">Run cron in the background</h2>
+This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
+
+First, determine the user cron should run as. For Magento, you should run cron as the web server user. To determine your web server's user ID, enter the following command:
 
 	ps -o "user group command" -C httpd,apache2
 
 In CentOS, the Apache user is typically `apache`; in Ubuntu, it's typically `www-data`
 
-See one of the following sections:
+To create a cron job as the user who runs Apache, the following commands in the order shown:
 
-*	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
-*	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
+1.	Create or edit a crontab for the Apache user:
+
+		crontab -u <apache user name> -e
+
+	A text editor displays. (You might need to choose a text editor first.)
+2.	In the editor, enter the following:
+
+		*/1 * * * * php <your Magento install dir>/bin/magento cron:run &
+
+	For example, for CentOS,
+
+		*/1 * * * * php /var/www/html/magento2/bin/magento cron:run &
+
+Save your changes to the crontab and exit the editor.
 
 <h2 id="config-cli-cron-browser">Run cron from a web browser</h2>
 You can run cron anytime using a web browser (for example, during development).
@@ -96,7 +118,7 @@ For example,
 
 	http://magento.example.com/magento2/pub/cron.php?group=default
 
-<a href="#config-cli-cron-group-conf">Configure cron groups">More information about cron groups</a>.
+<a href="#config-cli-cron-group-conf">More information about cron groups</a>.
 
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
 A *cron group* is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the `default` cron group; some modules use the `index` group.
@@ -166,11 +188,11 @@ In addition, the `<group>` element supports the following options, all of which 
 		
 	<tr>
 		<td><p>schedule_generate_every</p></td>
-		<td><p>Determines the frequency, in minutes, that schedules are generated.</p></td>
+		<td><p>Determines the frequency, in minutes, that schedules are written to the <code>cron_schedule</code> table.</p></td>
 	</tr>
 	<tr>
 		<td><p>schedule_ahead_for</p></td>
-		<td><p>Determines the number of minutes in advance that schedules are generated.</p>
+		<td><p>Determines the number of minutes in advance that schedules are written to the <code>cron_schedule</code> table.</p>
 		</td>		
 	</tr>
 	<tr>
@@ -191,8 +213,8 @@ In addition, the `<group>` element supports the following options, all of which 
 	</tr>
 	<tr>
 		<td><p>use_separate_process</p></td>
-		<td><p>If set to <code>1</all>, all cron jobs in this group run in parallel as separate processes.</p>
-			<p>If set to <code>0</all>, all cron jobs in this group run one after the other as separate processes.</p></td>		
+		<td><p>If set to <code>1</code>, all cron jobs in this group run in parallel as separate processes.</p>
+			<p>If set to <code>0</code>, all cron jobs in this group run one after the other as separate processes.</p></td>		
 	</tr>
 	</tbody>
 </table>
@@ -206,6 +228,11 @@ Command options:
 	php magento cron:run [--group="<cron group name>"] [--bootstrap="<options>"]
 
 where `--group` specifies the cron group to run (omit this option to run cron for the `default` group)
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can run cron for one group at a time.</p></span>
+</div>
 
 
 #### Related topics
