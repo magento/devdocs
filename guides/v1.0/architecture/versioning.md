@@ -117,7 +117,9 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 <td>Component Version</td>
 <td><pre>"name": "magento/foo",
 "version": ~1.2
-</pre></td>
+</pre>
+<p>This is equivalent to &gt;= 1.2 &lt; 2.0.0.</p></td>
+</td>
 <td><pre>"name": "magento/foo",
 "version": 1.3.0
 </pre></td></tr>
@@ -126,7 +128,7 @@ The `x.y.z` numbers will change according to Semantic Versioning policy provisio
 <td><pre>"require": {
     "magento/foo": "1.2.*"
 }
-</pre></td>
+</pre>
 <td><pre>"require": {
     "magento/foo": "1.3.*"
 }
