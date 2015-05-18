@@ -158,7 +158,7 @@ The following table discusses each mapping file.
 </tr>
 <tr>
 	<td>eav-attribute-groups.xml.dist</td>
-	<td>List of tables required to process the EAV step.</td>
+	<td>List of attributes required to process the EAV step.</td>
 </tr>
 <tr>
 	<td>eav-document-groups.xml.dist</td>
