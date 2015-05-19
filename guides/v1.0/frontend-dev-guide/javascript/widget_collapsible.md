@@ -14,7 +14,7 @@ The Magento Collapsible widget converts a header/content pair into an accordion(
 
 The content can be updated using Ajax once the content gets expanded. The collapsed/expanded state can be saved into local storage or cookies if the browser doesn't support local storage. To save the state is absolutely necessary that the main collapsible element to have an id specified. Also when deep linking is used, if the id specified as anchor is actually the id of the content or the id of an element that appends to content, the content will be automatically expanded for that element.
 
-The Collapsible widget source is located in the <code>pub/lib/web/mage</code> directory.
+The Collapsible widget source is located in the pub/lib/web/mage directory.
 
 <p class="q">Would be nice to have an illustration</p>
 
@@ -30,6 +30,7 @@ Generally the collapsible widget is instantiated like:
 $("#element").collapsible();
 </pre>
 In this case, because the header, content and trigger are not specified, "#element" must have children with the following attributes:
+
 data-role="title"
 data-role="content"
 In this case the trigger will be actually the title but you can also specify it if you want having it different from title by adding the following attribute to the element:
@@ -41,32 +42,45 @@ Initialize the widget without having a container that consists in a header and a
 $("#header").collapsible();
  
 Widget can be instantiated with options:
+<pre>
 $("#element").collapsible({
     header : "#title-1"
     content : "#content-1",
     trigger : "#trigger-1,
     ajaxUrlElement: "a"
  });
+</pre>
+
 Widget instantiation using data attributes:
-<div id="element" data-mage-init='{"collapsible":{}}'>
+<pre>
+&lt;div id=&quot;element&quot; data-mage-init='{&quot;collapsible&quot;:{}}'&gt;
+</pre>
+
 Widget instantiated using data attributes with options passed:
-<div id="element" data-mage-init='{"collapsible":{"header":"#title1", "content":"#content1", "icons": "{\"header\":\"plus\",\"activeHeader\":\"minus\"}}'/>
+<pre>
+&lt;div id=&quot;element&quot; data-mage-init='{&quot;collapsible&quot;:{&quot;header&quot;:&quot;#title1&quot;, &quot;content&quot;:&quot;#content1&quot;, &quot;icons&quot;: &quot;{\&quot;header\&quot;:\&quot;plus\&quot;,\&quot;activeHeader\&quot;:\&quot;minus\&quot;}}'/&gt;
+</pre>
 
 <h2>Options</h2>
 
 The collapsible widget has the following options:
 
-*	<a href="#fedg_collaps_options-active">active</a>
-*	<a href="#fedg_tabs_options-destination">destination</a>
-*	<a href="#fedg_tabs_options-ajaxOptions">ajaxOptions</a>
-*	<a href="#fedg_tabs_options-tabIdArgument">tabIdArgument</a>
+<li><a href="#fedg_collaps_active">active</a> </li>
+<li><a href="#fedg_tabs_options-destination">destination</a></li>
+<li><a href="#fedg_tabs_options-ajaxOptions">ajaxOptions</a></li>
+<li><a href="#fedg_tabs_options-tabIdArgument">tabIdArgument</a></li>
 *	<a href="#fedg_tabs_options-tabsBlockPrefix">tabsBlockPrefix</a>
 *	<a href="#fedg_tabs_options-shadowTabsShadow">shadowTabsShadow</a>
 
+</li>
+
 <h3>active</h3>
 Specifies if the content should be expanded or not when the widget gets initialized
+
 Type: Boolean
+
 Default value: false
+
 Initialize the collapsible with the active option specified:
 <pre>
 $("#element").collapsible({ active: true});
@@ -85,8 +99,11 @@ $("#element").collapsible("option","active",false);
 
 <h3>disable</h3>
 Specifies if the content should be disabled or not when the widget gets initialized
+
 Type: Boolean
+
 Default value: false
+
 Initialize the collapsible with the disable option specified:
 <pre>
 $("#element").collapsible({ disable: true});
@@ -108,8 +125,11 @@ $("#element").collapsible("option","disable",false);
 <h3>collapsible</h3>
 
 If this option is set to false, the content will not be collapsed when the panel is active.
+
 Type: Boolean
+
 Default value: true
+
 Initialize the collapsible with the collapsible option specified:
 <pre>
 $("#element").collapsible({ collapsible: true});
@@ -131,8 +151,11 @@ $("#element").collapsible("option","collapsible",false);
 
 <h3>header</h3>
 Selector for the header element, applied via .find() on the main collapsible element. If the element is not found on the main collapsible element, the header becomes the main element.
+
 Type: String, jQuery Object
+
 Default value: [data-role=title]
+
 Initialize the collapsible with the content option specified:
 
 <pre>
@@ -154,7 +177,9 @@ $("#element").collapsible("option","header",".header");
 
 <h3>content</h3>
 Selector for the content element, applied via .find() on the main collapsible element. 
+
 Type: String, jQuery Object
+
 Default value: [data-role=content]
 
 Initialize the collapsible with the content option specified:
@@ -173,3 +198,25 @@ var content = $("#element).collapsible("option","content");
 <pre>
 $("#element").collapsible("option","content",".content");
 </pre>
+
+<h3>trigger</h3>
+Selector for the trigger element, applied via .find() on the main collapsible element. If the trigger is not found, the header becomes trigger.
+
+Type: String, jQuery Object
+
+Default value: [data-role=trigger]
+
+Initialize the collapsible with the trigger option specified:
+<pre>
+$("#element").collapsible({ trigger: ".trigger"});
+</pre>
+
+Get or set the trigger option, after initialization:
+//getter
+var trigger = $("#element).collapsible("option","trigger");
+//setter
+$("#element").collapsible("option","trigger",".trigger");
+
+openedState
+Specifies the class that the main collapsible element will earn when the content gets expanded.
+Type: String
