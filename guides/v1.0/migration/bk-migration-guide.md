@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Migration
+subgroup: Migration guide
 title: Migration guide
 menu_title: Migration guide
 menu_node: parent
@@ -15,59 +15,24 @@ github_link: migration/bk-migration-guide.md
 See one of the following sections:
 
 *	<a href="#migrate-overview">Overview</a>
-*	<a href="#migrate-plan">Creating a migration plan</a>
-*	<a href="#migrate-tool">Data Migration Tool</a>
 *	<a href="#migrate-prereq">Prerequisites</a>
-*	<a href="#migrate-install">Install the migration tool</a>
-*	<a href="#migration-config">Work with configuration and mapping files</a>
-*	<a href="#migration-notes">General notes about using the migration tool</a>
-*	<a href="#migration-command">Migrating data, settings, and changes</a>
-*	<a href="#migrate-command-media">Manual migration</a>
-*	<a href="#migrate-command-after">Post-migration tasks</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span>This topic is in draft form. Information in this topic might be incorrect or incomplete. Use the <strong>Edit this page on GitHub</strong> link at the top of this topic to send us feedback and suggestions.</p></span>
 </div>
 
 <h2 id="migrate-overview">Overview</h2>
-We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1.x—to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.
+We’re pleased you’re considering moving from the world’s #1 eCommerce platform—Magento 1.x—to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.
 
 Magento 2 migration involves four components: data, extensions, themes, and customizations. 
 
 *	Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data
 
-*	Extensions: We are working with the Magento development community on updating extensions. They will be on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide</a>.	
+*	Custom code: Code is not ported because it cannot be automated.
 
 *	Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 themes, layouts, and customizations.
 
-*	Custom code: Code cannot be ported.
-
 Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1.x to Magento 2.0 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. 
-
-<h3 id="migrate-overview-benchmarking">Best practices and benchmarking</h3>
-This section provides our best information about how to speed up and simplify your migration, and provides guidance about how much time you can expect migration to require.
-
-Best practices and recommendations
-
-* Migrate data from a replicated Magento 1.x database instance.
-* Remove outdated and redundant data from your Magento 1.x database (for example, you could remove logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, and so on).
-* Stop all administrative activity on both Magento 1.x and Magento 2.0 during your migration test runs and the actual migration (including configuration changes; and maintaining customers, orders, and inventory).
-* For Magento Enterprise Edition, archive unarchived orders.
-
-
-Benchmarking estimates
-
-We tested migration on the following system:
-
-* Environment: Virtual Box VM, CentOS 6, 2.5Gb RAM, CPU 1 core 2.6GHz
-* Database had 177k products, 355k orders, 214k customers
-
-Performance Results:
-
-* Settings migration time: ~10 mins
-* Data migration time: ~9 hrs (all data except URL Rewrites, ~85% of total data)
-* Site downtime estimate: A few minutes to reindex and change DNS settings. Additional time required to “warm up” the page cache.
-
  
 <h3 id="migrate-overview-versions">Supported versions</h3>
 We support the following versions for migration:
@@ -112,76 +77,6 @@ Google Shopping shipped in some older Magento 1 versions but has since been remo
 #### Data that is not supported in Magento 2
 Poll, tag, staging modules, and recurring profiles are not currently supported in Magento 2.
 
-
-
-<h2 id="migrate-plan">Creating a migration plan</h2>
-To have a successful migration, you must plan it and test it thoroughly. Use the following guidelines to get started.
-
-Preconditions
-
-Before you run the migration tool, you must:
-
-* Make sure the Magento 1.x and Magento 2.0 databases are available on the network
-* Disable Magento 2.0 cron jobs 
-* Set up the configuration and mapping files as (discussed in <cross-ref to How Migration Works>)
-
-#### Step 1: Review your current site
-
-* What extensions have you installed?
-* Have you identified if you need all these extensions in your new site?  (There might be old ones you can safely drop.)
-* Have you determined if Magento 2 versions your extensions exist?  (Check with your extension providers to see if they have been ported yet.)
-* What database assets from your extensions do you want to migrate?
-
-#### Step 2: Capacity planning
-
-Consider whether the new site needs to be designed with more hardware or a more advanced topology with better caching tiers and so on. It’s a good time to make more serious changes to get your site ready for your next level of growth.
-
-The following figure shows the migration flow that is discussed in the remainder of this section.
-
-#### Step 3: Build and test Magento 2
-
-To prepare for the migration, make sure you do all of the following:
-
-* Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system.
-* To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration.
-* Install Magento 2.0 on a system that meets our <a href="{{ site.gdeurl }}/install-gde/system-requirements.html">system requirements</a>..
-
-#### Step 4: Start your migration
-
-* Stop all activity in the Magento 1.x Admin Panel (except for order management and shipping).
-Activity cannot resume until your migration is complete.
-* Stop all Magento 1.x cron jobs. Use the migration tool to migrate settings and websites.
-* Copy your Magento 1.x media assets to Magento 2.0. (You must copy these manually from <your Magento 1 install dir>/media directory to <your Magento 2 install dir>/pub/media directory.)
-* Use the migration tool to bulk copy your Magento 1.x database to your Magento 2.0 database. 
-If some of your extensions have data you want to you migrate, you might need to use the mapping files provided with the migration tool.
-* Reindex all Magento 2.0 indexers. For details, see the Configuration Guide.
-
-Thoroughly test your Magento 2.0 site. 
-Make sure you can place orders using all configured payment processors.
-
-#### Step 5:  Incremental updates
-
-Now that you’ve migrated the bulk of your data, you must incrementally capture data updates (such as new or updated customers, inventory changes, and orders) from Magento 1.x to Magento 2.0.
-
-* Start the incremental migration; updates run continually. (You can stop the updates at any time by pressing Control+C.)	
-* Thoroughly test your Magento 2 site during this time so you can catch any issues as soon as possible.
-* If you find issues, press Control+C to stop incremental migration and start it again after issues are resolved.
-
-#### Step 6:  Go live
-
-Now that your Magento 2 site is up-to-date with Magento 1 and is functioning, do the following to cut over to the new site:
-
-* Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).
-* Press Control+C in the migration tool command window to stop incremental updates.
-* Start your Magento 2 cron jobs.
-* In your Magento 2 system, reindex the stock indexer (cataloginventory_stock). For more information, see the Configuration Guide.
-* Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.
-* Perform any final verification of your Magento 2 site.
-* Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) 
-* Resume activity in the Magento Admin.
-
-<h2 id="migrate-tool">Data Migration Tool</h2>
-
 <h2 id="migrate-prereq">Prerequisites</h2>
 Before you start your migration, you must do all of the following:
 
@@ -203,264 +98,3 @@ Before you start your migration, you must do all of the following:
 
 	Reach out to your extension providers to see if they have been ported yet.
 
-<h2 id="migrate-install">Install the migration tool</h2>
-Installation is discussed in:
-
-*	Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/blob/master/README.md" target="_blank">README.md</a>
-<!-- *	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README.md" target="_blank">README.md</a>
- -->
-
-<h2 id="migration-config">Work with configuration and mapping files</h2>
-The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
-
-*	Changing table names
-*	Changing column names
-*	Changing field names
-*	Ignoring tables or fields
-
-Mapping files for supported Magento versions are located in subdirectories of `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`
-
-To use the mapping files:
-
-1.	Rename or copy them to remove the `.dist` extension.
-2.	Edit them using the schema located in `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc`.
-
-The `<your Magento 2 install dir>/vendor/magento/data-migration-tool/<ce or ee version>/etc` directory contains the following configuration files:
-
-The following table discusses each mapping file.
-
-<table>
-<tbody>
-	<tr>
-		<th>Mapping file name</th>
-		<th>Description</th>
-	</tr>
-<tr>
-	<td>class-map.xml.dist</td>
-	<td>Dictionary of class mappings between Magento 1 and Magento 2</td>
-</tr>
-<tr>
-	<td>config.xml.dist</td>
-	<td>Main configuration file that specifies the Magento 1.x and Magento 2 database configurations, step configuration, and links to mapping files</td>
-</tr>
-<tr>
-	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>
-	<td>List of tables used in the custom customer attributes step.</td>
-</tr>
-<tr>
-	<td><em>EE only</em>. customer-attr-map.xml.dist</td>
-	<td>Map file for the custom customer attributes step.</td>
-</tr>
-<tr>
-	<td>deltalog.xml.dist</td>
-	<td>Contains the list of tables required for database routines setup.</td>
-</tr>
-<tr>
-	<td>eav-attribute-groups.xml.dist</td>
-	<td>List of attributes required to process the EAV step.</td>
-</tr>
-<tr>
-	<td>eav-document-groups.xml.dist</td>
-	<td>List of tables required to process the EAV step.</td>
-</tr>
-<tr>
-	<td>log-document-groups.xml.dist</td>
-	<td>List of tables required to process the log step.</td>
-</tr>
-<tr>
-	<td>map-eav.xml.dist</td>
-	<td>EAV mapping files.</td>
-</tr>
-<tr>
-	<td>map-log.xml.dist</td>
-	<td>Log mapping file.</td>
-</tr>
-<tr>
-	<td><em>EE only</em>. map-sales.xml.dist</td>
-	<td>Log mapping file.</td>
-</tr>
-<tr>
-	<td>map.xml.dist</td>
-	<td>Mapping file required for the map step.</td>
-</tr>
-<tr>
-	<td>settings.xml.dist</td>
-	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
-</tr>
-
-</tbody>
-</table>
-
-<h2 id="migration-notes">General notes about using the migration tool</h2>
-During the time you're migrating:
-
-*	Do not make any changes in the Magento 1.x Admin Panel except for except for order management and shipping
-*	Stop all Magento 1.x cron jobs
-*	Do not alter any code
-*	Do not delete any data
-*	Do not make any changes in the Magento 2 Admin
-
-After performing migration:
-
-1.	In the Magento 2 Admin, flush all caches and reindex all indexes.
-2.	Run your Magento 2 cron jobs.
-
-<h2 id="migration-configure">Configuring the migration</h2>
-Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce or ee version>/config.xml` to specify at minimum values for the following:
-
-{% highlight xml %}
-	<source version="1.9.1">
-        <database host="localhost" name="magento1" user="root"/>
-    </source>
-    <destination version="2.0.0.0">
-        <database host="localhost" name="magento2" user="root"/>
-    </destination>
-{% endhighlight %}
-
-Optional parameters:
-
-*	Database user password: `password=<password>`
-*	Table prefix: `<source_prefix>`, `<dest_prefix>`.
-
-For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
-
-{% highlight xml %}
-	<source version="1.9.1">
-        <database host="localhost" name="magento1" user="root" password="pass"/>
-        <source_prefix>magento1</source_prefix>
-    </source>
-    <destination version="2.0.0.0">
-        <database host="localhost" name="magento2" user="root"/>
-    </destination>
-{% endhighlight %}
-
-<h2 id="migration-command">Migrating data, settings, and changes</h2>
-Run the migration tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
-
-Command syntax:
-
-	php migrate <mode> --config=path/to/config.xml [options]
-
-where `<mode>` can be:
-
-*	`data` to migrate database data
-*	`delta` to migrate data that is added to the database since your ran the tool with the `data` option
-*	`settings` to migrate Magento Admin Panel settings
-
-where `[options]` can be:
-
-*	`--reset` to start the migration from the beginning
-*	`--config <value>` path to `config.xml`
-*	`--verbose <level>` DEBUG, INFO, NONE (default is INFO)
-*	`--help` Displays help for the command
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Logs are written to the <code>&lt;your Magento install dir>/vendor/magento/migration-tool/var</code> directory.</p></span>
-</div>
-
-See the following sections in the order shown:
-
-1.	<a href="#migrate-command-settings">Migrating settings</a>
-3.	<a href="#migrate-command-data">Migrating data</a>
-4.	<a href="#migrate-command-delta">Incremental migration (delta mode)</a>
-
-<h3 id="migrate-command-settings">Migrating settings</h3>
-You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment and some tax settings. 
-
-To change how settings are migrated, either edit `etc/map/settings.xml` or create a new one).
-
-Command usage:
-
-	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
-	php migrate settings --config=<path to config.xml>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
-</div>
-
-<h3 id="migrate-command-data">Migrating data</h3>
-When you migrate data, the migration tool verifies that tables and fields are consistent between  Magento 1 and Magento 2. If not, an error displays that lists the problematic tables and fields. These entities, for example, can belong to some extensions from Magento 1 that do not exist in the Magento 2 database.
-
-If you encounter such an error, you can:
-
-*	Install the corresponding extensions in Magento 2 if they exist
-*	Ignore them by adding `<ignore>` tags to the `map.xml` file. 
-
-After resolving issues, run the migration tool again.
-
-Command usage:
-
-	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
-	php migrate data --config=<path to config.xml> [--reset]
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The migration tool saves its current progress as it runs. If errors or user intervention stop it from running, the migration tool resumes progress at the last known good state.</p>
-  <p>To force the migration tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
-</div>
-
-<h3 id="migrate-command-delta">Incremental migration (delta mode)</h3>
-Incremental migration enables you to migrate only the changes since you migrated data. For example, you can migrate new customers, orders, and so on.
-
-Command usage:
-
-	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
-	php migrate delta --config=<path to config.xml>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
-</div>
-
-<h2 id="migrate-command-media">Manual migration</h2>
-You must manually migrate all of the following:
-
-### Media
-This section discusses how to manually migrate media files.
-
-#### Media files stored in the database
-This section applies to you *only* if you store media files in the Magento database.
-
-If media files are stored in the Magento 1 database, use the following steps:
-
-1.	Log in to the Magento 1 Admin Panel as an administrator.
-2.	Click **System** > **Configuration** > ADVANCED > **System**. 
-3.	In the right pane, scroll to **Storage Configuration for Media**.
-4.	From the **Select Media Database** list, click the name of your media storage database. 
-5.	Click **Synchronize**.
-
-After that, use the following steps:
-
-1.	Log in to the Magento 2 Admin as an administrator.
-2.	Click **Stores** > **Configuration** > ADVANCED > **System**. 
-3.	In the right pane, scroll to **Storage Configuration for Media**.
-4.	From the **Select Media Database** list, click the name of your media storage database. 
-5.	Click **Synchronize**.
-
-#### Media files on the file system
-All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`. 
-
-However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved. 
-
-### Templates and layouts        
-Templates and layouts (that is, CSS, JavaScript, and XML layout files) changed location and format between Magento 1 and Magento 2. 
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Layout updates implemented in Magento 1 <em>cannot</em> be used in Magento 2 (namely, XML placed in the Magento Admin in CMS category pages and layout updates specified in widget instances).</p></span>
-</div>
-
-### ACLs
-*	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
-*	You must manually re-create all administrative users and associate them with access privileges.
-
-<h2 id="migrate-command-after">Post-migration tasks</h2>
-After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:
-
-*	Put Magento 1 in maintenance mode and permanently stop all Admin Panel activities
-*	Start Magento 2 cron jobs
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean" target="_blank">Flush all Magento 2 cache types</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex" target="_blank">Reindex all Magento 2 indexers</a>
-*	Change DNS, load balancers, and so on to point to Magento 2 production hardware
