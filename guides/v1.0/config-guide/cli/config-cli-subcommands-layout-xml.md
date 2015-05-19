@@ -20,7 +20,7 @@ github_link: config-guide/cli/config-cli-subcommands-layout-xml.md
 {% include install/first-steps-cli.html %}
 
 <h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
-When XML schema are updated, you should update your layout XML files to match the new schema. This command enables you to perform these updates.
+When XML schema are updated, you should update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet. This command enables you to perform these updates.
 
 For more information about layout XML files, see:
 
@@ -30,12 +30,12 @@ For more information about layout XML files, see:
 <h2 id="config-cli-xml-run">Convert layout XML files</h2>
 Command options:
 
-	php magento dev:xml:convert [-o|--overwrite] <xml file> <xsd template>
+	php magento dev:xml:convert [-o|--overwrite] <xml file> <xslt stylesheet>
 
 where
 
 *	`<xml file>` is the full path and file name of a layout XML file to convert (required)
-*	`<xsd template>` is the full path and file name of an XSD schema file to use for conversion (required)
+*	`<xsd stylesheet>` is the full path and file name of an XSLT schema file to use for conversion (required)
 *	`-o|--overwrite` include this option to overwrite the existing XML file
 
 
