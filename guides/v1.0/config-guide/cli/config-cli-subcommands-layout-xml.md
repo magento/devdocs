@@ -2,8 +2,8 @@
 layout: default
 group: config-guide 
 subgroup: CLI
-title: Update layout XML files
-menu_title: Update layout XML files
+title: Convert layout XML files
+menu_title: Convert layout XML files
 menu_node: 
 menu_order: 500
 github_link: config-guide/cli/config-cli-subcommands-layout-xml.md
@@ -13,171 +13,30 @@ github_link: config-guide/cli/config-cli-subcommands-layout-xml.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-perf-overview">Overview of performance testing data</a>
-*	<a href="#config-cli-perf-prof">About profiles</a>
-*	<a href="#config-cli-perf-run">Run the data generator</a>
+*	<a href="#config-cli-xml-overview">Overview of layout XML conversion</a>
+*	<a href="#config-cli-xml-run">Convert layout XML files</a>
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 
-<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
-To use the Magento performance toolkit or to do similar performance testing, you need to generate a large amount of data (for example, stores, categories, products, and so on).
+<h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
+When XML schema are updated, you should update your layout XML files to match the new schema. This command enables you to perform these updates.
 
-You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses more detail.
+For more information about layout XML files, see:
 
-The following figure shows how a product displays on the storefront using the small profile:
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-types.html">Layout file types</a>
 
-<p><img src="{{ site.baseurl }}common/images/config_generate-data.png" alt="Sample storefront with generated data"></p>
-
-<h2 id="config-cli-perf-prof">About profiles</h2>
-The following table provides details about the data generator profiles (small, medium, large, and extra large).
-
-Profiles are located in `<your Magento install dir>/setup/performance_toolkit/profiles/<ce or ee>/profiles`
-
-For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
-
-<table>
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Small profile</th>
-			<th>Medium profile</th>
-			<th>Large profile</th>
-			<th>Extra large profile</th>
-		</tr>
-		
-	<tr>
-		<td><p>websites</p></td>
-		<td><p>1</p></td>
-		<td><p>1</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>
-	</tr>
-	<tr>
-		<td><p>store_groups</p></td>
-		<td><p>1</p></td>	
-		<td><p>2</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>	
-	</tr>
-	<tr>
-		<td><p>store_views</p></td>
-		<td><p>1</p></td>	
-		<td><p>2</p></td>
-		<td><p>3</p></td>
-		<td><p>5</p></td>	
-	</tr>
-	<tr>
-		<td><p>simple_products</p></td>
-		<td><p>800</p></td>	
-		<td><p>16,000</p></td>
-		<td><p>400,000</p></td>
-		<td><p>800,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>configurable_products</p></td>
-		<td><p>50</p></td>	
-		<td><p>1,000</p></td>
-		<td><p>25,000</p></td>
-		<td><p>50,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>categories</p></td>
-		<td><p>30</p></td>	
-		<td><p>300</p></td>
-		<td><p>1,000</p></td>
-		<td><p>3,000</p></td>	
-	</tr>
-	<tr>
-		<td><p>categories_nesting_level</p></td>
-		<td><p>3</p></td>	
-		<td><p>3</p></td>
-		<td><p>3</p></td>
-		<td><p>6</p></td>	
-	</tr>
-	<tr>
-		<td><p>catalog_price_rules</p></td>
-		<td><p>10</p></td>	
-		<td><p>20</p></td>
-		<td><p>50</p></td>
-		<td><p>100</p></td>	
-	</tr>
-	<tr>
-		<td><p>catalog_target_rules</p></td>
-		<td><p>2</p></td>	
-		<td><p>5</p></td>
-		<td><p>10</p></td>
-		<td><p>50</p></td>	
-	</tr>
-	<tr>
-		<td><p>cart_price_rules</p></td>
-		<td><p>10</p></td>	
-		<td><p>20</p></td>
-		<td><p>50</p></td>
-		<td><p>100</p></td>		
-	</tr>
-	<tr>
-		<td><p>cart_price_rules_floor</p></td>
-		<td><p>2</p></td>	
-		<td><p>2</p></td>
-		<td><p>2</p></td>
-		<td><p>5</p></td>		
-	</tr>
-	<tr>
-		<td><p>customers</p></td>
-		<td><p>20</p></td>	
-		<td><p>200</p></td>
-		<td><p>2,000</p></td>
-		<td><p>5,000</p></td>		
-	</tr>
-	<tr>
-		<td><p>tax rates</p></td>
-		<td><p>40,000</p></td>	
-		<td><p>40,000</p></td>
-		<td><p>40,000</p></td>
-		<td><p>40,000</p></td>		
-	</tr>
-	<tr>
-		<td><p>orders</p></td>
-		<td><p>80</p></td>	
-		<td><p>1,600</p></td>
-		<td><p>40,000</p></td>
-		<td><p>80,000</p></td>		
-	</tr>
-	</tbody>
-</table>
-
-<h3 id="config-cli-perf-run">Run the data generator</h3>
-Run the command as discussed in this section. After the command runs, it rebuilds indexers.
-
+<h2 id="config-cli-xml-run">Convert layout XML files</h2>
 Command options:
 
-	php magento setup:perf:generate-fixtures <path to profile>
+	php magento dev:xml:convert [-o|--overwrite] <xml file> <xsd template>
 
-where `<path to profile>` specifies the absolute file system path to and name of a profile.
+where
 
-For example,
-
-	php magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
-
-Sample output for the small profile:
-
-	Generating profile with following params:
-	 |- Websites: 1
-	 |- Store Groups: 1
-	 |- Store Views: 1
-	 |- Categories: 30
-	 |- Simple products: 800
-	 |- Configurable products: 50
-	 |- Customers: 20
-	 |- Cart Price Rules: 10
-	 |- Catalog Price Rules: 10
-	 |- Orders: 80
-	Generating websites, stores and store views...  done in <time>
-	Generating categories...  done in <time>
-	Generating simple products...  done in <time>
-	Generating configurable EAV variations...  done in <time>
-	... more ...
+*	`<xml file>` is the full path and file name of a layout XML file to convert (required)
+*	`<xsd template>` is the full path and file name of an XSD schema file to use for conversion (required)
+*	`-o|--overwrite` include this option to overwrite the existing XML file
 
 
 #### Related topics
