@@ -1,7 +1,7 @@
 ---
 layout: default
 group:  migration
-subgroup: Overview
+subgroup: A_Overview
 title: Best practices
 menu_title: Best practices
 menu_node: 
@@ -9,7 +9,7 @@ menu_order: 1
 github_link: migration/migration-overview-practices.md
 ---
 
-<h3 id="migrate-overview-benchmarking">Best practices and benchmarking</h3>
+<h2 id="migrate-overview-benchmarking">Best practices and benchmarking</h2>
 This section provides our best information about how to speed up and simplify your migration, and provides guidance about how much time you can expect migration to require.
 
 Best practices and recommendations

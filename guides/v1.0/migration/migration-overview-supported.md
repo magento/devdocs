@@ -1,15 +1,15 @@
 ---
 layout: default
 group:  migration
-subgroup: Overview
+subgroup: A_Overview
 title: Versions supported
 menu_title: Versions supported
 menu_node: 
-menu_order: 1
+menu_order: 2
 github_link: migration/migration-overview-versions.md
 ---
 
-<h3 id="migrate-overview-versions">Supported versions</h3>
+<h2 id="migrate-overview-versions">Supported versions</h2>
 We support the following versions for migration:
 
 *	Enterprise Edition (EE) version 1.9.1.0 

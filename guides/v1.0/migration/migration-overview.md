@@ -1,33 +1,13 @@
 ---
 layout: default
 group:  migration
-subgroup: Overview
+subgroup: A_Overview
 title: Overview
 menu_title: Overview
 menu_node: parent
 menu_order: 1
 github_link: migration/migration-overview.md
 ---
-
-  
-<h4>Contents</h4>
-
-See one of the following sections:
-
-*	<a href="#migrate-overview">Overview</a>
-*	<a href="#migrate-plan">Creating a migration plan</a>
-*	<a href="#migrate-tool">Data Migration Tool</a>
-*	<a href="#migrate-prereq">Prerequisites</a>
-*	<a href="#migrate-install">Install the migration tool</a>
-*	<a href="#migration-config">Work with configuration and mapping files</a>
-*	<a href="#migration-notes">General notes about using the migration tool</a>
-*	<a href="#migration-command">Migrating data, settings, and changes</a>
-*	<a href="#migrate-command-media">Manual migration</a>
-*	<a href="#migrate-command-after">Post-migration tasks</a>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span>This topic is in draft form. Information in this topic might be incorrect or incomplete. Use the <strong>Edit this page on GitHub</strong> link at the top of this topic to send us feedback and suggestions.</p></span>
-</div>
 
 <h2 id="migrate-overview">Overview</h2>
 We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1.x—to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.
