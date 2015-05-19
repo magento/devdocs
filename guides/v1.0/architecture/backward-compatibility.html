@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Package an extension</title>
+	<title>Backward compatibility</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/package_module.html">
+	<link rel="canonical" href="//guides/v1.0/architecture/backward-compatibility.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Package an extension</h1>
+		<h1 class="page-heading">Backward compatibility</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/package_module.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/backward-compatibility.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,113 +149,117 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The Magento system uses Composer packages to distribute, install, and upgrade extensions in an application instance.</p>
+		<h2>Backward Compatibility Policy</h2>
 
-<p>To package an extension, you must:</p>
+<p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible. </p>
+
+<p>To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
 
 <ul>
-  <li>Create a Magento Composer file (<code>composer.json</code>).</li>
-  <li>Package and publish the extension. </li>
+  <li>
+    <p>MAJOR indicates incompatible API changes</p>
+  </li>
+  <li>
+    <p>MINOR indicates backward-compatible functionality has been added</p>
+  </li>
+  <li>
+    <p>PATCH indicates backward-compatible bug fixes</p>
+  </li>
 </ul>
 
-<h2 id="composer">Create a Magento Composer file</h2>
+<p>The backward compatibility policy applies to PHP code annotated with <code>@api</code> </p>
 
-<p>The Magento <code>composer.json</code> file defines the name, requirements, version, and other basic information about the extension. This file must be placed in the root directory of the extension.</p>
+<blockquote>
+  <p>We promise to be backward compatible for classes and methods annotated with <code>@api</code> within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with <code>@deprecated</code>.  The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
+</blockquote>
 
-<p>The <code>composer.json</code> uses <a href="https://getcomposer.org/doc/04-schema.md">Composer’s generic schema</a>, with the following restrictions:</p>
+<h3>What code is affected?</h3>
+<p>The backward compatibility policy applies to PHP code annotated with <code>@api</code>. This includes the following:</p>
 
-<table>
-<tbody>
-<tr>
-<th>Element</th>
-<th>Description</th>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>A fully-qualified module name, in the format <code>&lt;vendor_name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
-</tr>
-<tr>
-<td><code>type</code> </td>
-<td>For extensions, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
-</tr>
-<tr>
-<td><code>extra-&gt;map</code>  </td>
-<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>app/code/&lt;Vendor&gt;</code> directory. </td>
-</tr>
+<ul>
+  <li>Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.</li>
+  <li>Any service contract</li>
+  <li>Public classes that are stable and likely extension points within the framework.</li>
+  <li>Individual methods or constants</li>
+  <li>Popular extension points, based on customer feedback</li>
+</ul>
 
-</tbody>
-</table>
+<p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.  If the <code>@api</code> tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.</p>
 
-<p>The following example is a <code>composer.json</code> file for a module:</p>
+<h3>Service Provider Interfaces</h3>
+<p>A PHP Interface in Magento can be used several ways by the core product and extension developers.</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;foovendor/module-one&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;5.4.*|5.5.*&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Foovendor/ModuleOne&quot;</span>
-            <span class="p">]</span>
-        <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<h2 id="packaging">Package and publish an extension</h2>
-
-<p>After you have created the extension’s <code>composer.json</code> file in the root directory of the extension, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.</p>
-
-<h3 id="hosting">Hosting on GitHub and Packagist</h3>
-<p>Prerequisite: git must be set up on your machine.</p>
-
-<ol>
-  <li>Navigate to your extension directory, with the <code>composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details. </li>
-  <li>When you have committed and pushed your extension to your GitHub repository, you can either:
-    <ul>
-      <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or </li>
-      <li>Use the following steps to refer to the package through Packagist.
-        <ol>
-          <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
-          <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the extension’s <code>composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code>vendor/extension</code> without any additional repository information, as is required solely using GitHub.</li>
-        </ol>
-      </li>
-    </ul>
+<ul>
+  <li>
+    <p><strong>As an API</strong>. An interface is called by PHP code.</p>
   </li>
-</ol>
+  <li>
+    <p><strong>As a Service Provider Interface (SPI)</strong>. An interface can be implemented, allowing code to provide functionality to the platform. </p>
+  </li>
+  <li>
+    <p><strong>As both</strong>. For example, in a service contract, we expect all calls to a module to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).</p>
+  </li>
+</ul>
 
-<h3 id="private_repos">Hosting on a private packaging repository</h3>
+<p>APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.</p>
 
-<ol>
-  <li>Set up your own Composer packaging repository using a system such as <a href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">Satis</a> or <a href="https://toranproxy.com/">Toran</a>.</li>
-  <li>Create the package in a way similar to the described above.</li>
-  <li>Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.</li>
-  <li>To use the private packaging repository in a project, add the following to your <code>composer.json</code>file:</li>
-</ol>
+<p>However, the dependency rules are different:</p>
+
+<ul>
+  <li>
+    <p>If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.</p>
+
+    <p><strong>API dependency example</strong></p>
+  </li>
+</ul>
 
 <div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">[</span><span class="err">repository</span> <span class="err">url</span> <span class="err">here</span><span class="p">]</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
 <span class="p">}</span></code></pre></div>
 
-<p>All packages on the private packaging repository can now be referenced within the <code>require</code> field.</p>
+<ul>
+  <li>
+    <p>If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.</p>
 
-<h2 id="test">Test your extension</h2>
-<p>Test your extension by deploying a Magento Community Edition and adding the extension to the project’s <code>composer.json</code>. Marshall the extension into the <code>app/code</code> directory.</p>
+    <p><strong>SPI dependency example</strong></p>
+  </li>
+</ul>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;foovendor/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
-<span class="p">}</span><span class="err">,</span></code></pre></div>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="err">...</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;magento/customer&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0.0&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="err">...</span>
+<span class="p">}</span></code></pre></div>
+
+<h3>Versions</h3>
+
+<p>To reduce complexities, for Magento 2.0 GA, all components are versioned together. This does limit the value of our policy since a change in one module’s public API affects the version of the entire set. Additionally, we expect to extract the <code>@api</code> PHP interfaces into a separate package, allowing more stability to third parties. Magento expects to be able to further reduce coupling of components after the 2.0 release.  </p>
+
+<h3>What other code changes can cause backward incompatibility?</h3>
+
+<p>Changes to the database can cause code to break.  As with PHP code, within a MAJOR version changes must be backward compatible. This means:</p>
+
+<ul>
+  <li>Database tables or columns will not be removed.</li>
+  <li>The format of data in a column will not be restructured. </li>
+</ul>
+
+<p>This may require redundancy in table structure and data until a clean occurs with next MAJOR release. Unlike the PHP code, this code does not have automated identification of breaking changes.</p>
+
+<p>Changes in configuration files can potentially cause problems. As a result, Magento will monitor these files to ensure backward incompatible changes are not introduced.</p>
+
+<h3>How does the @api impact the version?</h3>
+<ul>
+  <li>Adding  <code>@api</code> - Leads to increasing minor version.</li>
+  <li>Removing <code>@api</code> - Leads to increasing major version and therefore break compatibility.</li>
+</ul>
+
 
 
 		</div>
@@ -277,6 +281,22 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -287,29 +307,6 @@
 						
 						
 						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Introduction</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/Contribute_edg.html">Contribute to Magento DevDocs!</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/template.html">template (generic)</a></li>
-						
-								
-								
-								
 							
 							
 						
@@ -328,64 +325,50 @@
 								
 								
 							
-									<li class=""><span class="nav-header">Concepts</span></li>
+									<li class=""><span class="nav-header">Architecture</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_whatis.html">What is Magento?</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular system</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/composer-integration.html">Composer Integration</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Fundamentals</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/arch_layers.html">Architecture layers</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_intro.html">Modules</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_libraries.html">Libraries</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_themes.html">Themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_translations.html">Language packages</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/versioning.html">Versioning Policy</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v1.0/architecture/backward-compatibility.html">Backward compatibility</a></li>
 						
 								
 								
@@ -408,30 +391,26 @@
 								
 								
 							
-									<li class=""><span class="nav-header">How to</span></li>
+									<li class=""><span class="nav-header">Behavior</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/create_module.html">Create a Module</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-calc.html">How Magento calculates prices</a></li>
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/extension-dev-guide/package_module.html">Package an extension</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-render.html">How Magento renders prices</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/template_create_req_config_files.html">Create the required config files (template)</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
 						
 								
 								
@@ -451,13 +430,84 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/architecture/index-cache/indexing.html">Indexing</a></li>
-									
 								
+								
+							
+									<li class=""><span class="nav-header">Modules</span></li>
 								
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_conventions.html">Module naming and location conventions</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">View library</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/view-lib.html">View library</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/design-abstract.html">Design abstractions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-assets.html">Page assets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-type.html">Page types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/template-engine.html">Template engine</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/static-process.html">Static file processing</a></li>
+						
 								
 								
 								
@@ -468,22 +518,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			

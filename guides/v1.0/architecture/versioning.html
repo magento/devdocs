@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>XML layouts and schemas</title>
+	<title>Versioning Policy</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/architecture/view/xml-schema-layout.html">
+	<link rel="canonical" href="//guides/v1.0/architecture/versioning.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">XML layouts and schemas</h1>
+		<h1 class="page-heading">Versioning Policy</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/architecture/view/xml-schema-layout.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/architecture/versioning.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,360 +149,237 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="m2devgde-xml-layout-intro">Overview</h2>
-<p>In the Magento system, you define application page layouts in XML files, also known as <i>layouts</i>.</p>
-<p>The system uses the Magento XML schemas to validate these layouts.</p>
-<h2 id="xml-schemas">XML schemas</h2>
-<p>The Magento system uses the following XML schemas to validate these layouts:</p>
+		<h2 id="verpol">Overview</h2>
 
-<p class="q">Reviewer: The original topic mentioned 3 XSD files, two of which do not exist or have been renamed: layout_single.xsd, layouts.xsd, and layout_merged.xsd. I guessed that layout_single = layout_generic but I do not know the correct reference for layouts.xsd. Please provide this information.</p>
+<p>The Magento system and its components use the software (or “platform”) version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="/guides/v1.0/architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.</p>
+
+<p>Magento software versioning complies with the following specifications:</p>
+
+<ul>
+  <li><a href="http://semver.org/">Semantic Versioning 2.0.0</a></li>
+  <li><a href="https://getcomposer.org/doc/04-schema.md#version">Versioning specification of Composer system</a></li>
+  <li><a href="http://php.net/version_compare">PHP version_compare()</a></li>
+</ul>
+
+<h3>Version formats</h3>
+
+<p>Stable release versions are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
+
+<ul>
+  <li>
+    <p>MAJOR indicates incompatible API changes</p>
+  </li>
+  <li>
+    <p>MINOR indicates backward-compatible functionality has been added</p>
+  </li>
+  <li>
+    <p>PATCH indicates backward-compatible bug fixes</p>
+  </li>
+</ul>
+
+<p>The pre-release version format is: <code>MAJOR.MINOR.PATCH-&lt;alpha | beta | rc&gt;n</code>, where <code>alpha</code>, <code>beta</code> or <code>rc</code> are stability indications, as described in the <code>version_compare()</code> specification, and
+<code>n</code> is an increment number to distinguish releases of the non-stable versions.</p>
+
+<h3>Public APIs</h3>
+
+<p>Source code is considered public API only if it is explicitly marked as such using the <code>@api</code> docblock tag. This designation indicates the code can be used or customized by other components, such as formal interfaces and dependency injection points.</p>
+
+<p>For PHP code, compatibility of <code>@api</code> may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).</p>
+
+<h2>Where versioning is used</h2>
+<p>The software version can be found in the source code of any Magento component or bundle, inside the <code>composer.json</code> file.</p>
+
+<p>It can be declared as the version of the component:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;name&quot;</span><span class="err">:</span> <span class="s2">&quot;acme/foo&quot;</span><span class="err">,</span>
+<span class="s2">&quot;version&quot;</span><span class="err">:</span> <span class="mf">1.2</span><span class="err">.</span><span class="mi">0</span></code></pre></div>
+
+<p>Or it can be used to declare a dependency on a particular version of a component:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;acme/foo&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.*&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;acme/bar&quot;</span><span class="p">:</span> <span class="s2">&quot;2.2.0&quot;</span>
+<span class="p">}</span></code></pre></div>
+
+<h2>Release types</h2>
+<p>This section describes how exactly and when the software version numbers will be changed with releases.</p>
+
+<p>The software version will always change with any release of Magento source code.</p>
+
+<h3>Development releases</h3>
+<p>In every development release (“pre-release” version), <strong>the same value of version number will be propagated in all Magento components and their dependencies</strong>.</p>
+
+<p>Magento may update the <code>x.y.z</code> version in way perscribed by Semantic Versioning, but also could release the same <code>x.y.z</code> with different stability and/or index numbers, For example, <code>0.1.0-alpha1 -&gt; 0.1.0-alpha2</code>, <code>0.1.0-alpha3</code> or <code>2.0.0-alpha3 -&gt; 2.1.0-beta1 -&gt; 2.1.0-beta2</code></p>
+
 <table>
-   <tbody>
-      <tr style="background-color: lightgray">
-         <th>Schema</th>
-         <th>Validates</th>
-      </tr>
-      <tr>
-         <td><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Layout/etc/layout_generic.xsd" target="_blank">layout_generic.xsd</a>
-         </td>
-         <td>Individual layouts</td>
-      </tr>
-      <tr>
-         <td><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/PageLayout/etc/layouts.xsd" target="_blank">layouts.xsd</a></td>
-         <td>Individual layouts.</td>
-      </tr>
-      <tr>
-         <td><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/View/Layout/etc/layout_merged.xsd" target="_blank">layout_merged.xsd</a></td>
-         <td>Merged layouts.</td>
-      </tr>
-   </tbody>
+<tbody>
+<tr>
+<th></th>
+<th>Previous Release</th>
+<th>Next Release</th>
+</tr>
+<tr>
+<td>Component Version</td>
+<td><pre>
+"name": "magento/foo",
+"version": 0.1.0-alpha87</pre></td>
+<td><pre>
+"name": "magento/foo",
+"version": 0.1.0-alpha88</pre></td></tr>
+<tr>
+<td>Dependency in Other Components</td>
+<td><pre>"require": {
+    "magento/foo": "0.1.0-alpha87"
+}
+</pre></td>
+<td><pre>"require": {
+    "magento/foo": "0.1.0-alpha88"
+}
+</pre></td></tr>
+</tbody>
 </table>
-<p>These layout-specific XML schemas might use additional universal XML schemas.</p>
-<h2 id="layout-elements">XML layout elements and structure</h2>
-<p>The following table lists the allowable XML layout elements.
-   The table reflects the correct structure for these elements.
-</p>
-<table style="width:135%">
-   <col width="33%" />
-   <col width="33%" />
-   <col width="33%" />
-   <thead>
-      <tr>
-         <th>Description</th>
-         <th>Attributes</th>
-         <th>Children</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;layout&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Mandatory root element.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code></li>
-               <li><code>xsi:noNamespaceSchemaLocation="../../../../Core/etc/layout_single.xsd"</code></li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;block&gt;</code></li>
-               <li><code>&lt;container&gt;</code></li>
-               <li><code>&lt;remove&gt;</code></li>
-               <li><code>&lt;move&gt;</code></li>
-               <li><code>&lt;update&gt;</code></li>
-               <li><code>&lt;referenceBlock&gt;</code></li>
-               <li><code>&lt;referenceContainer&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;block&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>A unit of a page output, which generates content. Each block corresponds to a Magento PHP class.
-               Instantiate each block one time only.
-            </p>
-            <p>If the cacheable attribute is set to false for one block on the page,
-               each request generates the whole page.
-            </p>
-         </td>
-         <td>
-            <ul>
-               <li><code>class="{block_class}"</code> (required)</li>
-               <li><code>name="{arbitrary_name}"</code> (unique)</li>
-               <li><code>as="{alias}"</code></li>
-               <li><code>before="{name_of_sibling}"</code></li>
-               <li><code>after=" {name_of_sibling}"</code></li>
-               <li><code>template="{block_template}"</code></li>
-               <li><code>group="{group_name}"</code></li>
-               <li><code>output="1|0"</code></li>
-               <li><code>acl="{resource_name}"</code> (the block is generated and its output is added to the rendered page if a user has permission for the resource)</li>
-               <li><code>ifconfig="{сonfig_path}"</code> (the element is rendered just in case the corresponding configuration flag is set for the current scope)</li>
-               <li><code>cacheable="true|false"</code></li>
-               <li><code>ttl="block_lifetime_for_Varnish_ESI_cache"</code></li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;block&gt;</code></li>
-               <li><code>&lt;container&gt;</code></li>
-               <li><code>&lt;action&gt;</code></li>
-               <li><code>&lt;arguments&gt;</code></li>
-               <li><code>&lt;referenceBlock&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;container&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>A placeholder for blocks and other containers.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>name="{arbitrary_name}"</code> (unique)</li>
-               <li><code>as="{alias}"</code></li>
-               <li><code>before="{name_of_sibling}"</code></li>
-               <li><code>after="{name_of_sibling}"</code></li>
-               <li><code>group="{group_name}"</code></li>
-               <li><code>output="1|0"</code></li>
-               <li><code>htmlTag="{tag_to_wrap_in}"</code></li>
-               <li><code>htmlId="{id_of_wrapping_tag}"</code></li>
-               <li><code>htmlClass="{class_of_wrapping_tag}"</code></li>
-               <li><code>label="label_displayed_for_user}"</code></li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;block&gt;</code></li>
-               <li><code>&lt;container&gt;</code></li>
-               <li><code>&lt;remove&gt;</code></li>
-               <li><code>&lt;move&gt;</code></li>
-               <li><code>&lt;referenceBlock&gt;</code></li>
-               <li><code>&lt;referenceContainer&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;update&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>The specified handle is "included" and executed recursively.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>handle="{name_of_handle_to_include}"</code></li>
-            </ul>
-         </td>
-         <td />
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;move&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Sets the declared element as a child to another element in the specified order.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>element="{name.of.an.element}"</code> (required)</li>
-               <li><code>destination="{name.of.destination.element}"</code> (required)</li>
-               <li><code>as="{new_alias}"</code></li>
-               <li><code>after="{name.of.element.after}"</code></li>
-               <li><code>before="{name.of.element.before}"</code></li>
-            </ul>
-         </td>
-         <td />
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;remove&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Removes the specified element.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>name="{name.of.an.element}"</code> (required)</li>
-            </ul>
-         </td>
-         <td />
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;action&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Invokes block method
-               Will become obsolete eventually. It is being gradually replaced with non-imperative layout instructions.
-            </p>
-         </td>
-         <td>
-            <ul>
-               <li><code>method="{block_class_method}"</code> (required)</li>
-               <li><code>ifconfig="{config_path}"</code> (The element is rendered just in case the corresponding configuration flag is set by specified path for current scope.)</li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;argument&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;referenceBlock&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Wraps layout instructions, that is they will be executed in the context of the specified block.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>name="{block_name}"</code> (required)</li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;block&gt;</code></li>
-               <li><code>&lt;container&gt;</code></li>
-               <li><code>&lt;remove&gt;</code></li>
-               <li><code>&lt;move&gt;</code></li>
-               <li><code>&lt;update&gt;</code></li>
-               <li><code>&lt;referenceBlock&gt;</code></li>
-               <li><code>&lt;referenceContainer&gt;</code></li>
-               <li><code>&lt;action&gt;</code></li>
-               <li><code>&lt;arguments&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;referenceContainer&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Wraps layout instructions, that is they will be executed in the context of the specified container.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>name="{container_name}"</code> (required)</li>
-               <li><code>htmlTag="{wrapping_tag}"</code></li>
-               <li><code>htmlClass="{class_of_wrapping_tag}"</code></li>
-               <li><code>htmlId="{id_of_wrapping_tag}"</code></li>
-               <li><code>label="{lable_to_be_displayed_for_admin_user}"</code></li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;block&gt;</code></li>
-               <li><code>&lt;container&gt;</code></li>
-               <li><code>&lt;remove&gt;</code></li>
-               <li><code>&lt;move&gt;</code></li>
-               <li><code>&lt;update&gt;</code></li>
-               <li><code>&lt;referenceBlock&gt;</code></li>
-               <li><code>&lt;referenceContainer&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;arguments&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>A wrapper for arguments.</p>
-         </td>
-         <td />
-         <td>
-            <ul>
-               <li><code>&lt;argument&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;argument&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Handles parameters that are injected into the parent block constructor during instantiation.
 
-            </p>
-         </td>
-         <td>
-            <ul>
-               <li><code>name ="{ argument_name}"</code> (required, unique)</li>
-               <li><code>xsi:type =" string|boolean|object|number|null|array"</code></li>
-               <li><code>translate="true|false"</code></li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;item&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;item&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Handles array items for array arguments type.</p>
-         </td>
-         <td>
-            <ul>
-               <li><code>name ="{ argument_name}"</code> (required, unique)</li>
-               <li><code>xsi:type =" string|boolean|object|number|null|array"</code></li>
-               <li><code>translate="true|false"</code></li>
-            </ul>
-         </td>
-         <td>
-            <ul>
-               <li><code>&lt;item&gt;</code></li>
-            </ul>
-         </td>
-      </tr>
-      <tr style="background-color: lightgray">
-         <th colspan="3"><code>&lt;updater&gt;</code></th>
-      </tr>
-      <tr>
-         <td>
-            <p>Changes argument value.</p>
-         </td>
-         <td />
-         <td />
-      </tr>
-   </tbody>
+<h3>Stable releases</h3>
+
+<p>In every stable release, the same value of version number will be propagated in all components, but dependencies will have a wildcard (*) pattern.</p>
+
+<p>The <code>x.y.z</code> numbers will change according to Semantic Versioning policy provisions. For example, <code>1.0.0 -&gt; 1.0.1 -&gt; 1.1.0 -&gt; 1.5.0 -&gt; 1.5.1 -&gt; 2.0.0 -&gt; 2.1.0</code>. Also, Magento may decide to change the “minor” version instead of the “patch” version.</p>
+
+<table>
+<tbody>
+<tr>
+<th></th>
+<th>Previous Release</th>
+<th>Next Release</th>
+</tr>
+<tr>
+<td>Component Version</td>
+<td><pre>"name": "magento/foo",
+"version": ~1.2
+</pre>
+<p>This is equivalent to &gt;= 1.2 &lt; 2.0.0.</p></td>
+<td><pre>"name": "magento/foo",
+"version": 1.3.0
+</pre></td></tr>
+<tr>
+<td>Dependency in Other Components</td>
+<td><pre>"require": {
+    "magento/foo": "1.2.*"
+}
+</pre></td>
+<td><pre>"require": {
+    "magento/foo": "1.3.*"
+}
+</pre></td>
+</tr>
+</tbody>
 </table>
-<h2 id="xml-validation">Validate XML layouts</h2>
-<p>Use the following tests
-   to validate new or changed layouts:
-</p>
-<table style="width:125%">
-   <col width="75%" />
-   <col width="25%" />
-   <thead>
-      <tr style="background-color: lightgray">
-         <th>Test</th>
-         <th>Validates</th>
-      </tr>
-   </thead>
-   <tbody>
-      <tr>
-         <td><a href="https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Integrity/Layout/HandlesTest.php" target="_blank">HandlesTest.php</a></td>
-         <td>Layouts</td>
-      </tr>
-      <tr>
-      <td>
-         <a href="https://github.com/magento/magento2/blob/develop/dev/tests/integration/testsuite/Magento/Test/Integrity/Modular/LayoutFilesTest.php" target="_blank">LayoutFilesTest.php</a></td>
-         <td>Argument values correspond to required data types</td>
-      </tr>
-   </tbody>
-</table>
+
+<h3>Example Lifecycle</h3>
+<p>The following steps demonstrate the packaging and backward compatibility story from the view of Magento, system integrators, and extension developers. This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.</p>
+<ol>
+<li>Start by cloning the master branch from github.
+
+
+   This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
+   
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run the <code>composer update</code> command. Core modules a &amp; b are pulled down from the repository.</li>
+
+
+<li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
+
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code> and see the new extension downloaded.</li>
+
+<li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
+
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy. 
+
+   This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
+</li>
+
+<li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
+
+   
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~1.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
+
+<li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
+
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myexamplestore/sample-site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;A sample site&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;project&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;myexamplestore/product-bundle&quot;</span><span class="p">:</span> <span class="s2">&quot;2.4.0-RC1&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;myexamplestore/acme-extension&quot;</span><span class="p">:</span> <span class="s2">&quot;~2.0&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+</li>
+
+<li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
+
+</ol>
+<h2>Related Topics</h2>
+<ul>
+  <li><a href="/guides/v1.0/architecture/backward-compatibility.html">Backward compability</a></li>
+</ul>
+
 
 
 		</div>
@@ -607,7 +484,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/versioning.html">Versioning Policy</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/architecture/versioning.html">Versioning Policy</a></li>
 						
 								
 							
@@ -741,7 +618,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
 						
 								
 							

@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Package an extension</title>
+	<title>Composer Integration</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/package_module.html">
+	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/composer-integration.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Package an extension</h1>
+		<h1 class="page-heading">Composer Integration</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/package_module.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/composer-integration.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,113 +149,215 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The Magento system uses Composer packages to distribute, install, and upgrade extensions in an application instance.</p>
+		<h2>Composer Integration</h2>
+<p><a href="https://getcomposer.org/">Composer</a> manages dependencies in PHP. Magento 2 relies on this tool to package components and product editions. Each component or product edition may be presented as a Composer package and published to the Magento Connect repository. In addition, 
+some 3rd-party components that the Magento system uses may be actually not present in the code base. Instead, they will be listed as dependencies in the root <code>composer.json</code> file. </p>
 
-<p>To package an extension, you must:</p>
+<h2>Overview of composer.json files</h2>
 
-<ul>
-  <li>Create a Magento Composer file (<code>composer.json</code>).</li>
-  <li>Package and publish the extension. </li>
-</ul>
+<p>Certain Magento components and product editions are represented with <code>composer.json</code> files. A directory with a <code>composer.json</code> file and other component files constitute a package.</p>
 
-<h2 id="composer">Create a Magento Composer file</h2>
-
-<p>The Magento <code>composer.json</code> file defines the name, requirements, version, and other basic information about the extension. This file must be placed in the root directory of the extension.</p>
-
-<p>The <code>composer.json</code> uses <a href="https://getcomposer.org/doc/04-schema.md">Composer’s generic schema</a>, with the following restrictions:</p>
-
-<table>
-<tbody>
+<table><tbody>
 <tr>
-<th>Element</th>
-<th>Description</th>
+<th> Type of composer.json </th>
+<th> Location </th>
+<th> Naming Convention </th>
+<th> Type of Package </th>
+<th> Notes </th>
 </tr>
 <tr>
-<td><code>name</code></td>
-<td>A fully-qualified module name, in the format <code>&lt;vendor_name&gt;/module-&lt;module-name&gt;</code>. All letters must be in lowercase. Use dashes in the <code>&lt;module-name&gt;</code> to separate words.</td>
+<td> Root</td>
+<td> <tt>composer.json</tt> </td>
+<td>
+<pre>magento/magento2ce</pre>
+</td>
+<td>
+<pre>project</pre>
+</td>
+<td>This is the main <tt>composer.json</tt> file. Magento uses this file to declare dependencies on 3rd-party components. This file is used as a template for any other root <tt>composer.json</tt> files 
+ </td>
 </tr>
 <tr>
-<td><code>type</code> </td>
-<td>For extensions, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
+<td>CE project</td>
+<td> <tt>composer.json</tt> </td>
+<td>
+<pre>magento/project-community-edition</pre>
+</td>
+<td>
+<pre>project</pre>
+</td>
+<td> This file represents the Magento Community Edition project. The package only includes the <tt>composer.json</tt>, which declares the dependencies on the magento product as well as the class autoloader. This can be used by Magento system integrators to deploy Magento using Composer. </td>
 </tr>
 <tr>
-<td><code>extra-&gt;map</code>  </td>
-<td>The mapping information for the marshalling of the package. The first line specifies which files to marshall. Specify <code>"*"</code> to marshall all files. The second line specifies where to place them, relative to the <code>app/code/&lt;Vendor&gt;</code> directory. </td>
+<td>CE product</td>
+<td> <tt>composer.json</tt> </td>
+<td>
+<pre>magento/product-community-edition</pre>
+</td>
+<td>
+<pre>metapackage</pre>
+</td>
+<td> This file represents Magento Community Edition product. The package only includes composer.json that declares the dependencies on magento components (modules, themes, etc.) and 3rd-party components. This can be used by Magento system integrators to deploy Magento using composer. </td>
 </tr>
+<tr>
+<td>base</td>
+<td> <tt>composer.json</tt> </td>
+<td>
+<pre>magento/magento2-base</pre>
+</td>
+<td>
+<pre>magento2-component</pre>
+</td>
+<td> This file represents Magento Community Edition base package. This package doesn't include any of Magento components (modules, themes, etc.) The package contains all other files/directories besides the components and lists the latter at the "require" section.</td>
+</tr>
+<tr>
+<td>module </td>
+<td> <tt>app/code/Magento/&lt;Module&gt;/composer.json</tt> </td>
+<td>
+<pre>magento/module-catalog-inventory
+magento/module-checkout</pre>
+</td>
+<td>
+<pre>magento2-module</pre>
+</td>
+<td> The fully qualified module name, broken down into vendor, with the rest of the words as suffixes. The "module" prefix is mandatory to disambiguate from other types (for example, Magento_Backend module versus Magento/backend theme).</td>
+</tr>
+<tr>
+<td>theme</td>
+<td> <tt>app/design/&lt;area&gt;/Magento/&lt;theme&gt;/composer.json</tt> </td>
+<td>
+<pre>magento/theme-frontend-blank
+magento/theme-adminhtml-backend</pre>
+</td>
+<td>
+<pre>magento2-theme</pre>
+</td>
+<td> Themes belong to areas, so the area name has to be the first suffix </td>
+</tr>
+<tr>
+<td>language packs</td>
+<td> <tt>app/i18n/Magento/&lt;language&gt;/composer.json</tt> </td>
+<td>
+<pre>magento/language-en_gb
+magento/language-de_de</pre>
+</td>
+<td>
+<pre>magento2-language</pre>
+</td>
+<td>The language identifier must be lowercase.</td>
+</tr>
+<tr>
+<td>Magento framework/libraries </td>
+<td> <tt>lib/internal/Magento/Framework/composer.json</tt> </td>
+<td>
+<pre>magento/framework</pre>
+</td>
+<td>
+<pre>magento2-library</pre>
+</td>
+<td>Currently there is only "magento/framework" package. We don't distinguish particular libraries as separate components. In the future, if we do, we'll use "framework-" prefix (as provided in the example). </td>
+</tr>
+</tbody></table>
 
-</tbody>
-</table>
+<h3>Naming conventions</h3>
 
-<p>The following example is a <code>composer.json</code> file for a module:</p>
+<p>The namespace of Composer packages is global within a package repository (such as <a href="packagist.org">packagist.org</a>). The Composer specification requires that a package name use the format: </p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;foovendor/module-one&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;php&quot;</span><span class="p">:</span> <span class="s2">&quot;5.4.*|5.5.*&quot;</span>
-    <span class="p">},</span>
-    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="p">[</span>
-                <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-                <span class="s2">&quot;Foovendor/ModuleOne&quot;</span>
-            <span class="p">]</span>
+<p><code>&lt;vendor_name&gt;/&lt;package_name&gt;</code> </p>
+
+<p>As a result, vendors of different packages are distinguished, and there is a low risk of overlapping (unless different vendors names themselves exactly the same). All letters in the name must be lowercase. Therefore, the format for package names released by Magento Inc is:</p>
+
+<p><code>magento/*</code></p>
+
+<p>The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:</p>
+
+<p><code>magento/&lt;type-prefix&gt;-&lt;suffix&gt;[-&lt;suffix&gt;]</code>…</p>
+
+<p>Where:</p>
+
+<p><code>type-prefix</code> stands for a type of component in a Magento-specific domain.</p>
+
+<p><code>suffix</code> would be anything that allows distinguishing/disambiguating the component within that type.</p>
+
+<h3>Magento-Specific Package Types</h3>
+<p>Each Magento component can be categorized into one of the types listed in the table. If any component does not fit into a specific category, it can be generalized to <code>magento-component</code>.</p>
+
+<p>Having an identifier type for each component allows the system to marshall the directories and files of each component to the correct locations, based on the Magento 2 directory structure. </p>
+
+<h3>The <code>extra</code> Section</h3>
+<p>The <a href="https://getcomposer.org/doc/04-schema.md#extra">Composer specification</a> permits adding an <code>extra</code> section in <code>composer.json</code> files can be used for any custom needs of the project. </p>
+
+<h4>Marshalling Map</h4>
+<p>By default, when you install a package, Composer puts it into <code>vendor/&lt;package&gt;</code> directory, such as <code>vendor/magento-module-catalog</code>.  However, the Magento framework requires Magento components to be in different locations, such as <code>app/code/Magento/Catalog</code>. The process of copying or moving contents of packages from default to the necessary location is called <em>marshalling</em>.</p>
+
+<p>To enable marshalling, the Magento-Composer integration uses a special component, <code>magento-composer-installer</code>. This is a Composer plugin that uses an <code>extra-&gt;map</code> section in <code>composer.json</code> files to perform the marshalling. Each Magento component must include a dependency on the installer in order to be properly marshalled.</p>
+
+<p>For example, in the Catalog module, the <code>extra-&gt;map</code> section would look as follows:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;magento2-module&quot;</span><span class="err">,</span>
+<span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+<span class="p">}</span><span class="err">,</span>
+<span class="s2">&quot;extra&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Magento/Catalog&quot;</span>
         <span class="p">]</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-
-<h2 id="packaging">Package and publish an extension</h2>
-
-<p>After you have created the extension’s <code>composer.json</code> file in the root directory of the extension, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.</p>
-
-<h3 id="hosting">Hosting on GitHub and Packagist</h3>
-<p>Prerequisite: git must be set up on your machine.</p>
-
-<ol>
-  <li>Navigate to your extension directory, with the <code>composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details. </li>
-  <li>When you have committed and pushed your extension to your GitHub repository, you can either:
-    <ul>
-      <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or </li>
-      <li>Use the following steps to refer to the package through Packagist.
-        <ol>
-          <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
-          <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the extension’s <code>composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code>vendor/extension</code> without any additional repository information, as is required solely using GitHub.</li>
-        </ol>
-      </li>
-    </ul>
-  </li>
-</ol>
-
-<h3 id="private_repos">Hosting on a private packaging repository</h3>
-
-<ol>
-  <li>Set up your own Composer packaging repository using a system such as <a href="https://getcomposer.org/doc/articles/handling-private-packages-with-satis.md">Satis</a> or <a href="https://toranproxy.com/">Toran</a>.</li>
-  <li>Create the package in a way similar to the described above.</li>
-  <li>Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.</li>
-  <li>To use the private packaging repository in a project, add the following to your <code>composer.json</code>file:</li>
-</ol>
-
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&quot;repositories&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;composer&quot;</span><span class="p">,</span>
-            <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="p">[</span><span class="err">repository</span> <span class="err">url</span> <span class="err">here</span><span class="p">]</span>
-        <span class="p">}</span>
     <span class="p">]</span>
 <span class="p">}</span></code></pre></div>
 
-<p>All packages on the private packaging repository can now be referenced within the <code>require</code> field.</p>
+<p>This code instructs the Composer installer to put everything in this package under the module’s <code>Magento/Catalog</code> subdirectory. Whenever this package is updated, the map determines which files and directories to delete and replace with new package contents.</p>
 
-<h2 id="test">Test your extension</h2>
-<p>Test your extension by deploying a Magento Community Edition and adding the extension to the project’s <code>composer.json</code>. Marshall the extension into the <code>app/code</code> directory.</p>
+<p>The following example is for the root <code>composer.json</code> file:</p>
 
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;foovendor/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
-<span class="p">}</span><span class="err">,</span></code></pre></div>
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;type&quot;</span><span class="err">:</span> <span class="s2">&quot;magento2-component&quot;</span><span class="err">,</span>
+<span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+<span class="p">}</span><span class="err">,</span>
+<span class="s2">&quot;extra&quot;</span><span class="err">:</span> <span class="p">{</span>
+    <span class="nt">&quot;map&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;app/.htaccess&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;app/.htaccess&quot;</span>
+        <span class="p">],</span>
+<span class="err">...</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;var/.htaccess&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;var/.htaccess&quot;</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></div>
+
+<p>Instead of using the wildcard character, this sample specifies which files from this package are placed in the target location. In case of the root <code>composer.json</code> file, it is the same location. Whenever the root (or “skeleton”) package is updated, only the specified paths will be affected and any other files/directories will be preserved.</p>
+
+<p>For more details about marshalling implementation, see the <a href="https://github.com/magento/magento-composer-installer">magento-composer-installer documentation</a>.</p>
+
+<h4>Component Paths Map</h4>
+<p>The section <code>extra-&gt;component_paths</code> is used in the root <code>composer.json</code> file to specify a custom location for the components that are listed in the <code>replace</code> section:</p>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;replace&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;foo/bar&quot;</span><span class="p">:</span> <span class="s2">&quot;1.1.0&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;bar/baz&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.3&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;foo/baz&quot;</span><span class="p">:</span> <span class="s2">&quot;dev-master#f33623e228dc03f77c12d39690217baa87370b3d&quot;</span>
+    <span class="p">}</span>
+    <span class="s2">&quot;extra&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;component_paths&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;foo/bar&quot;</span><span class="p">:</span> <span class="s2">&quot;path/to/bar/directory&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;bar/baz&quot;</span><span class="p">:</span> <span class="s2">&quot;path/to/baz/file.php&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;foo/baz&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;path/to/baz/another_directory&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;path/to/baz/another_file.php&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The values may specify the path to a directory or file, or a list of paths. The paths are relative to the root directory of Magento code base.</p>
+
+<p>This is needed when the Magento code base incorporates (“replaces”) source code of a library, but it happens to be in a location that is non-compliant to Composer. Declaring these components in <code>replace</code> section prevents other components from declaring dependencies on the incompatible versions of the same components. Declaring them in <code>extra-&gt;component_paths</code> section informs the developer where to look for them.</p>
+
 
 
 		</div>
@@ -347,7 +449,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/composer-integration.html">Composer Integration</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/extension-dev-guide/composer-integration.html">Composer Integration</a></li>
 						
 								
 								
@@ -423,7 +525,7 @@
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/extension-dev-guide/package_module.html">Package an extension</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/package_module.html">Package an extension</a></li>
 						
 								
 							
