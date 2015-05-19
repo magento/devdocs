@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Migration guide</title>
+	<meta name="description" content="Magento 2 Developer Guide.
+">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/css/app.css" />
+	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/override.css" />
+	<link rel="canonical" href="/pages/Magento/devdocs_internal//guides/v1.0/migration/bk-migration-guide.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div>
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/pages/Magento/devdocs_internal/"> </a>
+				<div class="sub-site-name">
+					<a href="/pages/Magento/devdocs_internal/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	﻿<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Migration guide</h1>
+			
+			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/migration/bk-migration-guide.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h4>Contents</h4>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#migrate-overview">Overview</a></li>
+  <li><a href="#migrate-prereq">Prerequisites</a></li>
+  <li><a href="#migrate-install">Install the migration tool</a></li>
+  <li><a href="#migration-config">Work with configuration and mapping files</a></li>
+  <li><a href="#migration-notes">General notes about using the migration tool</a></li>
+  <li><a href="#migration-command">Migrating data, settings, and changes</a></li>
+  <li><a href="#migrate-command-media">Manual migration</a></li>
+  <li><a href="#migrate-command-after">Post-migration tasks</a></li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span>This topic is in draft form. Information in this topic might be incorrect or incomplete. Use the <strong>Edit this page on GitHub</strong> link at the top of this topic to send us feedback and suggestions.</span>
+</div>
+
+<h2 id="migrate-overview">Overview</h2>
+<p>We’re pleased you’re considering moving from the world’s #1 eCommerce platform—Magento 1.x—to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.</p>
+
+<p>Magento 2 migration involves four components: data, extensions, themes, and customizations. </p>
+
+<ul>
+  <li>
+    <p>Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data</p>
+  </li>
+  <li>
+    <p>Custom code: Code is not ported because it cannot be automated.</p>
+  </li>
+  <li>
+    <p>Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 themes, layouts, and customizations.</p>
+  </li>
+</ul>
+
+<p>Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1.x to Magento 2.0 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. </p>
+
+<h3 id="migrate-overview-versions">Supported versions</h3>
+<p>We support the following versions for migration:</p>
+
+<ul>
+  <li>Enterprise Edition (EE) version 1.9.1.0 </li>
+  <li>Community Edition (CE) version 1.9.1.0 </li>
+</ul>
+
+<p>We also plan to support:</p>
+
+<ul>
+  <li>EE 1.11.x, EE 1.12.x, EE 1.13.x, and EE 1.14.x</li>
+  <li>CE 1.6.x, CE 1.7.x, CE 1.8.x, and CE 1.9.x</li>
+</ul>
+
+<h3 id="migrate-overview-not">What migration does not cover</h3>
+<p>Magento 2 takes advantage of several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences, rapidly respond to changing market dynamics, and scale to new levels. But, these valuable changes mean that some custom code, extensions, and themes cannot be automatically migrated to the new platform. They might need to be adjusted or rebuilt to fit the enhanced Magento 2 architecture.</p>
+
+<p>The migration tool does <em>not</em> automatically migrate the following.</p>
+
+<h4 id="extensions-and-custom-code">Extensions and custom code</h4>
+<p>Design differences between Magento 1 and Magento 2 are so large that custom code and extensions must be manually ported to Magento 2. </p>
+
+<h4 id="media">Media</h4>
+<p>Media assets include, for example, images for products, categories, WYSIWYG editor, and so on. You must copy these manually from <code>&lt;your Magento 1 install dir&gt;/media</code> directory to <code>&lt;your Magento 2 install dir&gt;/pub/media</code> directory.</p>
+
+<h4 id="storefront-design">Storefront design</h4>
+<p>Cascading Stylesheets (CSS), JavaScript, templates, and XML layouts are implemented differently in Magento 2 and must be migrated manually.</p>
+
+<h4 id="layouts">Layouts</h4>
+<p>Layout updates implemented in Magento 1 cannot be used in Magento 2. You must migrate the following manually:</p>
+
+<ul>
+  <li>XML in CMS category pages in the Magento Admin</li>
+  <li>Layout updates specified in widget instances</li>
+</ul>
+
+<h4 id="web-services-credentials">Web services credentials</h4>
+<p>You must manually create credentials for SOAP, XML-RPC and REST in Magento 2.</p>
+
+<h4 id="indexed-data">Indexed data</h4>
+<p>You should perform a full reindex before you enable Magento 2 on the production sever.</p>
+
+<h4 id="google-shopping">Google Shopping</h4>
+<p>Google Shopping shipped in some older Magento 1 versions but has since been removed.</p>
+
+<h4 id="data-that-is-not-supported-in-magento-2">Data that is not supported in Magento 2</h4>
+<p>Poll, tag, staging modules, and recurring profiles are not currently supported in Magento 2.</p>
+
+<h2 id="migrate-prereq">Prerequisites</h2>
+<p>Before you start your migration, you must do all of the following:</p>
+
+<ul>
+  <li>
+    <p>Set up a Magento 2.0 system that meets our <a href="/pages/Magento/devdocs_internal/guides/v1.0//install-gde/system-requirements.html">system requirements</a>.</p>
+
+    <p>Set up your system using a topology and design that at least matches your existing Magento 1.x system.</p>
+  </li>
+  <li>
+    <p>Do not start Magento 2.0 cron jobs.</p>
+  </li>
+  <li>
+    <p>Back up or <a href="https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html" target="_blank">dump</a> your Magento 2 database as soon after installation as possible.</p>
+  </li>
+  <li>
+    <p>Check that the data migration tool has a network connection the Magento 1.x and Magento 2 databases.</p>
+
+    <p>Open ports in your firewall so the migration tool can communicate with the databases and so the databases can communicate with each other.</p>
+  </li>
+  <li>
+    <p>To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database.</p>
+  </li>
+  <li>
+    <p>Migrate Magento 1.x extension code to Magento 2.0.</p>
+
+    <p>Reach out to your extension providers to see if they have been ported yet.</p>
+  </li>
+</ul>
+
+<h2 id="migrate-install">Install the migration tool</h2>
+<p>Installation is discussed in:</p>
+
+<ul>
+  <li>Magento Community Edition (CE): <a href="https://github.com/magento/data-migration-tool-ce/blob/master/README.md" target="_blank">README.md</a>
+<!-- *	Magento Enterprise Edition (EE): <a href="https://github.com/magento/data-migration-tool-ee/README.md" target="_blank">README.md</a>
+ --></li>
+</ul>
+
+<h2 id="migration-config">Work with configuration and mapping files</h2>
+<p>The migration tool uses <em>mapping files</em> to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:</p>
+
+<ul>
+  <li>Changing table names</li>
+  <li>Changing column names</li>
+  <li>Changing field names</li>
+  <li>Ignoring tables or fields</li>
+</ul>
+
+<p>Mapping files for supported Magento versions are located in subdirectories of <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code></p>
+
+<p>To use the mapping files:</p>
+
+<ol>
+  <li>Rename or copy them to remove the <code>.dist</code> extension.</li>
+  <li>Edit them using the schema located in <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code>.</li>
+</ol>
+
+<p>The <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/&lt;ce or ee version&gt;/etc</code> directory contains the following configuration files:</p>
+
+<p>The following table discusses each mapping file.</p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Mapping file name</th>
+		<th>Description</th>
+	</tr>
+<tr>
+	<td>class-map.xml.dist</td>
+	<td>Dictionary of class mappings between Magento 1 and Magento 2</td>
+</tr>
+<tr>
+	<td>config.xml.dist</td>
+	<td>Main configuration file that specifies the Magento 1.x and Magento 2 database configurations, step configuration, and links to mapping files</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>
+	<td>List of tables used in the custom customer attributes step.</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. customer-attr-map.xml.dist</td>
+	<td>Map file for the custom customer attributes step.</td>
+</tr>
+<tr>
+	<td>deltalog.xml.dist</td>
+	<td>Contains the list of tables required for database routines setup.</td>
+</tr>
+<tr>
+	<td>eav-attribute-groups.xml.dist</td>
+	<td>List of attributes required to process the EAV step.</td>
+</tr>
+<tr>
+	<td>eav-document-groups.xml.dist</td>
+	<td>List of tables required to process the EAV step.</td>
+</tr>
+<tr>
+	<td>log-document-groups.xml.dist</td>
+	<td>List of tables required to process the log step.</td>
+</tr>
+<tr>
+	<td>map-eav.xml.dist</td>
+	<td>EAV mapping files.</td>
+</tr>
+<tr>
+	<td>map-log.xml.dist</td>
+	<td>Log mapping file.</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. map-sales.xml.dist</td>
+	<td>Log mapping file.</td>
+</tr>
+<tr>
+	<td>map.xml.dist</td>
+	<td>Mapping file required for the map step.</td>
+</tr>
+<tr>
+	<td>settings.xml.dist</td>
+	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2 id="migration-notes">General notes about using the migration tool</h2>
+<p>During the time you’re migrating:</p>
+
+<ul>
+  <li>Do not make any changes in the Magento 1.x Admin Panel except for except for order management and shipping</li>
+  <li>Stop all Magento 1.x cron jobs</li>
+  <li>Do not alter any code</li>
+  <li>Do not delete any data</li>
+  <li>Do not make any changes in the Magento 2 Admin</li>
+</ul>
+
+<p>After performing migration:</p>
+
+<ol>
+  <li>In the Magento 2 Admin, flush all caches and reindex all indexes.</li>
+  <li>Run your Magento 2 cron jobs.</li>
+</ol>
+
+<h2 id="migration-configure">Configuring the migration</h2>
+<p>Before you migrate any data, you must edit <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce or ee version&gt;/config.xml</code> to specify at minimum values for the following:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source</span> <span class="na">version=</span><span class="s">&quot;1.9.1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/destination&gt;</span></code></pre></div>
+
+<p>Optional parameters:</p>
+
+<ul>
+  <li>Database user password: <code>password=&lt;password&gt;</code></li>
+  <li>Table prefix: <code>&lt;source_prefix&gt;</code>, <code>&lt;dest_prefix&gt;</code>.</li>
+</ul>
+
+<p>For example, if your database owner’s user name is <code>root</code> with password <code>pass</code> and you use the prefix <code>magento1</code> in your Magento 1 database, use the following in <code>config.xml</code>:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source</span> <span class="na">version=</span><span class="s">&quot;1.9.1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
+    <span class="nt">&lt;/source&gt;</span>
+    <span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/destination&gt;</span></code></pre></div>
+
+<h2 id="migration-command">Migrating data, settings, and changes</h2>
+<p>Run the migration tool from the <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin</code> directory.</p>
+
+<p>Command syntax:</p>
+
+<pre><code>php migrate &lt;mode&gt; --config=path/to/config.xml [options]
+</code></pre>
+
+<p>where <code>&lt;mode&gt;</code> can be:</p>
+
+<ul>
+  <li><code>data</code> to migrate database data</li>
+  <li><code>delta</code> to migrate data that is added to the database since your ran the tool with the <code>data</code> option</li>
+  <li><code>settings</code> to migrate Magento Admin Panel settings</li>
+</ul>
+
+<p>where <code>[options]</code> can be:</p>
+
+<ul>
+  <li><code>--reset</code> to start the migration from the beginning</li>
+  <li><code>--config &lt;value&gt;</code> path to <code>config.xml</code></li>
+  <li><code>--verbose &lt;level&gt;</code> DEBUG, INFO, NONE (default is INFO)</li>
+  <li><code>--help</code> Displays help for the command</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Logs are written to the <code>&lt;your Magento install dir&gt;/vendor/magento/migration-tool/var</code> directory.</p></span>
+</div>
+
+<p>See the following sections in the order shown:</p>
+
+<ol>
+  <li><a href="#migrate-command-settings">Migrating settings</a></li>
+  <li><a href="#migrate-command-data">Migrating data</a></li>
+  <li><a href="#migrate-command-delta">Incremental migration (delta mode)</a></li>
+</ol>
+
+<h3 id="migrate-command-settings">Migrating settings</h3>
+<p>You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment and some tax settings. </p>
+
+<p>To change how settings are migrated, either edit <code>etc/map/settings.xml</code> or create a new one).</p>
+
+<p>Command usage:</p>
+
+<pre><code>cd &lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin
+php migrate settings --config=&lt;path to config.xml&gt;
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
+</div>
+
+<h3 id="migrate-command-data">Migrating data</h3>
+<p>When you migrate data, the migration tool verifies that tables and fields are consistent between  Magento 1 and Magento 2. If not, an error displays that lists the problematic tables and fields. These entities, for example, can belong to some extensions from Magento 1 that do not exist in the Magento 2 database.</p>
+
+<p>If you encounter such an error, you can:</p>
+
+<ul>
+  <li>Install the corresponding extensions in Magento 2 if they exist</li>
+  <li>Ignore them by adding <code>&lt;ignore&gt;</code> tags to the <code>map.xml</code> file. </li>
+</ul>
+
+<p>After resolving issues, run the migration tool again.</p>
+
+<p>Command usage:</p>
+
+<pre><code>cd &lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin
+php migrate data --config=&lt;path to config.xml&gt; [--reset]
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The migration tool saves its current progress as it runs. If errors or user intervention stop it from running, the migration tool resumes progress at the last known good state.</p>
+  <p>To force the migration tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
+</div>
+
+<h3 id="migrate-command-delta">Incremental migration (delta mode)</h3>
+<p>Incremental migration enables you to migrate only the changes since you migrated data. For example, you can migrate new customers, orders, and so on.</p>
+
+<p>Command usage:</p>
+
+<pre><code>cd &lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin
+php migrate delta --config=&lt;path to config.xml&gt;
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
+</div>
+
+<h2 id="migrate-command-media">Manual migration</h2>
+<p>You must manually migrate all of the following:</p>
+
+<h3 id="media-1">Media</h3>
+<p>This section discusses how to manually migrate media files.</p>
+
+<h4 id="media-files-stored-in-the-database">Media files stored in the database</h4>
+<p>This section applies to you <em>only</em> if you store media files in the Magento database.</p>
+
+<p>If media files are stored in the Magento 1 database, use the following steps:</p>
+
+<ol>
+  <li>Log in to the Magento 1 Admin Panel as an administrator.</li>
+  <li>Click <strong>System</strong> &gt; <strong>Configuration</strong> &gt; ADVANCED &gt; <strong>System</strong>. </li>
+  <li>In the right pane, scroll to <strong>Storage Configuration for Media</strong>.</li>
+  <li>From the <strong>Select Media Database</strong> list, click the name of your media storage database. </li>
+  <li>Click <strong>Synchronize</strong>.</li>
+</ol>
+
+<p>After that, use the following steps:</p>
+
+<ol>
+  <li>Log in to the Magento 2 Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; ADVANCED &gt; <strong>System</strong>. </li>
+  <li>In the right pane, scroll to <strong>Storage Configuration for Media</strong>.</li>
+  <li>From the <strong>Select Media Database</strong> list, click the name of your media storage database. </li>
+  <li>Click <strong>Synchronize</strong>.</li>
+</ol>
+
+<h4 id="media-files-on-the-file-system">Media files on the file system</h4>
+<p>All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from <code>&lt;your Magento 1 install dir&gt;/media</code> to <code>&lt;your Magento 2 install dir&gt;/pub/media</code>. </p>
+
+<p>However, do <em>not</em> copy <code>.htaccess</code> files located in the Magento 1 <code>media</code> folder. Magento 2 has its own <code>.htaccess</code> that should be preserved. </p>
+
+<h3 id="templates-and-layouts">Templates and layouts</h3>
+<p>Templates and layouts (that is, CSS, JavaScript, and XML layout files) changed location and format between Magento 1 and Magento 2. </p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Layout updates implemented in Magento 1 <em>cannot</em> be used in Magento 2 (namely, XML placed in the Magento Admin in CMS category pages and layout updates specified in widget instances).</p></span>
+</div>
+
+<h3 id="acls">ACLs</h3>
+<ul>
+  <li>You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).</li>
+  <li>You must manually re-create all administrative users and associate them with access privileges.</li>
+</ul>
+
+<h2 id="migrate-command-after">Post-migration tasks</h2>
+<p>After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:</p>
+
+<ul>
+  <li>Put Magento 1 in maintenance mode and permanently stop all Admin Panel activities</li>
+  <li>Start Magento 2 cron jobs</li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean" target="_blank">Flush all Magento 2 cache types</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex" target="_blank">Reindex all Magento 2 indexers</a></li>
+  <li>Change DNS, load balancers, and so on to point to Magento 2 production hardware</li>
+</ul>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration guide</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/pages/Magento/devdocs_internal/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://www.magentocommerce.com/license/" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2014 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Magento.com scripts -->
+<script src="/pages/Magento/devdocs_internal/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
+<script src="/pages/Magento/devdocs_internal/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
+<!--<script src="/pages/Magento/devdocs_internal/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+
+
+<!-- Docs scripts (just in case) -->
+<script src="/pages/Magento/devdocs_internal/js/app-min.js"></script>
+
+
+</body>
+</html>

@@ -63,7 +63,7 @@
    <div id="subnav">
       <ul class="menu nav">
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
@@ -74,6 +74,7 @@
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -93,9 +94,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -156,25 +157,29 @@
 <ul>
   <li><a href="#instgde-install-cli-prereq">Before you start your installation</a></li>
   <li><a href="#instgde-install-cli-first">First steps</a></li>
-  <li><a href="#instgde-cli-help">Command-line installer help commands</a></li>
+  <li><a href="#instgde-cli-summary">Command summary</a></li>
+  <li><a href="#instgde-cli-help">Help commands</a></li>
+  <li><a href="#instgde-cli-subcommands-common">Common arguments</a></li>
+  <li><a href="#instgde-cli-subcommands">Commands</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
-  <li><a href="#instgde-cli-maint-configphp">Maintenance mode</a></li>
-  <li><a href="#instgde-cli-subcommands-uninstall">Uninstall</a></li>
 </ul>
+
+<!-- *	<a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
+*	<a href="#instgde-cli-maint-configphp">Maintenance mode</a> -->
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 <p>Before you begin, make sure that:</p>
 <ol><li>Your system meets the requirements discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
 <li>You completed all prerequisite tasks discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
 <li>You installed Composer and cloned the Magento GitHub repository as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.</li>
-<li>After you log in to the Magento server, switch to the web server user as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li></ol>
+<li>After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li></ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
-</div>
+<!-- <div class="bs-callout bs-callout-warning">
+	<span class="glyphicon-class">
+		<p>The Magento command-line installer now uses a new syntax. You must install the Magento software from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. </p>
+  		<p>The new syntax replaces <code>setup/php -f index.php</code>.</p></span>
+</div> -->
 
 <p>The installer is designed to be run multiple times if necessary so you can:</p>
 
@@ -189,111 +194,189 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
 <li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/setup</pre>
+<pre>cd &lt;your Magento install dir&gt;/bin</pre>
 Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/setup</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/setup</code></li>
+<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
+<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
 </ul>
 </li>
 </ol>
 
-<h2 id="instgde-cli-help">Command-line installer help commands</h2>
-<p>To display a complete list of installer subcommands, enter:</p>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can run the commands in any of the following ways:</p>
+<ul><li><code>php magento &lt;command&gt;</code></li>
+<li><code>magento &lt;command&gt;</code></li></ul></span>
+</div>
 
-<pre><code>php index.php help
-</code></pre>
+<h2 id="instgde-cli-summary">Command summary</h2>
+<p>The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.</p>
 
-<p>To get help on a particular subcommand, enter:</p>
+<table>
+	<col width="40%" />
+  	<col width="30%" />
+  	<col width="30%" />
+	<tbody>
+		<tr>
+			<th>Command</th>
+			<th>Description</th>
+			<th>Prerequisites</th>
+		</tr>
+		
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">php magento setup:install</a></td>
+		<td>Installs the Magento software</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">php magento setup:uninstall</a></td>
+		<td>Removes the Magento software.</td>
+		<td>Magento software installed</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">php magento setup:upgrade</a></td>
+		<td>Updates the Magento software.</td>
+		<td>Deployment configuration</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">php magento maintenance:{enable|disable}</a></td>
+		<td>Enables or disables maintenance mode (in maintenance mode, only exempt IP addresses can access the Magento Admin or storefront).</td>
+		<td>Magento software installed</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">php magento config:set</a></td>
+		<td>Creates the deployment configuration file, <code>config.php</code>.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">php magento module:{enable|disable}</a></td>
+		<td>Enable or disable modules.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">php magento setup:store-config:set</a></td>
+		<td>Sets storefront-related options, such as base URL, language, timezone, and so on.</td>
+		<td><ul><li>Deployment configuration</li>
+			<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
+				</ul></td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">php magento setup:db-schema:upgrade</a></td>
+		<td>Updates the Magento database schema.</td>
+		<td>Deployment configuration</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">php magento setup:db-data:upgrade</a></td>
+		<td>Updates the Magento database data.</td>
+		<td>Deployment configuration</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html#instgde-cli-dbconfig">php magento setup:db:status</a></td>
+		<td>Checks if the database is up-to-date with the code.</td>
+		<td>Deployment configuration</td>
+	</tr>
+	<tr>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">php magento admin:user:create</a></td>
+		<td>Creates a Magento administrator.</td>
+		<td><p>All of the following:</p>
+			<ul><li>Deployment configuration</li>
+				<li>Enable at minimum the <code>Magento_User</code> and <code>Magento_Authorization</code> modules</li>
+				<li>Database (simplest way is to use <code>magento setup:upgrade</code>)</li>
+				</ul></td>
+	</tr>
+	<tr>
+		<td><a href="#instgde-cli-help">php magento list</a></td>
+		<td>Lists all available commands.</td>
+		<td>None</td>
+	</tr>
+	<tr>
+		<td><a href="#instgde-cli-help">php magento help</a></td>
+		<td>Provides help for the specified command.</td>
+		<td>None</td>
+	</tr>
+	
+	
+	</tbody>
+</table>
 
-<pre><code>php index.php help &lt;subcommand&gt;
-</code></pre>
-
+<h2 id="instgde-cli-help">Help commands</h2>
+<p>To display a complete list of commands, enter:</p>
+<pre>php magento --list</pre>
+<p>To get help for a particular command, enter:</p>
+<pre>php magento --help &lt;command&gt;</pre>
 <p>For example,</p>
+<pre>php magento --help setup:install
+php magento --help cache:enable</pre>
 
-<pre><code>php index.php help install-configuration
-</code></pre>
+<h2 id="instgde-cli-subcommands-common">Common arguments</h2>
+<p>The following arguments are common to all commands. These commands can be run either before or after the Magento software is installed:</p>
+<table>
+	<tbody>
+		<col width="15%" />
+  		<col width="10%" />
+  		<col width="75%" />
+		<tr>
+			<th>Long version</th>
+			<th>Short version</th>
+			<th>Meaning</th>
+		</tr>
+		
+	<tr>
+		<td>--help</td>
+		<td>-h</td>
+		<td>Get help for any command. For example, <code>php magento help setup:install</code> or <code>php magento help setup:config:set</code>.</td>
+	</tr>
+	<tr>
+		<td>--quiet</td>
+		<td>-q</td>
+		<td>Quiet mode; no output.</td>
+	</tr>
+	<tr>
+		<td>--no-interaction</td>
+		<td>-n</td>
+		<td>No interactive questions.</td>
+	</tr>
+	<tr>
+		<td>--verbose=1|2|3</td>
+		<td>-v|vv|vvv</td>
+		<td>Verbosity level. For example, <code>--verbose=3</code> or <code>-vvv</code> displays debug verbosity, which is the most verbose output. Default is <code>--verbose=1</code> or <code>-v</code>.</td>
+	</tr>
+	<tr>
+		<td>--version</td>
+		<td>-V</td>
+		<td>Display this application version</td>
+	</tr>
+	<tr>
+		<td>--ansi</td>
+		<td>n/a</td>
+		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Force ANSI output</a></td>
+	</tr>
+		<tr>
+		<td>--no-ansi</td>
+		<td>n/a</td>
+		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Disable ANSI output</a></td>
+	</tr>
+	
+	
+	</tbody>
+</table>
 
-<h2 id="instgde-cli-subcommands">Command line installer subcommands</h2>
-<p>The following sections discuss the available subcommands.</p>
+<h2 id="instgde-cli-subcommands">Commands</h2>
+<p>The following sections discuss the available commands.</p>
 
 <ul>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
-  <li><a href="#instgde-cli-subcommands-update">Update the database</a></li>
-  <li><a href="#instgde-cli-maint-configphp">Maintenance mode</a></li>
-  <li><a href="#instgde-cli-subcommands-uninstall">Uninstall</a></li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Not all subcommands are currently documented. Provide us input by <a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/install-gde/install/install-cli-subcommands.md }}">editing this page on GitHub</a>.</p></span>
-</div>
-
-<h3 id="instgde-cli-subcommands-update">Update the database</h3>
-<p>To update the database (for example, after you install a new module or update an existing module), use the following command:</p>
-
-<pre><code>php index.php update
-</code></pre>
-
-<h3 id="instgde-cli-maint-configphp">Maintenance mode</h3>
-<p>Magento uses <em>maintenance mode</em> to disable bootstrapping; for example, if your system is being updated or reconfigured. </p>
-
-<p>Magento detects maintenance mode as follows:</p>
-
-<ul>
-  <li>If <code>var/.maintenance.flag</code> does not exist, maintenance mode is off and Magento operates normally.</li>
-  <li>
-    <p>Otherwise, maintenance mode is on unless <code>var/.maintenance.ip</code> exists:</p>
-
-    <p><code>var/.maintenance.ip</code> can contain a list of comma-separated IP addresses. If an entry point is accessed using HTTP and the client IP address corresponds to one of the entries in that list, then maintenance mode is off.</p>
-  </li>
-</ul>
-
-<p>Command usage:</p>
-
-<pre><code>php index.php maintenance [--set=1|0] [--addresses=&lt;list&gt;|none]
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Running <code>php index.php maintenance</code> with no arguments displays the current status.</p></span>
-</div>
-
-<p>For example, to enable maintenance mode:</p>
-
-<pre><code>php index.php maintenance --set=1
-</code></pre>
-
-<p>To enable maintenance mode for all clients except 192.0.2.10:</p>
-
-<pre><code>php index.php maintenance --set=1 --addresses=192.0.2.10
-</code></pre>
-
-<h3 id="instgde-cli-subcommands-uninstall">Uninstall</h3>
-<p>The command discussed in this section does the following:</p>
-
-<ul>
-  <li>Drops and re-creates the database, if the connection settings are present in the deployment configuration (<code>app/etc/config.php</code>). All tables and data are lost because only database is re-created, not the tables.</li>
-  <li>Deletes the contents of the <code>var</code> and <code>pub/static</code> directories, skipping paths that start with <code>.</code> (period).</li>
-  <li>Deletes the deployment configuration, <code>app/etc/config.php</code></li>
-</ul>
-
-<p>To perform the preceding tasks, enter the following command:</p>
-
-<pre><code>php index.php uninstall
-</code></pre>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
 </ul>
 
 
@@ -517,11 +600,31 @@ Examples:
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
 						
 								
 								
@@ -668,6 +771,14 @@ Examples:
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

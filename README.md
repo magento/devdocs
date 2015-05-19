@@ -1,7 +1,7 @@
 Magento Developer Documentation 
 =================================
 
-Welcome! This site contains the latest Magento developer documentation for the developer beta release.
+Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.0 releases.
 
 To contribute, please fork the develop branch. We won't accept pull requests into master.
 

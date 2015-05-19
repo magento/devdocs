@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>JavaScript in a responsive design</title>
+	<title>JavaScript in Magento responsive design</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -63,7 +63,7 @@
    <div id="subnav">
       <ul class="menu nav">
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
@@ -74,6 +74,7 @@
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -93,9 +94,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -138,7 +139,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">JavaScript in a responsive design</h1>
+		<h1 class="page-heading">JavaScript in Magento responsive design</h1>
 			
 			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -149,117 +150,89 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>To enable pages to load, we excluded JavaScript from the page head block and integrated the Magento system with <a href="http://requirejs.org/" target="_blank">RequireJS</a>. RequireJS uses asynchronous loading to decrease page load time and enables you to specify dependencies between JavaScript resources in your responsive theme.</p>
+		<h2>Overview</h2>
 
-<p>For an example of how to include JavaScript in your responsive theme, see <!-- <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/bootstrap.js" target="_blank">bootstrap.js</a>--> bootstrap.js.</p>
+<p>This topic describes the JavaScript used in Magento default Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.</p>
 
-<p>The Blank theme uses the following JavaScript to responsively relocate page elements by viewport:</p>
+<h2>Scripts general overview</h2>
 
+<p>The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:</p>
+
+<ul>
+<li><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
+<li><a href="https://github.com/magento/magento2/blob/develop//lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
+
+<li><a href="https://github.com/paulirish/matchMedia.js/" target="_blank"><code>matchMedia.js</code></a>, used by <code>responsive.js</code> and <code>menu.js</code></li>
+</ul>
+
+<p>The script files are located in the file system as follows:</p>
 <pre>
 ├── app/design/frontend/Magento/blank/web/js/
     ├── responsive.js
-    ├── navigation-menu.js
 ├── lib/web/
-    ├── matchMedia.js</pre>
+    ├── matchMedia.js
+    ├── mage/
+	    ├── menu.js
+</pre>
 
-<p>See one of the following sections for more information</p>
+<p>See one of the following sections for more information:</p>
 
 <ul>
-  <li><a href="#fedg_rwd_js_matchmedia">matchMedia.js</a></li>
   <li><a href="#fedg_rwd_js_resp">responsive.js</a></li>
-  <li><a href="#fedg_rwd_js_nav">navigation-menu.js</a></li>
+  <li><a href="#fedg_rwd_js_nav">menu.js</a></li>
 </ul>
-
-<h2 id="fedg_rwd_js_matchmedia">matchMedia.js</h2>
-
-<p><a href="https://github.com/magento/magento2/blob/master/lib/web/matchMedia.js" target="_blank">matchMedia.js</a> enables you to manipulate JavaScript for the desktop or mobile viewports. In the Blank theme, <code>responsive.js</code> toggles the behavior when the screen size reaches the breakpoint of 768px.</p>
-
-<p><code>matchMedia.js</code> can be used in any theme.</p>
 
 <h2 id="fedg_rwd_js_resp">responsive.js</h2>
 
-<p><a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank">responsive.js</a> implements specific responsive functions for the Blank theme. This file also contains a call of the <code>mediaCheck</code> anonymous function from <code>matchMedia.js</code>, which is responsible for reaching breakpoints.</p>
+<p>The <code>responsive.js</code> script implements specific responsive functions for the Blank and Luma themes. To manipulate JavaScript for the desktop or mobile view, <code>responsive.js</code> calls the <code>mediaCheck()</code> anonymous function from <code>matchMedia.js</code>.</p>
 
-<p>The <code>mediaCheck</code> call follows:</p>
+<p>The <code>mediaCheck</code> call looks as follows:</p>
 
-<script src="https://gist.github.com/xcomSteveJohnson/16b30d482f0512f88d89.js"></script>
+<pre>
+ /*...*/
+    mediaCheck({
+        media: '(min-width: 768px)',
+        // Switch to Desktop Version
+        entry: function () {
+            /* The function that toggles page elements from desktop to mobile mode is called here */
+        },
+        // Switch to Mobile Version
+        exit: function () {
+            /* The function that toggles page elements from mobile to desktop mode is called here*/
+        }
+    }); /*...*/
 
-<p>In <code>responsive.js</code>, you can see how the following elements are toggled from the mobile to the desktop version.</p>
+</pre>
 
+<p>For example, <code>responsive.js</code> changes the view of the checkout progress block on the checkout page:</p>
 <ul>
-  <li>
-    <p>The link to the shopping cart: For the desktop viewport, clicking the link runs JavaScript and opens the mini shopping cart list (a drop-down list that contains links to customer’s items in the shopping cart).</p>
-
-    <p>For the mobile viewport, clicking the link opens the shopping cart page.</p>
-
-    <p>The behavior of the same block in the desktop and mobile viewports results from separate JavaScript widgets that are responsible for managing the block’s behavior based on the viewport.</p>
-
-    <p>With the specified breakpoint, <code>matchMedia.js</code> controls which JavaScript widget is applied to the block when the screen size is a desktop or a mobile device.</p>
-  </li>
-  <li>
-    <p>Checkout progress: For the mobile viewport, the checkout progress block on the checkout page is moved by CSS to be displayed under the checkout steps, and it becomes a toggled block by means of JavaScript. By default, the checkout progress information is hidden in the “Your Checkout Progress” section and it becomes visible after you click it.</p>
-  </li>
-  <li>
-    <p>Product image zoom on product page: This element is switched off for the mobile viewport and is switched on for the desktop viewport.</p>
-  </li>
+ <li>For the desktop view, the checkout progress block is permanently displayed on the left-hand side.</li>
+<li>For the mobile view, it is moved by CSS to be displayed under the checkout steps. <code>responsive.js</code> makes it a toggled block: by default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it is visible after you click it.</li>
 </ul>
 
-<p>A sample checkout page follows:</p>
+<h2 id="fedg_rwd_js_nav">menu.js</h2>
 
-<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_js_checkout-progress.png" alt="In a mobile viewport, checkout progress displays following the checkout steps." /></p>
-
-<h2 id="fedg_rwd_js_nav">navigation-menu.js</h2>
-
-<p>Responsible for rearranging navigation and header links for the desktop and mobile viewports. See one of the following sections for more information:</p>
-
+<p>In a mobile view, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way: </p>
 <ul>
-  <li><a href="#fedg_rwd_js_nav_mobile">Mobile navigation</a></li>
-  <li><a href="#fedg_rwd_js_nav_desktop">Desktop navigation</a></li>
+<li>Category menu items are not displayed, but are accessible after clicking the menu icon.</li>
+<li>The behavior of a category link depends on whether the category has sub-categories:
+<ul>
+<li>If sub-categories exist, the category link behaves as collapsible block. Clicking a category link does not redirect to the category page immediately. Instead it opens a list of sub-categories, including the <b>All category products</b> option. </li>
+<li>If there are no sub-categories, the category link behaves as usual.</li>
+</ul>
+</li>
 </ul>
 
-<h3 id="fedg_rwd_js_nav_mobile">Mobile navigation</h3>
+<p>The following image illustrates the mobile-view navigation menu.</p>
 
-<p>In a mobile viewport, <a href="https://github.com/magento/magento2/blob/master/app/design/frontend/Magento/blank/web/js/navigation-menu.js" target="_blank">navigation-menu.js</a> copies the existing navigation menu <code>&lt;nav class="navigation"&gt;</code>, moves it from the desktop position in the page source code, and inserts it before the global wrapping tag <code>&lt;div class="page wrapper"&gt;</code>.</p>
+<p><img style="border: 1px solid #ABABAB" src="/pages/Magento/devdocs_internal/common/images/js_rwd_menu.png" /></p>
 
-<p><code>navigation-menu.js</code> also adds the links (<strong>Sign in</strong>, <strong>Register</strong>, and so on) and the Settings block (language switcher, currency switcher) to the Mobile navigation.</p>
+<h2 id="rwd_js_reuse">Re-using Magento scripts in your theme</h2>
 
-<p>The Mobile navigation moves left and it slides from the left side when the navigation menu button is clicked.</p>
+<p>You can use the <code>menu.js</code>, <code>responsive.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom theme. 
+If your theme inherits from Blank or Luma, you do not even need to additionally include the script files in your theme.</p>
 
-<p>Sample HTML:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/6e00b3139e039bf8c966.js"></script>
-
-<p>Sample of how it might look:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_js_nav_mobile.png" alt="In a mobile viewport, navigation displays on the left." /></p>
-
-<h3 id="fedg_rwd_js_nav_desktop">Desktop navigation</h3>
-
-<p>In a desktop viewport, the script returns the default elements sequence in the source code:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/eadce4824923cf19f412.js"></script>
-
-<p>Sample of how it might look:</p>
-
-<p><img src="/pages/Magento/devdocs_internal/common/images/rwd_js_nav_desktop.png" alt="In a desktop viewport, navigation displays at the top." /></p>
-
-<h2 id="fedg_rwd_include-js">Include JavaScript files in a responsive theme</h2>
-
-<p>The Blank theme layout file, <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank">app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml</a>, already has <code>responsive.js</code>, <code>navigation-menu.js</code>, and <code>matchMedia.js</code> included.</p>
-
-<p>When you add a new theme, you include them in your responsive theme layout as follows:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/1f24ae464c0f1727899a.js"></script>
-
-<h4 id="related-topics">Related topics:</h4>
-
-<ul>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
-</ul>
-
+<p>If your theme does not inherit from Blank or Luma, to be able to use the scripts, you must configure RequireJS for your theme.</p>
 
 
 		</div>
@@ -480,9 +453,6 @@
 									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
 									
 								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-overview.html">Cascading style sheets (CSS)</a></li>
-									
-								
 								
 								
 							
@@ -497,15 +467,11 @@
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/theme-ui-lib.html">Magento UI library</a></li>
-						
-								
-							
 									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/ZZZ-ignore/css-practice.html">Customizing styles illustration</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
 						
 								
 							
@@ -533,7 +499,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">Responsive web design</a></li>
+									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
 									
 								
 								
@@ -542,19 +508,19 @@
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_blocks.html">Blocks in a responsive design</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in a responsive design</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in Magento responsive design</a></li>
 						
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in a responsive design</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/theme-best-practices.html">Theme design best practices</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
 						
 								
 								
@@ -614,33 +580,16 @@
 						
 
 					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

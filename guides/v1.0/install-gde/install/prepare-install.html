@@ -63,7 +63,7 @@
    <div id="subnav">
       <ul class="menu nav">
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
@@ -74,6 +74,7 @@
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -93,9 +94,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -219,7 +220,7 @@
     <pre><code>su - apache
 </code></pre>
 
-    <p>If the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.</p>
+    <p>If you don’t know the user’s password or if the following error displays, continue with the next step; otherwise, continue with <a href="install-composer-install">Running Composer to update dependencies</a>.</p>
 
     <pre><code>This account is currently not available.
 </code></pre>
@@ -227,7 +228,7 @@
   <li>
     <p>To give <code>apache</code> a valid shell account so you can switch to it, enter the following command:</p>
 
-    <pre><code>sudo chsh -s /bin/bash apache
+    <pre><code>sudo chsh -s /bin/bash apache &amp;&amp; sudo passwd apache
 </code></pre>
   </li>
   <li>
@@ -248,9 +249,16 @@
 <ol>
   <li>Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>.</li>
   <li>
-    <p>Change to the Magento installation directory and run <code>composer install</code>. For example,</p>
+    <p>Change to the Magento installation directory and run <code>composer install</code>. Examples:</p>
+
+    <p>CentOS:</p>
 
     <pre><code>cd /var/www/html/magento2 &amp;&amp; composer install
+</code></pre>
+
+    <p>Ubuntu:</p>
+
+    <pre><code>cd /var/www/magento2 &amp;&amp; composer install
 </code></pre>
 
     <p>This command updates package dependencies and can take a few minutes to complete.</p>
@@ -494,11 +502,31 @@
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
 						
 								
 								
@@ -645,6 +673,14 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

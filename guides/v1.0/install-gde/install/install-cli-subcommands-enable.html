@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable and disable modules</title>
+	<title>Enable or disable modules</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -63,7 +63,7 @@
    <div id="subnav">
       <ul class="menu nav">
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
@@ -74,6 +74,7 @@
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -93,9 +94,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -138,7 +139,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Enable and disable modules</h1>
+		<h1 class="page-heading">Enable or disable modules</h1>
 			
 			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/install-gde/install/install-cli-subcommands-enable.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -153,40 +154,68 @@
 
 <ul>
   <li><a href="#instgde-cli-subcommands-enable-disable">Module enable, disable</a></li>
+  <li><a href="#instgde-cli-subcommands-enable-disable-prereq">Prerequisites</a></li>
   <li><a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a></li>
 </ul>
 
-<h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
-<p>To enable or disable currently installed modules, use the following command:</p>
+<h2 id="instgde-cli-before">First steps</h2>
+<p>First steps:</p>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>Change to the following directory:<br />
+<pre>cd &lt;your Magento install dir&gt;/bin</pre>
+Examples:
+<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
+<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
+</ul>
+</li>
+</ol>
+<p>In addition to the arguments discussed in this topic, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<pre><code>php index.php {module-enable|module-disable} {--modules="&lt;list&gt;"} [--force]
+<h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
+<p>This command has no prerequisites.</p>
+
+<h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
+<p>To enable or disable available modules, use the following command:</p>
+
+<pre><code>php magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
+php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
 </code></pre>
+
+<p>where</p>
+
+<ul>
+  <li><code>&lt;module-list&gt;</code> is a space-delimited list of modules to enable or disable. If any module name contains special characters, enclose the name in either single or double quotes.</li>
+  <li><code>--all</code> to enable or disable all modules at the same time.</li>
+  <li><code>-f</code> or <code>--force</code> to force a module to be enabled or disabled despite dependencies. Before you use this option, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</li>
+  <li>
+    <p><code>-c</code> or <code>--clear-static-content</code> clears generated static view files after enabling or disabling modules. </p>
+
+    <p>Failure to clear static view files might result in issues if there are multiple files with the same name and you don’t clear all of them. </p>
+
+    <p>In other words, because of <a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/view/static-process.html">static file fallback</a> rules, if you do not clear static files and there is more than one file named <code>logo.gif</code> that are different, fallback might cause the wrong file to display.</p>
+  </li>
+</ul>
 
 <p>Use the following command to list enabled and disabled modules:</p>
 
-<pre><code>php index.php help module-list
+<pre><code>php magento module:status
 </code></pre>
 
 <p>For example, to disable the Weee module, enter:</p>
 
-<pre><code>php index.php module-disable --modules=Magento_Weee
+<pre><code>php magento module:disable Magento_Weee
 </code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>To enable or disable more than one module at a time, enter module names as a comma-separated list (no spaces).</p></span>
-</div>
 
 <p>For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p>
 
 <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
 <p>If you enabled one or more modules, run the following command to update the database:</p>
 
-<pre><code>php index.php update
+<pre><code>php magento setup:upgrade
 </code></pre>
 
 <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
-<p>Magento enables you to enable or disable currently installed modules; in other words, any Magento-provided module or any third-party module you currently have installed.</p>
+<p>Magento enables you to enable or disable currently available modules; in other words, any Magento-provided module or any third-party module you that is currently available.</p>
 <p>Certain modules have dependencies on other modules, in which case you might not be able to enable or disable a module because it has dependencies on other modules. </p>
 <p>In addition, there might be <em>conflicting</em> modules that cannot both be enabled at the same time.</p>
 <p>Examples:</p>
@@ -212,10 +241,15 @@
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
 </ul>
 
 
@@ -439,11 +473,31 @@
 						
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
 						
 								
 								
@@ -590,6 +644,14 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

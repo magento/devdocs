@@ -63,7 +63,7 @@
    <div id="subnav">
       <ul class="menu nav">
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
@@ -74,6 +74,7 @@
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -93,9 +94,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -155,16 +156,14 @@
 
 <ul>
   <li><a href="#instgde-install-cli-prereq">Before you start your installation</a></li>
-  <li><a href="#instgde-install-cli-first">First steps</a></li>
-  <li><a href="#instgde-install-cli-magento">Installing the Magento software from the command line</a></li>
-  <li><a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
-  <li><a href="#instgde-install-magento-update">Updating the Magento software</a></li>
-  <li><a href="#instgde-install-magento-reinstall">Reinstalling the Magento software</a></li>
+  <li><a href="#instgde-install-cli-magento">Install the Magento software from the command line</a></li>
 </ul>
 
-<div class="bs-callout bs-callout-warning">
+<p>See also <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This topic discusses important information that affects you if you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later. For more information, see <a href="#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>.</p></span>
+  <p>If you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-updatebeta11">this section</a>.</p></span>
 </div>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
@@ -172,7 +171,7 @@
 <p>Before you begin, make sure that:</p>
 
 <ol>
-  <li>Your system meets the requirements discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
+  <li>Your system meets the requirements discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a>.</li>
   <li>You completed all prerequisite tasks discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
   <li>You installed Composer and cloned the Magento GitHub repository as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.</li>
   <li>After you log in to the Magento server, switch to the web server user as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li>
@@ -181,7 +180,7 @@
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
+  <p>You must install Magento from its <code>bin</code> subdirectory.</p></span>
 </div>
 
 <p>The installer is designed to be run multiple times if necessary so you can:</p>
@@ -198,31 +197,31 @@
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>clean_database</code> parameter to change this behavior.</li>
+  <ul><li>By default, the installer doesn't overwrite the Magento database if you install the Magento software in the same database instance. You can use the optional <code>cleanup-database</code> parameter to change this behavior.</li>
   <li>If you get errors during the installation, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting</a>.</li></ul></span>
 </div>
 
 <h2 id="instgde-cli-help-cmds">Installer help commands</h2>
 
-<p>Optionally run the following commands to find values for some required options:</p>
+<p>You can run the following commands to find values for some required arguments:</p>
 
 <table>
 <tbody>
 	<tr>
-		<th>Installer option</th>
+		<th>Installer argument</th>
 		<th>Command</th>
 	</tr>
 <tr>
 	<td>Language</td>
-	<td><code>php -f index.php help language</code></td>
-</tr>
-<tr>
-	<td>Time zone</td>
-	<td><code>php -f index.php help timezone</code></td>
+	<td><code>php magento info:language:list</code></td>
 </tr>
 <tr>
 	<td>Currency</td>
-	<td><code>php -f index.php help currency</code></td>
+	<td><code>php magento info:currency:list</code></td>
+</tr>
+<tr>
+	<td>Time zone</td>
+	<td><code>php  magento info:timezone:list</code></td>
 </tr>
 </tbody>
 </table>
@@ -232,15 +231,22 @@
   <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
 
-<h2 id="instgde-install-cli-magento">Installing the Magento software from the command line</h2>
+<h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
 <p>The format of the install command follows:</p>
 
-<pre><code>php -f index.php install --&lt;installation option name&gt;=&lt;installation option value&gt; ...
+<pre><code>php magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
 </code></pre>
 
-<p>The following table discusses the meanings of installation option names and values. An example is provided in <a href="#install-cli-example">Sample localhost installation</a>.</p>
+<p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
 
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Any options that contain spaces or special characters must be enclosed in either single or double quotes.</p></span>
+</div>
 <table>
+	<col width="35%" />
+	<col width="55" />
+	<col width="10%" />
 	<tbody>
 		<tr>
 			<th>Name</th>
@@ -248,164 +254,179 @@
 			<th>Required?</th>
 		</tr>
 		<tr>
-		<td>base_url</td>
+		<td><p>--base-url</p></td>
 		<td><p>Base URL to use to access your Magento Admin and storefront in the format <code>http[s]://&lt;host or ip&gt;/&lt;your Magento install dir&gt;/</code>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><code>&lt;your Magento install dir&gt;</code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://localhost/&lt;your Magento install dir&gt;/</code> or <code>http://localhost/&lt;your Magento install dir&gt;/</code>.</p>
+		<p>To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir&gt;/</code> or <code>http://127.0.0.1/&lt;your Magento install dir&gt;/</code>.</p>
 		</td>
-		<td>Yes</td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>backend_frontname</td>
-		<td>Path to access the Magento Admin. This path is appended to Base URL.
-For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</td>
-		<td>Yes</td>
+		<td><p>--backend-frontname</p></td>
+		<td><p>Path to access the Magento Admin. This path is appended to base URL. Default is <code>admin</code>. 
+For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_host</td>
+		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> if your database serve is on the same host as your web server.</li>
+		<li><code>localhost</code> )default) if your database server ison the same host as your web server.</li>
 		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>
-		<td>Yes</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_name</td>
-		<td>Name of the Magento database instance in which you want to install the Magento database tables.</td>
-		<td>Yes</td>
+		<td><p>--db-name</p></td>
+		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
+			<p>Default is <code>magento2</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_user</td>
-		<td>User name of the Magento database instance owner.</td>
-		<td>Yes</td>
+		<td><p>--db-user</p></td>
+		<td><p>User name of the Magento database instance owner.</p>
+			<p>Default is <code>root</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_pass</td>
-		<td>Magento database instance owner's password.</td>
-		<td>No</td>
+		<td><p>--db-password</p></td>
+		<td><p>Magento database instance owner's password.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_prefix</td>
+		<td><p>--db-prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
-		<td>No</td>
-	</tr>
-
-		<td>admin_firstname</td>
-		<td>Magento administrator user's first name.</td>
-		<td>Yes</td>
-	
-	<tr>
-		<td>admin_lastname</td>
-		<td>Magento administrator user's last name.</td>
-		<td>Yes</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>admin_email</td>
-		<td>Magento administrator user's e-mail address.</td>
-		<td>Yes</td>
+		<td><p>--admin-firstname</p></td>
+		<td><p>Magento administrator user's first name.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>admin_username</td>
-		<td>Magento administrator user name.</td>
-		<td>Yes</td>
+		<td><p>--admin-lastname</p></td>
+		<td><p>Magento administrator user's last name.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>admin_password</td>
-		<td>Magento administrator user password.</td>
-		<td>Yes</td>
+		<td><p>--admin-email</p></td>
+		<td><p>Magento administrator user's e-mail address.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>language</td>
-		<td>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php -f index.php help language</code> from the <code>setup</code> directory.)</td>
-		<td>Yes</td>
+		<td><p>--admin-user</p></td>
+		<td><p>Magento administrator user name.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>currency</td>
-		<td>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php -f index.php help currency</code> from the <code>setup</code> directory.)</td>
-		<td>Yes</td>
+		<td><p>--admin_password</p></td>
+		<td><p>Magento administrator user password.</p>
+			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>timezone</td>
-		<td>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php -f index.php help timezone</code> from the <code>setup</code> directory.)</td>
-		<td>Yes</td>
+		<td><p>--language</p></td>
+		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td>use_secure</td>
+		<td><p>--currency</p></td>
+		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--timezone</p></td>
+		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--use-rewrites</p></td>
+		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
+		<p><code>0</code> disables the use of web server rewrites.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>--use-secure</p></td>
 		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>.</p></td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>base_secure_url</td>
+		<td><p>--base-url-secure</p></td>
 		<td><p><code>1</code> means SSL is preferred in Magento URLs designed to use it (for example, the checkout page). Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> means SSL is not used.</p></td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
 
 	<tr>
-		<td>use_secure_admin</td>
+		<td><p>--use-secure-admin</p></td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> means you do not use SSL with the Admin.</p></td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>admin_use_security_key</td>
+		<td><p>--admin-use-security-key</p></td>
 		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>.</p>
 		<p><code>0</code> disables the use of the key.</p></td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
-	<tr> 
-		<td>enable_modules=&lt;list&gt;}</td>
-		<td><p>Enable modules that are installed but disabled where <code>&lt;list&gt;</code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+	<!-- <tr> 
+		<td>enable_modules=&lt;list>}</td>
+		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>To enable and disable modules after installing Magento, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
 		<p>For important information about module dependencies, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
 		<td>No</td>
 	</tr>
 	<tr>
-		<td>disable_modules=&lt;list&gt;}</td>
-		<td><p>Disable modules that are installed and enabled where <code>&lt;list&gt;</code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
+		<td>disable_modules=&lt;list>}</td>
+		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>To enable and disable modules after installing Magento, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
 		<p>For important information about module dependencies, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
-	</tr>
+	</tr> -->
 	<tr>
-		<td>session_save</td>
+		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
-		<li><code>db.files</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li></ul></td>
-		<td>No</td>
+		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li></ul></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>key</td>
-		<td>If you have one, specify a key to encrypt sensitive data in the Magento database. (This includes passwords and personally identifiable customer information.) If you don't have one, Magento generates one for you.</td>
-		<td>No</td>
+		<td><p>--key</p></td>
+		<td><p>If you have one, specify a key to encrypt personally identifiable data in the Magento database. If you don't have one, Magento generates one for you.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>use_sample_data</td>
-		<td><p><code>1</code> installs optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, products, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
+		<td><p>--use-sample-data</p></td>
+		<td><p>Use this parameter to install optional Magento sample data. Magento sample data uses the Luma theme to provide you with a sample storefront, complete with products, customers, CMS pages, and so on. You can use it to get the feel of a Magento storefront.</p>
 		<p>Sample data installs only if you already enabled the package as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></p>.</td>
-		<td>No</td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>cleanup_database</td>
-		<td>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</td>
-		<td>No</td>
+		<td><p>--cleanup-database</p></td>
+		<td><p>To drop database tables before installing the Magento software, specify this parameter without a value. Otherwise, the Magento database is left intact.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>db_init_statements</td>
-		<td>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</td>
-		<td>No</td>
+		<td><p>--db-init-statements</p></td>
+		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database. Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p>
+			<p>Default is <code>SET NAMES utf8;</code>.</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td>sales_order_increment_prefix</td>
-		<td>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</td>
-		<td>No</td>
+		<td><p>--sales-order-increment-prefix</p></td>
+		<td><p>Specify a string value to use as a prefix for sales orders. Typically, this is used to guarantee unique order numbers for payment processors.</p></td>
+		<td><p>No</p></td>
 	</tr>
+	<!-- <tr>
+		<td><p>--definition_format</p></td>
+		<td><p>Type of definitions used by the Object Manager. Possible values are <a href="https://github.com/phadej/igbinary" target="_blank"><code>igbinary</code></a> or <code>serialized</code>.</p></td>
+		<td><p>No</p></td>
+	</tr> -->
 
 	</tbody>
 </table>
@@ -415,7 +436,9 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <p>To enable or disable modules after installing Magento, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p></span>
 </div>
 
-<h4 id="install-cli-example">Sample localhost installation</h4>
+<h4 id="install-cli-example">Sample localhost installations</h4>
+
+<p><strong>Example 1</strong></p>
 
 <p>The following example installs Magento with the following options:</p>
 
@@ -423,7 +446,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <li>
     <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
 
-    <p>Your storefront URL is <code>http://localhost</code> and you can access the Magento Admin at <code>http://localhost/admin</code></p>
+    <p>Your storefront URL is <code>http://127.0.0.1</code> and you can access the Magento Admin at <code>http://127.0.0.1/admin</code></p>
   </li>
   <li>
     <p>The database server is on the same host as the web server.</p>
@@ -437,8 +460,8 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
     <p>The Magento administrator has the following properties:</p>
 
     <ul>
-      <li>First and last name are is <code>Magento User</code></li>
-      <li>User name is <code>admin</code> and the password is <code>iamtheadmin</code></li>
+      <li>First and last name are <code>Magento User</code></li>
+      <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
       <li>E-mail address is <code>user@example.com</code></li>
     </ul>
   </li>
@@ -447,12 +470,55 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <li>
     <p>Default time zone is U.S. Central (America/Chicago)</p>
 
-    <pre><code>php -f index.php install --base_url=http://localhost/magento2/ \
---backend_frontname=admin \
---db_host=localhost --db_name=magento --db_user=magento --db_pass=magento \
---admin_firstname=Magento --admin_lastname=User --admin_email=user@example.com \
---admin_username=admin --admin_password=iamtheadmin --language=en_US \
---currency=USD --timezone=America/Chicago
+    <pre><code>php bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--backend-frontname=admin \
+--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin_password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --use-sample-data
+</code></pre>
+  </li>
+</ul>
+
+<p><strong>Example 2</strong> (with additional options)</p>
+
+<p>The following example installs Magento with the following options:</p>
+
+<ul>
+  <li>
+    <p>The Magento software is installed in the <code>magento2</code> directory relative to the web server docroot on <code>localhost</code> and the path to the Magento Admin is <code>admin</code>; therefore:</p>
+
+    <p>Your storefront URL is <code>http://127.0.0.1</code> and you can access the Magento Admin at <code>http://127.0.0.1/admin</code></p>
+  </li>
+  <li>
+    <p>The database server is on the same host as the web server.</p>
+
+    <p>The database name is <code>magento</code>, and the user name and password are both <code>magento</code></p>
+  </li>
+  <li>
+    <p>The Magento administrator has the following properties:</p>
+
+    <ul>
+      <li>First and last name are is <code>Magento User</code></li>
+      <li>User name is <code>admin</code> and the password is <code>admin123</code></li>
+      <li>E-mail address is <code>user@example.com</code></li>
+    </ul>
+  </li>
+  <li>Default language is <code>en_US</code> (U.S. English)</li>
+  <li>Default currency is U.S. dollars</li>
+  <li>Default time zone is U.S. Central (America/Chicago)</li>
+  <li>The installer first cleans up the database before installing the tables and schema</li>
+  <li>You use a sales order increment prefix <code>ORD$</code> and because it contains a special character (<code>$</code>), the value must be enclosed in double quotes</li>
+  <li>
+    <p>Session data is saved in the database</p>
+
+    <pre><code>php bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
+--backend-frontname=admin --db-host=localhost --db-name=magento \
+--db-user=magento --db-password=magento \
+--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+--admin-user=admin --admin_password=admin123 --language=en_US \
+--currency=USD --timezone=America/Chicago --cleanup-database \
+--sales-order-increment-prefix="ORD$" --session-save=db
 </code></pre>
   </li>
 </ul>
@@ -462,190 +528,12 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
   <p>The command must be entered either on a single line or, as in the preceding example, with a <code>\</code> character at the end of each line.</p></span>
 </div>
 
-<h2 id="instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
-<p>This section applies to you in the following situation only:</p>
-
-<ul>
-  <li>You currently have version 0.42.0-beta10 or earlier</li>
-  <li>You’re updating to version 0.42.0-beta11 or later</li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
-</div>
-
-<p>To determine the versions:</p>
-
-<ul>
-  <li>Your version: View <code>&lt;your Magento install dir&gt;/CHANGELOG.md</code> in a text editor.</li>
-  <li>Current version: Look at the Magento 2 <a href="https://github.com/magento/magento2/blob/develop/CHANGELOG.md" target="_blank">changelog</a> on GitHub.</li>
-</ul>
-
-<h3 id="instgde-install-magento-updatebeta11-why">Why must I uninstall?</h3>
-<p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
-<ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
-<li>Resources in the table are replaced by module names. For example, <code>catalog_setup</code> is now <code>Magento_Catalog</code>, which exactly matches the module name. </li>
-<li>The following fields in the <code>setup_module</code> table have new names:
-<ul><li><code>code</code> is now <code>module</code></li>
-<li><code>version</code> is now <code>schema_version</code></li></ul>
-</li>
-</ul>
-<p>Old way:</p>
-<pre>	code                     | version   | data_version|
-	-----------------------------------------------------------
-	catalog_setup            | 2.0.0     | 2.0.0   
-	checkoutagreements_setup | 2.0.0     | 2.0.0   
-	checkout_setup           | 2.0.0     | 2.0.0   
-	cms_setup                | 2.0.0.1   | 2.0.0.1 </pre>
-<p>New way:</p>
-
-<pre>	module                       | schema_version        | data_version|
-	------------------------------------------------------------------------
-	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
-	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
-	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
-	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
-	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0</pre>
-
-<h3 id="instgde-install-magento-updatebeta11-how">How to update the Magento software</h3>
-<p>To update the Magento software to 0.42.0-beta11 or later from version beta10 or earlier:</p>
-
-<ol>
-  <li>
-    <p>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</p>
-  </li>
-  <li>
-    <p>Change to the following directory:</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;/setup
-</code></pre>
-  </li>
-  <li>
-    <p>Uninstall the Magento software and change to your Magento installation directory:</p>
-
-    <pre><code>php index.php uninstall &amp;&amp; cd ..
-</code></pre>
-  </li>
-  <li>
-    <p>Update the Magento code:</p>
-
-    <pre><code>git pull origin develop
-</code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
-</div>
-  </li>
-  <li>
-    <p>Run Composer:</p>
-
-    <pre><code>composer install
-</code></pre>
-  </li>
-  <li>
-    <p>Install the Magento software:</p>
-
-    <ul>
-      <li><a href="#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="instgde-install-magento-update">Updating the Magento software</h2>
-<p>This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.</p>
-
-<p>You might do this in an development environment especially to get all the latest code changes.</p>
-
-<p>To update the Magento software:</p>
-
-<ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
-  <li>
-    <p>Save any changes you made to <code>composer.json</code> because the following steps will overwrite it:</p>
-
-    <pre><code> cd &lt;your Magento install dir&gt;
- cp composer.json composer.json.old
-</code></pre>
-  </li>
-  <li>
-    <p>If you previously installed the optional sample data, enter the following command:</p>
-
-    <pre><code>rm -rf dev/tools/Magento/Tools/SampleData/
-</code></pre>
-  </li>
-  <li>
-    <p>Update your local repository to get the latest code:</p>
-
-    <pre><code>git pull origin develop
-</code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
-</div>
-  </li>
-  <li>
-    <p>Restore your previous <code>composer.json</code> and update dependencies:</p>
-
-    <pre><code>cp composer.json.old composer.json &amp;&amp; composer update
-</code></pre>
-  </li>
-  <li>
-    <p>Update the Magento database.</p>
-
-    <pre><code>cd setup
-php -f index.php update
-</code></pre>
-  </li>
-  <li>
-    <p><em>Optional</em>. To change installation options, repeat the tasks discussed in:</p>
-
-    <ul>
-      <li><a href="#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="instgde-install-magento-reinstall">Reinstalling the Magento software</h2>
-<p>This section discusses how to uninstall and then reinstall the Magento software. </p>
-
-<p>To reinstall the Magento software:</p>
-
-<ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;
-git pull origin develop
-php setup/index.php uninstall
-</code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </p></span>
-</div>
-  </li>
-  <li>
-    <p>Install the Magento software:</p>
-
-    <ul>
-      <li><a href="#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
-
 <h4 id="next-steps">Next steps</h4>
 
 <ul>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/verify.html">Verify the installation</a>.</li>
   <li>To install optional Magento sample data (sample store, products, customers, and so on), see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</li>
 </ul>
-
 
 
 		</div>
@@ -868,11 +756,31 @@ php setup/index.php uninstall
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
 						
 								
 								
@@ -1019,6 +927,14 @@ php setup/index.php uninstall
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

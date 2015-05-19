@@ -63,7 +63,7 @@
    <div id="subnav">
       <ul class="menu nav">
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
@@ -74,6 +74,7 @@
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -93,9 +94,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -160,7 +161,7 @@
   <li><a href="#dep-inj-mod-class">Class definitions</a></li>
   <li><a href="#dep-inj-mod-type">Type configurations</a></li>
   <li><a href="#dep-inj-mod-type-life-mgmt">Lifecycle management</a></li>
-  <li><a href="#dep-inj-compile">Definition compiler tool</a></li>
+  <li><a href="#dep-inj-compile">Compiler tool</a></li>
 </ul>
 
 <h2 id="dep-inj-intro">Overview of dependency injection</h2>
@@ -287,7 +288,7 @@
 <h2 id="dep-inj-mod-class">Class definitions</h2>
 <p>Magento uses class constructor signatures, not doc-block annotations, to retrieve information about class dependencies; that is, to define what dependencies are to be passed to an object.</p>
 
-<p>Magento reads constructors using reflection and we recommend you use the Magento <a href="#dep-inj-compile">definition compiler tool</a> to pre-compile class definitions for better performance.</p>
+<p>Magento reads constructors using reflection. We recommend you use the <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">single-store compiler tool</a> or the <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-store compiler tool</a> to pre-compile class definitions for better performance.</p>
 
 <p>The parameters specified for a class type are inherited by its descendant classes.</p>
 
@@ -580,7 +581,7 @@ Parameters configured for a class type are automatically configured for all of i
 
     <ul>
       <li>Has a transient lifecycle</li>
-      <li>Requires external (such as data user input or data from database) to be properly created</li>
+      <li>Requires external input (such as data user input or data from database) to be properly created</li>
     </ul>
 
     <p>Most models are non-injectable (for example, <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Model/Product.php" target="_blank">Magento\Catalog\Model\Product</a> or <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/User/Model/User.php" target="_blank">Magento\User\Model\User</a>).</p>
@@ -622,157 +623,23 @@ Parameters configured for a class type are automatically configured for all of i
 
 <p>Most factories are simple, so developers do not have to bother with writing them. If a non-existent factory is encountered by object manager in runtime mode or compiler, the object manager generates the factory. </p>
 
-<h2 id="dep-inj-compile">Definition compiler tool</h2>
-<p>By default, class definitions are read using reflection. Because PHP reflection is slow, we created the definition compiler tool. The definition compiler tool performs the following tasks:</p>
+<h2 id="dep-inj-compile">Compiler tool</h2>
+<p>To compile all non-existent proxies and factories; and to pre-compile class definitions, inheritance information, and plugin definitions for multiple stores or websites, see one of the following topics:</p>
 
 <ul>
-  <li>Generates all required factories </li>
-  <li>Generates proxies declared in <code>di.xml</code> files</li>
-  <li>Generate interceptors for all classes that have plug-ins declared in <code>di.xml</code> </li>
-  <li>Automatically compiles definitions for all modules and libraries</li>
-  <li>Compiles class inheritance implementation relations to increase performance of configuration inheritance operations</li>
-  <li>Compiles plug-in definitions (that is, the list of declared public methods)</li>
+  <li>If you have one website and one store, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-store compiler</a></li>
+  <li>If you have multiple websites and stores, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-store compiler</a></li>
 </ul>
-
-<p class="q">Reviewer: Please check the following list.</p>
-
-<p>As a result of running the compiler tool, the following files and directories are created:</p>
-
-<ul>
-  <li>
-    <p><code>&lt;your Magento install dir&gt;/var/generation</code> directory, which contains all generated classes by Magento and modules. </p>
-
-    <p>We use code-generation actively to create service classes (proxies, interceptors, factories, and builders). </p>
-  </li>
-  <li>
-    <p><code>&lt;your Magento install dir&gt;/var/di</code> directory, which contains the following:</p>
-
-    <ul>
-      <li><code>definitions.php</code> for compiled definitions. </li>
-      <li><code>plugins.php</code> for declared public methods in plug-in definitions. </li>
-      <li><code>relations.php</code> for class inheritance implementation relations.</li>
-    </ul>
-  </li>
-</ul>
-
-<p>The preceding files are used by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>.</p>
-
-<p>If you don’t run the compiler tool and if the preceding do not exist, the  slower <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. </p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>We suggest you use the slower runtime object during development but use only the compiled code in production.</p></span>
-</div>
-
-<h3 id="dep-inj-compile-notes">Notes about using the definition compiler tool</h3>
-<div class="bs-callout bs-callout-warning">
-<span class="glyphicon-class">
-  <p>The definition compiler tool does not analyze auto-generated factory classes in files that are located in the <code>&lt;your Magento install dir&gt;lib/internal/Magento</code> directory.</p>
-<p>Do not use auto-generated factory classes at the library level. Such classes must be created manually.</p></span>
-</div>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <ul><li>Declare proxy classes only in `di.xml` (as a preference, as a type for virtualType or as an instance of type parameter)</li>
-  <li>Declare factory classes only in a PHP file's <code>__construct</code> of a class that is located under <code>&lt;your Magento install dir&gt;app/code</code>.</li></ul></span>
-</div>
-
-<p>Naming rules for an auto-generated class named `Some\Module\Name’:</p>
-
-<ul>
-  <li>Proxy Class: <code>Some\Model\Name\Proxy</code></li>
-  <li>Factory Class: <code>Some\Model\NameFactory</code></li>
-</ul>
-
-<h3 id="dep-inj-compile-run">Running the definition compiler tool</h3>
-<p>To run the definition compiler tool:</p>
-
-<ol>
-  <li>Log in to the Magento server as, or <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
-  <li>Change to the <code>[your Magento install dir]/dev/tools/Magento/Tools/Di</code> directory.</li>
-</ol>
-
-<p>Following is the command syntax:</p>
-
-<pre><code>php compiler.php [--serializer &lt;word&gt;] [--verbose|-v] [--extra-classes-file &lt;string&gt;] [--generation &lt;string&gt;] [--di &lt;string&gt;] [--help]
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Use double quotes (") to wrap strings.</p></span>
-</div>
-
-<p>The following table discusses the meanings of the options:</p>
-
-<table>
-	<tbody>
-		<tr>
-			<th>Option</th>
-			<th>Description</th>
-		</tr>
-	<tr>
-		<td>--serializer &lt;word&gt;</td>
-		<td>Serializer function to use <code>serialize</code> or <code>binary</code>. Default is <code>serialize</code>.</td>
-	</tr>
-	<tr>
-		<td>--verbose | v</td>
-		<td>Omit to display errors only. Include to display verbose output (including the generated classes).</td>
-	</tr>
-	<tr>
-		<td>--extra-classes-file &lt;string&gt;</td>
-		<td>Include to specify factories that are not in the code base. For more information, see <a href="#dep-inj-mod">Configuration overview</a>.</td>
-	</tr>
-	<tr>
-		<td>--generation &lt;string&gt;</td>
-		<td>Specify the absolute file system path to generate service classes. Default is <code>&lt;magento_root&gt;/var/di</code>.</td>
-	</tr>
-	<tr>
-		<td>--help</td>
-		<td>Display command help</td>
-	</tr>
-	</tbody>
-</table>
-
-<h4 id="dep-inj-compile-extra">Specifying extra classes</h4>
-<p>To generate proxies and factories not declared in dependency injection or the Magento code base, use the <code>--extra-classes-file</code> parameter to specify the path to a file that contains a list of factories and classes to generate. A sample follows:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-
-<span class="k">return</span> <span class="k">array</span><span class="p">(</span>
-    <span class="s1">&#39;Magento\Core\Model\SomeFactory&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Magento\Core\Model\Some\Proxy&#39;</span>
-<span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<h4 id="dep-inj-compile-sample">Sample commands</h4>
-
-<p><strong>Example 1: Running the definition tool in verbose mode</strong></p>
-
-<pre><code>php compiler.php -v
-</code></pre>
-
-<p>Sample output:</p>
-
-<pre><code>Generated classes:
-    Magento\AdminNotification\Model\FeedFactory
-    Magento\AdminNotification\Model\InboxFactory
-    Magento\Authorization\Model\Acl\Role\GroupFactory
-    Magento\Authorization\Model\Acl\Role\UserFactory
-    Magento\Authorization\Model\Resource\Role\CollectionFactory
-    Magento\Authorization\Model\Resource\Rules\CollectionFactory
-    Magento\Authorization\Model\RoleFactory
-... (more)
-</code></pre>
-
-<p><strong>Example 2: Specifying an alternate path to generated files</strong></p>
-
-<pre><code>php compiler.php --generation "/var/www/magento2/mydir"
-</code></pre>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The user who runs the definition compiler tool must have write access to the directory you specify.</p></span>
-</div>
 
 <h4 id="related-topics">Related topics:</h4>
+
+<ul>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/plugins.html">Plugins</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/routing.html">Routing</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/guides\v1.0\config-guide\bootstrap\magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+</ul>
 
 
 
@@ -865,7 +732,7 @@ Parameters configured for a class type are automatically configured for all of i
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/backward-compatibility.html">Backward compatibiliy</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/composer-integration.html">Composer Integration</a></li>
 						
 								
 								
@@ -941,7 +808,7 @@ Parameters configured for a class type are automatically configured for all of i
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_create_req_config_files.html">Create the required config files (template)</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/package_module.html">Package an extension</a></li>
 						
 								
 							
@@ -949,11 +816,7 @@ Parameters configured for a class type are automatically configured for all of i
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_package_module.html">Package a module (template)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_verify_new_module.html">Verify the new module (template)</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/template_create_req_config_files.html">Create the required config files (template)</a></li>
 						
 								
 								
@@ -990,6 +853,14 @@ Parameters configured for a class type are automatically configured for all of i
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

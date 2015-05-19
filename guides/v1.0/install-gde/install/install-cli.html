@@ -63,7 +63,7 @@
    <div id="subnav">
       <ul class="menu nav">
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/release-notes.html">Get Started</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/bk-get-started-magento.html">Get Started</a>
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
@@ -74,6 +74,7 @@
             <ul class="menu nav">
                <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
             </ul>
          </li>
          <li class="first expanded">
@@ -93,9 +94,9 @@
             </ul>
          </li>
          <li class="first expanded">
-            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor</a>
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html"">Contributor Guide</a></li>
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor Guide</a></li>
             </ul>
          </li>
       </ul>
@@ -154,33 +155,54 @@
 <p>See one of the following sections:</p>
 
 <ul>
+  <li><a href="#new-cli-intro">Introducing the Magento command-line interface (CLI)</a></li>
   <li><a href="#instgde-install-cli-prereq">Before you start your installation</a></li>
   <li><a href="#instgde-install-cli-first">First steps</a></li>
 </ul>
+
+<h2 id="new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
+<p>Magento has one command-line interface that performs both installation and configuration tasks: <code>&lt;your Magento install dir&gt;/bin/magento</code>. The new interface performs multiple tasks, including:</p>
+<ul><li>Installing Magento (and related tasks such as creating or updating the database schema, creating the deployment configuration, and so on)</li>
+	<li>Clearing the cache</li>
+	<li>Managing indexes, including reindexing</li>
+	<li>Creating translation dictionaries and translation packages</li>
+	<li>Generating non-existent classes such as factories and interceptors for plug-ins, generating the dependency injection configuration for the object manager.</li>
+	<li>Deploying static view files</li>
+	<li>Creating CSS from LESS</li></ul>
+<p>Other benefits:</p>
+<ul><li>A single command (php <code>&lt;your Magento install dir&gt;/bin/magento list</code>) lists all available installation and configuration commands</li>
+<li>Consistent user interface based on Symfony</li>
+<li>The CLI is extensible so third party developers can "plug in" to it<br />
+This has the additional benefit of eliminating users' learning curve</li>
+<li>Commands for disabled modules do not display.</li></ul>
+
+<p>This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see TBD.</p>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 <p>Before you begin, make sure that:</p>
 <ol><li>Your system meets the requirements discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
 <li>You completed all prerequisite tasks discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
 <li>You installed Composer and cloned the Magento GitHub repository as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.</li>
-<li>After you log in to the Magento server, switch to the web server user as discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li></ol>
+<li>After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li></ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You must install Magento from its <code>setup</code> subdirectory.</p></span>
-</div>
+<!-- <div class="bs-callout bs-callout-warning">
+	<span class="glyphicon-class">
+		<p>The Magento command-line installer now uses a new syntax. You must install the Magento software from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. </p>
+  		<p>The new syntax replaces <code>setup/php -f index.php</code>.</p></span>
+</div> -->
 
 <h2 id="instgde-install-cli-first">First steps</h2>
 <p>First steps:</p>
-<ol><li>Log in to the Magento server as, or <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
 <li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/setup</pre>
+<pre>cd &lt;your Magento install dir&gt;/bin</pre>
 Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/setup</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/setup</code></li>
+<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
+<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
 </ul>
 </li>
 </ol>
+<p>In addition to the arguments discussed in this topic, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h4 id="next-steps">Next steps</h4>
 
@@ -410,11 +432,31 @@ Examples:
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
 						
 								
 								
@@ -561,6 +603,14 @@ Examples:
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
