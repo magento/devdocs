@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Magento configuration files
-title: Magento's deployment configuration, config.php
-menu_title: Magento's deployment configuration, config.php
+title: Magento's deployment configuration
+menu_title: Magento's deployment configuration
 menu_order: 1
 github_link: config-guide/config/config-php.md
 ---
@@ -11,27 +11,12 @@ github_link: config-guide/config/config-php.md
 
 #### Contents
 
-*  <a href="#config-php-overview">What is config.php?</a>
+*  <a href="#config-php-overview">What is the Magento deployment configuration?</a>
 *  <a href="#config-php-contents">config.php contents</a>
+*  <a href="#env-php-contents">env.php contents</a>
 
-<h2 id="config-php-overview">What is config.php?</h2>
-`<your Magento install dir>/app/etc/config.php` is referred to as Magento's *deployment configuration* because it's created during installation and has information required to start Magento.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>config.php</code> is the replacement for <code>local.xml</code> in earlier Magento versions. It contains a declarative array of configuration values.</p>
-</div>
-
-Unlike other configuration files discussed in <a href="{{ site.gdeurl }}config-guide/config/config-files.html">Module configuration files</a>, `config.php` is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended.
-
-`config.php` includes the following information:
-
-*	Database credentials and connection settings
-*	Cache storage settings 
-*	Enabled cache types
-*	Your encryption key 
-*	Web routing parameters (base URLs, URL path to Magento Admin)
-*	List of enabled modules 
-*	File system paths
+<h2 id="config-php-overview">What is the Magento deployment configuration?</h2>
+{% include install/deployment-config.html %}
 
 <h2 id="config-php-contents">config.php contents</h2>
 `config.php` is a PHP-file that returns a multi-dimensional associative array. This section discusses its structure and contents.

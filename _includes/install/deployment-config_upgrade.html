@@ -1,0 +1,114 @@
+<p>Magento 2 build 0.74-beta10 for the first time splits Magento's <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a> into two files:</p>
+<ul><li><code>&lt;your Magento install dir>/app/etc/config.php</code></li>
+	<li><code>&lt;your Magento install dir>/app/etc/env.php</code></li></ul>
+
+<p>As a result of this change, you must take action when upgrading from an earlier build.</p>
+<p>You have the following options:</p>
+<ul><li>Manually split the files after you upgrade to 0.74-beta10 or later</li>
+	<li><a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall" target="_blank">Uninstall</a> the Magento 2 software and <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall" target="_blank">reinstall it</a>.</li>
+	<li>Delete <code>&lt;your Magento install dir>/app/etc/config.php</code> and either <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall" target="_blank">reinstall</a> the Magento software or re-create the <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html" target="_blank">deployment configuration</a></li>
+</ul>
+<p>To manually update the files:</p>
+<ol><li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
+	<li><a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update" target="_blank">Update the Magento software</a> to build 0.74-beta10 or later.</li>
+	<li>Change to the <code>&lt;your Magento install dir>/app/etc</code> directory.</li>
+	<li>Enter the following commands in the order shown:<br>
+		<pre>cp config.php env.php
+vim env.php</pre></li>
+			<li>Delete the module list from <code>env.php</code>. The module list looks similar to the following:<br>
+				<pre>return array (
+  'modules' =>
+  array (
+    'Magento_Store' => 1,
+    'Magento_Directory' => 1,
+    'Magento_Backend' => 1,
+    'Magento_Backup' => 1,
+    'Magento_Theme' => 1,
+    'Magento_CacheInvalidate' => 1,
+    'Magento_Eav' => 1,
+    'Magento_Customer' => 1,
+    'Magento_CatalogImportExport' => 1,
+    'Magento_Indexer' => 1,
+    'Magento_Cms' => 1,
+    'Magento_Search' => 1,
+    'Magento_Catalog' => 1,
+    'Magento_Rule' => 1,
+    'Magento_CatalogInventory' => 1,
+    'Magento_Payment' => 1,
+    'Magento_CheckoutAgreements' => 1,
+    'Magento_Quote' => 1,
+    'Magento_CmsUrlRewrite' => 1,
+    'Magento_Config' => 1,
+    'Magento_ConfigurableImportExport' => 1,
+    'Magento_Msrp' => 1,
+    'Magento_Contact' => 1,
+    'Magento_Cookie' => 1,
+    'Magento_Cron' => 1,
+    'Magento_Widget' => 1,
+    'Magento_Bundle' => 1,
+    'Magento_CustomerImportExport' => 1,
+    'Magento_DesignEditor' => 1,
+    'Magento_Developer' => 1,
+    'Magento_Dhl' => 1,
+    'Magento_Authorization' => 1,
+    'Magento_Downloadable' => 1,
+    'Magento_SalesSequence' => 1,
+    'Magento_Email' => 1,
+    'Magento_Fedex' => 1,
+    'Magento_Sales' => 1,
+    'Magento_Checkout' => 1,
+    'Magento_GoogleAnalytics' => 1,
+    'Magento_GoogleOptimizer' => 1,
+    'Magento_GoogleShopping' => 1,
+    'Magento_GroupedImportExport' => 1,
+    'Magento_GroupedProduct' => 1,
+    'Magento_ImportExport' => 1,
+    'Magento_CatalogRule' => 1,
+    'Magento_User' => 1,
+    'Magento_LayeredNavigation' => 1,
+    'Magento_Log' => 1,
+    'Magento_MediaStorage' => 1,
+    'Magento_ConfigurableProduct' => 1,
+    'Magento_Multishipping' => 1,
+    'Magento_Newsletter' => 1,
+    'Magento_OfflinePayments' => 1,
+    'Magento_SalesRule' => 1,
+    'Magento_PageCache' => 1,
+    'Magento_Centinel' => 1,
+    'Magento_Persistent' => 1,
+    'Magento_ProductAlert' => 1,
+    'Magento_Captcha' => 1,
+    'Magento_Reports' => 1,
+    'Magento_RequireJs' => 1,
+    'Magento_Review' => 1,
+    'Magento_Rss' => 1,
+    'Magento_CatalogWidget' => 1,
+    'Magento_GoogleAdwords' => 1,
+    'Magento_OfflineShipping' => 1,
+    'Magento_GiftMessage' => 1,
+    'Magento_CatalogSearch' => 1,
+    'Magento_Sendfriend' => 1,
+    'Magento_Shipping' => 1,
+    'Magento_Sitemap' => 1,
+    'Magento_AdminNotification' => 1,
+    'Magento_Tax' => 1,
+    'Magento_TaxImportExport' => 1,
+    'Magento_CatalogUrlRewrite' => 1,
+    'Magento_Translation' => 1,
+    'Magento_Ui' => 1,
+    'Magento_Ups' => 1,
+    'Magento_UrlRewrite' => 1,
+    'Magento_Integration' => 1,
+    'Magento_Usps' => 1,
+    'Magento_Variable' => 1,
+    'Magento_Version' => 1,
+    'Magento_Webapi' => 1,
+    'Magento_Weee' => 1,
+    'Magento_CurrencySymbol' => 1,
+    'Magento_Wishlist' => 1,
+  ),</pre></li>
+  <li>Save your changes to <code>env.php</code> and exit the text editor.</li>
+  <li>Open <code>config.php</code> in a text editor.</li>
+  <li>Delete from <code>config.php</code> everything <em>except</em> the module list.</li>
+  <li>Save your changes to <code>config.php</code> and exit the text editor.</li>
+</ol>
