@@ -14,4 +14,4 @@ github_link: config-guide/config/upgrade-temp.md
 This is a special temporary file so Maddy can review the upgrade procedure for 0.74-beta10. This file will be deleted before publication.
 
 # Instructions
-{% include install/deployment-config_upgrade.html}
+{% include install/deployment-config_upgrade.html %}
