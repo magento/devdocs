@@ -65,11 +65,11 @@ You can run the following commands to find values for some required arguments:
 	</tr>
 <tr>
 	<td>Language</td>
-	<td><code>php magento info:language:list</code></td>
+	<td><code>./magento info:language:list</code></td>
 </tr>
 <tr>
 	<td>Currency</td>
-	<td><code>php magento info:currency:list</code></td>
+	<td><code>./magento info:currency:list</code></td>
 </tr>
 <tr>
 	<td>Time zone</td>
@@ -87,7 +87,7 @@ You can run the following commands to find values for some required arguments:
 <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
 The format of the install command follows:
 
-	php magento setup:install --<option>=<value> ... --<option>=<value>
+	./magento setup:install --<option>=<value> ... --<option>=<value>
 
 The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.
 
@@ -182,17 +182,17 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	</tr>
 	<tr>
 		<td><p>--language</p></td>
-		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>./magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--currency</p></td>
-		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>./magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--timezone</p></td>
-		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>./magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>

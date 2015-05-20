@@ -32,7 +32,7 @@ You can use this command if:
 
 Command options:
 
-	php magento setup:config:set [--<parameter>=<value>, ...]
+	./magento setup:config:set [--<parameter>=<value>, ...]
 
 The following table discusses the meanings of installation parameters and values. 
 

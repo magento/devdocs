@@ -23,7 +23,7 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 <h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
 To view the list of indexers to use in the commands discussed in this topic, enter
 
-	php magento indexer:info
+	./magento indexer:info
 
 The list displays as follows:
 
@@ -41,17 +41,17 @@ This command enables you to view the status of all or selected indexers (for exa
 
 Command options:
 
-	php magento indexer:status <indexer>
+	./magento indexer:status <indexer>
 
 where `<indexer>` is either `--all` to display the status of all indexers, or a space-separated list of indexers.
 
 To view the list of indexers, enter
 
-	php magento indexer:info
+	./magento indexer:info
 
 A sample follows:
 
-	php magento indexer:status --all
+	./magento indexer:status --all
 
 Sample result:
 
@@ -71,17 +71,17 @@ This command enables you to reindex all or selected indexers.
 
 Command options:
 
-	php magento reindex <indexer>
+	./magento reindex <indexer>
 
 where `<indexer>` is either `--all` to reindex all indexers, or a space-separated list of indexers.
 
 To view the list of indexers, enter
 
-	php magento indexer:info
+	./magento indexer:info
 
 A sample follows:
 
-	php magento indexer:reindex --all
+	./magento indexer:reindex --all
 
 Sample result:
 
@@ -110,13 +110,13 @@ This command enables you to set the following indexer options:
 <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
 To view the current indexer configuration, enter
 
-	php magento indexer:show-mode <indexer> [--all]
+	./magento indexer:show-mode <indexer> [--all]
 
 where `<indexer>` is either `--all` to display the configuration of all indexers, or a space-separated list of indexers.
 
 For example, to show the mode of all indexers:
 
-	php magento indexer:show-mode --all
+	./magento indexer:show-mode --all
 
 Sample result:
 
@@ -132,7 +132,7 @@ Sample result:
 <h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
 To specify the indexer configuration, enter
 
-	php magento indexer:set-mode {realtime|schedule} <indexer>
+	./magento indexer:set-mode {realtime|schedule} <indexer>
 
 where
 
@@ -142,11 +142,11 @@ where
 
 To view the list of indexers, enter
 
-	php magento indexer:info
+	./magento indexer:info
 
 For example, to change only the category products and product categories indexers to update on schedule, enter
 
-	php magento indexer:set-mode schedule catalog_category_product catalog_product_category
+	./magento indexer:set-mode schedule catalog_category_product catalog_product_category
 
 Sample result:
 

@@ -28,12 +28,12 @@ Before you run this command, you must <a href="{{ site.gdeurl }}install-gde/inst
 <h2 id="instgde-cli-dbconfig">Configure the database and add data</h2>
 Command usage:
 
-	php magento setup:db-schema:upgrade
-	php magento setup:db-data:upgrade
+	./magento setup:db-schema:upgrade
+	./magento setup:db-data:upgrade
 
 To see the status of the database, enter
 
-	php magento setup:db:status
+	./magento setup:db:status
 
 #### Related topics
 

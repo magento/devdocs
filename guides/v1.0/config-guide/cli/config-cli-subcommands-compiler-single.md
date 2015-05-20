@@ -27,7 +27,7 @@ Use this command if you have one website and store. If you have multiple website
 <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
 Run the command as follows (there are no options):
 
-	php magento setup:di:compile
+	./magento setup:di:compile
 
 The following message displays to confirm success:
 
