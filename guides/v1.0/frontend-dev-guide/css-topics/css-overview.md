@@ -31,7 +31,7 @@ In the default Blank theme, the buttons of the `.action.primary` class, so calle
 <img src="{{site.baseurl}}common/images/css_over1.png" alt="The default view of a product page, with the orange Add to Cart button">
 </div>
 
-OrangeCo want to change the color of the primary buttons to orange. To achieve this, they do the following:
+OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:
 
 1. Create a new Orange theme, which inherits from the default Blank theme.
 2. In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:
@@ -45,7 +45,7 @@ OrangeCo want to change the color of the primary buttons to orange. To achieve t
 @button-primary-border-hover: 1px solid @color-orange-red2;
 </pre>
 
-When OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">apply their theme</a>, the primary buttons will look like on the following image:
+When OrangeCo <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the primary buttons will look like on the following image:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/css_over2.png" alt="The customized view of a product page, with the grey Add to Cart button">
