@@ -60,7 +60,7 @@ return array (
 {% endhighlight %}
 
 <h3 id="config-php-contents-env-php">env.php contents</h3>
-`env.php` was introduced in build 0.74-beta10; before that build, `config.php` contained this data. The following table provides details about each `env.php` segment and its structure.
+`env.php` was introduced in build 0.74-beta10; before that build, `config.php` contained this data in addition to the list of enabled modules. The following table provides details about each `env.php` segment and its structure.
 
 <table>
   <tbody>

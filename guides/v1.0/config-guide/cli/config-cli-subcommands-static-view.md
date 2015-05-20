@@ -38,7 +38,7 @@ To deploy static view files:
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
-4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 	
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
@@ -121,12 +121,12 @@ Use the following steps:
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
 3.	<a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
-4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 	
-	<div class="bs-callout bs-callout-info" id="info">
+	<!-- <div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-	</div>
+	</div> -->
 
 
 
