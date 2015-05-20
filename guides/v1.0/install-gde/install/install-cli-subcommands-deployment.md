@@ -2,8 +2,8 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Create or update the deployment configuration, config.php
-menu_title: Create or update the deployment configuration, config.php
+title: Create or update the deployment configuration
+menu_title: Create or update the deployment configuration
 menu_node: 
 menu_order: 6
 github_link: install-gde/install/install-cli-subcommands-deployment.md
@@ -23,12 +23,13 @@ github_link: install-gde/install/install-cli-subcommands-deployment.md
 There are no prerequisites for using this command.
   
 <h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
-Magento's deployment configuration, <a href="{{ site.gdeurl }}config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.
+<a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a> provides the information Magento needs to initialize and bootstrap.
 
 You can use this command if:
 
 *	You previously installed the Magento software and you want to modify the deployment configuration
-*	If you want to create only `config.php` and continue the Magento installation some other way
+*	If you want to create only the deployment configuration and continue the Magento installation some other way
+*	To update the deployment configuration without affecting anything else
 
 Command options:
 

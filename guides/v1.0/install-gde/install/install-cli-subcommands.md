@@ -21,7 +21,7 @@ See one of the following sections:
 *	<a href="#instgde-cli-subcommands-common">Common arguments</a>
 *	<a href="#instgde-cli-subcommands">Commands</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
 
 <!-- *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>
 *	<a href="#instgde-cli-maint-configphp">Maintenance mode</a> -->
@@ -92,7 +92,7 @@ The following table summarizes the available commands. Commands are shown in sum
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">php magento config:set</a></td>
-		<td>Creates the deployment configuration file, <code>config.php</code>.</td>
+		<td>Creates the deployment configuration.</td>
 		<td>None</td>
 	</tr>
 	<tr>
@@ -160,7 +160,7 @@ The following sections discuss the available commands.
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>

@@ -90,7 +90,7 @@ To reinstall the Magento software:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
-Uninstalling the Magento software drops and restores the database, removes 'config.php', and clears directories under `var`.
+Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under `var`.
 
 To uninstall the Magento software, enter the following command:
 

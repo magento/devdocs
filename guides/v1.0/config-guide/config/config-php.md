@@ -12,22 +12,27 @@ github_link: config-guide/config/config-php.md
 #### Contents
 
 *  <a href="#config-php-overview">What is the Magento deployment configuration?</a>
-*  <a href="#config-php-contents">config.php contents</a>
-*  <a href="#env-php-contents">env.php contents</a>
+*  <a href="#config-php-contents">config.php and env.php contents</a>
 
 <h2 id="config-php-overview">What is the Magento deployment configuration?</h2>
 {% include install/deployment-config.html %}
 
-<h2 id="config-php-contents">config.php contents</h2>
-`config.php` is a PHP-file that returns a multi-dimensional associative array. This section discusses its structure and contents.
-
-<h3 id="config-php-contents-segments">Segments</h3>
+<h2 id="config-php-contents">config.php and env.php contents</h2>
+`config.php` and `env.php` are PHP files that return a multi-dimensional associative array. 
 
 On the first hierarchy level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished from each other by an arbitrary key&mdash;both the key and its value are defined by the Magento framework. 
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
 
 On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules' configuration files, with the exception of disabled modules. 
+
+The following sections discusses the structure and contents of `config.php` and `env.php`.
+
+* <a href="#config-php-contents-config-php">config.php contents</a>
+* <a href="#config-php-contents-env-php">env.php contents</a>
+
+<h3 id="config-php-contents-config-php">config.php contens</h3>
+Starting with build 0.74-beta10, `config.php` contains the list of modules only.
 
 Disabled modules are not recognized by Magento; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not display in the storefront or Admin and don't affect routing. The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
@@ -54,8 +59,8 @@ return array (
 ); ?>
 {% endhighlight %}
 
-<h3 id="config-php-segments-detail">Segment details</h3>
-The following table provides details about each `config.php` segment and its structure.
+<h3 id="config-php-contents-env-php">env.php contents</h3>
+The following table provides details about each `env.php` segment and its structure.
 
 <table>
   <tbody>
@@ -131,10 +136,6 @@ The following table provides details about each `config.php` segment and its str
     </tr>
   </tbody>
 </table>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We're working to improve this topic. Use the <strong>Edit this page in GitHub</strong> link at the top of this page to give us feedback and suggestions.</p>
-</div>
 
 #### Related topic
 

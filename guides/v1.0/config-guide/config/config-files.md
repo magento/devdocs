@@ -128,4 +128,4 @@ You can interact with configuration files using interfaces under <a href="{{ sit
 #### Related topics
 
  *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration, config.php</a>
+ *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>
