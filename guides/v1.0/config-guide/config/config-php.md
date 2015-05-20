@@ -31,7 +31,7 @@ The following sections discusses the structure and contents of `config.php` and 
 * <a href="#config-php-contents-config-php">config.php contents</a>
 * <a href="#config-php-contents-env-php">env.php contents</a>
 
-<h3 id="config-php-contents-config-php">config.php contens</h3>
+<h3 id="config-php-contents-config-php">config.php contents</h3>
 Starting with build 0.74-beta10, `config.php` contains the list of modules only.
 
 Disabled modules are not recognized by Magento; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not display in the storefront or Admin and don't affect routing. The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
@@ -60,7 +60,7 @@ return array (
 {% endhighlight %}
 
 <h3 id="config-php-contents-env-php">env.php contents</h3>
-The following table provides details about each `env.php` segment and its structure.
+`env.php` was introduced in build 0.74-beta10; before that build, `config.php` contained this data. The following table provides details about each `env.php` segment and its structure.
 
 <table>
   <tbody>
