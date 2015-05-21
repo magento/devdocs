@@ -48,18 +48,18 @@ Magento 2 has the following cache types:
       <td><p>Block HTML output</p></td>
       <td><p>block_html</p></td>
       <td><p>HTML page fragments per block.</p>
-	<p>Clean or flush this cache type after modifying the view layer (only for blocks covered by HTML block cache).</p></td>
+	<p>Clean or flush this cache type after modifying the view layer.</p></td>
     </tr>
     <tr>
       <td><p>View files fallback</p></td>
       <td><p>view_files_fallback</p></td>
       <td><p>Paths to view files per theme and application area (adminhtml or frontend).</p>
-	<p>Clean or flush this cache type after you override static view files.</p></td>
+	<p>Clean or flush this cache type after you add or remove a theme.</p></td>
     </tr>
     <tr>
       <td><p>View files pre-processing</p></td>
       <td><p>view_files_preprocessing</p></td>
-      <td><p>Similar to the view files fallback cache except it takes pre-processing into account. Stores data per view file.</p></td>
+      <td><p>Similar to the view files fallback cache except it takes pre-processing into account. Stores path data per view file.</p></td>
     </tr>
     <tr>
       <td><p>Collections data</p></td>
