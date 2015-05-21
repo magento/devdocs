@@ -13,6 +13,7 @@ github_link: config-guide/cli/config-cli-subcommands-cache.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
+*	<a href="#config-cli-subcommands-cache-clean">Overview of cache types</a>
 *	<a href="#config-cli-subcommands-cache-status">View the cache status</a>
 *	<a href="#config-cli-subcommands-cache-en">Enable or disable the cache</a> 
 *	<a href="#config-cli-subcommands-cache-clean">Clean and flush cache types</a>
@@ -21,7 +22,91 @@ github_link: config-guide/cli/config-cli-subcommands-cache.md
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
-<!-- <h2 id="config-cli-subcommands-cache-clean">Overview of cache types</h2> -->
+<h2 id="config-cli-subcommands-cache-clean">Overview of cache types</h2>
+Magento 2 has the following cache types:
+
+<table>
+  <tbody>
+    <tr>
+      <th>Cache type "friendly" name</th>
+      <th>Cache type code name</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td><p>Configuration</p></td>
+      <td><p>config</p></td>
+      <td><p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
+	<p>Clean or flush this cache type after modifying configuration files.</p></td>
+    </tr>
+    <tr>
+      <td><p>Layout</p></td>
+      <td><p>layout</p></td>
+      <td><p>Compiled page layouts (that is, the layout components from all components).</p>
+	<p>Clean or flush this cache type after modifying layout files.</p></td>
+    </tr>
+    <tr>
+      <td><p>Block HTML output</p></td>
+      <td><p>block_html</p></td>
+      <td><p>HTML page fragments per block.</p>
+	<p>Clean or flush this cache type after modifying the view layer (only for blocks covered by HTML block cache).</p></td>
+    </tr>
+    <tr>
+      <td><p>View files fallback</p></td>
+      <td><p>view_files_fallback</p></td>
+      <td><p>Paths to view files per theme and application area (adminhtml or frontend).</p>
+	<p>Clean or flush this cache type after you override static view files.</p></td>
+    </tr>
+    <tr>
+      <td><p>View files pre-processing</p></td>
+      <td><p>view_files_preprocessing</p></td>
+      <td><p>Similar to the view files fallback cache except it takes pre-processing into account. Stores data per view file.</p></td>
+    </tr>
+    <tr>
+      <td><p>Collections data</p></td>
+      <td><p>collections</p></td>
+      <td><p>Results of database queries.</p>
+      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
+      	<p>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</p></td>
+    </tr>
+    <tr>
+      <td><p>DDL</p></td>
+      <td><p>db_ddl</p></td>
+      <td><p>Database schema. </p>
+      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
+      	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
+      	<p>One way to update the database schema automatically is using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
+    </tr>
+    <tr>
+      <td><p>Page cache</p></td>
+      <td><p>full_page</p></td>
+      <td><p>Generated HTML pages. </p>
+      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
+      	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled to because caching HTML improves performance significantly.</p></td>
+    </tr>
+    <tr>
+      <td><p>Translations</p></td>
+      <td><p>translate</p></td>
+      <td><p>Merged translations from all modules.</p></td>
+    </tr>
+    <tr>
+      <td><p>Integration configuration</p></td>
+      <td><p>config_integration</p></td>
+      <td><p>Compiled integrations.</p>
+      	<p>Clean or flush this cache after changing or adding integrations.</p></td>
+    </tr>
+    <tr>
+      <td><p>Integration API configuration</p></td>
+      <td><p>config_integration_api</p></td>
+      <td><p>Compiled integration APIs.</p></td>
+    </tr>
+    <tr>
+      <td><p>Web services configuration</p></td>
+      <td><p>config_webservice</p></td>
+      <td><p>Web API structure.</p></td>
+    </tr>
+
+  </tbody>
+</table>
 
 <h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
 To view the status of the cache, enter

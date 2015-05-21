@@ -23,9 +23,14 @@ These Release Notes discuss important changes in this release. For additional de
 *	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h2 id="rn-074b10-changes">Major changes in the 0.74-beta10 release</h2>
-TBD
+We made the following changes in this release:
 
-*	Upgraded Zend Framework 2 components from 2.3.4 to 2.4.0
+<h3>Zend framework</h3>
+Upgraded the Zend Framework 2 components from 2.3.4 to 2.4.0
+
+<h3>Two deployment configuration files&mdash;config.php and env.php</h3>
+{% include install/deployment-config_upgrade.html %}
+<a href="{{ site.gdeurl }}config-guide/config/config-php.html">More information about the deployment configuration</a>.
 
 <h2 id="rn-074b10-compat">Backward-compatible changes</h2>
 This section discusses the backward-compatible changes we made in this release.

@@ -19,5 +19,5 @@ For more information about the components, refer to the following topics:
 
 * <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>
 
-* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Translation packages</a>
+* <a href="{{ site.gdeurl }}architecture/arch_translations.html">Language packages</a>
 
