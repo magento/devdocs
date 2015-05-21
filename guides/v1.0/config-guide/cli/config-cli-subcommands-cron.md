@@ -225,7 +225,7 @@ As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:
 
-	./magento cron:run [--group="<cron group name>"] [--bootstrap="<options>"]
+	magento cron:run [--group="<cron group name>"] [--bootstrap="<options>"]
 
 where `--group` specifies the cron group to run (omit this option to run cron for the `default` group)
 

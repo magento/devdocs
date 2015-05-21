@@ -42,15 +42,15 @@ Following execution, a detailed report displays showing the test run and results
 <h2 id="config-cli-subcommands-tests-run">Run unit tests</h2>
 Command usage:
 
-	./magento dev:tests:run [--all] <test>
+	magento dev:tests:run [--all] <test>
 
 To list the available tests, enter
 
-	./magento dev:tests:run --help
+	magento dev:tests:run --help
 
 For example, to run integration tests, enter
 
-	./magento dev:tests:run integration
+	magento dev:tests:run integration
 
 #### Related topics
 

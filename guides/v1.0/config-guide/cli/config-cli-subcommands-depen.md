@@ -31,7 +31,7 @@ You can run the following types of reports:
 <h2 id="config-cli-depend-rpt-run">Run dependency reports</h2>
 Command options:
 
-	./magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
+	magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
 
 where
 

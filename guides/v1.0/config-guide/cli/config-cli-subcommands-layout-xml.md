@@ -30,7 +30,7 @@ For more information about layout XML files, see:
 <h2 id="config-cli-xml-run">Convert layout XML files</h2>
 Command options:
 
-	./magento dev:xml:convert [-o|--overwrite] <xml file> <xslt stylesheet>
+	magento dev:xml:convert [-o|--overwrite] <xml file> <xslt stylesheet>
 
 where
 

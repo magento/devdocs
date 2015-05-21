@@ -94,7 +94,7 @@ Uninstalling the Magento software drops and restores the database, removes 'conf
 
 To uninstall the Magento software, enter the following command:
 
-	./magento setup:uninstall
+	magento setup:uninstall
 
 The following message displays to confirm a successful uninstallation:
 
@@ -130,7 +130,7 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 3.	Uninstall the Magento software and change to your Magento installation directory:
 
-		./magento setup:uninstall && cd ..
+		magento setup:uninstall && cd ..
 
 4.	Update the Magento code:
 

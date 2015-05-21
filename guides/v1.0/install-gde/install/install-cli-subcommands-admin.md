@@ -31,13 +31,13 @@ Before you can use this command, you must do all of the following:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  		<p>The simplest way to create the database is to use the command <code>./magento setup:upgrade</code>.</span>
+  		<p>The simplest way to create the database is to use the command <code>magento setup:upgrade</code>.</span>
 	</div>
 
 <h2 id="instgde-cli-admin">Create an administrator</h2>
 Command usage:
 
-	./magento admin:user:create [--<parameter_name>=<value>, ...]
+	magento admin:user:create [--<parameter_name>=<value>, ...]
 
 
 

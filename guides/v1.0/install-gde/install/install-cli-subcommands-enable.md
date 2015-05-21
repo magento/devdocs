@@ -25,8 +25,8 @@ This command has no prerequisites.
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
 To enable or disable available modules, use the following command:
 
-	./magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
-	./magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
+	magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
+	magento module:disable [-c|--clear-static-content] [-f|--force] [--all] <module-list> 
 
 where
 
@@ -41,18 +41,18 @@ where
 
 Use the following command to list enabled and disabled modules:
 
-	./magento module:status
+	magento module:status
 
 For example, to disable the Weee module, enter:
 
-	./magento module:disable Magento_Weee
+	magento module:disable Magento_Weee
 
 For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 
 <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
 If you enabled one or more modules, run the following command to update the database:
 
-	./magento setup:upgrade
+	magento setup:upgrade
 
 <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %}

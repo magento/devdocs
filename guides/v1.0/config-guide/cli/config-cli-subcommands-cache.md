@@ -25,7 +25,7 @@ github_link: config-guide/cli/config-cli-subcommands-cache.md
 <h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
 To view the status of the cache, enter
 
-	./magento cache:status [--bootstrap="<url-encoded array>"]
+	magento cache:status [--bootstrap="<url-encoded array>"]
 
 where `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
 
@@ -50,8 +50,8 @@ This command enables you to enable or disable all cache types or only the ones y
 
 Command options:
 
-	./magento cache:enable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
-	./magento cache:disable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
+	magento cache:enable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
+	magento cache:disable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
 
 where
 
@@ -63,11 +63,11 @@ where
 
 To list cache types and their status, enter
 
-	./magento cache:status
+	magento cache:status
 
 For example, to disable the full page cache and the DDL cache, enter 
 
-	./magento cache:disable db_ddl full_page
+	magento cache:disable db_ddl full_page
 
 Sample result:
 
@@ -93,8 +93,8 @@ To purge out-of-date items from the cache, you can *clean* or *flush* cache type
 
 Command usage:
 
-	./magento cache:clean [--all] [--bootstrap="..."] [type] ... [type]
-	./magento cache:flush [--all] [--bootstrap="..."] [type] ... [type]
+	magento cache:clean [--all] [--bootstrap="..."] [type] ... [type]
+	magento cache:flush [--all] [--bootstrap="..."] [type] ... [type]
 
 where
 
@@ -106,7 +106,7 @@ where
 
 For example, to flush all cache types, enter
 
-	./magento cache:flush --all
+	magento cache:flush --all
 
 Sample result:
 
