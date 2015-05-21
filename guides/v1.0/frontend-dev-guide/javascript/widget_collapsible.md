@@ -504,4 +504,5 @@ $("#element").collapsible("forceActivate");
 Don't see them in code:
 destroy,
 beforeOpen Callback
+A: beforeOpen is an event
 </p>
