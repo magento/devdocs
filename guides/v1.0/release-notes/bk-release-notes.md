@@ -12,8 +12,8 @@ github_link: release-notes/bk-release-notes.md
 
 Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 
-For this first release of Magento 2.0, here is a summary of some important
-features of the release.
+Following is is a summary of important
+features of all Magento 2 releases starting with Developer Beta in December 2014.
 
 <h3 id="highlights-devrc">Highlights of this release</h3>
 

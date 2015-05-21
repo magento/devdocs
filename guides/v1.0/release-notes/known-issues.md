@@ -4,11 +4,13 @@ group: release-notes
 title: Release Notes
 menu_title: Known issues
 menu_node: 
-menu_order: 10
+menu_order: 2
 github_link: release-notes/known-issues.md
 ---
 
 <h2 id="known-devbeta">Known issues</h2>
+This page discusses known issues in all Magento 2 releases starting with Developer Beta in December, 2014.
+
 We have identified the following known issues in this release:
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
@@ -105,7 +107,11 @@ In this case, the installation *was* successful. You can access the storefront a
 To access your Magento-created encryption key:
 
 1.  Log in to your Magento server as a user with `root` privileges.
-2.  Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+2.  Do any of the following:
+
+    *   Build 0.74-beta9 or earlier: Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+    *   Build 0.74-beta10 or later: Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+    
 3.  Locate the value of `'key' =>`.
         
 This is your encryption key.
