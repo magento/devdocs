@@ -13,6 +13,7 @@ github_link: config-guide/config/config-php.md
 
 *  <a href="#config-php-overview">What is the Magento deployment configuration?</a>
 *  <a href="#config-php-contents">config.php and env.php contents</a>
+* <a href="#config-php-upgrade">Updating to build 0.74-beta10</a>
 
 <h2 id="config-php-overview">What is the Magento deployment configuration?</h2>
 {% include install/deployment-config.html %}
@@ -131,6 +132,9 @@ return array (
     </tr>
   </tbody>
 </table>
+
+<h2 id="config-php-upgrade">Updating to build 0.74-beta10</h2>
+{% include install/deployment-config_upgrade.html %}
 
 #### Related topic
 
