@@ -114,19 +114,14 @@ return array (
     <tr>
       <td>Installation date</td>
       <td><code>install</code></td>
-      <td>Not currently implemented</td>
+      <td><pre>__/install
+ |-- date</pre></td>
     </tr>
     <tr>
       <td>Encryption key</td>
       <td><code>encrypt</code></td>
       <td><pre>__/crypt
  |-- key</pre></td>
-    </tr>
-    <tr>
-      <td>Module list</td>
-      <td><code>modules</code></td>
-      <td><pre>__/modules
- |-- &lt;enumerated modules></pre></td>
     </tr>
     <tr>
       <td>Cache types</td>
