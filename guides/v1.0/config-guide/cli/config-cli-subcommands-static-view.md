@@ -19,6 +19,7 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment tool enables you to write static files to the Magento docroot when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.

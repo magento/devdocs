@@ -21,6 +21,7 @@ github_link: config-guide/cli/config-cli-subcommands-cron.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:

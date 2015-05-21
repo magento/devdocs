@@ -18,6 +18,7 @@ github_link: install-gde/install/install-cli-subcommands-deployment.md
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
 There are no prerequisites for using this command.

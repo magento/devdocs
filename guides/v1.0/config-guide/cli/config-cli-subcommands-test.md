@@ -18,6 +18,7 @@ github_link: config-guide/cli/config-cli-subcommands-test.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-tests-prereq">Prerequisites</h2>
 Before you run this command, all of the following must be true:

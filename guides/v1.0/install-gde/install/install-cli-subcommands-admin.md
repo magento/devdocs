@@ -21,6 +21,7 @@ See one of the following sections:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-admin-prereq">Prerequisites</h2>
 Before you can use this command, you must do all of the following:

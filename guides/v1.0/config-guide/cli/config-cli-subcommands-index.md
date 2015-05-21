@@ -19,6 +19,7 @@ github_link: config-guide/cli/config-cli-subcommands-index.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-index-info">View the list of indexers</h2>
 To view the list of indexers to use in the commands discussed in this topic, enter

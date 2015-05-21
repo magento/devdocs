@@ -18,6 +18,7 @@ github_link: config-guide/cli/config-cli-subcommands-depen.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>
 You can run the following types of reports:

@@ -18,6 +18,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:

@@ -18,6 +18,7 @@ github_link: config-guide/cli/config-cli-subcommands-layout-xml.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
 When XML schema are updated, you should update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet. This command enables you to perform these updates.

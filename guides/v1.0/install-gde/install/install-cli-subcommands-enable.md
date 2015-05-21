@@ -18,6 +18,7 @@ github_link: install-gde/install/install-cli-subcommands-enable.md
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
 This command has no prerequisites.
