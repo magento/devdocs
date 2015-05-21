@@ -22,6 +22,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 <h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
 
+*	There is one Magento 2 code base instance
 *	There is one database instance per tenant
 *	Independent configurations in the Magneto Admin per tenant
 *	The storefronts are independent of each other
@@ -61,7 +62,7 @@ Naming Rules for auto-generated classes for a module:
 <h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Command options:
 
-	php magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
+	magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
 	filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
 
 The following table discusses the meanings of this command's parameters and values. 
@@ -108,7 +109,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to run the compiler and specify the `igbinary` serializer:
 
-	php magento setup:di:compile-multi-tenant --serializer=igbinary
+	magento setup:di:compile-multi-tenant --serializer=igbinary
 
 Messages similar to the following display:
 

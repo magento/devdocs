@@ -47,7 +47,7 @@ To deploy static view files:
 
 Command options:
 
-	php magento setup:static-content:deploy <lang> ... <lang> [--dry-run] 
+	magento setup:static-content:deploy <lang> ... <lang> [--dry-run] 
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -64,7 +64,7 @@ The following table discusses the meanings of this command's parameters and valu
 	<tr>
 		<td>&lt;lang></td>
 		<td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>php magento info:language:list</code>.</p></td>
+		<p>You can find the list by running <code>magento info:language:list</code>.</p></td>
 	<td><p>No</p></td>
 	</tr>
 		<tr>
@@ -77,7 +77,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to deploy static view files for the `pt_BR` language, enter
 
-	php magento --ansi setup:static-content:deploy pt_BR
+	magento --ansi setup:static-content:deploy pt_BR
 
 Following are some sample messages that display to indicate successful deployment:
 

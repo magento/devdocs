@@ -14,6 +14,7 @@ github_link: install-gde/install/sample-data.md
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
 *	<a href="#instgde-install-sample-enable-before">Enable sample data before you install the Magento software</a>
 *	<a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>
+*	<a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>
  
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
@@ -48,7 +49,7 @@ This section discusses how to install optional sample data *after* you install t
 
 To install the sample data, enter the following command:
 
-	php dev/tools/Magento/Tools/SampleData/install.php -- --admin_user=<your Magento admin user name>
+	php dev/tools/Magento/Tools/SampleData/install.php -- --admin-user=<your Magento admin user name>
 
 <h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
 {% include install/sample-data-note.html %}

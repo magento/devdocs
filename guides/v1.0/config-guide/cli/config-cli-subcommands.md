@@ -39,7 +39,7 @@ Examples:
 <span class="glyphicon-class">
   <p>You can run the commands in any of the following ways:</p>
 <ul><li><code>php magento &lt;command></code></li>
-<li><code>./magento &lt;command></code></li></ul></span>
+<li><code>magento &lt;command></code></li></ul></span>
 </div>
 
 <h2 id="config-cli-summary">Command summary</h2>
@@ -61,41 +61,41 @@ The following table summarizes the available commands. Commands are shown in sum
 		</tr>
 		
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">php magento setup:cache:{enable|disable|clean|flush|status}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">magento setup:cache:{enable|disable|clean|flush|status}</a></td>
 		<td><p>Manages the cache</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">php magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
 		<td><p>Manages the indexers</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">php magento setup:di:compile-multi-tenant</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">magento setup:di:compile-multi-tenant</a></td>
 		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
 		<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">php magento setup:di:compile</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
 		<td><p>Use if you have one instance of the Magento application.</p>
 			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">php magento log:{status|clean}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">magento log:{status|clean}</a></td>
 		<td><p>Clears the logs</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">php magento i18n:{collect-phrases|pack}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">magento i18n:{collect-phrases|pack}</a></td>
 		<td><p>Creates a translation dictionary or a translation package</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">php magento setup:static-content:deploy</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">magento setup:static-content:deploy</a></td>
 		<td><p>Deploys static view files</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">php magento dev:css:deploy</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">magento dev:css:deploy</a></td>
 		<td><p>Creates CSS from LESS</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">php magento dev:tests:run</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">magento dev:tests:run</a></td>
 		<td><p>Runs automated tests</p></td>
 	</tr>
 	

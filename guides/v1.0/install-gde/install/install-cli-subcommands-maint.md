@@ -38,9 +38,9 @@ Magento detects maintenance mode as follows:
 
 Command usage:
 
-	php magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
-	php magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
-	php magento maintenance:status
+	magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
+	magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
+	magento maintenance:status
 
 where
 
@@ -56,16 +56,16 @@ where
 
 For example, to enable maintenance mode with no IP address exemptions:
 
-	php magento maintenance:enable
+	magento maintenance:enable
 
 To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 
-	php magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
+	magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
 To maintain the list of exempt IP addresses, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
-	php magento maintenance:allow-ips <ip address> .. <ip address> [--none]
+	magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
 where 
 

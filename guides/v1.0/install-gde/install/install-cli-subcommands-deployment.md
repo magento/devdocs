@@ -32,7 +32,7 @@ You can use this command if:
 
 Command options:
 
-	php magento setup:config:set [--<parameter>=<value>, ...]
+	magento setup:config:set [--<parameter>=<value>, ...]
 
 The following table discusses the meanings of installation parameters and values. 
 
@@ -48,13 +48,13 @@ The following table discusses the meanings of installation parameters and values
 		</tr>
 		
 	<tr>
-		<td><p>--backend_frontname</p></td>
+		<td><p>--backend-frontname</p></td>
 		<td><p>Path to access the Magento Admin. This path is appended to the base URL. Default is <code>admin</code>. 
 For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_host</p></td>
+		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
 		<li><code>localhost</code> (default) if your database server ison the same host as your web server.</li>
@@ -64,31 +64,31 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_name</p></td>
+		<td><p>--db-name</p></td>
 		<td><p>Name of the Magento database instance in which you want to install the Magento database tables.</p>
 			<p>Default is <code>magento2</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_user</p></td>
+		<td><p>--db-user</p></td>
 		<td><p>User name of the Magento database instance owner.</p>
 			<p>Default is <code>root</code>.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_password</p></td>
+		<td><p>--db-password</p></td>
 		<td><p>Magento database instance owner's password.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--db_prefix</p></td>
+		<td><p>--db-prefix</p></td>
 		<td><p>Use only if you're installing the Magento database tables in a database instance that has Magento tables in it already.</p>
 		<p>In that case, use a prefix to identify the Magento tables for this installation. Some customers have more than one Magento instance running on a server with all tables in the same database.</p>
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
-		<td><p>--session_save</p></td>
+		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless access to the Magento file system is slow or if you have a clustered database.</li>
 		<li><code>db</code> to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit compared to file-based storage.</li></ul></td>
@@ -112,7 +112,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td>No</td>
 	</tr> -->
 	<tr>
-		<td><p>--db_init_statements</p></td>
+		<td><p>--db-init-statements</p></td>
 		<td><p>Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.</p>
 			<p>Default is <code>SET NAMES utf8;</code>.</p> 
 			<p>Consult a reference similar to <a href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html" target="_blank">this one</a> before you set any values.</p></td>
