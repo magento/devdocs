@@ -33,7 +33,7 @@ features of the release.
     *   Follows Semantic Versioning 2.0.0
     *   Backward compatible for classes and methods annotated with `@api`
     *   Backward compatible for all client users within minor and patch core updates
-    *   We'll use  `@depreciated` to notify you of removal on the next major change
+    *   We'll use  `@deprecated` to notify you of removal on the next major change
 *   Refactored API code for:
     *   CatalogInventory module
     *   Tax module
