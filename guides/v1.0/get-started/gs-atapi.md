@@ -1,3 +1,4 @@
+<!--
 ---
 layout: default
 group: get-started
@@ -9,7 +10,7 @@ menu_node: parent
 github_link: get-started/gs-curl.md
 ---
 
-
+-->
 
 
 
