@@ -18,7 +18,7 @@ github_link: release-notes/changes_074-beta10.md
 <h2 id="rn-074b10-overview">Overview of the 0.74-beta10 release</h2>
 These Release Notes discuss important changes in this release. For additional details, see the following:
 
-*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta8" target="_blank">Changelog</a>
+*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta10" target="_blank">Changelog</a>
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
 *	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
@@ -30,7 +30,7 @@ Upgraded the Zend Framework 2 components from 2.3.4 to 2.4.0
 
 <h3>Two deployment configuration files&mdash;config.php and env.php</h3>
 {% include install/deployment-config_upgrade.html %}
-<a href="{{ site.gdeurl }}config-guide/config/config-php.html">More information about the deployment configuration</a>.
+<a href="{{ site.gdeurl }}config-guide/config/config-php.html">More information about the deployment configuration</a>
 
 <h2 id="rn-074b10-compat">Backward-compatible changes</h2>
 This section discusses the backward-compatible changes we made in this release.
@@ -127,15 +127,15 @@ The following sections discuss backward-incompatible changes in this release:
 
 
 <h3 id="rn-074b10-bundle">Backward-incompatible changes in Magento_Bundle</h3>
-*	Added saveChild method to `app/code/Magento/Bundle/Api/ProductLinkManagementInterface.php`
-*	Made following changes to `app/code/Magento/Bundle/Api/Data/LinkInterface.php`:
+*	Added the `saveChild` method to `app/code/Magento/Bundle/Api/ProductLinkManagementInterface.php`
+*	Made the following changes to `app/code/Magento/Bundle/Api/Data/LinkInterface.php`:
 	*	Added method `getId`
 	*	Added method `setId`
  	*	Removed method `getIsDefined`
 	*	Removed method `setIsDefined`
 
 <h3 id="rn-074b10-catalog">Backward-incompatible changes in Magento_Catalog</h3>
-*	Added `setCreatedAt` method to `app/code/Magento/Catalog/Api/Data/CategoryInterface.php`
+*	Added the `setCreatedAt` method to `app/code/Magento/Catalog/Api/Data/CategoryInterface.php`
 *	Added the following methods to `app/code/Magento/Catalog/Api/Data/ProductInterface.php`
 	*	`getProductLinks`
 	*	`setProductLinks`
@@ -150,7 +150,7 @@ The following sections discuss backward-incompatible changes in this release:
 *	Added the following methods to `app/code/Magento/Catalog/Api/Data/ProductTierPriceInterface.php`
 	*	`getCustomerGroupId`
 	*	`setCustomerGroupId`
-*	Changed method signature for method `create` in `app/code/Magento/Catalog/Api/ProductAttributeMediaGalleryManagementInterface.php`
+*	Changed the signature for method `create` in `app/code/Magento/Catalog/Api/ProductAttributeMediaGalleryManagementInterface.php`
 `
 *	Protected properties now private, accessible using protected lazy loading methods:
 
@@ -226,7 +226,7 @@ In `app/code/Magento/Dhl/Model/Carrier.php`, made the following changes:
 *	Added the following methods in `app/code/Magento/Downloadable/Api/LinkRepositoryInterface.php`
 	*	`getSamplesByProduct`
 	*	`getLinksByProduct`
-*	Change the method signature in `app/code/Magento/Downloadable/Api/LinkRepositoryInterface.php`
+*	Changed the method signature in `app/code/Magento/Downloadable/Api/LinkRepositoryInterface.php`
 *	Changed parameter type from `\Magento/Downloadable/Api/Data/LinkContentInterface.php` to `\Magento/Downloadable/Api/Data/LinkContentInterface.php`
 *	Change the method signature in `app/code/Magento/Downloadable/Api/SampleRepositoryInterface.php`
 *	Changed parameter type from `\Magento\Downloadable\Api\Data\SampleContentInterface` to `\Magento\Downloadable\Api\Data\SampleInterface`
@@ -264,7 +264,7 @@ In `app/code/Magento/Fedex/Model/Carrier.php` method `collectRates()`, changed p
 In <a href="{{ site.mage2000url }}app/code/Magento/GiftMessage/Helper/Message.php" target="_blank">\Magento\GiftMessage\Helper\Message</a>:
 
 *	Renamed method `isMessagesAvailable` to `isMessagesAllowed`
-*	Removed method `getIsMessagesAvailable` because it was a alias for `isMessagesAvailable`
+*	Removed method `getIsMessagesAvailable` because it was an alias for `isMessagesAvailable`
 
 	All usages of `isMessagesAvailable` and `getIsMessagesAvailable` are now replaced by `isMessagesAllowed`
 
@@ -331,7 +331,7 @@ Other changes:
 *	Removed `\Magento\Quote\Model\Cart\Access\CartManagementPlugin` and `\Magento\Quote\Model\Cart\Access\CartRepositoryPlugin`
 *	Added new class `\Magento\Quote\Model\Resource\Quote\QuoteIdMask`
 *	Added new class `\Magento\Quote\Model\QuoteIdMask`
-*	In `\Magento\Quote\Setup\InstallSchema`, added code to create table for storing cartId and obscured UUID based cartId mapping
+*	In `\Magento\Quote\Setup\InstallSchema`, added code to create a table for storing `cartId` and obscured UUID based `cartId` mapping
 *	Added new interface `\Magento\Framework\Webapi\Rest\Request\ParamOverriderInterface,` with the following two classes implementing it:
 
 	*	Added new class `\Magento\Quote\Model\Webapi\ParamOverriderCartId`
@@ -526,7 +526,7 @@ method: `getAdapter`
 	*	In method `checkAvailableShipCountries()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 	* 	In method `proccessAdditionalValidation()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 
-*	In `app/code/Magento/Shipping/Model/Carrier/AbstractCarrierOnline.php` method `proccessAdditionalValidation()`, rename parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
+*	In `app/code/Magento/Shipping/Model/Carrier/AbstractCarrierOnline.php` method `proccessAdditionalValidation()`, renamed parameter `\Magento\Quote\Model\Quote\Address\RateRequest` to `\Magento\Framework\Object`
 *	Moved `app/code/Magento/Quote/Model/Quote/Address/CarrierFactoryInterface.php` to `app/code/Magento/Shipping/Model/CarrierFactoryInterface.php`
 
 <h3 id="rn-074b10-tax">Backward-incompatible changes in Magento_Tax</h3>
@@ -554,18 +554,20 @@ In `app/code/Magento/Usps/Model/Carrier.php` method `collectRates()`, renamed pa
 
 <h3 id="rn-074b10-webapi">Backward-incompatible changes in Magento_Webapi and \Magento\Framework\Webapi</h3>
 *	Added an additional parameter `$methodsMapProcessor` for the constructor of <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/Soap/Request/Handler.php" target="_blank">Magento\Webapi\Controller\Soap\Request\Handler</a>
-*	Removed protected method `_formatRoutePath` from Magento\Webapi\Model\Rest\Config
+*	Removed protected method `_formatRoutePath` from `\Magento\Webapi\Model\Rest\Config`
 *	Added an additional parameter `$methodsMapProcessor` for the constructor of `\Magento\Framework\Api\DataObjectHelper`
-*	Refactored class <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:
- 	*	Added new class `\Magento\Framework\Reflection\CustomAttributesProcessor`
- 	*	Added new class `\Magento\Framework\Reflection\ExtensionAttributesProcessor`
+*	Refactored class <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Reflection/DataObjectProcessor.php" target="_blank">\Magento\Framework\Reflection\DataObjectProcessor</a> to separate out responsibilities to the following smaller classes:
+
+	*	Added new class `\Magento\Framework\Reflection\CustomAttributesProcessor`
+	*	Added new class `\Magento\Framework\Reflection\ExtensionAttributesProcessor`
  	*	Added new class `\Magento\Framework\Reflection\FieldNamer`
- 	*	Added new class `\Magento\Framework\Reflection\MethodsMap`
- 	*	Added new class `\Magento\Framework\Reflection\TypeCaster`
-*	Added an additional parameter `$methodsMapProcessor` for the constructor of Magento\Framework\Webapi\ServiceOutputProcessor
+	*	Added new class `\Magento\Framework\Reflection\MethodsMap`
+	*	Added new class `\Magento\Framework\Reflection\TypeCaster`
+
+*	Added an additional parameter `$methodsMapProcessor` for the constructor of `\Magento\Framework\Webapi\ServiceOutputProcessor`
 
 <h3 id="rn-074b10-except">Backward-incompatible changes in exceptions</h3>
-*	Eliminated the following exceptions and replaced with `\Magento\Framework\Exception\LocalizedException`:
+*	Eliminated the following exceptions and replaced with <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Exception/LocalizedException.php" target="_blank">\Magento\Framework\Exception\LocalizedException</a>:
 
 	*	`\Magento\Backup\Exception`
 	*	`\Magento\Catalog\Exception`

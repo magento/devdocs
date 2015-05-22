@@ -34,9 +34,6 @@ features of all Magento 2 releases starting with Developer Beta in December 2014
     *   Backward compatible for classes and methods annotated with `@api`
     *   Backward compatible for all client users within minor and patch core updates
     *   We'll use  `@deprecated` to notify you of removal on the next major change
-*   Refactored API code for:
-    *   CatalogInventory module
-    *   Tax module
 *   Removed the `Magento_Core` module; moved functions to other modules
 
 

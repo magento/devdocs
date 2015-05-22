@@ -15,7 +15,7 @@ We have identified the following known issues in this release:
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
-*   <a href="#known-devrc-php">Known issue with certain PHP versions</a>
+*   <a href="#known-devrc-php">Known issue with timezone in certain PHP versions</a>
 *   <a href="#known-devbeta-xdebug">Known issue with xdebug</a>
 *   <a href="#known-devbeta-storefront-err">Access errors</a>
 *   <a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a>
@@ -26,7 +26,9 @@ We have identified the following known issues in this release:
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
 
-<h3 id="known-devrc-php">Known issue with certain PHP versions</h3>
+<h3 id="known-devrc-php">Known issue with timezone in certain PHP versions</h3>
+This issue affects builds *earlier than* 0.74-beta10 only. If you have a later build, you can ignore this issue.
+
 There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
 
 *   5.5.10&ndash;5.5.16
@@ -110,7 +112,7 @@ To access your Magento-created encryption key:
 2.  Do any of the following:
 
     *   Build 0.74-beta9 or earlier: Open `<your Magento install dir>/app/etc/config.php` in a text editor.
-    *   Build 0.74-beta10 or later: Open `<your Magento install dir>/app/etc/config.php` in a text editor.
+    *   Build 0.74-beta10 or later: Open `<your Magento install dir>/app/etc/env.php` in a text editor.
     
 3.  Locate the value of `'key' =>`.
         
