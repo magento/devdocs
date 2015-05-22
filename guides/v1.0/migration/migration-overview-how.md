@@ -33,7 +33,7 @@ Any specific information about the migration command-line tool is speculative. T
 
 Conceptual overview
 
-Each mode has several steps; steps might include data migration and integrity checking. Mapping files enable you to specify how custom database data is moved. ( (fFor example, if you have custom data you can move it as-is or you can rename tables and fields in the Magento 2 database). The declarative language used in the mapping files makes it as easy as possible for you to map your custom data.
+Each mode has several steps; steps might include data migration and integrity checking. Mapping files enable you to specify how custom database data is moved. (For example, if you have custom data you can move it as-is or you can rename tables and fields in the Magento 2 database). The declarative language used in the mapping files makes it as easy as possible for you to map your custom data.
 
 All Magento 1.x core tables are automatically migrated to Magento 2.0 with no action required; you need to map only your custom database tables.
 
