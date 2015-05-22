@@ -35,9 +35,9 @@ This gives you an idea about what the data looks like.
 <h2 id="config-cli-perf-prof">About profiles</h2>
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
-Profiles are located in `<your Magento install dir>/dev/tools/performance-toolkit/profiles/<ce or ee>`
+Profiles are located in `<your Magento install dir>/setup/performance-toolkit/profiles/<ce or ee>`
 
-For example, `/var/www/html/magento2/dev/tools/performance-toolkit/profiles/ce`
+For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
 <table>
 	<tbody>
@@ -161,7 +161,7 @@ where `<path to profile>` specifies the absolute file system path to and name of
 
 For example,
 
-	magento setup:perf:generate-fixtures /var/www/html/magento2/dev/tools/performance-toolkit/profiles/ce/small.xml
+	magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
 
 Sample output for the small profile:
 
