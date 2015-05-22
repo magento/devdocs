@@ -54,7 +54,7 @@ Magento 2 has the following cache types:
       <td><p>View files fallback</p></td>
       <td><p>view_files_fallback</p></td>
       <td><p>Paths to view files per theme and application area (adminhtml or frontend).</p>
-	<p>Clean or flush this cache type after you add or remove a theme.</p></td>
+	<p>Clean or flush this cache type after you add or remove a static view file or theme.</p></td>
     </tr>
     <tr>
       <td><p>View files pre-processing</p></td>
@@ -75,6 +75,12 @@ Magento 2 has the following cache types:
       	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
       	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
       	<p>One way to update the database schema automatically is using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
+    </tr>
+    <tr>
+      <td><p>Entity attribute value (EAV)</p></td>
+      <td><p>eav</p></td>
+      <td><p>Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).</p>
+        <p>You should not typically need to clean or flush this cache type.</p></td>
     </tr>
     <tr>
       <td><p>Page cache</p></td>
@@ -111,9 +117,9 @@ Magento 2 has the following cache types:
 <h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
 To view the status of the cache, enter
 
-	magento cache:status [--bootstrap="<url-encoded array>"]
+	magento cache:status 
 
-where `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
+<!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
 A sample follows:
 
@@ -136,8 +142,8 @@ This command enables you to enable or disable all cache types or only the ones y
 
 Command options:
 
-	magento cache:enable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
-	magento cache:disable [--all] [--bootstrap="<url-encoded array>"] [type] ... [type]
+	magento cache:enable [--all] [type] ... [type]
+	magento cache:disable [--all] [type] ... [type] 
 
 where
 
@@ -145,7 +151,7 @@ where
 
 `type` is a space-separated list of cache types.
 
-`--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
+<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
 
 To list cache types and their status, enter
 
@@ -179,8 +185,8 @@ To purge out-of-date items from the cache, you can *clean* or *flush* cache type
 
 Command usage:
 
-	magento cache:clean [--all] [--bootstrap="..."] [type] ... [type]
-	magento cache:flush [--all] [--bootstrap="..."] [type] ... [type]
+	magento cache:clean [--all] [type] ... [type]
+	magento cache:flush [--all] [type] ... [type]
 
 where
 
@@ -188,8 +194,8 @@ where
 
 `type` is a space-separated list of cache types.
 
-`--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
-
+<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
+ -->
 For example, to flush all cache types, enter
 
 	magento cache:flush --all

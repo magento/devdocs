@@ -22,20 +22,22 @@ github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
-To use the Magento performance toolkit or to do similar performance testing, you need to generate a large amount of data (for example, stores, categories, products, and so on).
+To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
-You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses more detail.
+You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
 The following figure shows how a product displays on the storefront using the small profile:
 
 <p><img src="{{ site.baseurl }}common/images/config_generate-data.png" alt="Sample storefront with generated data"></p>
 
+This gives you an idea about what the data looks like.
+
 <h2 id="config-cli-perf-prof">About profiles</h2>
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
-Profiles are located in `<your Magento install dir>/setup/performance_toolkit/profiles/<ce or ee>/profiles`
+Profiles are located in `<your Magento install dir>/dev/tools/performance-toolkit/profiles/<ce or ee>`
 
-For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
+For example, `/var/www/html/magento2/dev/tools/performance-toolkit/profiles/ce`
 
 <table>
 	<tbody>
@@ -159,7 +161,7 @@ where `<path to profile>` specifies the absolute file system path to and name of
 
 For example,
 
-	magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+	magento setup:perf:generate-fixtures /var/www/html/magento2/dev/tools/performance-toolkit/profiles/ce/small.xml
 
 Sample output for the small profile:
 

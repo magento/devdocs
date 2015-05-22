@@ -44,7 +44,7 @@ Several Magento features require at least one cron job, which schedules activiti
   <p>Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</p></span>
 </div>
 
-UNIX systems schedule tasks to be performed by particular users using a *crontab*, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". Each user has its own crontab, and commands in any given crontab are executed as the user who owns the crontab.
+UNIX systems schedule tasks to be performed by particular users using a *crontab*, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". Each user has its own crontab, and commands in any given crontab are executed as the user who owns it.
 
 See one of the following sections:
 
@@ -84,10 +84,14 @@ You can run cron anytime using a web browser (for example, during development).
 Before you run cron in the browser, remove the restriction from `.htaccess` as follows:
 
 1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
-2.	Open `<your Magento install dir>/pub/.htaccess` in a text editor.
+2.	Open any of the following in a text editor (depending on your entry point to Magento):
+
+		`<your Magento install dir>/pub/.htaccess`
+		`<your Magento install dir>/.htaccess`
+
 3.	Delete or comment out the following:
 
-		## Deny access  to cron.php
+		## Deny access to cron.php
     	<Files cron.php>
         	order allow,deny
         	deny from all
@@ -103,43 +107,54 @@ Before you run cron in the browser, remove the restriction from `.htaccess` as f
 
 3.	Save your changes and exit the text editor.
 
-You can then run cron in a web browser as follows:
+You can then run cron in a web browser in any of the following ways (depending on your entry point to Magento):
 
+	<your Magento host name or IP>/<Magento root>/cron.php[?group=<group name>]
 	<your Magento host name or IP>/<Magento root>/pub/cron.php[?group=<group name>]
 
 where
 
 *	`<your Magento host name or IP>` is the host name or IP address of your Magento installation
-*	`<Magento root>` is the docroot-relative directory to which you installed the Magento software
+*	`<Magento root>` is the web server docroot-relative directory to which you installed the Magento software
 
 	The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.
-*	`<group name>` is any valid cron group name
+*	`<group name>` is any valid cron group name (optional)
 
 For example,
 
 	http://magento.example.com/magento2/pub/cron.php?group=default
 
-<a href="#config-cli-cron-group-conf">More information about cron groups</a>.
+<a href="#config-cli-cron-group-conf">More information about cron groups</a>
 
 <h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
+This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.
+
+Most Magento modules are in the `default` group; other modules are in the `index` group.
+
+See one of the following sections:
+
+*	<a href="#config-cli-cron-group-conf">Configure cron groups for custom modules</a>
+*	<a href="#config-cli-cron-group-run">Run cron from the command line</a>
+
+<h3 id="config-cli-cron-group-conf">Configure cron groups for custom modules</h3>
+This section discusses how to optionally create a cron group for a custom module. If you don't need to do this, continue with the next section.
+
 A *cron group* is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the `default` cron group; some modules use the `index` group.
 
 If you're implementing cron for a custom module, it's your choice of whether or not to use the `default` group or a different group.
 
-<h3 id="config-cli-cron-group-conf">Configure cron groups</h3>
-This section discusses how to optionally create a cron group for a custom module. If you don't need to do this, continue with the next section.
-
 To configure a cron group for your module, create `<your Magento install dir>/app/code/<VendorName>/<ModuleName>/etc/crontab.xml` with the following contents:
 
 	<config>
-    	<group id="%group_name%">
-	        <job name="%job_name%" instance="%classpath%" method="%method%">
-	            <schedule>%time%</schedule>
+    	<group id="<group_name>">
+	        <job name="<job_name>" instance="<classpath>" method="<method>">
+	            <schedule><time></schedule>
 	        </job>
 	    </group>
 	</config>
 
 The following table discusses the meanings of the options.
+
 
 <table>
 	<col width="25%">
@@ -151,30 +166,31 @@ The following table discusses the meanings of the options.
 		</tr>
 		
 	<tr>
-		<td><p>%group_name%</p></td>
+		<td><p>&lt;group_name></p></td>
 		<td><p>Name of the cron group. The group name doesn't have to be unique.</p>
 			<p>You can run cron for one group at a time.</p></td>
 	</tr>
 	<tr>
-		<td><p>%job_name%</p></td>
+		<td><p>&lt;job_name></p></td>
 		<td><p>Unique ID for this cron job.</p>
 		</td>		
 	</tr>
 	<tr>
-		<td><p>%classpath%</p></td>
+		<td><p>&lt;classpath></p></td>
 		<td><p>Classpath.</p></td>		
 	</tr>
 	<tr>
-		<td><p>%method%</p></td>
-		<td><p>Method in <code>%classpath%</code> to call.</p></td>		
+		<td><p>&lt;method></p></td>
+		<td><p>Method in <code>&lt;classpath></code> to call.</p></td>		
 	</tr>
 	<tr>
-		<td><p>%time%</p></td>
+		<td><p>&lt;time></p></td>
 		<td><p>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>.</p>
 			<p>Omit this parameter if the schedule is defined in the Magento database or other storage.</p></td>		
 	</tr>
 	</tbody>
 </table>
+
 
 In addition, the `<group>` element supports the following options, all of which run in store view scope:
 
@@ -202,7 +218,7 @@ In addition, the `<group>` element supports the following options, all of which 
 	</tr>
 	<tr>
 		<td><p>history_cleanup_every</p></td>
-		<td><p>Determines the number of minutes that pass before the cron history is cleaned.</p></td>		
+		<td><p>Determines the number of minutes that cron history is kept in the database.</p></td>		
 	</tr>
 	<tr>
 		<td><p>history_success_lifetime</p></td>
@@ -226,7 +242,7 @@ As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/
 <h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
 Command options:
 
-	magento cron:run [--group="<cron group name>"] [--bootstrap="<options>"]
+	magento cron:run [--group="<cron group name>"] 
 
 where `--group` specifies the cron group to run (omit this option to run cron for the `default` group)
 

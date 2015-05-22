@@ -34,13 +34,7 @@ Command options:
 
 	magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
 
-where
-
-*	`{show-modules}` results in a module dependency report
-*	`{show-modules-circular}` results in a circular dependency report
-*	`{show-framework}` results in a framework dependency report
-
-The following table discusses the meanings of this command's parameters and values. 
+The following table discusses the meanings of this command's options, parameters, and values. 
 
 <table>
 	<col width="25%">
@@ -52,7 +46,21 @@ The following table discusses the meanings of this command's parameters and valu
 			<th>Value</th>
 			<th>Required?</th>
 		</tr>
-		
+	<tr>
+		<td><p>show-modules</p></td>
+		<td><p>Module dependencies report.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>show-modules-circular</p></td>
+		<td><p>Circular dependencies report.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>show-framework</p></td>
+		<td><p>Framework dependencies report.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
 	<tr>
 		<td><p>-d|--directory</p></td>
 		<td><p>Path to the base directory to start searching for report data.</p></td>
@@ -70,7 +78,7 @@ The following table discusses the meanings of this command's parameters and valu
 </table>
 
 ### Sample module dependencies report
-Following is a portion of the output for a sample report:
+Following is a portion of the output for a sample module dependencies report:
 
 	"","All","Hard","Soft"
 	"Total number of dependencies","602","587","15"
@@ -91,7 +99,7 @@ Following is a portion of the output for a sample report:
 	" -- magento/module-import-export","","1","0"
 
 ### Sample circular dependencies report
-Following is a portion of the output for a sample report:
+Following is a portion of the output for a sample circular dependencies report:
 
 	"Circular dependencies:","Total number of chains"
 	"","848"
@@ -114,7 +122,7 @@ Following is a portion of the output for a sample report:
 	"magento/module-config->magento/module-backend->magento/module-sales->magento/module-checkout->magento/module-customer->magento/module-review->magento/module-catalog->magento/module-catalog-rule->magento/module-rule->magento/module-eav->magento/module-config"
 
 ### Sample framework dependencies report
-Following is a portion of the output for a sample report:
+Following is a portion of the output for a sample framework dependencies report:
 
 	"Dependencies of framework:","Total number"
 	"","111"
