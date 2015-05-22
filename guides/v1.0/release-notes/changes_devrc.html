@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>System Requirements</title>
+	<title>Release Notes</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/system-requirements.html">
+	<link rel="canonical" href="//guides/v1.0/release-notes/changes_devrc.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">System Requirements</h1>
+		<h1 class="page-heading">Release Notes</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/system-requirements.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/release-notes/changes_devrc.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,76 +149,140 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Before you install Magento, make sure your system meets or exceeds the following requirements:</p>
+		<h2 id="changes-contents">Contents</h2>
 
 <ul>
-  <li>
-    <p>Operating systems </p>
-
-    <p>Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on</p>
-  </li>
-  <li><a href="https://getcomposer.org/download/" target="_blank">Composer</a> (latest stable version)</li>
-  <li>
-    <p><a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a></p>
-
-    <p>In addition, the apache <code>mod_rewrite</code> module must be enabled. <code>mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a>.</p>
-  </li>
-  <li>
-    <p>PHP:</p>
-
-    <ul>
-      <li>5.6.x</li>
-      <li>5.5.x </li>
-    </ul>
-
-    <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  	<ul><li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
-  		<ul><li>5.5.10&ndash;5.5.16</li>
-    <li>5.6.0</li></ul>
-</li>
-<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
-<p>To work around the issue, see <a href="/guides/v1.0/release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
-<li>Magento no longer supports PHP 5.4.</li></ul></span>
-</div>
-  </li>
-  <li>
-    <p>Required PHP extensions:</p>
-
-    <ul>
-      <li>PDO/MySQL</li>
-      <li>mbstring</li>
-      <li>mcrypt</li>
-      <li>mhash</li>
-      <li>simplexml</li>
-      <li>curl</li>
-      <li>gd2, ImageMagick 6.3.7 (or later) or both</li>
-      <li>soap</li>
-      <li>intl</li>
-    </ul>
-  </li>
-  <li><a href="http://dev.mysql.com/doc/refman/5.6/en/installing.html" target="_blank">MySQL 5.6.x</a></li>
-  <li>Mail Transfer Agent (MTA) or an SMTP server</li>
-  <li>
-    <p>Optional but recommended:</p>
-
-    <ul>
-      <li>
-        <p><a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)</p>
-
-        <div class="bs-callout bs-callout-info" id="info">
-  		<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-  		<p>For details, see <a href="/guides/v1.0/release-notes/known-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.
-
-
-</p></div>
-      </li>
-      <li>
-        <p>PHPUnit (as a command-line tool) 4.1 or later</p>
-      </li>
-    </ul>
-  </li>
+  <li><a href="#change-devrc-overview">Overview of the Developer RC release</a></li>
+  <li><a href="#change-devrc-unit">Unit tests now located in module directories</a></li>
+  <li><a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
+  <li><a href="#change-devbeta-sampledata">Magento sample data is available only if you update composer.json</a></li>
 </ul>
+
+<h2 id="change-devrc-overview">Overview of the Developer RC release</h2>
+<p>These Release Notes discuss important changes in this release. For additional details, see the following:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/develop/CHANGELOG.md#0740-beta1" target="_blank">Changelog</a></li>
+  <li><a href="/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
+  <li><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release highlights</a></li>
+</ul>
+
+<h2 id="change-devrc-unit">Unit tests now located in module directories</h2>
+<p>For you to run PHPUnit-based tests, you must first run <code>&lt;your Magento root dir&gt;/composer install</code> to download the PHPUnit component and create the <code>vendor/bin/phpunit</code> executable. </p>
+
+<p>This way, you no longer have to download PHPUnit for your operating system; you can use the one provided with Magento instead.</p>
+
+<p>See the following sections for more information:</p>
+
+<ul>
+  <li><a href="#change-devrc-unit-move">Relocate unit test code</a></li>
+  <li><a href="#change-devrc-unit-run">Run unit tests</a></li>
+</ul>
+
+<h3 id="change-devrc-unit-move">Relocate unit test code</h3>
+<p>Code for unit tests must be located in a directory named <code>Test/Unit</code> in the module’s directory structure. A sample follows:</p>
+
+<pre><code>__/&lt;Magento root dir&gt;
+  |__/app/code/Magento/Catalog
+    |__/Controller
+    |__/Model
+    |__/Test
+      |__/Unit
+        |   |-- SomeUnitTest.php
+</code></pre>
+
+<p>To transition your existing tests to using the new directories, we recommend the following:</p>
+
+<ol>
+  <li>Resolve any conflicts between your working branch and the master or develop branch.</li>
+  <li>
+    <p>Refactor your tests by moving them to the directories.  </p>
+
+    <p>Be sure to update the namespace of the test.</p>
+  </li>
+  <li>
+    <p>Fix any references to the <code>TestFramework</code> files because they moved from <code>Magento\TestFramework\</code> to <code>Magento\Framework\TestFramework\Unit\</code></p>
+  </li>
+  <li>
+    <p>Fix any references to classes that were in the same namespace as your tests.  </p>
+
+    <p>Because the test namespace changed, you must add an alias for the old namespace.</p>
+  </li>
+</ol>
+
+<h3 id="change-devrc-unit-run">Run unit tests</h3>
+<p>To run <em>all</em> unit tests, enter the following commands in the order shown:</p>
+
+<pre><code>cd &lt;your Magento install dir&gt;/dev/Test/Unit
+../../../vendor/bin/phpunit .
+
+cd &lt;your Magento install dir&gt;/dev/Test/Integration
+../../../vendor/bin/phpunit .
+</code></pre>
+
+<ul>
+  <li>This should automatically discover any tests as defined by that phpunit configuration file (which might in turn refer to a test suite implementation)</li>
+  <li>That test suite implementation searches for corresponding tests in known component locations</li>
+</ul>
+
+<p>To run <em>individual</em> tests, enter the following commands in the order shown:</p>
+
+<pre><code>cd &lt;component root dir&gt;
+../bin/phpunit Tests // run defined component tests
+
+cd &lt;your Magento install dir&gt;/app/code/Magento/Catalog/Test/Integration
+../../../../../../vendor/bin/phpunit . // run integration tests defined for the Magento_Catalog module
+</code></pre>
+
+<h2 id="change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</h2>
+<p>This change applies to the following situation only:</p>
+
+<ul>
+  <li>You currently have version 0.42.0-beta10 or earlier</li>
+  <li>You’re updating to version 0.42.0-beta11 or later</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
+</div>
+<p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
+<ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
+<li>Resources in the table are replaced by module names. For example, <code>catalog_setup</code> is now <code>Magento_Catalog</code>, which exactly matches the module name. </li>
+<li>The following fields in the <code>setup_module</code> table have new names:
+<ul><li><code>code</code> is now <code>module</code></li>
+<li><code>version</code> is now <code>schema_version</code></li></ul>
+</li>
+</ul>
+<p>Old way:</p>
+<pre>	code                     | version   | data_version|
+	-----------------------------------------------------------
+	catalog_setup            | 2.0.0     | 2.0.0   
+	checkoutagreements_setup | 2.0.0     | 2.0.0   
+	checkout_setup           | 2.0.0     | 2.0.0   
+	cms_setup                | 2.0.0.1   | 2.0.0.1 </pre>
+<p>New way:</p>
+
+<pre>	module                       | schema_version        | data_version|
+	------------------------------------------------------------------------
+	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
+	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
+	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
+	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
+	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0</pre>
+
+<p>For details, see <a href="/guides/v1.0/install-gde/install/install-cli-install.html#instgde-install-magento-updatebeta11">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a></p>
+
+<h2 id="change-devbeta-sampledata">Magento sample data is available only if you update composer.json</h2>
+
+<p>To install the optional Magento 2 sample data, you must update <code>composer.json</code>, run <code>composer update</code>, and run the Magento 2 installer to update the database.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento 2 versions 0.42.0-beta10 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.42.0-beta10"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
+<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
+</div>
+
+<p>See <a href="/guides/v1.0//install-gde/install/sample-data.html">Enable optional Magento sample data</a>.</p>
 
 
 
@@ -253,6 +317,42 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -264,323 +364,21 @@
 						
 						
 							
-														
 							
-								
-								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-								
-								
+								<li class=""><a href="/guides/v1.0/release-notes/bk-release-notes.html">Highlights</a></li>
+				
 							
-								
-								
-								
-								
 							
+								<li class=""><a href="/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
+				
 							
-						
-
-					
-					
-						
-						
-						
-						
 							
-														
+								<li class=" active "><a href="/guides/v1.0/release-notes/changes_devrc.html">Changes in 0.74-beta1 (Developer RC)</a></li>
+				
 							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-								
-								
 							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/optional.html">Optional software</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/sample-data.html">Optional Magento sample data</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
-								
-								
-								
+								<li class=""><a href="/guides/v1.0/release-notes/changes_074-beta10.html">Changes in 0.74-beta10</a></li>
+				
 							
 							
 						
@@ -588,42 +386,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			

@@ -175,7 +175,7 @@
 This has the additional benefit of eliminating users' learning curve</li>
 <li>Commands for disabled modules do not display.</li></ul>
 
-<p>This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see TBD.</p>
+<p>This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see the <a href="/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a>.</p>
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 <p>Before you begin, make sure that:</p>
@@ -191,17 +191,17 @@ This has the additional benefit of eliminating users' learning curve</li>
 </div> -->
 
 <h2 id="instgde-install-cli-first">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
 
 <h4 id="next-steps">Next steps</h4>
 
@@ -246,31 +246,6 @@ Examples:
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
 					
 					
 						
@@ -435,7 +410,7 @@ Examples:
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
 						
 								
 							

@@ -158,17 +158,18 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
 <p>This command has no prerequisites.</p>
@@ -176,8 +177,8 @@ Examples:
 <h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
 <p>To enable or disable available modules, use the following command:</p>
 
-<pre><code>php magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
-php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
+<pre><code>magento module:enable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
+magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;module-list&gt; 
 </code></pre>
 
 <p>where</p>
@@ -197,12 +198,12 @@ php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;
 
 <p>Use the following command to list enabled and disabled modules:</p>
 
-<pre><code>php magento module:status
+<pre><code>magento module:status
 </code></pre>
 
 <p>For example, to disable the Weee module, enter:</p>
 
-<pre><code>php magento module:disable Magento_Weee
+<pre><code>magento module:disable Magento_Weee
 </code></pre>
 
 <p>For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p>
@@ -210,7 +211,7 @@ php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;
 <h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
 <p>If you enabled one or more modules, run the following command to update the database:</p>
 
-<pre><code>php magento setup:upgrade
+<pre><code>magento setup:upgrade
 </code></pre>
 
 <h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
@@ -242,7 +243,7 @@ php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;
 <ul>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a></li>
@@ -287,31 +288,6 @@ php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
 					
 					
 						
@@ -476,7 +452,7 @@ php magento module:disable [-c|--clear-static-content] [-f|--force] [--all] &lt;
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
 						
 								
 							

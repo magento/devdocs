@@ -150,12 +150,14 @@
 		<div class="content-wrap">
 		
 		<h2 id="known-devbeta">Known issues</h2>
+<p>This page discusses known issues in all Magento 2 releases starting with Developer Beta in December, 2014.</p>
+
 <p>We have identified the following known issues in this release:</p>
 
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
 <ul>
-  <li><a href="#known-devrc-php">Known issue with certain PHP versions</a></li>
+  <li><a href="#known-devrc-php">Known issue with timezone in certain PHP versions</a></li>
   <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
   <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
   <li><a href="#known-devbeta-wiz-fail-bogus">Setup Wizard reports failure falsely</a></li>
@@ -167,7 +169,9 @@
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
 
-<h3 id="known-devrc-php">Known issue with certain PHP versions</h3>
+<h3 id="known-devrc-php">Known issue with timezone in certain PHP versions</h3>
+<p>This issue affects builds <em>earlier than</em> 0.74-beta10 only. If you have a later build, you can ignore this issue.</p>
+
 <p>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:</p>
 
 <ul>
@@ -267,7 +271,14 @@
 
 <ol>
   <li>Log in to your Magento server as a user with <code>root</code> privileges.</li>
-  <li>Open <code>&lt;your Magento install dir&gt;/app/etc/config.php</code> in a text editor.</li>
+  <li>
+    <p>Do any of the following:</p>
+
+    <ul>
+      <li>Build 0.74-beta9 or earlier: Open <code>&lt;your Magento install dir&gt;/app/etc/config.php</code> in a text editor.</li>
+      <li>Build 0.74-beta10 or later: Open <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> in a text editor.</li>
+    </ul>
+  </li>
   <li>Locate the value of <code>'key' =&gt;</code>.</li>
 </ol>
 
@@ -414,19 +425,15 @@ If you don't know where `php.ini` is located, use the following steps:
 				
 							
 							
-								<li class=""><a href="/guides/v1.0/release-notes/changes.html">Changes in this release</a></li>
-				
-							
-							
-								<li class=""><a href="/guides/v1.0/release-notes/issues-fixed.html">Issues fixed since last release</a></li>
-				
-							
-							
-								<li class=""><a href="/guides/v1.0/release-notes/community.html">Community requests</a></li>
-				
-							
-							
 								<li class=" active "><a href="/guides/v1.0/release-notes/known-issues.html">Known issues</a></li>
+				
+							
+							
+								<li class=""><a href="/guides/v1.0/release-notes/changes_devrc.html">Changes in 0.74-beta1 (Developer RC)</a></li>
+				
+							
+							
+								<li class=""><a href="/guides/v1.0/release-notes/changes_074-beta10.html">Changes in 0.74-beta10</a></li>
 				
 							
 							

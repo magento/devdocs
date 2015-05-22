@@ -214,13 +214,13 @@
 <table>
   <tbody>
     <tr>
-      <th>Configuraiton file</th>
+      <th>Configuration file</th>
       <th>Description</th>
       <th>Stage</th>
       <th>Configuration object</th>
     </tr>
     <tr>
-      <td><code>config.php</code></td>
+      <td><code>config.php</code> and <code>env.php</code></td>
       <td><a href="/guides/v1.0/config-guide/config/config-php.html">Deployment configuration</a></td>
       <td>Loads into memory when Magento initializes</td>
       <td>Has no object, cannot be customized</td>
@@ -229,19 +229,19 @@
       <td><code>config.xml</code></td>
       <td>System configuration</td>
       <td>primary, global </td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a></td>
+      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
     </tr>
     <tr>
       <td><code>di.xml</code></td>
       <td><a href="/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
       <td>primary, global, area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">Magento\Framework\ObjectManager\Config</a></td>
+      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
     </tr>
     <tr>
       <td><code>events.xml</code></td>
       <td>Event/observer configuration</td>
       <td>global, area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
     </tr>
 <!--     <tr>
       <td><code>cache.xml</code></td>
@@ -280,7 +280,7 @@
 
 <ul>
   <li><a href="/guides/v1.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
-  <li><a href="/guides/v1.0/config-guide/config/config-php.html">Magento’s deployment configuration, config.php</a></li>
+  <li><a href="/guides/v1.0/config-guide/config/config-php.html">Magento’s deployment configuration</a></li>
 </ul>
 
 
@@ -425,6 +425,14 @@
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
 						
 								
@@ -433,7 +441,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
 						
 								
 							
@@ -450,6 +458,14 @@
 								
 							
 									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 						
 								
 								
@@ -529,7 +545,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							

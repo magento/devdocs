@@ -157,24 +157,25 @@
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-subcommands-less-sass">Create LESS files</h2>
 <p>This command enables you to create LESS files from existing CSS files.</p>
 
 <p>Command options:</p>
 
-<pre><code>php magento dev:css:deploy less &lt;file&gt; [--locale="&lt;locale&gt;" ... "&lt;locale&gt;"] [--area="{adminhtml|frontend}"] [--theme="&lt;theme name&gt;" ... 
+<pre><code>magento dev:css:deploy less &lt;file&gt; [--locale="&lt;locale&gt;" ... "&lt;locale&gt;"] [--area="{adminhtml|frontend}"] [--theme="&lt;theme name&gt;" ... 
 "&lt;theme name&gt;"] 
 </code></pre>
 
@@ -223,7 +224,7 @@ Examples:
 
 <p>For example, to create LESS files for the frontend theme named <code>VendorName/themeName</code> in the <code>en_US</code> locale using a CSS file named <code>&lt;your Magento install dir&gt;/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css</code>, enter the following command:</p>
 
-<pre><code>php magento dev:css:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
+<pre><code>magento dev:css:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
 </code></pre>
 
 <p>The following messages display to confirm success:</p>
@@ -237,12 +238,16 @@ Successfully processed LESS files
 <ul>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
 
 
@@ -387,6 +392,14 @@ Successfully processed LESS files
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
 						
 								
@@ -395,7 +408,7 @@ Successfully processed LESS files
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
 						
 								
 							
@@ -412,6 +425,14 @@ Successfully processed LESS files
 								
 							
 									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 						
 								
 								
@@ -491,7 +512,7 @@ Successfully processed LESS files
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							

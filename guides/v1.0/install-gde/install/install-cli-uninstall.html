@@ -162,17 +162,18 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-install-magento-update">Update the Magento software</h2>
 <p>This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.</p>
@@ -264,11 +265,11 @@ php bin/magento setup:uninstall
 </ol>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
-<p>Uninstalling the Magento software drops and restores the database, removes ‘config.php’, and clears directories under <code>var</code>.</p>
+<p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code>var</code>.</p>
 
 <p>To uninstall the Magento software, enter the following command:</p>
 
-<pre><code>php magento setup:uninstall
+<pre><code>magento setup:uninstall
 </code></pre>
 
 <p>The following message displays to confirm a successful uninstallation:</p>
@@ -337,7 +338,7 @@ php bin/magento setup:uninstall
   <li>
     <p>Uninstall the Magento software and change to your Magento installation directory:</p>
 
-    <pre><code>php magento setup:uninstall &amp;&amp; cd ..
+    <pre><code>magento setup:uninstall &amp;&amp; cd ..
 </code></pre>
   </li>
   <li>
@@ -403,31 +404,6 @@ php bin/magento setup:uninstall
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
 					
 					
 						
@@ -592,7 +568,7 @@ php bin/magento setup:uninstall
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
 						
 								
 							

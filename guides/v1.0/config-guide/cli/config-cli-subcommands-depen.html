@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>System Requirements</title>
+	<title>Dependency reports</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/system-requirements.html">
+	<link rel="canonical" href="//guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">System Requirements</h1>
+		<h1 class="page-heading">Dependency reports</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/system-requirements.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -149,77 +149,176 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Before you install Magento, make sure your system meets or exceeds the following requirements:</p>
+		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li>
-    <p>Operating systems </p>
+  <li><a href="#config-cli-before">First steps</a></li>
+  <li><a href="#config-cli-depend-rpt-overview">Overview of dependency reports</a></li>
+  <li><a href="#config-cli-depend-rpt-run">Run dependency reports</a></li>
+</ul>
 
-    <p>Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on</p>
-  </li>
-  <li><a href="https://getcomposer.org/download/" target="_blank">Composer</a> (latest stable version)</li>
-  <li>
-    <p><a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a></p>
-
-    <p>In addition, the apache <code>mod_rewrite</code> module must be enabled. <code>mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a>.</p>
-  </li>
-  <li>
-    <p>PHP:</p>
-
-    <ul>
-      <li>5.6.x</li>
-      <li>5.5.x </li>
-    </ul>
-
-    <div class="bs-callout bs-callout-info" id="info">
+<h2 id="config-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  	<ul><li>There is a <a href="https://bugs.php.net/bug.php?id=66985" target="_blank">known PHP issue</a> with versions:
-  		<ul><li>5.5.10&ndash;5.5.16</li>
-    <li>5.6.0</li></ul>
-</li>
-<p>This issue prevents users from being able to set their timezones to Greenwich time and several other time zones. </p>
-<p>To work around the issue, see <a href="/guides/v1.0/release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a>.</p>
-<li>Magento no longer supports PHP 5.4.</li></ul></span>
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
 </div>
-  </li>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+
+<h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>
+<p>You can run the following types of reports:</p>
+
+<ul>
+  <li>Module dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft</li>
+  <li>Circular dependencies: Shows the total number of dependency chains and the number and list of circular dependencies for each module</li>
   <li>
-    <p>Required PHP extensions:</p>
+    <p>Framework dependencies: Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library)</p>
 
-    <ul>
-      <li>PDO/MySQL</li>
-      <li>mbstring</li>
-      <li>mcrypt</li>
-      <li>mhash</li>
-      <li>simplexml</li>
-      <li>curl</li>
-      <li>gd2, ImageMagick 6.3.7 (or later) or both</li>
-      <li>soap</li>
-      <li>intl</li>
-    </ul>
-  </li>
-  <li><a href="http://dev.mysql.com/doc/refman/5.6/en/installing.html" target="_blank">MySQL 5.6.x</a></li>
-  <li>Mail Transfer Agent (MTA) or an SMTP server</li>
-  <li>
-    <p>Optional but recommended:</p>
-
-    <ul>
-      <li>
-        <p><a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)</p>
-
-        <div class="bs-callout bs-callout-info" id="info">
-  		<p>There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.</p>
-  		<p>For details, see <a href="/guides/v1.0/release-notes/known-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.
-
-
-</p></div>
-      </li>
-      <li>
-        <p>PHPUnit (as a command-line tool) 4.1 or later</p>
-      </li>
-    </ul>
+    <p>A dependency in a comment is also a dependency.</p>
   </li>
 </ul>
 
+<h2 id="config-cli-depend-rpt-run">Run dependency reports</h2>
+<p>Command options:</p>
+
+<pre><code>magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="&lt;path&gt;"] [-o|--output="&lt;path and filename"]
+</code></pre>
+
+<p>The following table discusses the meanings of this command’s options, parameters, and values. </p>
+
+<table>
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
+	<tbody>
+		<tr>
+			<th>Parameter</th>
+			<th>Value</th>
+			<th>Required?</th>
+		</tr>
+	<tr>
+		<td><p>show-modules</p></td>
+		<td><p>Module dependencies report.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>show-modules-circular</p></td>
+		<td><p>Circular dependencies report.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>show-framework</p></td>
+		<td><p>Framework dependencies report.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>-d|--directory</p></td>
+		<td><p>Path to the base directory to start searching for report data.</p></td>
+		<td><p>No</p></td>
+	</tr>
+	<tr>
+		<td><p>-o|--output</p></td>
+		<td><p>Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report.</p>
+		</td>
+		<td>
+			<p>No</p>
+		</td>
+	</tr>
+	</tbody>
+</table>
+
+<h3 id="sample-module-dependencies-report">Sample module dependencies report</h3>
+<p>Following is a portion of the output for a sample module dependencies report:</p>
+
+<pre><code>"","All","Hard","Soft"
+"Total number of dependencies","602","587","15"
+
+"Dependencies for each module:","All","Hard","Soft"
+"magento/module-cron","2","2","0"
+" -- magento/module-config","","1","0"
+" -- magento/module-store","","1","0"
+
+"magento/module-catalog-rule","8","8","0"
+" -- magento/module-store","","1","0"
+" -- magento/module-rule","","1","0"
+" -- magento/module-catalog","","1","0"
+" -- magento/module-customer","","1","0"
+" -- magento/module-backend","","1","0"
+" -- magento/module-eav","","1","0"
+" -- magento/module-indexer","","1","0"
+" -- magento/module-import-export","","1","0"
+</code></pre>
+
+<h3 id="sample-circular-dependencies-report">Sample circular dependencies report</h3>
+<p>Following is a portion of the output for a sample circular dependencies report:</p>
+
+<pre><code>"Circular dependencies:","Total number of chains"
+"","848"
+
+"Circular dependencies for each module:",""
+"magento/module-config","70"
+"magento/module-config-&gt;magento/module-store-&gt;magento/module-directory-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-store-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-cron-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-email-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-theme-&gt;magento/module-customer-&gt;magento/module-eav-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-reports-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-catalog-&gt;magento/module-theme-&gt;magento/module-eav-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-catalog-&gt;magento/module-log-&gt;magento/module-eav-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-customer-&gt;magento/module-checkout-&gt;magento/module-catalog-inventory-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-customer-&gt;magento/module-checkout-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-customer-&gt;magento/module-theme-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-payment-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-checkout-&gt;magento/module-customer-&gt;magento/module-review-&gt;magento/module-catalog-&gt;magento/module-themeax-&gt;magento/module-config"
+"magento/module-config-&gt;magento/module-backend-&gt;magento/module-sales-&gt;magento/module-checkout-&gt;magento/module-customer-&gt;magento/module-review-&gt;magento/module-catalog-&gt;magento/module-catalog-rule-&gt;magento/module-rule-&gt;magento/module-eav-&gt;magento/module-config"
+</code></pre>
+
+<h3 id="sample-framework-dependencies-report">Sample framework dependencies report</h3>
+<p>Following is a portion of the output for a sample framework dependencies report:</p>
+
+<pre><code>"Dependencies of framework:","Total number"
+"","111"
+
+"Dependencies for each module:",""
+"Magento\Cron","1"
+" -- Magento\Framework","143"
+
+"Magento\CatalogRule","1"
+" -- Magento\Framework","234"
+
+"Magento\Webapi","2"
+" -- Magento\Framework","347"
+" -- Magento\Server","1"
+
+"Magento\Checkout","1"
+" -- Magento\Framework","759"
+
+"Magento\Reports","1"
+" -- Magento\Framework","553"
+</code></pre>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+</ul>
 
 
 		</div>
@@ -253,6 +352,22 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -268,7 +383,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/bk-config-guide.html">Introduction</a></li>
 									
 								
 								
@@ -293,7 +408,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
 									
 								
 								
@@ -302,27 +417,11 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/apache.html">Apache</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/mysql.html">MySQL</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/prereq/optional.html">Optional software</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/magento-modes.html">Set the mode (developer, production, default)</a></li>
 						
 								
 								
@@ -342,7 +441,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
 									
 								
 								
@@ -351,11 +450,59 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 						
 								
 								
@@ -375,93 +522,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/sample-data.html">Optional Magento sample data</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/config/caching.html">Caching</a></li>
 									
 								
 								
@@ -486,7 +547,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/config/js-resources.html">JavaScript resources</a></li>
 									
 								
 								
@@ -511,72 +572,25 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
 								
+								
+							
+									<li class=""><span class="nav-header">Magento configuration files</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-files.html">Module configuration files</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
 						
 								
 								
@@ -588,22 +602,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			

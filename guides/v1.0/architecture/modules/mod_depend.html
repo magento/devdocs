@@ -183,7 +183,7 @@
   <li>(<em>Optional</em>) <strong>Define the desired load order</strong> of config files, .css files, etc. (do this in the <code>module.xml</code> file)</li>
 </ol>
 
-<p>EXAMPLE: Module A declares a dependency upon Module B. Thus, in Module A’s <code>module.xml</code> file, Module B is listed in the &lt;sequence&gt; list, so that B’s files are loaded before A’s. Additionally, in A’s <code>composer.json</code> file, a dependency upon Module B will need to be declared. Furthermore, in the deployment configuration file, Modules A and B will both need to be defined as active.</p>
+<p>EXAMPLE: Module A declares a dependency upon Module B. Thus, in Module A’s <code>module.xml</code> file, Module B is listed in the &lt;sequence&gt; list, so that B’s files are loaded before A’s. Additionally, in A’s <code>composer.json</code> file, a dependency upon Module B will need to be declared. Furthermore, in the <a href="/guides/v1.0/config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.</p>
 
 <h2 id="m2devgde-moddep-declare-deps">Declare the module's dependencies</h2>
 

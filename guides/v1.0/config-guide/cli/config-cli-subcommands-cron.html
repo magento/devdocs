@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Run tests</title>
+	<title>Configure and run cron</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">
+	<link rel="canonical" href="//guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">
 
 </head>	
 <body>
@@ -138,9 +138,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Run tests</h1>
+		<h1 class="page-heading">Configure and run cron</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/cli/config-cli-subcommands-test.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -153,8 +153,10 @@
 
 <ul>
   <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-subcommands-tests-prereq">Prerequisites</a></li>
-  <li><a href="#config-cli-subcommands-tests-overview">Overview of unit tests</a></li>
+  <li><a href="#config-cli-cron-overview">Overview of cron</a></li>
+  <li><a href="#config-cli-cron-bkg">Run cron in the background</a></li>
+  <li><a href="#config-cli-cron-browser">Run cron from a web browser</a></li>
+  <li><a href="#config-cli-cron-group">Configure and run cron using the command line</a></li>
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
@@ -171,47 +173,261 @@ bash shell example for CentOS:<br />
 </div>
 <p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="config-cli-subcommands-tests-prereq">Prerequisites</h2>
-<p>Before you run this command, all of the following must be true:</p>
+<h2 id="config-cli-cron-overview">Overview of cron</h2>
+<p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
 
 <ul>
-  <li>
-    <p>The <code>Magento_Developer</code> module must be enabled. You can enable it as follows:</p>
-
-    <pre><code>magento module:enable [--force] Magento_Developer
-</code></pre>
-
-    <p>Use the <code>--force</code> option only if it’s necessary.</p>
-  </li>
-  <li>
-    <p>Your system must be set up to run the desired tests.</p>
-
-    <p>For example, to run integration tests, you should copy <code>dev/tests/integration/etc/install-config-mysql.php.dist</code> to <code>dev/tests/integration/etc/install-config-mysql.php</code> and modify it to suit your environment.</p>
-  </li>
+  <li>Catalog price rules</li>
+  <li>Newsletters</li>
+  <li>Generating Google sitemaps</li>
+  <li>Customer Alerts/Notifications (product price change, product back in stock)</li>
+  <li>Reindexing</li>
+  <li>Private sales (Magento EE only)</li>
+  <li>Automatic updating of currency rates</li>
+  <li>All Magento e-mails (including order confirmation and transactional)</li>
 </ul>
 
-<h2 id="config-cli-subcommands-tests-overview">Overview of unit tests</h2>
-<p>This command runs a set of unit tests defined in the Magento 2 code base. You can either run all tests or tests you select.</p>
+<div class="bs-callout bs-callout-warning">
+    <p>You can no longer run <code>dev/tools/cron.sh</code> because the script has been removed.</p>
+</div>
 
-<p>Whenever a not supported type is specified, the program terminates and lists all available types.</p>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</p></span>
+</div>
 
-<p>Following execution, a detailed report displays showing the test run and results.</p>
+<p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to “run this command at this time on this date”. Each user has its own crontab, and commands in any given crontab are executed as the user who owns it.</p>
 
-<h2 id="config-cli-subcommands-tests-run">Run unit tests</h2>
-<p>Command usage:</p>
+<p>See one of the following sections:</p>
 
-<pre><code>magento dev:tests:run [--all] &lt;test&gt;
+<ul>
+  <li><a href="#config-cli-cron-bkg">Run cron in the background</a></li>
+  <li><a href="#config-cli-cron-browser">Run cron from a web browser</a></li>
+  <li><a href="#config-cli-cron-group">Configure and run cron using the command line</a></li>
+</ul>
+
+<h2 id="config-cli-cron-bkg">Run cron in the background</h2>
+<p>This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).</p>
+
+<p>First, determine the user cron should run as. For Magento, you should run cron as the web server user. To determine your web server’s user ID, enter the following command:</p>
+
+<pre><code>ps -o "user group command" -C httpd,apache2
 </code></pre>
 
-<p>To list the available tests, enter</p>
+<p>In CentOS, the Apache user is typically <code>apache</code>; in Ubuntu, it’s typically <code>www-data</code></p>
 
-<pre><code>magento dev:tests:run --help
+<p>To create a cron job as the user who runs Apache, the following commands in the order shown:</p>
+
+<ol>
+  <li>
+    <p>Create or edit a crontab for the Apache user:</p>
+
+    <pre><code>crontab -u &lt;apache user name&gt; -e
 </code></pre>
 
-<p>For example, to run integration tests, enter</p>
+    <p>A text editor displays. (You might need to choose a text editor first.)</p>
+  </li>
+  <li>
+    <p>In the editor, enter the following:</p>
 
-<pre><code>magento dev:tests:run integration
+    <pre><code>*/1 * * * * php &lt;your Magento install dir&gt;/bin/magento cron:run &amp;
 </code></pre>
+
+    <p>For example, for CentOS,</p>
+
+    <pre><code>*/1 * * * * php /var/www/html/magento2/bin/magento cron:run &amp;
+</code></pre>
+  </li>
+</ol>
+
+<p>Save your changes to the crontab and exit the editor.</p>
+
+<h2 id="config-cli-cron-browser">Run cron from a web browser</h2>
+<p>You can run cron anytime using a web browser (for example, during development).</p>
+
+<p>Before you run cron in the browser, remove the restriction from <code>.htaccess</code> as follows:</p>
+
+<ol>
+  <li>Log in to your Magento server as a user with permissions to write to the Magento file system.</li>
+  <li>
+    <p>Open any of the following in a text editor (depending on your entry point to Magento):</p>
+
+    <pre><code>`&lt;your Magento install dir&gt;/pub/.htaccess`
+`&lt;your Magento install dir&gt;/.htaccess`
+</code></pre>
+  </li>
+  <li>
+    <p>Delete or comment out the following:</p>
+
+    <pre><code>## Deny access to cron.php
+&lt;Files cron.php&gt;
+	order allow,deny
+	deny from all
+&lt;/Files&gt;
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>## Deny access  to cron.php
+#&lt;Files cron.php&gt;
+#	order allow,deny
+#	deny from all
+#&lt;/Files&gt;
+</code></pre>
+  </li>
+  <li>Save your changes and exit the text editor.</li>
+</ol>
+
+<p>You can then run cron in a web browser in any of the following ways (depending on your entry point to Magento):</p>
+
+<pre><code>&lt;your Magento host name or IP&gt;/&lt;Magento root&gt;/cron.php[?group=&lt;group name&gt;]
+&lt;your Magento host name or IP&gt;/&lt;Magento root&gt;/pub/cron.php[?group=&lt;group name&gt;]
+</code></pre>
+
+<p>where</p>
+
+<ul>
+  <li><code>&lt;your Magento host name or IP&gt;</code> is the host name or IP address of your Magento installation</li>
+  <li>
+    <p><code>&lt;Magento root&gt;</code> is the web server docroot-relative directory to which you installed the Magento software</p>
+
+    <p>The exact URL you use to run the Magento application depends on how you configured your web server and virtual host.</p>
+  </li>
+  <li><code>&lt;group name&gt;</code> is any valid cron group name (optional)</li>
+</ul>
+
+<p>For example,</p>
+
+<pre><code>http://magento.example.com/magento2/pub/cron.php?group=default
+</code></pre>
+
+<p><a href="#config-cli-cron-group-conf">More information about cron groups</a></p>
+
+<h2 id="config-cli-cron-group">Configure and run cron using the command line</h2>
+<p>This section discusses how to run cron at any time using the command line. You can optionally configure a cron group for a custom module as discussed in the next section.</p>
+
+<p>Most Magento modules are in the <code>default</code> group; other modules are in the <code>index</code> group.</p>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#config-cli-cron-group-conf">Configure cron groups for custom modules</a></li>
+  <li><a href="#config-cli-cron-group-run">Run cron from the command line</a></li>
+</ul>
+
+<h3 id="config-cli-cron-group-conf">Configure cron groups for custom modules</h3>
+<p>This section discusses how to optionally create a cron group for a custom module. If you don’t need to do this, continue with the next section.</p>
+
+<p>A <em>cron group</em> is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the <code>default</code> cron group; some modules use the <code>index</code> group.</p>
+
+<p>If you’re implementing cron for a custom module, it’s your choice of whether or not to use the <code>default</code> group or a different group.</p>
+
+<p>To configure a cron group for your module, create <code>&lt;your Magento install dir&gt;/app/code/&lt;VendorName&gt;/&lt;ModuleName&gt;/etc/crontab.xml</code> with the following contents:</p>
+
+<pre><code>&lt;config&gt;
+	&lt;group id="&lt;group_name&gt;"&gt;
+        &lt;job name="&lt;job_name&gt;" instance="&lt;classpath&gt;" method="&lt;method&gt;"&gt;
+            &lt;schedule&gt;&lt;time&gt;&lt;/schedule&gt;
+        &lt;/job&gt;
+    &lt;/group&gt;
+&lt;/config&gt;
+</code></pre>
+
+<p>The following table discusses the meanings of the options.</p>
+
+<table>
+	<col width="25%" />
+	<col width="65%" />
+	<tbody>
+		<tr>
+			<th>Value</th>
+			<th>Description</th>
+		</tr>
+		
+	<tr>
+		<td><p>&lt;group_name&gt;</p></td>
+		<td><p>Name of the cron group. The group name doesn't have to be unique.</p>
+			<p>You can run cron for one group at a time.</p></td>
+	</tr>
+	<tr>
+		<td><p>&lt;job_name&gt;</p></td>
+		<td><p>Unique ID for this cron job.</p>
+		</td>		
+	</tr>
+	<tr>
+		<td><p>&lt;classpath&gt;</p></td>
+		<td><p>Classpath.</p></td>		
+	</tr>
+	<tr>
+		<td><p>&lt;method&gt;</p></td>
+		<td><p>Method in <code>&lt;classpath&gt;</code> to call.</p></td>		
+	</tr>
+	<tr>
+		<td><p>&lt;time&gt;</p></td>
+		<td><p>Schedule in <a href="http://www.nncron.ru/help/EN/working/cron-format.htm" target="_blank">cron format</a>.</p>
+			<p>Omit this parameter if the schedule is defined in the Magento database or other storage.</p></td>		
+	</tr>
+	</tbody>
+</table>
+
+<p>In addition, the <code>&lt;group&gt;</code> element supports the following options, all of which run in store view scope:</p>
+
+<table>
+	<col width="25%" />
+	<col width="65%" />
+	<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Description</th>
+		</tr>
+		
+	<tr>
+		<td><p>schedule_generate_every</p></td>
+		<td><p>Determines the frequency, in minutes, that schedules are written to the <code>cron_schedule</code> table.</p></td>
+	</tr>
+	<tr>
+		<td><p>schedule_ahead_for</p></td>
+		<td><p>Determines the number of minutes in advance that schedules are written to the <code>cron_schedule</code> table.</p>
+		</td>		
+	</tr>
+	<tr>
+		<td><p>schedule_lifetime</p></td>
+		<td><p>Schedule lifetime in minutes.</p></td>		
+	</tr>
+	<tr>
+		<td><p>history_cleanup_every</p></td>
+		<td><p>Determines the number of minutes that cron history is kept in the database.</p></td>		
+	</tr>
+	<tr>
+		<td><p>history_success_lifetime</p></td>
+		<td><p>Determines the number of minutes that the record of successfully completed cron jobs are kept in the database.</p></td>		
+	</tr>
+	<tr>
+		<td><p>history_failure_lifetime</p></td>
+		<td><p>Determines the number of minutes that the record of failed cron jobs are kept in the database.</p></td>		
+	</tr>
+	<tr>
+		<td><p>use_separate_process</p></td>
+		<td><p>If set to <code>1</code>, all cron jobs in this group run in parallel as separate processes.</p>
+			<p>If set to <code>0</code>, all cron jobs in this group run one after the other as separate processes.</p></td>		
+	</tr>
+	</tbody>
+</table>
+
+<p>As an example, see <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a></p>
+
+<h3 id="config-cli-cron-group-run">Run cron from the command line</h3>
+<p>Command options:</p>
+
+<pre><code>magento cron:run [--group="&lt;cron group name&gt;"] 
+</code></pre>
+
+<p>where <code>--group</code> specifies the cron group to run (omit this option to run cron for the <code>default</code> group)</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can run cron for one group at a time.</p></span>
+</div>
 
 <h4 id="related-topics">Related topics</h4>
 
@@ -219,13 +435,13 @@ bash shell example for CentOS:<br />
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
@@ -376,7 +592,7 @@ bash shell example for CentOS:<br />
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
 						
 								
 							
@@ -404,7 +620,7 @@ bash shell example for CentOS:<br />
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
 						
 								
 							

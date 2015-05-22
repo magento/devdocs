@@ -160,17 +160,18 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-cli-admin-prereq">Prerequisites</h2>
 <p>Before you can use this command, you must do all of the following:</p>
@@ -183,7 +184,7 @@ Examples:
 
     <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
-  		<p>The simplest way to create the database is to use the command <code>php magento setup:upgrade</code>.
+  		<p>The simplest way to create the database is to use the command <code>magento setup:upgrade</code>.
 
 
 </p></span></div>
@@ -192,7 +193,7 @@ Examples:
 <h2 id="instgde-cli-admin">Create an administrator</h2>
 <p>Command usage:</p>
 
-<pre><code>php magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
+<pre><code>magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
 </code></pre>
 
 <p>where the following table defines parameters and values.</p>
@@ -208,28 +209,29 @@ Examples:
 			<th>Required?</th>
 		</tr>
 		<tr>
-		<td><p>--admin_firstname</p></td>
+		<td><p>--admin-firstname</p></td>
 		<td><p>Magento administrator user's first name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_lastname</p></td>
+		<td><p>--admin-lastname</p></td>
 		<td><p>Magento administrator user's last name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_email</p></td>
+		<td><p>--admin-email</p></td>
 		<td><p>Magento administrator user's e-mail address.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_user</p></td>
+		<td><p>--admin-user</p></td>
 		<td><p>Magento administrator user name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--admin_password</p></td>
-		<td><p>Magento administrator user password.</p></td>
+		<td><p>Magento administrator user password.</p>
+		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 
@@ -242,7 +244,7 @@ Examples:
   <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a></li>
   <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
@@ -286,31 +288,6 @@ Examples:
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
 					
 					
 						
@@ -475,7 +452,7 @@ Examples:
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
 						
 								
 							

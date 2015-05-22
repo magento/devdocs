@@ -159,17 +159,18 @@
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
 <p>Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.</p>
@@ -203,7 +204,7 @@ Examples:
 
 <p>Command options:</p>
 
-<pre><code>php magento i18n:collect-phrases [-o|--output "&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
+<pre><code>magento i18n:collect-phrases [-o|--output "&lt;csv file path and name&gt;"] [-m|--magento] &lt;path to directory to translate&gt;
 </code></pre>
 
 <p>The following table discusses the meanings of this command’s parameters and values. </p>
@@ -286,7 +287,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
 <p>Command usage:</p>
 
-<pre><code>php magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;pack&gt; &lt;locale&gt;
+<pre><code>magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] &lt;source&gt; &lt;pack&gt; &lt;locale&gt;
 </code></pre>
 
 <p>The following table discusses the meanings of this command’s parameters and values. </p>
@@ -305,7 +306,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 	<tr>
 		<td><p>&lt;source&gt;</p></td>
 		<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.</p>.
-		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">php magento:i18n-collect</a> to create the .csv file then create the language package as discussed in <a href="#config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</a>. </p></td>
+		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">magento:i18n-collect</a> to create the .csv file then create the language package as discussed in <a href="#config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</a>. </p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -455,7 +456,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
   <li>
     <p>Collect phrases from your module:</p>
 
-    <pre><code>php magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
+    <pre><code>magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
 </code></pre>
   </li>
   <li>Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.</li>
@@ -479,15 +480,18 @@ Product 'Multimeter-2000' has been added to shopping cart.
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
   <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
 
 
@@ -632,6 +636,14 @@ Product 'Multimeter-2000' has been added to shopping cart.
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
 						
 								
@@ -640,7 +652,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
 						
 								
 							
@@ -657,6 +669,14 @@ Product 'Multimeter-2000' has been added to shopping cart.
 								
 							
 									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 						
 								
 								
@@ -736,7 +756,7 @@ Product 'Multimeter-2000' has been added to shopping cart.
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
