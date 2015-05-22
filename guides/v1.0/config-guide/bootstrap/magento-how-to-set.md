@@ -12,7 +12,7 @@ github_link: config-guide/bootstrap/magento-how-to-set.md
 #### Contents
 *	<a href="#config-bootparam-overview">Overview of setting bootstrap parameter values</a>
 *	<a href="#mode-specify-var">Specifying a parameter value using an environment variable</a>
-*	<a href="#mode-specify-var">Specifying a parameter value using your web server environment</a>
+*	<a href="#mode-specify-web">Specifying a parameter value using your web server environment</a>
 
 <h2 id="config-bootparam-overview">Overview of setting bootstrap parameter values</h2>
 This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
@@ -49,8 +49,7 @@ Use the `MAGE_MODE` system environment variable to specify a mode as follows:
 
 	MAGE_MODE=[developer|default|production]
 
-<h2 id="mode-specify-var">Specifying a parameter value using your web server environment</h2>
-
+<h2 id="mode-specify-web">Specifying a parameter value using your web server environment</h2>
 The Apache web server supports this using `mod_env` directives.
 
 The Apache `mod_env` directive is slightly different in <a href="http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv" target="_blank">version 2.2</a> and <a href="http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv" target="_blank">version 2.4</a>.

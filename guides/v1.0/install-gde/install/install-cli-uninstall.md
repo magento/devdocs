@@ -22,8 +22,7 @@ See one of the following sections:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-
-
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-install-magento-update">Update the Magento software</h2>
 This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.
@@ -90,11 +89,11 @@ To reinstall the Magento software:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
-Uninstalling the Magento software drops and restores the database, removes 'config.php', and clears directories under `var`.
+Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under `var`.
 
 To uninstall the Magento software, enter the following command:
 
-	php magento setup:uninstall
+	magento setup:uninstall
 
 The following message displays to confirm a successful uninstallation:
 
@@ -130,7 +129,7 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 3.	Uninstall the Magento software and change to your Magento installation directory:
 
-		php magento setup:uninstall && cd ..
+		magento setup:uninstall && cd ..
 
 4.	Update the Magento code:
 

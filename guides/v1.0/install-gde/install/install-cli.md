@@ -21,7 +21,7 @@ See one of the following sections:
 <h2 id="new-cli-intro">Introducing the Magento command-line interface (CLI)</h2>
 {% include install/new-cli-intro.html %}
 
-This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see TBD.
+This topic discusses installing the Magento software using the CLI. For information about configuring Magento, see the <a href="{{ site.gdeurl }}config-guide/bk-config-guide.html">Configuration Guide</a>.
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 {% include install/before-you-begin-cli.html %}

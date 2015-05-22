@@ -19,6 +19,7 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment tool enables you to write static files to the Magento docroot when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
@@ -38,7 +39,7 @@ To deploy static view files:
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool from the `<your Magento install dir>/dev/tools/Magento/Tools/View` directory.
-4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 	
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
@@ -47,7 +48,7 @@ To deploy static view files:
 
 Command options:
 
-	php magento setup:static-content:deploy <lang> ... <lang> [--dry-run] 
+	magento setup:static-content:deploy <lang> ... <lang> [--dry-run] 
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -64,7 +65,7 @@ The following table discusses the meanings of this command's parameters and valu
 	<tr>
 		<td>&lt;lang></td>
 		<td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>php magento info:language:list</code>.</p></td>
+		<p>You can find the list by running <code>magento info:language:list</code>.</p></td>
 	<td><p>No</p></td>
 	</tr>
 		<tr>
@@ -77,7 +78,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to deploy static view files for the `pt_BR` language, enter
 
-	php magento --ansi setup:static-content:deploy pt_BR
+	magento --ansi setup:static-content:deploy pt_BR
 
 Following are some sample messages that display to indicate successful deployment:
 
@@ -121,22 +122,24 @@ Use the following steps:
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
 3.	<a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
-4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files.
+<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 	
-	<div class="bs-callout bs-callout-info" id="info">
+	<!-- <div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-	</div>
-
-
+	</div> -->
 
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

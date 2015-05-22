@@ -17,13 +17,14 @@ github_link: config-guide/cli/config-cli-subcommands-less-sass.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-less-sass">Create LESS files</h2>
 This command enables you to create LESS files from existing CSS files.
 
 Command options:
 
-	php magento dev:css:deploy less <file> [--locale="<locale>" ... "<locale>"] [--area="{adminhtml|frontend}"] [--theme="<theme name>" ... 
+	magento dev:css:deploy less <file> [--locale="<locale>" ... "<locale>"] [--area="{adminhtml|frontend}"] [--theme="<theme name>" ... 
 	"<theme name>"] 
 
 The following table discusses the meanings of this command's parameters and values. 
@@ -71,7 +72,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<your Magento install dir>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
 
-	php magento dev:css:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
+	magento dev:css:deploy less css/styles-l --locale="en_US" --area="frontend" --theme="VendorName/themeName"
 
 The following messages display to confirm success:
 
@@ -83,9 +84,13 @@ The following messages display to confirm success:
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
