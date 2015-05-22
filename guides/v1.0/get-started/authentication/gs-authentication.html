@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 1. Authenticate</title>
+	<title>Authentication</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -57,7 +57,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -86,12 +86,28 @@
          <li class="expanded">
             <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -138,7 +154,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Step 1. Authenticate</h1>
+		<h1 class="page-heading">Authentication</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/get-started/authentication/gs-authentication.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -356,34 +372,6 @@ acl.xml files across all Magento modules are consolidated to build an ACL tree w
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -399,13 +387,21 @@ acl.xml files across all Magento modules are consolidated to build an ACL tree w
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/bk-get-started-api.html">Introduction</a></li>
 									
 								
 								
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/authentication/access_control_lists.html">Access Control Lists</a></li>
+						
 								
 								
 								
@@ -424,7 +420,7 @@ acl.xml files across all Magento modules are consolidated to build an ACL tree w
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/get-started/authentication/gs-authentication.html">Step 1. Authenticate</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v1.0/get-started/authentication/gs-authentication.html">Authentication</a></li>
 									
 								
 								
@@ -461,7 +457,7 @@ acl.xml files across all Magento modules are consolidated to build an ACL tree w
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/rest_front.html">REST Overview</a></li>
 									
 								
 								
@@ -469,58 +465,17 @@ acl.xml files across all Magento modules are consolidated to build an ACL tree w
 							
 								
 								
-								
+							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/gs-web-api-request.html">Construct a request</a></li>
+						
 								
 							
-							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/gs-curl.html">Use cURL to run the request</a></li>
 						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-atapi.html">Step 3. Use cURL to run the request</a></li>
-									
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-curl.html">Step 3. Use cURL to run the request</a></li>
-									
-								
-								
 								
 							
-								
-								
-								
-								
-							
-							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/gs-web-api-response.html">Review the response</a></li>
 						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
@@ -531,6 +486,42 @@ acl.xml files across all Magento modules are consolidated to build an ACL tree w
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

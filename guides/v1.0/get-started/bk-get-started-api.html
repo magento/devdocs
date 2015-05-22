@@ -57,7 +57,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -86,12 +86,28 @@
          <li class="expanded">
             <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -157,39 +173,6 @@
 <li>JavaScript widgets in the Magento storefront or Admin interface. The widget makes AJAX calls to access services.</li>
 </ul>
 <p>This guide introduces web API, REST, and cURL command concepts. It shows you how to authenticate and construct and run REST web API calls. You run REST web API calls through <a href="/guides/v1.0/get-started/gs-curl.html">cURL commands</a> or a REST client.</p>
-<!-- <p>You can modify these examples to construct other calls.</p> -->
-<p>Read the following sections to get up and running with the Magento web APIs:</p>
-<ul>
-   <li>
-      <p>
-         <a href="/guides/v1.0/get-started/authentication/gs-authentication.html">Step 1. Authenticate</a>
-      </p>
-   </li>
-   <li>
-      <p>
-         <a href="/guides/v1.0/get-started/gs-web-api-request.html">Step 2. Construct a request</a>
-      </p>
-   </li>
-   <li>
-      <p>
-         <a href="/guides/v1.0/get-started/gs-curl.html">Step 3. Use cURL to run the request</a>
-      </p>
-   </li>
-   <li>
-      <p>
-         <a href="/guides/v1.0/get-started/gs-web-api-response.html">Step 4. Review the response</a>
-      </p>
-   </li>
-   <!--
-      <li>
-         <p>
-            <a href="/guides/v1.0/get-started/soap/soap-web-api-calls.html">SOAP web API calls</a>
-         </p>
-      </li>
-      -->
-</ul>
-<h3 id="related-topics">Related topics</h3>
-<ul><li><a href="/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li></ul>
 
 
 
@@ -220,34 +203,6 @@
 			
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -263,13 +218,21 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v1.0/get-started/bk-get-started-api.html">Introduction</a></li>
 									
 								
 								
 								
 							
 								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/service-to-web-service.html">Configure services as web APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/authentication/access_control_lists.html">Access Control Lists</a></li>
+						
 								
 								
 								
@@ -288,7 +251,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/authentication/gs-authentication.html">Step 1. Authenticate</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/authentication/gs-authentication.html">Authentication</a></li>
 									
 								
 								
@@ -325,7 +288,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/rest_front.html">REST Overview</a></li>
 									
 								
 								
@@ -333,58 +296,17 @@
 							
 								
 								
-								
+							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/gs-web-api-request.html">Construct a request</a></li>
+						
 								
 							
-							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/gs-curl.html">Use cURL to run the request</a></li>
 						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-atapi.html">Step 3. Use cURL to run the request</a></li>
-									
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-curl.html">Step 3. Use cURL to run the request</a></li>
-									
-								
-								
 								
 							
-								
-								
-								
-								
-							
-							
+									<li class="level-2 "><a href="/guides/v1.0/get-started/gs-web-api-response.html">Review the response</a></li>
 						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/get-started/gs-web-api-response.html">Step 4. Review the response</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
@@ -395,6 +317,42 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
