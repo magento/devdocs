@@ -44,7 +44,7 @@ Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), th
 We support the following versions for migration:
 
 *	Enterprise Edition (EE) version 1.9.1.0 
-*	Community Edition (CE) version 1.9.1.0 
+*	Community Edition (CE) version 1.14.1.0 
 
 We also plan to support:
 
@@ -191,6 +191,9 @@ The following table discusses each mapping file.
 
 </tbody>
 </table>
+
+You can refer to <a href="MigrationToolDeveloper'sGuide.pdf">Data Mapping Guide</a> for more details.
+
 
 <h2 id="migration-notes">General notes about using the migration tool</h2>
 During the time you're migrating:
