@@ -53,26 +53,41 @@ Set the variable using a shell-specific command. Because shells have differing s
 
 bash shell example for CentOS:
 
-	export PATH=$PATH:/var/www/html/magento2/bin
+	export MAGE_MODE=developer
 
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
-This section discusses how to specify the mode, either in a way that works for both Apache and nginx, or in ways specific to these web servers.
-
-By modifying `.htaccess`, you can specify a Magento mode for either web server without modifying its settings. You can also configure settings for each web server.
+This section discusses how to specify the mode for either Apache or nginx.
 
 See one of the following sections for more information:
 
 *	<a href="#mode-specify-web-nginx">Specify the mode using an nginx setting</a>
+*	<a href="#mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</a>
 *	<a href="#mode-specify-web-apache">Specify the mode using an Apache setting</a>
 
 <h3 id="mode-specify-web-nginx">Specify the mode using an nginx setting</h3>
 See the <a href="{{ site.mage2000url }}nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.
 
 <h3 id="mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</h3>
+One way to set the Magento mode is by editing `.htaccess`. This way, you don't have to change Apache settings.
+
 You can modify `.htaccess` in any of the following locations, depending on your entry point to the Magento application:
 
 *	`<your Magento install dir>/.htaccess`
 *	`<your Magento install dir>/pub/.htaccess`
+
+To set the mode:
+
+1.	Open any of the preceding files in a text editor and uncomment the following:
+
+		#   SetEnv MAGE_MODE developer
+
+2.	Set the value of `MAGE_MODE` to any of the following:
+
+		developer
+		default
+		production
+
+2.	Save your changes to `.htaccess`; you don't need to restart Apache for the change to take effect.
 
 <h3 id="mode-specify-web-apache">Specify the mode using an Apache setting</h3>
 The Apache web server supports setting the Magento mode using `mod_env` directives.
