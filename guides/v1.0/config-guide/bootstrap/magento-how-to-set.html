@@ -208,19 +208,72 @@
 <pre><code>MAGE_MODE=[developer|default|production]
 </code></pre>
 
-<h2 id="mode-specify-web">Specifying a parameter value using your web server environment</h2>
-<p>The Apache web server supports this using <code>mod_env</code> directives.</p>
+<p>Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+
+<p>bash shell example for CentOS:</p>
+
+<pre><code>export MAGE_MODE=developer
+</code></pre>
+
+<h2 id="mode-specify-web">Specifying a parameter value</h2>
+<p>This section discusses how to specify the mode for either Apache or nginx.</p>
+
+<p>See one of the following sections for more information:</p>
+
+<ul>
+  <li><a href="#mode-specify-web-nginx">Specify the mode using an nginx setting</a></li>
+  <li><a href="#mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</a></li>
+  <li><a href="#mode-specify-web-apache">Specify the mode using an Apache setting</a></li>
+</ul>
+
+<h3 id="mode-specify-web-nginx">Specify the mode using an nginx setting</h3>
+<p>See the <a href="https://github.com/magento/magento2/blob/develop/nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.</p>
+
+<h3 id="mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</h3>
+<p>One way to set the Magento mode is by editing <code>.htaccess</code>. This way, you don’t have to change Apache settings.</p>
+
+<p>You can modify <code>.htaccess</code> in any of the following locations, depending on your entry point to the Magento application:</p>
+
+<ul>
+  <li><code>&lt;your Magento install dir&gt;/.htaccess</code></li>
+  <li><code>&lt;your Magento install dir&gt;/pub/.htaccess</code></li>
+</ul>
+
+<p>To set the mode:</p>
+
+<ol>
+  <li>
+    <p>Open any of the preceding files in a text editor and uncomment the following:</p>
+
+    <pre><code>#   SetEnv MAGE_MODE developer
+</code></pre>
+  </li>
+  <li>
+    <p>Set the value of <code>MAGE_MODE</code> to any of the following:</p>
+
+    <pre><code>developer
+default
+production
+</code></pre>
+  </li>
+  <li>
+    <p>Save your changes to <code>.htaccess</code>; you don’t need to restart Apache for the change to take effect.</p>
+  </li>
+</ol>
+
+<h3 id="mode-specify-web-apache">Specify the mode using an Apache setting</h3>
+<p>The Apache web server supports setting the Magento mode using <code>mod_env</code> directives.</p>
 
 <p>The Apache <code>mod_env</code> directive is slightly different in <a href="http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv" target="_blank">version 2.2</a> and <a href="http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv" target="_blank">version 2.4</a>.</p>
 
 <p>The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use <code>mod_env</code> directives; consult the Apache documentation for details.</p>
 
 <ul>
-  <li><a href="#mode-specify-ubuntu">Specifying a mode using Ubuntu</a></li>
-  <li><a href="#mode-specify-centos">Specifying a mode using CentOS</a></li>
+  <li><a href="#mode-specify-ubuntu">Specify a mode for Apache on Ubuntu</a></li>
+  <li><a href="#mode-specify-centos">Specify a mode for Apache on CentOS</a></li>
 </ul>
 
-<h4 id="mode-specify-ubuntu">Specifying a mode using Ubuntu</h4>
+<h4 id="mode-specify-ubuntu">Specify a mode for Apache on Ubuntu</h4>
 <p>This section assumes you’ve already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts" target="_blank">this digitalocean tutorial</a>.</p>
 
 <p>For more information about each mode, see:</p>
@@ -270,7 +323,7 @@
   </li>
 </ol>
 
-<h4 id="mode-specify-centos">Specifying a mode using CentOS</h4>
+<h4 id="mode-specify-centos">Specify a mode for Apache on CentOS</h4>
 <p>This section assumes you’ve already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6" target="_blank">this digitalocean tutorial</a>.</p>
 
 <p>For more information about each mode, see:</p>
