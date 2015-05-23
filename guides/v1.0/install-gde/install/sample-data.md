@@ -49,7 +49,7 @@ This section discusses how to install optional sample data *after* you install t
 
 To install the sample data, enter the following command:
 
-	php dev/tools/Magento/Tools/SampleData/install.php -- --admin-user=<your Magento admin user name>
+	php dev/tools/Magento/Tools/SampleData/install.php -- --admin_user=<your Magento admin user name>
 
 <h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
 {% include install/sample-data-note.html %}
