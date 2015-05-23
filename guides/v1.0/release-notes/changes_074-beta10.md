@@ -449,7 +449,7 @@ See the following table.
 		<td><p>Type of the third parameter was changed from <code>\Magento\Sales\Model\Order\Email\Sender\ShipmentSender</code> to <code>\Magento\Sales\Model\Order\Email\Sender\ShipmentCommentSender</code></p></td>
 	</tr> -->
 	<tr>
-		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
+		<td><p><a href="{{ site.mage2000url }}app/code/Magento/Sales/Model/Order/Email/Sender/OrderSender.php" target="_blank">\Magento\Sales\Model\Order\Email\Sender\OrderSender</a></p></td>
 		<td><p>send()</p></td>
 		<td><p>Arguments list changed to <code>Creditmemo $creditmemo</code>, <code>$forceSyncMode = false</code></p></td>
 	</tr>
