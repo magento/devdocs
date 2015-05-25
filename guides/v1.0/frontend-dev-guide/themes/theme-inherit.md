@@ -62,9 +62,9 @@ If module context is not defined for a file:
 
 If module context is defined for a file:
 
-1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module/>web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
+1. Current theme module static files `app/design/frontend/<Vendor>/<theme>/<Namespace>_<Module>/web/`. Example: `app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/`
 3. Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
-	`app/design/frontend/<parent_theme_path>/<Namespace>_<Module/>web/`
+	`app/design/frontend/<parent_theme_path>/<Namespace>_<Module>/web/`
 
 3. Module static view files: `app/code/<Namespace>/<Module>/view/frontend/web/`
 
@@ -141,10 +141,9 @@ Unlike templates or images, layout can be not only overridden, but also extended
 
 To add an extending layout file:
 
-* Put your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/ directory`.
+* Put your custom layout file in the `app/design/frontend/<Vendor>/<theme>/<Vendor>_<Module>/layout/` directory.
 
 <u>Example</u>
-
 
 OrangeCo decided they should remove the “Report bugs” link from the footer, defined in `app/code/Magento/Theme/view/frontend/layout/default.xml`
 To do this, they added an extending layout in `app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml` :

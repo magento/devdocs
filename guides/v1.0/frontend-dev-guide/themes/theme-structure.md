@@ -73,9 +73,7 @@ Let's have a closer look at each particular sub-directory.
     </tr>
     <tr>
       <td colspan="1">
-        <code>/&lt;Vendor&gt;_&lt;Module&gt;
-        </code>
-        <code>/web/css/source</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/web/css/source</code>
       </td>
       <td colspan="1">
         optional
