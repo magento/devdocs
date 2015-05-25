@@ -12,7 +12,7 @@ github_link: config-guide/bootstrap/magento-how-to-set.md
 #### Contents
 *	<a href="#config-bootparam-overview">Overview of setting bootstrap parameter values</a>
 *	<a href="#mode-specify-var">Specifying a parameter value using an environment variable</a>
-*	<a href="#mode-specify-var">Specifying a parameter value using your web server environment</a>
+*	<a href="#mode-specify-web">Specifying a parameter value using your web server environment</a>
 
 <h2 id="config-bootparam-overview">Overview of setting bootstrap parameter values</h2>
 This topic discusses how to set the values of Magento application bootstrap parameters. <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-bootstrap.html">More information about Magento application bootstrapping</a>.
@@ -49,18 +49,57 @@ Use the `MAGE_MODE` system environment variable to specify a mode as follows:
 
 	MAGE_MODE=[developer|default|production]
 
-<h2 id="mode-specify-var">Specifying a parameter value using your web server environment</h2>
+Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.
 
-The Apache web server supports this using `mod_env` directives.
+bash shell example for CentOS:
+
+	export MAGE_MODE=developer
+
+<h2 id="mode-specify-web">Specifying a parameter value</h2>
+This section discusses how to specify the mode for either Apache or nginx.
+
+See one of the following sections for more information:
+
+*	<a href="#mode-specify-web-nginx">Specify the mode using an nginx setting</a>
+*	<a href="#mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</a>
+*	<a href="#mode-specify-web-apache">Specify the mode using an Apache setting</a>
+
+<h3 id="mode-specify-web-nginx">Specify the mode using an nginx setting</h3>
+See the <a href="{{ site.mage2000url }}nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.
+
+<h3 id="mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</h3>
+One way to set the Magento mode is by editing `.htaccess`. This way, you don't have to change Apache settings.
+
+You can modify `.htaccess` in any of the following locations, depending on your entry point to the Magento application:
+
+*	`<your Magento install dir>/.htaccess`
+*	`<your Magento install dir>/pub/.htaccess`
+
+To set the mode:
+
+1.	Open any of the preceding files in a text editor and uncomment the following:
+
+		#   SetEnv MAGE_MODE developer
+
+2.	Set the value of `MAGE_MODE` to any of the following:
+
+		developer
+		default
+		production
+
+2.	Save your changes to `.htaccess`; you don't need to restart Apache for the change to take effect.
+
+<h3 id="mode-specify-web-apache">Specify the mode using an Apache setting</h3>
+The Apache web server supports setting the Magento mode using `mod_env` directives.
 
 The Apache `mod_env` directive is slightly different in <a href="http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv" target="_blank">version 2.2</a> and <a href="http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv" target="_blank">version 2.4</a>.
 
 The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use `mod_env` directives; consult the Apache documentation for details.
 
-*	<a href="#mode-specify-ubuntu">Specifying a mode using Ubuntu</a>
-*	<a href="#mode-specify-centos">Specifying a mode using CentOS</a>
+*	<a href="#mode-specify-ubuntu">Specify a mode for Apache on Ubuntu</a>
+*	<a href="#mode-specify-centos">Specify a mode for Apache on CentOS</a>
 
-<h4 id="mode-specify-ubuntu">Specifying a mode using Ubuntu</h4>
+<h4 id="mode-specify-ubuntu">Specify a mode for Apache on Ubuntu</h4>
 This section assumes you've already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts" target="_blank">this digitalocean tutorial</a>.
 
 For more information about each mode, see:
@@ -99,7 +138,7 @@ To set the Magento mode using your web server's environment:
 
 	<pre>service apache2 restart</pre>
 
-<h4 id="mode-specify-centos">Specifying a mode using CentOS</h4>
+<h4 id="mode-specify-centos">Specify a mode for Apache on CentOS</h4>
 This section assumes you've already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6" target="_blank">this digitalocean tutorial</a>.
 
 For more information about each mode, see:

@@ -23,7 +23,7 @@ Magento uses <a href="http://framework.zend.com/manual/1.12/en/zend.cache.html" 
   <p>By default, file system caching is enabled; no configuration is necessary to use it. This means the cache is located under <code>&lt;your Magento install dir>/var</code>.</p>
 </div>
 
-To change the cache configuration, edit `<Magento install dir>/app/etc/config.php`.
+To change the cache configuration, edit `<your Magento install dir>/app/etc/env.php`.
 
 The cache configuration is an associative array similar to the following:
 

@@ -22,6 +22,7 @@ See one of the following sections:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
 Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
@@ -38,9 +39,9 @@ Magento detects maintenance mode as follows:
 
 Command usage:
 
-	php magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
-	php magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
-	php magento maintenance:status
+	magento maintenance:enable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
+	magento maintenance:disable [--ip=<ip address> ... --ip=<ip address>] | [ip=none]
+	magento maintenance:status
 
 where
 
@@ -56,16 +57,16 @@ where
 
 For example, to enable maintenance mode with no IP address exemptions:
 
-	php magento maintenance:enable
+	magento maintenance:enable
 
 To enable maintenance mode for all clients except 192.0.2.10 and 192.0.2.11:
 
-	php magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
+	magento maintenance:enable --ip=192.0.2.10 --ip=192.0.2.11
 
 <h2 id="instgde-cli-maint-exempt">Maintain the list of exempt IP addresses</h2>
 To maintain the list of exempt IP addresses, you can either use the `[--ip=<ip list>]` option in the preceding commands or you can use the following:
 
-	php magento maintenance:allow-ips <ip address> .. <ip address> [--none]
+	magento maintenance:allow-ips <ip address> .. <ip address> [--none]
 
 where 
 
@@ -78,7 +79,7 @@ where
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>

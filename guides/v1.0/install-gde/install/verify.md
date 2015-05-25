@@ -37,7 +37,7 @@ If the page displays unconfigured (no styles, only text), see <a href="{{ site.g
 
 Go to the Magento Admin in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URL is `admin`, enter `http://www.example.com/admin` in your browser's address or location bar.
 
-(The Admin URL is specified by the value of the `backend_frontname` installation parameter.)
+(The Admin URL is specified by the value of the `backend-frontname` installation parameter.)
 
 When prompted, log in as a Magento Administrator.
 

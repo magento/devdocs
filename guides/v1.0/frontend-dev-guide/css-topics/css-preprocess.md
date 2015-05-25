@@ -60,7 +60,7 @@ In the Magento application, the following modes of compiling <code>.less</code> 
 
 <ol>
 <li>Server-side LESS compilation.<br>
-This is the default compilation mode, and is the only option in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-mode.html#mode-production" target="_blank"> production application mode</a>.
+This is the default compilation mode, and is the only option in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production" target="_blank"> production application mode</a>.
 In this case the compilation is performed on the server, using the <a href="https://github.com/oyejorge/less.php" target="_blank">LESS PHP library</a>.
 </li>
 

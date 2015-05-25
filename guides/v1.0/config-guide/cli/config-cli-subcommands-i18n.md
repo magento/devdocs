@@ -19,6 +19,7 @@ github_link: config-guide/cli/config-cli-subcommands-i18n.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
 Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.
@@ -46,7 +47,7 @@ After that,
 
 Command options:
 
-	php magento i18n:collect-phrases [-o|--output "<csv file path and name>"] [-m|--magento] <path to directory to translate>
+	magento i18n:collect-phrases [-o|--output "<csv file path and name>"] [-m|--magento] <path to directory to translate>
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -120,7 +121,7 @@ To create a language package, you must perform the tasks discussed in the follow
 <h3 id="config-cli-subcommands-xlate-pack-cmd">Run the language package command</h3>
 Command usage:
 
-	php magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <pack> <locale>
+	magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <pack> <locale>
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -138,7 +139,7 @@ The following table discusses the meanings of this command's parameters and valu
 	<tr>
 		<td><p>&lt;source></p></td>
 		<td><p>Absolute file system path and file name of a .csv file that contains the combined translation dictionary and meta-information necessary for breakdown into a language package.</p>.
-		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">php magento:i18n-collect</a> to create the .csv file then create the language package as discussed in <a href="#config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</a>. </p></td>
+		<p>Use <a href="#config-cli-subcommands-xlate-dict-dict">magento:i18n-collect</a> to create the .csv file then create the language package as discussed in <a href="#config-cli-subcommands-xlate-pack-meta">Add meta-information to the language package</a>. </p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -276,7 +277,7 @@ To add a German translation to module or theme you want to distribute to other m
 
 1.	Collect phrases from your module:
 
-		php magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
+		magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/XX_XX.csv" /var/www/html/magento2/ExampleCorp/SampleModule
 
 2.	Translate the words and phrases using <a href="#config-cli-subcommands-xlate-dict-trans">these guidelines</a>.
 3.	If necessary, copy `XX_XX.csv` to `/var/www/html/magento2/ExampleCorp/SampleModule` or to the module's theme directory.
@@ -295,12 +296,15 @@ Similar to preceding example, generate a CSV file, but instead of a module or th
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
