@@ -86,4 +86,4 @@ Your IDE can validate your configuration files at both runtime during developmen
 #### Related topics
 
 *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Module configuration files</a>
-*  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration, config.php</a>
+*  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>

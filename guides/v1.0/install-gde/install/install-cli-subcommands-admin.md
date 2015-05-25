@@ -21,6 +21,7 @@ See one of the following sections:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-admin-prereq">Prerequisites</h2>
 Before you can use this command, you must do all of the following:
@@ -31,13 +32,13 @@ Before you can use this command, you must do all of the following:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  		<p>The simplest way to create the database is to use the command <code>php magento setup:upgrade</code>.</span>
+  		<p>The simplest way to create the database is to use the command <code>magento setup:upgrade</code>.</span>
 	</div>
 
 <h2 id="instgde-cli-admin">Create an administrator</h2>
 Command usage:
 
-	php magento admin:user:create [--<parameter_name>=<value>, ...]
+	magento admin:user:create [--<parameter_name>=<value>, ...]
 
 
 
@@ -54,28 +55,29 @@ where the following table defines parameters and values.
 			<th>Required?</th>
 		</tr>
 		<tr>
-		<td><p>--admin_firstname</p></td>
+		<td><p>--admin-firstname</p></td>
 		<td><p>Magento administrator user's first name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_lastname</p></td>
+		<td><p>--admin-lastname</p></td>
 		<td><p>Magento administrator user's last name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_email</p></td>
+		<td><p>--admin-email</p></td>
 		<td><p>Magento administrator user's e-mail address.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_user</p></td>
+		<td><p>--admin-user</p></td>
 		<td><p>Magento administrator user name.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--admin_password</p></td>
-		<td><p>Magento administrator user password.</p></td>
+		<td><p>Magento administrator user password.</p>
+		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 
@@ -87,7 +89,7 @@ where the following table defines parameters and values.
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration, config.php</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>

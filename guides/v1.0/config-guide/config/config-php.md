@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Magento configuration files
-title: Magento's deployment configuration, config.php
-menu_title: Magento's deployment configuration, config.php
+title: Magento's deployment configuration
+menu_title: Magento's deployment configuration
 menu_order: 1
 github_link: config-guide/config/config-php.md
 ---
@@ -11,38 +11,29 @@ github_link: config-guide/config/config-php.md
 
 #### Contents
 
-*  <a href="#config-php-overview">What is config.php?</a>
-*  <a href="#config-php-contents">config.php contents</a>
+*  <a href="#config-php-overview">What is the Magento deployment configuration?</a>
+*  <a href="#config-php-contents">config.php and env.php contents</a>
+* <a href="#config-php-upgrade">Updating to build 0.74-beta10</a>
 
-<h2 id="config-php-overview">What is config.php?</h2>
-`<your Magento install dir>/app/etc/config.php` is referred to as Magento's *deployment configuration* because it's created during installation and has information required to start Magento.
+<h2 id="config-php-overview">What is the Magento deployment configuration?</h2>
+{% include install/deployment-config.html %}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>config.php</code> is the replacement for <code>local.xml</code> in earlier Magento versions. It contains a declarative array of configuration values.</p>
-</div>
-
-Unlike other configuration files discussed in <a href="{{ site.gdeurl }}config-guide/config/config-files.html">Module configuration files</a>, `config.php` is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended.
-
-`config.php` includes the following information:
-
-*	Database credentials and connection settings
-*	Cache storage settings 
-*	Enabled cache types
-*	Your encryption key 
-*	Web routing parameters (base URLs, URL path to Magento Admin)
-*	List of enabled modules 
-*	File system paths
-
-<h2 id="config-php-contents">config.php contents</h2>
-`config.php` is a PHP-file that returns a multi-dimensional associative array. This section discusses its structure and contents.
-
-<h3 id="config-php-contents-segments">Segments</h3>
+<h2 id="config-php-contents">config.php and env.php contents</h2>
+`config.php` and `env.php` are PHP files that return a multi-dimensional associative array. 
 
 On the first hierarchy level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished from each other by an arbitrary key&mdash;both the key and its value are defined by the Magento framework. 
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
 
 On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules' configuration files, with the exception of disabled modules. 
+
+The following sections discusses the structure and contents of `config.php` and `env.php`.
+
+* <a href="#config-php-contents-config-php">config.php contents</a>
+* <a href="#config-php-contents-env-php">env.php contents</a>
+
+<h3 id="config-php-contents-config-php">config.php contents</h3>
+Starting with build 0.74-beta10, `config.php` contains the list of modules only.
 
 Disabled modules are not recognized by Magento; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not display in the storefront or Admin and don't affect routing. The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
@@ -69,8 +60,8 @@ return array (
 ); ?>
 {% endhighlight %}
 
-<h3 id="config-php-segments-detail">Segment details</h3>
-The following table provides details about each `config.php` segment and its structure.
+<h3 id="config-php-contents-env-php">env.php contents</h3>
+`env.php` was introduced in build 0.74-beta10; before that build, `config.php` contained this data in addition to the list of enabled modules. The following table provides details about each `env.php` segment and its structure.
 
 <table>
   <tbody>
@@ -124,19 +115,14 @@ The following table provides details about each `config.php` segment and its str
     <tr>
       <td>Installation date</td>
       <td><code>install</code></td>
-      <td>Not currently implemented</td>
+      <td><pre>__/install
+ |-- date</pre></td>
     </tr>
     <tr>
       <td>Encryption key</td>
       <td><code>encrypt</code></td>
       <td><pre>__/crypt
  |-- key</pre></td>
-    </tr>
-    <tr>
-      <td>Module list</td>
-      <td><code>modules</code></td>
-      <td><pre>__/modules
- |-- &lt;enumerated modules></pre></td>
     </tr>
     <tr>
       <td>Cache types</td>
@@ -147,9 +133,8 @@ The following table provides details about each `config.php` segment and its str
   </tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>We're working to improve this topic. Use the <strong>Edit this page in GitHub</strong> link at the top of this page to give us feedback and suggestions.</p>
-</div>
+<h2 id="config-php-upgrade">Updating to build 0.74-beta10</h2>
+{% include install/deployment-config_upgrade.html %}
 
 #### Related topic
 

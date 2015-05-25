@@ -1,11 +1,11 @@
 ---
 layout: default
 group: get-started
-subgroup: Step 2. Construct a request
-title: Step 2. Construct a request
-menu_title: Step 2. Construct a request
+subgroup: C_REST
+title: Construct a request
+menu_title: Construct a request
 menu_order: 1
-menu_node: parent
+
 github_link: get-started/gs-web-api-request.md
 ---
 

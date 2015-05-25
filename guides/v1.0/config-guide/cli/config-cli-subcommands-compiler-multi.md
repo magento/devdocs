@@ -18,10 +18,12 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
 
+*	There is one Magento 2 code base instance
 *	There is one database instance per tenant
 *	Independent configurations in the Magneto Admin per tenant
 *	The storefronts are independent of each other
@@ -61,7 +63,7 @@ Naming Rules for auto-generated classes for a module:
 <h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Command options:
 
-	php magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
+	magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="<path>"] [--generation="<path and 
 	filename>"] [--di="<path and filename>"] [--exclude-pattern="<regex>"]
 
 The following table discusses the meanings of this command's parameters and values. 
@@ -108,7 +110,7 @@ The following table discusses the meanings of this command's parameters and valu
 
 For example, to run the compiler and specify the `igbinary` serializer:
 
-	php magento setup:di:compile-multi-tenant --serializer=igbinary
+	magento setup:di:compile-multi-tenant --serializer=igbinary
 
 Messages similar to the following display:
 
@@ -138,9 +140,13 @@ Messages similar to the following display:
 
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a>
 *	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">Run tests</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

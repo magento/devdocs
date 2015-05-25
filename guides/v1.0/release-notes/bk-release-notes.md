@@ -12,8 +12,8 @@ github_link: release-notes/bk-release-notes.md
 
 Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 
-For this first release of Magento 2.0, here is a summary of some important
-features of the release.
+Following is is a summary of important
+features of all Magento 2 releases starting with Developer Beta in December 2014.
 
 <h3 id="highlights-devrc">Highlights of this release</h3>
 
@@ -33,10 +33,7 @@ features of the release.
     *   Follows Semantic Versioning 2.0.0
     *   Backward compatible for classes and methods annotated with `@api`
     *   Backward compatible for all client users within minor and patch core updates
-    *   We'll use  `@depreciated` to notify you of removal on the next major change
-*   Refactored API code for:
-    *   CatalogInventory module
-    *   Tax module
+    *   We'll use  `@deprecated` to notify you of removal on the next major change
 *   Removed the `Magento_Core` module; moved functions to other modules
 
 

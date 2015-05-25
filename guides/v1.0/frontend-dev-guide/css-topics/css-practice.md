@@ -22,11 +22,11 @@ The following image illustrates how store pages look when the Blank theme is app
 </div>
 
 
-In their Grey theme, OrangeCo want to change the color scheme from white to grey.
+In their Grey theme, OrangeCo wants to change the color scheme from white to grey.
 
 The Grey theme directory is <code>app/design/frontend/OrangeCo/grey</code>.
 
-OrangeCo decide to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
+OrangeCo decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
 To do this, they added an overriding <code>_theme.less</code> file in the <code>app/design/frontend/OrangeCo/grey/web/css/source</code> directory, with the following content:
 <pre>
 //  Color nesting

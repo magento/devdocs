@@ -66,13 +66,13 @@ The following table shows each configuration type and the Magento configuration 
 <table>
   <tbody>
     <tr>
-      <th>Configuraiton file</th>
+      <th>Configuration file</th>
       <th>Description</th>
       <th>Stage</th>
       <th>Configuration object</th>
     </tr>
     <tr>
-      <td><code>config.php</code></td>
+      <td><code>config.php</code> and <code>env.php</code></td>
       <td><a href="{{ site.gdeurl }}config-guide/config/config-php.html">Deployment configuration</a></td>
       <td>Loads into memory when Magento initializes</td>
       <td>Has no object, cannot be customized</td>
@@ -81,19 +81,19 @@ The following table shows each configuration type and the Magento configuration 
       <td><code>config.xml</code></td>
       <td>System configuration</td>
       <td>primary, global </td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a></td>
+      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
     </tr>
     <tr>
       <td><code>di.xml</code></td>
       <td><a href="{{ site.gdeurl }}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
       <td>primary, global, area</td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">Magento\Framework\ObjectManager\Config</a></td>
+      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
     </tr>
     <tr>
       <td><code>events.xml</code></td>
       <td>Event/observer configuration</td>
       <td>global, area</td>
-      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+      <td><a href=" {{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
     </tr>
 <!--     <tr>
       <td><code>cache.xml</code></td>
@@ -128,4 +128,4 @@ You can interact with configuration files using interfaces under <a href="{{ sit
 #### Related topics
 
  *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration, config.php</a>
+ *  <a href="{{ site.gdeurl }}config-guide/config/config-php.html">Magento's deployment configuration</a>

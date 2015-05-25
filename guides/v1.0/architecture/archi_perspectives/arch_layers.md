@@ -7,8 +7,13 @@ menu_title: Architecture layers
 menu_order: 3
 github_link: architecture/archi_perspectives/arch_layers.md
 ---
+We will add information about the following layers in a future sprint:
 
-<h2 id="presentation">Presentation layer</h2>
+* Presentation layer
+* Service layer
+* Domain layer
+
+<!--<h2 id="presentation">Presentation layer</h2>
 
 
 <h2 id="service">Service layer</h2>
@@ -16,8 +21,10 @@ github_link: architecture/archi_perspectives/arch_layers.md
 
 <h2 id="domain">Domain layer</h2>
 
+-->
 
 <h2 id="persistence">Persistence layer</h2>
+
 
 Magento uses an active record pattern strategy for persistence. In this system, the model object contains a *resource model* that maps an object to one or more database rows. A resource model is responsible for performing functions such as:
 

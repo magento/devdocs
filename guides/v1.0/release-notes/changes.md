@@ -1,6 +1,6 @@
 ---
 layout: default
-group: release-notes
+group: 
 title: Release Notes
 menu_title: Changes in this release
 menu_node: 

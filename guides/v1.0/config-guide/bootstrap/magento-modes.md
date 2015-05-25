@@ -36,7 +36,7 @@ You can run Magento in any of the following *modes*:
 	</tr>
 	<tr class="even">
 		<td><a href="#mode-production">production</a></td>
-		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static files are not cached. You can set the static file directory to read-only because files are read without going through the fallback mechanism.</td>
+		<td>Intended for deployment on a production system. Exceptions are not displayed to the user, exceptions are written to logs only, and static files are not cached. <!-- You can set the static file directory to read-only because files are read without going through the fallback mechanism. --></td>
 	</tr>
 
 </tbody>
@@ -73,9 +73,9 @@ This improves performance because static files don't go through the fallback mec
 
 In production mode:
 
-*	Static view files are not materialized, and URLs for them are composed on the fly without going through fallback mechanism.
-*	The Magento installation directory can have read-only permissions
-*	Errors are logged to the file system and are never displayed to the user
+*	Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism.
+<!-- *	The Magento installation directory can have read-only permissions
+ -->*	Errors are logged to the file system and are never displayed to the user
 
 #### Next step
 To set a mode, see <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>

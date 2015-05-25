@@ -224,7 +224,7 @@ Click **Show details** to display details about the dependency error. You can th
 *	Resolve the issue by taking the action indicated by the message.
 		
 <div class="bs-callout bs-callout-warning">
-	<p>Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited <code>config.php</code>. Editing <code>config.php</code> is not recommended because future Magento software updates can undo your changes.</p>
+	<p>Use <strong>Skip dependency check for individual modules</strong> with caution. We recommend against it because a typical reason for this error is you manually edited the <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>. Editing the deployment configuration is not recommended because future Magento software updates can undo your changes.</p>
 </div>
 
 

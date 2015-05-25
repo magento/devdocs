@@ -1,11 +1,11 @@
 ---
 layout: default
 group: get-started
-subgroup: Step 4. Review the response
-title: Step 4. Review the response
-menu_title: Step 4. Review the response
-menu_order: 1
-menu_node: parent
+subgroup: C_REST
+title: Review the response
+menu_title: Review the response
+menu_order: 3
+
 github_link: get-started/gs-web-api-response.md
 ---
 
