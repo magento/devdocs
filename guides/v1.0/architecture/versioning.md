@@ -237,5 +237,5 @@ The following steps demonstrate the packaging and backward compatibility story f
 
 </ol>
 <h2>Related Topics</h2>
-* <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Backward compability</a>
+* <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Backward compatibility</a>
 
