@@ -5,7 +5,7 @@ subgroup: T_Command-line installation
 title: Enable or disable modules
 menu_title: Enable or disable modules
 menu_node: 
-menu_order: 9
+menu_order: 7
 github_link: install-gde/install/install-cli-subcommands-enable.md
 ---
 
