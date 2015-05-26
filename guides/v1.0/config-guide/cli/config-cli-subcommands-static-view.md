@@ -22,9 +22,9 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
-The static view files deployment tool enables you to write static files to the Magento docroot when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
+The static view files deployment tool enables you to write static files to the Magento file system when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
-Because static view files are not deployed on the fly in production mode, you must write static view files to the Magento docroot manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
+Because static view files are not deployed on the fly in production mode, you must write static view files to the Magento file system manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
