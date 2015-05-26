@@ -5,7 +5,7 @@ subgroup: T_Command-line installation
 title: Create or update the deployment configuration
 menu_title: Create or update the deployment configuration
 menu_node: 
-menu_order: 6
+menu_order: 9
 github_link: install-gde/install/install-cli-subcommands-deployment.md
 ---
 
