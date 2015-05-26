@@ -17,7 +17,7 @@ Modules encapsulate a particular business feature or set of features; a module i
 
 A Module is a logical group--that is, a directory containing blocks, controllers, helpers, models, and so on related to the specific feature or a widget. A module is designed to work independently and not to intervene with the work of other functionality. Using a modular approach implies that every module encapsulates a feature and has minimum dependencies on other modules.
 
-Specifically, a module is a directory that contains php and xml files (blocks, controllers, helpers, models, etc.) related to a specific functionality.
+Specifically, a module is a directory that contains PHP and XML files (blocks, controllers, helpers, models, etc.) related to a specific functionality.
 
 The purpose of each module is to provide specific product features by implementing new functionality or extending the functionality of other modules. Each module is designed to function independently, so the inclusion or exclusion of a particular module does not impact the functionality of other modules.
 
