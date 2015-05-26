@@ -6,7 +6,7 @@ title: Migration guide
 menu_title: Migration guide
 menu_node: parent
 menu_order: 1
-github_link: migration/bk-migration-guide.md
+github_link: migration/migration-user-guide.md
 ---
 
   
