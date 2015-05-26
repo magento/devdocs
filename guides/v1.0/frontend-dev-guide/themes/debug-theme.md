@@ -51,7 +51,7 @@ Just like templates, layouts are saved on a per-module basis. You can easily loc
 After you have determined the module, you can search for the layout in the following locations according to the layout fallback logic:
 
 1. `app/design/<area>/<vendor>/<current_theme>/<Namespace>_<Module>/layout`
-2. `app/design/<area>/<vendor>/<parent_theme(s)>/<Namespace>_<Module> /layout`
+2. `app/design/<area>/<vendor>/<parent_theme(s)>/<Namespace>_<Module>/layout`
 3. `app/code/<Namespace>/<Module>/view/<area>/layout`
 
 There is no straightforward algorithm how to define at once the exact layout file, but in most cases layout file names are self descriptive. Also you can search them for mentions of the corresponding templates.
@@ -89,6 +89,6 @@ In the mini shopping cart template `app/code/Magento/Checkout/view/frontend/temp
 So, let's search for occurrences of "`minicart-wrapper`" in according to the fallback scheme:
 
 1. Search in `app/design/frontend/Magento/blank/web/css`, the search returns no results.
-2. Search in `app/design/frontend/Magento/blank/Magento_Checkout/web/css`.The "`minicart-wrapper`" style is defined in `app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/minicart.less`
+2. Search in `app/design/frontend/Magento/blank/Magento_Checkout/web/css`.The "`minicart-wrapper`" style is defined in `app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/module/_minicart.less`
 
 <p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="{{ site.gdeurl }}frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>
