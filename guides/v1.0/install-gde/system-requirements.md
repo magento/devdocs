@@ -62,11 +62,4 @@ Before you install Magento, make sure your system meets or exceeds the following
 
     *	PHPUnit (as a command-line tool) 4.1 or later
 
-
-
-
-
-
-
-
-
+Click to <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">install Magento prerequisites</a>
