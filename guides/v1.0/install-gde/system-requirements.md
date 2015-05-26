@@ -39,15 +39,15 @@ Before you install Magento, make sure your system meets or exceeds the following
 
 *	Required PHP extensions:
 
-	*	PDO/MySQL
-	*	mbstring
-	*	mcrypt
-	*	mhash
-	*	simplexml
-	*	curl
-	*	gd2, ImageMagick 6.3.7 (or later) or both
-	*	soap
-	*	intl
+	*	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a>
+	*	<a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a>
+	*	<a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a>
+	*	<a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a>
+	*	<a href="http://php.net/manual/en/book.simplexml.php" target="_blank">simplexml</a>
+	*	<a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a>
+	*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd2</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
+	*	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
+	*	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 
 *	<a href="http://dev.mysql.com/doc/refman/5.6/en/installing.html" target="_blank">MySQL 5.6.x</a>
 *	Mail Transfer Agent (MTA) or an SMTP server
