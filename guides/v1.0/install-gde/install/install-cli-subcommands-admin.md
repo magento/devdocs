@@ -75,7 +75,7 @@ where the following table defines parameters and values.
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_password</p></td>
+		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
 		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
 		<td><p>Yes</p></td>
