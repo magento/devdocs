@@ -10,7 +10,7 @@ github_link: migration/migration-overview.md
 ---
 
 <h2 id="migrate-overview">Overview</h2>
-We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1.x—to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.
+We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1.x — to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.
 
 Magento 2 migration involves four components: data, extensions, themes, and customizations. 
 
