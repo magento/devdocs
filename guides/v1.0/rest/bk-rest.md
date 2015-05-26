@@ -10,7 +10,7 @@ github_link: rest/bk-rest.md
 ---
 The format and content of the REST Reference is still being developed. Until this information is available, Magento will periodically publish unprocessed documentation generated from the code.
 
-<h2 id="list"">List of REST APIs</h2>
+<h2 id="list">List of REST APIs</h2>
 
 <h3>Magento/Backend </h3>
 
