@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Bootstrap
-title: Set the mode (developer, production, default)
-menu_title: Set the mode (developer, production, default)
+title: Set the mode (MAGE_MODE)
+menu_title: Set the mode (MAGE_MODE)
 menu_order: 3
 menu_node: 
 github_link: config-guide/bootstrap/magento-modes.md
