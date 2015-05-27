@@ -43,8 +43,8 @@ Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), th
 <h3 id="migrate-overview-versions">Supported versions</h3>
 We support the following versions for migration:
 
-*	Enterprise Edition (EE) version 1.9.1.0 
-*	Community Edition (CE) version 1.14.1.0 
+*	Enterprise Edition (EE) version 1.14.1.0 
+*	Community Edition (CE) version 1.9.1.0 
 
 We also plan to support:
 
