@@ -2,8 +2,8 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Update, reinstall, uninstall 
-menu_title: Update, reinstall, uninstall
+title: Update, reinstall, uninstall Magento
+menu_title: Update, reinstall, uninstall Magento
 menu_node: 
 menu_order: 5
 github_link: install-gde/install/install-cli-uninstall.md
