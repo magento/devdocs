@@ -9,4 +9,6 @@ menu_node:
 github_link: rest/rest-details.md
 ---
 
-<a href="{{ site.gdeurl }}rest/restApi" target="_blank">REST API Details</a>
+ <h2>REST API details</h2>
+ 
+<a href="{{ site.gdeurl }}rest/restApi" target="_blank">Take this link</a> to open a new tab and view details about the REST API.
