@@ -65,7 +65,7 @@ Media assets include, for example, images for products, categories, WYSIWYG edit
 #### Storefront design
 
 * Design in files (css, js, templates, XML layouts) changed its location and format. It can be developed and integrated after migration of settings
-* Layout Updates stored in DB. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. Should be migrated manually after migration of main data.
+* Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. Should be migrated manually after migration of data.
 
 #### Web services credentials
 You must manually create credentials for SOAP, XML-RPC and REST in Magento 2.
@@ -118,18 +118,18 @@ During the time you're migrating:
 *	Do not alter any code
 *	Do not make changes in the Magento 2 Admin and Storefront
 
-All operations in Storefront are allowed at this time. 
+All operations in Magento 1 Storefront are allowed at this time. 
 
 <h2 id="migration-configure">Configuring the migration</h2>
 Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/magento/data-migration-tool/etc/<ce or ee version>/config.xml` to specify at minimum values for the following:
 
 {% highlight xml %}
-	<source version="1.9.1">
-        <database host="localhost" name="magento1" user="root"/>
-    </source>
-    <destination version="2.0.0.0">
-        <database host="localhost" name="magento2" user="root"/>
-    </destination>
+<source version="1.9.1">
+    <database host="localhost" name="magento1" user="root"/>
+</source>
+<destination version="2.0.0.0">
+    <database host="localhost" name="magento2" user="root"/>
+</destination>
 {% endhighlight %}
 
 Optional parameters:
@@ -140,12 +140,15 @@ Optional parameters:
 For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
 {% highlight xml %}
-    <source version="1.9.1">
-        <database host="localhost" name="magento1" user="root" password="pass"/>  </source> <destination version="2.0.0.0">
-        <database host="localhost" name="magento2" user="root"/> </destination> <options>
-       <source_prefix>magento1</source_prefix>
-    </options>
-
+<source version="1.9.1">
+    <database host="localhost" name="magento1" user="root" password="pass"/>
+</source>
+<destination version="2.0.0.0">
+    <database host="localhost" name="magento2" user="root"/>
+</destination>
+<options>
+    <source_prefix>magento1</source_prefix>
+</options>
 {% endhighlight %}
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
@@ -264,7 +267,7 @@ The following sections should be performed in a specific order:
 4.	<a href="#migrate-command-delta">Incremental migration (delta mode)</a>
 
 <h3 id="migrate-command-settings">Migrating settings</h3>
-You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment and some tax settings. 
+You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment, some tax settings etc. 
 
 To change how settings are migrated:
 
@@ -304,7 +307,7 @@ Command usage:
 </div>
 
 <h3 id="migrate-command-delta">Incremental migration (delta mode)</h3>
-Incremental migration enables you to migrate only the changes since you migrated data. These are all data that was added on Storefront by customers (created orders, reviews, changes in customer profiles etc.) and all operations with orders in Admin Panel.
+Incremental migration enables you to migrate only the changes made in Magento 1 since you migrated data. These are all data that was added on Storefront by customers (created orders, reviews, changes in customer profiles etc.) and all operations with orders in Admin Panel.
 
 Command usage:
 
@@ -315,6 +318,8 @@ Command usage:
 <span class="glyphicon-class">
   <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
 </div>
+
+Please note, that in this mode Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third party developers. If these extensions created some data in Storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="MigrationToolDeveloper'sGuide.pdf">Data Mapping Guide</a> for more information.
 
 <h2 id="migrate-command-media">Manual migration</h2>
 You must manually migrate all of the following:
@@ -348,7 +353,7 @@ However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder
 
 ### Storefront design        
 * Design in files (css, js, templates, XML layouts) changed its location and format. 
-* Layout Updates stored in DB. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. 
+* Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. 
 
 ### ACLs
 *	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
