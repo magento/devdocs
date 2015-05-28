@@ -34,7 +34,7 @@ Magento 2 migration involves four components: data, extensions, themes, and cust
 
 *	Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data
 
-*	Custom code: Code is not ported because it cannot be automated.
+*	Extensions and custom code: We are working with the Magento development community on updating extensions. They will be on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://www.devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide.</a>
 
 *	Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 themes, layouts, and customizations.
 
@@ -233,7 +233,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tbody>
 </table>
 
-You can refer to <a href="MigrationToolDeveloper'sGuide.pdf">Data Mapping Guide</a> for more details.
+You can refer to <a href="MigrationToolInternalSpecification.pdf">Migration Tool Internal Specification</a> for more details.
 
 <h2 id="migration-command">Migrating settings, data and changes</h2>
 Run the migration tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
@@ -319,7 +319,7 @@ Command usage:
   <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
 </div>
 
-Please note, that in this mode Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third party developers. If these extensions created some data in Storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="MigrationToolDeveloper'sGuide.pdf">Data Mapping Guide</a> for more information.
+Please note, that in this mode Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third party developers. If these extensions created some data in Storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="MigrationToolInternalSpecification.pdf">Migration Tool Internal Specification</a> for more information.
 
 <h2 id="migrate-command-media">Manual migration</h2>
 You must manually migrate all of the following:
