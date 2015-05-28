@@ -7,7 +7,7 @@ menu_order: 3
 menu_title: Magento dropdownDialog widget
 github_link: frontend-dev-guide/javascript/widget_dialog.md
 ---
-
+<p class="q">дроп даун с валютами, языками, product detailed page MAP</p>
 <h2>Overview</h2>
 Magento dropdownDialog widget is a customization of the standard <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog</a>. As extra functionality it implements the following:
 <ul>
@@ -148,6 +148,8 @@ Beside default functionality, this method sets the trigger for the opener handle
 Beside default functionality, this method calls the mouseLeave and mouseEnter functions, adds classes on trigger and dropdown parent, and binds the body to close the dropdown when click outside the modal.
 <h3 id="#d_close">close()</h3>
 Beside default functionality, this method removes the classes from trigger and dropdown parent and clears the timeout if exists.
+
+<p class="q"></p>
 <h3 id="#d_position">_position()</h3>
 The default functionality can be prevented from being executed  by setting the autoPosition option to false.
 <h3 id="#d_createTitleBar">_createTitleBar()</h3>

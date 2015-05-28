@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/javascript/widget_collapsible.md
 ---
 
 <h2>Overview</h2>
-
+<p class="q">used in Checkout</p>
 The Magento Collapsible widget converts a header/content pair into an accordion(collapse/expand the content when the header gets clicked).
 
 The content can be updated using Ajax once the content gets expanded. The collapsed/expanded state can be saved into local storage or cookies if the browser doesn't support local storage. To save the state is absolutely necessary that the main collapsible element to have an id specified. Also when deep linking is used, if the id specified as anchor is actually the id of the content or the id of an element that appends to content, the content will be automatically expanded for that element.
@@ -40,7 +40,7 @@ data-role="ajaxUrl"
 Is not necessary to have the data-attributes described above, you can specify the header, content, trigger as options when you initialize the widget.
 Initialize the widget without having a container that consists in a header and a content. In this case the initialization will be made on the header:
 $("#header").collapsible();
- 
+<p class="q">previous paragraph is unique, should be here</p>
 Widget can be instantiated with options:
 <pre>
 $("#element").collapsible({
@@ -65,6 +65,7 @@ Widget instantiated using data attributes with options passed:
 
 The collapsible widget has the following options:
 
+<ul>
 <li><a href="#fedg_collaps_active">active</a> </li>
 <li><a href="#fedg_collaps_disabled">disabled</a></li>
 
@@ -82,7 +83,7 @@ The collapsible widget has the following options:
 <li><a href="#">animate</a></li>
 <li><a href="#">icons</a></li>
 <li><a href="#">collateral</a></li>
-</li>
+</ul>
 
 <h3>active</h3>
 Specifies if the content should be expanded or not when the widget gets initialized
@@ -116,21 +117,21 @@ Default value: false
 
 Initialize the collapsible with the disable option specified:
 <pre>
-$("#element").collapsible({ disable: true});
+$("#element").collapsible({ disabled: true});
 </pre>
 Get or set the disable option, after initialization:
 
 //getter
 <pre>
-var disable = $("#element).collapsible("option","disable");
+var disabled = $("#element).collapsible("option","disabled");
 </pre>
 //setter
 
 <pre>
-$("#element").collapsible("option","disable",false);
+$("#element").collapsible("option","disabled",false);
 </pre>
 
-<p class="q">In the code the option name seems to be "disabled"</p>
+
 
 <h3>collapsible</h3>
 
@@ -495,14 +496,12 @@ $("#element" ).collapsible("activate");
 Expand the content without animation whenever this method is called.
 This method does not accept any arguments.
 
-Invoke the forceActivate method:
+Invoke the `forceActivate` method:
 <pre>
 $("#element").collapsible("forceActivate");
 </pre>
 
-<p class="q">
-Don't see them in code:
-destroy,
-beforeOpen Callback
-A: beforeOpen is an event
-</p>
+<h2 id="collapsible_events">Events</h2>
+
+<h3 id="c_beforeOpen">beforeOpen Callback</h3>
+<p class="q">need a description here</p>
