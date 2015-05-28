@@ -194,7 +194,7 @@
     <p>Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data</p>
   </li>
   <li>
-    <p>Custom code: Code is not ported because it cannot be automated.</p>
+    <p>Extensions and custom code: We are working with the Magento development community on updating extensions. They will be on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://www.devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide.</a></p>
   </li>
   <li>
     <p>Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 themes, layouts, and customizations.</p>
@@ -233,7 +233,7 @@
 
 <ul>
   <li>Design in files (css, js, templates, XML layouts) changed its location and format. It can be developed and integrated after migration of settings</li>
-  <li>Layout Updates stored in DB. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. Should be migrated manually after migration of main data.</li>
+  <li>Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. Should be migrated manually after migration of data.</li>
 </ul>
 
 <h4 id="web-services-credentials">Web services credentials</h4>
@@ -300,17 +300,17 @@
   <li>Do not make changes in the Magento 2 Admin and Storefront</li>
 </ul>
 
-<p>All operations in Storefront are allowed at this time. </p>
+<p>All operations in Magento 1 Storefront are allowed at this time. </p>
 
 <h2 id="migration-configure">Configuring the migration</h2>
 <p>Before you migrate any data, you must edit <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce or ee version&gt;/config.xml</code> to specify at minimum values for the following:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source</span> <span class="na">version=</span><span class="s">&quot;1.9.1&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/source&gt;</span>
-    <span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/destination&gt;</span></code></pre></div>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span></code></pre></div>
 
 <p>Optional parameters:</p>
 
@@ -322,10 +322,14 @@
 <p>For example, if your database owner’s user name is <code>root</code> with password <code>pass</code> and you use the prefix <code>magento1</code> in your Magento 1 database, use the following in <code>config.xml</code>:</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source</span> <span class="na">version=</span><span class="s">&quot;1.9.1&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>  <span class="nt">&lt;/source&gt;</span> <span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span> <span class="nt">&lt;/destination&gt;</span> <span class="nt">&lt;options&gt;</span>
-       <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
-    <span class="nt">&lt;/options&gt;</span></code></pre></div>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;options&gt;</span>
+    <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
+<span class="nt">&lt;/options&gt;</span></code></pre></div>
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
 <p>The migration tool uses <em>mapping files</em> to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:</p>
@@ -413,7 +417,7 @@
 </tbody>
 </table>
 
-<p>You can refer to <a href="MigrationToolDeveloper'sGuide.pdf">Data Mapping Guide</a> for more details.</p>
+<p>You can refer to <a href="MigrationToolInternalSpecification.pdf">Migration Tool Internal Specification</a> for more details.</p>
 
 <h2 id="migration-command">Migrating settings, data and changes</h2>
 <p>Run the migration tool from the <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin</code> directory.</p>
@@ -454,7 +458,7 @@
 </ol>
 
 <h3 id="migrate-command-settings">Migrating settings</h3>
-<p>You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment and some tax settings. </p>
+<p>You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment, some tax settings etc. </p>
 
 <p>To change how settings are migrated:</p>
 
@@ -500,7 +504,7 @@ php migrate data --config=&lt;path to config.xml&gt; [--reset]
 </div>
 
 <h3 id="migrate-command-delta">Incremental migration (delta mode)</h3>
-<p>Incremental migration enables you to migrate only the changes since you migrated data. These are all data that was added on Storefront by customers (created orders, reviews, changes in customer profiles etc.) and all operations with orders in Admin Panel.</p>
+<p>Incremental migration enables you to migrate only the changes made in Magento 1 since you migrated data. These are all data that was added on Storefront by customers (created orders, reviews, changes in customer profiles etc.) and all operations with orders in Admin Panel.</p>
 
 <p>Command usage:</p>
 
@@ -512,6 +516,8 @@ php migrate delta --config=&lt;path to config.xml&gt;
 <span class="glyphicon-class">
   <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
 </div>
+
+<p>Please note, that in this mode Data Migration Tool migrates data created only by Magento’s own modules and is not responsible for the code or extensions made by third party developers. If these extensions created some data in Storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="MigrationToolInternalSpecification.pdf">Migration Tool Internal Specification</a> for more information.</p>
 
 <h2 id="migrate-command-media">Manual migration</h2>
 <p>You must manually migrate all of the following:</p>
@@ -550,7 +556,7 @@ php migrate delta --config=&lt;path to config.xml&gt;
 <h3 id="storefront-design-1">Storefront design</h3>
 <ul>
   <li>Design in files (css, js, templates, XML layouts) changed its location and format. </li>
-  <li>Layout Updates stored in DB. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. </li>
+  <li>Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. </li>
 </ul>
 
 <h3 id="acls">ACLs</h3>
