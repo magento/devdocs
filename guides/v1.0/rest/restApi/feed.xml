@@ -4,10 +4,10 @@
     <title>REST Docs</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 May 2015 14:45:07 -0500</pubDate>
-    <lastBuildDate>Thu, 28 May 2015 14:45:07 -0500</lastBuildDate>
+    <link>http://yourdomain.comRESTApis/</link>
+    <atom:link href="http://yourdomain.comRESTApis/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 28 May 2015 15:59:45 -0500</pubDate>
+    <lastBuildDate>Thu, 28 May 2015 15:59:45 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Sat, 23 May 2015 15:56:07 -0500</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/05/23/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/05/23/welcome-to-jekyll.html</guid>
+        <link>http://yourdomain.comRESTApis/jekyll/update/2015/05/23/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.comRESTApis/jekyll/update/2015/05/23/welcome-to-jekyll.html</guid>
         
         
         <category>jekyll</category>
