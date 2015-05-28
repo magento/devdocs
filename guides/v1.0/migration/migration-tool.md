@@ -11,3 +11,7 @@ github_link: migration/migration-tool.md
 
   
 <h4>Contents</h4>
+
+Disclaimer
+
+Any specific information about the migration command-line tool is speculative. The tool is in development and some options are likely to change.

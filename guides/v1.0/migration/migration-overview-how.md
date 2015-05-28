@@ -23,13 +23,9 @@ This document uses the following terminology to discuss the migration tool:
 * Mode: Represented by a separate migration tool command, defines the basic mode of operation as:
   * Settings: Migrates the system configuration and website-related settings.
   * Data: Migrates database assets in bulk.
-  * Delta: Migrates incremental changes (for example, orders and inventory).
+  * Delta: Migrates incremental changes (for example, orders and inventory). 
 
-Disclaimer
-
-Any specific information about the migration command-line tool is speculative. The tool is in development and some options are likely to change. 
-
-Conceptual overview
+<h4>Conceptual overview</h4>
 
 Each mode has several steps; steps might include data migration and integrity checking. Mapping files enable you to specify how custom database data is moved. (For example, if you have custom data you can move it as-is or you can rename tables and fields in the Magento 2 database). The declarative language used in the mapping files makes it as easy as possible for you to map your custom data.
 
@@ -37,6 +33,6 @@ All Magento 1.x core tables are automatically migrated to Magento 2.0 with no ac
 
 Mapping files are discussed in more detail in <cross-ref to Database configuration and mapping files>
 
-The following diagram illustrates the migration procedure in general:
+####The following diagram illustrates the migration procedure in general:
 
 <p><img src="{{ site.baseurl }}common/images/migration.png" alt="Migration Procedure"></p> 

@@ -51,7 +51,7 @@ To prepare for the migration, make sure you do all of the following:
 * Stop all Magento 1.x cron jobs. Use the migration tool to migrate settings and websites.
 * Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from  from magento1-root/media to magento2-root/pub/media directory)
 * Use the migration tool to bulk copy your Magento 1.x database to your Magento 2.0 database. 
-If some of your extensions have data you want to you migrate, you might need to use the mapping files provided with the migration tool.
+If some of your extensions have data you want to migrate, you might need to use the mapping files provided with the migration tool.
 * Reindex all Magento 2.0 indexers. For details, see the Configuration Guide.
 * Thoroughly test your Magento 2.0 site. 
 Make sure you can place orders using all configured payment processors.
@@ -72,7 +72,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 1. Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).
 2. Press Control+C in the migration tool command window to stop incremental updates.
 3. Start your Magento 2 cron jobs.
-4. In your Magento 2 system, reindex the stock indexer. For more information, see the .
+4. In your Magento 2 system, reindex the stock indexer. For more information, see the `<TBD>`.
 5. Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.
 6. Perform any final verification of your Magento 2 site.
 7. Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) 
