@@ -122,16 +122,16 @@ To include a <code>.less</code> file using the <code>@magento_import</code> dire
 <li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
 <p><b>Example:</b></p>
 <pre>
-// Comment in a LESS document
+//  Comment in a LESS document
 
-// Standard LESS import directive 
+//  Standard LESS import directive 
 //  ---------------------------------------------
 
 @import 'source/_reset';
 @import '_styles';
 
 //
-// Custom Magento LESS import directives
+//  Custom Magento LESS import directives
 //  ---------------------------------------------
 
 //@magento_import 'source/_module.less'; // Theme modules
