@@ -260,15 +260,34 @@ H2.api2 {
 }
 
 
+DIV.title A {
+  text-decoration: none;
+}
+
+DIV.title A:link {color:#fff;}     /* unvisited link */
+DIV.title A:visited {color:#fff;}  /* visited link */
+DIV.title A:hover {color:#fff}   /* mouse over link */
+DIV.title A:active {color:#fff;}   /* selected link */
+
+
 #menu H1 {
 	font-size: 1.5rem;
   
 }
 
+DIV#collectionList H1 A {
+  text-decoration: none;
+  font-size: 1.8rem;
+
+}
+
+DIV#collectionList H1 A:link {color:#000;}     /* unvisited link */
+DIV#collectionList H1 A:visited {color:#000;}  /* visited link */
+DIV#collectionList H1 A:hover {color:#000}   /* mouse over link */
+DIV#collectionList H1 A:active {color:#000;}   /* selected link */
 
 
-ul.menu a {text-decoration:none;
-	}
+ul.menu a {text-decoration:none;}
 
 
 
@@ -282,6 +301,7 @@ ul.menu a:active {color:#c14800;}   /* selected link */
 
 ul.menu LI.current a {
 	font-weight: 900;
+  font-size: 1.5rem;
 	cursor:default;
 }
 

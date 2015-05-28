@@ -48,6 +48,6 @@ $('DIV#menu').animate({
 
 
 // Is this thing on?
-console.log("magDocs.js is up");
+// console.log("magDocs.js is up");
 
 } //end magDocs
