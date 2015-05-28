@@ -27,11 +27,19 @@ The following table discusses the bootstrap parameters you can set:
 			<th>Bootstrap parameter</th>
 			<th>Description</th>
 		</tr>
-		
 	<tr>
-		<td><a href="#config-bootparam-mode">MAGE_MODE</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">MAGE_DIRS</a></td>
+		<td>Specifies custom directory and URL paths</td>
+	</tr>	
+	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">MAGE_MODE</a></td>
 		<td>Sets the mode (default, developer, production)</td>
 	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
+		<td>Enables an HTML profiler</td>
+	</tr>
+
 	
 	</tbody>
 </table>
@@ -96,19 +104,13 @@ The Apache `mod_env` directive is slightly different in <a href="http://httpd.ap
 
 The procedures that follows show how to set the Magento mode in an Apache virtual host. This is not the only way to use `mod_env` directives; consult the Apache documentation for details.
 
-*	<a href="#mode-specify-ubuntu">Specify a mode for Apache on Ubuntu</a>
-*	<a href="#mode-specify-centos">Specify a mode for Apache on CentOS</a>
+*	<a href="#mode-specify-ubuntu">Specify a bootstrap variable for Apache on Ubuntu</a>
+*	<a href="#mode-specify-centos">Specify a bootstrap variable for Apache on CentOS</a>
 
-<h4 id="mode-specify-ubuntu">Specify a mode for Apache on Ubuntu</h4>
+<h4 id="mode-specify-ubuntu">Specify a bootstrap variable for Apache on Ubuntu</h4>
 This section assumes you've already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts" target="_blank">this digitalocean tutorial</a>.
 
-For more information about each mode, see:
-
-*	<a href="#mode-developer">Developer mode</a>
-*	<a href="#mode-default">Default mode</a>
-*	<a href="#mode-production">Production mode</a>
-
-To set the Magento mode using your web server's environment:
+To set a Magento bootstrap variable using your web server's environment:
 
 1.	As a user with `root` privileges, open your virtual host configuration file in a text editor.
 
@@ -119,45 +121,39 @@ To set the Magento mode using your web server's environment:
 
 2.	Anywhere in the virtual host configuration, add the following line:
 
-	<pre>SetEnv "MAGE_MODE" "[mode name]"</pre>
+		SetEnv "<variable name>" "<variable value>"
 
 	For example,
 
-	<pre>SetEnv "MAGE_MODE" "developer"</pre>
+		SetEnv "MAGE_MODE" "developer"
 
 3.	Save your changes and exit the text editor.
 4.	Enable your virtual host if you haven't already done so:
 
-	<pre>a2ensite [virtual host config file name]</pre>
+		a2ensite <virtual host config file name>
 
 	For example,
 
-	<pre>a2ensite my.magento.conf</pre>
+		a2ensite my.magento.conf
 
 5.	Restart the web server:
 
-	<pre>service apache2 restart</pre>
+		service apache2 restart
 
-<h4 id="mode-specify-centos">Specify a mode for Apache on CentOS</h4>
+<h4 id="mode-specify-centos">Specify a bootstrap variable for Apache on CentOS</h4>
 This section assumes you've already set up your virtual host. If you have not, consult a resource such as <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-centos-6" target="_blank">this digitalocean tutorial</a>.
 
-For more information about each mode, see:
-
-*	<a href="#mode-developer">Developer mode</a>
-*	<a href="#mode-default">Default mode</a>
-*	<a href="#mode-production">Production mode</a>
-
-To set the Magento mode using your web server's environment:
+To set a Magento bootstrap variable using your web server's environment:
 
 1.	As a user with `root` privileges, open `/etc/httpd/conf/httpd.conf` in a text editor.
 
-2.	2.	Anywhere in the virtual host configuration, add the following line:
+2.	Anywhere in the virtual host configuration, add the following line:
 
-	<pre>SetEnv "MAGE_MODE" "[mode name]"</pre>
+		SetEnv "<variable name>" "<variable value>"
 
 	For example,
 
-	<pre>SetEnv "MAGE_MODE" "developer"</pre>
+		SetEnv "MAGE_MODE" "developer"
 
 3.	Save your changes and exit the text editor.
 
