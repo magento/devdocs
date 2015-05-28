@@ -53,9 +53,11 @@ The following table discusses the bootstrap parameters you can set:
 This section discusses how to set the values of bootstrap parameters using environment variables.
 
 <h3 id="config-bootparam-mode">Set the mode using an environment variable</h3>
-Use the `MAGE_MODE` system environment variable to specify a mode as follows:
+You can specify Magento bootstrap variables as system-wide environment variables, which enables all processes to use them.
 
-	MAGE_MODE=[developer|default|production]
+For example, you can use the `MAGE_MODE` system environment variable to specify a mode as follows:
+
+	MAGE_MODE={developer|default|production}
 
 Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.
 
@@ -68,14 +70,14 @@ This section discusses how to specify the mode for either Apache or nginx.
 
 See one of the following sections for more information:
 
-*	<a href="#mode-specify-web-nginx">Specify the mode using an nginx setting</a>
-*	<a href="#mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</a>
-*	<a href="#mode-specify-web-apache">Specify the mode using an Apache setting</a>
+*	<a href="#mode-specify-web-nginx">Specify a variable using an nginx setting</a>
+*	<a href="#mode-specify-web-htaccess">Specify a variable using .htaccess (Apache only)</a>
+*	<a href="#mode-specify-web-apache">Specify a variable using an Apache setting</a>
 
-<h3 id="mode-specify-web-nginx">Specify the mode using an nginx setting</h3>
+<h3 id="mode-specify-web-nginx">Specify a variable using an nginx setting</h3>
 See the <a href="{{ site.mage2000url }}nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.
 
-<h3 id="mode-specify-web-htaccess">Specify the mode using .htaccess (Apache only)</h3>
+<h3 id="mode-specify-web-htaccess">Specify a variable using .htaccess (Apache only)</h3>
 One way to set the Magento mode is by editing `.htaccess`. This way, you don't have to change Apache settings.
 
 You can modify `.htaccess` in any of the following locations, depending on your entry point to the Magento application:
@@ -83,9 +85,11 @@ You can modify `.htaccess` in any of the following locations, depending on your 
 *	`<your Magento install dir>/.htaccess`
 *	`<your Magento install dir>/pub/.htaccess`
 
-To set the mode:
+To set a variable:
 
-1.	Open any of the preceding files in a text editor and uncomment the following:
+1.	Open any of the preceding files in a text editor and either add or uncomment the desired setting.
+
+	For example, to specify a <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:
 
 		#   SetEnv MAGE_MODE developer
 
@@ -97,7 +101,7 @@ To set the mode:
 
 2.	Save your changes to `.htaccess`; you don't need to restart Apache for the change to take effect.
 
-<h3 id="mode-specify-web-apache">Specify the mode using an Apache setting</h3>
+<h3 id="mode-specify-web-apache">Specify a variable using an Apache setting</h3>
 The Apache web server supports setting the Magento mode using `mod_env` directives.
 
 The Apache `mod_env` directive is slightly different in <a href="http://httpd.apache.org/docs/2.2/mod/mod_env.html#setenv" target="_blank">version 2.2</a> and <a href="http://httpd.apache.org/docs/2.4/mod/mod_env.html#setenv" target="_blank">version 2.4</a>.
@@ -162,3 +166,8 @@ After setting the mode, restart the web server:
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
 
+#### Related topics
+
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a>
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a>
