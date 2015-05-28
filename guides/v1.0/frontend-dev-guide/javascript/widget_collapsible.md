@@ -16,50 +16,30 @@ The content can be updated using Ajax once the content gets expanded. The collap
 
 The collapsible widget source is located in the <a href="{{site.mage2000url}}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
 
-<p class="q">Would be nice to have an illustration</p>
+<p class="q">Illustration: you mentioned that it is used in Checkout, but I can't find it in the page source using the method you described</p>
 
-<h2>Initialization</h2>
-
-In  the following examples of widget instantiation:
-•	    collapsible - the name of the widget
-•	    #element - the element's selector
-•	    #header - the header
+<h2>Initialize collapsible</h2>
 
 Generally the collapsible widget is instantiated like:
 <pre>
 $("#element").collapsible();
 </pre>
-In this case, because the header, content and trigger are not specified, "#element" must have children with the following attributes:
 
-data-role="title"
-data-role="content"
-In this case the trigger will be actually the title but you can also specify it if you want having it different from title by adding the following attribute to the element:
-data-role="trigger"
-Also to have the content updated using Ajax the element containing the URL for request must have the following attribute:
-data-role="ajaxUrl"
-Is not necessary to have the data-attributes described above, you can specify the header, content, trigger as options when you initialize the widget.
-Initialize the widget without having a container that consists in a header and a content. In this case the initialization will be made on the header:
+Where <code>#element</code> is the element's selector.
+
+
+Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or pathed as widget options. See <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html#accordion_init">Accordion widget initialization</a> for details.
+
+<h3>Initialize collapsible with header only</h3>
+You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
+<pre>
 $("#header").collapsible();
-<p class="q">previous paragraph is unique, should be here</p>
-Widget can be instantiated with options:
-<pre>
-$("#element").collapsible({
-    header : "#title-1"
-    content : "#content-1",
-    trigger : "#trigger-1,
-    ajaxUrlElement: "a"
- });
 </pre>
+<p class="q">For the writer: previous paragraph is unique, should be here</p>
 
-Widget instantiation using data attributes:
-<pre>
-&lt;div id=&quot;element&quot; data-mage-init='{&quot;collapsible&quot;:{}}'&gt;
-</pre>
-
-Widget instantiated using data attributes with options passed:
-<pre>
-&lt;div id=&quot;element&quot; data-mage-init='{&quot;collapsible&quot;:{&quot;header&quot;:&quot;#title1&quot;, &quot;content&quot;:&quot;#content1&quot;, &quot;icons&quot;: &quot;{\&quot;header\&quot;:\&quot;plus\&quot;,\&quot;activeHeader\&quot;:\&quot;minus\&quot;}}'/&gt;
-</pre>
+<h3>Initialize collapsible using the data-mage-init attribute</h3>
+The collapsible widget can be initialized using the <code>data-mage-init</code> attribute, as described in Widget initializaiton.
+<!--ADDLINK-->
 
 <h2>Options</h2>
 
@@ -68,29 +48,28 @@ The collapsible widget has the following options:
 <ul>
 <li><a href="#fedg_collaps_active">active</a> </li>
 <li><a href="#fedg_collaps_disabled">disabled</a></li>
-
-<li><a href="#">collapsible</a></li>
-<li><a href="#">header</a></li>
-<li><a href="#">content</a></li>
-<li><a href="#">trigger</a></li>
-<li><a href="#">closedState</a></li>
-<li><a href="#">openedState</a></li>
-<li><a href="#">disabledState</a></li>
-<li><a href="#">ajaxUrlElement</a></li>
-<li><a href="#">ajaxContent</a></li>
-<li><a href="#">loadingClass</a></li>
-<li><a href="#">saveState</a></li>
-<li><a href="#">animate</a></li>
-<li><a href="#">icons</a></li>
-<li><a href="#">collateral</a></li>
+<li><a href="#fedg_collaps_collapsible">collapsible</a></li>
+<li><a href="#fedg_collaps_header">header</a></li>
+<li><a href="#fedg_collaps_content">content</a></li>
+<li><a href="#fedg_collaps_trigger">trigger</a></li>
+<li><a href="#fedg_collaps_closedState">closedState</a></li>
+<li><a href="#fedg_collaps_openedState">openedState</a></li>
+<li><a href="#fedg_collaps_disabledState">disabledState</a></li>
+<li><a href="#fedg_collaps_ajaxUrlElement">ajaxUrlElement</a></li>
+<li><a href="#fedg_collaps_ajaxContent">ajaxContent</a></li>
+<li><a href="#fedg_collaps_loadingClass">loadingClass</a></li>
+<li><a href="#fedg_collaps_saveState">saveState</a></li>
+<li><a href="#fedg_collaps_animate">animate</a></li>
+<li><a href="#fedg_collaps_icons">icons</a></li>
+<li><a href="#fedg_collaps_collateral">collateral</a></li>
 </ul>
 
-<h3>active</h3>
-Specifies if the content should be expanded or not when the widget gets initialized
+<h3 id="fedg_collaps_active">active</h3>
+Specifies if the content should be expanded when the widget gets initialized.
 
-Type: Boolean
+**Type**: Boolean
 
-Default value: false
+**Default value**: false
 
 Initialize the collapsible with the active option specified:
 <pre>
@@ -98,13 +77,12 @@ $("#element").collapsible({ active: true});
 </pre>
 
 Get or set the active option, after initialization:
-getter
-<pre>
-var active = $("#element).collapsible("option","active");
-</pre>
 
-setter
 <pre>
+//getter
+var active = $("#element).collapsible("option","active");
+
+//setter
 $("#element").collapsible("option","active",false);
 </pre>
 

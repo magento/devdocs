@@ -9,77 +9,92 @@ github_link: frontend-dev-guide/javascript/widget_accordion.md
 ---
 
 <h2>Overview</h2>
+
+Magento Accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.md">Magento Tabs widget</a>.
+
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
-Accordions support arbitrary markup, but a set of data-attributes should be specified for the header, trigger and content, or all this elements must be specified with selectors as options. Also the titles and contents must be in the same order in DOM.
-Magento Accordion widget is an extension of <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.md">Magento Tabs widget</a>.
 
-The collapsible widget source is located in the <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
+Accordions support arbitrary markup, but the following requirements should be kept:
 
-<h2>Initialize the accordion widget</h2>
+<ol>
+<li>titles and contents are in the same order in DOM.</li>
+<li>the header, trigger and content are specified, either by adding the <code>data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
+<p class="q">need explanation here</p>
+</ol>
+
+
+The collapsible widget source is <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
+
+<h2 id="accordion_init">Initialize the accordion widget</h2>
+
+<h3>Initialize accordion when data-*attributes are specified</h3>
 
 Generally the collapsible widget is instantiated like following:
 <pre>
 $("#element").accordion();
 </pre>
 
-Where <code>#element</code> is the element's selector.
+Where:
+<ul>
+<li><code>#element</code> is the element's selector.</li>
+<li><code>#element</code> has children with the following attributes specified: 
+<ul>
+<li><code>data-role="title"</code>
+</li>
+<li><code>data-role="content"</code></li>
+</ul>
+</li>
+</ul>
 
- 
-In this case, because the header, content and trigger are not specified, "#element" must have children with the following attributes:
- 
-data-role="title"
-data-role="content"
- 
-In this case the trigger will be actually the title but you can also specify it if you want having it different from title by adding the following attribute to the element:
- 
-data-role="trigger"
- 
-Also to have the content updated using Ajax the element containing the URL for request must have the following attribute:
- 
-data-ajax="true"
- 
+Optionally, you can specify the following:
+<ul>
+<li>If you want the trigger to be different fron the title, add the <code>data-role="content"</code> attribute for the element</li>
+<p class="q">is it the "#element" for which the widget is initialized?</p>
+<li>To have the content updated using Ajax, add the <code>data-ajax="true"</code> attribute for the element containing the URL for request.
+</li>
+</ul>
+
 Mark-up examples:
- 
-<div id="element">
-    <div data-role="title">
-        <div data-role="trigger">
-            <span>Title 1</span>
-        </div>
-    </div>
-    <div data-role="content">Content 1</div>
+<pre>
+&lt;div id=&quot;element&quot;&gt;
+    &lt;div data-role=&quot;title&quot;&gt;
+        &lt;div data-role=&quot;trigger&quot;&gt;
+            &lt;span&gt;Title 1&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-role=&quot;content&quot;&gt;Content 1&lt;/div&gt;
   
-    <div data-role="title">
-        <div data-role="trigger">
-            <span>Title 2</span>
-        </div>
-    </div>
-    <div data-role="content">Content 2</div>
+    &lt;div data-role=&quot;title&quot;&gt;
+        &lt;div data-role=&quot;trigger&quot;&gt;
+            &lt;span&gt;Title 2&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-role=&quot;content&quot;&gt;Content 2&lt;/div&gt;
   
-   <div data-role="title">
-        <div data-role="trigger">
-            <span>Title 3</span>
-        </div>
-    </div>
-    <div data-role="content">Content 3</div>
-</div>
- 
-Is not necessary to have the data-attributes described above, you can specify the header, content, trigger as options when you initialize the widget.
-Widget can be instantiated with options:
- 
+   &lt;div data-role=&quot;title&quot;&gt;
+        &lt;div data-role=&quot;trigger&quot;&gt;
+            &lt;span&gt;Title 3&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div data-role=&quot;content&quot;&gt;Content 3&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<h3>Initialize accordion with option</h3>
+You can specify the header, content, trigger as options when you initialize the widget.
+For example:
+<pre>
 $("#element").accordion({
     header : "#title-1"
     content : "#content-1",
     trigger : "#trigger-1,
     ajaxUrlElement: "a"
  });
- 
-Widget instantiation using data attributes:
- 
-<div id="element" data-mage-init='{"accordion":{}}'>
- 
-Widget instantiated using data attributes with options passed:
- 
-<div id="element" data-mage-init='{"accordion":{"header":"#title1", "content":"#content1", "icons": "{\"header\":\"plus\",\"activeHeader\":\"minus\"}}'/>
+</pre>
+
+<h3>Initialize accordion using the data-mage-init attribute</h3>
+
+The accordion widget can be initialized using the <code>data-mage-init</code> attribute, as described in Widget initializaiton.
+<!--ADDLINK-->
 
 <h2>Options</h2>
 Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html#fedg_tabs_options">Magento Tabs options</a>, plus the following custom ones:
@@ -90,59 +105,59 @@ Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javas
 <p class="q">openFocus is not described in docs. Answer: need to document</p>
 </ul>
 
-<h3>active</h3>
+<h3 id="collaps_active">active</h3>
 
-Specifies which tab should be active when widget gets instantiated.
+Specifies which tab should be active when the widget gets instantiated.
 
-Type: Array, String
+**Type**: Array, String
 
-Default value: [0]
+**Default value**: [0]
 
-Initialize the tabs with the active option specified:
+Example of the accordion initialization with the <code>active</code> option specified:
 <pre>
 $("#element").accordion({ active: "0 1"});
 $("#element").accordion({ active: [0,1]});
 </pre>
-<h3>multipleCollapsible</h3>
+
+<h3 id="collaps_multi">multipleCollapsible</h3>
 Specifies is multiple panels can be expanded at the same time.
 
-Type: Boolean
+**Type**: Boolean
 
-Default value: false
+**Default value**: false
 
-Initialize the tabs with the active option specified:
+Example of the accordion initialization with the <code>multipleCollapsible</code> option specified:
 <pre>
 $("#element").accordion({ multipleCollapsible: false});
 </pre>
-Get or set the active option, after initialization:
-
-//getter
+Get or set the <code>multipleCollapsible</code> option, after initialization:
 <pre>
+//getter
 var multipleCollapsible = $("#element).accordion("option","multipleCollapsible");
-</pre>
 
 //setter
-<pre>
 $("#element").tabs("option","multipleCollapsible",false);
 </pre>
 
 <h2>Methods</h2>
-Accordion widget options and keyboard interaction mostly coincide with Magento Tabs Methods.
-<p class="q">Magento tabs or simply tabs. A:magento tabs</p>
+Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.
 
-The custom accordion methods are the fdifferences are the following:
+The custom accordion methods are the following:
 
 <ul>
 <li><a href="#meth_act">activate()</a></li>
 <li><a href="#meth_deact">deactivate()</a></li>
 </ul>
 
-<h3>activate(index)</h3>
+<h3 id="meth_act">activate(index)</h3>
 Activate a tab.
 
-The <code>index</code> parameter defines the which tab to activate; type: Number, Array.
+The <code>index</code> parameter defines the which tab to activate.
+
+**Type**: Number, Array.
 
 If no index is passed, all panels are activated.
+
 Code examples:
 <pre>
 $( "#element" ).accordion( "activate" );
@@ -150,10 +165,12 @@ $( "#element" ).accordion( "activate", 1 );
 $( "#element" ).accordion( "activate", [0,1]);
 </pre>
 
-<h3>deactivate(index)</h3>
+<h3 id="meth_deact">deactivate(index)</h3>
 Deactivate a tab.
 
-The <code>index</code> parameter defines the which tab to activate; type: Number, Array.
+The <code>index</code> parameter defines the which tab to deactivate.
+
+**Type**: Number, Array.
 
 If no index is passed, all panels are deactivated.
 

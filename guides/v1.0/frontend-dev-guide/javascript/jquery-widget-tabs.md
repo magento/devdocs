@@ -53,6 +53,7 @@ The Magento tabs widget has the same options as the jQuery <a href="http://api.j
 Whether a spinner is displayed on a tab when the tab content is loading using Ajax.
 
 **Type**: Boolean
+
 **Default value**: `false`
 
 <h4 id="fedg_tabs_options-destination">destination</h4>
@@ -99,6 +100,7 @@ Prefix for tab ID's.
 shadowTabsShadow tabs load in the background.
 
 **Type**: Object
+
 **Structure**:
 
 <pre>shadowTabs: {
