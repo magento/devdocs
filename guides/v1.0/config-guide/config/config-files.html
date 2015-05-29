@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -215,13 +231,13 @@
 <table>
   <tbody>
     <tr>
-      <th>Configuraiton file</th>
+      <th>Configuration file</th>
       <th>Description</th>
       <th>Stage</th>
       <th>Configuration object</th>
     </tr>
     <tr>
-      <td><code>config.php</code></td>
+      <td><code>config.php</code> and <code>env.php</code></td>
       <td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Deployment configuration</a></td>
       <td>Loads into memory when Magento initializes</td>
       <td>Has no object, cannot be customized</td>
@@ -230,19 +246,19 @@
       <td><code>config.xml</code></td>
       <td>System configuration</td>
       <td>primary, global </td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a></td>
+      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
     </tr>
     <tr>
       <td><code>di.xml</code></td>
       <td><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
       <td>primary, global, area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">Magento\Framework\ObjectManager\Config</a></td>
+      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
     </tr>
     <tr>
       <td><code>events.xml</code></td>
       <td>Event/observer configuration</td>
       <td>global, area</td>
-      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+      <td><a href=" https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
     </tr>
 <!--     <tr>
       <td><code>cache.xml</code></td>
@@ -281,7 +297,7 @@
 
 <ul>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento’s deployment configuration, config.php</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento’s deployment configuration</a></li>
 </ul>
 
 
@@ -298,6 +314,10 @@
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -546,7 +566,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
@@ -566,6 +586,10 @@
 					
 
 
+				
+			
+			
+				
 				
 			
 			

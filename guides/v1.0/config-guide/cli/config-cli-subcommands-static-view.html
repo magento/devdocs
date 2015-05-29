@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -160,22 +176,23 @@
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
-<p>The static view files deployment tool enables you to write static files to the Magento docroot when the Magento software is set for <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.</p>
+<p>The static view files deployment tool enables you to write static files to the Magento file system when the Magento software is set for <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.</p>
 
-<p>Because static view files are not deployed on the fly in production mode, you must write static view files to the Magento docroot manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
+<p>Because static view files are not deployed on the fly in production mode, you must write static view files to the Magento file system manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -192,9 +209,9 @@ Examples:
     <p>In a more secure environment, you should make the web server user the owner of the files after running the tool.</p>
   </li>
   <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>.</li>
-  <li>Run the static view files deployment tool from the <code>&lt;your Magento install dir&gt;/dev/tools/Magento/Tools/View</code> directory.</li>
   <li>
-    <p>Set read-only file permissions for the <code>pub/static</code> directory, its subdirectories, and files.</p>
+    <p>Run the static view files deployment tool from the <code>&lt;your Magento install dir&gt;/dev/tools/Magento/Tools/View</code> directory.
+<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
     <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
@@ -205,7 +222,7 @@ Examples:
 
 <p>Command options:</p>
 
-<pre><code>php magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
+<pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
 </code></pre>
 
 <p>The following table discusses the meanings of this command’s parameters and values. </p>
@@ -223,7 +240,7 @@ Examples:
 	<tr>
 		<td>&lt;lang&gt;</td>
 		<td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>php magento info:language:list</code>.</p></td>
+		<p>You can find the list by running <code>magento info:language:list</code>.</p></td>
 	<td><p>No</p></td>
 	</tr>
 		<tr>
@@ -236,7 +253,7 @@ Examples:
 
 <p>For example, to deploy static view files for the <code>pt_BR</code> language, enter</p>
 
-<pre><code>php magento --ansi setup:static-content:deploy pt_BR
+<pre><code>magento --ansi setup:static-content:deploy pt_BR
 </code></pre>
 
 <p>Following are some sample messages that display to indicate successful deployment:</p>
@@ -288,14 +305,14 @@ New version of deployed files: 1430773903
     <p>In a more secure environment, you should make the web server user the owner of the files after running the tool.</p>
   </li>
   <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
-  <li><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.</li>
   <li>
-    <p>Set read-only file permissions for the <code>pub/static</code> directory, its subdirectories, and files.</p>
+    <p><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
+<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
 
-    <div class="bs-callout bs-callout-info" id="info">
+    <!-- <div class="bs-callout bs-callout-info" id="info">
     <span class="glyphicon-class">
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-</div>
+</div> -->
   </li>
 </ol>
 
@@ -304,12 +321,16 @@ New version of deployed files: 1430773903
 <ul>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
 
 
@@ -326,6 +347,10 @@ New version of deployed files: 1430773903
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -574,7 +599,7 @@ New version of deployed files: 1430773903
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
@@ -594,6 +619,10 @@ New version of deployed files: 1430773903
 					
 
 
+				
+			
+			
+				
 				
 			
 			

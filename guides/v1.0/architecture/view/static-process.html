@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -150,14 +166,22 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="m2devgde-static-proc-intro">Overview</h2>
-<p>When a browser loads a web page and requests a static view file such as a JavaScript, CSS, image file, or another page asset,
-   the Magento system processes the requested file before it returns the file to the browser.
-</p>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#m2devgde-static-proc-intro">Overview</a></li>
+  <li><a href="#example-fallback">Fallback mechanism example</a></li>
+  <li><a href="#publish-static-view-files">Static view file publication</a></li>
+  <li><a href="#css-files">CSS file publication</a></li>
+  <li><a href="#static-view-files-url-resolution">URL resolution for static view files</a></li>
+</ul>
+
+<h2 id="m2devgde-static-proc-intro">Overview</h2>
+<p>When a browser loads a web page and requests a static view file such as a JavaScript, CSS, image file, or another page asset, the Magento application processes the requested file before it returns the file to the browser.</p>
+
 <p>This processing can include searching for a not-found file in additional locations, file merging, and file minification.</p>
-<p>Whenever a static view file is requested in the Magento application,
-   it uses the appropriate mechanisms for the file type and system configuration, as follows:
-</p>
+
+<p>Whenever a static view file is requested in the Magento application, it uses the appropriate mechanisms for the file type and system configuration, as follows:</p>
+
 <dl>
    <dt>View file fallback mechanism</dt>
    <dd>
@@ -171,63 +195,65 @@
    </dd>
    <dt>CSS and JavaScript file merging</dt>
    <dd>
-      <p>Magento merges all CSS or JavaScript assets linked in the &lt;head&gt; element of the page into a single files and replaces referenced files with a single reference.</p>
+      <p>Magento merges all CSS or JavaScript assets linked in the <code>&lt;head&gt;</code> element of the page into a single files and replaces referenced files with a single reference.</p>
    </dd>
    <dt>JavaScript files minifying</dt>
    <dd>
-      <p>Magento removes white spaces and comments.
-   
+      <p>Magento removes white spaces and comments.</p>
+   </dd>
+</dl>
 
 <h2 id="example-fallback">Fallback mechanism example</h2>
-<p>This example illustrates the fallback mechanism.</p>
-<p>The <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/images/logo.gif</code> URL requests the <code>logo.gif</code> image file.</p>
-<p>Magento API request:</p>
+<p>As an example of static file fallback, suppose there is a request for the <code>logo.svg</code> image in the Blank theme.</p>
 
-   <pre>$this-&gt;getViewFileUrl('logo.gif');</pre>
+<p>The request URL is similar to:</p>
+
+<pre><code>  http://www.example.com/pub/static/frontend/Magento/blank/en_US/images/logo.svg
+</code></pre>
+
+<p>The Magento API request is similar to:</p>
+
+<pre><code>  $this-&gt;getViewFileUrl('logo.svg');
+</code></pre>
 
 <p>The current system context is:</p>
 
 <table>
    <tr>
-      <th>application area</th>
+      <th>Application area</th>
       <td>frontend</td>
    </tr>
    <tr>
-      <th>theme</th>
-      <td><code>theme</code>, which inherits <code>parent_theme</code></td>
-   </tr>
-   <tr>
-      <th>language</th>
-      <td><code>en_US</code></td>
+      <th>Theme</th>
+      <td><code>theme</code>, which inherits from <code>parent_theme</code></td>
    </tr>
 </table>
 
-<p>By using theme inheritance and view file fallback rules, the system searches in this order for these files:</p>
-<p class="q">Reviewer: Please verify these paths. I do not see a /web/directory on my Magento 2 installation.</p>
+<p>Using theme inheritance and view file fallback rules, Magento uses the following search order:</p>
 
 <ol>
-   <li><code>app/design/frontend/theme/web/i18n/en_US/logo.gif</code></li>
-   <li><code>app/design/frontend/theme/web/logo.gif</code></li>
-   <li><code>app/design/frontend/parent_theme/web/i18n/en_US/logo.gif</code></li>
-   <li><code>app/design/frontend/parent_theme/web/logo.gif</code></li>
+   <li><code>app/design/frontend/Magento/blank/web/images/logo.svg</code></li>
+   <li><code>app/design/frontend/Magento/blank/web/logo.svg</code></li>
+   <li><code>app/design/frontend/Magento/parent_theme/web/images/logo.svg</code></li>
+   <li><code>app/design/frontend/Magento/parent_theme/web/logo.svg</code></li>
 </ol>
-<p>If the file is found, it is published in the following fully qualified location: <code>pub/static/frontend/theme/en_US/images/logo.gif</code>.</p>
-<p>The path inside the <code>pub/static</code> directory coincides with initial path in the <code>app/design</code> directory.</p>
+
+<p>If the file is found, it is published in the following location: </p>
+
+<pre><code>  pub/static/frontend/blank/web/images/logo.svg
+</code></pre>
+
+<p>The path inside the <code>pub/static</code> directory coincides with the initial path in the <code>app/design</code> directory.</p>
+
 <h2 id="publish-static-view-files">Static view file publication</h2>
-<p>Static files in their initial location might be not web accessible. To enable the Magento server to deliver static files, locate them in the public <code>pub/static</code> directory. The copy process is also known as <i>publication</i>.</p>
+<p>The Magento application has a <em>static view files publication command</em> that enables you to publish static view files in certain Magento <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bootstrap/magento-modes.html">modes</a>.</p>
+
 <div class="bs-callout bs-callout-info" id="info">
  <p>Any files that you manually upload (for example, product images), are always stored in <code>pub/media</code>.</p>
 </div>
-<p>The publication logic depends on the application mode:</p>
-<dl>
-   <dt>Default mode</dt>
-   <dd>Static files are published automatically when the requested file does not exist in the <code>pub/static</code> directory, or it exists but the original file was modified.</dd>
-   <dt>Production mode</dt>
-   <dd>To publish files, you must run the view files deployment tool. The script is located in <a href="https://github.com/magento/magento2/blob/develop/dev/tools/Magento/Tools/View/deploy.php" target="_blank">deploy.php</a>.</dd>
-   <dt>Developer mode</dt>
-   <dd>Files are not published. Though you can still run the deployment tool, all static view files are cached in the <code>pub/static</code> directory.
-   So, if a frontend developer changes any static view file, they must re-run the tool after each change.</dd>
-</dl>
+
+<p>To use the static view file publication tool, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">deploy static view files</a>.</p>
+
 <h2 id="css-files">CSS file publication</h2>
 <p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
 <h3 id="merging-enabled">Merging enabled</h3>
@@ -235,16 +261,14 @@
 <p>To enable publication of these files, reference them in a CSS file, as follows:</p>
 <ul>
    <li>Use the CSS <code>url()</code> directive to reference the file.</li>
-   <li>Use a relative path to reference the file. The system does not recognize absolute URLs or URIs.</li>
+   <li>Use a relative path to reference the file. The Magento application does not recognize absolute URLs or URIs.</li>
 </ul>
-<p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css-topics/styles.css</code>,
+<!-- <p>For example, if the original CSS file is to be published from <code>app/design/frontend/Magento/blank/web/css-topics/styles.css</code>,
 the identified references are published from following locations:</p>
 
-<p class="q">Reviewer: Again, please verify the /web/ directory path.</p>
-
 <table>
-<col width="50%" />
-<col width="50%" />
+<col width="50%">
+<col width="50%">
    <thead>
       <tr>
          <th>Reference</th>
@@ -283,7 +307,7 @@ the identified references are published from following locations:</p>
          <td>N/A. Absolute URI.</td>
       </tr>
    </tbody>
-</table>
+</table> -->
 
 <p>The referenced files can be located on different fallback levels, the publishing mechanism locates them recursively.</p>
 <h3 id="merging-disabled">Merging disabled</h3>
@@ -296,7 +320,7 @@ the identified references are published from following locations:</p>
 <p>Examples follow:</p>
 <h4 id="merging-disabled-css1">CSS specified by path</h4>
 
-Example: <code>css-topics/one/two/file.css</code>
+<p>Example: <code>css-topics/one/two/file.css</code></p>
 
 <table>
 
@@ -317,7 +341,7 @@ Example: <code>css-topics/one/two/file.css</code>
 
 <h4 id="merging-disabled-css1">CSS specified by module</h4>
 
-Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.css</code>
+<p>Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.css</code></p>
 
 <table>
    <colgroup><col width="25%" />
@@ -397,7 +421,7 @@ Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.cs
 <p>The generated URL is: <code>http://www.example.com/pub/static/frontend/Magento/blank/en_US/Magento_Catalog/web/images/product.gif</code>.</p>
 <div class="bs-callout bs-callout-info" id="info">
  <p>In production mode, the URL generating mechanism does not support the locale code; that is, generated URLs do not contain locale code.</p>
-</div></ul></p></dd></dl>
+</div></ul>
 
 
 		</div>
@@ -413,6 +437,10 @@ Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.cs
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -656,6 +684,10 @@ Example: <code>&lt;VendorName&gt;_&lt;ModuleName&gt;::css-topics/one/two/file.cs
 					
 
 
+				
+			
+			
+				
 				
 			
 			

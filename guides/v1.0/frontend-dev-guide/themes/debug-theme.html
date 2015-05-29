@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -198,7 +214,7 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 <ol>
   <li><code>app/design/&lt;area&gt;/&lt;vendor&gt;/&lt;current_theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
-  <li><code>app/design/&lt;area&gt;/&lt;vendor&gt;/&lt;parent_theme(s)&gt;/&lt;Namespace&gt;_&lt;Module&gt; /layout</code></li>
+  <li><code>app/design/&lt;area&gt;/&lt;vendor&gt;/&lt;parent_theme(s)&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
   <li><code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/&lt;area&gt;/layout</code></li>
 </ol>
 
@@ -242,7 +258,7 @@ After you find the class name, use text search in the theme and module styles di
 
 <ol>
   <li>Search in <code>app/design/frontend/Magento/blank/web/css</code>, the search returns no results.</li>
-  <li>Search in <code>app/design/frontend/Magento/blank/Magento_Checkout/web/css</code>.The “<code>minicart-wrapper</code>” style is defined in <code>app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/minicart.less</code></li>
+  <li>Search in <code>app/design/frontend/Magento/blank/Magento_Checkout/web/css</code>.The “<code>minicart-wrapper</code>” style is defined in <code>app/design/frontend/Magento/blank/Magento_Checkout/web/css/source/module/_minicart.less</code></li>
 </ol>
 
 <p>After you determine which <code>.css</code> or <code>.less</code> file defines the class, you can override the default class definition in your custom <code>.css</code> or <code>.less</code> files.  For details, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/css-topics/css-themes.html">CSS in themes</a>.</p>
@@ -261,6 +277,10 @@ After you find the class name, use text search in the theme and module styles di
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -595,6 +615,10 @@ After you find the class name, use text search in the theme and module styles di
 					
 
 
+				
+			
+			
+				
 				
 			
 			

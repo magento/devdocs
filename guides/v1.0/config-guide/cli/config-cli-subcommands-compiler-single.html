@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -154,22 +170,66 @@
 
 <ul>
   <li><a href="#config-cli-before">First steps</a></li>
+  <li><a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a></li>
   <li><a href="#config-cli-subcommands-single-overview">Overview of the single-tenant compiler</a></li>
   <li><a href="#config-cli-subcommands-single-run">Run the single-tenant compiler</a></li>
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+
+<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
+<p>This section discusses the basics of code compilation (which is also referred to as <em>code generation</em>).</p>
+
+<h3>Why generate code?</h3>
+<p>In brief, you can generate code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/Resource/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="o">...</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+        <span class="nx">\Magento\Customer\Model\AddressFactory</span> <span class="nv">$addressFactory</span><span class="p">,</span>
+<span class="o">...</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>The first constructor parameter has a type of <code>\Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 GitHub. The Magento application <em>generates</em> this class as because its name uses recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
+<p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug through the code.</p>
+
+<h4>When is code generated?</h4>
+<p>Provided the Magento application is <em>not</em> set for <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
+<p>You can also use the compiler discussed in this topic to generate code at any time.</p>
+
+<h4>Proxies and factories</h4>
+<ul><li>A <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/depend-inj.html#dep-inj-mod-type-fact">Factory</a> class creates instances of a type; for example, a generated <code>\Magento\Customer\Model\AddressFactory</code> creates new instances of <code>\Magento\Customer\Model\Address</code>. The code in <code>AddressFactory</code> has some specific code for the <code>Address</code> type.</li>
+<li>In more complex code generation, you can designate a <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">Proxy</a> to be generated for a type.<br />
+ Generally, a proxy must have an implementation of all the declared public methods of the original class.
+The method implementation could be delegating to another object in memory, or the method could make a network call to another object on a different machine. All the Proxy methods in a class usually do the same thing (for example, they all delegate to another object or they all make a network call) except they need a slight difference to call a specific method.<br />
+As a practical example, you can see the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated StoreManager Proxy class.</li></ul>
+
+<h4>Why should you regenerate code?</h4>
+<p>Suppose a Customer or Proxy class for a Customer class is generated. The Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it will not be re-generated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.</p>
+<p>Rarely, if the code generator implementation itself is changed, you must regenerate all the classes.</p>
+
+<h3>Advantages of generating code</h3>
+<p>Generating code assures you of the following:</p>
+
+<ul><li>The code is correct.<br />
+You won’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon. You don’t have to write tests for the generated code. </li>
+<li>Code generation writes the boilerplate code to enable you to write the more challenging and interesting code.</li>
+    <li>Consistency in implementation. <br />
+    All generated Factories work the same way. After you learn know how one Factory works, you should know how they all work.</li>
+    <li>You can change the implementation for all generated code. <br />
+    If you discover a better way of implementing a Proxy, you can do it across the board. If you want the code generator to use a PHP <code>__call</code> magic method or if you want to real methods, you only need to change the generator. Code maintenance is reduced.</li></ul>
 
 <h2 id="config-cli-subcommands-single-overview">Overview of the single-tenant compiler</h2>
 <p>Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-tenant compiler</a> instead.</p>
@@ -185,7 +245,7 @@ Examples:
 <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
 <p>Run the command as follows (there are no options):</p>
 
-<pre><code>php magento setup:di:compile
+<pre><code>magento setup:di:compile
 </code></pre>
 
 <p>The following message displays to confirm success:</p>
@@ -198,12 +258,16 @@ Examples:
 <ul>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
 
 
@@ -220,6 +284,10 @@ Examples:
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -468,7 +536,7 @@ Examples:
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
@@ -488,6 +556,10 @@ Examples:
 					
 
 
+				
+			
+			
+				
 				
 			
 			

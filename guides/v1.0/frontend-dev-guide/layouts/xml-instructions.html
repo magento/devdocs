@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -588,7 +604,7 @@ To pass an argument that is an array use the following construction:
 &lt;/argument&gt;
 </pre>
 
-<p id="getter">Arguments values set in a layout file can be accessed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean difining whether there's any value set. 
+<p id="getter">Arguments values set in a layout file can be accessed in <a href="/pages/Magento/devdocs_internal/guides/v1.0/frontend-dev-guide/templates/template-overview.html" target="_blank">templates</a> using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. The latter returns a boolean defining whether there's any value set. 
 <code>{ArgumentName}</code> is obtained from the <code>name</code> attribute the following way: for getting the value of <code>&lt;argument name="some_string"&gt;</code> the method name is <code>getSomeString()</code>.
 
 Example:
@@ -623,6 +639,10 @@ $cssClass&nbsp;=&nbsp;$this-&gt;getCssClass()&nbsp;?&nbsp;'&nbsp;'&nbsp;.&nbsp;$
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -957,6 +977,10 @@ $cssClass&nbsp;=&nbsp;$this-&gt;getCssClass()&nbsp;?&nbsp;'&nbsp;'&nbsp;.&nbsp;$
 					
 
 
+				
+			
+			
+				
 				
 			
 			

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create or update the deployment configuration, config.php</title>
+	<title>Create or update the deployment configuration</title>
 	<meta name="description" content="Magento 2 Developer Guide.
 ">
 
@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -139,7 +155,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Create or update the deployment configuration, config.php</h1>
+		<h1 class="page-heading">Create or update the deployment configuration</h1>
 			
 			<a class="improve-page" href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -159,34 +175,36 @@
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-cli-subcommands-configphp-prereq">Prerequisites</h2>
 <p>There are no prerequisites for using this command.</p>
 
 <h2 id="instgde-cli-subcommands-configphp">Create or update the Magento deployment configuration</h2>
-<p>Magento’s deployment configuration, <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">config.php</a>, provides the information Magento needs to initialize and bootstrap.</p>
+<p><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento’s deployment configuration</a> provides the information Magento needs to initialize and bootstrap.</p>
 
 <p>You can use this command if:</p>
 
 <ul>
   <li>You previously installed the Magento software and you want to modify the deployment configuration</li>
-  <li>If you want to create only <code>config.php</code> and continue the Magento installation some other way</li>
+  <li>If you want to create only the deployment configuration and continue the Magento installation some other way</li>
+  <li>To update the deployment configuration without affecting anything else</li>
 </ul>
 
 <p>Command options:</p>
 
-<pre><code>php magento setup:config:set [--&lt;parameter&gt;=&lt;value&gt;, ...]
+<pre><code>magento setup:config:set [--&lt;parameter&gt;=&lt;value&gt;, ...]
 </code></pre>
 
 <p>The following table discusses the meanings of installation parameters and values. </p>
@@ -354,35 +372,14 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 			
 				
 				
+			
+			
+				
+				
 					
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
 					
 					
 						
@@ -543,11 +540,11 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
 						
 								
 							
-									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
 						
 								
 							
@@ -555,7 +552,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+									<li class="level-2  active "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
 						
 								
 							
@@ -714,6 +711,10 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 					
 
 
+				
+			
+			
+				
 				
 			
 			

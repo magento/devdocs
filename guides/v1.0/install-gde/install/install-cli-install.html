@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -213,11 +229,11 @@
 	</tr>
 <tr>
 	<td>Language</td>
-	<td><code>php magento info:language:list</code></td>
+	<td><code>magento info:language:list</code></td>
 </tr>
 <tr>
 	<td>Currency</td>
-	<td><code>php magento info:currency:list</code></td>
+	<td><code>magento info:currency:list</code></td>
 </tr>
 <tr>
 	<td>Time zone</td>
@@ -234,7 +250,7 @@
 <h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
 <p>The format of the install command follows:</p>
 
-<pre><code>php magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
+<pre><code>magento setup:install --&lt;option&gt;=&lt;value&gt; ... --&lt;option&gt;=&lt;value&gt;
 </code></pre>
 
 <p>The following table discusses the meanings of installation option names and values. Examples are provided in <a href="#install-cli-example">Sample localhost installations</a>.</p>
@@ -323,24 +339,24 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_password</p></td>
+		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
 			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--language</p></td>
-		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>php magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--currency</p></td>
-		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>php magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
 		<td><p>--timezone</p></td>
-		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>php magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
+		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
@@ -474,7 +490,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 --backend-frontname=admin \
 --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
---admin-user=admin --admin_password=admin123 --language=en_US \
+--admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --use-sample-data
 </code></pre>
   </li>
@@ -516,7 +532,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 --backend-frontname=admin --db-host=localhost --db-name=magento \
 --db-user=magento --db-password=magento \
 --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
---admin-user=admin --admin_password=admin123 --language=en_US \
+--admin-user=admin --admin-password=admin123 --language=en_US \
 --currency=USD --timezone=America/Chicago --cleanup-database \
 --sales-order-increment-prefix="ORD$" --session-save=db
 </code></pre>
@@ -567,35 +583,14 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 			
 				
 				
+			
+			
+				
+				
 					
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
 					
 					
 						
@@ -756,11 +751,11 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
 						
 								
 							
@@ -768,7 +763,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
 						
 								
 							
@@ -927,6 +922,10 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 					
 
 
+				
+			
+			
+				
 				
 			
 			

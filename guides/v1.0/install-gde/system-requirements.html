@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -187,15 +203,15 @@
     <p>Required PHP extensions:</p>
 
     <ul>
-      <li>PDO/MySQL</li>
-      <li>mbstring</li>
-      <li>mcrypt</li>
-      <li>mhash</li>
-      <li>simplexml</li>
-      <li>curl</li>
-      <li>gd2, ImageMagick 6.3.7 (or later) or both</li>
-      <li>soap</li>
-      <li>intl</li>
+      <li><a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a></li>
+      <li><a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a></li>
+      <li><a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a></li>
+      <li><a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a></li>
+      <li><a href="http://php.net/manual/en/book.simplexml.php" target="_blank">simplexml</a></li>
+      <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
+      <li><a href="http://php.net/manual/en/book.image.php" target="_blank">gd2</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both</li>
+      <li><a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a></li>
+      <li><a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a></li>
     </ul>
   </li>
   <li><a href="http://dev.mysql.com/doc/refman/5.6/en/installing.html" target="_blank">MySQL 5.6.x</a></li>
@@ -221,6 +237,7 @@
   </li>
 </ul>
 
+<p>Click to <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/prereq/prereq-overview.html">install Magento prerequisites</a></p>
 
 
 		</div>
@@ -254,35 +271,14 @@
 			
 				
 				
+			
+			
+				
+				
 					
 					
 					
 					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/back-intro.html">Go back to the Magento installation overview</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
 					
 					
 						
@@ -443,11 +439,11 @@
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
 						
 								
 							
@@ -455,7 +451,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
 						
 								
 							
@@ -614,6 +610,10 @@
 					
 
 
+				
+			
+			
+				
 				
 			
 			

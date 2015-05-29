@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -160,31 +176,34 @@
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
-<p>First steps:</p>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/pages/Magento/devdocs_internal/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-<p>In addition to the arguments discussed in this topic, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
-<p>To use the Magento performance toolkit or to do similar performance testing, you need to generate a large amount of data (for example, stores, categories, products, and so on).</p>
+<p>To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
 
-<p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses more detail.</p>
+<p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
 
 <p>The following figure shows how a product displays on the storefront using the small profile:</p>
 
 <p><img src="/pages/Magento/devdocs_internal/common/images/config_generate-data.png" alt="Sample storefront with generated data" /></p>
 
+<p>This gives you an idea about what the data looks like.</p>
+
 <h2 id="config-cli-perf-prof">About profiles</h2>
 <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
 
-<p>Profiles are located in <code>&lt;your Magento install dir&gt;/setup/performance_toolkit/profiles/&lt;ce or ee&gt;/profiles</code></p>
+<p>Profiles are located in <code>&lt;your Magento install dir&gt;/setup/performance-toolkit/profiles/&lt;ce or ee&gt;</code></p>
 
 <p>For example, <code>/var/www/html/magento2/setup/performance-toolkit/profiles/ce</code></p>
 
@@ -304,14 +323,14 @@ Examples:
 
 <p>Command options:</p>
 
-<pre><code>php magento setup:perf:generate-fixtures &lt;path to profile&gt;
+<pre><code>magento setup:perf:generate-fixtures &lt;path to profile&gt;
 </code></pre>
 
 <p>where <code>&lt;path to profile&gt;</code> specifies the absolute file system path to and name of a profile.</p>
 
 <p>For example,</p>
 
-<pre><code>php magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
+<pre><code>magento setup:perf:generate-fixtures /var/www/html/magento2/setup/performance-toolkit/profiles/ce/small.xml
 </code></pre>
 
 <p>Sample output for the small profile:</p>
@@ -337,15 +356,18 @@ Generating configurable EAV variations...  done in &lt;time&gt;
 <h4 id="related-topics">Related topics</h4>
 
 <ul>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
 </ul>
 
 
@@ -362,6 +384,10 @@ Generating configurable EAV variations...  done in &lt;time&gt;
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -610,7 +636,7 @@ Generating configurable EAV variations...  done in &lt;time&gt;
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
@@ -630,6 +656,10 @@ Generating configurable EAV variations...  done in &lt;time&gt;
 					
 
 
+				
+			
+			
+				
 				
 			
 			

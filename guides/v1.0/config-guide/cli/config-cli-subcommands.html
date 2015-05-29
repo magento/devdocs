@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -191,7 +207,7 @@ Examples:
 <span class="glyphicon-class">
   <p>You can run the commands in any of the following ways:</p>
 <ul><li><code>php magento &lt;command&gt;</code></li>
-<li><code>./magento &lt;command&gt;</code></li></ul></span>
+<li><code>magento &lt;command&gt;</code></li></ul></span>
 </div>
 
 <h2 id="config-cli-summary">Command summary</h2>
@@ -213,41 +229,41 @@ Examples:
 		</tr>
 		
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">php magento setup:cache:{enable|disable|clean|flush|status}</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">magento setup:cache:{enable|disable|clean|flush|status}</a></td>
 		<td><p>Manages the cache</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">php magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
 		<td><p>Manages the indexers</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">php magento setup:di:compile-multi-tenant</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">magento setup:di:compile-multi-tenant</a></td>
 		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
 		<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites.</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">php magento setup:di:compile</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
 		<td><p>Use if you have one instance of the Magento application.</p>
 			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website.</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">php magento log:{status|clean}</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">magento log:{status|clean}</a></td>
 		<td><p>Clears the logs</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">php magento i18n:{collect-phrases|pack}</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">magento i18n:{collect-phrases|pack}</a></td>
 		<td><p>Creates a translation dictionary or a translation package</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">php magento setup:static-content:deploy</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">magento setup:static-content:deploy</a></td>
 		<td><p>Deploys static view files</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">php magento dev:css:deploy</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">magento dev:css:deploy</a></td>
 		<td><p>Creates CSS from LESS</p></td>
 	</tr>
 	<tr>
-		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">php magento dev:tests:run</a></td>
+		<td><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">magento dev:tests:run</a></td>
 		<td><p>Runs automated tests</p></td>
 	</tr>
 	
@@ -256,12 +272,12 @@ Examples:
 
 <h2 id="config-cli-help">Help commands</h2>
 <p>To display a complete list of commands, enter:</p>
-<pre>php magento --list</pre>
+<pre>magento --list</pre>
 <p>To get help for a particular command, enter:</p>
-<pre>php magento --help &lt;command&gt;</pre>
+<pre>magento --help &lt;command&gt;</pre>
 <p>For example,</p>
-<pre>php magento --help setup:install
-php magento --help cache:enable</pre>
+<pre>magento --help setup:install
+magento --help cache:enable</pre>
 
 <h2 id="config-cli-subcommands-common">Common arguments</h2>
 <p>The following arguments are common to all commands. These commands can be run either before or after the Magento software is installed:</p>
@@ -279,7 +295,7 @@ php magento --help cache:enable</pre>
 	<tr>
 		<td>--help</td>
 		<td>-h</td>
-		<td>Get help for any command. For example, <code>php magento help setup:install</code> or <code>php magento help setup:config:set</code>.</td>
+		<td>Get help for any command. For example, <code>./magento help setup:install</code> or <code>./magento help setup:config:set</code>.</td>
 	</tr>
 	<tr>
 		<td>--quiet</td>
@@ -322,14 +338,19 @@ php magento --help cache:enable</pre>
 <ul>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
   <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+  <li><a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
 </ul>
+
 
 
 		</div>
@@ -345,6 +366,10 @@ php magento --help cache:enable</pre>
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -593,7 +618,7 @@ php magento --help cache:enable</pre>
 								
 								
 							
-									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration, config.php</a></li>
+									<li class="level-2 "><a href="https://github.corp.ebay.com/pages/Magento/devdocs_internal/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
 						
 								
 							
@@ -613,6 +638,10 @@ php magento --help cache:enable</pre>
 					
 
 
+				
+			
+			
+				
 				
 			
 			

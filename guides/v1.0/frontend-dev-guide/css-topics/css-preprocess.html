@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -199,7 +215,7 @@ The root source files for the Blank theme:
 
 <ol>
 <li>Server-side LESS compilation.<br />
-This is the default compilation mode, and is the only option in <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bootstrap/magento-mode.html#mode-production" target="_blank"> production application mode</a>.
+This is the default compilation mode, and is the only option in <a href="/pages/Magento/devdocs_internal/guides/v1.0/config-guide/bootstrap/magento-modes.html#mode-production" target="_blank"> production application mode</a>.
 In this case the compilation is performed on the server, using the <a href="https://github.com/oyejorge/less.php" target="_blank">LESS PHP library</a>.
 </li>
 
@@ -258,16 +274,16 @@ The standard <code>@import</code> directive includes a single file, which is fou
 <li><p>To avoid any conflicts with the original LESS syntax, <code>@magento_import</code> must be commented out with two slashes. Otherwise, the LESS preprocessor ignores it.</p>
 <p><b>Example:</b></p>
 <pre>
-// Comment in a LESS document
+//  Comment in a LESS document
 
-// Standard LESS import directive 
+//  Standard LESS import directive 
 //  ---------------------------------------------
 
 @import 'source/_reset';
 @import '_styles';
 
 //
-// Custom Magento LESS import directives
+//  Custom Magento LESS import directives
 //  ---------------------------------------------
 
 //@magento_import 'source/_module.less'; // Theme modules
@@ -333,6 +349,10 @@ The best practice is to specify the file extension in the path, though technical
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -667,6 +687,10 @@ The best practice is to specify the file extension in the path, though technical
 					
 
 
+				
+			
+			
+				
 				
 			
 			

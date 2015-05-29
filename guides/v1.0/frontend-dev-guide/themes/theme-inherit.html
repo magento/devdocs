@@ -58,7 +58,7 @@
 		</div><!-- #global-nav -->
 	</nav>
 
-	﻿<!--Sub Navigation-->
+	<!--Sub Navigation-->
 <div id="subnav-wrap">
    <div id="subnav">
       <ul class="menu nav">
@@ -87,12 +87,28 @@
          <li class="expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
             <ul class="menu nav">
-               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
+    
+    
+          <li class="expanded">
+            <a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/pages/Magento/devdocs_internal/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
          <li class="first expanded">
             <a href="/pages/Magento/devdocs_internal/guides/v1.0/contributor-guide/CONTRIBUTING.html">Contributor</a>
             <ul class="menu nav">
@@ -207,10 +223,10 @@ the Orange theme by OrangeCo inherits from the Magento Blank theme. The inherita
 <p>If module context is defined for a file:</p>
 
 <ol>
-  <li>Current theme module static files <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module/&gt;web/</code>. Example: <code>app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/</code></li>
+  <li>Current theme module static files <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code>. Example: <code>app/design/frontend/OrangeCorp/orange/Magento_Catalog/web/</code></li>
   <li>
     <p>Ancestor themes module static files, recursively, until a theme with no ancestor is reached:
- <code>app/design/frontend/&lt;parent_theme_path&gt;/&lt;Namespace&gt;_&lt;Module/&gt;web/</code></p>
+ <code>app/design/frontend/&lt;parent_theme_path&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/</code></p>
   </li>
   <li>Module static view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web/</code></li>
 </ol>
@@ -289,7 +305,7 @@ Having changed the order or elements in the templates, OrangeCo got the minicart
 <p>To add an extending layout file:</p>
 
 <ul>
-  <li>Put your custom layout file in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/ directory</code>.</li>
+  <li>Put your custom layout file in the <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Vendor&gt;_&lt;Module&gt;/layout/</code> directory.</li>
 </ul>
 
 <p><u>Example</u></p>
@@ -339,6 +355,10 @@ To override the instructions from an ancestor theme layout file:</p>
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -673,6 +693,10 @@ To override the instructions from an ancestor theme layout file:</p>
 					
 
 
+				
+			
+			
+				
 				
 			
 			
