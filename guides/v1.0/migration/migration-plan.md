@@ -14,14 +14,6 @@ github_link: migration/migration-plan.md
 
 To have a successful migration, you need to plan it and test it thoroughly. Use the following guidelines to get started.
 
-<h4>Preconditions</h4>
-
-Before you run the migration tool, you must:
-
-* Make sure the Magento 1.x and Magento 2.0 databases are available on the network
-* Disable Magento 2.0 cron jobs 
-* Set up the configuration and mapping files 
-
 <h4>Step 1: Review your current site</h4>
 
 * What extensions have you installed?
@@ -58,7 +50,7 @@ Make sure you can place orders using all configured payment processors.
 
 <h4>Step 5:  Incremental updates</h4>
 
-Now that you’ve migrated the bulk of your data, you must incrementally capture data updates (such as new or updated customers, inventory changes, and orders) from Magento 1.x to Magento 2.0.
+Now that you’ve migrated your data, you must incrementally capture data updates (such as new orders, reviews and changes in customer profiles) from Magento 1.x to Magento 2.0.
 
 * Start the incremental migration; updates run continually. 
 You can stop the updates at any time by pressing Control+C.
