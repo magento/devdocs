@@ -69,7 +69,7 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Manages the indexers</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">magento log:{status|clean}</a></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">magento log {status|clean}</a></td>
 		<td><p>Cleans logs older than a specified number of days</p></td>
 	</tr>
 	<tr>
