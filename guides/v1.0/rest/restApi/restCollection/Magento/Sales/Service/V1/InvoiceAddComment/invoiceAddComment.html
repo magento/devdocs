@@ -2663,7 +2663,7 @@
     
     
 
-<li id="invoiceAddComment" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceAddComment/invoiceAddComment.html">Sales<br>InvoiceAddComment<br><span class='bold'>invoiceAddComment</span></a></li>
+<li id="invoiceAddComment" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceAddComment/invoiceAddComment.html">Sales<br>InvoiceAddComment<br><span class='bold'>invoiceAddComment</span></a></li>
 
 
 
@@ -3198,16 +3198,90 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="invoices-comments">invoices-comments</h2>
+        <h3 class="api3" id="post-invoices-comments">POST /default/V1/invoices/comments</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "entity": {
+        "comment": "Hello world!",
+        "entity_id": null,
+        "created_at": null,
+        "parent_id": "4",
+        "is_visible_on_front": true,
+        "is_customer_notified": true
+    }
+}</pre>        <h4 class="api4" id=”invoices-comments-response>Response</h4><pre>{
+    "comment": "Hello world!",
+    "created_at": null,
+    "entity_id": 1,
+    "is_customer_notified": 1,
+    "is_visible_on_front": 1,
+    "parent_id": 4
+}</pre>        <h3 class="api3" id="invoices-comments-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>entity</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>comment</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entity_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_customer_notified</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_visible_on_front</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>parent_id</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

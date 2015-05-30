@@ -476,7 +476,7 @@
     
     
 
-<li id="getAttributes" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductAttributeManagement/getAttributes.html">Catalog<br>ProductAttributeManagement<br><span class='bold'>getAttributes</span></a></li>
+<li id="getAttributes" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductAttributeManagement/getAttributes.html">Catalog<br>ProductAttributeManagement<br><span class='bold'>getAttributes</span></a></li>
 
 
 
@@ -3198,16 +3198,2019 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-attribute-sets-4-attributes">products-attribute-sets-4-attributes</h2>
+        <h3 class="api3" id="get-products-attribute-sets-4-attributes">GET /default/V1/products/attribute-sets/4/attributes</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "attributeSetId": 4
+}</pre>        <h4 class="api4" id=”products-attribute-sets-4-attributes-response>Response</h4><pre>[
+    {
+        "attribute_id": 72,
+        "attribute_code": "short_description",
+        "frontend_input": "textarea",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Short Description",
+        "frontend_labels": null,
+        "backend_type": "text",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 97,
+        "attribute_code": "custom_design",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "-- Please Select --",
+                "value": ""
+            },
+            {
+                "label": "Magento Blank",
+                "value": "2"
+            },
+            {
+                "label": "Magento Luma",
+                "value": "3"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Custom Design",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "source_model": "Magento\\Theme\\Model\\Theme\\Source\\Theme",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 84,
+        "attribute_code": "small_image",
+        "frontend_input": "media_image",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Small Image",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 88,
+        "attribute_code": "group_price",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Group Price",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\GroupPrice",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 98,
+        "attribute_code": "custom_design_from",
+        "frontend_input": "date",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Active From",
+        "frontend_labels": null,
+        "backend_type": "datetime",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Startdate",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 74,
+        "attribute_code": "special_price",
+        "frontend_input": "price",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Special Price",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 85,
+        "attribute_code": "thumbnail",
+        "frontend_input": "media_image",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Thumbnail",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 99,
+        "attribute_code": "custom_design_to",
+        "frontend_input": "date",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Active To",
+        "frontend_labels": null,
+        "backend_type": "datetime",
+        "backend_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 75,
+        "attribute_code": "special_from_date",
+        "frontend_input": "date",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Special Price From Date",
+        "frontend_labels": null,
+        "backend_type": "datetime",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Startdate",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 86,
+        "attribute_code": "media_gallery",
+        "frontend_input": "gallery",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Media Gallery",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Media",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 100,
+        "attribute_code": "custom_layout_update",
+        "frontend_input": "textarea",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Custom Layout Update",
+        "frontend_labels": null,
+        "backend_type": "text",
+        "backend_model": "Magento\\Catalog\\Model\\Attribute\\Backend\\Customlayoutupdate",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 76,
+        "attribute_code": "special_to_date",
+        "frontend_input": "date",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Special Price To Date",
+        "frontend_labels": null,
+        "backend_type": "datetime",
+        "backend_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 93,
+        "attribute_code": "gallery",
+        "frontend_input": "gallery",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Image Gallery",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 101,
+        "attribute_code": "page_layout",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "No layout updates",
+                "value": ""
+            },
+            {
+                "label": "1 column",
+                "value": "1column"
+            },
+            {
+                "label": "2 columns with left bar",
+                "value": "2columns-left"
+            },
+            {
+                "label": "2 columns with right bar",
+                "value": "2columns-right"
+            },
+            {
+                "label": "3 columns",
+                "value": "3columns"
+            },
+            {
+                "label": "Empty",
+                "value": "empty"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Page Layout",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "source_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Layout",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 77,
+        "attribute_code": "cost",
+        "frontend_input": "price",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": true,
+        "default_frontend_label": "Cost",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 87,
+        "attribute_code": "old_id",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "int",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 103,
+        "attribute_code": "options_container",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "Product Info Column",
+                "value": "container1"
+            },
+            {
+                "label": "Block after Info Column",
+                "value": "container2"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Display Product Options In",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "source_model": "Magento\\Catalog\\Model\\Entity\\Product\\Attribute\\Design\\Options\\Container",
+        "default_value": "container2",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 89,
+        "attribute_code": "tier_price",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Tier Price",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Tierprice",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 95,
+        "attribute_code": "minimal_price",
+        "frontend_input": "price",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Minimal Price",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 113,
+        "attribute_code": "msrp",
+        "frontend_input": "price",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Manufacturer's Suggested Retail Price",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 69,
+        "attribute_code": "name",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Name",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "frontend_class": "validate-length maximum-length-255",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 114,
+        "attribute_code": "msrp_display_actual_price_type",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "Use config",
+                "value": "0"
+            },
+            {
+                "label": "On Gesture",
+                "value": "1"
+            },
+            {
+                "label": "In Cart",
+                "value": "2"
+            },
+            {
+                "label": "Before Order Confirmation",
+                "value": "3"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Display Actual Price",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Boolean",
+        "source_model": "Magento\\Msrp\\Model\\Product\\Attribute\\Source\\Type\\Price",
+        "default_value": "0",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 128,
+        "attribute_code": "url_key",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "URL Key",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 118,
+        "attribute_code": "price_view",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [
+            {
+                "label": "As Low as",
+                "value": "1"
+            },
+            {
+                "label": "Price Range",
+                "value": "0"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Price View",
+        "frontend_labels": null,
+        "backend_type": "int",
+        "source_model": "Magento\\Bundle\\Model\\Product\\Attribute\\Source\\Price\\View",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 129,
+        "attribute_code": "url_path",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 104,
+        "attribute_code": "required_options",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "static",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 105,
+        "attribute_code": "has_options",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "static",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 106,
+        "attribute_code": "image_label",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Image Label",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 107,
+        "attribute_code": "small_image_label",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Small Image Label",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 108,
+        "attribute_code": "thumbnail_label",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Thumbnail Label",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 109,
+        "attribute_code": "created_at",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "static",
+        "backend_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Time\\Created",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 70,
+        "attribute_code": "sku",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "SKU",
+        "frontend_labels": null,
+        "backend_type": "static",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Sku",
+        "is_unique": "1",
+        "frontend_class": "validate-length maximum-length-64",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 80,
+        "attribute_code": "meta_title",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Meta Title",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 96,
+        "attribute_code": "visibility",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "Not Visible Individually",
+                "value": "1"
+            },
+            {
+                "label": "Catalog",
+                "value": "2"
+            },
+            {
+                "label": "Search",
+                "value": "3"
+            },
+            {
+                "label": "Catalog, Search",
+                "value": "4"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Visibility",
+        "frontend_labels": null,
+        "backend_type": "int",
+        "source_model": "Magento\\Catalog\\Model\\Product\\Visibility",
+        "default_value": "4",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 110,
+        "attribute_code": "updated_at",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "static",
+        "backend_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Time\\Updated",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 73,
+        "attribute_code": "price",
+        "frontend_input": "price",
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Price",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Price",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 81,
+        "attribute_code": "meta_keyword",
+        "frontend_input": "textarea",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Meta Keywords",
+        "frontend_labels": null,
+        "backend_type": "text",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 91,
+        "attribute_code": "news_from_date",
+        "frontend_input": "date",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Set Product as New from Date",
+        "frontend_labels": null,
+        "backend_type": "datetime",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Startdate",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 82,
+        "attribute_code": "meta_description",
+        "frontend_input": "textarea",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Meta Description",
+        "frontend_labels": null,
+        "note": "Maximum 255 chars",
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 92,
+        "attribute_code": "news_to_date",
+        "frontend_input": "date",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Set Product as New to Date",
+        "frontend_labels": null,
+        "backend_type": "datetime",
+        "backend_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Backend\\Datetime",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 125,
+        "attribute_code": "tax_class_id",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "None",
+                "value": "0"
+            },
+            {
+                "label": "Taxable Goods",
+                "value": "2"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Tax Class",
+        "frontend_labels": null,
+        "backend_type": "int",
+        "source_model": "Magento\\Tax\\Model\\TaxClass\\Source\\Product",
+        "default_value": "2",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 83,
+        "attribute_code": "image",
+        "frontend_input": "media_image",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Base Image",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 111,
+        "attribute_code": "country_of_manufacture",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": " ",
+                "value": ""
+            },
+            {
+                "label": "Afghanistan",
+                "value": "AF"
+            },
+            {
+                "label": "Albania",
+                "value": "AL"
+            },
+            {
+                "label": "Algeria",
+                "value": "DZ"
+            },
+            {
+                "label": "American Samoa",
+                "value": "AS"
+            },
+            {
+                "label": "Andorra",
+                "value": "AD"
+            },
+            {
+                "label": "Angola",
+                "value": "AO"
+            },
+            {
+                "label": "Anguilla",
+                "value": "AI"
+            },
+            {
+                "label": "Antarctica",
+                "value": "AQ"
+            },
+            {
+                "label": "Antigua & Barbuda",
+                "value": "AG"
+            },
+            {
+                "label": "Argentina",
+                "value": "AR"
+            },
+            {
+                "label": "Armenia",
+                "value": "AM"
+            },
+            {
+                "label": "Aruba",
+                "value": "AW"
+            },
+            {
+                "label": "Australia",
+                "value": "AU"
+            },
+            {
+                "label": "Austria",
+                "value": "AT"
+            },
+            {
+                "label": "Azerbaijan",
+                "value": "AZ"
+            },
+            {
+                "label": "Bahamas",
+                "value": "BS"
+            },
+            {
+                "label": "Bahrain",
+                "value": "BH"
+            },
+            {
+                "label": "Bangladesh",
+                "value": "BD"
+            },
+            {
+                "label": "Barbados",
+                "value": "BB"
+            },
+            {
+                "label": "Belarus",
+                "value": "BY"
+            },
+            {
+                "label": "Belgium",
+                "value": "BE"
+            },
+            {
+                "label": "Belize",
+                "value": "BZ"
+            },
+            {
+                "label": "Benin",
+                "value": "BJ"
+            },
+            {
+                "label": "Bermuda",
+                "value": "BM"
+            },
+            {
+                "label": "Bhutan",
+                "value": "BT"
+            },
+            {
+                "label": "Bolivia",
+                "value": "BO"
+            },
+            {
+                "label": "Bosnia & Herzegovina",
+                "value": "BA"
+            },
+            {
+                "label": "Botswana",
+                "value": "BW"
+            },
+            {
+                "label": "Bouvet Island",
+                "value": "BV"
+            },
+            {
+                "label": "Brazil",
+                "value": "BR"
+            },
+            {
+                "label": "British Indian Ocean Territory",
+                "value": "IO"
+            },
+            {
+                "label": "British Virgin Islands",
+                "value": "VG"
+            },
+            {
+                "label": "Brunei",
+                "value": "BN"
+            },
+            {
+                "label": "Bulgaria",
+                "value": "BG"
+            },
+            {
+                "label": "Burkina Faso",
+                "value": "BF"
+            },
+            {
+                "label": "Burundi",
+                "value": "BI"
+            },
+            {
+                "label": "Cambodia",
+                "value": "KH"
+            },
+            {
+                "label": "Cameroon",
+                "value": "CM"
+            },
+            {
+                "label": "Canada",
+                "value": "CA"
+            },
+            {
+                "label": "Cape Verde",
+                "value": "CV"
+            },
+            {
+                "label": "Cayman Islands",
+                "value": "KY"
+            },
+            {
+                "label": "Central African Republic",
+                "value": "CF"
+            },
+            {
+                "label": "Chad",
+                "value": "TD"
+            },
+            {
+                "label": "Chile",
+                "value": "CL"
+            },
+            {
+                "label": "China",
+                "value": "CN"
+            },
+            {
+                "label": "Christmas Island",
+                "value": "CX"
+            },
+            {
+                "label": "Cocos (Keeling) Islands",
+                "value": "CC"
+            },
+            {
+                "label": "Colombia",
+                "value": "CO"
+            },
+            {
+                "label": "Comoros",
+                "value": "KM"
+            },
+            {
+                "label": "Congo - Brazzaville",
+                "value": "CG"
+            },
+            {
+                "label": "Congo - Kinshasa",
+                "value": "CD"
+            },
+            {
+                "label": "Cook Islands",
+                "value": "CK"
+            },
+            {
+                "label": "Costa Rica",
+                "value": "CR"
+            },
+            {
+                "label": "Croatia",
+                "value": "HR"
+            },
+            {
+                "label": "Cuba",
+                "value": "CU"
+            },
+            {
+                "label": "Cyprus",
+                "value": "CY"
+            },
+            {
+                "label": "Czech Republic",
+                "value": "CZ"
+            },
+            {
+                "label": "C\u00f4te d\u2019Ivoire",
+                "value": "CI"
+            },
+            {
+                "label": "Denmark",
+                "value": "DK"
+            },
+            {
+                "label": "Djibouti",
+                "value": "DJ"
+            },
+            {
+                "label": "Dominica",
+                "value": "DM"
+            },
+            {
+                "label": "Dominican Republic",
+                "value": "DO"
+            },
+            {
+                "label": "Ecuador",
+                "value": "EC"
+            },
+            {
+                "label": "Egypt",
+                "value": "EG"
+            },
+            {
+                "label": "El Salvador",
+                "value": "SV"
+            },
+            {
+                "label": "Equatorial Guinea",
+                "value": "GQ"
+            },
+            {
+                "label": "Eritrea",
+                "value": "ER"
+            },
+            {
+                "label": "Estonia",
+                "value": "EE"
+            },
+            {
+                "label": "Ethiopia",
+                "value": "ET"
+            },
+            {
+                "label": "Falkland Islands",
+                "value": "FK"
+            },
+            {
+                "label": "Faroe Islands",
+                "value": "FO"
+            },
+            {
+                "label": "Fiji",
+                "value": "FJ"
+            },
+            {
+                "label": "Finland",
+                "value": "FI"
+            },
+            {
+                "label": "France",
+                "value": "FR"
+            },
+            {
+                "label": "French Guiana",
+                "value": "GF"
+            },
+            {
+                "label": "French Polynesia",
+                "value": "PF"
+            },
+            {
+                "label": "French Southern Territories",
+                "value": "TF"
+            },
+            {
+                "label": "Gabon",
+                "value": "GA"
+            },
+            {
+                "label": "Gambia",
+                "value": "GM"
+            },
+            {
+                "label": "Georgia",
+                "value": "GE"
+            },
+            {
+                "label": "Germany",
+                "value": "DE"
+            },
+            {
+                "label": "Ghana",
+                "value": "GH"
+            },
+            {
+                "label": "Gibraltar",
+                "value": "GI"
+            },
+            {
+                "label": "Greece",
+                "value": "GR"
+            },
+            {
+                "label": "Greenland",
+                "value": "GL"
+            },
+            {
+                "label": "Grenada",
+                "value": "GD"
+            },
+            {
+                "label": "Guadeloupe",
+                "value": "GP"
+            },
+            {
+                "label": "Guam",
+                "value": "GU"
+            },
+            {
+                "label": "Guatemala",
+                "value": "GT"
+            },
+            {
+                "label": "Guernsey",
+                "value": "GG"
+            },
+            {
+                "label": "Guinea",
+                "value": "GN"
+            },
+            {
+                "label": "Guinea-Bissau",
+                "value": "GW"
+            },
+            {
+                "label": "Guyana",
+                "value": "GY"
+            },
+            {
+                "label": "Haiti",
+                "value": "HT"
+            },
+            {
+                "label": "Heard & McDonald Islands",
+                "value": "HM"
+            },
+            {
+                "label": "Honduras",
+                "value": "HN"
+            },
+            {
+                "label": "Hong Kong SAR China",
+                "value": "HK"
+            },
+            {
+                "label": "Hungary",
+                "value": "HU"
+            },
+            {
+                "label": "Iceland",
+                "value": "IS"
+            },
+            {
+                "label": "India",
+                "value": "IN"
+            },
+            {
+                "label": "Indonesia",
+                "value": "ID"
+            },
+            {
+                "label": "Iran",
+                "value": "IR"
+            },
+            {
+                "label": "Iraq",
+                "value": "IQ"
+            },
+            {
+                "label": "Ireland",
+                "value": "IE"
+            },
+            {
+                "label": "Isle of Man",
+                "value": "IM"
+            },
+            {
+                "label": "Israel",
+                "value": "IL"
+            },
+            {
+                "label": "Italy",
+                "value": "IT"
+            },
+            {
+                "label": "Jamaica",
+                "value": "JM"
+            },
+            {
+                "label": "Japan",
+                "value": "JP"
+            },
+            {
+                "label": "Jersey",
+                "value": "JE"
+            },
+            {
+                "label": "Jordan",
+                "value": "JO"
+            },
+            {
+                "label": "Kazakhstan",
+                "value": "KZ"
+            },
+            {
+                "label": "Kenya",
+                "value": "KE"
+            },
+            {
+                "label": "Kiribati",
+                "value": "KI"
+            },
+            {
+                "label": "Kuwait",
+                "value": "KW"
+            },
+            {
+                "label": "Kyrgyzstan",
+                "value": "KG"
+            },
+            {
+                "label": "Laos",
+                "value": "LA"
+            },
+            {
+                "label": "Latvia",
+                "value": "LV"
+            },
+            {
+                "label": "Lebanon",
+                "value": "LB"
+            },
+            {
+                "label": "Lesotho",
+                "value": "LS"
+            },
+            {
+                "label": "Liberia",
+                "value": "LR"
+            },
+            {
+                "label": "Libya",
+                "value": "LY"
+            },
+            {
+                "label": "Liechtenstein",
+                "value": "LI"
+            },
+            {
+                "label": "Lithuania",
+                "value": "LT"
+            },
+            {
+                "label": "Luxembourg",
+                "value": "LU"
+            },
+            {
+                "label": "Macau SAR China",
+                "value": "MO"
+            },
+            {
+                "label": "Macedonia",
+                "value": "MK"
+            },
+            {
+                "label": "Madagascar",
+                "value": "MG"
+            },
+            {
+                "label": "Malawi",
+                "value": "MW"
+            },
+            {
+                "label": "Malaysia",
+                "value": "MY"
+            },
+            {
+                "label": "Maldives",
+                "value": "MV"
+            },
+            {
+                "label": "Mali",
+                "value": "ML"
+            },
+            {
+                "label": "Malta",
+                "value": "MT"
+            },
+            {
+                "label": "Marshall Islands",
+                "value": "MH"
+            },
+            {
+                "label": "Martinique",
+                "value": "MQ"
+            },
+            {
+                "label": "Mauritania",
+                "value": "MR"
+            },
+            {
+                "label": "Mauritius",
+                "value": "MU"
+            },
+            {
+                "label": "Mayotte",
+                "value": "YT"
+            },
+            {
+                "label": "Mexico",
+                "value": "MX"
+            },
+            {
+                "label": "Micronesia",
+                "value": "FM"
+            },
+            {
+                "label": "Moldova",
+                "value": "MD"
+            },
+            {
+                "label": "Monaco",
+                "value": "MC"
+            },
+            {
+                "label": "Mongolia",
+                "value": "MN"
+            },
+            {
+                "label": "Montenegro",
+                "value": "ME"
+            },
+            {
+                "label": "Montserrat",
+                "value": "MS"
+            },
+            {
+                "label": "Morocco",
+                "value": "MA"
+            },
+            {
+                "label": "Mozambique",
+                "value": "MZ"
+            },
+            {
+                "label": "Myanmar (Burma)",
+                "value": "MM"
+            },
+            {
+                "label": "Namibia",
+                "value": "NA"
+            },
+            {
+                "label": "Nauru",
+                "value": "NR"
+            },
+            {
+                "label": "Nepal",
+                "value": "NP"
+            },
+            {
+                "label": "Netherlands",
+                "value": "NL"
+            },
+            {
+                "label": "Netherlands Antilles",
+                "value": "AN"
+            },
+            {
+                "label": "New Caledonia",
+                "value": "NC"
+            },
+            {
+                "label": "New Zealand",
+                "value": "NZ"
+            },
+            {
+                "label": "Nicaragua",
+                "value": "NI"
+            },
+            {
+                "label": "Niger",
+                "value": "NE"
+            },
+            {
+                "label": "Nigeria",
+                "value": "NG"
+            },
+            {
+                "label": "Niue",
+                "value": "NU"
+            },
+            {
+                "label": "Norfolk Island",
+                "value": "NF"
+            },
+            {
+                "label": "North Korea",
+                "value": "KP"
+            },
+            {
+                "label": "Northern Mariana Islands",
+                "value": "MP"
+            },
+            {
+                "label": "Norway",
+                "value": "NO"
+            },
+            {
+                "label": "Oman",
+                "value": "OM"
+            },
+            {
+                "label": "Pakistan",
+                "value": "PK"
+            },
+            {
+                "label": "Palau",
+                "value": "PW"
+            },
+            {
+                "label": "Palestinian Territories",
+                "value": "PS"
+            },
+            {
+                "label": "Panama",
+                "value": "PA"
+            },
+            {
+                "label": "Papua New Guinea",
+                "value": "PG"
+            },
+            {
+                "label": "Paraguay",
+                "value": "PY"
+            },
+            {
+                "label": "Peru",
+                "value": "PE"
+            },
+            {
+                "label": "Philippines",
+                "value": "PH"
+            },
+            {
+                "label": "Pitcairn Islands",
+                "value": "PN"
+            },
+            {
+                "label": "Poland",
+                "value": "PL"
+            },
+            {
+                "label": "Portugal",
+                "value": "PT"
+            },
+            {
+                "label": "Qatar",
+                "value": "QA"
+            },
+            {
+                "label": "Romania",
+                "value": "RO"
+            },
+            {
+                "label": "Russia",
+                "value": "RU"
+            },
+            {
+                "label": "Rwanda",
+                "value": "RW"
+            },
+            {
+                "label": "R\u00e9union",
+                "value": "RE"
+            },
+            {
+                "label": "Samoa",
+                "value": "WS"
+            },
+            {
+                "label": "San Marino",
+                "value": "SM"
+            },
+            {
+                "label": "Saudi Arabia",
+                "value": "SA"
+            },
+            {
+                "label": "Senegal",
+                "value": "SN"
+            },
+            {
+                "label": "Serbia",
+                "value": "RS"
+            },
+            {
+                "label": "Seychelles",
+                "value": "SC"
+            },
+            {
+                "label": "Sierra Leone",
+                "value": "SL"
+            },
+            {
+                "label": "Singapore",
+                "value": "SG"
+            },
+            {
+                "label": "Slovakia",
+                "value": "SK"
+            },
+            {
+                "label": "Slovenia",
+                "value": "SI"
+            },
+            {
+                "label": "Solomon Islands",
+                "value": "SB"
+            },
+            {
+                "label": "Somalia",
+                "value": "SO"
+            },
+            {
+                "label": "South Africa",
+                "value": "ZA"
+            },
+            {
+                "label": "South Georgia & South Sandwich Islands",
+                "value": "GS"
+            },
+            {
+                "label": "South Korea",
+                "value": "KR"
+            },
+            {
+                "label": "Spain",
+                "value": "ES"
+            },
+            {
+                "label": "Sri Lanka",
+                "value": "LK"
+            },
+            {
+                "label": "St. Barth\u00e9lemy",
+                "value": "BL"
+            },
+            {
+                "label": "St. Helena",
+                "value": "SH"
+            },
+            {
+                "label": "St. Kitts & Nevis",
+                "value": "KN"
+            },
+            {
+                "label": "St. Lucia",
+                "value": "LC"
+            },
+            {
+                "label": "St. Martin",
+                "value": "MF"
+            },
+            {
+                "label": "St. Pierre & Miquelon",
+                "value": "PM"
+            },
+            {
+                "label": "St. Vincent & Grenadines",
+                "value": "VC"
+            },
+            {
+                "label": "Sudan",
+                "value": "SD"
+            },
+            {
+                "label": "Suriname",
+                "value": "SR"
+            },
+            {
+                "label": "Svalbard & Jan Mayen",
+                "value": "SJ"
+            },
+            {
+                "label": "Swaziland",
+                "value": "SZ"
+            },
+            {
+                "label": "Sweden",
+                "value": "SE"
+            },
+            {
+                "label": "Switzerland",
+                "value": "CH"
+            },
+            {
+                "label": "Syria",
+                "value": "SY"
+            },
+            {
+                "label": "S\u00e3o Tom\u00e9 & Pr\u00edncipe",
+                "value": "ST"
+            },
+            {
+                "label": "Taiwan",
+                "value": "TW"
+            },
+            {
+                "label": "Tajikistan",
+                "value": "TJ"
+            },
+            {
+                "label": "Tanzania",
+                "value": "TZ"
+            },
+            {
+                "label": "Thailand",
+                "value": "TH"
+            },
+            {
+                "label": "Timor-Leste",
+                "value": "TL"
+            },
+            {
+                "label": "Togo",
+                "value": "TG"
+            },
+            {
+                "label": "Tokelau",
+                "value": "TK"
+            },
+            {
+                "label": "Tonga",
+                "value": "TO"
+            },
+            {
+                "label": "Trinidad & Tobago",
+                "value": "TT"
+            },
+            {
+                "label": "Tunisia",
+                "value": "TN"
+            },
+            {
+                "label": "Turkey",
+                "value": "TR"
+            },
+            {
+                "label": "Turkmenistan",
+                "value": "TM"
+            },
+            {
+                "label": "Turks & Caicos Islands",
+                "value": "TC"
+            },
+            {
+                "label": "Tuvalu",
+                "value": "TV"
+            },
+            {
+                "label": "U.S. Outlying Islands",
+                "value": "UM"
+            },
+            {
+                "label": "U.S. Virgin Islands",
+                "value": "VI"
+            },
+            {
+                "label": "Uganda",
+                "value": "UG"
+            },
+            {
+                "label": "Ukraine",
+                "value": "UA"
+            },
+            {
+                "label": "United Arab Emirates",
+                "value": "AE"
+            },
+            {
+                "label": "United Kingdom",
+                "value": "GB"
+            },
+            {
+                "label": "United States",
+                "value": "US"
+            },
+            {
+                "label": "Uruguay",
+                "value": "UY"
+            },
+            {
+                "label": "Uzbekistan",
+                "value": "UZ"
+            },
+            {
+                "label": "Vanuatu",
+                "value": "VU"
+            },
+            {
+                "label": "Vatican City",
+                "value": "VA"
+            },
+            {
+                "label": "Venezuela",
+                "value": "VE"
+            },
+            {
+                "label": "Vietnam",
+                "value": "VN"
+            },
+            {
+                "label": "Wallis & Futuna",
+                "value": "WF"
+            },
+            {
+                "label": "Western Sahara",
+                "value": "EH"
+            },
+            {
+                "label": "Yemen",
+                "value": "YE"
+            },
+            {
+                "label": "Zambia",
+                "value": "ZM"
+            },
+            {
+                "label": "Zimbabwe",
+                "value": "ZW"
+            },
+            {
+                "label": "\u00c5land Islands",
+                "value": "AX"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Country of Manufacture",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "source_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Countryofmanufacture",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 112,
+        "attribute_code": "quantity_and_stock_status",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "In Stock",
+                "value": "1"
+            },
+            {
+                "label": "Out of Stock",
+                "value": "0"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Quantity",
+        "frontend_labels": null,
+        "backend_type": "int",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Stock",
+        "source_model": "Magento\\CatalogInventory\\Model\\Source\\Stock",
+        "default_value": "1",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 124,
+        "attribute_code": "gift_message_available",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "Yes",
+                "value": "1"
+            },
+            {
+                "label": "No",
+                "value": "0"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Allow Gift Message",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Boolean",
+        "source_model": "Magento\\Eav\\Model\\Entity\\Attribute\\Source\\Boolean",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 78,
+        "attribute_code": "weight",
+        "frontend_input": "weight",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Weight",
+        "frontend_labels": null,
+        "backend_type": "decimal",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Weight",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 102,
+        "attribute_code": "category_ids",
+        "frontend_input": "text",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Categories",
+        "frontend_labels": null,
+        "backend_type": "static",
+        "backend_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Backend\\Category",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 71,
+        "attribute_code": "description",
+        "frontend_input": "textarea",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Description",
+        "frontend_labels": null,
+        "backend_type": "text",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 94,
+        "attribute_code": "status",
+        "frontend_input": "select",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [
+            {
+                "label": "Enabled",
+                "value": "1"
+            },
+            {
+                "label": "Disabled",
+                "value": "2"
+            }
+        ],
+        "is_user_defined": false,
+        "default_frontend_label": "Status",
+        "frontend_labels": null,
+        "backend_type": "int",
+        "source_model": "Magento\\Catalog\\Model\\Product\\Attribute\\Source\\Status",
+        "default_value": "1",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 115,
+        "attribute_code": "price_type",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "int",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 116,
+        "attribute_code": "sku_type",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "int",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 117,
+        "attribute_code": "weight_type",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "int",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 119,
+        "attribute_code": "shipment_type",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Shipment",
+        "frontend_labels": null,
+        "backend_type": "int",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 120,
+        "attribute_code": "links_purchased_separately",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Links can be purchased separately",
+        "frontend_labels": null,
+        "backend_type": "int",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 121,
+        "attribute_code": "samples_title",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Samples title",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 122,
+        "attribute_code": "links_title",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": true,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Links title",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "attribute_id": 123,
+        "attribute_code": "links_exist",
+        "frontend_input": null,
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "frontend_labels": null,
+        "backend_type": "int",
+        "default_value": "0",
+        "is_unique": "0",
+        "validation_rules": []
+    }
+]</pre>        <h3 class="api3" id="products-attribute-sets-4-attributes-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>attributeSetId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

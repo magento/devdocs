@@ -611,7 +611,7 @@
     
     
 
-<li id="getList" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductAttributeRepository/getList.html">Catalog<br>ProductAttributeRepository<br><span class='bold'>getList</span></a></li>
+<li id="getList" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductAttributeRepository/getList.html">Catalog<br>ProductAttributeRepository<br><span class='bold'>getList</span></a></li>
 
 
 
@@ -3198,16 +3198,168 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-attributes?searchcriteria[filter_groups][0][filters][0][field]=frontend_input&searchcriteria[filter_groups][0][filters][0][value]=textarea&searchcriteria[filter_groups][0][filters][0][condition_type]=eq&searchcriteria[current_page]=1&searchcriteria[page_size]=2&entitytypecode=catalog_product">products-attributes?searchCriteria[filter_groups][0][filters][0][field]=frontend_input&searchCriteria[filter_groups][0][filters][0][value]=textarea&searchCriteria[filter_groups][0][filters][0][condition_type]=eq&searchCriteria[current_page]=1&searchCriteria[page_size]=2&entityTypeCode=catalog_product</h2>
+        <h3 class="api3" id="get-products-attributes?searchcriteria[filter_groups][0][filters][0][field]=frontend_input&searchcriteria[filter_groups][0][filters][0][value]=textarea&searchcriteria[filter_groups][0][filters][0][condition_type]=eq&searchcriteria[current_page]=1&searchcriteria[page_size]=2&entitytypecode=catalog_product">GET /default/V1/products/attributes?searchCriteria[filter_groups][0][filters][0][field]=frontend_input&searchCriteria[filter_groups][0][filters][0][value]=textarea&searchCriteria[filter_groups][0][filters][0][condition_type]=eq&searchCriteria[current_page]=1&searchCriteria[page_size]=2&entityTypeCode=catalog_product</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "searchCriteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "frontend_input",
+                        "value": "textarea",
+                        "condition_type": "eq"
+                    }
+                ]
+            }
+        ],
+        "current_page": 1,
+        "page_size": 2
+    },
+    "entityTypeCode": "catalog_product"
+}</pre>        <h4 class="api4" id=”products-attributes?searchcriteria[filter_groups][0][filters][0][field]=frontend_input&searchcriteria[filter_groups][0][filters][0][value]=textarea&searchcriteria[filter_groups][0][filters][0][condition_type]=eq&searchcriteria[current_page]=1&searchcriteria[page_size]=2&entitytypecode=catalog_product-response>Response</h4><pre>{
+    "items": [
+        {
+            "is_wysiwyg_enabled": true,
+            "is_html_allowed_on_front": true,
+            "used_for_sort_by": false,
+            "is_filterable": false,
+            "is_filterable_in_search": false,
+            "position": 0,
+            "apply_to": [],
+            "is_searchable": "1",
+            "is_visible_in_advanced_search": "1",
+            "is_comparable": "1",
+            "is_used_for_promo_rules": "0",
+            "is_visible_on_front": "0",
+            "used_in_product_listing": "0",
+            "is_visible": true,
+            "scope": "store",
+            "attribute_id": 71,
+            "attribute_code": "description",
+            "frontend_input": "textarea",
+            "entity_type_id": "4",
+            "is_required": false,
+            "options": [],
+            "is_user_defined": false,
+            "default_frontend_label": "Description",
+            "frontend_labels": null,
+            "backend_type": "text",
+            "is_unique": "0",
+            "validation_rules": []
+        },
+        {
+            "is_wysiwyg_enabled": true,
+            "is_html_allowed_on_front": true,
+            "used_for_sort_by": false,
+            "is_filterable": false,
+            "is_filterable_in_search": false,
+            "position": 0,
+            "apply_to": [],
+            "is_searchable": "1",
+            "is_visible_in_advanced_search": "1",
+            "is_comparable": "1",
+            "is_used_for_promo_rules": "0",
+            "is_visible_on_front": "0",
+            "used_in_product_listing": "1",
+            "is_visible": true,
+            "scope": "store",
+            "attribute_id": 72,
+            "attribute_code": "short_description",
+            "frontend_input": "textarea",
+            "entity_type_id": "4",
+            "is_required": false,
+            "options": [],
+            "is_user_defined": false,
+            "default_frontend_label": "Short Description",
+            "frontend_labels": null,
+            "backend_type": "text",
+            "is_unique": "0",
+            "validation_rules": []
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "frontend_input",
+                        "value": "textarea",
+                        "condition_type": "eq"
+                    }
+                ]
+            }
+        ],
+        "page_size": 2,
+        "current_page": 1
+    },
+    "total_count": 5
+}</pre>        <h3 class="api3" id="products-attributes?searchcriteria[filter_groups][0][filters][0][field]=frontend_input&searchcriteria[filter_groups][0][filters][0][value]=textarea&searchcriteria[filter_groups][0][filters][0][condition_type]=eq&searchcriteria[current_page]=1&searchcriteria[page_size]=2&entitytypecode=catalog_product-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>searchCriteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entityTypeCode</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

@@ -2951,7 +2951,7 @@
     
     
 
-<li id="searchTaxClassMultipleFilterGroups" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Tax/Api/TaxClassRepository/searchTaxClassMultipleFilterGroups.html">Tax<br>TaxClassRepository<br><span class='bold'>searchTaxClassMultipleFilterGroups</span></a></li>
+<li id="searchTaxClassMultipleFilterGroups" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Tax/Api/TaxClassRepository/searchTaxClassMultipleFilterGroups.html">Tax<br>TaxClassRepository<br><span class='bold'>searchTaxClassMultipleFilterGroups</span></a></li>
 
 
 
@@ -3198,16 +3198,242 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=taxable goods&searchcriteria[filter_groups][0][filters][1][field]=class_name&searchcriteria[filter_groups][0][filters][1][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer&searchcriteria[current_page]=1&searchcriteria[page_size]=10">taxClasses-search?searchCriteria[filter_groups][0][filters][0][field]=class_name&searchCriteria[filter_groups][0][filters][0][value]=Taxable Goods&searchCriteria[filter_groups][0][filters][1][field]=class_name&searchCriteria[filter_groups][0][filters][1][value]=Retail Customer&searchCriteria[filter_groups][1][filters][0][field]=class_type&searchCriteria[filter_groups][1][filters][0][value]=PRODUCT&searchCriteria[filter_groups][1][filters][1][field]=class_type&searchCriteria[filter_groups][1][filters][1][value]=CUSTOMER&searchCriteria[current_page]=1&searchCriteria[page_size]=10</h2>
+        <h3 class="api3" id="get-taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=taxable goods&searchcriteria[filter_groups][0][filters][1][field]=class_name&searchcriteria[filter_groups][0][filters][1][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer&searchcriteria[current_page]=1&searchcriteria[page_size]=10">GET /default/V1/taxClasses/search?searchCriteria[filter_groups][0][filters][0][field]=class_name&searchCriteria[filter_groups][0][filters][0][value]=Taxable Goods&searchCriteria[filter_groups][0][filters][1][field]=class_name&searchCriteria[filter_groups][0][filters][1][value]=Retail Customer&searchCriteria[filter_groups][1][filters][0][field]=class_type&searchCriteria[filter_groups][1][filters][0][value]=PRODUCT&searchCriteria[filter_groups][1][filters][1][field]=class_type&searchCriteria[filter_groups][1][filters][1][value]=CUSTOMER&searchCriteria[current_page]=1&searchCriteria[page_size]=10</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "searchCriteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "class_name",
+                        "value": "Taxable Goods"
+                    },
+                    {
+                        "field": "class_name",
+                        "value": "Retail Customer"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "class_type",
+                        "value": "PRODUCT"
+                    },
+                    {
+                        "field": "class_type",
+                        "value": "CUSTOMER"
+                    }
+                ]
+            }
+        ],
+        "current_page": 1,
+        "page_size": 10
+    }
+}</pre>        <h4 class="api4" id=”taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=taxable goods&searchcriteria[filter_groups][0][filters][1][field]=class_name&searchcriteria[filter_groups][0][filters][1][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer&searchcriteria[current_page]=1&searchcriteria[page_size]=10-response>Response</h4><pre>{
+    "items": [
+        {
+            "class_id": 2,
+            "class_name": "Taxable Goods",
+            "class_type": "PRODUCT"
+        },
+        {
+            "class_id": 3,
+            "class_name": "Retail Customer",
+            "class_type": "CUSTOMER"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "class_name",
+                        "value": "Taxable Goods"
+                    },
+                    {
+                        "field": "class_name",
+                        "value": "Retail Customer"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "class_type",
+                        "value": "PRODUCT"
+                    },
+                    {
+                        "field": "class_type",
+                        "value": "CUSTOMER"
+                    }
+                ]
+            }
+        ],
+        "page_size": 10,
+        "current_page": 1
+    },
+    "total_count": 2
+}</pre>        <h3 class="api3" id="taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=taxable goods&searchcriteria[filter_groups][0][filters][1][field]=class_name&searchcriteria[filter_groups][0][filters][1][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer&searchcriteria[current_page]=1&searchcriteria[page_size]=10-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>searchCriteria</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer">taxClasses-search?searchCriteria[filter_groups][0][filters][0][field]=class_name&searchCriteria[filter_groups][0][filters][0][value]=Retail Customer&searchCriteria[filter_groups][1][filters][0][field]=class_type&searchCriteria[filter_groups][1][filters][0][value]=PRODUCT&searchCriteria[filter_groups][1][filters][1][field]=class_type&searchCriteria[filter_groups][1][filters][1][value]=CUSTOMER</h2>
+        <h3 class="api3" id="get-taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer">GET /default/V1/taxClasses/search?searchCriteria[filter_groups][0][filters][0][field]=class_name&searchCriteria[filter_groups][0][filters][0][value]=Retail Customer&searchCriteria[filter_groups][1][filters][0][field]=class_type&searchCriteria[filter_groups][1][filters][0][value]=PRODUCT&searchCriteria[filter_groups][1][filters][1][field]=class_type&searchCriteria[filter_groups][1][filters][1][value]=CUSTOMER</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "searchCriteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "class_name",
+                        "value": "Retail Customer"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "class_type",
+                        "value": "PRODUCT"
+                    },
+                    {
+                        "field": "class_type",
+                        "value": "CUSTOMER"
+                    }
+                ]
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer-response>Response</h4><pre>{
+    "items": [
+        {
+            "class_id": 3,
+            "class_name": "Retail Customer",
+            "class_type": "CUSTOMER"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "class_name",
+                        "value": "Retail Customer"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "class_type",
+                        "value": "PRODUCT"
+                    },
+                    {
+                        "field": "class_type",
+                        "value": "CUSTOMER"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}</pre>        <h3 class="api3" id="taxclasses-search?searchcriteria[filter_groups][0][filters][0][field]=class_name&searchcriteria[filter_groups][0][filters][0][value]=retail customer&searchcriteria[filter_groups][1][filters][0][field]=class_type&searchcriteria[filter_groups][1][filters][0][value]=product&searchcriteria[filter_groups][1][filters][1][field]=class_type&searchcriteria[filter_groups][1][filters][1][value]=customer-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>searchCriteria</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

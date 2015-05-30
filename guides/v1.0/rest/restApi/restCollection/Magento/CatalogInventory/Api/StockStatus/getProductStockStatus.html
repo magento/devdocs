@@ -1025,7 +1025,7 @@
     
     
 
-<li id="getProductStockStatus" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/CatalogInventory/Api/StockStatus/getProductStockStatus.html">CatalogInventory<br>StockStatus<br><span class='bold'>getProductStockStatus</span></a></li>
+<li id="getProductStockStatus" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/CatalogInventory/Api/StockStatus/getProductStockStatus.html">CatalogInventory<br>StockStatus<br><span class='bold'>getProductStockStatus</span></a></li>
 
 
 
@@ -3198,16 +3198,111 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="stockstatuses-simple">stockStatuses-simple</h2>
+        <h3 class="api3" id="get-stockstatuses-simple">GET /default/V1/stockStatuses/simple</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "productSku": "simple"
+}</pre>        <h4 class="api4" id=”stockstatuses-simple-response>Response</h4><pre>{
+    "product_id": 1,
+    "website_id": 1,
+    "stock_id": 1,
+    "qty": 100,
+    "stock_status": 1,
+    "stock_item": {
+        "item_id": 74,
+        "product_id": 1,
+        "website_id": 1,
+        "stock_id": 1,
+        "qty": 100,
+        "is_in_stock": true,
+        "is_qty_decimal": false,
+        "show_default_notification_message": false,
+        "use_config_min_qty": true,
+        "min_qty": 0,
+        "use_config_min_sale_qty": 1,
+        "min_sale_qty": 1,
+        "use_config_max_sale_qty": true,
+        "max_sale_qty": 10000,
+        "use_config_backorders": true,
+        "backorders": 0,
+        "use_config_notify_stock_qty": true,
+        "notify_stock_qty": 1,
+        "use_config_qty_increments": true,
+        "qty_increments": 0,
+        "use_config_enable_qty_inc": true,
+        "enable_qty_increments": false,
+        "use_config_manage_stock": true,
+        "manage_stock": true,
+        "low_stock_date": null,
+        "is_decimal_divided": false,
+        "stock_status_changed_auto": 0
+    }
+}</pre>        <h3 class="api3" id="stockstatuses-simple-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>productSku</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>product_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>website_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>stock_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>qty</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>stock_status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>stock_item</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

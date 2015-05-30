@@ -2699,7 +2699,7 @@
     
     
 
-<li id="invoiceGet" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceGet/invoiceGet.html">Sales<br>InvoiceGet<br><span class='bold'>invoiceGet</span></a></li>
+<li id="invoiceGet" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceGet/invoiceGet.html">Sales<br>InvoiceGet<br><span class='bold'>invoiceGet</span></a></li>
 
 
 
@@ -3198,16 +3198,150 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="invoices-9">invoices-9</h2>
+        <h3 class="api3" id="get-invoices-9">GET /default/V1/invoices/9</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "id": "9"
+}</pre>        <h4 class="api4" id=”invoices-9-response>Response</h4><pre>{
+    "base_currency_code": null,
+    "base_discount_amount": 0,
+    "base_grand_total": 100,
+    "base_hidden_tax_amount": 0,
+    "base_shipping_amount": 0,
+    "base_shipping_hidden_tax_amnt": null,
+    "base_shipping_incl_tax": null,
+    "base_shipping_tax_amount": null,
+    "base_subtotal": 100,
+    "base_subtotal_incl_tax": 0,
+    "base_tax_amount": 0,
+    "base_total_refunded": null,
+    "base_to_global_rate": null,
+    "base_to_order_rate": null,
+    "billing_address_id": 39,
+    "can_void_flag": 0,
+    "created_at": "2015-05-11 12:43:11",
+    "discount_amount": 0,
+    "discount_description": null,
+    "email_sent": null,
+    "entity_id": 9,
+    "global_currency_code": null,
+    "grand_total": 100,
+    "hidden_tax_amount": 0,
+    "increment_id": "000000009",
+    "is_used_for_refund": null,
+    "order_currency_code": null,
+    "order_id": 20,
+    "shipping_address_id": 40,
+    "shipping_amount": 0,
+    "shipping_hidden_tax_amount": null,
+    "shipping_incl_tax": null,
+    "shipping_tax_amount": null,
+    "state": 2,
+    "store_currency_code": null,
+    "store_id": 1,
+    "store_to_base_rate": null,
+    "store_to_order_rate": null,
+    "subtotal": 100,
+    "subtotal_incl_tax": 0,
+    "tax_amount": 0,
+    "total_qty": 2,
+    "transaction_id": null,
+    "updated_at": "2015-05-11 12:43:11",
+    "items": [
+        {
+            "additional_data": null,
+            "base_cost": null,
+            "base_discount_amount": null,
+            "base_hidden_tax_amount": null,
+            "base_price": 10,
+            "base_price_incl_tax": null,
+            "base_row_total": 0,
+            "base_row_total_incl_tax": null,
+            "base_tax_amount": null,
+            "description": null,
+            "discount_amount": null,
+            "entity_id": 9,
+            "hidden_tax_amount": null,
+            "name": null,
+            "order_item_id": 20,
+            "parent_id": 9,
+            "price": 10,
+            "price_incl_tax": null,
+            "product_id": 1,
+            "qty": 2,
+            "row_total": 10,
+            "row_total_incl_tax": null,
+            "sku": null,
+            "tax_amount": null
+        }
+    ],
+    "comments": []
+}</pre>        <h3 class="api3" id="invoices-9-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>base_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_grand_total</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_hidden_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_hidden_tax_amnt</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_subtotal</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_subtotal_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_total_refunded</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_to_global_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_to_order_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>billing_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>can_void_flag</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>discount_description</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>email_sent</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entity_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>global_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>grand_total</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>hidden_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>increment_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_used_for_refund</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>order_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>order_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_hidden_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>state</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_to_base_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_to_order_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>subtotal</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>subtotal_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_qty</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>transaction_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>comments</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

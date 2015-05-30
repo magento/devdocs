@@ -395,7 +395,7 @@
     
     
 
-<li id="create" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/CategoryRepository/create.html">Catalog<br>CategoryRepository<br><span class='bold'>create</span></a></li>
+<li id="create" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/CategoryRepository/create.html">Catalog<br>CategoryRepository<br><span class='bold'>create</span></a></li>
 
 
 
@@ -3198,16 +3198,260 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="categories">categories</h2>
+        <h3 class="api3" id="post-categories">POST /default/V1/categories</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "category": {
+        "path": "2",
+        "parent_id": "2",
+        "name": "Test Category Name",
+        "is_active": "1",
+        "include_in_menu": "1",
+        "custom_attributes": [
+            {
+                "attribute_code": "url_key",
+                "value": ""
+            },
+            {
+                "attribute_code": "description",
+                "value": "Custom description"
+            },
+            {
+                "attribute_code": "meta_title",
+                "value": ""
+            },
+            {
+                "attribute_code": "meta_keywords",
+                "value": ""
+            },
+            {
+                "attribute_code": "meta_description",
+                "value": ""
+            },
+            {
+                "attribute_code": "display_mode",
+                "value": "PRODUCTS"
+            },
+            {
+                "attribute_code": "landing_page",
+                "value": ""
+            },
+            {
+                "attribute_code": "is_anchor",
+                "value": "0"
+            },
+            {
+                "attribute_code": "custom_use_parent_settings",
+                "value": "0"
+            },
+            {
+                "attribute_code": "custom_apply_to_products",
+                "value": "0"
+            },
+            {
+                "attribute_code": "custom_design",
+                "value": ""
+            },
+            {
+                "attribute_code": "custom_design_from",
+                "value": ""
+            },
+            {
+                "attribute_code": "custom_design_to",
+                "value": ""
+            },
+            {
+                "attribute_code": "page_layout",
+                "value": ""
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”categories-response>Response</h4><pre>{
+    "id": 403,
+    "parent_id": 2,
+    "name": "Test Category Name",
+    "is_active": true,
+    "position": 2,
+    "level": 2,
+    "children": "",
+    "created_at": "2015-05-11 13:33:46",
+    "updated_at": "2015-05-11 13:33:46",
+    "path": "1\/2\/403",
+    "available_sort_by": [],
+    "include_in_menu": true,
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Custom description"
+        },
+        {
+            "attribute_code": "meta_title",
+            "value": ""
+        },
+        {
+            "attribute_code": "meta_keywords",
+            "value": ""
+        },
+        {
+            "attribute_code": "meta_description",
+            "value": ""
+        },
+        {
+            "attribute_code": "display_mode",
+            "value": "PRODUCTS"
+        },
+        {
+            "attribute_code": "landing_page",
+            "value": ""
+        },
+        {
+            "attribute_code": "is_anchor",
+            "value": "0"
+        },
+        {
+            "attribute_code": "path",
+            "value": "1\/2\/403"
+        },
+        {
+            "attribute_code": "custom_design",
+            "value": ""
+        },
+        {
+            "attribute_code": "custom_design_from",
+            "value": ""
+        },
+        {
+            "attribute_code": "custom_design_to",
+            "value": ""
+        },
+        {
+            "attribute_code": "page_layout",
+            "value": ""
+        },
+        {
+            "attribute_code": "children_count",
+            "value": 0
+        },
+        {
+            "attribute_code": "default_sort_by",
+            "value": false
+        },
+        {
+            "attribute_code": "custom_use_parent_settings",
+            "value": "0"
+        },
+        {
+            "attribute_code": "custom_apply_to_products",
+            "value": "0"
+        },
+        {
+            "attribute_code": "url_key",
+            "value": ""
+        }
+    ]
+}</pre>        <h3 class="api3" id="categories-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>category</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>parent_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_active</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>position</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>level</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>children</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>path</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>available_sort_by</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>include_in_menu</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="categories-403">categories-403</h2>
+        <h3 class="api3" id="delete-categories-403">DELETE /default/V1/categories/403</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "categoryId": 403
+}</pre>        <h4 class="api4" id=”categories-403-response>Response</h4><pre>true</pre>        <h3 class="api3" id="categories-403-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>categoryId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>scalar_value</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

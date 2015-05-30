@@ -1646,7 +1646,7 @@
     
     
 
-<li id="createSavesPriceAndTitleInStoreViewScope" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Downloadable/Api/LinkRepository/createSavesPriceAndTitleInStoreViewScope.html">Downloadable<br>LinkRepository<br><span class='bold'>createSavesPriceAndTitleInStoreViewScope</span></a></li>
+<li id="createSavesPriceAndTitleInStoreViewScope" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Downloadable/Api/LinkRepository/createSavesPriceAndTitleInStoreViewScope.html">Downloadable<br>LinkRepository<br><span class='bold'>createSavesPriceAndTitleInStoreViewScope</span></a></li>
 
 
 
@@ -3198,16 +3198,88 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-downloadable-product-downloadable-links">products-downloadable-product-downloadable-links</h2>
+        <h3 class="api3" id="post-products-downloadable-product-downloadable-links">POST /default/V1/products/downloadable-product/downloadable-links</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "isGlobalScopeContent": false,
+    "sku": "downloadable-product",
+    "link": {
+        "title": "Store View Title",
+        "sort_order": 1,
+        "price": 150,
+        "is_shareable": true,
+        "number_of_downloads": 100,
+        "link_url": "http:\/\/www.example.com\/",
+        "link_type": "url",
+        "sample_url": "http:\/\/www.sample.example.com\/",
+        "sample_type": "url"
+    }
+}</pre>        <h4 class="api4" id=”products-downloadable-product-downloadable-links-response>Response</h4><pre>"4"</pre>        <h3 class="api3" id="products-downloadable-product-downloadable-links-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>isGlobalScopeContent</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>link</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>scalar_value</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

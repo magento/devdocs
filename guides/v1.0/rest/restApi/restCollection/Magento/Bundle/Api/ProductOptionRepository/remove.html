@@ -188,7 +188,7 @@
     
     
 
-<li id="remove" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Bundle/Api/ProductOptionRepository/remove.html">Bundle<br>ProductOptionRepository<br><span class='bold'>remove</span></a></li>
+<li id="remove" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Bundle/Api/ProductOptionRepository/remove.html">Bundle<br>ProductOptionRepository<br><span class='bold'>remove</span></a></li>
 
 
 
@@ -3198,16 +3198,136 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="bundle-products-bundle-product-options-all">bundle-products-bundle-product-options-all</h2>
+        <h3 class="api3" id="get-bundle-products-bundle-product-options-all">GET /default/V1/bundle-products/bundle-product/options/all</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "bundle-product"
+}</pre>        <h4 class="api4" id=”bundle-products-bundle-product-options-all-response>Response</h4><pre>[
+    {
+        "option_id": 7,
+        "title": "Bundle Product Items",
+        "required": true,
+        "type": "select",
+        "position": 0,
+        "sku": "bundle-product",
+        "product_links": [
+            {
+                "id": "8",
+                "sku": "simple",
+                "option_id": 7,
+                "qty": 1,
+                "position": 0,
+                "is_default": false,
+                "price": 0,
+                "price_type": 0,
+                "can_change_quantity": 1
+            }
+        ]
+    }
+]</pre>        <h3 class="api3" id="bundle-products-bundle-product-options-all-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="bundle-products-bundle-product-options-7">bundle-products-bundle-product-options-7</h2>
+        <h3 class="api3" id="delete-bundle-products-bundle-product-options-7">DELETE /default/V1/bundle-products/bundle-product/options/7</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "bundle-product",
+    "optionId": 7
+}</pre>        <h4 class="api4" id=”bundle-products-bundle-product-options-7-response>Response</h4><pre>true</pre>        <h3 class="api3" id="bundle-products-bundle-product-options-7-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>optionId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>scalar_value</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

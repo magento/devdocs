@@ -3005,7 +3005,7 @@
     
     
 
-<li id="searchTaxRates" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Tax/Api/TaxRateRepository/searchTaxRates.html">Tax<br>TaxRateRepository<br><span class='bold'>searchTaxRates</span></a></li>
+<li id="searchTaxRates" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Tax/Api/TaxRateRepository/searchTaxRates.html">Tax<br>TaxRateRepository<br><span class='bold'>searchTaxRates</span></a></li>
 
 
 
@@ -3198,16 +3198,113 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="taxrates-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=codeus12">taxRates-search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=codeUs12</h2>
+        <h3 class="api3" id="get-taxrates-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=codeus12">GET /default/V1/taxRates/search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=codeUs12</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "searchCriteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "code",
+                        "value": "codeUs12"
+                    }
+                ]
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”taxrates-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=codeus12-response>Response</h4><pre>{
+    "items": [
+        {
+            "id": 9,
+            "tax_country_id": "US",
+            "tax_region_id": 12,
+            "region_name": "CA",
+            "tax_postcode": "*",
+            "rate": 22,
+            "code": "codeUs12",
+            "titles": []
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "code",
+                        "value": "codeUs12"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}</pre>        <h3 class="api3" id="taxrates-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=codeus12-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>searchCriteria</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

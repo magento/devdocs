@@ -1295,7 +1295,7 @@
     
     
 
-<li id="validateCustomerData" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/AccountManagement/validateCustomerData.html">Customer<br>AccountManagement<br><span class='bold'>validateCustomerData</span></a></li>
+<li id="validateCustomerData" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/AccountManagement/validateCustomerData.html">Customer<br>AccountManagement<br><span class='bold'>validateCustomerData</span></a></li>
 
 
 
@@ -3198,16 +3198,143 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customers-validate">customers-validate</h2>
+        <h3 class="api3" id="put-customers-validate">PUT /default/V1/customers/validate</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "customer": {
+        "group_id": 1,
+        "confirmation": "a4fg7h893e39d",
+        "created_at": "2013-11-05",
+        "created_in": "Store Name",
+        "dob": "1970-01-01",
+        "email": "janedoe5550e90ddd759@example.com",
+        "firstname": null,
+        "lastname": null,
+        "middlename": "A",
+        "prefix": "Mr.",
+        "suffix": "Esq.",
+        "gender": "Male",
+        "store_id": 1,
+        "taxvat": "12",
+        "website_id": 1,
+        "addresses": [
+            {
+                "region": {
+                    "region_code": "AL",
+                    "region": "Alabama",
+                    "region_id": 1
+                },
+                "country_id": "US",
+                "street": [
+                    "Green str, 67"
+                ],
+                "telephone": "3468676",
+                "postcode": "75477",
+                "city": "CityM",
+                "firstname": "John",
+                "lastname": "Smith",
+                "default_shipping": true,
+                "default_billing": true
+            },
+            {
+                "region": {
+                    "region_code": "AL",
+                    "region": "Alabama",
+                    "region_id": 1
+                },
+                "country_id": "US",
+                "street": [
+                    "Black str, 48",
+                    "Building D"
+                ],
+                "telephone": "3234676",
+                "postcode": "47676",
+                "city": "CityX",
+                "firstname": "John",
+                "lastname": "Smith",
+                "default_shipping": false,
+                "default_billing": false
+            }
+        ],
+        "custom_attributes": [
+            {
+                "attribute_code": "disable_auto_group_change",
+                "value": "0"
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”customers-validate-response>Response</h4><pre>{
+    "valid": false,
+    "messages": [
+        "The first name cannot be empty.",
+        "The last name cannot be empty."
+    ]
+}</pre>        <h3 class="api3" id="customers-validate-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>customer</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>valid</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>messages</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

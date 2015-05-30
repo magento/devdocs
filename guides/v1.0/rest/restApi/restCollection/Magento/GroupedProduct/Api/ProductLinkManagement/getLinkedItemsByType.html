@@ -1880,7 +1880,7 @@
     
     
 
-<li id="getLinkedItemsByType" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/GroupedProduct/Api/ProductLinkManagement/getLinkedItemsByType.html">GroupedProduct<br>ProductLinkManagement<br><span class='bold'>getLinkedItemsByType</span></a></li>
+<li id="getLinkedItemsByType" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/GroupedProduct/Api/ProductLinkManagement/getLinkedItemsByType.html">GroupedProduct<br>ProductLinkManagement<br><span class='bold'>getLinkedItemsByType</span></a></li>
 
 
 
@@ -3198,16 +3198,98 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-grouped-product-links-associated">products-grouped-product-links-associated</h2>
+        <h3 class="api3" id="get-products-grouped-product-links-associated">GET /default/V1/products/grouped-product/links/associated</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "grouped-product",
+    "type": "associated"
+}</pre>        <h4 class="api4" id=”products-grouped-product-links-associated-response>Response</h4><pre>[
+    {
+        "product_sku": "grouped-product",
+        "link_type": "associated",
+        "linked_product_sku": "simple-1",
+        "linked_product_type": "simple",
+        "position": 1,
+        "extension_attributes": {
+            "qty": 1
+        }
+    },
+    {
+        "product_sku": "grouped-product",
+        "link_type": "associated",
+        "linked_product_sku": "virtual-product",
+        "linked_product_type": "virtual",
+        "position": 2,
+        "extension_attributes": {
+            "qty": 1
+        }
+    }
+]</pre>        <h3 class="api3" id="products-grouped-product-links-associated-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

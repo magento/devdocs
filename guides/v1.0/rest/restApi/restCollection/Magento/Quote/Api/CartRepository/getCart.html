@@ -2078,7 +2078,7 @@
     
     
 
-<li id="getCart" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/CartRepository/getCart.html">Quote<br>CartRepository<br><span class='bold'>getCart</span></a></li>
+<li id="getCart" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/CartRepository/getCart.html">Quote<br>CartRepository<br><span class='bold'>getCart</span></a></li>
 
 
 
@@ -3198,16 +3198,136 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="carts-31">carts-31</h2>
+        <h3 class="api3" id="get-carts-31">GET /default/V1/carts/31</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "cartId": "31"
+}</pre>        <h4 class="api4" id=”carts-31-response>Response</h4><pre>{
+    "id": 31,
+    "created_at": "2015-05-11 12:41:20",
+    "updated_at": "0000-00-00 00:00:00",
+    "is_active": true,
+    "is_virtual": false,
+    "items_count": 1,
+    "items_qty": 1,
+    "customer": {
+        "email": null,
+        "firstname": null,
+        "lastname": null
+    },
+    "shipping_address": {
+        "id": 54,
+        "region": "California",
+        "region_id": 12,
+        "region_code": "CA",
+        "country_id": "US",
+        "street": [
+            "street"
+        ],
+        "telephone": "11111111",
+        "postcode": "11111",
+        "city": "Los Angeles",
+        "firstname": "firstname",
+        "lastname": "lastname",
+        "email": "admin@example.com"
+    },
+    "billing_address": {
+        "id": 53,
+        "region": "California",
+        "region_id": 12,
+        "region_code": "CA",
+        "country_id": "US",
+        "street": [
+            "street"
+        ],
+        "telephone": "11111111",
+        "postcode": "11111",
+        "city": "Los Angeles",
+        "firstname": "firstname",
+        "lastname": "lastname",
+        "email": "admin@example.com"
+    },
+    "reserved_order_id": 0,
+    "orig_order_id": 0,
+    "currency": {
+        "global_currency_code": "USD",
+        "base_currency_code": "USD",
+        "store_currency_code": "USD",
+        "quote_currency_code": "USD",
+        "store_to_base_rate": 0,
+        "store_to_quote_rate": 0,
+        "base_to_global_rate": 1,
+        "base_to_quote_rate": 1
+    },
+    "customer_is_guest": true,
+    "customer_note_notify": true,
+    "customer_tax_class_id": 3
+}</pre>        <h3 class="api3" id="carts-31-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>cartId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_active</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_virtual</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>items_count</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>items_qty</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_address</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>billing_address</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>reserved_order_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>orig_order_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>currency</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_is_guest</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_note_notify</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_tax_class_id</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

@@ -1439,7 +1439,7 @@
     
     
 
-<li id="getAttributeMetadata" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/CustomerMetadata/getAttributeMetadata.html">Customer<br>CustomerMetadata<br><span class='bold'>getAttributeMetadata</span></a></li>
+<li id="getAttributeMetadata" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/CustomerMetadata/getAttributeMetadata.html">Customer<br>CustomerMetadata<br><span class='bold'>getAttributeMetadata</span></a></li>
 
 
 
@@ -3198,16 +3198,235 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="attributemetadata-customer-attribute-firstname">attributeMetadata-customer-attribute-firstname</h2>
+        <h3 class="api3" id="get-attributemetadata-customer-attribute-firstname">GET /default/V1/attributeMetadata/customer/attribute/firstname</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "attributeCode": "firstname"
+}</pre>        <h4 class="api4" id=”attributemetadata-customer-attribute-firstname-response>Response</h4><pre>{
+    "frontend_input": "text",
+    "input_filter": "",
+    "store_label": "First Name",
+    "validation_rules": [
+        {
+            "name": "max_text_length",
+            "value": "255"
+        },
+        {
+            "name": "min_text_length",
+            "value": "1"
+        }
+    ],
+    "multiline_count": 0,
+    "visible": true,
+    "required": true,
+    "data_model": "",
+    "options": [],
+    "frontend_class": " required-entry",
+    "user_defined": false,
+    "sort_order": 40,
+    "frontend_label": "First Name",
+    "note": "",
+    "system": true,
+    "backend_type": "varchar",
+    "attribute_code": "firstname"
+}</pre>        <h3 class="api3" id="attributemetadata-customer-attribute-firstname-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>attributeCode</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>frontend_input</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>input_filter</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>validation_rules</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>multiline_count</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visible</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>required</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>data_model</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>frontend_class</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>user_defined</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>frontend_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>note</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>system</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>backend_type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_code</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="attributemetadata-customer-attribute-gender">attributeMetadata-customer-attribute-gender</h2>
+        <h3 class="api3" id="get-attributemetadata-customer-attribute-gender">GET /default/V1/attributeMetadata/customer/attribute/gender</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "attributeCode": "gender"
+}</pre>        <h4 class="api4" id=”attributemetadata-customer-attribute-gender-response>Response</h4><pre>{
+    "frontend_input": "select",
+    "input_filter": "",
+    "store_label": "Gender",
+    "validation_rules": [],
+    "multiline_count": 0,
+    "visible": false,
+    "required": false,
+    "data_model": "",
+    "options": [
+        {
+            "label": "",
+            "value": ""
+        },
+        {
+            "label": "Male",
+            "value": "1"
+        },
+        {
+            "label": "Female",
+            "value": "2"
+        }
+    ],
+    "frontend_class": "",
+    "user_defined": false,
+    "sort_order": 110,
+    "frontend_label": "Gender",
+    "note": "",
+    "system": false,
+    "backend_type": "int",
+    "attribute_code": "gender"
+}</pre>        <h3 class="api3" id="attributemetadata-customer-attribute-gender-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>attributeCode</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>frontend_input</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>input_filter</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>validation_rules</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>multiline_count</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visible</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>required</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>data_model</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>frontend_class</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>user_defined</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>frontend_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>note</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>system</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>backend_type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_code</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="attributemetadata-customer-attribute-website_id">attributeMetadata-customer-attribute-website_id</h2>
+        <h3 class="api3" id="get-attributemetadata-customer-attribute-website_id">GET /default/V1/attributeMetadata/customer/attribute/website_id</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "attributeCode": "website_id"
+}</pre>        <h4 class="api4" id=”attributemetadata-customer-attribute-website_id-response>Response</h4><pre>{
+    "frontend_input": "select",
+    "input_filter": "",
+    "store_label": "Associate to Website",
+    "validation_rules": [],
+    "multiline_count": 0,
+    "visible": true,
+    "required": true,
+    "data_model": "",
+    "options": [
+        {
+            "label": "Admin",
+            "value": "0"
+        },
+        {
+            "label": "Main Website",
+            "value": "1"
+        }
+    ],
+    "frontend_class": " required-entry",
+    "user_defined": false,
+    "sort_order": 10,
+    "frontend_label": "Associate to Website",
+    "note": "",
+    "system": true,
+    "backend_type": "static",
+    "attribute_code": "website_id"
+}</pre>        <h3 class="api3" id="attributemetadata-customer-attribute-website_id-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>attributeCode</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>frontend_input</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>input_filter</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>validation_rules</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>multiline_count</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visible</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>required</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>data_model</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>frontend_class</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>user_defined</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>frontend_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>note</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>system</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>backend_type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_code</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

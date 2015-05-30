@@ -1376,7 +1376,7 @@
     
     
 
-<li id="getAllAttributesMetadata" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/AddressMetadata/getAllAttributesMetadata.html">Customer<br>AddressMetadata<br><span class='bold'>getAllAttributesMetadata</span></a></li>
+<li id="getAllAttributesMetadata" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/AddressMetadata/getAllAttributesMetadata.html">Customer<br>AddressMetadata<br><span class='bold'>getAllAttributesMetadata</span></a></li>
 
 
 
@@ -3198,16 +3198,3517 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="attributemetadata-customeraddress">attributeMetadata-customerAddress</h2>
+        <h3 class="api3" id="get-attributemetadata-customeraddress">GET /default/V1/attributeMetadata/customerAddress</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”attributemetadata-customeraddress-response>Response</h4><pre>[
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Prefix",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 10,
+        "frontend_label": "Prefix",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "prefix"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "First Name",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 20,
+        "frontend_label": "First Name",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "firstname"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Middle Name\/Initial",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 30,
+        "frontend_label": "Middle Name\/Initial",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "middlename"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Last Name",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 40,
+        "frontend_label": "Last Name",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "lastname"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Suffix",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 50,
+        "frontend_label": "Suffix",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "suffix"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Company",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 60,
+        "frontend_label": "Company",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "company"
+    },
+    {
+        "frontend_input": "multiline",
+        "input_filter": "",
+        "store_label": "Street Address",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 2,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 70,
+        "frontend_label": "Street Address",
+        "note": "",
+        "system": true,
+        "backend_type": "text",
+        "attribute_code": "street"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "City",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 80,
+        "frontend_label": "City",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "city"
+    },
+    {
+        "frontend_input": "select",
+        "input_filter": "",
+        "store_label": "Country",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [
+            {
+                "label": " ",
+                "value": ""
+            },
+            {
+                "label": "Afghanistan",
+                "value": "AF"
+            },
+            {
+                "label": "Albania",
+                "value": "AL"
+            },
+            {
+                "label": "Algeria",
+                "value": "DZ"
+            },
+            {
+                "label": "American Samoa",
+                "value": "AS"
+            },
+            {
+                "label": "Andorra",
+                "value": "AD"
+            },
+            {
+                "label": "Angola",
+                "value": "AO"
+            },
+            {
+                "label": "Anguilla",
+                "value": "AI"
+            },
+            {
+                "label": "Antarctica",
+                "value": "AQ"
+            },
+            {
+                "label": "Antigua & Barbuda",
+                "value": "AG"
+            },
+            {
+                "label": "Argentina",
+                "value": "AR"
+            },
+            {
+                "label": "Armenia",
+                "value": "AM"
+            },
+            {
+                "label": "Aruba",
+                "value": "AW"
+            },
+            {
+                "label": "Australia",
+                "value": "AU"
+            },
+            {
+                "label": "Austria",
+                "value": "AT"
+            },
+            {
+                "label": "Azerbaijan",
+                "value": "AZ"
+            },
+            {
+                "label": "Bahamas",
+                "value": "BS"
+            },
+            {
+                "label": "Bahrain",
+                "value": "BH"
+            },
+            {
+                "label": "Bangladesh",
+                "value": "BD"
+            },
+            {
+                "label": "Barbados",
+                "value": "BB"
+            },
+            {
+                "label": "Belarus",
+                "value": "BY"
+            },
+            {
+                "label": "Belgium",
+                "value": "BE"
+            },
+            {
+                "label": "Belize",
+                "value": "BZ"
+            },
+            {
+                "label": "Benin",
+                "value": "BJ"
+            },
+            {
+                "label": "Bermuda",
+                "value": "BM"
+            },
+            {
+                "label": "Bhutan",
+                "value": "BT"
+            },
+            {
+                "label": "Bolivia",
+                "value": "BO"
+            },
+            {
+                "label": "Bosnia & Herzegovina",
+                "value": "BA"
+            },
+            {
+                "label": "Botswana",
+                "value": "BW"
+            },
+            {
+                "label": "Bouvet Island",
+                "value": "BV"
+            },
+            {
+                "label": "Brazil",
+                "value": "BR"
+            },
+            {
+                "label": "British Indian Ocean Territory",
+                "value": "IO"
+            },
+            {
+                "label": "British Virgin Islands",
+                "value": "VG"
+            },
+            {
+                "label": "Brunei",
+                "value": "BN"
+            },
+            {
+                "label": "Bulgaria",
+                "value": "BG"
+            },
+            {
+                "label": "Burkina Faso",
+                "value": "BF"
+            },
+            {
+                "label": "Burundi",
+                "value": "BI"
+            },
+            {
+                "label": "Cambodia",
+                "value": "KH"
+            },
+            {
+                "label": "Cameroon",
+                "value": "CM"
+            },
+            {
+                "label": "Canada",
+                "value": "CA"
+            },
+            {
+                "label": "Cape Verde",
+                "value": "CV"
+            },
+            {
+                "label": "Cayman Islands",
+                "value": "KY"
+            },
+            {
+                "label": "Central African Republic",
+                "value": "CF"
+            },
+            {
+                "label": "Chad",
+                "value": "TD"
+            },
+            {
+                "label": "Chile",
+                "value": "CL"
+            },
+            {
+                "label": "China",
+                "value": "CN"
+            },
+            {
+                "label": "Christmas Island",
+                "value": "CX"
+            },
+            {
+                "label": "Cocos (Keeling) Islands",
+                "value": "CC"
+            },
+            {
+                "label": "Colombia",
+                "value": "CO"
+            },
+            {
+                "label": "Comoros",
+                "value": "KM"
+            },
+            {
+                "label": "Congo - Brazzaville",
+                "value": "CG"
+            },
+            {
+                "label": "Congo - Kinshasa",
+                "value": "CD"
+            },
+            {
+                "label": "Cook Islands",
+                "value": "CK"
+            },
+            {
+                "label": "Costa Rica",
+                "value": "CR"
+            },
+            {
+                "label": "Croatia",
+                "value": "HR"
+            },
+            {
+                "label": "Cuba",
+                "value": "CU"
+            },
+            {
+                "label": "Cyprus",
+                "value": "CY"
+            },
+            {
+                "label": "Czech Republic",
+                "value": "CZ"
+            },
+            {
+                "label": "C\u00f4te d\u2019Ivoire",
+                "value": "CI"
+            },
+            {
+                "label": "Denmark",
+                "value": "DK"
+            },
+            {
+                "label": "Djibouti",
+                "value": "DJ"
+            },
+            {
+                "label": "Dominica",
+                "value": "DM"
+            },
+            {
+                "label": "Dominican Republic",
+                "value": "DO"
+            },
+            {
+                "label": "Ecuador",
+                "value": "EC"
+            },
+            {
+                "label": "Egypt",
+                "value": "EG"
+            },
+            {
+                "label": "El Salvador",
+                "value": "SV"
+            },
+            {
+                "label": "Equatorial Guinea",
+                "value": "GQ"
+            },
+            {
+                "label": "Eritrea",
+                "value": "ER"
+            },
+            {
+                "label": "Estonia",
+                "value": "EE"
+            },
+            {
+                "label": "Ethiopia",
+                "value": "ET"
+            },
+            {
+                "label": "Falkland Islands",
+                "value": "FK"
+            },
+            {
+                "label": "Faroe Islands",
+                "value": "FO"
+            },
+            {
+                "label": "Fiji",
+                "value": "FJ"
+            },
+            {
+                "label": "Finland",
+                "value": "FI"
+            },
+            {
+                "label": "France",
+                "value": "FR"
+            },
+            {
+                "label": "French Guiana",
+                "value": "GF"
+            },
+            {
+                "label": "French Polynesia",
+                "value": "PF"
+            },
+            {
+                "label": "French Southern Territories",
+                "value": "TF"
+            },
+            {
+                "label": "Gabon",
+                "value": "GA"
+            },
+            {
+                "label": "Gambia",
+                "value": "GM"
+            },
+            {
+                "label": "Georgia",
+                "value": "GE"
+            },
+            {
+                "label": "Germany",
+                "value": "DE"
+            },
+            {
+                "label": "Ghana",
+                "value": "GH"
+            },
+            {
+                "label": "Gibraltar",
+                "value": "GI"
+            },
+            {
+                "label": "Greece",
+                "value": "GR"
+            },
+            {
+                "label": "Greenland",
+                "value": "GL"
+            },
+            {
+                "label": "Grenada",
+                "value": "GD"
+            },
+            {
+                "label": "Guadeloupe",
+                "value": "GP"
+            },
+            {
+                "label": "Guam",
+                "value": "GU"
+            },
+            {
+                "label": "Guatemala",
+                "value": "GT"
+            },
+            {
+                "label": "Guernsey",
+                "value": "GG"
+            },
+            {
+                "label": "Guinea",
+                "value": "GN"
+            },
+            {
+                "label": "Guinea-Bissau",
+                "value": "GW"
+            },
+            {
+                "label": "Guyana",
+                "value": "GY"
+            },
+            {
+                "label": "Haiti",
+                "value": "HT"
+            },
+            {
+                "label": "Heard & McDonald Islands",
+                "value": "HM"
+            },
+            {
+                "label": "Honduras",
+                "value": "HN"
+            },
+            {
+                "label": "Hong Kong SAR China",
+                "value": "HK"
+            },
+            {
+                "label": "Hungary",
+                "value": "HU"
+            },
+            {
+                "label": "Iceland",
+                "value": "IS"
+            },
+            {
+                "label": "India",
+                "value": "IN"
+            },
+            {
+                "label": "Indonesia",
+                "value": "ID"
+            },
+            {
+                "label": "Iran",
+                "value": "IR"
+            },
+            {
+                "label": "Iraq",
+                "value": "IQ"
+            },
+            {
+                "label": "Ireland",
+                "value": "IE"
+            },
+            {
+                "label": "Isle of Man",
+                "value": "IM"
+            },
+            {
+                "label": "Israel",
+                "value": "IL"
+            },
+            {
+                "label": "Italy",
+                "value": "IT"
+            },
+            {
+                "label": "Jamaica",
+                "value": "JM"
+            },
+            {
+                "label": "Japan",
+                "value": "JP"
+            },
+            {
+                "label": "Jersey",
+                "value": "JE"
+            },
+            {
+                "label": "Jordan",
+                "value": "JO"
+            },
+            {
+                "label": "Kazakhstan",
+                "value": "KZ"
+            },
+            {
+                "label": "Kenya",
+                "value": "KE"
+            },
+            {
+                "label": "Kiribati",
+                "value": "KI"
+            },
+            {
+                "label": "Kuwait",
+                "value": "KW"
+            },
+            {
+                "label": "Kyrgyzstan",
+                "value": "KG"
+            },
+            {
+                "label": "Laos",
+                "value": "LA"
+            },
+            {
+                "label": "Latvia",
+                "value": "LV"
+            },
+            {
+                "label": "Lebanon",
+                "value": "LB"
+            },
+            {
+                "label": "Lesotho",
+                "value": "LS"
+            },
+            {
+                "label": "Liberia",
+                "value": "LR"
+            },
+            {
+                "label": "Libya",
+                "value": "LY"
+            },
+            {
+                "label": "Liechtenstein",
+                "value": "LI"
+            },
+            {
+                "label": "Lithuania",
+                "value": "LT"
+            },
+            {
+                "label": "Luxembourg",
+                "value": "LU"
+            },
+            {
+                "label": "Macau SAR China",
+                "value": "MO"
+            },
+            {
+                "label": "Macedonia",
+                "value": "MK"
+            },
+            {
+                "label": "Madagascar",
+                "value": "MG"
+            },
+            {
+                "label": "Malawi",
+                "value": "MW"
+            },
+            {
+                "label": "Malaysia",
+                "value": "MY"
+            },
+            {
+                "label": "Maldives",
+                "value": "MV"
+            },
+            {
+                "label": "Mali",
+                "value": "ML"
+            },
+            {
+                "label": "Malta",
+                "value": "MT"
+            },
+            {
+                "label": "Marshall Islands",
+                "value": "MH"
+            },
+            {
+                "label": "Martinique",
+                "value": "MQ"
+            },
+            {
+                "label": "Mauritania",
+                "value": "MR"
+            },
+            {
+                "label": "Mauritius",
+                "value": "MU"
+            },
+            {
+                "label": "Mayotte",
+                "value": "YT"
+            },
+            {
+                "label": "Mexico",
+                "value": "MX"
+            },
+            {
+                "label": "Micronesia",
+                "value": "FM"
+            },
+            {
+                "label": "Moldova",
+                "value": "MD"
+            },
+            {
+                "label": "Monaco",
+                "value": "MC"
+            },
+            {
+                "label": "Mongolia",
+                "value": "MN"
+            },
+            {
+                "label": "Montenegro",
+                "value": "ME"
+            },
+            {
+                "label": "Montserrat",
+                "value": "MS"
+            },
+            {
+                "label": "Morocco",
+                "value": "MA"
+            },
+            {
+                "label": "Mozambique",
+                "value": "MZ"
+            },
+            {
+                "label": "Myanmar (Burma)",
+                "value": "MM"
+            },
+            {
+                "label": "Namibia",
+                "value": "NA"
+            },
+            {
+                "label": "Nauru",
+                "value": "NR"
+            },
+            {
+                "label": "Nepal",
+                "value": "NP"
+            },
+            {
+                "label": "Netherlands",
+                "value": "NL"
+            },
+            {
+                "label": "Netherlands Antilles",
+                "value": "AN"
+            },
+            {
+                "label": "New Caledonia",
+                "value": "NC"
+            },
+            {
+                "label": "New Zealand",
+                "value": "NZ"
+            },
+            {
+                "label": "Nicaragua",
+                "value": "NI"
+            },
+            {
+                "label": "Niger",
+                "value": "NE"
+            },
+            {
+                "label": "Nigeria",
+                "value": "NG"
+            },
+            {
+                "label": "Niue",
+                "value": "NU"
+            },
+            {
+                "label": "Norfolk Island",
+                "value": "NF"
+            },
+            {
+                "label": "North Korea",
+                "value": "KP"
+            },
+            {
+                "label": "Northern Mariana Islands",
+                "value": "MP"
+            },
+            {
+                "label": "Norway",
+                "value": "NO"
+            },
+            {
+                "label": "Oman",
+                "value": "OM"
+            },
+            {
+                "label": "Pakistan",
+                "value": "PK"
+            },
+            {
+                "label": "Palau",
+                "value": "PW"
+            },
+            {
+                "label": "Palestinian Territories",
+                "value": "PS"
+            },
+            {
+                "label": "Panama",
+                "value": "PA"
+            },
+            {
+                "label": "Papua New Guinea",
+                "value": "PG"
+            },
+            {
+                "label": "Paraguay",
+                "value": "PY"
+            },
+            {
+                "label": "Peru",
+                "value": "PE"
+            },
+            {
+                "label": "Philippines",
+                "value": "PH"
+            },
+            {
+                "label": "Pitcairn Islands",
+                "value": "PN"
+            },
+            {
+                "label": "Poland",
+                "value": "PL"
+            },
+            {
+                "label": "Portugal",
+                "value": "PT"
+            },
+            {
+                "label": "Qatar",
+                "value": "QA"
+            },
+            {
+                "label": "Romania",
+                "value": "RO"
+            },
+            {
+                "label": "Russia",
+                "value": "RU"
+            },
+            {
+                "label": "Rwanda",
+                "value": "RW"
+            },
+            {
+                "label": "R\u00e9union",
+                "value": "RE"
+            },
+            {
+                "label": "Samoa",
+                "value": "WS"
+            },
+            {
+                "label": "San Marino",
+                "value": "SM"
+            },
+            {
+                "label": "Saudi Arabia",
+                "value": "SA"
+            },
+            {
+                "label": "Senegal",
+                "value": "SN"
+            },
+            {
+                "label": "Serbia",
+                "value": "RS"
+            },
+            {
+                "label": "Seychelles",
+                "value": "SC"
+            },
+            {
+                "label": "Sierra Leone",
+                "value": "SL"
+            },
+            {
+                "label": "Singapore",
+                "value": "SG"
+            },
+            {
+                "label": "Slovakia",
+                "value": "SK"
+            },
+            {
+                "label": "Slovenia",
+                "value": "SI"
+            },
+            {
+                "label": "Solomon Islands",
+                "value": "SB"
+            },
+            {
+                "label": "Somalia",
+                "value": "SO"
+            },
+            {
+                "label": "South Africa",
+                "value": "ZA"
+            },
+            {
+                "label": "South Georgia & South Sandwich Islands",
+                "value": "GS"
+            },
+            {
+                "label": "South Korea",
+                "value": "KR"
+            },
+            {
+                "label": "Spain",
+                "value": "ES"
+            },
+            {
+                "label": "Sri Lanka",
+                "value": "LK"
+            },
+            {
+                "label": "St. Barth\u00e9lemy",
+                "value": "BL"
+            },
+            {
+                "label": "St. Helena",
+                "value": "SH"
+            },
+            {
+                "label": "St. Kitts & Nevis",
+                "value": "KN"
+            },
+            {
+                "label": "St. Lucia",
+                "value": "LC"
+            },
+            {
+                "label": "St. Martin",
+                "value": "MF"
+            },
+            {
+                "label": "St. Pierre & Miquelon",
+                "value": "PM"
+            },
+            {
+                "label": "St. Vincent & Grenadines",
+                "value": "VC"
+            },
+            {
+                "label": "Sudan",
+                "value": "SD"
+            },
+            {
+                "label": "Suriname",
+                "value": "SR"
+            },
+            {
+                "label": "Svalbard & Jan Mayen",
+                "value": "SJ"
+            },
+            {
+                "label": "Swaziland",
+                "value": "SZ"
+            },
+            {
+                "label": "Sweden",
+                "value": "SE"
+            },
+            {
+                "label": "Switzerland",
+                "value": "CH"
+            },
+            {
+                "label": "Syria",
+                "value": "SY"
+            },
+            {
+                "label": "S\u00e3o Tom\u00e9 & Pr\u00edncipe",
+                "value": "ST"
+            },
+            {
+                "label": "Taiwan",
+                "value": "TW"
+            },
+            {
+                "label": "Tajikistan",
+                "value": "TJ"
+            },
+            {
+                "label": "Tanzania",
+                "value": "TZ"
+            },
+            {
+                "label": "Thailand",
+                "value": "TH"
+            },
+            {
+                "label": "Timor-Leste",
+                "value": "TL"
+            },
+            {
+                "label": "Togo",
+                "value": "TG"
+            },
+            {
+                "label": "Tokelau",
+                "value": "TK"
+            },
+            {
+                "label": "Tonga",
+                "value": "TO"
+            },
+            {
+                "label": "Trinidad & Tobago",
+                "value": "TT"
+            },
+            {
+                "label": "Tunisia",
+                "value": "TN"
+            },
+            {
+                "label": "Turkey",
+                "value": "TR"
+            },
+            {
+                "label": "Turkmenistan",
+                "value": "TM"
+            },
+            {
+                "label": "Turks & Caicos Islands",
+                "value": "TC"
+            },
+            {
+                "label": "Tuvalu",
+                "value": "TV"
+            },
+            {
+                "label": "U.S. Outlying Islands",
+                "value": "UM"
+            },
+            {
+                "label": "U.S. Virgin Islands",
+                "value": "VI"
+            },
+            {
+                "label": "Uganda",
+                "value": "UG"
+            },
+            {
+                "label": "Ukraine",
+                "value": "UA"
+            },
+            {
+                "label": "United Arab Emirates",
+                "value": "AE"
+            },
+            {
+                "label": "United Kingdom",
+                "value": "GB"
+            },
+            {
+                "label": "United States",
+                "value": "US"
+            },
+            {
+                "label": "Uruguay",
+                "value": "UY"
+            },
+            {
+                "label": "Uzbekistan",
+                "value": "UZ"
+            },
+            {
+                "label": "Vanuatu",
+                "value": "VU"
+            },
+            {
+                "label": "Vatican City",
+                "value": "VA"
+            },
+            {
+                "label": "Venezuela",
+                "value": "VE"
+            },
+            {
+                "label": "Vietnam",
+                "value": "VN"
+            },
+            {
+                "label": "Wallis & Futuna",
+                "value": "WF"
+            },
+            {
+                "label": "Western Sahara",
+                "value": "EH"
+            },
+            {
+                "label": "Yemen",
+                "value": "YE"
+            },
+            {
+                "label": "Zambia",
+                "value": "ZM"
+            },
+            {
+                "label": "Zimbabwe",
+                "value": "ZW"
+            },
+            {
+                "label": "\u00c5land Islands",
+                "value": "AX"
+            }
+        ],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 90,
+        "frontend_label": "Country",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "country_id"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "State\/Province",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 100,
+        "frontend_label": "State\/Province",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "region"
+    },
+    {
+        "frontend_input": "hidden",
+        "input_filter": "",
+        "store_label": "State\/Province",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [
+            {
+                "label": "--Please select--"
+            },
+            {
+                "label": "A Coru\u00f1a",
+                "value": "130"
+            },
+            {
+                "label": "Aargau",
+                "value": "104"
+            },
+            {
+                "label": "Acre",
+                "value": "485"
+            },
+            {
+                "label": "\u0100da\u017eu novads",
+                "value": "471"
+            },
+            {
+                "label": "Aglonas novads",
+                "value": "366"
+            },
+            {
+                "label": "Ahvenanmaa",
+                "value": "339"
+            },
+            {
+                "label": "Ain",
+                "value": "182"
+            },
+            {
+                "label": "Aisne",
+                "value": "183"
+            },
+            {
+                "label": "Aizkraukles novads",
+                "value": "367"
+            },
+            {
+                "label": "Aizputes novads",
+                "value": "368"
+            },
+            {
+                "label": "Akn\u012bstes novads",
+                "value": "369"
+            },
+            {
+                "label": "Alabama",
+                "value": "1"
+            },
+            {
+                "label": "Alagoas",
+                "value": "486"
+            },
+            {
+                "label": "Alaska",
+                "value": "2"
+            },
+            {
+                "label": "Alava",
+                "value": "131"
+            },
+            {
+                "label": "Alba",
+                "value": "278"
+            },
+            {
+                "label": "Albacete",
+                "value": "132"
+            },
+            {
+                "label": "Alberta",
+                "value": "66"
+            },
+            {
+                "label": "Alicante",
+                "value": "133"
+            },
+            {
+                "label": "Allier",
+                "value": "184"
+            },
+            {
+                "label": "Almeria",
+                "value": "134"
+            },
+            {
+                "label": "Alojas novads",
+                "value": "370"
+            },
+            {
+                "label": "Alpes-de-Haute-Provence",
+                "value": "185"
+            },
+            {
+                "label": "Alpes-Maritimes",
+                "value": "187"
+            },
+            {
+                "label": "Alsungas novads",
+                "value": "371"
+            },
+            {
+                "label": "Al\u016bksnes novads",
+                "value": "372"
+            },
+            {
+                "label": "Alytaus Apskritis",
+                "value": "475"
+            },
+            {
+                "label": "Amap\u00e1",
+                "value": "487"
+            },
+            {
+                "label": "Amatas novads",
+                "value": "373"
+            },
+            {
+                "label": "Amazonas",
+                "value": "488"
+            },
+            {
+                "label": "American Samoa",
+                "value": "3"
+            },
+            {
+                "label": "Apes novads",
+                "value": "374"
+            },
+            {
+                "label": "Appenzell Ausserrhoden",
+                "value": "106"
+            },
+            {
+                "label": "Appenzell Innerrhoden",
+                "value": "105"
+            },
+            {
+                "label": "Arad",
+                "value": "279"
+            },
+            {
+                "label": "Ard\u00e8che",
+                "value": "188"
+            },
+            {
+                "label": "Ardennes",
+                "value": "189"
+            },
+            {
+                "label": "Arge\u015f",
+                "value": "280"
+            },
+            {
+                "label": "Ari\u00e8ge",
+                "value": "190"
+            },
+            {
+                "label": "Arizona",
+                "value": "4"
+            },
+            {
+                "label": "Arkansas",
+                "value": "5"
+            },
+            {
+                "label": "Armed Forces Africa",
+                "value": "6"
+            },
+            {
+                "label": "Armed Forces Americas",
+                "value": "7"
+            },
+            {
+                "label": "Armed Forces Canada",
+                "value": "8"
+            },
+            {
+                "label": "Armed Forces Europe",
+                "value": "9"
+            },
+            {
+                "label": "Armed Forces Middle East",
+                "value": "10"
+            },
+            {
+                "label": "Armed Forces Pacific",
+                "value": "11"
+            },
+            {
+                "label": "Asturias",
+                "value": "135"
+            },
+            {
+                "label": "Aube",
+                "value": "191"
+            },
+            {
+                "label": "Auces novads",
+                "value": "375"
+            },
+            {
+                "label": "Aude",
+                "value": "192"
+            },
+            {
+                "label": "Aveyron",
+                "value": "193"
+            },
+            {
+                "label": "Avila",
+                "value": "136"
+            },
+            {
+                "label": "Bab\u012btes novads",
+                "value": "376"
+            },
+            {
+                "label": "Bac\u0103u",
+                "value": "281"
+            },
+            {
+                "label": "Badajoz",
+                "value": "137"
+            },
+            {
+                "label": "Baden-W\u00fcrttemberg",
+                "value": "80"
+            },
+            {
+                "label": "Bahia",
+                "value": "489"
+            },
+            {
+                "label": "Baldones novads",
+                "value": "377"
+            },
+            {
+                "label": "Baleares",
+                "value": "138"
+            },
+            {
+                "label": "Baltinavas novads",
+                "value": "378"
+            },
+            {
+                "label": "Balvu novads",
+                "value": "379"
+            },
+            {
+                "label": "Barcelona",
+                "value": "139"
+            },
+            {
+                "label": "Bas-Rhin",
+                "value": "249"
+            },
+            {
+                "label": "Basel-Landschaft",
+                "value": "108"
+            },
+            {
+                "label": "Basel-Stadt",
+                "value": "109"
+            },
+            {
+                "label": "Bauskas novads",
+                "value": "380"
+            },
+            {
+                "label": "Bayern",
+                "value": "81"
+            },
+            {
+                "label": "Berlin",
+                "value": "82"
+            },
+            {
+                "label": "Bern",
+                "value": "107"
+            },
+            {
+                "label": "Bever\u012bnas novads",
+                "value": "381"
+            },
+            {
+                "label": "Bihor",
+                "value": "282"
+            },
+            {
+                "label": "Bistri\u0163a-N\u0103s\u0103ud",
+                "value": "283"
+            },
+            {
+                "label": "Boto\u015fani",
+                "value": "284"
+            },
+            {
+                "label": "Bouches-du-Rh\u00f4ne",
+                "value": "194"
+            },
+            {
+                "label": "Br\u0103ila",
+                "value": "286"
+            },
+            {
+                "label": "Brandenburg",
+                "value": "83"
+            },
+            {
+                "label": "Bra\u015fov",
+                "value": "285"
+            },
+            {
+                "label": "Bremen",
+                "value": "84"
+            },
+            {
+                "label": "British Columbia",
+                "value": "67"
+            },
+            {
+                "label": "Broc\u0113nu novads",
+                "value": "382"
+            },
+            {
+                "label": "Bucure\u015fti",
+                "value": "287"
+            },
+            {
+                "label": "Burgenland",
+                "value": "102"
+            },
+            {
+                "label": "Burgos",
+                "value": "140"
+            },
+            {
+                "label": "Burtnieku novads",
+                "value": "383"
+            },
+            {
+                "label": "Buz\u0103u",
+                "value": "288"
+            },
+            {
+                "label": "Caceres",
+                "value": "141"
+            },
+            {
+                "label": "Cadiz",
+                "value": "142"
+            },
+            {
+                "label": "C\u0103l\u0103ra\u015fi",
+                "value": "290"
+            },
+            {
+                "label": "California",
+                "value": "12"
+            },
+            {
+                "label": "Calvados",
+                "value": "195"
+            },
+            {
+                "label": "Cantabria",
+                "value": "143"
+            },
+            {
+                "label": "Cantal",
+                "value": "196"
+            },
+            {
+                "label": "Cara\u015f-Severin",
+                "value": "289"
+            },
+            {
+                "label": "Carnikavas novads",
+                "value": "384"
+            },
+            {
+                "label": "Castellon",
+                "value": "144"
+            },
+            {
+                "label": "Cear\u00e1",
+                "value": "490"
+            },
+            {
+                "label": "C\u0113su novads",
+                "value": "387"
+            },
+            {
+                "label": "Cesvaines novads",
+                "value": "385"
+            },
+            {
+                "label": "Ceuta",
+                "value": "145"
+            },
+            {
+                "label": "Charente",
+                "value": "197"
+            },
+            {
+                "label": "Charente-Maritime",
+                "value": "198"
+            },
+            {
+                "label": "Cher",
+                "value": "199"
+            },
+            {
+                "label": "Ciblas novads",
+                "value": "386"
+            },
+            {
+                "label": "Ciudad Real",
+                "value": "146"
+            },
+            {
+                "label": "Cluj",
+                "value": "291"
+            },
+            {
+                "label": "Colorado",
+                "value": "13"
+            },
+            {
+                "label": "Connecticut",
+                "value": "14"
+            },
+            {
+                "label": "Constan\u0163a",
+                "value": "292"
+            },
+            {
+                "label": "Cordoba",
+                "value": "147"
+            },
+            {
+                "label": "Corr\u00e8ze",
+                "value": "200"
+            },
+            {
+                "label": "Corse-du-Sud",
+                "value": "201"
+            },
+            {
+                "label": "C\u00f4te-d'Or",
+                "value": "203"
+            },
+            {
+                "label": "C\u00f4tes-d'Armor",
+                "value": "204"
+            },
+            {
+                "label": "Covasna",
+                "value": "293"
+            },
+            {
+                "label": "Creuse",
+                "value": "205"
+            },
+            {
+                "label": "Cuenca",
+                "value": "148"
+            },
+            {
+                "label": "Dagdas novads",
+                "value": "388"
+            },
+            {
+                "label": "D\u00e2mbovi\u0163a",
+                "value": "294"
+            },
+            {
+                "label": "Daugavpils",
+                "value": "355"
+            },
+            {
+                "label": "Daugavpils novads",
+                "value": "389"
+            },
+            {
+                "label": "Delaware",
+                "value": "15"
+            },
+            {
+                "label": "Deux-S\u00e8vres",
+                "value": "261"
+            },
+            {
+                "label": "District of Columbia",
+                "value": "16"
+            },
+            {
+                "label": "Distrito Federal",
+                "value": "511"
+            },
+            {
+                "label": "Dobeles novads",
+                "value": "390"
+            },
+            {
+                "label": "Dolj",
+                "value": "295"
+            },
+            {
+                "label": "Dordogne",
+                "value": "206"
+            },
+            {
+                "label": "Doubs",
+                "value": "207"
+            },
+            {
+                "label": "Dr\u00f4me",
+                "value": "208"
+            },
+            {
+                "label": "Dundagas novads",
+                "value": "391"
+            },
+            {
+                "label": "Durbes novads",
+                "value": "392"
+            },
+            {
+                "label": "Engures novads",
+                "value": "393"
+            },
+            {
+                "label": "\u0112rg\u013cu novads",
+                "value": "472"
+            },
+            {
+                "label": "Esp\u00edrito Santo",
+                "value": "491"
+            },
+            {
+                "label": "Essonne",
+                "value": "273"
+            },
+            {
+                "label": "Etel\u00e4-Karjala",
+                "value": "333"
+            },
+            {
+                "label": "Etel\u00e4-Pohjanmaa",
+                "value": "326"
+            },
+            {
+                "label": "Etel\u00e4-Savo",
+                "value": "325"
+            },
+            {
+                "label": "Eure",
+                "value": "209"
+            },
+            {
+                "label": "Eure-et-Loir",
+                "value": "210"
+            },
+            {
+                "label": "Federated States Of Micronesia",
+                "value": "17"
+            },
+            {
+                "label": "Finist\u00e8re",
+                "value": "211"
+            },
+            {
+                "label": "Florida",
+                "value": "18"
+            },
+            {
+                "label": "Freiburg",
+                "value": "110"
+            },
+            {
+                "label": "Gala\u0163i",
+                "value": "296"
+            },
+            {
+                "label": "Gard",
+                "value": "212"
+            },
+            {
+                "label": "Garkalnes novads",
+                "value": "394"
+            },
+            {
+                "label": "Genf",
+                "value": "111"
+            },
+            {
+                "label": "Georgia",
+                "value": "19"
+            },
+            {
+                "label": "Gers",
+                "value": "214"
+            },
+            {
+                "label": "Girona",
+                "value": "149"
+            },
+            {
+                "label": "Gironde",
+                "value": "215"
+            },
+            {
+                "label": "Giurgiu",
+                "value": "297"
+            },
+            {
+                "label": "Glarus",
+                "value": "112"
+            },
+            {
+                "label": "Goi\u00e1s",
+                "value": "492"
+            },
+            {
+                "label": "Gorj",
+                "value": "298"
+            },
+            {
+                "label": "Granada",
+                "value": "150"
+            },
+            {
+                "label": "Graub\u00fcnden",
+                "value": "113"
+            },
+            {
+                "label": "Grobi\u0146as novads",
+                "value": "395"
+            },
+            {
+                "label": "Guadalajara",
+                "value": "151"
+            },
+            {
+                "label": "Guam",
+                "value": "20"
+            },
+            {
+                "label": "Guipuzcoa",
+                "value": "152"
+            },
+            {
+                "label": "Gulbenes novads",
+                "value": "396"
+            },
+            {
+                "label": "Hamburg",
+                "value": "85"
+            },
+            {
+                "label": "Harghita",
+                "value": "299"
+            },
+            {
+                "label": "Harjumaa",
+                "value": "340"
+            },
+            {
+                "label": "Haut-Rhin",
+                "value": "250"
+            },
+            {
+                "label": "Haute-Corse",
+                "value": "202"
+            },
+            {
+                "label": "Haute-Garonne",
+                "value": "213"
+            },
+            {
+                "label": "Haute-Loire",
+                "value": "225"
+            },
+            {
+                "label": "Haute-Marne",
+                "value": "234"
+            },
+            {
+                "label": "Haute-Sa\u00f4ne",
+                "value": "252"
+            },
+            {
+                "label": "Haute-Savoie",
+                "value": "256"
+            },
+            {
+                "label": "Haute-Vienne",
+                "value": "269"
+            },
+            {
+                "label": "Hautes-Alpes",
+                "value": "186"
+            },
+            {
+                "label": "Hautes-Pyr\u00e9n\u00e9es",
+                "value": "247"
+            },
+            {
+                "label": "Hauts-de-Seine",
+                "value": "274"
+            },
+            {
+                "label": "Hawaii",
+                "value": "21"
+            },
+            {
+                "label": "H\u00e9rault",
+                "value": "216"
+            },
+            {
+                "label": "Hessen",
+                "value": "86"
+            },
+            {
+                "label": "Hiiumaa",
+                "value": "341"
+            },
+            {
+                "label": "Huelva",
+                "value": "153"
+            },
+            {
+                "label": "Huesca",
+                "value": "154"
+            },
+            {
+                "label": "Hunedoara",
+                "value": "300"
+            },
+            {
+                "label": "Ialomi\u0163a",
+                "value": "301"
+            },
+            {
+                "label": "Ia\u015fi",
+                "value": "302"
+            },
+            {
+                "label": "Ida-Virumaa",
+                "value": "342"
+            },
+            {
+                "label": "Idaho",
+                "value": "22"
+            },
+            {
+                "label": "Iecavas novads",
+                "value": "397"
+            },
+            {
+                "label": "Ik\u0161\u0137iles novads",
+                "value": "398"
+            },
+            {
+                "label": "Ilfov",
+                "value": "303"
+            },
+            {
+                "label": "Ille-et-Vilaine",
+                "value": "217"
+            },
+            {
+                "label": "Illinois",
+                "value": "23"
+            },
+            {
+                "label": "Il\u016bkstes novads",
+                "value": "399"
+            },
+            {
+                "label": "In\u010dukalna novads",
+                "value": "400"
+            },
+            {
+                "label": "Indiana",
+                "value": "24"
+            },
+            {
+                "label": "Indre",
+                "value": "218"
+            },
+            {
+                "label": "Indre-et-Loire",
+                "value": "219"
+            },
+            {
+                "label": "Iowa",
+                "value": "25"
+            },
+            {
+                "label": "Is\u00e8re",
+                "value": "220"
+            },
+            {
+                "label": "It\u00e4-Uusimaa",
+                "value": "337"
+            },
+            {
+                "label": "Jaen",
+                "value": "155"
+            },
+            {
+                "label": "J\u00e4rvamaa",
+                "value": "344"
+            },
+            {
+                "label": "Jaunjelgavas novads",
+                "value": "401"
+            },
+            {
+                "label": "Jaunpiebalgas novads",
+                "value": "402"
+            },
+            {
+                "label": "Jaunpils novads",
+                "value": "403"
+            },
+            {
+                "label": "J\u0113kabpils",
+                "value": "357"
+            },
+            {
+                "label": "J\u0113kabpils novads",
+                "value": "405"
+            },
+            {
+                "label": "Jelgava",
+                "value": "356"
+            },
+            {
+                "label": "Jelgavas novads",
+                "value": "404"
+            },
+            {
+                "label": "J\u00f5gevamaa",
+                "value": "343"
+            },
+            {
+                "label": "Jura",
+                "value": "114"
+            },
+            {
+                "label": "Jura",
+                "value": "221"
+            },
+            {
+                "label": "J\u016brmala",
+                "value": "358"
+            },
+            {
+                "label": "Kainuu",
+                "value": "322"
+            },
+            {
+                "label": "Kandavas novads",
+                "value": "406"
+            },
+            {
+                "label": "Kansas",
+                "value": "26"
+            },
+            {
+                "label": "Kanta-H\u00e4me",
+                "value": "335"
+            },
+            {
+                "label": "K\u00e4rnten",
+                "value": "99"
+            },
+            {
+                "label": "K\u0101rsavas novads",
+                "value": "412"
+            },
+            {
+                "label": "Kauno Apskritis",
+                "value": "476"
+            },
+            {
+                "label": "\u0136eguma novads",
+                "value": "473"
+            },
+            {
+                "label": "\u0136ekavas novads",
+                "value": "474"
+            },
+            {
+                "label": "Kentucky",
+                "value": "27"
+            },
+            {
+                "label": "Keski-Pohjanmaa",
+                "value": "330"
+            },
+            {
+                "label": "Keski-Suomi",
+                "value": "331"
+            },
+            {
+                "label": "Klaip\u0117dos Apskritis",
+                "value": "477"
+            },
+            {
+                "label": "Kokneses novads",
+                "value": "407"
+            },
+            {
+                "label": "Kr\u0101slavas novads",
+                "value": "410"
+            },
+            {
+                "label": "Krimuldas novads",
+                "value": "408"
+            },
+            {
+                "label": "Krustpils novads",
+                "value": "409"
+            },
+            {
+                "label": "Kuld\u012bgas novads",
+                "value": "411"
+            },
+            {
+                "label": "Kymenlaakso",
+                "value": "338"
+            },
+            {
+                "label": "La Rioja",
+                "value": "156"
+            },
+            {
+                "label": "L\u00e4\u00e4ne-Virumaa",
+                "value": "346"
+            },
+            {
+                "label": "L\u00e4\u00e4nemaa",
+                "value": "345"
+            },
+            {
+                "label": "Landes",
+                "value": "222"
+            },
+            {
+                "label": "Lappi",
+                "value": "320"
+            },
+            {
+                "label": "Las Palmas",
+                "value": "157"
+            },
+            {
+                "label": "Leon",
+                "value": "158"
+            },
+            {
+                "label": "Lielv\u0101rdes novads",
+                "value": "413"
+            },
+            {
+                "label": "Liep\u0101ja",
+                "value": "359"
+            },
+            {
+                "label": "Liep\u0101jas novads",
+                "value": "360"
+            },
+            {
+                "label": "L\u012bgatnes novads",
+                "value": "417"
+            },
+            {
+                "label": "Limba\u017eu novads",
+                "value": "414"
+            },
+            {
+                "label": "L\u012bv\u0101nu novads",
+                "value": "418"
+            },
+            {
+                "label": "Lleida",
+                "value": "159"
+            },
+            {
+                "label": "Loir-et-Cher",
+                "value": "223"
+            },
+            {
+                "label": "Loire",
+                "value": "224"
+            },
+            {
+                "label": "Loire-Atlantique",
+                "value": "226"
+            },
+            {
+                "label": "Loiret",
+                "value": "227"
+            },
+            {
+                "label": "Lot",
+                "value": "228"
+            },
+            {
+                "label": "Lot-et-Garonne",
+                "value": "229"
+            },
+            {
+                "label": "Louisiana",
+                "value": "28"
+            },
+            {
+                "label": "Loz\u00e8re",
+                "value": "230"
+            },
+            {
+                "label": "Lub\u0101nas novads",
+                "value": "415"
+            },
+            {
+                "label": "Ludzas novads",
+                "value": "416"
+            },
+            {
+                "label": "Lugo",
+                "value": "160"
+            },
+            {
+                "label": "Luzern",
+                "value": "115"
+            },
+            {
+                "label": "Madonas novads",
+                "value": "419"
+            },
+            {
+                "label": "Madrid",
+                "value": "161"
+            },
+            {
+                "label": "Maine",
+                "value": "29"
+            },
+            {
+                "label": "Maine-et-Loire",
+                "value": "231"
+            },
+            {
+                "label": "Malaga",
+                "value": "162"
+            },
+            {
+                "label": "M\u0101lpils novads",
+                "value": "421"
+            },
+            {
+                "label": "Manche",
+                "value": "232"
+            },
+            {
+                "label": "Manitoba",
+                "value": "68"
+            },
+            {
+                "label": "Maramure\u015f",
+                "value": "304"
+            },
+            {
+                "label": "Maranh\u00e3o",
+                "value": "493"
+            },
+            {
+                "label": "Marijampol\u0117s Apskritis",
+                "value": "478"
+            },
+            {
+                "label": "Marne",
+                "value": "233"
+            },
+            {
+                "label": "Marshall Islands",
+                "value": "30"
+            },
+            {
+                "label": "M\u0101rupes novads",
+                "value": "422"
+            },
+            {
+                "label": "Maryland",
+                "value": "31"
+            },
+            {
+                "label": "Massachusetts",
+                "value": "32"
+            },
+            {
+                "label": "Mato Grosso",
+                "value": "494"
+            },
+            {
+                "label": "Mato Grosso do Sul",
+                "value": "495"
+            },
+            {
+                "label": "Mayenne",
+                "value": "235"
+            },
+            {
+                "label": "Mazsalacas novads",
+                "value": "420"
+            },
+            {
+                "label": "Mecklenburg-Vorpommern",
+                "value": "87"
+            },
+            {
+                "label": "Mehedin\u0163i",
+                "value": "305"
+            },
+            {
+                "label": "Melilla",
+                "value": "163"
+            },
+            {
+                "label": "Meurthe-et-Moselle",
+                "value": "236"
+            },
+            {
+                "label": "Meuse",
+                "value": "237"
+            },
+            {
+                "label": "Michigan",
+                "value": "33"
+            },
+            {
+                "label": "Minas Gerais",
+                "value": "496"
+            },
+            {
+                "label": "Minnesota",
+                "value": "34"
+            },
+            {
+                "label": "Mississippi",
+                "value": "35"
+            },
+            {
+                "label": "Missouri",
+                "value": "36"
+            },
+            {
+                "label": "Montana",
+                "value": "37"
+            },
+            {
+                "label": "Morbihan",
+                "value": "238"
+            },
+            {
+                "label": "Moselle",
+                "value": "239"
+            },
+            {
+                "label": "Murcia",
+                "value": "164"
+            },
+            {
+                "label": "Mure\u015f",
+                "value": "306"
+            },
+            {
+                "label": "Nauk\u0161\u0113nu novads",
+                "value": "423"
+            },
+            {
+                "label": "Navarra",
+                "value": "165"
+            },
+            {
+                "label": "Neam\u0163",
+                "value": "307"
+            },
+            {
+                "label": "Nebraska",
+                "value": "38"
+            },
+            {
+                "label": "Neretas novads",
+                "value": "424"
+            },
+            {
+                "label": "Neuenburg",
+                "value": "116"
+            },
+            {
+                "label": "Nevada",
+                "value": "39"
+            },
+            {
+                "label": "New Brunswick",
+                "value": "70"
+            },
+            {
+                "label": "New Hampshire",
+                "value": "40"
+            },
+            {
+                "label": "New Jersey",
+                "value": "41"
+            },
+            {
+                "label": "New Mexico",
+                "value": "42"
+            },
+            {
+                "label": "New York",
+                "value": "43"
+            },
+            {
+                "label": "Newfoundland and Labrador",
+                "value": "69"
+            },
+            {
+                "label": "N\u012bcas novads",
+                "value": "425"
+            },
+            {
+                "label": "Nidwalden",
+                "value": "117"
+            },
+            {
+                "label": "Nieder\u00f6sterreich",
+                "value": "96"
+            },
+            {
+                "label": "Niedersachsen",
+                "value": "79"
+            },
+            {
+                "label": "Ni\u00e8vre",
+                "value": "240"
+            },
+            {
+                "label": "Nord",
+                "value": "241"
+            },
+            {
+                "label": "Nordrhein-Westfalen",
+                "value": "88"
+            },
+            {
+                "label": "North Carolina",
+                "value": "44"
+            },
+            {
+                "label": "North Dakota",
+                "value": "45"
+            },
+            {
+                "label": "Northern Mariana Islands",
+                "value": "46"
+            },
+            {
+                "label": "Northwest Territories",
+                "value": "72"
+            },
+            {
+                "label": "Nova Scotia",
+                "value": "71"
+            },
+            {
+                "label": "Nunavut",
+                "value": "73"
+            },
+            {
+                "label": "Ober\u00f6sterreich",
+                "value": "97"
+            },
+            {
+                "label": "Obwalden",
+                "value": "118"
+            },
+            {
+                "label": "Ogres novads",
+                "value": "426"
+            },
+            {
+                "label": "Ohio",
+                "value": "47"
+            },
+            {
+                "label": "Oise",
+                "value": "242"
+            },
+            {
+                "label": "Oklahoma",
+                "value": "48"
+            },
+            {
+                "label": "Olaines novads",
+                "value": "427"
+            },
+            {
+                "label": "Olt",
+                "value": "308"
+            },
+            {
+                "label": "Ontario",
+                "value": "74"
+            },
+            {
+                "label": "Oregon",
+                "value": "49"
+            },
+            {
+                "label": "Orne",
+                "value": "243"
+            },
+            {
+                "label": "Ourense",
+                "value": "166"
+            },
+            {
+                "label": "Ozolnieku novads",
+                "value": "428"
+            },
+            {
+                "label": "P\u00e4ij\u00e4t-H\u00e4me",
+                "value": "334"
+            },
+            {
+                "label": "Palau",
+                "value": "50"
+            },
+            {
+                "label": "Palencia",
+                "value": "167"
+            },
+            {
+                "label": "Panev\u0117\u017eio Apskritis",
+                "value": "479"
+            },
+            {
+                "label": "Par\u00e1",
+                "value": "497"
+            },
+            {
+                "label": "Para\u00edba",
+                "value": "498"
+            },
+            {
+                "label": "Paran\u00e1",
+                "value": "499"
+            },
+            {
+                "label": "P\u0101rgaujas novads",
+                "value": "432"
+            },
+            {
+                "label": "Paris",
+                "value": "257"
+            },
+            {
+                "label": "P\u00e4rnumaa",
+                "value": "348"
+            },
+            {
+                "label": "Pas-de-Calais",
+                "value": "244"
+            },
+            {
+                "label": "P\u0101vilostas novads",
+                "value": "433"
+            },
+            {
+                "label": "Pennsylvania",
+                "value": "51"
+            },
+            {
+                "label": "Pernambuco",
+                "value": "500"
+            },
+            {
+                "label": "Piau\u00ed",
+                "value": "501"
+            },
+            {
+                "label": "Pirkanmaa",
+                "value": "328"
+            },
+            {
+                "label": "P\u013cavi\u0146u novads",
+                "value": "434"
+            },
+            {
+                "label": "Pohjanmaa",
+                "value": "327"
+            },
+            {
+                "label": "Pohjois-Karjala",
+                "value": "323"
+            },
+            {
+                "label": "Pohjois-Pohjanmaa",
+                "value": "321"
+            },
+            {
+                "label": "Pohjois-Savo",
+                "value": "324"
+            },
+            {
+                "label": "P\u00f5lvamaa",
+                "value": "347"
+            },
+            {
+                "label": "Pontevedra",
+                "value": "168"
+            },
+            {
+                "label": "Prahova",
+                "value": "309"
+            },
+            {
+                "label": "Prei\u013cu novads",
+                "value": "429"
+            },
+            {
+                "label": "Priekules novads",
+                "value": "430"
+            },
+            {
+                "label": "Prieku\u013cu novads",
+                "value": "431"
+            },
+            {
+                "label": "Prince Edward Island",
+                "value": "75"
+            },
+            {
+                "label": "Puerto Rico",
+                "value": "52"
+            },
+            {
+                "label": "Puy-de-D\u00f4me",
+                "value": "245"
+            },
+            {
+                "label": "Pyr\u00e9n\u00e9es-Atlantiques",
+                "value": "246"
+            },
+            {
+                "label": "Pyr\u00e9n\u00e9es-Orientales",
+                "value": "248"
+            },
+            {
+                "label": "Quebec",
+                "value": "76"
+            },
+            {
+                "label": "Raplamaa",
+                "value": "349"
+            },
+            {
+                "label": "Raunas novads",
+                "value": "435"
+            },
+            {
+                "label": "R\u0113zekne",
+                "value": "361"
+            },
+            {
+                "label": "R\u0113zeknes novads",
+                "value": "442"
+            },
+            {
+                "label": "Rheinland-Pfalz",
+                "value": "89"
+            },
+            {
+                "label": "Rhode Island",
+                "value": "53"
+            },
+            {
+                "label": "Rh\u00f4ne",
+                "value": "251"
+            },
+            {
+                "label": "Riebi\u0146u novads",
+                "value": "436"
+            },
+            {
+                "label": "R\u012bga",
+                "value": "362"
+            },
+            {
+                "label": "R\u012bgas novads",
+                "value": "363"
+            },
+            {
+                "label": "Rio de Janeiro",
+                "value": "502"
+            },
+            {
+                "label": "Rio Grande do Norte",
+                "value": "503"
+            },
+            {
+                "label": "Rio Grande do Sul",
+                "value": "504"
+            },
+            {
+                "label": "Rojas novads",
+                "value": "437"
+            },
+            {
+                "label": "Rond\u00f4nia",
+                "value": "505"
+            },
+            {
+                "label": "Ropa\u017eu novads",
+                "value": "438"
+            },
+            {
+                "label": "Roraima",
+                "value": "506"
+            },
+            {
+                "label": "Rucavas novads",
+                "value": "439"
+            },
+            {
+                "label": "Rug\u0101ju novads",
+                "value": "440"
+            },
+            {
+                "label": "R\u016bjienas novads",
+                "value": "443"
+            },
+            {
+                "label": "Rund\u0101les novads",
+                "value": "441"
+            },
+            {
+                "label": "Saaremaa",
+                "value": "350"
+            },
+            {
+                "label": "Saarland",
+                "value": "90"
+            },
+            {
+                "label": "Sachsen",
+                "value": "91"
+            },
+            {
+                "label": "Sachsen-Anhalt",
+                "value": "92"
+            },
+            {
+                "label": "Salacgr\u012bvas novads",
+                "value": "444"
+            },
+            {
+                "label": "S\u0103laj",
+                "value": "311"
+            },
+            {
+                "label": "Salamanca",
+                "value": "169"
+            },
+            {
+                "label": "Salas novads",
+                "value": "445"
+            },
+            {
+                "label": "Salaspils novads",
+                "value": "446"
+            },
+            {
+                "label": "Saldus novads",
+                "value": "447"
+            },
+            {
+                "label": "Salzburg",
+                "value": "98"
+            },
+            {
+                "label": "Santa Catarina",
+                "value": "507"
+            },
+            {
+                "label": "Santa Cruz de Tenerife",
+                "value": "170"
+            },
+            {
+                "label": "S\u00e3o Paulo",
+                "value": "508"
+            },
+            {
+                "label": "Sa\u00f4ne-et-Loire",
+                "value": "253"
+            },
+            {
+                "label": "Sarthe",
+                "value": "254"
+            },
+            {
+                "label": "Saskatchewan",
+                "value": "77"
+            },
+            {
+                "label": "Satakunta",
+                "value": "329"
+            },
+            {
+                "label": "Satu-Mare",
+                "value": "310"
+            },
+            {
+                "label": "Saulkrastu novads",
+                "value": "448"
+            },
+            {
+                "label": "Savoie",
+                "value": "255"
+            },
+            {
+                "label": "Schaffhausen",
+                "value": "120"
+            },
+            {
+                "label": "Schleswig-Holstein",
+                "value": "93"
+            },
+            {
+                "label": "Schwyz",
+                "value": "122"
+            },
+            {
+                "label": "Segovia",
+                "value": "171"
+            },
+            {
+                "label": "Seine-et-Marne",
+                "value": "259"
+            },
+            {
+                "label": "Seine-Maritime",
+                "value": "258"
+            },
+            {
+                "label": "Seine-Saint-Denis",
+                "value": "275"
+            },
+            {
+                "label": "S\u0113jas novads",
+                "value": "455"
+            },
+            {
+                "label": "Sergipe",
+                "value": "509"
+            },
+            {
+                "label": "Sevilla",
+                "value": "172"
+            },
+            {
+                "label": "\u0160iauli\u0173 Apskritis",
+                "value": "480"
+            },
+            {
+                "label": "Sibiu",
+                "value": "312"
+            },
+            {
+                "label": "Siguldas novads",
+                "value": "449"
+            },
+            {
+                "label": "Skr\u012bveru novads",
+                "value": "451"
+            },
+            {
+                "label": "Skrundas novads",
+                "value": "450"
+            },
+            {
+                "label": "Smiltenes novads",
+                "value": "452"
+            },
+            {
+                "label": "Solothurn",
+                "value": "121"
+            },
+            {
+                "label": "Somme",
+                "value": "262"
+            },
+            {
+                "label": "Soria",
+                "value": "173"
+            },
+            {
+                "label": "South Carolina",
+                "value": "54"
+            },
+            {
+                "label": "South Dakota",
+                "value": "55"
+            },
+            {
+                "label": "St. Gallen",
+                "value": "119"
+            },
+            {
+                "label": "Steiermark",
+                "value": "100"
+            },
+            {
+                "label": "Stopi\u0146u novads",
+                "value": "453"
+            },
+            {
+                "label": "Stren\u010du novads",
+                "value": "454"
+            },
+            {
+                "label": "Suceava",
+                "value": "313"
+            },
+            {
+                "label": "Talsu novads",
+                "value": "456"
+            },
+            {
+                "label": "Tarn",
+                "value": "263"
+            },
+            {
+                "label": "Tarn-et-Garonne",
+                "value": "264"
+            },
+            {
+                "label": "Tarragona",
+                "value": "174"
+            },
+            {
+                "label": "Tartumaa",
+                "value": "351"
+            },
+            {
+                "label": "Taurag\u0117s Apskritis",
+                "value": "481"
+            },
+            {
+                "label": "Teleorman",
+                "value": "314"
+            },
+            {
+                "label": "Tel\u0161i\u0173 Apskritis",
+                "value": "482"
+            },
+            {
+                "label": "Tennessee",
+                "value": "56"
+            },
+            {
+                "label": "Territoire-de-Belfort",
+                "value": "272"
+            },
+            {
+                "label": "Teruel",
+                "value": "175"
+            },
+            {
+                "label": "T\u0113rvetes novads",
+                "value": "458"
+            },
+            {
+                "label": "Tessin",
+                "value": "124"
+            },
+            {
+                "label": "Texas",
+                "value": "57"
+            },
+            {
+                "label": "Thurgau",
+                "value": "123"
+            },
+            {
+                "label": "Th\u00fcringen",
+                "value": "94"
+            },
+            {
+                "label": "Timi\u015f",
+                "value": "315"
+            },
+            {
+                "label": "Tirol",
+                "value": "101"
+            },
+            {
+                "label": "Tocantins",
+                "value": "510"
+            },
+            {
+                "label": "Toledo",
+                "value": "176"
+            },
+            {
+                "label": "Tukuma novads",
+                "value": "457"
+            },
+            {
+                "label": "Tulcea",
+                "value": "316"
+            },
+            {
+                "label": "Uri",
+                "value": "125"
+            },
+            {
+                "label": "Utah",
+                "value": "58"
+            },
+            {
+                "label": "Utenos Apskritis",
+                "value": "483"
+            },
+            {
+                "label": "Uusimaa",
+                "value": "336"
+            },
+            {
+                "label": "Vai\u0146odes novads",
+                "value": "459"
+            },
+            {
+                "label": "Val-d'Oise",
+                "value": "277"
+            },
+            {
+                "label": "Val-de-Marne",
+                "value": "276"
+            },
+            {
+                "label": "V\u00e2lcea",
+                "value": "318"
+            },
+            {
+                "label": "Valencia",
+                "value": "177"
+            },
+            {
+                "label": "Valgamaa",
+                "value": "352"
+            },
+            {
+                "label": "Valkas novads",
+                "value": "460"
+            },
+            {
+                "label": "Valladolid",
+                "value": "178"
+            },
+            {
+                "label": "Valmiera",
+                "value": "364"
+            },
+            {
+                "label": "Valmieras novads",
+                "value": "461"
+            },
+            {
+                "label": "Var",
+                "value": "265"
+            },
+            {
+                "label": "Varak\u013c\u0101nu novads",
+                "value": "462"
+            },
+            {
+                "label": "V\u0101rkavas novads",
+                "value": "469"
+            },
+            {
+                "label": "Varsinais-Suomi",
+                "value": "332"
+            },
+            {
+                "label": "Vaslui",
+                "value": "317"
+            },
+            {
+                "label": "Vaucluse",
+                "value": "266"
+            },
+            {
+                "label": "Vecpiebalgas novads",
+                "value": "463"
+            },
+            {
+                "label": "Vecumnieku novads",
+                "value": "464"
+            },
+            {
+                "label": "Vend\u00e9e",
+                "value": "267"
+            },
+            {
+                "label": "Ventspils",
+                "value": "365"
+            },
+            {
+                "label": "Ventspils novads",
+                "value": "465"
+            },
+            {
+                "label": "Vermont",
+                "value": "59"
+            },
+            {
+                "label": "Vienne",
+                "value": "268"
+            },
+            {
+                "label": "Vies\u012btes novads",
+                "value": "466"
+            },
+            {
+                "label": "Vi\u013cakas novads",
+                "value": "467"
+            },
+            {
+                "label": "Vi\u013c\u0101nu novads",
+                "value": "468"
+            },
+            {
+                "label": "Viljandimaa",
+                "value": "353"
+            },
+            {
+                "label": "Vilniaus Apskritis",
+                "value": "484"
+            },
+            {
+                "label": "Virgin Islands",
+                "value": "60"
+            },
+            {
+                "label": "Virginia",
+                "value": "61"
+            },
+            {
+                "label": "Vizcaya",
+                "value": "179"
+            },
+            {
+                "label": "Vorarlberg",
+                "value": "103"
+            },
+            {
+                "label": "V\u00f5rumaa",
+                "value": "354"
+            },
+            {
+                "label": "Vosges",
+                "value": "270"
+            },
+            {
+                "label": "Vrancea",
+                "value": "319"
+            },
+            {
+                "label": "Waadt",
+                "value": "126"
+            },
+            {
+                "label": "Wallis",
+                "value": "127"
+            },
+            {
+                "label": "Washington",
+                "value": "62"
+            },
+            {
+                "label": "West Virginia",
+                "value": "63"
+            },
+            {
+                "label": "Wien",
+                "value": "95"
+            },
+            {
+                "label": "Wisconsin",
+                "value": "64"
+            },
+            {
+                "label": "Wyoming",
+                "value": "65"
+            },
+            {
+                "label": "Yonne",
+                "value": "271"
+            },
+            {
+                "label": "Yukon Territory",
+                "value": "78"
+            },
+            {
+                "label": "Yvelines",
+                "value": "260"
+            },
+            {
+                "label": "Zamora",
+                "value": "180"
+            },
+            {
+                "label": "Zaragoza",
+                "value": "181"
+            },
+            {
+                "label": "Zilupes novads",
+                "value": "470"
+            },
+            {
+                "label": "Zug",
+                "value": "128"
+            },
+            {
+                "label": "Z\u00fcrich",
+                "value": "129"
+            }
+        ],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 100,
+        "frontend_label": "State\/Province",
+        "note": "",
+        "system": true,
+        "backend_type": "int",
+        "attribute_code": "region_id"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Zip\/Postal Code",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "Magento\\Customer\\Model\\Attribute\\Data\\Postcode",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 110,
+        "frontend_label": "Zip\/Postal Code",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "postcode"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Phone Number",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 120,
+        "frontend_label": "Phone Number",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "telephone"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Fax",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 130,
+        "frontend_label": "Fax",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "fax"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "VAT number",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 140,
+        "frontend_label": "VAT number",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "vat_id"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "VAT number validity",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 0,
+        "frontend_label": "VAT number validity",
+        "note": "",
+        "system": true,
+        "backend_type": "int",
+        "attribute_code": "vat_is_valid"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "VAT number validation request ID",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 0,
+        "frontend_label": "VAT number validation request ID",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "vat_request_id"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "VAT number validation request date",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 0,
+        "frontend_label": "VAT number validation request date",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "vat_request_date"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "VAT number validation request success",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 0,
+        "frontend_label": "VAT number validation request success",
+        "note": "",
+        "system": true,
+        "backend_type": "int",
+        "attribute_code": "vat_request_success"
+    }
+]</pre>        <h3 class="api3" id="attributemetadata-customeraddress-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

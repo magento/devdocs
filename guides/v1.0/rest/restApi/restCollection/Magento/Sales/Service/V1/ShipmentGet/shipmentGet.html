@@ -2861,7 +2861,7 @@
     
     
 
-<li id="shipmentGet" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/ShipmentGet/shipmentGet.html">Sales<br>ShipmentGet<br><span class='bold'>shipmentGet</span></a></li>
+<li id="shipmentGet" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/ShipmentGet/shipmentGet.html">Sales<br>ShipmentGet<br><span class='bold'>shipmentGet</span></a></li>
 
 
 
@@ -3198,16 +3198,117 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="shipment-6">shipment-6</h2>
+        <h3 class="api3" id="get-shipment-6">GET /default/V1/shipment/6</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "id": "6"
+}</pre>        <h4 class="api4" id=”shipment-6-response>Response</h4><pre>{
+    "billing_address_id": null,
+    "created_at": "2015-05-11 12:43:33",
+    "customer_id": null,
+    "email_sent": null,
+    "entity_id": 6,
+    "increment_id": "000000008",
+    "order_id": 39,
+    "packages": [
+        [
+            "1"
+        ],
+        [
+            "2"
+        ]
+    ],
+    "shipment_status": 1,
+    "shipping_address_id": null,
+    "shipping_label": null,
+    "store_id": 1,
+    "total_qty": null,
+    "total_weight": null,
+    "updated_at": "2015-05-11 12:43:33",
+    "items": [
+        {
+            "additional_data": null,
+            "description": null,
+            "entity_id": 6,
+            "name": null,
+            "order_item_id": 39,
+            "parent_id": 6,
+            "price": null,
+            "product_id": null,
+            "qty": null,
+            "row_total": null,
+            "sku": null,
+            "weight": null
+        }
+    ],
+    "tracks": [],
+    "comments": null
+}</pre>        <h3 class="api3" id="shipment-6-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>billing_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>email_sent</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entity_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>increment_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>order_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>packages</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipment_status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_qty</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_weight</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tracks</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>comments</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

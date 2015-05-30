@@ -2843,7 +2843,7 @@
     
     
 
-<li id="invoke" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/ShipmentCreate/invoke.html">Sales<br>ShipmentCreate<br><span class='bold'>invoke</span></a></li>
+<li id="invoke" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/ShipmentCreate/invoke.html">Sales<br>ShipmentCreate<br><span class='bold'>invoke</span></a></li>
 
 
 
@@ -3198,16 +3198,143 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="shipment">shipment</h2>
+        <h3 class="api3" id="post-shipment">POST /default/V1/shipment</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "entity": {
+        "order_id": "37",
+        "entity_id": null,
+        "store_id": null,
+        "total_weight": null,
+        "total_qty": null,
+        "email_sent": null,
+        "customer_id": null,
+        "shipping_address_id": null,
+        "billing_address_id": null,
+        "shipment_status": null,
+        "increment_id": null,
+        "created_at": null,
+        "updated_at": null,
+        "shipping_label": null,
+        "tracks": [],
+        "items": [
+            {
+                "order_item_id": "37",
+                "qty": "2.0000",
+                "additional_data": null,
+                "description": null,
+                "entity_id": null,
+                "name": null,
+                "parent_id": null,
+                "price": null,
+                "product_id": null,
+                "row_total": null,
+                "sku": null,
+                "weight": null
+            }
+        ],
+        "comments": []
+    }
+}</pre>        <h4 class="api4" id=”shipment-response>Response</h4><pre>{
+    "billing_address_id": null,
+    "created_at": null,
+    "customer_id": null,
+    "email_sent": null,
+    "entity_id": 4,
+    "increment_id": "000000006",
+    "order_id": 37,
+    "packages": [],
+    "shipment_status": null,
+    "shipping_address_id": null,
+    "shipping_label": null,
+    "store_id": null,
+    "total_qty": null,
+    "total_weight": null,
+    "updated_at": null,
+    "items": [
+        {
+            "additional_data": null,
+            "description": null,
+            "entity_id": 4,
+            "name": null,
+            "order_item_id": 37,
+            "parent_id": 4,
+            "price": null,
+            "product_id": null,
+            "qty": 2,
+            "row_total": null,
+            "sku": null,
+            "weight": null
+        }
+    ],
+    "tracks": [],
+    "comments": []
+}</pre>        <h3 class="api3" id="shipment-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>entity</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>billing_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>email_sent</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entity_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>increment_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>order_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>packages</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipment_status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_label</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_qty</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_weight</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tracks</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>comments</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

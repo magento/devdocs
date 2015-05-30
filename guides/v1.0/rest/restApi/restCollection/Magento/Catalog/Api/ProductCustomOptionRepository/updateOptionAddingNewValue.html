@@ -683,7 +683,7 @@
     
     
 
-<li id="updateOptionAddingNewValue" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductCustomOptionRepository/updateOptionAddingNewValue.html">Catalog<br>ProductCustomOptionRepository<br><span class='bold'>updateOptionAddingNewValue</span></a></li>
+<li id="updateOptionAddingNewValue" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductCustomOptionRepository/updateOptionAddingNewValue.html">Catalog<br>ProductCustomOptionRepository<br><span class='bold'>updateOptionAddingNewValue</span></a></li>
 
 
 
@@ -3198,16 +3198,435 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-options-842">products-options-842</h2>
+        <h3 class="api3" id="put-products-options-842">PUT /default/V1/products/options/842</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "option": {
+        "product_sku": "simple",
+        "title": "drop_down option",
+        "type": "drop_down",
+        "is_require": "1",
+        "sort_order": "4",
+        "values": [
+            {
+                "price": "10.0000",
+                "price_type": "fixed",
+                "sku": "drop_down option 1 sku",
+                "title": "drop_down option 1",
+                "sort_order": "1"
+            },
+            {
+                "price": "20.0000",
+                "price_type": "fixed",
+                "sku": "drop_down option 2 sku",
+                "title": "drop_down option 2",
+                "sort_order": "2"
+            },
+            {
+                "price": 100500,
+                "price_type": "fixed",
+                "sku": "new option sku drop_down",
+                "title": "New Option Title",
+                "sort_order": 100
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-options-842-response>Response</h4><pre>{
+    "product_sku": "simple",
+    "option_id": 842,
+    "title": "drop_down option",
+    "type": "drop_down",
+    "sort_order": 4,
+    "is_require": true,
+    "values": [
+        {
+            "title": "drop_down option 1",
+            "sort_order": 1,
+            "price": 10,
+            "price_type": "fixed",
+            "sku": "drop_down option 1 sku",
+            "option_type_id": 837
+        },
+        {
+            "title": "drop_down option 2",
+            "sort_order": 2,
+            "price": 20,
+            "price_type": "fixed",
+            "sku": "drop_down option 2 sku",
+            "option_type_id": 838
+        },
+        {
+            "title": "New Option Title",
+            "sort_order": 100,
+            "price": 100500,
+            "price_type": "fixed",
+            "sku": "new option sku drop_down",
+            "option_type_id": 839
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-options-842-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>option</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>product_sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>option_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>title</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_require</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>values</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-options-854">products-options-854</h2>
+        <h3 class="api3" id="put-products-options-854">PUT /default/V1/products/options/854</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "option": {
+        "product_sku": "simple",
+        "title": "checkbox option",
+        "type": "checkbox",
+        "is_require": "1",
+        "sort_order": "6",
+        "values": [
+            {
+                "price": "10.0000",
+                "price_type": "fixed",
+                "sku": "checkbox option 1 sku",
+                "title": "checkbox option 1",
+                "sort_order": "1"
+            },
+            {
+                "price": "20.0000",
+                "price_type": "fixed",
+                "sku": "checkbox option 2 sku",
+                "title": "checkbox option 2",
+                "sort_order": "2"
+            },
+            {
+                "price": 100500,
+                "price_type": "fixed",
+                "sku": "new option sku checkbox",
+                "title": "New Option Title",
+                "sort_order": 100
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-options-854-response>Response</h4><pre>{
+    "product_sku": "simple",
+    "option_id": 854,
+    "title": "checkbox option",
+    "type": "checkbox",
+    "sort_order": 6,
+    "is_require": true,
+    "values": [
+        {
+            "title": "checkbox option 1",
+            "sort_order": 1,
+            "price": 10,
+            "price_type": "fixed",
+            "sku": "checkbox option 1 sku",
+            "option_type_id": 848
+        },
+        {
+            "title": "checkbox option 2",
+            "sort_order": 2,
+            "price": 20,
+            "price_type": "fixed",
+            "sku": "checkbox option 2 sku",
+            "option_type_id": 849
+        },
+        {
+            "title": "New Option Title",
+            "sort_order": 100,
+            "price": 100500,
+            "price_type": "fixed",
+            "sku": "new option sku checkbox",
+            "option_type_id": 850
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-options-854-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>option</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>product_sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>option_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>title</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_require</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>values</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-options-863">products-options-863</h2>
+        <h3 class="api3" id="put-products-options-863">PUT /default/V1/products/options/863</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "option": {
+        "product_sku": "simple",
+        "title": "radio option",
+        "type": "radio",
+        "is_require": "1",
+        "sort_order": "5",
+        "values": [
+            {
+                "price": "10.0000",
+                "price_type": "fixed",
+                "sku": "radio option 1 sku",
+                "title": "radio option 1",
+                "sort_order": "1"
+            },
+            {
+                "price": "20.0000",
+                "price_type": "fixed",
+                "sku": "radio option 2 sku",
+                "title": "radio option 2",
+                "sort_order": "2"
+            },
+            {
+                "price": 100500,
+                "price_type": "fixed",
+                "sku": "new option sku radio",
+                "title": "New Option Title",
+                "sort_order": 100
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-options-863-response>Response</h4><pre>{
+    "product_sku": "simple",
+    "option_id": 863,
+    "title": "radio option",
+    "type": "radio",
+    "sort_order": 5,
+    "is_require": true,
+    "values": [
+        {
+            "title": "radio option 1",
+            "sort_order": 1,
+            "price": 10,
+            "price_type": "fixed",
+            "sku": "radio option 1 sku",
+            "option_type_id": 859
+        },
+        {
+            "title": "radio option 2",
+            "sort_order": 2,
+            "price": 20,
+            "price_type": "fixed",
+            "sku": "radio option 2 sku",
+            "option_type_id": 860
+        },
+        {
+            "title": "New Option Title",
+            "sort_order": 100,
+            "price": 100500,
+            "price_type": "fixed",
+            "sku": "new option sku radio",
+            "option_type_id": 861
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-options-863-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>option</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>product_sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>option_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>title</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_require</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>values</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-options-875">products-options-875</h2>
+        <h3 class="api3" id="put-products-options-875">PUT /default/V1/products/options/875</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "option": {
+        "product_sku": "simple",
+        "title": "multiple option",
+        "type": "multiple",
+        "is_require": "1",
+        "sort_order": "7",
+        "values": [
+            {
+                "price": "10.0000",
+                "price_type": "fixed",
+                "sku": "multiple option 1 sku",
+                "title": "multiple option 1",
+                "sort_order": "1"
+            },
+            {
+                "price": "20.0000",
+                "price_type": "fixed",
+                "sku": "multiple option 2 sku",
+                "title": "multiple option 2",
+                "sort_order": "2"
+            },
+            {
+                "price": 100500,
+                "price_type": "fixed",
+                "sku": "new option sku multiple",
+                "title": "New Option Title",
+                "sort_order": 100
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-options-875-response>Response</h4><pre>{
+    "product_sku": "simple",
+    "option_id": 875,
+    "title": "multiple option",
+    "type": "multiple",
+    "sort_order": 7,
+    "is_require": true,
+    "values": [
+        {
+            "title": "multiple option 1",
+            "sort_order": 1,
+            "price": 10,
+            "price_type": "fixed",
+            "sku": "multiple option 1 sku",
+            "option_type_id": 870
+        },
+        {
+            "title": "multiple option 2",
+            "sort_order": 2,
+            "price": 20,
+            "price_type": "fixed",
+            "sku": "multiple option 2 sku",
+            "option_type_id": 871
+        },
+        {
+            "title": "New Option Title",
+            "sort_order": 100,
+            "price": 100500,
+            "price_type": "fixed",
+            "sku": "new option sku multiple",
+            "option_type_id": 872
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-options-875-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>option</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>product_sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>option_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>title</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_require</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>values</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

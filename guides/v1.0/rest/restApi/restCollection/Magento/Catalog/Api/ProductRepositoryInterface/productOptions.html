@@ -881,7 +881,7 @@
     
     
 
-<li id="productOptions" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductRepositoryInterface/productOptions.html">Catalog<br>ProductRepositoryInterface<br><span class='bold'>productOptions</span></a></li>
+<li id="productOptions" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductRepositoryInterface/productOptions.html">Catalog<br>ProductRepositoryInterface<br><span class='bold'>productOptions</span></a></li>
 
 
 
@@ -3198,16 +3198,1294 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products">products</h2>
+        <h3 class="api3" id="post-products">POST /default/V1/products</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "sku": "sku-5550e86eedd4b4.64665980",
+        "name": "sku-5550e86eedd504.98809795",
+        "visibility": 4,
+        "type_id": "simple",
+        "price": 3.62,
+        "status": 1,
+        "attribute_set_id": 4,
+        "custom_attributes": [
+            {
+                "attribute_code": "cost",
+                "value": ""
+            },
+            {
+                "attribute_code": "description",
+                "value": "Description"
+            }
+        ],
+        "options": [
+            {
+                "product_sku": "simple",
+                "title": "DropdownOption",
+                "type": "drop_down",
+                "sort_order": 0,
+                "is_require": true,
+                "values": [
+                    {
+                        "title": "DropdownOption2_1",
+                        "sort_order": 0,
+                        "price": 3,
+                        "price_type": "fixed"
+                    }
+                ]
+            },
+            {
+                "product_sku": "simple",
+                "title": "CheckboxOption",
+                "type": "checkbox",
+                "sort_order": 1,
+                "is_require": false,
+                "values": [
+                    {
+                        "title": "CheckBoxValue1",
+                        "price": 5,
+                        "price_type": "fixed",
+                        "sort_order": 1
+                    }
+                ]
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-response>Response</h4><pre>{
+    "id": 339,
+    "sku": "sku-5550e86eedd4b4.64665980",
+    "name": "sku-5550e86eedd504.98809795",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "created_at": "2015-05-11 13:35:43",
+    "updated_at": "2015-05-11 13:35:43",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 55,
+            "product_id": 339,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": null,
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 899,
+            "title": "DropdownOption",
+            "type": "drop_down",
+            "sort_order": 0,
+            "is_require": true,
+            "values": [
+                {
+                    "title": "DropdownOption2_1",
+                    "sort_order": 0,
+                    "price": 3,
+                    "price_type": "fixed",
+                    "option_type_id": 893
+                }
+            ]
+        },
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 900,
+            "title": "CheckboxOption",
+            "type": "checkbox",
+            "sort_order": 1,
+            "is_require": false,
+            "values": [
+                {
+                    "title": "CheckBoxValue1",
+                    "sort_order": 1,
+                    "price": 5,
+                    "price_type": "fixed",
+                    "option_type_id": 894
+                }
+            ]
+        }
+    ],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-sku-5550e86eedd4b4.64665980">products-sku-5550e86eedd4b4.64665980</h2>
+        <h3 class="api3" id="get-products-sku-5550e86eedd4b4.64665980">GET /default/V1/products/sku-5550e86eedd4b4.64665980</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "sku-5550e86eedd4b4.64665980"
+}</pre>        <h4 class="api4" id=”products-sku-5550e86eedd4b4.64665980-response>Response</h4><pre>{
+    "id": 339,
+    "sku": "sku-5550e86eedd4b4.64665980",
+    "name": "sku-5550e86eedd504.98809795",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "created_at": "2015-05-11 13:35:43",
+    "updated_at": "2015-05-11 13:35:43",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 55,
+            "product_id": 339,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": null,
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 899,
+            "title": "DropdownOption",
+            "type": "drop_down",
+            "sort_order": 0,
+            "is_require": true,
+            "values": [
+                {
+                    "title": "DropdownOption2_1",
+                    "sort_order": 0,
+                    "price": 3,
+                    "price_type": "fixed",
+                    "option_type_id": 893
+                }
+            ]
+        },
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 900,
+            "title": "CheckboxOption",
+            "type": "checkbox",
+            "sort_order": 1,
+            "is_require": false,
+            "values": [
+                {
+                    "title": "CheckBoxValue1",
+                    "sort_order": 1,
+                    "price": 5,
+                    "price_type": "fixed",
+                    "option_type_id": 894
+                }
+            ]
+        }
+    ],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-sku-5550e86eedd4b4.64665980-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-sku-5550e86eedd4b4.64665980">products-sku-5550e86eedd4b4.64665980</h2>
+        <h3 class="api3" id="put-products-sku-5550e86eedd4b4.64665980">PUT /default/V1/products/sku-5550e86eedd4b4.64665980</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "id": 339,
+        "sku": null,
+        "name": "sku-5550e86eedd504.98809795",
+        "store_id": 1,
+        "attribute_set_id": 4,
+        "price": 3.62,
+        "status": 1,
+        "visibility": 4,
+        "type_id": "simple",
+        "created_at": "2015-05-11 13:35:43",
+        "updated_at": "2015-05-11 13:35:43",
+        "extension_attributes": {
+            "stock_item": {
+                "item_id": 55,
+                "product_id": 339,
+                "website_id": 1,
+                "stock_id": 1,
+                "qty": null,
+                "is_in_stock": false,
+                "is_qty_decimal": false,
+                "show_default_notification_message": false,
+                "use_config_min_qty": true,
+                "min_qty": 0,
+                "use_config_min_sale_qty": 1,
+                "min_sale_qty": 1,
+                "use_config_max_sale_qty": true,
+                "max_sale_qty": 10000,
+                "use_config_backorders": true,
+                "backorders": 0,
+                "use_config_notify_stock_qty": true,
+                "notify_stock_qty": 1,
+                "use_config_qty_increments": true,
+                "qty_increments": 0,
+                "use_config_enable_qty_inc": true,
+                "enable_qty_increments": false,
+                "use_config_manage_stock": true,
+                "manage_stock": true,
+                "low_stock_date": null,
+                "is_decimal_divided": false,
+                "stock_status_changed_auto": 0
+            }
+        },
+        "product_links": [],
+        "options": [
+            {
+                "product_sku": "sku-5550e86eedd4b4.64665980",
+                "option_id": 899,
+                "title": "DropdownOption",
+                "type": "drop_down",
+                "sort_order": 0,
+                "is_require": true,
+                "values": [
+                    {
+                        "title": "DropdownOption2_1",
+                        "sort_order": 0,
+                        "price": 3,
+                        "price_type": "fixed",
+                        "option_type_id": 893
+                    },
+                    {
+                        "title": "Value2",
+                        "price": 6,
+                        "price_type": "fixed",
+                        "sort_order": 3
+                    }
+                ]
+            },
+            {
+                "product_sku": "simple",
+                "title": "DropdownOption2",
+                "type": "drop_down",
+                "sort_order": 3,
+                "is_require": false,
+                "values": [
+                    {
+                        "title": "Value3",
+                        "price": 7,
+                        "price_type": "fixed",
+                        "sort_order": 4
+                    }
+                ]
+            }
+        ],
+        "media_gallery_entries": [],
+        "group_prices": [],
+        "tier_prices": [],
+        "custom_attributes": [
+            {
+                "attribute_code": "description",
+                "value": "Description"
+            },
+            {
+                "attribute_code": "category_ids",
+                "value": []
+            },
+            {
+                "attribute_code": "options_container",
+                "value": "container2"
+            },
+            {
+                "attribute_code": "required_options",
+                "value": "1"
+            },
+            {
+                "attribute_code": "has_options",
+                "value": "1"
+            },
+            {
+                "attribute_code": "quantity_and_stock_status",
+                "value": [
+                    false,
+                    null
+                ]
+            },
+            {
+                "attribute_code": "tax_class_id",
+                "value": "2"
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-sku-5550e86eedd4b4.64665980-response>Response</h4><pre>{
+    "id": 339,
+    "sku": "sku-5550e86eedd4b4.64665980",
+    "name": "sku-5550e86eedd504.98809795",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "created_at": "2015-05-11 13:35:43",
+    "updated_at": "2015-05-11 13:35:45",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 55,
+            "product_id": 339,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": "2015-05-11 13:35:45",
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 899,
+            "title": "DropdownOption",
+            "type": "drop_down",
+            "sort_order": 0,
+            "is_require": true,
+            "values": [
+                {
+                    "title": "DropdownOption2_1",
+                    "sort_order": 0,
+                    "price": 3,
+                    "price_type": "fixed",
+                    "option_type_id": 893
+                },
+                {
+                    "title": "Value2",
+                    "sort_order": 3,
+                    "price": 6,
+                    "price_type": "fixed",
+                    "option_type_id": 895
+                }
+            ]
+        },
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 901,
+            "title": "DropdownOption2",
+            "type": "drop_down",
+            "sort_order": 3,
+            "is_require": false,
+            "values": [
+                {
+                    "title": "Value3",
+                    "sort_order": 4,
+                    "price": 7,
+                    "price_type": "fixed",
+                    "option_type_id": 896
+                }
+            ]
+        }
+    ],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-sku-5550e86eedd4b4.64665980-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-sku-5550e86eedd4b4.64665980">products-sku-5550e86eedd4b4.64665980</h2>
+        <h3 class="api3" id="put-products-sku-5550e86eedd4b4.64665980">PUT /default/V1/products/sku-5550e86eedd4b4.64665980</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "id": 339,
+        "sku": null,
+        "name": "sku-5550e86eedd504.98809795",
+        "store_id": 1,
+        "attribute_set_id": 4,
+        "price": 3.62,
+        "status": 1,
+        "visibility": 4,
+        "type_id": "simple",
+        "created_at": "2015-05-11 13:35:43",
+        "updated_at": "2015-05-11 13:35:45",
+        "extension_attributes": {
+            "stock_item": {
+                "item_id": 55,
+                "product_id": 339,
+                "website_id": 1,
+                "stock_id": 1,
+                "qty": null,
+                "is_in_stock": false,
+                "is_qty_decimal": false,
+                "show_default_notification_message": false,
+                "use_config_min_qty": true,
+                "min_qty": 0,
+                "use_config_min_sale_qty": 1,
+                "min_sale_qty": 1,
+                "use_config_max_sale_qty": true,
+                "max_sale_qty": 10000,
+                "use_config_backorders": true,
+                "backorders": 0,
+                "use_config_notify_stock_qty": true,
+                "notify_stock_qty": 1,
+                "use_config_qty_increments": true,
+                "qty_increments": 0,
+                "use_config_enable_qty_inc": true,
+                "enable_qty_increments": false,
+                "use_config_manage_stock": true,
+                "manage_stock": true,
+                "low_stock_date": "2015-05-11 13:35:45",
+                "is_decimal_divided": false,
+                "stock_status_changed_auto": 0
+            }
+        },
+        "product_links": [],
+        "media_gallery_entries": [],
+        "group_prices": [],
+        "tier_prices": [],
+        "custom_attributes": [
+            {
+                "attribute_code": "description",
+                "value": "Description"
+            },
+            {
+                "attribute_code": "category_ids",
+                "value": []
+            },
+            {
+                "attribute_code": "options_container",
+                "value": "container2"
+            },
+            {
+                "attribute_code": "required_options",
+                "value": "1"
+            },
+            {
+                "attribute_code": "has_options",
+                "value": "1"
+            },
+            {
+                "attribute_code": "quantity_and_stock_status",
+                "value": [
+                    false,
+                    null
+                ]
+            },
+            {
+                "attribute_code": "tax_class_id",
+                "value": "2"
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-sku-5550e86eedd4b4.64665980-response>Response</h4><pre>{
+    "id": 339,
+    "sku": "sku-5550e86eedd4b4.64665980",
+    "name": "sku-5550e86eedd504.98809795",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "created_at": "2015-05-11 13:35:43",
+    "updated_at": "2015-05-11 13:35:46",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 55,
+            "product_id": 339,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": "2015-05-11 13:35:46",
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 899,
+            "title": "DropdownOption",
+            "type": "drop_down",
+            "sort_order": 0,
+            "is_require": true,
+            "values": [
+                {
+                    "title": "DropdownOption2_1",
+                    "sort_order": 0,
+                    "price": 3,
+                    "price_type": "fixed",
+                    "option_type_id": 893
+                },
+                {
+                    "title": "Value2",
+                    "sort_order": 3,
+                    "price": 6,
+                    "price_type": "fixed",
+                    "option_type_id": 895
+                }
+            ]
+        },
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 901,
+            "title": "DropdownOption2",
+            "type": "drop_down",
+            "sort_order": 3,
+            "is_require": false,
+            "values": [
+                {
+                    "title": "Value3",
+                    "sort_order": 4,
+                    "price": 7,
+                    "price_type": "fixed",
+                    "option_type_id": 896
+                }
+            ]
+        }
+    ],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-sku-5550e86eedd4b4.64665980-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-sku-5550e86eedd4b4.64665980">products-sku-5550e86eedd4b4.64665980</h2>
+        <h3 class="api3" id="get-products-sku-5550e86eedd4b4.64665980">GET /default/V1/products/sku-5550e86eedd4b4.64665980</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "sku-5550e86eedd4b4.64665980"
+}</pre>        <h4 class="api4" id=”products-sku-5550e86eedd4b4.64665980-response>Response</h4><pre>{
+    "id": 339,
+    "sku": "sku-5550e86eedd4b4.64665980",
+    "name": "sku-5550e86eedd504.98809795",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "created_at": "2015-05-11 13:35:43",
+    "updated_at": "2015-05-11 13:35:46",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 55,
+            "product_id": 339,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": "2015-05-11 13:35:46",
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 899,
+            "title": "DropdownOption",
+            "type": "drop_down",
+            "sort_order": 0,
+            "is_require": true,
+            "values": [
+                {
+                    "title": "DropdownOption2_1",
+                    "sort_order": 0,
+                    "price": 3,
+                    "price_type": "fixed",
+                    "option_type_id": 893
+                },
+                {
+                    "title": "Value2",
+                    "sort_order": 3,
+                    "price": 6,
+                    "price_type": "fixed",
+                    "option_type_id": 895
+                }
+            ]
+        },
+        {
+            "product_sku": "sku-5550e86eedd4b4.64665980",
+            "option_id": 901,
+            "title": "DropdownOption2",
+            "type": "drop_down",
+            "sort_order": 3,
+            "is_require": false,
+            "values": [
+                {
+                    "title": "Value3",
+                    "sort_order": 4,
+                    "price": 7,
+                    "price_type": "fixed",
+                    "option_type_id": 896
+                }
+            ]
+        }
+    ],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "1"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-sku-5550e86eedd4b4.64665980-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-sku-5550e86eedd4b4.64665980">products-sku-5550e86eedd4b4.64665980</h2>
+        <h3 class="api3" id="put-products-sku-5550e86eedd4b4.64665980">PUT /default/V1/products/sku-5550e86eedd4b4.64665980</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "id": 339,
+        "sku": null,
+        "name": "sku-5550e86eedd504.98809795",
+        "store_id": 1,
+        "attribute_set_id": 4,
+        "price": 3.62,
+        "status": 1,
+        "visibility": 4,
+        "type_id": "simple",
+        "created_at": "2015-05-11 13:35:43",
+        "updated_at": "2015-05-11 13:35:46",
+        "extension_attributes": {
+            "stock_item": {
+                "item_id": 55,
+                "product_id": 339,
+                "website_id": 1,
+                "stock_id": 1,
+                "qty": null,
+                "is_in_stock": false,
+                "is_qty_decimal": false,
+                "show_default_notification_message": false,
+                "use_config_min_qty": true,
+                "min_qty": 0,
+                "use_config_min_sale_qty": 1,
+                "min_sale_qty": 1,
+                "use_config_max_sale_qty": true,
+                "max_sale_qty": 10000,
+                "use_config_backorders": true,
+                "backorders": 0,
+                "use_config_notify_stock_qty": true,
+                "notify_stock_qty": 1,
+                "use_config_qty_increments": true,
+                "qty_increments": 0,
+                "use_config_enable_qty_inc": true,
+                "enable_qty_increments": false,
+                "use_config_manage_stock": true,
+                "manage_stock": true,
+                "low_stock_date": "2015-05-11 13:35:46",
+                "is_decimal_divided": false,
+                "stock_status_changed_auto": 0
+            }
+        },
+        "product_links": [],
+        "options": [],
+        "media_gallery_entries": [],
+        "group_prices": [],
+        "tier_prices": [],
+        "custom_attributes": [
+            {
+                "attribute_code": "description",
+                "value": "Description"
+            },
+            {
+                "attribute_code": "category_ids",
+                "value": []
+            },
+            {
+                "attribute_code": "options_container",
+                "value": "container2"
+            },
+            {
+                "attribute_code": "required_options",
+                "value": "1"
+            },
+            {
+                "attribute_code": "has_options",
+                "value": "1"
+            },
+            {
+                "attribute_code": "quantity_and_stock_status",
+                "value": [
+                    false,
+                    null
+                ]
+            },
+            {
+                "attribute_code": "tax_class_id",
+                "value": "2"
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-sku-5550e86eedd4b4.64665980-response>Response</h4><pre>{
+    "id": 339,
+    "sku": "sku-5550e86eedd4b4.64665980",
+    "name": "sku-5550e86eedd504.98809795",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "created_at": "2015-05-11 13:35:43",
+    "updated_at": "2015-05-11 13:35:48",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 55,
+            "product_id": 339,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": "2015-05-11 13:35:48",
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-sku-5550e86eedd4b4.64665980-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-sku-5550e86eedd4b4.64665980">products-sku-5550e86eedd4b4.64665980</h2>
+        <h3 class="api3" id="delete-products-sku-5550e86eedd4b4.64665980">DELETE /default/V1/products/sku-5550e86eedd4b4.64665980</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”products-sku-5550e86eedd4b4.64665980-response>Response</h4><pre>true</pre>        <h3 class="api3" id="products-sku-5550e86eedd4b4.64665980-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>scalar_value</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

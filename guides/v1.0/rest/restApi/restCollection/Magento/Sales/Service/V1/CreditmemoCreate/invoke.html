@@ -2627,7 +2627,7 @@
     
     
 
-<li id="invoke" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/CreditmemoCreate/invoke.html">Sales<br>CreditmemoCreate<br><span class='bold'>invoke</span></a></li>
+<li id="invoke" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/CreditmemoCreate/invoke.html">Sales<br>CreditmemoCreate<br><span class='bold'>invoke</span></a></li>
 
 
 
@@ -3198,16 +3198,218 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="creditmemo">creditmemo</h2>
+        <h3 class="api3" id="post-creditmemo">POST /default/V1/creditmemo</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "entity": {
+        "adjustment": null,
+        "adjustment_negative": null,
+        "adjustment_positive": null,
+        "base_adjustment": null,
+        "base_adjustment_negative": null,
+        "base_adjustment_positive": null,
+        "base_currency_code": null,
+        "base_discount_amount": null,
+        "base_grand_total": null,
+        "base_hidden_tax_amount": null,
+        "base_shipping_amount": null,
+        "base_shipping_hidden_tax_amnt": null,
+        "base_shipping_incl_tax": null,
+        "base_shipping_tax_amount": null,
+        "base_subtotal": null,
+        "base_subtotal_incl_tax": null,
+        "base_tax_amount": null,
+        "base_to_global_rate": null,
+        "base_to_order_rate": null,
+        "billing_address_id": null,
+        "created_at": null,
+        "creditmemo_status": null,
+        "discount_amount": null,
+        "discount_description": null,
+        "email_sent": null,
+        "entity_id": null,
+        "global_currency_code": null,
+        "grand_total": null,
+        "hidden_tax_amount": null,
+        "increment_id": null,
+        "invoice_id": null,
+        "order_currency_code": null,
+        "order_id": "11",
+        "shipping_address_id": null,
+        "shipping_amount": null,
+        "shipping_hidden_tax_amount": null,
+        "shipping_incl_tax": null,
+        "shipping_tax_amount": null,
+        "state": null,
+        "store_currency_code": null,
+        "store_id": null,
+        "store_to_base_rate": null,
+        "store_to_order_rate": null,
+        "subtotal": null,
+        "subtotal_incl_tax": null,
+        "tax_amount": null,
+        "transaction_id": null,
+        "updated_at": null,
+        "items": {
+            "11": {
+                "order_item_id": "11",
+                "qty": "2.0000"
+            }
+        }
+    }
+}</pre>        <h4 class="api4" id=”creditmemo-response>Response</h4><pre>{
+    "adjustment": null,
+    "adjustment_negative": 0,
+    "adjustment_positive": 0,
+    "base_adjustment": null,
+    "base_adjustment_negative": null,
+    "base_adjustment_positive": null,
+    "base_currency_code": null,
+    "base_discount_amount": null,
+    "base_grand_total": null,
+    "base_hidden_tax_amount": null,
+    "base_shipping_amount": null,
+    "base_shipping_hidden_tax_amnt": null,
+    "base_shipping_incl_tax": null,
+    "base_shipping_tax_amount": null,
+    "base_subtotal": null,
+    "base_subtotal_incl_tax": null,
+    "base_tax_amount": null,
+    "base_to_global_rate": null,
+    "base_to_order_rate": null,
+    "billing_address_id": null,
+    "created_at": null,
+    "creditmemo_status": null,
+    "discount_amount": null,
+    "discount_description": null,
+    "email_sent": null,
+    "entity_id": 4,
+    "global_currency_code": null,
+    "grand_total": null,
+    "hidden_tax_amount": null,
+    "increment_id": "000000003",
+    "invoice_id": null,
+    "order_currency_code": null,
+    "order_id": 11,
+    "shipping_address_id": null,
+    "shipping_amount": null,
+    "shipping_hidden_tax_amount": null,
+    "shipping_incl_tax": null,
+    "shipping_tax_amount": null,
+    "state": null,
+    "store_currency_code": null,
+    "store_id": null,
+    "store_to_base_rate": null,
+    "store_to_order_rate": null,
+    "subtotal": null,
+    "subtotal_incl_tax": null,
+    "tax_amount": null,
+    "transaction_id": null,
+    "updated_at": null,
+    "items": [
+        {
+            "additional_data": null,
+            "base_cost": null,
+            "base_discount_amount": null,
+            "base_hidden_tax_amount": null,
+            "base_price": null,
+            "base_price_incl_tax": null,
+            "base_row_total": null,
+            "base_row_total_incl_tax": null,
+            "base_tax_amount": null,
+            "base_weee_tax_applied_amount": null,
+            "base_weee_tax_applied_row_amnt": null,
+            "base_weee_tax_disposition": null,
+            "base_weee_tax_row_disposition": null,
+            "description": null,
+            "discount_amount": null,
+            "entity_id": 4,
+            "hidden_tax_amount": null,
+            "name": null,
+            "order_item_id": 11,
+            "parent_id": 4,
+            "price": null,
+            "price_incl_tax": null,
+            "product_id": null,
+            "qty": 2,
+            "row_total": null,
+            "row_total_incl_tax": null,
+            "sku": null,
+            "tax_amount": null,
+            "weee_tax_applied": null,
+            "weee_tax_applied_amount": null,
+            "weee_tax_applied_row_amount": null,
+            "weee_tax_disposition": null,
+            "weee_tax_row_disposition": null
+        }
+    ],
+    "comments": []
+}</pre>        <h3 class="api3" id="creditmemo-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>entity</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>adjustment</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>adjustment_negative</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>adjustment_positive</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_adjustment</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_adjustment_negative</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_adjustment_positive</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_grand_total</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_hidden_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_hidden_tax_amnt</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_subtotal</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_subtotal_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_to_global_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_to_order_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>billing_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>creditmemo_status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>discount_description</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>email_sent</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entity_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>global_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>grand_total</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>hidden_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>increment_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>invoice_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>order_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>order_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_hidden_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>state</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_to_base_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_to_order_rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>subtotal</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>subtotal_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>transaction_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>comments</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

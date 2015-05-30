@@ -971,7 +971,7 @@
     
     
 
-<li id="getProductTypes" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductTypeList/getProductTypes.html">Catalog<br>ProductTypeList<br><span class='bold'>getProductTypes</span></a></li>
+<li id="getProductTypes" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductTypeList/getProductTypes.html">Catalog<br>ProductTypeList<br><span class='bold'>getProductTypes</span></a></li>
 
 
 
@@ -3198,16 +3198,84 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-types">products-types</h2>
+        <h3 class="api3" id="get-products-types">GET /default/V1/products/types</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”products-types-response>Response</h4><pre>[
+    {
+        "name": "simple",
+        "label": "Simple Product"
+    },
+    {
+        "name": "virtual",
+        "label": "Virtual Product"
+    },
+    {
+        "name": "bundle",
+        "label": "Bundle Product"
+    },
+    {
+        "name": "downloadable",
+        "label": "Downloadable Product"
+    },
+    {
+        "name": "grouped",
+        "label": "Grouped Product"
+    },
+    {
+        "name": "configurable",
+        "label": "Configurable Product"
+    }
+]</pre>        <h3 class="api3" id="products-types-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

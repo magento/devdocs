@@ -503,7 +503,7 @@
     
     
 
-<li id="createWithNotDefaultStoreId" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductAttributeMediaGalleryManagementInterface/createWithNotDefaultStoreId.html">Catalog<br>ProductAttributeMediaGalleryManagementInterface<br><span class='bold'>createWithNotDefaultStoreId</span></a></li>
+<li id="createWithNotDefaultStoreId" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductAttributeMediaGalleryManagementInterface/createWithNotDefaultStoreId.html">Catalog<br>ProductAttributeMediaGalleryManagementInterface<br><span class='bold'>createWithNotDefaultStoreId</span></a></li>
 
 
 
@@ -3198,16 +3198,91 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-simple-media">products-simple-media</h2>
+        <h3 class="api3" id="post-products-simple-media">POST /default/V1/products/simple/media</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "simple",
+    "entry": {
+        "id": null,
+        "label": "Image Text",
+        "position": 1,
+        "types": [
+            "image"
+        ],
+        "disabled": false,
+        "content": {
+            "entry_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z",
+            "mime_type": "image\/jpeg",
+            "name": "test_image"
+        }
+    },
+    "storeId": 1
+}</pre>        <h4 class="api4" id=”products-simple-media-response>Response</h4><pre>"2"</pre>        <h3 class="api3" id="products-simple-media-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entry</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>storeId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>scalar_value</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

@@ -2672,7 +2672,7 @@
     
     
 
-<li id="invoiceCommentsList" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceCommentsList/invoiceCommentsList.html">Sales<br>InvoiceCommentsList<br><span class='bold'>invoiceCommentsList</span></a></li>
+<li id="invoiceCommentsList" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceCommentsList/invoiceCommentsList.html">Sales<br>InvoiceCommentsList<br><span class='bold'>invoiceCommentsList</span></a></li>
 
 
 
@@ -3198,16 +3198,89 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="invoices-6-comments">invoices-6-comments</h2>
+        <h3 class="api3" id="get-invoices-6-comments">GET /default/V1/invoices/6/comments</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "id": "6"
+}</pre>        <h4 class="api4" id=”invoices-6-comments-response>Response</h4><pre>{
+    "items": [
+        {
+            "comment": "Test comment",
+            "created_at": "2015-05-11 12:43:08",
+            "entity_id": 2,
+            "is_customer_notified": null,
+            "is_visible_on_front": 0,
+            "parent_id": 6
+        }
+    ],
+    "search_criteria": null,
+    "total_count": 1
+}</pre>        <h3 class="api3" id="invoices-6-comments-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

@@ -1583,7 +1583,7 @@
     
     
 
-<li id="createGroupDefaultTaxClassIdRest" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/GroupRepository/createGroupDefaultTaxClassIdRest.html">Customer<br>GroupRepository<br><span class='bold'>createGroupDefaultTaxClassIdRest</span></a></li>
+<li id="createGroupDefaultTaxClassIdRest" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/GroupRepository/createGroupDefaultTaxClassIdRest.html">Customer<br>GroupRepository<br><span class='bold'>createGroupDefaultTaxClassIdRest</span></a></li>
 
 
 
@@ -3198,16 +3198,85 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups">customerGroups</h2>
+        <h3 class="api3" id="post-customergroups">POST /default/V1/customerGroups</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "group": {
+        "id": null,
+        "code": "Default Class Tax ID REST",
+        "tax_class_id": null
+    }
+}</pre>        <h4 class="api4" id=”customergroups-response>Response</h4><pre>{
+    "id": 6,
+    "code": "Default Class Tax ID REST",
+    "tax_class_id": 3,
+    "tax_class_name": "Retail Customer"
+}</pre>        <h3 class="api3" id="customergroups-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>group</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_class_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_class_name</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

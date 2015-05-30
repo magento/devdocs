@@ -1628,7 +1628,7 @@
     
     
 
-<li id="searchGroupsWithGET" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/GroupRepository/searchGroupsWithGET.html">Customer<br>GroupRepository<br><span class='bold'>searchGroupsWithGET</span></a></li>
+<li id="searchGroupsWithGET" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/GroupRepository/searchGroupsWithGET.html">Customer<br>GroupRepository<br><span class='bold'>searchGroupsWithGET</span></a></li>
 
 
 
@@ -3198,16 +3198,361 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=3">customerGroups-search?searchCriteria[filter_groups][0][filters][0][field]=tax_class_id&searchCriteria[filter_groups][0][filters][0][value]=3</h2>
+        <h3 class="api3" id="get-customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=3">GET /default/V1/customerGroups/search?searchCriteria[filter_groups][0][filters][0][field]=tax_class_id&searchCriteria[filter_groups][0][filters][0][value]=3</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=3-response>Response</h4><pre>{
+    "items": [
+        {
+            "id": 0,
+            "code": "NOT LOGGED IN",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        },
+        {
+            "id": 1,
+            "code": "General",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        },
+        {
+            "id": 2,
+            "code": "Wholesale",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        },
+        {
+            "id": 3,
+            "code": "Retailer",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        },
+        {
+            "id": 4,
+            "code": "Create Group REST",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        },
+        {
+            "id": 5,
+            "code": "Duplicate Group Code REST",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        },
+        {
+            "id": 6,
+            "code": "Default Class Tax ID REST",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        },
+        {
+            "id": 7,
+            "code": "Updated Group REST",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "tax_class_id",
+                        "value": "3"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 8
+}</pre>        <h3 class="api3" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=3-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=0">customerGroups-search?searchCriteria[filter_groups][0][filters][0][field]=tax_class_id&searchCriteria[filter_groups][0][filters][0][value]=0</h2>
+        <h3 class="api3" id="get-customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=0">GET /default/V1/customerGroups/search?searchCriteria[filter_groups][0][filters][0][field]=tax_class_id&searchCriteria[filter_groups][0][filters][0][value]=0</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=0-response>Response</h4><pre>{
+    "items": [],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "tax_class_id",
+                        "value": "0"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 0
+}</pre>        <h3 class="api3" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=tax_class_id&searchcriteria[filter_groups][0][filters][0][value]=0-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=b96e5024ea2d53cf52d93055214e8639">customerGroups-search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=b96e5024ea2d53cf52d93055214e8639</h2>
+        <h3 class="api3" id="get-customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=b96e5024ea2d53cf52d93055214e8639">GET /default/V1/customerGroups/search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=b96e5024ea2d53cf52d93055214e8639</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=b96e5024ea2d53cf52d93055214e8639-response>Response</h4><pre>{
+    "items": [],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "code",
+                        "value": "b96e5024ea2d53cf52d93055214e8639"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 0
+}</pre>        <h3 class="api3" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=b96e5024ea2d53cf52d93055214e8639-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=0">customerGroups-search?searchCriteria[filter_groups][0][filters][0][field]=id&searchCriteria[filter_groups][0][filters][0][value]=0</h2>
+        <h3 class="api3" id="get-customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=0">GET /default/V1/customerGroups/search?searchCriteria[filter_groups][0][filters][0][field]=id&searchCriteria[filter_groups][0][filters][0][value]=0</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=0-response>Response</h4><pre>{
+    "items": [
+        {
+            "id": 0,
+            "code": "NOT LOGGED IN",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "id",
+                        "value": "0"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}</pre>        <h3 class="api3" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=0-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=general">customerGroups-search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=General</h2>
+        <h3 class="api3" id="get-customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=general">GET /default/V1/customerGroups/search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=General</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=general-response>Response</h4><pre>{
+    "items": [
+        {
+            "id": 1,
+            "code": "General",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "code",
+                        "value": "General"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}</pre>        <h3 class="api3" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=general-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=2">customerGroups-search?searchCriteria[filter_groups][0][filters][0][field]=id&searchCriteria[filter_groups][0][filters][0][value]=2</h2>
+        <h3 class="api3" id="get-customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=2">GET /default/V1/customerGroups/search?searchCriteria[filter_groups][0][filters][0][field]=id&searchCriteria[filter_groups][0][filters][0][value]=2</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=2-response>Response</h4><pre>{
+    "items": [
+        {
+            "id": 2,
+            "code": "Wholesale",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "id",
+                        "value": "2"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}</pre>        <h3 class="api3" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=id&searchcriteria[filter_groups][0][filters][0][value]=2-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=retailer">customerGroups-search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=Retailer</h2>
+        <h3 class="api3" id="get-customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=retailer">GET /default/V1/customerGroups/search?searchCriteria[filter_groups][0][filters][0][field]=code&searchCriteria[filter_groups][0][filters][0][value]=Retailer</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=retailer-response>Response</h4><pre>{
+    "items": [
+        {
+            "id": 3,
+            "code": "Retailer",
+            "tax_class_id": 3,
+            "tax_class_name": "Retail Customer"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "code",
+                        "value": "Retailer"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}</pre>        <h3 class="api3" id="customergroups-search?searchcriteria[filter_groups][0][filters][0][field]=code&searchcriteria[filter_groups][0][filters][0][value]=retailer-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

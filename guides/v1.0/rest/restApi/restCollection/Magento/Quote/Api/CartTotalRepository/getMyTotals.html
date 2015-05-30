@@ -2096,7 +2096,7 @@
     
     
 
-<li id="getMyTotals" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/CartTotalRepository/getMyTotals.html">Quote<br>CartTotalRepository<br><span class='bold'>getMyTotals</span></a></li>
+<li id="getMyTotals" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/CartTotalRepository/getMyTotals.html">Quote<br>CartTotalRepository<br><span class='bold'>getMyTotals</span></a></li>
 
 
 
@@ -3198,16 +3198,101 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="carts-mine-totals">carts-mine-totals</h2>
+        <h3 class="api3" id="get-carts-mine-totals">GET /default/V1/carts/mine/totals</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”carts-mine-totals-response>Response</h4><pre>{
+    "grand_total": 16.66,
+    "base_grand_total": 16.66,
+    "subtotal": 16.66,
+    "base_subtotal": 16.66,
+    "discount_amount": 0,
+    "base_discount_amount": 0,
+    "subtotal_with_discount": 16.66,
+    "base_subtotal_with_discount": 16.66,
+    "shipping_amount": 10,
+    "base_shipping_amount": 12,
+    "shipping_discount_amount": 0,
+    "base_shipping_discount_amount": 0,
+    "tax_amount": 0,
+    "base_tax_amount": 0,
+    "shipping_tax_amount": 0,
+    "base_shipping_tax_amount": 0,
+    "subtotal_incl_tax": 16.66,
+    "shipping_incl_tax": 0,
+    "base_shipping_incl_tax": 0,
+    "base_currency_code": "USD",
+    "quote_currency_code": "USD",
+    "items": [
+        {
+            "price": 8.33,
+            "base_price": 8.33,
+            "qty": 2,
+            "row_total": 16.66,
+            "base_row_total": 16.66,
+            "row_total_with_discount": 0,
+            "tax_amount": 0,
+            "base_tax_amount": 0,
+            "tax_percent": 0,
+            "discount_amount": 0,
+            "base_discount_amount": 0,
+            "discount_percent": 0,
+            "price_incl_tax": 8.33,
+            "base_price_incl_tax": 8.33,
+            "row_total_incl_tax": 16.66,
+            "base_row_total_incl_tax": 16.66
+        }
+    ]
+}</pre>        <h3 class="api3" id="carts-mine-totals-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>grand_total</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_grand_total</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>subtotal</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_subtotal</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>subtotal_with_discount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_subtotal_with_discount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_discount_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_tax_amount</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>subtotal_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>shipping_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_shipping_incl_tax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>base_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>quote_currency_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

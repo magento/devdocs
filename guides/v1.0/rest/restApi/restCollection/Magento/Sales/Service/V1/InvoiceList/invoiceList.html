@@ -2708,7 +2708,7 @@
     
     
 
-<li id="invoiceList" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceList/invoiceList.html">Sales<br>InvoiceList<br><span class='bold'>invoiceList</span></a></li>
+<li id="invoiceList" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/InvoiceList/invoiceList.html">Sales<br>InvoiceList<br><span class='bold'>invoiceList</span></a></li>
 
 
 
@@ -3198,16 +3198,167 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="invoices?criteria[filter_groups][0][filters][0][field]=state&criteria[filter_groups][0][filters][0][value]=2">invoices?criteria[filter_groups][0][filters][0][field]=state&criteria[filter_groups][0][filters][0][value]=2</h2>
+        <h3 class="api3" id="get-invoices?criteria[filter_groups][0][filters][0][field]=state&criteria[filter_groups][0][filters][0][value]=2">GET /default/V1/invoices?criteria[filter_groups][0][filters][0][field]=state&criteria[filter_groups][0][filters][0][value]=2</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "state",
+                        "value": 2
+                    }
+                ]
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”invoices?criteria[filter_groups][0][filters][0][field]=state&criteria[filter_groups][0][filters][0][value]=2-response>Response</h4><pre>{
+    "items": [
+        {
+            "base_currency_code": null,
+            "base_discount_amount": 0,
+            "base_grand_total": 100,
+            "base_hidden_tax_amount": 0,
+            "base_shipping_amount": 0,
+            "base_shipping_hidden_tax_amnt": null,
+            "base_shipping_incl_tax": null,
+            "base_shipping_tax_amount": null,
+            "base_subtotal": 100,
+            "base_subtotal_incl_tax": 0,
+            "base_tax_amount": 0,
+            "base_total_refunded": null,
+            "base_to_global_rate": null,
+            "base_to_order_rate": null,
+            "billing_address_id": 41,
+            "can_void_flag": 0,
+            "created_at": "2015-05-11 12:43:12",
+            "discount_amount": 0,
+            "discount_description": null,
+            "email_sent": null,
+            "entity_id": 10,
+            "global_currency_code": null,
+            "grand_total": 100,
+            "hidden_tax_amount": 0,
+            "increment_id": "000000010",
+            "is_used_for_refund": null,
+            "order_currency_code": null,
+            "order_id": 21,
+            "shipping_address_id": 42,
+            "shipping_amount": 0,
+            "shipping_hidden_tax_amount": null,
+            "shipping_incl_tax": null,
+            "shipping_tax_amount": null,
+            "state": 2,
+            "store_currency_code": null,
+            "store_id": 1,
+            "store_to_base_rate": null,
+            "store_to_order_rate": null,
+            "subtotal": 100,
+            "subtotal_incl_tax": 0,
+            "tax_amount": 0,
+            "total_qty": 2,
+            "transaction_id": null,
+            "updated_at": "2015-05-11 12:43:12",
+            "items": [
+                {
+                    "additional_data": null,
+                    "base_cost": null,
+                    "base_discount_amount": null,
+                    "base_hidden_tax_amount": null,
+                    "base_price": 10,
+                    "base_price_incl_tax": null,
+                    "base_row_total": 0,
+                    "base_row_total_incl_tax": null,
+                    "base_tax_amount": null,
+                    "description": null,
+                    "discount_amount": null,
+                    "entity_id": 10,
+                    "hidden_tax_amount": null,
+                    "name": null,
+                    "order_item_id": 21,
+                    "parent_id": 10,
+                    "price": 10,
+                    "price_incl_tax": null,
+                    "product_id": 1,
+                    "qty": 2,
+                    "row_total": 10,
+                    "row_total_incl_tax": null,
+                    "sku": null,
+                    "tax_amount": null
+                }
+            ],
+            "comments": []
+        }
+    ],
+    "search_criteria": null,
+    "total_count": 1
+}</pre>        <h3 class="api3" id="invoices?criteria[filter_groups][0][filters][0][field]=state&criteria[filter_groups][0][filters][0][value]=2-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>criteria</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

@@ -2969,7 +2969,7 @@
     
     
 
-<li id="createTaxRate" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Tax/Api/TaxRateRepository/createTaxRate.html">Tax<br>TaxRateRepository<br><span class='bold'>createTaxRate</span></a></li>
+<li id="createTaxRate" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Tax/Api/TaxRateRepository/createTaxRate.html">Tax<br>TaxRateRepository<br><span class='bold'>createTaxRate</span></a></li>
 
 
 
@@ -3198,16 +3198,91 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="taxrates">taxRates</h2>
+        <h3 class="api3" id="post-taxrates">POST /default/V1/taxRates</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "tax_rate": {
+        "tax_country_id": "US",
+        "tax_region_id": 12,
+        "tax_postcode": "*",
+        "code": "Test Tax Rate 0.32387800 1431366221",
+        "rate": "8.2501"
+    }
+}</pre>        <h4 class="api4" id=”taxrates-response>Response</h4><pre>{
+    "id": 4,
+    "tax_country_id": "US",
+    "tax_region_id": 12,
+    "region_name": "CA",
+    "tax_postcode": "*",
+    "rate": 8.2501,
+    "code": "Test Tax Rate 0.32387800 1431366221",
+    "titles": []
+}</pre>        <h3 class="api3" id="taxrates-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>tax_rate</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_country_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_region_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>region_name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tax_postcode</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>rate</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>titles</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

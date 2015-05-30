@@ -2483,7 +2483,7 @@
     
     
 
-<li id="getAddress" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/ShippingAddressManagement/getAddress.html">Quote<br>ShippingAddressManagement<br><span class='bold'>getAddress</span></a></li>
+<li id="getAddress" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/ShippingAddressManagement/getAddress.html">Quote<br>ShippingAddressManagement<br><span class='bold'>getAddress</span></a></li>
 
 
 
@@ -3198,16 +3198,93 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="carts-92-shipping-address">carts-92-shipping-address</h2>
+        <h3 class="api3" id="get-carts-92-shipping-address">GET /default/V1/carts/92/shipping-address</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "cartId": "92"
+}</pre>        <h4 class="api4" id=”carts-92-shipping-address-response>Response</h4><pre>{
+    "id": 164,
+    "region": "Alabama",
+    "region_id": 1,
+    "region_code": "AL",
+    "country_id": "US",
+    "street": [
+        "Green str, 67"
+    ],
+    "company": "CompanyName",
+    "telephone": "3468676",
+    "postcode": "75477",
+    "city": "CityM",
+    "firstname": "John",
+    "lastname": "Smith",
+    "customer_id": 1,
+    "email": null
+}</pre>        <h3 class="api3" id="carts-92-shipping-address-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>cartId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>region</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>region_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>region_code</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>country_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>street</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>company</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>telephone</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>postcode</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>city</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>firstname</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>lastname</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>email</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

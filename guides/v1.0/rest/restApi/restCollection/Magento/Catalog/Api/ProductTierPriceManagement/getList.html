@@ -953,7 +953,7 @@
     
     
 
-<li id="getList" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductTierPriceManagement/getList.html">Catalog<br>ProductTierPriceManagement<br><span class='bold'>getList</span></a></li>
+<li id="getList" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductTierPriceManagement/getList.html">Catalog<br>ProductTierPriceManagement<br><span class='bold'>getList</span></a></li>
 
 
 
@@ -3198,16 +3198,170 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-simple-group-prices-0-tiers">products-simple-group-prices-0-tiers</h2>
+        <h3 class="api3" id="get-products-simple-group-prices-0-tiers">GET /default/V1/products/simple/group-prices/0/tiers</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "simple",
+    "customerGroupId": 0
+}</pre>        <h4 class="api4" id=”products-simple-group-prices-0-tiers-response>Response</h4><pre>[
+    {
+        "customer_group_id": 0,
+        "qty": 3,
+        "value": 5
+    }
+]</pre>        <h3 class="api3" id="products-simple-group-prices-0-tiers-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customerGroupId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-simple-group-prices-1-tiers">products-simple-group-prices-1-tiers</h2>
+        <h3 class="api3" id="get-products-simple-group-prices-1-tiers">GET /default/V1/products/simple/group-prices/1/tiers</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "simple",
+    "customerGroupId": 1
+}</pre>        <h4 class="api4" id=”products-simple-group-prices-1-tiers-response>Response</h4><pre>[]</pre>        <h3 class="api3" id="products-simple-group-prices-1-tiers-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customerGroupId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-simple-group-prices-all-tiers">products-simple-group-prices-all-tiers</h2>
+        <h3 class="api3" id="get-products-simple-group-prices-all-tiers">GET /default/V1/products/simple/group-prices/all/tiers</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "simple",
+    "customerGroupId": "all"
+}</pre>        <h4 class="api4" id=”products-simple-group-prices-all-tiers-response>Response</h4><pre>[
+    {
+        "customer_group_id": 32000,
+        "qty": 2,
+        "value": 8
+    },
+    {
+        "customer_group_id": 32000,
+        "qty": 5,
+        "value": 5
+    }
+]</pre>        <h3 class="api3" id="products-simple-group-prices-all-tiers-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customerGroupId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

@@ -2717,7 +2717,7 @@
     
     
 
-<li id="orderAddressUpdate" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/OrderAddressUpdate/orderAddressUpdate.html">Sales<br>OrderAddressUpdate<br><span class='bold'>orderAddressUpdate</span></a></li>
+<li id="orderAddressUpdate" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Sales/Service/V1/OrderAddressUpdate/orderAddressUpdate.html">Sales<br>OrderAddressUpdate<br><span class='bold'>orderAddressUpdate</span></a></li>
 
 
 
@@ -3198,16 +3198,134 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="orders-23">orders-23</h2>
+        <h3 class="api3" id="put-orders-23">PUT /default/V1/orders/23</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "entity": {
+        "region": "CA",
+        "postcode": "11111",
+        "lastname": "lastname",
+        "street": [
+            "street"
+        ],
+        "city": "city",
+        "email": "email@email.com",
+        "company": "company",
+        "telephone": "t123456789",
+        "country_id": "US",
+        "firstname": "firstname",
+        "address_type": "billing",
+        "parent_id": "23",
+        "entity_id": "45",
+        "customer_address_id": null,
+        "customer_id": null,
+        "fax": null,
+        "middlename": null,
+        "prefix": null,
+        "quote_address_id": null,
+        "region_id": null,
+        "suffix": null,
+        "vat_id": null,
+        "vat_is_valid": null,
+        "vat_request_date": null,
+        "vat_request_id": null,
+        "vat_request_success": null
+    }
+}</pre>        <h4 class="api4" id=”orders-23-response>Response</h4><pre>{
+    "address_type": "billing",
+    "city": "city",
+    "company": "company",
+    "country_id": "US",
+    "customer_address_id": null,
+    "customer_id": null,
+    "email": "email@email.com",
+    "entity_id": 45,
+    "fax": null,
+    "firstname": "firstname",
+    "lastname": "lastname",
+    "middlename": null,
+    "parent_id": 23,
+    "postcode": "11111",
+    "prefix": null,
+    "quote_address_id": null,
+    "region": "CA",
+    "region_id": null,
+    "street": [
+        "street"
+    ],
+    "suffix": null,
+    "telephone": "t123456789",
+    "vat_id": null,
+    "vat_is_valid": null,
+    "vat_request_date": null,
+    "vat_request_id": null,
+    "vat_request_success": null
+}</pre>        <h3 class="api3" id="orders-23-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>entity</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>address_type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>city</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>company</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>country_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>customer_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>email</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>entity_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>fax</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>firstname</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>lastname</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>middlename</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>parent_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>postcode</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>prefix</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>quote_address_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>region</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>region_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>street</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>suffix</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>telephone</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>vat_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>vat_is_valid</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>vat_request_date</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>vat_request_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>vat_request_success</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

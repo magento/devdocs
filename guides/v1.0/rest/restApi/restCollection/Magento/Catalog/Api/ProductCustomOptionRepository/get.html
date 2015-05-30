@@ -638,7 +638,7 @@
     
     
 
-<li id="get" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductCustomOptionRepository/get.html">Catalog<br>ProductCustomOptionRepository<br><span class='bold'>get</span></a></li>
+<li id="get" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductCustomOptionRepository/get.html">Catalog<br>ProductCustomOptionRepository<br><span class='bold'>get</span></a></li>
 
 
 
@@ -3198,16 +3198,88 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-simple-options-799">products-simple-options-799</h2>
+        <h3 class="api3" id="get-products-simple-options-799">GET /default/V1/products/simple/options/799</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "simple",
+    "optionId": "799"
+}</pre>        <h4 class="api4" id=”products-simple-options-799-response>Response</h4><pre>{
+    "product_sku": "simple",
+    "option_id": 799,
+    "title": "test_option_code_1",
+    "type": "field",
+    "sort_order": 1,
+    "is_require": true,
+    "price": 10,
+    "price_type": "fixed",
+    "sku": "sku1",
+    "max_characters": 10
+}</pre>        <h3 class="api3" id="products-simple-options-799-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>optionId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>product_sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>option_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>title</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sort_order</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_require</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price_type</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>max_characters</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

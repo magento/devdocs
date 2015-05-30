@@ -647,7 +647,7 @@
     
     
 
-<li id="getList" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductCustomOptionRepository/getList.html">Catalog<br>ProductCustomOptionRepository<br><span class='bold'>getList</span></a></li>
+<li id="getList" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductCustomOptionRepository/getList.html">Catalog<br>ProductCustomOptionRepository<br><span class='bold'>getList</span></a></li>
 
 
 
@@ -3198,16 +3198,252 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-simple-options">products-simple-options</h2>
+        <h3 class="api3" id="get-products-simple-options">GET /default/V1/products/simple/options</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "sku": "simple"
+}</pre>        <h4 class="api4" id=”products-simple-options-response>Response</h4><pre>[
+    {
+        "product_sku": "simple",
+        "option_id": 809,
+        "title": "test_option_code_1",
+        "type": "field",
+        "sort_order": 1,
+        "is_require": true,
+        "price": 10,
+        "price_type": "fixed",
+        "sku": "sku1",
+        "max_characters": 10
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 810,
+        "title": "area option",
+        "type": "area",
+        "sort_order": 2,
+        "is_require": false,
+        "price": 20,
+        "price_type": "percent",
+        "sku": "sku2",
+        "max_characters": 20
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 811,
+        "title": "file option",
+        "type": "file",
+        "sort_order": 3,
+        "is_require": true,
+        "price": 30,
+        "price_type": "percent",
+        "sku": "sku3",
+        "file_extension": "jpg, png, gif",
+        "image_size_x": 10,
+        "image_size_y": 20
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 812,
+        "title": "drop_down option",
+        "type": "drop_down",
+        "sort_order": 4,
+        "is_require": true,
+        "values": [
+            {
+                "title": "drop_down option 1",
+                "sort_order": 1,
+                "price": 10,
+                "price_type": "fixed",
+                "sku": "drop_down option 1 sku",
+                "option_type_id": 805
+            },
+            {
+                "title": "drop_down option 2",
+                "sort_order": 2,
+                "price": 20,
+                "price_type": "fixed",
+                "sku": "drop_down option 2 sku",
+                "option_type_id": 806
+            }
+        ]
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 813,
+        "title": "radio option",
+        "type": "radio",
+        "sort_order": 5,
+        "is_require": true,
+        "values": [
+            {
+                "title": "radio option 1",
+                "sort_order": 1,
+                "price": 10,
+                "price_type": "fixed",
+                "sku": "radio option 1 sku",
+                "option_type_id": 807
+            },
+            {
+                "title": "radio option 2",
+                "sort_order": 2,
+                "price": 20,
+                "price_type": "fixed",
+                "sku": "radio option 2 sku",
+                "option_type_id": 808
+            }
+        ]
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 814,
+        "title": "checkbox option",
+        "type": "checkbox",
+        "sort_order": 6,
+        "is_require": true,
+        "values": [
+            {
+                "title": "checkbox option 1",
+                "sort_order": 1,
+                "price": 10,
+                "price_type": "fixed",
+                "sku": "checkbox option 1 sku",
+                "option_type_id": 809
+            },
+            {
+                "title": "checkbox option 2",
+                "sort_order": 2,
+                "price": 20,
+                "price_type": "fixed",
+                "sku": "checkbox option 2 sku",
+                "option_type_id": 810
+            }
+        ]
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 815,
+        "title": "multiple option",
+        "type": "multiple",
+        "sort_order": 7,
+        "is_require": true,
+        "values": [
+            {
+                "title": "multiple option 1",
+                "sort_order": 1,
+                "price": 10,
+                "price_type": "fixed",
+                "sku": "multiple option 1 sku",
+                "option_type_id": 811
+            },
+            {
+                "title": "multiple option 2",
+                "sort_order": 2,
+                "price": 20,
+                "price_type": "fixed",
+                "sku": "multiple option 2 sku",
+                "option_type_id": 812
+            }
+        ]
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 816,
+        "title": "date option",
+        "type": "date",
+        "sort_order": 8,
+        "is_require": true,
+        "price": 80,
+        "price_type": "fixed",
+        "sku": "date option sku"
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 817,
+        "title": "date_time option",
+        "type": "date_time",
+        "sort_order": 9,
+        "is_require": true,
+        "price": 90,
+        "price_type": "fixed",
+        "sku": "date_time option sku"
+    },
+    {
+        "product_sku": "simple",
+        "option_id": 818,
+        "title": "time option",
+        "type": "time",
+        "sort_order": 10,
+        "is_require": true,
+        "price": 100,
+        "price_type": "fixed",
+        "sku": "time option sku"
+    }
+]</pre>        <h3 class="api3" id="products-simple-options-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

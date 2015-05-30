@@ -413,7 +413,7 @@
     
     
 
-<li id="get" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/CategoryRepository/get.html">Catalog<br>CategoryRepository<br><span class='bold'>get</span></a></li>
+<li id="get" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/CategoryRepository/get.html">Catalog<br>CategoryRepository<br><span class='bold'>get</span></a></li>
 
 
 
@@ -3198,16 +3198,114 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="categories-333">categories-333</h2>
+        <h3 class="api3" id="get-categories-333">GET /default/V1/categories/333</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "categoryId": 333
+}</pre>        <h4 class="api4" id=”categories-333-response>Response</h4><pre>{
+    "id": 333,
+    "parent_id": 2,
+    "name": "Category 1",
+    "is_active": true,
+    "position": 1,
+    "level": 2,
+    "children": "",
+    "created_at": "2014-06-23 09:50:07",
+    "updated_at": "2015-05-11 10:33:44",
+    "path": "1\/2\/333",
+    "available_sort_by": [
+        "position",
+        "name"
+    ],
+    "include_in_menu": true,
+    "custom_attributes": [
+        {
+            "attribute_code": "path",
+            "value": "1\/2\/333"
+        },
+        {
+            "attribute_code": "children_count",
+            "value": "0"
+        },
+        {
+            "attribute_code": "default_sort_by",
+            "value": "name"
+        },
+        {
+            "attribute_code": "url_key",
+            "value": "category-1"
+        },
+        {
+            "attribute_code": "url_path",
+            "value": "category-1"
+        }
+    ]
+}</pre>        <h3 class="api3" id="categories-333-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>categoryId</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>parent_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>is_active</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>position</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>level</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>children</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>path</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>available_sort_by</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>include_in_menu</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

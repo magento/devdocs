@@ -809,7 +809,7 @@
     
     
 
-<li id="getList" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductMediaAttributeManagement/getList.html">Catalog<br>ProductMediaAttributeManagement<br><span class='bold'>getList</span></a></li>
+<li id="getList" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductMediaAttributeManagement/getList.html">Catalog<br>ProductMediaAttributeManagement<br><span class='bold'>getList</span></a></li>
 
 
 
@@ -3198,16 +3198,193 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-media-types-attribute_set_with_media_attribute">products-media-types-attribute_set_with_media_attribute</h2>
+        <h3 class="api3" id="get-products-media-types-attribute_set_with_media_attribute">GET /default/V1/products/media/types/attribute_set_with_media_attribute</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "attributeSetName": "attribute_set_with_media_attribute"
+}</pre>        <h4 class="api4" id=”products-media-types-attribute_set_with_media_attribute-response>Response</h4><pre>[
+    {
+        "is_wysiwyg_enabled": false,
+        "is_html_allowed_on_front": false,
+        "used_for_sort_by": false,
+        "is_filterable": false,
+        "is_filterable_in_search": false,
+        "position": 0,
+        "apply_to": [],
+        "is_searchable": "0",
+        "is_visible_in_advanced_search": "0",
+        "is_comparable": "0",
+        "is_used_for_promo_rules": "0",
+        "is_visible_on_front": "0",
+        "used_in_product_listing": "1",
+        "is_visible": true,
+        "scope": "store",
+        "attribute_id": 84,
+        "attribute_code": "small_image",
+        "frontend_input": "media_image",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Small Image",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "is_wysiwyg_enabled": false,
+        "is_html_allowed_on_front": false,
+        "used_for_sort_by": false,
+        "is_filterable": false,
+        "is_filterable_in_search": false,
+        "position": 0,
+        "apply_to": [],
+        "is_searchable": "0",
+        "is_visible_in_advanced_search": "0",
+        "is_comparable": "0",
+        "is_used_for_promo_rules": "0",
+        "is_visible_on_front": "0",
+        "used_in_product_listing": "1",
+        "is_visible": true,
+        "scope": "store",
+        "attribute_id": 85,
+        "attribute_code": "thumbnail",
+        "frontend_input": "media_image",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Thumbnail",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "is_wysiwyg_enabled": false,
+        "is_html_allowed_on_front": false,
+        "used_for_sort_by": false,
+        "is_filterable": false,
+        "is_filterable_in_search": false,
+        "position": 0,
+        "apply_to": [],
+        "is_searchable": "0",
+        "is_visible_in_advanced_search": "0",
+        "is_comparable": "0",
+        "is_used_for_promo_rules": "0",
+        "is_visible_on_front": "0",
+        "used_in_product_listing": "1",
+        "is_visible": true,
+        "scope": "store",
+        "attribute_id": 83,
+        "attribute_code": "image",
+        "frontend_input": "media_image",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": false,
+        "default_frontend_label": "Base Image",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    },
+    {
+        "is_wysiwyg_enabled": false,
+        "is_html_allowed_on_front": false,
+        "used_for_sort_by": false,
+        "is_filterable": false,
+        "is_filterable_in_search": false,
+        "position": 0,
+        "apply_to": [],
+        "is_searchable": "0",
+        "is_visible_in_advanced_search": "0",
+        "is_comparable": "0",
+        "is_used_for_promo_rules": "0",
+        "is_visible_on_front": "0",
+        "used_in_product_listing": "0",
+        "is_visible": true,
+        "scope": "global",
+        "attribute_id": 139,
+        "attribute_code": "funny_image",
+        "frontend_input": "media_image",
+        "entity_type_id": "4",
+        "is_required": false,
+        "options": [],
+        "is_user_defined": true,
+        "default_frontend_label": "Funny image",
+        "frontend_labels": null,
+        "backend_type": "varchar",
+        "is_unique": "0",
+        "validation_rules": []
+    }
+]</pre>        <h3 class="api3" id="products-media-types-attribute_set_with_media_attribute-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>attributeSetName</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

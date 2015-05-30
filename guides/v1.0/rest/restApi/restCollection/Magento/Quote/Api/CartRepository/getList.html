@@ -2087,7 +2087,7 @@
     
     
 
-<li id="getList" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/CartRepository/getList.html">Quote<br>CartRepository<br><span class='bold'>getList</span></a></li>
+<li id="getList" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Quote/Api/CartRepository/getList.html">Quote<br>CartRepository<br><span class='bold'>getList</span></a></li>
 
 
 
@@ -3198,16 +3198,224 @@
 
 <div id="content">
     
-        <div class="home">
-
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="carts?searchcriteria[filter_groups][0][filters][0][field]=grand_total&searchcriteria[filter_groups][0][filters][0][condition_type]=gteq&searchcriteria[filter_groups][0][filters][0][value]=15&searchcriteria[filter_groups][0][filters][1][field]=subtotal&searchcriteria[filter_groups][0][filters][1][condition_type]=eq&searchcriteria[filter_groups][0][filters][1][value]=10.0000&searchcriteria[filter_groups][1][filters][0][field]=created_at&searchcriteria[filter_groups][1][filters][0][condition_type]=gteq&searchcriteria[filter_groups][1][filters][0][value]=2015-05-10&searchcriteria[filter_groups][2][filters][0][field]=created_at&searchcriteria[filter_groups][2][filters][0][condition_type]=lteq&searchcriteria[filter_groups][2][filters][0][value]=2015-05-12&searchcriteria[sort_orders][0][field]=subtotal&searchcriteria[sort_orders][0][direction]=1">carts?searchCriteria[filter_groups][0][filters][0][field]=grand_total&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq&searchCriteria[filter_groups][0][filters][0][value]=15&searchCriteria[filter_groups][0][filters][1][field]=subtotal&searchCriteria[filter_groups][0][filters][1][condition_type]=eq&searchCriteria[filter_groups][0][filters][1][value]=10.0000&searchCriteria[filter_groups][1][filters][0][field]=created_at&searchCriteria[filter_groups][1][filters][0][condition_type]=gteq&searchCriteria[filter_groups][1][filters][0][value]=2015-05-10&searchCriteria[filter_groups][2][filters][0][field]=created_at&searchCriteria[filter_groups][2][filters][0][condition_type]=lteq&searchCriteria[filter_groups][2][filters][0][value]=2015-05-12&searchCriteria[sort_orders][0][field]=subtotal&searchCriteria[sort_orders][0][direction]=1</h2>
+        <h3 class="api3" id="get-carts?searchcriteria[filter_groups][0][filters][0][field]=grand_total&searchcriteria[filter_groups][0][filters][0][condition_type]=gteq&searchcriteria[filter_groups][0][filters][0][value]=15&searchcriteria[filter_groups][0][filters][1][field]=subtotal&searchcriteria[filter_groups][0][filters][1][condition_type]=eq&searchcriteria[filter_groups][0][filters][1][value]=10.0000&searchcriteria[filter_groups][1][filters][0][field]=created_at&searchcriteria[filter_groups][1][filters][0][condition_type]=gteq&searchcriteria[filter_groups][1][filters][0][value]=2015-05-10&searchcriteria[filter_groups][2][filters][0][field]=created_at&searchcriteria[filter_groups][2][filters][0][condition_type]=lteq&searchcriteria[filter_groups][2][filters][0][value]=2015-05-12&searchcriteria[sort_orders][0][field]=subtotal&searchcriteria[sort_orders][0][direction]=1">GET /default/V1/carts?searchCriteria[filter_groups][0][filters][0][field]=grand_total&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq&searchCriteria[filter_groups][0][filters][0][value]=15&searchCriteria[filter_groups][0][filters][1][field]=subtotal&searchCriteria[filter_groups][0][filters][1][condition_type]=eq&searchCriteria[filter_groups][0][filters][1][value]=10.0000&searchCriteria[filter_groups][1][filters][0][field]=created_at&searchCriteria[filter_groups][1][filters][0][condition_type]=gteq&searchCriteria[filter_groups][1][filters][0][value]=2015-05-10&searchCriteria[filter_groups][2][filters][0][field]=created_at&searchCriteria[filter_groups][2][filters][0][condition_type]=lteq&searchCriteria[filter_groups][2][filters][0][value]=2015-05-12&searchCriteria[sort_orders][0][field]=subtotal&searchCriteria[sort_orders][0][direction]=1</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "searchCriteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "grand_total",
+                        "condition_type": "gteq",
+                        "value": 15
+                    },
+                    {
+                        "field": "subtotal",
+                        "condition_type": "eq",
+                        "value": "10.0000"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "created_at",
+                        "condition_type": "gteq",
+                        "value": "2015-05-10"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "created_at",
+                        "condition_type": "lteq",
+                        "value": "2015-05-12"
+                    }
+                ]
+            }
+        ],
+        "sort_orders": [
+            {
+                "field": "subtotal",
+                "direction": 1
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”carts?searchcriteria[filter_groups][0][filters][0][field]=grand_total&searchcriteria[filter_groups][0][filters][0][condition_type]=gteq&searchcriteria[filter_groups][0][filters][0][value]=15&searchcriteria[filter_groups][0][filters][1][field]=subtotal&searchcriteria[filter_groups][0][filters][1][condition_type]=eq&searchcriteria[filter_groups][0][filters][1][value]=10.0000&searchcriteria[filter_groups][1][filters][0][field]=created_at&searchcriteria[filter_groups][1][filters][0][condition_type]=gteq&searchcriteria[filter_groups][1][filters][0][value]=2015-05-10&searchcriteria[filter_groups][2][filters][0][field]=created_at&searchcriteria[filter_groups][2][filters][0][condition_type]=lteq&searchcriteria[filter_groups][2][filters][0][value]=2015-05-12&searchcriteria[sort_orders][0][field]=subtotal&searchcriteria[sort_orders][0][direction]=1-response>Response</h4><pre>{
+    "items": [
+        {
+            "id": 32,
+            "created_at": "2015-05-11 12:41:21",
+            "updated_at": "0000-00-00 00:00:00",
+            "is_active": true,
+            "is_virtual": false,
+            "items_count": 1,
+            "items_qty": 1,
+            "customer": {
+                "email": null,
+                "firstname": null,
+                "lastname": null
+            },
+            "shipping_address": {
+                "id": 56,
+                "region": "California",
+                "region_id": 12,
+                "region_code": "CA",
+                "country_id": "US",
+                "street": [
+                    "street"
+                ],
+                "telephone": "11111111",
+                "postcode": "11111",
+                "city": "Los Angeles",
+                "firstname": "firstname",
+                "lastname": "lastname",
+                "email": "admin@example.com"
+            },
+            "billing_address": {
+                "id": 55,
+                "region": "California",
+                "region_id": 12,
+                "region_code": "CA",
+                "country_id": "US",
+                "street": [
+                    "street"
+                ],
+                "telephone": "11111111",
+                "postcode": "11111",
+                "city": "Los Angeles",
+                "firstname": "firstname",
+                "lastname": "lastname",
+                "email": "admin@example.com"
+            },
+            "reserved_order_id": 0,
+            "orig_order_id": 0,
+            "currency": {
+                "global_currency_code": "USD",
+                "base_currency_code": "USD",
+                "store_currency_code": "USD",
+                "quote_currency_code": "USD",
+                "store_to_base_rate": 0,
+                "store_to_quote_rate": 0,
+                "base_to_global_rate": 1,
+                "base_to_quote_rate": 1
+            },
+            "customer_is_guest": true,
+            "customer_note_notify": true,
+            "customer_tax_class_id": 3
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "grand_total",
+                        "value": "15",
+                        "condition_type": "gteq"
+                    },
+                    {
+                        "field": "subtotal",
+                        "value": "10.0000",
+                        "condition_type": "eq"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "created_at",
+                        "value": "2015-05-10",
+                        "condition_type": "gteq"
+                    }
+                ]
+            },
+            {
+                "filters": [
+                    {
+                        "field": "created_at",
+                        "value": "2015-05-12",
+                        "condition_type": "lteq"
+                    }
+                ]
+            }
+        ],
+        "sort_orders": [
+            {
+                "field": "subtotal",
+                "direction": "1"
+            }
+        ]
+    },
+    "total_count": 1
+}</pre>        <h3 class="api3" id="carts?searchcriteria[filter_groups][0][filters][0][field]=grand_total&searchcriteria[filter_groups][0][filters][0][condition_type]=gteq&searchcriteria[filter_groups][0][filters][0][value]=15&searchcriteria[filter_groups][0][filters][1][field]=subtotal&searchcriteria[filter_groups][0][filters][1][condition_type]=eq&searchcriteria[filter_groups][0][filters][1][value]=10.0000&searchcriteria[filter_groups][1][filters][0][field]=created_at&searchcriteria[filter_groups][1][filters][0][condition_type]=gteq&searchcriteria[filter_groups][1][filters][0][value]=2015-05-10&searchcriteria[filter_groups][2][filters][0][field]=created_at&searchcriteria[filter_groups][2][filters][0][condition_type]=lteq&searchcriteria[filter_groups][2][filters][0][value]=2015-05-12&searchcriteria[sort_orders][0][field]=subtotal&searchcriteria[sort_orders][0][direction]=1-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>searchCriteria</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>items</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>search_criteria</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>total_count</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

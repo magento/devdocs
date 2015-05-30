@@ -1736,7 +1736,7 @@
     
     
 
-<li id="updateDownloadableProductLinksWithNewFile" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Downloadable/Api/ProductRepository/updateDownloadableProductLinksWithNewFile.html">Downloadable<br>ProductRepository<br><span class='bold'>updateDownloadableProductLinksWithNewFile</span></a></li>
+<li id="updateDownloadableProductLinksWithNewFile" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Downloadable/Api/ProductRepository/updateDownloadableProductLinksWithNewFile.html">Downloadable<br>ProductRepository<br><span class='bold'>updateDownloadableProductLinksWithNewFile</span></a></li>
 
 
 
@@ -3198,16 +3198,523 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products">products</h2>
+        <h3 class="api3" id="post-products">POST /default/V1/products</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "sku": "sku-test-product-downloadable",
+        "name": "sku-test-product-downloadable",
+        "type_id": "downloadable",
+        "price": 10,
+        "attribute_set_id": 4,
+        "extension_attributes": {
+            "downloadable_product_links": [
+                {
+                    "title": "link1",
+                    "sort_order": 10,
+                    "is_shareable": 1,
+                    "price": 2,
+                    "number_of_downloads": 0,
+                    "link_type": "file",
+                    "link_file_content": {
+                        "name": "link1_content.jpg",
+                        "file_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z"
+                    },
+                    "sample_type": "file",
+                    "sample_file_content": {
+                        "name": "link1_sample.jpg",
+                        "file_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z"
+                    }
+                },
+                {
+                    "title": "link2",
+                    "sort_order": 20,
+                    "is_shareable": 0,
+                    "price": 3,
+                    "number_of_downloads": 100,
+                    "link_type": "url",
+                    "link_url": "http:\/\/www.example.com\/link2.jpg",
+                    "sample_type": "url",
+                    "sample_url": "http:\/\/www.example.com\/link2.jpg"
+                }
+            ],
+            "downloadable_product_samples": [
+                {
+                    "title": "sample1",
+                    "sort_order": 10,
+                    "sample_type": "url",
+                    "sample_url": "http:\/\/www.example.com\/sample1.jpg"
+                },
+                {
+                    "title": "sample2",
+                    "sort_order": 20,
+                    "sample_type": "file",
+                    "sample_file_content": {
+                        "name": "sample2.jpg",
+                        "file_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z"
+                    }
+                }
+            ]
+        }
+    }
+}</pre>        <h4 class="api4" id=”products-response>Response</h4><pre>{
+    "id": 355,
+    "sku": "sku-test-product-downloadable",
+    "name": "sku-test-product-downloadable",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 10,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "downloadable",
+    "created_at": "2015-05-11 13:39:53",
+    "updated_at": "2015-05-11 13:39:53",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 98,
+            "product_id": 355,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": null,
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        },
+        "downloadable_product_links": [
+            {
+                "id": 32,
+                "title": "link1",
+                "sort_order": 10,
+                "is_shareable": 1,
+                "price": 2,
+                "number_of_downloads": 0,
+                "link_type": "file",
+                "link_file": "\/l\/i\/link1_content.jpg",
+                "sample_type": "file",
+                "sample_file": "\/l\/i\/link1_sample.jpg"
+            },
+            {
+                "id": 33,
+                "title": "link2",
+                "sort_order": 20,
+                "is_shareable": 0,
+                "price": 3,
+                "number_of_downloads": 100,
+                "link_type": "url",
+                "link_url": "http:\/\/www.example.com\/link2.jpg",
+                "sample_type": "url",
+                "sample_url": "http:\/\/www.example.com\/link2.jpg"
+            }
+        ],
+        "downloadable_product_samples": [
+            {
+                "id": 7,
+                "title": "sample1",
+                "sort_order": 10,
+                "sample_type": "url",
+                "sample_url": "http:\/\/www.example.com\/sample1.jpg"
+            },
+            {
+                "id": 8,
+                "title": "sample2",
+                "sort_order": 20,
+                "sample_type": "file",
+                "sample_file": "\/s\/a\/sample2.jpg"
+            }
+        ]
+    },
+    "product_links": [],
+    "options": [],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-sku-test-product-downloadable">products-sku-test-product-downloadable</h2>
+        <h3 class="api3" id="put-products-sku-test-product-downloadable">PUT /default/V1/products/sku-test-product-downloadable</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "id": 355,
+        "sku": "sku-test-product-downloadable",
+        "name": "sku-test-product-downloadable",
+        "store_id": 1,
+        "attribute_set_id": 4,
+        "price": 10,
+        "status": 1,
+        "visibility": 4,
+        "type_id": "downloadable",
+        "created_at": "2015-05-11 13:39:53",
+        "updated_at": "2015-05-11 13:39:53",
+        "extension_attributes": {
+            "stock_item": {
+                "item_id": 98,
+                "product_id": 355,
+                "website_id": 1,
+                "stock_id": 1,
+                "qty": null,
+                "is_in_stock": false,
+                "is_qty_decimal": false,
+                "show_default_notification_message": false,
+                "use_config_min_qty": true,
+                "min_qty": 0,
+                "use_config_min_sale_qty": 1,
+                "min_sale_qty": 1,
+                "use_config_max_sale_qty": true,
+                "max_sale_qty": 10000,
+                "use_config_backorders": true,
+                "backorders": 0,
+                "use_config_notify_stock_qty": true,
+                "notify_stock_qty": 1,
+                "use_config_qty_increments": true,
+                "qty_increments": 0,
+                "use_config_enable_qty_inc": true,
+                "enable_qty_increments": false,
+                "use_config_manage_stock": true,
+                "manage_stock": true,
+                "low_stock_date": null,
+                "is_decimal_divided": false,
+                "stock_status_changed_auto": 0
+            },
+            "downloadable_product_links": [
+                {
+                    "id": 32,
+                    "title": "link1_updated",
+                    "sort_order": 1,
+                    "is_shareable": 0,
+                    "price": 5,
+                    "number_of_downloads": 999,
+                    "link_type": "file",
+                    "link_file_content": {
+                        "name": "link1_content_updated.jpg",
+                        "file_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z"
+                    },
+                    "sample_type": "file",
+                    "sample_file_content": {
+                        "name": "link1_sample_updated.jpg",
+                        "file_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z"
+                    }
+                },
+                {
+                    "id": 33,
+                    "title": "link2_updated",
+                    "sort_order": 2,
+                    "is_shareable": 0,
+                    "price": 6,
+                    "number_of_downloads": 0,
+                    "link_type": "file",
+                    "link_file_content": {
+                        "name": "link2_content.jpg",
+                        "file_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z"
+                    },
+                    "sample_type": "file",
+                    "sample_file_content": {
+                        "name": "link2_sample.jpg",
+                        "file_data": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL\/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL\/wgARCABgAGADASIAAhEBAxEB\/8QAGwABAQADAQEBAAAAAAAAAAAAAAUCAwQHAQb\/xAAZAQEAAwEBAAAAAAAAAAAAAAAAAgMFBgH\/2gAMAwEAAhADEAAAAf35gZpqyVJNFJNFJNFJq21xTaU2yXm5wdJqd7meOlz4nU0b7JehWI9jmspNpTY+eb83T86bV5tFHCmHNj2fTVuxyun6FYj2Oby02lNj55uOp1wAAPQrEexzGSm0psfPNx1OuAAB6FYj2OYyWGamE1SWSmqQmqQmqQ1bSuP\/xAAiEAAABgICAwEBAAAAAAAAAAAAAQIDBBQQNAUwERITIjP\/2gAIAQEAAQUC7VrS2i\/FF+KL8UX4ovxRfii\/FF+KG3EuoxP0eji9DE\/RD7SCb9W2R9TIzcP2N0zbaNRoHF6GJ+iJH8Hy\/Bk34X6fQlGptoyNscXoYn6IMiPBJSQMiMePAIiLHF6GJ+j0cXoYn6PRxehifo9HF6GJ+j0cXoYWhLiKEUUIooRRQiihFFCKKEUUIobbS0jt\/8QAHxEAAgEFAAMBAAAAAAAAAAAAAAECAxESMlEQICEx\/9oACAEDAQE\/ATCXDCXDCXDCXPENkTbirmdv0zQndXKm7IbIkrpolTu7mDuR+L6VN2Q2XrU3ZDZetTd+M5dM5dM5dM5d8f\/EACMRAAEDBAIDAAMAAAAAAAAAAAEAAgMTM1JxERIEIDEQIVH\/2gAIAQIBAT8BVGTEqjJiVRkxKoyYlEcfVDcbtSvLG9gFVDf0\/wCozsCY7s3leRedtQ3G7Uje7C3+qSDs7lUT255TAQ0AryLztqG43fr5F521Dcbv18i87f4rSZFVpMiq0mRVaTIonn6v\/8QAJhAAAQIEBgIDAQAAAAAAAAAAAgABAxARMxIhMHGBsTFRIjJBYf\/aAAgBAQAGPwLVciejMrwq8KvCrwq8KvCrwq8Kxg9R9zi7aIc9zi7SIqZrEzL5A4t7WEQxO3lFQfk3lk2JpBz3OLtIk38dXTKv5VfZwL2ojVxUbyho\/wCSDnucXaWcsmZZszyyZmkHPc4u2iHPc4u2iHPc4u2iHPc4u2iHPc3EmqzqyKsirIqyKsirIqyKsisANQfWt\/\/EACAQAAEDAwUBAAAAAAAAAAAAAAEAEfAQMWEhMEGhsVH\/2gAIAQEAAT8h3QBronhTipxU4qcVOKnFTipxQIGawVn52e36Vn5oAN93fKalqbaF3QCPgtqdCGV9BmRBILobZR2Y0DF3fNO36Vn5p4PU8bVgktdkYA1Cx61bsHJnRRMEAHnRDwBIB24p2\/Ss\/NALACPhoUcI\/QF28BAAYAAfAnfWPgp2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/Ss\/Oz2\/SoA10DypxU4qcVOKnFTipxU4oEDFYN7\/9oADAMBAAIAAwAAABDv\/wD\/AP8A\/wD\/AOuvlf7DPn1f\/vvvlf8A7775W\/8A\/wD\/AP8A\/8QAIBEAAgIDAAMAAwAAAAAAAAAAAAERYSGRoSBBUTGBwf\/aAAgBAwEBPxBKcIvaL2i9ovaGmnDO5DSimLj+Mhhi6l9ga5Xyn6FKT2drO5F+ImsM\/TMcwnPefsRoX5HazuXj2s7l49rE4yi9svbL2y9sbbcs\/8QAIhEBAAIABwACAwAAAAAAAAAAAQARITFBUaGx8SBhgZHB\/9oACAECAQE\/EAVonmM8xnmM8xiKhTOE7jcTQrbWBtg\/ybQ+lobW0V+aiCW4Xo6Zg1SmxAI6zmu5wnccLQn7JfGsQG702pOYugAbyvGzUusM7zwmeibTmu5wnfx5rucJ38ea7go2T3Ge4z3Ge4xFatn\/xAAmEAABAgUDBAMBAAAAAAAAAAABABEhMWHR8TBB8BAggZFRcaGx\/9oACAEBAAE\/ENUA93lgWIsWIsWIsWIsWIsWIsWIsWIsRfKkSBYsf0deNRqfONR0YXGERMg8HbdEjjEJCcZAE\/KZHMDIAmTgSQ7gAwQdKJQKuEAAYd26IZOMPCw8H7fnGo6cChGGkSnKicj2j6bAABk\/TJ4AqJawPmBQr4IjRlDwgkdxJyTb+j2\/ONR0ITXMDgqaoO8goaAEEgI\/1Co42GCrpDQf12\/ONRqfONRqfONRqfONRqfAD3aWBZi5Zi5Zi5Zi5Zi5Zi5Zi5Zi5F8qTIBy5\/Trf\/\/Z"
+                    }
+                }
+            ]
+        },
+        "product_links": [],
+        "options": [],
+        "media_gallery_entries": [],
+        "group_prices": [],
+        "tier_prices": [],
+        "custom_attributes": [
+            {
+                "attribute_code": "category_ids",
+                "value": []
+            },
+            {
+                "attribute_code": "options_container",
+                "value": "container2"
+            },
+            {
+                "attribute_code": "required_options",
+                "value": "0"
+            },
+            {
+                "attribute_code": "has_options",
+                "value": "0"
+            },
+            {
+                "attribute_code": "quantity_and_stock_status",
+                "value": [
+                    false,
+                    null
+                ]
+            },
+            {
+                "attribute_code": "tax_class_id",
+                "value": "2"
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-sku-test-product-downloadable-response>Response</h4><pre>{
+    "id": 355,
+    "sku": "sku-test-product-downloadable",
+    "name": "sku-test-product-downloadable",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 10,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "downloadable",
+    "created_at": "2015-05-11 13:39:53",
+    "updated_at": "2015-05-11 13:39:54",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 98,
+            "product_id": 355,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": "2015-05-11 13:39:54",
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        },
+        "downloadable_product_links": [
+            {
+                "id": 32,
+                "title": "link1_updated",
+                "sort_order": 1,
+                "is_shareable": 0,
+                "price": 5,
+                "number_of_downloads": 999,
+                "link_type": "file",
+                "link_file": "\/l\/i\/link1_content_updated.jpg",
+                "sample_type": "file",
+                "sample_file": "\/l\/i\/link1_sample_updated.jpg"
+            },
+            {
+                "id": 33,
+                "title": "link2_updated",
+                "sort_order": 2,
+                "is_shareable": 0,
+                "price": 6,
+                "number_of_downloads": 0,
+                "link_type": "file",
+                "link_file": "\/l\/i\/link2_content.jpg",
+                "link_url": "http:\/\/www.example.com\/link2.jpg",
+                "sample_type": "file",
+                "sample_file": "\/l\/i\/link2_sample.jpg",
+                "sample_url": "http:\/\/www.example.com\/link2.jpg"
+            }
+        ],
+        "downloadable_product_samples": [
+            {
+                "id": 7,
+                "title": "sample1",
+                "sort_order": 10,
+                "sample_type": "url",
+                "sample_url": "http:\/\/www.example.com\/sample1.jpg"
+            },
+            {
+                "id": 8,
+                "title": "sample2",
+                "sort_order": 20,
+                "sample_type": "file",
+                "sample_file": "\/s\/a\/sample2.jpg"
+            }
+        ]
+    },
+    "product_links": [],
+    "options": [],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-sku-test-product-downloadable-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

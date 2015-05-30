@@ -1448,7 +1448,7 @@
     
     
 
-<li id="getAttributes" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/CustomerMetadata/getAttributes.html">Customer<br>CustomerMetadata<br><span class='bold'>getAttributes</span></a></li>
+<li id="getAttributes" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Customer/Api/CustomerMetadata/getAttributes.html">Customer<br>CustomerMetadata<br><span class='bold'>getAttributes</span></a></li>
 
 
 
@@ -3198,16 +3198,783 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="attributemetadata-customer-form-adminhtml_customer">attributeMetadata-customer-form-adminhtml_customer</h2>
+        <h3 class="api3" id="get-attributemetadata-customer-form-adminhtml_customer">GET /default/V1/attributeMetadata/customer/form/adminhtml_customer</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "formCode": "adminhtml_customer"
+}</pre>        <h4 class="api4" id=”attributemetadata-customer-form-adminhtml_customer-response>Response</h4><pre>[
+    {
+        "frontend_input": "date",
+        "input_filter": "",
+        "store_label": "Created At",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 0,
+        "frontend_label": "Created At",
+        "note": "",
+        "system": false,
+        "backend_type": "static",
+        "attribute_code": "created_at"
+    },
+    {
+        "frontend_input": "select",
+        "input_filter": "",
+        "store_label": "Associate to Website",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [
+            {
+                "label": "Admin",
+                "value": "0"
+            },
+            {
+                "label": "Main Website",
+                "value": "1"
+            }
+        ],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 10,
+        "frontend_label": "Associate to Website",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "website_id"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Created From",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 20,
+        "frontend_label": "Created From",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "created_in"
+    },
+    {
+        "frontend_input": "select",
+        "input_filter": "",
+        "store_label": "Group",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [
+            {
+                "label": "General",
+                "value": "1"
+            },
+            {
+                "label": "Wholesale",
+                "value": "2"
+            },
+            {
+                "label": "Retailer",
+                "value": "3"
+            }
+        ],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 25,
+        "frontend_label": "Group",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "group_id"
+    },
+    {
+        "frontend_input": "boolean",
+        "input_filter": "",
+        "store_label": "Disable Automatic Group Change Based on VAT ID",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 28,
+        "frontend_label": "Disable Automatic Group Change Based on VAT ID",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "disable_auto_group_change"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Prefix",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 30,
+        "frontend_label": "Prefix",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "prefix"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "First Name",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 40,
+        "frontend_label": "First Name",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "firstname"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Middle Name\/Initial",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 50,
+        "frontend_label": "Middle Name\/Initial",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "middlename"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Last Name",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 60,
+        "frontend_label": "Last Name",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "lastname"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Suffix",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 70,
+        "frontend_label": "Suffix",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "suffix"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Email",
+        "validation_rules": [
+            {
+                "name": "input_validation",
+                "value": "email"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry validate-email",
+        "user_defined": false,
+        "sort_order": 80,
+        "frontend_label": "Email",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "email"
+    },
+    {
+        "frontend_input": "date",
+        "input_filter": "date",
+        "store_label": "Date Of Birth",
+        "validation_rules": [
+            {
+                "name": "input_validation",
+                "value": "date"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 90,
+        "frontend_label": "Date Of Birth",
+        "note": "",
+        "system": false,
+        "backend_type": "datetime",
+        "attribute_code": "dob"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Tax\/VAT Number",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 100,
+        "frontend_label": "Tax\/VAT Number",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "taxvat"
+    },
+    {
+        "frontend_input": "select",
+        "input_filter": "",
+        "store_label": "Gender",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [
+            {
+                "label": "",
+                "value": ""
+            },
+            {
+                "label": "Male",
+                "value": "1"
+            },
+            {
+                "label": "Female",
+                "value": "2"
+            }
+        ],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 110,
+        "frontend_label": "Gender",
+        "note": "",
+        "system": false,
+        "backend_type": "int",
+        "attribute_code": "gender"
+    }
+]</pre>        <h3 class="api3" id="attributemetadata-customer-form-adminhtml_customer-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>formCode</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
-
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
-
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="attributemetadata-customer-form-adminhtml_customer">attributeMetadata-customer-form-adminhtml_customer</h2>
+        <h3 class="api3" id="get-attributemetadata-customer-form-adminhtml_customer">GET /default/V1/attributeMetadata/customer/form/adminhtml_customer</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "formCode": "adminhtml_customer"
+}</pre>        <h4 class="api4" id=”attributemetadata-customer-form-adminhtml_customer-response>Response</h4><pre>[
+    {
+        "frontend_input": "date",
+        "input_filter": "",
+        "store_label": "Created At",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 0,
+        "frontend_label": "Created At",
+        "note": "",
+        "system": false,
+        "backend_type": "static",
+        "attribute_code": "created_at"
+    },
+    {
+        "frontend_input": "select",
+        "input_filter": "",
+        "store_label": "Associate to Website",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [
+            {
+                "label": "Admin",
+                "value": "0"
+            },
+            {
+                "label": "Main Website",
+                "value": "1"
+            }
+        ],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 10,
+        "frontend_label": "Associate to Website",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "website_id"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Created From",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 20,
+        "frontend_label": "Created From",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "created_in"
+    },
+    {
+        "frontend_input": "select",
+        "input_filter": "",
+        "store_label": "Group",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [
+            {
+                "label": "General",
+                "value": "1"
+            },
+            {
+                "label": "Wholesale",
+                "value": "2"
+            },
+            {
+                "label": "Retailer",
+                "value": "3"
+            }
+        ],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 25,
+        "frontend_label": "Group",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "group_id"
+    },
+    {
+        "frontend_input": "boolean",
+        "input_filter": "",
+        "store_label": "Disable Automatic Group Change Based on VAT ID",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": true,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 28,
+        "frontend_label": "Disable Automatic Group Change Based on VAT ID",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "disable_auto_group_change"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Prefix",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 30,
+        "frontend_label": "Prefix",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "prefix"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "First Name",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 40,
+        "frontend_label": "First Name",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "firstname"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Middle Name\/Initial",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 50,
+        "frontend_label": "Middle Name\/Initial",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "middlename"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Last Name",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            },
+            {
+                "name": "min_text_length",
+                "value": "1"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry",
+        "user_defined": false,
+        "sort_order": 60,
+        "frontend_label": "Last Name",
+        "note": "",
+        "system": true,
+        "backend_type": "varchar",
+        "attribute_code": "lastname"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Suffix",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 70,
+        "frontend_label": "Suffix",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "suffix"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Email",
+        "validation_rules": [
+            {
+                "name": "input_validation",
+                "value": "email"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": true,
+        "required": true,
+        "data_model": "",
+        "options": [],
+        "frontend_class": " required-entry validate-email",
+        "user_defined": false,
+        "sort_order": 80,
+        "frontend_label": "Email",
+        "note": "",
+        "system": true,
+        "backend_type": "static",
+        "attribute_code": "email"
+    },
+    {
+        "frontend_input": "date",
+        "input_filter": "date",
+        "store_label": "Date Of Birth",
+        "validation_rules": [
+            {
+                "name": "input_validation",
+                "value": "date"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 90,
+        "frontend_label": "Date Of Birth",
+        "note": "",
+        "system": false,
+        "backend_type": "datetime",
+        "attribute_code": "dob"
+    },
+    {
+        "frontend_input": "text",
+        "input_filter": "",
+        "store_label": "Tax\/VAT Number",
+        "validation_rules": [
+            {
+                "name": "max_text_length",
+                "value": "255"
+            }
+        ],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 100,
+        "frontend_label": "Tax\/VAT Number",
+        "note": "",
+        "system": false,
+        "backend_type": "varchar",
+        "attribute_code": "taxvat"
+    },
+    {
+        "frontend_input": "select",
+        "input_filter": "",
+        "store_label": "Gender",
+        "validation_rules": [],
+        "multiline_count": 0,
+        "visible": false,
+        "required": false,
+        "data_model": "",
+        "options": [
+            {
+                "label": "",
+                "value": ""
+            },
+            {
+                "label": "Male",
+                "value": "1"
+            },
+            {
+                "label": "Female",
+                "value": "2"
+            }
+        ],
+        "frontend_class": "",
+        "user_defined": false,
+        "sort_order": 110,
+        "frontend_label": "Gender",
+        "note": "",
+        "system": false,
+        "backend_type": "int",
+        "attribute_code": "gender"
+    }
+]</pre>        <h3 class="api3" id="attributemetadata-customer-form-adminhtml_customer-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>formCode</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        Parameters should be specified manually.
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       

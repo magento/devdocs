@@ -818,7 +818,7 @@
     
     
 
-<li id="create" class="menuItem "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductRepositoryInterface/create.html">Catalog<br>ProductRepositoryInterface<br><span class='bold'>create</span></a></li>
+<li id="create" class="menuItem current "><a href="http://devdocs.magento.com/guides/v1.0/rest/restApi/restCollection/Magento/Catalog/Api/ProductRepositoryInterface/create.html">Catalog<br>ProductRepositoryInterface<br><span class='bold'>create</span></a></li>
 
 
 
@@ -3198,16 +3198,351 @@
 
 <div id="content">
     
-        <div class="home">
+        <div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products">products</h2>
+        <h3 class="api3" id="post-products">POST /default/V1/products</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "sku": "psku-test-1",
+        "name": "sku-5550e7b2a16bf4.07241391",
+        "visibility": 4,
+        "type_id": "simple",
+        "price": 3.62,
+        "status": 1,
+        "attribute_set_id": 4,
+        "custom_attributes": [
+            {
+                "attribute_code": "cost",
+                "value": ""
+            },
+            {
+                "attribute_code": "description",
+                "value": "Description"
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-response>Response</h4><pre>{
+    "id": 335,
+    "sku": "psku-test-1",
+    "name": "sku-5550e7b2a16bf4.07241391",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "simple",
+    "created_at": "2015-05-11 13:35:33",
+    "updated_at": "2015-05-11 13:35:33",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 51,
+            "product_id": 335,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": null,
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-  <h1 class="page-heading">REST API Details</h1>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-psku-test-1">products-psku-test-1</h2>
+        <h3 class="api3" id="delete-products-psku-test-1">DELETE /default/V1/products/psku-test-1</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”products-psku-test-1-response>Response</h4><pre>true</pre>        <h3 class="api3" id="products-psku-test-1-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>scalar_value</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>Continuing improvements will be made to this reference in upcoming sprints.</p>
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products">products</h2>
+        <h3 class="api3" id="post-products">POST /default/V1/products</h3>
+        <h4 class="api4">Request</h4><pre>{
+    "product": {
+        "sku": "psku-test-2",
+        "name": "sku-5550e7b2a16cd8.22970128",
+        "visibility": 4,
+        "type_id": "virtual",
+        "price": 3.62,
+        "status": 1,
+        "attribute_set_id": 4,
+        "custom_attributes": [
+            {
+                "attribute_code": "cost",
+                "value": ""
+            },
+            {
+                "attribute_code": "description",
+                "value": "Description"
+            }
+        ]
+    }
+}</pre>        <h4 class="api4" id=”products-response>Response</h4><pre>{
+    "id": 336,
+    "sku": "psku-test-2",
+    "name": "sku-5550e7b2a16cd8.22970128",
+    "store_id": 1,
+    "attribute_set_id": 4,
+    "price": 3.62,
+    "status": 1,
+    "visibility": 4,
+    "type_id": "virtual",
+    "created_at": "2015-05-11 13:35:34",
+    "updated_at": "2015-05-11 13:35:34",
+    "extension_attributes": {
+        "stock_item": {
+            "item_id": 52,
+            "product_id": 336,
+            "website_id": 1,
+            "stock_id": 1,
+            "qty": null,
+            "is_in_stock": false,
+            "is_qty_decimal": false,
+            "show_default_notification_message": false,
+            "use_config_min_qty": true,
+            "min_qty": 0,
+            "use_config_min_sale_qty": 1,
+            "min_sale_qty": 1,
+            "use_config_max_sale_qty": true,
+            "max_sale_qty": 10000,
+            "use_config_backorders": true,
+            "backorders": 0,
+            "use_config_notify_stock_qty": true,
+            "notify_stock_qty": 1,
+            "use_config_qty_increments": true,
+            "qty_increments": 0,
+            "use_config_enable_qty_inc": true,
+            "enable_qty_increments": false,
+            "use_config_manage_stock": true,
+            "manage_stock": true,
+            "low_stock_date": null,
+            "is_decimal_divided": false,
+            "stock_status_changed_auto": 0
+        }
+    },
+    "product_links": [],
+    "options": [],
+    "media_gallery_entries": [],
+    "group_prices": [],
+    "tier_prices": [],
+    "custom_attributes": [
+        {
+            "attribute_code": "description",
+            "value": "Description"
+        },
+        {
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "options_container",
+            "value": "container2"
+        },
+        {
+            "attribute_code": "required_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "has_options",
+            "value": "0"
+        },
+        {
+            "attribute_code": "quantity_and_stock_status",
+            "value": [
+                false,
+                null
+            ]
+        },
+        {
+            "attribute_code": "tax_class_id",
+            "value": "2"
+        }
+    ]
+}</pre>        <h3 class="api3" id="products-parameters">Request and response parameters</h3>            <table class="docutils field-list" frame="void" rules="none"  width="400">
+                <colgroup>
+                    <col width="35%" class="field-name">
+                    <col  width="65%" class="field-body">
+                </colgroup>
+                <tbody valign="top">
+                <tr class="field-odd field">
+                    <th class="field-name">Request parameters:</th>
+                    <td class="field-body">
+                        <ul class="first last simple">
+                            <li><strong>product</strong> (<em>Change type manually!</em>) TBD.</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>sku</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>name</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>store_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>attribute_set_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>price</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>status</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>visibility</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>type_id</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>created_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>updated_at</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>extension_attributes</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>product_links</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>options</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>media_gallery_entries</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>group_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>tier_prices</strong> (<em>Change type manually!</em>) TBD.</li><li><strong>custom_attributes</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-<p>
-
+<div class="objectContent" role="main">
+    <div class="bs-docs-section">        <h2 class="api2" id="products-psku-test-2">products-psku-test-2</h2>
+        <h3 class="api3" id="delete-products-psku-test-2">DELETE /default/V1/products/psku-test-2</h3>
+        <h4 class="api4">Request</h4><pre>This call does not accept a request body.</pre>        <h4 class="api4" id=”products-psku-test-2-response>Response</h4><pre>true</pre>        <h3 class="api3" id="products-psku-test-2-parameters">Request and response parameters</h3>        <table class="docutils field-list" frame="void" rules="none"  width="400">
+            <colgroup>
+                <col width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Response attributes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>scalar_value</strong> (<em>Change type manually!</em>) TBD.</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>        <h3 class="api3" id="products-responses">Response codes</h3>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Normal response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>SUCCESS_CODE</strong> - SUCCESS_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils field-list" frame="void" rules="none" width="400">
+            <colgroup>
+                <col  width="35%" class="field-name">
+                <col  width="65%" class="field-body">
+            </colgroup>
+            <tbody valign="top">
+            <tr class="field-odd field">
+                <th class="field-name">Error response codes:</th>
+                <td class="field-body">
+                    <ul class="first last simple">
+                        <li><strong>ERROR_CODE</strong> - ERROR_DESCRIPTION</li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
   </div>
       
