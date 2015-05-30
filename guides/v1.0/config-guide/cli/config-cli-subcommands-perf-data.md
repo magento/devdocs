@@ -155,7 +155,7 @@ Run the command as discussed in this section. After the command runs, it rebuild
 
 Command options:
 
-	magento setup:perf:generate-fixtures <path to profile>
+	magento setup:perf:generate-fixtures {path to profile}
 
 where `<path to profile>` specifies the absolute file system path to and name of a profile.
 

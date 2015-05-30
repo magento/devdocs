@@ -69,6 +69,14 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Manages the indexers</p></td>
 	</tr>
 	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">magento log:{status|clean}</a></td>
+		<td><p>Cleans logs older than a specified number of days</p></td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html">magento cron:run</a></td>
+		<td><p>Runs Magento cron jobs</p></td>
+	</tr>
+	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">magento setup:di:compile-multi-tenant</a></td>
 		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
 		<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites.</p></td>
@@ -79,8 +87,8 @@ The following table summarizes the available commands. Commands are shown in sum
 			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website.</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-log.html">magento log:{status|clean}</a></td>
-		<td><p>Clears the logs</p></td>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-depen.html">magento info:dependencies:{show-modules|show-modules-circular|show-framework}e</a></td>
+		<td><p>Module dependencies, circular dependencies, and Magento framework dependencies.</p></td>
 	</tr>
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-i18n.html">magento i18n:{collect-phrases|pack}</a></td>
@@ -97,6 +105,19 @@ The following table summarizes the available commands. Commands are shown in sum
 	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">magento dev:tests:run</a></td>
 		<td><p>Runs automated tests</p></td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">magento dev:xml:convert</a></td>
+		<td><p>Update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet</p></td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">magento setup:perf:generate-fixtures</a></td>
+		<td><p>Generate data to use for performance testing.</p></td>
+	</tr>
+	<tr>
+		<td><a href="{{ site.gdeurl }}install-gde/install/sample-data.html#instgde-install-sample-enable-after">magento sampledata:install</a></td>
+		<td><p>Installs optional Magento sample data after you install the Magento application.</p>
+			<p>For more details about Magento sample data, see <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Optional Magento sample data</a>.</p></td>
 	</tr>
 	
 	</tbody>
