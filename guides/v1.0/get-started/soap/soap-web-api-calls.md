@@ -10,8 +10,7 @@ github_link: rest/soap/soap-web-api-calls.md
 ---
 
 
-
-<h2 id="formats">WSDL Generation</h2>
+<h2 id="wsdl">WSDL File</h2>
 
 A WSDL file is generated only for services you request. This means that different clients may use different services and therefore use different WSDLs.
 
