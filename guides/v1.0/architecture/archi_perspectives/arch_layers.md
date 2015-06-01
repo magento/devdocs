@@ -16,12 +16,62 @@ We will add information about the following layers in a future sprint:
 <!--<h2 id="presentation">Presentation layer</h2>
 
 
+
 <h2 id="service">Service layer</h2>
 
 
 <h2 id="domain">Domain layer</h2>
 
 -->
+
+<h2> Presentation layer</h2>
+
+
+<h3>How Presentation code calls other layers</h3>
+Presentation code typically calls service contracts, particularly for store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the Admin UI screens are often tightly linked a specific implementation and not generic across implementations.
+
+<h2>Service layer</h2>
+The Service layer is a set of PHP interfaces that provides the bridge between the presentation layer and the model layer of domain logic and resource data. This layer allows modules to provide a well-defined public API while hiding business logic. Each module provides a service contract that    
+
+<b>Add diagram</b>
+
+All calls from web service interfaces, or users working with the product interface (that is, controller-initiated requests), must be routed through through the Service layer.  Each module provides a <i>service contract</i> to pass requests to and from the presentation layers to the business logic layers. The service contract for a module resides in its /Api. 
+
+
+External applications can make also requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure. 
+
+<h3>Who accesses the Service layer?</h3>
+Service layer clients include:
+
+* Controllers (initiated by actions of users of the product interface)
+* Web services
+* Other Magento modules
+
+<h3>Service contracts</h3>
+
+A module's service contract resides in the /Api namespace of the module.
+
+
+
+<h2>Domain layer</h2>
+The Domain layer identifies the part of the business logic layer of Magento that handles requests from the Service layer. It defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. Object models do not contain resource- or  database- specific information.
+
+<b>Add diagram: service layer --- > DOMAIN layer --> resource models  —> database</b>
+
+All calls to the Magento system typically use service contracts to communicate to the Domain layer. Service contracts pass data types to the Domain layer via strongly typed objects. Applications can also use SOAP or RESTful endpoints to request data from object models. 
+
+<h3>Models</h3>
+
+Each domain-layer object model contains a reference to a resource model, which it uses to retrieve data from the database with MySql calls.  This resource model contains logic for connecting to the underlying database, typically MySQL. A model requires a resource model only if the model data must persist. 
+
+<h3>Who accesses the Domain layer?</h3>
+Modules typically contact this layer through service contracts. However, Domain layer code in one module can also plug itself into another module by: 
+
+* event hooks
+* plugins
+* di.xml files (with an SPI contract) 
+  
+
 
 <h2 id="persistence">Persistence layer</h2>
 

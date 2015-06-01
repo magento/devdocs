@@ -1,0 +1,59 @@
+---
+layout: default
+group: arch-guide
+subgroup: Architecture
+title: Technology Stack
+menu_title: Technology Stack
+menu_order: 10
+github_link: extension-dev-guide/arch-basics
+---
+<h2>Architectural Basics</h2>
+
+<h3>Magento Technology Stack</h3>
+Magento’s highly modular structure includes the following open-source technologies:
+
+<b> add tech stack diagram</b>
+
+Stack components include:
+
+* PHP (5.5 and 5.6)
+
+* Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide)
+
+* HTML5
+
+* CSS3 (LESS CSS pre-processor)
+
+* JQuery (primary JavaScript library)
+
+* RequireJS (library that helps load JavaScript resources on demand)
+
+* MySQL 5.6
+
+Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. This framework is included in Magento/mtf. For more information, see Magento Test Framework guide.<h3>Stack Basics</h3>
+<h4>routing</h4>
+<h4>caching</h4>
+
+<h4>indexing</h4>
+
+
+<h3>Backwards compatibility</h3>
+Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
+
+To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:
+
+MAJOR indicates incompatible API changes
+
+MINOR indicates backward-compatible functionality has been added
+
+PATCH indicates backward-compatible bug fixes
+
+The backward compatibility policy applies to PHP code annotated with @api
+
+We promise to be backward compatible for classes and methods annotated with @api within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with @deprecated. The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.
+
+
+
+
+
+
