@@ -101,11 +101,6 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>None</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html">magento module:uninstall &lt;ModuleName></a></td>
-		<td><p>Uninstall modules.</p></td>
-		<td><p>Magento software installed</p></td>
-	</tr>
-	<tr>
 		<td><a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">magento setup:store-config:set</a></td>
 		<td><p>Sets storefront-related options, such as base URL, language, timezone, and so on.</p></td>
 		<td><ul><li>Deployment configuration</li>
@@ -164,7 +159,6 @@ The following sections discuss the available commands.
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html">Uninstall modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a>
