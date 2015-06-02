@@ -13,6 +13,10 @@ The Loader widget blocks page content (all content or a part of it). Its intende
 
 The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js">lib/web/mage/loader.js</a>.
 
+<h2 id="loader_init">Initialization</h2>
+The loader widget is initialized as described in Widget initializaiton.
+<!--ADDLINK-->
+
 <h2 id="loader_options">Options</h2>
 
 <ul>

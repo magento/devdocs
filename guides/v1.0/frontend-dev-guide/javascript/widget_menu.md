@@ -17,6 +17,8 @@ The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" 
 </ul>
 The Magento menu widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
 
+<h2 id="menu_init">Initialization</h2>
+
 <h2 id="menu_options">Options</h2>
 Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of several custom ones:
 <ul>
