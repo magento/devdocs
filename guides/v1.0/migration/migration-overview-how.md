@@ -35,4 +35,4 @@ Mapping files are discussed in more detail in <cross-ref to Database configurati
 
 ####The following diagram illustrates the migration flow in general:
 
-<p><img src="{{ site.baseurl }}common/images/migration-flow.png" alt="Migration Flow"></p> 
+<p><img src="{{ site.baseurl }}common/images/migration_flow.png" alt="Migration Flow"></p> 
