@@ -15,6 +15,7 @@ github_link: install-gde/install/install-cli-uninstall.md
 See one of the following sections:
 
 *	<a href="#instgde-cli-before">First steps</a>
+*	<a href="#instgde-install-magento-prereq">Prerequisites</a>
 *	<a href="#instgde-install-magento-update">Update the Magento software</a>
 *	<a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a>
 *	<a href="#instgde-install-uninstall">Uninstall the Magento software</a>
@@ -23,6 +24,9 @@ See one of the following sections:
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+
+<h2 id="instgde-install-magento-prereq">Prerequisites</h2>
+Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
 
 <h2 id="instgde-install-magento-update">Update the Magento software</h2>
 This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.
