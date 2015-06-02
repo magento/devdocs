@@ -92,7 +92,7 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--backup-code</p></td>
 		<td><p>Backs up the Magento file system (excluding the <code>var</code> and <code>pub/static</code> directories) before uninstalling modules.</p>
-			<p>The backup is stored in <code>var/backup</code> as a compressed tar file with the name <code>&lt;timestamp>.filesystem.tgz</code>.</p>
+			<p>The backup is stored in <code>var/backups</code> as a compressed tar file with the name <code>&lt;timestamp>.filesystem.tgz</code>.</p>
 			<p><a href="#instgde-cli-uninst-mod-roll">Roll back the codebase later</a></td>
 		<td><p>No</p></td>
 	</tr>
@@ -105,7 +105,7 @@ To restore the Magento codebase to the state at which you backed it up using the
 
 	magento setup:rollback {file name}
 
-where `filename` is the name of the backup file located in `<your Magento install dir>/var/backup`.
+where `filename` is the name of the backup file located in `<your Magento install dir>/var/backups`.
 
 #### Related topics
 
