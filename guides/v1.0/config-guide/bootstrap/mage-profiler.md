@@ -25,3 +25,5 @@ Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/in
 *	`firebug` which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Firebug.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Firebug</a>
 *	`csv` which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a>
 *	Any other value, including an empty value, which uses <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a>
+
+You can set the value of `MAGE_PROFILER` in any of the ways discussed in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.
