@@ -12,7 +12,7 @@ github_link: rest/soap/soap-web-api-calls.md
 
 <h2 id="wsdl">WSDL File</h2>
 
-A WSDL file is generated only for services you request. This means that different clients may use different services and therefore use different WSDLs.
+A WSDL file is generated only for services that you request. This means that different clients may use different services and therefore use different WSDLs.
 
 The Magento web API uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
 
