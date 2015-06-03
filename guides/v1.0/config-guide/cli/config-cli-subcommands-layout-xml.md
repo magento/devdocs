@@ -31,12 +31,12 @@ For more information about layout XML files, see:
 <h2 id="config-cli-xml-run">Convert layout XML files</h2>
 Command options:
 
-	magento dev:xml:convert [-o|--overwrite] <xml file> <xslt stylesheet>
+	magento dev:xml:convert [-o|--overwrite] {xml file} {xslt stylesheet}
 
 where
 
-*	`<xml file>` is the full path and file name of a layout XML file to convert (required)
-*	`<xsd stylesheet>` is the full path and file name of an XSLT schema file to use for conversion (required)
+*	`{xml file}` is the full path and file name of a layout XML file to convert (required)
+*	`{xslt stylesheet}` is the full path and file name of an XSLT schema file to use for conversion (required)
 *	`-o|--overwrite` include this option to overwrite the existing XML file
 
 
