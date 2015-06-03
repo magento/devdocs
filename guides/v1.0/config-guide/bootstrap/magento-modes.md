@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Bootstrap
-title: Set the mode (developer, production, default)
-menu_title: Set the mode (developer, production, default)
+title: Set the mode (MAGE_MODE)
+menu_title: Set the mode (MAGE_MODE)
 menu_order: 3
 menu_node: 
 github_link: config-guide/bootstrap/magento-modes.md
@@ -67,7 +67,7 @@ In default mode:
 For more information, see <a href="#mode-specify">Specify a mode</a>.
 
 <h2 id="mode-production">Production mode</h2>
-You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="#mode-production-view">view files creation tool</a> to write static view files to the Magento `pub/static` directory.
+You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.
 
 This improves performance because static files don't go through the fallback mechanism; instead, URLs for static files are created as needed.
 
@@ -75,7 +75,8 @@ In production mode:
 
 *	Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism.
 <!-- *	The Magento installation directory can have read-only permissions
- -->*	Errors are logged to the file system and are never displayed to the user
+ -->
+ *	Errors are logged to the file system and are never displayed to the user
 
 #### Next step
 To set a mode, see <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
