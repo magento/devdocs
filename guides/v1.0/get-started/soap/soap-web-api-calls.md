@@ -16,7 +16,7 @@ A WSDL file is generated only for services you request. This means that differen
 
 The Magento web API uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
 
-Each Magento service is represented as a separate service in the WSDL.
+Each Magento service interface that is part of a service contract is represented as a separate service in the WSDL.
 
 To consume several services, you must specify them in the WSDL endpoint URL.
 
@@ -89,16 +89,11 @@ Service names use the following conventions:
 </tbody>
 </table>
 
-<h2>Authentication</h2>
+<h2 id="auth">Authentication</h2>
 
-You should access all protected SOAP resources over SSL; otherwise, your credentials are sent in the clear and can be easily compromised. Access tokens are strings representing access authorizations issued to the client.
+Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access authorization issued to the client. For more information, see <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 
-
-Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access authorization issued to the client. In order to get an access token, you can create an integration similar to the following.
-
-
-
-Authenticating using a PHP script
+The following PHP script illustrates how to get an access token:
 
 {% highlight php %}
 $opts = array(
@@ -118,5 +113,9 @@ $soapClient->setStreamContext($context);
 $soapResponse = $this->_getSoapClient($serviceInfo)->testModule1AllSoapAndRestV1Item($serviceArgs);
 {% endhighlight %}
 
+<h2 id="related">Related Topics</h2>
+* <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+* <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
+* <a href="{{ site.gdeurl }}soap/bk-soap.html">SOAP Reference</a>
 
 
