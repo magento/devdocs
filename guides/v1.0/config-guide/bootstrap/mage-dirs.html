@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get started with command-line configuration</title>
+	<title>Customize base directory paths (MAGE_DIRS)</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/config-guide/cli/config-cli-subcommands.html">
+	<link rel="canonical" href="//guides/v1.0/config-guide/bootstrap/mage-dirs.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Get started with command-line configuration</h1>
+		<h1 class="page-heading">Customize base directory paths (MAGE_DIRS)</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/cli/config-cli-subcommands.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/bootstrap/mage-dirs.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,211 +166,46 @@
 		<div class="content-wrap">
 		
 		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#dirs-introduction">Introduction to Magento base directory paths</a></li>
+  <li><a href="#dirs-set">Set MAGE_DIRS</a></li>
+</ul>
 
-<p>See one of the following sections:</p>
+<h2 id="dirs-introduction">Introduction to Magento base directory paths</h2>
+<p>The <code>MAGE_DIRS</code> environment variable enables you to specify custom base directory paths and fragments of base URLs that are used by the Magento application to build absolute paths to various files or for generating URLs. </p>
+
+<h2 id="dirs-set">Set MAGE_DIRS</h2>
+<p>Specify an associative array where keys are constants from <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Filesystem/DirectoryList.php" target="_blank">\Magento\App\Filesystem\DirectoryList</a> and values are absolute paths of directories or their URL paths, respectively.</p>
+
+<p>You can set <code>MAGE_DIRS</code> in any of the following ways:</p>
 
 <ul>
-  <li><a href="#config-install-cli-prereq">Before you configure the Magento application</a></li>
-  <li><a href="#config-install-cli-first">First steps</a></li>
-  <li><a href="#config-cli-summary">Command summary</a></li>
-  <li><a href="#config-cli-help">Help commands</a></li>
-  <li><a href="#config-cli-subcommands-common">Common arguments</a></li>
-  <li><a href="#config-cli-subcommands">Commands</a></li>
+  <li><a href="/guides/v1.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+  <li>Using a custom entry point script such as the following:</li>
 </ul>
 
-<h2 id="config-install-cli-prereq">Before you configure the Magento application</h2>
-<p>Before you begin, make sure that:</p>
-<ol><li>Your system meets the requirements discussed in <a href="/guides/v1.0/install-gde/system-requirements.html">Magento System Requirements</a>.</li>
-<li>You completed all prerequisite tasks discussed in <a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a>.</li>
-<li>You installed Composer and cloned the Magento GitHub repository as discussed in <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.</li>
-<li>After you log in to the Magento server, switch to a user that has permissions to write to the Magento file system. One way to do this is discussed in <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</li></ol>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+	<span class="k">use</span> <span class="nx">Magento\Framework\App\Filesystem\DirectoryList</span><span class="p">;</span>
+	<span class="k">use</span> <span class="nx">Magento\Framework\App\Bootstrap</span><span class="p">;</span>
+ 
+	<span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/app/bootstrap.php&#39;</span><span class="p">;</span>
+	<span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+	<span class="nv">$customDirs</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">CACHE</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PATH</span> <span class="o">=&gt;</span> <span class="s1">&#39;/mnt/nfs/cache&#39;</span><span class="p">],</span>
+	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">MEDIA</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PATH</span> <span class="o">=&gt;</span> <span class="s1">&#39;/mnt/nfs/media&#39;</span><span class="p">,</span> <span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">]</span>
+	<span class="nv">$params</span><span class="p">[</span><span class="nx">Bootstrap</span><span class="o">::</span><span class="na">INIT_PARAM_FILESYSTEM_DIR_PATHS</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">PUB</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>	
+	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">MEDIA</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">&#39;media&#39;</span><span class="p">],</span>
+	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">STATIC_VIEW</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">&#39;static&#39;</span><span class="p">],</span>
+	<span class="nx">DirectoryList</span><span class="o">::</span><span class="na">UPLOAD</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">DirectoryList</span><span class="o">::</span><span class="na">URL_PATH</span> <span class="o">=&gt;</span> <span class="s1">&#39;media/upload&#39;</span><span class="p">],</span>
+	<span class="p">];</span>
+<span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+	<span class="sd">/** @var \Magento\Framework\App\Http $app */</span>
+	<span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
+	<span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
+	<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<!-- <div class="bs-callout bs-callout-warning">
-	<span class="glyphicon-class">
-		<p>The Magento command-line installer now uses a new syntax. You must install the Magento software from the <code>bin</code> subdirectory instead of the <code>setup</code> subdirectory. </p>
-  		<p>The new syntax replaces <code>setup/php -f index.php</code>.</p></span>
-</div> -->
-
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
-<li>Change to the following directory:<br />
-<pre>cd &lt;your Magento install dir&gt;/bin</pre>
-Examples:
-<ul><li>Ubuntu: <code>cd /var/www/magento2/bin</code></li>
-<li>CentOS: <code>cd /var/www/html/magento2/bin</code></li>
-</ul>
-</li>
-</ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can run the commands in any of the following ways:</p>
-<ul><li><code>php magento &lt;command&gt;</code></li>
-<li><code>magento &lt;command&gt;</code></li></ul></span>
-</div>
-
-<h2 id="config-cli-summary">Command summary</h2>
-<p>The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Before you run any of these commands, you must either <a href="/guides/v1.0/install-gde/install/install-cli.html">install the Magento application</a> or <a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">enable some modules</a>.</p></span>
-</div>
-
-<table>
-	<col width="40%" />
-  	<col width="30%" />
-  	<col width="30%" />
-	<tbody>
-		<tr>
-			<th>Command</th>
-			<th>Description</th>
-		</tr>
-		
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">magento setup:cache:{enable|disable|clean|flush|status}</a></td>
-		<td><p>Manages the cache</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">magento setup:indexer:{status|show-mode|set-mode|reindex|info}</a></td>
-		<td><p>Manages the indexers</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">magento log {status|clean}</a></td>
-		<td><p>Cleans logs older than a specified number of days</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">magento cron:run</a></td>
-		<td><p>Runs Magento cron jobs</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">magento setup:di:compile-multi-tenant</a></td>
-		<td><p>Use only if you have multiple independent Magento applications (in other words, one common Magento code base but more than one independent instance of the Magento application).</p>
-		<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for multiple stores or websites.</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">magento setup:di:compile</a></td>
-		<td><p>Use if you have one instance of the Magento application.</p>
-			<p>Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plugin definitions for one store and website.</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-depen.html">magento info:dependencies:{show-modules|show-modules-circular|show-framework}e</a></td>
-		<td><p>Module dependencies, circular dependencies, and Magento framework dependencies.</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">magento i18n:{collect-phrases|pack}</a></td>
-		<td><p>Creates a translation dictionary or a translation package</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">magento setup:static-content:deploy</a></td>
-		<td><p>Deploys static view files</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">magento dev:css:deploy</a></td>
-		<td><p>Creates CSS from LESS</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">magento dev:tests:run</a></td>
-		<td><p>Runs automated tests</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">magento dev:xml:convert</a></td>
-		<td><p>Update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">magento setup:perf:generate-fixtures</a></td>
-		<td><p>Generate data to use for performance testing.</p></td>
-	</tr>
-	<tr>
-		<td><a href="/guides/v1.0/install-gde/install/sample-data.html#instgde-install-sample-enable-after">magento sampledata:install</a></td>
-		<td><p>Installs optional Magento sample data after you install the Magento application.</p>
-			<p>For more details about Magento sample data, see <a href="/guides/v1.0/install-gde/install/sample-data.html">Optional Magento sample data</a>.</p></td>
-	</tr>
-	
-	</tbody>
-</table>
-
-<h2 id="config-cli-help">Help commands</h2>
-<p>To display a complete list of commands, enter:</p>
-<pre>magento --list</pre>
-<p>To get help for a particular command, enter:</p>
-<pre>magento --help &lt;command&gt;</pre>
-<p>For example,</p>
-<pre>magento --help setup:install
-magento --help cache:enable</pre>
-
-<h2 id="config-cli-subcommands-common">Common arguments</h2>
-<p>The following arguments are common to all commands. These commands can be run either before or after the Magento software is installed:</p>
-<table>
-	<tbody>
-		<col width="15%" />
-  		<col width="10%" />
-  		<col width="75%" />
-		<tr>
-			<th>Long version</th>
-			<th>Short version</th>
-			<th>Meaning</th>
-		</tr>
-		
-	<tr>
-		<td>--help</td>
-		<td>-h</td>
-		<td>Get help for any command. For example, <code>./magento help setup:install</code> or <code>./magento help setup:config:set</code>.</td>
-	</tr>
-	<tr>
-		<td>--quiet</td>
-		<td>-q</td>
-		<td>Quiet mode; no output.</td>
-	</tr>
-	<tr>
-		<td>--no-interaction</td>
-		<td>-n</td>
-		<td>No interactive questions.</td>
-	</tr>
-	<tr>
-		<td>--verbose=1|2|3</td>
-		<td>-v|vv|vvv</td>
-		<td>Verbosity level. For example, <code>--verbose=3</code> or <code>-vvv</code> displays debug verbosity, which is the most verbose output. Default is <code>--verbose=1</code> or <code>-v</code>.</td>
-	</tr>
-	<tr>
-		<td>--version</td>
-		<td>-V</td>
-		<td>Display this application version</td>
-	</tr>
-	<tr>
-		<td>--ansi</td>
-		<td>n/a</td>
-		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Force ANSI output</a></td>
-	</tr>
-		<tr>
-		<td>--no-ansi</td>
-		<td>n/a</td>
-		<td><a href="http://symfony.com/doc/current/components/console/usage.html" target="_blank">Disable ANSI output</a></td>
-	</tr>
-	
-	
-	</tbody>
-</table>
-
-<h2 id="config-cli-subcommands">Commands</h2>
-<p>The following sections discuss the available commands. </p>
-
-<ul>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
-
+<p>The preceding example sets paths for <code>[cache]</code> and <code>[media]</code> directories to <code>/mnt/nfs/cache</code> and <code>/mnt/nfs/media</code>, respectively.</p>
 
 
 		</div>
@@ -481,7 +316,7 @@ magento --help cache:enable</pre>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
 						
 								
 							
@@ -514,7 +349,7 @@ magento --help cache:enable</pre>
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
 						
 								
 							
