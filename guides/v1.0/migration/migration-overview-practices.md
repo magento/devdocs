@@ -14,10 +14,9 @@ This section provides our best information about how to speed up and simplify yo
 
 Best practices and recommendations
 
-* Migrate data from a replicated Magento 1.x database instance.
-* Remove outdated and redundant data from your Magento 1.x database (for example, you could remove logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, and so on).
-* Stop all administrative activity on both Magento 1.x and Magento 2.0 during your migration test runs and the actual migration (including configuration changes; and maintaining customers, orders, and inventory).
-* For Magento Enterprise Edition, archive unarchived orders.
+* Migrate data from a replicated Magento 1 database instance.
+* Remove outdated and redundant data from your Magento 1 database (for example, you could remove logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, and so on).
+* To avoid any unexpected issues or conflicts please follow steps described in "General Notes about using the migration tool"
 
 
 Benchmarking estimates
