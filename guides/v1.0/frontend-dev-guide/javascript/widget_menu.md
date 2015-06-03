@@ -20,7 +20,7 @@ The Magento menu widget source is <a href="{{site.mage2000url}}lib/web/mage/load
 <h2 id="menu_init">Initialization</h2>
 
 <h2 id="menu_options">Options</h2>
-Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of several custom ones:
+Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of the following custom ones:
 <ul>
 <li><a href="#m_expanded">expanded</a></li>
 <li><a href="#m_responsive">responsive</a></li>
@@ -34,7 +34,7 @@ Expand all submenu's past the second layer of sub-menus.
 
 **Type**: Boolean
 
-**Default value**: false
+**Default value**: `false`
 
 <h3 id="#m_responsive">responsive</h3>
 Setting the default responsive handler for the navigation widget.
@@ -55,19 +55,11 @@ The Magento menu widget has all default jQuery UI menu widget methods, plus the 
 
 <ul>
 <li><a href="#m_isexpanded">isExpanded()</a></li>
-<li><a href="#m_toggleMobileMode">_toggleMobileMode()</a></li>
-<li><a href="#m_delay">delay</a></li>
 
 </ul>
 
 <h3>isExpanded()</h3>
-This function adds an 'expanded' class to the submenu containers past the second level of sub navigation, sets the aria-expanded attribute to true, and removes the aria-hidden attribute
-Visibility: public
-<h3>_toggleMobileMode()</h3>
-This function dictates the mobile mode of the widget. Coverts hover to click.
+Adds the `expanded` class to the submenu containers past the second level of sub navigation, sets the aria-expanded attribute to true, and removes the aria-hidden attribute
 
-Visibility: private
-<h3>_delay()</h3>
-This function revert the changes dictated in the _toggleMobileMode
-
- Visibility: private
+<p class="q">What is meant by "aria"? area?></p>
+<p class="q">In the code, there's also the toggle() method, it is not mentioned in <code>navigation</code> or <code>menu</code> docs, should it be mentioned?</p>

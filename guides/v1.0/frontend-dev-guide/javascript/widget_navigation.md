@@ -56,7 +56,7 @@ Container to track the menu overflow on responsive navigation.
 
 **Type**: String
 
-**Default value**: #menu
+**Default value**: *'#menu'*
 
 <h3 id="n_moreText">moreText</h3>
 
@@ -73,7 +73,7 @@ Set the text for the overflow menu (i.e. more)
 <ul>
 <li><a href="#nav_return">return()</a></li>
 <li><a href="#nav_setMaxItems">setMaxItems()</a></li>
-<li><a href="#setupMoreMenu>setupMoreMenu()</a></li>
+<li><a href="#setupMoreMenu">setupMoreMenu()</a></li>
 </ul>
 
 <h3 id="#nav_return">return()</h3>
