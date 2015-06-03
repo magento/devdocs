@@ -113,7 +113,7 @@ $soapClient->setStreamContext($context);
 $soapResponse = $this->_getSoapClient($serviceInfo)->testModule1AllSoapAndRestV1Item($serviceArgs);
 {% endhighlight %}
 
-<h2 id="related">Related Topics</h2>
+<h2 id="related">Related topics</h2>
 * <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 * <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 * <a href="{{ site.gdeurl }}soap/bk-soap.html">SOAP Reference</a>
