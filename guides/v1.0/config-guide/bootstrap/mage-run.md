@@ -28,12 +28,28 @@ A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with di
 </div>
 
 <h2 id="magerun-conf">Configure Magento</h2>
-This section discusses the minimum tasks required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`. For more details, see the Magento 2 Users Guide when it is available.
+This section discusses the minimum tasks required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`. For more details about websites and stores, see the Magento 2 Users Guide when it is available.
+
+We use the following terms:
+
+*	*Website* is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  create separate websites. 
+
+*	*Store* is contained by a website. In turn, a store contains at least one *store view*. 
+
+	Multiple Stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures. 
+
+	Store views change the way pages are presented, and are typically used to display a site different layouts or languages. 
+
+
+
+<!-- https://www.properhost.com/support/kb/30/How-To-Setup-Magento-With-Multiple-Stores-And-Domains -->
+<!-- http://inchoo.net/magento/how-to-set-multiple-stores-websites-with-one-magento-installation-on-different-domains/ -->
+
 
 
 
 <h2 id="magerun-set">Set values for MAGE_RUN_TYPE and MAGE_RUN_CODE</h2>
-We recommend you set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` in an entry point script, rather than using them as system or web server environment variables. This is more flexible and makes more sense because you can use store-specific values that are used depending on the entry point.
+We recommend you set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` in an entry point script, rather than as system or web server environment variables. This is more flexible and makes more sense because you can use store-specific values in entry points.
 
 
 
