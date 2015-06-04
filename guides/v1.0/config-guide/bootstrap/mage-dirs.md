@@ -32,9 +32,11 @@ You can set `MAGE_DIRS` in any of the following ways:
  
 	require __DIR__ . '/app/bootstrap.php';
 	$params = $_SERVER;
-	$customDirs = [
-	DirectoryList::CACHE => [DirectoryList::PATH => '/mnt/nfs/cache'],
-	DirectoryList::MEDIA => [DirectoryList::PATH => '/mnt/nfs/media', DirectoryList::URL_PATH => '']
+	$params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS] = [
+       DirectoryList::CACHE => [DirectoryList::PATH => '/mnt/nfs/cache'],
+       DirectoryList::MEDIA => [DirectoryList::PATH => '/mnt/nfs/media', DirectoryList::URL_PATH => ''],
+	];
+
 	$params[Bootstrap::INIT_PARAM_FILESYSTEM_DIR_PATHS] = [
 	DirectoryList::PUB => [DirectoryList::URL_PATH => ''],	
 	DirectoryList::MEDIA => [DirectoryList::URL_PATH => 'media'],
