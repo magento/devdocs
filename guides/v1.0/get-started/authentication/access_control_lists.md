@@ -7,6 +7,6 @@ menu_title: Access Control Lists
 menu_order: 3
 
 
-github_link: get-started/access_control_lists.md
+github_link: get-started/authentication/access_control_lists.md
 ---
 Information about this topic will be provided in a future sprint.

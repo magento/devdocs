@@ -12,6 +12,7 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 #### Contents
 
 *	<a href="#config-cli-before">First steps</a>
+*	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
 *	<a href="#config-cli-subcommands-multi">Overview of the multi-tenant compiler</a>
 *	<a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a>
 
@@ -19,6 +20,11 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
 <h2 id="config-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
+
+<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
+This section discusses the basics of code compilation (which is also referred to as *code generation*).
+
+{% include install/cli_code-generation.html %}
 
 <h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
@@ -31,6 +37,8 @@ Use this command if you have multiple *tenants*, which means more than one indep
 If you do not have multiple tenants, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html">single-tenant compiler</a> instead.
 
 {% include install/cli_tenant-compiler.html %}
+
+
 
 <!-- The multi-tenant compiler does the following:
 
@@ -59,6 +67,7 @@ Naming Rules for auto-generated classes for a module:
 <div class="bs-callout bs-callout-warning">
     <p>Failure to follow the preceding naming convention results in exceptions.</p>
 </div> -->
+
 
 <h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Command options:

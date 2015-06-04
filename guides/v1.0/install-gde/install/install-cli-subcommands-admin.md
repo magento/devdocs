@@ -75,7 +75,7 @@ where the following table defines parameters and values.
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_password</p></td>
+		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
 		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
 		<td><p>Yes</p></td>
@@ -90,8 +90,8 @@ where the following table defines parameters and values.
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>

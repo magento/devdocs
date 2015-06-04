@@ -47,9 +47,15 @@ This section discusses how to install optional sample data *after* you install t
  
 {% include install/sample-data.html %}
 
-To install the sample data, enter the following command:
+To install the sample data, enter the following commands in the order shown:
 
-	php dev/tools/Magento/Tools/SampleData/install.php -- --admin-user=<your Magento admin user name>
+	<path to Magento 2 bin dir>/magento setup:upgrade
+	<path to Magento 2 bin dir>/magento sampledata:install <your Magento administrator user name>
+
+For example,
+
+	/var/www/magento2/bin magento setup:upgrade
+	/var/www/magento2/bin magento sampledata:install admin
 
 <h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
 {% include install/sample-data-note.html %}

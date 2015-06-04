@@ -175,7 +175,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>Yes</p></td>
 	</tr>
 	<tr>
-		<td><p>--admin_password</p></td>
+		<td><p>--admin-password</p></td>
 		<td><p>Magento administrator user password.</p>
 			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
 		<td><p>Yes</p></td>
@@ -318,7 +318,7 @@ The following example installs Magento with the following options:
 		--backend-frontname=admin \
 		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-		--admin-user=admin --admin_password=admin123 --language=en_US \
+		--admin-user=admin --admin-password=admin123 --language=en_US \
 		--currency=USD --timezone=America/Chicago --use-sample-data
 
 **Example 2** (with additional options)
@@ -350,7 +350,7 @@ The following example installs Magento with the following options:
 		--backend-frontname=admin --db-host=localhost --db-name=magento \
 		--db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-		--admin-user=admin --admin_password=admin123 --language=en_US \
+		--admin-user=admin --admin-password=admin123 --language=en_US \
 		--currency=USD --timezone=America/Chicago --cleanup-database \
 		--sales-order-increment-prefix="ORD$" --session-save=db
 
