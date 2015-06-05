@@ -56,7 +56,13 @@ To create websites and stores:
 
 
 <h2 id="magerun-set">Set values for MAGE_RUN_TYPE and MAGE_RUN_CODE</h2>
-We recommend you set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` in an entry point script, rather than as system or web server environment variables. This is more flexible and makes more sense because you can use store-specific values in entry points.
+The following sections discuss alternatives for setting values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`:
+
+*   <a href="#magerun-set-index">Set values in an entry point script</a>
+*   <a href="#magerun-set-htaccess">Set values in .htaccess</a>
+
+<h3 id="magerun-set-index">Set values in an entry point script</h3>
+Setting values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` in an entry point script is flexible; it enables you to use website or store-specific values in entry points.
 
 If necessary, create an `index.php` entry point script for your website or store view and add to it the following:
 
@@ -107,3 +113,38 @@ HTML;
 
 {% endhighlight %}
 
+<h3 id="magerun-set-htaccess">Set values in .htaccess</h3>
+This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using Apache server variables `SetEnvIf` or `RewriteCond`. If you're not sure what method to use, consult a network administrator.
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Additional tasks required to set up the Magento 2 file system for this type of environment are beyond the scope of this topic.</p></span>
+</div>
+
+For more information about `SetEnvIf` or `RewriteCond`, see:
+
+*   Apache 2.2: <a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a>
+*   Apache 2.4: <a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a>
+
+#### SetEnvIf example
+Add the following after `RewriteEngine on` in `.htaccess`:
+
+    SetEnvIf Host .*<your domain>.* MAGE_RUN_CODE=<code>
+    SetEnvIf Host .*<your domain>.* MAGE_RUN_TYPE={store|website}
+
+For example, to use a website with the code `frenchsite.example.com`:
+
+    SetEnvIf Host .*example.com.* MAGE_RUN_CODE=frenchsite.example.com
+    SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
+
+#### RewriteCond example
+Add the following code just below `RewriteBase /magento/` in `.htaccess`:
+
+    RewriteCond %{HTTP_HOST} .*newdomain\.com [NC]
+    RewriteRule .* – [E=MAGE_RUN_CODE:site_code]
+    RewriteCond %{HTTP_HOST} .*newdomain\.com [NC]
+    RewriteRule .* – [E=MAGE_RUN_TYPE:website]
+
+<!-- http://gotgroove.com/ecommerce-blog/magento-development/developer-toolbox-using-store-views-in-magento/ -->
+<!-- https://www.byte.nl/blog/multiple-stores-in-one-magento-install/ -->
+<!-- http://magento.stackexchange.com/questions/6521/rewrite-htaccess-to-different-domain -->
