@@ -11,24 +11,38 @@ github_link: migration/migration-manually.md
 
   
 <h2>Data that needs to be migrated manually</h2>
-<h4>What migration does not cover</h4>
 
-Magento 2 uses new powerfull technologies to enhance merchant's shopping experience and these valuable changes mean that some custom code, extensions, and themes cannot be automatically migrated to the new platform. They might need to be adjusted or rebuilt to fit the improved Magento 2 architecture.
+### Media
+This section discusses how to manually migrate media files.
 
-The migration tool does not automatically migrate the following. 
+#### Media files stored in the database
+This section applies to you *only* if you store media files in the Magento database and should be performed before migration of data.
 
-* Extensions and custom code 
-* Media
-  * all media files (e.g. images for product, category, wysiwyg ...) should be copied manually as-is from directory magento1-root/media to magento2-root/pub/media. But .htaccess files that exist in media folder of Magento 1 should not be copied to Magneto 2. Magento 2 has its own .htaccess and it should be preserved. Media files can be copied in any period of migration.
-  * in case media is stored in database of Magento 1, then in the Admin of Magento 2 in configuration section of media storage one must press the button "Synchronize" before migration of main data. It will create according database tables in Magento 2.
-* Storefront design
-  * design in files (css, js, templates, XML layouts) changed its location and format. It can be developed and integrated after migration of settings.
-  * Layout Updates stored in DB. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. Should be migrated manually after migration of main data.
-* All Credentials for API Web Services. (SOAP, XML-RPC, REST). Should be migrated manually after migration of main data.
-* Admin users and ACL rules for them. Should be migrated manually after migration of main data.
+If media files are stored in the Magento 1 database, use the following steps:
 
-<h4>Data which will not be used in Magento 2</h4>
+1.	Log in to the Magento 1 Admin Panel as an administrator.
+2.	Click **System** > **Configuration** > ADVANCED > **System**. 
+3.	In the right pane, scroll to **Storage Configuration for Media**.
+4.	From the **Select Media Database** list, click the name of your media storage database. 
+5.	Click **Synchronize**.
 
-* Google Shopping was removed from Magento 1 and 2
-* Poll, Tag, Staging modules and Recurring Profiles were removed in Magento 2
-* All indexed data. Indexes should be run manually in Magento 2 after migration of main data and after migration of delta
+After that, use the following steps:
+
+1.	Log in to the Magento 2 Admin as an administrator.
+2.	Click **Stores** > **Configuration** > ADVANCED > **System**. 
+3.	In the right pane, scroll to **Storage Configuration for Media**.
+4.	From the **Select Media Database** list, click the name of your media storage database. 
+5.	Click **Synchronize**.
+
+#### Media files on the file system
+All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`. 
+
+However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved. 
+
+### Storefront design        
+* Design in files (css, js, templates, XML layouts) changed its location and format. 
+* Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. 
+
+### ACLs
+*	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
+*	You must manually re-create all administrative users and associate them with access privileges.
