@@ -12,7 +12,6 @@ github_link: frontend-dev-guide/javascript/js_init.md
 
 In the Magento 2 application, there are two ways to initialize a JavaScript component on a DOM element: using the `data-mage-init` attribute and using the `<script>` tag.
 
-<p class="q">What is meant by "component"?</q>
 
 This topic describes both approaches in details, and talks about when each of them is appropriate.
 
@@ -21,13 +20,13 @@ This topic describes both approaches in details, and talks about when each of th
 To initialize a JavaScript component in a .phtml template, add the following code:
 
 <pre>
-&lt;nav data-mage-init=&quot;{ &quot;&lt;component_name&gt;&quot;: &lt;?php echo $block-&gt;getNavigationConfig(); ?&gt; }&quot;&gt;&lt;/nav&gt;
+&lt;nav data-mage-init=&quot;{ &quot;&lt;component_name&gt;&quot;: {..<component configuration/options>.} }&quot;&gt;&lt;/nav&gt;
 </pre>
 
-<p class="q">Can it be used for other element than <nav>? What is this php code?</q>
+<p class="q">Can it be used for other element than <nav> A: yes? What is this php code?</q>
 
 In this case, it is "navigation", but there may be more, rather than just one.
-<p class="q">Can we specify more than one JS for a node? How is it done?</q>
+<p class="q">Can we specify more than one JS for a node? How is it done?A: the component is initiated only for this element, not for other elements of this type</q>
 
 On DOM ready, the `data-mage-init` attribute is parsed to extract components names and configuration to be applied to the node. 
 Depending on the type of the JS component initialized, there are three behavior patterns:
