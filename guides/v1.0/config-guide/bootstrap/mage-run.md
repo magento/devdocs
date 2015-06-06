@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: Bootstrap
-title: MAGE_RUN_TYPE, MAGE_RUN_CODE
-menu_title: MAGE_RUN_TYPE, MAGE_RUN_CODE
+title: Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)
+menu_title: Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)
 menu_order: 500
 menu_node: 
 github_link: config-guide/bootstrap/mage-run.md
@@ -16,19 +16,25 @@ github_link: config-guide/bootstrap/mage-run.md
 
 
 <h2 id="magerun-introduction">Introduction to multiple Magento stores and websites</h2>
-Use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables when you have multiple stores and websites using the same Magento installation. This allows multiple storefronts to share a common code base and Magento Admin, simplifying administration. 
+One instance of the Magento software can enable you to start multiple websites or store views that:
 
-In addition to sharing a codebase, stores can share customers, product catalogs, and configuration settings based on how you choose to configure your websites.
+*   Use different default languages
+*   Use different domain names
+*   Use different categories
+
+This very flexible solution enables one Magento codebase and Magento Admin to administer and display different stores.
+
+You configure the websites, stores, and store views in the Magento Admin. You use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in entry point scripts or `.htaccess` files to start the Magento application using these websites or store views. 
 
 A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and the other one will be on different language.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This topic discusses how to set the variables only. Details about deploying the Magento software in multiple domains is beyond the scope of this topic.</p></span>
+  <p>This topic discusses only the basics of configuring multiple sites using the Admin and variables. Details about deploying the Magento application in multiple domains is beyond the scope of this topic.</p></span>
 </div>
 
 <h2 id="magerun-conf">Configure Magento websites and stores</h2>
-This section discusses the minimum tasks required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`. For more details about websites and stores, see the Magento 2 Users Guide when it is available.
+This section discusses the minimum tasks required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`. 
 
 We use the following terms:
 
@@ -36,9 +42,9 @@ We use the following terms:
 
 *	*Store* is contained by a website. In turn, a store contains at least one *store view*. 
 
-	Multiple Stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures. 
+	Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures. 
 
-	Store views change the way pages are presented, and are typically used to display a site different layouts or languages. 
+	Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. 
 
 Each website and each store view must have a unique identifer. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`.
 
@@ -62,8 +68,6 @@ The following sections discuss alternatives for setting values for `MAGE_RUN_TYP
 *   <a href="#magerun-set-htaccess">Set values in .htaccess</a>
 
 <h3 id="magerun-set-index">Set values in an entry point script</h3>
-Setting values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` in an entry point script is flexible; it enables you to use website or store-specific values in entry points.
-
 If necessary, create an `index.php` entry point script for your website or store view and add to it the following:
 
 {% highlight php %}
@@ -138,12 +142,24 @@ For example, to use a website with the code `frenchsite.example.com`:
     SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
 
 #### RewriteCond example
-Add the following code just below `RewriteBase /magento/` in `.htaccess`:
+Add code similar to the following after `RewriteBase /magento/` in `.htaccess`:
 
-    RewriteCond %{HTTP_HOST} .*newdomain\.com [NC]
-    RewriteRule .* – [E=MAGE_RUN_CODE:site_code]
-    RewriteCond %{HTTP_HOST} .*newdomain\.com [NC]
+    RewriteCond %{HTTP_HOST} ^(.*)<your domain>\<domain suffix>
+    RewriteRule .* – [E=MAGE_RUN_CODE:<code>]
+    RewriteCond %{HTTP_HOST} ^(.*)<your domain>\<domain suffix>
+    RewriteRule .* – [E=MAGE_RUN_TYPE:{store|website}]
+
+For example, to use a website with the code `frenchsite.example.com`:
+
+    RewriteCond %{HTTP_HOST} ^(.*)example\.com
+    RewriteRule .* – [E=MAGE_RUN_CODE:frenchsite.example.com]
+    RewriteCond %{HTTP_HOST} ^(.*)example\.com
     RewriteRule .* – [E=MAGE_RUN_TYPE:website]
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>The preceding is an example only. There is more than one way to configure the <code>RewriteCond</code> rule. Consult a system integrator or network administrator for more information.</p></span>
+</div>
 
 <!-- http://gotgroove.com/ecommerce-blog/magento-development/developer-toolbox-using-store-views-in-magento/ -->
 <!-- https://www.byte.nl/blog/multiple-stores-in-one-magento-install/ -->
