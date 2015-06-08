@@ -22,7 +22,7 @@ To locate scripts used for a certain element:
 <p class="q">class or id? true?</p>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code>calls for this element, its children or parents. which are used for JS scripts initialization. The names of the scripts are specified there. 
+<li>Find the corresponding element and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls for this element, its children or parents. which are used for JS scripts initialization. The names of the scripts are specified there. 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -37,7 +37,7 @@ To find out, where is the source file of the widget:
 <li>In the <code>var config = {...}</code> section, find the required script name, and view the path to its source file. The path is relative to either:
 <ul>
 <li>If the module context is not specified: <code>lib/web</code> or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (the current theme) directories. According to the assets fallback, if there's a file in the current theme <code>web</code> directory, the system uses it. If it is not found there, the system uses the file from the <code><lib/web</code></li>
-<li>If the module context is specified: app/code/<Namespace>/<Module> or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/<Namespace>_<Module>/web</code>. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
+<li>If the module context is specified: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> or <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code>. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
 
 </ul>
 </li>
@@ -50,7 +50,7 @@ To find out, where is the source file of the widget:
 </ol>
 </ol>
 
-blabla
+
 <h2>Locating widgets: example</h2>
 
 Let's find out what JS components are used for displaying the main navigation menu in the 
@@ -67,7 +67,9 @@ To do this, let's follow the steps described in the previous section:
 
 </li>
 <li>Search the page source for *"store.menu"*. We can see that there's a  
+<p>
 <img src="{{site.baseurl}}common/images/fdg_js_debug2.png">
+</p>
 
 We can see that there's a <code>data-mage-init</code> attribute in the scope of the <code>&lt;div id= &quot;store.menu&quot;&gt;&lt;/div&gt;</code> 
 
