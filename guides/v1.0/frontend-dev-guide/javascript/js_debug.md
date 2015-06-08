@@ -44,7 +44,7 @@ To find out, where is the source file of the widget:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: &lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</p></span>
+<p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: &lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</p></span>
 </div>
 
 </ol>
@@ -60,13 +60,31 @@ To do this, let's follow the steps described in the previous section:
 <ol>
 <li>Using the Inspect Element feature of the browser, we define that id of the menu section is *"store.menu"* <code>id</code>:
 
+<p>
 <img src="{{site.baseurl}}common/images/fdg_js_debug1.png">
+</p>
 
 
 </li>
-<li>Search the page source for *"store.menu"*. We see the 
+<li>Search the page source for *"store.menu"*. We can see that there's a  
 <img src="{{site.baseurl}}common/images/fdg_js_debug2.png">
 
+We can see that there's a <code>data-mage-init</code> attribute in the scope of the <code>&lt;div id= &quot;store.menu&quot;&gt;&lt;/div&gt;</code> 
 
+<pre>
+data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'
+</pre>
+
+According to the JS components initializaiton notation, this means that this code calls <code>menu.js</code>. 
 </li>
+<li>To find out where's the source file of <code>menu.js</code></li>, let's open, <code>requirejs-config.js</code> by clicking the link to it in the <head></head> section of the page source. The path to menu.js is specified there as follows:
+<pre>
+"menu":                   "mage/menu",
+</pre>
+
+This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order:
+<ol>
+<li><code>app/design/frontend/Magento/blank/web/js</code> (current theme JS files)</li>
+<li><code>lib/web</code> (library files)</li>
 </ol>
+There is no <code>mage/menu.js</code> in the current theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>
