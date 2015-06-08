@@ -23,7 +23,7 @@ Specify an associative array where keys are constants from <a href="{{ site.mage
 You can set `MAGE_DIRS` in any of the following ways:
 
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>
-*	Using a custom entry point script such as the following:
+*	Use a custom entry point script such as the following:
 
 	{% highlight php %}
 	<?php
@@ -43,7 +43,7 @@ You can set `MAGE_DIRS` in any of the following ways:
 	DirectoryList::STATIC_VIEW => [DirectoryList::URL_PATH => 'static'],
 	DirectoryList::UPLOAD => [DirectoryList::URL_PATH => 'media/upload'],
 	];
-$bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
+	$bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $params);
 	/** @var \Magento\Framework\App\Http $app */
 	$app = $bootstrap->createApplication('Magento\Framework\App\Http');
 	$bootstrap->run($app);
