@@ -34,8 +34,14 @@ You should uninstall a module only if you're certain you won't use it. Instead o
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This command uninstalls <em>only</em> Composer packages. Modules that are installed with the Magento software can't be uninstalled; you can, however, disable those modules.</span>
+  <p>This command uninstalls <em>only</em> Composer packages. Modules that are installed with the Magento software can't be uninstalled; you can, however, disable those modules.</p></span>
 </div>
+
+
+<h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
+Command usage:
+
+	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] <ModuleName> ... <ModuleName>
 
 The module uninstall command performs the following tasks:
 
@@ -44,68 +50,68 @@ The module uninstall command performs the following tasks:
 	This command works *only* with modules defined as Composer packages.
 
 2.	Checks for dependencies with other modules.
-2.	If `--backup-code` is specified, backs up the Magento file system (excluding `var` and `pub/static` directories).
-3.	If `--remove-data` is specified, collects the `Uninstall` classes from the code base.
+4.	Requests confirmation to proceed.
+3.	Puts the store in maintenance mode.
+4.	Processes the following command options.
 
-	For each specified module to uninstall, invoke the `uninstall` method in its `Uninstall` class. This class must inherit from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.
-4.	Removes the specified modules from the module registry in the database table `setup_module`.
-4.	Removes the specified modules from the module list in the <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>.
-5.	Cleans the cache.
-6.	Cleans generated classes.
-6.	If `--clear-static-content` is specified, clears generated static view files.
-
-
-<h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
-Command usage:
-
-	magento module:uninstall [-r|--remove-data] [--backup-code] [-c|--clear-static-content] <ModuleName> ... <ModuleName>
-
-The following table discusses the meanings of installation parameters and values. 
-
-<table>
+	<table>
 	<col width="25%">
 	<col width="65%">
 	<col width="10%">
 	<tbody>
 		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
+			<th>Option</th>
+			<th>Meaning</th>
+			<th>Backup file name and location</th>
 		</tr>
 		
 	<tr>
-		<td><p>&lt;ModuleName></p></td>
-		<td><p>Space-separated list of modules to uninstall.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>-r|--remove-data</p></td>
-		<td><p>Removes the module's data from the database.</p>
-			<p>Back up the database first using a tool such as <a href="https://www.mysql.com/products/workbench/" target="_blank">MySQL Workbench</a>.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>-c|--clear-static-content</p></td>
-		<td><p>Clears generated static view files after uninstalling modules.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
 		<td><p>--backup-code</p></td>
-		<td><p>Backs up the Magento file system (excluding the <code>var</code> and <code>pub/static</code> directories) before uninstalling modules.</p>
-			<p>The backup is stored in <code>var/backups</code> as a compressed tar file with the name <code>&lt;timestamp>.filesystem.tgz</code>.</p>
-			<p><a href="#instgde-cli-uninst-mod-roll">Roll back the codebase later</a></td>
-		<td><p>No</p></td>
+		<td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
+		<td><p>/var/backups/&lt;timestamp>filesystem.tgz</p></td>
 	</tr>
-	
+	<tr>
+		<td><p>--backup-media</p></td>
+		<td><p>Back up the <code>pub/media</code> directory.</p></td>
+		<td><p>/var/backups/&lt;timestamp>filesystem_media.tgz</p></td>
+	</tr>
+	<tr>
+	<tr>
+		<td><p>--backup-db</p></td>
+		<td><p>Back up the Magento 2 database.</p></td>
+		<td><p>/var/backups/&lt;timestamp>db.gz</p></td>
+	</tr>
+	<tr>
 	</tbody>
-</table>
+	</table>
+
+
+3.	If `--remove-data` is specified, collects the `Uninstall` classes from the code base.
+
+	For each specified module to uninstall, invoke the `uninstall` method in its `Uninstall` class. This class must inherit from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.
+4.	Removes the specified modules from the `setup_module` database table.
+4.	Removes the specified modules from the module list in the <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>.
+5.	Removes code from the codebase using `composer remove`.
+5.	Cleans the cache.
+6.	Updates generated classes.
+6.	If `--clear-static-content` is specified, clears generated static view files.
+7.	Takes the store out of maintenance mode.
 
 <h2 id="instgde-cli-uninst-mod-roll">Roll back the codebase</h2>
 To restore the Magento codebase to the state at which you backed it up using the `--backup-code` parameter, use the following command:
 
-	magento setup:rollback {file name}
+	magento setup:rollback {filename}
 
 where `filename` is the name of the backup file located in `<your Magento install dir>/var/backups`.
+
+This command performs the following tasks:
+
+1.	Puts the store in maintenance mode.
+1.	Verifies the backup file name.
+2.	Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
+3.	Removes existent code base in the rollback destination locations.
+4.	Extracts the archive file to the destination locations.
+5.	Takes the store out of maintenance mode.
 
 #### Related topics
 
