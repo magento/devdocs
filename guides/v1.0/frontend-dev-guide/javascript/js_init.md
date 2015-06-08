@@ -58,4 +58,26 @@ something.phtml
 
 </pre>
 
+<h2>Widget initialization in JS</h2>
+
+To initialize a widget JS file, use notation similar to the following: (the accordion widget is initilized as illustration):
+
+<pre>
+$("#element").accordion();
+</pre>
+
+To initialize a widget with options, use notation similar to the following:
+
+<pre>
+$("#element").accordion({
+    header : "#title-1"
+    content : "#content-1",
+    trigger : "#trigger-1,
+    ajaxUrlElement: "a"
+ });
+</pre>
+
 <p class="q">What about the "general widget initialization", like "$("#element").accordion();" </p>
+
+
+
