@@ -19,22 +19,25 @@ This topic describes both approaches in details, and talks about when each of th
 
 To initialize a JavaScript component in a .phtml template, add the following code:
 
+
 <pre>
+&lt;!-- Initializing a script for the &lt;nav/&gt; element--&gt;
+
 &lt;nav data-mage-init=&quot;{ &quot;&lt;component_name&gt;&quot;: {..<component configuration/options>.} }&quot;&gt;&lt;/nav&gt;
 </pre>
 
-<p class="q">Can it be used for other element than <nav> A: yes? What is this php code?</q>
+The script is called only for the specific element for which it is initialized. It is not automatically initialized for other elements of this type on the page. 
 
-In this case, it is "navigation", but there may be more, rather than just one.
-<p class="q">Can we specify more than one JS for a node? How is it done?A: the component is initiated only for this element, not for other elements of this type</q>
+<h3 id >How the JS initialization is processed</h3>
 
 On DOM ready, the `data-mage-init` attribute is parsed to extract components names and configuration to be applied to the node. 
 Depending on the type of the JS component initialized, there are three behavior patterns:
 
+<p class="q">if the following is up to date is being clarified by a SME</p>
+
 <ul>
 
 <li>If an object is returned, initializer tries to find "navigation" key if it's function, config and element will be passed to it.</li>
-<p class="q">Who's initializer?</q>
 <li>If a function is returned, config and element are simply passed to it, as in above example.</li>
 <li>if neither function nor object are exported from target module, initializer tries to search for "navigation" in jQuery prototype and if found, apply it as $(element).navigation(config).</li>
 </ul>
@@ -77,7 +80,7 @@ $("#element").accordion({
  });
 </pre>
 
-<p class="q">What about the "general widget initialization", like "$("#element").accordion();" </p>
+<p class="q"> Is it appropriate to have initialization in JS files and initialization in templates in one file? </p>
 
 
 

@@ -16,12 +16,13 @@ This article talks about how to define which `.js` scripts are used for a certai
 <h2 id="locate_widget">Locate script</h2>
 
 To locate scripts used for a certain element:
-<p class="q">Can this approach be used for admin panel pages as well?</p>
 
 <ol>
-<li>Open the store page in a browser, and locate the element's class using browser debugging tools.</li>
+<li>Open the store page in a browser, and locate the element's class or id using browser debugging tools.</li>
+<p class="q">class or id? true?</p>
+
 <li>Select to view the page source.</li>
-<li>Search for <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;occurencies</code>, which are used for JS scripts initialization. The names of the scripts are specified there. 
+<li>Find the corresponding element and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code>calls for this element, its children or parents. which are used for JS scripts initialization. The names of the scripts are specified there. 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -36,21 +37,36 @@ To find out, where is the source file of the widget:
 <li>In the <code>var config = {...}</code> section, find the required script name, and view the path to its source file. The path is relative to either:
 <ul>
 <li>If the module context is not specified: <code>lib/web</code> or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (the current theme) directories. According to the assets fallback, if there's a file in the current theme <code>web</code> directory, the system uses it. If it is not found there, the system uses the file from the <code><lib/web</code></li>
-<li>If the module context is specified: app/code/<Namespace>/<Module> or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/<Namespace>_<Module>/web. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
+<li>If the module context is specified: app/code/<Namespace>/<Module> or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/<Namespace>_<Module>/web</code>. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
 
 </ul>
 </li>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>&lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
+ <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: &lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</p></span>
 </div>
 
 </ol>
-</li>
 </ol>
 
+blabla
 <h2>Locating widgets: example</h2>
 
-Let's find out what widget is responsible for....
-<p class="q">To wh?</p>
+Let's find out what JS components are used for displaying the main navigation menu in the 
+default Blank theme. 
+
+To do this, let's follow the steps described in the previous section:
+<ol>
+<li>Using the Inspect Element feature of the browser, we define that id of the menu section is *"store.menu"* <code>id</code>:
+
+<img src="{{site.baseurl}}common/images/fdg_js_debug1.png">
+
+
+</li>
+<li>Search the page source for *"store.menu"*. We see the 
+<img src="{{site.baseurl}}common/images/fdg_js_debug2.png">
+
+
+</li>
+</ol>
