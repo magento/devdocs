@@ -4,16 +4,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
 	<title>Patches for Magento Enterprise Edition (EE) Versions 1.10&ndash;1.12</title>
 
 </head>
 
 <body>
-	<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+	<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <a name="top"></a>
 
@@ -33,7 +33,7 @@
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><tt>/app/code/community</tt> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="/guides/m1x/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h4 id="ee113-patches-how-to-get">How to Get This Patch</h4>
 <p>To get this patch:</p>
@@ -41,7 +41,7 @@ To set file system permissions appropriately, see <a href="/pages/Magento/devdoc
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 <li>In the right pane, click <strong>Magento Enterprise Edition</strong>.</li>
 <li>Follow the prompts on your screen to download a patch for your version of EE.</li>
-<li>Apply the patch as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="/guides/m1x/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h3 id="ee113-patches-solr-index">Solr Search Results and Indexing</h3>
 <p><em>Patch name</em>: PATCH_SUPEE-3630_EE_1.12.x_v1.sh for EE 1.12.x. <!-- <a href="https://jira.corp.x.com/browse/MPERF-5050" target="_blank">MPERF-5050</a>, <a href="https://jira.corp.x.com/browse/SUPEE-3630" target="_blank">SUPEE-3630</a>  -->After applying this patch, your search engine returns search results to users on the web store while reindexing is underway. We recommend you install this patch if you're using the Solr search engine. <em>This patch can result in slower performance if you're using the default MySQL Full Text search engine</em>.</p>

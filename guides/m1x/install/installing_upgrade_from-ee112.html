@@ -7,17 +7,17 @@
 <head>
     <meta charset=utf-8>
 
-    <link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-    <link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-    <link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
     <title>EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</title>
 
 </head>
 
 <body>
 <a name="top"></a>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <div id="content"> 
 
@@ -28,9 +28,9 @@
 <ul><li>From EE 1.12.x or earlier to EE 1.13.0.2</li>
 <li>From EE 1.12.x or earlier to EE 1.13.1.0</li>
 <li>From EE 1.12.x or earlier to EE 1.14.0.0</li></ul>
-<p>If your upgrade is not in the preceding list, go back to <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html">Upgrading to and Verifying Magento Community Edition (CE) 1.8 and Enterprise Edition (EE) 1.13</a>.</p>
+<p>If your upgrade is not in the preceding list, go back to <a href="/guides/m1x/install/installing_upgrade_details.html">Upgrading to and Verifying Magento Community Edition (CE) 1.8 and Enterprise Edition (EE) 1.13</a>.</p>
 <p>This article discusses how to run the URL redirect script that creates HTTP 301 (Moved Permanently) redirects for any duplicate product URL keys. This enables <strong>Previous</strong> links in your web store to work, for example.</p>
-<!-- <p>To run the URL redirect script, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a>. When you're done, continue with the next section. -->
+<!-- <p>To run the URL redirect script, see <a href="/guides/m1x/install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a>. When you're done, continue with the next section. -->
 <p>To create redirects for your URLs, perform the following tasks in the order shown:</p>
 <ol><li><a href="#upgrade-manual-post-upgrade-11302-cron-verify">Verifying that cron is Disabled</a></li>
 <li><a href="#upgrade-manual-post-upgrade-11302-indexer">Changing Indexer Settings to Update When Scheduled</a></li>
@@ -54,9 +54,9 @@
 <li>In the right pane, expand <strong>Index Options</strong>.</li>
 <li>Click <strong>Update when scheduled</strong> from the list for every indexer.<br />
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_index-management_when-scheduled.png" width="600px" height="258px"></li>
+<img src="/common/images/m1x/upgrade_index-management_when-scheduled.png" width="600px" height="258px"></li>
 <li>In the upper right corner, click <strong>Save Config</strong>.<br />
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Ignore any messages requesting you to reindex or flush the cache; you'll do that later.</div></li>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Ignore any messages requesting you to reindex or flush the cache; you'll do that later.</div></li>
 <li>Log out of the Admin Panel.</li>
 <li>If the script ran without errors, continue with <a href="#upgrade-manual-post-upgrade-11302-run">Running the URL Redirect Script</a>.</li></ol>
 
@@ -73,7 +73,7 @@ The following figure shows an example.<br />
 
 <h2 id="upgrade-manual-post-upgrade-11302-run">Running the URL Redirect Script</h2>
 <p>This section discusses how to run the URL redirect script to create permanent redirects for any URLs that changed in EE 1.13.1.0.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The time the script takes to run and the amount of memory it uses is directly proportional to the size of your database. If your database has 100,000 SKUs or more, Magento <em>strongly recommends</em> you monitor thread execution as discussed in this section. For large databases, the script can require several hours to complete.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The time the script takes to run and the amount of memory it uses is directly proportional to the size of your database. If your database has 100,000 SKUs or more, Magento <em>strongly recommends</em> you monitor thread execution as discussed in this section. For large databases, the script can require several hours to complete.</div>
 
 <p>To run the script:</p>
 <ol><li>Change to your Magento installation directory.</li>
@@ -82,7 +82,7 @@ The following figure shows an example.<br />
 where<br />
 <em>thread_count</em> is the number of threads to use. Magento recommends setting this to the number of CPU cores in your system minus 1 to a maximum of 15. For example, if your system has 8 CPU cores, enter
 <pre>php -f shell/url_migration_to_1_13.php 7</pre>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Each thread can use up to 512MB of RAM.</div></li>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Each thread can use up to 512MB of RAM.</div></li>
 <li>Wait while the script runs.<br />
 Messages like the following display to indicate progress: <br />
 <pre>[INFO]: Initialization...
@@ -112,14 +112,14 @@ This command helps you to determine if each thread behaves correctly. After each
   <li>Click <strong>Catalog</strong> > <strong>Attributes</strong> > <strong>Manage Attributes</strong>.</li>
   <li>Click the <strong>url_key</strong> row</strong>.</li>
   <li>Examine the value of the <strong>Scope</strong> list. A sample follows.<br />
-  <img src="/pages/Magento/devdocs_internal/common/images/m1x/index-management_product-url-key-attrib.png"></li>
+  <img src="/common/images/m1x/index-management_product-url-key-attrib.png"></li>
   <li>If the value in the <strong>Scope</strong> list is <strong>Global</strong>:
   <ol><li style="list-style-type:lower-alpha">Select another value from the list. You can select any value <em>other than</em> <strong>Global</strong>.</li>
   <li style="list-style-type:lower-alpha">Click <strong>Save Attribute</strong>.</li>
   <li style="list-style-type:lower-alpha">Log out of the Admin Panel.</li>
-  <li style="list-style-type:lower-alpha">Re-export the database as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html#prereq-tasks-prod-backup-db" target="_blank">Backing Up the Database</a>.</li>
-  <li style="list-style-type:lower-alpha">In the development system, drop and re-create the database as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html#prereq-tasks-dev" target="_blank">Pre-Upgrade Tasks for Your Development Environment</a>.</li>
-  <li style="list-style-type:lower-alpha">Import the database you just exported as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-db" target="_blank">Updating the Magento Database</a>.</li>
+  <li style="list-style-type:lower-alpha">Re-export the database as discussed in <a href="/guides/m1x/install/installing_upgrade_details.html#prereq-tasks-prod-backup-db" target="_blank">Backing Up the Database</a>.</li>
+  <li style="list-style-type:lower-alpha">In the development system, drop and re-create the database as discussed in <a href="/guides/m1x/install/installing_upgrade_details.html#prereq-tasks-dev" target="_blank">Pre-Upgrade Tasks for Your Development Environment</a>.</li>
+  <li style="list-style-type:lower-alpha">Import the database you just exported as discussed in <a href="/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-db" target="_blank">Updating the Magento Database</a>.</li>
   <li style="list-style-type:lower-alpha">Try running the upgrade script again.</li></ol>
   </li>
   <li>If the value of the <strong>Scope</strong> list is <em>not</em> <strong>Global</strong>, the issue is likely that the category <code>url_key</code> attribute is set to global. To confirm this:
@@ -154,13 +154,13 @@ This command helps you to determine if each thread behaves correctly. After each
 All redirects created by the URL redirect script display the following description:<br />
 <pre>1.12.0.2-1.13.x migration redirect</pre>
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_url-redirects.png" width="600px" height="159px"></li></ol>
+<img src="/common/images/m1x/upgrade_url-redirects.png" width="600px" height="159px"></li></ol>
 
 <h2 id="upgrade-manual-post-upgrade-11302-verify">Verifying That URLs Work Properly</h2>
 <p>Assuming all your post-upgrade issues are fixed, go to your web store and navigate the category tree. Click some products and make sure they display properly. Verify that all <strong>Previous</strong> and <strong>Back</strong> links work properly.</p>
 
 <h2 id="complete-upgrade">Completing Your Upgrade</h2>
 <p>Complete your upgrade:</p>
-<ol><li><a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_install.html#install-cron" target="_blank">Setting Up the Magento Cron Job</a></li>
-<li><a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-var">Clearing Magento var/ Subdirectories</a></li>
+<ol><li><a href="/guides/m1x/install/installing_install.html#install-cron" target="_blank">Setting Up the Magento Cron Job</a></li>
+<li><a href="/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-var">Clearing Magento var/ Subdirectories</a></li>
 <li>Complete the remainder of the tasks on that page in the order shown</li></ol>

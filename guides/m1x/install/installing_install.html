@@ -4,10 +4,10 @@
 <head>
   <meta charset=utf-8>
 
-  <link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-  <link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-  <link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+  <link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+  <link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
   <title>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</title>
 
 </head>
@@ -15,7 +15,7 @@
 <body>
 <a name="top"></a>
 
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <div id="content">
 
@@ -24,7 +24,7 @@
 <!-- URL: ce18-and-ee113-installing -->
 
 <h1>Installing and Verifying Magento Community Edition (CE) and Enterprise Edition (EE)</h1>
-<p><a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/m1x//install/installing_install.html" target="_blank">Edit this page on GitHub <img src="/pages/Magento/devdocs_internal/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x//install/installing_install.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
 
 
 <div class="toc"> <h4 class="toc">Contents</h4>
@@ -49,15 +49,15 @@
 <li>Set up a MySQL Magento database instance.</li>
 <li>Run the Magento installer to complete the installation.</li>
 <li>Verify that Magento installed correctly.</li></ol>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Perform <em>all installations</em> to Magento the latest version of CE 1.9 or Magento EE 1.14 to get the latest fixes, features, and security updates.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Perform <em>all installations</em> to Magento the latest version of CE 1.9 or Magento EE 1.14 to get the latest fixes, features, and security updates.</span></div>
 
 
 <h2 id="prereq">Prerequisites</h2>
 <p>Before starting your installation:</p>
-<ul><li>Get the Magento installation archive as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get" target="_blank">Getting Magento CE or EE</a>.</li>
+<ul><li>Get the Magento installation archive as discussed in <a href="/guides/m1x/install/installing.html#get" target="_blank">Getting Magento CE or EE</a>.</li>
 <li>Set up one or more hosts that meet the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
 <li>If you are setting up more than one web node with load balancing, set up and test that part of your system <em>before</em> you install Magento.</li>
-<li>If your database server and web server are located on different hosts, <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">get help</a> before proceeding.</li>
+<li>If your database server and web server are located on different hosts, <a href="/guides/m1x/install/installing.html#help" target="_blank">get help</a> before proceeding.</li>
 <li>Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.</li></ul>
 <p>Magento <em>strongly</em> recommends you observe the following guidelines when you set up your Magento database:</p>
 <ul>
@@ -79,14 +79,14 @@
 <li>Review the MySQL developer site's recommendations for <a href="http://dev.mysql.com/doc/refman/5.0/en/password-security-user.html" target="_blank">MySQL password security</a>.</li>
 <li>Before you continue, make sure the system on which you install Magento meets the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li></ul>
 <p>Complete the tasks discussed in the following sections in the order shown:</p>
-<ol><li>Installing and configuring required prerequisite Software for <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_req-prereq_ubuntu.html" target="_blank">Ubuntu</a> or <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_req-prereq_centos.html" target="_blank">CentOS</a></li>
+<ol><li>Installing and configuring required prerequisite Software for <a href="/guides/m1x/install/installing_req-prereq_ubuntu.html" target="_blank">Ubuntu</a> or <a href="/guides/m1x/install/installing_req-prereq_centos.html" target="_blank">CentOS</a></li>
 <li><a href="#install-prereq-selinux">SELinux Prerequisite</a></li>
 <li><a href="#install-iptables">Opening Ports In Your Firewall</a></li>
 <li><a href="#install-optional">Installing Optional Software</a></li>
 <li><a href="#install-create-db">Creating a Magento Database Instance</a></li>
 <li><a href="#install-extract-archive">Extracting the Magento Installation Archive</a></li>
 <li><a href="#install-sample">Installing Optional Sample Data</a></li></ol>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <code>root</code> privileges.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Unless otherwise noted, all tasks discussed in this article must be performed by a user with <code>root</code> privileges.</div>
 
 
 <h3 id="install-prereq-selinux">SELinux Prerequisite</h3>
@@ -213,7 +213,7 @@ For example,
 
 <h3 id="install-create-db">Creating a Magento Database Instance</h3>
 <p>This section discusses how to create a new database instance for Magento. Although a new database instance is recommended, you can optionally install Magento into an existing database instance. If you choose to do that, skip this section and continue with <a href="#install-sample">Installing Optional Sample Data</a>.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Before you continue, review the information about MySQL discussed in <a href="#prereq">Prerequisites</a>.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Before you continue, review the information about MySQL discussed in <a href="#prereq">Prerequisites</a>.</div>
 
 <p>To create a new database instance:</p>
 <ol><li>Log in to your database server as any user.</li>
@@ -260,11 +260,11 @@ tar -zxf <em>magento-install-archive</em></pre></li></ul>
 <h3 id="install-sample">Installing Optional Sample Data</h3>
 <p>Magento provides sample data you can optionally install to give you an idea of what products look like in the Admin Panel and in your web store. You can use this sample data to learn how Magento works and to experiment with custom themes.</p>
 <p>You must install sample data on the file system and in the database <em>before</em> you install Magento.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: <em>Only if your database is shared between more than one Magento installation</em>. Database table names used by the sample data are not configurable. To use sample data with a new Magento installation, you must manually add a prefix to all sample data tables and use the same prefix when you install Magento.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: <em>Only if your database is shared between more than one Magento installation</em>. Database table names used by the sample data are not configurable. To use sample data with a new Magento installation, you must manually add a prefix to all sample data tables and use the same prefix when you install Magento.</div>
 
 <p>To skip sample data installation, continue with <a href="#install-privs">Setting File and Directory Ownership and Privileges</a>.</p>
 <p>To install Magento sample data:</p>
-<ol><li>Download the sample data from one of the locations discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get">Getting Magento CE or EE</a>.</li>
+<ol><li>Download the sample data from one of the locations discussed in <a href="/guides/m1x/install/installing.html#get">Getting Magento CE or EE</a>.</li>
 <li>If necessary, transfer the sample data to your Magento server.</li>
 <li>On your Magento server, extract the sample data archive to a directory other than your Magento installation directory.</li>
 <li>Make note of the path to the sample data's <code>media</code> subdirectory.</li>
@@ -337,7 +337,7 @@ chown -R myuser:www-data magento</code></li>
 
 <h2 id="install-magento">Installing Magento CE or EE</h2>
 <p>This section discusses how to run the Magento installer, using Magento EE as an example. The Magento CE installer has exactly the same options; only the appearance is different.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The procedure that follows assumes that your web server and database server are on the same host. If they are installed on different hosts, additional tasks are required. <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">Get help</a> before you continue your installation.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The procedure that follows assumes that your web server and database server are on the same host. If they are installed on different hosts, additional tasks are required. <a href="/guides/m1x/install/installing.html#help" target="_blank">Get help</a> before you continue your installation.</span></div>
 
 <p>To install Magento CE or EE:</p>
 <ol><li>Complete all of the tasks discussed earlier in this article.</li>
@@ -346,7 +346,7 @@ chown -R myuser:www-data magento</code></li>
 For example, if your web server is <code>http://www.example.com</code>, listens on port 80, and Magento is installed in the web server docroot's <code>magento</code> subdirectory, enter
 <pre>http://www.example.com/magento</pre>
 The following page displays.<br >
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_first-page.png" height="353px" width="600px"></li>
+<img src="/common/images/m1x/install_first-page.png" height="353px" width="600px"></li>
 <li>Select the check box that indicates you agree to the terms and conditions, and click <strong>Continue</strong>.</li>
 <li>On the Localization page, enter the following information.<br />
 <table>
@@ -370,7 +370,7 @@ The following page displays.<br >
 </tbody>
 </table><br />
 The following figure shows an example of configuring Magento for US English in the US Central time zone and using the US Dollar as the default currency.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_localization.png" height="307px" width="600px"></li>
+<img src="/common/images/m1x/install_localization.png" height="307px" width="600px"></li>
 <li>Click <strong>Continue</strong>.<br />
 The Configuration page displays. Each of its three sections is discussed in the following step.</li>
 <li>In the Configuration page, enter the following information:
@@ -410,7 +410,7 @@ The Configuration page displays. Each of its three sections is discussed in the 
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_configuration_database.png" height="274px" width="600px"></li>
+<img src="/common/images/m1x/install_configuration_database.png" height="274px" width="600px"></li>
 <li>In the Web Access Options section, enter the following information.<br />
 <table>
 <tbody>
@@ -446,7 +446,7 @@ A sample follows.<br />
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_web-access-options.png" height="344px" width="600px"></li>
+<img src="/common/images/m1x/install_web-access-options.png" height="344px" width="600px"></li>
 <li>In the Session Storage Options section, click one of the following options:
 <ul><li><strong>File</strong> to store user session data on the file system in the <code>[your Magento install dir]/var/session</code> directory.<br />
 File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
@@ -456,7 +456,7 @@ Choose database storage if you have a clustered database; otherwise, there might
 </li>
 </li>
 <li>Click <strong>Continue</strong>.<br />
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: If errors display, you must resolve them before continuing.</span></div></li>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: If errors display, you must resolve them before continuing.</span></div></li>
 <li>In the Create Admin Account page, enter the following information.
 <table>
 <tbody>
@@ -496,10 +496,10 @@ Choose database storage if you have a clustered database; otherwise, there might
 </tbody>
 </table><br />
 A sample follows.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_create-admin-account.png" height="511px" width="600px"></li>
+<img src="/common/images/m1x/install_create-admin-account.png" height="511px" width="600px"></li>
 <li>Click <strong>Continue</strong>.<br />
 The following page displays to indicate a successful installation.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_confirm_mock.png" height="308px" width="600px"></li>
+<img src="/common/images/m1x/install_confirm_mock.png" height="308px" width="600px"></li>
 </li></ol></ol>
 
 <h2 id="verify">Verifying that Magento CE or Magento EE Installed Successfully</h2>
@@ -511,7 +511,7 @@ The following page displays to indicate a successful installation.<br />
 <li>Log in to the Admin Panel as an administrator.</li>
 <li>Scroll to the bottom of the page; the version should display as 1.14 (Magento EE) or 1.9.0.0 (Magento CE).<br />
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_verify-version_mock.png" height="36px" width="600px"></li></ol>
+<img src="/common/images/m1x/install_verify-version_mock.png" height="36px" width="600px"></li></ol>
 <!-- <li>Create a simple product.
 <ol><li>In the Admin Panel, click <strong>Catalog</strong> > <strong>Manage Products</strong>.</li>
 <li>In the upper right corner, click <strong>Add Product</strong>.</li>
@@ -569,7 +569,7 @@ The following figure shows an example.<br />
 <li>Automatic updating of currency rates</li>
 <li><em>Magento EE 1.14.1 and later, Magento CE 1.9.1 and later</em> All Magento e-mails (including order confirmation and transactional)</li>
 </ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento depends on proper cron job configuration for many important system functions, including indexing. Failure to set it up properly means Magento won't function as expected.</div>
 
 <p>Magento recommends running cron every minute for EE and every five minutes for CE.</p>
 <p>UNIX systems schedule tasks to be performed by particular users using a <em>crontab</em>, which is a file that contains instructions to the cron daemon that tell the daemon in effect to "run this command at this time on this date". Each user has its  own  crontab, and commands in any given crontab are executed as the user who owns the crontab.</p>
@@ -589,7 +589,7 @@ For example, for CentOS,<br />
 <li>Save your changes to the crontab and exit the editor.</li></ol>
 
 <h2 id="install-privs-after">Setting Magento File System Permissions and Ownership After Installation</h2>
-<p>To secure your Magento installation after the installation, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
+<p>To secure your Magento installation after the installation, see <a href="/guides/m1x/install/installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
 
 <h2 id="install-troubleshoot">Troubleshooting</h2>
 <p>This section discusses some suggestions for issues you might encounter when installing Magento.</p>
@@ -611,7 +611,7 @@ For example, for CentOS,<br />
 </tr>
 <tr>
   <td>You never advance past the installer's Configuration page.</td>
-  <td>Try selecting the <strong>Skip Base URL Validation Before the Next Step</strong> check box. If problems persist, <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">get help</a>.</td>
+  <td>Try selecting the <strong>Skip Base URL Validation Before the Next Step</strong> check box. If problems persist, <a href="/guides/m1x/install/installing.html#help" target="_blank">get help</a>.</td>
 </tr>
 </tbody>
 </table>

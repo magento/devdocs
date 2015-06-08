@@ -8,10 +8,10 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
 	<title>Responsive Email Developer's Guide for Magento EE 1.14.1 and Magento CE 1.9.1</title>
 
 </head>
@@ -19,13 +19,13 @@
 <body>
 <a name="top"></a>
 
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <div id="content">
 
 <h1>Responsive Email Developer's Guide for Magento EE 1.14.1 and Magento CE 1.9.1</h1>
 <p><em>by Erik Hansen</em></p>
-<p><a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/m1x//ce19-ee114/RWD_responsive_emails.html" target="_blank">Edit this page on GitHub <img src="/pages/Magento/devdocs_internal/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x//ce19-ee114/RWD_responsive_emails.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
 
 <div class="toc"> <h4 class="toc">Table of Contents</h4>
     <ul>
@@ -51,12 +51,12 @@
     <li>CSS is now contained in separate CSS files</li>
     <li>We provide you with a responsive sample newsletter template</li>
 </ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This article focuses on responsive emails but the same techniques can be used for newsletter templates as well. For more information about newsletter templates, see <a href="#newsletter-template">Using Updated Newsletter Templates</a>.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This article focuses on responsive emails but the same techniques can be used for newsletter templates as well. For more information about newsletter templates, see <a href="#newsletter-template">Using Updated Newsletter Templates</a>.</div>
 
 
 <h2 id="cron">Using cron to Send Emails</h2>
 <p>Starting in Magento EE 1.14.1 and CE 1.9.1, your Magento cron job sends <em>all</em> emails, including transactional emails. You must configure cron for emails to work.</p>
-<p>For more information, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_install.html#install-cron" target="_blank">Setting Up Cron Jobs</a>.</p>
+<p>For more information, see <a href="/guides/m1x/install/installing_install.html#install-cron" target="_blank">Setting Up Cron Jobs</a>.</p>
 
 <h2 id="supported">Supported Email Clients and Devices</h2>
 <p>We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues. Refer to the following sections for more information.</p>
@@ -214,7 +214,7 @@
     <li><code>[your Magento install dir]/app/locale/en_US/template/email/html/header.html</code></li>
     <li><code>[your Magento install dir]/app/locale/en_US/template/email/html/footer.html</code></li>
 </ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To make changes to the templates at the website or store view configuration scopes, see the next section.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To make changes to the templates at the website or store view configuration scopes, see the next section.</div>
 
 
 <h3 id="custom-head-foot-admin">Customizing Header and Footer Templates Using the Magento Admin Panel</h3>
@@ -263,7 +263,7 @@
 </tr>
 </tbody></table><br>
 The following figure shows an example:<br>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_header-template.png" width="600px" height="502px"></li>
+<img src="/common/images/m1x/resp_email_header-template.png" width="600px" height="502px"></li>
 <li>Click <strong>Preview Template</strong> to look at the HTML code in a separate browser tab page or window, or click <strong>Save Template</strong> to save it.</li></ol>
 
 <h4 id="custom-head-foot-admin-assign">Using the Template in a Website or Store View</h4>
@@ -274,11 +274,11 @@ The following figure shows an example:<br>
 	<li>From the <strong>Current Configuration Scope</strong> in the upper left corner, click the scope.<br>
 Initially, the template is associated with <strong>Default Config</strong>, which means it applies to all websites and store views. You can optionally associate it with a specific website or store view by selecting it from the list.<br>
 The following example shows how to associate a template with the Madison Island English store view.<br>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_template_scope.png"></li>
+<img src="/common/images/m1x/resp_email_template_scope.png"></li>
     <li>In the right pane, click <strong>Transactional Emails</strong> to expand it.</li>
     <li>From the <strong>Email Header Template</strong> list, click the header template you created earlier.<br>
 	The following figure shows an example:<br>
-	<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_using-header.png" width="600px" height="542px"></li>
+	<img src="/common/images/m1x/resp_email_using-header.png" width="600px" height="542px"></li>
     <li>Click <strong>Save Config</strong> in the upper right corner of the page.</li></ol>
     <p>Now transactional emails use the header or footer template you created.</p>
 
@@ -291,7 +291,7 @@ The following example shows how to associate a template with the Madison Island 
     <li><code>[your Magento install dir]/skin/frontend/rwd/default/scss/email-inline.scss</code></li>
     <li><code>[your Magento install dir]/skin/frontend/rwd/default/scss/email-non-inline.scss</code></li>
 </ul>
-<p>As you might expect, these two files compile to <code>skin/frontend/rwd/default/css/email-inline.css</code> and <code>skin/frontend/rwd/default/css/email-non-inline.css</code>, respectively. If you're not familiar with how to work with Sass files, refer to the <a href="/pages/Magento/devdocs_internal/guides/m1x/ce19-ee114/RWD_dev-guide.html" target="_blank">RWD theme documentation</a>.</p>
+<p>As you might expect, these two files compile to <code>skin/frontend/rwd/default/css/email-inline.css</code> and <code>skin/frontend/rwd/default/css/email-non-inline.css</code>, respectively. If you're not familiar with how to work with Sass files, refer to the <a href="/guides/m1x/ce19-ee114/RWD_dev-guide.html" target="_blank">RWD theme documentation</a>.</p>
 
 <h3 id="email-css-inline">Using Inline Styles to Customize Email CSS</h3>
 <p>
@@ -300,7 +300,7 @@ The following example shows how to associate a template with the Madison Island 
     Notice that the templates in <code>app/locale/en_US/template/email/</code> include this directive in each email template. The directive enables you to specify CSS that loads from the current storefront's theme and is inlined on that template.</p>
 <p>The directive supports the standard Magento fallback hierarchy, which means that if the <code>email-inline.css</code> can't be found in the store's theme, Magento looks in each of the parent themes until a match is found. (A sample theme directory is <code>skin/frontend/custompackage/customtheme/css/email-inline.css</code>)</p>
 <p>Refer to the <a href="https://github.com/jjriv/emogrifier#emogrifier" target="_blank">Emogrifier README</a> to see what CSS selectors are supported.</a></p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The <code>&#123;&#123;inlinecss file=""}}</code> directive can be used a single time and cannot be used in templates that get included by other templates (for example, <code>app/locale/en_US/template/email/html/header.html</code> and <code>app/locale/en_US/template/email/html/footer.html</code>).</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The <code>&#123;&#123;inlinecss file=""}}</code> directive can be used a single time and cannot be used in templates that get included by other templates (for example, <code>app/locale/en_US/template/email/html/header.html</code> and <code>app/locale/en_US/template/email/html/footer.html</code>).</div>
 
 
 <h3 id="email-css-noninline">Using Non-Inline Styles to Customize Email CSS</h3>
@@ -319,7 +319,7 @@ The following example shows how to associate a template with the Madison Island 
     <li>If you customize transactional emails using the Magento Admin Panel, you can add CSS styles to the <strong>Template Styles</strong> field to include those styles in the <code>non_inline_styles</code> variable. For more information, see <a href="#custom-head-foot-admin">Customizing Header and Footer Templates Using the Magento Admin Panel</a>.</li>
 </ul>
 <p>After the CSS is loaded, it's wrapped in a <code>&lt;style type=&quot;text/css&quot;&gt;&lt;/style&gt;</code> tag and is assigned to the <code>non_inline_styles</code> variable.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: When you are writing "non-inline" CSS, you must add the <code>!important</code> declaration after each property so the style has a high enough specificity to get applied. This is the best way to get your custom styles to override styles defined in the <code>email-inline.css</code> file.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: When you are writing "non-inline" CSS, you must add the <code>!important</code> declaration after each property so the style has a high enough specificity to get applied. This is the best way to get your custom styles to override styles defined in the <code>email-inline.css</code> file.</div>
 
 
 <h2 id="hi-rez-logo">Using a High-Resolution Logo</h2>
@@ -361,7 +361,7 @@ The following example shows how to associate a template with the Madison Island 
     alt="&#123;&#123;var logo_alt}}"
     border="0"/></pre></li>
 </ol>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To use a file type other than GIF or if you need to upload unique logos for different websites, stores, or store views, see the next section.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: To use a file type other than GIF or if you need to upload unique logos for different websites, stores, or store views, see the next section.</div>
 
 
 <h4 id="hi-rez-logo-admin">Updating a High-Resolution Logo Using the Admin Panel</h4>
@@ -376,7 +376,7 @@ The following example shows how to associate a template with the Madison Island 
 	<li>From the <strong>Current Configuration Scope</strong> in the upper left corner, click the scope to display the logo.<br>
 Initially, the logo is associated with <strong>Default Config</strong>, which means it applies to all websites and store views. You can optionally associate it with a specific website or store view by selecting it from the list.<br>
 The following example shows how to associate a logo with the Madison Island English store view.<br>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_template_scope.png"></li>
+<img src="/common/images/m1x/resp_email_template_scope.png"></li>
 	<li>In the right pane, click <strong>Transactional Emails</strong> to expand it.</li>
 	<li>Enter the following information:
 	<table>
@@ -407,7 +407,7 @@ The following example shows how to associate a logo with the Madison Island Engl
 </tr>
 </tbody></table><br>
 The following figure shows an example.<br>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/resp_email_logo.png" width="600px" height="509px"></li>    
+<img src="/common/images/m1x/resp_email_logo.png" width="600px" height="509px"></li>    
     <li>Click <strong>Save Config</strong> in the upper right corner of the page.</li>
 </ol>
 

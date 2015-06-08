@@ -4,10 +4,10 @@
 <head>
     <meta charset=utf-8>
 
-    <link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-    <link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-    <link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
     <title>Magento Enterprise Edition (EE) 1.13 Benchmarking Guide</title>
 
 </head>
@@ -15,7 +15,7 @@
 <body>
 <a name="top"></a>
 
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 <h1>Magento Enterprise Edition (EE) 1.13 Benchmarking Guide</h1>
 
 <!--TableOfContents:Begin-->
@@ -65,7 +65,7 @@
 <p>This is a representation of the multi-node Magento Enterprise Edition 1.12/1.13 installation used for performance testing. It consists of four physical nodes, three of which are virtualized.</p>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2167-Benchmark-Config-Doc-R1.png" width="660" height="510">
+<img src="/common/images/m1x/2167-Benchmark-Config-Doc-R1.png" width="660" height="510">
 </figure>
 
 <p>We used HP ProLiant SL230s Gen8 servers with 8x16GB DDR3 and 2x Intel Xeon E5‐2660 CPUs for our benchmarking.</p>
@@ -77,7 +77,7 @@
 <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_2.1"></A><!--TableOfContentsAnchor:End-->Software Components</h3>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2187-1.13_Benchmark_Report_Software_Component_r1v1.png">
+<img src="/common/images/m1x/2187-1.13_Benchmark_Report_Software_Component_r1v1.png">
 </figure>
 
 <h2><!--TableOfContentsAnchor:Begin--><A NAME="Section_3"></A><!--TableOfContentsAnchor:End-->Scenarios</h2>
@@ -93,7 +93,7 @@
 </ul>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2178-1.13_Benchmark_Report_Shopper_Flows_r1v1.png">
+<img src="/common/images/m1x/2178-1.13_Benchmark_Report_Shopper_Flows_r1v1.png">
 </figure>
 
 <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_3.2"></A><!--TableOfContentsAnchor:End-->Catalog</h3>
@@ -105,7 +105,7 @@
 </ul>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2179-1.13_Benchmark_Report_Catalog_r3v1.png">
+<img src="/common/images/m1x/2179-1.13_Benchmark_Report_Catalog_r3v1.png">
 </figure>
 
 <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_3.3"></A><!--TableOfContentsAnchor:End-->Target Merchant Profile</h3>
@@ -129,7 +129,7 @@
 <p>Take the example of a merchant with a catalog containing 500,000 products. In Magento Enterprise Edition 1.12, any change to a product would result in a full re-index operation. In Magento Enterprise Edition 1.13, incremental re-indexing means the merchant will only re-index items that were changed. The test focused on measuring the improvements provided by the incremental re-indexing feature in Magento Enterprise Edition 1.13. The table below compares improvements to common admin actions, such as changing a product description, prices or inventory. </p>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2180-1.13_Benchmark_Report_Partial_Reindexingr2v1.png">
+<img src="/common/images/m1x/2180-1.13_Benchmark_Report_Partial_Reindexingr2v1.png">
 </figure>
 
 <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.2"></A><!--TableOfContentsAnchor:End-->Full Re-indexing</h3>
@@ -137,7 +137,7 @@
 <p>As part of the benchmarking effort, we also measured the improvements in the full re-indexing feature on Magento Enterprise Edition 1.13, where indexing a 500,000-item catalog was 53% faster than Magento Enterprise Edition 1.12. Faster re-indexing means less load on the system and that changes to the catalog propagate faster to the storefront.</p>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2182-1.13_Benchmark_Report_Full_Reindexing_r1v1.png">
+<img src="/common/images/m1x/2182-1.13_Benchmark_Report_Full_Reindexing_r1v1.png">
 </figure>
 
 <ul>
@@ -151,7 +151,7 @@
 <p>This section presents the results for full re-index completion times for the individual indexers in Magento Enterprise Edition 1.13 compared to Magento Enterprise Edition 1.12.</p>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2183-1.13_Benchmark_Report_Individual_Reindexing_r1v1.png">
+<img src="/common/images/m1x/2183-1.13_Benchmark_Report_Individual_Reindexing_r1v1.png">
 </figure>
 
 <ul>
@@ -169,7 +169,7 @@
 <p>In the guest checkout flow pages, Magento Enterprise Edition 1.13 provides a substantial decrease in load times over its predecessor, most of the time more than twice as fast.</p>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2184-1.13_Benchmark_Report_Checkout_Flow_r1v1.png">
+<img src="/common/images/m1x/2184-1.13_Benchmark_Report_Checkout_Flow_r1v1.png">
 </figure>
 
 <h4><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.4.2"></A><!--TableOfContentsAnchor:End-->Registered Checkout Flow Page Load Times</h4>
@@ -177,7 +177,7 @@
 <p>The bar chart below presents the improvements in page load times for registered checkout flow.</p>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2185-1.13_Benchmark_Report_Registered_Checkout_r1v1.png">
+<img src="/common/images/m1x/2185-1.13_Benchmark_Report_Registered_Checkout_r1v1.png">
 </figure>
 
 <h3><!--TableOfContentsAnchor:Begin--><A NAME="Section_4.5"></A><!--TableOfContentsAnchor:End-->Page Views and Orders</h3>
@@ -187,7 +187,7 @@
 <p>During our testing, which simulated a storefront running at peak hours, EE 1.13 executed 33% more orders and 31% more page views than Magento Enterprise Edition 1.12 on the multi-node benchmarking configuration. Notably, Magento Enterprise Edition 1.13 served 47K pages during the test run (10 minutes).</p>
 
 <figure>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/2186-1.13_Benchmark_Report_Page_Views_r2v1.png">
+<img src="/common/images/m1x/2186-1.13_Benchmark_Report_Page_Views_r2v1.png">
 </figure>
 
 <ul>
@@ -296,7 +296,7 @@ CPU utilization is high because session duration was set to 72 seconds for the t
 
 Gatling does not report the number of users that cycled through during the test. However, it is possible to estimate the number using the following formula:
 
-<center><img src="/pages/Magento/devdocs_internal/common/images/m1x/NumberOfVisitors.png"></center>
+<center><img src="/common/images/m1x/NumberOfVisitors.png"></center>
 
 </div>
 </body>

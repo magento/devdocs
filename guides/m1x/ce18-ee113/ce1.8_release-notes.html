@@ -3,10 +3,10 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon"> 
 	<title>Magento Community Edition (CE) Release Notes (1.8 and later)</title>
 
 </head>
@@ -14,7 +14,7 @@
 <body>
 <a name="top"></a>
 
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <!-- Title: Magento Community Edition (CE) Release Notes (version 1.8 and later) -->
 <!-- URL: ece-18-later-release-notes -->
@@ -23,7 +23,7 @@
 <h1>Magento Community Edition (CE) Release Notes (1.8 and later)</h1>
 
 
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>:  We'd like to make you aware that a security patch for older versions of <a href="http://www.magentocommerce.com/download" target="_blank">Magento Community Edition</a> has been posted (in the Magento Community Edition Patches section). This patch resolves a remote code execution vulnerability that enables an attacker with Magento administrator privileges to delete files and directories on a Magento installation. This vulnerability was discovered through our quarterly penetration testing process and has not been reported by merchants.<br /><br />
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>:  We'd like to make you aware that a security patch for older versions of <a href="http://www.magentocommerce.com/download" target="_blank">Magento Community Edition</a> has been posted (in the Magento Community Edition Patches section). This patch resolves a remote code execution vulnerability that enables an attacker with Magento administrator privileges to delete files and directories on a Magento installation. This vulnerability was discovered through our quarterly penetration testing process and has not been reported by merchants.<br /><br />
 This issue was fixed in Magento Community Edition 1.8.0.0; no patch is necessary for versions 1.8.0.0 and later. Patches are available for Magento Community Edition 1.4.0.0 through 1.7.0.2. We encourage all affected merchants to apply the patch in their next regularly scheduled maintenance cycle. <br /><br />
 Magento takes security very seriously and will continue to focus on identifying potential issues and hardening our defenses.</div>
 
@@ -44,7 +44,7 @@ Magento takes security very seriously and will continue to focus on identifying 
 <li><a href="#ce18-patches-how-to-get">How to get Patches for Magento CE</a></li> 
 </ul>
 
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against CE 1.8.x as well.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against CE 1.8.x as well.</div>
 
 <h3 id="ce18-patches-connect-general">General Magento Connect Patches</h3>
 <p><em>Patch name</em>: SUPEE-3941</p>
@@ -52,7 +52,7 @@ Magento takes security very seriously and will continue to focus on identifying 
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="/guides/m1x/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ce18-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -69,13 +69,13 @@ To set file system permissions appropriately, see <a href="/pages/Magento/devdoc
 <h3 id="discover-fix">Discover Card Validation Patch Available</h3>
 <p>Magento has fixed an issue that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
 <p>The issue affects Magento CE versions 1.4.2.0&ndash;1.8.1.0.</p>
-<p>To get a fix for the issue, see <a href="/pages/Magento/devdocs_internal/guides/m1x/other/discover-card-validation.html" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
+<p>To get a fix for the issue, see <a href="/guides/m1x/other/discover-card-validation.html" target="_blank">Discover credit card validation issue: Magento EE 1.9.1.1&ndash;1.13.1.0 and CE 1.4.2.0&ndash;1.8.1.0</a>.</p>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div>
 
 
 <h3 id="php54">PHP 5.4 Patch Available</h3>
 <p>You can use PHP 5.4 with Magento CE versions 1.6.0.0&ndash;1.8.1.0.</p>
-<p>To get the patch, see <a href="/pages/Magento/devdocs_internal/guides/m1x/other/php5.4_patch.html" target="_blank">Getting the PHP 5.4 patch for Magento Enterprise Edition (EE) and Community Edition (CE)</a>.</p>
+<p>To get the patch, see <a href="/guides/m1x/other/php5.4_patch.html" target="_blank">Getting the PHP 5.4 patch for Magento Enterprise Edition (EE) and Community Edition (CE)</a>.</p>
 <p>For more information about PHP 5.4, see <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">the PHP migration page</a> and <a href="http://php.net/ChangeLog-5.php#5.4.0" target="blank">the PHP changelog</a>.</p>
 
 <h3 id="ce18-patches-how-to-get">How to Get Patches For Magento CE</h3>
@@ -85,7 +85,7 @@ To set file system permissions appropriately, see <a href="/pages/Magento/devdoc
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 <li>Scroll down to the Magento Community Edition Patches section.</li>
 <li>Follow the prompts on your screen to download a patch for your version of CE.</li>
-<li>Apply the patch as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="/guides/m1x/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h2 id="ee1131-11310">Magento Community Edition (CE) 1.8.1.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
@@ -132,7 +132,7 @@ Magento thanks iSEC Security Consultants for contributing to this fix. For more 
 Magento thanks Ivan Chepurnyi for contributing to this fix.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-373" target="_blank">MPERF-373</a>)  -->Resolved a session fixation issue when registering a user with the web store.<!-- <br />
 Magento thanks iSEC Security Consultants for contributing to this fix. --></li>
-<!--<li> (<a href="https://jira.corp.x.com/browse/MPERF-2120" target="_blank">MPERF-2120</a>)  Resolved a <a href="/pages/Magento/devdocs_internal/guides/m1x/ce18-ee113/ce1.8_release-notes.html#ce18-1800security-advisory" target="_blank">cross-site scripting (XSS) issue reported in CE 1.8.0.0</a>.<br />
+<!--<li> (<a href="https://jira.corp.x.com/browse/MPERF-2120" target="_blank">MPERF-2120</a>)  Resolved a <a href="/guides/m1x/ce18-ee113/ce1.8_release-notes.html#ce18-1800security-advisory" target="_blank">cross-site scripting (XSS) issue reported in CE 1.8.0.0</a>.<br />
 Magento thanks Myke Hines, Fox, and Opteros for contributing to this fix.</li> -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2123" target="_blank">MPERF-2123</a>)  -->Resolved issues with the expiration of file-based user sessions.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1234" target="_blank">MPERF-1234</a>)  -->Resolved issues that could have resulted in <a href="https://en.wikipedia.org/wiki/File_inclusion_vulnerability" target="_blank">Remote File Inclusion (RFI)</a> vulnerabilities.<!-- <br />
@@ -146,7 +146,7 @@ Magento thanks Binary Anvil for contributing to this fix. --></li>
 </ul>  
 
 <h3 id="11810-changes-upgrade-issue">Issue After Upgrading to CE 1.8.1</h3>
-<p><!-- https://jira.corp.x.com/browse/APPSEC-212 -->There is a known Issue After Upgrading to CE 1.8.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
+<p><!-- https://jira.corp.x.com/browse/APPSEC-212 -->There is a known Issue After Upgrading to CE 1.8.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="/guides/m1x/install/installing_upgrade_details.html#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
 <p><strong>Symptom</strong>: After completing the upgrade, when you log in to the Admin Panel and click <strong>System</strong> > <strong>Configuration</strong>, a fatal error similar to the following displays in your browser:</p>
 <pre>Class 'Mage_Googlecheckout_Helper_Data' not found in /var/www/html/magento/app/Mage.php on line 547</pre>
 <!-- <p><strong>Description</strong>: TBD -->
@@ -155,7 +155,7 @@ Magento thanks Binary Anvil for contributing to this fix. --></li>
 <li>As a user with <code>root</code> privileges, delete all files <em>except</em> <code>config.xml</code> from the following directory:<br />
 <pre><em>magento-install-dir</em>/app/code/core/Mage/GoogleCheckout/etc</pre></li>
 <li>When you log back in to the Admin Panel, everything works as expected.<br />
-If you're still encountering errors, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</li></ol>
+If you're still encountering errors, see <a href="/guides/m1x/install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</li></ol>
  
 <h3 id="11310-changes">Changes in This Release</h3>
 <p>See the following sections for a discussion of changes in this release:</p>
@@ -393,7 +393,7 @@ Magento thanks Benjamin Marks for contributing to this fix. Link to the <a href=
 <ul><li>Major overhaul of tax calculation formulas, correction of rounding errors, and additional assistance with configuration.</li>
 <li>Optimized cache adapters for single-server systems</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-1972" target="_blank">MPERF-1972</a>)  -->Upgraded Redis cache adapters for multi-server systems.<br />
-To set up and use Redis with Magento, see <a href="/pages/Magento/devdocs_internal/guides/m1x/ce18-ee113/using_redis.html" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
+To set up and use Redis with Magento, see <a href="/guides/m1x/ce18-ee113/using_redis.html" target="_blank">Using Redis with Magento Community Edition (CE) and Enterprise Edition (EE)</a>.</li>
 <li>Eliminated many types of database deadlocks.</li>
 </ul>
 
@@ -414,7 +414,7 @@ We thank Bastian Ike for contributing to this fix.<!-- (<a href="https://jira.co
 
 <h3 id="ce18-1800usps">United States Postal Service (USPS) Update</h3>
 <p>The USPS changed the names of their Priority and Express shipping options in their API in July 2013. To enable you to continue utilizing USPS Priority <em>and</em> Express mail methods, CE 1.8 includes a patch that addresses the issue.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The USPS API patch has an impact on upgrading to CE 1.8 from earlier versions. If you're doing a new CE 1.8 installation, however, you don't need to do anything.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: The USPS API patch has an impact on upgrading to CE 1.8 from earlier versions. If you're doing a new CE 1.8 installation, however, you don't need to do anything.</span></div>
 
 <p>Following are details about the upgrade impact:</p>
 <ul class="leve1"><li>Print all USPS shipping labels before upgrading; after upgrading, you will not be able to print them.</li>

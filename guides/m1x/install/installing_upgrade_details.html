@@ -4,20 +4,20 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
 	<title>Upgrading to and Verifying Magento Community Edition and Enterprise Edition&mdash;Part 2</title>
 
 </head>
 
 <body>
 <a name="top"></a>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <h1>Upgrading to and Verifying Magento Community Edition and Enterprise Edition&mdash;Part 2</h1>
-<p><a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/m1x//install/installing_upgrade_details.html" target="_blank">Edit this page on GitHub <img src="/pages/Magento/devdocs_internal/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x//install/installing_upgrade_details.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
 
  
 <div class="toc"> <h4 class="toc">Table of Contents</h4> 
@@ -38,28 +38,28 @@
 <p>This article discusses how you upgrade to:</p>
 <ul><li>Magento Community Edition (CE) 1.8 or 1.9.x</li>
 <li>Magento Enterprise Edition (EE) 1.13.0.2, 1.13.1, or 1.14.x</li></ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Magento recommends CE 1.9.1.0 or later or EE 1.14.1.0 or later for <em>all CE and EE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Magento recommends CE 1.9.1.0 or later or EE 1.14.1.0 or later for <em>all CE and EE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
 
 <p>Because of changes to URL rewrites, the following upgrades are more complex than other upgrades.</p>
 <ul><li>Upgrading from EE 1.12 or earlier to EE 1.14.x</li>
 <li>Upgrading from EE 1.13.0.0 or EE 1.13.0.1 to EE 1.14.x</li></ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you're upgrading from EE 1.13.0.2 to EE 1.13.1.0 or later, your upgrade doesn't involve changes to URL rewrites and you can skip many of the steps discussed in the other upgrades. Continue with <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you're upgrading from EE 1.13.0.2 to EE 1.13.1.0 or later, your upgrade doesn't involve changes to URL rewrites and you can skip many of the steps discussed in the other upgrades. Continue with <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</div>
 
 
 <h2 id="upgrade-ee-versions">Upgrade Roadmaps</h2>
-<ul><li>High-level roadmaps for upgrading to EE 1.13.0.2 or later are discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_landing.html#ee1300-11301-upgrade-to-ee11302-start" target="_blank">Understanding the Upgrade to EE 1.13.0.2 or EE 1.14</a>.</li>
+<ul><li>High-level roadmaps for upgrading to EE 1.13.0.2 or later are discussed in <a href="/guides/m1x/install/installing_upgrade_landing.html#ee1300-11301-upgrade-to-ee11302-start" target="_blank">Understanding the Upgrade to EE 1.13.0.2 or EE 1.14</a>.</li>
 <li>To upgrade from EE 1.13.0.2 to EE 1.13.1.0 or later (including EE 1.14.x), see <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</li>
-<li>To upgrade to CE 1.8 or 1.9, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_ce18_upgrade-roadmap.html" target="_blank">Upgrade Roadmap for CE 1.8 or 1.9</a></li></ul>
+<li>To upgrade to CE 1.8 or 1.9, see <a href="/guides/m1x/install/installing_upgrade_ce18_upgrade-roadmap.html" target="_blank">Upgrade Roadmap for CE 1.8 or 1.9</a></li></ul>
 
 <h2 id="prereq-tasks">Getting Ready For Your Upgrade</h2>
 <p>This section discusses how to get ready for your upgrade by backing up the database and customizations on the file system. The steps that follow do not affect your current production system. You can continue serving customers with no downtime.</p>
 <p>To get ready for your upgrade:</p>
-<ol><li>Get the Magento installation archive as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get" target="_blank">Getting Magento CE or EE</a>.</li>
+<ol><li>Get the Magento installation archive as discussed in <a href="/guides/m1x/install/installing.html#get" target="_blank">Getting Magento CE or EE</a>.</li>
 <li>Install Magento in a different directory:
 <ul><li><em>Recommended</em>. Set up a new system (that is, another host) on which to install Magento.<br />
 The system should be identical to, if not better than, your current system. The new system must meet the <a href="http://www.magentocommerce.com/system-requirements" target="_blank">Magento system requirements</a>.</li>
 <li>Install Magento in a new, empty root installation directory on the same server.</li>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</span></div></li></ul>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Do not</em> upgrade Magento in the same directory on the same server because post-upgrade errors are likely to occur.</span></div></li></ul>
 </li>
 <li>Magento <em>strongly</em> recommends you observe the following guidelines when you set up the Magento database in your development environment:
 <ul>
@@ -93,7 +93,7 @@ The system should be identical to, if not better than, your current system. The 
 This enables you to enable exception logging so you'll see exceptions in the development environment after the upgrade.</li>
 <li>In the right pane, click <strong>Log Settings</strong> to expand it.<br />
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_log.png" height="338px" width="600px"></li>
+<img src="/common/images/m1x/upgrade_log.png" height="338px" width="600px"></li>
 <li>From the <strong>Enabled</strong> list, click <strong>Yes</strong>.</li>
 <li>Optionally change the names of the log files.</li>
 <li>Click <strong>Save Config</strong>.</li></ol>
@@ -114,10 +114,10 @@ The following figure shows an example.<br />
 The <strong>Index Mode</strong> list displays.</li>
 <li>From the <strong>Index Mode</strong> list, click <strong>Manual Update</strong>.<br />
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_index-management_manual-update2.png" height="156px" width="600px"></li>
+<img src="/common/images/m1x/upgrade_index-management_manual-update2.png" height="156px" width="600px"></li>
 <li>At the top right corner, click <strong>Submit</strong>.</li>
 <li>Make sure all indexers are now set for Manual Update as the following figure shows.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_index-management_manual-update.png" height="156px" width="600px"></li></ol> -->
+<img src="/common/images/m1x/upgrade_index-management_manual-update.png" height="156px" width="600px"></li></ol> -->
 
 <h4 id="prereq-tasks-prod-index">Setting All Indexers for Update on Save<!--  <em>(EE 1.13.0.0 or 1.13.0.1 only)</em> --></h4>
 <p><em>This section applies to upgrading Magento EE only</em>. Skip this section if you're using Magento CE.</p>
@@ -129,10 +129,10 @@ The following figure shows an example.<br />
 The <strong>Index Mode</strong> list displays.</li>
 <li>From the <strong>Index Mode</strong> list, click <strong>Update on Save</strong>.<br />
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_index-management.png" height="156px" width="600px"></li>
+<img src="/common/images/m1x/upgrade_index-management.png" height="156px" width="600px"></li>
 <li>At the top right corner, click <strong>Submit</strong>.</li>
 <li>Make sure all indexers are now set for Update on Save as the following figure shows.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_index-management2.png" height="156px" width="600px"></li></ol>
+<img src="/common/images/m1x/upgrade_index-management2.png" height="156px" width="600px"></li></ol>
 
 <h4 id="prereq-tasks-prod-clear-cache">Flushing the Cache</h4>
 <p>Clear the Magento cache as follows:</p>
@@ -168,7 +168,7 @@ tar -czf media.tgz media</pre></li>
 <p>In your development environment:</p>
 <ol><li>If necessary, create a Magento installation master directory; Magento installs in a <code>magento</code> subdirectory of that directory.<br />
 The Magento installation archive creates a <code>magento</code> subdirectory so if you want your Magento installation directory to be <code>/var/www/magento</code>, you don't need to do anything.<br />
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-tip.png" alt="tip" align="left" width="40"><span><strong>Tip</strong>: The name and path to the Magento installation directory in your development system does not have to be the same as on your production system, although it might make some tasks simpler.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-tip.png" alt="tip" align="left" width="40"><span><strong>Tip</strong>: The name and path to the Magento installation directory in your development system does not have to be the same as on your production system, although it might make some tasks simpler.</span></div>
 
 <li>Create a new database instance. For example, you can create a new MySQL database instance named <code>magento</code> using the following commands:<br />
 <pre>mysql -u root -p</pre>
@@ -197,7 +197,7 @@ Ubuntu
 <h4 id="prereq-tasks-dev-php">Optional: Upgrading to PHP 5.4</h4>
 <p>PHP 5.3 is currently the latest PHP version available in the default repositories for Ubuntu and CentOS. PHP 5.3 works with CE 1.8, CE 1.9, EE 1.13, and EE 1.14.</p>
 <p>We recommend PHP 5.4 for all of the preceding CE and EE versions because of the <a href="http://php.net/ChangeLog-5.php#5.4.0" target="_blank">new features and changes</a> in that release.</p>
-<p>CE 1.8 and EE 1.13 both require a <a href="/pages/Magento/devdocs_internal/guides/m1x/other/php5.4_patch.html" target="_blank">PHP 5.4 patch</a>. The patch is listed as <strong>PHP 5.4 Compatibility</strong> in the EE support portal.</p>
+<p>CE 1.8 and EE 1.13 both require a <a href="/guides/m1x/other/php5.4_patch.html" target="_blank">PHP 5.4 patch</a>. The patch is listed as <strong>PHP 5.4 Compatibility</strong> in the EE support portal.</p>
 
 <h5>Upgrading to PHP 5.4&mdash;Ubuntu</h5>
 <p>Use the instructions on <a href="http://phpave.com/upgrade-php-5-3-php-5-5-ubuntu-12-04-lts/" target="_blank">phpave</a>.</p>
@@ -224,11 +224,11 @@ yum --enablerepo=remi install httpd php php-common</pre>
 <h3 id="upgrade-manual-prereq">Upgrade Requirements</h3>
 <p>Before attempting your Magento upgrade, complete all the tasks discussed in:</p>
 <ul><li><a href="#prereq-tasks">Getting Ready for Your Upgrade</a></li>
-<li><a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#get">Getting Magento CE or EE</a></li></ul>
+<li><a href="/guides/m1x/install/installing.html#get">Getting Magento CE or EE</a></li></ul>
 
 <h3 id="upgrade-manual-file-sys">Upgrading Assets on the Magento File System</h3>
 <p>This section discusses how to extract the Magento archive in your development system and manually copy over your customizations, themes, and extensions.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: To avoid errors after upgrading, you <em>must</em> set up a parallel system. <em>Do not</em> upgrade your existing system or post-upgrade errors are likely to occur.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: To avoid errors after upgrading, you <em>must</em> set up a parallel system. <em>Do not</em> upgrade your existing system or post-upgrade errors are likely to occur.</span></div>
 
 <ol><li>Make sure the CE or EE installation archive is located in the directory above where you want Magento to be installed.<br />
 For example, to install Magento to <code>/var/www/magento</code>, copy the archive to <code>/var/www</code>.</li>
@@ -236,7 +236,7 @@ For example, to install Magento to <code>/var/www/magento</code>, copy the archi
 <code>tar -zxf <em>archive-name</em></code><br />
 This installs Magento CE or EE on the file system on your development system. Next, you'll overwrite some of these assets with customizations from your production system.</li>
 <li>Extract the production system's <code>media</code> archive, overwriting the installation archive. You created the <code>media</code> archive as discussed in <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.<br />
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-tip.png" alt="tip" align="left" width="40"><span><strong>Tip</strong>: Copy the media archive to the same level in the directory structure to simplify the process. For example, if you created the media archive on your production system in your Magento install directory, the archive when extracted creates the <code>media</code> directory and all subdirectories. If you copy the media archive to the Magento installation directory on your development system, extracting it automatically replaces existing <code>media</code> subdirectory contents.</span></div></li>
+<div class="msg-box important"><img src="/common/images/m1x/icon-tip.png" alt="tip" align="left" width="40"><span><strong>Tip</strong>: Copy the media archive to the same level in the directory structure to simplify the process. For example, if you created the media archive on your production system in your Magento install directory, the archive when extracted creates the <code>media</code> directory and all subdirectories. If you copy the media archive to the Magento installation directory on your development system, extracting it automatically replaces existing <code>media</code> subdirectory contents.</span></div></li>
 <li>If necessary, move the <code>media</code> directory and subdirectories to <code>media</code> directory in your new Magento installation, overwriting the existing contents.</li>
 <li>Extract the custom theme package archive you created as discussed in <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</li>
 <li>If necessary, move the theme packages to the <code>[your Magento install dir]/app/design/frontend</code> and <code>[your Magento install dir]/skin/frontend</code> directories, as appropriate, overwriting the existing contents.</li>
@@ -248,7 +248,7 @@ This installs Magento CE or EE on the file system on your development system. Ne
 <ul><li>Import the production database data into the development database instance.</li>
 <li>In the development database instance, change the values of the paths <code>web/unsecure/base_url</code> and <code>web/secure/base_url</code> in the <code>core_config_data</code> table to the development server's IP address or host name.</li></ul>
 <p>Import the production database data using your database manager tool.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>:The database instance into which you import <em>must be empty</em>.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>:The database instance into which you import <em>must be empty</em>.</span></div>
 
 <p><code>mysql</code> syntax follows:</p>
 <pre>mysql -u root -p <em>database-name</em> &lt; <em>database-export-filename</em>.sql</pre>
@@ -303,14 +303,14 @@ For example, if your web server address is <code>http://dev.example.com</code>, 
 <li>In the Search tab page, from the <strong>Operator</strong> list, click <strong>LIKE</strong>.</li>
 <li>Enter <code>%base_url%</code> in the <strong>Value</strong> field.<br />
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_myphpadmin_search.png" height="279px" width="600px"></li>
+<img src="/common/images/m1x/install_myphpadmin_search.png" height="279px" width="600px"></li>
 <li>Click <strong>Go</strong>.<br />
 The following figure shows sample results.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_myphpadmin_results.png" height="139px" width="600px"></li>
-<li>Click <img src="/pages/Magento/devdocs_internal/common/images/m1x/install_myphpadmin_edit-icon.png"> (Edit) in the row that includes the path <code>web/unsecure/base_url</code>.</li>
+<img src="/common/images/m1x/install_myphpadmin_results.png" height="139px" width="600px"></li>
+<li>Click <img src="/common/images/m1x/install_myphpadmin_edit-icon.png"> (Edit) in the row that includes the path <code>web/unsecure/base_url</code>.</li>
 <li>Change the value to the host name or IP address of your development server.<br />
 The following figure shows an example.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/install_myphpadmin_edit.png" height="333px" width="600px">
+<img src="/common/images/m1x/install_myphpadmin_edit.png" height="333px" width="600px">
 <li>Click <strong>Go</strong>.</li>
 <li>Repeat these tasks for the path that includes <code>web/secure/base_url</code>.</li>
 <li>Exit phpmyadmin.</li></ol>
@@ -334,7 +334,7 @@ For example, on CentOS:
 <pre>cd /var/www/html/magento/shell</pre></li>
 <li>Enter the following command:
 <pre>php indexer.php --reindex catalogsearch_fulltext</code></li></ol>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding example showed paths used by the Solr example configuration. Solr ships with a sample configuration that Magento suggests you use for development only. Do not use the Solr example configuration in production.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding example showed paths used by the Solr example configuration. Solr ships with a sample configuration that Magento suggests you use for development only. Do not use the Solr example configuration in production.</div>
 
 <h3 id="upgrade-manual-cleanup">Finishing the File System</h3>
 <p>This section discusses how to edit copy <code>local.xml</code> and set file system permissions and ownership on the production system.</p>
@@ -414,14 +414,14 @@ chown -R <em>your-user-name</em>:<em>web-server-group</em> magento<br />
 chown -R myuser:www-data magento</code></li></ol> -->
 
 <h2 id="upgrade-manual-post-upgrade-ee11300">Running the URL Redirect Script (EE 1.13.0.0 and 1.13.0.1 only)</h2>
-<p>If you're upgrading to EE 1.14 from EE 1.13.0.0 or 1.13.0.1, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_from-ee11300-or-01.html" target="_blank">EE 1.13.1.0 Upgrade: Running the EE 1.13.0.0 or EE 1.13.0.1 URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
+<p>If you're upgrading to EE 1.14 from EE 1.13.0.0 or 1.13.0.1, see <a href="/guides/m1x/install/installing_upgrade_from-ee11300-or-01.html" target="_blank">EE 1.13.1.0 Upgrade: Running the EE 1.13.0.0 or EE 1.13.0.1 URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
 
 <h2 id="upgrade-manual-run">Completing the Magento Upgrade</h2>
 <p>To complete the upgrade, go to your Magento base URL in a web browser. The first time you go to your Magento base URL, server-side scripts run to update the database. Depending on the amount of data in your database, this process can take a long time.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Completing the upgrade requires downtime on your production system</em>. If you continue to take orders on your production system, there is no way to reconcile all of the new orders in the replacement development system. You can reduce the amount of downtime to a minimum by thoroughly testing your development system before shutting down production.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: <em>Completing the upgrade requires downtime on your production system</em>. If you continue to take orders on your production system, there is no way to reconcile all of the new orders in the replacement development system. You can reduce the amount of downtime to a minimum by thoroughly testing your development system before shutting down production.</span></div>
 
 
-<p>If you're upgrading from a version earlier than CE 1.4 or EE 1.7, Magento <em>strongly recommends</em> the two-step upgrade approach discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_landing.html#upgrade-path">Upgrade Path</a>. In addition, you should expect the upgrade and testing process to take a long time and to expect more downtime for your production system.</p></p>
+<p>If you're upgrading from a version earlier than CE 1.4 or EE 1.7, Magento <em>strongly recommends</em> the two-step upgrade approach discussed in <a href="/guides/m1x/install/installing_upgrade_landing.html#upgrade-path">Upgrade Path</a>. In addition, you should expect the upgrade and testing process to take a long time and to expect more downtime for your production system.</p></p>
 <p>Complete the following tasks in the order shown:</p>
 <ol><li><a href="#upgrade-manual-scripts">Running the Upgrade Scripts and Fixing Exceptions</a></li>
 <li><a href="#upgrade-manual-post-upgrade-11302">Running the URL Redirect Script <em>(EE 1.12.x and earlier only)</em></a></li>
@@ -435,10 +435,10 @@ chown -R myuser:www-data magento</code></li></ol> -->
 <h3 id="upgrade-manual-scripts">Running the Upgrade Scripts and Fixing Exceptions</h3>
 <p>The first step in your upgrade is to run server-side upgrade scripts. Depending on the nature of your customizations and extensions, and how many customers and products are in your database, these scripts can take a long time to run and can result in exceptions. You must resolve all exceptions before continuing to the next step in the process.</p>
 <p>This step in the upgrade process is iterative; that is, you'll probably run through it more than once.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Your production system remains up during this step in the upgrade process. You can continue taking and shipping orders and also making changes in the Admin Panel.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Your production system remains up during this step in the upgrade process. You can continue taking and shipping orders and also making changes in the Admin Panel.</div>
 <p>To run the upgrade scripts:</p>
 <ol><li>In a web browser address or location field, enter your Magento installation's base URL.<br />
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you upgraded Magento on the same server, you might need to update your Apache web server's virtual host configuration to reference the new Magento installation directory. For more information about configuring virtual hosts, see the <a href="http://httpd.apache.org/docs/2.2/vhosts" target="_blank">Apache Virtual Host documentation</a>.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: If you upgraded Magento on the same server, you might need to update your Apache web server's virtual host configuration to reference the new Magento installation directory. For more information about configuring virtual hosts, see the <a href="http://httpd.apache.org/docs/2.2/vhosts" target="_blank">Apache Virtual Host documentation</a>.</div>
 
 (You updated the Magento database with the development system base URL as discussed in <a href="#upgrade-manual-db">Updating the Magento Database</a>.)</li>
 <li>Wait while upgrade scripts run on the server.</li>
@@ -451,7 +451,7 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <li style="list-style-type:lower-alpha">Use the following command to delete the contents of the Magento <code>var/</code> subdirectories:
 <pre>rm -rf [your Magento install dir]/var/cache [your Magento install dir]/var/full_page_cache \
 	[your Magento install dir]/var/locks [your Magento install dir]/var/session</pre>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of these directories might be empty; this is normal.</div></li>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of these directories might be empty; this is normal.</div></li>
 <li style="list-style-type:lower-alpha">Clean up the file system as discussed in <a href="#upgrade-manual-cleanup">Finishing the File System</a>.</li>
 <li style="list-style-type:lower-alpha">Repeat step 1 in this section.</li>
 <li style="list-style-type:lower-alpha">Repeat the tasks discussed in this section until no more fatal errors display in the browser.</li></ol>
@@ -467,7 +467,7 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <p>Continue with <a href="#upgrade-manual-cron">Setting Up Magento Cron Jobs</a>.</p>
 
 <h3 id="upgrade-manual-post-upgrade-11302">Running the URL Redirect Script (EE 1.12.x and Earlier Only)</h3>
-<p>If you're upgrading to EE 1.14 from EE 1.12 or earlier, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
+<p>If you're upgrading to EE 1.14 from EE 1.12 or earlier, see <a href="/guides/m1x/install/installing_upgrade_from-ee112.html" target="_blank">EE 1.14 Upgrade: Running the EE 1.12 and Earlier URL Redirect Script</a> now. When you're done, return here to continue your upgrade.</p>
 <!-- <h3 id="upgrade-manual-post-upgrade-ee112">Running a Full Reindex <em>(EE 1.13.0.0 or 1.13.0.1 only)</em></h3>
 <p>If you're upgrading from EE 1.13.0.0 or 1.13.0.1, enter the following commands as a user with <codE>root</code> privileges to fully reindex:</p>
 <ol><li>Change to the Magento installation directory.</li>
@@ -477,12 +477,12 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <li>Clear the Magento <code>var/</code> subdirectories as discussed in the next section.</li></ol> -->
 
 <h3 id="upgrade-manual-cron">Setting Up the Magento Cron Job</h3>
-<p>You should now set up your Magento cron job as discussed <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_install.html#install-cron" target=_"blank">here</a>.</p>
+<p>You should now set up your Magento cron job as discussed <a href="/guides/m1x/install/installing_install.html#install-cron" target=_"blank">here</a>.</p>
 
 <h3 id="upgrade-manual-var">Clearing Magento var/ Subdirectories</h3>
 <p>Run the following command to clean the Magento <code>var/</code> subdirectories:</p>
 <pre>rm -rf [your Magento install dir]/var/cache [your Magento install dir]/var/full_page_cache [your Magento install dir]/var/locks</pre>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of these directories might be empty; this is normal.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of these directories might be empty; this is normal.</div>
 
 <h3 id="upgrade-manual-index">Verifying the Status of Indexers</h3>
 <p>After the cron job runs, all indexers should be in a Ready status. Before testing your upgrade, verify all indexers are Ready; otherwise, your testing will be inconclusive.</p>
@@ -490,7 +490,7 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <ol><li>Log in to the Admin Panel as an administrator.</li> 
 <li>Click <strong>System</strong> > <strong>Index Management</strong>.<br />
 Verify that all indexers have a status of Ready, as the following figure shows.<br />
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/upgrade_index-management_after.png" width="600px" height="154px"/></li>
+<img src="/common/images/m1x/upgrade_index-management_after.png" width="600px" height="154px"/></li>
 <li>If indexers are <em>not</em> Ready, use the following guidelines:
 <table>
 <tbody>
@@ -514,13 +514,13 @@ Verify that all indexers have a status of Ready, as the following figure shows.<
 <ol><li>Test all extensions and customizations thoroughly.<br />
 Make sure the UIs perform as expected, make sure the extensions behave properly, and so on.</li>
 <li>Run some orders, making sure prices are calculated correctly and that orders go through the configured payment mechanisms.</li>
-<li>If you encounter issues, <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">get help</a>.</li>
+<li>If you encounter issues, <a href="/guides/m1x/install/installing.html#help" target="_blank">get help</a>.</li>
 <li>Before making the development system live, back up everything in your production and development environments again.<br />
 The way you make your development system live is up to you; a simple way is to update your DNS server to point to the development IP address.</li></ol>
 
 <h3 id="upgrade-downtime">Taking Your Old Production System Offline</h3>
 <p>The last step in upgrading is to take your production system offline and switching to your development system&mdash;which then becomes the production system from that point on.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Before continuing, make sure all errors have been resolved and that you have thoroughly tested the upgrade as discussed in the preceding section.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Before continuing, make sure all errors have been resolved and that you have thoroughly tested the upgrade as discussed in the preceding section.</span></div>
 <p>To switch from your production to development system:</p>
 <ol><li>Put your production system in maintenance mode so it cannot accept orders or other changes.<br />
 To do so, create an empty file named <code>[your Magento install dir]/maintenance.flag</code>.</li>
@@ -534,10 +534,10 @@ For details, see <a href="#upgrade-manual-db">Updating the Magento Database</a>.
 The way you do this is up to you; typically, you can configure your DNS server to send requests for your web store domain to the development system's IP address. Be aware that propagating the change to other DNS servers can take some time.</li>
 <li>Verify your former development system is functioning as your new Magento web store in production.</li>
 <li>Shut down the old production system.</li></ol>
-<p>Congratulations! You successfully upgraded! Review our <a href="/pages/Magento/devdocs_internal/guides/m1x/ce19-ee114-home.html">welcome page</a> to see the improvements you're getting.</p>
+<p>Congratulations! You successfully upgraded! Review our <a href="/guides/m1x/ce19-ee114-home.html">welcome page</a> to see the improvements you're getting.</p>
 
 <h2 id="install-privs-after">Setting Magento File System Permissions and Ownership After Upgrade</h2>
-<p>To secure your Magento installation after the upgrade, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
+<p>To secure your Magento installation after the upgrade, see <a href="/guides/m1x/install/installer-privileges_after.html" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</p>
 
 <h2 id="upgrade-troubleshoot">Troubleshooting</h2>
 <p>There is a known issue after upgrading to EE 1.13.1 that affects you <em>only</em> if you do <em>not</em> follow the recommended procedure to upgrade to a new environment as discussed in <a href="#prereq-tasks">Getting Ready For Your Upgrade</a>.</p>
@@ -550,6 +550,6 @@ The way you do this is up to you; typically, you can configure your DNS server t
 <pre>[your Magento install dir]/app/code/core/Mage/GoogleCheckout/etc</pre></li>
 <li>When you log back in to the Admin Panel, everything works as expected.</li></ol>
 
-<p>In the event of any other issue during the upgrade, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</p>
+<p>In the event of any other issue during the upgrade, see <a href="/guides/m1x/install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</p>
  
 </p>

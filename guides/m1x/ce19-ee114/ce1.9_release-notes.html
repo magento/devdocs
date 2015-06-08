@@ -3,10 +3,10 @@
 <head>
 	<meta charset=utf-8>
 
-	<link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-	<link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-	<link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-	<link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon"> 
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon"> 
 	<title>Magento Community Edition (CE) Release Notes (1.9 and later)</title>
 
 </head>
@@ -14,7 +14,7 @@
 <body>
 <a name="top"></a>
 
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <!-- Title: Magento Community Edition (CE) 1.9 Release Notes -->
 <!-- URL: ce19-later-release-notes -->
@@ -28,6 +28,7 @@
 <p>These Release Notes contain the following information:</p>
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
+<li><a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.1.html" target="_blank">Magento CE 1.9.1.1 Release Notes</a></li>
 <li><a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.html" target="_blank">Magento CE 1.9.1.0 Release Notes</a></li>
 <li><a href="#ce19-1901">Magento CE 1.9.0.1 Release Notes</a></li>
 <li><a href="#ce19-1900">Magento CE 1.9.0.0 Release Notes</a></li>
@@ -37,7 +38,14 @@
 </ul></div>
 
 <h2 id="upgrade">Important Upgrade Information</h2>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.1.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.1.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+<h2 id="ce19-1911">Magento CE 1.9.1.1 Release Notes</h2>
+<p>Magento CE 1.9.1.1 Release Notes are now part of the <a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.1.html" target="_blank">User Guide</a>.</p>
+
+<h2 id="ce19-1910">Magento CE 1.9.1.0 Release Notes</h2>
+<p>Magento CE 1.9.1.0 Release Notes are now part of the <a href="http://merch.docs.magento.com/ce/user_guide/Magento_Community_Edition_User_Guide.html#magento/release-notes-ce-1.9.1.html" target="_blank">User Guide</a>.</p>
+
 
 
 <h2 id="ce19-1901">Magento CE 1.9.0.1 Release Notes</h2>
@@ -54,7 +62,7 @@
 <li><a href="#ce19-patches-how-to-get">How to Get Patches For Magento EE</a></li> 
 </ul>
 
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against CE 1.9.x as well.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Some of the patches discussed in this section have <code>EE_1.14.0.1</code> in the name. These patches were all tested against CE 1.9.x as well.</div>
 
 
 <h3 id="ce19-patches-connect-general">General Magento Connect Patches</h3>
@@ -63,7 +71,7 @@
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4589" target="_blank">APPSTORE-4589</a>  -->To improve security, Magento Connect now uses HTTPS by default to download extensions, rather than FTP. </li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4557" target="_blank">APPSTORE-4557</a>  -->Extension developers can now create an extensions with a dash character in the name. Merchants can install those extensions without issues.</li>
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4558" target="_blank">MPERF-4558</a>, <a href="https://jira.corp.x.com/browse/APPSTORE-4575" target="_blank">APPSTORE-4575</a>  -->Magento administrators who attempt to install an extension with insufficient file system privileges are now informed. Typically, the Magento Admin Panel runs as the web server user. If this user has insufficient privileges to the <em>your Magento install dir</em><code>/app/code/community</code> directory structure, the Magento administrator sees an error message in the Magento Connect Manager.<br />
-To set file system permissions appropriately, see <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
+To set file system permissions appropriately, see <a href="/guides/m1x/install/installer-privileges_after.html#extensions" target="_blank">After You Install Magento: Recommended File System Ownership and Privileges</a>.</li></ul>
 
 <h3 id="ce19-patches-soap">Magento Install Page Displays After SOAP v2 Index Page Refresh</h3>
 <p><em>Patch name</em>: SUPEE-3762. <!-- <a href="https://jira.corp.x.com/browse/SUPEE-3762" target="_blank">SUPEE-3762</a>  -->Refreshing the SOAP v2 index page (<code>http://<em>your-magento-host-name</em>/index.php/api/v2_soap/index/</code>) results in all administrators and customers viewing the Magento installation page.</p>
@@ -75,7 +83,7 @@ To set file system permissions appropriately, see <a href="/pages/Magento/devdoc
 <li>In the left pane, click <strong>Downloads</strong>.</li>
 li>Scroll down to the Magento Community Edition Patches section.</li>
 <li>Follow the prompts on your screen to download a patch for your version of CE.</li>
-<li>Apply the patch as discussed in <a href="/pages/Magento/devdocs_internal/guides/m1x/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
+<li>Apply the patch as discussed in <a href="/guides/m1x/other/ht_install-patches.html" target="_blank">How to Apply and Revert Magento Patches</a>.</li></ol>
 
 <h2 id="ce19-1900">Magento CE 1.9.0.0 Release Notes</h2>
 <p>See the following sections for information about changes in this release:</p>
@@ -125,7 +133,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-2563" target="_blank">MPERF-2563</a>  -->Two new options to prevent <a href="http://en.wikipedia.org/wiki/Clickjacking" target="_blank">"clickjacking"</a> if you run Magento in a <code>frame</code> or <code>iframe</code>:
 <ul class="level2"><li>Enable frames only in the same domain.</li>
 <li>Enable frames.</li>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</span></div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: For security reasons, Magento strongly recommends against running the Magento software in a frame.</span></div>
 
 <p>The options are available in the Admin Panel at <strong>System</strong> > <strong>Configuration</strong> > ADVANCED > <strong>Admin</strong> > <strong>Security</strong> and are named <strong>Allow Magento Backend to run in frame</strong> and <strong> Allow Magento Frontend to run in frame</strong>.</p>
 <p>Enabling the option causes the <a href="https://developer.mozilla.org/en-US/docs/HTTP/X-Frame-Options" target="_blank"><code>X-Frame-Options</code></a> request header to be sent.</p></ul>
@@ -138,7 +146,7 @@ To enable cross-border trade in the Admin Panel, click <strong>System</strong> >
 <!-- <li><a href="https://jira.corp.x.com/browse/MPERF-3769" target="_blank">MPERF-3769</a> Added address validation, which enables users to select from multiple matching addresses. For example, if a user enters a partial address or a common street name, they might be presented with matching addresses from which to choose.</li>
  -->
 <li><!-- <a href="https://jira.corp.x.com/browse/MPERF-4620" target="_blank">MPERF-4620</a>.  -->CE 1.9 includes a fix that prevented some Discover credit cards from validating properly. The issue was that certain Discover credit card number ranges were not recognized as being valid. As a result of the fix, all Discover cards should validate properly.</p>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div></li>
+<div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: This is <em>not</em> a security threat. No data has been compromised or misused. It affects only the ability to validate certain credit card number ranges as valid Discover card numbers.</span></div></li>
 <li>The default values for two configuration options changed. Both options can be found in the Admin Panel under <strong>System</strong> > <strong>Configuration</strong> > CATALOG > <strong>Catalog</strong> > <strong>Frontend</strong>. The new default values follow:
 <ul class="level2"><li><strong>Products per Page on Grid Allowed Values</strong> is now <strong>12, 24, 36</strong>.</li>
 <li><strong>Products per Page on Grid Default Value</strong> is now <strong>12</strong>.</li></ul>

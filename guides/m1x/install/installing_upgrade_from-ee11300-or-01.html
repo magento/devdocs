@@ -4,20 +4,20 @@
 <head>
     <meta charset=utf-8>
 
-    <link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-    <link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-    <link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
     <title>EE 1.14 Upgrade: Running the EE 1.13.0.0 or EE 1.13.0.1 URL Redirect Script</title>
 
 </head>
 
 <body>
 <a name="top"></a>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <h1>EE 1.14 Upgrade: Running the EE 1.13.0.0 or EE 1.13.0.1 URL Redirect Script</h1>
-<p><a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/m1x//install/installing_upgrade_from-ee11300-or-01.html" target="_blank">Edit this page on GitHub <img src="/pages/Magento/devdocs_internal/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x//install/installing_upgrade_from-ee11300-or-01.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
 
 
 <div id="content"> 
@@ -27,7 +27,7 @@
 <ul><li>From EE 1.13.0.1 to EE 1.13.0.2</li>
 <li>From EE 1.13.0.1 to EE 1.13.1.0</li>
 <li>From EE 1.13.0.1 to EE 1.14.0.0</li></ul>
-<p>If your upgrade is not in the preceding list, skip this article and continue with <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-run">Completing the Magento Upgrade</a>.</p>
+<p>If your upgrade is not in the preceding list, skip this article and continue with <a href="/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-run">Completing the Magento Upgrade</a>.</p>
 <p>This article discusses how to run the URL redirect script that creates HTTP 301 (Moved Permanently) redirects for any duplicate product URL keys. This enables <strong>Previous</strong> links in your web store to work, for example.</p>
 <p>For more information about URL changes, see the <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-later-release-notes#ee113-11302-seo" target="_blank">EE 1.13.0.2 Release Notes</a>. (Release Notes for the latest release are <a href="http://www.magentocommerce.com/knowledge-base/entry/ee113-later-release-notes#ee1131-11310">here</a>.)</p>
 <p>To create redirects for your URLs, perform the following tasks in the order shown:</p>
@@ -59,7 +59,7 @@ Messages like the following display to indicate progress:<br />
 <ul><li><tt>Application is not installed yet, please complete install wizard first</tt></li>
 <li><tt>PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[28000] [1045] Access denied for user '<em>name</em>'@'<em>hostname</em>' (using password: YES)' in /var/www/magento/lib/Zend/Db/Adapter/Pdo/Abstract.php</tt></li></ul>
 <p>If one of these displays, make sure you copied <tt>[your Magento install dir]/app/etc/local.xml</tt> from your development system to the production system. Edit it if necessary to reference the production database instance. After you copy and edit <tt>local.xml</tt>, run the URL redirect script again.</p>
-<p>Continue your upgrade with <a href="/pages/Magento/devdocs_internal/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-run" target="_blank">Completing the Magento Upgrade</a>.</p>
+<p>Continue your upgrade with <a href="/guides/m1x/install/installing_upgrade_details.html#upgrade-manual-run" target="_blank">Completing the Magento Upgrade</a>.</p>
 
 </body>
 </html>

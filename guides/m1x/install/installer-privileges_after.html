@@ -7,21 +7,21 @@
 <head>
     <meta charset=utf-8>
 
-    <link rel="stylesheet" type="text/css" href="/pages/Magento/devdocs_internal/common/css/stylesheet.css"/>
-    <link rel="stylesheet" href="/pages/Magento/devdocs_internal/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
-    <link rel="icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="/pages/Magento/devdocs_internal/common/css/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css"/>
+    <link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css" charset="utf-8">
+    <link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
     <title>After You Install Magento: Recommended File System Ownership and Privileges</title>
 
 </head>
 
 <body>
 <a name="top"></a>
-<img src="/pages/Magento/devdocs_internal/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
 
 <div id="content"> 
 <h1>After You Install Magento: Recommended File System Ownership and Privileges</h1>
-<p><a href="https://github.corp.ebay.com/Magento/devdocs_internal/tree/pubs-ux-common/guides/m1x//install/installer-privileges_after.html" target="_blank">Edit this page on GitHub <img src="/pages/Magento/devdocs_internal/common/images/github_icon.png" height="15px"></a></p>
+<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x//install/installer-privileges_after.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
 
 
 <div class="toc"> <h4 class="toc">Table of Contents</h4>
@@ -61,7 +61,7 @@ Typically, Magento extensions install with 777 (world-writable) privileges, whic
 <p>If you have installed Magento, you can set file system privileges and ownership as follows:</p>
 <ul><li>For a dedicated Magento server, you set ownership of files and directory as the web server user. You set privileges as 500 (directories) and 400 (files).</li>
 <li>For a hosted Magento server on which the web server runs as the logged-in user name, you set privileges as as 500 (directories) and 400 (files).</li></ul>       
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: In both hosted and dedicated systems, you set the privileges for the <code>media/</code> and <code>var/</code> directories at 700/600 because they must be writable.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: In both hosted and dedicated systems, you set the privileges for the <code>media/</code> and <code>var/</code> directories at 700/600 because they must be writable.</div>
 
 <p>Following is an explanation of the privileges:</p>
 <ul><li>500 permissions for directories (<code>dr-x------</code>) gives the web server user read and execute privileges to prevent the accidental deletion or modification of files in the directory. Other users have no access to Magento directories.</li>
@@ -69,14 +69,14 @@ Typically, Magento extensions install with 777 (world-writable) privileges, whic
 This prevents attacks that depend on overwriting existing files with malicious content.</li>
 <li>700 permissions (<code>drwx------</code>) for the <code>media/</code> and <code>var/</code> directories give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</li>
 <li>600 permissions (<code>-rw-------</code>) for files in the <code>media/</code> and <code>var/</code> directories enable the web server user to write to them and to overwrite them.</li></ul>
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: On a dedicated system, all commands discussed in this article must be entered as a user with <code>root</code> privileges. On a hosted system, commands must be entered as the web server user.</div>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: On a dedicated system, all commands discussed in this article must be entered as a user with <code>root</code> privileges. On a hosted system, commands must be entered as the web server user.</div>
 
 <p>To set up ownership and permissions on a dedicated Magento server:</p>
 <ol><li><em>Dedicated Magento server only</em>. As a user with <code>root</code> privileges, find the web server user:
 <ul><li>Apache:
 <ul class="level3"><li>Ubuntu: <code>grep User /etc/apache2/apache2.conf</code></li>
 <li>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code><br />
-<div class="msg-box important"><img src="/pages/Magento/devdocs_internal/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding paths are samples only. The paths to these <code>.conf</code> files on your system might be different. You can use the command <code>whereis nginx</code> to find the location of the configuration files.</div></li></ul>
+<div class="msg-box important"><img src="/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The preceding paths are samples only. The paths to these <code>.conf</code> files on your system might be different. You can use the command <code>whereis nginx</code> to find the location of the configuration files.</div></li></ul>
 <!-- <pre>ps -o "user group command" -C httpd,apache2</pre>
 The value in the USER column is the web server user name.<br /> -->
 Typically, the Apache web server user on CentOS is <code>apache</code> and the Apache web server user on Ubuntu is <code>www-data</code>.</li>
