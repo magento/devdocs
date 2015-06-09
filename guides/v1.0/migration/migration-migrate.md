@@ -12,7 +12,7 @@ github_link: migration/migration-migrate.md
   
 <h2 id="migration-command">Migrating settings, data and changes</h2>
 
-Run the migration tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
+Run the Data Migration Tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
 
 Command syntax:
 
@@ -38,6 +38,7 @@ where `[options]` can be:
 
 The following sections should be performed in a specific order:
 
-1.	<a href="#migrate-command-settings">Migrating settings</a>
-3.	<a href="#migrate-command-data">Migrating data</a>
-4.	<a href="#migrate-command-delta">Incremental migration (delta mode)</a>
+1.	<a href="{{ site.gdeurl }}migration/migration-migrate-settings.html">Migrate settings</a>
+3.	<a href="{{ site.gdeurl }}migration/migration-migrate-data.html">Migrate data</a>
+4.	<a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">Migrate changes in Delta Mode</a>
+

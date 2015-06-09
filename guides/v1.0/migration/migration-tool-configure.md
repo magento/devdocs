@@ -13,8 +13,8 @@ github_link: migration/migration-tool-install.md
 
 During the time you're migrating:
 
-*	Do not make any changes in the Magento 1.x Admin Panel except for order management (shipping, creating invoice, credit memos etc.)
-*	Stop all Magento 1.x cron jobs
+*	Do not make any changes in the Magento 1 Admin Panel except for order management (shipping, creating invoice, credit memos etc.)
+*	Stop all Magento 1 cron jobs
 *	Do not alter any code
 *	Do not make changes in the Magento 2 Admin and Storefront
 
@@ -52,7 +52,7 @@ For example, if your database owner's user name is `root` with password `pass` a
 {% endhighlight %}
 
 <h2 id="migration-config">Work with configuration and mapping files</h2>
-The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
+The Data Migration Tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1 and Magento 2 databases, including:
 
 *	Changing table names
 *	Changing field names
@@ -83,7 +83,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tr>
 <tr>
 	<td>config.xml.dist</td>
-	<td>Main configuration file that specifies the Magento 1.x and Magento 2 database configurations, step configuration, and links to mapping files</td>
+	<td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
 </tr>
 <tr>
 	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>

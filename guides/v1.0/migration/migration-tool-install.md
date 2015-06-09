@@ -12,10 +12,10 @@ github_link: migration/migration-tool-install.md
 ## Install Data Migration Tool
 This section discusses how to install the Magento Data Migration Tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from a GitHub repository.
 
-**Note**: The versions of both the migration tool and the Magento 2 code must be identical (for example, 0.74-beta8). To find the version of either package, open `composer.json` and find the value of `"version"`.
+**Note**: The versions of both the Data Migration Tool and the Magento 2 code must be identical (for example, 0.74-beta8). To find the version of either package, open `composer.json` and find the value of `"version"`.
 
 ### Install the tool from GitHub
-To install the migration tool from GitHub, use the following steps:
+To install the Data Migration Tool from GitHub, use the following steps:
 
 1.	Log in to your Magento 2 server as a user with privileges to write to the Magento 2 file system or <a href="http://devdocs.magento.com/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to the web server user</a>.
 2. Go to Magento 2 root directory.
@@ -27,14 +27,14 @@ To install the migration tool from GitHub, use the following steps:
 3.	Wait while dependencies are updated.
 
 ### Install the tool from packages.magento.com
-To install the Data Migration Tool, you must update `composer.json` in the Magento root installation directory to provide the location of the migration tool package. 
+To install the Data Migration Tool, you must update `composer.json` in the Magento root installation directory to provide the location of the Data Migration Tool package. 
 
 Sample data is versioned like Magento code. Before you begin, you can either:
 
 *	Find the exact version you want at <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a>.
 *	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
 
-To install the migration tool, you must:
+To install the Data Migration Tool, you must:
 
 1.	Decide the version of `magento/data-migration-tool` you want as discussed in the preceding section.
 
