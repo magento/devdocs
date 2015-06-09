@@ -15,7 +15,7 @@ github_link: config-guide/bootstrap/mage-profiler.md
 
 
 <h2 id="dirs-introduction">Introduction to Magento HTML profiling</h2>
-You can use an HTML profiler with Magento to perform tasks such as analyze performance. (The nature of profiling depends on the analytical tools you use.)
+You can use an HTML profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use.)
 
 Magento provides the base functionality in <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.
 

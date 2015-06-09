@@ -108,9 +108,21 @@ This command performs the following tasks:
 
 1.	Puts the store in maintenance mode.
 1.	Verifies the backup file name.
-2.	Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
-3.	Removes existent code base in the rollback destination locations.
-4.	Extracts the archive file to the destination locations.
+4.	If you specify a code rollback file:
+	
+	2.	Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
+	3.	Removes existent code base in the rollback destination locations.
+	4.	Extracts the archive file to the destination locations.
+5.	If you specify a database rollback file:
+
+	2.	Drops the entire Magento database.
+	3.	Restores the database using the database backup.
+5.	If you specify a media rollback file:
+
+	2.	Verifies the rollback destination locations are writable.
+	3.	Removes existent media files in the rollback destination locations.
+	4.	Extracts the archive file to the destination locations.
+
 5.	Takes the store out of maintenance mode.
 
 #### Related topics
