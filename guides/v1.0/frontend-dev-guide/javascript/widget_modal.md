@@ -150,6 +150,6 @@ Close the modal window.
 
 The modal widget is subscribed to the following events:
 <ul>
-`modalopened` - triggered when the modal window is opened.
-`modalclosed` - triggered when the modal window is closed.
+<li>modalopened - triggered when the modal window is opened.</li>
+<li>modalclosed - triggered when the modal window is closed.</li>
 </ul>
