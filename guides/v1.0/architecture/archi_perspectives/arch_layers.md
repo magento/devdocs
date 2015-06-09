@@ -28,48 +28,99 @@ We will add information about the following layers in a future sprint:
 
 
 <h3>How Presentation code calls other layers</h3>
-Presentation code typically calls service contracts, particularly for store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the Admin UI screens are often tightly linked a specific implementation and not generic across implementations.
+Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the Admin UI screens are often tightly linked a specific implementation and are not generic across implementations.
 
 <h2>Service layer</h2>
-The Service layer is a set of PHP interfaces that provides the bridge between the presentation layer and the model layer of domain logic and resource data. This layer allows modules to provide a well-defined public API while hiding business logic. Each module provides a service contract that    
+The service layer provides a bridge between the presentation layer and the model layer of domain logic and resource-specific data. This is implemented using *service contracts*, which are defined using PHP interfaces.
+
+In general, the service layer 
+
+* Resides below the presentation layer and above the domain layer.
+
+* Contains service contracts, which define how the implementation will behave.  
+
+* Provides an easy way to access the REST/SOAP API framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files -- no coding required.
+
+
+* Provides a stable API for other modules to call into.
+
+
 
 <b>Add diagram</b>
 
-All calls from web service interfaces, or users working with the product interface (that is, controller-initiated requests), must be routed through through the Service layer.  Each module provides a <i>service contract</i> to pass requests to and from the presentation layers to the business logic layers. The service contract for a module resides in its /Api. 
 
 
-External applications can make also requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure. 
 
-<h3>Who accesses the Service layer?</h3>
-Service layer clients include:
+<h3>Who accesses the service layer?</h3>
 
-* Controllers (initiated by actions of users of the product interface)
-* Web services
-* Other Magento modules
+All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic. 
 
-<h3>Service contracts</h3>
+External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.
 
-A module's service contract resides in the /Api namespace of the module.
+Service contract clients include:
+
+* Controllers (initiated by actions of users of the storefront)
+* Web services (SOAP and REST API calls)
+* Other Magento modules through service contracts
+
+<h3>Service contract anatomy</h3>
+
+The service contract of a module is defined by the set of interfaces in the module's `/Api`. It typically consists of: 
+
+* service interfaces in the `/Api` namespace of the module
 
 
+
+* data (or *entity*) interfaces in the `Api/Data` directory
+ *Data entities* are data structures passed to and returned from service interfaces.
+
+
+<b> add screenshot of relevant directory structure for module</b>
+
+Typically, service contracts provide three distinct types of interfaces: 
+
+* Repository interfaces
+* Management interfaces
+* Metadata interfaces
+
+However, there is no requirement that service contracts conform to all three patterns. 
+
+<h3>Advantages of service contracts</h3>
+Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the <preference> element of a dependency injection config file (`di.xml` file). The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`. 
+
+Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
 
 <h2>Domain layer</h2>
-The Domain layer identifies the part of the business logic layer of Magento that handles requests from the Service layer. It defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. Object models do not contain resource- or  database- specific information.
+The domain layer holds the business logic layer of a Magento module. It typically does not contain resource-specific or database-specific information. Its primary functions include:
 
-<b>Add diagram: service layer --- > DOMAIN layer --> resource models  —> database</b>
+* Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models. 
 
-All calls to the Magento system typically use service contracts to communicate to the Domain layer. Service contracts pass data types to the Domain layer via strongly typed objects. Applications can also use SOAP or RESTful endpoints to request data from object models. 
+* (Optionally) Includes the implementation of service contracts, although not their definition.
+
+<b>Add diagram: service layer -- > domain layer resource models  -—> database</b>
+
+Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic. 
+
+
 
 <h3>Models</h3>
 
-Each domain-layer object model contains a reference to a resource model, which it uses to retrieve data from the database with MySql calls.  This resource model contains logic for connecting to the underlying database, typically MySQL. A model requires a resource model only if the model data must persist. 
+Each domain-layer model contains a reference to a resource model, which it uses to retrieve data from the database with MySql calls.  This resource model contains logic for connecting to the underlying database, typically MySQL. A model requires a resource model only if the model data must persist. 
 
-<h3>Who accesses the Domain layer?</h3>
-Modules typically contact this layer through service contracts. However, Domain layer code in one module can also plug itself into another module by: 
+<h3>Who accesses the domain layer?</h3>
+There are three primary ways of accessing a module's domain-layer code:
 
-* event hooks
-* plugins
-* di.xml files (with an SPI contract) 
+* Service contracts are the recommended way for one module to access another module's domain-level code. This loosely coupled solution is the optimal way for most modules to access another module. 
+
+* A module can directly call into another module. This tightly-coupled solution is not recommended for most situations, but is sometimes unavoidable.
+
+* Domain layer code in one module can also plug itself into another module by: 
+
+    * event hooks
+    * plugins
+    * `di.xml` files (with an SPI contract) 
+    
+Your strategy for calling another module's domain-layer code is highly dependent upon the unique configuration and needs of your system. 
   
 
 

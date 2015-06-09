@@ -27,10 +27,21 @@ Stack components include:
 * JQuery (primary JavaScript library)
 
 * RequireJS (library that helps load JavaScript resources on demand)
+* Third-party libraries (Zend Framework 1, Zend Framework 2, Symphony)
 
 * MySQL 5.6
+* Composer (dependency management package for PHP) 
 
-Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. This framework is included in Magento/mtf. For more information, see Magento Test Framework guide.<h3>Stack Basics</h3>
+Optional stack components include:
+
+* Redis (used for session or page caching)
+* Solr (search engine)
+
+
+Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
+
+This framework is included in Magento/mtf. For more information, see Magento Test Framework guide.
+<h3>Stack Basics</h3>
 <h4>routing</h4>
 <h4>caching</h4>
 
