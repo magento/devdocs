@@ -68,18 +68,18 @@ The module uninstall command performs the following tasks:
 	<tr>
 		<td><p>--backup-code</p></td>
 		<td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
-		<td><p>/var/backups/&lt;timestamp>filesystem.tgz</p></td>
+		<td><p>/var/backups/&lt;timestamp>_filesystem.tgz</p></td>
 	</tr>
 	<tr>
 		<td><p>--backup-media</p></td>
 		<td><p>Back up the <code>pub/media</code> directory.</p></td>
-		<td><p>/var/backups/&lt;timestamp>filesystem_media.tgz</p></td>
+		<td><p>/var/backups/&lt;timestamp>_filesystem_media.tgz</p></td>
 	</tr>
 	<tr>
 	<tr>
 		<td><p>--backup-db</p></td>
 		<td><p>Back up the Magento 2 database.</p></td>
-		<td><p>/var/backups/&lt;timestamp>db.gz</p></td>
+		<td><p>/var/backups/&lt;timestamp>_db.gz</p></td>
 	</tr>
 	<tr>
 	</tbody>
@@ -96,6 +96,44 @@ The module uninstall command performs the following tasks:
 6.	Updates generated classes.
 6.	If `--clear-static-content` is specified, clears generated static view files.
 7.	Takes the store out of maintenance mode.
+
+For example, the following command uninstalls a module named `VendorName_SampleModule` after backing up the Magento `app/code` file system, `pub/media` files, and database tables but does *not* remove the module's code:
+
+	magento module:uninstall VendorName_SampleModule --backup-code --backup-media --backup-db
+
+Messages similar to the following display:
+
+	Enabling maintenance mode
+	You are about to remove code and database tables. Are you sure?[y/N]y
+	Code backup is starting...
+	Code backup filename: 1433876616_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+	Code backup path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
+	[SUCCESS]: Code backup has completed successfully.
+	Media backup is starting...
+	Media backup filename: 1433876616_filesystem_media.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+	Media backup path: /var/www/html/magento2/var/backups/1433876616_filesystem_media.tgz
+	[SUCCESS]: Media backup has completed successfully.
+	DB backup is starting...
+	DB backup filename: 1433876616_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
+	DB backup path: /var/www/html/magento2/var/backups/1433876616_db.gz
+	[SUCCESS]: DB backup has completed successfully.
+	You are about to remove a module(s) that might have database data. Do you want to remove the data from database?[y/N]
+	Removing VendorName_SampleModule from module registry in database
+	Removing VendorName_SampleModule from module list in deployment configuration
+	Removing code from Magento codebase:
+	Loading composer repositories with package information
+	Updating dependencies (including require-dev)
+	Updating dependencies (including require-dev)
+  		- Removing vendorname/samplemodule (1.0.0)
+	Removing VendorName_SampleModule
+	Writing lock file
+	Generating autoload files
+	Cache cleared successfully.
+	Generated classes cleared successfully.
+	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. Failure to clear static view files might cause display issues in the Admin and storefront.
+	Disabling maintenance mode
+
+
 
 <h2 id="instgde-cli-uninst-mod-roll">Roll back the codebase</h2>
 To restore the Magento codebase to the state at which you backed it up using the `--backup-code` parameter, use the following command:
