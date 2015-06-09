@@ -84,7 +84,7 @@ You can specify the header, content, trigger as options when you initialize the 
 For example:
 <pre>
 $("#element").accordion({
-    header : "#title-1"
+    header : "#title-1",
     content : "#content-1",
     trigger : "#trigger-1,
     ajaxUrlElement: "a"
