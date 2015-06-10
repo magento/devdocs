@@ -83,7 +83,7 @@ Typically, service contracts provide three distinct types of interfaces:
 However, there is no requirement that service contracts conform to all three patterns. 
 
 <h3>Advantages of service contracts</h3>
-Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the <preference> element of a dependency injection config file (`di.xml` file). The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`. 
+Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (`di.xml`) file. The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`. 
 
 Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
 
