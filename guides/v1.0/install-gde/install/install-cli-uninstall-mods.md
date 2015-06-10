@@ -52,6 +52,8 @@ The module uninstall command performs the following tasks:
 	This command works *only* with modules defined as Composer packages.
 
 2.	Checks for dependencies with other modules.
+
+	If a module depends on another module, you cannot uninstall one module; you must uninstall both.
 4.	Requests confirmation to proceed.
 3.	Puts the store in maintenance mode.
 4.	Processes the following command options.
@@ -139,6 +141,11 @@ Messages similar to the following display:
 	Generated classes cleared successfully.
 	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. Failure to clear static view files might cause display issues in the Admin and storefront.
 	Disabling maintenance mode
+
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>Errors display if you attempt to uninstall a module with a dependency on another module. In that case, you cannot uninstall one module; you must uninstall both.</p></span>
+</div>
 
 <h2 id="instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</h2>
 To restore the Magento codebase to the state at which you backed it up, use the following command:
