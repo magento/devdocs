@@ -22,7 +22,7 @@ To locate scripts used for a certain element:
 <p class="q">class or id? true?</p>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls for this element, its children or parents. which are used for JS scripts initialization. The names of the scripts are specified there. 
+<li>Find the corresponding element and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls for this element, its children or parents. The notaion contains the names of the scripts. 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -31,22 +31,23 @@ To locate scripts used for a certain element:
 </div>
 </li>
 <li>
-To find out, where is the source file of the widget:
+To find out, where is the source file of the used script:
 <ol>
-<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source view, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration collected from all modules of the current theme </li>
+<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source view, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration collected from all modules of the current theme.
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+<p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>&lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
+</div>
+</li>
 <li>In the <code>var config = {...}</code> section, find the required script name, and view the path to its source file. The path is relative to either:
 <ul>
-<li>If the module context is not specified: <code>lib/web</code> or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (the current theme) directories. According to the assets fallback, if there's a file in the current theme <code>web</code> directory, the system uses it. If it is not found there, the system uses the file from the <code><lib/web</code></li>
-<li>If the module context is specified: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> or <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code>. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
+<li>If the module context is not specified: <code>lib/web</code>(library) or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme) directories. 
+
+According to the assets fallback, if there's a file in the current theme, the system uses it. If it is not found there, the system uses the file from the library.</li>
+<li>If the module context is specified: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) or <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module) directories. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
 
 </ul>
 </li>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-<p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: &lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</p></span>
-</div>
-
 </ol>
 </ol>
 
@@ -58,7 +59,7 @@ default Blank theme.
 
 To do this, let's follow the steps described in the previous section:
 <ol>
-<li>Using the Inspect Element feature of the browser, we define that id of the menu section is *"store.menu"* <code>id</code>:
+<li>Using the Inspect Element feature of the browser, define that the menu section <code>id</code> is *"store.menu"* <code>id</code>:
 
 <p>
 <img src="{{site.baseurl}}common/images/fdg_js_debug1.png">
@@ -66,7 +67,7 @@ To do this, let's follow the steps described in the previous section:
 
 
 </li>
-<li>Search the page source for *"store.menu"*. We can see that there's a  
+<li>Search the page source for *"store.menu"* (illustration follows): 
 <p>
 <img src="{{site.baseurl}}common/images/fdg_js_debug2.png">
 </p>
