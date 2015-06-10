@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>The pricing library</title>
+	<title>Technology Stack</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/architecture/behavior/pricing.html">
+	<link rel="canonical" href="//guides/v1.0/architecture/arch-basics.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">The pricing library</h1>
+		<h1 class="page-heading">Technology Stack</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/architecture/behavior/pricing.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/arch-basics" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,504 +165,68 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="m2devgde-pricelib-intro">Introduction to the Magento pricing library</h2>
+		<h2>Architectural Basics</h2>
 
-<p>This topic discusses how to use the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> library in your module and how to add price rendering to page templates and layouts.</p>
+<h3>Magento Technology Stack</h3>
+<p>Magento’s highly modular structure includes the following open-source technologies:</p>
 
-<h2 id="m2devgde-pricelib-integrate">Use the pricing library in your module</h2>
+<p><b> add tech stack diagram</b></p>
 
-<p>To use the pricing library in a module:</p>
+<p>Stack components include:</p>
 
-<ol>
+<ul>
   <li>
-    <p>Create price calculating and rendering logic extending and implementing library interfaces.</p>
+    <p>PHP (5.5 and 5.6)</p>
   </li>
-  <li>Add prices and adjustments in the <code>di.xml</code> of a module.</li>
-  <li>Prepare a layout: create a pricing layout handle (or use the default Magento one) and add a price rendering block to page layouts.</li>
-  <li>Add price rendering to page templates.</li>
-</ol>
-
-<p>Each step is described in the following paragraphs.</p>
-
-<p>If all you need is customizing the way prices are displayed on your pages, skip steps 1 and 2 and proceed directly to layout and template tasks.</p>
-
-<h2 id="m2devgde-pricelib-custom">Implement price calculation and rendering</h2>
-
-<p>To implement the price calculation and rendering, add the following to your module code base:</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <p>
-          <strong>Entity</strong>
-        </p>
-      </td>
-      <td>
-        <p>
-          <strong>Requirement</strong>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Saleable entity</p>
-      </td>
-      <td>
-        <p>Implements <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>PriceType model</p>
-      </td>
-      <td>
-        <p>Extends <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Amount model</p>
-      </td>
-      <td>
-        <p>Implements <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Adjustment model</p>
-      </td>
-      <td>
-        <p>Implements <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a>
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="m2devgde-pricelib-custom-price">Add a custom price type</h3>
-
-<p>To add a custom price type, create a corresponding class extending <code>AbstractPrice</code>.</p>
-
-<h2 id="m2devgde-pricelib-di">Configure prices and adjustments</h2>
-
-<p>To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module’s <code>di.xml</code> file.
-An example of Catalog module price configuration in its <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
-
-<p>Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price types</a>.</p>
-
-<h3 id="m2devgde-pricelib-adj">Specify adjustments for a product</h3>
-
-<p>To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module’s <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
-
-<h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
-
-<p><code>Magento\Framework\Pricing\Render</code> is the entry point of Pricing. That is, to add Pricing blocks to your pages, you need to add a <code>Magento\Framework\Pricing\Render</code> block in the layout files of your pages.</p>
-
-<p>For example:</p>
-
-<script src="https://gist.github.com/xcomSteveJohnson/08821ad203003c6eda7a.js"></script>
-
-<p>The value of the <code>price_render_handle</code> argument is the name of the pricing layout handle, where price displaying configuration is set. For more details about pricing layout handle see the following paragraph.</p>
-
-<h2 id="m2devgde-pricelib-custom-price-config">Configure price display options</h2>
-
-<p>To configure price blocks displaying in layouts, you need to create a separate layout handle for price rendering.</p>
-
-<p>The name of the layout handle is arbitrary. But if you want to use also default Magento layouts for pricing, name the handle (and so the layout file defining it)  <code>catalog_product_prices.xml</code>.</p>
-
-<p>To learn about locations of layouts in Magento application, see <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
-
-<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular product types in the <code>catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
-
-<p>Class and template declarations in the pricing layout handles are based on the following fallback structures.</p>
-
-<p>Price classes fallback:</p>
-
-<ol>
-  <li><code>$type&nbsp;.&nbsp;'/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_class',</code></li>
-  <li><code>$type&nbsp;.&nbsp;'/default_render_class',</code></li>
-  <li><code>'default/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_class',</code></li>
-  <li><code>'default/default_render_class'</code></li>
-</ol>
-
-<p>Price templates fallback:</p>
-
-<ol>
-  <li><code>$type&nbsp;.&nbsp;'/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_template',</code></li>
-  <li><code>$type&nbsp;.&nbsp;'/default_render_template',</code></li>
-  <li><code>'default/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_template',</code></li>
-  <li><code>'default/default_render_template'</code></li>
-</ol>
-
-<p>Amount templates fallback:</p>
-
-<ol>
-  <li><code>$type . '/prices/' . $priceCode . '/amount_render_template'</code>,</li>
-  <li><code>$type . '/default_amount_render_template'</code>,</li>
-  <li><code>'default/prices/' . $priceCode . '/amount_render_template'</code>,</li>
-  <li><code>'default/default_amount_render_template'</code>.</li>
-</ol>
-
-<p>Adjustment classes templates:</p>
-
-<ol>
-  <li><code>"{$itemType}/adjustments/{$priceType}"</code>,</li>
-  <li><code>"{$itemType}/adjustments/default"</code>,</li>
-  <li><code>"default/adjustments/{$priceType}"</code>,</li>
-  <li><code>"default/adjustments/default"</code>.</li>
-</ol>
-
-<p>Where:</p>
-
-<ul>
-  <li><code>$type/$itemType</code> – is for type of a product.</li>
-  <li><code>$priceCode/$priceType</code> – is for a price type.</li>
+  <li>
+    <p>Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide)</p>
+  </li>
+  <li>
+    <p>HTML5</p>
+  </li>
+  <li>
+    <p>CSS3 (LESS CSS pre-processor)</p>
+  </li>
+  <li>
+    <p>JQuery (primary JavaScript library)</p>
+  </li>
+  <li>RequireJS (library that helps load JavaScript resources on demand)</li>
+  <li>
+    <p>Third-party libraries (Zend Framework 1, Zend Framework 2, Symphony)</p>
+  </li>
+  <li>MySQL 5.6</li>
+  <li>Composer (dependency management package for PHP) </li>
 </ul>
 
-<h2 id="m2devgde-pricelib-ins">Insert price rendering into PHTML templates</h2>
-<p>To invoke the price rendering block, you need to add the following code to a page template:</p>
-<pre>
-$this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
-    '&lt;price type&gt;',
-    $product
-    $arguments
-);
-</pre>
-
-<p>where</p>
+<p>Optional stack components include:</p>
 
 <ul>
-  <li><code>&lt;price type&gt;</code>: the code of the price type</li>
-  <li><code>$product</code>: an instance of Saleable Item, for example <code>Magento\Catalog\Model\Product</code></li>
-  <li><code>$arguments</code>: is the array of rendering arguments.</li>
+  <li>Redis (used for session or page caching)</li>
+  <li>Solr (search engine)</li>
 </ul>
 
-<h2 id="m2devgde-pricelib-def">Default price types</h2>
-<p>In the following table you can find the complete list of the price types implemented in the Magento application.</p>
+<p>Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. </p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <p>
-          <strong>Code</strong>
-        </p>
-      </td>
-      <td>
-        <p>
-          <strong>Description</strong>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>base_price</code>
-        </p>
-      </td>
-      <td>
-        <p>The minimal price without adding any adjustments</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>regular_price</code>
-        </p>
-      </td>
-      <td>
-        <p>The product price specified in the Price field in the Admin panel</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>special_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Special price of the product (set for a certain period of time)</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>final_price</code>
-        </p>
-      </td>
-      <td>
-        <p>The general price display type for displaying final price after applying all required adjustments. Final price is the minimum of all available prices</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>tier_prices</code>
-        </p>
-      </td>
-      <td>
-        <p>Tier prices (different pricing for higher quantities). When rendered, the tier prices block is displayed.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>msrp_price</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <a href="http://en.wikipedia.org/wiki/Suggested_retail_price" target="_blank">MSRP price</a>. When rendered, the "Click for price" link and <a href="http://en.wikipedia.org/wiki/Minimum_advertised_price" target="_blank">MAP</a> pop-up</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>link_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Prices of links in a downloadable product</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>catalog_rule_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Price after applying a catalog rule</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>attribute_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Configurable product attribute price</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>bundle_selection</code>
-        </p>
-      </td>
-      <td>
-        <p>Bundle selection price</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>group_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Special price for a specific customer group</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>custom_option_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Custom option price</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>bundle_option</code>
-        </p>
-      </td>
-      <td>
-        <p>Bundle option price</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>configured_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Product price with configured options</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>link_price</code>
-        </p>
-      </td>
-      <td>
-        <p>Downloadable product link price</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<p>This framework is included in <code>Magento/mtf</code>. For more information, see Magento Test Framework guide.</p>
 
-<h2 id="m2devgde-pricelib-def_rend">Default rendering arguments</h2>
-<p>In the following table you can find the complete list of the rendering arguments implemented in the Magento application</p>
-<table>
-  <tbody>
-    <tr>
-      <td>
-        <p>
-          <strong>Code</strong>
-        </p>
-      </td>
-      <td>
-        <p>
-          <strong>Value</strong>
-        </p>
-      </td>
-      <td>
-        <p>
-          <strong>Description</strong>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>zone </code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>string</code>
-        </p>
-      </td>
-      <td>
-        <p>Display Zone code</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>skip_adjustments</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>boolean</code>
-        </p>
-      </td>
-      <td>
-        <p>Whether to display price adjustments</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>display_label</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>string</code>
-        </p>
-      </td>
-      <td>
-        <p>Price label, for example <em>Regular Price</em>
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>price_id</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>string</code>
-        </p>
-      </td>
-      <td>
-        <p>Price HTML ID</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>include_container</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>
-            boolean
-          </code>
-        </p>
-      </td>
-      <td>
-        <p>Whether to use the <code>&lt;span/&gt;</code> container for currency symbol rendering</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>id_suffix</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>string</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          Price
-          HTML
-          ID suffix
-        </p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>css_classes</code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>string</code>
-        </p>
-      </td>
-      <td>
-        <p>User defined CSS style classes to be added to Price Box root element.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>
-          <code>display_minimal_price </code>
-        </p>
-      </td>
-      <td>
-        <p>
-          <code>boolean</code>
-        </p>
-      </td>
-      <td>
-        <p>Whether a product minimal price should be displayed when available</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<h3>Stack Basics</h3>
+<p>Information about routing, caching, and indexing will be provided in a future sprint.</p>
 
+<h3>Backwards compatibility</h3>
+
+<p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.</p>
+
+<p>To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:</p>
+
+<p>MAJOR indicates incompatible API changes</p>
+
+<p>MINOR indicates backward-compatible functionality has been added</p>
+
+<p>PATCH indicates backward-compatible bug fixes</p>
+
+<p>The backward compatibility policy applies to PHP code annotated with @api</p>
+
+<p>We promise to be backward compatible for classes and methods annotated with @api within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with @deprecated. The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
 
 
 		</div>
@@ -775,7 +339,7 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch-basics.html">Technology Stack</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/architecture/arch-basics.html">Technology Stack</a></li>
 						
 								
 								
@@ -805,7 +369,7 @@ $this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
 						
 								
 							
