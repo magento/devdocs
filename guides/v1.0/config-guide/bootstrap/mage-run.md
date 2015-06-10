@@ -46,7 +46,7 @@ We use the following terms:
 
 	Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. 
 
-Each website and each store view must have a unique identifer. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`.
+Each website and each store view must have a unique identifier. This identifier is required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`.
 
 To create websites and stores:
 
