@@ -9,7 +9,7 @@ menu_order: 3
 github_link: migration/migration-tool-install.md
 ---
 
-##General rules for successfull migration
+##General rules for successful migration
 
 During the time you're migrating:
 
@@ -91,7 +91,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tr>
 <tr>
 	<td><em>EE only</em>. customer-attr-map.xml.dist</td>
-	<td>Map file for the custom customer attributes step.</td>
+	<td>Map file that is used in Custom Customer Attributes Step.</td>
 </tr>
 <tr>
 	<td>deltalog.xml.dist</td>
@@ -99,19 +99,19 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tr>
 <tr>
 	<td>eav-attribute-groups.xml.dist</td>
-	<td>List of attributes required to process the EAV step.</td>
+	<td>Contains list of attributes that are used in Eav Step.</td>
 </tr>
 <tr>
 	<td>eav-document-groups.xml.dist</td>
-	<td>List of tables required to process the EAV step.</td>
+	<td>Contains list of tables that are used in Eav Step.</td>
 </tr>
 <tr>
 	<td>log-document-groups.xml.dist</td>
-	<td>List of tables required to process the log step.</td>
+	<td>Contains list of tables that are used in Log Step.</td>
 </tr>
 <tr>
 	<td>map-eav.xml.dist</td>
-	<td>EAV mapping files.</td>
+	<td>Map file that is used in EAV Step.</td>
 </tr>
 <tr>
 	<td>map-log.xml.dist</td>
@@ -119,7 +119,7 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tr>
 <tr>
 	<td><em>EE only</em>. map-sales.xml.dist</td>
-	<td>Log mapping file.</td>
+	<td>Map file that is used in SalesOrder step.</td>
 </tr>
 <tr>
 	<td>map.xml.dist</td>

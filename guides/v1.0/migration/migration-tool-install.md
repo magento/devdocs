@@ -22,7 +22,7 @@ To install the Data Migration Tool from GitHub, use the following steps:
 3.	Enter one of the following commands:
 
 			composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool-ce
-			composer require magento/data-migration-tool:dev-develop
+			composer require magento/data-migration-tool:dev-master
 
 3.	Wait while dependencies are updated.
 
