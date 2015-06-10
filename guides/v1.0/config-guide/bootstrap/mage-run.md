@@ -16,17 +16,17 @@ github_link: config-guide/bootstrap/mage-run.md
 
 
 <h2 id="magerun-introduction">Introduction to multiple Magento stores and websites</h2>
-One instance of the Magento software can enable you to start multiple websites or store views that:
+One instance of the Magento software can enable you to start multiple websites or store views that use different:
 
-*   Use different default languages
-*   Use different domain names
-*   Use different categories
+*   Default languages
+*   Domain names
+*   Categories
 
-This very flexible solution enables one Magento codebase and Magento Admin to administer and display different stores.
+This flexible solution enables one Magento codebase and Magento Admin to administer and display different stores.
 
 You configure the websites, stores, and store views in the Magento Admin. You use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in entry point scripts or `.htaccess` files to start the Magento application using these websites or store views. 
 
-A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and the other one will be on different language.
+A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -34,11 +34,11 @@ A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with di
 </div>
 
 <h2 id="magerun-conf">Configure Magento websites and stores</h2>
-This section discusses the minimum tasks required to use `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`. 
+This section discusses the minimum tasks required to use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables. 
 
 We use the following terms:
 
-*	*Website* is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  create separate websites. 
+*	*Website* is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites. 
 
 *	*Store* is contained by a website. In turn, a store contains at least one *store view*. 
 
@@ -55,11 +55,7 @@ To create websites and stores:
 3.	To create a website, click **Create Website**.
 4.	To create a store, click **Create Store**.
 5.	To create a store view, click **Create Store View**.
-5.	When you create your website or store view, make note of its unique identifier.
-
-<!-- https://www.properhost.com/support/kb/30/How-To-Setup-Magento-With-Multiple-Stores-And-Domains -->
-<!-- http://inchoo.net/magento/how-to-set-multiple-stores-websites-with-one-magento-installation-on-different-domains/ -->
-
+5.	When you create your website or store view, make note of its unique identifier because you'll use it later.
 
 <h2 id="magerun-set">Set values for MAGE_RUN_TYPE and MAGE_RUN_CODE</h2>
 The following sections discuss alternatives for setting values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE`:
@@ -68,7 +64,7 @@ The following sections discuss alternatives for setting values for `MAGE_RUN_TYP
 *   <a href="#magerun-set-htaccess">Set values in .htaccess</a>
 
 <h3 id="magerun-set-index">Set values in an entry point script</h3>
-If necessary, create an `index.php` entry point script for your website or store view and add to it the following:
+If necessary, copy the existing `index.php` entry point script for your website or store view and add to it the following:
 
 {% highlight php %}
 <?php
@@ -81,32 +77,10 @@ If necessary, create an `index.php` entry point script for your website or store
  ?>
  {% endhighlight %}
 
-Sample `index.php` that starts Magento with a website with the code `frenchsite.example.com`:
+Sample `index.php` snippet that starts Magento with a website with the code `frenchsite.example.com`:
 
 {% highlight php %}
 <?php
-/**
- * Application entry point
- *
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-try {
-    require __DIR__ . '/app/bootstrap.php';
-} catch (\Exception $e) {
-    echo <<<HTML
-<div style="font:12px/1.35em arial, helvetica, sans-serif;">
-    <div style="margin:0 0 25px 0; border-bottom:1px solid #ccc;">
-        <h3 style="margin:0;font-size:1.7em;font-weight:normal;text-transform:none;text-align:left;color:#2f2f2f;">
-        Autoload error</h3>
-    </div>
-    <p>{$e->getMessage()}</p>
-</div>
-HTML;
-    exit(1);
-}
-
  $params = $_SERVER;
  $params[\Magento\Store\Model\StoreManager::MAGE_RUN_CODE] = 'frenchsite.example.com';
  $params[\Magento\Store\Model\StoreManager::MAGE_RUN_TYPE] = 'website';
@@ -118,7 +92,7 @@ HTML;
 {% endhighlight %}
 
 <h3 id="magerun-set-htaccess">Set values in .htaccess</h3>
-This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using Apache server variables `SetEnvIf` or `RewriteCond`. If you're not sure what method to use, consult a network administrator.
+This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using Apache server variables `SetEnvIf` or `RewriteCond`. If you're not sure what environment variable to use, consult a network administrator.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -160,7 +134,3 @@ For example, to use a website with the code `frenchsite.example.com`:
 <span class="glyphicon-class">
   <p>The preceding is an example only. There is more than one way to configure the <code>RewriteCond</code> rule. Consult a system integrator or network administrator for more information.</p></span>
 </div>
-
-<!-- http://gotgroove.com/ecommerce-blog/magento-development/developer-toolbox-using-store-views-in-magento/ -->
-<!-- https://www.byte.nl/blog/multiple-stores-in-one-magento-install/ -->
-<!-- http://magento.stackexchange.com/questions/6521/rewrite-htaccess-to-different-domain -->
