@@ -28,13 +28,14 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
 
 <h2 id="instgde-cli-uninst-mod-over">Overview of uninstalling modules</h2>
-This section discusses how to uninstall one or more individual modules, optionally including the modules' data. 
+This section discusses how to uninstall one or more modules, optionally including the modules' code from the file system, database schema, and database data. You can create backups first so you can recover the data at a later time.
 
 You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This command uninstalls <em>only</em> Composer packages. Modules that are installed with the Magento software can't be uninstalled; you can, however, disable those modules.</p></span>
+  <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a module that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module></code>.</p>
+  <p>As an alternative, you can <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
 </div>
 
 
@@ -87,7 +88,7 @@ The module uninstall command performs the following tasks:
 	</table>
 
 
-3.	If `--remove-data` is specified, collects the `Uninstall` classes from the code base.
+3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
 	For each specified module to uninstall, invoke the `uninstall` method in its `Uninstall` class. This class must inherit from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.
 4.	Removes the specified modules from the `setup_module` database table.
@@ -144,7 +145,7 @@ To restore the Magento codebase to the state at which you backed it up, use the 
 
 	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 
-where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`.
+where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -172,7 +173,7 @@ This command performs the following tasks:
 
 5.	Takes the store out of maintenance mode.
 
-For example, to restore a file system backup, enter the following commands in the order shown:
+For example, to restore a code (that is, file system) backup, enter the following commands in the order shown:
 
 *	Display a list of backups:
 
