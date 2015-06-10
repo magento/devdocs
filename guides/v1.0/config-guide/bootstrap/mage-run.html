@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage the cache</title>
+	<title>Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">
+	<link rel="canonical" href="//guides/v1.0/config-guide/bootstrap/mage-run.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Manage the cache</h1>
+		<h1 class="page-heading">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/bootstrap/mage-run.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,254 +166,143 @@
 		<div class="content-wrap">
 		
 		<h4 id="contents">Contents</h4>
-
 <ul>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-subcommands-cache-clean">Overview of cache types</a></li>
-  <li><a href="#config-cli-subcommands-cache-status">View the cache status</a></li>
-  <li><a href="#config-cli-subcommands-cache-en">Enable or disable the cache</a> </li>
-  <li><a href="#config-cli-subcommands-cache-clean">Clean and flush cache types</a></li>
+  <li><a href="#magerun-introduction">Introduction to multiple Magento stores and websites</a></li>
+  <li><a href="#magerun-conf">Configure Magento</a></li>
+  <li><a href="#magerun-set">Set values for MAGE_RUN_TYPE and MAGE_RUN_CODE</a></li>
 </ul>
 
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<h2 id="magerun-introduction">Introduction to multiple Magento stores and websites</h2>
+<p>One instance of the Magento software can enable you to start multiple websites or store views that use different:</p>
+
+<ul>
+  <li>Default languages</li>
+  <li>Domain names</li>
+  <li>Categories</li>
+</ul>
+
+<p>This flexible solution enables one Magento codebase and Magento Admin to administer and display different stores.</p>
+
+<p>You configure the websites, stores, and store views in the Magento Admin. You use the <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> variables in entry point scripts or <code>.htaccess</code> files to start the Magento application using these websites or store views. </p>
+
+<p>A typical use of <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.</p>
+
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+  <p>This topic discusses only the basics of configuring multiple sites using the Admin and variables. Details about deploying the Magento application in multiple domains is beyond the scope of this topic.</p></span>
 </div>
-<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="config-cli-subcommands-cache-clean">Overview of cache types</h2>
-<p>Magento 2 has the following cache types:</p>
+<h2 id="magerun-conf">Configure Magento websites and stores</h2>
+<p>This section discusses the minimum tasks required to use the <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> variables. </p>
 
-<table>
-  <tbody>
-    <tr>
-      <th>Cache type "friendly" name</th>
-      <th>Cache type code name</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td><p>Configuration</p></td>
-      <td><p>config</p></td>
-      <td><p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
-	<p>Clean or flush this cache type after modifying configuration files.</p></td>
-    </tr>
-    <tr>
-      <td><p>Layout</p></td>
-      <td><p>layout</p></td>
-      <td><p>Compiled page layouts (that is, the layout components from all components).</p>
-	<p>Clean or flush this cache type after modifying layout files.</p></td>
-    </tr>
-    <tr>
-      <td><p>Block HTML output</p></td>
-      <td><p>block_html</p></td>
-      <td><p>HTML page fragments per block.</p>
-	<p>Clean or flush this cache type after modifying the view layer.</p></td>
-    </tr>
-    <tr>
-      <td><p>View files fallback</p></td>
-      <td><p>view_files_fallback</p></td>
-      <td><p>Paths to view files per theme and application area (adminhtml or frontend).</p>
-	<p>Clean or flush this cache type after you add or remove a static view file or theme.</p></td>
-    </tr>
-    <tr>
-      <td><p>View files pre-processing</p></td>
-      <td><p>view_files_preprocessing</p></td>
-      <td><p>Similar to the view files fallback cache except it takes pre-processing into account. Stores path data per view file.</p></td>
-    </tr>
-    <tr>
-      <td><p>Collections data</p></td>
-      <td><p>collections</p></td>
-      <td><p>Results of database queries.</p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</p></td>
-    </tr>
-    <tr>
-      <td><p>DDL</p></td>
-      <td><p>db_ddl</p></td>
-      <td><p>Database schema. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
-      	<p>One way to update the database schema automatically is using the <a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p></td>
-    </tr>
-    <tr>
-      <td><p>Entity attribute value (EAV)</p></td>
-      <td><p>eav</p></td>
-      <td><p>Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).</p>
-        <p>You should not typically need to clean or flush this cache type.</p></td>
-    </tr>
-    <tr>
-      <td><p>Page cache</p></td>
-      <td><p>full_page</p></td>
-      <td><p>Generated HTML pages. </p>
-      	<p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-      	<p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled to because caching HTML improves performance significantly.</p></td>
-    </tr>
-    <tr>
-      <td><p>Translations</p></td>
-      <td><p>translate</p></td>
-      <td><p>Merged translations from all modules.</p></td>
-    </tr>
-    <tr>
-      <td><p>Integration configuration</p></td>
-      <td><p>config_integration</p></td>
-      <td><p>Compiled integrations.</p>
-      	<p>Clean or flush this cache after changing or adding integrations.</p></td>
-    </tr>
-    <tr>
-      <td><p>Integration API configuration</p></td>
-      <td><p>config_integration_api</p></td>
-      <td><p>Compiled integration APIs.</p></td>
-    </tr>
-    <tr>
-      <td><p>Web services configuration</p></td>
-      <td><p>config_webservice</p></td>
-      <td><p>Web API structure.</p></td>
-    </tr>
+<p>We use the following terms:</p>
 
-  </tbody>
-</table>
+<ul>
+  <li>
+    <p><em>Website</em> is the top-level container for sites, shipping methods, payment methods, and so on. To create completely separate sites that do not share cart, shipping methods, and so on,  you must create separate websites. </p>
+  </li>
+  <li>
+    <p><em>Store</em> is contained by a website. In turn, a store contains at least one <em>store view</em>. </p>
 
-<h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
-<p>To view the status of the cache, enter</p>
+    <p>Multiple stores can share cart, user sessions, payment gateways, and so on, but they have separate catalog structures. </p>
 
-<pre><code>magento cache:status 
+    <p>Store views change the way pages are presented, and are typically used to display a store with different layouts or languages. </p>
+  </li>
+</ul>
+
+<p>Each website and each store view must have a unique identifier. This identifier is required to use <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code>.</p>
+
+<p>To create websites and stores:</p>
+
+<ol>
+  <li>Log in to the Magento Admin as a user authorized to create websites, stores, and store views.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>All Stores</strong>.</li>
+  <li>To create a website, click <strong>Create Website</strong>.</li>
+  <li>To create a store, click <strong>Create Store</strong>.</li>
+  <li>To create a store view, click <strong>Create Store View</strong>.</li>
+  <li>When you create your website or store view, make note of its unique identifier because you’ll use it later.</li>
+</ol>
+
+<h2 id="magerun-set">Set values for MAGE_RUN_TYPE and MAGE_RUN_CODE</h2>
+<p>The following sections discuss alternatives for setting values for <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code>:</p>
+
+<ul>
+  <li><a href="#magerun-set-index">Set values in an entry point script</a></li>
+  <li><a href="#magerun-set-htaccess">Set values in .htaccess</a></li>
+</ul>
+
+<h3 id="magerun-set-index">Set values in an entry point script</h3>
+<p>If necessary, copy the existing <code>index.php</code> entry point script for your website or store view and add to it the following:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+ <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">MAGE_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&lt;code&gt;&#39;</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">MAGE_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;{store|website}&#39;</span><span class="p">;</span>
+ <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+ <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
+ <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
+ <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<p>Sample <code>index.php</code> snippet that starts Magento with a website with the code <code>frenchsite.example.com</code>:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+ <span class="nv">$params</span> <span class="o">=</span> <span class="nv">$_SERVER</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">MAGE_RUN_CODE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;frenchsite.example.com&#39;</span><span class="p">;</span>
+ <span class="nv">$params</span><span class="p">[</span><span class="nx">\Magento\Store\Model\StoreManager</span><span class="o">::</span><span class="na">MAGE_RUN_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;website&#39;</span><span class="p">;</span>
+ <span class="nv">$bootstrap</span> <span class="o">=</span> <span class="nx">\Magento\Framework\App\Bootstrap</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="nx">BP</span><span class="p">,</span> <span class="nv">$params</span><span class="p">);</span>
+ <span class="nv">$app</span> <span class="o">=</span> <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">createApplication</span><span class="p">(</span><span class="s1">&#39;Magento\Framework\App\Http&#39;</span><span class="p">);</span>
+ <span class="nv">$bootstrap</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">(</span><span class="nv">$app</span><span class="p">);</span>
+ <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
+<h3 id="magerun-set-htaccess">Set values in .htaccess</h3>
+<p>This section discusses how to set values for <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> using Apache server variables <code>SetEnvIf</code> or <code>RewriteCond</code>. If you’re not sure what environment variable to use, consult a network administrator.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>Additional tasks required to set up the Magento 2 file system for this type of environment are beyond the scope of this topic.</p></span>
+</div>
+
+<p>For more information about <code>SetEnvIf</code> or <code>RewriteCond</code>, see:</p>
+
+<ul>
+  <li>Apache 2.2: <a href="http://httpd.apache.org/docs/2.2/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.2/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a></li>
+  <li>Apache 2.4: <a href="http://httpd.apache.org/docs/2.4/mod/mod_setenvif.html" target="_blank">SetEnvIf</a>, <a href="http://httpd.apache.org/docs/2.4/mod/mod_rewrite.html#rewritecond" target="_blank">RewriteCond</a></li>
+</ul>
+
+<h4 id="setenvif-example">SetEnvIf example</h4>
+<p>Add the following after <code>RewriteEngine on</code> in <code>.htaccess</code>:</p>
+
+<pre><code>SetEnvIf Host .*&lt;your domain&gt;.* MAGE_RUN_CODE=&lt;code&gt;
+SetEnvIf Host .*&lt;your domain&gt;.* MAGE_RUN_TYPE={store|website}
 </code></pre>
 
-<!-- where `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v1.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
+<p>For example, to use a website with the code <code>frenchsite.example.com</code>:</p>
 
-<p>A sample follows:</p>
-
-<pre><code>                    config: 1
-                    layout: 1
-                block_html: 1
-       view_files_fallback: 1
-  view_files_preprocessing: 1
-               collections: 1
-                    db_ddl: 1
-                       eav: 1
-                 full_page: 1
-                 translate: 1
-        config_integration: 1
-    config_integration_api: 1
-         config_webservice: 1
+<pre><code>SetEnvIf Host .*example.com.* MAGE_RUN_CODE=frenchsite.example.com
+SetEnvIf Host .*example.com.* MAGE_RUN_TYPE=website
 </code></pre>
 
-<h2 id="config-cli-subcommands-cache-en">Enable or disable cache types</h2>
-<p>This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse affect on performance.</p>
+<h4 id="rewritecond-example">RewriteCond example</h4>
+<p>Add code similar to the following after <code>RewriteBase /magento/</code> in <code>.htaccess</code>:</p>
 
-<p>Command options:</p>
-
-<pre><code>magento cache:enable [--all] [type] ... [type]
-magento cache:disable [--all] [type] ... [type] 
+<pre><code>RewriteCond %{HTTP_HOST} ^(.*)&lt;your domain&gt;\&lt;domain suffix&gt;
+RewriteRule .* – [E=MAGE_RUN_CODE:&lt;code&gt;]
+RewriteCond %{HTTP_HOST} ^(.*)&lt;your domain&gt;\&lt;domain suffix&gt;
+RewriteRule .* – [E=MAGE_RUN_TYPE:{store|website}]
 </code></pre>
 
-<p>where</p>
+<p>For example, to use a website with the code <code>frenchsite.example.com</code>:</p>
 
-<p><code>--all</code> enables or disables all cache types at the same time.</p>
-
-<p><code>type</code> is a space-separated list of cache types.</p>
-
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v1.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values. -->
-
-<p>To list cache types and their status, enter</p>
-
-<pre><code>magento cache:status
-</code></pre>
-
-<p>For example, to disable the full page cache and the DDL cache, enter </p>
-
-<pre><code>magento cache:disable db_ddl full_page
-</code></pre>
-
-<p>Sample result:</p>
-
-<pre><code>Changed cache status:	
-                    db_ddl: 1 -&gt; 0
-                 full_page: 1 -&gt; 0
+<pre><code>RewriteCond %{HTTP_HOST} ^(.*)example\.com
+RewriteRule .* – [E=MAGE_RUN_CODE:frenchsite.example.com]
+RewriteCond %{HTTP_HOST} ^(.*)example\.com
+RewriteRule .* – [E=MAGE_RUN_TYPE:website]
 </code></pre>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Enabling a cache type automatically clears that cache type.</p></span>
+  <p>The preceding is an example only. There is more than one way to configure the <code>RewriteCond</code> rule. Consult a system integrator or network administrator for more information.</p></span>
 </div>
-
-<h2 id="config-cli-subcommands-cache-clean">Clean and flush cache types</h2>
-<p>To purge out-of-date items from the cache, you can <em>clean</em> or <em>flush</em> cache types:</p>
-
-<ul>
-  <li>
-    <p>Cleaning a cache type deletes all items from enabled cache types only.</p>
-
-    <p>Disabled cache types are not cleaned.</p>
-  </li>
-  <li>
-    <p>Flushing a cache type purges the cache storage.</p>
-
-    <p>All cache types that use the specified storage are flushed.</p>
-  </li>
-</ul>
-
-<p>Command usage:</p>
-
-<pre><code>magento cache:clean [--all] [type] ... [type]
-magento cache:flush [--all] [type] ... [type]
-</code></pre>
-
-<p>where</p>
-
-<p><code>--all</code> cleans or flushes all cache types at the same time.</p>
-
-<p><code>type</code> is a space-separated list of cache types.</p>
-
-<!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="/guides/v1.0/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
- -->
-<p>For example, to flush all cache types, enter</p>
-
-<pre><code>magento cache:flush --all
-</code></pre>
-
-<p>Sample result:</p>
-
-<pre><code>Flushed cache types:
-config
-layout
-block_html
-view_files_fallback
-view_files_preprocessing
-collections
-db_ddl
-eav
-full_page
-translate
-config_integration
-config_integration_api
-config_webservice
-</code></pre>
-
-<h4 id="related-topics">Related topics</h4>
-
-<ul>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
 
 
 		</div>
@@ -528,7 +417,7 @@ config_webservice
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
 						
 								
 								
@@ -561,7 +450,7 @@ config_webservice
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
 						
 								
 							
