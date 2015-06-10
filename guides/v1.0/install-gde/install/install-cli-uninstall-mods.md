@@ -18,7 +18,7 @@ See one of the following sections:
 *	<a href="#instgde-cli-uninst-mod-over">Overview of uninstalling modules</a>
 *	<a href="#instgde-cli-uninst-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-uninst-mod-uninst">Uninstall modules</a>
-*	<a href="#instgde-cli-uninst-mod-roll">Roll back the codebase</a>
+*	<a href="#instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</a>
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -41,7 +41,8 @@ You should uninstall a module only if you're certain you won't use it. Instead o
 <h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
 Command usage:
 
-	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] <ModuleName> ... <ModuleName>
+	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] <ModuleName> ... 
+	<ModuleName>
 
 The module uninstall command performs the following tasks:
 
@@ -68,18 +69,18 @@ The module uninstall command performs the following tasks:
 	<tr>
 		<td><p>--backup-code</p></td>
 		<td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
-		<td><p>/var/backups/&lt;timestamp>_filesystem.tgz</p></td>
+		<td><p>var/backups/&lt;timestamp>_filesystem.tgz</p></td>
 	</tr>
 	<tr>
 		<td><p>--backup-media</p></td>
 		<td><p>Back up the <code>pub/media</code> directory.</p></td>
-		<td><p>/var/backups/&lt;timestamp>_filesystem_media.tgz</p></td>
+		<td><p>var/backups/&lt;timestamp>_filesystem_media.tgz</p></td>
 	</tr>
 	<tr>
 	<tr>
 		<td><p>--backup-db</p></td>
 		<td><p>Back up the Magento 2 database.</p></td>
-		<td><p>/var/backups/&lt;timestamp>_db.gz</p></td>
+		<td><p>var/backups/&lt;timestamp>_db.gz</p></td>
 	</tr>
 	<tr>
 	</tbody>
@@ -92,12 +93,17 @@ The module uninstall command performs the following tasks:
 4.	Removes the specified modules from the `setup_module` database table.
 4.	Removes the specified modules from the module list in the <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>.
 5.	Removes code from the codebase using `composer remove`.
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>Uninstalling a module <em>always</em> runs <code>composer remove</code>. The <code>--remove-data</code> option removes database data and schema defined by the module's <code>Uninstall</code> class.</p></span>
+	</div>
 5.	Cleans the cache.
 6.	Updates generated classes.
 6.	If `--clear-static-content` is specified, clears generated static view files.
 7.	Takes the store out of maintenance mode.
 
-For example, the following command uninstalls a module named `VendorName_SampleModule` after backing up the Magento `app/code` file system, `pub/media` files, and database tables but does *not* remove the module's code:
+For example, the following command uninstalls a module named `VendorName_SampleModule` after backing up the Magento `app/code` file system, `pub/media` files, and database tables but does *not* remove the module's database schema or data:
 
 	magento module:uninstall VendorName_SampleModule --backup-code --backup-media --backup-db
 
@@ -133,14 +139,17 @@ Messages similar to the following display:
 	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. Failure to clear static view files might cause display issues in the Admin and storefront.
 	Disabling maintenance mode
 
+<h2 id="instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</h2>
+To restore the Magento codebase to the state at which you backed it up, use the following command:
 
+	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 
-<h2 id="instgde-cli-uninst-mod-roll">Roll back the codebase</h2>
-To restore the Magento codebase to the state at which you backed it up using the `--backup-code` parameter, use the following command:
+where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`.
 
-	magento setup:rollback {filename}
-
-where `filename` is the name of the backup file located in `<your Magento install dir>/var/backups`.
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>To display a list of available backup files, enter <code>magento info:backups:list</code></p></span>
+</div>
 
 This command performs the following tasks:
 
@@ -162,6 +171,26 @@ This command performs the following tasks:
 	4.	Extracts the archive file to the destination locations.
 
 5.	Takes the store out of maintenance mode.
+
+For example, to restore a file system backup, enter the following commands in the order shown:
+
+*	Display a list of backups:
+
+		magento info:backups:list
+
+*	Restore a file backup named `1433876616_filesystem.tgz`:
+
+		magento setup:rollback --code-file="1433876616_filesystem.tgz"
+
+	Messages similar to the following display:
+
+		Enabling maintenance mode
+		Code rollback is starting ...
+		Code rollback filename: 1433876616_filesystem.tgz
+		Code rollback file path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
+		[SUCCESS]: Code rollback has completed successfully.
+		Disabling maintenance mode
+
 
 #### Related topics
 
