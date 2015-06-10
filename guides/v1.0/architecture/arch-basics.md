@@ -40,7 +40,7 @@ Optional stack components include:
 
 Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
 
-This framework is included in Magento/mtf. For more information, see Magento Test Framework guide.
+This framework is included in `Magento/mtf`. For more information, see Magento Test Framework guide.
 <h3>Stack Basics</h3>
 <h4>routing</h4>
 <h4>caching</h4>

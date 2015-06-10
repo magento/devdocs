@@ -10,8 +10,6 @@ github_link: architecture/archi_perspectives/arch_layers.md
 We will add information about the following layers in a future sprint:
 
 * Presentation layer
-* Service layer
-* Domain layer
 
 <!--<h2 id="presentation">Presentation layer</h2>
 
@@ -71,8 +69,7 @@ The service contract of a module is defined by the set of interfaces in the modu
 
 
 
-* data (or *entity*) interfaces in the `Api/Data` directory
- *Data entities* are data structures passed to and returned from service interfaces.
+* data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
 
 
 <b> add screenshot of relevant directory structure for module</b>
@@ -97,7 +94,7 @@ The domain layer holds the business logic layer of a Magento module. It typicall
 
 * (Optionally) Includes the implementation of service contracts, although not their definition.
 
-<b>Add diagram: service layer -- > domain layer resource models  -—> database</b>
+<b>Add diagram: service layer -- > domain layer resource models -- > database</b>
 
 Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic. 
 
@@ -112,7 +109,7 @@ There are three primary ways of accessing a module's domain-layer code:
 
 * Service contracts are the recommended way for one module to access another module's domain-level code. This loosely coupled solution is the optimal way for most modules to access another module. 
 
-* A module can directly call into another module. This tightly-coupled solution is not recommended for most situations, but is sometimes unavoidable.
+* A module can directly call into another module. This tightly coupled solution is not recommended for most situations, but is sometimes unavoidable.
 
 * Domain layer code in one module can also plug itself into another module by: 
 
