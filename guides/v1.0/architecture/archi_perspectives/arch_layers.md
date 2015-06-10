@@ -58,7 +58,7 @@ The service contract of a module is defined by the set of interfaces in the modu
 * data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
 
 
-<b> add screenshot of relevant directory structure for module</b>
+<b>To do: Add screenshot of relevant directory structure for module</b>
 
 Typically, service contracts provide three distinct types of interfaces: 
 
