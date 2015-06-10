@@ -198,31 +198,31 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 	<tr>
 		<td><p>--use-rewrites</p></td>
 		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
-		<p><code>0</code> disables the use of web server rewrites.</p></td>
+		<p><code>0</code> disables the use of web server rewrites. This is the default.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--use-secure</p></td>
 		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>.</p></td>
+		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--base-url-secure</p></td>
 		<td><p><code>1</code> means SSL is preferred in Magento URLs designed to use it (for example, the checkout page). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> means SSL is not used.</p></td>
+		<p><code>0</code> means SSL is not used. This is the default.</p></td>
 		<td><p>No</p></td>
 	</tr>
 
 	<tr>
 		<td><p>--use-secure-admin</p></td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> means you do not use SSL with the Admin.</p></td>
+		<p><code>0</code> means you do not use SSL with the Admin. This is the default.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--admin-use-security-key</p></td>
-		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>.</p>
+		<td><p><code>1</code> causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_%28CSRF%29" target="_blank">cross-site script forgery attacks</a>. This is the default.</p>
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td><p>No</p></td>
 	</tr>
@@ -304,6 +304,8 @@ The following example installs Magento with the following options:
 
 *	Installs optional sample data
 
+*	Uses server rewrites
+
 *	The Magento administrator has the following properties:
 
 	*	First and last name are `Magento User`
@@ -319,7 +321,7 @@ The following example installs Magento with the following options:
 		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 		--admin-user=admin --admin-password=admin123 --language=en_US \
-		--currency=USD --timezone=America/Chicago --use-sample-data
+		--currency=USD --timezone=America/Chicago --use-sample-data --use-rewrites=1
 
 **Example 2** (with additional options)
 
@@ -345,6 +347,7 @@ The following example installs Magento with the following options:
 *	The installer first cleans up the database before installing the tables and schema
 *	You use a sales order increment prefix `ORD$` and because it contains a special character (`$`), the value must be enclosed in double quotes
 *	Session data is saved in the database
+*	Uses server rewrites
 
 		php bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
 		--backend-frontname=admin --db-host=localhost --db-name=magento \
@@ -352,7 +355,7 @@ The following example installs Magento with the following options:
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 		--admin-user=admin --admin-password=admin123 --language=en_US \
 		--currency=USD --timezone=America/Chicago --cleanup-database \
-		--sales-order-increment-prefix="ORD$" --session-save=db
+		--sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
 
 
 <div class="bs-callout bs-callout-info" id="info">
