@@ -41,15 +41,13 @@ Optional stack components include:
 Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. 
 
 This framework is included in `Magento/mtf`. For more information, see Magento Test Framework guide.
-<h3>Stack Basics</h3>
-<h4>routing</h4>
-<h4>caching</h4>
-
-<h4>indexing</h4>
 
-
-<h3>Backwards compatibility</h3>
-Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
+<h3>Stack Basics</h3>
+Information about routing, caching, and indexing will be provided in a future sprint.
+
+<h3>Backwards compatibility</h3>
+
+Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
 
 To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:
 
@@ -62,9 +60,3 @@ PATCH indicates backward-compatible bug fixes
 The backward compatibility policy applies to PHP code annotated with @api
 
 We promise to be backward compatible for classes and methods annotated with @api within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with @deprecated. The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.
-
-
-
-
-
-
