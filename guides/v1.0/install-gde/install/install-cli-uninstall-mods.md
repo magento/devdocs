@@ -145,6 +145,11 @@ To restore the Magento codebase to the state at which you backed it up, use the 
 
 	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 
+<div class="bs-callout bs-callout-warning">
+    <p>This command deletes files or the database before restoring them. Make sure you have made no changes to the file system or database that you want to keep before using this command.</p>
+</div>
+
+
 where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -159,7 +164,7 @@ This command performs the following tasks:
 4.	If you specify a code rollback file:
 	
 	2.	Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
-	3.	Removes existent code base in the rollback destination locations.
+	3.	Deletes all files and directories under your Magento 2 installation directory.
 	4.	Extracts the archive file to the destination locations.
 5.	If you specify a database rollback file:
 
@@ -168,7 +173,7 @@ This command performs the following tasks:
 5.	If you specify a media rollback file:
 
 	2.	Verifies the rollback destination locations are writable.
-	3.	Removes existent media files in the rollback destination locations.
+	3.	Deletes all files and directories under `pub/media`
 	4.	Extracts the archive file to the destination locations.
 
 5.	Takes the store out of maintenance mode.
@@ -192,6 +197,10 @@ For example, to restore a code (that is, file system) backup, enter the followin
 		[SUCCESS]: Code rollback has completed successfully.
 		Disabling maintenance mode
 
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>To run the <code>magento</code> command again without changing directories, you might need to enter <code>cd `pwd`</code></p></span>
+</div>
 
 #### Related topics
 
