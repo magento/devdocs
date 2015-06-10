@@ -7,20 +7,6 @@ menu_title: Architecture layers
 menu_order: 3
 github_link: architecture/archi_perspectives/arch_layers.md
 ---
-We will add information about the following layers in a future sprint:
-
-* Presentation layer
-
-<!--<h2 id="presentation">Presentation layer</h2>
-
-
-
-<h2 id="service">Service layer</h2>
-
-
-<h2 id="domain">Domain layer</h2>
-
--->
 
 <h2> Presentation layer</h2>
 
@@ -44,7 +30,7 @@ In general, the service layer
 
 
 
-<b>Add diagram</b>
+<b> To do: Add diagram</b>
 
 
 
@@ -94,7 +80,7 @@ The domain layer holds the business logic layer of a Magento module. It typicall
 
 * (Optionally) Includes the implementation of service contracts, although not their definition.
 
-<b>Add diagram: service layer -- > domain layer resource models -- > database</b>
+<b>To do: Add diagram: service layer -- > domain layer resource models -- > database</b>
 
 Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic. 
 
