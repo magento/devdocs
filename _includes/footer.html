@@ -56,7 +56,7 @@
                 <div class="hold-form">
                 <div id="nws-notsubscribed">
                     <div id="sb-email" class="sb-email">
-                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
                             <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
                             <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
                                 Submit
@@ -71,8 +71,8 @@
                             <input type="hidden" name="kw" value="" />
                             <input type="hidden" name="cr" value="" />
                             <input type="hidden" name="searchstr" value="" />
-                            <input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" />
-                            <input type="hidden" name="formid" value="1006" />
+                            <input type="hidden" name="lpurl" value="http://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
                             <input type="hidden" name="returnURL" value="http://devdocs.magento.com{{ page.url }}" />
                             <input type="hidden" name="retURL" value="http://devdocs.magento.com{{ page.url }}" />
                             <input type="hidden" name="_mkt_disp" value="return" />
@@ -123,11 +123,32 @@
       }
       else {
         $('.email-invalid').fadeOut('slow');
-        $('#mktForm_1006').submit();
+        $('#mktForm_1182').submit();
       }
       return false;
     }
-  })(jQuery);    
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
 </script>
 
 <!-- Docs scripts (just in case) -->
