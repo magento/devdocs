@@ -27,7 +27,7 @@ Stack components include:
 * JQuery (primary JavaScript library)
 
 * RequireJS (library that helps load JavaScript resources on demand)
-* Third-party libraries (Zend Framework 1, Zend Framework 2, Symphony)
+* Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)
 
 * MySQL 5.6
 * Composer (dependency management package for PHP) 
