@@ -12,6 +12,19 @@ github_link: migration/migration-migrate.md
   
 <h2 id="migration-command">Migrating settings, data and changes</h2>
 
+###General rules for successful migration
+
+During the time you're migrating:
+
+*	Do not make any changes in the Magento 1 Admin Panel except for order management (shipping, creating invoice, credit memos etc.)
+*	Stop all Magento 1 cron jobs
+*	Do not alter any code
+*	Do not make changes in the Magento 2 Admin and Storefront
+
+All operations in Magento 1 Storefront are allowed at this time.
+
+###Run Data Migration Tool
+
 Run the Data Migration Tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
 
 Command syntax:
