@@ -2,24 +2,24 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: Script debugging
-menu_title: Script debugging
+title: Locate JS components
+menu_title: Locate JS components
 menu_order: 2
 github_link: frontend-dev-guide/javascript/js_debug.md
 ---
 
 <h2 id="js_debug_overview">Overview</h2>
 
-This article talks about how to define which `.js` scripts are used for a certain HTML element on a store page.
+This article talks about how to define which JavaScript components (scripts) are used for a certain HTML element on a store page.
 
 
-<h2 id="locate_widget">Locate script</h2>
+<h2 id="locate_widget">Locate JS components: walkthrough</h2>
 
 To locate scripts used for a certain element:
 
 <ol>
 <li>Open the store page in a browser, and locate the element's class or id using browser debugging tools.</li>
-<p class="q">class or id? true?</p>
+<p class="q">class or id? true? yes</p>
 
 <li>Select to view the page source.</li>
 <li>Find the corresponding element and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls for this element, its children or parents. The notaion contains the names of the scripts. 

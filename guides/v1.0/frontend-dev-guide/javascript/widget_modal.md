@@ -122,11 +122,9 @@ Modal scroll position.
 
 <h3 id="modal_innerScroll"><code>modalLeftMargin</code></h3>
 Set a margin between modals.
-<p class="q">between modal windows?</p>
+<p class="q">A: between slide modal windows</p>
 
 **Type**: Number 
-
-<p class="q">number or integer?</p>
 
 **Default value**: 45
 
