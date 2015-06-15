@@ -449,378 +449,67 @@ $this->logger->debug("Some debug message");
 $this->logger->error("Message about error operation");
 </code></pre>
 
-<!--
--->
+There is a possibility to customize where log information should be written. You can do that by adding handler to logger using pushHandler() method of the logger. Each handler should implement \Monolog\Handler\HandlerInterface interface. As for now there are two handlers:
 
-<h2 id="migrate-install">Install the migration tool</h2>
-This section discusses how to install the Magento migration tool. To install the migration tool, you must update `composer.json` in the Magento root installation directory to provide the location of the migration tool package. 
+* ConsoleHandler: writes messages to console
+* FileHandler: writes messages to log file that has been set in "log_file" config option
 
-Sample data is versioned like Magento code. Before you begin, you can either either:
+Also it is possible to implement any additional handler. There is a set of handlers in Magento framework. Example of adding handlers to logger:
 
-*	Find the exact version you want at <a href="http://packages.magento.com/#magento/migration-tool" target="_blank">packages.magento.com</a>.
-*	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
+<pre><code>// $this->consoleHandler is the object of Migration\Logger\ConsoleHandler class
+// $this->logger is the object of Migration\Logger\Logger class
+$this->logger->pushHandler($this->consoleHandler);
+</code></pre>
 
-<h4 id="migrate-install">Install migration tool using composer</h4>
+To set additional data for logger (e.g. current mode, table name e.t.c) you can use logger processors. There is one existing processor (MessageProcessor). It's created to add "extra" data for logging messages and will be called each time when log method is executed. MessageProcessor has protected $extra var, which contain empty values for 'mode', 'stage', 'step' and 'table'. Extra data can be passed to processor as a second parameter (context) for log method. Currently additional data sets to processor in AbstractStep->runStage (pass current mode, stage and step to processor) method and data classes where used logger->debug method (pass migrating table name). Example of adding processors to logger:
 
-To deploy migration tool, you must:
+<pre><code>// $this->processoris the object of Migration\Logger\messageProcessor class
+// $this->logger is the object of Migration\Logger\Logger class
+$this->logger->pushProcessor([$this->processor, 'setExtra']);
+// As a second array value you need to pass method that should be executed when processor called
+</code></pre>
 
-1.	Decide the version of `magento/migration-tool` you want. 
+There is a possibility to set the level of verbosity. As for now there are 3 levels: ERROR(writes only errors to the log), INFO(only important information is written to the log, default value), DEBUG(everything is written). Verbosity log level can be set for each handler separately by calling setLevel() method. If you want to set verbosity level via command line parameter, you should change 'verbose' option at application launch as follows:
 
-2. Run the composer config and composer require commands to update composer.json.
+<pre><code>magento2$ php -f vendor/magento/migration-tool/migration.php -- --verbose ERROR
+magento2$ php -f vendor/magento/migration-tool/migration.php -- --verbose INFO
+magento2$ php -f vendor/magento/migration-tool/migration.php -- --verbose DEBUG
+</code></pre>
 
-NOTE: Migration tools and Magento 2 are tested only if they have the same version. For example, Magento 2 version 0.74.0-beta4 is tested only with Migration tool version 0.74.0-beta4.
+There is a possibility to format log messages via monolog formatter. To make formatter functionality work it needs to be set to specified log handler using setFormatter() method. Currently we have one formatter class (MessageFormatter) that sets certain format (depends on verbosity level) during message handling (via format() method executed from handler).
 
-To update `composer.json`:
+As for now manipulation with logger, adding handler(s), processor(s) to it and processing verbose mode is performed in process() method of Migration\Logger\Manager class. Mentioned method is called during application start.
 
-1.	Log in to your Magento server as the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apacheweb">web server user</a> or as a user with `root` privileges.
+###Extension Points
 
-2.	Change to your Magento installation directory.
+####Custom Resource Type of Source
 
-3.	Make a backup copy of `composer.json`.
+By default migration tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to CSV as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
 
-		cp composer.json composer.json.bak
+####Map Step configuration
 
-4.	Open `composer.json` in a text editor.
+In most cases modification of map will be enough.
 
-5.	In the first section, add `"minimum-stability": "beta",` before `version`. A snippet follows:
+####Custom Handler
 
-		"name": "magento/project-community-edition",
-	    "description": "Magento project (Community Edition)",
-	    "type": "project",
-	    "minimum-stability": "beta",
-	    "version": "0.74.0-beta5",
-	    "license": [
-	        "OSL-3.0",
-	        "AFL-3.0"
-	    ],
+Custom handlers can be used for cases where data in a field should be transformed with more complex algorithm. There are a lot of custom handlers out of the box in src/Migration/Handler/ folder. Custom handlers are used in Settings step and Map step.
 
-6.	Save your changes to <code>composer.json</code> and exit the text editor.
+####Custom Steps
 
-7.	Enter the following command to reference Magento packages in `composer.json`:
+Migration tool provides possibility to add custom steps to migration procedure (see Step internals).
 
-		composer config repositories.magento composer http://packages.magento.com
+###Automatic tests
 
-8.	Enter the following command to require the current version of the migration tool package:
+There are 3 types of tests in migration tool: static, unit and integration tests. They all are located in tests/ directory of the tool and they are located in folders, which are the same as the type of the test (e.g. unit tests are located in tests/unit folder). To launch the test you should have phpunit installed. In such case you should change current folder to the folder of test and launch phpunit. See the example below.
 
-		composer require magento/migration-tool:<version>
-
-	where `<version>` is either an exact version or next significant release syntax.
-
-	Exact version example:
-
-		composer require magento/migration-tool:0.74.0-beta4
-
-	Next significant release example:
-
-		composer require magento/migration-tool:~0.74.0-beta4
-
-9.	Wait while dependencies are installed.
-
-<h2 id="migration-preconditions">Preconditions before running the tool</h2>
-
-*	Available network connection to Magento 1 and Magento 2 data storage (MySQL)
-*	Magento 2 store should be installed but its cron tasks should not be executed
-*	Extensions from Magento 1 are ported to Magento 2
-*	The codebase of Migration tool depends on Magento Framework of Magento 2 and should be located in magento2-root/vendor/magento/migration-tool directory
-
-	It is recommended to: 
-<pre>
-1.	make a database dump of Magento 2 just after its installation
-2.	set up replication (after MAGETWO-33344)?!? 
-</pre>
-
-<h3 id="migration-preconditions">Configuration</h3>
-
-All config files are placed under /etc folder.
-
-Here is list of configuration files required for migration:
-
-<table>
-<tbody>
-	<tr>
-		<th>Configuration file name</th>
-		<th>Description</th>
-	</tr>
-<tr>
-	<td>class_map.php</td>
-	<td>Magento 1 to Magento 2 class map dictionary. </td>
-</tr>
-<tr>
-	<td>magento_path.php</td>
-	<td></td>
-</tr>
-</tbody>
-</table>
-
-The following table discusses each mapping file.
-
-<table>
-<tbody>
-	<tr>
-		<th>Mapping file name</th>
-		<th>Description</th>
-	</tr>
-<tr>
-	<td>config.xml.dist</td>
-	<td>Main configuration file that specifies the Magento 1.x and Magento 2 database configurations, step configuration, and links to mapping files</td>
-</tr>
-<tr>
-	<td>map.xml.dist</td>
-	<td>Map file required for the map step.</td>
-</tr>
-<tr>
-	<td>map-eav.xml.dist<br />
-	list-eav.xml.dist</td>
-	<td>EAV mapping files.</td>
-</tr>
-<tr>
-	<td>map-log.xml.dist</td>
-	<td>Log mapping file.</td>
-</tr>
-<tr>
-	<td>changelog.xml.dist</td>
-	<td>Configuration file that specifies the list of tables required for database routines setup.</td>
-</tr>
-<tr>
-	<td>settings.xml.dist</td>
-	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
-</tr>
-<tr>
-	<td>deltalog.xml.dist</td>
-	<td>Log settings for delta migration.</td>
-</tr>
-
-</tbody>
-</table>
-
-
-<h3 id="migration-preconditions">Actions with configuration files before running tool</h3>
-
-The migration tool uses *mapping files* to enable you to perform custom database mapping between your Magento 1.x and Magento 2 databases, including:
-
-*	Changing table names
-*	Changing column names
-*	Changing field names
-*	Ignoring tables or fields
-
-Mapping files for supported Magento versions are located in subdirectories of `<your Magento install dir>/vendor/magento/migration-tool/etc`.
-
-1. go to migration-tool/etc/your-m1-version folder
-2. copy config.xml.dist => config.xml
-3. change config.xml
-  * with yours credentials to MySQL in <config><source><database> for Magento 1 and <config><destination><database> for Magento 2
-  * specify <source_prefix> and/or <dest_prefix> in case you use prefixes for tables in Magento 1 or Magneto 2 *!!!!!!*
-
-<h3 id="migration-preconditions">Migration Tool CLI usage</h3>
-
-<pre>
-Usage:
-  migrate <mode> --config=path/to/config.xml [options]
-  migrate --help
+<pre><code>[10:32 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/migration-tool]-[git master]
+$ cd tests/unit
  
-Possible modes:
-  settings            Migrate system configuration
-  data                Main migration of data
-  delta               Migrate the data is added into Magento after the main migration
- 
- 
-Available options:
-  --reset             Reset the current position of migration to start from the beginning
-  --config <value>    Path to main configuration file, i.e.: etc/m1_version/config.xml
-  --verbose <level>   Verbosity levels: DEBUG, INFO, ERROR
-  --help              Help information
-</pre>
+[10:33 AM]-[vagrant@debian-70rc1-x64-vbox4210]-[/var/www/magento2/vendor/magento/migration-tool/tests/unit]-[git master]
+$ phpunit
+PHPUnit 4.1.0 by Sebastian Bergmann.
+....
+</code></pre>
 
-<h2 id="migration-notes">Running migration</h2>
 
-The migration of data should be performed in specific order. First, it is migration of settings. Then migration of main data and the last one is migration of delta. 
-
-By using --verbose option one can leverage details level of information during migration process.
-
-* ERROR - shows only error messages
-* INFO - shows info about current name of mode, step, progress bar etc.
-* DEBUG - includes information from INFO level and shows names of tables are processed
-
-<pre>
-INFO: verbosity level is used by default
-</pre>
-
-Migration tool shows log information on screen and writes into log file simultaneously. The migration.log file locates in var directory of migration tool and can be changed in config.xml
-
-<pre>
-During the migration process these options are allowed in Magento 1 store:
-
-* all operations for customers in store-front (creating new customers, placing orders, reviews, etc.)
-* order processing for admin users (invoice, shipping creation, etc.)
-
-Other options are forbidden:
-
-* all operations in Magento 2 store either in store-front and in admin side
-* changing configurations in Magento 1
-* creation price rules in Magento 1
-* installing new extensions in Magento 1
-* etc.
-</pre>
-
-<h3 id="migration-notes">Migration of settings</h3>
-
-In this mode migration tool transfers stores, website and different system configurations like shipping, payment and some tax settings. To run migration of settings staying in magento2-root/vendor/magento/migration-tool folder run:
-
-<pre>
-bin/migrate settings --config=path/to/config.xml
-</pre>
-
-Example:
-
-<pre>
-$ bin/migrate settings --config=etc/ce-1.9.1/config.xml
-
-[2015-05-06 04:43:31][INFO][mode: settings][stage: integrity check][step: Settings step]: started
-100% [============================] Remaining Time: 1 sec
-[2015-05-06 04:43:32][INFO][mode: settings][stage: data migration][step: Settings step]: started
-100% [============================] Remaining Time: 1 sec
-[2015-05-06 04:43:32][INFO][mode: settings][stage: data migration][step: Settings step]: Migration completed
-</pre>
-
-This mode can be configured by changing special config file (by default it is etc/map/settings.xml file).
-
-<pre>
-Be informed that some settings from configuration can not be migrated. So pass through your Magento 2 settings to be sure that all your settings were migrated properly
-</pre>
-
-<h3 id="migration-notes">Migration of main data</h3>
-
-In this mode migration tool transfers most of the data from Magneto 1. So it may take some time.
-To run migration of main data staying in magento2-root/vendor/magento/migration-tool folder run:
-
-<pre>
-bin/migrate data --config=path/to/config.xml
-</pre>
-
-Example:
-
-<pre>
-$ bin/migrate data --config=etc/ce-1.9.1/config.xml
-
-[2015-05-06 04:43:31][INFO][mode: data][stage: integrity check][step: Map step]: started
-100% [============================] Remaining Time: 1 sec
-[2015-05-06 04:43:32][INFO][mode: data][stage: data migration][step: Map step]: started
-100% [============================] Remaining Time: 1 sec
-[2015-05-06 04:43:33][INFO][mode: data][stage: volume check][step: Map step]: started
-100% [============================] Remaining Time: 1 sec
-[2015-05-06 04:43:34][INFO][mode: data][stage: volume check][step: Map step]: Migration completed
-</pre>
-
-The tool will verify that tables and fields from Magento 1 and Magento 2 are consistent (stage: integrity check). If not, an error will be shown with a list of corresponding tables and fields. These entities, for example, can belong to some extensions from Magento 1 and they do not exist in Magento 2 database. There are several ways to fix it:
-
-1. Install corresponding extensions to Magento 2 if it exists
-2. Omit transferring these data by adding <code>&lt;ignore&gt;</code> tags to map.xml file. Refer to Migration Tool Developer's Guide for details.
-
-After fixing this issue the tool can be rerun in the same way.
-
-Be informed, Migration Tool constantly saves its current progress position during its running. In case when migration is aborted in the middle it will restore from the last position after next rerunning. But if rerun with --reset option the migration will be run all over again. In this case some data could already have been migrated to Magneto 2. Thus the initial database state of Magento 2 should be restored manually using its database dump previously made.
-
-
-
-
-
-<h2 id="migration-notes">General notes about using the migration tool</h2>
-During the time you're migrating:
-
-*	Do not make any changes in the Magento 1.x Admin Panel
-*	Do not alter any code
-*	Do not delete any data
-*	Do not make any changes in the Magento 2 Admin
-
-You *can*, however, manage orders in your Magento 1.x system.
-
-After performing migration:
-
-1.	In the Magento 2 Admin, flush all caches and reindex all indexes.
-2.	Run your Magento 2 cron jobs twice.
-
-<h2 id="migration-configure">Configuring the migration</h2>
-Before you migrate any data, you must edit `<your Magento install dir>/vendor/magento/migration-tool/etc/<magento-version>/config.xml` to specify at minimum values for the following:
-
-{% highlight xml %}
-	<source version="1.9.1">
-        <database host="localhost" name="magento1" user="root"/>
-    </source>
-    <destination version="2.0.0.0">
-        <database host="localhost" name="magento2" user="root"/>
-    </destination>
-{% endhighlight %}
-
-If you use table prefixes, specify them using `<source_prefix>` and `<dest_prefix>` elements.
-
-<h2 id="migration-command">Migrating data, settings, and changes</h2>
-Run the migration tool from the `<your Magento install dir>/vendor/magento/migration-tool/bin` directory.
-
-Command syntax:
-
-	migrate <mode> --config=path/to/config.xml [options]
-
-where `<mode>` can be:
-
-*	`data` to migrate database data
-*	`delta` to migrate data that is added to the database since your ran the tool with the `data` option
-*	`settings` to migrate Magento Admin Panel settings
-
-where `[options]` can be:
-
-*	`--reset` to start the migration from the beginning
-*	`--config <value>` path to `config.xml`
-*	`--verbose <level>` DEBUG, INFO, NONE
-*	`--help` Help
-
-See one of the following sections:
-
-*	<a href="#migrate-command-settings">Migrating settings</a>
-*	<a href="#migrate-command-data">Migrating data</a>
-*	<a href="#migrate-command-delta">Incremental migration (delta mode)</a>
-
-<h3 id="migrate-command-settings">Migrating settings</h3>
-You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment and some tax settings. 
-
-To change how settings are migrated, either edit `etc/map/settings.xml` or create a new one).
-
-Command usage:
-
-	<your Magento install dir>/vendor/magento/migration-tool/bin/migrate settings --config=<path to config.xml>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
-</div>
-
-<h3 id="migrate-command-data">Migrating data</h3>
-When you migrate data, the migration tool verifies that tables and fields are consistent between  Magento 1 and Magento 2. If not, an error displays that lists the problematic tables and fields. These entities, for example, can belong to some extensions from Magento 1 that do not exist in the Magento 2 database.
-
-If you encounter such an error, you can:
-
-*	Install the corresponding extensions in Magento 2 if they exist
-*	Ignore them by adding `<ignore>` tags to the `map.xml` file. 
-
-After resolving issues, run the migration tool again.
-
-Command usage:
-
-	<your Magento install dir>/vendor/magento/migration-tool/bin/migrate data --config=<path to config.xml> [--reset]
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The migration tool saves its current progress as it runs. If errors or user intervention stop it from running, the migration tool resumes progress at the last known good state.</p>
-  <p>To force the migration tool to run from the beginning, use the <code>--reset</code>. In that case, we recommend you restore your Magento 2 database dump to prevent duplication of previously migrated data.</p></span>
-</div>
-
-<h3 id="migrate-command-delta">Incremental migration (delta mode)</h3>
-Incremental migration enables you to migrate only the changes since you migrated data. For example, you can migrate new customers, orders, and so on.
-
-Command usage:
-
-	<your Magento install dir>/vendor/magento/migration-tool/bin/migrate delta --config=<path to config.xml>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Incremental migration runs continuously until you stop it by pressing Control+C.</p></span>
 
