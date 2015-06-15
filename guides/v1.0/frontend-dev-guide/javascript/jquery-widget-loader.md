@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: jQuery loader widget
-menu_title: jQuery loader widget
+title: Loader widget
+menu_title: Loader widget
 menu_order: 4
 github_link: frontend-dev-guide/javascript/jquery-widget-loader.md
 ---

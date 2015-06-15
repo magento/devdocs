@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: Magento Menu widget
+title: Menu widget
 menu_order: 2
-menu_title: Magento Menu widget
+menu_title: Menu widget
 github_link: frontend-dev-guide/javascript/widget_menu.md
 ---
 <h2>Overview</h2>
@@ -15,7 +15,7 @@ The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" 
 <li>declaring a responsive menu</li>
 <li>setting hover delay</li>
 </ul>
-The Magento menu widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
+The Magento menu widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>.
 
 <h2 id="menu_init">Initialization</h2>
 
@@ -30,7 +30,7 @@ Menu widget options mostly coincide with the options of the jQuery UI Menu widge
 
 <h3 id="#m_expanded">expanded</h3>
 Expand all submenu's past the second layer of sub-menus.
-<p class="q">SHta?</p>
+<p class="q">Shta?</p>
 
 **Type**: Boolean
 

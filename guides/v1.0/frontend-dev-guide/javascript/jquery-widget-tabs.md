@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: jQuery tabs widget
-menu_title: jQuery tabs widget
+title: Tabs widget
+menu_title: Tabs widget
 menu_order: 5
 github_link: frontend-dev-guide/javascript/jquery-widget-tabs.md
 ---

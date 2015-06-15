@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: Magento quickSearch widget
+title: QuickSearch widget
 menu_order: 2
-menu_title: Magento quickSearch widget
+menu_title: QuickSearch widget
 github_link: frontend-dev-guide/javascript/widget_quickSearch.md
 ---
 

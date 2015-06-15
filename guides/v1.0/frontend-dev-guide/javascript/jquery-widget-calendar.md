@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: jQuery calendar widget
-menu_title: jQuery calendar widget
+title: Calendar widget
+menu_title: Calendar widget
 menu_order: 3
 github_link: frontend-dev-guide/javascript/jquery-widget-calendar.md
 ---

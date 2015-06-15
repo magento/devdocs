@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: Magento Loader widget
+title: Loader widget
 menu_order: 3
-menu_title: Magento Loader widget
+menu_title: Loader widget
 github_link: frontend-dev-guide/javascript/widget_loader.md
 ---
 

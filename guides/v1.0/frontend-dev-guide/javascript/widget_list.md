@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: Magento Navigation widget
+title: List widget
 menu_order: 2
-menu_title: Magento Navigation widget
+menu_title: List widget
 github_link: frontend-dev-guide/javascript/widget_list.md
 ---
 <h2>Overview</h2>

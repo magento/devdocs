@@ -2,8 +2,8 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: jQuery translateInline widget
-menu_title: jQuery translateInline widget
+title: TranslateInline widget
+menu_title: TranslateInline widget
 menu_order: 6
 github_link: frontend-dev-guide/javascript/jquery-widget-translate-inline.md
 ---

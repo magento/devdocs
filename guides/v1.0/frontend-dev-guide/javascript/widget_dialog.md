@@ -2,9 +2,9 @@
 layout: default
 group: fedg
 subgroup: Javascript
-title: Magento dropdownDialog widget
+title: DropdownDialog widget
 menu_order: 3
-menu_title: Magento dropdownDialog widget
+menu_title: DropdownDialog widget
 github_link: frontend-dev-guide/javascript/widget_dialog.md
 ---
 <p class="q">currency, language drop-down, product detailed page MAP</p>
