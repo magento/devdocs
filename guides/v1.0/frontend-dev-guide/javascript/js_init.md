@@ -17,7 +17,7 @@ This topic describes both approaches in details, and talks about when each of th
 
 <h2 id="data_mage_init">Initialization using <code>data-mage-init</code></h2>
 
-To initialize a JavaScript component in a .phtml template, add the following code:
+For informantion on how to initialize a JavaScript component in a .phtml template, use the in:
 
 
 <pre>

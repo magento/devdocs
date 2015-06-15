@@ -46,30 +46,36 @@ var config = {
 </ul>
 <li>Place your <code>navigation-menu.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
-<li>Your theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code><</li>
+<li>Your theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
 <li>Your module view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web</code></li>
 </ul>
 </li>
 </ol>
+
+This way your custom JS component is used instead of the Magento component in all entries all over the frontend area.
+
 <h2 id="extend_js">Extend a default JS component</h2>
+You can add a custom JS component/widget, which will extend a default Magento component/widget.
 
-<h3 id="extend_js_widget"></h3>
+<h3 id="extend_js_widget">Extend Magento widget</h3>
 
-To extend a default Magento jQuery widget:
+To extend a default Magento jQuery widget, your custom widget must contain the following:
 
+`<your_widget_name>.js`:
 <pre>
 define([
   'jquery',
   'jquery/ui'
 ], function($){
  
-  $.widget('customNS.extended', $.mage.menu, { ... });
+  $.widget('&lt;your_namespace&gt;.&lt;your_widget_name&gt;', $.mage.&lt;widget.name&gt;, { ... });
  
-  return $.customNS.extended;
+  return $.&lt;your_namespace&gt;.&lt;your_widget_name&gt;;
 });
 </pre>
+For details about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
-<h3 id="extend_js_component"></h3>
+<h3 id="extend_js_component">Extend a default UI component</h3>
 To extend a default UI component:
 <pre>
 define([
