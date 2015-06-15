@@ -34,6 +34,6 @@ The web API framework establishes the identity of the admin user based on logged
 <h2>Related topic</h2>
 <ul>
 
-   <li><a href="{{ site.githuburl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
+   <li><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 </ul>
 

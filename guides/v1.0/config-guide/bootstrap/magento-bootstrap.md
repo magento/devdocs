@@ -115,5 +115,7 @@ When the request is redirected to the entry point, the Magento application parse
 #### Related topics
 This topic discussed the basics of Magento application initialization and bootstrapping. To find out how to set bootstrap environment variables, see one of the following topics:
 
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Set the mode (developer, production, default)</a>
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a>
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a>
 

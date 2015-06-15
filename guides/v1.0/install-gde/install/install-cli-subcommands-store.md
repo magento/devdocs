@@ -73,26 +73,26 @@ where the following table defines parameters and values.
 	<tr>
 		<td><p>--use-rewrites</p></td>
 		<td><p><code>1</code> means you use web server rewrites for generated links in the storefront and Admin.</p>
-		<p><code>0</code> disables the use of web server rewrites.</p></td>
+		<p><code>0</code> disables the use of web server rewrites. This is the default</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--use-secure</p></td>
 		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>.</p></td>
+		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--base-url-secure</p></td>
 		<td><p><code>1</code> means SSL is preferred in Magento URLs designed to use it (for example, the checkout page). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> means SSL is not used.</p></td>
+		<p><code>0</code> means SSL is not used. This is the default</p></td>
 		<td><p>No</p></td>
 	</tr>
 
 	<tr>
 		<td><p>--use-secure-admin</p></td>
 		<td><p><code>1</code> means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> means you do not use SSL with the Admin.</p></td>
+		<p><code>0</code> means you do not use SSL with the Admin. This is the default</p></td>
 		<td><p>No</p></td>
 	</tr>
 	</tbody>
@@ -104,8 +104,9 @@ where the following table defines parameters and values.
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-store.html">Configure the store</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
