@@ -565,15 +565,27 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="/common/images/NAME_OF_IMAGEjpg" alt="H
                 <div class="hold-form">
                 <div id="nws-notsubscribed">
                     <div id="sb-email" class="sb-email">
-                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info.magento.com/index.php/leadCapture/save" id="mktForm_1006" class="mktform" name="mktForm_1006" onsubmit="return validateForm();" >
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
                             <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
-                            <button type="submit" class="sb-icon-submit btn outline">
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
                                 Submit
                             </button>
                             <span class="sb-icon-email btn outline">
                                 Sign Up
                             </span>
-                            <span style="display:none;"><input type="text" name="_marketo_comments" value="" /></span><input type="hidden" name="lpId" value="-1" /><input type="hidden" name="subId" value="36" /><input type="hidden" name="kw" value="" /><input type="hidden" name="cr" value="" /><input type="hidden" name="searchstr" value="" /><input type="hidden" name="lpurl" value="http://na-j.marketo.com/lp/magentocommerce/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}" /><input type="hidden" name="formid" value="1006" /><input type="hidden" name="returnURL" value="magento.com/" /><input type="hidden" name="retURL" value="magento.com/" /><input type="hidden" name="_mkt_disp" value="return" /><input type="hidden" name="_mkt_trk" value="" />
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/template_create_req_config_files.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/template_create_req_config_files.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
                         </form>
                     </div>
                 </div>
@@ -603,13 +615,50 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="/common/images/NAME_OF_IMAGEjpg" alt="H
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-<!-- Magento.com scripts -->
-<script src="/js/js_IkgOrrVZK1UTp2HktvFi5vo1g7b25Muyr5GoySikuic.js"></script>
-<script src="/js/js_m-zV5Ek4Owkee3MVRMcqkTW8aki0DvIJIFma7yS1xM0.js"></script>
-<script src="/js/js_Z5NZormFXt4exRfF6jg2O0wNC5okceOt7B3Hn2hqoFc.js"></script>
-<script src="/js/js_O6lYvuZQJUPSnK699QFEAm_UI3AJznTbKmq3JNA4Z-M.js"></script>
-<!--<script src="/js/js_xPIm45Yu7K82fSuatvdEsOmXU71DqQGS-vh5dkLvpro.js"></script>-->
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
 
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
 
 <!-- Docs scripts (just in case) -->
 <script src="/js/app-min.js"></script>
