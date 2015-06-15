@@ -11,15 +11,17 @@ github_link: frontend-dev-guide/javascript/custom_js.md
 <h2 id="custom_js_overview">Overview</h2>
 This topic talks about how to use custom Javascript components, together with the default ones used in Magento or having replaced them with custom implementations.
 
+We strongly recommend not to change the default Magento files. All customizations must be implemented in custom modules or themes.
+
 <h2 id="js_replace">Use custom implementations instead of default JS components</h2>
 
-We strongly recommend not to change the default 
+
 To use a custom implementation of a certain existing Magento JS component:
 <ol>
 <li>Place the custom component source file in one of the following locations:
 <ul>
 <li>Your theme JS files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/js</code></li>
-<li>Your module view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web/js</code></li>
+<li>Your module view JS files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web/js</code></li>
 </ul>
 </li>
 <li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
@@ -38,6 +40,48 @@ var config = {
 };
 </pre>
 
+<p class="q">What is navigation-menu.js?</p>
 
 </li>
 </ul>
+<li>Place your <code>navigation-menu.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
+<ul>
+<li>Your theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code><</li>
+<li>Your module view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="extend_js">Extend a default JS component</h2>
+
+<h3 id="extend_js_widget"></h3>
+
+To extend a default Magento jQuery widget:
+
+<pre>
+define([
+  'jquery',
+  'jquery/ui'
+], function($){
+ 
+  $.widget('customNS.extended', $.mage.menu, { ... });
+ 
+  return $.customNS.extended;
+});
+</pre>
+
+<h3 id="extend_js_component"></h3>
+To extend a default UI component:
+<pre>
+define([
+  'jquery',
+  'jquery/ui'
+], function($){
+ 
+  $.widget('customNS.extended', $.mage.menu, { ... });
+ 
+  return $.customNS.extended;
+});
+</pre>
+
+<h2>Related topics</h2>
+<a href="{{site.gdeurl}}config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a>
