@@ -73,21 +73,60 @@ define([
   return $.&lt;your_namespace&gt;.&lt;your_widget_name&gt;;
 });
 </pre>
-For details about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+
+Where the following notation is used:
+<ul>
+<li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom widget. According to the jQuery widgets naming convenvtion, must contain a namespace and name.</li>
+
+<li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget which you extend.</li>
+</ul>
+
+For innformation about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h3 id="extend_js_component">Extend a default UI component</h3>
-To extend a default UI component:
+
+To extend a default UI component, your custom JS component must contain the following:
+
 <pre>
 define([
-  'jquery',
-  'jquery/ui'
-], function($){
+  '&lt;default_component&gt;'
+], function(&lt;your_component&gt;){
  
-  $.widget('customNS.extended', $.mage.menu, { ... });
+  return &lt;your_component&gt;.extend({
  
-  return $.customNS.extended;
+    defaults: { ... }, // properties with default values
+    ... // methods of your component
+  });
 });
 </pre>
+
+Where the following notation is used:
+
+<ul>
+<li><code>&lt;default_component&gt;</code>: the name of the default Magento component that you extend</li>
+<li><code>&lt;your_component&gt;</code>: your custom component</li>
+</ul>
+
+<p class="q">Need verification</p>
+
+For example, if your custom component extends the default 
+<pre>
+define([
+  'Magento_Ui/js/grid/filters/filters'
+], function(Filters){
+ 
+  return Filters.extend({
+ 
+    defaults: { ... }, // properties with default values
+    ... // methods of your component
+  });
+});
+</pre>
+
+<p class="q">Where is the default 'filters' component located?</p>
+<p class="q">Is Filters the name of the custom component?</p>
+
+For innformation about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h2>Related topics</h2>
 <a href="{{site.gdeurl}}config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a>
