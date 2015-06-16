@@ -44,10 +44,10 @@ var config = {
 
 </li>
 </ul>
-<li>Place your <code>navigation-menu.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
+<li>Place your <code>requirejs-config.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
-<li>Your theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web</code></li>
-<li>Your module view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/web</code></li>
+<li>Your theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code></li>
+<li>Your module view files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend</code></li>
 </ul>
 </li>
 </ol>
@@ -123,10 +123,34 @@ define([
 });
 </pre>
 
-<p class="q">Where is the default 'filters' component located?</p>
-<p class="q">Is Filters the name of the custom component?</p>
 
 For innformation about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+
+<h2 id="disable_default_js">Disable default Magento JS</h2>
+
+To disable the auto-loading of default Magento JS components and widget initialization:
+<ol>
+<li>Create a <code>requirejs-config.js</code> file with the following content:
+<pre>
+var config = {
+    deps: [
+    ]
+};
+</pre>
+</li>
+<li>Put the <code>requirejs-config.js</code> file in one of the following locations
+<ul>
+<li>Your custom theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> </li>
+<li>Your custom module files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend</code></li>
+</ul>
+</li>
+</ol>
+If you need to enable the loading of default Magento JS components and widget initialization on a certain stage, add the following code in your JS script:
+
+<pre>
+$(mage.apply);
+</pre>
+
 
 <h2>Related topics</h2>
 <a href="{{site.gdeurl}}config-guide/config/js-resources.html" target="_blank">JavaScript resources configuration</a>
