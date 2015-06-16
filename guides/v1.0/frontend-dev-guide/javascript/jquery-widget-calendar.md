@@ -1,7 +1,7 @@
 ---
 layout: default
-group: fedg
-subgroup: Javascript
+group: javascript
+subgroup: JQuery widget details
 title: Calendar widget
 menu_title: Calendar widget
 menu_order: 3

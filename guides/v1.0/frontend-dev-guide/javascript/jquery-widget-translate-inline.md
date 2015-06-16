@@ -1,7 +1,7 @@
 ---
 layout: default
-group: fedg
-subgroup: Javascript
+group: javascript
+subgroup: JQuery widget details
 title: TranslateInline widget
 menu_title: TranslateInline widget
 menu_order: 6

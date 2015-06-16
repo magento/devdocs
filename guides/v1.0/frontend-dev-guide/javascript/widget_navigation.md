@@ -1,7 +1,7 @@
 ---
 layout: default
-group: fedg
-subgroup: Javascript
+group: javascript
+subgroup: JQuery widget details
 title: Navigation widget
 menu_order: 2
 menu_title: Navigation widget

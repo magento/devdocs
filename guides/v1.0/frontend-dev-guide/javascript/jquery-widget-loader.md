@@ -1,7 +1,7 @@
 ---
 layout: default
-group: fedg
-subgroup: Javascript
+group: javascript
+subgroup: JQuery widget details
 title: Loader widget
 menu_title: Loader widget
 menu_order: 4

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: fedg
-subgroup: Javascript
+group: javascript
+subgroup: JQuery widget details
 title: DropdownDialog widget
 menu_order: 3
 menu_title: DropdownDialog widget

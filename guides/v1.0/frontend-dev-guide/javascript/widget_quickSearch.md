@@ -1,7 +1,7 @@
 ---
 layout: default
-group: fedg
-subgroup: Javascript
+group: javascript
+subgroup: JQuery widget details
 title: QuickSearch widget
 menu_order: 2
 menu_title: QuickSearch widget
