@@ -188,19 +188,19 @@ To be executed Step class should be defined in config.xml file.
 
 Every stage class must implement StageInterface.
 
-{% highlight php %}
-class StageClass implements StageInterface
+<pre>
+class&nbsp;StageClass&nbsp;implements&nbsp;StageInterface
 {
-  /**
-   * Perform the stage
-   *
-   * @return bool
-   */
-  public function perform()
-  {
-  }
+&nbsp;&nbsp;/**
+&nbsp;&nbsp;&nbsp;*&nbsp;Perform&nbsp;the&nbsp;stage
+&nbsp;&nbsp;&nbsp;*
+&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;bool
+&nbsp;&nbsp;&nbsp;*/
+&nbsp;&nbsp;public&nbsp;function&nbsp;perform()
+&nbsp;&nbsp;{
+&nbsp;&nbsp;}
 }
-{% endhighlight %}
+</pre>
 
 If data stage supports rollback it should implement RollbackInterface interface.
 
@@ -365,7 +365,7 @@ Options:
 	</tr>
 <tr>
 	<td>ignore 
-        rename</td>
+    	rename</td>
 	<td>ignore
 		move 
 		transform</td>
