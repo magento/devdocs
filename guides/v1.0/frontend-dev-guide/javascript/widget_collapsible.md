@@ -9,37 +9,44 @@ github_link: frontend-dev-guide/javascript/widget_collapsible.md
 ---
 
 <h2>Overview</h2>
-<p class="q">used in Checkout</p>
-The Magento Collapsible widget converts a header/content pair into an accordion(collapse/expand the content when the header gets clicked).
+<!-- used in Checkout -->
+The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
-The content can be updated using Ajax once the content gets expanded. The collapsed/expanded state can be saved into local storage or cookies if the browser doesn't support local storage. To save the state is absolutely necessary that the main collapsible element to have an id specified. Also when deep linking is used, if the id specified as anchor is actually the id of the content or the id of an element that appends to content, the content will be automatically expanded for that element.
+<p class="q">what's the difference with accordion widget?</p>
 
-The collapsible widget source is located in the <a href="{{site.mage2000url}}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
+
+Once it is expanded, the content can be updated using Ajax. The collapsed/expanded state can be saved into local storage or cookies, if the browser does not support local storage. 
+
+The collapsible widget source is <a href="{{site.mage2000url}}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
 
 <p class="q">Illustration: you mentioned that it is used in Checkout, but I can't find it in the page source using the method you described</p>
 
-<h2>Initialize collapsible</h2>
 
-Generally the collapsible widget is instantiated like:
+<h2 id="collaps_init_js">Initialize collapsible in JS</h2>
+Generally the collapsible widget is instantiated like following:
 <pre>
 $("#element").collapsible();
 </pre>
 
 Where <code>#element</code> is the element's selector.
 
+If you need to be able to save the expaneded/collapsed state, the element must have the `<id>` attribute specified. 
 
-Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or pathed as widget options. See <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html#accordion_init">Accordion widget initialization</a> for details.
+The element's `id` is also used in deep linking: if the `id` of the content or the id of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
+
+
+Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html#accordion_init">Accordion widget initialization</a> for details.
 
 <h3>Initialize collapsible with header only</h3>
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:
 <pre>
 $("#header").collapsible();
 </pre>
-<p class="q">For the writer: previous paragraph is unique, should be here</p>
 
-<h3>Initialize collapsible using the data-mage-init attribute</h3>
-The collapsible widget can be initialized using the <code>data-mage-init</code> attribute, as described in Widget initializaiton.
-<!--ADDLINK-->
+
+<h2>Initialize collapsible in a template</h2>
+The collapsible widget can be initialized using the <code>data-mage-init</code> attribute, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>.
+<p class="q">Can it be initialized using `script` as well? yes, for all widgets</p>
 
 <h2>Options</h2>
 
@@ -175,8 +182,8 @@ $("#element").collapsible({ content: ".content"});
 </pre>
 Get or set the content option, after initialization:
 
-//getter
 <pre>
+//getter
 var content = $("#element).collapsible("option","content");
 
 //setter
@@ -241,6 +248,7 @@ $("#element").collapsible({ closedState: "collapsible-content"});
 
 Get or set the `contentClass` option after initialization:
 
+<pre>
 //getter
 var contentClass = $("#element).collapsible("option","contentClass");
 
@@ -272,7 +280,7 @@ $("#element").collapsible("option","disabledState","disabled");
 
 <h3 id="fedg_collaps_loadingClass">loadingClass</h3>
 Specifies the class that is assigned to the main collapsible element when requesting data using Ajax.
-<p class="q">who is requesting data using Ajax?</p>
+
 
 **Type**: String
 
@@ -293,9 +301,7 @@ $("#element").collapsible("option","loadingClass","loading");
 </pre>
 
 <h3 id="fedg_collaps_ajaxUrlElement">ajaxUrlElement</h3>
-Selector for the element that contains the URL for Ajax request, applied using `.find()` on the header. 
-
-<p class="q">What exactly is applied?</p>
+Selector applied on the header using `.find()`, for the element that contains the URL for Ajax request. 
 
 **Type**: String
 
@@ -318,9 +324,9 @@ $("#element").collapsible("option","loadingClass","ajax");
 </pre>
 
 <h3 id="fedg_collaps_ajaxContent">ajaxContent</h3>
-Specifies if the content will is updated using Ajax request.
+Specifies if the content is updated using Ajax request.
 
-<p class="q">Is it is updated at all or by Ajax request specifically</p>
+<p class="q">Is set to "true", is it updated only by Ajax request or by Ajax request as well? Please help to describe the option correctly</p>
 
 **Type**: Boolean
 
@@ -344,7 +350,6 @@ $("#element").collapsible("option","ajaxContent",true);
 <h3 id="fedg_collaps_saveState">saveState</h3>
 Specifies if the state is saved in the local storage if the browser supports it. Otherwise will be saved into a cookie.
 
-<p class="q">Otherwise: depending on the option value or the browser settings?</p>
 
 **Type**: Boolean
 
@@ -357,8 +362,8 @@ $("#element").collapsible({ saveState: true});
 
 Get or set the `saveState` option after initialization:
 
-//getter
 <pre>
+//getter
 var active = $("#element).collapsible("option","saveState");
 
 //setter
@@ -381,24 +386,22 @@ $("#element").collapsible({ animate: {duration:1000,easing:"easeOutCubic"});
 
 Get or set the animate option, after initialization:
 
-//getter
 <pre>
+//getter
 var animate = $("#element).collapsible("option","animate");
-</pre>
 
 //setter 
-<pre>
 $("#element").collapsible("option","animate",false);
 </pre>
 
 <h3 id="fedg_collaps_icons">icons</h3>
-The icons to be used in headers. If no classes are specified icons are not be created. A new span is created and appended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
-
-<p class="q">What is meant by "icons"? Classes</p>
+The classes for icons to be used in headers. If no classes are specified, icons are not be created. A new span is created and appended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
 
 **Type**: String
 
 **Default value**: <code>{ "header": "icon-triangle-1-e", "activeHeader": "icon-triangle-1-s" }</code>
+
+<p class="q">In the source file the default values seem to "null"/"null" - which one is correct? A: null-null</p>
 
 Initialize the collapsible with the `icons` option specified:
 <pre>
@@ -415,7 +418,19 @@ var icons = $("#element).collapsible("option","icons");
 $("#element").collapsible("option","icons",{"header": "plus", "activeHeader": "minus" });
 </pre>
 
-<h2>Methods</h2>
+<h3 id="fedg_collaps_collateral"><code>collateral</code></h3>
+
+<p class="q">Please help to provide a decsription</p>
+
+**Type**: String
+
+**Default value**: <code>{
+                element: null,
+                openedState: null
+            }</code>
+
+
+<h2 id="collaps_methods">Methods</h2>
 <h3 id="collaps_disable">disable()</h3>
 
 Disable the panel.
@@ -426,7 +441,7 @@ Invoke the disable method:
 $( "#element" ).collapsible("disable");
 </pre>
 
-<h3 id="collaps_enable"> enable()</h3>
+<h3 id="collaps_enable">enable()</h3>
 Enable the panel.
 
 This method does not accept any arguments.
@@ -447,7 +462,7 @@ Invoke the deactivate method:
 $( "#element" ).collapsible("deactivate");
 </pre>
 
-<h3 id="collaps_forceDeactivate">forceDeactivate</h3>
+<h3 id="collaps_forceDeactivate">forceDeactivate()</h3>
 Collapse the content without animation when this method is called.
 
 This method does not accept any arguments.
@@ -458,7 +473,7 @@ $( "#element" ).collapsible("forceDeactivate");
 </pre>
 
 
-<h3 id="collaps_activate">activate</h3>
+<h3 id="collaps_activate">activate()</h3>
 Expand the content when this method is called.
 
 This method does not accept any arguments.
@@ -468,7 +483,7 @@ Invoke the activate method:
 $("#element" ).collapsible("activate");
 </pre>
 
-<h3 id="collaps_forceActivate">forceActivate</h3>
+<h3 id="collaps_forceActivate">forceActivate()</h3>
 Expand the content without animation when this method is called.
 
 This method does not accept any arguments.

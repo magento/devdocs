@@ -10,26 +10,17 @@ github_link: frontend-dev-guide/javascript/widget_accordion.md
 
 <h2>Overview</h2>
 
-Magento Accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.md">Magento Tabs widget</a>.
+Magento accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.md">Magento Tabs widget</a>.
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
-Accordions support arbitrary markup, but the following requirements should be kept:
-
-<ol>
-<li>Titles and contents are in the same order in DOM.</li>
-<p class="q">What does it mean "in the same order?"</p>
-<li>the header, trigger and content are specified, either by adding the <code>data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
-<p class="q">need explanation here</p>
-</ol>
-
-
-The collapsible widget source is <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
+The accordion widget source is <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
 
 <h2 id="accordion_init">Initialize the accordion widget</h2>
 
-<h3>Initialize accordion when data-*attributes are specified</h3>
+<h3>Initialize accordion in JS components</h3>
 
+<h4>Initialize accordion with <code>data-*</code> attributes specified</h4>
 Generally the collapsible widget is instantiated like following:
 <pre>
 $("#element").accordion();
@@ -37,8 +28,9 @@ $("#element").accordion();
 
 Where:
 <ul>
-<li><code>#element</code> is the element's selector.</li>
+<li><code>#element</code> is the selector of the element for accordion is initialized.</li>
 <li><code>#element</code> has children with the following attributes specified: 
+<p class="q">is it a must or an option?</p>
 <ul>
 <li><code>data-role="title"</code>
 </li>
@@ -49,11 +41,19 @@ Where:
 
 Optionally, you can specify the following:
 <ul>
-<li>If you want the trigger to be different fron the title, add the <code>data-role="content"</code> attribute for the element</li>
-<p class="q">is it the "#element" for which the widget is initialized?</p>
+<li>If you want the trigger to be different from the title, add the <code>data-role="content"</code> attribute for the element</li>
+
 <li>To have the content updated using Ajax, add the <code>data-ajax="true"</code> attribute for the element containing the URL for request.
 </li>
 </ul>
+
+Accordions support arbitrary markup, but the following requirements should be kept:
+
+<ol>
+<li>Titles and contents are in the same order in DOM.</li>
+<p class="q">What does it mean "in the same order?"</p>
+<li>The header, trigger and content are specified, either by adding the <code>data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
+</ol>
 
 Mark-up examples:
 <pre>
@@ -80,7 +80,9 @@ Mark-up examples:
     &lt;div data-role=&quot;content&quot;&gt;Content 3&lt;/div&gt;
 &lt;/div&gt;
 </pre>
-<h3>Initialize accordion with option</h3>
+
+
+<h4>Initialize accordion with option</h4>
 You can specify the header, content, trigger as options when you initialize the widget.
 For example:
 <pre>
@@ -92,10 +94,10 @@ $("#element").accordion({
  });
 </pre>
 
-<h3>Initialize accordion using the <code>data-mage-init</code> attribute</h3>
+<h3>Initialize accordion in a template using the <code>data-mage-init</code> attribute</h3>
 
-The accordion widget can be initialized using the <code>data-mage-init</code> attribute, as described in Widget initializaiton.
-<!--ADDLINK-->
+The accordion widget can be initialized using the <code>data-mage-init</code> attribute, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>.
+<p class="q">Can accordion be initialized using `script` as well?</p>
 
 <h2>Options</h2>
 Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html#fedg_tabs_options">Magento Tabs options</a>, plus the following custom ones:
@@ -103,10 +105,9 @@ Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javas
 <li><a href="#collaps_active">active</a></li>
 <li><a href="#collaps_multi">multipleCollapsible</a></li>
 <li><a href="#collaps_open">openOnFocus</a></li>
-<p class="q">openFocus is not described in docs. Answer: need to document</p>
 </ul>
 
-<h3 id="collaps_active">active</h3>
+<h3 id="collaps_active"><code>active</code></h3>
 
 Specifies which tab should be active when the widget gets instantiated.
 
@@ -120,7 +121,8 @@ $("#element").accordion({ active: "0 1"});
 $("#element").accordion({ active: [0,1]});
 </pre>
 
-<h3 id="collaps_multi">multipleCollapsible</h3>
+
+<h3 id="collaps_multi"><code>multipleCollapsible</code></h3>
 Specifies is multiple panels can be expanded at the same time.
 
 **Type**: Boolean
@@ -140,6 +142,16 @@ var multipleCollapsible = $("#element).accordion("option","multipleCollapsible")
 $("#element").tabs("option","multipleCollapsible",false);
 </pre>
 
+<h3 id="collaps_open"><code>openOnFocus</code></h3>
+
+<p class="q">Please help to provide a description</p>
+
+**Type**: Boolean
+
+**Default value**: false
+
+
+
 <h2>Methods</h2>
 Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.
 
@@ -150,7 +162,7 @@ The custom accordion methods are the following:
 <li><a href="#meth_deact">deactivate()</a></li>
 </ul>
 
-<h3 id="meth_act">activate(index)</h3>
+<h3 id="meth_act"><code>activate(index)</code></h3>
 Activate a tab.
 
 The <code>index</code> parameter defines the which tab to activate.
@@ -166,7 +178,7 @@ $( "#element" ).accordion( "activate", 1 );
 $( "#element" ).accordion( "activate", [0,1]);
 </pre>
 
-<h3 id="meth_deact">deactivate(index)</h3>
+<h3 id="meth_deact"><code>deactivate(index)</code></h3>
 Deactivate a tab.
 
 The <code>index</code> parameter defines the which tab to deactivate.
