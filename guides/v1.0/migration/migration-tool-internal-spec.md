@@ -2,11 +2,11 @@
 layout: default
 group:  migration
 subgroup: mapping
-title: Database mapping
-menu_title: Database mapping
+title: Data Migration Tool Internal Specification
+menu_title: Data Migration Tool Internal Specification
 menu_node: parent
 menu_order: 6
-github_link: migration/migration-mapping.md
+github_link: migration/migration-tool-spec.md
 ---
 
   
@@ -15,8 +15,18 @@ github_link: migration/migration-mapping.md
 See one of the following sections:
 
 *	<a href="#migrate-overview">Overview</a>
+	* <a href="#repositories">Repositories</a>
+	* <a href="#system-requirements">System requirements</a>
 *	<a href="#migrate-is">Internal structure</a>
-*	<a href="#migrate-autotests">Automatic tests</a>
+	* <a href="#directory-structure">Directory Structure</a>
+	* <a href="#entry-point">Entry Point</a>
+	* <a href="#configuration">Configuration</a>
+	* <a href="#step-internals">Step Internals</a>
+	* <a href="#running-modes">Running Modes</a>
+	* <a href="#data-sources">Data Sources</a>
+	* <a href="#logging">Logging</a>
+	* <a href="#extension-points">Extension Points</a>
+*	<a href="#automatic-tests">Automatic tests</a>
 
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -27,17 +37,17 @@ See one of the following sections:
 
 This section describes an implementation details of Migration Tool and how to extend its functionality.
 
-<h3 id="migrate-overview">Repositories</h3>
+<h3 id="repositories">Repositories</h3>
 
 Migration tool repository <a href=" https://github.com/magento/data-migration-tool" target="_blank">migration-tool</a>
 
-<h3 id="migrate-overview">System requirements</h3>
+<h3 id="system-requirements">System requirements</h3>
 
 Same as for Magento 2
 
 <h2 id="migrate-is">Internal structure</h2>
 
-<h3 id="migrate-is">Directory structure</h3>
+<h3 id="directory-structure">Directory structure</h3>
 
 Next diagram represents directory structure of Migration Tool:
 
@@ -94,13 +104,13 @@ Next diagram represents directory structure of Migration Tool:
 └ README.md
 </pre>
 
-<h3 id="migrate-is">Entry Point</h3>
+<h3 id="entry-point">Entry Point</h3>
 
 Script that runs migration process is located at
 magento-root/vendor/magento/migration-tool/bin/migrate
 
 
-<h3 id="migrate-is">Configuration</h3>
+<h3 id="configuration">Configuration</h3>
 
 The Schema for configuration file config.xsd is placed under etc/directory. Default configuration file config.xml.dist is created for each version of Magento 1.x. It is placed in separate directories under etc/.
 
@@ -162,9 +172,7 @@ It can be set to source and to destination documents. Use the "source_prefix" an
 Configuration data is accessible via \Migration\Config class.
 
 
-
-
-<h2 id="migrate-sv-versions">Step internals</h2>
+<h2 id="step-internals">Step internals</h2>
 Migration Process consists of steps.
 Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.
 
@@ -232,7 +240,7 @@ After data has been migrated Volume Check provides additional check that all dat
 
 Delta functionality is responsible for delivering the rest of data that was added after main migration.
 
-##Running Modes
+<h2 id="running-modes">Running modes</h2>
 
 The tool should be run in three different modes in particular order:
 
@@ -417,7 +425,7 @@ After main migration some data could have been added to DB of Magento 1 e.g. by 
 2. create its own delta class which extends Migration\App\Step\AbstractDelta
 3. add name of this class to config.xml into delta mode section
 
-##Data sources
+<h2 id="data-sources">Data Sources</h2>
 
 To reach to the data sources of Magento 1 and Magento 2 and operate with its data (select, update, insert, delete) there are many classes in Resource folder. Migration\Resource\Source and Migration\Resource\Destination are main classes. All migration steps use it to operate with data. This data is contained in classes like Migration\Resource\Document, Migration\Resource\Record, Migration\Resource\Structure etc. 
 
@@ -425,7 +433,7 @@ Here is a class diagram of these classes:
 
 <p><img src="{{ site.baseurl }}common/images/Migration Tool Data Structure.png" alt="Migration Tool Data Structure"></p>
 
-##Logging
+<h2 id="logging">Logging</h2>
 
 In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor dependency injection.
 
@@ -480,7 +488,7 @@ There is a possibility to format log messages via monolog formatter. To make for
 
 As for now manipulation with logger, adding handler(s), processor(s) to it and processing verbose mode is performed in process() method of Migration\Logger\Manager class. Mentioned method is called during application start.
 
-###Extension Points
+<h2 id="extension-points">Extension Points</h2>
 
 ####Custom Resource Type of Source
 
@@ -498,7 +506,7 @@ Custom handlers can be used for cases where data in a field should be transforme
 
 Migration tool provides possibility to add custom steps to migration procedure (see Step internals).
 
-###Automatic tests
+<h2 id="automatic-tests">Automatic Tests</h2>
 
 There are 3 types of tests in migration tool: static, unit and integration tests. They all are located in tests/ directory of the tool and they are located in folders, which are the same as the type of the test (e.g. unit tests are located in tests/unit folder). To launch the test you should have phpunit installed. In such case you should change current folder to the folder of test and launch phpunit. See the example below.
 
