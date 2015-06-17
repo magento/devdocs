@@ -24,7 +24,7 @@ To initialize a JS component on certain HTML element, you need to specify the <c
 
 The script is called only for the specific element for which it is initialized. It is not automatically initialized for other elements of this type on the page. 
 
-<h4 id >How the JS initialization using <code>data-mage-init</code> is processed</h4>
+<h4 id="init_process">How the JS initialization using <code>data-mage-init</code> is processed</h4>
 
 On DOM ready, the `data-mage-init` attribute is parsed to extract components names and configuration to be applied to the node. 
 Depending on the type of the JS component initialized, there are the following behavior patterns:
