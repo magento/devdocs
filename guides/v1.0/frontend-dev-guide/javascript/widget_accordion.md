@@ -17,7 +17,8 @@ Accordions are generally used to break content into multiple sections that can b
 Accordions support arbitrary markup, but the following requirements should be kept:
 
 <ol>
-<li>titles and contents are in the same order in DOM.</li>
+<li>Titles and contents are in the same order in DOM.</li>
+<p class="q">What does it mean "in the same order?"</p>
 <li>the header, trigger and content are specified, either by adding the <code>data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
 <p class="q">need explanation here</p>
 </ol>
@@ -91,7 +92,7 @@ $("#element").accordion({
  });
 </pre>
 
-<h3>Initialize accordion using the data-mage-init attribute</h3>
+<h3>Initialize accordion using the <code>data-mage-init</code> attribute</h3>
 
 The accordion widget can be initialized using the <code>data-mage-init</code> attribute, as described in Widget initializaiton.
 <!--ADDLINK-->
