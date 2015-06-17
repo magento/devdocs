@@ -101,10 +101,11 @@ Alert message displayed when maximum limit is reached.
 **Default value**: `"[data-button=remove]"`
 
 <h2 id="list_methods">Methods</h2>
+<p class="q">Plz help to provide description for the following methods:</p>
 
-checkLimit
-handleContext
-removeItem
-handleAdd
-addItem
+<h3>checkLimit()</h3>
+<h3>handleContext()</h3>
+<h3>removeItem()</h3>
+<h3>handleAdd()</h3>
+<h3>addItem()</h3>
 
