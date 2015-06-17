@@ -11,7 +11,7 @@ The Magento system uses a jQuery JavaScript library to implement client function
 
 This guide discusses the following widgets:
 <ul>
-<li><a href="{{ site.gdeurl }}widget_accordion.html" target="_blank">Accordion widget</a></li>
+<li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">Accordion widget</a></li>
 <li><a href="{{ site.gdeurl }}jquery-widget-calendar.html" target="_blank">Calendar widget</a>: Customized <a href="http://api.jQueryui.com/datepicker/" target="_blank">jQuery UI Datepicker widget</a> that enables you to select a data using a pop-up or an in-line calendar.</li>
 <li><a href="{{ site.gdeurl }}widget_collapsible.html" target="_blank">Collapsible widget</a></li>
 <li><a href="{{ site.gdeurl }}widget_list.html" target="_blank">List widget</a></li>
