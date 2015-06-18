@@ -14,16 +14,21 @@ The Magento tabs widget is a customization of the jQuery <a href="http://api.jqu
 
 Specifically, the tabs widget implements the following:
 
-*	Switching between tab pages
-*	Loading static tab content, or loading tab content by Ajax requests, when clicking on the tab
-*	Setting active tab on initialization
-*	Rendering tab pages vertically or horizontally
+*	Switching between tab pages.
+*	Loading static tab content, or loading tab content by Ajax requests, when clicking on the tab.
+*	Setting active tab on initialization.
+*	Rendering tab pages vertically or horizontally.
 
-The Tabs widget source is located in the `<your Magento install dir>/pub/lib/mage/backend` directory. All tab pages in Magento Admin panel are implemented using the tabs widget.
+The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/backend/tabs.js"}}lib/web/mage/backend/tabs.js</a>. All tab pages in Magento Admin panel are implemented using the tabs widget.
+
+<p class="q">what about the tabs.js in lib/web/mage/tabs.js - is it used somewhere?</p>
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
 
-Example 1, where the first tab is active by default:
+<h3 id="tabs_init_ex">Examples of tabs initialization</h3>
+
+Example 1, when initialized like this, he first tab is active by default:
 
 <pre>$('#tabs').tabs();  </pre>
 
@@ -31,11 +36,13 @@ Example 2:
 
 <pre>$('#tabs').tabs({destination:'#edit_form'});  </pre>
 
+<p class="q">Do we need any description for Example2?</p>
+
 <h2 id="fedg_tabs_options">Options for the tabs widget</h2>
 
 The tabs widget has the following options:
 
-*	<a href="#fedg_tabs_options-spinner">icon</a>
+*	<a href="#fedg_tabs_options-spinner">spinner</a>
 *	<a href="#fedg_tabs_options-destination">destination</a>
 *	<a href="#fedg_tabs_options-ajaxOptions">ajaxOptions</a>
 *	<a href="#fedg_tabs_options-tabIdArgument">tabIdArgument</a>
@@ -128,10 +135,3 @@ The tabs widget is subscribed to the following events:
 *	`beforeSubmit`&mdash;Listens for the `beforeSubmit` event and adds active tab ID to the event data.
 
 
-#### Related topics:
-
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-calendar.html">jQuery calendar widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-loader.html">jQuery loader widget</a>
-*	<a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html">jQuery translateInline widget</a>
-*	<a href="{{ site.gdeurl }}coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a>

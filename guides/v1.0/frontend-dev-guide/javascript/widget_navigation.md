@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/javascript/widget_navigation.md
 ---
 
 <h2>Overview</h2>
-Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI menu widget</a>. The extended functionality includes:
+Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento menu extends the default functionality with the following:
 <ul>
 <li>expanding all layers of the menu tree past the second layer.</li>
 <li>limiting the maximum number of list items contained within the main navigation (overflow items are placed into a secondary navigation level).</li>
@@ -18,9 +18,8 @@ Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/
 
 The navigation widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js">lib/web/mage/menu.js</a>
 
-<h2 id="navigation_init">Initialization</h2>
-The loader widget is initialized as described in Widget initializaiton.
-<!--ADDLINK-->
+<h2 id="navigation_init">Initialize navigation</h2>
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
 
 <h2 id="navigation_options">Options</h2>
 
@@ -66,7 +65,7 @@ Set the text for the overflow menu (i.e. more)
 
 **Default value**: *'more'*
 
-<h3 id="#n_breakpoint">breakpoint</h3>
+<h3 id="n_breakpoint">breakpoint</h3>
 <p class="q">need description</p>
 
 <h2 id="navigation_methods">Methods</h2>
@@ -76,12 +75,12 @@ Set the text for the overflow menu (i.e. more)
 <li><a href="#setupMoreMenu">setupMoreMenu()</a></li>
 </ul>
 
-<h3 id="#nav_return">return()</h3>
+<h3 id="nav_return">return()</h3>
 
-<p class="q">need description here</p>
+<p class="q">Please help to provide description</p>
 
-<h3 id="#nav_setMaxItems">setMaxItems()</h3>
+<h3 id="nav_setMaxItems">setMaxItems()</h3>
 Moves the list items that are more than the total max item number set by the user option.
 
-<h3 id="#nav_setupMoreMenu">setupMoreMenu()</h3>
+<h3 id="nav_setupMoreMenu">setupMoreMenu()</h3>
 Builds the more overflow menu by cloning the main menu items.

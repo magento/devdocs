@@ -10,11 +10,7 @@ github_link: frontend-dev-guide/javascript/widget_modal.md
 
 <h2 id="modal_overview">Overview</h2>
 
-The Magento modal widget is a secondary window that opens on top of the page. It contains an overlay and modal content.
-
-<p class="q">What is the difference between modal and overlaying?</p>
-
-Specifically, the modal widget implements:
+The Magento modal widget is a secondary window that opens on top of the page. It contains the overlay and modal content, and implements the following:
 
 <ul>
 <li>Configuring as popup or slide</li>
@@ -43,7 +39,7 @@ $('#modal_content').modal({
 });
 </pre>
 
-For details about how to initialize the widget in a .phtml template, refer to the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization topic.
+For details about how to initialize the widget in a .phtml template, refer to the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="modal_options">Options</h2>
 
@@ -66,7 +62,6 @@ The type of window: popup or slide.
 **Default value**: *'popup'*
 
 
-
 <h3 id="modal_title"><code>title</code></h3>
 Translated title for popup widget.
 <p class="q">tranlsated?popup widget or window?</p>
@@ -84,7 +79,7 @@ Custom classes for modal widget.
 
 **Default value**: ''
 
-<h3 id="modal_modalClass"><code>buttons</code></h3>
+<h3 id="modal_buttons"><code>buttons</code></h3>
 Array of buttons for action pane.
 
 **Type**: Array 
@@ -120,9 +115,9 @@ Modal scroll position.
 
 **Default value**: false
 
-<h3 id="modal_innerScroll"><code>modalLeftMargin</code></h3>
-Set a margin between modals.
-<p class="q">A: between slide modal windows</p>
+<h3 id="modal_modalLeftMargin"><code>modalLeftMargin</code></h3>
+Set a margin between slide modal windows.
+
 
 **Type**: Number 
 

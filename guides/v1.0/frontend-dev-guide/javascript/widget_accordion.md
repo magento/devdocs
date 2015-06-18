@@ -21,7 +21,7 @@ The accordion widget source is <a href="{{site.mage2000url}}lib/web/mage/accordi
 <h3>Initialize accordion in JS components</h3>
 
 <h4>Initialize accordion with <code>data-*</code> attributes specified</h4>
-Generally the collapsible widget is instantiated like following:
+Generally the accordion widget is instantiated like following:
 <pre>
 $("#element").accordion();
 </pre>

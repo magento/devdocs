@@ -10,12 +10,12 @@ github_link: frontend-dev-guide/javascript/widget_quickSearch.md
 
 <h2>Overview</h2>
 
-The quickSearch widget is a custom autocomplete widget that populates a list of suggest search terms for the given field. 
+The quickSearch widget is a custom autocomplete widget that populates a list of suggest search terms for a given field. 
 
-The Suggest widget source is <a href="{{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js">app/code/Magento/Search/view/frontend/web/form-mini.js</a>.
+The suggest widget source is <a href="{{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js">app/code/Magento/Search/view/frontend/web/form-mini.js</a>.
 
-<h2 id="quicksearch_init">Inititalization</h2>
-
+<h2 id="quicksearch_init">Inititalize quickSearch</h2>
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
 
 
 <h2 id="quicksearch_options">Options</h2>
@@ -45,7 +45,7 @@ The form selector containing the search input field.
 
 **Default value**: No form by default.
 
-<p class="q">Don't see this option (formSelector) in code</q>
+<p class="q">Don't see this option (formSelector) in code</p>
 
 <h3 id="q_minSearchLength">minSearchLength</h3>
 Minimum number of characters required before the auto suggest triggers.
@@ -65,6 +65,7 @@ Selector for the response elements.
 Class assigned to the selected suggested term.
 
 **Type**: String
+
 **Default value**: `'selected'`
 
 <h3 id="q_template">template</h3>
@@ -89,7 +90,7 @@ Selector of a search input label.
 
 **Default value**: *'[data-role=minisearch-label]'*
 
-<p class="q">these ones I don't see in code</q>
+<p class="q">these ones I don't see in code</p>
 
 
 

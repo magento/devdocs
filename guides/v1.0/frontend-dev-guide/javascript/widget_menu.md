@@ -9,15 +9,16 @@ github_link: frontend-dev-guide/javascript/widget_menu.md
 ---
 <h2>Overview</h2>
 
-The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. The Magento widget extends the functionality to include:
+The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI Menu widget</a>. Magento menu extends the default functionality with the following:
 <ul>
-<li>expanding all layers of the menu tree past the second layer.</li>
+<li>expanding all layers of the menu tree past the second layer</li>
 <li>declaring a responsive menu</li>
 <li>setting hover delay</li>
 </ul>
 The Magento menu widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>.
 
-<h2 id="menu_init">Initialization</h2>
+<h2 id="menu_init">Initialize menu</h2>
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
 
 <h2 id="menu_options">Options</h2>
 Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of the following custom ones:
@@ -28,7 +29,7 @@ Menu widget options mostly coincide with the options of the jQuery UI Menu widge
 
 </ul>
 
-<h3 id="#m_expanded">expanded</h3>
+<h3 id="m_expanded">expanded</h3>
 Expand all submenu's past the second layer of sub-menus.
 <p class="q">Shta?</p>
 
@@ -36,14 +37,14 @@ Expand all submenu's past the second layer of sub-menus.
 
 **Default value**: `false`
 
-<h3 id="#m_responsive">responsive</h3>
+<h3 id="m_responsive">responsive</h3>
 Setting the default responsive handler for the navigation widget.
 
 **Type**: Boolean.
 
-**Default value**: false
+**Default value**: `false`
 
-<h3 id="#m_delay">delay</h3>
+<h3 id="m_delay">delay</h3>
 Set the delay length of opening submenu.
 
 Type: Int
