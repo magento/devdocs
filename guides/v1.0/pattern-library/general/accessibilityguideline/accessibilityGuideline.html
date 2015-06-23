@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/pattern-library/templates/address-form/address-form.html">
+	<link rel="canonical" href="//guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html">
 
 </head>	
 <body>
@@ -156,7 +156,7 @@
 	<div class="container">
 		<h1 class="page-heading">Magento Admin Pattern Library</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/pattern-library/templates/address-form/address-form.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,81 +165,158 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2> Address Form </h2>
+		<h2> Accessibility Guidelines </h2>
 
 <h3> Contents </h3>
 
 <ul>
   <li><a href="#overview">Overview</a></li>
-  <li><a href="#when-to-use">When to Use / When Not to Use</a></li>
-  <li><a href="#variations">Variations</a></li>
-  <li><a href="#styling">Styling</a></li>
-  <li><a href="#examples">Usage Example</a></li>
-  <li><a href="#assets">Assets</a></li>
+  <li><a href="#visual">Visual</a></li>
+  <li><a href="#content">Content</a></li>
+  <li><a href="#user-interaction">User Interaction</a></li>
+  <li><a href="#development">Development</a></li>
+  <li><a href="#resources">Resources</a></li>
 </ul>
 
 <h3 id="overview">Overview</h3>
-<p>This article will establish standards and rules for an address entry forms.<br />
-For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.</p>
 
-<h3 id="when-to-use">When to Use / When Not to Use</h3>
-<p>The address entry fields should be used whenever an address needs to be captured. This set of form elements will be universal across the Magento user experience. This pattern should follow rules established in the Form Elements and related patterns.</p>
+<p>Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.</p>
 
-<h3 id="variations">Variations</h3>
-<p>The only variation of this pattern at this time is the North American Address Entry format. Users have the ability to create address entry formats for other locales within the system.</p>
+<h3 id="visual">Visual</h3>
+<p><strong>1. Be mindful of text length</strong></p>
 
-<h4 id="fields-that-make-up-address-entry-in-order">Fields That Make Up Address Entry (in order)</h4>
+<p>Don’t make textual content too long or too short.</p>
 
-<table>
-	<thead>
-		<th> Label</th>
-		<th> Input Type </th>
-		<th> Required? </th>
-	</thead>
-	<tbody>
-		<tr>
-			<td>Address Line 1</td>
-			<td>Text Field</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>Address Line 2</td>
-			<td>Text Field</td>
-			<td>No</td>
-		</tr>
-		<tr>
-			<td>City</td>
-			<td>Text Field</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>State/Province</td>
-			<td>Dropdown (Default can be localized)</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>ZIP/Postal Code</td>
-			<td>Text Field</td>
-			<td>Yes</td>
-		</tr>
-		<tr>
-			<td>Country</td>
-			<td>Dropdown (Default can be localized)</td>
-			<td>Yes</td>
-		</tr>
-	</tbody>
-</table>
+<p><strong>2. Provide adequate contrast</strong></p>
 
-<p><img src="img/AddressForm_example01.jpg" /></p>
+<p>Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here: 
+<a href="http://webaim.org/resources/contrastchecker/" target="blank">http://webaim.org/resources/contrastchecker/ </a>
+or here:
+<a href="http://www.paciellogroup.com/resources/contrastAnalyser" target="blank">http://www.paciellogroup.com/resources/contrastAnalyser</a></p>
 
-<h3 id="styling">Styling</h3>
-<p>This pattern will follow the Form standards established in the Form Elements and related patterns. Refer to the Form Elements and related patterns for style information.</p>
+<p>Acceptable	<br />
+<img src="img/largetext-sample1.png" /></p>
 
-<h3 id="examples">Usage Example</h3>
-<p><img src="img/AddressForm_example02.jpg" /></p>
+<p>Not Acceptable	<br />	 
+<img src="img/largetext-sample2.png" /></p>
 
-<h3 id="assets">Assets</h3>
-<p>Source files associated with this article are currently attached the Form Elements Pattern.</p>
+<p><strong>3. Limit the use of CAPS</strong></p>
+
+<p>All caps can be difficult to read and can be read incorrectly by screen readers.</p>
+
+<p><strong>4. Use appropriate font size</strong></p>
+
+<p>Large text: 18 px Bold (22 px Regular) or larger</p>
+
+<p>Normal text: 13-14 px</p>
+
+<p><strong>5. Consider reading order</strong></p>
+
+<p>The reading order should match the visual order.</p>
+
+<p><strong>6. Keep the focus indicator visible</strong></p>
+
+<p>Ensure keyboard users can visually identify a focused link.</p>
+
+<p><strong>7. Design a “skip to main content” link</strong></p>
+
+<p>A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.</p>
+
+<p>Examples</p>
+
+<p><a href="http://www.nomensa.com/" target="blank"> http://www.nomensa.com/ </a></p>
+
+<p><a href="https://www.paypal.com/" target="blank"> https://www.paypal.com/ </a></p>
+
+<p><a href="http://www.standardchartered.com/en/" target="blank"> http://www.standardchartered.com/en/ </a></p>
+
+<p><a href="http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/" target="blank"> http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/ </a></p>
+
+<p><a href="https://uie.paypal.com/" target="blank"> https://uie.paypal.com/ </a> (Skip-To Widget)</p>
+
+<p><strong>8. Use animation, video and audio with caution</strong></p>
+
+<p>If used, provide a play/pause button. Avoid flashing or strobing content, which can cause seizures.Provide captions and other alternatives for multimedia.</p>
+
+<p><strong>9. Don’t convey content with color alone</strong></p>
+
+<p>Evaluate the design in grayscale. Make sure to use both shapes and color to differentiate icons.</p>
+
+<p><strong>10. Use images to enhance the experience for users with full vision</strong></p>
+
+<p><strong>11. Make sure links are obvious</strong></p>
+
+<p>Differentiate link text from other text.</p>
+
+<p><strong>12. Doo not use content that causes <a href="http://www.w3.org/WAI/WCAG20/quickref/Overview.php#seizure" target="blank"> seizures. </a></strong></p>
+
+<h3 id="content">Content</h3>
+<p><strong>1. Ensure that link text makes sense by itself</strong></p>
+
+<p>Avoid “Click Here” in link text. Ambiguous links such as “More” or “Continue” can also be confusing.</p>
+
+<p><strong>2. Provide text alternatives for non-text content.</strong></p>
+
+<p><strong>3. Content should be present-able in different ways without losing meaning.</strong></p>
+
+<p><strong>4. Content should appear and operate in predictable ways.</strong></p>
+
+<h3 id="user-interaction">User Interaction</h3>
+
+<p><strong>1. Use animation, video and audio with caution.</strong></p>
+
+<p>If used, provide a play/pause button. Avoid flashing or strobing content, which can cause seizures.</p>
+
+<p><strong>2. Create design that adapts to phone and tablet form factors</strong></p>
+
+<p>Don’t override native accessibility features.</p>
+
+<p><strong>3. Design accessible form controls</strong></p>
+
+<p>Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.</p>
+
+<p><strong>4. Give users <a href="http://www.w3.org/WAI/WCAG20/quickref/Overview.php#time-limits" target="blank">enough time</a> to read and use content.</strong></p>
+
+<p><strong>5. Help users navigate and find content.</strong></p>
+
+<h3 id="development">Development</h3>
+
+<p>(This section is high level only and is no way a complete list for engineering.)</p>
+
+<p><strong>1. Ensure that all content can be accessed with just the keyboard in a logical way using tab order</strong></p>
+
+<p>Make sure dynamic interactions (hide/show, open/close, update) can be used with the keyboard itself, without any peripheral devices. The reading order should match the visual order.</p>
+
+<p><strong>2. Plan heading structure early</strong></p>
+
+<p>Ensure all content and design fits under a logical heading structure.</p>
+
+<p><strong>3. Use true text whenever possible</strong></p>
+
+<p>True text enlarges better, loads faster, and is easier to translate. Use CSS to add visual style.</p>
+
+<p><strong>4. Support the link focus indicator</strong></p>
+
+<p>Make sure keyboard users can always visually identify a focused link.</p>
+
+<p><strong>5. Support a “skip to main content” link</strong></p>
+
+<p>A link for keyboard users to skip navigation should be at the top of the page. It can be hidden, but should be visible when in keyboard focus.</p>
+
+<p><strong>6. Code accessible form controls</strong></p>
+
+<p>Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.</p>
+
+<p><strong>7. Provide alt text if icons or glyphs are used without text</strong></p>
+
+<p>Cascading style sheets (CSS) for purely decorative images. Hyperlinked images without supporting text must be inline, with alternative text.</p>
+
+<h3 id="resources">Resources</h3>
+<p>Overview: <a href="http://www.w3.org/WAI/WCAG20/glance/" target="blank"> http://www.w3.org/WAI/WCAG20/glance/ </a></p>
+
+<p>Authoring Tool Accessibility Guidelines (ATAG) 1.0: <a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/" target="blank"> http://www.w3.org/TR/WCAG10-HTML-TECHS/</a></p>
+
+<p>Authoring Tool Accessibility Guidelines (ATAG) 2.0: <a href="http://www.w3.org/TR/WCAG20-HTML-TECHS/" target="blank"> http://www.w3.org/TR/WCAG20-HTML-TECHS/</a></p>
 
 
 		</div>
@@ -432,7 +509,7 @@ For solutions not described in this article, please refer to other related patte
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guideline</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guideline</a></li>
 						
 								
 								
@@ -522,7 +599,7 @@ For solutions not described in this article, please refer to other related patte
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/pattern-library/templates/address-form/address-form.html">Address Form</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/pattern-library/templates/address-form/address-form.html">Address Form</a></li>
 						
 								
 							
@@ -673,8 +750,8 @@ For solutions not described in this article, please refer to other related patte
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/pattern-library/templates/address-form/address-form.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/pattern-library/templates/address-form/address-form.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
