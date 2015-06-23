@@ -384,7 +384,8 @@ Options:
 	</tr>
 <tr>
 	<td>ignore</td>
-	<td>ignore</td>
+	<td>ignore
+		transform</td>
 </tr>
 </tbody>
 </table>
