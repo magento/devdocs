@@ -19,7 +19,7 @@ Specifically, the tabs widget implements the following:
 *	Setting active tab on initialization.
 *	Rendering tab pages vertically or horizontally.
 
-The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/backend/tabs.js"}}lib/web/mage/backend/tabs.js</a>. All tab pages in Magento Admin panel are implemented using the tabs widget.
+The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/backend/tabs.js">lib/web/mage/backend/tabs.js</a>. All tab pages in Magento Admin panel are implemented using the tabs widget.
 
 <p class="q">what about the tabs.js in lib/web/mage/tabs.js - is it used somewhere?</p>
 
@@ -28,7 +28,7 @@ For information about how to initilize a widget in a JS component or `.phtml` te
 
 <h3 id="tabs_init_ex">Examples of tabs initialization</h3>
 
-Example 1, when initialized like this, he first tab is active by default:
+Example 1, when initialized like this, the first tab is active by default:
 
 <pre>$('#tabs').tabs();  </pre>
 
@@ -38,7 +38,10 @@ Example 2:
 
 <p class="q">Do we need any description for Example2?</p>
 
-<h2 id="fedg_tabs_options">Options for the tabs widget</h2>
+<h2 id="fedg_tabs_options">Options</h2>
+
+The Magento tabs widget has the same options as the jQuery <a href="http://api.jqueryui.com/tabs/" target="_blank">Tabs Widget</a>, plus several custom options that are discussed in the sections that follow.
+
 
 The tabs widget has the following options:
 
@@ -49,7 +52,15 @@ The tabs widget has the following options:
 *	<a href="#fedg_tabs_options-tabsBlockPrefix">tabsBlockPrefix</a>
 *	<a href="#fedg_tabs_options-shadowTabsShadow">shadowTabsShadow</a>
 
-The Magento tabs widget has the same options as the jQuery <a href="http://api.jqueryui.com/tabs/" target="_blank">Tabs Widget</a>, plus several custom options that are discussed in the sections that follow.
+<p class="q">There's a totally different set of options in the widget source. Please help to describe</p>
+
+spinner
+
+groups: null,
+
+tabPanelClass
+
+excludedPanel
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p>
@@ -63,6 +74,8 @@ Whether a spinner is displayed on a tab when the tab content is loading using Aj
 
 **Default value**: `false`
 
+
+<!--
 <h4 id="fedg_tabs_options-destination">destination</h4>
 
 All tabs in the Magento Admin specific behavior. When a page is rendered, all tab pages are in the tabs container, but on tabs initialization all tab pages should be moved to another container (form). `destination` is a selector of the element that specifies to which container the tab page will be moved.
@@ -119,7 +132,9 @@ shadowTabsShadow tabs load in the background.
     ...
 }</pre>
 
-<h2 id="fedg_tabs_events-methods">Events and methods for the tabs widget</h2>
+-->
+
+<h2 id="fedg_tabs_events-methods">Events and methods</h2>
 
 The Magento tabs widget has the same events and methods as the jQuery <a href="http://api.jqueryui.com/tabs/" target="_blank">Tabs Widget</a>, plus custom events that are discussed in this section.
 
@@ -129,9 +144,9 @@ The Magento tabs widget has the same events and methods as the jQuery <a href="h
 
 The tabs widget is subscribed to the following events:
 
-*	`changed`&mdash;Can be triggered by a change in the value of a field on a tab page. When the event is triggered, the tabs widget processes it and displays the "changed" icon in the tab page.
-*	`highlight.validate`&mdash;Triggered by a field validation error. The tabs displays an error icon on the tab page.
-*	`focusin`&mdash;Used to open a tab with the first invalid field highlighted. When the event is triggered on a field in a hidden tab panel, the tabs widget opens this hidden panel.
-*	`beforeSubmit`&mdash;Listens for the `beforeSubmit` event and adds active tab ID to the event data.
+*	`changed`: can be triggered by a change in the value of a field on a tab page. When the event is triggered, the tabs widget processes it and displays the "changed" icon in the tab page.
+*	`highlight.validate`: triggered by a field validation error. The tabs displays an error icon on the tab page.
+*	`focusin`: used to open a tab with the first invalid field highlighted. When the event is triggered on a field in a hidden tab panel, the tabs widget opens this hidden panel.
+*	`beforeSubmit`: listens for the `beforeSubmit` event and adds active tab ID to the event data.
 
 

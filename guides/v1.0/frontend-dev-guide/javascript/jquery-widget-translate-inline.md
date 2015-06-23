@@ -23,17 +23,21 @@ Translateinline source is <a href="{{site.mage2000url}}lib/web/mage/translate-in
 
 To initialize translateinline:
 
-<script src="https://gist.github.com/xcomSteveJohnson/8d3fc4e87110d345dccf.js"></script>
+<pre>
+/* $design is Magento_Core_Model_View_DesignInterface instance */
+$(document).translateInline({
+     ajaxUrl: '<?php echo $ajaxUrl ?>',
+     area: '<?php echo $design->getArea() ?>',
+     editTrigger: {img: '<?php echo $trigImg ?>'}
+});
+</pre>
 
-The default edit control looks like the following:
+<p class="q">Is it instantiated as usually? Like described in our Initialize JS article?</p>
 
-![Default inline translation control is a book icon]({{ site.baseurl }}common/images/widget_translateinline_default-control.png)
-
-The default dialog and translation form look like the following:
-
-![Default inline translation form]({{ site.baseurl }}common/images/widget_translateinline_default-form.png)
 
 <h2 id="fedg_translate-widget_opt">Options for the translateinline widget</h2>
+
+<p class="q">There's a completely different list of options</p>
 
 The translateinline widget has the following options:
 
@@ -151,6 +155,8 @@ Specifies options for the jQuery UI translation dialog box.
 	}]</pre>
 
 <h2 id="fedg_widget_translateinline_customize">Customize the translateinline widget</h2>
+
+<p class="q">Does this section make sense at all?</p>
 
 By changing widget options, you can customize translateinline components and behavior.
 
