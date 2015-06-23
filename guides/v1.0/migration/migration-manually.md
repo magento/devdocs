@@ -16,9 +16,7 @@ github_link: migration/migration-manually.md
 This section discusses how to manually migrate media files.
 
 #### Media files stored in the database
-This section applies to you *only* if you store media files in the Magento database and should be performed before migration of data.
-
-If media files are stored in the Magento 1 database, use the following steps:
+This section applies to you *only* if you store media files in the Magento database and should be performed before <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">migration of data</a>:
 
 1.	Log in to the Magento 1 Admin Panel as an administrator.
 2.	Click **System** > **Configuration** > ADVANCED > **System**. 

@@ -53,5 +53,5 @@ The following sections should be performed in a specific order:
 
 1.	<a href="{{ site.gdeurl }}migration/migration-migrate-settings.html">Migrate settings</a>
 3.	<a href="{{ site.gdeurl }}migration/migration-migrate-data.html">Migrate data</a>
-4.	<a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">Migrate changes in Delta Mode</a>
+4.	<a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">Migrate changes</a>
 

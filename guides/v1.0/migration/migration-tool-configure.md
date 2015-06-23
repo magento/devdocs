@@ -122,4 +122,4 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tbody>
 </table>
 
-You can refer to <a href="MigrationToolInternalSpecification.pdf">Migration Tool Internal Specification</a> for more details.
+You can refer to <a href="{{ site.gdeurl }}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more details.

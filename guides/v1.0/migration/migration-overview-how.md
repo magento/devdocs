@@ -29,7 +29,7 @@ This section previews your migration experience by providing a high-level overvi
 
 There are many differences between Magento 1 and Magento 2 in data structure and data format, which are stored in database. And each version of Manento 1, for example 1.8.0.0 or 1.9.0.0, has its own unique changes in data structure. The Data Migration Tool understands all these changes and can properly transform it for usage in Magento 2 store. Most of these differences are declared in so called Map files. Using the Map file a Step will know that, for example, a table from Magento 1 was renamed in Magento 2 and will be able to transfer data properly to destination table. In case when there are no differences in data structure or data format the Data Migration Tool will transfer data as is to the database of Magento 2, including data from tables created by extensions. When differences are not declared in Map files then the Data Migration Tool will not start migration process and will show an error.
 
-Mapping files are discussed in more detail in <a href="{{ site.gdeurl }}migration/migration_mapping.html"> Database mapping.</a>
+Mapping files are discussed in more detail in <a href="{{ site.gdeurl }}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification.</a>
 
 ####The following diagram illustrates the migration flow in general:
 
