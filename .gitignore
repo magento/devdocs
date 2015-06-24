@@ -1,6 +1,5 @@
 _site/
 
-=======
 # OS generated files #
 ######################
 .DS_Store
@@ -18,7 +17,6 @@ _site
 CNAME
 _config.yml
 /Readme.md
-=======
 ignore
 /_config.yml
 /_config.brad.yml
