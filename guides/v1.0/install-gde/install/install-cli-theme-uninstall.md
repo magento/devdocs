@@ -51,20 +51,20 @@ The command performs the following tasks:
 
 	To work around this, you can either uninstall both themes or TBD.
 4.	Verifies that the theme is not being used; if it is being used, the command terminates.
-4.	Verifies that the theme is not the base of the virtual theme; if it is the base of a virtual theme, the command terminates.
-5.	Puts the store in maintenance mode.
-6.	If `--backup-code` is specified, backs up the Magento 2 codebase, excluding the `pub/static`, `pub/media`, and `var` directories.
+5.	Verifies that the theme is not the base of the virtual theme; if it is the base of a virtual theme, the command terminates.
+6.	Puts the store in maintenance mode.
+7.	If `--backup-code` is specified, backs up the Magento 2 codebase, excluding the `pub/static`, `pub/media`, and `var` directories.
 
 	The backup file name is `var/backups/<timestamp>_filesystem.tgz`
 
 	You can restore backups at any time using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
-7.	Removes themes from the `theme` database table.
-8.	Remove themes from code base using `composer remove`.
-9.	Cleans the cache.
-10.	Cleans generated classes
-11.	If `--clear-static-content` is specified, cleans generated static view files.
-12.	Takes the store out of maintenance mode.
+8.	Removes themes from the `theme` database table.
+9.	Remove themes from code base using `composer remove`.
+10.	Cleans the cache.
+11.	Cleans generated classes
+12.	If `--clear-static-content` is specified, cleans generated static view files.
+13.	Takes the store out of maintenance mode.
 
 For example,
 
