@@ -170,18 +170,23 @@ This command performs the following tasks:
 1.	Verifies the backup file name.
 4.	If you specify a code rollback file:
 	
-	2.	Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
-	3.	Deletes all files and directories under your Magento 2 installation directory.
-	4.	Extracts the archive file to the destination locations.
+	a.	Verifies the rollback destination locations are writable (note that the `pub/static` and `var` folders are ignored).
+
+	b.	Deletes all files and directories under your Magento 2 installation directory.
+
+	c.	Extracts the archive file to the destination locations.
 5.	If you specify a database rollback file:
 
-	2.	Drops the entire Magento database.
-	3.	Restores the database using the database backup.
+	a.	Drops the entire Magento database.
+
+	b.	Restores the database using the database backup.
 5.	If you specify a media rollback file:
 
-	2.	Verifies the rollback destination locations are writable.
-	3.	Deletes all files and directories under `pub/media`
-	4.	Extracts the archive file to the destination locations.
+	a.	Verifies the rollback destination locations are writable.
+
+	b.	Deletes all files and directories under `pub/media`
+
+	c.	Extracts the archive file to the destination locations.
 
 5.	Takes the store out of maintenance mode.
 
