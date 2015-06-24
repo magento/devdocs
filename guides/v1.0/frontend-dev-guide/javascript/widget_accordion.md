@@ -30,7 +30,7 @@ Where:
 <ul>
 <li><code>#element</code> is the selector of the element for accordion is initialized.</li>
 <li><code>#element</code> has children with the following attributes specified: 
-<p class="q">is it a must or an option?</p>
+
 <ul>
 <li><code>data-role="title"</code>
 </li>
@@ -50,8 +50,8 @@ Optionally, you can specify the following:
 Accordions support arbitrary markup, but the following requirements should be kept:
 
 <ol>
-<li>Titles and contents are in the same order in DOM.</li>
-<p class="q">What does it mean "in the same order?"</p>
+<li>Titles and contents are specified in the same order in DOM: first title, then contents.</li>
+
 <li>The header, trigger and content are specified, either by adding the <code>data-*</code> attributes for the corresponding children elements or by specifying these elements with selectors as options.</li>
 </ol>
 
@@ -94,10 +94,10 @@ $("#element").accordion({
  });
 </pre>
 
-<h3>Initialize accordion in a template using the <code>data-mage-init</code> attribute</h3>
+<h3>Initialize accordion in a template</h3>
 
-The accordion widget can be initialized using the <code>data-mage-init</code> attribute, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>.
-<p class="q">Can accordion be initialized using `script` as well?</p>
+The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>.
+
 
 <h2>Options</h2>
 Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html#fedg_tabs_options">Magento Tabs options</a>, plus the following custom ones:
@@ -144,7 +144,7 @@ $("#element").tabs("option","multipleCollapsible",false);
 
 <h3 id="collaps_open"><code>openOnFocus</code></h3>
 
-<p class="q">Please help to provide a description</p>
+<p class="q">Please help to provide a descriptionA: открывается ли аккордион когда тайтл в фокусе при навигации с помощью клавиатуры</p> 
 
 **Type**: Boolean
 

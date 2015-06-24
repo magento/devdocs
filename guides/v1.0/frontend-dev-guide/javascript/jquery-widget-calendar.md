@@ -20,17 +20,7 @@ The Calendar widget is a customized jQuery <a href="http://api.jQueryui.com/date
 
 <h2 id="fedg_calendar_init">Initialize the calendar widget</h2>
 
-Example:
-
-<pre>
-   $("#calendar_id").calendar({
-      dateFormat: "M/d/yy",
-      showsTime: true,
-      timeFormat: "h:mm a",
-      buttonImage: "image.gif",
-      buttonText: "Select Date"
-   })
-</pre>
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
 
 <h2 id="fedg_calendar_config">Configure the calendar widget</h2>
 
@@ -60,6 +50,4 @@ Global configuration for calendar is stored in a jQuery object as a hash of prop
 
 <p>Most options, methods, and events for the calendar widget correspond to the jQuery <a href="http://api.jqueryui.com/datepicker/" target="_blank">Datepicker Widget</a> options.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p>
-</div>
+

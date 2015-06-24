@@ -12,14 +12,13 @@ github_link: frontend-dev-guide/javascript/widget_collapsible.md
 <!-- used in Checkout -->
 The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
-<p class="q">what's the difference with accordion widget?</p>
+Unlike the accordion widget is that collapsible is intialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
 
+To "bind" several instances of collapsible widget, the <code>collateral</code> option is used.
 
 Once it is expanded, the content can be updated using Ajax. The collapsed/expanded state can be saved into local storage or cookies, if the browser does not support local storage. 
 
 The collapsible widget source is <a href="{{site.mage2000url}}lib/web/mage/collapsible.js" target="_blank">lib/web/mage/collapsible.js</a>.
-
-<p class="q">Illustration: you mentioned that it is used in Checkout, but I can't find it in the page source using the method you described</p>
 
 
 <h2 id="collaps_init_js">Initialize collapsible in JS</h2>
@@ -54,21 +53,22 @@ The collapsible widget has the following options:
 
 <ul>
 <li><a href="#fedg_collaps_active">active</a> </li>
-<li><a href="#fedg_collaps_disabled">disabled</a></li>
-<li><a href="#fedg_collaps_collapsible">collapsible</a></li>
-<li><a href="#fedg_collaps_header">header</a></li>
-<li><a href="#fedg_collaps_content">content</a></li>
-<li><a href="#fedg_collaps_trigger">trigger</a></li>
-<li><a href="#fedg_collaps_closedState">closedState</a></li>
-<li><a href="#fedg_collaps_openedState">openedState</a></li>
-<li><a href="#fedg_collaps_disabledState">disabledState</a></li>
 <li><a href="#fedg_collaps_ajaxUrlElement">ajaxUrlElement</a></li>
 <li><a href="#fedg_collaps_ajaxContent">ajaxContent</a></li>
-<li><a href="#fedg_collaps_loadingClass">loadingClass</a></li>
-<li><a href="#fedg_collaps_saveState">saveState</a></li>
 <li><a href="#fedg_collaps_animate">animate</a></li>
-<li><a href="#fedg_collaps_icons">icons</a></li>
+<li><a href="#fedg_collaps_collapsible">collapsible</a></li>
 <li><a href="#fedg_collaps_collateral">collateral</a></li>
+<li><a href="#fedg_collaps_content">content</a></li>
+<li><a href="#fedg_collaps_closedState">closedState</a></li>
+<li><a href="#fedg_collaps_disabled">disabled</a></li>
+<li><a href="#fedg_collaps_disabledState">disabledState</a></li>
+<li><a href="#fedg_collaps_header">header</a></li>
+<li><a href="#fedg_collaps_icons">icons</a></li>
+<li><a href="#fedg_collaps_loadingClass">loadingClass</a></li>
+<li><a href="#fedg_collaps_openedState">openedState</a></li>
+<li><a href="#fedg_collaps_saveState">saveState</a></li>
+<li><a href="#fedg_collaps_trigger">trigger</a></li>
+
 </ul>
 
 <h3 id="fedg_collaps_active">active</h3>
@@ -326,8 +326,6 @@ $("#element").collapsible("option","loadingClass","ajax");
 <h3 id="fedg_collaps_ajaxContent">ajaxContent</h3>
 Specifies if the content is updated using Ajax request.
 
-<p class="q">Is set to "true", is it updated only by Ajax request or by Ajax request as well? Please help to describe the option correctly</p>
-
 **Type**: Boolean
 
 **Default value**: false
@@ -420,7 +418,10 @@ $("#element").collapsible("option","icons",{"header": "plus", "activeHeader": "m
 
 <h3 id="fedg_collaps_collateral"><code>collateral</code></h3>
 
-<p class="q">Please help to provide a decsription</p>
+An object: 
+
+element can be a selector or jquery object. 
+openedState: the class name which is assigned to the element when the current element is in opened; removed when the current element is closed.
 
 **Type**: String
 
@@ -496,4 +497,7 @@ $("#element").collapsible("forceActivate");
 <h2 id="collapsible_events">Events</h2>
 
 <h3 id="c_beforeOpen">beforeOpen callback</h3>
-<p class="q">need a description here</p>
+Called before the content is opened. 
+
+<h3>dimensionsChanged</h3>
+Called after content is opened or closed.

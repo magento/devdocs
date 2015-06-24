@@ -2,9 +2,9 @@
 layout: default
 group: javascript
 subgroup: JQuery widget details
-title: Magento modal widget
+title: Modal widget
 menu_order: 3
-menu_title: Magento modal widget
+menu_title: Modal widget
 github_link: frontend-dev-guide/javascript/widget_modal.md
 ---
 
@@ -21,7 +21,6 @@ The Magento modal widget is a secondary window that opens on top of the page. It
 
 The modal widget source is <code>app/code/Magento/Ui/view/base/web/js/modal/modal.js</code>
 
-<p class="q">need to double check, as not published yet</p>
 
 The widget uses the following templates:
 
@@ -136,8 +135,6 @@ Open the modal window.
 
 <h3 id="modal_close"><code>closeModal()</code></h3>
 Close the modal window.
-
-<p class="q">True?</p>
 
 <h2 id="modal_events">Events</h2>
 

@@ -45,7 +45,6 @@ The form selector containing the search input field.
 
 **Default value**: No form by default.
 
-<p class="q">Don't see this option (formSelector) in code</p>
 
 <h3 id="q_minSearchLength">minSearchLength</h3>
 Minimum number of characters required before the auto suggest triggers.
@@ -90,7 +89,6 @@ Selector of a search input label.
 
 **Default value**: *'[data-role=minisearch-label]'*
 
-<p class="q">these ones I don't see in code</p>
 
 
 

@@ -19,9 +19,8 @@ Specifically, the tabs widget implements the following:
 *	Setting active tab on initialization.
 *	Rendering tab pages vertically or horizontally.
 
-The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/backend/tabs.js">lib/web/mage/backend/tabs.js</a>. All tab pages in Magento Admin panel are implemented using the tabs widget.
+The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js">lib/web/mage/tabs.js</a>. 
 
-<p class="q">what about the tabs.js in lib/web/mage/tabs.js - is it used somewhere?</p>
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
 For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
@@ -61,10 +60,6 @@ groups: null,
 tabPanelClass
 
 excludedPanel
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Because Magento supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options available in later versions might be unavailable.</p>
-</div>
 
 <h4 id="fedg_tabs_options-spinner">spinner</h4>
 

@@ -58,3 +58,9 @@ HTML wrapper for the output, or a DOM element selector.
 '&lt;/div&gt;'
 </pre>
 
+<h2>Events</h2>
+<h3>processStart</h3>
+Display the loader. Can be triggered for/on any page element.
+
+<h3>processStop</h3>
+Hide the loader. Can be triggered for/on any page element.

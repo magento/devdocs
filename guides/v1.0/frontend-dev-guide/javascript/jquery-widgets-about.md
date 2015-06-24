@@ -22,8 +22,11 @@ This guide discusses the following widgets:
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_quickSearch.html" target="_blank">QuickSearch widget</a></li>
 
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-tabs.html" target="_blank">Tabs widget</a>: Implements tabs as a single content area with multiple panels, each associated with a header in a list. This is a customized jQuery UI Tabs widget.</li>
-<li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/jquery-widget-translate-inline.html" target="_blank">TranslateInline widget</a>: Enables inline translation; that is, translating the store page strings directly in the browser when browsing the page.</li>
+
 
 </ul>
 
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento 2 supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options added in later versions might be unavailable.</p>
+</div>

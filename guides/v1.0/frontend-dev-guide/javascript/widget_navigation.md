@@ -66,18 +66,19 @@ Set the text for the overflow menu (i.e. more)
 **Default value**: *'more'*
 
 <h3 id="n_breakpoint">breakpoint</h3>
-<p class="q">need description</p>
+
+Width of user's window in px for which the menu switches between mobile view and desktop view.
+
+**Type**: Integer
+
+**Default value**: 768
 
 <h2 id="navigation_methods">Methods</h2>
 <ul>
-<li><a href="#nav_return">return()</a></li>
 <li><a href="#nav_setMaxItems">setMaxItems()</a></li>
 <li><a href="#setupMoreMenu">setupMoreMenu()</a></li>
 </ul>
 
-<h3 id="nav_return">return()</h3>
-
-<p class="q">Please help to provide description</p>
 
 <h3 id="nav_setMaxItems">setMaxItems()</h3>
 Moves the list items that are more than the total max item number set by the user option.

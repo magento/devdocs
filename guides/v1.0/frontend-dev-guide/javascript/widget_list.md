@@ -101,11 +101,17 @@ Alert message displayed when maximum limit is reached.
 **Default value**: `"[data-button=remove]"`
 
 <h2 id="list_methods">Methods</h2>
-<p class="q">Plz help to provide description for the following methods:</p>
 
 <h3>checkLimit()</h3>
-<h3>handleContext()</h3>
+If the `maxItems` option is set, hides or displays the Add button.
+
+
 <h3>removeItem()</h3>
+Removes an item from the list.
+
 <h3>handleAdd()</h3>
+Adds item to the list.
+
 <h3>addItem()</h3>
+Adds item to the list in the specified order (defined by the index parameter).
 
