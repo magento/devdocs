@@ -27,3 +27,8 @@ p.q 	{
 
 	display: none;
 	}
+
+/* SRJ - fix Firefox bug */
+.main-container {
+	clear: both;
+}

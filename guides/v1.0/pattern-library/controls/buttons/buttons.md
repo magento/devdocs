@@ -248,11 +248,7 @@ Use toggle for:<br>
 <br>
 Do not use checkboxes if:<br>
 * Multiple options need visibility<br>
-<br>
-**Accessibility**<br>
-PC: <a href="http://support.microsoft.com/kb/126449">http://support.microsoft.com/kb/126449</a><br>
-OS: <a href="http://support.apple.com/en-us/HT201236">http://support.apple.com/en-us/HT201236</a><br>
-(Keyboard shortcut same as checkbox)<br>
+
 <br>
 **Variations**<br>
 No additional variations.<br>
@@ -290,6 +286,11 @@ Left/Right margin spacing should not be less than 10px<br>
 **Examples of toggle buttons:**<br><br>
 <img src="img/TableWToggle.png">
 
+<h3 id="accessibility">Accessibility</h3>
+
+PC: <a href="http://support.microsoft.com/kb/126449" target="blank">http://support.microsoft.com/kb/126449</a><br>
+OS: <a href="http://support.apple.com/en-us/HT201236" target="blank">http://support.apple.com/en-us/HT201236</a><br>
+(Keyboard shortcut same as checkbox)<br>
 
 <h3 id="assets">Assets</h3>
 
