@@ -14,4 +14,5 @@ We're looking forward to hearing from you!
 
 *	<a href="mailto:DL-Magento-Doc-Feedback@ebay.com">E-mail us</a>
 
-*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built on GitHub using Jekyll.
+*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built on GitHub using [Jekyll](http://jekyllrb.com/).
+
