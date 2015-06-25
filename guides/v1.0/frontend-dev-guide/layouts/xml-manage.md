@@ -59,13 +59,14 @@ The following file is a sample of a file you must add:
 	&lt;css src=&quot;css/my-styles.css&quot;/&gt;
     
         &lt;!-- The following two ways to add local JavaScript files are equal --&gt;
-        &lt;link src=&quot;js/sample.js&quot;/&gt;
         &lt;script src=&quot;Magento_Catalog::js/sample1.js&quot;/&gt;
+        &lt;link src=&quot;js/sample.js&quot;/&gt;
 		
 	&lt;!-- Add external resources --&gt;
 	&lt;css src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot; src_type=&quot;url&quot; /&gt;
-        &lt;link src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; src_type=&quot;url&quot; /&gt; 
         &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot; src_type=&quot;url&quot; /&gt;
+        &lt;link src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; src_type=&quot;url&quot; /&gt; 
+
     &lt;/head&gt;
 &lt;/page&gt;
 </pre>
@@ -117,13 +118,13 @@ To remove the static resources, linked in a page `<head>`, make a change similar
 &lt;page&gt;
    &lt;head&gt;
         &lt;!-- Remove local resources --&gt;
-	&lt;remove src=&quot;css/styles-m.css&quot; /&gt;
+        &lt;remove src=&quot;css/styles-m.css&quot; /&gt;
         &lt;remove src=&quot;my-js.js&quot;/&gt;
         &lt;remove src=&quot;Magento_Catalog::js/compare.js&quot; /&gt;
 								
 	&lt;!-- Remove external resources --&gt;
         &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;/&gt;
-	&lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;/&gt;
+        &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;/&gt;
         &lt;remove src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; /&gt; 
    &lt;/head&gt;
 &lt;/page&gt;

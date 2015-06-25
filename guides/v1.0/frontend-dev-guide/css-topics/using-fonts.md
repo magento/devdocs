@@ -14,11 +14,12 @@ The Magento application contains a set of built-in fonts, but you can easily inc
 
 Place the font files to your theme directory under: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/web/fonts</code>.
 
-<h2>Including fonts</h2>
+<h2 id="fonts">Include fonts</h2>
 
 To ensure stability and secure your customizations from being deleted during upgrade, we recommend not changing default Magento files. That is why custom fonts should be included in the stylesheets of custom themes.
 
-To include a custom font, use one of the following approaches:
+<h3 id="local_fonts">Include locally stored fonts</h3>
+To include a custom font stored locally, use one of the following approaches:
 
 <ul> 
 <li>If you build a theme using Magento UI library, declare the font by adding the <code>.font-face</code> mixin in the <code>app/design/&lt;Vendor&gt;/&lt;theme&gt;/web/css/source/_typography.less</code> file:
@@ -50,7 +51,7 @@ The mixin generates the CSS including font. For example, here is how the generat
 </li>
 <li>If your theme does not use the Magento UI library, include the font in your theme <code>.css</code> files by the standard means of CSS, for example the <code>@font-face</code> rule.
 
-<p>To use external fonts, you need also to include them in the page configuration file, as described in <a href="{{site.gdeurl}}layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a></p>.
+<p>To use external fonts, you need also to include them in the page configuration file, as described in <a href="{{site.gdeurl}}layouts/xml-manage.html#layout_markup_css" >Include static resources (JavaScript, CSS, fonts)</a>.</p>
 
 </li>
 </ul>
