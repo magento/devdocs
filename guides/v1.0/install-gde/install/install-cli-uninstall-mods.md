@@ -15,8 +15,8 @@ github_link: install-gde/install/install-cli-uninstall-mods.md
 See one of the following sections:
 
 *	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-cli-uninst-mod-over">Overview of uninstalling modules</a>
 *	<a href="#instgde-cli-uninst-prereq">Prerequisites</a>
+*	<a href="#instgde-cli-uninst-mod-over">Overview of uninstalling modules</a>
 *	<a href="#instgde-cli-uninst-mod-uninst">Uninstall modules</a>
 *	<a href="#instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</a>
 
@@ -28,7 +28,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
 
 <h2 id="instgde-cli-uninst-mod-over">Overview of uninstalling modules</h2>
-This section discusses how to uninstall one or more modules, optionally including the modules' code from the file system, database schema, and database data. You can create backups first so you can recover the data at a later time.
+This section discusses how to uninstall one or more modules. During uninstallation, you can optionally remove the modules' code, database schema, and database data. You can create backups first so you can recover the data at a later time.
 
 You should uninstall a module only if you're certain you won't use it. Instead of uninstalling a module, you can disable it as discussed in <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.
 
@@ -38,12 +38,13 @@ You should uninstall a module only if you're certain you won't use it. Instead o
   <p>As an alternative, you can <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
 </div>
 
-
 <h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
 Command usage:
 
-	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] <ModuleName> ... 
-	<ModuleName>
+	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
+	{ModuleName} ... {ModuleName}
+
+where `{ModuleName}` specifies the module name in `<VendorName>_<ModuleName>` format. For example, the Magento Customer module name is `Magento_Customer`
 
 The module uninstall command performs the following tasks:
 
@@ -53,7 +54,7 @@ The module uninstall command performs the following tasks:
 
 2.	Checks for dependencies with other modules.
 
-	If a module depends on another module, you cannot uninstall one module; you must uninstall both.
+	If a module depends on other modules, you cannot uninstall only the dependent modules; you must either uninstall all modules or uninstall the depending modules first.
 4.	Requests confirmation to proceed.
 3.	Puts the store in maintenance mode.
 4.	Processes the following command options.
@@ -76,13 +77,13 @@ The module uninstall command performs the following tasks:
 	</tr>
 	<tr>
 		<td><p>--backup-media</p></td>
-		<td><p>Back up the <code>pub/media</code> directory.</p></td>
+		<td><p>Backs up the <code>pub/media</code> directory.</p></td>
 		<td><p>var/backups/&lt;timestamp>_filesystem_media.tgz</p></td>
 	</tr>
 	<tr>
 	<tr>
 		<td><p>--backup-db</p></td>
-		<td><p>Back up the Magento 2 database.</p></td>
+		<td><p>Backs up the Magento 2 database.</p></td>
 		<td><p>var/backups/&lt;timestamp>_db.gz</p></td>
 	</tr>
 	<tr>
@@ -92,7 +93,7 @@ The module uninstall command performs the following tasks:
 
 3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
-	For each specified module to uninstall, invoke the `uninstall` method in its `Uninstall` class. This class must inherit from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.
+	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php" target="_blank">Magento\Framework\Setup\UninstallInterface</a>.
 4.	Removes the specified modules from the `setup_module` database table.
 4.	Removes the specified modules from the module list in the <a href="{{ site.gdeurl }}config-guide/config/config-php.html">deployment configuration</a>.
 5.	Removes code from the codebase using `composer remove`.
@@ -133,7 +134,7 @@ Messages similar to the following display:
 	Loading composer repositories with package information
 	Updating dependencies (including require-dev)
 	Updating dependencies (including require-dev)
-  		- Removing vendorname/samplemodule (1.0.0)
+  	  - Removing vendorname/samplemodule (1.0.0)
 	Removing VendorName_SampleModule
 	Writing lock file
 	Generating autoload files
@@ -152,12 +153,12 @@ To restore the Magento codebase to the state at which you backed it up, use the 
 
 	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 
+where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
+
 <div class="bs-callout bs-callout-warning">
-    <p>This command deletes files or the database before restoring them. Make sure you have made no changes to the file system or database that you want to keep before using this command.</p>
+    <p>This command deletes the specified files or the database before restoring them. (For example, the <code>--media-file</code> option deletes media assets under <code>pub/media</code> before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.</p>
 </div>
 
-
-where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
