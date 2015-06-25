@@ -272,60 +272,6 @@ Permissions required to access particular resource are configured in the <code>w
    <p>Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, <code>GET /V1/customers/me</code> fetches the logged-in customer's details. This is typically useful for JavaScript-based widgets. </p>
 </div>
 
-<h3 id="extension_attrs">Extension attribute authentication</h3>
-
-<p>Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. </p>
-
-<p>The following <a href="https://github.corp.ebay.com/magento2/magento2ce/blob/develop/app/code/Magento/CatalogInventory/etc/extension_attributes.xml">code sample</a> defines <code>stock_item</code> as an extension attribute of the <code>CatalogInventory</code> module. <code>CatalogInventory</code> is treated as a “3rd-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.</p>
-
-<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;stock_item&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;resources&gt;</span>
-                <span class="nt">&lt;resource</span> <span class="na">ref=</span><span class="s">&quot;Magento_CatalogInventory::cataloginventory&quot;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;/resources&gt;</span>
-        <span class="nt">&lt;/attribute&gt;</span>
-    <span class="nt">&lt;/extension_attributes&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></div>
-
-<p>In this example, the <code>stock_item</code> attribute is restricted to only the users who have the <code>Magento_CatalogInventory::cataloginventory</code> permission. As a result, an anonymous or unauthenticated user issuing a <code>GET http://store/rest/V1/products/&lt;sku&gt;</code> request will receive product information similar to the following:</p>
-
-<pre>
-{
-    "sku": “tshirt1”,
-    “price”: “20.00”,
-    “description”: “New JSmith design”,
-    “extension_attributes”: {
-        “logo size”: “small”
-    },
-    “custom_attributes”: {
-        “artist”: “James Smith”
-    }
-}
-</pre>
-
-<p>However, an authenticated user with the permission <code>Magento_CatalogInventory::cataloginventory</code> receives the additional <code>stock_item</code> field:</p>
-
-<pre>
-{
-        "sku": “tshirt1”,
-        “price”: “20.00”,
-        “description”: “New JSmith design”,
-        “extension_attributes”: {
-                “logo size”: “small”,
-                “stock_item” : {
-                        “status” : “in_stock”
-                        “quantity”: 70
-                }
-        },
-        “custom_attributes”: {
-                “artist”: “James Smith”
-        }
-}
-</pre>
-
-<p>This only works for extension attributes (those attributes defined in an <code>extension_attributes.xml</code> file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict <code>custom_attributes</code>.</p>
-
 <h3 id="webapi-clients">Web API clients and authentication methods</h3>
 <p>You use a client, such as a mobile application or an external batch job, to access Magento services using web APIs.</p>
 <p>Each type of client has a preferred authentication method. To authenticate, use the authentication method for your preferred client:</p>
@@ -398,6 +344,9 @@ Permissions required to access particular resource are configured in the <code>w
    <li>Third-party application. <a href="/guides/v1.0/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
    <li>JavaScript widget on the Magento Admin or storefront. <a href="/guides/v1.0/get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
+
+<h2 id="related">Related information</h2>
+<p><a href="/guides/v1.0/extension-dev-guide/attributes.html">Extension attribute authentication</a></p>
 
 
 		</div>
@@ -477,10 +426,6 @@ Permissions required to access particular resource are configured in the <code>w
 								
 							
 								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/get-started/service-to-web-service.html">Configure services as web APIs</a></li>
-						
 								
 								
 								
