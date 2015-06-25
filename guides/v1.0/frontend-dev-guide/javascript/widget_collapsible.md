@@ -118,7 +118,7 @@ $("#element").collapsible("option","disabled",false);
 
 <h3 id="fedg_collaps_collapsible">collapsible</h3>
 
-If this option is set to false, the content will not be collapsed when the panel is active.
+If this option is set to false, the content is not collapsed when the panel is active.
 
 **Type**: Boolean
 
@@ -140,11 +140,8 @@ $("#element").collapsible("option","collapsible",false);
 </pre>
 
 <h3 id="fedg_collaps_header">header</h3>
-Selector for the header element, applied using <code>.find()</code> on the main collapsible element. If the element is not found on the main collapsible element, the header becomes the main element.
+Selector for the header element, searched for using <code>.find()</code> on the main collapsible element. If the element with the specified selector is not found on the main collapsible element, the main element becomes a header.
 
-<p class="q">need explanation for "applied using <code>.find()</code> on the main collapsible element" </p>
-
-<p class="q">What is meant by element is not found on the ... element? </p>
 
 **Type**: String, jQuery Object
 
@@ -167,7 +164,7 @@ $("#element").collapsible("option","header",".header");
 </pre>
 
 <h3 id="fedg_collaps_content">content</h3>
-Selector for the content element, applied using `.find()` on the main collapsible element. 
+Selector for the content element, searched for using `.find()` on the main collapsible element. 
 
 **Type**: String, jQuery Object
 
@@ -370,6 +367,18 @@ $("#element").collapsible("option","saveState",true);
 
 <h3 id="fedg_collaps_animate">animate</h3>
 Specifies if the collapse/expand actions are performed with animation.
+If a number is passed, it is regarded as duration. 
+If a string is passed, it is parsed as a json string to an object. 
+If is specified as object:
+<pre>
+{
+duration: <Number>,
+easing: <String>,
+<propToAnimate>: <howToAnimate>
+}
+</pre>
+
+For details about the object passed, see <a href="http://api.jquery.com/animate/" target="_blank">jQuery.animate()</a>
 
 **Type**: Number / String / Object
 
