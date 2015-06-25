@@ -44,7 +44,7 @@ Command usage:
 	magento module:uninstall [--backup-code] [--backup-media] [--backup-db] [-r|--remove-data] [-c|--clear-static-content] \
 	{ModuleName} ... {ModuleName}
 
-where `{ModuleName}` specifies the module name in `<VendorName>_<ModuleName>` format. For example, the Magento Customer module name is `Magento_Customer`
+where `{ModuleName}` specifies the module name in `<VendorName>_<ModuleName>` format. For example, the Magento Customer module name is `Magento_Customer`. To get a list of module names, enter `magento module:status`
 
 The module uninstall command performs the following tasks:
 
@@ -52,9 +52,9 @@ The module uninstall command performs the following tasks:
 
 	This command works *only* with modules defined as Composer packages.
 
-2.	Checks for dependencies with other modules.
+2.	Checks for dependencies with other modules; if there are any, the command terminates..
 
-	If a module depends on other modules, you cannot uninstall only the dependent modules; you must either uninstall all modules or uninstall the depending modules first.
+	To work around this, you can either uninstall all modules at the same time or you can uninstall the depending modules first.
 4.	Requests confirmation to proceed.
 3.	Puts the store in maintenance mode.
 4.	Processes the following command options.
@@ -107,35 +107,42 @@ The module uninstall command performs the following tasks:
 6.	If `--clear-static-content` is specified, clears generated static view files.
 7.	Takes the store out of maintenance mode.
 
-For example, the following command uninstalls a module named `VendorName_SampleModule` after backing up the Magento `app/code` file system, `pub/media` files, and database tables but does *not* remove the module's database schema or data:
+For example, if you attempt to uninstall a module that another module depends on, the following message displays:
 
-	magento module:uninstall VendorName_SampleModule --backup-code --backup-media --backup-db
+	magento module:uninstall Magento_SampleMinimal
+		Cannot uninstall module 'Magento_SampleMinimal' because the following module(s) depend on it:
+        Magento_SampleModifyContent
+
+One alternative is to uninstall both modules after backing up the Magento `app/code` file system, `pub/media` files, and database tables but *not* removing the module's database schema or data:
+
+	magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
 
 Messages similar to the following display:
 
+	 You are about to remove code and/or database tables. Are you sure?[y/N]y
 	Enabling maintenance mode
-	You are about to remove code and database tables. Are you sure?[y/N]y
 	Code backup is starting...
-	Code backup filename: 1433876616_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Code backup path: /var/www/html/magento2/var/backups/1433876616_filesystem.tgz
-	[SUCCESS]: Code backup has completed successfully.
+	Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+	Code backup path: /var/www/html/magento2ce/var/backups/1435261098_filesystem_code.tgz
+	[SUCCESS]: Code backup completed successfully.
 	Media backup is starting...
-	Media backup filename: 1433876616_filesystem_media.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Media backup path: /var/www/html/magento2/var/backups/1433876616_filesystem_media.tgz
-	[SUCCESS]: Media backup has completed successfully.
+	Media backup filename: 1435261098_filesystem_media.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+	Media backup path: /var/www/html/magento2ce/var/backups/1435261098_filesystem_media.tgz
+	[SUCCESS]: Media backup completed successfully.
 	DB backup is starting...
-	DB backup filename: 1433876616_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
-	DB backup path: /var/www/html/magento2/var/backups/1433876616_db.gz
-	[SUCCESS]: DB backup has completed successfully.
-	You are about to remove a module(s) that might have database data. Do you want to remove the data from database?[y/N]
-	Removing VendorName_SampleModule from module registry in database
-	Removing VendorName_SampleModule from module list in deployment configuration
+	DB backup filename: 1435261098_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
+	DB backup path: /var/www/html/magento2ce/var/backups/1435261098_db.gz
+	[SUCCESS]: DB backup completed successfully.
+	You are about to remove a module(s) that might have database data. Remove the database data manually after uninstalling, if desired.
+	Removing Magento_SampleMinimal, Magento_SampleModifyContent from module registry in database
+	Removing Magento_SampleMinimal, Magento_SampleModifyContent from module list in deployment configuration	
 	Removing code from Magento codebase:
 	Loading composer repositories with package information
 	Updating dependencies (including require-dev)
-	Updating dependencies (including require-dev)
-  	  - Removing vendorname/samplemodule (1.0.0)
-	Removing VendorName_SampleModule
+	  - Removing magento/sample-module-modifycontent (1.0.0)
+	Removing Magento/SampleModifycontent
+	  - Removing magento/sample-module-minimal (1.0.0)
+	Removing Magento/SampleMinimal
 	Writing lock file
 	Generating autoload files
 	Cache cleared successfully.

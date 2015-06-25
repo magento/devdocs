@@ -55,7 +55,7 @@ The command performs the following tasks:
 2.	Verifies that the theme is a Composer package; if not, the command terminates.
 3.	Checks for dependencies; if there are any, the command terminates.
 
-	To work around this, you can either uninstall both themes at the same time or you can uninstall the depending theme first.
+	To work around this, you can either uninstall all themes at the same time or you can uninstall the depending theme first.
 4.	Verifies that the theme is not being used; if it is being used, the command terminates.
 5.	Verifies that the theme is not the base of the virtual theme; if it is the base of a virtual theme, the command terminates.
 6.	Puts the store in maintenance mode.
