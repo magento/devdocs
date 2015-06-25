@@ -99,7 +99,7 @@ $("#element").accordion({
 The accordion widget can be initialized using the <code>data-mage-init</code> attribute or `<script>` element, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>.
 
 
-<h2>Options</h2>
+<h2 id="accordion_options">Options</h2>
 Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html#fedg_tabs_options">Magento Tabs options</a>, plus the following custom ones:
 <ul>
 <li><a href="#collaps_active">active</a></li>
@@ -109,11 +109,11 @@ Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javas
 
 <h3 id="collaps_active"><code>active</code></h3>
 
-Specifies which tab should be active when the widget gets instantiated.
+Which tab is active when the widget gets instantiated.
 
 **Type**: Array, String
 
-**Default value**: [0]
+**Default value**: `0`
 
 Example of the accordion initialization with the <code>active</code> option specified:
 <pre>
@@ -123,11 +123,11 @@ $("#element").accordion({ active: [0,1]});
 
 
 <h3 id="collaps_multi"><code>multipleCollapsible</code></h3>
-Specifies is multiple panels can be expanded at the same time.
+If multiple panels can be expanded at the same time.
 
 **Type**: Boolean
 
-**Default value**: false
+**Default value**: `false`
 
 Example of the accordion initialization with the <code>multipleCollapsible</code> option specified:
 <pre>
@@ -144,15 +144,14 @@ $("#element").tabs("option","multipleCollapsible",false);
 
 <h3 id="collaps_open"><code>openOnFocus</code></h3>
 
-<p class="q">Please help to provide a descriptionA: открывается ли аккордион когда тайтл в фокусе при навигации с помощью клавиатуры</p> 
+Defines if the accordion expands when the title gets in focus when keyboard navigation is used.
 
 **Type**: Boolean
 
-**Default value**: false
+**Default value**: `false`
 
 
-
-<h2>Methods</h2>
+<h2 id="accordion_methods">Methods</h2>
 Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.
 
 The custom accordion methods are the following:
@@ -163,13 +162,11 @@ The custom accordion methods are the following:
 </ul>
 
 <h3 id="meth_act"><code>activate(index)</code></h3>
-Activate a tab.
-
-The <code>index</code> parameter defines the which tab to activate.
+Activate a tab with the specified `index`.
 
 **Type**: Number, Array.
 
-If no index is passed, all panels are activated.
+If no `index` is passed, all panels are activated.
 
 Code examples:
 <pre>
@@ -179,9 +176,8 @@ $( "#element" ).accordion( "activate", [0,1]);
 </pre>
 
 <h3 id="meth_deact"><code>deactivate(index)</code></h3>
-Deactivate a tab.
+Deactivate a tab with the specified `index`.
 
-The <code>index</code> parameter defines the which tab to deactivate.
 
 **Type**: Number, Array.
 
