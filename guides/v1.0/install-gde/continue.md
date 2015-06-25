@@ -9,9 +9,12 @@ menu_order: 1
 github_link: install-gde/continue.md
 ---
 
-#### Contents
+## High-level installation roadmap
 
-*	<a href="{{ site.gdeurl }}install-gde/back-intro.html">Go back to the installation overview</a>
+We've broken down instructions for installing the Magento software into the following groups. We suggest you follow these in order, although you can install optional sample data before or after you install the Magento 2 system itself.
+
+By the way, if you're new to Magento installation or you don't know what some of these options means, you can <a href="{{ site.gdeurl }}install-gde/back-intro.html">go back to the installation overview</a>. We have some helpful information there to help you get started.
+
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>
 *	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Pre-installation</a>
