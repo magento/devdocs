@@ -43,13 +43,19 @@ Command usage:
 
 	magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
 
+where 
+
+*	`{theme path}` is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is `frontend/Magento/blank`.
+*	`--backup-code` backs up the Magento 2 codebase as discussed in the paragraphs that follow.
+*	`--clear-static-content` causes static view files to be cleaned. This is necessary to cause static view files to display properly.
+
 The command performs the following tasks:
 
 1.	Verifies that the specified theme paths exist; if not, the command terminates.
 2.	Verifies that the theme is a Composer package; if not, the command terminates.
 3.	Checks for dependencies; if there are any, the command terminates.
 
-	To work around this, you can either uninstall both themes or TBD.
+	To work around this, you can either uninstall both themes at the same time or you can uninstall the depending theme first.
 4.	Verifies that the theme is not being used; if it is being used, the command terminates.
 5.	Verifies that the theme is not the base of the virtual theme; if it is the base of a virtual theme, the command terminates.
 6.	Puts the store in maintenance mode.
@@ -66,9 +72,32 @@ The command performs the following tasks:
 12.	If `--clear-static-content` is specified, cleans generated static view files.
 13.	Takes the store out of maintenance mode.
 
-For example,
+For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:
 
-EXAMPLE TBD
+	Cannot uninstall frontend/Magento/SampleModuleTheme because the following package(s) depend on it:
+        ExampleCorp/sample-module-theme-depend
+
+One alternative is to uninstall both themes at the same time as follows:
+
+	magento theme:uninstall frontend/Magento/SampleModuleTheme frontend/Magento/SampleModuleThemeDepend
+
+Messages similar to the following display:
+
+	Enabling maintenance mode
+	Removing frontend/Magento/SampleModuleTheme, frontend/Magento/SampleModuleThemeDepend from database
+	Removing frontend/Magento/SampleModuleTheme, frontend/Magento/SampleModuleThemeDepend from Magento codebase
+	Loading composer repositories with package information
+	Updating dependencies (including require-dev)
+	  - Removing ExampleCorp/sample-module-theme-depend (dev-master)
+	Removing ExampleCorp/SampleThemeDepend
+	  - Removing ExampleCorp/sample-module-theme (dev-master)
+	Removing ExampleCorp/SampleTheme
+	Writing lock file
+	Generating autoload files
+	Cache cleared successfully.
+	Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. 
+	Failure to clear static view files might cause display issues in the Admin and storefront.
+	Disabling maintenance mode
 
 #### Related topics
 
