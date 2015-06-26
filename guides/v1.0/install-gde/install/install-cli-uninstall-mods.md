@@ -119,7 +119,7 @@ One alternative is to uninstall both modules after backing up the Magento `app/c
 
 Messages similar to the following display:
 
-	 You are about to remove code and/or database tables. Are you sure?[y/N]y
+	You are about to remove code and/or database tables. Are you sure?[y/N]y
 	Enabling maintenance mode
 	Code backup is starting...
 	Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
