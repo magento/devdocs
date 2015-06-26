@@ -18,8 +18,10 @@ By the way, if you're new to Magento installation or you don't know what some of
 1.	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>
 2.	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
 3.	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Pre-installation</a>
-4.	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
-5.	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
+4.	Either of the following:
+
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
 6.	<a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Optional Magento sample data</a>
 7.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
