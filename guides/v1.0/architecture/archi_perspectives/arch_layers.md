@@ -10,37 +10,39 @@ github_link: architecture/archi_perspectives/arch_layers.md
 
 
 <h2>Magento Framework</h2>
-The Magento Framework is responsible for how application components interact, including requests, routing, indexing, caching, and exception handling. Its logical groups are called libraries. The application layer, in its turn, implements the business logic and is built over the framework layer. 
+The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and exception handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies. 
 
-Most simply, the Magento framework consists of all PHP code under Magento\Framework. It also includes non-PHP framework libraries, including the JavaScript and LESS/CSS libraries. The Framework contains no business logic. 
+This primarily PHP software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
+(Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.) 
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Note: Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
+</div>
+
 
 <h3>Magento Framework responsibilities</h3>
-Supports goal of making Magento code more modular as well as decrease dependencies. 
+The Magento framework provides libraries that help reduce the effort of creating modules that contain business logic.
+The framework is responsible for operations that are useful for potentially all modules, including: 
 
-* establishes and supports how to access form fields
+* handling HTTP protocols
+* interacting with the database and filesystem
+* rendering content
 
-* talks to MySql
+<h3>Magento Framework organization</h3>
+Here is the Magento framework folder structure:
 
-* renders a template file
+```
+Lib/
+ ../Internal
+    ../Magento
+      ../Framework
+ ```
 
-Magento framework provides services that reduce the effort of creating modules that contain business logic. 
+* `/lib/internal` contains some non-PHP as well as PHP components. non-PHP framework libraries includes JavaScript, LESS/CSS.
 
-Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model. 
+* `/lib/internal/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). Sample libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. some of which is designed to support CSS rendering
 
-<h3>Magento Framework anatomy</h3>
-The Magento Framework contains
 
-* all the PHP code under Magento\Framework. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries).
-
-* library of code to help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves
-
-* All components that are dependent on libraries only. 
-
-* non-PHP framework libraries, including JavaScript, LESS/CSS.
-
-* infrastructure (base) modules  — these approximately 40 modules differ from the commerce modules. Base modules are not commerce-specific but instead support commerce modules. 
-
-* several areas of commerce functionality (catalog, shopping cart, shipping, taxes, etc) – these modules hold business logic. Third-party extensions frequently slot in here alongside other commerce functionality (for example, drop ship management)
 
 <h2> Presentation layer</h2>
 
