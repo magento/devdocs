@@ -11,9 +11,9 @@ github_link: extension-dev-guide/service-contracts/design-patterns.md
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a design pattern as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
 
-      <div class="bs-callout bs-callout-info" id="info">
+<div class="bs-callout bs-callout-info" id="info">
          <p>Service contract data interfaces are now mutable.</p>
-      </div>
+</div>
 
 <h2 id="top-level-msc">Interface types and locations</h2>
 <p>A service contract must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
