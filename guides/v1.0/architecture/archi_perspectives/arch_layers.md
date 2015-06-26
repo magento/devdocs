@@ -8,6 +8,40 @@ menu_order: 3
 github_link: architecture/archi_perspectives/arch_layers.md
 ---
 
+
+<h2>Magento Framework</h2>
+The Magento Framework is responsible for how application components interact, including requests, routing, indexing, caching, and exception handling. Its logical groups are called libraries. The application layer, in its turn, implements the business logic and is built over the framework layer. 
+
+Most simply, the Magento framework consists of all PHP code under Magento\Framework. It also includes non-PHP framework libraries, including the JavaScript and LESS/CSS libraries. The Framework contains no business logic. 
+
+<h3>Magento Framework responsibilities</h3>
+Supports goal of making Magento code more modular as well as decrease dependencies. 
+
+* establishes and supports how to access form fields
+
+* talks to MySql
+
+* renders a template file
+
+Magento framework provides services that reduce the effort of creating modules that contain business logic. 
+
+Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model. 
+
+<h3>Magento Framework anatomy</h3>
+The Magento Framework contains
+
+* all the PHP code under Magento\Framework. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries).
+
+* library of code to help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves
+
+* All components that are dependent on libraries only. 
+
+* non-PHP framework libraries, including JavaScript, LESS/CSS.
+
+* infrastructure (base) modules  — these approximately 40 modules differ from the commerce modules. Base modules are not commerce-specific but instead support commerce modules. 
+
+* several areas of commerce functionality (catalog, shopping cart, shipping, taxes, etc) – these modules hold business logic. Third-party extensions frequently slot in here alongside other commerce functionality (for example, drop ship management)
+
 <h2> Presentation layer</h2>
 
 
@@ -28,9 +62,6 @@ In general, the service layer
 
 * Provides a stable API for other modules to call into.
 
-
-
-<b> To do: Add diagram</b>
 
 
 
@@ -58,8 +89,6 @@ The service contract of a module is defined by the set of interfaces in the modu
 * data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
 
 
-<b>To do: Add screenshot of relevant directory structure for module</b>
-
 Typically, service contracts provide three distinct types of interfaces: 
 
 * Repository interfaces
@@ -79,8 +108,6 @@ The domain layer holds the business logic layer of a Magento module. It typicall
 * Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models. 
 
 * (Optionally) Includes the implementation of service contracts, although not their definition.
-
-<b>To do: Add diagram: service layer -- > domain layer resource models -- > database</b>
 
 Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic. 
 

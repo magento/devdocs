@@ -18,7 +18,7 @@ Stack components include:
 
 * PHP (5.5 and 5.6)
 
-* Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide)
+* Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4
 
 * HTML5
 
@@ -29,11 +29,17 @@ Stack components include:
 * RequireJS (library that helps load JavaScript resources on demand)
 * Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)
 
+* Apache 2.2, 2.4
+
+* Nginx 1.7
+
+
 * MySQL 5.6
 * Composer (dependency management package for PHP) 
 
 Optional stack components include:
 
+* Varnish (caching)
 * Redis (used for session or page caching)
 * Solr (search engine)
 
@@ -45,7 +51,7 @@ This framework is included in `Magento/mtf`. For more information, see Magento T
 <h3>Stack Basics</h3>
 Information about routing, caching, and indexing will be provided in a future sprint.
 
-<h3>Backwards compatibility</h3>
+<h3>Backward compatibility</h3>
 
 Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
 
