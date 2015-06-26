@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Pre-installation</title>
+	<title>Uninstall language packages</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/install/pre-install.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Pre-installation</h1>
+		<h1 class="page-heading">Uninstall language packages</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/pre-install.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/install-cli-uninstall-langpk.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,47 +165,100 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="instgde-overview-composer">Composer and Magento</h2>
+		<h4>Contents</h4>
 
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.</p>
-
-<p>Composer provides you with the following advantages:</p>
+<p>See one of the following sections:</p>
 
 <ul>
-  <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-  <li>Component-based architecture with robust dependency management</li>
-  <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-  <li>Versioned dependencies</li>
-  <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-  <li>Supports PHP Framework Interoperability standard</li>
+  <li><a href="#instgde-cli-before">First steps</a></li>
+  <li><a href="#instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</a></li>
+  <li><a href="#instgde-cli-uninst-mod-lgpk">Uninstall language packages</a></li>
 </ul>
 
-<p>We’ll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.</p>
+<h2 id="instgde-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-overview-steps">Steps to install Magento</h2>
+<h2 id="instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</h2>
+<p>This section discusses how to uninstall one or more language packages, optionally including the language packages’ code from the file system. You can create backups first so you can restore the data at a later time.</p>
 
-<p>To install Magento, complete the following tasks in the order shown:</p>
+<p>This command uninstalls <em>only</em> language packages that are specified in <code>composer.json</code>; in other words, language packages that are provided as Composer packages. If your language package is not a Composer package, you must uninstall it manually by removing language package code from the file system.</p>
+
+<p>You can restore backups at any time using the <a href="/guides/v1.0/install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+
+<h2 id="instgde-cli-uninst-lgpk-uninst">Uninstall language packages</h2>
+<p>Command usage:</p>
+
+<pre><code>magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}
+</code></pre>
+
+<p>The language package uninstall command performs the following tasks:</p>
 
 <ol>
-  <li><a href="/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-  <li>Install the Magento software:
-    <ul>
-      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-    </ul>
+  <li>
+    <p>Checks for dependencies; if so, the command terminates.</p>
+
+    <p>To work around this, you can either uninstall all dependent language packages at the same time or you can uninstall the depending language packages first.</p>
   </li>
-  <li><a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
+  <li>If <code>--backup code</code> is specified, backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories) to <code>var/backups/&lt;timestamp&gt;_filesystem.tgz</code></li>
+  <li>Removes language packages files from the codebase using <code>composer remove</code>.</li>
+  <li>Cleans the cache.</li>
 </ol>
 
-<p>If you have issues installing the Magento software, see <a href="/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></p>
+<p>For example, if you attempt to uninstall a language package that another language package depends on, the following message displays:</p>
 
-<h4 id="next-step">Next step</h4>
+<pre><code>Cannot uninstall vendorname/language-en_us because the following package(s) depend on it:
+    vendorname/language-en_gb
+</code></pre>
 
-<p>Continue with <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></p>
+<p>One alternative is to uninstall both language packages after backing up the Magento codebase:</p>
 
+<pre><code>magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
+</code></pre>
+
+<p>Messages similar to the following display:</p>
+
+<pre><code>Code backup is starting...
+Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
+[SUCCESS]: Code backup completed successfully.
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+  - Removing vendorname/language-en_us (dev-master)
+Removing Magento/LanguageEn_us
+  - Removing vendorname/language-en_br (dev-master)
+	Removing vendorname/language-en_br (dev-master)
+Writing lock file
+Generating autoload files
+</code></pre>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+</ul>
 
 
 		</div>
@@ -328,7 +381,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
 									
 								
 								
@@ -443,7 +496,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
 						
 								
 								
@@ -720,8 +773,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/pre-install.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/pre-install.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

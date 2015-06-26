@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Pre-installation</title>
+	<title>Uninstall themes</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/install/pre-install.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/install/install-cli-theme-uninstall.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Pre-installation</h1>
+		<h1 class="page-heading">Uninstall themes</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/pre-install.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/install-cli-theme-uninstall.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,47 +165,142 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="instgde-overview-composer">Composer and Magento</h2>
+		<h4>Contents</h4>
 
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.</p>
-
-<p>Composer provides you with the following advantages:</p>
+<p>See one of the following sections:</p>
 
 <ul>
-  <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-  <li>Component-based architecture with robust dependency management</li>
-  <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-  <li>Versioned dependencies</li>
-  <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-  <li>Supports PHP Framework Interoperability standard</li>
+  <li><a href="#instgde-cli-before">First steps</a></li>
+  <li><a href="#instgde-install-magento-prereq">Prerequisite</a></li>
+  <li><a href="#instgde-install-uninst-theme-over">Overview of uninstalling themes</a></li>
+  <li><a href="#instgde-install-uninst-theme-uninst">Uninstall themes</a></li>
 </ul>
 
-<p>We’ll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.</p>
+<h2 id="instgde-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-overview-steps">Steps to install Magento</h2>
+<h2 id="instgde-install-uninst-theme-prereq">Prerequisite</h2>
+<p>Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of <code>&lt;your Magento install dir&gt;/app/design/&lt;area name&gt;</code>. You must specify the path to the theme starting with the area, which is either <code>frontend</code> (for storefront themes) or <code>adminhtml</code> (for Magento Admin themes).</p>
 
-<p>To install Magento, complete the following tasks in the order shown:</p>
+<p>For example, the path to the Luma theme provided with Magento 2 is <code>frontend/Magento/luma</code>.</p>
+
+<p>For more information about themes, see <a href="/guides/v1.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.</p>
+
+<h2 id="instgde-install-uninst-theme-over">Overview of uninstalling themes</h2>
+<p>This section discusses how to uninstall one or more themes, optionally including the themes’ code from the file system. You can create backups first so you can restore the data at a later time.</p>
+
+<p>This command uninstalls <em>only</em> themes that are specified in <code>composer.json</code>; in other words, themes that are provided as Composer packages. If your theme is not a Composer package, you must uninstall it manually by:</p>
+
+<ul>
+  <li>Updating the <code>parent</code> node information in <code>theme.xml</code> to remove references to the theme.</li>
+  <li>
+    <p>Removing theme code from the file system.</p>
+
+    <p><a href="/guides/v1.0/frontend-dev-guide/themes/theme-inherit.html">More information about theme inheritance</a>.</p>
+  </li>
+</ul>
+
+<h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
+<p>Command usage:</p>
+
+<pre><code>magento theme:uninstall [--backup-code] [-c|--clear-static-content] {theme path} ... {theme path}
+</code></pre>
+
+<p>where </p>
+
+<ul>
+  <li><code>{theme path}</code> is the relative path to the theme, starting with the area name. For example, the path to the Blank theme supplied with Magento 2 is <code>frontend/Magento/blank</code>.</li>
+  <li><code>--backup-code</code> backs up the Magento 2 codebase as discussed in the paragraphs that follow.</li>
+  <li><code>--clear-static-content</code> causes static view files to be cleaned. This is necessary to cause static view files to display properly.</li>
+</ul>
+
+<p>The command performs the following tasks:</p>
 
 <ol>
-  <li><a href="/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-  <li>Install the Magento software:
-    <ul>
-      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-    </ul>
+  <li>Verifies that the specified theme paths exist; if not, the command terminates.</li>
+  <li>Verifies that the theme is a Composer package; if not, the command terminates.</li>
+  <li>
+    <p>Checks for dependencies; if there are any, the command terminates.</p>
+
+    <p>To work around this, you can either uninstall all themes at the same time or you can uninstall the depending theme first.</p>
   </li>
-  <li><a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
+  <li>Verifies that the theme is not being used; if it is being used, the command terminates.</li>
+  <li>Verifies that the theme is not the base of the virtual theme; if it is the base of a virtual theme, the command terminates.</li>
+  <li>Puts the store in maintenance mode.</li>
+  <li>
+    <p>If <code>--backup-code</code> is specified, backs up the Magento 2 codebase, excluding the <code>pub/static</code>, <code>pub/media</code>, and <code>var</code> directories.</p>
+
+    <p>The backup file name is <code>var/backups/&lt;timestamp&gt;_filesystem.tgz</code></p>
+
+    <p>You can restore backups at any time using the <a href="/guides/v1.0/install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+  </li>
+  <li>Removes themes from the <code>theme</code> database table.</li>
+  <li>Remove themes from code base using <code>composer remove</code>.</li>
+  <li>Cleans the cache.</li>
+  <li>Cleans generated classes</li>
+  <li>If <code>--clear-static-content</code> is specified, cleans generated static view files.</li>
 </ol>
 
-<p>If you have issues installing the Magento software, see <a href="/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></p>
+<p>For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:</p>
 
-<h4 id="next-step">Next step</h4>
+<pre><code>Cannot uninstall frontend/ExampleCorp/SampleModuleTheme because the following package(s) depend on it:
+    ExampleCorp/sample-module-theme-depend
+</code></pre>
 
-<p>Continue with <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></p>
+<p>One alternative is to uninstall both themes at the same time as follows after backing up the Magento codebase:</p>
 
+<pre><code>magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
+</code></pre>
+
+<p>Messages similar to the following display:</p>
+
+<pre><code>Code backup is starting...
+Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
+[SUCCESS]: Code backup completed successfully.Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from database
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from Magento codebase
+  - Removing ExampleCorp/sample-module-theme-depend (dev-master)
+Removing ExampleCorp/SampleThemeDepend
+  - Removing ExampleCorp/sample-module-theme (dev-master)
+Removing ExampleCorp/SampleTheme
+Writing lock file
+Generating autoload files
+Cache cleared successfully.
+Alert: Generated static view files were not cleared. You can clear them using the --clear-static-content option. 
+Failure to clear static view files might cause display issues in the Admin and storefront.
+Disabling maintenance mode
+</code></pre>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+</ul>
 
 
 		</div>
@@ -328,7 +423,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
 									
 								
 								
@@ -439,7 +534,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/install-gde/install/install-cli-theme-uninstall.html">Uninstall themes</a></li>
 						
 								
 							
@@ -720,8 +815,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/pre-install.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/pre-install.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-theme-uninstall.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-theme-uninstall.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

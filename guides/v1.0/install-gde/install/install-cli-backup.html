@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Pre-installation</title>
+	<title>Back up the file system, media, and database</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/install/pre-install.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/install/install-cli-backup.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Pre-installation</h1>
+		<h1 class="page-heading">Back up the file system, media, and database</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/pre-install.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/install/install-cli-backup.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,47 +165,123 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="instgde-overview-composer">Composer and Magento</h2>
+		<h4>Contents</h4>
 
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.</p>
-
-<p>Composer provides you with the following advantages:</p>
+<p>See one of the following sections:</p>
 
 <ul>
-  <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-  <li>Component-based architecture with robust dependency management</li>
-  <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-  <li>Versioned dependencies</li>
-  <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-  <li>Supports PHP Framework Interoperability standard</li>
+  <li><a href="#instgde-cli-before">First steps</a></li>
+  <li><a href="#instgde-cli-uninst-back-over">Overview of backup</a></li>
+  <li><a href="#instgde-cli-uninst-back">Backing up</a></li>
 </ul>
 
-<p>We’ll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.</p>
+<h2 id="instgde-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul></span>
+</div>
+<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-overview-steps">Steps to install Magento</h2>
+<h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
+<p>This command enables you to back up:</p>
 
-<p>To install Magento, complete the following tasks in the order shown:</p>
+<ul>
+  <li>The Magento file system (excluding <code>var</code> and <code>pub/static</code> directories)</li>
+  <li>The the <code>pub/media</code> directory</li>
+  <li>The Magento 2 database</li>
+</ul>
+
+<p>Backups are stored in the <code>var/backups</code> directory and can be restored at any time using the <a href="/guides/v1.0/install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+
+<h2 id="instgde-cli-uninst-back">Backing up</h2>
+<p>Command usage:</p>
+
+<pre><code>magento setup:backup [--code] [--media] [--db]
+</code></pre>
+
+<p>The command performs the following tasks:</p>
 
 <ol>
-  <li><a href="/guides/v1.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-  <li><a href="/guides/v1.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-  <li><a href="/guides/v1.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-  <li>Install the Magento software:
-    <ul>
-      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
-      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line installation</a></li>
-    </ul>
+  <li>Puts the store in maintenance mode.</li>
+  <li>
+    <p>Executes one of the following command options.</p>
+
+    <table>
+<col width="25%" />
+<col width="65%" />
+<col width="10%" />
+<tbody>
+    <tr>
+        <th>Option</th>
+        <th>Meaning</th>
+        <th>Backup file name and location</th>
+    </tr>
+		
+<tr>
+    <td><p>--code</p></td>
+    <td><p>Backs up the Magento file system (excluding <code>var</code> and <code>pub/static</code> directories).</p></td>
+    <td><p>var/backups/&lt;timestamp&gt;_filesystem.tgz</p></td>
+</tr>
+<tr>
+    <td><p>--media</p></td>
+    <td><p>Back up the <code>pub/media</code> directory.</p></td>
+    <td><p>var/backups/&lt;timestamp&gt;_filesystem_media.tgz</p></td>
+</tr>
+<tr>
+<tr>
+    <td><p>--db</p></td>
+    <td><p>Back up the Magento 2 database.</p></td>
+    <td><p>var/backups/&lt;timestamp&gt;_db.gz</p></td>
+</tr>
+<tr>
+
+
+
+</tr></tr></tbody></table>
   </li>
-  <li><a href="/guides/v1.0/install-gde/install/verify.html">Verify the installation</a></li>
+  <li>Takes the store out of maintenance mode.</li>
 </ol>
 
-<p>If you have issues installing the Magento software, see <a href="/guides/v1.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></p>
+<p>For example, to back up the file system and database,</p>
 
-<h4 id="next-step">Next step</h4>
+<pre><code>magento setup:backup --code --db
+</code></pre>
 
-<p>Continue with <a href="/guides/v1.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></p>
+<p>Messages similar to the following display:</p>
 
+<pre><code>Enabling maintenance mode
+Code backup is starting...
+Code backup filename: 1434133011_filesystem.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+Code backup path: /var/www/html/magento2/var/backups/1434133011_filesystem.tgz
+[SUCCESS]: Code backup completed successfully.
+DB backup is starting...
+DB backup filename: 1434133011_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
+DB backup path: /var/www/html/magento2/var/backups/1434133011_db.gz
+[SUCCESS]: DB backup completed successfully.
+Disabling maintenance mode
+</code></pre>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="/guides/v1.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+</ul>
 
 
 		</div>
@@ -328,7 +404,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/install/pre-install.html">Pre-installation</a></li>
 									
 								
 								
@@ -435,7 +511,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a></li>
 						
 								
 							
@@ -720,8 +796,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/pre-install.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/pre-install.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-backup.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/install/install-cli-backup.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
