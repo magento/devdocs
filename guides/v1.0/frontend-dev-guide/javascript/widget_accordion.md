@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: Accordion widget
-menu_order: 3
+menu_order: 1
 menu_title: Accordion widget
 github_link: frontend-dev-guide/javascript/widget_accordion.md
 ---

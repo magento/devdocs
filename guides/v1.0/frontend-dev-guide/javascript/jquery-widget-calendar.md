@@ -4,7 +4,7 @@ group: javascript
 subgroup: JQuery widget details
 title: Calendar widget
 menu_title: Calendar widget
-menu_order: 3
+menu_order: 2
 github_link: frontend-dev-guide/javascript/jquery-widget-calendar.md
 ---
 
