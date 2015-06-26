@@ -50,5 +50,5 @@ At the very minimum, a Magento module could be called via XML file:
 
 Get your feet wet quickly and build <a href="{{ site.gdeurl }}extension-dev-guide/build_a_simple_module.html">a simple Magento module</a>.
 
-Or jump right in and use <a href="{{ site.gdeurl }}extension-dev-guide/worksheet.html"t>a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.
+Or jump right in and use <a href="{{ site.gdeurl }}extension-dev-guide/worksheet.html">a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.
 
