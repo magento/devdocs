@@ -1,10 +1,10 @@
 ---
 layout: default
-group: extension-dev-guide
-subgroup: A_Introduction
+group: Contributor Guide
+subgroup: 
 title: Contribute to Magento DevDocs!
 menu_title: Contribute to Magento DevDocs!
-menu_order: 1
+menu_order: 100
 
 ---
 
