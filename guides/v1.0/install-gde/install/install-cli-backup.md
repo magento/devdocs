@@ -2,8 +2,8 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Back up the file system, media, or database
-menu_title: Back up the file system, media, or database
+title: Back up the file system, media, and database
+menu_title: Back up the file system, media, and database
 menu_node: 
 menu_order: 100
 github_link: install-gde/install/install-cli-backup.md
