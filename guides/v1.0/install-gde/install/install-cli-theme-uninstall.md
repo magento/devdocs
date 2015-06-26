@@ -31,6 +31,8 @@ For example, the path to the Luma theme provided with Magento 2 is `frontend/Mag
 For more information about themes, see <a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.
 
 <h2 id="instgde-install-uninst-theme-over">Overview of uninstalling themes</h2>
+This section discusses how to uninstall one or more themes, optionally including the themes' code from the file system. You can create backups first so you can restore the data at a later time.
+
 This command uninstalls *only* themes that are specified in `composer.json`; in other words, themes that are provided as Composer packages. If your theme is not a Composer package, you must uninstall it manually by:
 
 *	Updating the `parent` node information in `theme.xml` to remove references to the theme.
@@ -70,24 +72,25 @@ The command performs the following tasks:
 10.	Cleans the cache.
 11.	Cleans generated classes
 12.	If `--clear-static-content` is specified, cleans generated static view files.
-13.	Takes the store out of maintenance mode.
 
 For example, if you attempt to uninstall a theme that another theme depends on, the following message displays:
 
-	Cannot uninstall frontend/Magento/SampleModuleTheme because the following package(s) depend on it:
+	Cannot uninstall frontend/ExampleCorp/SampleModuleTheme because the following package(s) depend on it:
         ExampleCorp/sample-module-theme-depend
 
-One alternative is to uninstall both themes at the same time as follows:
+One alternative is to uninstall both themes at the same time as follows after backing up the Magento codebase:
 
-	magento theme:uninstall frontend/Magento/SampleModuleTheme frontend/Magento/SampleModuleThemeDepend
+	magento theme:uninstall frontend/ExampleCorp/SampleModuleTheme frontend/ExampleCorp/SampleModuleThemeDepend --backup-code
 
 Messages similar to the following display:
 
-	Enabling maintenance mode
-	Removing frontend/Magento/SampleModuleTheme, frontend/Magento/SampleModuleThemeDepend from database
-	Removing frontend/Magento/SampleModuleTheme, frontend/Magento/SampleModuleThemeDepend from Magento codebase
+	Code backup is starting...
+	Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+	Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
+	[SUCCESS]: Code backup completed successfully.Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from database
 	Loading composer repositories with package information
 	Updating dependencies (including require-dev)
+	Removing frontend/ExampleCorp/SampleModuleTheme, frontend/ExampleCorp/SampleModuleThemeDepend from Magento codebase
 	  - Removing ExampleCorp/sample-module-theme-depend (dev-master)
 	Removing ExampleCorp/SampleThemeDepend
 	  - Removing ExampleCorp/sample-module-theme (dev-master)

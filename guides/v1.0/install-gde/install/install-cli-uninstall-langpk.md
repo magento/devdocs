@@ -23,9 +23,9 @@ See one of the following sections:
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</h2>
-This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as Composer packages. If your language package is not a Composer package, you must uninstall it manually by removing language package code from the file system.
-
 This section discusses how to uninstall one or more language packages, optionally including the language packages' code from the file system. You can create backups first so you can restore the data at a later time.
+
+This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as Composer packages. If your language package is not a Composer package, you must uninstall it manually by removing language package code from the file system.
 
 You can restore backups at any time using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
@@ -48,17 +48,22 @@ For example, if you attempt to uninstall a language package that another languag
 	Cannot uninstall vendorname/language-en_us because the following package(s) depend on it:
         vendorname/language-en_gb
 
-In that case, you can uninstall both language packages after backing up the Magento codebase:
+One alternative is to uninstall both language packages after backing up the Magento codebase:
 
 	magento i18n:uninstall vendorname/language-en_us vendorname/language-en_gb --backup-code
 
 Messages similar to the following display:
 
+	Code backup is starting...
+	Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
+	Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
+	[SUCCESS]: Code backup completed successfully.
 	Loading composer repositories with package information
 	Updating dependencies (including require-dev)
 	  - Removing vendorname/language-en_us (dev-master)
-	Removing vendorname/language-en_br (dev-master)
+	Removing Magento/LanguageEn_us
 	  - Removing vendorname/language-en_br (dev-master)
+		Removing vendorname/language-en_br (dev-master)
 	Writing lock file
 	Generating autoload files
 

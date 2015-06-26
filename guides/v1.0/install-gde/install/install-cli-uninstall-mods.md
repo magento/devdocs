@@ -123,15 +123,15 @@ Messages similar to the following display:
 	Enabling maintenance mode
 	Code backup is starting...
 	Code backup filename: 1435261098_filesystem_code.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Code backup path: /var/www/html/magento2ce/var/backups/1435261098_filesystem_code.tgz
+	Code backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_code.tgz
 	[SUCCESS]: Code backup completed successfully.
 	Media backup is starting...
 	Media backup filename: 1435261098_filesystem_media.tgz (The archive can be uncompressed with 7-Zip on Windows systems)
-	Media backup path: /var/www/html/magento2ce/var/backups/1435261098_filesystem_media.tgz
+	Media backup path: /var/www/html/magento2/var/backups/1435261098_filesystem_media.tgz
 	[SUCCESS]: Media backup completed successfully.
 	DB backup is starting...
 	DB backup filename: 1435261098_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
-	DB backup path: /var/www/html/magento2ce/var/backups/1435261098_db.gz
+	DB backup path: /var/www/html/magento2/var/backups/1435261098_db.gz
 	[SUCCESS]: DB backup completed successfully.
 	You are about to remove a module(s) that might have database data. Remove the database data manually after uninstalling, if desired.
 	Removing Magento_SampleMinimal, Magento_SampleModifyContent from module registry in database
