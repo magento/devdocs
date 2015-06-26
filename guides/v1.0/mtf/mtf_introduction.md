@@ -39,23 +39,23 @@ test suite), or run all available tests.
 
 What tools do I need to work with MTF?
 
--   PHPUnit (downloaded via composer during installation)
+-   [PHPUnit][] (downloaded via composer during installation);
 
--   Selenium
+-   [Selenium Standalone Server][];
 
--   Web browser
+-   Web browser.
 
 What do I have as output working with MTF?
 
--   Tested application
+-   Tested application;
 
--   Basic PHPUnit results
+-   Basic PHPUnit results;
 
 -   Screenshots of failures (**\[magento\_root\] &gt; dev &gt; tests &gt;
-    functional &gt; var &gt; log &gt; magento**)
+    functional &gt; var &gt; log &gt; magento**);
 
 -   Logs of failures (**\[magento\_root\] &gt; dev&gt; tests &gt;
-    functional &gt; var &gt; log**)
+    functional &gt; var &gt; log**).
 
 <h2 id="mtf_intro_audi">Audience</h2>
 
@@ -75,27 +75,27 @@ MTF is purposed to test user interactions with web application under
 test.
 
 MTF works with functional tests located in
-**\[magento\_root\] &gt; dev &gt; tests &gt; functional**
+**\[magento\_root\] &gt; dev &gt; tests &gt; functional**.
 
 Out-of-the-box tests cover basic functionality. Extended functionality
 may be tested using customized tests, created with MTF.
 
 Relatively to software life cycle the MTF could be useful on the following phases:
 
-1)  development phase – to test any changes of functionality (new
-    modules, extensions, bug fixing)
+1) development phase – to test any changes of functionality (new
+    modules, extensions, bug fixing);
 
-2)  maintenance phase – for periodical automated regression resting.
+2) maintenance phase – for periodical automated regression resting.
 
 <h3 id="mtf_intro_scope_use-case-ex">MTF use cases examples</h3>
 
 1)  As Magento developer I want to cover implemented functionality with
     new tests (e. g. added attribute on Customer Form, extended Search
-    functionality, added tags for Products etc.)
+    functionality, added tags for Products etc.).
 
 2)  As software engineer I want to perform regression testing before
     release to be confident that Magento works as expected with new
-    functionality
+    functionality.
     
 <h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
 
@@ -108,9 +108,9 @@ Also,
 
 -   JavaScript tests ([devdocs.magento.com &gt; Guides &gt; V1.0 &gt;
     Extension-dev-guide &gt; Test &gt; Test
-    js-unit](http://devdocs.magento.com/guides/v1.0/extension-dev-guide/test/test_js-unit.html)),
+    js-unit](http://devdocs.magento.com/guides/v1.0/extension-dev-guide/test/test_js-unit.html));
 
--   Performance tests([devdocs.magento.com &gt; Guides &gt; V1.0 &gt;
+-   Performance tests ([devdocs.magento.com &gt; Guides &gt; V1.0 &gt;
     Config-guide &gt; Cli &gt;
     Config-cli-subcommands-perf-data](http://devdocs.magento.com/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html)).
 
@@ -119,3 +119,7 @@ Also,
 
 Follow the MTF project and contribute on GitHub
 <https://github.com/magento/mtf>
+
+
+[Selenium Standalone Server]: http://www.seleniumhq.org/download/
+[PHPUnit]: https://phpunit.de/
