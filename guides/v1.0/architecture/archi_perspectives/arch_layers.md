@@ -19,6 +19,7 @@ This primarily PHP software component is organized into logical groups called <i
   <p>Note: Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
 </div>
 
+You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  
 
 <h3>Magento Framework responsibilities</h3>
 The Magento framework provides libraries that help reduce the effort of creating modules that contain business logic.
@@ -41,6 +42,8 @@ Lib/
 * `/lib/internal` contains some non-PHP as well as PHP components. non-PHP framework libraries includes JavaScript, LESS/CSS.
 
 * `/lib/internal/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). Sample libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. some of which is designed to support CSS rendering
+
+* `/lib/web` contains JavaScript and CSS/LESS files.
 
 
 
@@ -103,6 +106,10 @@ However, there is no requirement that service contracts conform to all three pat
 Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (`di.xml`) file. The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`. 
 
 Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
+
+<h3>Related topics </h3>
+Service contracts
+
 
 <h2>Domain layer</h2>
 The domain layer holds the business logic layer of a Magento module. It typically does not contain resource-specific or database-specific information. Its primary functions include:
