@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architecture
 title: Product Architecture Overview
 menu_title: Product Architecture Overview

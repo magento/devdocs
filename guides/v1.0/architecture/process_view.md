@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architecture
 title: Process view
 menu_title: Process view

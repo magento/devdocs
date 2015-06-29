@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architecture
 title: Deployment view
 menu_title: Deployment view

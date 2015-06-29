@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architecture
 title: Logical view
 menu_title: Logical view
