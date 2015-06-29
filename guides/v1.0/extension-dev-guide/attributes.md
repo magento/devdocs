@@ -13,7 +13,7 @@ Magento provides two types of attributes that integrators can use to extend the 
 
 * Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed on the GUI. See the merchant documentation for information about information about managing custom attributes.
 
-	EAV attributes are a subset of custom attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules are the only modules that use EAV attributes.
+	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules have the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
 * Extension attributes. Extension attributes are new in Magento 2. They are used to extend functionality and often use more complex data types than custom attributes. These attributes do not appear on the GUI.
 
@@ -35,11 +35,11 @@ The `Customer` module does not have treat its EAV attributes in a special manner
 
 <h2 id="extension">Extension attributes</h2>
 
-Use `ExtensibleDataInterface`to implement extension attributes. In your code, you must define `getExtensionAttributes()`.
+Use `ExtensibleDataInterface` to implement extension attributes. In your code, you must define `getExtensionAttributes()` and `setExtensionAttributes(*ExtensionInterface param)`.
 
 <code>public function getExtensionAttributes();</code>
 
-Most likely, you'll also want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
+Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
 
 
 
@@ -74,7 +74,7 @@ where:
 <tbody>
 <tr>
 <td>for</td>
-<td>The path to the interface that processes the extensions. The interface can be in a different module. The path can be anything under a <code>Magento/&lt;Module&gt;/Api</code> directory.</td>
+<td>The fully-qualified type name with the namespace that processes the extensions. The value much be a type that implements `ExtensibleDataInterface`. The interface can be in a different module. </td>
 <td>Magento\Quote\Api\Data\TotalsInterface</td>
 </tr>
 <tr>
@@ -111,8 +111,10 @@ The table involved in a join operation. See <a href="#search">Searching extensio
 </tr>
 <tr>
 <td>field</td>
-<td>One or more fields present in the interface specified in the <code>type</code> keyword.</td>
-<td>&lt;field>firstname&lt;/field><br>&lt;field>lastname&lt;/field><br>&lt;field>email&lt;/field></td>
+<td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
+<p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
+<td>&lt;field>firstname&lt;/field><br>&lt;field>lastname&lt;/field><br>&lt;field>email&lt;/field><br><br>
+&lt;field column="customer_group_code">code&lt;/field></td>
 </tr>
 </tbody>
 
@@ -127,21 +129,16 @@ The system uses a join directive to add external attributes to a collection and 
 In the following example, an attribute named `quoteApiTestAttribute` of type `UserInterface` added to the `CartInterface`. 
 
 {% highlight XML %}
-<extension_attributes for="Magento\Quote\Api\Data\CartInterface">
-        <attribute code="quoteApiTestAttribute" type="Magento\User\Api\Data\UserInterface">
-            <join reference_table="admin_user"
-                  join_on_field="store_id"
-                  reference_field="user_id"
-                    >
-                <field>firstname</field>
-                <field>lastname</field>
-                <field>email</field>
+<extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
+    <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
+         <join reference_table="cataloginventory_stock_item" reference_field="product_id" join_on_field="entity_id">
+                <field>qty</field>
             </join>
         </attribute>
-    </extension_attributes>
+   </extension_attributes>
 {% endhighlight %}
 
-When `getList()` is called, it returns a list of `CartInterface`s. When it does this, the code populates the `quoteApiTestAttribute` with a joined operation in which the `UserInterface`’s `firstName`, `lastName`, and `email` properties come from the `admin_user` table where the `Cart`'s `store_Id` is joined with the `admin_user.user_id` column. 
+When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column. 
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
@@ -162,7 +159,7 @@ The following [code sample](https://github.com/magento/magento2/blob/develop/app
 </config>
 {% endhighlight %}
 
-In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://store/rest/V1/products/<sku>` request will receive product information similar to the following:
+In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<MAGENTO_BASE_URL>/rest/V1/products/<sku>` request will receive product information similar to the following:
 
 <pre>
 {
@@ -182,18 +179,18 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
 
 <pre>
 {
-        "sku": “tshirt1”,
-        “price”: “20.00”,
-        “description”: “New JSmith design”,
-        “extension_attributes”: {
-                “logo size”: “small”,
-                “stock_item” : {
-                        “status” : “in_stock”
-                        “quantity”: 70
-                }
-        },
+   "sku": “tshirt1”,
+   “price”: “20.00”,
+   “description”: “New JSmith design”,
+    “extension_attributes”: {
+        “logo size”: “small”,
+        “stock_item” : {
+            “status” : “in_stock”
+            “quantity”: 70
+             }
+         },
         “custom_attributes”: {
-                “artist”: “James Smith”
+          “artist”: “James Smith”
         }
 }
 </pre>
