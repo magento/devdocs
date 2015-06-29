@@ -35,8 +35,7 @@ An *extension* is a module or modules that are packaged for sale on Magento Conn
 
 
 ##Magento module example
-
-At the very minimum, a Magento module could be called via XML file:
+Modules are declared in the module.xml file. Here is a minimal example: 
 
 {% highlight XML %}
     <?xml version="1.0"?>
