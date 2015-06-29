@@ -11,6 +11,8 @@ github_link: rest/list.md
 
 <h2 id="list">List of REST APIs</h2>
 
+Updated June 29, 2015. Additions since the last update are marked with asterisks (*).
+
 <h3>Magento/Backend</h3>
 
     GET    /V1/modules
@@ -108,16 +110,16 @@ github_link: rest/list.md
 
 <h3>Magento/Cms</h3>
 
-    GET    /V1/cmsPage/:pageId
-    GET    /V1/cmsPage/search
-    POST   /V1/cmsPage
-    PUT    /V1/cmsPage/:id
-    DELETE /V1/cmsPage/:pageId
-    GET    /V1/cmsBlock/:blockId
-    GET    /V1/cmsBlock/search
-    POST   /V1/cmsBlock
-    PUT    /V1/cmsBlock/:id
-    DELETE /V1/cmsBlock/:blockId
+    * GET    /V1/cmsPage/:pageId
+    * GET    /V1/cmsPage/search
+    * POST   /V1/cmsPage
+    * PUT    /V1/cmsPage/:id
+    * DELETE /V1/cmsPage/:pageId
+    * GET    /V1/cmsBlock/:blockId
+    * GET    /V1/cmsBlock/search
+    * POST   /V1/cmsBlock
+    * PUT    /V1/cmsBlock/:id
+    * DELETE /V1/cmsBlock/:blockId
 
 <h3>Magento/ConfigurableProduct</h3>
 
@@ -252,7 +254,7 @@ github_link: rest/list.md
     POST   /V1/carts/:cartId/billing-address
     GET    /V1/guest-carts/:cartId/billing-address
     POST   /V1/guest-carts/:cartId/billing-address
-    POST   /V1/guest-carts/:cartId/addresses
+    * POST   /V1/guest-carts/:cartId/addresses
     GET    /V1/carts/mine/billing-address
     POST   /V1/carts/mine/billing-address
     GET    /V1/carts/:cartId/coupons
@@ -270,13 +272,13 @@ github_link: rest/list.md
     POST   /V1/guest-carts/:cartId/shipping-address
     GET    /V1/carts/mine/shipping-address
     POST   /V1/carts/mine/shipping-address
-    POST   /V1/carts/mine/addresses
+    * POST   /V1/carts/mine/addresses
     PUT    /V1/carts/:cartId/order
     GET    /V1/carts/:cartId/totals
-    PUT    /V1/guest-carts/:cartId/collect-totals
+    * PUT    /V1/guest-carts/:cartId/collect-totals
     GET    /V1/guest-carts/:cartId/totals
     GET    /V1/carts/mine/totals
-    PUT    /V1/carts/mine/collect-totals
+    * PUT    /V1/carts/mine/collect-totals
 
 <h3>Magento/Sales</h3>
 
