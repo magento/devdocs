@@ -142,8 +142,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 <h3 id="ext-auth">Extension attribute authentication</h3>
 
-Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. 
-
+Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.
 
 The following [code sample](https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a “3rd-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
@@ -196,4 +195,7 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
 </pre>
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
+
+<h2 id="related">Related topics</h2>
+<a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
 
