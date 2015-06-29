@@ -19,6 +19,8 @@ Composer is a separate application that manages PHP dependencies. Before you can
 2.	<a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.
 2.	Run the <a href="#install-composer-install">`composer install` command</a> from your Magento root directory (for example, `/var/www/magento2/`).
 
+	The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
+
 <h2 id="install-update-depend-apache">Switching to the Apache user</h2>
 
 For the installation to work properly, all files written by Composer *must* be owned by the web server user. There are at least two ways to do this:
@@ -91,6 +93,12 @@ After you completed the tasks discussed in the preceding section, update depende
 		cd /var/www/magento2 && composer install
 
 	This command updates package dependencies and can take a few minutes to complete.
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</p></span>
+	</div>
+
 
 3.	(Secure environment). Change ownership to the web server user as follows:
 

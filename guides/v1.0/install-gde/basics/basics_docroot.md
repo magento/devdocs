@@ -43,9 +43,8 @@ To find the docroot:
 	
 3.	See one of the following sections:
 
-	*	TBD
-	*	TBD
-	*	TBD
+	*	<a href="#basics-docroot-apache22">Find the docroot for Apache 2.2</a>
+	*	<a href="#basics-docroot-apache24">Find the docroot for Apache 2.4</a>
 
 <h2 id="basics-docroot-apache22">Find the docroot for Apache 2.2</h2>
 To find the docroot for Apache 2.2:
