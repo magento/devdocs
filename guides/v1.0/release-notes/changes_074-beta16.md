@@ -29,15 +29,16 @@ We made the following changes in this release:
 *	TBD
 
 <h3 id="rn-074b16-changes-join">Join directive</h3>
-Created a Join directive, join process for tables, and XML configuration support to define a performant join for search services.
-
+*	Created a Join directive, join process for tables, and XML configuration support to define a performant join for search services.
+*	Changed return type from `\Magento\Sales\Api\Data\OrderSearchResultInterface[]` to `\Magento\Sales\Api\Data\OrderInterface[]` in the API method `getList` in `Magento\Sales\Api\Data\OrderSearchResultInterface`
+*	Changed return type from `\Magento\Sales\Api\Data\InvoiceSearchResultInterface` to `\Magento\Sales\Api\Data\InvoiceCommentSearchResultInterface` in the API method `getList` in `Magento\Sales\Api\InvoiceCommentRepositoryInterface`
 
 <h3 id="rn-074b16-changes-other">Other changes</h3>
 *	Updated the "composer/composer" dependency to version "1.0.0-alpha10".
 *	The <a href="http://php.net/manual/en/book.xsl.php" target="_blank">ext-xsl</a> PHP extension is now a requirement to install the Magento software.
-*	We added the `tmp` directory to the list of allowed media resources.
+*	We added the `pub/media/tmp` directory to the list of allowed media resources.
 
-	This means that, for example, when you upload an image using the product edit page, the image displays even if the product isn't saved.
+	For example, now when you upload an image using the product edit page, the image displays even if the product isn't saved.
 
 *	The `pub/get.php` entry point now displays exceptions in <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>.
 
@@ -69,3 +70,45 @@ This section discusses the backward-compatible changes we made in this release.
 
 	Replace arguments for method `debug` from `($logData, ConfigInterface $config)` to `(array $debugData, array $debugReplaceKeys, $debugFlag);`
 
+### Magento_Catalog
+
+#### API changes
+The product link entity used as the payload for PUT, POST (`/V1/products/:sku/links`) and DELETE (`/V1/products/:sku/links/:type/:linkedProductSku`) has changed. The `product_sku` attribute is now `sku`. Examples follow:
+
+OLD
+
+	{% highlight json %}
+	{ 
+	    "entity": { 
+	       "product_sku": "Simple_Product",         
+  	      "linked_product_sku": "simple3", 
+ 	       "link_type": "upsell" 
+ 	  }
+	}
+	{% endhighlight %}
+ 
+NEW
+
+	{% highlight json %}
+	{ 
+    	"entity": { 
+        	"sku": "Simple_Product",         
+    	    "linked_product_sku": "simple3", 
+        	"link_type": "upsell" 
+    	}
+	}
+	{% endhighlight %}
+
+`link_type` is no longer specified in the REST URL. You must specify it in the payload for PUT and POST operations as follows:
+
+OLD
+
+	POST: /V1/products/Simple_Product/links/related
+
+NEW
+
+	POST: /V1/products/Simple_Product/links
+
+#### Zrgument change
+
+In `Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator, we added a new argument `\Magento\Catalog\Api\ProductRepositoryInterface $productRepository` into `__construct;`
