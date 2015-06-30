@@ -48,6 +48,7 @@ Index of the tab, which is active at the moment of initialization. Starts from "
 **Type**: Number
 
 **Default value**: `0`
+
 <h3 id="fedg_tabs_options-ajaxUrlElement"><code>ajaxUrlElement</code></h3> 
 Selector for the tab element, which contains the URL for the Ajax request.
 The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
@@ -55,6 +56,7 @@ The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_c
 **Type**:String
 
 **Default value**: `[data-ajax=true]`
+
 <h3 id="fedg_tabs_options-ajaxContent"><code>ajaxContent</code></h3>
 Defines if the contend is loaded by Ajax request.
 The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
@@ -62,6 +64,7 @@ The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_c
 **Type**: Boolean
 
 **Default value**: `false`
+
 <h3 id="fedg_tabs_options-animate"><code>animate</code></h3>
 Specifies if the collapse/expand actions are performed with animation. The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
@@ -91,6 +94,7 @@ Class assigned to the tab being closed.
 **Type**: String
 
 **Default value**: `null`
+
 <h3 id="fedg_tabs_options-collapsible"><code>collapsible</code></h3>
 
 If this option is set to false, the content is not collapsed when the panel is active. The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
@@ -98,6 +102,7 @@ If this option is set to false, the content is not collapsed when the panel is a
 **Type**: Boolean
 
 **Default value**: `false`
+
 <h3 id="fedg_tabs_options-collapsibleElement"><code>collapsibleElement</code></h3>
 Selector of the element for which the collapsible widget is initialized.
 
@@ -160,6 +165,7 @@ Class name assigned to a tab which is being currently opened.
 **Type**: String
 
 **Default value**: `null`
+
 <h3 id="fedg_tabs_options-openOnFocus"><code>openOnFocus</code></h3>
 Used for setting keyboard navigation. Defines if the tab is expanded when its header is in focus.
 
