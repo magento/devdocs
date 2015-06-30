@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Technology Stack</title>
+	<title>Deployment view</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/architecture/arch-basics.html">
+	<link rel="canonical" href="//guides/v1.0/architecture/deployment_view.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Technology Stack</h1>
+		<h1 class="page-heading">Deployment view</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/arch-basics" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/architecture/deployment_view.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,73 +165,24 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Architectural Basics</h2>
-
-<h3>Magento Technology Stack</h3>
-<p>Magento’s highly modular structure includes the following open-source technologies:</p>
-
-<p>Stack components include:</p>
+		<h2>Components</h2>
+<p>One of Magento’s strongest features is its extensibility. Because Magento can be customized so extensively, there’s no standard deployment to describe. </p>
 
 <ul>
-  <li>
-    <p>PHP (5.5 and 5.6)</p>
-  </li>
-  <li>
-    <p>Coding standards PSR-0 (autoloading standard), PSR-1 (basic coding standards), and PSR-2 (coding style guide), PSR-3, PSR-4</p>
-  </li>
-  <li>
-    <p>HTML5</p>
-  </li>
-  <li>
-    <p>CSS3 (LESS CSS pre-processor)</p>
-  </li>
-  <li>
-    <p>JQuery (primary JavaScript library)</p>
-  </li>
-  <li>RequireJS (library that helps load JavaScript resources on demand)</li>
-  <li>
-    <p>Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)</p>
-  </li>
-  <li>
-    <p>Apache 2.2, 2.4</p>
-  </li>
-  <li>
-    <p>Nginx 1.7</p>
-  </li>
-  <li>MySQL 5.6</li>
-  <li>Composer (dependency management package for PHP) </li>
+  <li>application server</li>
+  <li>load balancer</li>
+  <li>web server</li>
+  <li>database server</li>
 </ul>
 
-<p>Optional stack components include:</p>
+<h2>Simple use case scenario</h2>
+<p>(MAGEDOC-1813)</p>
 
-<ul>
-  <li>Varnish (caching)</li>
-  <li>Redis (used for session or page caching)</li>
-  <li>Solr (search engine)</li>
-</ul>
+<h2>Complex use case scenario</h2>
+<p> </p>
 
-<p>Magento also provides an automated testing suite that includes test scripts for integration, functional areas, and performance. Components include PHPUnit for the unit test framework and Selenium for the functional test framework. </p>
+<h2>Default test framework</h2>
 
-<p>This framework is included in <code>Magento/mtf</code>. For more information, see Magento Test Framework guide.</p>
-
-<h3>Stack Basics</h3>
-<p>Information about routing, caching, and indexing will be provided in a future sprint.</p>
-
-<h3>Backward compatibility</h3>
-
-<p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.</p>
-
-<p>To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses Semantic Versioning 2.0.0 to indicate whether a change breaks backward compatibility. Version numbers are in the format MAJOR.MINOR.PATCH, where:</p>
-
-<p>MAJOR indicates incompatible API changes</p>
-
-<p>MINOR indicates backward-compatible functionality has been added</p>
-
-<p>PATCH indicates backward-compatible bug fixes</p>
-
-<p>The backward compatibility policy applies to PHP code annotated with @api</p>
-
-<p>We promise to be backward compatible for classes and methods annotated with @api within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with @deprecated. The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.</p>
 
 
 		</div>
@@ -268,232 +219,6 @@
 			
 			
 				
-				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Architecture</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_whatis.html">What is Magento?</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular system</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/arch_layers.html">Architecture layers</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_intro.html">Modules</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_libraries.html">Libraries</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_themes.html">Themes</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_translations.html">Language packages</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/versioning.html">Versioning Policy</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/backward-compatibility.html">Backward compatibility</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v1.0/architecture/arch-basics.html">Technology Stack</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Behavior</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-calc.html">How Magento calculates prices</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-render.html">How Magento renders prices</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Modules</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_conventions.html">Module naming and location conventions</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">View library</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/view-lib.html">View library</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/design-abstract.html">Design abstractions</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-assets.html">Page assets</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-type.html">Page types</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/template-engine.html">Template engine</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/static-process.html">Static file processing</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-
-
 				
 			
 			
@@ -620,8 +345,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/architecture/arch-basics.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/architecture/arch-basics.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/architecture/deployment_view.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/architecture/deployment_view.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
