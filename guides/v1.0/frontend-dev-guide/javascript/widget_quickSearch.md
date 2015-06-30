@@ -12,16 +12,16 @@ github_link: frontend-dev-guide/javascript/widget_quickSearch.md
 
 The quickSearch widget is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
 
-The suggest widget source is <a href="{{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js">app/code/Magento/Search/view/frontend/web/form-mini.js</a>.
+The suggest widget source is <a href="{{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js" target="_blank">app/code/Magento/Search/view/frontend/web/form-mini.js</a>.
 
 <h2 id="quicksearch_init">Inititalize quickSearch</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/" target="_blank">Initialize JavaScript</a> topic.
 
 
 <h2 id="quicksearch_options">Options</h2>
 <ul>
 <li><a href="#q_autocomplete">autocomplete</a></li>
-<li><a href="#q_formSelector">formSelector</li>
+<li><a href="#q_formSelector">formSelector</a></li>
 <li><a href="#q_minSearchLength">minSearchLength</a></li>
 <li><a href="#q_responseFieldElements">responseFieldElements</a></li>
 <li><a href="#q_searchLabel">searchLabel</a></li>
@@ -29,6 +29,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 <li><a href="#q_submitBtn">submitBtn</a></li>
 <li><a href="#q_template">template</a></li>
 </ul>
+
 
 <h3 id="q_autocomplete"><code>autocomplete</code></h3>
 Attaches the `autocomplete` attribute to the search field.
