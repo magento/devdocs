@@ -24,11 +24,11 @@ Composer is a separate application that manages PHP dependencies. Before you can
 For the installation to work properly, all files written by Composer *must* be owned by the web server user. There are at least two ways to do this:
 
 *	Run Composer as the web server user as discussed in this section
-*	Run Composer as another user and change file ownership afterward
+*	Run Composer as another user and change file ownership afterward (more secure)
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>We suggest running Composer in a web server shell in a development environment <em>only</em>. In a more secure environment, you should change not run a shell; instead, change ownership after you run Composer. </p></span>
+  <p>We suggest running Composer in a web server shell in a development environment <em>only</em>. In a more secure environment, you should change ownership to the web server user after you run Composer.</p></span>
 </div>
 
 In the discussion that follows, it's assumed that the CentOS web server user is `apache` and the Ubuntu web server user is `www-data`.
