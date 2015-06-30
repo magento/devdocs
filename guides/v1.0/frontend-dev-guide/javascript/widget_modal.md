@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/javascript/widget_modal.md
 
 <h2 id="modal_overview">Overview</h2>
 
-The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget conffiguration enables the following:
+The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
 <ul>
 <li>Configuring as popup or slide</li>
@@ -41,7 +41,7 @@ $('#modal_content').modal({
 For details about how to initialize the widget in a` .phtml` template, refer to the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="modal_options">Options</h2>
-
+The modal widget has the following options:
 <ul>
 <li><a href="#modal_buttons">buttons</a></li>
 <li><a href="#modal_innerScroll">innerScroll</a></li>
@@ -85,8 +85,7 @@ Modal scroll position.
 **Default value**: `false`
 
 <h3 id="modal_modalClass"><code>modalClass</code></h3>
-Custom classes for modal widget.
-<p class="q">widget or window?</p>
+Custom classes for modal window.
 
 **Type**: String 
 
@@ -107,8 +106,7 @@ Turn popup modal window to slide panel on small screens. Available if the `type`
 **Default value**: `false`
 
 <h3 id="modal_title"><code>title</code></h3>
-Translated title for popup widget.
-<p class="q">tranlsated?popup widget or window?</p>
+Translated title for popup window.
 
 **Type**: String 
 

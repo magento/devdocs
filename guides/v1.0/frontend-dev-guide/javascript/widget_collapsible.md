@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/javascript/widget_collapsible.md
 <!-- used in Checkout -->
 The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
-Unlike the accordion widget is that collapsible is intialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
+Unlike the accordion widget is that collapsible is initialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
 
 To "bind" several instances of collapsible widget, the <code>collateral</code> option is used.
 
@@ -29,7 +29,7 @@ $("#element").collapsible();
 
 Where <code>#element</code> is the element's selector.
 
-If you need to be able to save the expaneded/collapsed state, the element must have the `<id>` attribute specified. 
+If you need to be able to save the expanded/collapsed state, the element must have the `<id>` attribute specified. 
 
 The element's `id` is also used in deep linking: if the `id` of the content or the id of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
 
@@ -172,10 +172,12 @@ $("#element").collapsible("option","collapsible",false);
 
 <h3 id="fedg_collaps_collateral"><code>collateral</code></h3>
 
+Specifies the element, and the class which is assigned to this element, when the current element is opened; and is removed when the current element is closed.
+
 An object that contains the following:
 
-- an element, can be a selector or jquery object. 
-- openedState: the class name which is assigned to the element when the current element is in opened; removed when the current element is closed.
+- `element`: an element, can be a selector or jquery object. 
+- `openedState`: the class name which is assigned to the element when the current element is in opened; removed when the current element is closed.
 
 **Type**: String
 
@@ -213,7 +215,7 @@ $("#element").collapsible("option","content",".content");
 </pre>
 
 <h3 id="fedg_collaps_closedState"><code>closedState</code></h3>
-Specifies the class that is assigned to the main collapsible element when the content gets collapsed.
+Specifies the class that is assigned to the main collapsible element, when the content gets collapsed.
 
 **Type**: String
 
@@ -235,7 +237,7 @@ $("#element").collapsible("option","contentClass","collapsible-content");
 </pre>
 
 <h3 id="fedg_collaps_disabled"><code>disabled</code></h3>
-Specifies if the content should be disabled when the widget gets initialized.
+Specifies if the content should be disabled, when the widget gets initialized.
 
 **Type**: Boolean
 
@@ -245,7 +247,7 @@ Initialize the collapsible widget with the `disabled` option specified:
 <pre>
 $("#element").collapsible({ disabled: true});
 </pre>
-Get or set the disable option after initialization:
+Get or set the `disabled` option after initialization:
 
 <pre>
 //getter

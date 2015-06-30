@@ -109,7 +109,7 @@ Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javas
 
 <h3 id="collaps_active"><code>active</code></h3>
 
-Which tab is active when the widget gets instantiated.
+Defines which tab is active when the widget gets instantiated.
 
 **Type**: Array, String
 
@@ -123,7 +123,7 @@ $("#element").accordion({ active: [0,1]});
 
 
 <h3 id="collaps_multi"><code>multipleCollapsible</code></h3>
-If multiple panels can be expanded at the same time.
+Defines if multiple panels can be expanded at the same time.
 
 **Type**: Boolean
 
@@ -144,7 +144,7 @@ $("#element").tabs("option","multipleCollapsible",false);
 
 <h3 id="collaps_open"><code>openOnFocus</code></h3>
 
-Defines if the accordion expands when the title gets in focus when keyboard navigation is used.
+For keyboard navigation defines if the accordion expands when the title gets in focus.
 
 **Type**: Boolean
 

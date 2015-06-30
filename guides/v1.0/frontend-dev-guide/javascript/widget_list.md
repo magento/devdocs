@@ -9,7 +9,7 @@ github_link: frontend-dev-guide/javascript/widget_list.md
 ---
 <h2>Overview</h2>
 
-Provides developers a way to move items, typically a list, from one content section to another.
+Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 
 
 The List widget source file is <a href="{{site.mage2000url}}">lib/web/mage/list.js</a>.
@@ -60,7 +60,7 @@ Number of the current item.
 **Default value**: `0`
 
 <h3 id="#l_maxItems"><code>maxItems</code></h3>
-The number of list items that can be added to the destination.
+Number of list items that can be added to the destination.
 
 **Type**: Integer
 

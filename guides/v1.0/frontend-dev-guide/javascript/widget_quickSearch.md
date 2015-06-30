@@ -10,12 +10,12 @@ github_link: frontend-dev-guide/javascript/widget_quickSearch.md
 
 <h2>Overview</h2>
 
-The quickSearch widget is a custom autocomplete widget that populates a list of suggest search terms for a given field. 
+The quickSearch widget is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
 
 The suggest widget source is <a href="{{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js">app/code/Magento/Search/view/frontend/web/form-mini.js</a>.
 
 <h2 id="quicksearch_init">Inititalize quickSearch</h2>
-For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
 
 
 <h2 id="quicksearch_options">Options</h2>
@@ -84,7 +84,7 @@ Disable the submit button.
 **Default value**: `button[type="submit"]`
 
 <h3 id="q_template"><code>template</code></h3>
-Template responsible for rendering returned data(suggested terms).
+Template responsible for rendering returned data (suggested terms).
 
 **Type**: String
 

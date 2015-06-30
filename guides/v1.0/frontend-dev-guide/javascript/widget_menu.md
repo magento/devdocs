@@ -18,7 +18,7 @@ The Magento menu widget is a customized <a href="http://api.jqueryui.com/menu/" 
 The Magento menu widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>.
 
 <h2 id="menu_init">Initialize menu</h2>
-For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
 
 <h2 id="menu_options">Options</h2>
 Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of the following custom ones:
@@ -30,14 +30,14 @@ Menu widget options mostly coincide with the options of the jQuery UI Menu widge
 
 </ul>
 
-<h3 id="m_delay">delay</h3>
+<h3 id="m_delay"><code>delay</code></h3>
 Set the delay length of opening submenu.
 
-**Type**: Int
+**Type**: Number
 
 **Default value**: `300`
 
-<h3 id="m_responsive">responsive</h3>
+<h3 id="m_responsive"><code>responsive</code></h3>
 Setting the default responsive handler for the navigation widget.
 
 **Type**: Boolean.

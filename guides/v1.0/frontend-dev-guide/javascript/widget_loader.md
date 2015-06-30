@@ -14,7 +14,7 @@ The Loader widget blocks page content (all content or a part of it). Its intende
 The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js">lib/web/mage/loader.js</a>.
 
 <h2 id="loader_init">Initialize loader</h2>
-The loader widget is initialized as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initializaiton</a>..
+The loader widget is initialized as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
 
 <h2 id="loader_options">Options</h2>
 Tge loader widget has the following options:
@@ -60,7 +60,7 @@ The text that is displayed under the loader image. <br>
 
 <h2>Events</h2>
 <h3><code>processStart</code></h3>
-Display the loader. Can be triggered for/on any page element.
+Display the loader. Can be triggered on any page element.
 
 <h3><code>processStop</code></h3>
-Hide the loader. Can be triggered for/on any page element.
+Hide the loader. Can be triggered on any page element.
