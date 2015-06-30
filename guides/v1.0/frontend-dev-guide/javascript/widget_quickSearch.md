@@ -21,7 +21,7 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 <h2 id="quicksearch_options">Options</h2>
 <ul>
 <li><a href="#q_autocomplete">autocomplete</a></li>
-<li><a href="#q_formSelector"><code>formSelector</code></li>
+<li><a href="#q_formSelector">formSelector</li>
 <li><a href="#q_minSearchLength">minSearchLength</a></li>
 <li><a href="#q_responseFieldElements">responseFieldElements</a></li>
 <li><a href="#q_searchLabel">searchLabel</a></li>
