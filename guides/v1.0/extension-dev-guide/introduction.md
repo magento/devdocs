@@ -10,7 +10,7 @@ github_link: extension-dev-guide/introduction.md
 ---
 
 
-This guide is for developers that need to modify or customize an existing Magento module, or are building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.
+This guide is for developers that or are building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.
 
 
 ##Magento is made up of components:
