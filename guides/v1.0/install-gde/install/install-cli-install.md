@@ -124,7 +124,7 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 		<td><p>--db-host</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li>The database server's fully qualified host name or IP address.</li>
-		<li><code>localhost</code> )default) if your database server ison the same host as your web server.</li>
+		<li><code>localhost</code> )default) if your database server is on the same host as your web server.</li>
 		<li>UNIX socket; for example, <code>/var/run/mysqld/mysqld.sock</code></li></ul>
 		<p><strong>Note</strong>: You can optionally specify the database server port in its host name like <code>www.example.com:9000</code></p>
 </td>

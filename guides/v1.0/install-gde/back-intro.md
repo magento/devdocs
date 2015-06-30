@@ -9,7 +9,9 @@ menu_order: 1
 github_link: install-gde/back-intro.md
 ---
 
-#### Contents
+## Need more help?
+
+Need some basic info before you get started? New to Magento installation? Here are some helpful resources for you:
 
 *	<a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Installation overview</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">Is the Magento software already installed?</a>
