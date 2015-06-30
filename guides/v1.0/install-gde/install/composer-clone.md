@@ -8,6 +8,11 @@ menu_node:
 menu_order: 1
 github_link: install-gde/install/composer-clone.md
 ---
+
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+<!-- References are to http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-install, http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-clone -->
+<!-- Also referred to by view\magento\setup\readiness-check\progress.phtml owned by Ogres. Reference is to http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-access and http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-access -->
  
 #### Contents 
 

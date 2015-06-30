@@ -9,6 +9,11 @@ menu_node: parent
 github_link: contributor-guide/CONTRIBUTING.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: CONTRIBUTING.md owned by core -->
+<!-- References are to this topic itself, http://devdocs.magento.com/guides/v1.0/contributor-guide/CONTRIBUTING.html#fork, CONTRIBUTING.html#pull_request -->
+
+
 The following topics are included in the Guide:
 
 * <a href="#contribute">Contribute to Magento 2 code</a>

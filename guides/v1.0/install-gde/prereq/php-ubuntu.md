@@ -8,6 +8,8 @@ menu_order: 3
 github_link: install-gde/prereq/php-ubuntu.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
 
 
 <h4 id="instgde-php-prereq-contents">Contents</h4>

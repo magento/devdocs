@@ -9,6 +9,10 @@ menu_order: 1
 github_link: install-gde/install/install-web.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core and setup\view\magento\setup\landing.phtml owned by Ogres -->
+
+
 <h4>Contents</h4>   
 
 See one of the following sections:

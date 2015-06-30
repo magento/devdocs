@@ -9,6 +9,10 @@ menu_order: 1
 github_link: install-gde/bk-install-guide.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
+
 <h2>Magento software installation</h2>
 Hi, we're glad you're among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation. 
 

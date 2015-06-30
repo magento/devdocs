@@ -8,6 +8,10 @@ menu_node:
 menu_order: 5
 github_link: install-gde/install/prepare-install.md
 ---
+
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
   
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
 

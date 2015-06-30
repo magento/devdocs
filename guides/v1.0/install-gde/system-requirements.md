@@ -9,7 +9,9 @@ menu_order: 1
 github_link: install-gde/system-requirements.md
 ---
  
- 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: app\bootstrap.php owned by core and setup\view\magento\setup\readiness-check\progress.phtml owned by Ogres -->
+
 Before you install Magento, make sure your system meets or exceeds the following requirements:
 
 *	Operating systems 

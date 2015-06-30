@@ -9,6 +9,10 @@ menu_order: 99
 github_link: install-gde/basics/basics_software.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
+
 
 The full list of software is listed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">System Requirements</a> but here are the essentials:
 

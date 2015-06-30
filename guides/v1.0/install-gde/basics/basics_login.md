@@ -9,6 +9,9 @@ menu_order: 2
 github_link: install-gde/basics/basics_login.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
  
 To complete almost all of the tasks in this guide, you must remotely log in to your Magento server. 
 

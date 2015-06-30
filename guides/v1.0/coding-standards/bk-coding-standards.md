@@ -8,6 +8,9 @@ menu_order: 1
 menu_node: parent
 github_link: coding-standards/bk-coding-standards.md
 ---
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: CONTRIBUTING.md owned by core -->
+
 
 <p>Like many large projects, Magento has coding standards.</p>
 <p>To code extensions, follow the Magento standards for code:</p>
