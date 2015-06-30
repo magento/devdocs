@@ -71,8 +71,6 @@ The following file is a sample of a file you must add:
 &lt;/page&gt;
 </pre>
 
-<p class="q">question to the reviewer: are there any peculiarities in using http vs https</p>
-
 When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.
 
 
@@ -129,7 +127,6 @@ To remove the static resources, linked in a page `<head>`, make a change similar
    &lt;/head&gt;
 &lt;/page&gt;
 </pre>
-<p class="q">question to the reviewer: are there any peculiarities in using http vs https</p>
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
