@@ -35,6 +35,7 @@ github_link: pattern-library/getting-user-input/form_elements/form_elements.md
 * <a href="#help_tip">Contextual Help tooltip</a>
 * <a href="#help_text">Help text</a>
 * <a href="#specs">Styling and Spacing</a>
+* <a href="#accessibility"> Accessibility </a>
 * <a href="#assets">Assets</a>
 
 
@@ -225,6 +226,13 @@ _**Sample of specs**_
 <br />
 <img src="img/spec_sample.png">
 <br />
+
+<h3 id="accessibility">Accessibility</h3>
+
+Follow this guideline:
+
+<a href="http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms"> http://www.w3.org/TR/WCAG10-HTML-TECHS/#forms </a>
+
 
 <h3 id="assets">Assets</h3>
 PSD files and PNG images can be found here:
