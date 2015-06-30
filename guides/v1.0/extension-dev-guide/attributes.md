@@ -73,48 +73,48 @@ where:
 </thead>
 <tbody>
 <tr>
-<td>for</td>
-<td>The fully-qualified type name with the namespace that processes the extensions. The value much be a type that implements `ExtensibleDataInterface`. The interface can be in a different module. </td>
-<td>Magento\Quote\Api\Data\TotalsInterface</td>
+<td><p>for</p></td>
+<td><p>The fully-qualified type name with the namespace that processes the extensions. The value much be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
+<td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
 </tr>
 <tr>
-<td>code </td>
-<td>The name of the attribute. The attribute name should be in snake case (the first letter in each word should be in lowercase, with each word separated by an underscore). </td>
-<td>gift_cards_amount_used</td>
+<td><p>code</p></td>
+<td><p>The name of the attribute. The attribute name should be in snake case (the first letter in each word should be in lowercase, with each word separated by an underscore). </p></td>
+<td><code>gift_cards_amount_used</code></td>
 </tr>
 <tr>
-<td>type </td>
-<td>The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface.</td>
-<td>float <br>Magento\CatalogInventory\Api\Data\StockItemInterface</td>
+<td><p>type</p></td>
+<td><p>The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface.</p></td>
+<td><code>float <br>Magento\CatalogInventory\Api\Data\StockItemInterface</code></td>
 </tr>
 <tr>
-<td>ref</td>
-<td>Optional. Restricts access to the extension attribute to users with the specified permission.</td>
-<td>Magento_CatalogInventory::cataloginventory</td>
+<td><p>ref</p></td>
+<td><p>Optional. Restricts access to the extension attribute to users with the specified permission.</p></td>
+<td><code>Magento_CatalogInventory::cataloginventory</code></td>
 </tr>
 <tr>
-<td>reference_table</td>
+<td><p>reference_table</p></td>
 <td>
-The table involved in a join operation. See <a href="#search">Searching extension attributes</a> for details.
+<p>The table involved in a join operation. See <a href="#search">Searching extension attributes</a> for details.</p>
 </td>
-<td>admin_user</td>
+<td><code>admin_user</code></td>
 </tr>
 <tr>
-<td>reference_field</td>
-<td>Column in the reference_table</td>
-<td>user_id</td>
+<td><p>reference_field</p></td>
+<td><p>Column in the reference_table</p></td>
+<td><code>user_id</code></td>
 </tr>
 <tr>
-<td>join_on_field</td>
-<td>The column of the table associated with the interface specified in the <code>for</code> keyword that will be used in the join operation.</td>
-<td>store_id</td>
+<td><p>join_on_field</p></td>
+<td><p>The column of the table associated with the interface specified in the <code>for</code> keyword that will be used in the join operation.</p></td>
+<td><code>store_id</code></td>
 </tr>
 <tr>
-<td>field</td>
+<td><p>field</p></td>
 <td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
 <p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td>&lt;field>firstname&lt;/field><br>&lt;field>lastname&lt;/field><br>&lt;field>email&lt;/field><br><br>
-&lt;field column="customer_group_code">code&lt;/field></td>
+<td><code>&lt;field>firstname&lt;/field><br>&lt;field>lastname&lt;/field><br>&lt;field>email&lt;/field><br><br>
+&lt;field column="customer_group_code">code&lt;/field></code></td>
 </tr>
 </tbody>
 
