@@ -4,13 +4,13 @@ group: javascript
 subgroup: JQuery widget details
 title: Tabs widget
 menu_title: Tabs widget
-menu_order: 5
+menu_order: 10
 github_link: frontend-dev-guide/javascript/jquery-widget-tabs.md
 ---
 
 <h2 id="fedg_tabs-widget_overview">Overview</h2>
 
-The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list.
+The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">Magento collapsible widget</a>.
 
 The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js">lib/web/mage/tabs.js</a>. 
 
@@ -47,55 +47,71 @@ Index of the tab, which is active at the moment of initialization. Starts from "
 
 **Type**: Number
 
-**Default value**: 0
+**Default value**: `0`
 <h3 id="fedg_tabs_options-ajaxUrlElement"><code>ajaxUrlElement</code></h3> 
 Selector for the tab element, which contains the URL for the Ajax request.
-<p class="q">the option for the collapsible widget</p>
+The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**:String
 
-**Default value**: *[data-ajax=true]*
+**Default value**: `[data-ajax=true]`
 <h3 id="fedg_tabs_options-ajaxContent"><code>ajaxContent</code></h3>
 Defines if the contend is loaded by Ajax request.
-<p class="q">the option for the collapsible widget</p>
+The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: Boolean
 
-**Default value**: *false*
+**Default value**: `false`
 <h3 id="fedg_tabs_options-animate"><code>animate</code></h3>
-<p class="q">see the option for the collapsible widget</p>
+Specifies if the collapse/expand actions are performed with animation. The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
-**Type**:Boolean
+**Type**: 
+Multiple types are supported:
+<ul>
+<li>Boolean: the `false` value disables the animation </li> 
+<li>Number: duration in milliseconds</li> 
+<li>String: is parsed to an object as a json string</li> 
+<li>Object: 
+<pre>
+{
+duration: &lt;Number&gt;,
+easing: &lt;String&gt;,
+&lt;propToAnimate&gt;: &lt;howToAnimate&gt;
+}
+</pre>
+For details about the object passed, see <a href="http://api.jquery.com/animate/" target="_blank">jQuery.animate()</a>.
+</li>
+</ul>
 
-**Default value**: *false*
+**Default value**: `false`
+
 <h3 id="fedg_tabs_options-closedState"><code>closedState</code></h3>
 Class assigned to the tab being closed.
 
 **Type**: String
 
-**Default value**: *null*
+**Default value**: `null`
 <h3 id="fedg_tabs_options-collapsible"><code>collapsible</code></h3>
 
-If this option is set to false, the content is not collapsed when the panel is active.
-<p class="q">the option for the collapsible widget</p>
+If this option is set to false, the content is not collapsed when the panel is active. The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: Boolean
 
-**Default value**: *false*
+**Default value**: `false`
 <h3 id="fedg_tabs_options-collapsibleElement"><code>collapsibleElement</code></h3>
 Selector of the element for which the collapsible widget is initialized.
 
 **Type**: String 
 
-**Default value**: "[data-role=collapsible]"
+**Default value**: `[data-role=collapsible]`
+
 <h3 id="fedg_tabs_options-content"><code>content</code></h3>
 
-Selector for the content element, searched for using `.find()` on the main collapsible element. 
+Selector for the content element, searched for using `.find()` on the main collapsible element. The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
-<p class="q">the option for the collapsible widget</p>
 **Type**: String
 
-**Default value**: *"[data-role=content]"*
+**Default value**: `[data-role=content]`
 
 <h3 id="fedg_tabs_options-disabled"><code>disabled</code></h3>
 
@@ -103,30 +119,28 @@ Array of the elements' indexes which are disabled when the widget is initialized
 
 **Type**: Array of numbers.
 
-**Default value**: *[]*
+**Default value**: `[]`
 
 <h3 id="fedg_tabs_options-disabledState"><code>disabledState</code></h3>
 Class assigned to the tab being currently disabled.
 
 **Type**: String
 
-**Default value**: *null*
+**Default value**: `null`
 
 <h3 id="fedg_tabs_options-header"><code>header</code></h3>
 
 Selector for the header element, searched for using `.find()` on the main collapsible element. 
-
-<p class="q">the option for the collapsible widget</p>
+The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: String
 
-**Default value**: *"[data-role=title]"*
+**Default value**: `[data-role=title]`
 
 <h3 id="fedg_tabs_options-icons"><code>icons</code></h3>
 
 The classes for icons to be used in headers. If no classes are specified, icons are not be created. A new span is created and appended to the header, the classes for this span are automatically changed whenever the content gets expanded/collapsed.
-<p class="q">the option for the collapsible widget</p>
-
+The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: String
 
@@ -138,46 +152,49 @@ Class assigned to a tab during content loading for this tab.
 
 **Type**: String
 
-**Default value**: *null*
+**Default value**: `null`
 
 <h3 id="fedg_tabs_options-openedState"><code>openedState</code></h3>
 Class name assigned to a tab which is being currently opened.
 
 **Type**: String
 
-**Default value**: *null*
+**Default value**: `null`
 <h3 id="fedg_tabs_options-openOnFocus"><code>openOnFocus</code></h3>
 Used for setting keyboard navigation. Defines if the tab is expanded when its header is in focus.
 
 **Type**: Boolean
 
-**Default value**: *true*
+**Default value**: `true`
 
 <h3 id="fedg_tabs_options-saveState"><code>saveState</code></h3>
 
 Specifies if the state is saved in the local storage if the browser supports it. Otherwise will be saved into a cookie.
-<p class="q">the option for the collapsible widget</p>
+The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: Boolean
 
-**Default value**: *true*
+**Default value**: `true`
 
 <h3 id="fedg_tabs_options-trigger"><code>trigger</code></h3>
 
 Selector for the trigger element, applied using `.find()` on the main collapsible element. If the trigger is not found, the header becomes a trigger.
-<p class="q">the option for the collapsible widget</p>
+The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: String, jQuery Object
 
-**Default value**: *[data-role=trigger]*
+**Default value**: `[data-role=trigger]`
 
 
 <h2 id="tabs_methods">Methods</h2>
-*	<a href="#fedg_tabs_methods-activate">activate()</a>
-*	<a href="#fedg_tabs_methods-enable">enable()</a>
-*	<a href="#fedg_tabs_methods-deactivate">deactivate()</a>
-*	<a href="#fedg_tabs_options-disable">disable()</a>
 
+The tabs widget has the following methods:
+<ul>
+<li><a href="#fedg_tabs_methods-activate">activate()</a></li>
+<li><a href="#fedg_tabs_methods-enable">enable()</a></li>
+<li><a href="#fedg_tabs_methods-deactivate">deactivate()</a></li>
+<li><a href="#fedg_tabs_options-disable">disable()</a></li>
+</ul>
 <h3 id="fedg_tabs_methods-activate">activate()</h3>
 
 `activate(index)` displays `content` for the tab with the corresponding `index`.
@@ -193,12 +210,17 @@ Selector for the trigger element, applied using `.find()` on the main collapsibl
 `disable(index)` disables the tab with the corresponding `index`.
 
 <h2 id="fedg_tabs_events-methods">Events</h2>
-<p class="q">events of the collapsible widget</p>
+Tabs is subscribed to the same events as the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget:
 
-<h3 id="c_beforeOpen">beforeOpen callback</h3>
+<ul>
+<li><a href="#fedg_tabs_beforeOpen_callback">beforeOpen callback</a></li>
+<li><a href="#fedg_tabs_dimensionsChanged">dimensionsChanged</a></li>
+</ul>
+
+<h3 id="fedg_tabs_beforeOpen_callback"><code>beforeOpen callback</code></h3>
 Called before the content is opened. 
 
-<h3>dimensionsChanged</h3>
+<h3 id="fedg_tabs_dimensionsChanged">dimensionsChanged</h3>
 Called after content is opened or closed.
 
 

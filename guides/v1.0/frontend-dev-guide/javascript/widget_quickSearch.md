@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: QuickSearch widget
-menu_order: 2
+menu_order: 9
 menu_title: QuickSearch widget
 github_link: frontend-dev-guide/javascript/widget_quickSearch.md
 ---
@@ -21,24 +21,26 @@ For information about how to initilize a widget in a JS component or `.phtml` te
 <h2 id="quicksearch_options">Options</h2>
 <ul>
 <li><a href="#q_autocomplete">autocomplete</a></li>
+<li><a href="#q_formSelector"><code>formSelector</code></li>
 <li><a href="#q_minSearchLength">minSearchLength</a></li>
 <li><a href="#q_responseFieldElements">responseFieldElements</a></li>
-<li><a href="#q_selectClass">selectClass</a></li>
-<li><a href="#q_template">template</a></li>
-<li><a href="#q_submitBtn">submitBtn</a></li>
 <li><a href="#q_searchLabel">searchLabel</a></li>
+<li><a href="#q_selectClass">selectClass</a></li>
+<li><a href="#q_submitBtn">submitBtn</a></li>
+<li><a href="#q_template">template</a></li>
 </ul>
 
-<h3 id="q_autocomplete">autocomplete</h3>
+<h3 id="q_autocomplete"><code>autocomplete</code></h3>
 Attaches the `autocomplete` attribute to the search field.
 
 **Type**: String
 
-**Default value**: *'off'*
+**Default value**: `off`
 
-Accepted values: off, on
+**Accepted values**: `off`, `on`
 
-<h3 id="q_formSelector">formSelector</h3>
+
+<h3 id="q_formSelector"><code>formSelector</code></h3>
 The form selector containing the search input field.
 
 **Type**: String 
@@ -46,49 +48,46 @@ The form selector containing the search input field.
 **Default value**: No form by default.
 
 
-<h3 id="q_minSearchLength">minSearchLength</h3>
+<h3 id="q_minSearchLength"><code>minSearchLength</code></h3>
 Minimum number of characters required before the auto suggest triggers.
 
 **Type**: Integer
 
-**Default value**: 2
+**Default value**: `2`
 
-<h3 id="q_responseFieldElements">responseFieldElements</h3>
+<h3 id="q_responseFieldElements"><code>responseFieldElements</code></h3>
 Selector for the response elements.
 
 **Type**: String
 
-**Default Value**: *'ul li'*
+**Default Value**: `ul li`
 
-<h3 id="q_selectClass">selectClass</h3>
-Class assigned to the selected suggested term.
-
-**Type**: String
-
-**Default value**: `'selected'`
-
-<h3 id="q_template">template</h3>
-Template responsible for rendering returned data(suggested terms).
-
-**Type**: String
-
-**Default value**: `<li></li>` element 
-
-
-<h3 id="q_submitBtn">submitBtn</h3>
-Disable the submit button. 
-
-**Type**: String
-
-**Default value**: *'button[type="submit"]'*
-
-<h3 id="q_searchLabel">searchLabel</h3>
+<h3 id="q_searchLabel"><code>searchLabel</code></h3>
 Selector of a search input label.
 
 **Type**: String
 
-**Default value**: *'[data-role=minisearch-label]'*
+**Default value**: `[data-role=minisearch-label]`
 
+<h3 id="q_selectClass"><code>selectClass</code></h3>
+Class assigned to the selected suggested term.
 
+**Type**: String
+
+**Default value**: `selected`
+
+<h3 id="q_submitBtn"><code>submitBtn</code></h3>
+Disable the submit button. 
+
+**Type**: String
+
+**Default value**: `button[type="submit"]`
+
+<h3 id="q_template"><code>template</code></h3>
+Template responsible for rendering returned data(suggested terms).
+
+**Type**: String
+
+**Default value**: `<li></li>` element.
 
 

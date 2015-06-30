@@ -530,8 +530,8 @@ $( "#element" ).collapsible("forceDeactivate");
 
 <h2 id="collapsible_events">Events</h2>
 
-<h3 id="c_beforeOpen"><code>beforeOpen</code> callback</h3>
+<h3 id="c_beforeOpen"><code>beforeOpen callback</code></h3>
 Called before the content is opened. 
 
-<h3 id="c_dimensionsChanged><code>dimensionsChanged</code></h3>
+<h3 id="c_dimensionsChanged"><code>dimensionsChanged</code></h3>
 Called after content is opened or closed.

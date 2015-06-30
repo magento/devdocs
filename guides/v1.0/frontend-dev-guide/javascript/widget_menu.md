@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: Menu widget
-menu_order: 2
+menu_order: 6
 menu_title: Menu widget
 github_link: frontend-dev-guide/javascript/widget_menu.md
 ---
@@ -24,10 +24,18 @@ For information about how to initilize a widget in a JS component or `.phtml` te
 Menu widget options mostly coincide with the options of the jQuery UI Menu widget, with addition of the following custom ones:
 <ul>
 
-<li><a href="#m_responsive">responsive</a></li>
 <li><a href="#m_delay">delay</a></li>
+<li><a href="#m_responsive">responsive</a></li>
+
 
 </ul>
+
+<h3 id="m_delay">delay</h3>
+Set the delay length of opening submenu.
+
+**Type**: Int
+
+**Default value**: `300`
 
 <h3 id="m_responsive">responsive</h3>
 Setting the default responsive handler for the navigation widget.
@@ -36,14 +44,8 @@ Setting the default responsive handler for the navigation widget.
 
 **Default value**: `false`
 
-<h3 id="m_delay">delay</h3>
-Set the delay length of opening submenu.
 
-Type: Int
-
-Default value: 300
-
-<h2>Methods</h2>
+<h2 id="menu_methods">Methods</h2>
 The Magento menu widget has all default jQuery UI menu widget methods.
 
 
