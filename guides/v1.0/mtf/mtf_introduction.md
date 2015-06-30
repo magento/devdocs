@@ -8,61 +8,38 @@ menu_order: 1
 github_link: guides\v1.0\mtf\mtf_introduction.md
 ---
 
-This guide provides instructions on installing, configuring and applying
-of all components required for the Magento Testing Framework (MTF) to
-create and run tests.
+This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). It specifies approach of creating and running tests with MTF. Detailed description of MTF tools may help to understand principles of MTF work, that allows developers designing high performance tests. The Magento Test Framework includes nearly 170 automated functional tests, that are designed to improve quality of implementation and to make it easier to perform basic acceptance testing, smoke testing, regression testing of Magento application. In all cases application under test is Magento application after changes of functionality are made: extension added, customized, or upgraded.
 
-MTF is an open source project facilitating the improvement of Magento
-products. This is a cross-platform solution (i. e. does not depend on a
+MTF is an open source cross-platform solution (does not depend on a
 specific operating system).
 
-MTF is configurable tool used for running repeatable functional tests
-against the Magento application being tested. Although, it can be useful
-to create functional tests to any web application. It is used for writing test automation scripts and for performing actual testing.
-Test automation scripts created within the framework can be used for
-testing Magento functionality.
-
-The Magento Test Framework includes nearly 170 automated functional
-tests, which are designed to improve the quality of implementations and
-to make it easier to perform basic acceptance testing, smoke testing,
-regression testing, when adding extensions, making customizations, or
-upgrading Magento.
-
-Magento itself contains out-of-the box tests, but the user can also
-create customized tests using MTF.
-
 MTF allows software engineers to quickly develop functional tests for
-the Magento, that can be performed at any time.
+the Magento. These tests can be performed at any time.
 
-You can run a single test independently, or a bunch of tests together (a
-test suite), or run all available tests.
+You can run a single test independently, many tests together (that is, a
+test suite), or you can run all available tests.
 
-What tools do I need to work with MTF?
+<h3 id="mtf_intro_extratools">What tools do I need to work with MTF?</h3>
 
--   [PHPUnit][] (downloaded via composer during installation);
+-   [PHPUnit][] (downloaded via composer during installation)
 
--   [Selenium Standalone Server][];
+-   [Selenium Standalone Server][]
 
--   Web browser.
+-   Web browser
 
-What do I have as output working with MTF?
+<h3 id="mtf_intro_mtf-output">What do I have as output working with MTF?</h3>
 
--   Tested application;
+-   Tested application
 
--   Basic PHPUnit results;
+-   Basic PHPUnit results
 
--   Screenshots of failures (**\[magento\_root\] &gt; dev &gt; tests &gt;
-    functional &gt; var &gt; log &gt; magento**);
+-   Screenshots of failures
 
--   Logs of failures (**\[magento\_root\] &gt; dev&gt; tests &gt;
-    functional &gt; var &gt; log**).
+-   Logs of failures
 
 <h2 id="mtf_intro_audi">Audience</h2>
 
-
-This guide will be useful for Magento developers primarily. Although,
-software engineers such as QA specialists, PHP developers, system
-integrators working with Magento may find this guide helpful.
+This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, PHP developers, and system integrators.
 
 <h2 id="mtf_intro_goal">Goal</h2>
 
@@ -75,44 +52,41 @@ MTF is purposed to test user interactions with web application under
 test.
 
 MTF works with functional tests located in
-**\[magento\_root\] &gt; dev &gt; tests &gt; functional**.
+`<magento_root>/dev/tests/functional/`.
 
 Out-of-the-box tests cover basic functionality. Extended functionality
 may be tested using customized tests, created with MTF.
 
 Relatively to software life cycle the MTF could be useful on the following phases:
 
-1) development phase – to test any changes of functionality (new
-    modules, extensions, bug fixing);
+1.    During development phase use MTF to test any changes of functionality (new
+    modules, extensions, bug fixing).
 
-2) maintenance phase – for periodical automated regression resting.
+1.    During maintenance phase use MTF for periodical automated regression resting.
 
 <h3 id="mtf_intro_scope_use-case-ex">MTF use cases examples</h3>
 
-1)  As Magento developer I want to cover implemented functionality with
+1.    As Magento developer I want to cover implemented functionality with
     new tests (e. g. added attribute on Customer Form, extended Search
-    functionality, added tags for Products etc.).
+    functionality, added tags for Products etc).
 
-2)  As software engineer I want to perform regression testing before
+1.    As software engineer I want to perform regression testing before
     release to be confident that Magento works as expected with new
     functionality.
     
 <h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
 
-Magento 2 contains also other types of tests in **\[magento\_root\] &gt; dev &gt; tests** in corresponding folders. This guide does not describe testing other than
+Magento 2 contains also other types of tests in `<magento_root>/dev/tests/` in corresponding folders. This guide does not describe testing other than
 functional.
 
-For other tests please see [devdocs.magento.com &gt; Guides &gt; V1.0 &gt; Config-guide &gt; Cli &gt; Config-cli-subcommands-test](http://devdocs.magento.com/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html).
 
-Also,
+For other tests please see the following sections:
 
--   JavaScript tests ([devdocs.magento.com &gt; Guides &gt; V1.0 &gt;
-    Extension-dev-guide &gt; Test &gt; Test
-    js-unit](http://devdocs.magento.com/guides/v1.0/extension-dev-guide/test/test_js-unit.html));
+- <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a> 
 
--   Performance tests ([devdocs.magento.com &gt; Guides &gt; V1.0 &gt;
-    Config-guide &gt; Cli &gt;
-    Config-cli-subcommands-perf-data](http://devdocs.magento.com/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html)).
+- <a href="{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a>
+
+- <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a>
 
 
 <h2 id="mtf_intro_github-link">MTF on GitHub</h2>
