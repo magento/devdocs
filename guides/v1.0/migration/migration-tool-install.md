@@ -12,7 +12,9 @@ github_link: migration/migration-tool-install.md
 ## Install Data Migration Tool
 This section discusses how to install the Magento Data Migration Tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from a GitHub repository.
 
-**Note**: The versions of both the Data Migration Tool and the Magento 2 code must be identical (for example, 0.74-beta8). To find the version of either package, open `composer.json` and find the value of `"version"`.
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The versions of both the Data Migration Tool and the Magento 2 code must be identical (for example, 0.74-beta8). To find the version of either package, open `composer.json` and find the value of "version".</p>
+</div>
 
 ### Install the tool from GitHub
 To install the Data Migration Tool from GitHub, use the following steps:

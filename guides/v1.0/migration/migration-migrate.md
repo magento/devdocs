@@ -10,7 +10,7 @@ github_link: migration/migration-migrate.md
 ---
 
   
-<h2 id="migration-command">Migrating settings, data and changes</h2>
+<h2 id="migration-command">Migrating settings, data, and changes</h2>
 
 ###General rules for successful migration
 

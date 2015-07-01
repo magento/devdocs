@@ -107,9 +107,9 @@ magento-root/vendor/magento/data-migration-tool/bin/migrate
 
 <h3 id="configuration">Configuration</h3>
 
-The Schema for configuration file config.xsd is placed under etc/directory. Default configuration file config.xml.dist is created for each version of Magento 1.x. It is placed in separate directories under etc/.
+The Schema for configuration file `config.xsd` is placed under etc/directory. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under etc/.
 
-Default configuration file can be replaced by custom one via CLI (see <a href="{{ site.gdeurl }}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see <a href="{{ site.gdeurl }}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
 Configuration file has the following structure:
 {% highlight xml %}
@@ -170,9 +170,9 @@ Configuration data is accessible via \Migration\Config class.
 Migration process consists of steps.
 Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.
 
-By default there are several steps (Map, EAV, URL Rewrites ...). But developer can add his own.
-Steps related classes are placed into src/Migration/Step directory.
-To be executed Step class should be defined in config.xml file.
+By default there are several steps (Map, EAV, URL Rewrites, and so on). You can optionally add your own steps as well.
+Steps related classes are located in the src/Migration/Step directory.
+To execute a Step class, the class must be defined in config.xml file.
 
 {% highlight xml %}
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
@@ -204,9 +204,9 @@ class&nbsp;StageClass&nbsp;implements&nbsp;StageInterface
 }
 </pre>
 
-If data stage supports rollback it should implement RollbackInterface interface.
+If the data stage supports rollback, it should implement the RollbackInterface interface.
 
-Visualization of step running is provided by Symfony's ProgressBar component (see http://symfony.com/doc/current/components/console/helpers/progressbar.html). It is accessible inside step as LogLevelProcessor.
+Visualization of the running step is provided by Symfony's ProgressBar component (see http://symfony.com/doc/current/components/console/helpers/progressbar.html). Access this component in a step as LogLevelProcessor.
 
 Main methods for use are:
 
