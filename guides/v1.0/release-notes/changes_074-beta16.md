@@ -12,7 +12,6 @@ github_link: release-notes/changes_074-beta16.md
 
 *	<a href="#rn-074b10-overview">Overview of the 0.74-beta16 release</a>
 *	<a href="#rn-074b16-changes">Major changes in the 0.74-beta16 release</a>
-*	<a href="#rn-074b16-compat">Backward-compatible changes</a>
 *	<a href="#rn-074b16-incompat">Backward-incompatible changes</a>
 
 <h2 id="rn-074b10-overview">Overview of the 0.74-beta10 release</h2>
@@ -44,11 +43,10 @@ We made the following changes in this release:
 
 This change also enables you to get a table prefix without injecting `Magento\Framework\App\Resource` into <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php" target="_blank">ExtensionAttributesFactory</a>.
 
-<h2 id="rn-074b10-compat">Backward-compatible changes</h2>
-This section discusses the backward-compatible changes we made in this release.
+<h2 id="rn-074b16-incompat">Backward-incompatible changes</h2>
+This section discusses the backward-incompatible changes we made in this release.
 
 ### Magento_Config
-
 
 *	`\Magento\Config\Model\Config\Structure\Reader`
 
