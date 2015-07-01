@@ -16,10 +16,10 @@ Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/
 <li>Method for handling the responsive layout of the menu.</li>
 </ul>
 
-The navigation widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js">lib/web/mage/menu.js</a>
+The navigation widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
 
 <h2 id="navigation_init">Initialize navigation</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="navigation_options">Options</h2>
 The navigation widget has the following options:
@@ -31,7 +31,7 @@ The navigation widget has the following options:
 <li><a href="#n_responsiveAction">responsiveAction</a></li>
 </ul>
 
-<h3 id="n_breakpoint">breakpoint</h3>
+<h3 id="n_breakpoint"><code>breakpoint</code></h3>
 
 Width of user's window in px for which the menu switches between mobile view and desktop view.
 
@@ -77,7 +77,7 @@ The default responsive handler for the navigation widget.
 <h2 id="navigation_methods">Methods</h2>
 <ul>
 <li><a href="#nav_setMaxItems">setMaxItems()</a></li>
-<li><a href="#setupMoreMenu">setupMoreMenu()</a></li>
+<li><a href="#nav_setupMoreMenu">setupMoreMenu()</a></li>
 </ul>
 
 

@@ -16,11 +16,11 @@ The Calendar widget is a customized jQuery <a href="http://api.jQueryui.com/date
 *	Taking into account server time zone offset.
 *	Converting date and time formats to avoid inconsistency in Zend Date format and Datepicker format.
 *	Making the calendar initialization easier.
-*	The Calendar widget source is <a href="{{site.mage2000url}}lib/web/mage/calendar.js">lib/web/mage/calendar.js</a>.
+*	The Calendar widget source is <a href="{{site.mage2000url}}lib/web/mage/calendar.js" target="_blank">lib/web/mage/calendar.js</a>.
 
 <h2 id="fedg_calendar_init">Initialize the calendar widget</h2>
 
-For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.
 
 <h2 id="fedg_calendar_config">Configure the calendar widget</h2>
 

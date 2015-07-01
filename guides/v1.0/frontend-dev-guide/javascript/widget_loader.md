@@ -11,20 +11,20 @@ github_link: frontend-dev-guide/javascript/widget_loader.md
 <h2>Overview</h2>
 The Loader widget blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
-The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js">lib/web/mage/loader.js</a>.
+The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
 
 <h2 id="loader_init">Initialize loader</h2>
-The loader widget is initialized as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#data_mage_init" target="_blank">JavaScript initialization</a>.
+The loader widget is initialized as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>.
 
 <h2 id="loader_options">Options</h2>
-Tge loader widget has the following options:
+The loader widget has the following options:
 <ul>
 <li><a href="#l_icon">icon</a></li>
 <li><a href="#l_template">template</a></li>
 <li><a href="#l_texts">texts</a></li>
 </ul>
 
-<h3 id="#l_icon"><code>icon</code></h3>
+<h3 id="l_icon"><code>icon</code></h3>
 The URL to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events. 
 
 **Type**: String 
@@ -32,7 +32,7 @@ The URL to the loader image. This image is displayed when the widget is active; 
 **Default value**: No image by default.
 
 
-<h3 id="#l_template"><code>template</code></h3>
+<h3 id="l_template"><code>template</code></h3>
 HTML wrapper for the output, or a DOM element selector. 
 
 **Default value**:
@@ -45,7 +45,7 @@ HTML wrapper for the output, or a DOM element selector.
 '&lt;/div&gt;'
 </pre>
 
-<h3 id="#l_texts"><code>texts</code></h3>
+<h3 id="l_texts"><code>texts</code></h3>
 
 An object that contains translations for loader text:
 <ul>
@@ -59,8 +59,15 @@ The text that is displayed under the loader image. <br>
 </ul>
 
 <h2>Events</h2>
-<h3><code>processStart</code></h3>
+Loader is subscribed to the following events:
+<ul>
+<li><a href="#l_processStart">processStart</a></li>
+<li><a href="#l_processStop">processStop</a></li>
+<li><a href="#l_texts">texts</a></li>
+</ul>
+
+<h3 id="l_processStart"><code>processStart</code></h3>
 Display the loader. Can be triggered on any page element.
 
-<h3><code>processStop</code></h3>
+<h3 id="l_processStop"><code>processStop</code></h3>
 Hide the loader. Can be triggered on any page element.

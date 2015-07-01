@@ -16,7 +16,7 @@ The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js">lib
 
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
-For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/">Initialize JavaScript</a> topic.
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 
 <h2 id="fedg_tabs_options">Options</h2>

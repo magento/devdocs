@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/javascript/widget_accordion.md
 
 <h2>Overview</h2>
 
-Magento accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.md">Magento Tabs widget</a>.
+Magento accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html" target="_blank">Magento Tabs widget</a>.
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
@@ -100,7 +100,7 @@ The accordion widget can be initialized using the <code>data-mage-init</code> at
 
 
 <h2 id="accordion_options">Options</h2>
-Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html#fedg_tabs_options">Magento Tabs options</a>, plus the following custom ones:
+Accordion options coincide with <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html#fedg_tabs_options" target="_blank">Magento Tabs options</a>, plus the following custom ones:
 <ul>
 <li><a href="#collaps_active">active</a></li>
 <li><a href="#collaps_multi">multipleCollapsible</a></li>

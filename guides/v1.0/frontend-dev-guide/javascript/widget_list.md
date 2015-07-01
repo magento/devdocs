@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/javascript/widget_list.md
 Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 
 
-The List widget source file is <a href="{{site.mage2000url}}">lib/web/mage/list.js</a>.
+The List widget source file is <a href="{{site.mage2000url}}lib/web/mage/list.js">lib/web/mage/list.js</a>.
 
 <h2 id="quicksearch_init">Inititalize list</h2>
 For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
@@ -34,70 +34,70 @@ The list widget has the following options:
 
 Detailed description of each option follows.
 
-<h3 id="#l_addButton"><code>addButton</code></h3>
+<h3 id="l_addButton"><code>addButton</code></h3>
 Selector for the element used for item adding. 
 
 **Type**: String
 
 **Default value**: `[data-button=remove]`
 
-<h3 id="#l_destinationSelector"><code>destinationSelector</code></h3>
+<h3 id="l_destinationSelector"><code>destinationSelector</code></h3>
 Content destination selector.
 
 **Type**: String
 
 **Default value**: `[data-role=container]`
 
-<h3 id="#l_itemCount"><code>itemCount</code></h3>
+<h3 id="l_itemCount"><code>itemCount</code></h3>
 Number of total items.
 
 **Type**: Integer 
 
 **Default value**: `0`
 
-<h3 id="#l_itemIndex"><code>itemIndex</code></h3>
+<h3 id="l_itemIndex"><code>itemIndex</code></h3>
 Number of the current item.
 
 **Type**: Integer
 
 **Default value**: `0`
 
-<h3 id="#l_maxItems"><code>maxItems</code></h3>
+<h3 id="l_maxItems"><code>maxItems</code></h3>
 Number of list items that can be added to the destination.
 
 **Type**: Integer
 
 **Default value**: `null`
 
-<h3 id="#l_maxItemsAlert"><code>maxItemsAlert</code></h3>
+<h3 id="l_maxItemsAlert"><code>maxItemsAlert</code></h3>
 Alert message displayed when maximum limit is reached.
 
 **Type**: String
 
 **Default value**: `[data-button=remove]`
 
-<h3 id="#l_removeButton"><code>removeButton</code></h3>
+<h3 id="l_removeButton"><code>removeButton</code></h3>
 Selector for the element used for item removing. 
 
 **Type**: String
 
 **Default value**: `[data-button=remove]`
 
-<h3 id="#l_template"><code>template</code></h3>
+<h3 id="l_template"><code>template</code></h3>
 Template for the added item.
 
 **Type**: String
 
 **Default value**: `[data-role=item]`
 
-<h3 id="#l_templateClass"><code>templateClass</code></h3>
+<h3 id="l_templateClass"><code>templateClass</code></h3>
 Class attached to the template wrapper.
 
 **Type**: String
 
 **Default value**: `[data-role=container]`
 
-<h3 id="#l_templateWrapper"><code>templateWrapper</code></h3>
+<h3 id="l_templateWrapper"><code>templateWrapper</code></h3>
 Element holding the template.
 
 **Type**: String
