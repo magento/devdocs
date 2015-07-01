@@ -171,8 +171,8 @@
 
 <ul>
   <li><a href="#layout_markup_columns">Set the page layout</a></li>
-  <li><a href="#layout_markup_css">Add CSS and JavaScript in &lt;head&gt;</a></li>
-  <li><a href="#layout_markup_css_remove">Remove CSS and JavaScript in &lt;head&gt;</a></li>
+  <li><a href="#layout_markup_css">Include static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a></li>
+  <li><a href="#layout_markup_css_remove">Remove static resources (JavaScript, CSS, fonts) in &lt;head&gt;</a></li>
   <li><a href="#create_cont">Create a container</a></li>
   <li><a href="#ref_container">Reference a container</a></li>
   <li><a href="#xml-manage-block">Create a block</a></li>
@@ -204,7 +204,7 @@ Change the layout of Advanced Search page from default “1-column” to “2-co
 &lt;/page&gt;
 </pre>
 
-<h2 id="layout_markup_css">Add JavaScript and CSS</h2>
+<h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
 
 <p>JavaScript, CSS and other static assets are added in the <code>&lt;head&gt;</code> section of a <a href="/guides/v1.0/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page <code>&lt;head&gt;</code> is defined by <code>app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml</code>. The recommended way to add CSS and JavaScript is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:</p>
@@ -212,17 +212,27 @@ The following file is a sample of a file you must add:</p>
 <p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
 
 <pre>
-&lt;page&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;head&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;css&nbsp;src=&quot;css/my-styles.css&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;link&nbsp;src=&quot;js/sample.js&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src=&quot;Magento_Catalog::js/sample1.js&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/head&gt;
-&lt;/page&gt;
+&lt;page xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd&quot;&gt;
+    &lt;head&gt;
+        &lt;!-- Add local resources --&gt;
+	&lt;css src=&quot;css/my-styles.css&quot;/&gt;
+    
+        &lt;!-- The following two ways to add local JavaScript files are equal --&gt;
+        &lt;script src=&quot;Magento_Catalog::js/sample1.js&quot;/&gt;
+        &lt;link src=&quot;js/sample.js&quot;/&gt;
+		
+	&lt;!-- Add external resources --&gt;
+	&lt;css src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot; src_type=&quot;url&quot; /&gt;
+        &lt;script src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot; src_type=&quot;url&quot; /&gt;
+        &lt;link src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; src_type=&quot;url&quot; /&gt; 
 
+    &lt;/head&gt;
+&lt;/page&gt;
 </pre>
 
-<p>You can use either <code>&lt;link src="js/sample.js"/&gt;</code> or <code>&lt;script src="js/sample.js"/&gt;</code> instruction to add a JavaScript file to your theme.</p>
+<p>When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.</p>
+
+<p>You can use either <code>&lt;link src="js/sample.js"/&gt;</code> or <code>&lt;script src="js/sample.js"/&gt;</code> instruction to add a locally stored JavaScript file to your theme.</p>
 
 <p>The path to assets is specified relatively to one the following locations:</p>
 <ul>
@@ -254,21 +264,26 @@ A sample follows:</p>
 
 <p>In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.</p>
 
-<h2 id="layout_markup_css_remove">Remove JavaScript and CSS</h2>
+<h2 id="layout_markup_css_remove">Remove static resources (JavaScript, CSS, fonts)</h2>
 
-<p>To remove the JavaScript and CSS resources linked in a page <code>&lt;head&gt;</code>, make a change similar to the following in a theme extending file:</p>
+<p>To remove the static resources, linked in a page <code>&lt;head&gt;</code>, make a change similar to the following in a theme extending file:</p>
 
 <p><code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/Magento_Theme/layout/default_head_blocks.xml</code></p>
 
 <pre>
 &lt;page&gt;
-&nbsp;&nbsp;&nbsp;&lt;head&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;css/styles-m.css&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;my-js.js&quot;/&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;remove&nbsp;src=&quot;Magento_Catalog::js/compare.js&quot;&nbsp;/&gt;
-&nbsp;&nbsp;&nbsp;&lt;/head&gt;
+   &lt;head&gt;
+        &lt;!-- Remove local resources --&gt;
+        &lt;remove src=&quot;css/styles-m.css&quot; /&gt;
+        &lt;remove src=&quot;my-js.js&quot;/&gt;
+        &lt;remove src=&quot;Magento_Catalog::js/compare.js&quot; /&gt;
+								
+	&lt;!-- Remove external resources --&gt;
+        &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;/&gt;
+        &lt;remove src=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;/&gt;
+        &lt;remove src=&quot;http://fonts.googleapis.com/css?family=Montserrat&quot; /&gt; 
+   &lt;/head&gt;
 &lt;/page&gt;
-
 </pre>
 
 <p>Note, that if a static asset is added with a module path (for example <code>Magento_Catalog::js/sample.js</code>) in the initial layout, you need to specify the module path as well when removing the asset.</p>
