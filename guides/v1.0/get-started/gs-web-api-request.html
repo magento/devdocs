@@ -316,33 +316,35 @@ See <a href="/guides/v1.0/get-started/authentication/gs-authentication.html">Aut
             <em>optional</em> inputs.</p>
 <p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
 <p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
-<pre>{
-    "customers": {
-        "customer": {
-            "email": "user@example.com",
-            "firstname": "John",
-            "lastname": "Doe"
-        },
-        "addresses": [
-            {
-                "defaultShipping": true,
-                "defaultBilling": true,
-                "firstname": "John",
-                "lastname": "Doe",
-                "region": {
-                    "regionCode": "CA",
-                    "region": "California",
-                    "regionId": 12
-                },
-                "postcode": "90001",
-                "street": ["Zoe Ave"],
-                "city": "Los Angeles",
-                "telephone": "555-000-00-00",
-                "countryId": "US"
-            }
-        ]
-    }
-}</pre>
+
+<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;customers&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;customer&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;email&quot;</span><span class="p">:</span> <span class="s2">&quot;user@example.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;defaultShipping&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;defaultBilling&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+                <span class="nt">&quot;firstname&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;lastname&quot;</span><span class="p">:</span> <span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;regionCode&quot;</span><span class="p">:</span> <span class="s2">&quot;CA&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
+                    <span class="nt">&quot;regionId&quot;</span><span class="p">:</span> <span class="mi">12</span>
+                <span class="p">},</span>
+                <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;90001&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Zoe Ave&quot;</span><span class="p">],</span>
+                <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;555-000-00-00&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;countryId&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
 <p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 
 <h2 id="construct-request">Construct a request</h2>

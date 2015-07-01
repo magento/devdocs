@@ -251,21 +251,22 @@
 
 <p>The following PHP script illustrates how to get an access token:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$opts = array(</span>
-<span class="x">            &#39;http&#39;=&gt;array(</span>
-<span class="x">                &#39;header&#39; =&gt; &#39;Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e&#39;</span>
-<span class="x">            )</span>
-<span class="x">        );</span>
-<span class="x">$wssdlUrl = &#39;http://magento.ll/soap/default?wsdl=1&amp;services=testModule1AllSoapAndRestV1&#39;;</span>
-<span class="x">$serviceArgs = array(&quot;id&quot;=&gt;1);</span>
-<span class="x"> </span>
-<span class="x">$soapClient = new Zend\Soap\Client($wsdlUrl);</span>
-<span class="x">$soapClient-&gt;setSoapVersion(SOAP_1_2);</span>
-<span class="x"> </span>
-<span class="x">$context = stream_context_create($opts);</span>
-<span class="x">$soapClient-&gt;setStreamContext($context);</span>
-<span class="x"> </span>
-<span class="x">$soapResponse = $this-&gt;_getSoapClient($serviceInfo)-&gt;testModule1AllSoapAndRestV1Item($serviceArgs);</span></code></pre></div>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$opts</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;http&#39;</span><span class="o">=&gt;</span><span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;header&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e&#39;</span>
+            <span class="p">)</span>
+        <span class="p">);</span>
+<span class="nv">$wssdlUrl</span> <span class="o">=</span> <span class="s1">&#39;http://magento.ll/soap/default?wsdl=1&amp;services=testModule1AllSoapAndRestV1&#39;</span><span class="p">;</span>
+<span class="nv">$serviceArgs</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="o">=&gt;</span><span class="mi">1</span><span class="p">);</span>
+ 
+<span class="nv">$soapClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Zend\Soap\Client</span><span class="p">(</span><span class="nv">$wsdlUrl</span><span class="p">);</span>
+<span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">setSoapVersion</span><span class="p">(</span><span class="nx">SOAP_1_2</span><span class="p">);</span>
+ 
+<span class="nv">$context</span> <span class="o">=</span> <span class="nb">stream_context_create</span><span class="p">(</span><span class="nv">$opts</span><span class="p">);</span>
+<span class="nv">$soapClient</span><span class="o">-&gt;</span><span class="na">setStreamContext</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span>
+ 
+<span class="nv">$soapResponse</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_getSoapClient</span><span class="p">(</span><span class="nv">$serviceInfo</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">testModule1AllSoapAndRestV1Item</span><span class="p">(</span><span class="nv">$serviceArgs</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <h2 id="related">Related topics</h2>
 <ul>
