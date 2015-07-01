@@ -24,6 +24,14 @@ code {
 p.q 	{
 	font-size: 15pt;
 	color: red;
+<<<<<<< HEAD
 
 /*	display: none;*/
+
 	}
+
+/* SRJ - fix Firefox bug */
+.main-container {
+	clear: both;
+}
+

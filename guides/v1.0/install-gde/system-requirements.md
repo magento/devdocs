@@ -2,7 +2,7 @@
 layout: default
 group: install
 subgroup: Getting Started
-title: System Requirements
+title: System requirements
 menu_title: Magento system requirements
 menu_node: parent
 menu_order: 1

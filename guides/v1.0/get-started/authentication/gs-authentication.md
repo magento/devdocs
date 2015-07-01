@@ -9,7 +9,7 @@ menu_node: parent
 github_link: get-started/authentication/gs-authentication.md
 ---
 
-<h2 id="overview-authenticate">Web API Authentication overview</h2>
+<h2 id="overview-authenticate">Web API authentication overview</h2>
 <p>
 Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>. 
 Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a> 
@@ -53,14 +53,15 @@ Permissions required to access particular resource are configured in the <code>w
 </table>
 
 <h3 id="acl-webapi-relation">Relation between acl.xml and webapi.xml</h3>
-<p>The acl.xml file defines the access control list (ACL) for a given module. It defines available set of permissions to access the resources.
-acl.xml files across all Magento modules are consolidated to build an ACL tree which is used to select allowed Admin role resources or third party Integration's access (System > Extension > Integration > Add New Integration > Available APIs).
+<p>The <code>acl.xml</code> file defines the access control list (ACL) for a given module. It defines available set of permissions to access the resources.
+<code>acl.xml</code> files across all Magento modules are consolidated to build an ACL tree which is used to select allowed Admin role resources or third party Integration's access (System > Extension > Integration > Add New Integration > Available APIs).
 </p>
-<h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
-For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a>.
 
-When a developer creates the Web API configuration file (webapi.xml), the permissions defined in acl.xml are referenced to create access rights for each API resource.
-<h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
+<h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
+For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <code><a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a></code>.
+
+When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
+<h4 id="acl-webapi-relation">Sample (truncated) customer <code>webapi.xml</code></h4>
 
 {% highlight XML %}
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -189,3 +190,6 @@ Authorization is granted to either an administrator (or an integration) defined 
    <li>Third-party application. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
    <li>JavaScript widget on the Magento Admin or storefront. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
+
+<h2 id="related">Related topics</h2>
+<a href="{{ site.gdeurl }}extension-dev-guide/attributes.html">Extension attribute authentication</a>

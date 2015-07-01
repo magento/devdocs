@@ -9,15 +9,15 @@ menu_node:
 github_link: rest/list.md
 ---
 
-
 <h2 id="list">List of REST APIs</h2>
 
-<h3>Magento/Backend </h3>
+Updated June 29, 2015. Additions since the last update are marked with asterisks (*).
+
+<h3>Magento/Backend</h3>
 
     GET    /V1/modules
 
-
-<h3>Magento/Bundle </h3>
+<h3>Magento/Bundle</h3>
 
     POST   /V1/bundle-products/:sku/links/:optionId
     PUT    /V1/bundle-products/:sku/links/:id
@@ -96,7 +96,7 @@ github_link: rest/list.md
     POST   /V1/categories/:categoryId/products
     PUT    /V1/categories/:categoryId/products
     DELETE /V1/categories/:categoryId/products/:sku
-
+    
 <h3>Magento/CatalogInventory</h3>
 
     GET    /V1/stockItems/:productSku
@@ -107,6 +107,19 @@ github_link: rest/list.md
 <h3>Magento/CheckoutAgreements</h3>
 
     GET    /V1/carts/licence
+
+<h3>Magento/Cms</h3>
+
+    * GET    /V1/cmsPage/:pageId
+    * GET    /V1/cmsPage/search
+    * POST   /V1/cmsPage
+    * PUT    /V1/cmsPage/:id
+    * DELETE /V1/cmsPage/:pageId
+    * GET    /V1/cmsBlock/:blockId
+    * GET    /V1/cmsBlock/search
+    * POST   /V1/cmsBlock
+    * PUT    /V1/cmsBlock/:id
+    * DELETE /V1/cmsBlock/:blockId
 
 <h3>Magento/ConfigurableProduct</h3>
 
@@ -192,8 +205,8 @@ github_link: rest/list.md
 
     POST   /V1/integration/admin/token
     POST   /V1/integration/customer/token
- 
-<h3>Magento/Quote </h3>
+
+<h3>Magento/Quote</h3>
 
     GET    /V1/carts/:cartId
     GET    /V1/carts
@@ -241,6 +254,7 @@ github_link: rest/list.md
     POST   /V1/carts/:cartId/billing-address
     GET    /V1/guest-carts/:cartId/billing-address
     POST   /V1/guest-carts/:cartId/billing-address
+    * POST   /V1/guest-carts/:cartId/addresses
     GET    /V1/carts/mine/billing-address
     POST   /V1/carts/mine/billing-address
     GET    /V1/carts/:cartId/coupons
@@ -258,11 +272,14 @@ github_link: rest/list.md
     POST   /V1/guest-carts/:cartId/shipping-address
     GET    /V1/carts/mine/shipping-address
     POST   /V1/carts/mine/shipping-address
+    * POST   /V1/carts/mine/addresses
     PUT    /V1/carts/:cartId/order
     GET    /V1/carts/:cartId/totals
+    * PUT    /V1/guest-carts/:cartId/collect-totals
     GET    /V1/guest-carts/:cartId/totals
     GET    /V1/carts/mine/totals
-    
+    * PUT    /V1/carts/mine/collect-totals
+
 <h3>Magento/Sales</h3>
 
     GET    /V1/orders/:id
@@ -321,9 +338,3 @@ github_link: rest/list.md
     PUT    /V1/taxClasses/:classId
     DELETE /V1/taxClasses/:taxClassId
     GET    /V1/taxClasses/search
-
-<!--
-<h2 id="output">Raw output</h2>
-The restapi.zip file contains HTML files that are generated from the REST code. This is raw output, and no navigation between the files is available. 
-
--->
