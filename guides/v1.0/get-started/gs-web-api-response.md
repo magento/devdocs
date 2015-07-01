@@ -59,7 +59,9 @@ github_link: get-started/gs-web-api-response.md
 <p><code>POST</code>, <code>PUT</code>, and <code>GET</code> web API calls return a response payload. This payload is a JSON- or XML-formatted response body. The <code>Accept: application/&lt;FORMAT&gt;</code> header in the request determines the format of the response body, where <code>&lt;FORMAT&gt;</code> is either <code>json</code> or <code>xml</code>.</p>
 <p>The response payload depends on the call.</p>
 <p>For example, a <code>GET /V1/customers/:customerId</code> call returns the following payload:</p>
-<pre>{
+
+{% highlight json %}
+{
     "customers": {
         "customer": {
             "email": "user@example.com",
@@ -85,7 +87,8 @@ github_link: get-started/gs-web-api-response.md
             }
         ]
     }
-}</pre>
+}
+{% endhighlight %}
 <p>This JSON-formatted response body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.</p>
 
 <!--
