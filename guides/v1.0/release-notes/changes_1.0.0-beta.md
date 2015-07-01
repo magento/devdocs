@@ -2,17 +2,17 @@
 layout: default
 group: release-notes
 title: Release Notes
-menu_title: Changes in 0.74-beta16
+menu_title: Changes in 1.0.0-beta (Merchant Beta)
 menu_node: 
 menu_order: 6
-github_link: release-notes/changes_074-beta16.md
+github_link: release-notes/changes_1.0.0-beta.md
 ---
 
 <h2 id="changes-contents">Contents</h2>
 
 *	<a href="#rn-074b10-overview">Overview of the 0.74-beta16 release</a>
-*	<a href="#rn-074b16-changes">Major changes in the 0.74-beta16 release</a>
-*	<a href="#rn-074b16-incompat">Backward-incompatible changes</a>
+*	<a href="#1.0.0-beta-changes">Major changes in the 0.74-beta16 release</a>
+*	<a href="#1.0.0-beta-incompat">Backward-incompatible changes</a>
 
 <h2 id="rn-074b10-overview">Overview of the 0.74-beta10 release</h2>
 These Release Notes discuss important changes in this release. For additional details, see the following:
@@ -21,32 +21,32 @@ These Release Notes discuss important changes in this release. For additional de
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
 *	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
-<h2 id="rn-074b16-changes">Major changes in the 0.74-beta16 release</h2>
+<h2 id="1.0.0-beta-changes">Major changes in the 0.74-beta16 release</h2>
 We made the following changes in this release:
 
-*	<a href="#rn-074b16-changes-join">Join directive</a>
-*	<a href="#rn-074b16-changes-backup">Uninstall and backup</a>
-*	<a href="#rn-074b16-changes-other">Other changes</a>
+*	<a href="#1.0.0-beta-changes-join">Join directive</a>
+*	<a href="#1.0.0-beta-changes-backup">Uninstall and backup</a>
+*	<a href="#1.0.0-beta-changes-other">Other changes</a>
 
-<h3 id="rn-074b16-changes-join">Join directive</h3>
+<h3 id="1.0.0-beta-changes-join">Join directive</h3>
 *	Created a Join directive, join process for tables, and XML configuration support to define a performant join for search services.
 *	Changed return type from `\Magento\Sales\Api\Data\OrderSearchResultInterface[]` to `\Magento\Sales\Api\Data\OrderInterface[]` in the API method `getList` in `Magento\Sales\Api\Data\OrderSearchResultInterface`
 *	Changed return type from `\Magento\Sales\Api\Data\InvoiceSearchResultInterface` to `\Magento\Sales\Api\Data\InvoiceCommentSearchResultInterface` in the API method `getList` in `Magento\Sales\Api\InvoiceCommentRepositoryInterface`
 
-<h3 id="rn-074b16-changes-backup">Uninstall and backup</h3>
+<h3 id="1.0.0-beta-changes-backup">Uninstall and backup</h3>
 We've added the ability to <a href="{{ site.gdeurl }}install-gde/install/install-cli-backup.html">back up and roll back to</a> at any time:
 
 *	The Magento 2 file system
 *	The `pub/media` directories
 *	The Magento 2 database
 
-You can also uninstall any of the following after optionally making a backup:
+You can also uninstall any of the following after optionally backing up:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html">Modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-theme-uninstall.html">Themes</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-langpk.html">Language packages</a>
 
-<h3 id="rn-074b16-changes-other">Other changes</h3>
+<h3 id="1.0.0-beta-changes-other">Other changes</h3>
 *	Updated the "composer/composer" dependency to version "1.0.0-alpha10".
 *	The <a href="http://php.net/manual/en/book.xsl.php" target="_blank">ext-xsl</a> PHP extension is now a requirement to install the Magento software.
 
@@ -59,7 +59,7 @@ You can also uninstall any of the following after optionally making a backup:
 
 This change also enables you to get a table prefix without injecting `Magento\Framework\App\Resource` into <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php" target="_blank">ExtensionAttributesFactory</a>.
 
-<h2 id="rn-074b16-incompat">Backward-incompatible changes</h2>
+<h2 id="1.0.0-beta-incompat">Backward-incompatible changes</h2>
 This section discusses the backward-incompatible changes we made in this release.
 
 ### Magento_Config
@@ -130,7 +130,7 @@ The new REST route URL to update stock item quantity is now `/V1/products/:sku/s
 
 In `Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator`, we added a new argument `\Magento\Catalog\Api\ProductRepositoryInterface $productRepository` in `__construct;`
 
-#### Magento_Email changes
+### Magento_Email changes
 Constructors of `\Magento\Email\Model\AbstractTemplate` and `\Magento\Email\Model\BackendTemplate` now have two additional parameters parameters: `\Magento\Framework\Model\Resource\AbstractResource` and `\Magento\Framework\Data\Collection\AbstractDb`. 
 
 We also swapped the `$design` and `$registry` parameters.
