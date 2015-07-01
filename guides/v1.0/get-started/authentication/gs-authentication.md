@@ -9,7 +9,7 @@ menu_node: parent
 github_link: get-started/authentication/gs-authentication.md
 ---
 
-<h2 id="overview-authenticate">Web API Authentication overview</h2>
+<h2 id="overview-authenticate">Web API authentication overview</h2>
 <p>
 Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>. 
 Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a> 
@@ -191,5 +191,5 @@ Authorization is granted to either an administrator (or an integration) defined 
    <li>JavaScript widget on the Magento Admin or storefront. <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
 
-<h2 id="related">Related information</h2>
+<h2 id="related">Related topics</h2>
 <a href="{{ site.gdeurl }}extension-dev-guide/attributes.html">Extension attribute authentication</a>
