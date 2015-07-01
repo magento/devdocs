@@ -49,6 +49,7 @@ See one of the following sections for more information:
 *	<a href="#instgde-install-magento-web-step0">Getting started</a>
 *	<a href="#instgde-install-magento-web-step1">Step 1: Readiness Check</a>
 *	<a href="#instgde-install-magento-web-step2">Step 2: Add a Database</a>
+*	<a href="#instgde-install-magento-web-step3">Step 3: Web Configuration</a>
 *	<a href="#instgde-install-magento-web-step4">Step 4: Customize Your Store</a>
 *	<a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>
 *	<a href="#instgde-install-magento-web-step6">Step 6: Install</a>
@@ -136,8 +137,11 @@ To install the Magento software using the Setup Wizard:
 		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
 	</tr>
 	<tr>
-		<td>Magento Admin Address </td>
-		<td>Enter the relative URL by which to access the Magento Admin.</td>
+		<td>Magento Admin Address</td>
+		<td><p>Path to access the Magento Admin. Initially, a random value displays.</p>
+			<p>We recommend a random URL for security purposes. A random URL is harder for hackers or malicious software to exploit.</p>
+			<p>After the installation completes, we recommend you bookmark the Magento Admin URL so you don't forget it. You can display this value at any time using the TBD command.</p>
+			<p>If you choose to enter another value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on.</p></td>
 	</tr>
 	</tbody>
 	</table>
