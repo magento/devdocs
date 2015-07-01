@@ -86,7 +86,7 @@ This section discusses the backward-incompatible changes we made in this release
 
 ### Magento_Catalog
 
-#### Magento_Catalog API changes
+#### Magento_Catalog API changes to product_sku attribute
 The product link entity used as the payload for PUT, POST (`/V1/products/:sku/links`) and DELETE (`/V1/products/:sku/links/:type/:linkedProductSku`) has changed. The `product_sku` attribute is now `sku`. Examples follow:
 
 OLD
@@ -123,10 +123,19 @@ NEW
 
 	POST: /V1/products/Simple_Product/links
 
+#### Magento_Catalog API change to stock item quantity
+The new REST route URL to update stock item quantity is now `/V1/products/:sku/stockItems/:itemId`
+
 #### Magento_Catalog argument change
 
 In `Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator`, we added a new argument `\Magento\Catalog\Api\ProductRepositoryInterface $productRepository` in `__construct;`
 
+#### Magento_Email changes
+Constructors of `\Magento\Email\Model\AbstractTemplate` and `\Magento\Email\Model\BackendTemplate` now have two additional parameters parameters: `\Magento\Framework\Model\Resource\AbstractResource` and `\Magento\Framework\Data\Collection\AbstractDb`. 
+
+We also swapped the `$design` and `$registry` parameters.
+
 
 ### Framework changes
-We eliminated the method `getDefaultResult` from `\Magento\Framework\App\Action\AbstractAction`
+*	We removed the method `getDefaultResult` from `\Magento\Framework\App\Action\AbstractAction`
+*	We removed `field_expr` support from `Magento\Framework\DB\Adapter\Pdo\Mysql::prepareSqlCondition()`
