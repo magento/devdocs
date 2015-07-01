@@ -8,7 +8,7 @@ menu_order: 1
 github_link: guides\v1.0\mtf\mtf_introduction.md
 ---
 
-This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). It specifies approach of creating and running tests with MTF. Detailed description of MTF tools may help to understand principles of MTF work, that allows developers designing high performance tests. The Magento Test Framework includes nearly 170 automated functional tests, that are designed to improve quality of implementation and to make it easier to perform basic acceptance testing, smoke testing, regression testing of Magento application. In all cases application under test is Magento application after changes of functionality are made: extension added, customized, or upgraded.
+This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). Also it specifies approach of creating and running tests with MTF. Detailed description of MTF tools may help to understand principles of MTF work, that allows developers to create high performance tests. MTF does not contain tests. All functional tests are within Magento application in `<magento_root>/dev/tests/functional/`. They are designed to improve quality of its implementation and to make it easier to perform basic acceptance testing, smoke testing, regression testing.
 
 MTF is an open source cross-platform solution (does not depend on a
 specific operating system).
