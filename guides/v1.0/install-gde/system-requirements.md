@@ -45,6 +45,7 @@ Before you install Magento, make sure your system meets or exceeds the following
 	*	<a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a>
 	*	<a href="http://php.net/manual/en/book.simplexml.php" target="_blank">simplexml</a>
 	*	<a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a>
+	*	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">ext-xsl</a> (typically provided with PHP)
 	*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd2</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
 	*	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
 	*	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
