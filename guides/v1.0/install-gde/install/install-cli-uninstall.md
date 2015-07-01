@@ -66,7 +66,7 @@ To update the Magento software:
 
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
 
-	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
@@ -89,7 +89,7 @@ To reinstall the Magento software:
 
 4.	Install the Magento software:
 
-	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
@@ -150,5 +150,5 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 6.	Install the Magento software:
 
-	*	<a href="#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>

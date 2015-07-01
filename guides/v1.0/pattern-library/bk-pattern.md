@@ -24,7 +24,6 @@ Browse the Design Pattern Library here:
 
 <a href="containers/staticContentContainer/contentContainer.html">Static Content Container</a>
 
-
 ####Controls
 <a href="controls/buttons/buttons.html">Buttons</a><br>
 <a href="controls/button-bar/button-bar.html">Button Bar</a>
@@ -48,6 +47,9 @@ Browse the Design Pattern Library here:
 <a href="templates/address-form/address-form.html">Address Form</a><br>
 <a href="templates/sign-in-form/sign-in-form.html">Sign In Form</a><br>
 
+
+####General
+<a href="general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a><br>
 
 
 

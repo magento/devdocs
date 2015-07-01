@@ -8,6 +8,45 @@ menu_order: 3
 github_link: architecture/archi_perspectives/arch_layers.md
 ---
 
+
+<h2>Magento Framework</h2>
+The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and exception handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies. 
+
+This primarily PHP software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
+(Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.) 
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Note: Don’t confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
+</div>
+
+You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  
+
+<h3>Magento Framework responsibilities</h3>
+The Magento framework provides libraries that help reduce the effort of creating modules that contain business logic.
+The framework is responsible for operations that are useful for potentially all modules, including: 
+
+* handling HTTP protocols
+* interacting with the database and filesystem
+* rendering content
+
+<h3>Magento Framework organization</h3>
+Here is the Magento framework folder structure:
+
+```
+Lib/
+ ../Internal
+    ../Magento
+      ../Framework
+ ```
+
+* `/lib/internal` contains some non-PHP as well as PHP components. non-PHP framework libraries includes JavaScript, LESS/CSS.
+
+* `/lib/internal/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). Sample libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. some of which is designed to support CSS rendering
+
+* `/lib/web` contains JavaScript and CSS/LESS files.
+
+
+
 <h2> Presentation layer</h2>
 
 
@@ -28,9 +67,6 @@ In general, the service layer
 
 * Provides a stable API for other modules to call into.
 
-
-
-<b> To do: Add diagram</b>
 
 
 
@@ -58,8 +94,6 @@ The service contract of a module is defined by the set of interfaces in the modu
 * data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
 
 
-<b>To do: Add screenshot of relevant directory structure for module</b>
-
 Typically, service contracts provide three distinct types of interfaces: 
 
 * Repository interfaces
@@ -73,14 +107,16 @@ Service contracts permit you to add a new customer extension that adds or change
 
 Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
 
+<h3>Related topics </h3>
+Service contracts
+
+
 <h2>Domain layer</h2>
 The domain layer holds the business logic layer of a Magento module. It typically does not contain resource-specific or database-specific information. Its primary functions include:
 
 * Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models. 
 
 * (Optionally) Includes the implementation of service contracts, although not their definition.
-
-<b>To do: Add diagram: service layer -- > domain layer resource models -- > database</b>
 
 Best practice: Use service contracts to communicate to the domain layer by passing data types through strongly typed objects. This practice can help you avoid the need to replace presentation layer code when replacing business layer logic. 
 
