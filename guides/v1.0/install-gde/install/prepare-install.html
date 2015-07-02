@@ -174,7 +174,11 @@
 <ol>
   <li><a href="/guides/v1.0/install-gde/install/composer-clone.html">Install the Composer software</a>.</li>
   <li><a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.</li>
-  <li>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code>/var/www/magento2/</code>).</li>
+  <li>
+    <p>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code>/var/www/magento2/</code>).</p>
+
+    <p>The Magento root directory is a subdirectory of your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v1.0/install-gde/basics/basics_docroot.html">here</a>.</p>
+  </li>
 </ol>
 
 <h2 id="install-update-depend-apache">Switching to the Apache user</h2>
@@ -277,6 +281,11 @@
 </code></pre>
 
     <p>This command updates package dependencies and can take a few minutes to complete.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v1.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
   </li>
   <li>
     <p>(Secure environment). Change ownership to the web server user as follows:</p>

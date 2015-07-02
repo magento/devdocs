@@ -259,6 +259,8 @@ mv composer.phar /usr/local/bin/composer</pre>
     <p>Change to your web server’s docroot directory.</p>
 
     <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+
+    <p>Need help locating the docroot? Click <a href="/guides/v1.0/install-gde/basics/basics_docroot.html">here.</a></p>
   </li>
   <li>
     <p>Enter the following command:</p>
@@ -345,7 +347,17 @@ fatal: The remote end hung up unexpectedly</pre>
   <li>
     <p>Change to the Magento directory:</p>
 
-    <pre>cd magento2</pre>
+    <pre><code>cd &lt;web server docroot&gt;/&lt;magento2 clone dir&gt;
+</code></pre>
+
+    <p>Cloning the Magento 2 GitHub repository creates a directory, typically <code>magento2</code>, under your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v1.0/install-gde/basics/basics_docroot.html">here</a>.</p>
+
+    <p>Examples:</p>
+
+    <ul>
+      <li>Ubuntu: <code>/var/www/magento2</code></li>
+      <li>CentOS: <code>/var/www/html/magento2</code></li>
+    </ul>
   </li>
   <li>
     <p>Find the web server user:</p>

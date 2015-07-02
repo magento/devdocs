@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Deploy static view files</title>
+	<title>What is a docroot?</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">
+	<link rel="canonical" href="//guides/v1.0/install-gde/basics/basics_docroot.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Deploy static view files</h1>
+		<h1 class="page-heading">What is a docroot?</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/basics/basics_docroot.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,174 +165,117 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h4 id="contents">Contents</h4>
+		<p>The web server document root (often referred to as the <em>docroot</em>) is the web server’s root directory; in other words, all pages it delivers are located in this directory and subdirectories of it. The path to your web server’s docroot depends on:</p>
 
 <ul>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-static-overview">Overview of static view files deployment</a></li>
-  <li><a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a></li>
-  <li><a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a></li>
+  <li>What operating system you’re using</li>
+  <li>The web server brand and version</li>
+  <li>Your hosting provider (if you use one)</li>
 </ul>
 
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v1.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
+<p>This guide can’t cover all the possibilities but we’ll help you get started figuring out where your docroot. It’s imporant; your Magento 2 installation directory is a subdirectory of your web server’s docroot so if you don’t know where the docroot is, you’ll have a lot of trouble doing anything with Magento.</p>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p>Look at the following sections in the order presented to locate your docroot.</p>
 
-<h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
-<p>The static view files deployment tool enables you to write static files to the Magento file system when the Magento software is set for <a href="/guides/v1.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.</p>
+<h2 id="contact-your-hosting-provider">Contact your hosting provider</h2>
+<p>If you use one, contact your hosting provider to locate the web server docroot. For example, <a href="http://support.hostgator.com/articles/cpanel/what-is-a-document-root-folder" target="_blank">cPanel</a> typically uses <code>public_html</code> as its docroot but don’t believe us! Contact your provider directly.</p>
 
-<p>Because static view files are not deployed on the fly in production mode, you must write static view files to the Magento file system manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.</p>
+<h2 id="contact-your-network-administrator">Contact your network administrator</h2>
+<p>If you don’t use a hosting provider, you’re not technical, and you’re not that familiar with how things are set up, contact your network administrator. </p>
+
+<h2 id="find-the-docroot-yourself">Find the docroot yourself</h2>
+<p>This section is for technical people who don’t mind opening a <a href="/guides/v1.0/install-gde/basics/basics_login.html">command prompt</a> and finding the docroot themselves.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the tool as the web server user. For more information, see <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
+  <p>This section assumes you have a simple web server setup with virtual hosts. An Apache <em>virtual host</em> refers to running more than one web site (such as <code>company1.example.com</code> and <code>company2.example.com</code>) on a single machine. A virtual host configuration can override the default docroot. For more information about virtual hosts, see <a href="http://httpd.apache.org/docs/2.2/mod/core.html#virtualhost" target="_blank">Apache 2.2</a> or <a href="http://httpd.apache.org/docs/2.4/mod/core.html#virtualhost" target="_blank">Apache 2.4</a> documentation.</p>
 </div>
 
-<h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
-<p>To deploy static view files:</p>
+<p>To find the docroot:</p>
 
 <ol>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_os-version.html">Find what operating system you’re using</a>.</li>
   <li>
-    <p>Log in to the Magento server as, or <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</p>
-
-    <p>In a more secure environment, you should make the web server user the owner of the files after running the tool.</p>
-  </li>
-  <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>.</li>
-  <li>
-    <p>Run the static view files deployment tool from the <code>&lt;your Magento install dir&gt;/dev/tools/Magento/Tools/View</code> directory.
-<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-</div>
-  </li>
-</ol>
-
-<p>Command options:</p>
-
-<pre><code>magento setup:static-content:deploy &lt;lang&gt; ... &lt;lang&gt; [--dry-run] 
-</code></pre>
-
-<p>The following table discusses the meanings of this command’s parameters and values. </p>
-
-<table>
-	<col width="15%" />
-  	<col width="65%" />
-  	<col width="25%" />
-	<tbody>
-		<tr>
-			<th>Option</th>
-			<th>Description</th>
-			<th>Required?</th>
-		</tr>
-	<tr>
-		<td>&lt;lang&gt;</td>
-		<td><p>Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank">ISO-636</a> language codes for which to output static view files. (Default is <code>en_US</code>.)</p>
-		<p>You can find the list by running <code>magento info:language:list</code>.</p></td>
-	<td><p>No</p></td>
-	</tr>
-		<tr>
-		<td>--dry-run</td>
-		<td><p>Include to view the files output by the tool without outputting anything.</p></td>
-		<td><p>No</p></td>
-	</tr>
-	</tbody>
-</table>
-
-<p>For example, to deploy static view files for the <code>pt_BR</code> language, enter</p>
-
-<pre><code>magento --ansi setup:static-content:deploy pt_BR
-</code></pre>
-
-<p>Following are some sample messages that display to indicate successful deployment:</p>
-
-<pre><code>Requested languages: pt_BR
-=== frontend -&gt; Magento/luma -&gt; pt_BR ===
-... progress indicator ...
-Successful: 1613 files; errors: 0
-
-=== frontend -&gt; Magento/blank -&gt; pt_BR ===
-... progress indicator ...
-Successful: 1620 files; errors: 0
-
-=== adminhtml -&gt; Magento/backend -&gt; pt_BR ===
-... progress indicator ...
-Successful: 1626 files; errors: 0
-
-=== Minify templates ===
-... progress indicator ...
-Successful: 858 files modified
----
-New version of deployed files: 1430773903
-</code></pre>
-
-<h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
-<p><a href="/guides/v1.0/install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.</p>
-
-<p><strong>Symptom</strong>: The following error is displayed when you run the static view files deployment tool:</p>
-
-<pre><code>ERROR: You need to install the Magento application before running this utility.
-</code></pre>
-
-<p><strong>Solution</strong>:</p>
-
-<p>Use the following steps:</p>
-
-<ol>
-  <li>
-    <p>Install the Magento software in any of the following ways:</p>
+    <p>Find your web server version:</p>
 
     <ul>
-      <li><a href="/guides/v1.0/install-gde/install/install-cli.html">Command line</a></li>
-      <li><a href="/guides/v1.0/install-gde/install/install-web.html">Setup wizard</a></li>
+      <li>Ubuntu: <code>apache2 -v</code></li>
+      <li>CentOS: <code>httpd -v</code></li>
     </ul>
   </li>
   <li>
-    <p>Log in to the Magento server as, or <a href="/guides/v1.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</p>
+    <p>See one of the following sections:</p>
 
-    <p>In a more secure environment, you should make the web server user the owner of the files after running the tool.</p>
-  </li>
-  <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</li>
-  <li>
-    <p><a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
-<!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. --></p>
-
-    <!-- <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
-</div> -->
+    <ul>
+      <li><a href="#basics-docroot-apache22">Find the docroot for Apache 2.2</a></li>
+      <li><a href="#basics-docroot-apache24">Find the docroot for Apache 2.4</a></li>
+    </ul>
   </li>
 </ol>
 
-<h4 id="related-topics">Related topics</h4>
+<h2 id="basics-docroot-apache22">Find the docroot for Apache 2.2</h2>
+<p>To find the docroot for Apache 2.2:</p>
 
-<ul>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
+<ol>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_login.html">Log in to your Magento server</a>.</li>
+  <li>
+    <p>Open the following file in a text editor:</p>
+
+    <ul>
+      <li>
+        <p>Ubuntu:</p>
+
+        <pre><code>/etc/apache2/sites-available/default
+</code></pre>
+      </li>
+      <li>
+        <p>CentOS:</p>
+
+        <pre><code>/etc/httpd/httpd.conf
+</code></pre>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Search the file for <code>DocumentRoot</code>. A typical result follows:</p>
+
+    <ul>
+      <li>
+        <p>Ubuntu:</p>
+
+        <pre><code>DocumentRoot /var/www
+</code></pre>
+      </li>
+      <li>
+        <p>CentOS:</p>
+
+        <pre><code>DocumentRoot /var/www/html
+</code></pre>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="basics-docroot-apache24">Find the docroot for Apache 2.4</h2>
+<p>This section applies to Apache 2.4 on Ubuntu only. If you installed Apache 2.4 on CentOS, consult the documentation provided with your version of Apache for more information.</p>
+
+<p>To find the docroot for Apache 2.4:</p>
+
+<ol>
+  <li><a href="/guides/v1.0/install-gde/basics/basics_login.html">Log in to your Magento server</a>.</li>
+  <li>
+    <p>Open the following file in a text editor:</p>
+
+    <pre><code>/etc/apache2/sites-available/default/000-default.conf
+</code></pre>
+  </li>
+  <li>
+    <p>Search the file for <code>DocumentRoot</code>. A typical result follows:</p>
+
+    <pre><code>DocumentRoot /var/www/html
+</code></pre>
+  </li>
+</ol>
+
 
 
 		</div>
@@ -374,6 +317,89 @@ New version of deployed files: 1430773903
 			
 				
 				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+								
+								
+							
+									<li class=""><span class="nav-header">Getting Started</span></li>
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation overview</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v1.0/install-gde/basics/basics_docroot.html">What is a docroot?</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/continue.html">Continue with your installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
 			
 			
 				
@@ -381,253 +407,6 @@ New version of deployed files: 1430773903
 			
 			
 				
-				
-					
-					
-					
-					
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/bk-config-guide.html">Introduction</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/bootstrap/mage-run.html">Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/cli/config-cli.html">Command line configuration</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/config/caching.html">Caching</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/config-guide/config/js-resources.html">JavaScript resources</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Magento configuration files</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-files.html">Module configuration files</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-
-
 				
 			
 			
@@ -742,8 +521,8 @@ New version of deployed files: 1430773903
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_docroot.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_docroot.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
