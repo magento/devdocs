@@ -8,16 +8,13 @@ menu_order: 1
 github_link: guides\v1.0\mtf\mtf_introduction.md
 ---
 
-This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). Also it specifies approach of creating and running tests with MTF. Detailed description of MTF tools may help to understand principles of MTF work, that allows developers to create high performance tests. MTF does not contain tests. All functional tests are within Magento application in `<magento_root>/dev/tests/functional/`. They are designed to improve quality of its implementation and to make it easier to perform basic acceptance testing, smoke testing, regression testing.
+This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). With the Magento Testing Framework you can create and run functional tests that are designed to improve the quality of your Magento implementation and to make it easier to perform basic acceptance testing, smoke testing, regression testing.  MTF does not contain tests. All functional tests are within Magento application in `<magento_root>/dev/tests/functional/`.
 
-MTF is an open source cross-platform solution (does not depend on a
-specific operating system).
+MTF is an open source cross-platform solution (that is, does not depend on a specific operating system).
 
-MTF allows software engineers to quickly develop functional tests for
-the Magento. These tests can be performed at any time.
+MTF enables you to quickly develop functional tests for the Magento application. These tests can be performed at any time.
 
-You can run a single test independently, many tests together (that is, a
-test suite), or you can run all available tests.
+You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.
 
 <h3 id="mtf_intro_extratools">What tools do I need to work with MTF?</h3>
 
@@ -44,7 +41,7 @@ This guide is intended to be used by any Magento developer. In addition, it can 
 <h2 id="mtf_intro_goal">Goal</h2>
 
 Facilitate functional testing and minimize efforts to perform
-regression testing. It should save time of Magento developers.
+regression testing.
 
 <h2 id="mtf_intro_scope">Scope</h2>
 
@@ -55,32 +52,25 @@ MTF works with functional tests located in
 `<magento_root>/dev/tests/functional/`.
 
 Out-of-the-box tests cover basic functionality. Extended functionality
-may be tested using customized tests, created with MTF.
+can be tested using customized tests, created with MTF.
 
-Relatively to software life cycle the MTF could be useful on the following phases:
+Relative to your software development lifecycle, the MTF can help you:
 
-1.    During development phase use MTF to test any changes of functionality (new
-    modules, extensions, bug fixing).
+1.    During the development phase, test any changes of functionality (new modules, update modules, fix bugs).
 
-1.    During maintenance phase use MTF for periodical automated regression resting.
+1.    During the maintenance phase, for periodic automated regression testing.
 
 <h3 id="mtf_intro_scope_use-case-ex">MTF use cases examples</h3>
 
-1.    As Magento developer I want to cover implemented functionality with
-    new tests (e. g. added attribute on Customer Form, extended Search
-    functionality, added tags for Products etc).
+1.    As Magento developer I want to cover implemented functionality with new tests (for example, added attribute on Customer Form, extended Search functionality, added tags for Products etc).
 
-1.    As software engineer I want to perform regression testing before
-    release to be confident that Magento works as expected with new
-    functionality.
+1.    As a software engineer I want to perform regression testing before release to be confident that Magento works as expected with new functionality.
     
 <h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
 
-Magento 2 contains also other types of tests in `<magento_root>/dev/tests/` in corresponding folders. This guide does not describe testing other than
-functional.
+MTF works with tests from `<magento_root>/dev/tests/functional` only.
 
-
-For other tests please see the following sections:
+For other tests please see the following topics:
 
 - <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a> 
 
