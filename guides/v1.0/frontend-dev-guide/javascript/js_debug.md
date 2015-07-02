@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/javascript/js_debug.md
 
 <h2 id="js_debug_overview">Overview</h2>
 
-This article talks about how to define which JavaScript components (scripts) are used for a certain HTML element on a store page.
+This article talks about how to define which JavaScript components (scripts) are used for a certain HTML element on a Magento store page.
 
 
 <h2 id="locate_widget">Locate JS components: walkthrough</h2>
@@ -18,22 +18,15 @@ This article talks about how to define which JavaScript components (scripts) are
 To locate scripts used for a certain element:
 
 <ol>
-<li>Open the store page in a browser, and locate the element's class or id using browser debugging tools.</li>
-<p class="q">class or id? true? yes</p>
+<li>Open the store page in a browser, and locate the element's <code>class</code> or <code>id</code> using browser debugging tools.</li>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls for this element, its children or parents. The notaion contains the names of the scripts. 
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>For information about JS scripts initializtion, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic</p></span>
-<!--ADDLINK-->
-</div>
+<li>Find the corresponding element in the page source and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>. 
 </li>
 <li>
 To find out, where is the source file of the used script:
 <ol>
-<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source view, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration collected from all modules of the current theme.
+<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration collected from all modules of the current theme.
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
 <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>&lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
@@ -54,22 +47,22 @@ According to the assets fallback, if there's a file in the current theme, the sy
 
 <h2>Locating widgets: example</h2>
 
-Let's find out what JS components are used for displaying the main navigation menu in the 
-default Blank theme. 
+Let's find out what JS components are used for displaying the main navigation menu in the Luma theme. 
 
 To do this, let's follow the steps described in the previous section:
 <ol>
-<li>Using the Inspect Element feature of the browser, define that the menu section <code>id</code> is *"store.menu"* <code>id</code>:
+<li>Using the Inspect Element feature of the browser, define that the menu section <code>id</code> is <code>store.menu</code>:
 
 <p>
-<img src="{{site.baseurl}}common/images/fdg_js_debug1.png">
+<img src="{{site.baseurl}}common/images/fdg_js_debug1.png" alt="Using the Inspect Element define the id">
 </p>
 
 
 </li>
-<li>Search the page source for *"store.menu"* (illustration follows): 
+<br>
+<li>Search the page source for <code>store.menu</code> (illustration follows): 
 <p>
-<img src="{{site.baseurl}}common/images/fdg_js_debug2.png">
+<img src="{{site.baseurl}}common/images/fdg_js_debug2.png" alt="Search the page source for the store.menu string">
 </p>
 
 We can see that there's a <code>data-mage-init</code> attribute in the scope of the <code>&lt;div id= &quot;store.menu&quot;&gt;&lt;/div&gt;</code> 
@@ -78,9 +71,9 @@ We can see that there's a <code>data-mage-init</code> attribute in the scope of 
 data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'
 </pre>
 
-According to the JS components initializaiton notation, this means that this code calls <code>menu.js</code>. 
+According to the JS components initialization notation, this means that this code calls <code>menu.js</code>. 
 </li>
-<li>To find out where's the source file of <code>menu.js</code></li>, let's open, <code>requirejs-config.js</code> by clicking the link to it in the <head></head> section of the page source. The path to menu.js is specified there as follows:
+<li>To find out where's the source file of <code>menu.js</code></li>, let's open <code>requirejs-config.js</code> by clicking the link to it in the <head></head> section of the page source. The path to <code>menu.js</code> is specified there as follows:
 <pre>
 "menu":                   "mage/menu",
 </pre>
