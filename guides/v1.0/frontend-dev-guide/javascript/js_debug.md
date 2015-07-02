@@ -21,23 +21,24 @@ To locate scripts used for a certain element:
 <li>Open the store page in a browser, and locate the element's <code>class</code> or <code>id</code> using browser debugging tools.</li>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element in the page source and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a>. 
+<li>Find the corresponding element in the page source and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#init_phtml" target="_blank">JavaScript initialization</a>. 
 </li>
 <li>
 To find out, where is the source file of the used script:
 <ol>
-<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration collected from all modules of the current theme.
+<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration, collected from all modules of the current theme.
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
 <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>&lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
 </div>
 </li>
-<li>In the <code>var config = {...}</code> section, find the required script name, and view the path to its source file. The path is relative to either:
+<li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. The path is relative to either:
 <ul>
-<li>If the module context is not specified: <code>lib/web</code>(library) or <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme) directories. 
+<li>If the module context is not specified: <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme) or <code>lib/web</code>(library) directories. 
 
 According to the assets fallback, if there's a file in the current theme, the system uses it. If it is not found there, the system uses the file from the library.</li>
-<li>If the module context is specified: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) or <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module) directories. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
+
+<li>If the module context is specified: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module) or <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) directories. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
 
 </ul>
 </li>
@@ -45,7 +46,7 @@ According to the assets fallback, if there's a file in the current theme, the sy
 </ol>
 
 
-<h2>Locating widgets: example</h2>
+<h2>Locate JS component: example</h2>
 
 Let's find out what JS components are used for displaying the main navigation menu in the Luma theme. 
 

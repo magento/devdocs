@@ -9,11 +9,11 @@ github_link: frontend-dev-guide/javascript/custom_js.md
 ---
 
 <h2 id="custom_js_overview">Overview</h2>
-This topic talks about how to use custom Javascript components, together with the default ones used in Magento or having replaced them with custom implementations.
+This topic talks about how to use custom JavaScript components, together with Magento default ones or having replaced them with custom implementations.
 
-We strongly recommend not to change the default Magento files. All customizations must be implemented in custom modules or themes.
+We strongly recommend not changing the default Magento files. All customizations must be implemented in custom modules or themes.
 
-<h2 id="js_replace">Use custom implementations instead of default JS components</h2>
+<h2 id="js_replace">Replace a default component</h2>
 
 
 To use a custom implementation of a certain existing Magento JS component:
@@ -26,9 +26,23 @@ To use a custom implementation of a certain existing Magento JS component:
 </li>
 <li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
 
-<p class="q">Need help to create a general sample</p>
+<pre>
+var config = {
+  &quot;map&quot;: {
+    &quot;*&quot;: {
+      &quot;&lt;default_component&gt;&quot;: &quot;js/&lt;custom_component&gt;&quot;,
+    }
+  }
+};
+</pre>
 
-For example, if you want to use the custom implementation of <code>navigation-menu.js</code> 
+Where the following notation is used:
+<ul>
+<li><code>&lt;default_component&gt;&quot;</code>: the name of the default component you replace</li>
+<li><code>&lt;custom_component&gt;</code>: the name of the custom component</li>
+</ul>
+
+For example, if you want to use custom <code>navigation-menu.js</code> script instead of the default menu widgets:
 <pre>
 var config = {
   &quot;map&quot;: {
@@ -40,7 +54,7 @@ var config = {
 };
 </pre>
 
-<p class="q">What is navigation-menu.js?</p>
+
 
 </li>
 </ul>
@@ -81,11 +95,11 @@ Where the following notation is used:
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget which you extend.</li>
 </ul>
 
-For innformation about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h3 id="extend_js_component">Extend a default UI component</h3>
 
-To extend a default UI component, your custom JS component must contain the following:
+To extend a default JS component, your custom script must contain the following:
 
 <pre>
 define([
@@ -107,9 +121,7 @@ Where the following notation is used:
 <li><code>&lt;your_component&gt;</code>: your custom component</li>
 </ul>
 
-<p class="q">Need verification</p>
-
-For example, if your custom component extends the default 
+For example, <code>Filters.js</code> script extends the default <code>filters.js</code>:
 <pre>
 define([
   'Magento_Ui/js/grid/filters/filters'
@@ -124,7 +136,7 @@ define([
 </pre>
 
 
-For innformation about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h2 id="disable_default_js">Disable default Magento JS</h2>
 
