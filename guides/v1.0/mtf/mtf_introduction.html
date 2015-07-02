@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>What operating system is my server running?</title>
+	<title>Introduction to Magento Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/install-gde/basics/basics_os-version.html">
+	<link rel="canonical" href="//guides/v1.0/mtf/mtf_introduction.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">What operating system is my server running?</h1>
+		<h1 class="page-heading">Introduction to Magento Testing Framework</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/install-gde/basics/basics_os-version.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/guides\v1.0\mtf\mtf_introduction.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,49 +165,109 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>How can you tell what operating system and version your Magento server runs? </p>
+		<p>This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). With the Magento Testing Framework you can create and run functional tests that are designed to improve the quality of your Magento implementation and to make it easier to perform basic acceptance testing, smoke testing, regression testing.  MTF does not contain tests. All functional tests are within Magento application in <code>&lt;magento_root&gt;/dev/tests/functional/</code>.</p>
 
-<p><strong>Prerequisites</strong>: You must access the server using a command prompt (an application that enables you to enter commands directly). </p>
+<p>MTF is an open source cross-platform solution (that is, does not depend on a specific operating system).</p>
 
-<p>If you can log in directly to the machine, the application is usually called Terminal. </p>
+<p>MTF enables you to quickly develop functional tests for the Magento application. These tests can be performed at any time.</p>
 
-<p>If you cannot log in directly, you can <a href="/guides/v1.0/install-gde/basics/basics_magento-installed.html#instgde-basics-terminal">log in remotely</a>.</p>
+<p>You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.</p>
 
-<h2 id="exact-command-or-process-of-elimination">Exact command or process of elimination?</h2>
+<h3 id="mtf_intro_extratools">What tools do I need to work with MTF?</h3>
 
-<p>If you already know you’re running Ubuntu or CentOS but don’t know the version, see one of the following sections. If you don’t know that much, just use the process of elimination—run both commands until you find the one that works.</p>
+<ul>
+  <li>
+    <p><a href="https://phpunit.de/">PHPUnit</a> (downloaded via composer during installation)</p>
+  </li>
+  <li>
+    <p><a href="http://www.seleniumhq.org/download/">Selenium Standalone Server</a></p>
+  </li>
+  <li>
+    <p>Web browser</p>
+  </li>
+</ul>
 
-<h3 id="centos">CentOS</h3>
+<h3 id="mtf_intro_mtf-output">What do I have as output working with MTF?</h3>
 
-<p>To find the CentOS version, enter the following command in Terminal:</p>
+<ul>
+  <li>
+    <p>Tested application</p>
+  </li>
+  <li>
+    <p>Basic PHPUnit results</p>
+  </li>
+  <li>
+    <p>Screenshots of failures</p>
+  </li>
+  <li>
+    <p>Logs of failures</p>
+  </li>
+</ul>
 
-<pre><code>cat /etc/*release*
-</code></pre>
+<h2 id="mtf_intro_audi">Audience</h2>
 
-<p>The following sample output shows you’re running CentOS 6.5 (you can ignore most of the output):</p>
+<p>This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, PHP developers, and system integrators.</p>
 
-<pre><code>CentOS release 6.5 (Final)
-LSB_VERSION=base-4.0-amd64:base-4.0-noarch:core-4.0-amd64:core-4.0-noarch:graphics-4.0-amd64:graphics-4.0-noarch:printing-4.0-amd64:printing-4.0-noarch
-cat: /etc/lsb-release.d: Is a directory
-CentOS release 6.5 (Final)
-CentOS release 6.5 (Final)
-</code></pre>
+<h2 id="mtf_intro_goal">Goal</h2>
 
-<h3 id="ubuntu">Ubuntu</h3>
+<p>Facilitate functional testing and minimize efforts to perform
+regression testing.</p>
 
-<p>To find the Ubuntu version, enter the following command in Terminal:</p>
+<h2 id="mtf_intro_scope">Scope</h2>
 
-<pre><code>lsb_release -a
-</code></pre>
+<p>MTF is purposed to test user interactions with web application under
+test.</p>
 
-<p>The following sample output shows you’re running Ubuntu 14:</p>
+<p>MTF works with functional tests located in
+<code>&lt;magento_root&gt;/dev/tests/functional/</code>.</p>
 
-<pre><code>No LSB modules are available.
-Distributor ID: Ubuntu
-Description:    Ubuntu 14.04.1 LTS
-Release:        14.04
-Codename:       trusty
-</code></pre>
+<p>Out-of-the-box tests cover basic functionality. Extended functionality
+can be tested using customized tests, created with MTF.</p>
+
+<p>Relative to your software development lifecycle, the MTF can help you:</p>
+
+<ol>
+  <li>
+    <p>During the development phase, test any changes of functionality (new modules, update modules, fix bugs).</p>
+  </li>
+  <li>
+    <p>During the maintenance phase, for periodic automated regression testing.</p>
+  </li>
+</ol>
+
+<h3 id="mtf_intro_scope_use-case-ex">MTF use cases examples</h3>
+
+<ol>
+  <li>
+    <p>As Magento developer I want to cover implemented functionality with new tests (for example, added attribute on Customer Form, extended Search functionality, added tags for Products etc).</p>
+  </li>
+  <li>
+    <p>As a software engineer I want to perform regression testing before release to be confident that Magento works as expected with new functionality.</p>
+  </li>
+</ol>
+
+<h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
+
+<p>MTF works with tests from <code>&lt;magento_root&gt;/dev/tests/functional</code> only.</p>
+
+<p>For other tests please see the following topics:</p>
+
+<ul>
+  <li>
+    <p><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a> </p>
+  </li>
+  <li>
+    <p><a href="/guides/v1.0/extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html">More information about performance testing.</a></p>
+  </li>
+</ul>
+
+<h2 id="mtf_intro_github-link">MTF on GitHub</h2>
+
+<p>Follow the MTF project and contribute on GitHub
+<a href="https://github.com/magento/mtf">https://github.com/magento/mtf</a></p>
 
 
 
@@ -250,6 +310,46 @@ Codename:       trusty
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -268,34 +368,14 @@ Codename:       trusty
 								
 								
 							
-									<li class=""><span class="nav-header">Getting Started</span></li>
+									<li class=""><span class="nav-header">Magento Testing Framework Guide</span></li>
 								
 								
 							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation overview</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v1.0/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/install-gde/basics/basics_docroot.html">What is a docroot?</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/mtf/mtf_introduction.html">INTRODUCTION</a></li>
 						
 								
 								
@@ -305,73 +385,8 @@ Codename:       trusty
 						
 
 					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/install-gde/continue.html">Continue with your installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			
@@ -458,8 +473,8 @@ Codename:       trusty
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_os-version.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/install-gde/basics/basics_os-version.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/mtf/mtf_introduction.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/mtf/mtf_introduction.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
