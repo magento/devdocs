@@ -15,7 +15,8 @@ See one of the following sections:
 
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-magento-web">Running the Setup Wizard</a>
-*	<a href="#instgde-install-reinstall">Reinstalling the Magento software</a>
+*	<a href="#instgde-install-runagain">Running the Setup Wizard again</a>
+*	<a href="#instgde-install-reinstall">Updating or reinstalling the Magento software</a>
 
 This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
 
@@ -141,7 +142,7 @@ To install the Magento software using the Setup Wizard:
 		<td><p>Path to access the Magento Admin. Initially, a random value displays.</p>
 			<p>We recommend a random URL for security purposes. A random URL is harder for hackers or malicious software to exploit.</p>
 			<p>After the installation completes, we recommend you bookmark the Magento Admin URL so you don't forget it. You can display this value at any time using the TBD command.</p>
-			<p>If you choose to enter another value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on.</p></td>
+			<p>If you choose to enter another value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URL can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only.</p></td>
 	</tr>
 	</tbody>
 	</table>
@@ -301,6 +302,11 @@ The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-tem
 The value of `sys_temp_dir` determines where `install.log` is located. If the value is commented out, PHP uses that value as its default. 
 
 A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.log`.
+
+<h2 id="instgde-install-runagain">Running the Setup Wizard again</h2>
+You can optionally run the Setup Wizard after a successful installation to change values (for example, if you change your database password).
+
+To do so, log in to the Magento Admin as an administrator and click **System** > Tools > **Web Setup Wizard**.
 
 <h2 id="instgde-install-reinstall">Updating or reinstalling the Magento software</h2>
 You can reinstall the Magento software in an development environment especially to get all the latest code changes:

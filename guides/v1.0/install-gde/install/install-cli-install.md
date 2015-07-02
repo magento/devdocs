@@ -119,7 +119,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Path to access the Magento Admin or omit this parameter to let Magento generate a random URL for you.</p>
 			<p>We recommend a random URL for security purposes. A random URL is harder for hackers or malicious software to exploit.</p>
 			<p>The URL displays at the end of the installation. You can display it at any time using the TBD command.</p>
-			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on.</p></td>
+			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URL can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
