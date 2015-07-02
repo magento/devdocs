@@ -61,7 +61,8 @@ Permissions required to access particular resource are configured in the <code>w
 For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <code><a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a></code>.
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
-<h4 id="acl-webapi-relation">Sample (truncated) customer <code>webapi.xml</code></h4>
+
+<h4 id="acl-webapi-relation">Sample (truncated) customer webapi.xml</h4>
 
 {% highlight XML %}
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
