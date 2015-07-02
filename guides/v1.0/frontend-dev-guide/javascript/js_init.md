@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/javascript/js_init.md
 
 This topic talks about how to initialize a JavaScript component in the Magento 2 application.
 
-<h2 id="init_phtml">Initialize a JS component on HTML element</h2>
+<h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
 In Magento 2, there are two ways to initialize a JS component in a `.phtml` template: using the `data-mage-init` attribute and using the `<script>` tag. Both ways are described in the following sections.
 
 
