@@ -2,8 +2,8 @@
 layout: default
 group: install 
 subgroup: T_Command-line installation
-title: Display or change the Admin URL
-menu_title: Display or change the Admin URL 
+title: Display or change the Admin URI
+menu_title: Display or change the Admin URI
 menu_node: 
 menu_order: 5
 github_link: install-gde/install/install-cli-adminurl.md
@@ -26,15 +26,14 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
 Before you run this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.
 
-<h2 id="instgde-cli-displayurl">Display the Admin URL</h2>
-This section discusses how to use the command line to display the Admin URL.
+<h2 id="instgde-cli-displayurl">Display the Admin URI</h2>
+This section discusses how to use the command line to display the Admin Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>).
 
 Command options:
 
-	magento TBD
+	magento info:adminuri
 
-<h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
-To change the Admin URL, edit its value in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
+You can also view the the Admin URI in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
 
 {% highlight php %}
 <? php
@@ -45,4 +44,5 @@ To change the Admin URL, edit its value in `<your Magento install dir>/app/etc/e
   <?
 {% endhighlight %}
 
-The Admin URL can contain alphanumeric values, the underscore character (`_`), and the dash character (`-`) only.
+<h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
+To change the Admin URI, use the <a href="{{ site.gdeurl }}/install-gde/install/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.
