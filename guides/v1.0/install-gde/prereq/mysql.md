@@ -8,6 +8,10 @@ menu_order: 5
 github_link: install-gde/prereq/mysql.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
+
 #### Contents
 
 *	<a href="#mysql-help-beginner">Help if you're just starting out</a>

@@ -105,7 +105,7 @@ For more information, see the <a href="http://php.net/manual/en/function.phpinfo
 
 To view the results, enter the following URL in your browser's location or address field:
 
-	http://[web server host or IP]/phpinfo.php
+	http://<web server host or IP>/phpinfo.php
 
 If a 404 (Not Found) error displays, check the following:
 
@@ -128,13 +128,13 @@ To install phpmyadmin on Ubuntu:
 
 1.	Use the following command:
 
-	<pre>apt-get install phpmyadmin</pre>
+		apt-get install phpmyadmin
 
 2.	Follow the prompts on your screen to complete the installation.
 
 3.	To use phpmyadmin, enter the following URL in your browser's address or location field:
 
-	<pre>http://[web server host or IP]/phpmyadmin</pre>
+		http://<web server host or IP>/phpmyadmin
 
 4.	When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.
 
@@ -143,45 +143,45 @@ To install phpmyadmin on CentOS:
 
 1.	Download the epel RPM for the version of CentOS you're using. A sample follows.
 
-	<pre>cd /tmp
-	wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
-	rpm -ivh epel-release-6-8.noarch.rpm</code>
+		cd /tmp
+		wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+		rpm -ivh epel-release-6-8.noarch.rpm
 
-2.	Install <code>phpmyadmin</code> as follows:
+2.	Install `phpmyadmin` as follows:
 
-	<pre>yum -y install phpmyadmin</pre>
+		yum -y install phpmyadmin
 
 3.	Authorize access to phpmyadmin from your machine's IP address.
 
 	Open the following file for editing:
 
-	<pre>vim /etc/httpd/conf.d/phpMyAdmin.conf</pre>
+		vim /etc/httpd/conf.d/phpMyAdmin.conf
 
 3.	Replace the following IP address with your IP address
 
-	<pre>Require ip localhost</pre>
+		Require ip localhost
 
 	For example,
 
-	<pre>Require ip 192.51.100.101</pre>
+		Require ip 192.51.100.101
 
 4.	Replace the following IP with your IP address:
 
-	<pre>Allow from localhost</pre>
+		Allow from localhost
 
 	For example,
 
-	<pre>Allow from 192.51.100.101</pre>
+		Allow from 192.51.100.101
 
-5.	Save your changes to <code>/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.
+5.	Save your changes to `/etc/httpd/conf.d/phpMyAdmin.conf` and exit the text editor.
 
 6.	Restart Apache.
 
-	<pre>service httpd restart</pre>
+		service httpd Restart
 
 7.	To use phpmyadmin, enter the following command in your browser's address or location field:
 
-	http://[web server host or IP]/phpmyadmin
+		http://<web server host or IP>/phpmyadmin
 
 8.	When prompted, log in using your MySQL database <code>root</code> or administrative user's user name and password.
 
