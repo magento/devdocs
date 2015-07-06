@@ -1,7 +1,7 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architecture
+subgroup: Introduction
 title: What is Magento?
 menu_title: What is Magento?
 menu_order: 1

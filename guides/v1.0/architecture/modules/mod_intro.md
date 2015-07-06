@@ -2,9 +2,9 @@
 layout: default
 group: arch-guide
 subgroup: Architecture
-title: Modules
+title: 
 menu_title: Modules
-menu_order: 4
+menu_order: 
 github_link: architecture/modules/mod_intro.md
 ---
 

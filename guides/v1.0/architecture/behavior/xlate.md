@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Behavior
+subgroup: 
 title: Translation
 menu_title: Translation
-menu_order: 5
+menu_order: 
 menu_node: 
 github_link: architecture/behavior/xlate.md
 ---

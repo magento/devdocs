@@ -1,10 +1,10 @@
 ---
 layout: default
 group: 
-subgroup: Modules
+subgroup: 
 title: Modular file system
 menu_title: Modular file system
-menu_order: 8
+menu_order: 
 github_link: architecture/modules/mod_file_system.md
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Modules
+subgroup: 
 title: Module relationships
 menu_title: Module relationships
-menu_order: 3
+menu_order: 
 github_link: architecture/modules/mod_relationships.md
 ---
 

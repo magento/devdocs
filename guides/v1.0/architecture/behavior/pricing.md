@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Behavior
+subgroup: 
 title: The pricing library
 menu_title: The pricing library
-menu_order: 1
+menu_order: 
 github_link: architecture/behavior/pricing.md
 ---
 
