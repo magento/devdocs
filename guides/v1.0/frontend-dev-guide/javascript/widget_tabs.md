@@ -5,7 +5,7 @@ subgroup: JQuery widget details
 title: Tabs widget
 menu_title: Tabs widget
 menu_order: 10
-github_link: frontend-dev-guide/javascript/jquery-widget-tabs.md
+github_link: frontend-dev-guide/javascript/widget_tabs.md
 ---
 
 <h2 id="fedg_tabs-widget_overview">Overview</h2>
