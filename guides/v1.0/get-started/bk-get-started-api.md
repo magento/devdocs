@@ -17,9 +17,3 @@ You use a client to access these services. These clients include:
 * Third-party applications. For example, a mobile application.
 * External batch jobs that run without user intervention.
 * JavaScript widgets in the Magento storefront or Admin interface. The widget makes AJAX calls to access services.
-
-
-
-
-
-
