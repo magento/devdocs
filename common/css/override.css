@@ -24,7 +24,10 @@ code {
 p.q 	{
 	font-size: 15pt;
 	color: red;
-	display: none;
+<<<<<<< HEAD
+
+/*	display: none;*/
+
 	}
 
 /* SRJ - fix Firefox bug */
