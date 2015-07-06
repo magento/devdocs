@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/templates/template-email.md
 
 #### Contents
 
-This topic discusses how to customize the content and design of transactional email templates. [What are transactional emails? Use something like this only better? http://devdocs.magento.com/guides/m1x/ce19-ee114/RWD_responsive_emails.html#intro]
+This topic discusses how to customize the content and design of email templates.
 
 * <a href="#customizing-email-templates">Customize email templates</a>
     * <a href="#customize-email-theme">Customize an email template using a theme</a>
