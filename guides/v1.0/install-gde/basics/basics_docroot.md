@@ -16,7 +16,7 @@ The web server document root (often referred to as the *docroot*) is the web ser
 *	The web server brand and version
 *	Your hosting provider (if you use one)
 
-This guide can't cover all the possibilities but we'll help you get started figuring out where your docroot. It's imporant; your Magento 2 installation directory is a subdirectory of your web server's docroot so if you don't know where the docroot is, you'll have a lot of trouble doing anything with Magento.
+This guide can't cover all the possibilities but we'll help you get started figuring out where your docroot. It's important; your Magento 2 installation directory is a subdirectory of your web server's docroot so if you don't know where the docroot is, you'll have a lot of trouble doing anything with Magento.
 
 Look at the following sections in the order presented to locate your docroot.
 

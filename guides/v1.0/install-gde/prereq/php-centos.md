@@ -135,8 +135,8 @@ To set your time zone and memory limit:
 
 2.	Change `memory_limit` to:
 
-		memory_limit = 512M` or more for normal operation
-		memory_limit = 2G` or more for testing
+		memory_limit = 512M or more for normal operation
+		memory_limit = 2G or more for testing
 
 3.	Save your changes and exit the text editor.
 

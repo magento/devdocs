@@ -71,7 +71,7 @@ To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14:
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php5-5.6
 		apt-get -y update
-		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl
+		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 
 2.	Enter the following command to verify PHP 5.6 installed properly:
 
@@ -110,7 +110,7 @@ To install or upgrade to PHP 5.6 on Ubuntu 12:
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php5-5.6
 		apt-get -y update
-		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl
+		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 
 2.	Verify that PHP 5.6 installed properly:
 
@@ -137,7 +137,7 @@ To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
 
 1.	Enter the following command:
 
-		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl
+		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
@@ -154,7 +154,7 @@ To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
 		apt-get -y update
 		add-apt-repository ppa:ondrej/php5
 		apt-get update
-		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl
+		apt-get -y install php5 php5-mhash php5-mcrypt php5-curl php5-cli php5-mysql php5-gd php5-intl php5-xsl
 
 2.	Verify the PHP version by entering `php -v`. Messages similar to the following should display:
 
