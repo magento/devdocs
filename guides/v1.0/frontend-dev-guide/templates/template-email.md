@@ -22,7 +22,7 @@ This topic discusses how to customize the content and design of transactional em
     * <a href="#inline-styles">Inline styles</a>
     * <a href="#non-inline-styles">Non-inline styles</a>
     * <a href="#organization-email-styles">Organization of email styles</a>
-    * <a href="#web-fonts">Web fonts</a>
+    * <a href="#custom-fonts">Custom fonts</a>
 * <a href="#email-logo">Email logo</a>
     * <a href="#customize-logo-theme">Customize the logo using a theme</a>
     * <a href="#customize-logo-admin">Customize the logo using the Admin</a>
@@ -229,13 +229,21 @@ The styles for emails are split into several different files.
 
 When implementing a custom theme, you should be able to fully customize email templates by copying the `app/design/frontend/Magento/blank/web/css/source/_email-extend.less` and `app/design/frontend/Magento/blank/web/css/source/_email-variables.less` files to your custom theme and editing those files.
 
-<h3 id="web-fonts">Web fonts</h3>
+<h3 id="custom-fonts">Custom fonts</h3>
 
-The `Magento\blank` theme and emails use the Open Sans web font. If you want to change this font, can do the following:
+Emails in the `Magento\blank` theme use the same "Open Sans" font as the frontend theme. Since Open Sans is not a standard system font, `@font-face` rules are used to include web fonts.
+ 
+ Here is an overview of how the font structure for emails works:
+ 
+ * The `app/design/frontend/Magento/blank/web/css/source/_email-extend.less` file contains an `@import` directive which requests the `email-fonts.css` file. The reason the contents of `email-fonts.css` are being loaded using `@import` rather than be output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients won't render the text since the web fonts can't be loaded.
+ * The `app/design/frontend/Magento/blank/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
+     * The `app/design/frontend/Magento/blank/web/css/source/_variables.less` file defines which font is going to be used.
+     * The `app/design/frontend/Magento/blank/web/css/source/_typography.less` file generates the `@font-face` rules which import the custom fonts.
 
-<span style="color: red;">TODO - It probably doesn't make sense to write up instructions on how to implement a custom font here, as the custom font will be inherited from the frontend theme. So the theme development documentation should probably be expanded with an example of how to add a custom web font and we can then just reference it from here.</span>
+If you want to change the font used for emails, do the following:
 
-[Check this out: http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html]
+1. Refer to the documentation on [using fonts]({{ site.gdeurl }}frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
+2. Once you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to those new fonts, the emails should start using the new font. 
 
 <h2 id="email-logo">Email logo</h2>
 You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. 
