@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Themes</title>
+	<title>JavaScript initialization</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/themes/theme-general.html">
+	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/javascript/js_init.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Themes</h1>
+		<h1 class="page-heading">JavaScript initialization</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/themes/theme-general.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/javascript/js_init.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,36 +165,117 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="theme-gen-overview">Overview</h2>
-<p>A theme is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images.</p>
+		<h2 id="js_init_overview">Overview</h2>
 
-<p>Themes are designed to override or customize view layer resources, provided initially by modules or libraries.<!--ADDLINK to Fallback--> Themes are implemented by different vendors (frontend developers) and intended to be distributed as additional packages for Magento system similar to other components.</p>
+<p>This topic talks about how to initialize a JavaScript component in the Magento 2 application. It covers initializing JavaScript components in a <code>.phtml</code> template and jQuery widget initialization in a JS script.</p>
 
-<p>Out-of-the-box Magento application provides two design themes: Luma, as a demonstration theme, and Blank as a basis for custom theme creation.</p>
+<h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
+<p>In Magento 2, there are two ways to initialize a JS component in a <code>.phtml</code> template: using the <code>data-mage-init</code> attribute and using the <code>&lt;script&gt;</code> tag. Both ways are described in the following sections.
+<!-- ADDLINK for JS component--></p>
 
-<p>There are no restrictions on using the demonstration Luma theme for a live store, but if you want to customize the default design, you need to create a new theme. We strongly recommend not to change the default Luma and Blank theme files, because if you do edit the default files, your changes can be overwritten by the new version of the default files during upgrades.</p>
+<h3 id="data_mage_init">Initialization using <code>data-mage-init</code></h3>
 
-<p>Your new theme can be a standalone new theme, or can inherit from the default or any other existing one. The theme inheritance concept implemented in the Magento system allows you changing only certain theme files, and inheriting the rest necessary files from a parent theme. <!--ADDLINK Magento Theme Inheritance for details. --></p>
+<p>Use the <code>data-mage-init</code> attribute to initialize a JS component on a certain HTML element. The following code sample is an illustration. Here a JS component is initialized on the <code>&lt;nav/&gt;</code> element:</p>
+<pre>
+&lt;nav data-mage-init='{ &quot;&lt;component_name&gt;&quot;: {...} }'&gt;&lt;/nav&gt;
+</pre>
 
-<p>The Create a new theme chapter provides all information, including theoretical concepts and practical references, a frontend developer might need to efficiently create a new theme in Magento application.</p>
+<p>When initialized on a certain element, the script is called only for this particular element. It is not automatically initialized for other elements of this type on the page. </p>
 
-<h2 id="theme-gen-walkthrough">Add a theme: walkthrough</h2>
-<p>The high-level steps required to add a new theme in the Magento system are the following:</p>
+<h4 id="init_process">How the JS initialization using <code>data-mage-init</code> is processed</h4>
 
-<ol>
-  <li>Create a folder for the theme under <code>app/design/frontend/&lt;your_vendor_name&gt;/&lt;your_theme_name&gt;</code>.</li>
-  <li>Add a declaration file <code>theme.xml</code> and optionally <code>view.xml</code> to the theme folder.</li>
-  <li>Add a <code>composer.json</code> file.</li>
-  <li>Create folders for CSS, JavaScript, images, and fonts.</li>
-  <li>Configure your theme in the Admin panel.</li>
-</ol>
-
-<h2 id="theme-gen-read">Recommended reading</h2>
-
+<p>On DOM ready, the <code>data-mage-init</code> attribute is parsed to extract components’ names and configuration to be applied to the element. 
+Depending on the type of the JS component initialized, processing is performed as follows:</p>
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento" target="_blank">Checklist of modules</a></li>
-  <li><a href="/guides/v1.0/architecture/view/static-process.html" target="_blank">Static view files processing</a></li>
+
+<li>If an object is returned, the initializer tries to find the <code>&lt;component_name&gt;</code> key. If the corresponding value is a function, the initializer passes the <code>config</code> and <code>element</code> values to this function.
+
+For example:
+<pre>
+return {
+    '&lt;component_name&gt;': function(config, element) { ... }
+};
+</pre>
+</li>
+<li>If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. 
+
+For example:
+
+<pre>
+return function(config, element) { ... };
+</pre>
+
+</li>
+<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
+
+For example:
+<pre>
+$.fn.&lt;component_name&gt; = function() { ... };
+return;
+</pre>
+</li>
+
+<li>If none of the previous cases is true, the component is executed with no further processing. 
+Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
+
+<h3 id="init_script">Initialization using <code>&lt;script&gt;</code></h3>
+<p>To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> tag. An illustration follows:</p>
+
+<pre>
+&lt;script type=&quot;text/x-magento-init&quot;&gt;
+    // components initialized on the element defined by selector
+	&quot;&lt;element_selector&gt;&quot;: {
+		&quot;&lt;js_component1&gt;&quot;: ...,
+		&quot;&lt;js_component2&gt;&quot;: ...
+    },
+    // components initialized without binding to an element
+    &quot;*&quot;: {
+        &quot;&lt;js_component3&quot;&gt;: ...
+    }
+&lt;/script&gt;
+</pre>
+
+<p>Where:</p>
+<ul>
+<li><code>&lt;element_selector&gt;</code> is a selector for the element on which the following JS components are initialized.</li>
+<li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
+<li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
+</ul>
+
+<p>The following is an illustration of widget initialization using <code>&lt;script&gt;</code>. Here the accordion and navigation widgets are initialized on the element with the <code>#main-container</code> selector, and the <code>pageCache</code> script is initialized with no binding to any element.</p>
+
+<pre>
+&lt;script type=&quot;text/x-magento-init&quot;&gt;
+    &quot;#main-container&quot;: {
+        &quot;navigation&quot;: &lt;?php echo $block-&gt;getNavigationConfig(); ?&gt;,
+        &quot;accordion&quot;: &lt;?php echo $block-&gt;getNavigationAccordionConfig(); ?&gt;
+    },
+    &quot;*&quot;: {
+        &quot;pageCache&quot;: &lt;?php echo $block-&gt;getPageCacheConfig(); ?&gt;
+    }
+&lt;/script&gt;
+</pre>
+
+<h2 id="widget_init">Widget initialization in JS</h2>
+
+<p>To initialize a widget in JS code, use a notation similar to the following (the <a href="/guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the <code>#main-container</code> element as illustration):</p>
+
+<pre>
+$("#main-container").accordion();
+</pre>
+
+<p>To initialize a widget with options, use notation similar to the following:</p>
+
+<pre>
+$("#main-container").accordion({
+    header : "#title-1"
+    content : "#content-1",
+    trigger : "#trigger-1,
+    ajaxUrlElement: "a"
+ });
+</pre>
+
 
 
 		</div>
@@ -273,7 +354,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
 									
 								
 								
@@ -507,7 +588,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
 						
 								
 								
@@ -637,8 +718,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/js_init.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/js_init.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
