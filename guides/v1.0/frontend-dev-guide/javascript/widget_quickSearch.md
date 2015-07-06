@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: QuickSearch widget
-menu_order: 9
+menu_order: 10
 menu_title: QuickSearch widget
 github_link: frontend-dev-guide/javascript/widget_quickSearch.md
 ---

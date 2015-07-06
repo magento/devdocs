@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: Loader widget
-menu_order: 5
+menu_order: 6
 menu_title: Loader widget
 github_link: frontend-dev-guide/javascript/widget_loader.md
 ---

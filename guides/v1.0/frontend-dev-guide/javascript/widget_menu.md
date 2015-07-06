@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: Menu widget
-menu_order: 6
+menu_order: 7
 menu_title: Menu widget
 github_link: frontend-dev-guide/javascript/widget_menu.md
 ---

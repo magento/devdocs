@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: Navigation widget
-menu_order: 8
+menu_order: 9
 menu_title: Navigation widget
 github_link: frontend-dev-guide/javascript/widget_navigation.md
 ---

@@ -4,7 +4,7 @@ group: javascript
 subgroup: JQuery widget details
 title: Tabs widget
 menu_title: Tabs widget
-menu_order: 10
+menu_order: 11
 github_link: frontend-dev-guide/javascript/widget_tabs.md
 ---
 
@@ -71,7 +71,7 @@ Specifies if the collapse/expand actions are performed with animation. The optio
 **Type**: 
 Multiple types are supported:
 <ul>
-<li>Boolean: the `false` value disables the animation </li> 
+<li>Boolean: the <code>false</code> value disables the animation </li> 
 <li>Number: duration in milliseconds</li> 
 <li>String: is parsed to an object as a json string</li> 
 <li>Object: 

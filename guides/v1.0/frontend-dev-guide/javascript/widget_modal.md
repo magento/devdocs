@@ -3,7 +3,7 @@ layout: default
 group: javascript
 subgroup: JQuery widget details
 title: Modal widget
-menu_order: 7
+menu_order: 8
 menu_title: Modal widget
 github_link: frontend-dev-guide/javascript/widget_modal.md
 ---
