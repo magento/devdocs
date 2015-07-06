@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_pre
 subgroup: Q_Pre-installation
 title: Pre-installation
 menu_title: Pre-installation
