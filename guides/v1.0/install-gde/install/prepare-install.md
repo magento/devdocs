@@ -8,6 +8,10 @@ menu_node:
 menu_order: 5
 github_link: install-gde/install/prepare-install.md
 ---
+
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
   
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
 
@@ -18,6 +22,8 @@ Composer is a separate application that manages PHP dependencies. Before you can
 1.	<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install the Composer software</a>.
 2.	<a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.
 2.	Run the <a href="#install-composer-install">`composer install` command</a> from your Magento root directory (for example, `/var/www/magento2/`).
+
+	The Magento root directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
 
 <h2 id="install-update-depend-apache">Switching to the Apache user</h2>
 
@@ -91,6 +97,12 @@ After you completed the tasks discussed in the preceding section, update depende
 		cd /var/www/magento2 && composer install
 
 	This command updates package dependencies and can take a few minutes to complete.
+
+	<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</p></span>
+	</div>
+
 
 3.	(Secure environment). Change ownership to the web server user as follows:
 

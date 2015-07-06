@@ -161,7 +161,9 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
             <em>optional</em> inputs.</p>
 <p>You specify input parameters in the URI. For example, in the <code>GET&nbsp;/V1/customers/:customerId</code> URI, you must specify the <code>customerId</code> template parameter. This parameter filters the response by the specified customer ID.</p>
 <p>You specify input attributes in a JSON- or XML-formatted request body. For example, in the <code>POST&nbsp;/V1/customers</code> call, you must specify a request body like this:</p>
-<pre>{
+
+{% highlight json %}
+{
     "customers": {
         "customer": {
             "email": "user@example.com",
@@ -187,7 +189,9 @@ See <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html"
             }
         ]
     }
-}</pre>
+}
+{% endhighlight %}
+
 <p>This JSON-formatted request body includes a <code>customer</code> object with the customer email, first name, and last name, and customer address information. The information in this request body is used to populate the new customer account.</p>
 
 <h2 id="construct-request">Construct a request</h2>
