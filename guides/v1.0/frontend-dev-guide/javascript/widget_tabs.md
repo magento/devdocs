@@ -187,7 +187,7 @@ The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_c
 Selector for the trigger element, applied using `.find()` on the main collapsible element. If the trigger is not found, the header becomes a trigger.
 The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
-**Type**: String, jQuery Object
+**Type**: String, jQuery object
 
 **Default value**: `[data-role=trigger]`
 
@@ -201,18 +201,18 @@ The tabs widget has the following methods:
 <li><a href="#fedg_tabs_methods-deactivate">deactivate()</a></li>
 <li><a href="#fedg_tabs_options-disable">disable()</a></li>
 </ul>
-<h3 id="fedg_tabs_methods-activate">activate()</h3>
+<h3 id="fedg_tabs_methods-activate"><code>activate()</code></h3>
 
 `activate(index)` displays `content` for the tab with the corresponding `index`.
 
 
-<h3 id="fedg_tabs_methods-enable">enbale()</h3>
+<h3 id="fedg_tabs_methods-enable"><code>enbale()</code></h3>
 `enable(index)` enables the tab with the corresponding `index`.
 
-<h3 id="fedg_tabs_methods-deactivate">deactivate()</h3>
+<h3 id="fedg_tabs_methods-deactivate"><code>deactivate()</code></h3>
 `deactivate(index)` hides `content` for the tab with the corresponding `index`.
 
-<h3 id="fedg_tabs_methods-disable">disable()</h3>
+<h3 id="fedg_tabs_methods-disable"><code>disable()</code></h3>
 `disable(index)` disables the tab with the corresponding `index`.
 
 <h2 id="fedg_tabs_events-methods">Events</h2>
@@ -226,7 +226,7 @@ Tabs is subscribed to the same events as the <a href="{{site.gdeurl}}frontend-de
 <h3 id="fedg_tabs_beforeOpen_callback"><code>beforeOpen callback</code></h3>
 Called before the content is opened. 
 
-<h3 id="fedg_tabs_dimensionsChanged">dimensionsChanged</h3>
+<h3 id="fedg_tabs_dimensionsChanged"><code>dimensionsChanged</code></h3>
 Called after content is opened or closed.
 
 

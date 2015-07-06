@@ -102,7 +102,7 @@ Element holding the template.
 
 **Type**: String
 
-**Default value**: null
+**Default value**: `null`
 
 
 <h2 id="list_methods">Methods</h2>

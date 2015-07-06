@@ -144,9 +144,9 @@ Customized public methods:
 <li><a href="#d_close">close()</a></li>
 </ul>
 
-<h3 id="#d_open">open()</h3>
+<h3 id="#d_open"><code>open()</code></h3>
 Beside default functionality, this method calls the `_mouseLeave()` and `_mouseEnter()` functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the `<body>` element.
 
-<h3 id="#d_close">close()</h3>
+<h3 id="#d_close"><code>close()</code></h3>
 Beside default functionality, this method removes the classes from trigger and drop-down parent and clears the timeout if the latter exists.
 
