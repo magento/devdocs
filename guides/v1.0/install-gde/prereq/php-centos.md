@@ -8,6 +8,10 @@ menu_order: 4
 github_link: install-gde/prereq/php-centos.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
+
 <h4 id="instgde-php-prereq-contents">Contents</h4>
 
 *	<a href="#php-support">PHP versions supported</a>
@@ -131,8 +135,8 @@ To set your time zone and memory limit:
 
 2.	Change `memory_limit` to:
 
-		memory_limit = 512M` or more for normal operation
-		memory_limit = 2G` or more for testing
+		memory_limit = 512M or more for normal operation
+		memory_limit = 2G or more for testing
 
 3.	Save your changes and exit the text editor.
 

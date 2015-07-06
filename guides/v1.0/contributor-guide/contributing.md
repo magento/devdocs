@@ -6,8 +6,13 @@ title: Contributor Guide
 menu_title: Contribute to Magento 2 code
 menu_order: 1
 menu_node: parent
-github_link: contributor-guide/CONTRIBUTING.md
+github_link: contributor-guide/contributing.md
 ---
+
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: contributing.md owned by core -->
+<!-- References are to this topic itself, http://devdocs.magento.com/guides/v1.0/contributor-guide/contributing.html#fork, contributing.html#pull_request -->
+
 
 The following topics are included in the Guide:
 

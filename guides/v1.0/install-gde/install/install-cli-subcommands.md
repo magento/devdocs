@@ -15,7 +15,7 @@ github_link: install-gde/install/install-cli-subcommands.md
 See one of the following sections:
 
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
-*	<a href="#instgde-install-cli-first">First steps</a>
+*	<a href="#instgde-install-cli-before">First steps</a>
 *	<a href="#instgde-cli-summary">Command summary</a>
 *	<a href="#instgde-cli-help">Help commands</a>
 *	<a href="#instgde-cli-subcommands-common">Common arguments</a>
@@ -48,12 +48,16 @@ Examples:
 </ul>
 </li>
 </ol>
+<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  		<p>The Magento installation directory is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>You can run the commands in any of the following ways:</p>
 <ul><li><code>magento &lt;command></code></li>
-<li><code>magento &lt;command></code></li></ul></span>
+<li><code>php magento &lt;command></code></li></ul></span>
 </div>
 
 <h2 id="instgde-cli-summary">Command summary</h2>
