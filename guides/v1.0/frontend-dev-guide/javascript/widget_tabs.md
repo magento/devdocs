@@ -12,7 +12,7 @@ github_link: frontend-dev-guide/javascript/widget_tabs.md
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">Magento collapsible widget</a>.
 
-The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js">lib/web/mage/tabs.js</a>. 
+The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>. 
 
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>

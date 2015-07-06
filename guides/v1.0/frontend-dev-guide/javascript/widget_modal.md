@@ -24,8 +24,8 @@ The modal widget source is <a href="{{site.mage2000url}}app/code/Magento/Ui/view
 
 The widget uses the following templates:
 
-<a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html</a> - popup type template.
-<a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html</a> - slide type template.
+- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html</a> popup type template.
+- <a href="{{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank">app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html</a> slide type template.
 
 <h2 id="modal_initialize">Initialize the modal widget</h2>
 

@@ -14,6 +14,7 @@ This guide discusses the following widgets:
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">Accordion widget</a> </li>
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_calendar.html" target="_blank">Calendar widget</a></li>
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">Collapsible widget</a></li>
+<li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_dialog.html" target="_blank">DropdownDialog widget</a></li>
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_list.html" target="_blank">List widget</a></li>
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_loader.html" target="_blank">Loader widget</a></li>
 <li><a href="{{ site.gdeurl }}frontend-dev-guide/javascript/widget_menu.html" target="_blank">Menu widget</a></li>

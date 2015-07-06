@@ -14,7 +14,7 @@ The Magento collapsible widget converts a header/content pair into an accordion,
 
 Unlike the accordion widget is that collapsible is initialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
 
-To "bind" several instances of collapsible widget, the <code>collateral</code> option is used.
+To "bind" several instances of collapsible widget, the <a href="##fedg_collaps_collateral"><code>collateral</code></a> option is used.
 
 Once it is expanded, the content can be updated using Ajax. The collapsed/expanded state can be saved into local storage or cookies, if the browser does not support local storage. 
 
@@ -29,9 +29,9 @@ $("#element").collapsible();
 
 Where <code>#element</code> is the element's selector.
 
-If you need to be able to save the expanded/collapsed state, the element must have the `<id>` attribute specified. 
+If you need to be able to save the expanded/collapsed state, the element must have the `id` attribute specified. 
 
-The element's `id` is also used in deep linking: if the `id` of the content or the id of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
+The element's `id` is also used in deep linking: if the `id` of the content or the `id` of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
 
 
 Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
