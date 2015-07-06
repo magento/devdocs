@@ -129,7 +129,7 @@ var msg = '&lt;span class="text">Hello World!&lt;/div>';
 <h2 id="fedg_js-coding_naming">Naming conventions</h2>
 <h3 id="fedg_js-coding_naming_const">Constants</h3>
 <p>Constants may contain both alphanumeric characters and underscores (<code>_</code>).</p>
-<p>All letters used in a constant name must be capitalized, while all words in a constant name must be separated by ah underscore.</p>
+<p>All letters used in a constant name must be capitalized, while all words in a constant name must be separated by an underscore.</p>
 <p>For example, <code>EMBED_SUPPRESS_EMBED_EXCEPTION</code> is an acceptable name, but <code>EMBED_SUPPRESSEMBEDEXCEPTION</code> is not.</p>
 <p>Constants must be defined as class members with the <code>const</code> modifier.</p>
 <p>In JavaScript constants are declared using the <code>@const</code> annotation. But Internet Explorer does not parse the <code>@const</code> keyword, so omit it, if possible.</p>
