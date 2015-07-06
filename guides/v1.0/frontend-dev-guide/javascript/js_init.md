@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/javascript/js_init.md
 
 <h2 id="js_init_overview">Overview</h2>
 
-This topic talks about how to initialize a JavaScript component in the Magento 2 application. It covers JavaScript components initialization in a `.phtml` template and jQuery widget initialization in a JS script.
+This topic talks about how to initialize a JavaScript component in the Magento 2 application. It covers initializing JavaScript components in a `.phtml` template and jQuery widget initialization in a JS script.
 
 <h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
 In Magento 2, there are two ways to initialize a JS component in a `.phtml` template: using the `data-mage-init` attribute and using the `<script>` tag. Both ways are described in the following sections.
@@ -18,7 +18,7 @@ In Magento 2, there are two ways to initialize a JS component in a `.phtml` temp
 
 <h3 id="data_mage_init">Initialization using <code>data-mage-init</code></h3>
 
-To initialize a JS component on a certain HTML element, you need to specify the <code>data-mage-init</code> attribute for this element. The following code sample is an illustration. Here a JS component is initialized on the `<nav/>` element:
+Use the <code>data-mage-init</code> attribute to initialize a JS component on a certain HTML element. The following code sample is an illustration. Here a JS component is initialized on the `<nav/>` element:
 <pre>
 &lt;nav data-mage-init='{ &quot;&lt;component_name&gt;&quot;: {...} }'&gt;&lt;/nav&gt;
 </pre>
@@ -31,7 +31,7 @@ On DOM ready, the `data-mage-init` attribute is parsed to extract components' na
 Depending on the type of the JS component initialized, processing is performed as follows:
 <ul>
 
-<li>If an object is returned, initializer tries to find the <code>&lt;component_name&gt;</code> key. If the corresponding value is a function, intializer passes the <code>config</code> and <code>element</code> values to this function.
+<li>If an object is returned, the initializer tries to find the <code>&lt;component_name&gt;</code> key. If the corresponding value is a function, the initializer passes the <code>config</code> and <code>element</code> values to this function.
 
 For example:
 <pre>
@@ -40,7 +40,7 @@ return {
 };
 </pre>
 </li>
-<li>If a function is returned, intializer passes the <code>config</code> and <code>element</code> values to this function. 
+<li>If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. 
 
 For example:
 
@@ -49,7 +49,7 @@ return function(config, element) { ... };
 </pre>
 
 </li>
-<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are exported from the target component, then initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
+<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
 
 For example:
 <pre>
@@ -59,7 +59,7 @@ return;
 </li>
 
 <li>If none of the previous cases is true, the component is executed with no further processing. 
-Such a component does not require neither <code>config</code> nor <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
+Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
 <h3 id="init_script">Initialization using <code>&lt;script&gt;</code></h3>
@@ -74,14 +74,14 @@ To initialize a JS component on a HTML element without direct access to the elem
     },
     // components initialized without binding to an element
     &quot;*&quot;: {
-        &quot;js_component3&quot;: ...
+        &quot;&lt;js_component3&quot;&gt;: ...
     }
 &lt;/script&gt;
 </pre>
 
 Where:
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a selector for the element on which the following JS component(s) are initialized.</li>
+<li><code>&lt;element_selector&gt;</code> is a selector for the element on which the following JS components are initialized.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
 </ul>
@@ -103,7 +103,7 @@ The following is an illustration of widget initialization using <code>&lt;script
 
 <h2 id="widget_init">Widget initialization in JS</h2>
 
-To initialize a widget in a JS code, use a notation similar to the following (the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
+To initialize a widget in JS code, use a notation similar to the following (the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the `#main-container` element as illustration):
 
 <pre>
 $("#main-container").accordion();
