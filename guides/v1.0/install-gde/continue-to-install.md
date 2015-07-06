@@ -13,3 +13,5 @@ github_link: install-gde/continue-to-install.md
 
 This mini-topic explains the different options: Setup Wizard and CLI.
 
+<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Introduction to the Setup Wizard</a>
+
