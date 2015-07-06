@@ -8,6 +8,11 @@ menu_node:
 menu_order: 1
 github_link: install-gde/install/composer-clone.md
 ---
+
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+<!-- References are to http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-install, http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-clone -->
+<!-- Also referred to by view\magento\setup\readiness-check\progress.phtml owned by Ogres. Reference is to http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-access and http://devdocs.magento.com/guides/v1.0/install-gde/install/composer-clone.html#instgde-prereq-compose-access -->
  
 #### Contents 
 
@@ -86,6 +91,8 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
+	Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here.
+
 2.	Enter the following command:
 
 		git clone git@github.com:magento/magento2.git
@@ -149,7 +156,14 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 
 1.	Change to the Magento directory:
 
-	<pre>cd magento2</pre>
+		cd <web server docroot>/<magento2 clone dir>
+
+	Cloning the Magento 2 GitHub repository creates a directory, typically `magento2`, under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
+
+	Examples:
+
+	*	Ubuntu: `/var/www/magento2`
+	*	CentOS: `/var/www/html/magento2`
 
 2.	Find the web server user:
 
