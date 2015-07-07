@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architectural Layers
+subgroup: Logical view
 title: Magento Framework
 menu_title: Magento Framework
-menu_order: 5
+menu_order: 3
 github_link: architecture/archi_perspectives/framework.md
 ---
 
