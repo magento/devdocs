@@ -33,6 +33,10 @@ Command options:
 
 	magento info:adminuri
 
+A sample result follows:
+
+	Admin Panel URI: /admin_1wgrah
+
 You can also view the the Admin URI in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
 
 {% highlight php %}
