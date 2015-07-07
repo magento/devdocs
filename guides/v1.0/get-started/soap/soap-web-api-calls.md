@@ -96,6 +96,7 @@ Protected SOAP resources can be accessed using bearer tokens (OAuth access token
 The following PHP script illustrates how to get an access token:
 
 {% highlight php %}
+<?php
 $opts = array(
             'http'=>array(
                 'header' => 'Authorization: Bearer 36849300bca4fbff758d93a3379f1b8e'
@@ -110,7 +111,7 @@ $soapClient->setSoapVersion(SOAP_1_2);
 $context = stream_context_create($opts);
 $soapClient->setStreamContext($context);
  
-$soapResponse = $this->_getSoapClient($serviceInfo)->testModule1AllSoapAndRestV1Item($serviceArgs);
+$soapResponse = $this->_getSoapClient($serviceInfo)->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
 
 <h2 id="related">Related topics</h2>
