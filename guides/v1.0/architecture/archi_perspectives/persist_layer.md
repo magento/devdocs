@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architecture
-title: Architecture layers
+subgroup: Architectural Layers
+title: Persistence layer
 menu_title: Persistence layer
-menu_order: 3
+menu_order: 5
 github_link: architecture/archi_perspectives/persist_layer.md
 ---
 

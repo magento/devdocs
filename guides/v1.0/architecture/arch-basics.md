@@ -4,7 +4,7 @@ group: arch-guide
 subgroup: Architecture
 title: Technology Stack
 menu_title: Technology Stack
-menu_order: 10
+menu_order: 
 github_link: extension-dev-guide/arch-basics
 ---
 <h2>Architectural Basics</h2>

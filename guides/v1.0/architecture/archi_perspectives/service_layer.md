@@ -1,9 +1,9 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architecture
-title: Architecture layers
-menu_title: Architecture layers
+subgroup: Architectural Layers
+title: Service layer
+menu_title: Service layer
 menu_order: 3
 github_link: architecture/archi_perspectives/service_layer.md
 ---

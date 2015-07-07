@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architecture
-title: Architecture layers
+subgroup: Architectural Layers
+title: Domain layer
 menu_title: Domain layer
-menu_order: 3
+menu_order: 4
 github_link: architecture/archi_perspectives/domain_layer.md
 ---
 
