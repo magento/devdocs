@@ -4,7 +4,7 @@ group: arch-guide
 subgroup: Architectural Layers
 title: Domain layer
 menu_title: Domain layer
-menu_order: 4
+menu_order: 3
 github_link: architecture/archi_perspectives/domain_layer.md
 ---
 

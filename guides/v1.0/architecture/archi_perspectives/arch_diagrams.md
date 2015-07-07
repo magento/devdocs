@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architecture
+subgroup: Architectural Basics
 title: Architectural diagrams
 menu_title: Architectural diagrams
-menu_order: 2
+menu_order: 1
 github_link: architecture/archi_perspectives/arch_diagrams.md
 ---
 

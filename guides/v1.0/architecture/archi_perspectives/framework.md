@@ -4,7 +4,7 @@ group: arch-guide
 subgroup: Architectural Layers
 title: Magento Framework
 menu_title: Magento Framework
-menu_order: 6
+menu_order: 5
 github_link: architecture/archi_perspectives/framework.md
 ---
 

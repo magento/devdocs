@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: 
 title: How Magento renders prices
 menu_title: How Magento renders prices

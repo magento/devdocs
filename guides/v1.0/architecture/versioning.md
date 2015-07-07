@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architecture
+subgroup: Architectural Basics
 title: Versioning Policy
 menu_title: Versioning Policy
-menu_order: 8
+menu_order: 4
 github_link: architecture/versioning.md
 ---
 

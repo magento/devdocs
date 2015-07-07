@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architecture
 title: Themes
 menu_title: Themes
-menu_order: 6
+menu_order: 
 github_link: architecture/arch_themes.md
 ---
 

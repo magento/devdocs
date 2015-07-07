@@ -4,7 +4,7 @@ group: arch-guide
 subgroup: Architectural Layers
 title: Service layer
 menu_title: Service layer
-menu_order: 3
+menu_order: 2
 github_link: architecture/archi_perspectives/service_layer.md
 ---
 

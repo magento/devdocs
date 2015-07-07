@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: 
 title: Module naming and location conventions
 menu_title: Module naming and location conventions

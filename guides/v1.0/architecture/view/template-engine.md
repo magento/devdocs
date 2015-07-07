@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: View library
 title: Template engine
 menu_title: Template engine
-menu_order: 7
+menu_order: 
 github_link: architecture/view/template-engine.md
 ---
 

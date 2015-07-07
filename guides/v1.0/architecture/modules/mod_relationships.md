@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: 
 title: Module relationships
 menu_title: Module relationships

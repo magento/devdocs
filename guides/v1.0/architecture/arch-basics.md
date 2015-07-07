@@ -1,7 +1,7 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Architecture
+group: 
+subgroup: 
 title: Technology Stack
 menu_title: Technology Stack
 menu_order: 

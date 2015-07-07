@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Architecture
+group: 
+subgroup: 
 title: Architecture layers
 menu_title: Architecture layers
-menu_order: 3
+menu_order: 
 github_link: architecture/archi_perspectives/arch_layers.md
 ---
 

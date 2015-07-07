@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architectural layers
+subgroup: Architectural Layers
 title: Presentation layer
 menu_title: Presentation layer
-menu_order: 2
+menu_order: 1
 github_link: architecture/archi_perspectives/present_layer.md
 ---
 
