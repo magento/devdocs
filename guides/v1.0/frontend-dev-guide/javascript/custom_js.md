@@ -9,14 +9,14 @@ github_link: frontend-dev-guide/javascript/custom_js.md
 ---
 
 <h2 id="custom_js_overview">Overview</h2>
-This topic talks about how to use custom JavaScript components, together with Magento default ones or having replaced them with custom implementations.
+This topic talks about how to use custom JavaScript components together with Magento default ones or having replaced them with custom implementations.
 
 We strongly recommend not changing the default Magento files. All customizations must be implemented in custom modules or themes.
 
-<h2 id="js_replace">Replace a default component</h2>
+<h2 id="js_replace">Replace a default JS component</h2>
 
 
-To use a custom implementation of a certain existing Magento JS component:
+To use a custom implementation of an existing Magento JS component:
 <ol>
 <li>Place the custom component source file in one of the following locations:
 <ul>
@@ -26,15 +26,17 @@ To use a custom implementation of a certain existing Magento JS component:
 </li>
 <li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
 
-<pre>
+{% highlight JavaScript %}
 var config = {
-  &quot;map&quot;: {
-    &quot;*&quot;: {
-      &quot;&lt;default_component&gt;&quot;: &quot;js/&lt;custom_component&gt;&quot;,
+  "map": {
+    "*": {
+      "menu": "js/navigation-menu",
+      "mage/backend/menu": "js/navigation-menu",
     }
   }
 };
-</pre>
+
+{% endhighlight %}
 
 Where the following notation is used:
 <ul>
@@ -42,7 +44,7 @@ Where the following notation is used:
 <li><code>&lt;custom_component&gt;</code>: the name of the custom component</li>
 </ul>
 
-For example, if you want to use custom <code>navigation-menu.js</code> script instead of the default menu widgets:
+For example, if you want to use custom <code>navigation-menu.js</code> script instead of the default menu widgets, your <code>requirejs-config.js</code> should contain the following:
 <pre>
 var config = {
   &quot;map&quot;: {
@@ -90,29 +92,31 @@ define([
 
 Where the following notation is used:
 <ul>
-<li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom widget. According to the jQuery widgets naming convenvtion, must contain a namespace and name.</li>
+<li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom widget. According to the jQuery widgets naming convention, must contain a namespace and name.</li>
 
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget which you extend.</li>
 </ul>
 
 For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
-<h3 id="extend_js_component">Extend a default UI component</h3>
+<h3 id="extend_js_component">Extend a default Ui component</h3>
 
-To extend a default JS component, your custom script must contain the following:
+<p class="q">What about other JS components, which do not reside in app/code/Magento/Ui/view/.../web? Can they be extended?</p>
 
-<pre>
+To extend a default JS Ui component, your custom script must contain the following:
+
+{% highlight JavaScript %}
 define([
-  '&lt;default_component&gt;'
-], function(&lt;your_component&gt;){
+  '<default_component>'
+], function(<your_component>){
  
-  return &lt;your_component&gt;.extend({
+  return <your_component>.extend({
  
     defaults: { ... }, // properties with default values
     ... // methods of your component
   });
 });
-</pre>
+{% endhighlight %}
 
 Where the following notation is used:
 
@@ -122,7 +126,8 @@ Where the following notation is used:
 </ul>
 
 For example, <code>Filters.js</code> script extends the default <code>filters.js</code>:
-<pre>
+
+{% highlight JavaScript %}
 define([
   'Magento_Ui/js/grid/filters/filters'
 ], function(Filters){
@@ -133,7 +138,7 @@ define([
     ... // methods of your component
   });
 });
-</pre>
+{% endhighlight %}
 
 
 For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
@@ -143,12 +148,12 @@ For information about how to initialize your custom JS component in a `.phtml` t
 To disable the auto-loading of default Magento JS components and widget initialization:
 <ol>
 <li>Create a <code>requirejs-config.js</code> file with the following content:
-<pre>
+{% highlight JavaScript %}
 var config = {
     deps: [
     ]
 };
-</pre>
+{% endhighlight %}
 </li>
 <li>Put the <code>requirejs-config.js</code> file in one of the following locations
 <ul>

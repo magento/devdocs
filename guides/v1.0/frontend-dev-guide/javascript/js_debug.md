@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/javascript/js_debug.md
 
 <h2 id="js_debug_overview">Overview</h2>
 
-This article talks about how to define which JavaScript components (scripts) are used for a certain HTML element on a Magento store page.
+This article talks about how to define which JavaScript components (scripts) are used on a particular Magento store page.
 
 
 <h2 id="locate_widget">Locate JS components: walkthrough</h2>
@@ -23,21 +23,22 @@ To locate scripts used for a certain element:
 <li>Select to view the page source.</li>
 <li>Find the corresponding element in the page source and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#init_phtml" target="_blank">JavaScript initialization</a>. 
 </li>
+<p class="q">"script" can be used without binding to any element, as far as I understand. So should I rewrite this paragraph? A user can also simply search for script, without element's id or class? Ot this is not a real-life use case?</p>
 <li>
 To find out, where is the source file of the used script:
 <ol>
 <li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration, collected from all modules of the current theme.
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-<p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>&lt;your_root&gt;/pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
+<p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
 </div>
 </li>
 <li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. The path is relative to either:
 <ul>
 <li>If the module context is not specified: <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme) or <code>lib/web</code>(library) directories. 
 
-According to the assets fallback, if there's a file in the current theme, the system uses it. If it is not found there, the system uses the file from the library.</li>
-
+According to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, if there's a file in the current theme, the system uses it. If it is not found there, the system uses the file from the library.</li>
+<p class="q">According to the fallback description we have in docs, the fallback includes parent theme(s) level, should we mention it here as well?</p>
 <li>If the module context is specified: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module) or <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) directories. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
 
 </ul>
@@ -81,7 +82,8 @@ According to the JS components initialization notation, this means that this cod
 
 This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order:
 <ol>
-<li><code>app/design/frontend/Magento/blank/web/js</code> (current theme JS files)</li>
+<li><code>app/design/frontend/Magento/luma/web/js</code> (current theme JS files)</li>
+<li><code>app/design/frontend/Magento/blank/web/js</code> (parent theme JS files)</li>
 <li><code>lib/web</code> (library files)</li>
 </ol>
-There is no <code>mage/menu.js</code> in the current theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>
+There is no <code>mage/menu.js</code> in the current theme nor parent theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>
