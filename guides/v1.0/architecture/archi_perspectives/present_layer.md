@@ -12,14 +12,12 @@ github_link: architecture/archi_perspectives/present_layer.md
 
 
 <h2> Presentation layer</h2>
-Presentation layer code controls both product behavior and appearance when a web user interacts with Magento. Also known as the view layer,it renders the product’s web interface. 
+When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. Also known as the <i>view layer</i>, presentation code controls both product behavior and appearance. If you are extending Magento, you can extensively customize the product's appearance and behavior by using HTML5 and CSS3 to modify elements of the presentation layer. 
 
-If you are extending Magento, the fundamental unit of presentation layer code A Magento area delimit representation of the data to different user groups depending on the behavior logic of the system . Areas typically have both behavior and view components, which operate separately.
+Although many different elements comprise the presentation layer -- including templates, layout files, and blocks --  the fundamental unit of presentation layer code is the Magento <i>area</i>. A Magento area defines the logic on how data is displayed according to the type of user accessing it. Areas typically have both behavior and view components.
 
 
-You can extensively customize the presentation layer through use of HTML5 and CSS3. 
-
-An extension can work in several areas, you should ensure it has separate behavior and view components for each area
+Any extension you develop can work in several areas.  You should ensure it has separate behavior and view components for each area. For more information, see Extension Developer's Guide.
 
 
 
