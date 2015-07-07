@@ -164,9 +164,9 @@ var config = {
 </ol>
 If you need to enable the loading of default Magento JS components and widget initialization on a certain stage, add the following code in your JS script:
 
-<pre>
+{% highlight JavaScript %}
 $(mage.apply);
-</pre>
+{% endhighlight %}
 
 
 <h2>Related topics</h2>
