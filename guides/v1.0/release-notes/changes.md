@@ -9,6 +9,10 @@ github_link: release-notes/changes.md
 ---
 
 <h2 id="changes-contents">Contents</h2>
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file:CHANGELOG.md owned by core -->
+<!-- Reference is to http://devdocs.magento.com/guides/v1.0/release-notes/changes.html#change-devrc-unit -->
+
 
 *   <a href="#change-devrc-unit">Unit tests now located in module directories</a>
 *   <a href="#change-devbeta-uninstall">Updating to version 0.42.0-beta11 or later from beta10 or earlier</a>

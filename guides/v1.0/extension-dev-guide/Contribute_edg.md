@@ -12,7 +12,7 @@ We encourage our community members to add content; either by writing a full topi
 
 The files are mostly written in the markdown language (and HTML where needed). 
 
-To get started, review the <a href="{{ site.gdeurl }}contributor-guide/CONTRIBUTING.html">Contributor Guide</a> to learn about the process for code and doc contributions, including how to fork the repository and do a Pull Request to have your work submitted and reviewed.
+To get started, review the <a href="{{ site.gdeurl }}contributor-guide/contributing.html">Contributor Guide</a> to learn about the process for code and doc contributions, including how to fork the repository and do a Pull Request to have your work submitted and reviewed.
 
 Then, review the Table of Contents in the left pane of the Guide, and determine which topic areas you can contribute to, or any that might be missing.
 

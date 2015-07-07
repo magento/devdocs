@@ -9,6 +9,10 @@ menu_order: 1
 github_link: install-gde/install/install-cli.md
 ---
 
+<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: README.md owned by core -->
+
+
   
 <h4>Contents</h4>
 
