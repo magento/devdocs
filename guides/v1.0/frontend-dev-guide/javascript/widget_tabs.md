@@ -53,7 +53,7 @@ Index of the tab, which is active at the moment of initialization. Starts from "
 Selector for the tab element, which contains the URL for the Ajax request.
 The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
-**Type**:String
+**Type**: String
 
 **Default value**: `[data-ajax=true]`
 
@@ -187,7 +187,10 @@ The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_c
 Selector for the trigger element, applied using `.find()` on the main collapsible element. If the trigger is not found, the header becomes a trigger.
 The option of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
-**Type**: String, jQuery object
+**Type**: 
+
+- String
+- jQuery object
 
 **Default value**: `[data-role=trigger]`
 

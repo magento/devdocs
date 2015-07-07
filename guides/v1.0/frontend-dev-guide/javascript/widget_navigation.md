@@ -35,7 +35,7 @@ The navigation widget has the following options:
 
 Width of user's window in px for which the menu switches between mobile view and desktop view.
 
-**Type**: Integer
+**Type**: Number
 
 **Default value**: `768`
 

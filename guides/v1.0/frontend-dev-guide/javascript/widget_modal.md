@@ -89,7 +89,7 @@ Custom classes for modal window.
 
 **Type**: String 
 
-**Default value**: ''
+**Default value**: empty
 
 <h3 id="modal_modalLeftMargin"><code>modalLeftMargin</code></h3>
 Sets a margin between slide modal windows.
@@ -110,7 +110,7 @@ Translated title for popup window.
 
 **Type**: String 
 
-**Default value**: ''
+**Default value**: empty
 
 
 <h3 id="modal_type"><code>type</code></h3>
@@ -119,7 +119,7 @@ The type of window: popup or slide.
 
 **Type**: String 
 
-**Default value**: *'popup'*
+**Default value**: `popup`
 
 <h2 id="modal_methods">Methods</h2>
 The modal widget has the following methods:

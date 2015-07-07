@@ -54,7 +54,7 @@ The text that is displayed under the loader image. <br>
 
 <b>Default value</b>: <i>'Please wait...'</i></li>
 
-<li><code>texts.imgAlt</code>: The text that is set as the <code>alt</code> attribute value of the loader image. 
+<li><code>texts.imgAlt</code>: The text that is set as the <code>alt</code> attribute value of the loader image. <br>
 <b>Default value</b>: <i>'Loading...'</i></li>
 </ul>
 

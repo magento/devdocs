@@ -120,7 +120,10 @@ Name of the event that triggers the `open()` function for drop-down.
 <h3 id="#d_triggerTarget"><code>triggerTarget</code></h3>
 Element that triggers the drop-down.
 
-**Type**: String|jQuery object
+**Type**: 
+
+- String
+- jQuery object
 
 **Default value**: `null`
 
