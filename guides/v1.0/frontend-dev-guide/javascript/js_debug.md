@@ -4,7 +4,7 @@ group: fedg
 subgroup: Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
-menu_order: 2
+menu_order: 4
 github_link: frontend-dev-guide/javascript/js_debug.md
 ---
 
