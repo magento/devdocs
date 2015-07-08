@@ -180,7 +180,7 @@
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
 <p>This section discusses how to enable you to install the optional Magento sample data. To enable sample data, you must update <code>composer.json</code> in the Magento root installation directory to provide the location of the sample data package. After that you can either run the Magento software installer or you can run a script to install the sample data.</p>
 
-<p>Sample data is versioned like Magento code. Before you begin, you can either either:</p>
+<p>Sample data is versioned like Magento code. Before you begin, you can either:</p>
 
 <ul>
   <li>Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</li>
@@ -198,7 +198,7 @@
 
 <p>To enable sample data, you must:</p>
 <ol><li>Decide the version of <code>magento/sample-data</code> you want as discussed in <a href="/guides/v1.0/install-gde/install/sample-data.html#instgde-prereq-sample-intro">Introduction to Magento sample data</a>.</li>
-<li>Run the <code>composer package</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
+<li>Run the <code>composer config</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
 
 <p>To update <code>composer.json</code>:</p>
 
@@ -241,7 +241,7 @@ Next significant release example:<br />
 
 <p>To enable sample data, you must:</p>
 <ol><li>Decide the version of <code>magento/sample-data</code> you want as discussed in <a href="/guides/v1.0/install-gde/install/sample-data.html#instgde-prereq-sample-intro">Introduction to Magento sample data</a>.</li>
-<li>Run the <code>composer package</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
+<li>Run the <code>composer config</code> and <code>composer require</code> commands to update <code>composer.json</code>.</li></ol>
 
 <p>To update <code>composer.json</code>:</p>
 
@@ -280,8 +280,8 @@ Next significant release example:<br />
 
 <p>For example,</p>
 
-<pre><code>/var/www/magento2/bin magento setup:upgrade
-/var/www/magento2/bin magento sampledata:install admin
+<pre><code>/var/www/magento2/bin/magento setup:upgrade
+/var/www/magento2/bin/magento sampledata:install admin
 </code></pre>
 
 <h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
