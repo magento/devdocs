@@ -48,6 +48,10 @@ Area
 * database schema
 
 <h3>View model</h3>
+Magento uses three software components to display its pages: 
+block classes
+PHTML files
+layout XML
 
 
 

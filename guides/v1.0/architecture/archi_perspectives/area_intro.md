@@ -13,23 +13,55 @@ github_link: architecture/archi_perspectives/area_intro.md
 
 <h2> Magento Area</h2>
 
-What is a Magento Area? 
 A Magento Area contains user-oriented functionality, which is responsible for managing user interaction with the system. It consists of components that provide a bridge into the core business logic encapsulated in the Domain (business logic) layer.
 
 — responsible for presentation layer components
+
 — modules can use area resources
+
 — modules independent of area
+
 — when an area is disabled, then an entry point to module presentation is lost
 
 
-Magento Area Module Structure
+<h3>Magento Area Module Structure</h3>
 — router
 — base controller
 — area configuration
 — area code
 
+The admin panel area serves for managing the store. The code of this area is adminhtml. Respectively, adminhtml subdirectory contains the view resources and Adminhtml subdirectory contains the controllers of the admin panel area.
 
-Magento Area Configuration
+
+The resources visible and accessible in an area as well as area's behavior are defined by modules. The same module can influence several areas
+
+
+{ModuleName}
++-Controller
+| +-{Area}
+|   L-{ControllerName}
+|   L-{ControllerName}
+|   L-...
+L-view
+  L-{area}
+    L-layout
+    L-template.phtml
+    L-...
+    
+    
+    
+    
+    
+Each area declares itself in a module. All resources specific for an area are located in area's module as well.
+You can use an area's module to enable or disable an area. If this module is enabled, it injects an area's routers into general application's routing process. If this module is disabled, an area's routers are not loaded and, as a result, an area's resources and specific functionality are not available.
+
+ area can have one or several routers
+ 
+ Area's abstract controller defines the behaviour of all actions of an area
+ 
+ An area's controllers are to be unique for an area
+
+<h3>Magento Area Configuration</h3>
 
 How do areas and modules interact?
  — Modules are independent of areas. Modules can belong to multiple Areas.
