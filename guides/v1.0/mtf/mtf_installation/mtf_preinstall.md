@@ -12,13 +12,16 @@ github_link: guides/v1.0/mtf/mtf_installation/mtf_preinstall.md
 
 <h3 id="mtf_install_pre_inst-magento">1. Install Magento application you want to test</h3>
 To know how, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">**Magento Installation Guide**</a>.
+
 <h3 id="mtf_install_pre_adj-magento">2. Adjust Magento application preferences</h3>
 
 -    Open your Magento Admin page <code>http://&lt;your_magento_instance>/admin&gt;</code> and log in.
 -    On the Primary Navigation (navigation panel on left side of the page) follow **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>For Magento 1 follow <b>System &gt; Configuration &gt; Admin &gt; Security</b>.</p>
 </div>
+
 -    Set **Add Secret Key to URLs** to **No**. We want to open direct URLs, and not to navigate pages via Primary Navigation.
 -    Go back to the Primary Navigation of Magento Admin page.
 -    Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
