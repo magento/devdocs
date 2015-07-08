@@ -66,12 +66,14 @@ github_link: coding-standards/code-standard-javascript.md
 <h3 id="fedg_js-coding_codestyle_parens">Parentheses</h3>
 <p>Use sparingly and in general only where required by the syntax and semantics.</p>
 <p>Never use parentheses for:</p>
-* Unary operators such as `delete`, `typeof`, and `void`
-* After keywords such as `return`, `throw`
-* For `case`, `in`, or `new`, and others like them
+<ul>
+   <li>Unary operators such as <code>delete</code>, <code>typeof</code>, and <code>void</code></li>
+   <li>After keywords such as <code>return</code>, <code>throw</code></li>
+   <li>For <code>case</code>, <code>in</code>, or <code>new</code>, and others like them</li>
+</ul>
 <h3 id="semicolons">Semicolons</h3>
-Always put semicolons as statement terminators.
-The following example shows how missing semicolons can be particularly dangerous:
+<p>Always put semicolons as statement terminators.</p>
+<p>The following example shows how missing semicolons can be particularly dangerous:</p>
 <pre>
 // 1.
 MyClass.prototype.myMethod = function() {
@@ -157,8 +159,10 @@ obj.example.SECONDS_TABLE = {
 <h3 id="fedg_js-coding_naming_files">File names</h3>
 <p>File names should be all lowercase to avoid confusion on case-sensitive platforms.</p>
 <p>File names should contain only alphanumeric characters, and dash character (<code>-</code>) as words separator, end with <code>.js</code>:</p>
-* **Correct**: `dialog-popup-base-features.js`
-* **Incorrect**: `dialog_popup_base_features.js`
+<ul>
+   <li><b>Correct</b>: <code>dialog-popup-base-features.js</code></li>
+   <li><b>Incorrect</b>: <code>dialog_popup_base_features.js</code></li>
+</ul>
 <h2 id="fedg_js-coding_codestyle">Code style</h2>
 <h3 id="fedg_js-coding_codestyle_curl">Curly braces</h3>
 <p>Because of implicit semicolon insertion, always start your curly braces on the same line as whatever they are opening.</p>
@@ -177,9 +181,11 @@ obj.example.SECONDS_TABLE = {
 <p>Class method names should start with an English verb in infinitive form that describes the method.</p>
 <p>Verbosity is generally encouraged. Function names should be as verbose as is needed to fully describe their purpose and behavior.</p>
 <p>Examples of acceptable function names include:</p>
-* `filterInput()`
-* `getElementById()`
-* `widgetFactory()`
+<ul>
+   <li><code>filterInput()</code></li>
+   <li><code>getElementById()</code></li>
+   <li><code>widgetFactory()</code></li>
+</ul>
 <p>For object-oriented programming, accessors for instances or static variables should always have the <code>get</code> or <code>set</code> prefix.</p>
 <p>In design patterns, such as the singleton or factory patterns, implementation method names should contain the pattern name where practical to provide the better behavior description.</p>
 <p>Methods that return certain status flags or other Boolean values should have the <code>has</code> or <code>is</code> prefix, instead of <code>get</code>.</p>
@@ -372,15 +378,19 @@ if (kid) {
    </tbody>
 </table>
 <h3 id="tostring-method">Custom toString() method</h3>
-**Must always succeed without side effects.**
-<p>You can control how your objects are converted to string by defining a custom `toString()` method.</p>
+<b>Must always succeed without side effects.</b>
+<p>You can control how your objects are converted to string by defining a custom <code>toString()</code> method.</p>
 <p>The method should:</p>
-* Always succeed.
-* Not have side-effects.
+<ul>
+   <li>Always succeed.</li>
+   <li>Not have side-effects.</li>
+</ul>
 <p>Otherwise you can run into serious problems. For example:</p>
-* `toString()` calls a method that does an assert.
-* The assert tries to output the name of the object in which it failed.
-* `toString()` is called.
+<ul>
+   <li><code>toString()</code> calls a method that does an assert.</li>
+   <li>The assert tries to output the name of the object in which it failed.</li>
+   <li><code>toString()</code> is called.</li>
+</ul>
 <h3 id="functions-in-blocks">Function declarations within blocks</h3>
 <p>ECMAScript only allows function declarations in the root statement list of a script or a function.</p>
 <p>To define a function within a block, use a variable initialized with a function expression.</p>
@@ -459,7 +469,7 @@ with (foo) {
 <p>Answer: anything.</p>
 <p>The local variable x could be clobbered by a property of foo, and perhaps it even has a setter, in which case assigning 3 could cause lots of other code to execute.</p>
 <h3 id="this">Use this with caution</h3>
-<p>Semantic of this can be tricky. It can refer to either:</p>
+<p>Semantic of <code>this</code> can be tricky. It can refer to either:</p>
 
 * global object (in most cases)
 * the scope of the caller (in eval)
