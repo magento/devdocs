@@ -63,6 +63,13 @@ Presentation layer components (blocks, templates, controllers) make calls to the
 
 <h2 id="related">Related topics</h2>
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+Magento Areas
+Blocks and Controllers
+Templates and Layouts
+Magento Web API Endpoints
+
+
+
 
 
 
