@@ -56,11 +56,11 @@ The path to the configuration settings for each default template displays in the
 7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the LESS files <a href="#email-styles">described below</a> to make style changes to emails, because some email clients don't support styles in `<style>` tags.
 8. Click **Save Template**.
 9. Now that you have created a template, you must configure that template to be used:
-    a. Go to **Stores** > **Configuration**
-    b. Navigate to the section that contains the template that you want to override; this section is referenced by **Currently Used For**.<br>
-    For example, if you created a "New Order" template, the configuration section is one of the options under **Stores** > **Configuration** > SALES > **Sales Emails** > **Order**.
-    c. Select your newly created template from the dropdown.
-    d. Click **Save Config**.
+    1. Go to **Stores** > **Configuration**
+    2. Navigate to the section that contains the template that you want to override; this section is referenced by **Currently Used For**.<br>
+       For example, if you created a "New Order" template, the configuration section is one of the options under **Stores** > **Configuration** > SALES > **Sales Emails** > **Order**.
+    3. Select your newly created template from the dropdown.
+    4. Click **Save Config**.
 
 <h3 id="customize-header-footer">Customize header or footer templates</h3>
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
@@ -71,9 +71,9 @@ Every frontend email template includes a header and footer template using these 
 The header and footer templates can be customized using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">Admin</a> customization methods discussed previously.
 
 <h3 id="customize-content">Customize email content</h3>
-To add the store and sales related information to a template, use system variables. 
+To add the store and sales related information to a template, use system variables. There are some
 
-System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code>&#123;&#123;var order.increment_id&#125;&#125;</code> variable is replaced by the ID of the order for which the email is generated.
+System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **Stores** > **Configuration** > GENERAL > **General** > **Emails** section.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -84,10 +84,10 @@ To add a variable to your template content:
 
 1.  In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2.  Create a new template or edit an existing template.
-2.  Click to place the cursor in the text in which to insert the variable.
-2. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. Variables are grouped by the modules they relate to. The following figure shows an example: <br><img src="{{site.baseurl}}common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%">
+3.  Click to place the cursor in the text in which to insert the variable.
+4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br><img src="{{site.baseurl}}common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%">
 
-2. Click the name of the required variable. <br> The variable code is inserted in the template content.
+5. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -299,14 +299,14 @@ Emails can output your store name, store email address, store phone number, and 
 To set those values:
 
 1. To set the store name, phone number, and hours of operation:
-    a. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **General** > **Emails**
-    b. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields. 
-    c. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
-    d. Click the **Save Config** button.
+    1. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **General** > **Emails**
+    2. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
+    3. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
+    4. Click the **Save Config** button.
 2. To set the store name, phone number, and hours of operation:
-    a. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
-    b. Input values into the **Sender Name** and **Sender Email** fields. 
-    c. Click the **Save Config** button.
+    1. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
+    2. Input values into the **Sender Name** and **Sender Email** fields.
+    3. Click the **Save Config** button.
 
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 
