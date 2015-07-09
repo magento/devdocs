@@ -10,11 +10,11 @@ github_link: release-notes/changes_1.0.0-beta.md
 
 <h2 id="changes-contents">Contents</h2>
 
-*	<a href="#rn-074b10-overview">Overview of the Merchant Beta release</a>
+*	<a href="#rn-merchbeta-overview">Overview of the Merchant Beta release</a>
 *	<a href="#1.0.0-beta-changes">Major changes in the Merchant Beta release</a>
 *	<a href="#1.0.0-beta-incompat">Backward-incompatible changes</a>
 
-<h2 id="rn-074b10-overview">Overview of the 0.74-beta10 release</h2>
+<h2 id="rn-merchbeta-overview">Overview of the Merchant Beta release</h2>
 These Release Notes discuss important changes in this release. 
 
 For additional details, see the following:
