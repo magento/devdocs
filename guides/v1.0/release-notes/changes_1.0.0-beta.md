@@ -10,23 +10,55 @@ github_link: release-notes/changes_1.0.0-beta.md
 
 <h2 id="changes-contents">Contents</h2>
 
-*	<a href="#rn-074b10-overview">Overview of the 0.74-beta16 release</a>
-*	<a href="#1.0.0-beta-changes">Major changes in the 0.74-beta16 release</a>
+*	<a href="#rn-074b10-overview">Overview of the Merchant Beta release</a>
+*	<a href="#1.0.0-beta-changes">Major changes in the Merchant Beta release</a>
 *	<a href="#1.0.0-beta-incompat">Backward-incompatible changes</a>
 
 <h2 id="rn-074b10-overview">Overview of the 0.74-beta10 release</h2>
-These Release Notes discuss important changes in this release. For additional details, see the following:
+These Release Notes discuss important changes in this release. 
+
+For additional details, see the following:
 
 *	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta16" target="_blank">Changelog</a>
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
 *	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
-<h2 id="1.0.0-beta-changes">Major changes in the 0.74-beta16 release</h2>
+<h2 id="1.0.0-beta-changes">Major changes in the Merchant Beta release</h2>
 We made the following changes in this release:
 
+*	<a href="#1.0.0-beta-changes-swatch">Product attribute swatches</a>
+*	<a href="#1.0.0-beta-changes-emails">Transactional emails</a>
+*	<a href="#1.0.0-beta-changes-import">Import and export</a>
 *	<a href="#1.0.0-beta-changes-join">Join directive</a>
 *	<a href="#1.0.0-beta-changes-backup">Uninstall and backup</a>
 *	<a href="#1.0.0-beta-changes-other">Other changes</a>
+
+<h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
+Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
+
+<h3 id="1.0.0-beta-changes-emails">Transactional emails</h3>
+Emails designed to display on all types of devices (desktop, tablet, mobile) to inform customers about store-related activities (for example, sales, promotions, new stock, and so on).
+
+Transactional emails provide the following benefits:
+
+*	Email templates are displayed consistently across all supported email clients
+*	Email templates can be distributed as a part of a theme
+*	Email templates work with the Magento global internationalization mechanism
+
+To use transactional emails, log in to the Magento Admin and click **Marketing** > Communications > **Email Templates**. For more information, see <a href="{{ site.gdeurl }}frontend-dev-guide/templates/template-email.html">Customizing Email Templates</a>.
+
+<h3 id="1.0.0-beta-changes-import">Import and export</h3>
+Import and export enable you to do any of the following in one operation:
+
+*	Add new products to your inventory
+*	Update your product data and advanced price data
+*	Replace a set of products 
+
+Import and export includes product and advanced price entities. In comparison with the Magento 1.x import and export, Magento 2 has improved performance, a simplified file structure, and better error descriptions.
+
+For large catalogs especially, it's much easier to export the data, edit the data in a spreadsheet, and then import the data back into your store.
+
+To use import and export, log in to the Magento Admin and click **System** > Data Transfer > **Import** or **System** > Data Transfer > **Export**.
 
 <h3 id="1.0.0-beta-changes-join">Join directive</h3>
 *	Created a Join directive, join process for tables, and XML configuration support to define a performant join for search services.
