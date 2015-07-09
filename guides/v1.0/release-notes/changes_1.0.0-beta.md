@@ -10,18 +10,9 @@ github_link: release-notes/changes_1.0.0-beta.md
 
 <h2 id="changes-contents">Contents</h2>
 
-*	<a href="#rn-merchbeta-overview">Overview of the Merchant Beta release</a>
 *	<a href="#1.0.0-beta-changes">Major changes in the Merchant Beta release</a>
 *	<a href="#1.0.0-beta-incompat">Backward-incompatible changes</a>
-
-<h2 id="rn-merchbeta-overview">Overview of the Merchant Beta release</h2>
-These Release Notes discuss important changes in this release. 
-
-For additional details, see the following:
-
-*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta16" target="_blank">Changelog</a>
-*	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
-*	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
+*	<a href="1.0.0-beta-feedback">Give us your feedback!</a>
 
 <h2 id="1.0.0-beta-changes">Major changes in the Merchant Beta release</h2>
 We made the following changes in this release:
@@ -32,6 +23,12 @@ We made the following changes in this release:
 *	<a href="#1.0.0-beta-changes-join">Join directive</a>
 *	<a href="#1.0.0-beta-changes-backup">Uninstall and backup</a>
 *	<a href="#1.0.0-beta-changes-other">Other changes</a>
+
+For additional details not covered in these Release Notes, see the following:
+
+*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta16" target="_blank">Changelog</a>
+*	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
+*	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
 Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
@@ -223,3 +220,11 @@ Removed:
 ### Framework changes
 *	We removed the method `getDefaultResult` from `\Magento\Framework\App\Action\AbstractAction`
 *	We removed `field_expr` support from `Magento\Framework\DB\Adapter\Pdo\Mysql::prepareSqlCondition()`
+
+<h2 id="1.0.0-beta-feedback">Give us your feedback!</h2>
+The Magento developer documentation team loves feedback! Please help us help you in any of the following ways:
+
+*	<a href="https://github.com/magento/devdocs/issues" target="_blank">Create an issue</a>
+*	Click **Edit this page on GitHub** on any topic to create a pull request
+*	Drop us a line on <a href="https://twitter.com/MagentoDevDocs" target="_blank">Twitter</a> (`@MagentoDevDocs`)
+*	Heck, send us <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>!
