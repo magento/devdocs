@@ -265,6 +265,7 @@ Examples of acceptable function names include:
 * `filterInput()`
 * `getElementById()`
 * `widgetFactory()`
+
 For object-oriented programming, accessors for instances or static variables should always have the `get` or `set` prefix.
 
 In design patterns, such as the singleton or factory patterns, implementation method names should contain the pattern name where practical to provide the better behavior description.
@@ -513,6 +514,7 @@ The method should:
 
 * Always succeed.
 * Not have side-effects.
+
 Otherwise you can run into serious problems. For example:
 
 * `toString()` calls a method that does an assert.
