@@ -46,7 +46,7 @@ where `[options]` can be:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Logs are written to the <code>&lt;your Magento install dir>/vendor/magento/migration-tool/var</code> directory.</p></span>
+  <p>Logs are written to the <code>&lt;your Magento install dir>/vendor/magento/migration-tool/var</code></p></span>
 </div>
 
 The following sections should be performed in a specific order:
