@@ -9,7 +9,7 @@ menu_node: parent
 
 github_link: get-started/bk-get-started-api.md
 ---
-<h2>What are the Magento web APIs?</h2>
+<h2 id="whatare">What are the Magento web APIs?</h2>
 
 The Magento web API framework provides integrators and developers the means to use web services that communicate with the Magento system. Key features include:
 
@@ -30,14 +30,7 @@ The Magento web API framework provides integrators and developers the means to u
 * One API call can send or return many different types of information. For example, one call could be used to create a downloadable product with web images and a link. 
 
 
-To access these services, use one of the following types of clients:
-
-* Third-party applications, such as a mobile application.
-* External batch jobs that run without user intervention.
-* JavaScript widgets in the Magento storefront or Admin interface. The widget makes AJAX calls to access services.
-
-
-<h2>What can I do with the Magento web APIs?</h2>
+<h2 id="uses">What can I do with the Magento web APIs?</h2>
 
 
 The APIs can used to perform a wide array of tasks. For example:
@@ -48,9 +41,10 @@ The APIs can used to perform a wide array of tasks. For example:
 
 * Integrate with a CMS (Content Management System). At present, content tagging is not supported.
 
+* Create JavaScript widgets in the Magento storefront or Admin interface. The widget makes AJAX calls to access services.
 
 
-<h2>How do I get started?</h2>
+<h2 id="procedure">How do I get started?</h2>
 
 You must register a web service on Magento Admin. Use the following general steps to set up Magento to enable web services.
 
