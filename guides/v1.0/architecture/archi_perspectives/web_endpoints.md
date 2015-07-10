@@ -1,9 +1,9 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architectural Layers
-title: Blocks and Controllers
-menu_title: Blocks and Controllers
+title: Magento Web API Endpoints
+menu_title: 
 menu_order: 
 github_link: architecture/archi_perspectives/web_endpoints.md
 ---

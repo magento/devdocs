@@ -1,6 +1,6 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architectural Layers
 title: Magento Blocks and Controllers
 menu_title: Magento Blocks and Controllers
