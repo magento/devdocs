@@ -1,26 +1,38 @@
-The Web API testing framework allows you to test Magento Web API from the client application point of view. The tests can used with either REST or SOAP.
+---
+layout: default
+group: get-started
+subgroup: A_Concepts
+title: Web API functional testing
+menu_title: Web API functional testing
+menu_order: 1
+github_link: get-started/web-api-functional-testing.md
+---
 
-Concrete test is not aware about adapter being used for making requests. Specific adapter is selected based on parameters specified in PHPUnit configuration (see How to Run the Tests section for more details).
+
+The Web API testing framework allows you to test Magento Web API from the client application point of view. The tests can used with either REST or SOAP. The REST or SOAP adapter that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
 
-<h2>Implementation Details</h2>
+<h2 id="details">Implementation Details</h2>
 
 The Web API functional testing framework depends on the integration testing framework and reuses most of classes implemented there.
 
 
-<h3>Custom Annotation for Data Fixtures</h3>
+<h3 id="custom">Custom Annotations for Data Fixtures</h3>
 
 In the Web API functional tests only, the custom annotation  `@magentoApiDataFixture` is available for declaring fixtures. The difference of this annotation from `@magentoDataFixture` is that the fixture will be committed and accessible during HTTP requests made within the test body. The usage rules of `@magentoApiDataFixture` are the same as `@magentoDataFixture` usage rules.
 
-	If data was added to DB using @magentoApiDataFixture, it will not be automatically cleared after test execution in contrast to case when @magentoDataFixture is used
+<div class="a" id="info">
+
+<p>If data was added to the DB using <code>@magentoApiDataFixture</code>, it will not be automatically cleared after test execution. The data is cleared when <code>@magentoDataFixture</code> is used.</p>
+</div>
 	
-No fixtures must be defined in `dev/tests/api-functional`. Instead, they must be taken from `dev/tests/integration`. The integration framework defines most necessary fixtures, and they should be reused during Web API functional testing. If the existing set of fixtures is insufficient, add new fixtures under `dev/tests/integration`. As a result, the fixtures will be available for both testing frameworks.
+Do not define fixtures in `dev/tests/api-functional`. Instead, they must be taken from `dev/tests/integration`. The integration framework defines most necessary fixtures, and they should be reused during Web API functional testing. If the existing set of fixtures is insufficient, add new fixtures under `dev/tests/integration`. The fixtures will then be available for both testing frameworks.
 
 To keep your test environment clean, clear all entities created in fixture files or within tests itself from the DB after test execution. This can be done either directly in tearDown or by a corresponding rollback for the fixture file. This file should be named the same as a fixture, but with `_rollback` suffix.
 
-<h2>How to Create a New Test</h2>
+<h2 id="create">How to Create a New Test</h2>
 
-All Web API functional tests should be inherited from the generic test case `Magento\TestFramework\TestCase\WebapiAbstract`. It defines the `_webApiCall()` method, which should be used to perform Web API calls from tests. Clients of `_webApiCall()` are unaware of which adapter will be used to perform remote call.
+All Web API functional tests should inherit from the generic test case `Magento\TestFramework\TestCase\WebapiAbstract`. It defines the `_webApiCall()` method, which should be used to perform Web API calls from tests. Clients of `_webApiCall()` are unaware of which adapter will be used to perform remote call.
 
 {% highlight php %}
 <?php
@@ -85,8 +97,8 @@ interface AdapterInterface
  ?>
 {% endhighlight %}
 
-<h2>How to Run the Tests</h2>
-<h3>Prerequisites</h3>
+<h2 id="howto">How to Run the Tests</h2>
+<h3 id="prereq">Prerequisites</h3>
 1. Install the PHP Soap extension. 
 
 	Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
@@ -96,7 +108,7 @@ interface AdapterInterface
 2. Before running the functional tests you need to clear your cache.
 Now you are ready to run the tests.
 
-<h3>Running the Tests</h3>
+<h3 id="running">Running the Tests</h3>
 1. Copy `/dev/tests/api-functional/phpunit.xml.dist` to `/dev/tests/api-functional/phpunit.xml`
 	a. Specify your Magento instance URL as a value of `TESTS_BASE_URL` in `phpunit.xml`.
 	b. Choose the required Web API adapter, `rest` or `soap`, to be used and specify it in `TESTS_WEB_API_ADAPTER`.
