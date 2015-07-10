@@ -29,9 +29,9 @@ Consider whether the new site needs to be designed with more hardware or a more 
 
 To prepare for the migration, make sure you do all of the following:
 
-* Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system.
+* Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system
 * To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration
-* Install Magento 2.0 on a system that meets our system requirements.
+* Install Magento 2.0 on a system that meets our system requirements
 
 <h4>Step 4: Start your migration</h4>
 
@@ -52,9 +52,9 @@ To prepare for the migration, make sure you do all of the following:
 Now that you’ve migrated your data, you must incrementally capture data updates that are added in Magento 1 store (such as new orders, reviews and changes in customer profiles) and migrate it to Magento 2 store.
 
 * Start the incremental migration; updates run continually. 
-You can stop the updates at any time by pressing CTRL+C.
+You can stop the updates at any time by pressing CTRL+C
 * Test your Magento 2 site during this time so you can catch any issues as soon as possible.
-In case you find any issues, press Control+C to stop incremental migration and start it again after issues are resolved.
+In case you find any issues, press Control+C to stop incremental migration and start it again after issues are resolved
 
 <h4>Step 6: Go live</h4>
 

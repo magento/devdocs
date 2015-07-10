@@ -24,7 +24,7 @@ Before you migrate any data, you must edit `<your Magento 2 install dir>/vendor/
 Optional parameters:
 
 *	Database user password: `password=<password>`
-*	Table prefix: `<source_prefix>`, `<dest_prefix>`.
+*	Table prefix: `<source_prefix>`, `<dest_prefix>`
 
 For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 

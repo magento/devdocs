@@ -16,7 +16,7 @@ When you migrate data, the Data Migration Tool verifies that tables and fields a
 If you encounter such an error, you can:
 
 *	Install the corresponding extensions in Magento 2 if they exist
-*	Ignore them by adding `<ignore>` tags to the `map.xml` file. 
+*	Ignore them by adding `<ignore>` tags to the `map.xml` file 
 
 After resolving issues, run the Data Migration Tool again.
 

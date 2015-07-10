@@ -153,13 +153,13 @@ Configuration file has the following structure:
 </config>
 {% endhighlight %}
 
-* steps - describes all steps that are processed during migration.
+* steps - describes all steps that are processed during migration
 
-* source - configuration for data source. Available source types: database.
+* source - configuration for data source. Available source types: database
 
-* destination - configuration for data destination. Available destination types: database.
+* destination - configuration for data destination. Available destination types: database
 
-* options - list of parameters. Contains both mandatory (map_file, settings_map_file, bulk_size) and optional (custom_option, resource_adapter_class_name, prefix_source, prefix_dest, log_file) parameters.
+* options - list of parameters. Contains both mandatory (map_file, settings_map_file, bulk_size) and optional (custom_option, resource_adapter_class_name, prefix_source, prefix_dest, log_file) parameters
 
 Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the “source_prefix” and “dest_prefix” configuration options accordingly.
 
@@ -342,21 +342,21 @@ Map file has the next format:
 
 Areas:
 
-* *source* - contains rules of source database.
+* *source* - contains rules of source database
 
-* *destination* - contains rules of destination database.
+* *destination* - contains rules of destination database
 
 Options:
 
-* *ignore* - document or field marked with this option will be ignored and not transferred to destination document.
+* *ignore* - document or field marked with this option will be ignored and not transferred to destination document
 
-* *rename* - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name.
+* *rename* - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name
 
-* *move* - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field.
+* *move* - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field
 
-* *transform* - is a option that allows user to migrate fields according to behavior described in handlers.
+* *transform* - is a option that allows user to migrate fields according to behavior described in handlers
 
-* *handler* - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param> tag with the parameter name and value data to pass it to handler.
+* *handler* - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param> tag with the parameter name and value data to pass it to handler
 
 **Source** available operations:
 <table>

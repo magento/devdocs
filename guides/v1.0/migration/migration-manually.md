@@ -43,9 +43,9 @@ All media files (for example, images for products, categories, the WYSIWYG edito
 However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved. 
 
 ### Storefront design        
-* Design in files (css, js, templates, XML layouts) changed its location and format. 
-* Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. 
+* Design in files (css, js, templates, XML layouts) changed its location and format 
+* Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages 
 
 ### ACLs (Access Control Lists)
-*	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
-*	You must manually re-create all administrative users and associate them with access privileges.
+*	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST)
+*	You must manually re-create all administrative users and associate them with access privileges
