@@ -20,7 +20,7 @@ The Magento web API framework provides integrators and developers the means to u
 	* Mobile applications authenticate using <a href="{{ site.gdeurl }}/get-started/authentication/gs-authentication-token.html">tokens</a>. 
 	* Administrators and customers are authenticated with <a href="{{ site.gdeurl }}/get-started/authentication/gs-authentication-token.html">login credentials</a>. 
 	
-* Users and integrations are assigned resources that they have access to. The API framework checks that any call has authorization to perform the request.    
+* All accounts and integrations are assigned resources that they have access to. The API framework checks that any call has authorization to perform the request.    
 
 * Any Magento or third-party service can be <a href="{{ site.gdeurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">configured as a web API</a>.
 
@@ -41,18 +41,18 @@ The APIs can used to perform a wide array of tasks. For example:
 
 * Integrate with a CMS (Content Management System). At present, content tagging is not supported.
 
-* Create JavaScript widgets in the Magento storefront or Admin interface. The widget makes AJAX calls to access services.
+* Create JavaScript widgets in the Magento storefront or on the Admin panel. The widget makes AJAX calls to access services.
 
 
 <h2 id="procedure">How do I get started?</h2>
 
 You must register a web service on Magento Admin. Use the following general steps to set up Magento to enable web services.
 
-1. Create a web services user on Magento Admin.
-2. Create a new integration on Magento Admin. Be sure to restrict which resources the integration can access.
+1. Create a web services user on Magento Admin. To create a user, click System > All Users > Add New User. 
+2. Create a new integration on Magento Admin. To create an integration, click System > Integration > Add New Integration. Be sure to restrict which resources the integration can access.
 3. Use a REST or SOAP client to configure authentication.
 
-See the Merchant documentation for more information.
+See the Merchant User Guide for more information.
 
 
 
