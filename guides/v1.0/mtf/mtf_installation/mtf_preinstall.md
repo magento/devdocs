@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Installation
+subgroup: B. Installation
 title: Install Magento Testing Framework
 menu_title: Check pre-installation conditions
 menu_order: 1
@@ -44,7 +44,9 @@ To know how, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">**
 </div>
 
 <h4 id="mtf_install_pre_tools_apache">Selenium Standalone Server</h4>
-Download [last release of Selenium Standalone Server][].
+Selenium Standalone Server will be downloaded during Magento installation in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/netwing/selenium-server-standalone</code>.
+Also you can download manually [last release of Selenium Standalone Server][].
+
 
 <h4 id="mtf_install_pre_tools_apache">Web driver</h4>
 Selenium uses web-driver to manipulate the browser.

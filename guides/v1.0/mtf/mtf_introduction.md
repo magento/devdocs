@@ -1,9 +1,9 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: 1_Introduction
+subgroup: A. Introduction
 title: Introduction to Magento Testing Framework
-menu_title: INTRODUCTION
+menu_title: A. INTRODUCTION
 menu_order: 1
 menu_node: parent
 github_link: guides/v1.0/mtf/mtf_introduction.md

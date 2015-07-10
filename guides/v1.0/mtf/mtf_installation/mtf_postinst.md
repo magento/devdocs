@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Installation
+subgroup: B. Installation
 title: Install Magento Testing Framework
 menu_title: Verify installation
 menu_order: 3
