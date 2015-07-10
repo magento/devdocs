@@ -9,16 +9,24 @@ github_link: frontend-dev-guide/javascript/js_practice.md
 ---
 
 <h2 id="practice_overview">Overview</h2>
-This topic features a step-by-step illustration of how to customize a jQuery widget, include your own custom widget (jCarousel), and set up your own script to communicate with built-in Magento widgets.
+This topic features a step-by-step illustration of how to customize a jQuery widget and how to use a custom widget instead the default Magento one. 
 
 <h2>Customize a default Magento jQuery widget</h2>
 
-Remove the "Click on image to view it full sized" message on the product page. 
+In their Orange theme, OrangeCo wants to remove the "Click on image to view it full sized" message displayed on the product page. 
 
-Open a product page > view source > search for "Click to..." > see that it is displayed by the gallery.js.
+First, OrangeCo needs to define how the message is output. To do this, they take the following steps: 
 
-In the requirejs-config.js find "gallery", the path is "mage/gallery"
+1. Open a product page.
+2. Select to view source.
+3. Search for the "Click on image to view it full sized" string.
+3. View that it is output by `gallery.js`
 
+<img src="{{site.baseurl }}common/images/fdg_js_pr1.png" alt="Page source search result">
+
+5. In require-config.js find the path for gallery: "mage/gallery"
+
+So MAge
 In the Orange theme create ...orange/requirejs-config.js
 with the following content:
 <pre>
