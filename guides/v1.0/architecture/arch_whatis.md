@@ -1,9 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Introduction
+subgroup: A_Introduction
 title: What is Magento?
-menu_title: What is Magento?
+menu_title: Introduction
+menu_node: parent
 menu_order: 1
 github_link: architecture/arch_whatis.md
 ---
