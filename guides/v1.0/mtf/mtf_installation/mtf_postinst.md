@@ -5,7 +5,7 @@ subgroup: B. Installation
 title: Install Magento Testing Framework
 menu_title: Verify installation
 menu_order: 3
-github_link: guides/v1.0/mtf/mtf_postinstall.md
+github_link: guides/v1.0/mtf/mtf_installation/mtf_postinstall.md
 ---
 
 <h2 id="mtf_install_pre">Check installation</h2>

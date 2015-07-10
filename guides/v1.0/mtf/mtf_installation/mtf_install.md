@@ -5,7 +5,7 @@ subgroup: B. Installation
 title: Install Magento Testing Framework
 menu_title: Perform installation
 menu_order: 2
-github_link: guides/v1.0/mtf/mtf_install.md
+github_link: guides/v1.0/mtf/mtf_installation/mtf_install.md
 ---
 <h2 id="mtf_install_pre">Perform installation</h2>
 

@@ -9,3 +9,6 @@ menu_node: parent
 github_link: guides/v1.0/mtf/mtf_changelog.md
 ---
 
+Check current state of the Magento Testing Framework, history of changes and list of releases on [GitHub][].
+
+[GitHub]: https://github.com/magento/mtf/blob/develop/CHANGELOG.md
