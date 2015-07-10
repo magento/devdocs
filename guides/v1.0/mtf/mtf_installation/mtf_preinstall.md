@@ -28,11 +28,6 @@ To know how, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">**
 -    Set **Enable WYSIWYG Editor** to **Disabled Completely**. For stable work of Selenium with Magento 2.
 
 <h3 id="mtf_install_pre_tools">3. Check if all required software installed and configured</h3>
-<h4 id="mtf_install_pre_tools_apache">Apache</h4>
-<a href="{{ site.gdeurl }}install-gde/prereq/apache.html">More details about Apache verification, installation and configuration</a>.
-
-<h4 id="mtf_install_pre_tools_apache">MySQL</h4>
-<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">More details about MySQL verification, installation and configuration</a>.
 
 <h4 id="mtf_install_pre_tools_apache">PHP</h4>
 
@@ -49,13 +44,14 @@ Also you can download manually [last release of Selenium Standalone Server][].
 
 
 <h4 id="mtf_install_pre_tools_apache">Web driver</h4>
-Selenium uses web-driver to manipulate the browser.
+Selenium Standalone Server uses web-driver to manipulate the browser.
 
 Download [web-driver for your browser][], if needed. 
 
 <h3 id="mtf_install_pre_mtf-check">4. Check if MTF has been already installed</h3>
-Open folder <code>&lt;magento_root&gt;/dev/tests/functional/vendor/magento/</code>.
-If it contains folder <code>mtf</code>, then MTF is already there.
+1. Open folder <code>&lt;magento_root&gt;/dev/tests/functional/</code>.
+1. Try to find <code>vendor/magento/mtf</code> folder. If your attempt is successful, then you already have MTF.
+
 
 
 [official web-site]: http://www.seleniumhq.org/download/
