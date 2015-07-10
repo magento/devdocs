@@ -20,7 +20,7 @@ If you encounter such an error, you can:
 
 After resolving issues, run the Data Migration Tool again.
 
-Command usage:
+To run the Data Migration Tool, use the following command:
 
 	cd <your Magento 2 install dir>/vendor/magento/data-migration-tool/bin
 	php migrate data --config=<path to config.xml> [--reset]
@@ -28,5 +28,5 @@ Command usage:
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
   <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Data Migration Tool resumes progress at the last known good state.</p>
-  <p>To force Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
+  <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
 </div>

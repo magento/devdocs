@@ -16,16 +16,16 @@ github_link: migration/migration-migrate.md
 
 During the time you're migrating:
 
-*	Do not make any changes in the Magento 1 Admin Panel except for order management (shipping, creating invoice, credit memos etc.)
+*	Do not make any changes in the Magento 1 Admin except for order management (shipping, creating invoice, credit memos etc.)
 *	Stop all Magento 1 cron jobs
 *	Do not alter any code
-*	Do not make changes in the Magento 2 Admin and Storefront
+*	Do not make changes in the Magento 2 Admin and storefront
 
-All operations in Magento 1 Storefront are allowed at this time.
+All operations in Magento 1 storefront are allowed at this time.
 
 ###Run Data Migration Tool
 
-Run the Data Migration Tool from the `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin` directory.
+Run the Data Migration Tool from `<your Magento 2 install dir>/vendor/magento/data-migration-tool/bin`
 
 Command syntax:
 
@@ -34,8 +34,8 @@ Command syntax:
 where `<mode>` can be:
 
 *	`data` to migrate database data
-*	`delta` to migrate data that is added to the database since your ran the tool with the `data` option
-*	`settings` to migrate Magento Admin Panel settings
+*	`delta` to migrate data that is added to the database since you last ran the tool with the `data` option
+*	`settings` to migrate Magento Admin settings
 
 where `[options]` can be:
 

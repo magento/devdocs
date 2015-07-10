@@ -12,11 +12,16 @@ github_link: migration/migration-manually.md
   
 <h2>Data that needs to be migrated manually</h2>
 
+There are three types of data that need to be manually migrated:
+* Media
+* Storefront design
+* ACLs
+
 ### Media
 This section discusses how to manually migrate media files.
 
 #### Media files stored in the database
-This section applies to you *only* if you store media files in the Magento database and should be performed before <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">migration of data</a>:
+This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">migration of data</a>:
 
 1.	Log in to the Magento 1 Admin Panel as an administrator.
 2.	Click **System** > **Configuration** > ADVANCED > **System**. 
@@ -41,6 +46,6 @@ However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder
 * Design in files (css, js, templates, XML layouts) changed its location and format. 
 * Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages. 
 
-### ACLs
+### ACLs (Access Control Lists)
 *	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST).
 *	You must manually re-create all administrative users and associate them with access privileges.
