@@ -4,7 +4,7 @@ group: release-notes
 title: Release Notes
 menu_title: Changes in 1.0.0-beta (Merchant Beta)
 menu_node: 
-menu_order: 6
+menu_order: 3
 github_link: release-notes/changes_1.0.0-beta.md
 ---
 
@@ -59,11 +59,11 @@ To use import and export, log in to the Magento Admin and click **System** > Dat
 
 <h3 id="1.0.0-beta-changes-join">Join directive</h3>
 *	Created a Join directive, join process for tables, and XML configuration support to define a performant join for search services.
-*	Changed return type from `\Magento\Sales\Api\Data\OrderSearchResultInterface[]` to `\Magento\Sales\Api\Data\OrderInterface[]` in the API method `getList` in `Magento\Sales\Api\Data\OrderSearchResultInterface`
+*	Changed the return type from `\Magento\Sales\Api\Data\OrderSearchResultInterface[]` to `\Magento\Sales\Api\Data\OrderInterface[]` in the API method `getList` in `Magento\Sales\Api\Data\OrderSearchResultInterface`
 *	Changed return type from `\Magento\Sales\Api\Data\InvoiceSearchResultInterface` to `\Magento\Sales\Api\Data\InvoiceCommentSearchResultInterface` in the API method `getList` in `Magento\Sales\Api\InvoiceCommentRepositoryInterface`
 
 <h3 id="1.0.0-beta-changes-backup">Uninstall and backup</h3>
-We've added the ability to <a href="{{ site.gdeurl }}install-gde/install/install-cli-backup.html">back up and roll back to</a> at any time:
+We've added the ability to <a href="{{ site.gdeurl }}install-gde/install/install-cli-backup.html">back up</a> and <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">roll back to</a> at any time:
 
 *	The Magento 2 file system
 *	The `pub/media` directories
@@ -74,6 +74,8 @@ You can also uninstall any of the following after optionally backing up:
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html">Modules</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-theme-uninstall.html">Themes</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-langpk.html">Language packages</a>
+
+You can <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">roll back</a> to an earlier backup at any time.
 
 <h3 id="1.0.0-beta-changes-other">Other changes</h3>
 *	Updated the "composer/composer" dependency to version "1.0.0-alpha10".
@@ -135,7 +137,7 @@ NEW
 	POST: /V1/products/Simple_Product/links
 
 #### Magento_Catalog API change to stock item quantity
-The new REST route URL to update stock item quantity is now `/V1/products/:sku/stockItems/:itemId`
+The new REST route URL to update stock item quantity is `/V1/products/:sku/stockItems/:itemId`
 
 #### Magento_Catalog argument change
 
@@ -143,8 +145,8 @@ In `Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator`, we added a new arg
 
 ### Magento_Checkout changes
 
-*	`checkout_onepage_index.xml` renamed to `checkout_index_index.xml`
-*	Updated process method according to changed in checkout layout `Magento/Checkout/Block/Checkout/LayoutProcessor`
+*	We renamed `checkout_onepage_index.xml` to `checkout_index_index.xml`
+*	Updated the process method according to changes in checkout layout `Magento/Checkout/Block/Checkout/LayoutProcessor`
 *	In `Magento/Checkout/Model/DefaultConfigProvider` we added required parameters `Cart\ImageProvider`, `Magento\Directory\Model\Country\Postcode\ConfigInterface`, `Magento\Directory\Helper\Data`, `Magento\Quote\Api\Data\EstimateAddressInterfaceFactory`,
 `Magento\Shipping\Model\Config`, `Magento\Store\Model\StoreManagerInterface`, `Magento\Quote\Api\PaymentMethodManagementInterface`, `Magento\Framework\App\Config\ScopeConfigInterface`,
 `Magento\Store\Model\ScopeInterface`, `Magento\Quote\Api\CartTotalRepositoryInterface`
@@ -222,9 +224,11 @@ Removed:
 *	We removed `field_expr` support from `Magento\Framework\DB\Adapter\Pdo\Mysql::prepareSqlCondition()`
 
 <h2 id="1.0.0-beta-feedback">Give us your feedback!</h2>
-The Magento developer documentation team loves feedback! Please help us help you in any of the following ways:
+The Magento developer documentation team loves feedback! Please provide feedback in any of the following ways:
 
 *	<a href="https://github.com/magento/devdocs/issues" target="_blank">Create an issue</a>
 *	Click **Edit this page on GitHub** on any topic to create a pull request
 *	Drop us a line on <a href="https://twitter.com/MagentoDevDocs" target="_blank">Twitter</a> (`@MagentoDevDocs`)
-*	Heck, send us <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>!
+*	Send us <a href="mailto:DL-Magento-Doc-Feedback@ebay.com">e-mail</a>
+
+Our <a href="{{ site.gdeurl }}contributor-guide/contributing.html#requirements">contribution guidelines</a> provide more detail about providing feedback on the code and documentation.
