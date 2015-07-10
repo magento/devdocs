@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: a
 subgroup: Architectural Layers
 title: Magento Area
 menu_title: Magento Area
-menu_order: 1
+menu_order: 
 github_link: architecture/archi_perspectives/area_intro.md
 ---
 
