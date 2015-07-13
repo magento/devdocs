@@ -441,9 +441,10 @@ obj.example.SECONDS_TABLE = {
 <ul>
   <li><code>filterInput()</code></li>
   <li><code>getElementById()</code></li>
-  <li><code>widgetFactory()</code>
-For object-oriented programming, accessors for instances or static variables should always have the <code>get</code> or <code>set</code> prefix.</li>
+  <li><code>widgetFactory()</code></li>
 </ul>
+
+<p>For object-oriented programming, accessors for instances or static variables should always have the <code>get</code> or <code>set</code> prefix.</p>
 
 <p>In design patterns, such as the singleton or factory patterns, implementation method names should contain the pattern name where practical to provide the better behavior description.</p>
 
@@ -502,22 +503,21 @@ var a4 = [];
 </code></pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-   The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.
-
-   Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.
-
+   <p>The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.
+   Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.</p>
+   
    <script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
 </div>
 <p>Object constructors don’t have the same problems, but for readability and consistency object literals should be used.</p>
 
-<p>var o = {};</p>
-
-<p>var o2 = {
-      a: 0,
-      b: 1,
-      c: 2,
-      ‘strange key’: 3
-};</p>
+<pre><code>var o = {};
+var o2 = {
+  a: 0,
+  b: 1,
+  c: 2,
+  'strange key': 3
+};
+</code></pre>
 
 <h3 id="fedg_js-coding_codestyle_binary-ternary">Binary and ternary operators</h3>
 <p>Always put the operator on the preceding line, so that you don’t have to think about implicit semi-colon insertion issues.</p>
@@ -578,8 +578,7 @@ var a4 = [];
    </tbody>
 </table>
 <div class="bs-callout bs-callout-info" id="info2">
-   Here are some examples of non-obvious Boolean expressions results:
-
+   <p>Here are some examples of non-obvious Boolean expressions results:</p>
    
    <pre>Boolean('0') == true
 '0' != true</pre>
@@ -693,10 +692,12 @@ You can control how your objects are converted to string by defining a custom <c
 
 <ul>
   <li>Always succeed.</li>
-  <li>
-    <p>Not have side-effects.
-Otherwise you can run into serious problems. For example:</p>
-  </li>
+  <li>Not have side-effects.</li>
+</ul>
+
+<p>Otherwise you can run into serious problems. For example:</p>
+
+<ul>
   <li><code>toString()</code> calls a method that does an assert.</li>
   <li>The assert tries to output the name of the object in which it failed.</li>
   <li><code>toString()</code> is called.</li>
@@ -852,7 +853,7 @@ var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.
 </code></pre>
 
 <div class="bs-callout bs-callout-info" id="info">
-   The following is **incorrect**:
+   <p>The following is <b>incorrect</b>:</p>
 
    <pre>WRONG_Object.prototype = {
     a          : 0,
