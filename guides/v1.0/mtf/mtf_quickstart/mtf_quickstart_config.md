@@ -11,7 +11,7 @@ github_link: guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.md
 
 <h3 id="mtf_quickstart_config_phpunitxml">1. Edit <code>phpunit.xml</code> to configure PHPUnit</h3>
 
-Find <code>phpunit.xml</code> in <code>&lt;magento_root&gt;\dev\tests\functional</code>, and open it in editor.
+Find <code>phpunit.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional</code>, and open it in editor.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
@@ -35,7 +35,7 @@ Example:
 For Windows you need also to change path to full path for environment variables `credentials_file_path` (file with credentials required by Magento Modules) and `basedir` (folder for error logs).
 
 <h3 id="mtf_quickstart_config_configxml">2. Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
-Find <code>config.xml</code> in <code>&lt;magento_root&gt;\dev\tests\functional\etc</code>, and open it in editor.
+Find <code>config.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional/etc</code>, and open it in editor.
 
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
 In <code>&lt;application&gt;</code> element find elements <code>&lt;backendLogin&gt;</code> and <code>&lt;backendPassword&gt;</code>. Change content of these elements to your actual credentials for Magento Admin Front.
@@ -49,20 +49,20 @@ The default browser is **Mozilla Firefox**.
 
 If you want to use another browser for tests you have to specify it in <code>config.xml</code>.
 
-Copy <code>&lt;server&gt;</code> element from <code>&lt;magento_root>/dev/tests/functional/vendor/etc/config.xml&gt;</code> and paste it in <code>&lt;magento_root&gt;\dev\tests\functional\config.xml</code> after <code>&lt;install&gt;</code> element.
+Copy <code>&lt;server&gt;</code> element from <code>&lt;magento_root>/dev/tests/functional/vendor/etc/config.xml&gt;</code> and paste it in <code>&lt;magento_root&gt;/dev/tests/functional/config.xml</code> after <code>&lt;install&gt;</code> element.
 
 Enter actual data in <code>&lt;browserName&gt;</code> and <code>&lt;browser&gt;</code> attributes.
 
 
-<h3 id="mtf_quickstart_config_configxml">3. Edit <code>credentials.xml</code> to configure Magento Testing Framework to work with Magento Modules that requires credentials</h3>
+<h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to configure Magento Testing Framework to work with Magento Modules that requires credentials</h3>
 
-Find <code>credentials.xml</code> in <code>&lt;magento_root&gt;\dev\tests\functional</code>, and open it in editor.
+Find <code>credentials.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional</code>, and open it in editor.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>
 </div>
 
-<h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Modules under test</h4>
+<h4 id="mtf_quickstart_config_credentialsxml-set">Set credentials for Magento Modules under test</h4>
 Open <code>credentials.xml</code>.
 
 Find block of elements for the Magento Module you want to test.
