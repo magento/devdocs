@@ -181,16 +181,16 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
    "sku": “tshirt1”,
    “price”: “20.00”,
    “description”: “New JSmith design”,
-    “extension_attributes”: {
-        “logo size”: “small”,
-        “stock_item” : {
-            “status” : “in_stock”
-            “quantity”: 70
-             }
-         },
-        “custom_attributes”: {
-          “artist”: “James Smith”
-        }
+   “extension_attributes”: {
+      “logo size”: “small”,
+      “stock_item” : {
+         “status” : “in_stock”
+         “quantity”: 70
+      }
+   },
+   “custom_attributes”: {
+      “artist”: “James Smith”
+   }
 }
 </pre>
 
