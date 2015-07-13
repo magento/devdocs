@@ -258,14 +258,14 @@ Because email clients don't support vector-based formats such as Scalable Vector
 
 If you don't have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px &times; 100px, specify `200` for the width and `100` for the height.
 
-<h3 id="customize-logo-theme">Customize the logo using a theme</h3>
+<h3 id="customize-logo-theme">Customize the email logo using a theme</h3>
 To customize your logo using a theme:
 
-1. Add a file named `logo_email.png` to a `Magento_Email/web/` folder in your custom theme.
+1. Add a file named `logo_email.png` to a `Magento_Email/web/` directory in your custom theme.
   
-   For example, if you wanted to add a logo for the `Magento/luma` theme, you would add a file here: `app/design/frontend/Magento/luma/Magento_Email/web/logo_email.png`.
+   For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/OrangeCo/orange/Magento_Email/web` directory.
 
-2. Copy the `app/code/Magento/Email/view/frontend/email/header.html` file into a `Magento_Email/email/header.html` folder in your theme. Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
+2. Copy the `app/code/Magento/Email/view/frontend/email/header.html` file into a `Magento_Email/email/header.html` directory in your theme. Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
   
   Example:
   
