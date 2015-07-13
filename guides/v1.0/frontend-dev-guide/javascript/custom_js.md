@@ -9,9 +9,9 @@ github_link: frontend-dev-guide/javascript/custom_js.md
 ---
 
 <h2 id="custom_js_overview">Overview</h2>
-This topic talks about how to use custom JavaScript components together with Magento default ones or having replaced them with custom implementations.
+This topic discusses about how to use custom JavaScript components with the components provided by Magento or having replaced them with custom implementations.
 
-We strongly recommend not changing the default Magento files. All customizations must be implemented in custom modules or themes.
+We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
 <h2 id="js_replace">Replace a default JS component</h2>
 
@@ -74,27 +74,26 @@ You can add a custom JS component/widget, which will extend a default Magento co
 
 <h3 id="extend_js_widget">Extend Magento widget</h3>
 
-To extend a default Magento jQuery widget, your custom widget must contain the following:
+To extend a default Magento jQuery widget, create `<your_widget_name>.js` with the following contents:
 
-`<your_widget_name>.js`:
-<pre>
+{% highlight JavaScript %}
 define([
   'jquery',
   'jquery/ui',
-  'mage/&lt;widget.name&gt;' // usually widget can be found in /lib/web/mage dir
+  'mage/<widget.name>' // usually widget can be found in /lib/web/mage dir
 ], function($){
  
-  $.widget('&lt;your_namespace&gt;.&lt;your_widget_name&gt;', $.mage.&lt;widget.name&gt;, { ... });
+  $.widget('<your_namespace>.<your_widget_name>', $.mage.<widget.name>, { ... });
  
-  return $.&lt;your_namespace&gt;.&lt;your_widget_name&gt;;
+  return $.<your_namespace>.<your_widget_name>;
 });
-</pre>
+{% endhighlight %}
 
 Where the following notation is used:
 <ul>
 <li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom widget. According to the jQuery widgets naming convention, must contain a namespace and name.</li>
 
-<li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget which you extend.</li>
+<li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you extend.</li>
 </ul>
 
 For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
@@ -155,7 +154,7 @@ var config = {
 };
 {% endhighlight %}
 </li>
-<li>Put the <code>requirejs-config.js</code> file in one of the following locations
+<li>Put the <code>requirejs-config.js</code> file in one of the following locations:
 <ul>
 <li>Your custom theme files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;</code> </li>
 <li>Your custom module files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend</code></li>

@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/javascript/js_debug.md
 
 <h2 id="js_debug_overview">Overview</h2>
 
-This article talks about how to define which JavaScript components (scripts) are used on a particular Magento store page.
+This topic discusses how to define which JavaScript components and widgets are used on a particular Magento store page.
 
 
 <h2 id="locate_widget">Locate JS components: walkthrough</h2>
@@ -18,15 +18,15 @@ This article talks about how to define which JavaScript components (scripts) are
 To locate scripts used for a certain element:
 
 <ol>
-<li>Open the store page in a browser, and locate the element's <code>class</code> or <code>id</code> using browser debugging tools.</li>
+<li>Open the store page in a browser, and locate the element's <code>class</code> or <code>id</code> using browser debugging tools, such as Firebug (Firefox) or Inspect Element (Chrome).</li>
 
 <li>Select to view the page source.</li>
-<li>Find the corresponding element in the page source and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#init_phtml" target="_blank">JavaScript initialization</a>. 
+<li>Find the corresponding element in the page source and see if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#init_phtml" target="_blank">JavaScript initialization</a>. 
 </li>
 <li>
-To find out, where is the source file of the used script:
+To find the source file of the used script:
 <ol>
-<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click the link to <code>requirejs-config.js</code> file. The file contains Magento RequireJS configuration, collected from all modules of the current theme.
+<li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click link to <code>requirejs-config.js</code> file. The file contains the Magento RequireJS configuration, collected from all modules of the current theme.
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
 <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
