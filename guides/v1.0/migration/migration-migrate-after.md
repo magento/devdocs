@@ -1,11 +1,11 @@
 ---
 layout: default
 group:  migration
-subgroup: Migrate using data migration tool
+subgroup: n_after
 title: After Migration
 menu_title: After Migration
-menu_node:
-menu_order: 4
+menu_node: parent
+menu_order: 6
 github_link: migration/migration-migrate.md
 ---
 

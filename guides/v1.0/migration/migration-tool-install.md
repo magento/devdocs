@@ -2,14 +2,14 @@
 layout: default
 group:  migration
 subgroup: Data migration tool
-title: Install Data Migration Tool
-menu_title: Install Data Migration Tool
+title: Install the Data Migration Tool
+menu_title: Install the Data Migration Tool
 menu_node: 
 menu_order: 2
 github_link: migration/migration-tool-install.md
 ---
 
-## Install Data Migration Tool
+## Install the Data Migration Tool
 This section discusses how to install the Magento Data Migration Tool. You can install it from either <a href="http://packages.magento.com/#magento/data-migration-tool" target="_blank">packages.magento.com</a> or from a GitHub repository.
 
 <div class="bs-callout bs-callout-info" id="info">

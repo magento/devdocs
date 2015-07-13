@@ -12,7 +12,9 @@ github_link: migration/migration-tool.md
   
 <h2>Data Migration Tool</h2>
 
-To assist you with your migration, Magento is creating the Magento 2
-Data Migration Tool, a data migration command-line interface (CLI) tool with auxiliary verification, progress tracking, logging, and testing functions that allows direct data copying from a Magento 1 database to a Magento 2 database. The tool is expected to be available by Q3 2015 and it efficiently and reliably migrates all core Magento data entities and any custom data entities that do not change between versions.
+To assist you with your migration, Magento provides the Data Migration Tool, a command-line interface (CLI) that provides verification, progress tracking, logging, and testing functions. The migration tool operates in three modes to transfer and adapt data from Magento 1 to Magento 2:
+* Settings mode: Migrates all possible configuration settings from Magento 1 to Magento 2
+* Data mode: Bulk migrates data from your Magento 1 database to your Magento 2 database
+* Delta mode: Incremental "catch-up" migration after the initial bulk data migration
 
-Data Migration Tool can transfer and adapt data from Magento 1 to Magento 2 stores. The migration in overall is split into three phase (or "modes"). Migration of settings, migration of main data and migration of delta. Each mode splits into steps. Every step responsible for transferring some particular data. (e.g. URL Rewrite step, EAV step, Settings step ...) At the beginning, when is run, step checks tables structure of Magento 1 and Magento 2 for their consistency. Then the actual data is transferred to Magento 2 and in the end this data is checked to ensure that everything was transferred properly.
+Each mode consists of several steps that perform tasks specific to the mode. (For example, URL rewrite step, EAV step, settings step.) Each step initially checks data integrity in the Magento 1 and Magento 2 databases and, after verification succeeds, performs the transfer, and verifies data again after it's done.

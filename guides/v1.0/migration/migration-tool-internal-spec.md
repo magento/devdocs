@@ -1,11 +1,11 @@
 ---
 layout: default
 group:  migration
-subgroup: mapping
+subgroup: o_mapping
 title: Data Migration Tool Internal Specification
 menu_title: Data Migration Tool Internal Specification
 menu_node: parent
-menu_order: 6
+menu_order: 7
 github_link: migration/migration-tool-spec.md
 ---
 
@@ -44,7 +44,7 @@ Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-r
 
 <h3 id="directory-structure">Directory structure</h3>
 
-Next diagram represents directory structure of Data Migration Tool:
+The following diagram represents directory structure of Data Migration Tool:
 
 <pre>
 
@@ -102,12 +102,12 @@ Next diagram represents directory structure of Data Migration Tool:
 <h3 id="entry-point">Entry Point</h3>
 
 Script that runs migration process is located at
-magento-root/vendor/magento/data-migration-tool/bin/migrate
+`magento-root/vendor/magento/data-migration-tool/bin/migrate`
 
 
 <h3 id="configuration">Configuration</h3>
 
-The Schema for configuration file `config.xsd` is placed under etc/directory. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under etc/.
+The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
 Default configuration file can be replaced by custom one using CLI (see <a href="{{ site.gdeurl }}migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
 
@@ -167,7 +167,7 @@ Configuration data is accessible via \Migration\Config class.
 
 
 <h2 id="step-internals">Step internals</h2>
-Migration process consists of steps.
+The migration process consists of steps.
 Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.
 
 By default there are several steps (Map, EAV, URL Rewrites, and so on). You can optionally add your own steps as well.
