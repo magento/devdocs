@@ -30,8 +30,7 @@ To use a custom implementation of an existing Magento JS component:
 var config = {
   "map": {
     "*": {
-      "menu": "js/navigation-menu",
-      "mage/backend/menu": "js/navigation-menu",
+      "<custom_component>": "<default_component>"
     }
   }
 };
@@ -40,21 +39,21 @@ var config = {
 
 Where the following notation is used:
 <ul>
-<li><code>&lt;default_component&gt;&quot;</code>: the name of the default component you replace</li>
+<li><code>&lt;default_component&gt;</code>: the name of the default component you replace</li>
 <li><code>&lt;custom_component&gt;</code>: the name of the custom component</li>
 </ul>
 
 For example, if you want to use custom <code>navigation-menu.js</code> script instead of the default menu widgets, your <code>requirejs-config.js</code> should contain the following:
-<pre>
+{% highlight JavaScript %}
 var config = {
-  &quot;map&quot;: {
-    &quot;*&quot;: {
-      &quot;menu&quot;: &quot;js/navigation-menu&quot;,
-      &quot;mage/backend/menu&quot;: &quot;js/navigation-menu&quot;,
+  "map": {
+    "*": {
+      "menu": "js/navigation-menu",
+      "mage/backend/menu": "js/navigation-menu",
     }
   }
 };
-</pre>
+{% endhighlight %}
 
 
 
@@ -81,7 +80,8 @@ To extend a default Magento jQuery widget, your custom widget must contain the f
 <pre>
 define([
   'jquery',
-  'jquery/ui'
+  'jquery/ui',
+  'mage/&lt;widget.name&gt;' // usually widget can be found in /lib/web/mage dir
 ], function($){
  
   $.widget('&lt;your_namespace&gt;.&lt;your_widget_name&gt;', $.mage.&lt;widget.name&gt;, { ... });
@@ -101,16 +101,16 @@ For information about how to initialize your custom widget in a `.phtml` templat
 
 <h3 id="extend_js_component">Extend a default Ui component</h3>
 
-<p class="q">What about other JS components, which do not reside in app/code/Magento/Ui/view/.../web? Can they be extended?</p>
+<p class="q">What about other JS components, which do not reside in app/code/Magento/Ui/view/.../web? Can they be extended? Yes, but this chapter talks about Ui components</p>
 
 To extend a default JS Ui component, your custom script must contain the following:
 
 {% highlight JavaScript %}
 define([
-  '<default_component>'
-], function(<your_component>){
+  '<component_path>'
+], function(<component_alias>){
  
-  return <your_component>.extend({
+  return <component_alias>.extend({
  
     defaults: { ... }, // properties with default values
     ... // methods of your component
@@ -121,8 +121,8 @@ define([
 Where the following notation is used:
 
 <ul>
-<li><code>&lt;default_component&gt;</code>: the name of the default Magento component that you extend</li>
-<li><code>&lt;your_component&gt;</code>: your custom component</li>
+<li><code>&lt;component_path&gt;</code>: path to the default component that you extend</li>
+<li><code>&lt;component_alias&gt;</code>: variable containing the default component that you extend</li>
 </ul>
 
 For example, <code>Filters.js</code> script extends the default <code>filters.js</code>:

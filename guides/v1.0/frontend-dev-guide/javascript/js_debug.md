@@ -23,7 +23,6 @@ To locate scripts used for a certain element:
 <li>Select to view the page source.</li>
 <li>Find the corresponding element in the page source and see, if there are <code>data-mage-init</code> or <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> calls on this element, its children or parents. The calls contain the names of the scripts, as described in <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html#init_phtml" target="_blank">JavaScript initialization</a>. 
 </li>
-<p class="q">"script" can be used without binding to any element, as far as I understand. So should I rewrite this paragraph? A user can also simply search for script, without element's id or class? Ot this is not a real-life use case?</p>
 <li>
 To find out, where is the source file of the used script:
 <ol>
@@ -38,7 +37,7 @@ To find out, where is the source file of the used script:
 <li>If the module context is not specified: <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme) or <code>lib/web</code>(library) directories. 
 
 According to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, if there's a file in the current theme, the system uses it. If it is not found there, the system uses the file from the library.</li>
-<p class="q">According to the fallback description we have in docs, the fallback includes parent theme(s) level, should we mention it here as well?</p>
+<p class="q">According to the fallback description we have in docs, the fallback includes parent theme(s) level, should we mention it here as well? yessss</p>
 <li>If the module context is specified: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module) or <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) directories. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
 
 </ul>
