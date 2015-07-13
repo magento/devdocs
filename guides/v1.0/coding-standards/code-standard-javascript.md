@@ -265,6 +265,7 @@ Examples of acceptable function names include:
 * `filterInput()`
 * `getElementById()`
 * `widgetFactory()`
+
 For object-oriented programming, accessors for instances or static variables should always have the `get` or `set` prefix.
 
 In design patterns, such as the singleton or factory patterns, implementation method names should contain the pattern name where practical to provide the better behavior description.
@@ -322,22 +323,20 @@ The following example is <b>correct</b>. Always use the more readable array lite
     var a4 = [];
 
 <div class="bs-callout bs-callout-info" id="info">
-   The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.
-
-   Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.
-
+   <p>The following example is <b>incorrect</b> because array constructors are error-prone due to their arguments.
+   Because of this, if someone changes the code to pass one argument instead of two arguments, the array might not have the expected length.</p>
+   
    <script src="https://gist.github.com/xcomSteveJohnson/d7c6db5a7d0947e72b48.js"></script>
 </div>
 Object constructors don't have the same problems, but for readability and consistency object literals should be used.
 
-  var o = {};
-
-  var o2 = {
+    var o = {};
+    var o2 = {
       a: 0,
       b: 1,
       c: 2,
       'strange key': 3
-};
+    };
 
 <h3 id="fedg_js-coding_codestyle_binary-ternary">Binary and ternary operators</h3>
 Always put the operator on the preceding line, so that you don't have to think about implicit semi-colon insertion issues.
@@ -398,8 +397,7 @@ The following code samples are equivalent:
    </tbody>
 </table>
 <div class="bs-callout bs-callout-info" id="info2">
-   Here are some examples of non-obvious Boolean expressions results:
-
+   <p>Here are some examples of non-obvious Boolean expressions results:</p>
    
    <pre>Boolean('0') == true
 '0' != true</pre>
@@ -513,6 +511,7 @@ The method should:
 
 * Always succeed.
 * Not have side-effects.
+
 Otherwise you can run into serious problems. For example:
 
 * `toString()` calls a method that does an assert.
@@ -656,7 +655,7 @@ For example:
     };
 
 <div class="bs-callout bs-callout-info" id="info">
-   The following is **incorrect**:
+   <p>The following is <b>incorrect</b>:</p>
 
    <pre>WRONG_Object.prototype = {
     a          : 0,

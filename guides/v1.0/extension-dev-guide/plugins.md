@@ -132,13 +132,13 @@ namespace My\Module\Model\Product;
  
 class Plugin
 {
- public function aroundSave(\Magento\Catalog\Model\Product $subject, \Closure $proceed)
- {
-   $this->doSmthBeforeProductIsSaved();
-    $returnValue = $proceed();
-    if ($returnValue) {
-    $this->postProductToFacebook();
-   }
+    public function aroundSave(\Magento\Catalog\Model\Product $subject, \Closure $proceed)
+    {
+        $this->doSmthBeforeProductIsSaved();
+        $returnValue = $proceed();
+        if ($returnValue) {
+            $this->postProductToFacebook();
+        }
         return $returnValue;
     }
 }
