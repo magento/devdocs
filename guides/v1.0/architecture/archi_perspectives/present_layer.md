@@ -2,8 +2,8 @@
 layout: default
 group: arch-guide
 subgroup: Architectural Layers
-title: Presentation layer
-menu_title: Presentation layer
+title: Presentation Layer
+menu_title: Presentation Layer
 menu_order: 1
 github_link: architecture/archi_perspectives/present_layer.md
 ---
@@ -11,20 +11,18 @@ github_link: architecture/archi_perspectives/present_layer.md
 
 
 
-<h2> Presentation layer</h2>
-When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. Also known as the <i>view layer</i>, presentation code controls both web user interaction with the product (and how Magento responds to web input) and its appearance. You can extensively customize Magento's appearance and behaviorby using HTML5 and CSS3 to modify elements of the presentation layer. 
+<h2> Presentation Layer</h2>
+When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. Also known as the <i>view layer</i>, presentation code controls  web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and .phtml files to modify elements of the presentation layer. 
 
 
 
 
 <h3>Who uses the Presentation layer?</h3>
-Three types of Magento users interact with Presentation layer code. Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Types of users and their associated areas include: 
+Two types of Magento users interact with Presentation layer code. Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Types of users and their associated areas include: 
 
 * <b>Web users</b> interact with the store front, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the (`frontend`) area. 
 
-* <b>Web services</b> use the REST and SOAP API endpoints exposed in the presentation layer to integrate with third-party applications.  
-
-* <b>System administrators</b> customizing a storefront can indirectly manipulate the presentation layer by tweaking components of the front end.
+* <b>System administrators</b> customizing a storefront can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the front end.
 
 
 
@@ -34,7 +32,7 @@ One helpful way of understanding the Magento presentation layer components is by
 
 Each theme resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience. 
 
-The FDG contains an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes. 
+For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see Frontend Developers Guide.
 
 
 
@@ -50,27 +48,24 @@ View elements fall into two main categories: Blocks and containers.
 * Containers collect an ordered group of children view elements.
 
 
-The brower forms a product web page by asking the view element tree to render itself into HTML. Containers and blocks emit HTML that encloses their children appropriately. Blocks typically have a template file to contain the HTML to be emitted, allowing the HTML to be more easily customized without having to replace the PHP code used to implement the block as well.
+The brower forms a product web page by asking the view element tree to render itself into HTML. Containers and blocks emit HTML that encloses their children appropriately. Blocks can generate their content using static HTML, Knockout JS scripts, and PHTML.
 
 
 <h3>How Presentation code calls other layers</h3>
 Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the <i>business logic</i> layer. For example, the Admin UI screens are often tightly linked a specific implementation and are not generic across implementations.
+
+The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts. 
 
 <h3>Presentation layer flow</h3>
 Web users interact with components of the presentation layer to select actions that initiate calls to the underlying product layers. Presentation layer components make calls to the Service layer, which in turn sends requests to the Domain (or business logic) layer.
 
 
 
-<h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<h3 id="related">Related topics</h3>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural Diagrams</a>
 
-Magento Areas
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural Layers Overview</a>
 
-Blocks and Controllers
-
-Templates and Layouts
-
-Magento Web API Endpoints
 
 
 

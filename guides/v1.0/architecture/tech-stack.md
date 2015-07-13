@@ -5,7 +5,7 @@ subgroup: Architectural Basics
 title: Technology Stack
 menu_title: Technology Stack
 menu_order: 2
-github_link: extension-dev-guide/arch-basics
+github_link: extension-dev-guide/tech-stack.md
 ---
 <h2>Magento Technology Stack</h2>
 
@@ -47,3 +47,7 @@ Magento also provides an automated testing suite that includes test scripts for 
 This framework is included in `Magento/mtf`. For more information, see Magento Test Framework guide.
 
 <h2>Related topics</h2>
+<a href="{{ site.gdeurl }}architecture/stack-basics.html"> Stack Basics</a>
+
+
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural Basics</a>

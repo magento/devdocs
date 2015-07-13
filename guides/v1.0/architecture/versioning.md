@@ -8,7 +8,7 @@ menu_order: 4
 github_link: architecture/versioning.md
 ---
 
-<h2 id="verpol">Overview</h2>
+<h2 id="verpol">Versioning Policy Overview</h2>
 
 The Magento system and its components use the software (or "platform") version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.
 
@@ -41,7 +41,7 @@ Source code is considered public API only if it is explicitly marked as such usi
 For PHP code, compatibility of `@api` may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).
 
 
-<h2>Where versioning is used</h2>
+<h3>Where versioning is used</h3>
 The software version can be found in the source code of any Magento component or bundle, inside the `composer.json` file.
 
 It can be declared as the version of the component:
@@ -61,7 +61,7 @@ Or it can be used to declare a dependency on a particular version of a component
 {% endhighlight %}
 
 
-<h2>Release types</h2>
+<h3>Release types</h3>
 This section describes how exactly and when the software version numbers will be changed with releases.
 
 The software version will always change with any release of Magento source code.
@@ -236,6 +236,12 @@ The following steps demonstrate the packaging and backward compatibility story f
 <li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
 
 </ol>
-<h2>Related Topics</h2>
-* <a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Backward compatibility</a>
+
+<h3>Related topics</h3>
+<a href="{{ site.gdeurl }}architecture/backward-compatibility.html">Backward Compatibility</a>
+
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural Basics</a>
+
+
+
 

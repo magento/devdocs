@@ -24,5 +24,7 @@ The backward compatibility policy applies to PHP code annotated with @api
 
 We promise to be backward compatible for classes and methods annotated with @api within MINOR and PATCH updates to our components. As changes are introduced, we will annotate methods with @deprecated. The methods will be removed only with the next MAJOR component version. MAJOR changes will be scheduled no more than once per year; likely during the holiday season when site changes are unlikely.
 
-<h2>Related topics</h2>
+<h3>Related topics</h3>
+
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural Basics</a>
 

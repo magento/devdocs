@@ -5,11 +5,19 @@ subgroup: Architectural Basics
 title:  Stack Basics
 menu_title: Stack Basics
 menu_order: 2
-github_link: extension-dev-guide/arch-basics
+github_link: extension-dev-guide/stack-basics
 ---
 <h2>Stack Basics</h2>
 
 
-Information about routing, caching, and indexing will be provided in a future sprint.
+<i>Information about routing, caching, and indexing will be provided in a future sprint.</i>
 
-<h2>Related topics</h2>
+<h3>Related topics</h3>
+
+
+<a href="{{ site.gdeurl }}architecture/tech-stack.html">Technology Stack</a>
+
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural Basics</a>
+
+
+

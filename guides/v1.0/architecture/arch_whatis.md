@@ -51,7 +51,7 @@ Modules form the basic functional unit of a Magento system. Magento modules cont
 Extend and customize the core components of your Magento store's PHP-, HTML5- and CSS3- based default themes and language packages to precisely control your site’s behavior and look-and-feel.
  
  <h3>Strong stack of open-source technologies</h3>
-The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.For a comprehensive description of the Magento technology stack, see Magento Technology Stack. 
+The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.For a comprehensive description of the Magento technology stack, see <a href="{{ site.gdeurl }}architecture/tech-stack.html">Magento Technology Stack</a>. 
 
 With Magento 2.0, the Magento product architecture continues its evolution toward increased modularity.
 
@@ -63,7 +63,7 @@ With Magento 2.0, the Magento product architecture continues its evolution towar
 </div>
 
 
-<h2 id="m2arch-related">Related topics</h2>
+<h3 id="m2arch-related">Related topics</h3>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
 

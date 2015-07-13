@@ -11,6 +11,7 @@ github_link: architecture/archi_perspectives/LogicalView_intro.md
 
 
 <h2>Logical View Overview</h2>
+<i>Information will be added at a later sprint.</i>
 
 
 

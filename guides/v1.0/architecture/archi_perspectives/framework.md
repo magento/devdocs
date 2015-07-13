@@ -1,10 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Logical view
+subgroup: Logical View
 title: Magento Framework
 menu_title: Magento Framework
-menu_order: 3
+menu_order: 4
 github_link: architecture/archi_perspectives/framework.md
 ---
 
@@ -96,17 +96,15 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
    </tbody>
 </table>
 
-<p>Other namespaces under <code>Magento\Framework</code> that will interest extension developers.</p>
+<p>Other namespaces under <code>Magento\Framework</code> that will interest extension developers:</p>
 
- 
 <table>
    <tbody>
       <tr style="background-color: lightgray">
          <th>Namespace</th>
          <th>Purpose</th>
          
-      </tr>
-      <tr>
+      </tr><tr>
          <td><code>Magento\Framework\ObjectManager</code>
          </td>
          <td>Used to provide <i>dependency injection</i>. </td>
@@ -151,7 +149,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.
 </td>
-      </t
+      </t>
 
          <td>
          </td>
@@ -160,9 +158,10 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.
 </td>
-      </t
-
+      </t>
 
          <td></td>
 </tbody>
 </table>
+
+

@@ -2,13 +2,13 @@
 layout: default
 group: arch-guide
 subgroup: Architectural Layers
-title: Service layer
-menu_title: Service layer
+title: Service Layer
+menu_title: Service Layer
 menu_order: 2
 github_link: architecture/archi_perspectives/service_layer.md
 ---
 
-<h2>Service layer</h2>
+<h2>Service Layer</h2>
 The service layer provides a bridge between the presentation layer and the model layer of domain logic and resource-specific data. This is implemented using *service contracts*, which are defined using PHP interfaces.
 
 In general, the service layer 
@@ -63,8 +63,11 @@ Service contracts permit you to add a new customer extension that adds or change
 Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.
 
 
-<h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+<h3 id="related">Related topics</h3>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural Diagrams</a>
 
+
+
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural Layers Overview</a>
 
  
