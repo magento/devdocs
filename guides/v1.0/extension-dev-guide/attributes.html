@@ -321,39 +321,37 @@
 
 <p>In this example, the <code>stock_item</code> attribute is restricted to only the users who have the <code>Magento_CatalogInventory::cataloginventory</code> permission. As a result, an anonymous or unauthenticated user issuing a <code>GET http://&lt;MAGENTO_BASE_URL&gt;/rest/V1/products/&lt;sku&gt;</code> request will receive product information similar to the following:</p>
 
-<pre>
-{
-    "sku": “tshirt1”,
-    “price”: “20.00”,
-    “description”: “New JSmith design”,
-    “extension_attributes”: {
-        “logo size”: “small”
-    },
-    “custom_attributes”: {
-        “artist”: “James Smith”
-    }
+<pre><code>{
+  "sku": “tshirt1”,
+  “price”: “20.00”,
+  “description”: “New JSmith design”,
+  “extension_attributes”: {
+    “logo size”: “small”
+  },
+  “custom_attributes”: {
+    “artist”: “James Smith”
+  }
 }
-</pre>
+</code></pre>
 
 <p>However, an authenticated user with the permission <code>Magento_CatalogInventory::cataloginventory</code> receives the additional <code>stock_item</code> field:</p>
 
-<pre>
-{
+<pre><code>{
    "sku": “tshirt1”,
    “price”: “20.00”,
    “description”: “New JSmith design”,
-   “extension_attributes”: {
-      “logo size”: “small”,
-      “stock_item” : {
-         “status” : “in_stock”
-         “quantity”: 70
+        “extension_attributes”: {
+        “logo size”: “small”,
+       “stock_item” : {
+            “status” : “in_stock”
+            “quantity”: 70
+             }
+      },
+      “custom_attributes”: {
+        “artist”: “James Smith”
       }
-   },
-   “custom_attributes”: {
-      “artist”: “James Smith”
-   }
 }
-</pre>
+</code></pre>
 
 <p>This only works for extension attributes (those attributes defined in an <code>extension_attributes.xml</code> file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict <code>custom_attributes</code>.</p>
 
