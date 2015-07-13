@@ -65,7 +65,34 @@ To improve access to your storefront, we enable:
 In addition, promotional rules have less affect on checkout responsiveness.
 
 <h3 id="1.0.0-beta-changes-admin">Magento Admin improvements</h3>
-TBD
+Among the improvements we made:
+
+*	The Admin is touch-friendly (the Luma theme provided for storefront demonstration is also touch-friendly)
+*	Larger tap targets
+*	No hover states
+*	You can save custom views
+*	The following apply to the Content Management System (CMS), Products, and Sales:
+
+	*	Keyword search
+	*	Configurable columns
+	*	Expanding filters
+	*	Custom views
+	*	Drag and drop column reordering
+	*	Thumbnails in the product catalog
+
+*	Standard product templates:
+
+	*	Simple
+	*	Configurable
+	*	Virtual
+	*	Downloadable
+
+*	You can create products by attributes
+*	Bulk product editing by attribute:
+
+	*	Images
+	*	Pricing
+	*	Inventory
 
 <h3 id="1.0.0-beta-changes-checkout">Checkout improvements</h3>
 TBD
