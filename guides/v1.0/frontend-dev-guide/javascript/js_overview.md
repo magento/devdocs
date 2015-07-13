@@ -1,8 +1,8 @@
 ---
 layout: default
 group: fedg
-subgroup: JavaScript
-title: Javascript
+subgroup: Javascript
+title: JavaScript
 menu_title: JavaScript
 menu_order: 1
 menu_node: parent
