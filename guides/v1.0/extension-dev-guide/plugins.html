@@ -302,13 +302,13 @@
  
 <span class="k">class</span> <span class="nc">Plugin</span>
 <span class="p">{</span>
- <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
- <span class="p">{</span>
-   <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
-    <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
-   <span class="p">}</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\Closure</span> <span class="nv">$proceed</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
+        <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$returnValue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">postProductToFacebook</span><span class="p">();</span>
+        <span class="p">}</span>
         <span class="k">return</span> <span class="nv">$returnValue</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
