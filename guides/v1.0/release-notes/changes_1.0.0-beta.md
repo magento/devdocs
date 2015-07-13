@@ -17,6 +17,7 @@ github_link: release-notes/changes_1.0.0-beta.md
 <h2 id="1.0.0-beta-changes">Major changes in the Merchant Beta release</h2>
 We made the following changes in this release:
 
+*	<a href="#1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</a>
 *	<a href="#1.0.0-beta-changes-swatch">Product attribute swatches</a>
 *	<a href="#1.0.0-beta-changes-emails">Transactional emails</a>
 *	<a href="#1.0.0-beta-changes-import">Import and export</a>
@@ -29,6 +30,10 @@ For additional details not covered in these Release Notes, see the following:
 *	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta16" target="_blank">Changelog</a>
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
 *	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
+
+<h3 id="1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</h3>
+{% include install/schema-change_merchbeta.html %}
+
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
 Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
