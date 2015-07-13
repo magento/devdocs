@@ -14,7 +14,7 @@ title: Guidelines for domain and service layers
          </div>
          <div class="col-xs-9" role="main">
             <div class="bs-docs-section">
-               <p><a href="{{ site.githuburl }}guides/v1.0/extension-dev-guide/service-contracts/service-domain-guidelines.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
+               <p><a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-domain-guidelines.md" target="_blank"><em>Help us improve this page</em></a>&nbsp;<img src="{{ site.baseurl }}common/images/newWindow.gif"/></p>
                <p>How to segregate logic between domain and service layers.</p>
               <h3 id="related-topics">Related topics</h3>
                <ul>
