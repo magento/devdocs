@@ -285,7 +285,7 @@ To customize your logo using a theme:
   
   You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.
 
-<h3 id="customize-logo-admin">Customize the logo using the Admin</h3>
+<h3 id="customize-logo-admin">Customize the email logo using the Admin</h3>
 
 1. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **Design** > **Emails**
 2. In the **Scope** drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). 
