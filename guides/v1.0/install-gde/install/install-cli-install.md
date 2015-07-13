@@ -20,7 +20,7 @@ See one of the following sections:
 See also <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
 <div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}release-notes/changes_1.0.0-beta.html#1.0.0-beta-changes-schema">the Merchant Beta Release Notes</a>.</p>
+    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
 </div>
 
 
