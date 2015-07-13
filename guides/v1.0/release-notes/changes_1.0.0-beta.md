@@ -14,10 +14,18 @@ github_link: release-notes/changes_1.0.0-beta.md
 *	<a href="#1.0.0-beta-incompat">Backward-incompatible changes</a>
 *	<a href="1.0.0-beta-feedback">Give us your feedback!</a>
 
+<div class="bs-callout bs-callout-warning">
+    <p>Because of database changes in this release, you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="#1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</a>.</p>
+</div>
+
 <h2 id="1.0.0-beta-changes">Major changes in the Merchant Beta release</h2>
 We made the following changes in this release:
 
 *	<a href="#1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</a>
+*	<a href="#1.0.0-beta-changes-perf">Performance improvements</a>
+*	<a href="#1.0.0-beta-changes-avail">Better availability</a>
+*	<a href="#1.0.0-beta-changes-admin">Magento Admin improvements</a>
+*	<a href="#1.0.0-beta-changes-checkout">Checkout improvements</a>
 *	<a href="#1.0.0-beta-changes-swatch">Product attribute swatches</a>
 *	<a href="#1.0.0-beta-changes-emails">Transactional emails</a>
 *	<a href="#1.0.0-beta-changes-import">Import and export</a>
@@ -27,12 +35,40 @@ We made the following changes in this release:
 
 For additional details not covered in these Release Notes, see the following:
 
-*	<a href="{{ site.mage2000url }}CHANGELOG.md#0740-beta16" target="_blank">Changelog</a>
+*	<a href="{{ site.mage2000url }}CHANGELOG.md#1.0.0-beta" target="_blank">Changelog</a>
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html">Known issues</a>
 *	<a href="{{ site.gdeurl }}release-notes/bk-release-notes.html">Release highlights</a>
 
 <h3 id="1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</h3>
 {% include install/schema-change_merchbeta.html %}
+
+<h3 id="1.0.0-beta-changes-perf">Performance improvements</h3>
+A number of performance improvements, including:
+
+*	Decreased number of requests for private content on cached catalog pages
+	
+	Request is sent only after login or adding product to cart
+*	User private blocks are completely rendered on the client side
+*	Checkout is based on two steps with complete rendering on the client side and asynchronous blocks reload
+*	Improved Magento Admin performance with large databases 
+*	Fewer persistence operations
+*	Improved performance of payment blocks rendering
+
+<h3 id="1.0.0-beta-changes-avail">Better availability</h3>
+To improve access to your storefront, we enable:
+
+*	Up to 30 administrators working on orders creation and processing simultaneously
+*	Up to 25 administrators working on product creation and editing with delayed catalog data update
+*	50,000 or more promotion rules 
+*	Up to 100 promotional rules per cart
+
+In addition, promotional rules have less affect on checkout responsiveness.
+
+<h3 id="1.0.0-beta-changes-admin">Magento Admin improvements</h3>
+TBD
+
+<h3 id="1.0.0-beta-changes-checkout">Checkout improvements</h3>
+TBD
 
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
