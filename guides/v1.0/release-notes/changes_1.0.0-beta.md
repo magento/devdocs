@@ -95,8 +95,12 @@ Among the improvements we made:
 	*	Inventory
 
 <h3 id="1.0.0-beta-changes-checkout">Checkout improvements</h3>
-TBD
+Among the improvements we made:
 
+*	Customers are identified as soon as they log in
+*	Shipping information populates automatically as soon as the customer enters the correct information 
+*	Better application of gift or discount card
+*	Add items to a cart using Ajax call
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
 Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
