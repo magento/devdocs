@@ -96,7 +96,7 @@ magento/theme-adminhtml-backend</pre>
 </tr>
 <tr>
 <td>language packs</td>
-<td> <tt>app/i18n/Magento/&lt;language&gt;/composer.json</tt> </td>
+<td> <tt>app/i18n/magento/&lt;language&gt;/composer.json</tt> </td>
 <td>
 <pre>magento/language-en_gb
 magento/language-de_de</pre>
