@@ -6,7 +6,7 @@ title: During installation, xdebug maximum function nesting level error
 menu_title: During installation, xdebug maximum function nesting level error
 menu_node: 
 menu_order: 500
-github_link: install-gde/trouble/tshoot_xdebug.md
+github_link: install-gde/trouble/trouble/php/tshoot_xdebug.md
 ---
 
 <h2 id="install-trouble-xdebug">During installation, xdebug maximum function nesting level error</h2>

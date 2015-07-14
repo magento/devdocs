@@ -36,5 +36,5 @@ This topic discusses installing the Magento software using the CLI. For informat
 
 #### Next steps 
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Install the Magento software using the command line</a>

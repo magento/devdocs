@@ -6,7 +6,7 @@ title: The PHP mcrypt extension is not installed properly
 menu_title: The PHP mcrypt extension is not installed properly
 menu_node:
 menu_order: 22
-github_link: install-gde/trouble/tshoot_mcrypt.md
+github_link: install-gde/trouble/trouble/php/tshoot_mcrypt.md
 ---
 
 <h2 id="trouble-php-mycrypt">The PHP mcrypt extension is not installed properly</h2>
