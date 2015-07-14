@@ -32,14 +32,14 @@ This topic covers how to customize the content and design of email templates.
 * <a href="#newsletter-templates">Newsletter templates</a>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-Email templates are stored in the `app/code/<Namespace>/<Module>/view/<area>/email/` directory of their respective modules. For example, the template for the new order tranactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/email/order_new.html" target="_blank">app/code/Magento/Sales/view/email/order_new.html</a>. 
+Email templates are stored in the `app/code/<VendorName>/<ModuleName>/view/<area>/email/` directory of their respective modules. For example, the template for the new order tranactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/email/order_new.html" target="_blank">app/code/Magento/Sales/view/email/order_new.html</a>. 
 
+We strongly recommend you not change the default Magento files. If you want to customize the default templats, you should create your custom templates and configure Magento to use them instead the default templates. 
 
-We strongly recommend not to change the default Magento files. If you want to customize the default templats, you should create your custom templates and configure Magento to use them instead the default templates. 
-You can add custom templates as physical files in the file system, or create them using the Magento Admin Panel. Both approaches are described in the following sections.
+You can add custom templates as physical files in the file system, or create them using the Magento Admin. Both approaches are described in the following sections.
  
 <h3 id="customize-email-theme">Customize email templates using a theme</h3>
-Override email templates by creating templates in your custom theme's `<Vendor>_<Module>/email/` directory. For example, to override the New Order email template, create a `order_new.html` template in `app/design/frontend/<Your_Vendor>/<your_theme>/Magento_Sales/email` directory. 
+Override email templates by creating templates in your custom theme's `<VendorName>_<ModuleName>/email/` directory. For example, to override the New Order email template, create a `order_new.html` template in `app/design/frontend/<Your_Vendor>/<your_theme>/Magento_Sales/email` directory. 
 
 <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Templates fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
  
@@ -48,8 +48,9 @@ Override email templates by creating templates in your custom theme's `<Vendor>_
 Any templates configured in the Magento Admin take precedence over default or theme-based templates.
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
-2. Click the **Add New Template** button.
-3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click the **Load Template** button. The path to the configuration settings for each default template appears in the **Currently Used For** field in the Template Information section. Make note of this path, because you will need it later when you configure this new template to be used instead of the default template.
+2. Click **Add New Template**.
+3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click the **Load Template** button. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
+Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
     <br><img src="{{site.baseurl}}common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%"/>
 
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
@@ -58,14 +59,19 @@ Any templates configured in the Magento Admin take precedence over default or th
 7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically you'll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don't support styles in `<style>` tags.
 8. Click **Save Template**.
 9. Now that you have created a template, you must configure that template to be used:
-    1. Go to **Stores** > **Configuration**
-    2. Navigate to the section that contains the template that you want to override. This is the section referenced by the **Currently Used For**. For example, if you created a "New Order" template, the configuration section is **Stores** > **Configuration** > SALES > **Sales Emails**.
-    3. Select your newly created template from the dropdown.
+
+    1.  Log in to the Magento Admin as an administrator.
+    1. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
+    2. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
+
+    <br>For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
+    <br><img src="{{site.baseurl}}common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%"/>
+
+    3. Select your newly created template from the list.
     4. Click **Save Config**.
 
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
-
-Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
+Every email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
  * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/email/header.html" target="_blank">app/code/Magento/Email/view/email/header.html</a>
  * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/email/footer.html" target="_blank">app/code/Magento/Email/view/email/footer.html</a>
@@ -73,14 +79,13 @@ Every frontend email template includes a header and footer template using these 
 You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.
 
 <h3 id="customize-content">Customize email content</h3>
-
 To add the store and sales related information to a template, use system variables.
 
-System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **Stores** > **Configuration** > GENERAL > **General** > **Emails** section.
+System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Emails** section.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>You can also create your own custom variables and set their values in the Admin, under <b>System</b> > <b>Custom Variables</b>.</p></span>
+ <p>You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> > <b>Custom Variables</b>.</p></span>
 </div>
 
 To add a variable to your template content:
@@ -95,7 +100,7 @@ To add a variable to your template content:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p> The selection of available variables depends on which template you use as a basis. Alternatively, you can manually insert variables "related" to other templates in your template code if you know the variable code. </p></span>
+ <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/email/account_new.html">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
 </div>
 
 <h2 id="email-styles">Styles for email templates</h2>
@@ -235,20 +240,21 @@ The styles for emails are split into several different files.
 When implementing a custom theme, you should be able to fully customize email templates by copying the `app/design/frontend/Magento/blank/web/css/source/_email-extend.less` and `app/design/frontend/Magento/blank/web/css/source/_email-variables.less` files to your custom theme and editing those files.
 
 <h3 id="custom-fonts">Custom fonts</h3>
-
-Emails will inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the **Open Sans** font. Since **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
+Emails inherit the custom fonts that are defined by the frontend theme. The Magento blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
 
 Here is an overview of how the font structure for emails works:
 
-* The `app/design/frontend/Magento/blank/web/css/source/_email-extend.less` file contains the `@import` directive which requests the `email-fonts.css` file. The reason the contents of `email-fonts.css` are being loaded using `@import` rather than be output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients won't render the text since the web fonts can't be loaded.
+* <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_email-extend.less</a> contains the `@import` directive that requests the `email-fonts.css` file.
+
+  The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
 * The `app/design/frontend/Magento/blank/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
-    * The `app/design/frontend/Magento/blank/web/css/source/_variables.less` file defines which font is going to be used, via the `@font-family-name__base` variable.
-    * The `app/design/frontend/Magento/blank/web/css/source/_typography.less` file generates the `@font-face` rules which import the custom fonts.
+    * <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the `@font-family-name__base` variable.
+    * <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the `@font-face` rules which import the custom fonts.
 
 If you want to change the font used for emails, do the following:
 
 1. Refer to the documentation on [using fonts]({{ site.gdeurl }}frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
-2. Once you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should start using the new font.
+2. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should use the specified font.
 
 <h2 id="email-logo">Email logo</h2>
 
@@ -287,7 +293,7 @@ To customize your logo using a theme:
 
 <h3 id="customize-logo-admin">Customize the email logo using the Admin</h3>
 
-1. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **Design** > **Emails**
+1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **Design** > **Emails**
 2. In the **Scope** drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). 
 3. Upload your logo and specify the alternative text for it.
 <img src="{{site.baseurl}}common/images/email_configuration.png" alt="System configuration">
@@ -302,12 +308,12 @@ Emails can output your store name, store email address, store phone number, and 
 To set those values:
 
 1. To set the store name, phone number, and hours of operation:
-    1. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **General** > **Emails**
+    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Emails**
     2. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
     3. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
     4. Click the **Save Config** button.
 2. To set the store name, phone number, and hours of operation:
-    1. In the Magento Admin, navigate to **Stores** > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
+    1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
     2. Input values into the **Sender Name** and **Sender Email** fields.
     3. Click the **Save Config** button.
 
