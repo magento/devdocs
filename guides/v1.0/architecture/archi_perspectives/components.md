@@ -9,7 +9,7 @@ github_link: architecture/archi_perspectives/components.md
 ---
 
 
-<h2>Magento Components</h2>
+<h2>Magento components</h2>
 <i>Information will be added at a later sprint.</i>
 
 

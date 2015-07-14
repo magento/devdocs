@@ -11,7 +11,7 @@ github_link: architecture/archi_perspectives/area_intro.md
 
 
 
-<h2> Magento Area</h2>
+<h2> Magento area</h2>
 
 A Magento Area contains user-oriented functionality, which is responsible for managing user interaction with the system. It consists of components that provide a bridge into the core business logic encapsulated in the Domain (business logic) layer.
 
@@ -24,7 +24,7 @@ A Magento Area contains user-oriented functionality, which is responsible for ma
 — when an area is disabled, then an entry point to module presentation is lost
 
 
-<h3>Magento Area Module Structure</h3>
+<h3>Magento area module structure</h3>
 — router
 — base controller
 — area configuration
@@ -61,7 +61,7 @@ You can use an area's module to enable or disable an area. If this module is ena
  
  An area's controllers are to be unique for an area
 
-<h3>Magento Area Configuration</h3>
+<h3>Magento area configuration</h3>
 
 How do areas and modules interact?
  — Modules are independent of areas. Modules can belong to multiple Areas.
@@ -73,7 +73,7 @@ How do areas and modules interact?
 
 
 
-<h2 id="related">Related topics</h2>
+<h3 id="related">Related topics</h3>
 <a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 Presentation Layer

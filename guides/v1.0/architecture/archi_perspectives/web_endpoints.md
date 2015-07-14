@@ -2,7 +2,7 @@
 layout: default
 group: 
 subgroup: Architectural Layers
-title: Magento Web API Endpoints
+title: Magento Web API endpoints
 menu_title: 
 menu_order: 
 github_link: architecture/archi_perspectives/web_endpoints.md
@@ -11,7 +11,7 @@ github_link: architecture/archi_perspectives/web_endpoints.md
 
 
 
-<h2>Magento Web API Endpoints</h2>
+<h2>Magento Web API endpoints</h2>
 
  
 

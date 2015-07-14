@@ -2,15 +2,15 @@
 layout: default
 group: arch-guide
 subgroup: Architectural Layers
-title: Domain Layer
-menu_title: Domain Layer
+title: Domain layer
+menu_title: Domain layer
 menu_order: 3
 github_link: architecture/archi_perspectives/domain_layer.md
 ---
 
 
 
-<h2>Domain Layer</h2>
+<h2>Domain layer</h2>
 The domain layer holds the business logic layer of a Magento module. It typically does not contain resource-specific or database-specific information. Its primary functions include:
 
 * Defines the generic Magento data objects, or models, that contain business logic. This logic defines which operations can be performed on particular types of data, such as a Customer object. These models contain generic information only. Applications can also use SOAP or RESTful endpoints to request data from models. 
@@ -42,9 +42,9 @@ Your strategy for calling another module's domain-layer code is highly dependent
   
 
 <h2 id="related">Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural Diagrams</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural Layers Overview</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
  

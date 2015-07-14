@@ -8,7 +8,7 @@ menu_order: 1
 github_link: architecture/archi_perspectives/arch_diagrams.md
 ---
 
-<h2 id="m2arch-whatis-overview">Architectural Diagrams</h2>
+<h2 id="m2arch-whatis-overview">Architectural diagrams</h2>
 
 Depending upon your role and purpose for learning more about Magento, there are several different ways to view the Magento architecture. For example, a developer who wants to create new modules or perhaps customize an existing module will want to understand the architecture of a module itself, and how it fits into the larger view, with the Magento framework and other components. However, a merchant who wants to quickly build an online store front wants to view the collection of components from a higher level, and understand the components that impact the look, feel, and user interaction components.
 
@@ -39,8 +39,8 @@ The following diagram shows the perspective of a user who wants to build an onli
 *Diagram will be published in a later sprint.*
 
 
-<h2 id="m2arch-related">Related topics</h2>
+<h3 id="m2arch-related">Related topics</h3>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
-* <a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architecture Layers Overview</a>
+* <a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architecture layers overview</a>
 

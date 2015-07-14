@@ -2,15 +2,15 @@
 layout: default
 group: arch-guide
 subgroup: Architectural Layers
-title: Architectural Layers Overview
-menu_title: Architectural Layers
+title: Architectural layers overview
+menu_title: Architectural layers
 menu_node: parent
 menu_order: 
 github_link: architecture/archi_perspectives/ALayers_intro.md
 ---
 
 
-<h2>Architectural Layers Overview</h2>
+<h2>Architectural layers overview</h2>
 
 At its highest level, Magento's product architecture consists of the core product code plus optional <i>modules</i>. These optional modules enhance or replace the basic product code. 
 
@@ -32,16 +32,16 @@ Layered application design offers many advantages, but users of Magento will app
 
 <h3>Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural Diagrams</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/present_layer.html">Presentation Layer</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/present_layer.html">Presentation layer</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/service_layer.html">Service Layer</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/service_layer.html">Service layer</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/domain_layer.html">Domain Layer</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/domain_layer.html">Domain layer</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/persist_layer.html">Persistence Layer</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/persist_layer.html">Persistence layer</a>
 
 

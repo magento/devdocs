@@ -2,12 +2,12 @@
 layout: default
 group: arch-guide
 subgroup: Architectural Basics
-title: Technology Stack
-menu_title: Technology Stack
+title: Technology stack
+menu_title: Technology stack
 menu_order: 2
 github_link: extension-dev-guide/tech-stack.md
 ---
-<h2>Magento Technology Stack</h2>
+<h2>Magento technology stack</h2>
 
 Magento’s highly modular structure includes the following open-source technologies:
 
@@ -47,7 +47,7 @@ Magento also provides an automated testing suite that includes test scripts for 
 This framework is included in `Magento/mtf`. For more information, see Magento Test Framework guide.
 
 <h2>Related topics</h2>
-<a href="{{ site.gdeurl }}architecture/stack-basics.html"> Stack Basics</a>
+<a href="{{ site.gdeurl }}architecture/stack-basics.html"> Stack basics</a>
 
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural Basics</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

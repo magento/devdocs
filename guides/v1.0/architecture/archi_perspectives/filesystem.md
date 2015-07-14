@@ -2,14 +2,14 @@
 layout: default
 group: arch-guide
 subgroup: Logical View
-title: Magento Filesystem
-menu_title: Magento Filesystem
+title: Magento filesystem
+menu_title: Magento filesystem
 menu_order: 3
 github_link: architecture/archi_perspectives/filesystem.md
 ---
 
 
-<h2>Magento Filesystem</h2>
+<h2>Magento filesystem</h2>
 <i>Information will be added at a later sprint.</i>
 
 

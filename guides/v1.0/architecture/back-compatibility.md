@@ -2,12 +2,12 @@
 layout: default
 group: arch-guide
 subgroup: Architectural Basics
-title: Backward Compatibility
-menu_title: Backward Compatibility
+title: Backward compatibility
+menu_title: Backward compatibility
 menu_order: 3
 github_link: extension-dev-guide/arch-basics
 ---
-<h2>Backward Compatibility</h2>
+<h2>Backward compatibility</h2>
 
 
 Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
@@ -26,5 +26,5 @@ We promise to be backward compatible for classes and methods annotated with @api
 
 <h3>Related topics</h3>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural Basics</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
 

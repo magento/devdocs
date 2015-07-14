@@ -3,7 +3,7 @@ layout: default
 group: arch-guide
 subgroup: Architectural Layers
 title: Presentation Layer
-menu_title: Presentation Layer
+menu_title: Presentation layer
 menu_order: 1
 github_link: architecture/archi_perspectives/present_layer.md
 ---
@@ -11,7 +11,7 @@ github_link: architecture/archi_perspectives/present_layer.md
 
 
 
-<h2> Presentation Layer</h2>
+<h2> Presentation layer</h2>
 When you interact with the Magento web interface, you are directly working with <i>presentation layer</i> code. Also known as the <i>view layer</i>, presentation code controls  web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and .phtml files to modify elements of the presentation layer. 
 
 
@@ -62,9 +62,9 @@ Web users interact with components of the presentation layer to select actions t
 
 
 <h3 id="related">Related topics</h3>
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural Diagrams</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
 
-<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural Layers Overview</a>
+<a href="{{ site.gdeurl }}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
 
 
 
