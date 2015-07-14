@@ -1,8 +1,8 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: B. Installation
-title: Install Magento Testing Framework
+subgroup: Installation
+title: Installation of the Magento Testing Framework
 menu_title: Check pre-installation conditions
 menu_order: 1
 github_link: guides/v1.0/mtf/mtf_installation/mtf_preinstall.md
@@ -10,22 +10,17 @@ github_link: guides/v1.0/mtf/mtf_installation/mtf_preinstall.md
 
 <h2 id="mtf_install_pre">Check pre-installation conditions</h2>
 
-<h3 id="mtf_install_pre_inst-magento">1. Install Magento application you want to test</h3>
-To know how, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">**Magento Installation Guide**</a>.
+<h3 id="mtf_install_pre_inst-magento">1. Install the Magento application you want to test</h3>
+To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">Magento Installation Guide</a>.
 
 <h3 id="mtf_install_pre_adj-magento">2. Adjust Magento application preferences</h3>
 
--    Open your Magento Admin page <code>http://&lt;your_magento_instance>/admin&gt;</code> and log in.
--    On the Primary Navigation (navigation panel on left side of the page) follow **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>For Magento 1 follow <b>System &gt; Configuration &gt; Admin &gt; Security</b>.</p>
-</div>
-
--    Set **Add Secret Key to URLs** to **No**. We want to open direct URLs, and not to navigate pages via Primary Navigation.
--    Go back to the Primary Navigation of Magento Admin page.
--    Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
--    Set **Enable WYSIWYG Editor** to **Disabled Completely**. For stable work of Selenium with Magento 2.
+-    Log in to the Magento Admin as an administrator. Example of Magento Admin URL: <code>http://magento.example.com/admin_1sgfym</code>.
+-    On the vertical navigation bar click **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
+-    Set **Add Secret Key to URLs** to **No**. This setting allows test to open pages using direct URLs and assures correct cURL requests.
+-    Go back to the vertical navigation bar of Magento Admin page.
+-    Click **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
+-    Set **Enable WYSIWYG Editor** to **Disabled Completely** to enable you to work with Selenium. You can change the setting later after you're finished testing.
 
 <h3 id="mtf_install_pre_tools">3. Check if all required software installed and configured</h3>
 
@@ -39,21 +34,21 @@ To know how, see <a href="{{ site.gdeurl }}install-gde/bk-install-guide.html">**
 </div>
 
 <h4 id="mtf_install_pre_tools_apache">Selenium Standalone Server</h4>
-Selenium Standalone Server will be downloaded during Magento installation in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/netwing/selenium-server-standalone</code>.
-Also you can download manually [last release of Selenium Standalone Server][].
+Selenium Standalone Server is downloaded during Magento installation in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/netwing/selenium-server-standalone</code>.
+If desired, you can download the [newest version][].
 
 
-<h4 id="mtf_install_pre_tools_apache">Web driver</h4>
-Selenium Standalone Server uses web-driver to manipulate the browser.
+<h4 id="mtf_install_pre_tools_apache">Selenium WebDriver</h4>
+Selenium Standalone Server uses WebDriver to manipulate the browser.
 
-Download [web-driver for your browser][], if needed. 
+Download the [WebDriver for your browser][], if needed. 
 
 <h3 id="mtf_install_pre_mtf-check">4. Check if MTF has been already installed</h3>
-1. Open folder <code>&lt;magento_root&gt;/dev/tests/functional/</code>.
-1. Try to find <code>vendor/magento/mtf</code> folder. If your attempt is successful, then you already have MTF.
+1. Open directory <code>&lt;magento_root&gt;/dev/tests/functional/</code>.
+1. Find <code>vendor/magento/mtf</code> directory. If the directory exists, you already have MTF installed.
 
 
 
 [official web-site]: http://www.seleniumhq.org/download/
-[last release of Selenium Standalone Server]: http://www.seleniumhq.org/download/
-[web-driver for your browser]: http://www.seleniumhq.org/about/platforms.jsp#browsers
+[newest version]: http://www.seleniumhq.org/download/
+[WebDriver for your browser]: http://www.seleniumhq.org/about/platforms.jsp#browsers

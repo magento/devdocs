@@ -1,16 +1,16 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: C. Quick Start
-title: Quick start with Magento Testing Framework
+subgroup: Quick Start
+title: Quick start with the Magento Testing Framework
 menu_title: Test run
 menu_order: 3
 github_link: guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_testrun.md
 ---
 <h2 id="mtf_quickstart_testrun">Test run</h2>
-All tests classified by categories in corresponding folders in <code>&lt;magento_root&gt;/dev/tests/functional/tests/app/Magento</code>.
+All tests classified by categories in corresponding directories in <code>&lt;magento_root&gt;/dev/tests/functional/tests/app/Magento</code>.
 
-For running tests MTF uses PHPUnit. It is located in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/bin</code> folder.
+For running tests MTF uses PHPUnit. It is located in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/bin</code> directory.
 
 
 <h3 id="mtf_quickstart_testrun_all">Run all tests</h3>

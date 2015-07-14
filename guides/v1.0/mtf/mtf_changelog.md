@@ -1,11 +1,11 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: D. Chanhelog
+subgroup: Z_Chanhelog
 title: Changelog of Magento Testing Framework
-menu_title: D. CHANGELOG
-menu_order: 1
+menu_title: CHANGELOG
 menu_node: parent
+menu_order:
 github_link: guides/v1.0/mtf/mtf_changelog.md
 ---
 
