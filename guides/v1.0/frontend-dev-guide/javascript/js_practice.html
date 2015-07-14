@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customizing email templates</title>
+	<title>Customizing JavaScript illustration</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/templates/template-email.html">
+	<link rel="canonical" href="//guides/v1.0/frontend-dev-guide/javascript/js_practice.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Customizing email templates</h1>
+		<h1 class="page-heading">Customizing JavaScript illustration</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/javascript/js_practice.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,89 +165,139 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2>Overview</h2>
+		<h2 id="practice_overview">Overview</h2>
+<p>This topic features a step-by-step illustration of how to customize a jQuery widget and how to use a custom widget instead the default Magento one. </p>
 
-<p>Email templates are not bound to design themes, but creating a custom theme for a store most likely will include customization of email templates as well. Even if use the default templates, there is a change you will definitely need to make; namely you should change the logo used in these templates which is the Magento logo by default. </p>
+<h2>Customize a default Magento jQuery widget</h2>
 
-<p>This topic describes how to change the default logo used in default email templates, how to further customize email templates and apply them for a store. </p>
+<p>In their Orange theme, OrangeCo wants to remove the “Click on image to view it full sized” message displayed on the product page. </p>
 
-<h2>Changing email logo</h2>
-
-<p>To replace the default Magento logo used in the email templates:</p>
-
-<ol>
-  <li>In the Magento Admin, navigate to <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Design</strong> &gt; <strong>Transactional Emails</strong></li>
-  <li>
-    <p>In the <strong>Scope</strong> drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). </p>
-  </li>
-  <li>
-    <p>Load your logo and specify the alternative text for it.
-<img src="/common/images/email-logo-settings.png" alt="System configuration" /></p>
-  </li>
-  <li>Click the <strong>Save Config</strong> button.</li>
-</ol>
-
-<h2>Customizing email templates</h2>
-
-<p>To make more serious customization than changing a logo, you need to create a custom template, optionally using a default template as a basis.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>Email templates can be accessed and customized only in the Magento Admin.</p></span>
-</div>
-
-<p>To create a custom email template:</p>
+<p>The high-level steps for this task are the following:</p>
 
 <ol>
-  <li>In the Magento Admin, navigate to <strong>MARKETING</strong> &gt; Communications &gt; <strong>Email Templates</strong></li>
-  <li>Click the <strong>Add New Template</strong> button. </li>
-  <li>
-    <p>If you want to use a default template as a starting point, in the Load default template section, choose the template and click the <strong>Load Template</strong> button. <br id="info_path" />The path to the configuration settings for each default template appears in the <strong>Used as Default For</strong> field in the Template Information section. Make note of this path, because you will later need to update the configuration with the name of the new template.<br /><img src="/common/images/create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
-  </li>
-  <li>In <strong>Template Name</strong>, enter the name which will be used in the Magento Admin.</li>
-  <li>In <strong>Template Subject</strong>, add plain text which will be used as a Subject of the emails sent using the template you create. This field can contain <a href="#var">system variables</a>.  </li>
-  <li>Customize template content. For details please refer to the <a href="#content">next paragraph</a>.</li>
-  <li>In <strong>Template Styles</strong>, optionally add CSS styles for the template. </li>
-  <li>Save the template. </li>
+  <li>Define how the message is output.</li>
+  <li>Add the custom script extending the default one.</li>
+  <li>Update RequireJS configuration to use the custom script instead of the default one.</li>
 </ol>
 
-<h3 id="content">Customizing email content</h3>
+<p>Let’s look at each step in more detail.</p>
 
-<p>An email template is an HTML snippet, where the content should be enclosed in <code>&lt;body&gt;&lt;/body&gt;</code></p>
+<h3 id="define_script1">Step 1: Define how the message is output</h3>
 
-<p><span id="var">To add the store and sales related information to a template, use system variables. </span></p>
-
-<p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code>&#123;&#123;var order.increment_id&#125;&#125;</code> variable is replaced by the ID of the order for which the email is generated.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p> You can also create your own custom variables and set their values. This is done in the Admin, under <b>System</b> &gt; <b>Custom Variables</b> </p></span>
-</div>
-
-<p>To add a variable to your template content:</p>
+<p>OrangeCo needs to define how the message is output. To do this, they take the following steps: </p>
 
 <ol>
-  <li>On the template creation page, click to place the cursor in the text in which to insert the variable.</li>
-  <li>
-    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. Variables are grouped by the modules they relate to. The following image illustrates a variable list: <br /><img src="/common/images/insert-variable.png" alt="The list of available variables" width="70%" height="70%" /></p>
-  </li>
-  <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
+<li>Open a product page.</li>
+<li>Select to view the page source.</li>
+<li>Search for the "Click on image to view it full sized" string. The illustration of the search result follows:
+<br />
+<img src="/common/images/fdg_js_pr1.png" alt="Page source search result" />
+</li>
+<li>View that it is output by <code>gallery.js</code>.
+
+</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p> The selection of available variables depends on which template you use as a basis. Alternatively, you can manually insert variables "related" to other templates in your template code if you know the variable code. </p></span>
-</div>
+<p>We see that the script which OrangeCo needs to alter is <code>gallery.js</code>. </p>
 
-<h3>Applying a new template</h3>
+<p>To be able to extend <code>gallery.js</code>, OrangeCo needs to know the path to it. To get this info, they refer to <code>requirejs-config.js</code>, which <a href="/guides/v1.0/frontend-dev-guide/javascript/custom_js.html#config_file">can be reached from the page source view or from the file system</a>. According to the configuration, the path for <code>gallery</code> is <code>mage/gallery</code>. The illustration follows:</p>
 
-<p>To use a new template for generating emails, you need to specify it in the in Admin under <strong>Stores</strong> &gt; <strong>Configuration</strong>. </p>
+<p><img src="/common/images/fdg_pr_2.png" alt="RequireJS config file" /></p>
 
-<p>The further path to the configuration depends on the purpose of the template. 
-For example, if the template is supposed to be used for sales emails, like new order notification, or invoice, it is configured under <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; SALES &gt; <strong>Sales Emails</strong>.</p>
+<h3 id="add_code1">Step 2: Add the custom widget extending the gallery widget</h3>
 
-<p>If your template was created using a default one, then the path for configuration was specified on the template creation page in the <a href="#info_path"><strong>Used as Default For</strong> field</a>.</p>
+<p>In the <code>app/design/OrangeCo/orange/web/js</code> OrangeCo adds <code>orange-gallery.js</code> with the following content:</p>
+<pre>
+define([
+  'jquery',
+  'jquery/ui',
+  'mage/gallery' 
+], function($){
+ 
+  $.widget('orange.gallery', $.mage.gallery, {
+    _create: function() { // special method of jQuery UI Widgets
+      this._setOption('controls', {'notice': {}});
+    }
+  });
+ 
+  return $.orange.gallery;
+});
+</pre>
 
+<h3 id="config1">Step 3: Update the RequireJS configuration</h3>
+<p>OrangeCo adds the custom <code>app/design/OrangeCo/orange/requirejs-config.js</code> with the following content:</p>
+<pre>
+var config = {
+  "map": {
+    "*": {
+      "gallery": "js/orange-gallery"
+    }
+  }
+};
+</pre>
+
+<p>The new behavior is applied once the store pages are reloaded.</p>
+
+<h2 id="use_custom_widget">Add and use a custom widget (jCarousel)</h2>
+<p>OrangeCo wants to use the <a href="http://sorgalla.com/jcarousel/" target="_blank">jCarousel widget</a> to display product images on product pages.
+The high level steps for this task are the following:</p>
+
+<ol>
+  <li>Define how product images are displayed by default.</li>
+  <li>Add the custom script to the file system.</li>
+  <li>Update RequireJS configuration to use the custom script instead of the default one.</li>
+</ol>
+
+<p>Let’s look at each step in more detail.</p>
+<h3>Step 1: Define what is the default implementation</h3>
+<p>Using the approach <a href="#define_sript">described in the previous section</a>, OrangeCo defines that the product images are displayed by <code>gallery.js</code>, and the configuration path for it is <code>mage/gallery</code>.</p>
+
+<h3>Step 2: Add the custom script to the file system</h3>
+
+<p>For the jCarousel widget to be able to use the configuration passed to the gallery widget, 
+OrangeCo needs to add a “wrapper” script. </p>
+
+<p>To do this, OrangeCo adds the following files in the <code>app/design/OrangeCo/orange/web/js</code> directory:</p>
+
+<ul> 
+<li>The jCarousel widget source file: <code>jquery.jcarousel.js</code></li>
+<li>A "wrapper" <code>orange-carousel.js</code> with the following content:
+<pre>
+define([
+  'jquery',
+  'js/jquery.jcarousel'
+], function($){
+ 
+  return function (config, element) {
+   var jCarouselConfig = {
+     list: '.items.thumbs',
+     items: '.item.thumb'
+   };
+   $(element).jcarousel(jCarouselConfig);
+  }
+});
+</pre>
+</li>
+</ul>
+
+<h3>Step 3: Update RequireJS configuration</h3>
+<p>In the <code>app/design/OrangeCo/orange</code> directory OrangeCo adds <code>requirejs-config.js</code> with the following content:</p>
+
+<pre>
+var config = {
+  "map": {
+    "*": {
+      "gallery": "js/orange-gallery"
+    }
+  },
+  "shim": {
+    "js/jquery.jcarousel": ["jquery"] // as jquery.jcarousel isn't an AMD module
+  }
+};
+</pre>
+
+<h2 id="recommended-reading">Recommended reading</h2>
+<p><a href="/guides/v1.0/frontend-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a></p>
 
 
 		</div>
@@ -445,7 +495,7 @@ For example, if the template is supposed to be used for sales emails, like new o
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/templates/template-email.html">Customizing email templates</a></li>
 						
 								
 								
@@ -573,7 +623,7 @@ For example, if the template is supposed to be used for sales emails, like new o
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/frontend-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a></li>
 						
 								
 								
@@ -703,8 +753,8 @@ For example, if the template is supposed to be used for sales emails, like new o
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/templates/template-email.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/templates/template-email.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/js_practice.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/javascript/js_practice.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
