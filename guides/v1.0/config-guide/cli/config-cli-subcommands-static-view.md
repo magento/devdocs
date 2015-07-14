@@ -40,7 +40,7 @@ Static view files deployment is affected by Magento modes as follows:
 
 <div class="bs-callout bs-callout-warning">
   <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must flush the old files to make sure you get all the changes for the new module.</p>
-  <p>To flush static view files, TBD.</p>
+  <p>Several commands support an optional parameter <code>--clear-static-content</code>, which does this for you. For example, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
 </div>
 
 
