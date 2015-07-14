@@ -67,3 +67,9 @@ To update `composer.json`:
 		composer require magento/data-migration-tool:~0.74.0-beta4
 
 9.	Wait while dependencies are installed.
+
+###Related topics
+
+* <a href="{{ site.gdeurl }}migration/migration-tool-configure.html">Configure migration</a>
+
+* <a href="{{ site.gdeurl }}migration/migration-tool-preconditions.html">Preconditions</a>

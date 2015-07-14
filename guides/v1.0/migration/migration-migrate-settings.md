@@ -28,3 +28,7 @@ Command usage:
 <span class="glyphicon-class">
   <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
 </div>
+
+###Related topics
+
+* <a href="{{ site.gdeurl }}migration/migration-migrate-data.html">Migrate data</a>

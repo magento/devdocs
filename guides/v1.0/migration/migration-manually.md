@@ -49,3 +49,7 @@ However, do *not* copy `.htaccess` files located in the Magento 1 `media` folder
 ### ACLs (Access Control Lists)
 *	You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST)
 *	You must manually re-create all administrative users and associate them with access privileges
+
+###Related topics
+
+* <a href="{{ site.gdeurl }}migration/migration-migrate-after.html">After migration</a>

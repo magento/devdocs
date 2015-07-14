@@ -30,3 +30,7 @@ Before you start your migration, you must do all of the following:
 *	Migrate Magento 1 extension code to Magento 2.
 
 	Reach out to your extension providers to see if they have been ported yet
+
+###Related topics
+
+* <a href="{{ site.gdeurl }}migration/migration-tool-install.html">Install the Data Migration Tool</a>

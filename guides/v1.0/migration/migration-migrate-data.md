@@ -30,3 +30,7 @@ To run the Data Migration Tool, use the following command:
   <p>The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Data Migration Tool resumes progress at the last known good state.</p>
   <p>To force the Data Migration Tool to run from the beginning, use the <code>--reset</code> argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.</p></span>
 </div>
+
+###Related topics
+
+* <a href="{{ site.gdeurl }}migration/migration-migrate-delta.html">Migrate changes</a>

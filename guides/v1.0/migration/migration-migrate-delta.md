@@ -24,3 +24,7 @@ Command usage:
 </div>
 
 Please note that in this mode Data Migration Tool migrates data created only by Magento's own modules and is not responsible for the code or extensions made by third-party developers. If these extensions created some data in the storefront database and the merchant wants to have this data in Magento 2 - config files of Data Migration Tool should be created and modified. Please check <a href="{{ site.gdeurl }}migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more information.
+
+###Related topics
+
+* <a href="{{ site.gdeurl }}migration/migration-manually.html">Data that needs to be migrated manually</a>
