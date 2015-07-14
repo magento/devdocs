@@ -11,8 +11,6 @@ github_link: frontend-dev-guide/javascript/js_overview.md
 
 By default, the Magento application uses the <a href="{{site.gdeurl}}http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
 
-<p class="q">Do we need to mention something about JS scripts being AMD modules?</p>
-
 You can follow the same approach when customizing Magento Javacsript, or <a href="{{site.gdeurl}}frontend-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and loading them using RequireJS</a>.
 
 For information about how JS resources are located and configured, see the <a href="{{site.gdeurl}}/config-guide/config/js-resources.html" target="_blank"> JavaScript resources</a> topic in the Configuration Guide.
@@ -62,8 +60,7 @@ JS component located in the <code>Magento_Ui</code> module, in the <a href="{{si
 <i>jQuery UI widget</i>
 </td>
 <td>
-A JS component/widget provided by <a href="" target="_blank">jQuery UI bundle</a>.
-<p class="q">Do we mean the widgets from the jQuery UI library? are they stored in a certain location in Magento file system?</p>
+A JS component/widget provided by <a href="{{site.mage2000url}}lib/web/jquery/jquery-ui-1.9.2.js" target="_blank">jQuery UI library used in Magento</a>.
 </td>
 </tr>
 <tr>
