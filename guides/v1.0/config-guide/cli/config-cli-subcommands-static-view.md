@@ -24,11 +24,29 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment tool enables you to write static files to the Magento file system when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
-Because static view files are not deployed on the fly in production mode, you must write static view files to the Magento file system manually; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
+The term *static view file* refers to the following:
+
+*	"Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and CSS generated from LESS.
+*	"View" refers to presentation layer (from MVC).
+
+Static view files are located in the `<your Magento install dir>/pub/static` directory, and some are cached under the `<your Magento install dir>/var` directory as well.
+
+Static view files deployment is affected by Magento modes as follows:
+
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a>: Magento generates them on demand, but the rest are cached in a file for speed of access.
+*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-default">Default</a> and <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production</a> modes: Static files are *not* generated or cached. 
+
+	You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
+
+<div class="bs-callout bs-callout-warning">
+  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must flush the old files to make sure you get all the changes for the new module.</p>
+  <p>To flush static view files, TBD.</p>
+</div>
+
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the tool as the web server user. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
+  <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the command as the web server user. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
 </div>
 
 <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>

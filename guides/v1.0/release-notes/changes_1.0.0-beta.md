@@ -110,7 +110,7 @@ Among the improvements we made:
 *	iFrame that enables a payment form hosted by a third party to be embedded
 *	Third-party hosted payment page that redirects to a page on an entirely different domain for payment entry
 *	Easiest level of PCI compliance SAQ-A or SAQ A-EP depending on selected payment method
-*	<em>CE and EE</em>: Added the Braintree payment processor
+*	<em>CE and EE</em>: Added the Braintree, PayPal, and Authorize.net payment processors
 *	<em>EE only</em>: Added the CyberSource and Worldpay payment processors
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
