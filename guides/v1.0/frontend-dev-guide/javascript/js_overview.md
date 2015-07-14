@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/javascript/js_overview.md
 
 By default, the Magento application uses the <a href="http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
 
-You can follow the same approach when customizing Magento Javacsript, or <a href="{{site.gdeurl}}frontend-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and loading them using RequireJS</a>.
+You can follow the same approach when customizing Magento Javacsript, or <a href="{{site.gdeurl}}frontend-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and their load by RequireJS</a>.
 
 For information about how JS resources are located and configured, see the <a href="{{site.gdeurl}}/config-guide/config/js-resources.html" target="_blank"> JavaScript resources</a> topic in the Configuration Guide.
 
