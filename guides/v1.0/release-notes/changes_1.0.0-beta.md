@@ -23,9 +23,10 @@ We made the following changes in this release:
 
 *	<a href="#1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</a>
 *	<a href="#1.0.0-beta-changes-perf">Performance improvements</a>
-*	<a href="#1.0.0-beta-changes-avail">Better availability</a>
+*	<a href="#1.0.0-beta-changes-avail">Multiple administrators</a>
 *	<a href="#1.0.0-beta-changes-admin">Magento Admin improvements</a>
 *	<a href="#1.0.0-beta-changes-checkout">Checkout improvements</a>
+*	<a href="#1.0.0-beta-changes-pymt">Payment improvements</a>
 *	<a href="#1.0.0-beta-changes-swatch">Product attribute swatches</a>
 *	<a href="#1.0.0-beta-changes-emails">Transactional emails</a>
 *	<a href="#1.0.0-beta-changes-import">Import and export</a>
@@ -54,15 +55,16 @@ A number of performance improvements, including:
 *	Fewer persistence operations
 *	Improved performance of payment blocks rendering
 
-<h3 id="1.0.0-beta-changes-avail">Better availability</h3>
-To improve access to your storefront, we enable:
+<h3 id="1.0.0-beta-changes-avail">Multiple administrators</h3>
+Improved the ability for multiple administrators to access the Admin:
 
 *	Up to 30 administrators working on orders creation and processing simultaneously
 *	Up to 25 administrators working on product creation and editing with delayed catalog data update
-*	50,000 or more promotion rules 
-*	Up to 100 promotional rules per cart
 
-In addition, promotional rules have less affect on checkout responsiveness.
+<!-- *	50,000 or more promotion rules 
+*	Up to 100 promotional rules per cart -->
+
+<!-- In addition, promotional rules have less affect on checkout responsiveness. -->
 
 <h3 id="1.0.0-beta-changes-admin">Magento Admin improvements</h3>
 Among the improvements we made:
@@ -102,6 +104,15 @@ Among the improvements we made:
 *	Better application of gift or discount card
 *	Add items to a cart using Ajax call
 
+<h3 id="1.0.0-beta-changes-pymt">Payment improvements</h3>
+Among the improvements we made:
+
+*	iFrame that enables a payment form hosted by a third party to be embedded
+*	Third-party hosted payment page that redirects to a page on an entirely different domain for payment entry
+*	Easiest level of PCI compliance SAQ-A or SAQ A-EP depending on selected payment method
+*	<em>CE and EE</em>: Added the Braintree payment processor
+*	<em>EE only</em>: Added the CyberSource and Worldpay payment processors
+
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
 Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
 
@@ -113,6 +124,8 @@ Transactional emails provide the following benefits:
 *	Email templates are displayed consistently across all supported email clients
 *	Email templates can be distributed as a part of a theme
 *	Email templates work with the Magento global internationalization mechanism
+
+Transactional email templates are provided with the blank and Luma themes that ship with the Magento application.
 
 To use transactional emails, log in to the Magento Admin and click **Marketing** > Communications > **Email Templates**. For more information, see <a href="{{ site.gdeurl }}frontend-dev-guide/templates/template-email.html">Customizing Email Templates</a>.
 
