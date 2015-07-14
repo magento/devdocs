@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Javascript</title>
+	<title>JavaScript</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -154,7 +154,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Javascript</h1>
+		<h1 class="page-heading">JavaScript</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/frontend-dev-guide/javascript/js_overview.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -165,7 +165,70 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		
+		<p>By default, the Magento application uses the <a href="http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.</p>
+
+<p>You can follow the same approach when customizing Magento Javacsript, or <a href="/guides/v1.0/frontend-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and their load by RequireJS</a>.</p>
+
+<p>For information about how JS resources are located and configured, see the <a href="/guides/v1.0//config-guide/config/js-resources.html" target="_blank"> JavaScript resources</a> topic in the Configuration Guide.</p>
+
+<h2 id="#js_contents">What's in this chapter</h2>
+<p>Topics of this chapter describe the following:</p>
+
+<ul>
+  <li><a href="/guides/v1.0/frontend-dev-guide/javascript/js_init.html">JavaScript initialization</a>: how to initialize JavaScript components and widgets in JavaScript files and <code>.phtml</code> templates</li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/javascript/custom_js.html">Use custom JavaScript</a>: how to extend or replace default JavaScript components/widgets.</li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/javascript/js_debug.html">Locate JavaScript</a> components: how to define which components (scripts) are used on a particular store page.</li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a>: Magento jQuery widget API documentation.</li>
+  <li><a href="/guides/v1.0/frontend-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a>: practical illustration of custom widgets related tasks.</li>
+</ul>
+
+<h2 id="js_terms">Terms used</h2>
+
+<table>
+<tr>
+<th>
+Term
+</th>
+<th>
+Description
+</th>
+</tr>
+<tr>
+<td>
+<i>JavaScript component (JS component)</i>
+</td>
+<td>
+Any separate <code>.js</code> file decorated as <a href="http://requirejs.org/docs/whyamd.html#amd" target="_blank">AMD module</a>.
+</td>
+</tr>
+
+<tr>
+<td>
+<i>Ui component</i>
+</td>
+<td>
+JS component located in the <code>Magento_Ui</code> module, in the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Ui/view" target="_blank">app/code/Magento/Ui/view</a> directory.
+</td>
+</tr>
+
+<tr>
+<td>
+<i>jQuery UI widget</i>
+</td>
+<td>
+A JS component/widget provided by <a href="https://github.com/magento/magento2/blob/develop/lib/web/jquery/jquery-ui-1.9.2.js" target="_blank">jQuery UI library used in Magento</a>.
+</td>
+</tr>
+<tr>
+<td>
+<i>jQuery widget</i>
+</td>
+<td>
+Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are jQuery widget.
+</td>
+</tr>
+</table>
+
 
 
 		</div>
@@ -181,6 +244,10 @@
 		
 		
 		
+				
+				
+			
+			
 				
 				
 			
@@ -469,7 +536,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/javascript/js_overview.html">Javascript</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v1.0/frontend-dev-guide/javascript/js_overview.html">JavaScript</a></li>
 									
 								
 								
@@ -478,7 +545,23 @@
 								
 								
 							
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/custom_js.html">Use custom JavaScript</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/js_debug.html">Locate JavaScript components</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/frontend-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a></li>
 						
 								
 								
