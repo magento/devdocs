@@ -322,8 +322,8 @@ Enables you to ignore some layout tags when generating a layout.
    <li><code>&lt;block class="Magento\Module\Block\Class" name="name.specified"/></code></li>
    <li><code>&lt;container name="name.specified"/></code></li>
    <li><code>&lt;referenceBlock name="name.specified">...</referenceBlock></code></li>
-   <li><code>&lt;move element="name.specified" destination="name.destination"/></code></li>
-   <li><code>&lt;move element="name.element" destination="name.specified"/></code></li>
+   <li><code>&lt;move name="name.specified" destination="name.destination"/></code></li>
+   <li><code>&lt;move name="name.element" destination="name.specified"/></code></li>
 </ul>
 <p><b>Example:</b></p>
 
@@ -341,7 +341,7 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 Sets the declared block or container element as a child of another element in the specified order.
 <p><b>Example:</b></p>
-<pre>&lt;move element="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/></pre>
+<pre>&lt;move name="name.of.an.element" destination="name.of.destination.element" as="new_alias" after="name.of.element.after" before="name.of.element.before"/></pre>
 <p>Keep the following information in mind when using <code>&lt;move></code></p>
 <ul>
    <li><code>&lt;move></code> is skipped if the element to be moved is not defined.</li>
@@ -357,7 +357,7 @@ Sets the declared block or container element as a child of another element in th
          <th>Required?</th>
       </tr>
       <tr class="even">
-         <td>element</td>
+         <td>name</td>
          <td>Name of the element to move.</td>
          <td>element name</td>
          <td>yes</td>
