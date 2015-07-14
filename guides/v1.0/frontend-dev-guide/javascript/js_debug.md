@@ -32,13 +32,11 @@ To find the source file of the used script:
 <p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
 </div>
 </li>
-<li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. The path is relative to either:
+<li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains module reference:
 <ul>
-<li>If the module context is not specified: <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme) or <code>lib/web</code>(library) directories. 
+<li>If the module context is not specified, the path is relative to <code>app/design/frontend/&lt;Vendor&gt;_&lt;theme&gt;/web</code> (current theme). If the file is not found there, according to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, it is searched for in parent theme <code>web</code> directory, and then <code>lib/web</code>(library) directory.</li>
 
-According to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback</a>, if there's a file in the current theme, the system uses it. If it is not found there, the system uses the file from the library.</li>
-<p class="q">According to the fallback description we have in docs, the fallback includes parent theme(s) level, should we mention it here as well? yessss</p>
-<li>If the module context is specified: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module) or <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) directories. According to the assets fallback, if there's a file in the current theme module directory, the system uses it. If it is not found there, the system uses the file from the module directory.</li>
+<li>If the module context is specified, the path is relative to  <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code> (current theme module). If the file is not found there, according to the assets fallback, it is searched for in the same location in the parent theme files, and then in the <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;</code> (module) directory.</li>
 
 </ul>
 </li>
@@ -48,9 +46,9 @@ According to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit
 
 <h2>Locate JS component: example</h2>
 
-Let's find out what JS components are used for displaying the main navigation menu in the Luma theme. 
+As we discussed in the preceding section, you use browser debugging tools to define which JavaScript component or widget is used for an element. An example follows.
+To find what JS components are used for displaying the main navigation menu in the Luma theme: 
 
-To do this, let's follow the steps described in the previous section:
 <ol>
 <li>Using the Inspect Element feature of the browser, define that the menu section <code>id</code> is <code>store.menu</code>:
 
@@ -74,15 +72,15 @@ data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"l
 
 According to the JS components initialization notation, this means that this code calls <code>menu.js</code>. 
 </li>
-<li>To find out where's the source file of <code>menu.js</code></li>, let's open <code>requirejs-config.js</code> by clicking the link to it in the <head></head> section of the page source. The path to <code>menu.js</code> is specified there as follows:
+<li>To find the source file of <code>menu.js</code></li>, let's open <code>requirejs-config.js</code> by clicking the link to it in the <head></head> section of the page source. The path to <code>menu.js</code> is specified there as follows:
 <pre>
 "menu":                   "mage/menu",
 </pre>
 
-This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order:
+This means we should check for <code>mage/menu.js</code> the following locations, in the following priority order (according to the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static">assets fallback rules</a>):
 <ol>
 <li><code>app/design/frontend/Magento/luma/web/js</code> (current theme JS files)</li>
 <li><code>app/design/frontend/Magento/blank/web/js</code> (parent theme JS files)</li>
 <li><code>lib/web</code> (library files)</li>
 </ol>
-There is no <code>mage/menu.js</code> in the current theme nor parent theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>
+There is no <code>mage/menu.js</code> in the current theme or parent theme JS files, so the source file for menu component used for the main navigation menu is <code>lib/web/mage/menu.js</code>
