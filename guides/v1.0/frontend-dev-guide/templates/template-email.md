@@ -39,7 +39,7 @@ We strongly recommend you not change the default Magento files. If you want to c
 You can add custom templates as physical files in the file system, or create them using the Magento Admin. Both approaches are described in the following sections.
  
 <h3 id="customize-email-theme">Customize email templates using a theme</h3>
-Override email templates by creating templates in your custom theme's `<VendorName>_<ModuleName>/email/` directory. For example, to override the New Order email template, create a `order_new.html` template in `app/design/frontend/<Your_Vendor>/<your_theme>/Magento_Sales/email` directory. 
+Override email templates by creating templates in a new folder in your custom theme, using this pattern: `app/design/frontend/<ThemeVendor>/<ThemeName>/<ModuleVendorName>_<ModuleName>/email/`. For example, to override the New Order email template, create a template named `order_new.html` in the `app/design/frontend/<ThemeVendor>/<ThemeName>/Magento_Sales/email` directory.
 
 <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Templates fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
  
@@ -49,24 +49,22 @@ Any templates configured in the Magento Admin take precedence over default or th
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Click **Add New Template**.
-3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click the **Load Template** button. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
+3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
 Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
     <br><img src="{{site.baseurl}}common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%"/>
 
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
 5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  
 6. Customize template content. For details, see <a href="#customize-content">the section on customizing content</a>.
-7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically you'll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don't support styles in `<style>` tags.
+7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don't support styles in `<style>` tags.
 8. Click **Save Template**.
 9. Now that you have created a template, you must configure that template to be used:
 
-    1.  Log in to the Magento Admin as an administrator.
+    1. If you haven't done so already, log in to the Magento Admin as an administrator.
     1. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
     2. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
-
     <br>For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
     <br><img src="{{site.baseurl}}common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%"/>
-
     3. Select your newly created template from the list.
     4. Click **Save Config**.
 
