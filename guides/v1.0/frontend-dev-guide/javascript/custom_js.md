@@ -100,8 +100,6 @@ For information about how to initialize your custom widget in a `.phtml` templat
 
 <h3 id="extend_js_component">Extend a default Ui component</h3>
 
-<p class="q">What about other JS components, which do not reside in app/code/Magento/Ui/view/.../web? Can they be extended? Yes, but this chapter talks about Ui components</p>
-
 To extend a default JS Ui component, your custom script must contain the following:
 
 {% highlight JavaScript %}
