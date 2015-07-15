@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Behavior
+group: 
+subgroup: 
 title: How Magento renders prices
 menu_title: How Magento renders prices
-menu_order: 3
+menu_order: 
 github_link: architecture/behavior/price-render.md
 ---
 

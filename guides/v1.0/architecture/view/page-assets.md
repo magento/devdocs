@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: View library
 title: Page assets
 menu_title: Page assets
-menu_order: 3
+menu_order: 
 github_link: architecture/view/page-assets.md
 ---
 

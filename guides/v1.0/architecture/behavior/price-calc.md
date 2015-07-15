@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Behavior
+group: 
+subgroup: 
 title: How Magento calculates prices
 menu_title: How Magento calculates prices
-menu_order: 2
+menu_order: 
 github_link: architecture/behavior/price-calc.md
 ---
 
