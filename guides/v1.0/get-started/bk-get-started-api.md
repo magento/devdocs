@@ -56,9 +56,3 @@ You must register a web service on Magento Admin. Use the following general step
 
 See the User Guide for more information.
 
-
-
-
-
-
-
