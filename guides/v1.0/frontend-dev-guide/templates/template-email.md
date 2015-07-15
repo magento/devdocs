@@ -69,7 +69,7 @@ Make note of this path because you will need it later when you configure this ne
     4. Click **Save Config**.
 
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
-Every email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
+Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
  * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/email/header.html" target="_blank">app/code/Magento/Email/view/email/header.html</a>
  * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/email/footer.html" target="_blank">app/code/Magento/Email/view/email/footer.html</a>
