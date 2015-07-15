@@ -190,27 +190,27 @@ The product link entity used as the payload for PUT, POST (`/V1/products/:sku/li
 
 OLD
 
-	{% highlight json %}
-	{ 
-	    "entity": { 
-	       "product_sku": "Simple_Product",         
-  	      "linked_product_sku": "simple3", 
- 	       "link_type": "upsell" 
- 	  }
-	}
-	{% endhighlight %}
+{% highlight json %}
+{ 
+  "entity": { 
+      "product_sku": "Simple_Product",         
+      "linked_product_sku": "simple3", 
+      "link_type": "upsell" 
+    }
+}
+{% endhighlight %}
  
 NEW
 
-	{% highlight json %}
-	{ 
-    	"entity": { 
-        	"sku": "Simple_Product",         
-    	    "linked_product_sku": "simple3", 
-        	"link_type": "upsell" 
-    	}
-	}
-	{% endhighlight %}
+{% highlight json %}
+{ 
+  "entity": {
+      "sku": "Simple_Product",         
+      "linked_product_sku": "simple3", 
+      "link_type": "upsell" 
+    }
+}
+{% endhighlight %}
 
 `link_type` is no longer specified in the REST URL. You must specify it in the payload for PUT and POST operations as follows:
 
