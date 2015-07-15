@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: View library
 title: Page types
 menu_title: Page types
-menu_order: 4
+menu_order: 
 github_link: architecture/view/page-type.md
 ---
 

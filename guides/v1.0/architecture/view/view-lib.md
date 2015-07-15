@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: View library
 title: View library
 menu_title: View library
-menu_order: 1
+menu_order: 
 github_link: architecture/view/view-lib.md
 ---
 

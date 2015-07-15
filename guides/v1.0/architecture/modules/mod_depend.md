@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Modules
+group: 
+subgroup: 
 title: Module dependencies
 menu_title: Module dependencies
-menu_order: 2
+menu_order: 
 github_link: architecture/modules/mod_depend.md
 ---
 

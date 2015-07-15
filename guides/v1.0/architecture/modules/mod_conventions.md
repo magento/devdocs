@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Modules
+group: 
+subgroup: 
 title: Module naming and location conventions
 menu_title: Module naming and location conventions
-menu_order: 5
+menu_order: 
 github_link: architecture/modules/mod_conventions.md
 ---
 

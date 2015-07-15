@@ -1,10 +1,10 @@
 ---
 layout: default
 group:
-subgroup: Modules
+subgroup: 
 title: Specific Modules
 menu_title: Specific Modules
-menu_order: 6
+menu_order: 
 github_link: architecture/modules/mod_specific.md
 ---
 

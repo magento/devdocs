@@ -23,9 +23,11 @@ We made the following changes in this release:
 
 *	<a href="#1.0.0-beta-changes-schema">Module version changes (requires reinstallation)</a>
 *	<a href="#1.0.0-beta-changes-perf">Performance improvements</a>
-*	<a href="#1.0.0-beta-changes-avail">Better availability</a>
+*	<a href="#1.0.0-beta-changes-avail">Multiple administrators</a>
 *	<a href="#1.0.0-beta-changes-admin">Magento Admin improvements</a>
 *	<a href="#1.0.0-beta-changes-checkout">Checkout improvements</a>
+*	<a href="#1.0.0-beta-changes-pymt">Payment improvements</a>
+<!-- *	<a href="1.0.0-beta-changes-goog">Google Tag Manager and Universal Analytics</a> -->
 *	<a href="#1.0.0-beta-changes-swatch">Product attribute swatches</a>
 *	<a href="#1.0.0-beta-changes-emails">Transactional emails</a>
 *	<a href="#1.0.0-beta-changes-import">Import and export</a>
@@ -45,24 +47,25 @@ For additional details not covered in these Release Notes, see the following:
 <h3 id="1.0.0-beta-changes-perf">Performance improvements</h3>
 A number of performance improvements, including:
 
-*	Decreased number of requests for private content on cached catalog pages
+*	Fewer requests for private content on cached catalog pages
 	
-	Request is sent only after login or adding product to cart
-*	User private blocks are completely rendered on the client side
-*	Checkout is based on two steps with complete rendering on the client side and asynchronous blocks reload
-*	Improved Magento Admin performance with large databases 
+	A request is sent only after login or adding product to cart
+*	User private blocks are rendered on the client only
+*	Checkout is based on two steps with complete rendering on the client and asynchronous blocks reloading
+<!-- *	Improved Magento Admin performance with large databases --> 
 *	Fewer persistence operations
 *	Improved performance of payment blocks rendering
 
-<h3 id="1.0.0-beta-changes-avail">Better availability</h3>
-To improve access to your storefront, we enable:
+<h3 id="1.0.0-beta-changes-avail">Multiple administrators</h3>
+Improved the ability for multiple administrators to access the Admin:
 
-*	Up to 30 administrators working on orders creation and processing simultaneously
-*	Up to 25 administrators working on product creation and editing with delayed catalog data update
-*	50,000 or more promotion rules 
-*	Up to 100 promotional rules per cart
+*	Up to 30 administrators simultaneously creating and processing orders
+*	Up to 25 administrators simultaneously editing and creating products with delayed catalog data update
 
-In addition, promotional rules have less affect on checkout responsiveness.
+<!-- *	50,000 or more promotion rules 
+*	Up to 100 promotional rules per cart -->
+
+<!-- In addition, promotional rules have less affect on checkout responsiveness. -->
 
 <h3 id="1.0.0-beta-changes-admin">Magento Admin improvements</h3>
 Among the improvements we made:
@@ -99,8 +102,17 @@ Among the improvements we made:
 
 *	Customers are identified as soon as they log in
 *	Shipping information populates automatically as soon as the customer enters the correct information 
-*	Better application of gift or discount card
-*	Add items to a cart using Ajax call
+
+<h3 id="1.0.0-beta-changes-pymt">Payment improvements</h3>
+Among the improvements we made:
+
+*	Third-party hosted payment page that redirects to a page on an entirely different domain for payment entry
+*	Easiest level of PCI compliance SAQ-A or SAQ A-EP depending on selected payment method
+*	<em>CE and EE</em>: Added the Braintree, PayPal, and Authorize.net payment processors
+*	<em>EE only</em>: Added the CyberSource and Worldpay payment processors
+
+<!-- <h3 id="1.0.0-beta-changes-goog">Google Tag Manager and Universal Analytics</h3>
+<em>Magento EE only</em>. Magento Enterprise Edition supports Universal Analytics, the new standard for Google Analytics. With this update, merchants can define more custom dimensions and metrics for tracking, incorporate offline and mobile app interactions, and gain access to ongoing feature updates that will only be available on Universal Analytics. -->
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
 Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
@@ -110,9 +122,11 @@ Emails designed to display on all types of devices (desktop, tablet, mobile) to 
 
 Transactional emails provide the following benefits:
 
-*	Email templates are displayed consistently across all supported email clients
+*	Email templates display consistently across all supported email clients
 *	Email templates can be distributed as a part of a theme
-*	Email templates work with the Magento global internationalization mechanism
+*	Email templates work with Magento internationalization 
+
+Transactional email templates are provided with the blank and Luma themes that ship with the Magento application.
 
 To use transactional emails, log in to the Magento Admin and click **Marketing** > Communications > **Email Templates**. For more information, see <a href="{{ site.gdeurl }}frontend-dev-guide/templates/template-email.html">Customizing Email Templates</a>.
 
@@ -176,27 +190,27 @@ The product link entity used as the payload for PUT, POST (`/V1/products/:sku/li
 
 OLD
 
-	{% highlight json %}
-	{ 
-	    "entity": { 
-	       "product_sku": "Simple_Product",         
-  	      "linked_product_sku": "simple3", 
- 	       "link_type": "upsell" 
- 	  }
-	}
-	{% endhighlight %}
+{% highlight json %}
+{ 
+  "entity": { 
+      "product_sku": "Simple_Product",         
+      "linked_product_sku": "simple3", 
+      "link_type": "upsell" 
+    }
+}
+{% endhighlight %}
  
 NEW
 
-	{% highlight json %}
-	{ 
-    	"entity": { 
-        	"sku": "Simple_Product",         
-    	    "linked_product_sku": "simple3", 
-        	"link_type": "upsell" 
-    	}
-	}
-	{% endhighlight %}
+{% highlight json %}
+{ 
+  "entity": {
+      "sku": "Simple_Product",         
+      "linked_product_sku": "simple3", 
+      "link_type": "upsell" 
+    }
+}
+{% endhighlight %}
 
 `link_type` is no longer specified in the REST URL. You must specify it in the payload for PUT and POST operations as follows:
 
@@ -246,9 +260,10 @@ In `Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator`, we added a new arg
 	Replace arguments for method `debug` from `($logData, ConfigInterface $config)` to `(array $debugData, array $debugReplaceKeys, $debugFlag);`
 
 ### Magento_Email changes
-Constructors of `\Magento\Email\Model\AbstractTemplate` and `\Magento\Email\Model\BackendTemplate` now have two additional parameters parameters: `\Magento\Framework\Model\Resource\AbstractResource` and `\Magento\Framework\Data\Collection\AbstractDb`. 
+Because of changes in the the transactional email feature:
 
-We also swapped the `$design` and `$registry` parameters.
+*	The `\Magento\Email` module was extensively refactored.
+*	The `\Magento\Newsletter` module was also affected.
 
 ### Removed the Magento_GoogleShopping module
 We removed the `Magento_GoogleShopping` module.
