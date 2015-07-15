@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview</title>
+	<title>Data that needs to be migrated manually</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/migration/bk-migration-guide.html">
+	<link rel="canonical" href="//guides/v1.0/migration/migration-manually.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Overview</h1>
+		<h1 class="page-heading">Data that needs to be migrated manually</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-manually.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,24 +165,59 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="migrate-overview">Overview</h2>
-<p>We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1 — to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.</p>
+		<h2>Data that needs to be migrated manually</h2>
 
-<p>Magento 2 migration involves four components: data, extensions, themes, and customizations. </p>
+<p>There are three types of data that need to be manually migrated:
+* Media
+* Storefront design
+* ACLs</p>
 
+<h3 id="media">Media</h3>
+<p>This section discusses how to manually migrate media files.</p>
+
+<h4 id="media-files-stored-in-the-database">Media files stored in the database</h4>
+<p>This section applies to you <em>only</em> if you store media files in the Magento database. This step should be performed before <a href="/guides/v1.0/migration/migration-migrate-data.html">migration of data</a>:</p>
+
+<ol>
+  <li>Log in to the Magento 1 Admin Panel as an administrator.</li>
+  <li>Click <strong>System</strong> &gt; <strong>Configuration</strong> &gt; ADVANCED &gt; <strong>System</strong>. </li>
+  <li>In the right pane, scroll to <strong>Storage Configuration for Media</strong>.</li>
+  <li>From the <strong>Select Media Database</strong> list, click the name of your media storage database. </li>
+  <li>Click <strong>Synchronize</strong>.</li>
+</ol>
+
+<p>After that, use the following steps:</p>
+
+<ol>
+  <li>Log in to the Magento 2 Admin as an administrator.</li>
+  <li>Click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; ADVANCED &gt; <strong>System</strong>. </li>
+  <li>In the right pane, scroll to <strong>Storage Configuration for Media</strong>.</li>
+  <li>From the <strong>Select Media Database</strong> list, click the name of your media storage database. </li>
+  <li>Click <strong>Synchronize</strong>.</li>
+</ol>
+
+<h4 id="media-files-on-the-file-system">Media files on the file system</h4>
+<p>All media files (for example, images for products, categories, the WYSIWYG editor, and so on) should be copied manually from <code>&lt;your Magento 1 install dir&gt;/media</code> to <code>&lt;your Magento 2 install dir&gt;/pub/media</code>. </p>
+
+<p>However, do <em>not</em> copy <code>.htaccess</code> files located in the Magento 1 <code>media</code> folder. Magento 2 has its own <code>.htaccess</code> that should be preserved. </p>
+
+<h3 id="storefront-design">Storefront design</h3>
 <ul>
-  <li>
-    <p>Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data</p>
-  </li>
-  <li>
-    <p>Extensions and custom code: We are working with the Magento development community on updating extensions. They will be on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide</a></p>
-  </li>
-  <li>
-    <p>Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">themes</a>, <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">layouts</a>, and customizations</p>
-  </li>
+  <li>Design in files (css, js, templates, XML layouts) changed its location and format </li>
+  <li>Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages </li>
 </ul>
 
-<p>Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1 to Magento 2 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. </p>
+<h3 id="acls-access-control-lists">ACLs (Access Control Lists)</h3>
+<ul>
+  <li>You must manually re-create all credentials for web services APIs (that is, SOAP, XML-RPC, and REST)</li>
+  <li>You must manually re-create all administrative users and associate them with access privileges</li>
+</ul>
+
+<h3 id="related-topics">Related topics</h3>
+
+<ul>
+  <li><a href="/guides/v1.0/migration/migration-migrate-after.html">After migration</a></li>
+</ul>
 
 
 		</div>
@@ -267,7 +302,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
 									
 								
 								
@@ -403,7 +438,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/migration/migration-manually.html">Data that needs to be migrated manually</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v1.0/migration/migration-manually.html">Data that needs to be migrated manually</a></li>
 									
 								
 								
@@ -576,8 +611,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-manually.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-manually.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

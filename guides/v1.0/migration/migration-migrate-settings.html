@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview</title>
+	<title>Migrate Settnigs</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/migration/bk-migration-guide.html">
+	<link rel="canonical" href="//guides/v1.0/migration/migration-migrate-settings.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Overview</h1>
+		<h1 class="page-heading">Migrate Settnigs</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-migrate.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,24 +165,33 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="migrate-overview">Overview</h2>
-<p>We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1 — to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.</p>
+		<h2 id="migrate-command-settings">Migrating settings</h2>
+<p>You should migrate settings first. This mode migrates stores; websites; and different system configuration like shipping, payment, some tax settings etc. </p>
 
-<p>Magento 2 migration involves four components: data, extensions, themes, and customizations. </p>
+<p>To change how settings are migrated:</p>
+
+<ol>
+  <li>Rename or copy <code>settings.xml.dist</code> in a folder <code>"etc/&lt;ce or ee version&gt;/"</code> to remove the .dist extension.</li>
+  <li>Make your changes in settings.xml file.</li>
+  <li>Make changes to config.xml <code>&lt;settings_map_file&gt;</code> tag so it would have a new file name of the settings file.</li>
+</ol>
+
+<p>Command usage:</p>
+
+<pre><code>cd &lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/bin
+php migrate settings --config=&lt;path to config.xml&gt;
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
+</div>
+
+<h3 id="related-topics">Related topics</h3>
 
 <ul>
-  <li>
-    <p>Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data</p>
-  </li>
-  <li>
-    <p>Extensions and custom code: We are working with the Magento development community on updating extensions. They will be on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide</a></p>
-  </li>
-  <li>
-    <p>Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">themes</a>, <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">layouts</a>, and customizations</p>
-  </li>
+  <li><a href="/guides/v1.0/migration/migration-migrate-data.html">Migrate data</a></li>
 </ul>
-
-<p>Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1 to Magento 2 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. </p>
 
 
 		</div>
@@ -267,7 +276,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
 									
 								
 								
@@ -375,7 +384,7 @@
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/migration/migration-migrate-settings.html">Migrate Settnigs</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/migration/migration-migrate-settings.html">Migrate Settnigs</a></li>
 						
 								
 							
@@ -576,8 +585,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-migrate-settings.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-migrate-settings.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

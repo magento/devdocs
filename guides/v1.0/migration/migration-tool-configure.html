@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview</title>
+	<title>Configure migration</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/migration/bk-migration-guide.html">
+	<link rel="canonical" href="//guides/v1.0/migration/migration-tool-configure.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Overview</h1>
+		<h1 class="page-heading">Configure migration</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-tool-install.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,24 +165,122 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="migrate-overview">Overview</h2>
-<p>We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1 — to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.</p>
+		<h2 id="migration-configure">Configuring the migration</h2>
+<p>Before you migrate any data, you must edit <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc/&lt;ce or ee version&gt;/config.xml</code> to specify at minimum values for the following:</p>
 
-<p>Magento 2 migration involves four components: data, extensions, themes, and customizations. </p>
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source</span> <span class="na">version=</span><span class="s">&quot;1.9.1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span></code></pre></div>
+
+<p>Optional parameters:</p>
 
 <ul>
-  <li>
-    <p>Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data</p>
-  </li>
-  <li>
-    <p>Extensions and custom code: We are working with the Magento development community on updating extensions. They will be on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide</a></p>
-  </li>
-  <li>
-    <p>Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">themes</a>, <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">layouts</a>, and customizations</p>
-  </li>
+  <li>Database user password: <code>password=&lt;password&gt;</code></li>
+  <li>Table prefix: <code>&lt;source_prefix&gt;</code>, <code>&lt;dest_prefix&gt;</code></li>
 </ul>
 
-<p>Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1 to Magento 2 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. </p>
+<p>For example, if your database owner’s user name is <code>root</code> with password <code>pass</code> and you use the prefix <code>magento1</code> in your Magento 1 database, use the following in <code>config.xml</code>:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;source</span> <span class="na">version=</span><span class="s">&quot;1.9.1&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento1&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span> <span class="na">password=</span><span class="s">&quot;pass&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/source&gt;</span>
+<span class="nt">&lt;destination</span> <span class="na">version=</span><span class="s">&quot;2.0.0.0&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;database</span> <span class="na">host=</span><span class="s">&quot;localhost&quot;</span> <span class="na">name=</span><span class="s">&quot;magento2&quot;</span> <span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;options&gt;</span>
+    <span class="nt">&lt;source_prefix&gt;</span>magento1<span class="nt">&lt;/source_prefix&gt;</span>
+<span class="nt">&lt;/options&gt;</span></code></pre></div>
+
+<h2 id="migration-config">Work with configuration and mapping files</h2>
+<p>The Data Migration Tool uses <em>mapping files</em> to enable you to perform custom database mapping between your Magento 1 and Magento 2 databases, including:</p>
+
+<ul>
+  <li>Changing table names</li>
+  <li>Changing field names</li>
+  <li>Ignoring tables or fields</li>
+  <li>Adapt transferring data of a field to Magento 2 format</li>
+</ul>
+
+<p>Mapping files for supported Magento versions are located in subdirectories of <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code></p>
+
+<p>To use the mapping files:</p>
+
+<ol>
+  <li>Rename or copy them to remove the <code>.dist</code> extension.</li>
+  <li>Edit them using the schema located in <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/etc</code>.</li>
+  <li>Then change config.xml in <code>&lt;options&gt;</code> node with the new name of the file.</li>
+</ol>
+
+<p>The <code>&lt;your Magento 2 install dir&gt;/vendor/magento/data-migration-tool/&lt;ce or ee version&gt;/etc</code> directory contains the following configuration files:</p>
+
+<p>Even though you will be working with <code>map.xml.dist</code> file most of the time, the following table discusses each mapping and other files.</p>
+
+<table>
+<tbody>
+	<tr>
+		<th>Mapping file name</th>
+		<th>Description</th>
+	</tr>
+<tr>
+	<td>class-map.xml.dist</td>
+	<td>Dictionary of class mappings between Magento 1 and Magento 2</td>
+</tr>
+<tr>
+	<td>config.xml.dist</td>
+	<td>Main configuration file that specifies the Magento 1 and Magento 2 database configurations, step configuration, and links to mapping files</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. customer-attr-document-groups.xml.dist</td>
+	<td>List of tables used in the custom customer attributes step.</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. customer-attr-map.xml.dist</td>
+	<td>Map file that is used in Custom Customer Attributes Step.</td>
+</tr>
+<tr>
+	<td>deltalog.xml.dist</td>
+	<td>Contains the list of tables required for database routines setup.</td>
+</tr>
+<tr>
+	<td>eav-attribute-groups.xml.dist</td>
+	<td>Contains list of attributes that are used in Eav Step.</td>
+</tr>
+<tr>
+	<td>eav-document-groups.xml.dist</td>
+	<td>Contains list of tables that are used in Eav Step.</td>
+</tr>
+<tr>
+	<td>log-document-groups.xml.dist</td>
+	<td>Contains list of tables that are used in Log Step.</td>
+</tr>
+<tr>
+	<td>map-eav.xml.dist</td>
+	<td>Map file that is used in EAV Step.</td>
+</tr>
+<tr>
+	<td>map-log.xml.dist</td>
+	<td>Log mapping file.</td>
+</tr>
+<tr>
+	<td><em>EE only</em>. map-sales.xml.dist</td>
+	<td>Map file that is used in SalesOrder step.</td>
+</tr>
+<tr>
+	<td>map.xml.dist</td>
+	<td>Mapping file required for the map step.</td>
+</tr>
+<tr>
+	<td>settings.xml.dist</td>
+	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
+</tr>
+
+</tbody>
+</table>
+
+<p>You can refer to <a href="/guides/v1.0/migration/migration-tool-internal-spec.html"> Data Migration Tool Internal Specification</a> for more details.</p>
 
 
 		</div>
@@ -267,7 +365,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
 									
 								
 								
@@ -346,7 +444,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/migration/migration-tool-configure.html">Configure migration</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/migration/migration-tool-configure.html">Configure migration</a></li>
 						
 								
 								
@@ -576,8 +674,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-tool-configure.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-tool-configure.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

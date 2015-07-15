@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview</title>
+	<title>Creating a migration plan</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/migration/bk-migration-guide.html">
+	<link rel="canonical" href="//guides/v1.0/migration/migration-plan.html">
 
 </head>	
 <body>
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Overview</h1>
+		<h1 class="page-heading">Creating a migration plan</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/migration/migration-plan.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,24 +165,73 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="migrate-overview">Overview</h2>
-<p>We’re pleased you have considered moving from the world’s #1 eCommerce platform—Magento 1 — to the eCommerce platform for the future, Magento 2. We’re also excited to share the details about this process, which we refer to as migration.</p>
+		<h2>Creating a migration plan</h2>
 
-<p>Magento 2 migration involves four components: data, extensions, themes, and customizations. </p>
+<p>To have a successful migration, you need to plan it and test it thoroughly. Use the following guidelines to get started.</p>
+
+<h4>Step 1: Review your current site</h4>
 
 <ul>
-  <li>
-    <p>Data: We’ve developed the Magento 2 Data Migration Tool to help you efficiently port all of your key product, customer, and order data, store configurations, promotions and more to Magento 2. This paper provides information on the tool and best practices for using it to migrate your data</p>
-  </li>
-  <li>
-    <p>Extensions and custom code: We are working with the Magento development community on updating extensions. They will be on Magento Connect when Magento 2 becomes generally available. More information on developing extensions for Magento 2 is available in the <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Magento 2 Extension Developer Guide</a></p>
-  </li>
-  <li>
-    <p>Themes and Customizations: Magento 2 uses several new approaches and technologies that give merchants an unmatched ability to create innovative shopping experiences and scale to new levels. To take advantage of these advances, developers will need to make changes to their themes and customizations. Documentation is available online for creating Magento 2 <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/themes/theme-general.html">themes</a>, <a href="http://devdocs.magento.com/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html">layouts</a>, and customizations</p>
-  </li>
+  <li>What extensions have you installed?</li>
+  <li>Have you identified if you need all these extensions in your new site?  (There might be old ones you can safely drop.)</li>
+  <li>Have you determined if Magento 2 versions your extensions exist?  (Check with your extension providers to see if they have been ported yet.)</li>
+  <li>What database assets from your extensions do you want to migrate?</li>
 </ul>
 
-<p>Just like an upgrade between 1.x versions (for example, from v1.12 to v1.14), the level of effort to migrate from Magento 1 to Magento 2 depends upon how you have built your site and its level of customization.  Initial estimates indicate that an average Magento 2 migration is only about 20% larger than a Magento 1.x upgrade. Over the coming months, as we proceed with testing and the merchant beta program, we will be able to refine this number so you can plan your budgets and timelines. </p>
+<h4>Step 2: Capacity planning</h4>
+
+<p>Consider whether the new site needs to be designed with more hardware or a more advanced topology with better caching tiers and so on. It’s a good time to make more serious changes to get your site ready for your next level of growth.</p>
+
+<h4>Step 3: Build and test Magento 2</h4>
+
+<p>To prepare for the migration, make sure you do all of the following:</p>
+
+<ul>
+  <li>Set up a Magento 2.0 system using a topology and design that at least matches your existing Magento 1 system</li>
+  <li>To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration</li>
+  <li>Install Magento 2.0 on a system that meets our system requirements</li>
+</ul>
+
+<h4>Step 4: Start your migration</h4>
+
+<ol>
+  <li>Make sure that the Data Migration Tool has a network access to connect to Magento 1 and Magento 2 databases. Open ports in your firewall.</li>
+  <li>Stop all activity in the Magento 1.x Admin Panel (except for order management, such as shipping, creating invoice, credit memos etc.)</li>
+<pre>NOTE: Activity cannot resume until your Magento 2 store goes live.</pre>
+  <li>Stop all Magento 1.x cron jobs.</li> 
+  <li>Use the migration tool to migrate settings and websites.</li>
+  <li>Copy your Magento 1.x media files to Magento 2.0. (You must copy these manually from  from magento1-root/media to magento2-root/pub/media directory)</li> 
+  <li>Use Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</li>
+  <li>Reindex all Magento 2.0 indexers. For details, see the <a href="/guides/v1.0/config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
+  <li>Thoroughly test your Magento 2.0 site.</li>
+</ol>
+
+<h4>Step 5:  Incremental updates</h4>
+
+<p>Now that you’ve migrated your data, you must incrementally capture data updates that are added in Magento 1 store (such as new orders, reviews and changes in customer profiles) and migrate it to Magento 2 store.</p>
+
+<ul>
+  <li>Start the incremental migration; updates run continually. 
+You can stop the updates at any time by pressing CTRL+C</li>
+  <li>Test your Magento 2 site during this time so you can catch any issues as soon as possible.
+In case you find any issues, press Control+C to stop incremental migration and start it again after issues are resolved</li>
+</ul>
+
+<h4>Step 6: Go live</h4>
+
+<p>Now that your Magento 2 site is up-to-date with Magento 1 and is functioning normally, do the following to cut over to the new site:</p>
+
+<ol>
+  <li>Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).</li>
+  <li>Press Control+C in the migration tool command window to stop incremental updates.</li>
+  <li>Start your Magento 2 cron jobs.</li>
+  <li>In your Magento 2 system, reindex the stock indexer. For more information, see the <code>&lt;TBD&gt;</code>.</li>
+  <li>Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.</li>
+  <li>Perform any final verification of your Magento 2 site.</li>
+  <li>Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) </li>
+  <li>Magento 2 store is ready to use. You and Your customers can resume all activities.</li>
+</ol>
+
 
 
 		</div>
@@ -267,7 +316,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v1.0/migration/bk-migration-guide.html">Overview</a></li>
 									
 								
 								
@@ -304,7 +353,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v1.0/migration/migration-plan.html">Creating a migration plan</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v1.0/migration/migration-plan.html">Creating a migration plan</a></li>
 									
 								
 								
@@ -576,8 +625,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/bk-migration-guide.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-plan.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/migration/migration-plan.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
