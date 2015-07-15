@@ -260,9 +260,10 @@ In `Magento\CatalogUrlRewrite\Model\ProductUrlPathGenerator`, we added a new arg
 	Replace arguments for method `debug` from `($logData, ConfigInterface $config)` to `(array $debugData, array $debugReplaceKeys, $debugFlag);`
 
 ### Magento_Email changes
-Constructors of `\Magento\Email\Model\AbstractTemplate` and `\Magento\Email\Model\BackendTemplate` now have two additional parameters parameters: `\Magento\Framework\Model\Resource\AbstractResource` and `\Magento\Framework\Data\Collection\AbstractDb`. 
+Because of changes in the the transactional email feature:
 
-We also swapped the `$design` and `$registry` parameters.
+*	The `\Magento\Email` module was extensively refactored.
+*	The `\Magento\Newsletter` module was also affected.
 
 ### Removed the Magento_GoogleShopping module
 We removed the `Magento_GoogleShopping` module.
