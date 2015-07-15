@@ -189,9 +189,23 @@ features of all Magento 2 releases starting with Developer Beta in December 2014
     </ul>
   </li>
   <li>Support for Varnish 4</li>
-  <li>Services can be exposed as a web API supporting both SOAP &amp; REST</li>
-  <li>The version is part of the URL</li>
-  <li>Extended attribute objects are marked as optional in WSDL</li>
+  <li>Services can be exposed as a <a href="/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">web API</a> supporting both SOAP and REST</li>
+  <li>For SOAP:
+    <ul>
+      <li>The service name used in the WSDL endpoint URL is derived from the Service interface name. We use the following rules:</li>
+      <li>CamelCase is used for service naming.</li>
+      <li>Omit <code>Service</code>, the <code>Magento</code> prefix , and the <code>Interface</code> suffix</li>
+      <li>If the service name is the same as a module name, the module name is omitted (for example, if there is Customer service interface in the Customer module, the word <code>customer</code> is used in the service name only once).
+Examples of service naming changes follow:
+        <ul>
+          <li><code>\Magento\Customer\Service\V1\CustomerInterface</code> is now <code>customerV1</code></li>
+          <li><code>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code> is now <code>customerCustomerAccountServiceV1</code></li>
+          <li><code>\Enterprise\Customer\Service\V3\Customer\AddressInterface</code> is now <code>enterpriseCustomerAddressV3</code></li>
+        </ul>
+      </li>
+      <li>Extended attribute objects are marked as optional in WSDL</li>
+    </ul>
+  </li>
   <li><a href="/guides/v1.0/release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module’s directory</li>
   <li>Backward compatibility policy; marked Public APIs coming next quarter
     <ul>
@@ -336,6 +350,10 @@ Feel free to contact the documentation team directly at
 			
 				
 				
+			
+			
+				
+				
 					
 					
 					
@@ -356,11 +374,15 @@ Feel free to contact the documentation team directly at
 				
 							
 							
-								<li class=""><a href="/guides/v1.0/release-notes/changes_devrc.html">Changes in 0.74-beta1 (Developer RC)</a></li>
+								<li class=""><a href="/guides/v1.0/release-notes/changes_1.0.0-beta.html">Changes in 1.0.0-beta (Merchant Beta)</a></li>
 				
 							
 							
 								<li class=""><a href="/guides/v1.0/release-notes/changes_074-beta10.html">Changes in 0.74-beta10</a></li>
+				
+							
+							
+								<li class=""><a href="/guides/v1.0/release-notes/changes_devrc.html">Changes in 0.74-beta1 (Developer RC)</a></li>
 				
 							
 							

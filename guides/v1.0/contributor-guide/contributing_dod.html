@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Contributor Guide</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v1.0/contributor-guide/contributing_dod.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v1.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v1.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v1.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               
+               <li class="first leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+    
+    
+          <li class="expanded">
+            <a href="/guides/v1.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v1.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v1.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v1.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v1.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Contributor Guide</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/contributor-guide/contributing_dod.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
+<!-- Referring file: contributing.md owned by core -->
+
+<h2 id="dod">Magento Definition of Done</h2>
+
+<h3>Overview</h3>
+
+<p>The “Definition of Done” (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base. The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.  Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria. We encourage our community contributors to also follow the Magento DoD.</p>
+
+<p>At a high level, the criteria defined in our “definition of done” revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.</p>
+
+<p>The following sections provide additional details about each of these criteria: </p>
+
+<h3>Functional Backwards Compatibility</h3>
+
+<p>Existing product features and functionality must be retained during any changes to the code. If backwards incompatible functional changes are made, the documentation should explain the justification and provide the “business value”. </p>
+
+<p>For more information, see <a href="/guides/v1.0/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</p>
+
+<h3>Documentation</h3>
+
+<p>All changes, additions, and extensions to the product should be documented by the author. The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.</p>
+
+<p>Ideally, the informatin about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>. </p>
+
+<p>When submitting either code or documentation, a brief summary of the work should be included in the commit message. </p>
+
+<p>Additionally, the code itself should contain high-quality comments/descriptions for all classes and methods.</p>
+
+<p>Any backwards-incompatible changes must also be recorded in the accompanying documentation, using the following format:</p>
+
+<table>
+<tr>
+<th><u>Change</u></th>
+<th><u>Was in Magento 1.x</u></th>	
+<th><u>Became in Magento 2.x</u></th>
+</tr>
+<tr>
+<th>description</th>
+<th>example</th>	
+<th>example</th>
+</tr>
+</table>
+
+<h3>Tests</h3>
+
+<h4>Automated Tests</h4>
+
+<p>Code changes must be covered by automated tests according to Classification of Magento Automated Tests.</p>
+
+<p>Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes. Continuous integration enforces execution of all tests and author is accountable for broken builds.</p>
+
+<h5>Functional Tests</h5>
+<p>Must cover new or changed application behavior (functional).
+Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.</p>
+
+<h5>Unit Tests</h5>
+
+<p>Code to cover:</p>
+
+<ul>
+  <li>new code (except auto-generated code) MUST BE covered by unit tests</li>
+  <li>modified legacy code:</li>
+</ul>
+
+<p>New and modified code MUST BE covered if it changes the system’s behaviour, and MAY BE covered if it does not change system’s behaviour (class/method renamed, class moved, other minor changes)</p>
+
+<p>In cases where it is impossible to cover – replace with integration tests
+It is not necessary to cover classes created by auto-generation and methods that don’t have any business logic.</p>
+
+<h5>Integration Tests</h5>
+
+<p>Code to cover:</p>
+
+<ul>
+  <li>Must cover code that interacts with operating system environment, database or any other 3rd-party system directly</li>
+  <li>Must cover code in “Model” layer that interacts with database indirectly</li>
+  <li>Must be used as alternative of unit tests in legacy code in the following cases:
+** If it is impossible to cover due to high code coupling
+** If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification</li>
+</ul>
+
+<h5>Integrity Tests</h5>
+
+<p>Code to cover: </p>
+
+<ul>
+  <li>must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.</li>
+</ul>
+
+<p>Expected code coverage: must cover all files applicable to this convention.</p>
+
+<p>For example:</p>
+
+<p>Scan for all XML-files of certain type and validate them using appropriate XML-schema
+Scan for declarations of templates and invoke “fallback” mechanism to ensure they resolve</p>
+
+<p><strong>Static Code Analysis</strong></p>
+
+<p>Code to cover: 
+* must cover all new code files (or whatever qualifies as “new”).</p>
+
+<p>Expected code coverage: must cover all applicable files in entire code base.</p>
+
+<p><strong>Legacy Tests</strong></p>
+
+<p>Code to cover: </p>
+
+<ul>
+  <li>must cover any formal backwards-incompatible changes on code level. For more information, see 
+<a href="/guides/v1.0/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</li>
+</ul>
+
+<p>A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.</p>
+
+<p>Expected code coverage:</p>
+
+<ul>
+  <li>must cover majority of occurrences of the backwards-incompatible change</li>
+  <li>should cover 100% of occurrences</li>
+</ul>
+
+<p>Not all changes can be covered. For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.</p>
+
+<h4>Functional Manual Tests</h4>
+<p>Must cover new or changed application behavior (functional).
+Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.</p>
+
+<h3>Review</h3>
+<p>A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:</p>
+
+<ul>
+  <li>there are no unauthorized backwards incompatible functional changes </li>
+  <li>all changes are documented properly </li>
+  <li>all changes are covered with automated tests</li>
+  <li>determine if code changes caused any failure in continuous integration builds.</li>
+</ul>
+
+<p>The work cannot be considered as complete unless all the criteria are verified.</p>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v1.0/contributor-guide/contributing.html">Contribute to Magento 2</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/contributor-guide/contributing_dod.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/contributor-guide/contributing_dod.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://magento.com/legal/licensing" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2015 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>

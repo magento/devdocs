@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Versioning Policy</title>
+	<title>Versioning policy</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -154,7 +154,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Versioning Policy</h1>
+		<h1 class="page-heading">Versioning policy</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/architecture/versioning.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -165,7 +165,7 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="verpol">Overview</h2>
+		<h2 id="verpol">Versioning policy overview</h2>
 
 <p>The Magento system and its components use the software (or “platform”) version to indicate the compatibility of changes in the implementation (on the code level). By comparing two versions of the same component, one can tell whether it has any <a href="/guides/v1.0/architecture/backward-compatibility.html">backwards-incompatible</a> changes in the public API or other significant code changes.</p>
 
@@ -202,7 +202,7 @@
 
 <p>For PHP code, compatibility of <code>@api</code> may be tracked on the level of structural elements (class signatures, interfaces, methods, etc.). For other source code, compatibility is tracked only on file level (for example, the file has been deleted or renamed).</p>
 
-<h2>Where versioning is used</h2>
+<h3>Where versioning is used</h3>
 <p>The software version can be found in the source code of any Magento component or bundle, inside the <code>composer.json</code> file.</p>
 
 <p>It can be declared as the version of the component:</p>
@@ -217,7 +217,7 @@
     <span class="nt">&quot;acme/bar&quot;</span><span class="p">:</span> <span class="s2">&quot;2.2.0&quot;</span>
 <span class="p">}</span></code></pre></div>
 
-<h2>Release types</h2>
+<h3>Release types</h3>
 <p>This section describes how exactly and when the software version numbers will be changed with releases.</p>
 
 <p>The software version will always change with any release of Magento source code.</p>
@@ -291,7 +291,7 @@
 </tbody>
 </table>
 
-<h3>Example Lifecycle</h3>
+<h3>Example lifecycle</h3>
 <p>The following steps demonstrate the packaging and backward compatibility story from the view of Magento, system integrators, and extension developers. This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.</p>
 <ol>
 <li>Start by cloning the master branch from github.
@@ -391,10 +391,11 @@
 <li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
 
 </ol>
-<h2>Related Topics</h2>
-<ul>
-  <li><a href="/guides/v1.0/architecture/backward-compatibility.html">Backward compatibility</a></li>
-</ul>
+
+<h3>Related topics</h3>
+<p><a href="/guides/v1.0/architecture/backward-compatibility.html">Backward compatibility</a></p>
+
+<p><a href="/guides/v1.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></p>
 
 
 
@@ -413,22 +414,6 @@
 		
 				
 				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
 					
 					
 					
@@ -454,57 +439,57 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v1.0/architecture/arch_whatis.html">Introduction</a></li>
+									
 								
-								
-							
-									<li class=""><span class="nav-header">Architecture</span></li>
-								
-								
-							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_whatis.html">What is Magento?</a></li>
+								
+								
+								
+								
+							
+							
 						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v1.0/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></li>
+									
+								
+								
+								
+							
+								
 								
 							
 									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_asmodsys.html">Magento as a modular system</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/stack-basics.html">Stack basics</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/arch_layers.html">Architecture layers</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/tech-stack.html">Technology stack</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_intro.html">Modules</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/back-compatibility.html">Backward compatibility</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_libraries.html">Libraries</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_themes.html">Themes</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch_translations.html">Language packages</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v1.0/architecture/versioning.html">Versioning Policy</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/backward-compatibility.html">Backward compatibility</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/arch-basics.html">Technology Stack</a></li>
+									<li class="level-2  active "><a href="/guides/v1.0/architecture/versioning.html">Versioning policy</a></li>
 						
 								
 								
@@ -524,71 +509,28 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v1.0/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									
 								
-								
-							
-									<li class=""><span class="nav-header">Behavior</span></li>
-								
-								
-							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/pricing.html">The pricing library</a></li>
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/present_layer.html">Presentation layer</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-calc.html">How Magento calculates prices</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/service_layer.html">Service layer</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/price-render.html">How Magento renders prices</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/domain_layer.html">Domain layer</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/behavior/xlate.html">Translation</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Modules</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/modules/mod_conventions.html">Module naming and location conventions</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></li>
 						
 								
 								
@@ -608,41 +550,32 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v1.0/architecture/archi_perspectives/LogicalView_intro.html">Logical View</a></li>
+									
 								
-								
-							
-									<li class=""><span class="nav-header">View library</span></li>
-								
-								
-							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/view-lib.html">View library</a></li>
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/components.html">Components</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/design-abstract.html">Design abstractions</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/composer.html">Composer</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-assets.html">Page assets</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/filesystem.html">Magento filesystem</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/page-type.html">Page types</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/framework.html">Magento Framework</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/xml-schema-layout.html">XML layouts and schemas</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/template-engine.html">Template engine</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/architecture/view/static-process.html">Static file processing</a></li>
+									<li class="level-2 "><a href="/guides/v1.0/architecture/archi_perspectives/third-party-libs.html">Third-Party libraries</a></li>
 						
 								
 								
@@ -654,6 +587,26 @@
 					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
