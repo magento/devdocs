@@ -22,14 +22,14 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
-The static view files deployment tool enables you to write static files to the Magento file system when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
+The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
 The term *static view file* refers to the following:
 
 *	"Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and CSS generated from LESS.
 *	"View" refers to presentation layer (from MVC).
 
-Static view files are located in the `<your Magento install dir>/pub/static` directory, and some are cached under the `<your Magento install dir>/var` directory as well.
+Static view files are located in the `<your Magento install dir>/pub/static` directory, and some are cached in the `<your Magento install dir>/var/view_preprocessed` directory as well.
 
 Static view files deployment is affected by Magento modes as follows:
 
@@ -40,7 +40,9 @@ Static view files deployment is affected by Magento modes as follows:
 
 <div class="bs-callout bs-callout-warning">
   <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must flush the old files to make sure you get all the changes for the new module.</p>
-  <p>Several commands support an optional parameter <code>--clear-static-content</code>, which does this for you. For example, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
+  <p>You can clear static files in any of the following ways:</p>
+  <ul><li>Manually by clearing the <code>pub/static</code> and <code>var/view_preprocessed</code> directories and subdirectories.</li>
+  <li>Using the Magento command line. Several commands support an optional parameter <code>--clear-static-content</code>, which clears the appropriate directories. For example, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</li></ul>
 </div>
 
 
