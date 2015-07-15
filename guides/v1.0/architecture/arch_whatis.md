@@ -25,12 +25,12 @@ The <i>Magento Framework</i> defines the fundamental concepts and rules for how 
 The Magento Framework is integrated with the following software layers: 
 
 
-* <b>Presentation/View layer</b> provides core business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize. Business logic rules, which define how data is retrieved from the database and manipulated, are stored in the Business Logic layer. 
+* <b>Presentation layer</b> provides both view components (layouts, blocks, templates) and controllers, which process commands to and from the user interface. The presentation layer can also include web API service bindings. (We include these service bindings in this discussion of the presentation layer model because  web API calls come in through HTTP just like browser requests, and can be made via AJAX calls from the user interface. Consequently, while web API calls can originate from an external application, they  can also originate from the user interface.)
 
-* <b>Service layer</b>, through the use of service contracts, defines the overall interface for interacting with business logic (for example, creating customers and getting tax rates). Service contracts simplify the process of replacing or modifying (via plugins) services
+* <b>Service layer</b>, through the use of service contracts, defines the overall interface for interacting with business logic (for example, creating customers and getting tax rates). Service contracts simplify the process of replacing or modifying (via plugins) services.
 
 
-* <b>Domain layers</b> provide core business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize. Business logic rules, which define how data is retrieved from the database and manipulated, are stored in the Business Logic layer
+* <b>Domain layer</b> provides core business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize. Business logic rules, which define how data is retrieved from the database and manipulated, are stored in the Business Logic layer.
 
  
  <h3>Ease of extensibility</h3>
