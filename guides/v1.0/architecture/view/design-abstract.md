@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: View library
 title: Design abstractions
 menu_title: Design abstractions
-menu_order: 2
+menu_order: 
 github_link: architecture/view/design-abstract.md
 ---
 

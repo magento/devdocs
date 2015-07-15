@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: View library
 title: Static file processing
 menu_title: Static file processing
-menu_order: 8
+menu_order: 
 github_link: architecture/view/static-process.md
 ---
 

@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: View library
 title: XML layouts and schemas
 menu_title: XML layouts and schemas
-menu_order: 4
+menu_order: 
 github_link: architecture/view/xml-schema-layout.md
 ---
 

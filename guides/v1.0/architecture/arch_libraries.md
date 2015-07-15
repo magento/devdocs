@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
+group: 
 subgroup: Architecture
 title: Libraries
 menu_title: Libraries
-menu_order: 5
+menu_order: 
 github_link: architecture/arch_libraries.md
 ---
 
