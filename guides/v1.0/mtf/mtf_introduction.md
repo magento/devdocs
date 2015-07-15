@@ -1,14 +1,15 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Magento Testing Framework Guide
+subgroup: A_Introduction
 title: Introduction to Magento Testing Framework
 menu_title: INTRODUCTION
-menu_order: 1
-github_link: guides\v1.0\mtf\mtf_introduction.md
+menu_node: parent
+menu_order:
+github_link: guides/v1.0/mtf/mtf_introduction.md
 ---
 
-This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). With the Magento Testing Framework you can create and run functional tests that are designed to improve the quality of your Magento implementation and to make it easier to perform basic acceptance testing, smoke testing, regression testing.  MTF does not contain tests. All functional tests are within Magento application in `<magento_root>/dev/tests/functional/`.
+This guide provides instructions on installing and configuring the Magento Testing Framework (MTF). With the Magento Testing Framework you can create and run functional tests to make it easier to perform basic acceptance testing, smoke testing, regression testing, etc.  MTF does not contain tests. All functional tests are within Magento code in `<magento_root>/dev/tests/functional/`.
 
 MTF is an open source cross-platform solution (that is, does not depend on a specific operating system).
 
@@ -16,7 +17,7 @@ MTF enables you to quickly develop functional tests for the Magento application.
 
 You can run a single test independently, many tests together (that is, a test suite), or you can run all available tests.
 
-<h3 id="mtf_intro_extratools">What tools do I need to work with MTF?</h3>
+<h3 id="mtf_intro_extratools">What tools should I use to run tests with MTF?</h3>
 
 -   [PHPUnit][] (downloaded via composer during installation)
 
@@ -24,7 +25,8 @@ You can run a single test independently, many tests together (that is, a test su
 
 -   Web browser
 
-<h3 id="mtf_intro_mtf-output">What do I have as output working with MTF?</h3>
+<h3 id="mtf_intro_mtf-output">What do I have as output after running tests with MTF?
+</h3>
 
 -   Tested application
 
