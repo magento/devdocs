@@ -26,7 +26,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 This command enables you to back up:
 
 *	The Magento file system (excluding <code>var</code> and <code>pub/static</code> directories)
-*	The the <code>pub/media</code> directory
+*	The <code>pub/media</code> directory
 *	The Magento 2 database
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.

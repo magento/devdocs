@@ -131,17 +131,17 @@ section[role="main"] { ... }
 ...
    this.element.toggleClass('hidden');
 ...
-   this.options.hOffset = /&lt;li>calculation based on dimensions of some DOM elements within a widget */
+   this.options.hOffset = /* calculation based on dimensions of some DOM elements within a widget */
    this.element.find(this.options.myCustomElement).css({'margin-top', this.options.hOffset + 'px'})
 ...</pre>
 <p><b>Unacceptable JavaScript file</b></p>
 <pre>
 this.element.on('click', function() {
-if ($(this).is(':visible')) {
-$(this).css({ visibility: 'hidden' });
-} else {
-$(this).css({ visibility: 'visible' });
-}
+   if ($(this).is(':visible')) {
+      $(this).css({ visibility: 'hidden' });
+   } else {
+      $(this).css({ visibility: 'visible' });
+   }
 });
 </pre>
 
@@ -177,7 +177,7 @@ this.element.find('[data-action="delete"]').on( ... );
 this.element.on('click', '[data-action="delete"]', function() { ... });
 ...
 // Globally initialized widgets
-$('[data-role="tooltip]').tooltip();  //Globally for ALL tooltip elements
+$('[data-role="tooltip]').tooltip();  // Globally for ALL tooltip elements
 ...
 </pre>
 <p><b>Unacceptable PHTML file</b></p>
@@ -218,7 +218,7 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 ...
 public function getSelectorOptions()
 {
-return $selectorOptions;
+    return $selectorOptions;
 }
 ...
 </pre>
@@ -233,7 +233,7 @@ return $selectorOptions;
 ...
 public function getAfterElementHtml()
 {
-return &lt;&lt;&lt;HTML
+    return &lt;&lt;&lt;HTML
 &lt;script>
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 &lt;/script>
@@ -252,20 +252,20 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <p><b>Acceptable PHP file</b></p>
 <pre>...
 $fieldset->addField('new_category_parent', 'text', array(
-'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-'required' => true,
-'class'    => 'parent category',
+    'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+    'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+    'required' => true,
+    'class'    => 'parent category',
 ));
 ...
 </pre>
 <p><b>Unacceptable PHP file</b></p>
 <pre>...
 $fieldset->addField('new_category_parent', 'text', array(
-'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
-'required' => true,
-'style'    => 'border: 1px solid #ccc;',
+    'label'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+    'title'    => Mage::helper('Mage_Catalog_Helper_Data')->__('Parent Category'),
+    'required' => true,
+    'style'    => 'border: 1px solid #ccc;',
 ));
 ...
 </pre>
@@ -278,7 +278,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 ...
 public function getSelectorOptions()
 {
-return $selectorOptions;
+    return $selectorOptions;
 }
 ...
 </pre>
@@ -293,7 +293,7 @@ return $selectorOptions;
 ...
 public function getAfterElementHtml()
 {
-return &lt;&lt;&lt;HTML
+    return &lt;&lt;&lt;HTML
 &lt;script>
 jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 &lt;/script>
@@ -309,20 +309,27 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <li>Reduces the number of files to be modified.</li></ul>
 <p><b>Acceptable PHP file</b></p>
 <pre>
-public function getAttributeName($element) {
-return ($element->getExtType() === 'multiple') ? $element->getId() . '_checkbox' : NULL;
+public function getAttributeName($element)
+{
+    return ($element->getExtType() === 'multiple') ? $element->getId() . '_checkbox' : NULL;
 }
-public function getAttributeId($element) {
-return $element->getId();
+
+public function getAttributeId($element)
+{
+    return $element->getId();
 }
 </pre>
 <p><b>Acceptable PHTML file</b></p>
 <pre>
 &lt;span class="attribute-change-checkbox">
 &lt;label>
-&lt;input type="checkbox" &lt;?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element).'"' : NULL; ?> data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />&lt;?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>&lt;/label>
+   &lt;input type="checkbox" 
+      &lt;?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
+      data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />
+   &lt;?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
+&lt;/label>
 &lt;/span>
-&lt;!--jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements.
+&lt;!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 </pre>
 
 
