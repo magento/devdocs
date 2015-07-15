@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Module naming and location conventions</title>
+	<title>PHP Developer Guide Introduction</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v1.0/architecture/modules/mod_conventions.html">
+	<link rel="canonical" href="//guides/v1.0/extension-dev-guide/introduction.html">
 
 </head>	
 <body>
@@ -155,9 +155,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Module naming and location conventions</h1>
+		<h1 class="page-heading">PHP Developer Guide Introduction</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/architecture/modules/mod_conventions.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v1.0/extension-dev-guide/introduction.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,48 +166,42 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="m2arch-module-conventions-overview"> Overview</h2>
+		<p>This guide is for developers that or are building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.</p>
 
-<p>When developing or working with modules, be aware of Magento standards and conventions, such as naming conventions and the location of modules within the file system.</p>
+<h2 id="magento-is-made-up-of-components">Magento is made up of components:</h2>
 
-<p>Be sure to research additional Magento conventions, beyond those applicable to modules. For  more information, see <a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a>.</p>
-
-<h2 id="m2arch-module-conventions-location"> Module location conventions</h2>
-
-<p>The following table shows the standard locating within the Magento file system for specific entities.</p>
-
-<table>
-	<tbody>
-		<tr>
-			<th>Entity</th>
-			<th>Location</th>
-		</tr>
-		<tr>
-			<td>Code base of your custom module</td>
-			<td><p><code>&lt;your Magento install dir&gt;/app/code/&lt;Vendor&gt;/&lt;Module&gt;</code></p></td>
-		</tr>
-		<tr>
-			<td colspan="1">Your custom theme files</td>
-			<td colspan="1"><code>&lt;your Magento install dir&gt;/app/design/&lt;Module&gt;/&lt;theme&gt;</code></td>
-		</tr>
-		<tr><td colspan="1">If you want to use a library</td>
-			<td colspan="1"><code>&lt;your Magento install dir&gt;/lib/&lt;Vendor_Library&gt;</code></td>
-		</tr>
-	</tbody>
-</table>
-
-<h2 id="m2arch-module-conventions-location">Module naming convention</h2>
-
-<p>Several modules in Magento have composite names. For example, when a name consists of several words with capitalized first letters. Because a module alias is in lowercase, there is no simple solution to convert module alias to module name. To solve this issue setup class contains correspondence array of modules with composite names and this array is used in class name generation.</p>
-
-<p>Example: <code>catalogsearch</code> is the module alias of the <code>Magento_CatalogSearch</code> module.</p>
-
-<h2 id="m2arch-module-related"> Related topics</h2>
 <ul>
-  <li><a href="/guides/v1.0/architecture/modules/mod_depend.html">Module dependencies</a></li>
-  <li><a href="/guides/v1.0/architecture/modules/mod_relationships.html">Module relationships</a></li>
-  <li><a href="/guides/v1.0/architecture/modules/mod_and_areas.html">Modules and areas</a></li>
+  <li>Modules</li>
+  <li>Themes</li>
+  <li>Language packages</li>
 </ul>
+
+<p>A Magento <em>module</em> is a discrete chunk of code that accomplishes a particular business function or handles a Magento feature. A module is typically a collection <code>.php</code> and <code>.xml</code> files, and the bulk of your work in modules will be in these files.  Modules are interactive with each other. A module also contains any user interface required for a user’s interaction with the module, and any application interfaces that another module or code chunk might call, if you decide to expose any application interface to other Magento modules.</p>
+
+<p>Themes can be applied to the module to change its appearance. So when you are building a module, you may also touch themes and language packages.</p>
+
+<p>A <em>package</em> is a module that is wrapped up in a distributable form. Usually you will use Composer to do this.</p>
+
+<p>An <em>extension</em> is a module or modules that are packaged for sale on Magento Connect.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
+</div>
+
+<h2 id="magento-module-example">Magento module example</h2>
+<p>Modules are declared in the module.xml file. Here is a minimal example: </p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+        <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Magento_SampleMinimal&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;2.0.0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/module&gt;</span>
+    <span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<h2 id="whats-next">What’s Next?</h2>
+
+<p>Get your feet wet quickly and build <a href="/guides/v1.0/extension-dev-guide/build_a_simple_module.html">a simple Magento module</a>.</p>
+
+<p>Or jump right in and use <a href="/guides/v1.0/extension-dev-guide/worksheet.html">a worksheet</a> that steps you through a complete best practice method to build, test, and package a Magento module.</p>
 
 
 
@@ -383,8 +377,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/architecture/modules/mod_conventions.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/architecture/modules/mod_conventions.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/introduction.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/introduction.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

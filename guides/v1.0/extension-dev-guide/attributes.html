@@ -88,7 +88,8 @@
             <ul class="menu nav">
                
                <li class="first leaf"><a href="/guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
-               <li class="leaf"><a href="/guides/v1.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v1.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v1.0/mtf/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <li class="leaf"><a href="/guides/v1.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
             </ul>
          </li>
@@ -295,11 +296,11 @@
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;stock_item&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span><span class="nt">&gt;</span>
-         <span class="nt">&lt;join</span> <span class="na">reference_table=</span><span class="s">&quot;cataloginventory_stock_item&quot;</span> <span class="na">reference_field=</span><span class="s">&quot;product_id&quot;</span> <span class="na">join_on_field=</span><span class="s">&quot;entity_id&quot;</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;field&gt;</span>qty<span class="nt">&lt;/field&gt;</span>
-            <span class="nt">&lt;/join&gt;</span>
-        <span class="nt">&lt;/attribute&gt;</span>
-   <span class="nt">&lt;/extension_attributes&gt;</span></code></pre></div>
+        <span class="nt">&lt;join</span> <span class="na">reference_table=</span><span class="s">&quot;cataloginventory_stock_item&quot;</span> <span class="na">reference_field=</span><span class="s">&quot;product_id&quot;</span> <span class="na">join_on_field=</span><span class="s">&quot;entity_id&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;field&gt;</span>qty<span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;/join&gt;</span>
+    <span class="nt">&lt;/attribute&gt;</span>
+<span class="nt">&lt;/extension_attributes&gt;</span></code></pre></div>
 
 <p>When <code>getList()</code> is called, it returns a list of <code>ProductInterface</code>s. When it does this, the code populates the <code>stock_item</code> with a joined operation in which the <code>StockItemInterface</code>’s <code>qty</code> property come from the <code>cataloginventory_stock_item</code> table where the <code>Product</code>’s <code>entity_Id</code> is joined with the <code>cataloginventory_stock_item.product_id</code> column. </p>
 
@@ -337,19 +338,19 @@
 <p>However, an authenticated user with the permission <code>Magento_CatalogInventory::cataloginventory</code> receives the additional <code>stock_item</code> field:</p>
 
 <pre><code>{
-   "sku": “tshirt1”,
-   “price”: “20.00”,
-   “description”: “New JSmith design”,
-        “extension_attributes”: {
-        “logo size”: “small”,
-       “stock_item” : {
-            “status” : “in_stock”
-            “quantity”: 70
-             }
-      },
-      “custom_attributes”: {
-        “artist”: “James Smith”
-      }
+  "sku": “tshirt1”,
+  “price”: “20.00”,
+  “description”: “New JSmith design”,
+  “extension_attributes”: {
+    “logo size”: “small”,
+    “stock_item” : {
+      “status” : “in_stock”
+      “quantity”: 70
+    }
+  },
+  “custom_attributes”: {
+    “artist”: “James Smith”
+  }
 }
 </code></pre>
 
@@ -379,6 +380,22 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -401,14 +418,6 @@
 								
 							
 								
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/extension-dev-guide/Contribute_edg.html">Contribute to Magento DevDocs!</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v1.0/template.html">template (generic)</a></li>
-						
 								
 								
 								
@@ -574,22 +583,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			
