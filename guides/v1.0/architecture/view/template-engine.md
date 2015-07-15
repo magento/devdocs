@@ -36,7 +36,7 @@ The sequence of execution of <code>toHtml()</code> depends on whether the HTML c
 
 	1.	Perform the preparatory tasks defined <code>in _beforeToHtml()</code>.
 
-	2.	Generate the HTML content. Here is where the template engine is invoked for blocks with templates: if a block class is inherited from the <code>Template</code> class, and has a predefined or dynamically obtained  template name, then generating the HTML content is performed by calling <code>Template:: fetchView()</code> which initiates the template engine, calls the <code>render()</code> method, and returns the HTML content for subsequent processing by <code>AbstractBlock::toHtml()</code>.
+	2.	Generate the HTML content. Here is where the template engine is invoked for blocks with templates: if a block class is inherited from the <code>Template</code> class, and has a predefined or dynamically obtained  template name, then generating the HTML content is performed by calling <code>Template::fetchView()</code> which initiates the template engine, calls the <code>render()</code> method, and returns the HTML content for subsequent processing by <code>AbstractBlock::toHtml()</code>.
 
 	3.	Cache the generated HTML.
 
