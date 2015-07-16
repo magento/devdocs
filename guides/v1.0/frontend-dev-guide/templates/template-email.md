@@ -334,7 +334,7 @@ In order to support the translation of content, all strings in emails are output
     {% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
-x
+
 <h2 id="supported-clients">Supported email clients and devices</h2>
 
 We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
