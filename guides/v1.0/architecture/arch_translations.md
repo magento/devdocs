@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Architecture
+group: 
+subgroup: 
 title: Language packages
 menu_title: Language packages
-menu_order: 7
+menu_order: 
 github_link: architecture/arch_translations.md
 ---
 

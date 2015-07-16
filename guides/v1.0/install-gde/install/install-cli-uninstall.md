@@ -64,6 +64,10 @@ To update the Magento software:
 
 		php bin/magento setup:upgrade
 
+5.	Clear `var` directory contents:
+
+		rm -rf var/generation/* var/cache/*
+
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
 
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>

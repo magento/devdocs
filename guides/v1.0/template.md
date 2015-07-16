@@ -1,6 +1,6 @@
 ---
 layout: default
-group: extension-dev-guide
+group: 
 subgroup: A_Introduction
 title: template (generic)
 menu_title: template (generic)

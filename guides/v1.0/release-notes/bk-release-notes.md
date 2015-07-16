@@ -25,9 +25,17 @@ features of all Magento 2 releases starting with Developer Beta in December 2014
     *   Easily extend existing service with additional data objects
     *   No generated code
 *   Support for Varnish 4
-*   Services can be exposed as a web API supporting both SOAP & REST
-*   The version is part of the URL
-*   Extended attribute objects are marked as optional in WSDL
+*   Services can be exposed as a <a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">web API</a> supporting both SOAP and REST
+*   For SOAP:
+    *   The service name used in the WSDL endpoint URL is derived from the Service interface name. We use the following rules:
+    *   CamelCase is used for service naming.
+    *   Omit `Service`, the `Magento` prefix , and the `Interface` suffix
+    *   If the service name is the same as a module name, the module name is omitted (for example, if there is Customer service interface in the Customer module, the word `customer` is used in the service name only once).
+    Examples of service naming changes follow:
+        *   `\Magento\Customer\Service\V1\CustomerInterface` is now `customerV1`
+        *   `\Magento\Customer\Service\V1\CustomerAccountServiceInterface` is now `customerCustomerAccountServiceV1`
+        *   `\Enterprise\Customer\Service\V3\Customer\AddressInterface` is now `enterpriseCustomerAddressV3`
+    *   Extended attribute objects are marked as optional in WSDL
 *   <a href="{{ site.gdeurl }}release-notes/changes.html#change-devrc-unit">Unit tests</a> are now located in the module's directory
 *   Backward compatibility policy; marked Public APIs coming next quarter
     *   Follows Semantic Versioning 2.0.0
