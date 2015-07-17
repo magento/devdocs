@@ -51,17 +51,6 @@ Magento 2 has the following cache types:
 	<p>Clean or flush this cache type after modifying the view layer.</p></td>
     </tr>
     <tr>
-      <td><p>View files fallback</p></td>
-      <td><p>view_files_fallback</p></td>
-      <td><p>Paths to view files per theme and application area (adminhtml or frontend).</p>
-	<p>Clean or flush this cache type after you add or remove a static view file or theme.</p></td>
-    </tr>
-    <tr>
-      <td><p>View files pre-processing</p></td>
-      <td><p>view_files_preprocessing</p></td>
-      <td><p>Similar to the view files fallback cache except it takes pre-processing into account. Stores path data per view file.</p></td>
-    </tr>
-    <tr>
       <td><p>Collections data</p></td>
       <td><p>collections</p></td>
       <td><p>Results of database queries.</p>
@@ -126,8 +115,6 @@ A sample follows:
                         config: 1
                         layout: 1
                     block_html: 1
-           view_files_fallback: 1
-      view_files_preprocessing: 1
                    collections: 1
                         db_ddl: 1
                            eav: 1
@@ -206,8 +193,6 @@ Sample result:
 	config
 	layout
 	block_html
-	view_files_fallback
-	view_files_preprocessing
 	collections
 	db_ddl
 	eav

@@ -3,7 +3,7 @@ layout: default
 group: Contributor Guide
 subgroup: Contributor Guide
 title: Contributor Guide
-menu_title: Contribute to Magento 2 code
+menu_title: Contribute to Magento 2
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing.md
@@ -43,6 +43,7 @@ Often when the Magento 2 team works on reviewing the suggested changes, we will 
 <h2 id="requirements">Contribution requirements</h2>
 
 1. Contributions must adhere to <a href="{{ site.gdeurl }}coding-standards/bk-coding-standards.html" target="_blank">Magento coding standards</a>.
+2. Refer to the Magento development team's <a href="{{ site.gdeurl }}/contributor-guide/contributing_dod.html">Definition of Done</a>. We use these guidelines internally to ensure that we deliver well-tested, well-documented, solid code, and we encourage you to as well!
 2. Pull requests (PRs) must be accompanied by a meaningful description of their purpose. Comprehensive descriptions increase the chances that a pull request is merged quickly and without additional clarification requests.
 3. Commits must be accompanied by meaningful commit messages.
 4. PRs that include bug fixing must be accompanied by a step-by-step description of how to reproduce the bug.

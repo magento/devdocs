@@ -12,8 +12,9 @@ github_link: install-gde/install/install-cli-subcommands-enable.md
   
 #### Contents
 
-*	<a href="#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
+*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-cli-subcommands-enable-disable-prereq">Prerequisites</a>
+*	<a href="#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
 *	<a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>
 
 <h2 id="instgde-cli-before">First steps</h2>

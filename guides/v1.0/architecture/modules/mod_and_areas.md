@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Modules
+group: 
+subgroup: 
 title: Modules and areas
 menu_title: Modules and areas
-menu_order: 4
+menu_order:
 github_link: architecture/modules/mod_and_areas.md
 ---
 

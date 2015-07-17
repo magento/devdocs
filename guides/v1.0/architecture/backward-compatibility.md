@@ -1,10 +1,10 @@
 ---
 layout: default
-group: arch-guide
-subgroup: Architecture
+group: 
+subgroup: 
 title: Backward compatibility
 menu_title: Backward compatibility
-menu_order: 9
+menu_order: 
 github_link: extension-dev-guide/backward-compatibility.md
 ---
 <h2>Backward compatibility</h2>

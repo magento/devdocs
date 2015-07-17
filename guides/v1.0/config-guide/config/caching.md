@@ -34,8 +34,6 @@ The cache configuration is an associative array similar to the following:
     'config' => 1,
     'layout' => 1,
     'block_html' => 1,
-    'view_files_fallback' => 1,
-    'view_files_preprocessing' => 1,
     'collections' => 1,
     'db_ddl' => 1,
     'eav' => 1,

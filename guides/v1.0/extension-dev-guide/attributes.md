@@ -17,17 +17,26 @@ Magento provides two types of attributes that integrators can use to extend the 
 
 * Extension attributes. Extension attributes are new in Magento 2. They are used to extend functionality and often use more complex data types than custom attributes. These attributes do not appear on the GUI.
 
-
-
 <h2 id="custom">EAV and custom attributes</h2>
 
 `CustomAttributesDataInterface` defines the methods that are called to get and set custom attributes, including `getCustomAttributes()`.
 
 A module has a set of built-in attributes that are always available. The `Catalog` module has several attributes that are defined as EAV attributes, but are treated as built-in attributes. These attributes include:
 
-* attribute_set_id* created_at
+* attribute_set_id
+* created_at
 * group_price
-* media_gallery* name* price* sku* status* store_id* tier_price* type_id* updated_at* visibility* weight
+* media_gallery
+* name
+* price
+* sku
+* status
+* store_id
+* tier_price
+* type_id
+* updated_at
+* visibility
+* weight
 
 In this case, when `getCustomAttributes()` is called, the system returns only custom attributes that are not in this list.
 
@@ -131,11 +140,11 @@ In the following example, an attribute named `quoteApiTestAttribute` of type `Us
 {% highlight XML %}
 <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
     <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
-         <join reference_table="cataloginventory_stock_item" reference_field="product_id" join_on_field="entity_id">
-                <field>qty</field>
-            </join>
-        </attribute>
-   </extension_attributes>
+        <join reference_table="cataloginventory_stock_item" reference_field="product_id" join_on_field="entity_id">
+            <field>qty</field>
+        </join>
+    </attribute>
+</extension_attributes>
 {% endhighlight %}
 
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column. 
@@ -160,39 +169,35 @@ The following [code sample](https://github.com/magento/magento2/blob/develop/app
 
 In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<MAGENTO_BASE_URL>/rest/V1/products/<sku>` request will receive product information similar to the following:
 
-<pre>
-{
-    "sku": “tshirt1”,
-    “price”: “20.00”,
-    “description”: “New JSmith design”,
-    “extension_attributes”: {
+    {
+      "sku": “tshirt1”,
+      “price”: “20.00”,
+      “description”: “New JSmith design”,
+      “extension_attributes”: {
         “logo size”: “small”
-    },
-    “custom_attributes”: {
+      },
+      “custom_attributes”: {
         “artist”: “James Smith”
+      }
     }
-}
-</pre>
 
 However, an authenticated user with the permission `Magento_CatalogInventory::cataloginventory` receives the additional `stock_item` field:
 
-<pre>
-{
-   "sku": “tshirt1”,
-   “price”: “20.00”,
-   “description”: “New JSmith design”,
-    “extension_attributes”: {
+    {
+      "sku": “tshirt1”,
+      “price”: “20.00”,
+      “description”: “New JSmith design”,
+      “extension_attributes”: {
         “logo size”: “small”,
         “stock_item” : {
-            “status” : “in_stock”
-            “quantity”: 70
-             }
-         },
-        “custom_attributes”: {
-          “artist”: “James Smith”
+          “status” : “in_stock”
+          “quantity”: 70
         }
-}
-</pre>
+      },
+      “custom_attributes”: {
+        “artist”: “James Smith”
+      }
+    }
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
 
