@@ -19,10 +19,10 @@ See one of the following sections:
 
 See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you're updating the Magento software from version 0.42.0-beta10 or earlier to 0.42.0-beta11 or later, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-updatebeta11">this section</a>.</p></span>
+<div class="bs-callout bs-callout-warning">
+    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
 </div>
+
 
 <h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
 
@@ -107,10 +107,13 @@ The following table discusses the meanings of installation option names and valu
 		</tr>
 		<tr>
 		<td><p>--base-url</p></td>
-		<td><p>Base URL to use to access your Magento Admin and storefront in the format <code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.</p>
+		<td><p>Base URL to use to access your Magento Admin and storefront in any of the following formats:</p>
+		<ul><li><code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.</p>
 		<p><strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.</p>
 		<p><code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.</p>
-		<p>To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir>/</code> or <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</p>
+		<p>To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir>/</code> or <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</p></li>
+		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the host name <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>
+
 		</td>
 		<td><p>Yes</p></td>
 	</tr>

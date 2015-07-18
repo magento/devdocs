@@ -140,11 +140,11 @@ In the following example, an attribute named `quoteApiTestAttribute` of type `Us
 {% highlight XML %}
 <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
     <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
-         <join reference_table="cataloginventory_stock_item" reference_field="product_id" join_on_field="entity_id">
-                <field>qty</field>
-            </join>
-        </attribute>
-   </extension_attributes>
+        <join reference_table="cataloginventory_stock_item" reference_field="product_id" join_on_field="entity_id">
+            <field>qty</field>
+        </join>
+    </attribute>
+</extension_attributes>
 {% endhighlight %}
 
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property come from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column. 
@@ -184,19 +184,19 @@ In this example, the `stock_item` attribute is restricted to only the users who 
 However, an authenticated user with the permission `Magento_CatalogInventory::cataloginventory` receives the additional `stock_item` field:
 
     {
-       "sku": “tshirt1”,
-       “price”: “20.00”,
-       “description”: “New JSmith design”,
-            “extension_attributes”: {
-            “logo size”: “small”,
-           “stock_item” : {
-                “status” : “in_stock”
-                “quantity”: 70
-                 }
-          },
-          “custom_attributes”: {
-            “artist”: “James Smith”
-          }
+      "sku": “tshirt1”,
+      “price”: “20.00”,
+      “description”: “New JSmith design”,
+      “extension_attributes”: {
+        “logo size”: “small”,
+        “stock_item” : {
+          “status” : “in_stock”
+          “quantity”: 70
+        }
+      },
+      “custom_attributes”: {
+        “artist”: “James Smith”
+      }
     }
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.

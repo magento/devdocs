@@ -1,9 +1,10 @@
 ---
 layout: default
 group: arch-guide
-subgroup: Architecture
+subgroup: A_Introduction
 title: What is Magento?
-menu_title: What is Magento?
+menu_title: Introduction
+menu_node: parent
 menu_order: 1
 github_link: architecture/arch_whatis.md
 ---
@@ -24,12 +25,12 @@ The <i>Magento Framework</i> defines the fundamental concepts and rules for how 
 The Magento Framework is integrated with the following software layers: 
 
 
-* <b>Presentation/View layer</b> provides core business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize. Business logic rules, which define how data is retrieved from the database and manipulated, are stored in the Business Logic layer. 
+* <b>Presentation layer</b> provides both view components (layouts, blocks, templates) and controllers, which process commands to and from the user interface. The presentation layer can also include web API service bindings. (We include these service bindings in this discussion of the presentation layer model because  web API calls come in through HTTP just like browser requests, and can be made via AJAX calls from the user interface. Consequently, while web API calls can originate from an external application, they  can also originate from the user interface.)
 
-* <b>Service layer</b>, through the use of service contracts, defines the overall interface for interacting with business logic (for example, creating customers and getting tax rates). Service contracts simplify the process of replacing or modifying (via plugins) services
+* <b>Service layer</b>, through the use of service contracts, defines the overall interface for interacting with business logic (for example, creating customers and getting tax rates). Service contracts simplify the process of replacing or modifying (via plugins) services.
 
 
-* <b>Domain layers</b> provide core business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize. Business logic rules, which define how data is retrieved from the database and manipulated, are stored in the Business Logic layer
+* <b>Domain layer</b> provides core business logic and functionality in base classes, resource models, and data access capabilities that you can extend and customize. Business logic rules, which define how data is retrieved from the database and manipulated, are stored in the Business Logic layer.
 
  
  <h3>Ease of extensibility</h3>
@@ -50,7 +51,7 @@ Modules form the basic functional unit of a Magento system. Magento modules cont
 Extend and customize the core components of your Magento store's PHP-, HTML5- and CSS3- based default themes and language packages to precisely control your site’s behavior and look-and-feel.
  
  <h3>Strong stack of open-source technologies</h3>
-The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.For a comprehensive description of the Magento technology stack, see Magento Technology Stack. 
+The Magento tech stack supplies a robust toolset for deploying large, distributed storefronts and for customizing the product for your particular needs. The Magento stack includes popular open-source technologies such as the Linux OS, Apache/Nginx server, MySQL, Zend, and Composer.For a comprehensive description of the Magento technology stack, see <a href="{{ site.gdeurl }}architecture/tech-stack.html">Magento Technology Stack</a>. 
 
 With Magento 2.0, the Magento product architecture continues its evolution toward increased modularity.
 
@@ -62,7 +63,7 @@ With Magento 2.0, the Magento product architecture continues its evolution towar
 </div>
 
 
-<h2 id="m2arch-related">Related topics</h2>
+<h3 id="m2arch-related">Related topics</h3>
 
 * <a href="{{ site.gdeurl }}architecture/arch_asmodsys.html">Magento as a modular system</a>
 
