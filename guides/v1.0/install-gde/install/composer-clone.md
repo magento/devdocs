@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install_pre
-subgroup: Q_Pre-installation
+subgroup: T_Developer
 title: Install Composer and clone the Magento repository
 menu_title: Install Composer and clone the Magento repository
 menu_node: 
-menu_order: 2
+menu_order: 10
 github_link: install-gde/install/composer-clone.md
 ---
 

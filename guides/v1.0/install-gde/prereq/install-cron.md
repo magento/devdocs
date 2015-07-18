@@ -1,10 +1,10 @@
 ---
 layout: default
 group: install_pre
-subgroup: Prerequisites
+subgroup: R_first
 title: Configure the installation and updater cron jobs
 menu_title: Configure the installation and updater cron jobs
-menu_order: 10
+menu_order: 5
 github_link: install-gde/prereq/install-cron.md
 ---
 

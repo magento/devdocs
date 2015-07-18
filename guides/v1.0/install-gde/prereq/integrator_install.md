@@ -1,11 +1,12 @@
 ---
 layout: default
 group: install_pre
-subgroup: R_first
-title: Install the Magento updater
-menu_title: Install the Magento updater
+subgroup: S_SI
+title: System Integrator installation first steps
+menu_title: System Integrator installation first steps
 menu_order: 1
-github_link: install-gde/prereq/updater.md
+menu_node: parent
+github_link: install-gde/prereq/integrator_install.md
 ---
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
 <!-- Referring file: TBD owned by Ogres -->
