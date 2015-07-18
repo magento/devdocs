@@ -115,7 +115,7 @@ class Magentotutorial_Weblog_Model_Resource_Setup extends Mage_Core_Model_Resour
 
 <p>Create the following file at the following location</p>
 
-<p>File: app/code/local/Magentotutorial/Weblog/sql/weblog_setup/mysql4-install-0.1.0.php</p>
+<p>File: <tt>app/code/local/Magentotutorial/Weblog/sql/weblog_setup/mysql4-install-0.1.0.php</tt></p>
 <pre>
 echo 'Running This Upgrade: '.get_class($this)."\n &lt;br /&gt; \n";
 die("Exit for now");
@@ -212,7 +212,7 @@ Exit for now
 
 <pre>DELETE from core_resource where code = 'weblog_setup';</pre>
 
-<p>We'll also want to drop the table we manually created in the <a href="magento-for-dev-part-5-magento-models-and-orm-basics">ORM article</a>.  </p>
+<p>We'll also want to drop the table we manually created in the <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">ORM article</a>.  </p>
 
 <pre>DROP TABLE blog_posts;</pre>
 
@@ -286,7 +286,7 @@ $installer-&gt;endSetup();
 
 <p>In order to make setup scripts cross-database compatible, Magento offers a DDL (Data Definition Language) Table object. Here is an alternative version of our setup script that would run on any supported RDBMS.</p>
 
-<p>File: app/code/local/Magentotutorial/Weblog/sql/weblog_setup/mysql4-install-0.1.0.php</p>
+<p>File: <code>app/code/local/Magentotutorial/Weblog/sql/weblog_setup/mysql4-install-0.1.0.php</code></p>
 <pre>
 $installer = $this;
 $installer->startSetup();

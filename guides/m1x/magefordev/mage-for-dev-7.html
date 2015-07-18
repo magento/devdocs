@@ -109,9 +109,9 @@
 
 <pre>http://example.com/complexworld</pre>
 
-<p>If you're unsure how to do this, be sure you've mastered the concepts in the <a href="magento-for-dev-part-1-introduction-to-magento">previous tutorials</a>.</p>
+<p>If you're unsure how to do this, be sure you've mastered the concepts in the <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-7.html">previous tutorials</a>.</p>
 
-<p>Next, we'll create a new Model named Weblogeav. Remember, it's the <strong>Resource</strong> that's considered EAV.  We design and configure our Model the exact same way, so let's configure a Model similar to one <a href="magento-for-dev-part-5-magento-models-and-orm-basics">we created in the first ORM article</a>.</p>
+<p>Next, we'll create a new Model named Weblogeav. Remember, it's the <strong>Resource</strong> that's considered EAV.  We design and configure our Model the exact same way, so let's configure a Model similar to one <a href="{{ site.m1xgdeurl }}magefordev/mage-for-dev-5.html">we created in the first ORM article</a>.</p>
 
 <pre>
 &lt;global>
@@ -182,7 +182,7 @@ failed to open stream: No such file or directory  in /Users/username/Sites/magen
 <p>we'd know our Model was misconfigured, as Magento was looking for the Model in <tt>code/core/Mage</tt> instead of <tt>code/local/Magentotutorial</tt>.</p>
 
 <p>So, lets create our Model class</p>
-<p>File: app/code/local/Magentotutorial/Complexworld/Model/Eavblogpost.php:
+<p>File: <code>app/code/local/Magentotutorial/Complexworld/Model/Eavblogpost.php</code>:
 <pre>
 class Magentotutorial_Complexworld_Model_Eavblogpost extends Mage_Core_Model_Abstract {
     protected function _construct()
