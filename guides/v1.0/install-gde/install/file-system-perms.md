@@ -9,6 +9,8 @@ menu_order: 1
 github_link: install-gde/install/file-system-perms.md
 ---
 
+<!-- Being used as a redirect from the old wiki. Create a temporary redirect from guides/v2.0 > guides/v1.0 until 2.0 is available -->
+
 After you get the Magento software, set ownership of all Magento files and directories and make sure they are writable by that user.
 
 Typically, Magento files and directories should be owned by the web server user; however, the choice of user is up to you. The important thing is that the owner of the Magento file system must have write access to all files and directories.
