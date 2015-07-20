@@ -6,7 +6,7 @@ title: GitHub API rate limit
 menu_title: GitHub API rate limit
 menu_node: 
 menu_order: 199
-github_link: install-gde/trouble/tshoot_rate-limit.md
+github_link: install-gde/trouble/trouble/git/tshoot_rate-limit.md
 ---
 
 <h2 id="install-trouble-pdo">You reach the GitHub API rate limit</h2>

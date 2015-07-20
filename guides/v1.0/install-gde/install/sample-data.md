@@ -42,7 +42,7 @@ This section discusses how to install optional sample data *before* you install 
 
 Continue with one of the following topics:
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Install the Magento software using the command line</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
 
 

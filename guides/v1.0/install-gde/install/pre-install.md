@@ -1,9 +1,9 @@
 ---
 layout: default
-group: install
+group: install_pre
 subgroup: Q_Pre-installation
-title: Pre-installation
-menu_title: Pre-installation
+title: Ways to install the Magento software
+menu_title: Ways to install the Magento software
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/pre-install.md

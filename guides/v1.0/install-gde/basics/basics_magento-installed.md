@@ -5,7 +5,7 @@ subgroup: Getting Started
 title: Is the Magento software installed already?
 menu_title: Is the Magento software installed already?
 menu_node: 
-menu_order: 1
+menu_order: 2
 github_link: install-gde/basics/basics_magento-installed.md
 ---
 

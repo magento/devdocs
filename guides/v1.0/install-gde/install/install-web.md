@@ -1,9 +1,9 @@
 ---
 layout: default 
-group: install 
-subgroup: S_Installation
-title: Setup Wizard installation
-menu_title: Setup Wizard installation
+group: install_wiz 
+subgroup: A_Introduction
+title: Introduction to the Setup Wizard
+menu_title: Introduction to the Setup Wizard
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/install-web.md
@@ -17,15 +17,15 @@ github_link: install-gde/install/install-web.md
 
 See one of the following sections:
 
+*	<a href="#instgde-install-over">What is the Magento Setup Wizard?</a>
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-magento-web">Running the Setup Wizard</a>
 *	<a href="#instgde-install-reinstall">Reinstalling the Magento software</a>
 
 This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
-</div>
+<h2 id="instgde-install-over">What is the Magento Setup Wizard?</a>
+TODO, talk about everything the Setup Wizard does. Point back to CLI installation.
 
 <h2 id="instgde-install-prereq">Before you start your installation</h2>
 

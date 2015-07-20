@@ -6,7 +6,7 @@ title: Update, reinstall, uninstall Magento
 menu_title: Update, reinstall, uninstall Magento
 menu_node: 
 menu_order: 5
-github_link: install-gde/install/install-cli-uninstall.md
+github_link: install-gde/install/cli/install-cli-uninstall.md
 ---
 
   
@@ -23,10 +23,10 @@ See one of the following sections:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-install-magento-prereq">Prerequisites</h2>
-Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>.
+Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
 <h2 id="instgde-install-magento-update">Update the Magento software</h2>
 This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.
@@ -51,7 +51,7 @@ To update the Magento software:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 	</div>
 				
 3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.
@@ -70,7 +70,7 @@ To update the Magento software:
 
 4.	_Optional_. To change installation options, repeat the tasks discussed in:
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
@@ -87,13 +87,13 @@ To reinstall the Magento software:
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
+  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
   				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
 	</div>
 
 4.	Install the Magento software:
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
@@ -145,7 +145,7 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ site.gdeurl }}install-gde/trouble/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
 	</div>
 
 5.	Run Composer:
@@ -154,5 +154,5 @@ To update the Magento software to 0.42.0-beta11 or later from version beta10 or 
 
 6.	Install the Magento software:
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>

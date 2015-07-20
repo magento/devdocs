@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_pre
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache

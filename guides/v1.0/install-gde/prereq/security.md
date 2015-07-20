@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_pre
 subgroup: Prerequisites
 title: Security-related prerequisites
 menu_title: Security-related prerequisites
