@@ -24,7 +24,7 @@ By the way, if you're new to Magento installation or you don't know what some of
 4.	Either of the following:
 
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>
 6.	<a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Optional Magento sample data</a>
 7.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 

@@ -32,7 +32,7 @@ Before you begin, make sure that:
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
 4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.
-5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>.
+5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">

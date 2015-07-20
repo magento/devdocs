@@ -25,7 +25,7 @@ To install Magento, complete the following tasks in the order shown:
 1.	<a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>
 1.	Install the Magento software:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>
+	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>
 1.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
 
 If you have issues installing the Magento software, see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting suggestions</a>

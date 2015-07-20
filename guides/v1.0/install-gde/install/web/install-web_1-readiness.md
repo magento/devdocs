@@ -2,11 +2,11 @@
 layout: default 
 group: install_wiz 
 subgroup: A_Introduction
-title: Step 1, Readiness check
-menu_title: Step 1, Readiness check
+title: Step 1. Readiness check
+menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 2
-github_link: install-gde/install/install-web._1-readiness.md
+github_link: install-gde/install/web/install-web_1-readiness.md
 ---
 
 
@@ -21,5 +21,5 @@ github_link: install-gde/install/install-web._1-readiness.md
 	
 2.	Click **Next**.
 
-3.	Continue with TBD
+3.	Continue with <a href="{{ site.gdeurl }}install-gde/install/web/install-web_2-db.html">Step 2. Add a Database</a>.
 
