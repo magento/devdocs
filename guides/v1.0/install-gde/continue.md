@@ -9,6 +9,9 @@ menu_order: 1
 github_link: install-gde/continue.md
 ---
 
+## TO DO
+Enhance with a short description of Setup Wizard, Component Manager, and Updater (TBD)
+
 ## High-level installation roadmap
 
 We've broken down instructions for installing the Magento software into the following groups. We suggest you follow these in order, although you can install optional sample data before or after you install the Magento 2 system itself.

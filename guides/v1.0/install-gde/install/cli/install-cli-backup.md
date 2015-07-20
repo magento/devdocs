@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install 
+group: install_cli 
 subgroup: T_Command-line installation
 title: Back up the file system, media, and database
 menu_title: Back up the file system, media, and database

@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install 
+group: install_cli 
 subgroup: T_Command-line installation
 title: Get started with the command-line installation
 menu_title: Get started with the command-line installation

@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install 
+group: install_cli 
 subgroup: T_Command-line installation
 title: Update, reinstall, uninstall Magento
 menu_title: Update, reinstall, uninstall Magento

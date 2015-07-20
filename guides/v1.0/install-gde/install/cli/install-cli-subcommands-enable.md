@@ -1,6 +1,6 @@
 ---
 layout: default 
-group:  install
+group:  install_cli
 subgroup: T_Command-line installation
 title: Enable or disable modules
 menu_title: Enable or disable modules

@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install 
+group: install_cli 
 subgroup: T_Command-line installation
 title: Configure the store
 menu_title: Configure the store

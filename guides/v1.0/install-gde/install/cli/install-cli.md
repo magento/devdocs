@@ -1,12 +1,12 @@
 ---
 layout: default
-group: install 
+group: install_cli
 subgroup: T_Command-line installation
 title: Command line installation
 menu_title: Command line installation
 menu_node: parent
 menu_order: 1
-github_link: install-gde/install/install-cli.md
+github_link: install-gde/install/cli/install-cli.md
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

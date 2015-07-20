@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: T_Developer
+subgroup: U_Developer
 title: Update installation dependencies
 menu_title: Update installation dependencies 
 menu_node: 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: T_Developer
+subgroup: U_Developer
 title: Install Composer and clone the Magento repository
 menu_title: Install Composer and clone the Magento repository
 menu_node: 

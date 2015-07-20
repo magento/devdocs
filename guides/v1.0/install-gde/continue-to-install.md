@@ -11,7 +11,13 @@ github_link: install-gde/continue-to-install.md
 
 ## TODO
 
-This mini-topic explains the different options: Setup Wizard and CLI.
+This mini-topic explains the different options: Setup Wizard and CLI. (TBD)
 
-<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Introduction to the Setup Wizard</a>
+
+TBD
+
+## Temporary pointers
+
+*	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Running the Setup Wizard</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Running the CLI</a>
 
