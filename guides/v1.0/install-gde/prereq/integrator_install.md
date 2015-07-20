@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: T_SI
+subgroup: S_Integrator
 title: System Integrator installation first steps
 menu_title: System Integrator installation first steps
 menu_order: 1

@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_pre
+group: 
 subgroup: R_first
 title: Install the Magento updater
 menu_title: Install the Magento updater

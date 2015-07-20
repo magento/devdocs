@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: S_Merchant
+subgroup: R_Merchant
 title: Merchant installation first steps
 menu_title: Merchant installation first steps
 menu_order: 1

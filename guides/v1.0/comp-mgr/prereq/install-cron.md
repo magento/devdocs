@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_pre
+group: 
 subgroup: R_first
 title: Configure the installation and updater cron jobs
 menu_title: Configure the installation and updater cron jobs

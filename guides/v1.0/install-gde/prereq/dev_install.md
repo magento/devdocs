@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: U_Developer
+subgroup: T_Developer
 title: Developer installation first steps
 menu_title: Developer installation first steps
 menu_order: 1
