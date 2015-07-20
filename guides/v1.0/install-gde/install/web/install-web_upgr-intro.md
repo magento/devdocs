@@ -1,6 +1,6 @@
 ---
 layout: default 
-group: install_wiz
+group: 
 subgroup: A_Introduction
 title: Getting started with System Upgrade
 menu_title: Getting started with System Upgrade

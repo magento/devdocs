@@ -21,3 +21,8 @@ TBD
 *	<a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Running the Setup Wizard</a>
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Running the CLI</a>
 
+## Component Manager and Updater temporary pointers
+
+*	TBD
+*	TBD
+

@@ -29,7 +29,7 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 
 1.	Change to the Magento directory:
 
-		cd <web server docroot>/<magento2 clone dir>
+		cd <web server docroot>/<magento2 base dir>
 
 	Cloning the Magento 2 GitHub repository creates a directory, typically `magento2`, under your web server's docroot. Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here</a>.
 
