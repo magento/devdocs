@@ -9,9 +9,10 @@ menu_order: 2
 github_link: install-gde/install/web/install-web_1-readiness.md
 ---
 
+## Before you begin
+{% include install/before-you-begin-web.html %}
 
-
-<h3 id="instgde-install-magento-web-step1">Step 1: Readiness Check</h3>
+<h2 id="instgde-install-magento-web-step1">Step 1: Readiness Check</h2>
 
 1.	Click **Start Readiness Check**.
 

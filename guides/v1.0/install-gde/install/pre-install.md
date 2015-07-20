@@ -9,6 +9,12 @@ menu_order: 1
 github_link: install-gde/install/pre-install.md
 ---
 
+#### Contents
+
+*	TBD
+*	TBD
+*	TBD
+
 ## TO DO
 *	Longer description of the Setup Wizard, CLI, Component Manager, and Updater.
 *	Discuss the ways to install Magento: developer, merchant, and SI

@@ -9,11 +9,12 @@ menu_order: 10
 github_link: install-gde/install/web/install-web_6-install.md
 ---
 
+## Before you begin
+{% include install/before-you-begin-web.html %}
 
+<h2 id="instgde-install-magento-web-step6">Step 6: Install</h2>
 
-<h3 id="instgde-install-magento-web-step6">Step 6: Install</h3>
-
-Click **Install Now**.
+After completing all preceding steps in the Setup Wizard, click **Install Now**.
 
 You have the following options:
 
@@ -54,7 +55,7 @@ A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.
 You can reinstall the Magento software in an development environment especially to get all the latest code changes:
 
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html#instgde-install-magento-update">Update</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html#instgde-install-magento-reinstall">Uninstall and reinstall</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Uninstall and reinstall</a>
 
 #### Next step
 

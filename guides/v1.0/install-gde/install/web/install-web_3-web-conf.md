@@ -9,7 +9,10 @@ menu_order: 4
 github_link: install-gde/install/web/install-web_3-web-conf.md
 ---
 
-<h3 id="instgde-install-magento-web-step3">Step 3: Web Configuration</h3>
+## Before you begin
+{% include install/before-you-begin-web.html %}
+
+<h2 id="instgde-install-magento-web-step3">Step 3: Web Configuration</h2>
 
 1.	Enter the following information:
 

@@ -20,13 +20,13 @@ By the way, if you're new to Magento installation or you don't know what some of
 
 1.	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento system requirements</a>
 2.	<a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>
-3.	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Pre-installation</a>
-4.	Either of the following:
+3.	<a href="{{ site.gdeurl }}install-gde/install/pre-install.html">Identify your installation path</a>
 
-	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup Wizard installation</a>
-	*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>
-6.	<a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Optional Magento sample data</a>
-7.	<a href="{{ site.gdeurl }}install-gde/install/verify.html">Verify the installation</a>
+At any time (before or after installation), you can <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">install optional Magento sample data</a>.
+
+After the installation is complete, <a href="{{ site.gdeurl }}install-gde/install/verify.html">verify it</a>.
+
+If you encounter issues, <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshoot the installation</a>.
 
 <div class="bs-callout bs-callout-warning">
     <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}release-notes/changes_1.0.0-beta.html#1.0.0-beta-changes-schema">the Merchant Beta Release Notes</a>.</p>

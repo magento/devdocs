@@ -9,7 +9,10 @@ menu_order: 3
 github_link: install-gde/install/web/install-web_2-db.md
 ---
 
-<h3 id="instgde-install-magento-web-step2">Step 2: Add a Database</h3>
+## Before you begin
+{% include install/before-you-begin-web.html %}
+
+<h2 id="instgde-install-magento-web-step2">Step 2: Add a Database</h2>
 
 1.	Enter the following information:
 
