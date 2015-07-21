@@ -389,21 +389,42 @@ A sample follows:</p>
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
-<p>Block object methods are accessed using the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction.</p>
+<p>There are two ways to access block object methods:</p>
 
-<p>Example: Set a page title using the <code>setPageTitle()</code> method.</p>
+<ul>
+  <li>using the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code></li>
+  <li>using the <a href="/guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through <code>&lt;argument&gt;</code>. </li>
+</ul>
+
+<p>Example 1: Set a CSS class and add an attribute for the product page using <code>&lt;argument&gt;</code>.</p>
 
 <p>Extending layout:</p>
 
-<pre>
-...
-&lt;referenceBlock&nbsp;name=&quot;page.main.title&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setPageTitle&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;translate=&quot;true&quot;&nbsp;name=&quot;title&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Catalog&nbsp;Advanced&nbsp;Search&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
+<pre><code>&lt;referenceBlock name="page.main.title"&gt;
+	&lt;arguments&gt;
+	    &lt;argument name="css_class" xsi:type="string"&gt;product&lt;/argument&gt;
+	    &lt;argument name="add_base_attribute" xsi:type="string"&gt;itemprop="name"&lt;/argument&gt;
+	&lt;/arguments&gt;
+&lt;/referenceBlock&gt;
+</code></pre>
+
+<p>Example 2: Set a page title using <code>&lt;action&gt;</code>. </p>
+
+<div class="bs-callout bs-callout-warning" id="info">
+<span class="glyphicon-class">
+ <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+</div>
+
+<p>Extending layout:</p>
+
+<pre><code>...
+&lt;referenceBlock name="page.main.title"&gt;
+    &lt;action method="setPageTitle"&gt;
+        &lt;argument translate="true" name="title" xsi:type="string"&gt;Catalog Advanced Search&lt;/argument&gt;
+    &lt;/action&gt;
 &lt;/referenceBlock&gt;
 ...
-</pre>
+</code></pre>
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
