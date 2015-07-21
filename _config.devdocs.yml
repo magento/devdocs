@@ -9,8 +9,8 @@ baseurl: "/"
 description: Magento 2 Developer's Guide
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-gdeurl: "/guides/v1.0/"
-githuburl: "http://github.com/magento/devdocs/blob/develop/guides/v1.0/"
+gdeurl: "/guides/v2.0/"
+githuburl: "http://github.com/magento/devdocs/blob/develop/guides/v2.0/"
 namem2fedg: "Magento 2 Frontend Developer's Guide"
 namem2devgde: "Magento 2 Developer's Guide"
 namem2apiref: "Magento 2 API Reference"
