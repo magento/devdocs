@@ -1,11 +1,11 @@
 ---
 layout: default
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: Access issues
 title: Error after logging in to the Magento Admin
 menu_title: Error after logging in to the Magento Admin
 menu_node: 
-menu_order: 5
+menu_order: 10
 github_link: install-gde/install/composer-clone.md
 ---
 

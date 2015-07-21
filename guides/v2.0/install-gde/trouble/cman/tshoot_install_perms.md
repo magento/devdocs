@@ -1,7 +1,7 @@
 ---
 layout: default
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: Z_Other issues
 title: Permissions errors
 menu_title: Permissions errors
 menu_node: 

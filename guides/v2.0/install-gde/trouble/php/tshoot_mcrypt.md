@@ -1,11 +1,11 @@
 ---
 layout: default
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: PHP issues
 title: The PHP mcrypt extension is not installed properly
 menu_title: The PHP mcrypt extension is not installed properly
 menu_node:
-menu_order: 22
+menu_order: 5
 github_link: install-gde/trouble/trouble/php/tshoot_mcrypt.md
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default 
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: Errors during installation
 title: During installation, Reflection Exception error
 menu_title: During installation, Reflection Exception error
 menu_node: 

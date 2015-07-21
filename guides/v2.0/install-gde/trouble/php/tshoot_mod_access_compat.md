@@ -1,7 +1,7 @@
 ---
 layout: default
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: Access issues
 title: 503 (Service Unavailable) errors accessing Magento software in a web browser
 menu_title: 503 (Service Unavailable) errors accessing Magento software in a web browser
 menu_node: 

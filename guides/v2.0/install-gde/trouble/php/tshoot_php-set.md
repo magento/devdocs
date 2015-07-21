@@ -1,11 +1,11 @@
 ---
 layout: default
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: PHP issues
 title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
-menu_order: 22
+menu_order: 1
 github_link: install-gde/trouble/trouble/php/tshoot_php-set.md
 ---
 
