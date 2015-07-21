@@ -32,16 +32,16 @@ This topic covers how to customize the content and design of email templates.
 * <a href="#newsletter-templates">Newsletter templates</a>
 
 <h2 id="customize-email-templates">Customize email templates</h2>
-Email templates are stored in the `app/code/<VendorName>/<ModuleName>/view/<area>/email/` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/email/order_new.html" target="_blank">app/code/Magento/Sales/view/email/order_new.html</a>. 
+Email templates are stored in the `app/code/<VendorName>/<ModuleName>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="{{ site.mage2000url }}app/code/Magento/Sales/view/frontend/email/order_new.html" target="_blank">app/code/Magento/Sales/view/frontend/email/order_new.html</a>. 
 
-We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead the default templates. 
+We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
-You can add custom templates as physical files in the file system, or create them using the Magento Admin. Both approaches are described in the following sections.
+You can add custom templates as physical files in your custom theme or create them using the Magento Admin. Both approaches are described in the following sections.
  
 <h3 id="customize-email-theme">Customize email templates using a theme</h3>
-Override email templates by creating templates in a new folder in your custom theme, using this pattern: `app/design/frontend/<ThemeVendor>/<ThemeName>/<ModuleVendorName>_<ModuleName>/email/`. For example, to override the New Order email template, create a template named `order_new.html` in the `app/design/frontend/<ThemeVendor>/<ThemeName>/Magento_Sales/email` directory.
+Override email templates by creating templates in a new directory in your custom theme, using this pattern: `app/design/frontend/<ThemeVendor>/<ThemeName>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `app/design/frontend/<ThemeVendor>/<ThemeName>/Magento_Sales/email` directory.
 
-<a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Templates fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
+<a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.
  
 <h3 id="customize-email-admin">Customize email templates using the Magento Admin</h3>
 
@@ -71,8 +71,8 @@ Make note of this path because you will need it later when you configure this ne
 <h3 id="customize-header-footer">Customize header and footer templates</h3>
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
- * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/email/header.html" target="_blank">app/code/Magento/Email/view/email/header.html</a>
- * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/email/footer.html" target="_blank">app/code/Magento/Email/view/email/footer.html</a>
+ * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/header.html" target="_blank">app/code/Magento/Email/view/frontend/email/header.html</a>
+ * <a href="{{ site.mage2000url }}app/code/Magento/Email/view/frontend/email/footer.html" target="_blank">app/code/Magento/Email/view/frontend/email/footer.html</a>
 
 You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.
 
@@ -98,7 +98,7 @@ To add a variable to your template content:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/email/account_new.html">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
+ <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
 </div>
 
 <h2 id="email-styles">Styles for email templates</h2>
@@ -115,11 +115,11 @@ The `inlinecss` directive tells Magento which files to apply as inline styles on
 
 For example, let's say an email is being sent from a store configured with the `Magento/luma` theme. The `inlinecss` directive first looks for a `email-inline.less` file in `app/design/frontend/Magento/luma/web/css/email-inline.less`. However because that file doesn't exist, it will fall back to the `app/design/frontend/Magento/blank/web/css/email-inline.less` file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.
 
-Refer to the <a href="https://github.com/jjriv/emogrifier#emogrifier" target="_blank">Emogrifier README</a> to see what CSS selectors are supported.
+Refer to the <a href="https://github.com/jjriv/emogrifier#supported-css-selectors" target="_blank">Emogrifier README</a> to see what CSS selectors are supported.
 
 <h3 id="non-inline-styles">Non-inline styles</h3>
 
-Non-inline styles for emails come from global and template-specific styles.
+Non-inline styles for emails come from global and template-specific styles, as described in the following sections. 
 
 <h4 id="global-non-inline-styles">Global non-inline styles</h4>
 
@@ -252,42 +252,46 @@ Here is an overview of how the font structure for emails works:
 If you want to change the font used for emails, do the following:
 
 1. Refer to the documentation on [using fonts]({{ site.gdeurl }}frontend-dev-guide/css-topics/using-fonts.html) for details on how to add a new font.
-2. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should use the specified font.
+2. After you've added a new font and have updated the `source/_variables.less` and `source/_typography.less` files for your custom theme to refer to the new font, the emails should automatically use the specified font.
 
 <h2 id="email-logo">Email logo</h2>
 
 You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. 
 
-Because email clients don't support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3x the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
+Because email clients don't support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
 
 If you don't have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px &times; 100px, specify `200` for the width and `100` for the height.
 
-<h3 id="customize-logo-theme">Customize the email logo using a theme</h3>
+<h3 id="customize-logo-theme">Customize the email logo using a theme</h3> 
 To customize your logo using a theme:
 
-1. Add a file named `logo_email.png` to a `Magento_Email/web/` directory in your custom theme.
+1. Add a file named `logo_email.png` to a `Magento_Email/web` directory in your custom theme.
   
    For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the `app/design/frontend/OrangeCo/orange/Magento_Email/web` directory.
 
-2. Copy the `app/code/Magento/Email/view/frontend/email/header.html` file into a `Magento_Email/email/header.html` directory in your theme. Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
+2. Copy the `app/code/Magento/Email/view/frontend/email/header.html` file into a `Magento_Email/email` directory in your theme. 
+   
+   For example, the OrangeCo vendor would copy the file to this location: `app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html`
+   
+   Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
   
-  Example:
-  
-    {% raw %}
-    {{if logo_width}}
-       width="{{var logo_width}}"
-    {{else}}
-        width="200"
-    {{/if}}
-  
-    {{if logo_height}}
-        height="{{var logo_height}}"
-    {{else}}
-        height="100"
-    {{/if}}
-    {% endraw %}
-  
-  You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.
+   Example:
+   
+       {% raw %}
+       {{if logo_width}}
+           width="{{var logo_width}}"
+       {{else}}
+           width="200"
+       {{/if}}
+       
+       {{if logo_height}}
+           height="{{var logo_height}}"
+       {{else}}
+           height="100"
+       {{/if}}
+       {% endraw %}
+   
+   You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.
 
 <h3 id="customize-logo-admin">Customize the email logo using the Admin</h3>
 
@@ -310,13 +314,14 @@ To set those values:
     2. Input values into the **Store Name**, **Store Phone Number**, and **Store Hours of Operation** fields.
     3. Note: The **Store Phone Number** and **Store Hours of Operation** fields are optional.
     4. Click the **Save Config** button.
-2. To set the store name, phone number, and hours of operation:
+2. To set the store email:
     1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Email Addresses** > **General Contact**
     2. Input values into the **Sender Name** and **Sender Email** fields.
     3. Click the **Save Config** button.
 
 The sales emails are configured to display all of the above values, if they're configured in the admin. If you want to add those values to other email templates, you can use the following variables:
 
+    {% raw %}{{var store.getFrontendName()}}{% endraw %}
     {% raw %}{{var store_email}}{% endraw %}
     {% raw %}{{var store_phone}}{% endraw %}
     {% raw %}{{var store_hours}}{% endraw %}
@@ -329,7 +334,7 @@ In order to support the translation of content, all strings in emails are output
     {% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
-x
+
 <h2 id="supported-clients">Supported email clients and devices</h2>
 
 We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
