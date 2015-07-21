@@ -2,8 +2,8 @@
 layout: default
 group: install_cli
 subgroup: T_Command-line installation
-title: Command line installation
-menu_title: Command line installation
+title: Install the Magento software using the command line
+menu_title: Install the Magento software using the command line
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/cli/install-cli.md
