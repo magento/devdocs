@@ -229,21 +229,41 @@ Extending layout:
 
 <h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
 
-Block object methods are accessed using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction.
+There are two ways to access block object methods:
 
-Example: Set a page title using the `setPageTitle()` method.
+- using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#argument"><code>&lt;argument&gt;</code></a> instruction for `<block>` or `<referenceBlock>`
+- using the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a> instruction. This way is not recommended, but can be used for calling those methods, which are not refactored yet to be accessed through `<argument>`. 
+
+Example 1: Set a CSS class and add an attribute for the product page using `<argument>`.
 
 Extending layout:
 
-<pre>
-...
-&lt;referenceBlock&nbsp;name=&quot;page.main.title&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;action&nbsp;method=&quot;setPageTitle&quot;&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;argument&nbsp;translate=&quot;true&quot;&nbsp;name=&quot;title&quot;&nbsp;xsi:type=&quot;string&quot;&gt;Catalog&nbsp;Advanced&nbsp;Search&lt;/argument&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;/action&gt;
-&lt;/referenceBlock&gt;
-...
-</pre>
+	<referenceBlock name="page.main.title">
+		<arguments>
+		    <argument name="css_class" xsi:type="string">product</argument>
+		    <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
+		</arguments>
+	</referenceBlock>
+
+
+Example 2: Set a page title using `<action>`. 
+
+<div class="bs-callout bs-callout-warning" id="info">
+<span class="glyphicon-class">
+ <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code></a> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+</div>
+
+
+Extending layout:
+
+	...
+	<referenceBlock name="page.main.title">
+	    <action method="setPageTitle">
+	        <argument translate="true" name="title" xsi:type="string">Catalog Advanced Search</argument>
+	    </action>
+	</referenceBlock>
+	...
+
 
 <h2 id="layout_markup_rearrange">Rearrange elements</h2>
 
