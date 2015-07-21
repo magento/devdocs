@@ -27,4 +27,3 @@ Composer provides you with the following advantages:
 *	<a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a>
 *	Supports PHP Framework Interoperability standard
 
-We'll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.

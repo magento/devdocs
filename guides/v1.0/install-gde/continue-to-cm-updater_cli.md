@@ -1,12 +1,12 @@
 ---
 layout: default
-group: install_wiz 
+group: install_cli
 subgroup: Z_continue
 title: Continue to upgrading components
 menu_title: Continue to upgrading components
 menu_node: parent
 menu_order: 1
-github_link: install-gde/continue-to-cm-updater.md
+github_link: install-gde/continue-to-cm-updater_cli.md
 ---
 
 ## Need to make changes?

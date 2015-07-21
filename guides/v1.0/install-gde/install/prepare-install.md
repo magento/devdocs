@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: U_Developer
+subgroup: T_Developer
 title: Update installation dependencies
 menu_title: Update installation dependencies 
 menu_node: 
@@ -14,8 +14,7 @@ github_link: install-gde/install/prepare-install.md
 
   
 <h2 id="install-update-depend">Introduction to Magento installation dependencies</h2>
-
-For the first time, Magento uses <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.
+Magento uses <a href="http://getcomposer.org">Composer</a> to resolve dependencies before you install the Magento software and extensions.
 
 Composer is a separate application that manages PHP dependencies. Before you can install the Magento software, you must perform the following tasks in the order shown:
 
@@ -109,8 +108,4 @@ After you completed the tasks discussed in the preceding section, update depende
 	*	(Ubuntu) `chown -R www-data .`
 	*	(CentOS) `chown -R apache .`
 
-#### Next step
-
-*	<a href="{{ site.gdeurl }}install-gde/install/sample-data.html">Enable optional Magento sample data</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a>
+4.	<a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>

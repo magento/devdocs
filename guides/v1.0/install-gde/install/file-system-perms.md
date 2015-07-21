@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Y_perms
-title: Set file system permissions and ownership
-menu_title: Set file system permissions and ownership
+title: Set file system ownership and permissions
+menu_title: Set file system ownership and permissions
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/file-system-perms.md
