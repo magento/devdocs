@@ -1,11 +1,11 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Tabs widget
 menu_title: Tabs widget
 menu_order: 11
-github_link: frontend-dev-guide/javascript/widget_tabs.md
+github_link: javascript-dev-guide/widgets/widget_tabs.md
 ---
 
 <h2 id="fedg_tabs-widget_overview">Overview</h2>

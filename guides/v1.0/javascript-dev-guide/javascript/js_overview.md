@@ -1,12 +1,12 @@
 ---
 layout: default
-group: fedg
+group: jsdg
 subgroup: Javascript
 title: JavaScript
 menu_title: JavaScript
 menu_order: 1
 menu_node: parent
-github_link: frontend-dev-guide/javascript/js_overview.md
+github_link: javascript-dev-guide/javascript/js_overview.md
 ---
 
 By default, the Magento application uses the <a href="http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.

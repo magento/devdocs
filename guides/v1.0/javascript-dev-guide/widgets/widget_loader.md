@@ -1,11 +1,11 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Loader widget
 menu_order: 6
 menu_title: Loader widget
-github_link: frontend-dev-guide/javascript/widget_loader.md
+github_link: javascript-dev-guide/widgets/widget_loader.md
 ---
 
 <h2>Overview</h2>

@@ -1,11 +1,11 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Navigation widget
 menu_order: 9
 menu_title: Navigation widget
-github_link: frontend-dev-guide/javascript/widget_navigation.md
+github_link: javascript-dev-guide/widgets/widget_navigation.md
 ---
 
 <h2>Overview</h2>

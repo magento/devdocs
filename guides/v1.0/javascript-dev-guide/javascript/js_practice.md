@@ -1,11 +1,11 @@
 ---
 layout: default
-group: fedg
+group: jsdg
 subgroup: Javascript
 title: Customizing JavaScript illustration
 menu_title: Customizing JavaScript illustration
 menu_order: 5
-github_link: frontend-dev-guide/javascript/js_practice.md
+github_link: javascript-dev-guide/javascript/js_practice.md
 ---
 
 <h2 id="practice_overview">Overview</h2>

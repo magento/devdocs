@@ -1,11 +1,11 @@
 ---
 layout: default
-group: fedg
+group: jsdg
 subgroup: Javascript
 title: Use custom JavaScript
 menu_order: 3
 menu_title: Use custom JavaScript
-github_link: frontend-dev-guide/javascript/custom_js.md
+github_link: javascript-dev-guide/javascript/custom_js.md
 ---
 
 <h2 id="custom_js_overview">Overview</h2>

@@ -3,8 +3,10 @@ layout: default
 group: fedg
 subgroup: Javascript
 title: Magento jQuery widgets
-menu_order: 2
 menu_title: Magento jQuery widgets
+menu_order: 2
+menu_node: parent
+github_link: frontend-dev-guide/javascript/jquery-widgets-about.md
 ---
 
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.

@@ -1,11 +1,11 @@
 ---
 layout: default
-group: fedg
+group: jsdg
 subgroup: Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
 menu_order: 4
-github_link: frontend-dev-guide/javascript/js_debug.md
+github_link: javascript-dev-guide/javascript/js_debug.md
 ---
 
 <h2 id="js_debug_overview">Overview</h2>

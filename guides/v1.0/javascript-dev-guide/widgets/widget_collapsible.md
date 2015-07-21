@@ -1,11 +1,11 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Collapsible widget
 menu_order: 3
 menu_title: Collapsible widget
-github_link: frontend-dev-guide/javascript/widget_collapsible.md
+github_link: javascript-dev-guide/widgets/widget_collapsible.md
 ---
 
 <h2>Overview</h2>

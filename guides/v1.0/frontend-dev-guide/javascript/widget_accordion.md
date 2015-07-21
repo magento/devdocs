@@ -8,6 +8,16 @@ menu_title: Accordion widget
 github_link: frontend-dev-guide/javascript/widget_accordion.md
 ---
 
+---
+layout: default
+group: fedg
+subgroup: Javascript
+title: JavaScript initialization
+menu_title: JavaScript initialization
+menu_order: 2
+github_link: frontend-dev-guide/javascript/js_init.md
+---
+
 <h2>Overview</h2>
 
 Magento accordion widget is an extension of the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/jquery-widget-tabs.html" target="_blank">Magento Tabs widget</a>.
