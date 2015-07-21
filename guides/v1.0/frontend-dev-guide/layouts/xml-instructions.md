@@ -257,10 +257,12 @@ The following tables give a detailed description of the results you can get usin
 </table>
 
 <h3 id="fedg_layout_xml-instruc_ex_act">&lt;action></h3>
+
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
- <p>The <code>&lt;action&gt;</code> instruction is deprecated. Do not use it.</p></span>
+ <p>The <code>&lt;action&gt;</code> instruction is deprecated. If the method implementation allows, use the <a href="#argument"><code>&lt;argument&gt;</code></a> for <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a> or <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code></a> to access block public API.</p></span>
 </div>
+
 Calls public methods on the block API.
 <p><b>Details:</b> Used to set up the execution of a certain method of the block during block generation; the <code>&lt;action></code> node must be located in the scope of the <code>&lt;block></code> node.</p>
 Example:
@@ -463,3 +465,4 @@ Using the value of `css_class` in <code><a href="{{site.mage2000url}}app/code/Ma
 $cssClass&nbsp;=&nbsp;$this-&gt;getCssClass()&nbsp;?&nbsp;'&nbsp;'&nbsp;.&nbsp;$this-&gt;getCssClass()&nbsp;:&nbsp;'';
 ...
 </pre>
+
