@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Customize email templates</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/templates/template-email.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+    
+    
+          <li class="expanded">
+            <a href="/guides/v2.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Customize email templates</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/templates/template-email.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h4 id="contents">Contents</h4>
+
+<p>This topic covers how to customize the content and design of email templates.</p>
+
+<ul>
+  <li><a href="#customize-email-templates">Customize email templates</a>
+    <ul>
+      <li><a href="#customize-email-theme">Customize email templates using a theme</a></li>
+      <li><a href="#customize-email-admin">Customize email templates using the Magento Admin</a></li>
+      <li><a href="#customize-header-footer">Customize header and footer templates</a></li>
+      <li><a href="#customize-content">Customize email content</a></li>
+    </ul>
+  </li>
+  <li><a href="#email-styles">Email styles</a>
+    <ul>
+      <li><a href="#inline-styles">Inline styles</a></li>
+      <li><a href="#non-inline-styles">Non-inline styles</a></li>
+      <li><a href="#organization-email-styles">How email styles are organized</a></li>
+      <li><a href="#custom-fonts">Custom fonts</a></li>
+    </ul>
+  </li>
+  <li><a href="#email-logo">Email logo</a>
+    <ul>
+      <li><a href="#customize-logo-theme">Customize the logo using a theme</a></li>
+      <li><a href="#customize-logo-admin">Customize the logo using the Admin</a></li>
+    </ul>
+  </li>
+  <li><a href="#contact-information-emails">Use contact information in emails</a></li>
+  <li><a href="#localization">Localization</a></li>
+  <li><a href="#supported-clients">Supported email clients and devices</a></li>
+  <li><a href="#newsletter-templates">Newsletter templates</a></li>
+</ul>
+
+<h2 id="customize-email-templates">Customize email templates</h2>
+<p>Email templates are stored in the <code>app/code/&lt;VendorName&gt;/&lt;ModuleName&gt;/view/&lt;area&gt;/email</code> directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Sales/view/frontend/email/order_new.html" target="_blank">app/code/Magento/Sales/view/frontend/email/order_new.html</a>. </p>
+
+<p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. </p>
+
+<p>You can add custom templates as physical files in your custom theme or create them using the Magento Admin. Both approaches are described in the following sections.</p>
+
+<h3 id="customize-email-theme">Customize email templates using a theme</h3>
+<p>Override email templates by creating templates in a new directory in your custom theme, using this pattern: <code>app/design/frontend/&lt;ThemeVendor&gt;/&lt;ThemeName&gt;/&lt;ModuleVendorName&gt;_&lt;ModuleName&gt;/email</code>. For example, to override the New Order email template, create a template named <code>order_new.html</code> in the <code>app/design/frontend/&lt;ThemeVendor&gt;/&lt;ThemeName&gt;/Magento_Sales/email</code> directory.</p>
+
+<p><a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates" target="_blank">Template fallback</a> is supported for email templates, so parent themes of your current theme are searched for templates.</p>
+
+<h3 id="customize-email-admin">Customize email templates using the Magento Admin</h3>
+
+<p>Any templates configured in the Magento Admin take precedence over default or theme-based templates.</p>
+
+<ol>
+  <li>In the Magento Admin, navigate to <strong>MARKETING</strong> &gt; Communications &gt; <strong>Email Templates</strong></li>
+  <li>Click <strong>Add New Template</strong>.</li>
+  <li>
+    <p>If you want to use a default template as a starting point, in the <strong>Load default template</strong> section, choose the template and click <strong>Load Template</strong>. The path to the configuration settings for each default template displays in the <strong>Currently Used For</strong> field in the Template Information section.<br />
+Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
+ <br /><img src="/common/images/email_create_template.png" alt="New template creation page with loaded default template" width="70%" height="70%" /></p>
+  </li>
+  <li>In <strong>Template Name</strong>, enter a name to identify the template in the Magento Admin.</li>
+  <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  </li>
+  <li>Customize template content. For details, see <a href="#customize-content">the section on customizing content</a>.</li>
+  <li>In <strong>Template Styles</strong>, optionally add CSS styles for the template. These styles are added inside of a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of the email. Typically, you’ll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don’t support styles in <code>&lt;style&gt;</code> tags.</li>
+  <li>Click <strong>Save Template</strong>.</li>
+  <li>
+    <p>Now that you have created a template, you must configure that template to be used:</p>
+
+    <ol>
+      <li>If you haven’t done so already, log in to the Magento Admin as an administrator.</li>
+      <li>Click <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; SALES &gt; <strong>Sales Emails</strong>.</li>
+      <li>In the left pane, locate the section that contains the template you want to override. This is the section referenced by <strong>Currently Used For</strong> in your new template. (See step 3 earlier in this section.)
+ <br />For example, if you created a “New Order” template, the configuration section is <strong>Order</strong> as the following figure shows.
+ <br /><img src="/common/images/email_choose-template.png" alt="Choosing a custom template" width="70%" height="70%" /></li>
+      <li>Select your newly created template from the list.</li>
+      <li>Click <strong>Save Config</strong>.</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="customize-header-footer">Customize header and footer templates</h3>
+<p>Every frontend email template includes a header and footer template using these two directives: <code>{{template config_path="design/email/header_template"}}</code> and <code>{{template config_path="design/email/footer_template"}}</code>. By default, those two directives load contents from these files:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Email/view/frontend/email/header.html" target="_blank">app/code/Magento/Email/view/frontend/email/header.html</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Email/view/frontend/email/footer.html" target="_blank">app/code/Magento/Email/view/frontend/email/footer.html</a></li>
+</ul>
+
+<p>You can customize header and footer templates using either the <a href="#customize-email-theme">theme</a> or <a href="#customize-email-admin">admin</a> customization methods discussed previously.</p>
+
+<h3 id="customize-content">Customize email content</h3>
+<p>To add the store and sales related information to a template, use system variables.</p>
+
+<p>System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the <code>{{var store_hours}}</code> variable is replaced by the value set in the <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Emails</strong> section.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+ <p>You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> &gt; <b>Custom Variables</b>.</p></span>
+</div>
+
+<p>To add a variable to your template content:</p>
+
+<ol>
+  <li>In the Magento Admin, navigate to <strong>MARKETING</strong> &gt; Communications &gt; <strong>Email Templates</strong></li>
+  <li>Create a new template or edit an existing template.</li>
+  <li>Click to place the cursor in the text in which to insert the variable.</li>
+  <li>
+    <p>Click <strong>Insert Variable</strong>. A pop-up containing a list of variables opens, including custom variables. The variables in the <strong>Store Contact Information</strong> are available in all email templates whereas the variables in the <strong>Template Variables</strong> section are specific to the template you’re editing. The following figure shows an example: <br /><img src="/common/images/email_insert_variable.png" alt="The list of available variables" width="70%" height="70%" /></p>
+  </li>
+  <li>Click the name of the required variable. <br /> The variable code is inserted in the template content.</li>
+</ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+ <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
+</div>
+
+<h2 id="email-styles">Styles for email templates</h2>
+
+<p>Some email clients (for example, Gmail) support only CSS styles that have been applied as “inline” styles on the <code>style</code> attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a> library, which takes the HTML and CSS and adds all of the CSS styles to <code>style</code> attributes of the HTML tags.</p>
+
+<h3 id="inline-styles">Inline styles</h3>
+
+<p>The <code>app/code/Magento/Email/view/frontend/email/header.html</code> file contains an <code>inlinecss</code> directive:</p>
+
+<pre><code>{{inlinecss file="css/email-inline.css"}}
+</code></pre>
+
+<p>The <code>inlinecss</code> directive tells Magento which files to apply as inline styles on the email template. </p>
+
+<p>For example, let’s say an email is being sent from a store configured with the <code>Magento/luma</code> theme. The <code>inlinecss</code> directive first looks for a <code>email-inline.less</code> file in <code>app/design/frontend/Magento/luma/web/css/email-inline.less</code>. However because that file doesn’t exist, it will fall back to the <code>app/design/frontend/Magento/blank/web/css/email-inline.less</code> file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.</p>
+
+<p>Refer to the <a href="https://github.com/jjriv/emogrifier#supported-css-selectors" target="_blank">Emogrifier README</a> to see what CSS selectors are supported.</p>
+
+<h3 id="non-inline-styles">Non-inline styles</h3>
+
+<p>Non-inline styles for emails come from global and template-specific styles, as described in the following sections. </p>
+
+<h4 id="global-non-inline-styles">Global non-inline styles</h4>
+
+<p>While the majority of styles should be applied inline, there are certain CSS styles that can’t be applied inline, such as media queries or <code>:hover</code> pseudo styles. These styles must be in a <code>&lt;style type="text/css"&gt;&lt;/style&gt;</code> tag for them to work.</p>
+
+<p>The <code>app/code/Magento/Email/view/frontend/email/header.html</code> file contains a <code>css</code> directive inside of a <code>&lt;style&gt;</code> tag:</p>
+
+<pre><code>&lt;style type="text/css"&gt;
+    {{var template_styles|raw}}
+
+    {{css file="css/email.css"}}
+&lt;/style&gt;
+</code></pre>
+
+<p>The <code>css</code> directive compiles the contents of the provided file and outputs it. </p>
+
+<p>For example, let’s say an email is being sent from a store configured with the Magento Luma theme. The <code>css</code> directive first looks for an <code>email.less</code> file in <code>app/design/frontend/Magento/luma/web/css</code>. However, because the file doesn’t exist there, it falls back to <code>app/design/frontend/Magento/blank/web/css/email.less</code>. The contents of that file are compiled and its contents output in the <code>&lt;style&gt;</code> tag.</p>
+
+<h4 id="template-specific-non-inline-styles">Template-specific non-inline styles</h4>
+<p>As mentioned in the preceding section, the <code>header.html</code> file outputs the <code>{{var template_styles|raw}}</code> variable. </p>
+
+<p>The value of that variable comes from any of the following: </p>
+
+<ul>
+  <li>
+    <p>Any styles you add to any <code>html</code> email template inside a comment block, like in the following example, are included in the <code>template_styles</code> variable:</p>
+
+    <pre><code>&lt;!--@styles 
+.example-style { color: green; }
+@--&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>If you customize transactional emails using the Magento Admin, you can add CSS styles to the <strong>Template Styles</strong> field to include those styles in the <code>template_styles</code> variable.</p>
+  </li>
+</ul>
+
+<h3 id="organization-email-styles">How email styles are organized</h3>
+
+<p>The styles for emails are split into several different files.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <th>File</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>app/design/frontend/Magento/blank/web/css/email.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>Imports necessary files and then outputs styles to be included in <code>&lt;style&gt;</code> tag</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>app/design/frontend/Magento/blank/web/css/email-fonts.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>Contains <code>@font-face</code> declarations for custom fonts. This file is imported by the <code>_email-extend.less</code> file using an <code>@import</code> rule.</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>app/design/frontend/Magento/blank/web/css/email-inline.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>Imports necessary files and then outputs styles to be inlined</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>app/design/frontend/Magento/blank/web/css/source/_email-base.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>Contains majority of styles for emails, including resets, layout, typography, and so on. Review the comments at the top of this file to understand how the styles in this file are split between the <code>email.less</code> and <code>email-inline.less</code> files.</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>app/design/frontend/Magento/blank/web/css/source/_email-extend.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>This file is intended to be copied into your custom themes and edited directly. You can add new email styles or override existing ones. This should prevent having to copy the <code>_email-base.less</code> file into your custom theme. See the <code>app/design/frontend/Magento/luma/web/css/source/_email-extend.less</code> file for example usage.</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>app/design/frontend/Magento/blank/web/css/source/_email-variables.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>The <code>_email-base.less</code> file uses a number mixins from the Magento UI library. If you want to change any of the styles output by those mixins, you can set the value of any of the variables those mixins uses in this file. See the <code>app/design/frontend/Magento/luma/web/css/source/_email-variables.less</code> file for example usage.</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>app/design/frontend/Magento/blank/&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>Styles that are specific to modules are stored in these files. This mechanism also allows third-party extensions to include styles that will get included in the inline/non-inline output.</p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>lib/web/css/source/_email-variables.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>Same as <code>app/design/frontend/Magento/blank/web/css/source/_email-variables.less</code></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
+          <p><code>lib/web/css/source/lib/variables/_email.less</code></p>
+      </td>
+      <td colspan="1">
+          <p>Contains new email-specific variables that can be overridden in a theme-specific <code>_email-variables.less</code> file. </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code>app/design/frontend/Magento/blank/web/css/source/_email-extend.less</code> and <code>app/design/frontend/Magento/blank/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
+
+<h3 id="custom-fonts">Custom fonts</h3>
+<p>Emails inherit the custom fonts that are defined by the frontend theme. The Magento blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code>@font-face</code> rules are used to include web fonts.</p>
+
+<p>Here is an overview of how the font structure for emails works:</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/source/_email-extend.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_email-extend.less</a> contains the <code>@import</code> directive that requests the <code>email-fonts.css</code> file.</p>
+
+    <p>The reason the contents of <code>email-fonts.css</code> are loaded using <code>@import</code> rather than being output directly into a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of an email is that if a user is reading their email offline, some email clients don’t render the text because the web fonts can’t be loaded.</p>
+  </li>
+  <li>
+    <p>The <code>app/design/frontend/Magento/blank/web/css/email-fonts.less</code> file imports <code>source/_variables.less</code> and <code>source/_typography.less</code> files:</p>
+    <ul>
+      <li><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/source/_variables.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_variables.less</a> defines which font is used in the <code>@font-family-name__base</code> variable.</li>
+      <li><a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/blank/web/css/source/_typography.less" target="_blank">app/design/frontend/Magento/blank/web/css/source/_typography.less</a> generates the <code>@font-face</code> rules which import the custom fonts.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>If you want to change the font used for emails, do the following:</p>
+
+<ol>
+  <li>Refer to the documentation on <a href="/guides/v2.0/frontend-dev-guide/css-topics/using-fonts.html">using fonts</a> for details on how to add a new font.</li>
+  <li>After you’ve added a new font and have updated the <code>source/_variables.less</code> and <code>source/_typography.less</code> files for your custom theme to refer to the new font, the emails should automatically use the specified font.</li>
+</ol>
+
+<h2 id="email-logo">Email logo</h2>
+
+<p>You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. </p>
+
+<p>Because email clients don’t support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3× the size that you actually want it to display. For example, let’s say your email has a 200px × 100px area for the logo. The logo image should be 600px × 300px.</p>
+
+<p>If you don’t have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px × 100px, specify <code>200</code> for the width and <code>100</code> for the height.</p>
+
+<h3 id="customize-logo-theme">Customize the email logo using a theme</h3>
+<p>To customize your logo using a theme:</p>
+
+<ol>
+  <li>
+    <p>Add a file named <code>logo_email.png</code> to a <code>Magento_Email/web</code> directory in your custom theme.</p>
+
+    <p>For example, if the OrangeCo vendor wants to add a logo for their custom Orange, they must add a file in the <code>app/design/frontend/OrangeCo/orange/Magento_Email/web</code> directory.</p>
+  </li>
+  <li>
+    <p>Copy the <code>app/code/Magento/Email/view/frontend/email/header.html</code> file into a <code>Magento_Email/email</code> directory in your theme. </p>
+
+    <p>For example, the OrangeCo vendor would copy the file to this location: <code>app/design/frontend/OrangeCo/orange/Magento_Email/email/header.html</code></p>
+
+    <p>Edit the <code>width</code> and <code>height</code> attributes of the <code>&lt;img&gt;</code> tag to reflect the area in which you want your logo to display (for example, 200 × 100).</p>
+
+    <p>Example:</p>
+
+    <pre><code>{{if logo_width}}
+    width="{{var logo_width}}"
+{{else}}
+    width="200"
+{{/if}}
+   
+{{if logo_height}}
+    height="{{var logo_height}}"
+{{else}}
+    height="100"
+{{/if}}
+</code></pre>
+
+    <p>You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.</p>
+  </li>
+</ol>
+
+<h3 id="customize-logo-admin">Customize the email logo using the Admin</h3>
+
+<ol>
+  <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Design</strong> &gt; <strong>Emails</strong></li>
+  <li>In the <strong>Scope</strong> drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). </li>
+  <li>
+    <p>Upload your logo and specify the alternative text for it.
+<img src="/common/images/email_configuration.png" alt="System configuration" /></p>
+  </li>
+  <li>Enter values for <strong>Logo Width</strong> and <strong>Logo Height</strong>. Based on the preceding example, you would enter <code>200</code> and <code>100</code>, respectively.</li>
+  <li>Click the <strong>Save Config</strong> button.</li>
+</ol>
+
+<h2 id="contact-information-emails">Use contact information in emails</h2>
+
+<p>Emails can output your store name, store email address, store phone number, and store hours of operation if those values are configured in the Admin. </p>
+
+<p>To set those values:</p>
+
+<ol>
+  <li>To set the store name, phone number, and hours of operation:
+    <ol>
+      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Emails</strong></li>
+      <li>Input values into the <strong>Store Name</strong>, <strong>Store Phone Number</strong>, and <strong>Store Hours of Operation</strong> fields.</li>
+      <li>Note: The <strong>Store Phone Number</strong> and <strong>Store Hours of Operation</strong> fields are optional.</li>
+      <li>Click the <strong>Save Config</strong> button.</li>
+    </ol>
+  </li>
+  <li>To set the store email:
+    <ol>
+      <li>In the Magento Admin, navigate to <strong>STORES</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong> &gt; <strong>Store Email Addresses</strong> &gt; <strong>General Contact</strong></li>
+      <li>Input values into the <strong>Sender Name</strong> and <strong>Sender Email</strong> fields.</li>
+      <li>Click the <strong>Save Config</strong> button.</li>
+    </ol>
+  </li>
+</ol>
+
+<p>The sales emails are configured to display all of the above values, if they’re configured in the admin. If you want to add those values to other email templates, you can use the following variables:</p>
+
+<pre><code>{{var store.getFrontendName()}}
+{{var store_email}}
+{{var store_phone}}
+{{var store_hours}}
+</code></pre>
+
+<h2 id="localization">Localization</h2>
+
+<p>In order to support the translation of content, all strings in emails are output using the <code>trans</code> directive. Example: </p>
+
+<pre><code>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+{{trans "Once your package ships we will send you a tracking number."}}
+</code></pre>
+
+<p>The <code>trans</code> directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the <code>fr_FR</code> locale, the emails are translated to French.</p>
+
+<h2 id="supported-clients">Supported email clients and devices</h2>
+
+<p>We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.</p>
+
+<ul>
+  <li>Supported Desktop Clients
+    <ul>
+      <li>Apple Mail 7 (OS X 10.9)</li>
+      <li>Apple Mail 8 (OS X 10.10)</li>
+      <li>Outlook 2003 (Windows 7)</li>
+      <li>Outlook 2007 (Windows 7)</li>
+      <li>Outlook 2010 (Windows 7)</li>
+      <li>Outlook 2013 (Windows 7)</li>
+      <li>Outlook 2016 (OS X 10.10)</li>
+    </ul>
+  </li>
+  <li>Supported Mobile Clients
+    <ul>
+      <li>Native email app (Android 2.3)</li>
+      <li>Native email app (Android 4.2)</li>
+      <li>Gmail app (Android 4.2)</li>
+      <li>Native email app (Blackberry 5 OS)</li>
+      <li>iOS 7 (iPhone 5s)</li>
+      <li>iOS 8 (iPad Retina)</li>
+      <li>iOS 8 (iPad Mini)</li>
+      <li>iOS 8 (iPhone 6)</li>
+      <li>iOS 8 (iPhone 6 Plus)</li>
+      <li>Windows Phone 8</li>
+    </ul>
+  </li>
+  <li>Supported Web Clients (tested in combination of Firefox, Chrome, and Internet Explorer)
+    <ul>
+      <li>AOL Mail</li>
+      <li>Gmail</li>
+      <li>Office 365</li>
+      <li>Outlook.com</li>
+      <li>Yahoo! Mail</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="newsletter-templates">Newsletter templates</h2>
+
+<p>The focus of this article is on transactional emails but the same techniques can be used with newsletter templates as well, including:</p>
+
+<ul>
+  <li>Import the header and footer using <code>{{template config_path="design/email/header_template"}}</code> and <code>{{template config_path="design/email/footer_template"}}</code></li>
+  <li>Apply inline styles using <code>{{inlinecss file="css/email-inline.css"}}</code></li>
+  <li>Include non-inline styles using <code>{{css file="css/email.css"}}</code></li>
+</ul>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html">Create a theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/frontend-dev-guide/templates/template-email.html">Customize email templates</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html">CSS preprocessing</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html">Styles debugging</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in Magento responsive design</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/javascript/js_overview.html">JavaScript</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/javascript/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/javascript/custom_js.html">Use custom JavaScript</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/javascript/js_debug.html">Locate JavaScript components</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/templates/template-email.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/templates/template-email.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://magento.com/legal/licensing" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2015 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>

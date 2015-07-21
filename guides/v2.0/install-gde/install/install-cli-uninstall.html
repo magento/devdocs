@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Update, reinstall, uninstall Magento</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/install-gde/install/install-cli-uninstall.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+    
+    
+          <li class="expanded">
+            <a href="/guides/v2.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">Update, reinstall, uninstall Magento</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/install-cli-uninstall.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h4>Contents</h4>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#instgde-cli-before">First steps</a></li>
+  <li><a href="#instgde-install-magento-prereq">Prerequisites</a></li>
+  <li><a href="#instgde-install-magento-update">Update the Magento software</a></li>
+  <li><a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+  <li><a href="#instgde-install-uninstall">Uninstall the Magento software</a></li>
+  <li><a href="#instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
+</ul>
+
+<h2 id="instgde-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
+
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
+
+<h2 id="instgde-install-magento-prereq">Prerequisites</h2>
+<p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/install-cli-install.html">install the Magento software</a>.</p>
+
+<h2 id="instgde-install-magento-update">Update the Magento software</h2>
+<p>This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.</p>
+
+<p>You might do this in an development environment especially to get all the latest code changes.</p>
+
+<p>To update the Magento software:</p>
+
+<ol>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
+  <li>
+    <p>Save any changes you made to <code>composer.json</code> because the following steps will overwrite it:</p>
+
+    <pre><code> cd &lt;your Magento install dir&gt;
+ cp composer.json composer.json.old
+</code></pre>
+  </li>
+  <li>
+    <p>If you previously installed the optional sample data, enter the following command:</p>
+
+    <pre><code>rm -rf dev/tools/Magento/Tools/SampleData/
+</code></pre>
+  </li>
+  <li>
+    <p>Update your local repository to get the latest code:</p>
+
+    <pre><code>git pull origin develop
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+  			<p>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+</div>
+  </li>
+  <li>
+    <p>Diff and merge your <code>composer.json.old</code> with <code>composer.json</code> installed with the Magento software.</p>
+  </li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>composer update
+</code></pre>
+  </li>
+  <li>
+    <p>Update the Magento database.</p>
+
+    <pre><code>php bin/magento setup:upgrade
+</code></pre>
+  </li>
+  <li>
+    <p>Clear <code>var</code> directory contents:</p>
+
+    <pre><code>rm -rf var/generation/* var/cache/*
+</code></pre>
+  </li>
+  <li>
+    <p><em>Optional</em>. To change installation options, repeat the tasks discussed in:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
+<p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
+
+<p>To reinstall the Magento software:</p>
+
+<ol>
+  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
+  <li>
+    <p>Enter the following commands in the order shown:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;
+git pull origin develop
+php bin/magento setup:uninstall
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
+  				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
+</div>
+  </li>
+  <li>
+    <p>Install the Magento software:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
+<p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code>var</code>.</p>
+
+<p>To uninstall the Magento software, enter the following command:</p>
+
+<pre><code>magento setup:uninstall
+</code></pre>
+
+<p>The following message displays to confirm a successful uninstallation:</p>
+
+<pre><code>[SUCCESS]: Magento uninstallation complete.
+</code></pre>
+
+<h2 id="instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</h2>
+<p>This section applies to you in the following situation only:</p>
+
+<ul>
+  <li>You currently have version 0.42.0-beta10 or earlier</li>
+  <li>You’re updating to version 0.42.0-beta11 or later</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
+</div>
+
+<p>To determine the versions:</p>
+
+<ul>
+  <li>Your version: View <code>&lt;your Magento install dir&gt;/CHANGELOG.md</code> in a text editor.</li>
+  <li>Current version: Look at the Magento 2 <a href="https://github.com/magento/magento2/blob/develop/CHANGELOG.md" target="_blank">changelog</a> on GitHub.</li>
+</ul>
+
+<h3 id="instgde-install-magento-updatebeta11-why">Why must I uninstall?</h3>
+<p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
+<ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
+<li>Resources in the table are replaced by module names. For example, <code>catalog_setup</code> is now <code>Magento_Catalog</code>, which exactly matches the module name. </li>
+<li>The following fields in the <code>setup_module</code> table have new names:
+<ul><li><code>code</code> is now <code>module</code></li>
+<li><code>version</code> is now <code>schema_version</code></li></ul>
+</li>
+</ul>
+<p>Old way:</p>
+<pre>	code                     | version   | data_version|
+	-----------------------------------------------------------
+	catalog_setup            | 2.0.0     | 2.0.0   
+	checkoutagreements_setup | 2.0.0     | 2.0.0   
+	checkout_setup           | 2.0.0     | 2.0.0   
+	cms_setup                | 2.0.0.1   | 2.0.0.1 </pre>
+<p>New way:</p>
+
+<pre>	module                       | schema_version        | data_version|
+	------------------------------------------------------------------------
+	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
+	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
+	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
+	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
+	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0</pre>
+
+<h3 id="instgde-install-magento-updatebeta11-how">How to update the Magento software</h3>
+<p>To update the Magento software to 0.42.0-beta11 or later from version beta10 or earlier:</p>
+
+<ol>
+  <li>
+    <p>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</p>
+  </li>
+  <li>
+    <p>Change to the following directory:</p>
+
+    <pre><code>cd &lt;your Magento install dir&gt;/setup
+</code></pre>
+  </li>
+  <li>
+    <p>Uninstall the Magento software and change to your Magento installation directory:</p>
+
+    <pre><code>magento setup:uninstall &amp;&amp; cd ..
+</code></pre>
+  </li>
+  <li>
+    <p>Update the Magento code:</p>
+
+    <pre><code>git pull origin develop
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+    <span class="glyphicon-class">
+  			<p>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+</div>
+  </li>
+  <li>
+    <p>Run Composer:</p>
+
+    <pre><code>composer install
+</code></pre>
+  </li>
+  <li>
+    <p>Install the Magento software:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+    </ul>
+  </li>
+</ol>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Pre-installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-cli.html">Command line installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/sample-data.html">Optional Magento sample data</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/install-cli-uninstall.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/install-cli-uninstall.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://magento.com/legal/licensing" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2015 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>

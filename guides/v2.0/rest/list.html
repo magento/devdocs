@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>List of REST APIs</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/rest/list.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+         <li class="expanded">
+            <a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer</a>
+            <ul class="menu nav">
+               
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+            </ul>
+         </li>
+    
+    
+          <li class="expanded">
+            <a href="/guides/v2.0/get-started/bk-get-started-api.html">Web Services Developer</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a></li>
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">List of REST APIs</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/rest/list.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="list">List of REST APIs</h2>
+
+<p>Updated June 29, 2015. Additions since the last update are marked with asterisks (*).</p>
+
+<h3>Magento/Backend</h3>
+
+<pre><code>GET    /V1/modules
+</code></pre>
+
+<h3>Magento/Bundle</h3>
+
+<pre><code>POST   /V1/bundle-products/:sku/links/:optionId
+PUT    /V1/bundle-products/:sku/links/:id
+GET    /V1/bundle-products/:productSku/children
+DELETE /V1/bundle-products/:sku/options/:optionId/children/:childSku
+GET    /V1/bundle-products/:sku/options/all
+GET    /V1/bundle-products/options/types
+GET    /V1/bundle-products/:sku/options/:optionId
+POST   /V1/bundle-products/options/add
+PUT    /V1/bundle-products/options/:optionId
+DELETE /V1/bundle-products/:sku/options/:optionId
+</code></pre>
+
+<h3>Magento/Catalog</h3>
+
+<pre><code>POST   /V1/products
+PUT    /V1/products/:sku
+DELETE /V1/products/:sku
+GET    /V1/products
+GET    /V1/products/:sku
+GET    /V1/products/attributes/types
+GET    /V1/products/attributes/:attributeCode
+GET    /V1/products/attributes
+GET    /V1/categories/attributes/:attributeCode
+GET    /V1/categories/attributes
+GET    /V1/categories/attributes/:attributeCode/options
+POST   /V1/products/attributes
+PUT    /V1/products/attributes/:attributeCode
+DELETE /V1/products/attributes/:attributeCode
+GET    /V1/products/types
+GET    /V1/products/attribute-sets/sets/list
+GET    /V1/products/attribute-sets/:attributeSetId
+DELETE /V1/products/attribute-sets/:attributeSetId
+POST   /V1/products/attribute-sets
+PUT    /V1/products/attribute-sets/:attributeSetId
+GET    /V1/products/attribute-sets/:attributeSetId/attributes
+POST   /V1/products/attribute-sets/attributes
+DELETE /V1/products/attribute-sets/:attributeSetId/attributes/:attributeCode
+GET    /V1/products/attribute-sets/groups/list
+POST   /V1/products/attribute-sets/groups
+PUT    /V1/products/attribute-sets/:attributeSetId/groups
+DELETE /V1/products/attribute-sets/groups/:groupId
+GET    /V1/products/attributes/:attributeCode/options
+POST   /V1/products/attributes/:attributeCode/options
+DELETE /V1/products/attributes/:attributeCode/options/:optionId
+GET    /V1/products/media/types/:attributeSetName
+GET    /V1/products/:sku/media/:imageId
+POST   /V1/products/:sku/media
+PUT    /V1/products/:sku/media/:entryId
+DELETE /V1/products/:sku/media/:entryId
+GET    /V1/products/:sku/media
+GET    /V1/products/:sku/group-prices/
+POST   /V1/products/:sku/group-prices/:customerGroupId/price/:price
+DELETE /V1/products/:sku/group-prices/:customerGroupId/
+GET    /V1/products/:sku/group-prices/:customerGroupId/tiers
+POST   /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty/price/:price
+DELETE /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty
+DELETE /V1/categories/:categoryId
+GET    /V1/categories/:categoryId
+POST   /V1/categories
+GET    /V1/categories
+PUT    /V1/categories/:id
+PUT    /V1/categories/:categoryId/move
+GET    /V1/products/options/types
+GET    /V1/products/:sku/options
+GET    /V1/products/:sku/options/:optionId
+POST   /V1/products/options
+PUT    /V1/products/options/:optionId
+DELETE /V1/products/:sku/options/:optionId
+GET    /V1/products/links/types
+GET    /V1/products/links/:type/attributes
+GET    /V1/products/:sku/links/:type
+POST   /V1/products/:sku/links/:type
+DELETE /V1/products/:sku/links/:type/:linkedProductSku
+PUT    /V1/products/:sku/links/:link_type
+GET    /V1/categories/:categoryId/products
+POST   /V1/categories/:categoryId/products
+PUT    /V1/categories/:categoryId/products
+DELETE /V1/categories/:categoryId/products/:sku
+</code></pre>
+
+<h3>Magento/CatalogInventory</h3>
+
+<pre><code>GET    /V1/stockItems/:productSku
+PUT    /V1/stockItems/:productSku
+GET    /V1/stockItems/lowStock/
+GET    /V1/stockStatuses/:productSku
+</code></pre>
+
+<h3>Magento/CheckoutAgreements</h3>
+
+<pre><code>GET    /V1/carts/licence
+</code></pre>
+
+<h3>Magento/Cms</h3>
+
+<pre><code>* GET    /V1/cmsPage/:pageId
+* GET    /V1/cmsPage/search
+* POST   /V1/cmsPage
+* PUT    /V1/cmsPage/:id
+* DELETE /V1/cmsPage/:pageId
+* GET    /V1/cmsBlock/:blockId
+* GET    /V1/cmsBlock/search
+* POST   /V1/cmsBlock
+* PUT    /V1/cmsBlock/:id
+* DELETE /V1/cmsBlock/:blockId
+</code></pre>
+
+<h3>Magento/ConfigurableProduct</h3>
+
+<pre><code>GET    /V1/configurable-products/:sku/children
+DELETE /V1/configurable-products/:sku/children/:childSku
+PUT    /V1/configurable-products/variation
+POST   /V1/configurable-products/:sku/child
+GET    /V1/configurable-products/:sku/options/:id
+GET    /V1/configurable-products/:sku/options/all
+POST   /V1/configurable-products/:sku/options
+PUT    /V1/configurable-products/:sku/options/:id
+DELETE /V1/configurable-products/:sku/options/:id
+</code></pre>
+
+<h3>Magento/Customer</h3>
+
+<pre><code>GET    /V1/customerGroups/:id
+GET    /V1/customerGroups/default/:storeId
+GET    /V1/customerGroups/default
+GET    /V1/customerGroups/:id/permissions
+GET    /V1/customerGroups/search
+POST   /V1/customerGroups
+PUT    /V1/customerGroups/:id
+DELETE /V1/customerGroups/:id
+GET    /V1/attributeMetadata/customer/attribute/:attributeCode
+GET    /V1/attributeMetadata/customer/form/:formCode
+GET    /V1/attributeMetadata/customer
+GET    /V1/attributeMetadata/customer/custom
+GET    /V1/attributeMetadata/customerAddress/attribute/:attributeCode
+GET    /V1/attributeMetadata/customerAddress/form/:formCode
+GET    /V1/attributeMetadata/customerAddress
+GET    /V1/attributeMetadata/customerAddress/custom
+GET    /V1/customers/:customerId
+POST   /V1/customers
+PUT    /V1/customers/:id
+PUT    /V1/customers/me
+GET    /V1/customers/me
+PUT    /V1/customers/me/activate
+GET    /V1/customers/search
+PUT    /V1/customers/:email/activate
+PUT    /V1/customers/me/password
+GET    /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken
+PUT    /V1/customers/password
+GET    /V1/customers/:customerId/confirm
+POST   /V1/customers/confirm
+PUT    /V1/customers/validate
+GET    /V1/customers/:customerId/permissions/readonly
+DELETE /V1/customers/:customerId
+POST   /V1/customers/isEmailAvailable
+GET    /V1/customers/addresses/:addressId
+GET    /V1/customers/me/billingAddress
+GET    /V1/customers/:customerId/billingAddress
+GET    /V1/customers/me/shippingAddress
+GET    /V1/customers/:customerId/shippingAddress
+DELETE /V1/addresses/:addressId
+</code></pre>
+
+<h3>Magento/Downloadable</h3>
+
+<pre><code>GET    /V1/products/:sku/downloadable-links
+GET    /V1/products/:sku/downloadable-links/samples
+POST   /V1/products/:sku/downloadable-links
+PUT    /V1/products/:sku/downloadable-links/:id
+DELETE /V1/products/downloadable-links/:id
+POST   /V1/products/:sku/downloadable-links/samples
+PUT    /V1/products/:sku/downloadable-links/samples/:id
+DELETE /V1/products/downloadable-links/samples/:id
+</code></pre>
+
+<h3>Magento/Eav</h3>
+
+<pre><code>GET    /V1/eav/attribute-sets/list
+GET    /V1/eav/attribute-sets/:attributeSetId
+DELETE /V1/eav/attribute-sets/:attributeSetId
+POST   /V1/eav/attribute-sets
+PUT    /V1/eav/attribute-sets/:attributeSetId
+</code></pre>
+
+<h3>Magento/GiftMessage</h3>
+
+<pre><code>GET    /V1/carts/:cartId/gift-message
+GET    /V1/carts/:cartId/gift-message/:itemId
+POST   /V1/carts/:cartId/gift-message
+POST   /V1/carts/:cartId/gift-message/:itemId
+</code></pre>
+
+<h3>Magento/Integration</h3>
+
+<pre><code>POST   /V1/integration/admin/token
+POST   /V1/integration/customer/token
+</code></pre>
+
+<h3>Magento/Quote</h3>
+
+<pre><code>GET    /V1/carts/:cartId
+GET    /V1/carts
+POST   /V1/carts/
+POST   /V1/customers/:customerId/carts
+PUT    /V1/carts/:cartId
+POST   /V1/carts/mine
+GET    /V1/carts/mine
+PUT    /V1/carts/mine/order
+GET    /V1/guest-carts/:cartId
+POST   /V1/guest-carts
+PUT    /V1/guest-carts/:cartId
+PUT    /V1/guest-carts/:cartId/order
+PUT    /V1/carts/:cartId/selected-shipping-method
+GET    /V1/carts/:cartId/selected-shipping-method
+GET    /V1/carts/:cartId/shipping-methods
+PUT    /V1/carts/mine/selected-shipping-method
+GET    /V1/carts/mine/selected-shipping-method
+GET    /V1/carts/mine/shipping-methods
+PUT    /V1/guest-carts/:cartId/selected-shipping-method
+GET    /V1/guest-carts/:cartId/selected-shipping-method
+GET    /V1/guest-carts/:cartId/shipping-methods
+GET    /V1/carts/:cartId/items
+POST   /V1/carts/items
+PUT    /V1/carts/items/:itemId
+DELETE /V1/carts/:cartId/items/:itemId
+GET    /V1/guest-carts/:cartId/items
+POST   /V1/guest-carts/items
+PUT    /V1/guest-carts/items/:itemId
+DELETE /V1/guest-carts/:cartId/items/:itemId
+GET    /V1/carts/mine/items
+POST   /V1/carts/mine/items
+PUT    /V1/carts/mine/items/:itemId
+DELETE /V1/carts/mine/items/:itemId
+GET    /V1/carts/:cartId/selected-payment-method
+PUT    /V1/carts/:cartId/selected-payment-method
+GET    /V1/carts/:cartId/payment-methods
+GET    /V1/guest-carts/:cartId/selected-payment-method
+PUT    /V1/guest-carts/:cartId/selected-payment-method
+GET    /V1/guest-carts/:cartId/payment-methods
+GET    /V1/carts/mine/selected-payment-method
+PUT    /V1/carts/mine/selected-payment-method
+GET    /V1/carts/mine/payment-methods
+GET    /V1/carts/:cartId/billing-address
+POST   /V1/carts/:cartId/billing-address
+GET    /V1/guest-carts/:cartId/billing-address
+POST   /V1/guest-carts/:cartId/billing-address
+* POST   /V1/guest-carts/:cartId/addresses
+GET    /V1/carts/mine/billing-address
+POST   /V1/carts/mine/billing-address
+GET    /V1/carts/:cartId/coupons
+PUT    /V1/carts/:cartId/coupons/:couponCode
+DELETE /V1/carts/:cartId/coupons
+GET    /V1/guest-carts/:cartId/coupons
+PUT    /V1/guest-carts/:cartId/coupons/:couponCode
+DELETE /V1/guest-carts/:cartId/coupons
+GET    /V1/carts/mine/coupons
+PUT    /V1/carts/mine/coupons/:couponCode
+DELETE /V1/carts/mine/coupons
+GET    /V1/carts/:cartId/shipping-address
+POST   /V1/carts/:cartId/shipping-address
+GET    /V1/guest-carts/:cartId/shipping-address
+POST   /V1/guest-carts/:cartId/shipping-address
+GET    /V1/carts/mine/shipping-address
+POST   /V1/carts/mine/shipping-address
+* POST   /V1/carts/mine/addresses
+PUT    /V1/carts/:cartId/order
+GET    /V1/carts/:cartId/totals
+* PUT    /V1/guest-carts/:cartId/collect-totals
+GET    /V1/guest-carts/:cartId/totals
+GET    /V1/carts/mine/totals
+* PUT    /V1/carts/mine/collect-totals
+</code></pre>
+
+<h3>Magento/Sales</h3>
+
+<pre><code>GET    /V1/orders/:id
+GET    /V1/orders
+GET    /V1/orders/:id/statuses
+POST   /V1/orders/:id/cancel
+POST   /V1/orders/:id/emails
+POST   /V1/orders/:id/hold
+POST   /V1/orders/:id/unhold
+POST   /V1/orders/:id/comments
+GET    /V1/orders/:id/comments
+PUT    /V1/orders/create
+PUT    /V1/orders/:parent_id
+GET    /V1/invoices/:id
+GET    /V1/invoices
+GET    /V1/invoices/:id/comments
+POST   /V1/invoices/:id/emails
+POST   /V1/invoices/:id/void
+POST   /V1/invoices/:id/capture
+POST   /V1/invoices/comments
+POST   /V1/invoices/
+GET    /V1/creditmemo/:id/comments
+GET    /V1/creditmemos
+GET    /V1/creditmemo/:id
+PUT    /V1/creditmemo/:id
+POST   /V1/creditmemo/:id/emails
+POST   /V1/creditmemo/:id/comments
+POST   /V1/creditmemo
+GET    /V1/shipment/:id
+GET    /V1/shipments
+GET    /V1/shipment/:id/comments
+POST   /V1/shipment/:id/comments
+POST   /V1/shipment/:id/emails
+POST   /V1/shipment/track
+DELETE /V1/shipment/track/:id
+POST   /V1/shipment/
+GET    /V1/shipment/:id/label
+POST   /V1/orders/
+GET    /V1/transactions/:id
+GET    /V1/transactions
+</code></pre>
+
+<h3>Magento/Tax</h3>
+
+<pre><code>POST   /V1/taxRates
+GET    /V1/taxRates/:rateId
+PUT    /V1/taxRates
+DELETE /V1/taxRates/:rateId
+GET    /V1/taxRates/search
+POST   /V1/taxRules
+PUT    /V1/taxRules
+DELETE /V1/taxRules/:ruleId
+GET    /V1/taxRules/:ruleId
+GET    /V1/taxRules/search
+POST   /V1/taxClasses
+GET    /V1/taxClasses/:taxClassId
+PUT    /V1/taxClasses/:classId
+DELETE /V1/taxClasses/:taxClassId
+GET    /V1/taxClasses/search
+</code></pre>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/rest/list.html">List of REST APIs</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/rest/rest-details.html">REST API Details</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/rest/list.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/rest/list.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://magento.com/legal/licensing" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2015 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>
