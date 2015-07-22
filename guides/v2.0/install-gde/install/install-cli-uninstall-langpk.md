@@ -14,13 +14,9 @@ github_link: install-gde/install/install-cli-uninstall-langpk.md
 
 See one of the following sections:
 
-*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</a>
+*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-cli-uninst-mod-lgpk">Uninstall language packages</a>
-
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</h2>
 This section discusses how to uninstall one or more language packages, optionally including the language packages' code from the file system. You can create backups first so you can restore the data at a later time.
@@ -28,6 +24,10 @@ This section discusses how to uninstall one or more language packages, optionall
 This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as Composer packages. If your language package is not a Composer package, you must uninstall it manually by removing language package code from the file system.
 
 You can restore backups at any time using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+
+<h2 id="instgde-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-lgpk-uninst">Uninstall language packages</h2>
 Command usage:
