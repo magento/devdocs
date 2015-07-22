@@ -45,6 +45,7 @@ Before you start your installation, take a moment to figure out which type of us
 			<th>User type</th>
 			<th>Description</th>
 			<th>High-level installation steps</th>
+			<th>Get started link</th>
 		</tr>
 		
 	<tr>
@@ -53,36 +54,34 @@ Before you start your installation, take a moment to figure out which type of us
 		<td><ol><li>Download a compressed file that contains the Magento software.</li>
 			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
 			<li>Installs the Magento software.</li></ol>
-		</p></td>
+		</td>
+		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/merch_install.html">Merchants start here</a></p></td>
 	</tr>
 	<tr>
 		<td><p>developer</p></td>
 		<td><p>Wants to contribute to the Magento codebase, highly technical, has their own Magento development server, understands Composer and GitHub.</p></td>
 		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
 			<li>Uses Composer to update package dependencies.</li>
-			<li>Installs the Magento software.</li></ol></td>
+			<li>Installs the Magento software.</li></ol>
+		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Developers start here</a></p></td>
+	</td>
 	</tr>
 	<tr>
 		<td><p>system integrator</p></td>
 		<td><p>Wants full control over all components installed, has access to the Magento server, highly technical.</p></td>
 		<td><ol><li>Creates a Composer <em>project</em> that contains the list of components to use.</li>
 			<li>Uses Composer to update package dependencies.</li>
-			<li>Installs the Magento software.</li></ol></td>
+			<li>Installs the Magento software.</li></ol>
+		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">System integrators start here</a></p></td>
+	</td>
+
 	</tr>
 	</tbody>
 </table>
 
-<h2 id="install-overview-start">Get started installing, managing, or upgrading</h2>
-Now that you know *who* you are, it's time to learn *how* to install the Magento software:
+#### Related topics
+After you finish installing the Magento software, you can:
 
-*	Installation
-
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/merch_install.html">Merchants start here</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/dev_install.html">Developers start here</a>
-	*	<a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">System integrators start here</a>
-
-*	Post-installation
-
-	*	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-guide.html">Manage components</a>
-	*	<a href="{{ site.gdeurl }}upgrade/bk-upgrade-guide.html">Upgrade</a>
+*	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-guide.html">Manage components</a>
+*	<a href="{{ site.gdeurl }}upgrade/bk-upgrade-guide.html">Upgrade</a>
 

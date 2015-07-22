@@ -5,7 +5,7 @@ subgroup: T_Developer
 title: Install Composer and clone the Magento repository
 menu_title: Install Composer and clone the Magento repository
 menu_node: 
-menu_order: 10
+menu_order: 5
 github_link: install-gde/install/composer-clone.md
 ---
 
