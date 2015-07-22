@@ -5,7 +5,7 @@ subgroup: Quick Start
 title: Quick start with the Magento Testing Framework
 menu_title: Adjust configuration
 menu_order: 1
-github_link: guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.md
+github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
 ---
 <h2 id="mtf_quickstart_config">Adjust configuration</h2>
 
