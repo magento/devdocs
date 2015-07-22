@@ -12,13 +12,10 @@ github_link: config-guide/cli/config-cli-subcommands-depen.md
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-depend-rpt-overview">Overview of dependency reports</a>
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-depend-rpt-run">Run dependency reports</a>
 
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>
 You can run the following types of reports:
@@ -28,6 +25,10 @@ You can run the following types of reports:
 *	Framework dependencies: Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library)
 
 	A dependency in a comment is also a dependency.
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-depend-rpt-run">Run dependency reports</h2>
 Command options:

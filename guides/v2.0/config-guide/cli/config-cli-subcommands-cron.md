@@ -12,16 +12,12 @@ github_link: config-guide/cli/config-cli-subcommands-cron.md
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-overview">Overview of cron</a>
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-bkg">Run cron in the background</a>
 *	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
 
-
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:
@@ -48,9 +44,14 @@ UNIX systems schedule tasks to be performed by particular users using a *crontab
 
 See one of the following sections:
 
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-cron-bkg">Run cron in the background</a>
 *	<a href="#config-cli-cron-browser">Run cron from a web browser</a>
 *	<a href="#config-cli-cron-group">Configure and run cron using the command line</a>
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).
@@ -123,6 +124,11 @@ where
 For example,
 
 	http://magento.example.com/magento2/pub/cron.php?group=default
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
+</div>
 
 <a href="#config-cli-cron-group-conf">More information about cron groups</a>
 
@@ -247,9 +253,9 @@ where `--group` specifies the cron group to run (omit this option to run cron fo
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You can run cron for one group at a time.</p></span>
+  <ul><li>You can run cron for one group at a time.</li>
+  	<li>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</li></ul></span>
 </div>
-
 
 #### Related topics
 

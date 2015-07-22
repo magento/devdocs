@@ -12,14 +12,10 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-static-overview">Overview of static view files deployment</a>
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a>
 *	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
-
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
@@ -50,6 +46,10 @@ Static view files deployment is affected by Magento modes as follows:
 <span class="glyphicon-class">
   <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the command as the web server user. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
 </div>
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
 To deploy static view files:

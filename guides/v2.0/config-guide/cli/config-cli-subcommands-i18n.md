@@ -12,14 +12,12 @@ github_link: config-guide/cli/config-cli-subcommands-i18n.md
 
 #### Contents
 
+*	<a href="#config-cli-xlate-overview">Overview of translations</a>
 *	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>
 *	<a href="#config-cli-subcommands-xlate-pack">Create a language package</a>
 *	<a href="#config-cli-subcommands-xlate-examples">Examples of using translation commands</a>
 
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
 Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.
@@ -27,6 +25,10 @@ Magento translations enable you to customize and localize your store for multipl
 For more information, see <a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>.
 
 This topic discusses how to generate translation dictionaries and language packages.
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
   
 <h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
 See one of the following sections:

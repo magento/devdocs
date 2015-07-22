@@ -12,15 +12,11 @@ github_link: config-guide/cli/config-cli-subcommands-cache.md
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-cache-clean">Overview of cache types</a>
+* <a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-cache-status">View the cache status</a>
 *	<a href="#config-cli-subcommands-cache-en">Enable or disable the cache</a> 
 *	<a href="#config-cli-subcommands-cache-clean">Clean and flush cache types</a>
-
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-cache-clean">Overview of cache types</h2>
 Magento 2 has the following cache types:
@@ -102,6 +98,10 @@ Magento 2 has the following cache types:
 
   </tbody>
 </table>
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-cache-status">View the cache status</h2>
 To view the status of the cache, enter
