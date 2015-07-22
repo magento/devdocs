@@ -12,14 +12,11 @@ github_link: config-guide/cli/config-cli-subcommands-compiler-single.md
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
 *	<a href="#config-cli-subcommands-single-overview">Overview of the single-tenant compiler</a>
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-single-run">Run the single-tenant compiler</a>
 
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 This section discusses the basics of code compilation (which is also referred to as *code generation*).
@@ -30,6 +27,10 @@ This section discusses the basics of code compilation (which is also referred to
 Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-tenant compiler</a> instead.
 
 {% include install/cli_tenant-compiler.html %}
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
   
 <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
 Run the command as follows (there are no options):
