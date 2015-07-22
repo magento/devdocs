@@ -6,7 +6,7 @@ title: Migrate Data
 menu_title: Migrate Data
 menu_node:
 menu_order: 2
-github_link: migration/migration-migrate.md
+github_link: migration/migration-migrate-data.md
 ---
 
   

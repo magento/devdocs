@@ -6,7 +6,7 @@ title: Migrate Changes
 menu_title: Migrate Changes
 menu_node:
 menu_order: 3
-github_link: migration/migration-migrate.md
+github_link: migration/migration-migrate-delta.md
 ---
 
   
