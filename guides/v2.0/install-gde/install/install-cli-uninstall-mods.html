@@ -172,12 +172,26 @@
 <p>See one of the following sections:</p>
 
 <ul>
-  <li><a href="#instgde-cli-before">First steps</a></li>
   <li><a href="#instgde-cli-uninst-prereq">Prerequisites</a></li>
   <li><a href="#instgde-cli-uninst-mod-over">Overview of uninstalling modules</a></li>
+  <li><a href="#instgde-cli-before">First steps</a></li>
   <li><a href="#instgde-cli-uninst-mod-uninst">Uninstall modules</a></li>
   <li><a href="#instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</a></li>
 </ul>
+
+<h2 id="instgde-cli-uninst-prereq">Prerequisites</h2>
+<p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/install-cli-install.html">install the Magento software</a>.</p>
+
+<h2 id="instgde-cli-uninst-mod-over">Overview of uninstalling modules</h2>
+<p>This section discusses how to uninstall one or more modules. During uninstallation, you can optionally remove the modules’ code, database schema, and database data. You can create backups first so you can recover the data at a later time.</p>
+
+<p>You should uninstall a module only if you’re certain you won’t use it. Instead of uninstalling a module, you can disable it as discussed in <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a module that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module&gt;</code>.</p>
+  <p>As an alternative, you can <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
+</div>
 
 <h2 id="instgde-cli-before">First steps</h2>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
@@ -194,20 +208,6 @@ bash shell example for CentOS:<br />
 </div>
 
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
-
-<h2 id="instgde-cli-uninst-prereq">Prerequisites</h2>
-<p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/install-cli-install.html">install the Magento software</a>.</p>
-
-<h2 id="instgde-cli-uninst-mod-over">Overview of uninstalling modules</h2>
-<p>This section discusses how to uninstall one or more modules. During uninstallation, you can optionally remove the modules’ code, database schema, and database data. You can create backups first so you can recover the data at a later time.</p>
-
-<p>You should uninstall a module only if you’re certain you won’t use it. Instead of uninstalling a module, you can disable it as discussed in <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a module that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module&gt;</code>.</p>
-  <p>As an alternative, you can <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
-</div>
 
 <h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
 <p>Command usage:</p>

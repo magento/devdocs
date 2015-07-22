@@ -172,27 +172,11 @@
 <p>See one of the following sections:</p>
 
 <ul>
-  <li><a href="#instgde-cli-before">First steps</a></li>
   <li><a href="#instgde-install-magento-prereq">Prerequisite</a></li>
   <li><a href="#instgde-install-uninst-theme-over">Overview of uninstalling themes</a></li>
+  <li><a href="#instgde-cli-before">First steps</a></li>
   <li><a href="#instgde-install-uninst-theme-uninst">Uninstall themes</a></li>
 </ul>
-
-<h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-install-uninst-theme-prereq">Prerequisite</h2>
 <p>Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of <code>&lt;your Magento install dir&gt;/app/design/&lt;area name&gt;</code>. You must specify the path to the theme starting with the area, which is either <code>frontend</code> (for storefront themes) or <code>adminhtml</code> (for Magento Admin themes).</p>
@@ -214,6 +198,22 @@ bash shell example for CentOS:<br />
     <p><a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">More information about theme inheritance</a>.</p>
   </li>
 </ul>
+
+<h2 id="instgde-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
+
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
 <p>Command usage:</p>

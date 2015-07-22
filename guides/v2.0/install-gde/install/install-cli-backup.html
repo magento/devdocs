@@ -172,10 +172,21 @@
 <p>See one of the following sections:</p>
 
 <ul>
-  <li><a href="#instgde-cli-before">First steps</a></li>
   <li><a href="#instgde-cli-uninst-back-over">Overview of backup</a></li>
+  <li><a href="#instgde-cli-before">First steps</a></li>
   <li><a href="#instgde-cli-uninst-back">Backing up</a></li>
 </ul>
+
+<h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
+<p>This command enables you to back up:</p>
+
+<ul>
+  <li>The Magento file system (excluding <code>var</code> and <code>pub/static</code> directories)</li>
+  <li>The <code>pub/media</code> directory</li>
+  <li>The Magento 2 database</li>
+</ul>
+
+<p>Backups are stored in the <code>var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.0/install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
 
 <h2 id="instgde-cli-before">First steps</h2>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
@@ -192,17 +203,6 @@ bash shell example for CentOS:<br />
 </div>
 
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
-
-<h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
-<p>This command enables you to back up:</p>
-
-<ul>
-  <li>The Magento file system (excluding <code>var</code> and <code>pub/static</code> directories)</li>
-  <li>The <code>pub/media</code> directory</li>
-  <li>The Magento 2 database</li>
-</ul>
-
-<p>Backups are stored in the <code>var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.0/install-gde/install/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
 
 <h2 id="instgde-cli-uninst-back">Backing up</h2>
 <p>Command usage:</p>
