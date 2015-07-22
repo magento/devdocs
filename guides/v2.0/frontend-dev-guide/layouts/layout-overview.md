@@ -24,6 +24,7 @@ This article describes the basic concepts you need to know to create layouts for
 A *layout handle* is a uniquely identified set of layout instructions that serves as a name of a layout file.
 
 There are three kinds of layout handles:
+
 - **page type layout handles** – Synonyms of the page type identifiers. Correspond to "full action names" of controller actions, for example, catalog_product_view.
 - **page layout handles** – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.
 - **arbitrary handles** - Do not correspond to any page type, but other handles use them by including.
@@ -66,7 +67,7 @@ In this guide we use *layout files* when talking about concepts which are simila
 The following terms are used to distinguish layouts provided by different application components:
 
 * *Base layouts*: Layout files provided by modules. Conventional location: 
-	* Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout`</code>
+	* Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code>
 	* Page layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code>
 * *Theme layouts*: Layout files provided by themes. Conventional location:
 	* Page configuration and generic layout files: <code>app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code>
