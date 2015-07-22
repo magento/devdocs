@@ -170,27 +170,11 @@
 		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a></li>
   <li><a href="#config-cli-subcommands-single-overview">Overview of the single-tenant compiler</a></li>
+  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-subcommands-single-run">Run the single-tenant compiler</a></li>
 </ul>
-
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 <p>This section discusses the basics of code compilation (which is also referred to as <em>code generation</em>).</p>
@@ -244,6 +228,22 @@ You won’t have to worry that the generated code is delegating to the wrong met
 <p>Generated code and the dependency injection configuration is written to the <code>&lt;your Magento install dir&gt;/var/generation</code> and <code>&lt;your Magento install dir&gt;/var/di</code> directories, respectively.</p>
 <p>If <code>&lt;your Magento install dir&gt;/var/di/definitions.php</code> exists, it is used by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>; otherwise, the much slower <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. (This class uses the reflection-based the definition builder.) </p>
 <p>Runtime definition compilation is fine in a development environment but you should use the compiler in a production environment.</p>
+
+<h2 id="config-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
+
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-subcommands-single">Run the single-tenant compiler</h2>
 <p>Run the command as follows (there are no options):</p>

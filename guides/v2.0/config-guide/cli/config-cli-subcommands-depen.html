@@ -170,9 +170,22 @@
 		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-depend-rpt-overview">Overview of dependency reports</a></li>
+  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-depend-rpt-run">Run dependency reports</a></li>
+</ul>
+
+<h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>
+<p>You can run the following types of reports:</p>
+
+<ul>
+  <li>Module dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft</li>
+  <li>Circular dependencies: Shows the total number of dependency chains and the number and list of circular dependencies for each module</li>
+  <li>
+    <p>Framework dependencies: Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library)</p>
+
+    <p>A dependency in a comment is also a dependency.</p>
+  </li>
 </ul>
 
 <h2 id="config-cli-before">First steps</h2>
@@ -190,19 +203,6 @@ bash shell example for CentOS:<br />
 </div>
 
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
-
-<h2 id="config-cli-depend-rpt-overview">Overview of dependency reports</h2>
-<p>You can run the following types of reports:</p>
-
-<ul>
-  <li>Module dependencies: Shows the total number of dependencies between modules and whether the dependencies are hard or soft</li>
-  <li>Circular dependencies: Shows the total number of dependency chains and the number and list of circular dependencies for each module</li>
-  <li>
-    <p>Framework dependencies: Shows the total number of dependencies on the Magento framework by module (including the total number of framework entries for each library)</p>
-
-    <p>A dependency in a comment is also a dependency.</p>
-  </li>
-</ul>
 
 <h2 id="config-cli-depend-rpt-run">Run dependency reports</h2>
 <p>Command options:</p>

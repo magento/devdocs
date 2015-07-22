@@ -170,28 +170,12 @@
 		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-cron-overview">Overview of cron</a></li>
+  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-cron-bkg">Run cron in the background</a></li>
   <li><a href="#config-cli-cron-browser">Run cron from a web browser</a></li>
   <li><a href="#config-cli-cron-group">Configure and run cron using the command line</a></li>
 </ul>
-
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-cron-overview">Overview of cron</h2>
 <p>Several Magento features require at least one cron job, which schedules activities to occur in the future. A partial list of these activities follows:</p>
@@ -221,10 +205,27 @@ bash shell example for CentOS:<br />
 <p>See one of the following sections:</p>
 
 <ul>
+  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-cron-bkg">Run cron in the background</a></li>
   <li><a href="#config-cli-cron-browser">Run cron from a web browser</a></li>
   <li><a href="#config-cli-cron-group">Configure and run cron using the command line</a></li>
 </ul>
+
+<h2 id="config-cli-before">First steps</h2>
+<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
+<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
+Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
+bash shell example for CentOS:<br />
+<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You can also run the commands in the following ways:</p>
+<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
+<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
+<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+</div>
+
+<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>
 <p>This section discusses how to run all Magento cron jobs every minute, which is the recommended interval for both Magento Community Edition (CE) and Enterprise Edition (EE).</p>
@@ -320,6 +321,11 @@ bash shell example for CentOS:<br />
 
 <pre><code>http://magento.example.com/magento2/pub/cron.php?group=default
 </code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<span class="glyphicon-class">
+  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
+</div>
 
 <p><a href="#config-cli-cron-group-conf">More information about cron groups</a></p>
 
@@ -446,7 +452,8 @@ bash shell example for CentOS:<br />
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You can run cron for one group at a time.</p></span>
+  <ul><li>You can run cron for one group at a time.</li>
+  	<li>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</li></ul></span>
 </div>
 
 <h4 id="related-topics">Related topics</h4>

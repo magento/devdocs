@@ -170,11 +170,22 @@
 		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-perf-overview">Overview of performance testing data</a></li>
+  <li><a href="#config-cli-before">First steps</a></li>
   <li><a href="#config-cli-perf-prof">About profiles</a></li>
   <li><a href="#config-cli-perf-run">Run the data generator</a></li>
 </ul>
+
+<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
+<p>To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
+
+<p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
+
+<p>The following figure shows how a product displays on the storefront using the small profile:</p>
+
+<p><img src="/common/images/config_generate-data.png" alt="Sample storefront with generated data" /></p>
+
+<p>This gives you an idea about what the data looks like.</p>
 
 <h2 id="config-cli-before">First steps</h2>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
@@ -191,17 +202,6 @@ bash shell example for CentOS:<br />
 </div>
 
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
-
-<h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
-<p>To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).</p>
-
-<p>You can adjust the amount of data you create using <em>profiles</em> (small, medium, large, and extra large). The next section discusses profiles in more detail.</p>
-
-<p>The following figure shows how a product displays on the storefront using the small profile:</p>
-
-<p><img src="/common/images/config_generate-data.png" alt="Sample storefront with generated data" /></p>
-
-<p>This gives you an idea about what the data looks like.</p>
 
 <h2 id="config-cli-perf-prof">About profiles</h2>
 <p>The following table provides details about the data generator profiles (small, medium, large, and extra large).</p>
