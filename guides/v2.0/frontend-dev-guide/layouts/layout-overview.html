@@ -181,10 +181,13 @@
 
 <p>A <em>layout handle</em> is a uniquely identified set of layout instructions that serves as a name of a layout file.</p>
 
-<p>There are three kinds of layout handles:
-- <strong>page type layout handles</strong> – Synonyms of the page type identifiers. Correspond to “full action names” of controller actions, for example, catalog_product_view.
-- <strong>page layout handles</strong> – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.
-- <strong>arbitrary handles</strong> - Do not correspond to any page type, but other handles use them by including.</p>
+<p>There are three kinds of layout handles:</p>
+
+<ul>
+  <li><strong>page type layout handles</strong> – Synonyms of the page type identifiers. Correspond to “full action names” of controller actions, for example, catalog_product_view.</li>
+  <li><strong>page layout handles</strong> – Identifiers of specific pages. Correspond to controller actions with parameters that identify specific pages, for example, catalog_product_view_type_simple_id_128.</li>
+  <li><strong>arbitrary handles</strong> - Do not correspond to any page type, but other handles use them by including.</li>
+</ul>
 
 <h2 id="layout_overview_blocks">Basic layout elements</h2>
 
@@ -227,7 +230,7 @@
 <ul>
   <li><em>Base layouts</em>: Layout files provided by modules. Conventional location: 
     <ul>
-      <li>Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout`</code></li>
+      <li>Page configuration and generic layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/layout</code></li>
       <li>Page layout files: <code>app/code/&lt;Namespace&gt;/&lt;Module&gt;/view/frontend/page_layout</code></li>
     </ul>
   </li>
