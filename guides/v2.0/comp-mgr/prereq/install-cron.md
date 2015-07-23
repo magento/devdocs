@@ -1,11 +1,11 @@
 ---
 layout: default
-group: 
-subgroup: R_first
+group: compman
+subgroup: b_prereq
 title: Configure the installation and updater cron jobs
 menu_title: Configure the installation and updater cron jobs
 menu_order: 5
-github_link: install-gde/prereq/install-cron.md
+github_link: comp-mgr/prereq/install-cron.md
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
