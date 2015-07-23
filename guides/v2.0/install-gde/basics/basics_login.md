@@ -7,6 +7,7 @@ menu_title: How do I log in to my Magento server using a terminal, command promp
 menu_node: 
 menu_order: 2
 github_link: install-gde/basics/basics_login.md
+redirect_from: /guides/v1.0/install-gde/basics/basics_login.md
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

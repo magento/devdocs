@@ -8,6 +8,7 @@ menu_node:
 menu_order: 1
 github_link: install-gde/bk-install-guide.md
 redirect_from: /guides/v1.0/install-gde/bk-install-guide.html
+redirect_from: /guides/v1.0//install-gde/bk-install-guide.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
