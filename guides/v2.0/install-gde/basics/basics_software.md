@@ -5,7 +5,7 @@ subgroup: Getting Started
 title: What is the software that the Magento server needs to run?
 menu_title: What is the software that the Magento server needs to run?
 menu_node: 
-menu_order: 99
+menu_order: 99 
 github_link: install-gde/basics/basics_software.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_software.md
 ---
