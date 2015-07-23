@@ -5,7 +5,7 @@ subgroup: Installation
 title: Installation of the Magento Testing Framework
 menu_title: Check pre-installation conditions
 menu_order: 1
-github_link: guides/v1.0/mtf/mtf_installation/mtf_preinstall.md
+github_link: mtf/mtf_installation/mtf_preinstall.md
 ---
 
 <h2 id="mtf_install_pre">Check pre-installation conditions</h2>
