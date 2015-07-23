@@ -14,13 +14,9 @@ github_link: install-gde/install/cli/install-cli-backup.md
 
 See one of the following sections:
 
-*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-cli-uninst-back-over">Overview of backup</a>
+*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-cli-uninst-back">Backing up</a>
-
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
 This command enables you to back up:
@@ -30,6 +26,10 @@ This command enables you to back up:
 *	The Magento 2 database
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+
+<h2 id="instgde-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-back">Backing up</h2>
 Command usage:

@@ -5,7 +5,7 @@ subgroup: Quick Start
 title: Quick start with the Magento Testing Framework
 menu_title: See logs for failed tests
 menu_order: 4
-github_link: guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_logs.md
+github_link: mtf/mtf_quickstart/mtf_quickstart_logs.md
 ---
 
 <h2 id="mtf_quickstart_logs">See logs for failed tests</h2>

@@ -12,6 +12,8 @@ github_link: install-gde/install/verify.md
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
 <!-- Referring file: README.md owned by core -->
 
+This is a test.
+
  
 #### Contents 
 
@@ -39,9 +41,9 @@ If the page displays unconfigured (no styles, only text), see <a href="{{ site.g
 
 <h2 id="instgde-verify-admin">Verify the Magento Admin</h2>
 
-Go to the Magento Admin in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URL is `admin`, enter `http://www.example.com/admin` in your browser's address or location bar.
+Go to the Magento Admin in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
 
-(The Admin URL is specified by the value of the `backend-frontname` installation parameter.)
+(The Admin URI is specified by the value of the `backend-frontname` installation parameter.)
 
 When prompted, log in as a Magento Administrator.
 

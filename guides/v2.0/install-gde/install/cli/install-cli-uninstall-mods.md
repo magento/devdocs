@@ -14,15 +14,11 @@ github_link: install-gde/install/cli/install-cli-uninstall-mods.md
 
 See one of the following sections:
 
-*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-cli-uninst-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-uninst-mod-over">Overview of uninstalling modules</a>
+*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-cli-uninst-mod-uninst">Uninstall modules</a>
 *	<a href="#instgde-cli-uninst-mod-roll">Roll back the file system, database, or media files</a>
-
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-prereq">Prerequisites</h2>
 Before you use this command, you must <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
@@ -37,6 +33,10 @@ You should uninstall a module only if you're certain you won't use it. Instead o
   <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a module that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module></code>.</p>
   <p>As an alternative, you can <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
 </div>
+
+<h2 id="instgde-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-uninst-mod-uninst">Uninstall modules</h2>
 Command usage:
