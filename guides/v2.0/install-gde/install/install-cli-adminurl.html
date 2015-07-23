@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Update, reinstall, uninstall Magento</title>
+	<title>Display or change the Admin URI</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/install/install-cli-uninstall.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/install/install-cli-adminurl.html">
 
 </head>	
 <body>
@@ -156,9 +156,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Update, reinstall, uninstall Magento</h1>
+		<h1 class="page-heading">Display or change the Admin URI</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/install-cli-uninstall.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/install-cli-adminurl.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -172,12 +172,10 @@
 <p>See one of the following sections:</p>
 
 <ul>
-  <li><a href="#instgde-cli-before">First steps</a></li>
-  <li><a href="#instgde-install-magento-prereq">Prerequisites</a></li>
-  <li><a href="#instgde-install-magento-update">Update the Magento software</a></li>
-  <li><a href="#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-  <li><a href="#instgde-install-uninstall">Uninstall the Magento software</a></li>
-  <li><a href="#instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</a></li>
+  <li><a href="#instgde-install-cli-first">First steps</a></li>
+  <li><a href="#instgde-cli-subcommands-store-prereq">Prerequisites</a></li>
+  <li><a href="#instgde-cli-displayurl">Display the Admin URL</a></li>
+  <li><a href="#instgde-cli-changeurl">Change the Admin URL</a></li>
 </ul>
 
 <h2 id="instgde-cli-before">First steps</h2>
@@ -196,207 +194,33 @@ bash shell example for CentOS:<br />
 
 <p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.</p>
 
-<h2 id="instgde-install-magento-prereq">Prerequisites</h2>
-<p>Before you use this command, you must <a href="/guides/v2.0/install-gde/install/install-cli-install.html">install the Magento software</a>.</p>
+<h2 id="instgde-cli-subcommands-db-prereq">Prerequisites</h2>
+<p>Before you run this command, you must <a href="/guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>.</p>
 
-<h2 id="instgde-install-magento-update">Update the Magento software</h2>
-<p>This section discusses how to update your Magento software without reinstalling it. To uninstall and reinstall, see the next section.</p>
+<h2 id="instgde-cli-displayurl">Display the Admin URI</h2>
+<p>This section discusses how to use the command line to display the Admin Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>).</p>
 
-<p>You might do this in an development environment especially to get all the latest code changes.</p>
+<p>Command options:</p>
 
-<p>To update the Magento software:</p>
-
-<ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
-  <li>
-    <p>Save any changes you made to <code>composer.json</code> because the following steps will overwrite it:</p>
-
-    <pre><code> cd &lt;your Magento install dir&gt;
- cp composer.json composer.json.old
-</code></pre>
-  </li>
-  <li>
-    <p>If you previously installed the optional sample data, enter the following command:</p>
-
-    <pre><code>rm -rf dev/tools/Magento/Tools/SampleData/
-</code></pre>
-  </li>
-  <li>
-    <p>Update your local repository to get the latest code:</p>
-
-    <pre><code>git pull origin develop
+<pre><code>magento info:adminuri
 </code></pre>
 
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
-</div>
-  </li>
-  <li>
-    <p>Diff and merge your <code>composer.json.old</code> with <code>composer.json</code> installed with the Magento software.</p>
-  </li>
-  <li>
-    <p>Enter the following command:</p>
+<p>A sample result follows:</p>
 
-    <pre><code>composer update
-</code></pre>
-  </li>
-  <li>
-    <p>Update the Magento database.</p>
-
-    <pre><code>php bin/magento setup:upgrade
-</code></pre>
-  </li>
-  <li>
-    <p>Clear <code>var</code> directory contents:</p>
-
-    <pre><code>rm -rf var/generation/* var/cache/*
-</code></pre>
-  </li>
-  <li>
-    <p><em>Optional</em>. To change installation options, repeat the tasks discussed in:</p>
-
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
-
-<h2 id="instgde-install-magento-reinstall">Reinstall the Magento software</h2>
-<p>This section discusses how to uninstall and then reinstall the Magento software with the latest version.</p>
-
-<p>To reinstall the Magento software:</p>
-
-<ol>
-  <li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;
-git pull origin develop
-php bin/magento setup:uninstall
+<pre><code>Admin Panel URI: /admin_1wgrah
 </code></pre>
 
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
-  				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
-</div>
-  </li>
-  <li>
-    <p>Install the Magento software:</p>
+<p>You can also view the the Admin URI in <code>&lt;your Magento install dir&gt;/app/etc/env.php</code>. A snippet follows:</p>
 
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?</span> <span class="nx">php</span>
+  <span class="s1">&#39;backend&#39;</span> <span class="o">=&gt;</span>
+  <span class="k">array</span> <span class="p">(</span>
+    <span class="s1">&#39;frontName&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin_e57arp&#39;</span><span class="p">,</span>
+  <span class="p">),</span>
+  <span class="o">&lt;?</span></code></pre></div>
 
-<h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
-<p>Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under <code>var</code>.</p>
-
-<p>To uninstall the Magento software, enter the following command:</p>
-
-<pre><code>magento setup:uninstall
-</code></pre>
-
-<p>The following message displays to confirm a successful uninstallation:</p>
-
-<pre><code>[SUCCESS]: Magento uninstallation complete.
-</code></pre>
-
-<h2 id="instgde-install-magento-updatebeta11">Update to version 0.42.0-beta11 or later from beta10 or earlier</h2>
-<p>This section applies to you in the following situation only:</p>
-
-<ul>
-  <li>You currently have version 0.42.0-beta10 or earlier</li>
-  <li>You’re updating to version 0.42.0-beta11 or later</li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-    <p>As a result of this change, you must first <em>uninstall</em> the Magento software and then reinstall it.</p>
-</div>
-
-<p>To determine the versions:</p>
-
-<ul>
-  <li>Your version: View <code>&lt;your Magento install dir&gt;/CHANGELOG.md</code> in a text editor.</li>
-  <li>Current version: Look at the Magento 2 <a href="https://github.com/magento/magento2/blob/develop/CHANGELOG.md" target="_blank">changelog</a> on GitHub.</li>
-</ul>
-
-<h3 id="instgde-install-magento-updatebeta11-why">Why must I uninstall?</h3>
-<p>We made changes to the Magento database to make it easier to understand module schema and data versions. This in turn makes it easier for you to code your module's installations and upgrades. In particular:</p>
-<ul><li>The <code>core_resource</code> table is now named <code>setup_module</code></li>
-<li>Resources in the table are replaced by module names. For example, <code>catalog_setup</code> is now <code>Magento_Catalog</code>, which exactly matches the module name. </li>
-<li>The following fields in the <code>setup_module</code> table have new names:
-<ul><li><code>code</code> is now <code>module</code></li>
-<li><code>version</code> is now <code>schema_version</code></li></ul>
-</li>
-</ul>
-<p>Old way:</p>
-<pre>	code                     | version   | data_version|
-	-----------------------------------------------------------
-	catalog_setup            | 2.0.0     | 2.0.0   
-	checkoutagreements_setup | 2.0.0     | 2.0.0   
-	checkout_setup           | 2.0.0     | 2.0.0   
-	cms_setup                | 2.0.0.1   | 2.0.0.1 </pre>
-<p>New way:</p>
-
-<pre>	module                       | schema_version        | data_version|
-	------------------------------------------------------------------------
-	Magento_Catalog              | 2.0.0.1               | 2.0.0.1
-	Magento_CatalogEvent         | 2.0.0                 | 2.0.0
-	Magento_CatalogImportExport  | 2.0.0                 | 2.0.0
-	Magento_CatalogInventory     | 2.0.0                 | 2.0.0
-	Magento_CatalogPermissions   | 2.0.0                 | 2.0.0</pre>
-
-<h3 id="instgde-install-magento-updatebeta11-how">How to update the Magento software</h3>
-<p>To update the Magento software to 0.42.0-beta11 or later from version beta10 or earlier:</p>
-
-<ol>
-  <li>
-    <p>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</p>
-  </li>
-  <li>
-    <p>Change to the following directory:</p>
-
-    <pre><code>cd &lt;your Magento install dir&gt;/setup
-</code></pre>
-  </li>
-  <li>
-    <p>Uninstall the Magento software and change to your Magento installation directory:</p>
-
-    <pre><code>magento setup:uninstall &amp;&amp; cd ..
-</code></pre>
-  </li>
-  <li>
-    <p>Update the Magento code:</p>
-
-    <pre><code>git pull origin develop
-</code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
-</div>
-  </li>
-  <li>
-    <p>Run Composer:</p>
-
-    <pre><code>composer install
-</code></pre>
-  </li>
-  <li>
-    <p>Install the Magento software:</p>
-
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/install/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a></li>
-      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-    </ul>
-  </li>
-</ol>
+<h2 id="instgde-cli-changeurl">Change the Admin URL</h2>
+<p>To change the Admin URI, use the <a href="/guides/v2.0//install-gde/install/install-cli-subcommands-deployment.html">magento setup:config:set</a> command.</p>
 
 
 		</div>
@@ -594,11 +418,11 @@ php bin/magento setup:uninstall
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-adminurl.html">Display or change the Admin URI</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/install-cli-adminurl.html">Display or change the Admin URI</a></li>
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
 						
 								
 							
@@ -952,8 +776,8 @@ php bin/magento setup:uninstall
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/install-cli-uninstall.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/install-cli-uninstall.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/install-cli-adminurl.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/install-cli-adminurl.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
