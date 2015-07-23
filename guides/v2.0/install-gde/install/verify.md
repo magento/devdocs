@@ -12,6 +12,8 @@ github_link: install-gde/install/verify.md
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
 <!-- Referring file: README.md owned by core -->
 
+This is a test.
+
  
 #### Contents 
 
