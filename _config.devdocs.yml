@@ -20,6 +20,9 @@ mage2000url: "https://github.com/magento/magento2/blob/develop/"
 m1xgdeurl: "/guides/m1x/"
 m1xgithuburl: "http://github.com/magento/devdocs/blob/develop/guides/m1x/"
 
+gems:
+  - jekyll-redirect-from
+
 
 # Build settings
 markdown: kramdown
