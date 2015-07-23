@@ -5,7 +5,7 @@ subgroup: A_Introduction
 title: Introduction to Magento Testing Framework
 menu_title: INTRODUCTION
 menu_node: parent
-menu_order:
+menu_order: 1
 github_link: mtf/mtf_introduction.md
 ---
 

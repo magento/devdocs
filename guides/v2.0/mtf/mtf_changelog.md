@@ -5,7 +5,7 @@ subgroup: Z_Chanhelog
 title: Changelog of Magento Testing Framework
 menu_title: CHANGELOG
 menu_node: parent
-menu_order:
+menu_order: 5
 github_link: mtf/mtf_changelog.md
 ---
 
