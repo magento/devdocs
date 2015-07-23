@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Changelog of Magento Testing Framework</title>
+	<title>Update the Magento Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/mtf/mtf_changelog.html">
+	<link rel="canonical" href="//guides/v2.0/mtf/mtf_update.html">
 
 </head>	
 <body>
@@ -156,9 +156,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Changelog of Magento Testing Framework</h1>
+		<h1 class="page-heading">Update the Magento Testing Framework</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/mtf/mtf_changelog.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/mtf/mtf_update.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -167,8 +167,45 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Check current state of the Magento Testing Framework, history of changes and list of releases on <a href="https://github.com/magento/mtf/blob/develop/CHANGELOG.md">GitHub</a>.</p>
+		<h2 id="mtf_update">How to update</h2>
 
+<p>Two types of updates are available.</p>
+
+<ul>
+  <li><a href="#mtf_update_install">Install a new version of the Magento Testing Framework</a></li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>Use this type of update if the version of the Magento Testing Framework in <code>&lt;magento_root&gt;/dev/tests/functional/composer.json</code> and last version in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md</code> are different. For example, when you updated Magento.</p>
+</div>
+
+<ul>
+  <li><a href="#mtf_update_depend">Update components from dependencies in <code>&lt;magento_root&gt;/dev/tests/functional/composer.json</code></a></li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>Use this type of update if you want to update dependent software from <code>composer.json</code>, or changed <code>composer.json</code> dependencies.</p>
+</div>
+
+<h3 id="mtf_update_install">Install a new version of the Magento Testing Framework</h3>
+
+<p>Step 1.    To avoid conflicts with the previous version, remove directory <code>&lt;magento_root&gt;/dev/tests/functional/generate</code>.</p>
+
+<p>Step 2.    Remove file <code>&lt;magento_root&gt;/dev/tests/functional/composer.lock</code>. </p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
+</div>
+
+<p>Step 3.    <a href="/guides/v2.0/mtf/mtf_installation/mtf_install.html">Perform and check installation.</a></p>
+
+<h3 id="mtf_update_depend">Update components from dependencies in <code>composer.json</code></h3>
+
+<ol>
+  <li>Open a command prompt.</li>
+  <li>Change working directory to <code>&lt;magento_root&gt;/dev/tests/functional/</code>.</li>
+  <li>Enter <code>composer update</code>.</li>
+</ol>
 
 
 		</div>
@@ -374,7 +411,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/mtf/mtf_update.html">UPDATE</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/mtf/mtf_update.html">UPDATE</a></li>
 									
 								
 								
@@ -399,7 +436,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/mtf/mtf_changelog.html">CHANGELOG</a></li>
 									
 								
 								
@@ -502,8 +539,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_changelog.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_changelog.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_update.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_update.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
