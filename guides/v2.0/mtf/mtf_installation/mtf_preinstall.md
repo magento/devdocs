@@ -33,22 +33,5 @@ To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk
 <p> To be sure, find text <code>extension=php_openssl.dll</code>. If it starts from <code>;</code>, then directive disabled. To enable it, delete <code>;</code>.</p>
 </div>
 
-<h4 id="mtf_install_pre_tools_apache">Selenium Standalone Server</h4>
-Selenium Standalone Server is downloaded during Magento installation in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/netwing/selenium-server-standalone</code>.
-If desired, you can download the [newest version][].
 
-
-<h4 id="mtf_install_pre_tools_apache">Selenium WebDriver</h4>
-Selenium Standalone Server uses WebDriver to manipulate the browser.
-
-Download the [WebDriver for your browser][], if needed. 
-
-<h3 id="mtf_install_pre_mtf-check">4. Check if MTF has been already installed</h3>
-1. Open directory <code>&lt;magento_root&gt;/dev/tests/functional/</code>.
-1. Find <code>vendor/magento/mtf</code> directory. If the directory exists, you already have MTF installed.
-
-
-
-[official web-site]: http://www.seleniumhq.org/download/
-[newest version]: http://www.seleniumhq.org/download/
-[WebDriver for your browser]: http://www.seleniumhq.org/about/platforms.jsp#browsers
+<h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_installation/mtf_install.html">Perform and check installation</a>
