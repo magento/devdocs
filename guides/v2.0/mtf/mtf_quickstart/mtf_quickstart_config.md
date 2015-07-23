@@ -5,7 +5,7 @@ subgroup: Quick Start
 title: Quick start with the Magento Testing Framework
 menu_title: Adjust configuration
 menu_order: 1
-github_link: guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_config.md
+github_link: mtf/mtf_quickstart/mtf_quickstart_config.md
 ---
 <h2 id="mtf_quickstart_config">Adjust configuration</h2>
 
@@ -34,7 +34,7 @@ Find <code>&lt;php&gt;</code> element.
 
 For <code>&lt;env name="basedir"</code> set <code>value="&lt;full_path_to_directory&gt;" /&gt;</code> (that is directory for error logs). For example, <code>&lt;env name="basedir" value="C:\magento2ce\dev\tests\functional\var\log" /&gt;</code>.
 
-For <code>name="credentials_file_path" </code> set <code>value="&lt;full_path_to_directory&gt;" /&gt;</code> (that is file with credentials required by Magento Modules). For example, <code>&lt;env name="credentials_file_path" value="C:\magento2ce\dev\tests\functional\credentials.xml" /&gt;</code>.
+For <code>name="credentials_file_path" </code> set <code>value="&lt;full_path_to_directory&gt;" /&gt;</code> (that is file with credentials for Magento Modules, if required). For example, <code>&lt;env name="credentials_file_path" value="C:\magento2ce\dev\tests\functional\credentials.xml" /&gt;</code>.
 
 <h3 id="mtf_quickstart_config_configxml">2. Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
 Find <code>config.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional/etc</code>, and open it in editor.
@@ -56,7 +56,7 @@ Copy <code>&lt;server&gt;</code> element from <code>&lt;magento_root>/dev/tests/
 Enter actual data in <code>&lt;browserName&gt;</code> and <code>&lt;browser&gt;</code> attributes.
 
 
-<h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to configure Magento Testing Framework to work with Magento Modules that requires credentials</h3>
+<h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to work with Magento Modules that requires credentials</h3>
 
 Find <code>credentials.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional</code>, and open it in editor.
 

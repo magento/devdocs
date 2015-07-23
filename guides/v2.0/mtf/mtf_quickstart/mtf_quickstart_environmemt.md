@@ -5,7 +5,7 @@ subgroup: Quick Start
 title: Quick start with the Magento Testing Framework
 menu_title: Prepare environment for test run
 menu_order: 2
-github_link: guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.md
+github_link: mtf/mtf_quickstart/mtf_quickstart_environmemt.md
 ---
 <h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 
@@ -20,7 +20,7 @@ Selenium server downloaded during MTF installation in <code>&lt;magento_root&gt;
 1.    Enter <code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar</code>.
 
 <h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non default browser</h3>        
-If your browser is not maintained by Selenium server, you should run Selenium server with additional argument to use [web-driver][].
+If the Selenium Server does not work directly with your browser, you should run the Selenium Server with additional argument to use [web-driver][].
 
 Example for Google Chrome:
 <code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar -Dwebdriver.chrome.driver=&lt;path_to_chrome_driver&gt;/chromedriver.exe</code>.
