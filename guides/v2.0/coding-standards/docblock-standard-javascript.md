@@ -6,6 +6,7 @@ title: JavaScript DocBlock standard
 menu_title: JavaScript DocBlock standard
 menu_order: 6
 github_link: coding-standards/docblock-standard-javascript.md
+redirect_from: /guides/v1.0/coding-standards/docblock-standard-javascript.html
 ---
 
 <h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>

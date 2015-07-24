@@ -6,6 +6,7 @@ title: Configure services as web APIs
 menu_title: Configure services as web APIs
 menu_order: 3
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md
+redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 ---
 
 <h2 id="overview-web-service">Overview</h2>

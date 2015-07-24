@@ -7,6 +7,7 @@ menu_title: Progress Indicator
 menu_order: 1
 menu_node: 
 github_link: pattern-library/feedbackToUser/progressIndicator/progressIndicator.md
+redirect_from: /guides/v1.0/pattern-library/feedbackToUser/progressIndicator/progressIndicator.html
 ---
 <h2>Progress Indicator</h2>
 

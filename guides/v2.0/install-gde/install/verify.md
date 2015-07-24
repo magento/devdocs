@@ -7,6 +7,7 @@ menu_title: Verify the installation
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/verify.md
+redirect_from: /guides/v1.0/install-gde/install/verify.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

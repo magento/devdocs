@@ -6,6 +6,7 @@ title: Service contract design patterns
 menu_title: Service contract design patterns
 menu_order: 3
 github_link: extension-dev-guide/service-contracts/design-patterns.md
+redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/design-patterns.html
 ---
 
 <p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a design pattern as a best practice with conditions.</p>

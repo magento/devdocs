@@ -6,6 +6,7 @@ title: Apache
 menu_title: Apache
 menu_order: 2
 github_link: install-gde/prereq/apache.md
+redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 ---
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
 <!-- Referring file: README owned by core -->

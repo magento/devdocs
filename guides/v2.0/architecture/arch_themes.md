@@ -6,6 +6,7 @@ title: Themes
 menu_title: Themes
 menu_order: 
 github_link: architecture/arch_themes.md
+redirect_from: /guides/v1.0/architecture/arch_themes.html
 ---
 
 <h2 id="m2arch-themes-overview">Overview</h2>

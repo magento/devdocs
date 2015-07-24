@@ -6,6 +6,7 @@ title: Module naming and location conventions
 menu_title: Module naming and location conventions
 menu_order: 
 github_link: architecture/modules/mod_conventions.md
+redirect_from: /guides/v1.0/architecture/modules/mod_conventions.html
 ---
 
 <h2 id="m2arch-module-conventions-overview"> Overview</h2>

@@ -7,6 +7,7 @@ menu_title: Create a Magento administrator
 menu_node: 
 menu_order: 50
 github_link: install-gde/install/install-cli-subcommands-admin.md
+redirect_from: /guides/v1.0/install-gde/install/install-cli-subcommands-admin.html
 ---
 
   

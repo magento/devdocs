@@ -6,6 +6,7 @@ menu_title: Known issues
 menu_node: 
 menu_order: 2
 github_link: release-notes/known-issues.md
+redirect_from: /guides/v1.0/release-notes/known-issues.html
 ---
 
 <h2 id="known-devbeta">Known issues</h2>

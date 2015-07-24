@@ -6,6 +6,7 @@ title: Customizing RWD illustration
 menu_title: Customizing RWD illustration
 menu_order: 6
 github_link: frontend-dev-guide/responsive-web-design/rwd_practice.md
+redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html
 ---
 <h2>Overview</h2>
 This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento default themes. 

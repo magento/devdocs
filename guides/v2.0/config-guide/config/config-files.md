@@ -6,6 +6,7 @@ title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
 github_link: config-guide/config/config-files.md
+redirect_from: /guides/v1.0/config-guide/config/config-files.html
 ---
 
 

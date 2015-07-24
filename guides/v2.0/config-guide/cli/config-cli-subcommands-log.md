@@ -7,6 +7,7 @@ menu_title: Clean the logs
 menu_node: 
 menu_order: 7
 github_link: config-guide/cli/config-cli-subcommands-log.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-log.html
 ---
 
 

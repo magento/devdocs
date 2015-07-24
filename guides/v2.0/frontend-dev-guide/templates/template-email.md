@@ -7,6 +7,7 @@ menu_title: Customize email templates
 menu_order: 4
 
 github_link: frontend-dev-guide/templates/template-email.md
+redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-email.html
 ---
 
 #### Contents

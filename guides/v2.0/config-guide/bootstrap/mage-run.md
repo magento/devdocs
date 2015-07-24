@@ -7,6 +7,7 @@ menu_title: Multiple websites or stores (MAGE_RUN_TYPE, MAGE_RUN_CODE)
 menu_order: 500
 menu_node: 
 github_link: config-guide/bootstrap/mage-run.md
+redirect_from: /guides/v1.0/config-guide/bootstrap/mage-run.html
 ---
 
 #### Contents

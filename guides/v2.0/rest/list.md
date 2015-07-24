@@ -7,6 +7,7 @@ menu_title: List of REST APIs
 menu_order: 2
 menu_node: 
 github_link: rest/list.md
+redirect_from: /guides/v1.0/rest/list.html
 ---
 
 <h2 id="list">List of REST APIs</h2>

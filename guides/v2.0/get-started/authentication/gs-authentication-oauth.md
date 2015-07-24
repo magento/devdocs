@@ -6,6 +6,7 @@ title: OAuth-based authentication
 menu_title: OAuth-based authentication
 menu_order: 2
 github_link: get-started/authentication/gs-authentication-oauth.md
+redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 ---
 
 <p>Third-party applications that integrate with Magento can use OAuth-based authentication as one of the ways to access Magento Web APIs. This authentication method uses an OAuth 1.0a handshake process.</p>

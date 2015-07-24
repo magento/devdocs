@@ -6,6 +6,7 @@ title: Third-Party libraries
 menu_title: Third-Party libraries
 menu_order: 5
 github_link: architecture/archi_perspectives/third-party-libs.md
+redirect_from: /guides/v1.0/architecture/archi_perspectives/third-party-libs.html
 ---
 
 

@@ -7,6 +7,7 @@ menu_title: Cannot run 'composer install'
 menu_node: 
 menu_order: 7
 github_link: install-gde/trouble/tshoot_composer-install.md
+redirect_from: /guides/v1.0/install-gde/trouble/tshoot_composer-install.html
 ---
 
 

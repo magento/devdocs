@@ -6,6 +6,7 @@ title: Modules and areas
 menu_title: Modules and areas
 menu_order:
 github_link: architecture/modules/mod_and_areas.md
+redirect_from: /guides/v1.0/architecture/modules/mod_and_areas.html
 ---
 
 <h2 id="m2arch-module-areas-overview"> Overview</h2>

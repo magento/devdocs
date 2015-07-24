@@ -7,6 +7,7 @@ menu_title: How to Make Your Theme Responsive and Mobile
 menu_order: 1
 menu_node: parent
 github_link: frontend-dev-guide/responsive-web-design/rwd_overview.md
+redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_overview.html
 ---
 
 Responsive web design (RWD, also referred as<i>responsive design</i>) crafts web sites to provide an optimal viewing experience across a wide range of devices (from large, high-resolution desktop computer monitors to mobile phones).

@@ -7,6 +7,7 @@ menu_title: Review the response
 menu_order: 3
 
 github_link: get-started/gs-web-api-response.md
+redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 ---
 
 <p>Each web API call returns an <a href="#http-status-codes">HTTP status code</a> that reflects the result of a request.</p>

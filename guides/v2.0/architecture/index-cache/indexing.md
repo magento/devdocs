@@ -7,6 +7,7 @@ menu_title: Indexing
 menu_order: 1
 menu_node: parent
 github_link: architecture/index-cache/indexing.md
+redirect_from: /guides/v1.0/architecture/index-cache/indexing.html
 ---
 
 <h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>

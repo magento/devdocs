@@ -6,6 +6,7 @@ title: Modal widget
 menu_order: 8
 menu_title: Modal widget
 github_link: frontend-dev-guide/javascript/widget_modal.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
 <h2 id="modal_overview">Overview</h2>

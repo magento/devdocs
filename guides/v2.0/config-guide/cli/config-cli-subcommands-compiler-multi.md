@@ -7,6 +7,7 @@ menu_title: Multi-tenant compiler
 menu_node: 
 menu_order: 10
 github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
 ---
 
 #### Contents
