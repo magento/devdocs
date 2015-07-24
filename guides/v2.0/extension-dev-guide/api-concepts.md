@@ -8,6 +8,7 @@ menu_order: 3
 github_link: extension-dev-guide/api-concepts.md
 redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 ---
+##{{page.menu_title}}
 
 <h2 id="public-interface">What is a public interface?</h2>
 <p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or pluginize. Magento guarantees that this code will not change in subsequent releases without a major version change.</p>

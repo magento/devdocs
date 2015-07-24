@@ -8,10 +8,8 @@ menu_order: 5
 github_link: extension-dev-guide/depend-inj.md
 redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---
+##{{page.menu_title}}
 
-<h4>Contents</h4> 
-
-See one of the following sections:
 
 *	<a href="#dep-inj-intro">Overview of dependency injection</a>
 *	<a href="#dep-inj-preview">Preview of using constructor injection</a>

@@ -9,10 +9,10 @@ github_link: extension-dev-guide/developers_roadmap.md
 redirect_from: /guides/v1.0/extension-dev-guide/developers_roadmap.html
 
 ---
+##{{page.menu_title}}
 
-<h2 id="developer_roadmap_overview">Overview</h2>
 
-This topic is intended to introduce the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.
+This topic introduces the high-level workflow for a developer who wants to create, customize, or contribute to the Magento code and components.
 
 <h2 id="developer_roadmap_resources">Developer Resources</h2>
 There are several resources that you might want to take a look at as you consider your workflow:

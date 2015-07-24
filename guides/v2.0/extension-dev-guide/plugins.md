@@ -12,7 +12,6 @@ redirect_from:
 ---
 ##{{page.menu_title}}
 
-#### Contents
 
 *  <a href="#plugin-intro">Introduction to Magento plug-ins</a>
 *  <a href="#plugin-limit">Limitations</a>

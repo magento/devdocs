@@ -9,6 +9,7 @@ github_link: extension-dev-guide/package_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
 ---
+##{{page.menu_title}}
 
 The Magento system uses Composer packages to distribute, install, and upgrade modules in an application instance.
 
