@@ -6,7 +6,9 @@ title: Plug-ins
 menu_title: Plug-ins
 menu_order: 2
 github_link: extension-dev-guide/plugins.md
-redirect_from: /guides/v1.0/extension-dev-guide/plugins.html
+redirect_from: 
+  - /guides/v1.0/extension-dev-guide/plugins.html
+  - /guides/v1.0/config-guide/config/plugins.html
 ---
 
 #### Contents
