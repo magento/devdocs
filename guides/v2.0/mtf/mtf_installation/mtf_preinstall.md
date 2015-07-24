@@ -26,10 +26,10 @@ To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk
 <h3 id="mtf_install_pre_tools">3. Check if all required software installed and configured</h3>
 
 <h4 id="mtf_install_pre_tools_apache">PHP</h4>
-
 <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">More details about PHP verification, installation and configuration</a>.
-
 <div class="bs-callout bs-callout-warning">
     <p>In <code>php.ini</code> file, directive <code>extension=php_openssl.dll</code> shall be enabled.</p>
 <p> To be sure, find text <code>extension=php_openssl.dll</code>. If it starts from <code>;</code>, then directive disabled. To enable it, delete <code>;</code>.</p>
 </div>
+
+<h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_installation/mtf_install.html">Perform and check installation</a>
