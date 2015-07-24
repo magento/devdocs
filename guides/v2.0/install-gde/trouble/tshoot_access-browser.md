@@ -7,6 +7,7 @@ menu_title: Cannot access Magento software in a web browser
 menu_node: 
 menu_order: 2
 github_link: install-gde/install/composer-clone.md
+redirect_from: /guides/v1.0/install-gde/install/composer-clone.html
 ---
 
 

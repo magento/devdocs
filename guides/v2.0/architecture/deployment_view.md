@@ -6,6 +6,7 @@ title: Deployment view
 menu_title: Deployment view
 menu_order: 3
 github_link: architecture/deployment_view.md
+redirect_from: /guides/v1.0/architecture/deployment_view.html
 ---
 
 <h2>Components</h2>

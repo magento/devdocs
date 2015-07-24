@@ -6,6 +6,7 @@ title: Installation of the Magento Testing Framework
 menu_title: Perform and check installation
 menu_order: 2
 github_link: mtf/mtf_installation/mtf_install.md
+redirect_from: /guides/v1.0/mtf/mtf_installation/mtf_install.html
 ---
 <h2 id="mtf_install_pre">Perform installation</h2>
 

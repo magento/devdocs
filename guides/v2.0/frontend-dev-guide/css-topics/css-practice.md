@@ -6,6 +6,7 @@ title: Customizing styles illustration
 menu_order: 5
 menu_title: Customizing styles illustration
 github_link: frontend-dev-guide/css-topics/css-practice.md
+redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-practice.html
 ---
 
 <h2 id ="practice_over">Overview</h2>

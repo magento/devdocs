@@ -7,6 +7,7 @@ menu_title: Translation
 menu_order: 
 menu_node: 
 github_link: architecture/behavior/xlate.md
+redirect_from: /guides/v1.0/architecture/behavior/xlate.html
 ---
 
 #### Contents

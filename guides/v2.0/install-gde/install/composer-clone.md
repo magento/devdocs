@@ -7,6 +7,7 @@ menu_title: Install Composer and clone the Magento repository
 menu_node: 
 menu_order: 10
 github_link: install-gde/install/composer-clone.md
+redirect_from: /guides/v1.0/install-gde/install/composer-clone.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

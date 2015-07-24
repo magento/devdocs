@@ -6,6 +6,7 @@ title: Accordion widget
 menu_order: 1
 menu_title: Accordion widget
 github_link: frontend-dev-guide/javascript/widget_accordion.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html
 ---
 
 <h2>Overview</h2>

@@ -6,6 +6,7 @@ title: Product Architecture Overview
 menu_title: Product Architecture Overview
 menu_order: 3
 github_link: architecture/process_view.md
+redirect_from: /guides/v1.0/architecture/process_view.html
 ---
 <h2>Introduction</h2> 
 <h2>Topological view</h2> 

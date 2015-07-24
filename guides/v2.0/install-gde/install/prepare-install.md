@@ -7,6 +7,7 @@ menu_title: Update installation dependencies
 menu_node: 
 menu_order: 50
 github_link: install-gde/install/prepare-install.md
+redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

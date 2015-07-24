@@ -6,6 +6,7 @@ title: Security-related prerequisites
 menu_title: Security-related prerequisites
 menu_order: 10
 github_link: install-gde/prereq/security.md
+redirect_from: /guides/v1.0/install-gde/prereq/security.html
 ---
 
 <h2 id="install-prereq-selinux">SELinux Prerequisite</h2>

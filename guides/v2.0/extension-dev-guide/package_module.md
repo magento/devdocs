@@ -6,6 +6,7 @@ title: Package an extension
 menu_title: Package an extension
 menu_order: 3
 github_link: extension-dev-guide/package_module.md
+redirect_from: /guides/v1.0/extension-dev-guide/package_module.html
 
 ---
 

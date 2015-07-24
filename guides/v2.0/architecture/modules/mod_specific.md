@@ -6,6 +6,7 @@ title: Specific Modules
 menu_title: Specific Modules
 menu_order: 
 github_link: architecture/modules/mod_specific.md
+redirect_from: /guides/v1.0/architecture/modules/mod_specific.html
 ---
 
 <h2 id="m2arch-module-specific-overview"> Overview</h2>

@@ -7,6 +7,7 @@ menu_title: Templates
 menu_order: 1
 menu_node: parent
 github_link: frontend-dev-guide/templates/template-overview.md
+redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-overview.html
 ---
 
 <h2>Introduction to customizing a theme using templates</h2>

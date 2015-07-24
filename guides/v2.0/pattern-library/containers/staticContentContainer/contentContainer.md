@@ -7,6 +7,7 @@ menu_title: Static Content Container
 menu_order: 1
 menu_node: 
 github_link: pattern-library/containers/staticContentContainer/contentContainer.md
+redirect_from: /guides/v1.0/pattern-library/containers/staticContentContainer/contentContainer.html
 ---
 <h2> Static Content Container </h2>
 

@@ -6,6 +6,7 @@ title: The pricing library
 menu_title: The pricing library
 menu_order: 
 github_link: architecture/behavior/pricing.md
+redirect_from: /guides/v1.0/architecture/behavior/pricing.html
 ---
 
 <h2 id="m2devgde-pricelib-intro">Introduction to the Magento pricing library</h2>

@@ -7,6 +7,7 @@ menu_title: Uninstall modules
 menu_node: 
 menu_order: 8
 github_link: install-gde/install/install-cli-uninstall-mods.md
+redirect_from: /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
 ---
 
   

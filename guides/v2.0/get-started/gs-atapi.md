@@ -8,6 +8,7 @@ menu_title: Step 3. Use cURL to run the request
 menu_order: 1
 menu_node: parent
 github_link: get-started/gs-curl.md
+redirect_from: /guides/v1.0/get-started/gs-curl.html
 ---
 
 -->

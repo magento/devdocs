@@ -7,6 +7,7 @@ menu_title: Construct a request
 menu_order: 1
 
 github_link: get-started/gs-web-api-request.md
+redirect_from: /guides/v1.0/get-started/gs-web-api-request.html
 ---
 
 <p>To configure a web API, developers define some of the elements of each API call in the <code>app/code/Magento/&lt;MODULE&gt;/etc/webapi.xml</code> file, where <code>&lt;MODULE></code> is the module name. For example, the web API for the Customer service is defined in the <code>app/code/Magento/Customer/etc/webapi.xml</code> configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the API calls.</p>

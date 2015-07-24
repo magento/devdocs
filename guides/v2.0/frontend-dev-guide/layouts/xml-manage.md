@@ -6,6 +6,7 @@ title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
 github_link: frontend-dev-guide/layouts/xml-manage.md
+redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 ---
 
 <h2>Introduction</h2>

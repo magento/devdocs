@@ -6,6 +6,7 @@ title: Process view
 menu_title: Process view
 menu_order: 3
 github_link: architecture/process_view.md
+redirect_from: /guides/v1.0/architecture/process_view.html
 ---
 
 <h2>Object connection overview</h2>

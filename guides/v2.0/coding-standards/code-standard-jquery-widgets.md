@@ -6,6 +6,7 @@ title: jQuery widget coding standard
 menu_title: jQuery widget coding standard
 menu_order: 4
 github_link: coding-standards/code-standard-jquery-widgets.md
+redirect_from: /guides/v1.0/coding-standards/code-standard-jquery-widgets.html
 ---
 
 <h2 id="fedg_jq-widget-coding-stnd_overview">Overview</h2>

@@ -7,6 +7,7 @@ menu_title: Contribute to Magento 2
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing.md
+redirect_from: /guides/v1.0/contributor-guide/contributing.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

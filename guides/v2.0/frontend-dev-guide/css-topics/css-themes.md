@@ -5,6 +5,7 @@ subgroup: D_CSS
 title: Include CSS 
 menu_order: 2
 github_link: frontend-dev-guide/css-topics/css-themes.md
+redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-themes.html
 ---
 
 <h2 id="fedg_css-in-themes_overview">Overview</h2>

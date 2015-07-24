@@ -7,6 +7,7 @@ menu_title: Single-tenant compiler
 menu_node: 
 menu_order: 11
 github_link: config-guide/cli/config-cli-subcommands-compiler-single.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-single.html
 ---
 
 

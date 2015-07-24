@@ -6,6 +6,7 @@ title:
 menu_title: Modules
 menu_order: 
 github_link: architecture/modules/mod_intro.md
+redirect_from: /guides/v1.0/architecture/modules/mod_intro.html
 ---
 
 <h2 id="arch-modules-overview">Overview</h2>
