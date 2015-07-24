@@ -167,7 +167,13 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="mtf_install_pre">Perform installation</h2>
+		<h3 id="mtf_install_pre_mtf-check">Check if MTF has been already installed</h3>
+<ol>
+  <li>Open directory <code>&lt;magento_root&gt;/dev/tests/functional/</code>.</li>
+  <li>Find <code>vendor/magento/mtf</code> directory. If the directory exists, you already have MTF installed.</li>
+</ol>
+
+<h2 id="mtf_install_pre">Perform installation</h2>
 
 <p>The Magento Testing Framework requires Composer, which downloads libraries defined in <code>&lt;magento_root&gt;/dev/tests/functional/composer.json</code>.</p>
 
@@ -188,18 +194,15 @@ Enter <code>php composer.phar install</code>.</p>
 </div>
 
 <h2 id="mtf_install_pre">Check installation</h2>
-<h3 id="mtf_install_pre">Installation folder</h3>
-<ol>
-  <li>Open <code> &lt;magento_root&gt;/dev/tests/functional/vendor/magento </code>.</li>
-  <li>Find <code>mtf</code> folder.</li>
-</ol>
+<p>Selenium Standalone Server, Selenium WebDriver, and MTF are downloaded during <code>composer install</code> in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/</code>.</p>
 
-<h3 id="mtf_install_pre">Version</h3>
+<h3 id="mtf_install_pre">Verify Version of MTF</h3>
 <ol>
   <li>Open <code> &lt;magento_root&gt;/dev/tests/functional/vendor/magento/mtf </code>.</li>
   <li>Find and open <code>CHANGELOG.md</code>.</li>
   <li>The latest version in <code>CHANGELOG.md</code> is version of MTF you installed.</li>
 </ol>
+
 
 
 		</div>
