@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Fundamentals
-title: Dependency injection
-menu_title: Dependency injection
-menu_order: 1
+subgroup: 6_Module Development
+title: PHP Developer Guide
+menu_title: Service contract design patterns
+menu_order: 5
 github_link: extension-dev-guide/depend-inj.md
 redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---

@@ -1,8 +1,8 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Concepts
-title: Service contract design patterns
+subgroup: 6_Module Development
+title: PHP Developer Guide
 menu_title: Service contract design patterns
 menu_order: 3
 github_link: extension-dev-guide/service-contracts/design-patterns.md

@@ -1,16 +1,16 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Fundamentals
-title: Routing
+subgroup: 6_Module Development
+title: PHP Developer Guide
 menu_title: Routing
-menu_order: 10
-menu_node: 
+menu_order: 7
 github_link: extension-dev-guide/routing.md
 redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 
-<h2 id="overview">Overview</h2>
+##{{page.menu_title}}
+
 
 In the Magento system, a URL has the following format:
 

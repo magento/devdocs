@@ -1,8 +1,8 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Concepts
-title: Service contracts
+subgroup: 6_Module Development
+title: PHP Developer Guide
 menu_title: Service contracts
 menu_order: 2
 github_link: extension-dev-guide/service-contracts/service-contracts.md

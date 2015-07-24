@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: How to
-title: Configure services as web APIs
+subgroup: 6_Module Development
+title: PHP Developer Guide
 menu_title: Configure services as web APIs
-menu_order: 3
+menu_order: 9
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html
 ---

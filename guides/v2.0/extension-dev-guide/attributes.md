@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Fundamentals
-title: EAV and extension attributes
-menu_title: Attributes
-menu_order: 4
+subgroup: 6_Module Development
+title: PHP Developer Guide
+menu_title: EAV and Extension Attributes
+menu_order: 5
 github_link: extension-dev-guide/attributes.md
 redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 

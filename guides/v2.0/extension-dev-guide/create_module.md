@@ -1,15 +1,14 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: How to
-title: Create a Module
+subgroup: 3_Build
+title: PHP Developer Guide
 menu_title: Create a Module
 menu_order: 2
 github_link: extension-dev-guide/create_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---
-
-<h2 id="create-module-overview">Overview</h2>
+##{{page.menu_title}}
 
 This topic covers the basic steps of creating a new module. Subsequent sections in this Developer's Guide explain how to verify your new module and how to use Composer to package and distribute the module.
 
