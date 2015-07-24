@@ -6,6 +6,7 @@ title: Page assets
 menu_title: Page assets
 menu_order: 
 github_link: architecture/view/page-assets.md
+redirect_from: /guides/v1.0/architecture/view/page-assets.html
 ---
 
 <h2 id="m2devgde-page-assets-intro">Introduction to page assets</h2>

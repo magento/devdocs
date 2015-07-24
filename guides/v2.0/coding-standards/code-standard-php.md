@@ -6,6 +6,7 @@ title: PHP coding standard
 menu_title: PHP coding standard
 menu_order: 2
 github_link: coding-standards/code-standard-php.md
+redirect_from: /guides/v1.0/coding-standards/code-standard-php.html
 ---
 
 <p>The Magento core development team uses the <a href="http://www.php-fig.org/psr/psr-1/">Basic Coding Standard</a> and <a href="http://www.php-fig.org/psr/psr-2/">Coding Style Guide</a>. Magento recommends that developers who create Magento extensions and customizations also use these standards.</p>

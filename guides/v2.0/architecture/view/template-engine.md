@@ -6,6 +6,7 @@ title: Template engine
 menu_title: Template engine
 menu_order: 
 github_link: architecture/view/template-engine.md
+redirect_from: /guides/v1.0/architecture/view/template-engine.html
 ---
 
 <h2 id="m2devgde-temp-eng-over">Introduction to the Magento template engine</h2>

@@ -6,6 +6,7 @@ title: Create a theme
 menu_title: Create a theme
 menu_order: 2
 github_link: frontend-dev-guide/themes/theme-create.md
+redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 ---
 
 <h2 id="layout_theme_how-to_overview">Overview</h2>

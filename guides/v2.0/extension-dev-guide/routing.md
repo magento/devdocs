@@ -7,6 +7,7 @@ menu_title: Routing
 menu_order: 10
 menu_node: 
 github_link: extension-dev-guide/routing.md
+redirect_from: /guides/v1.0/extension-dev-guide/routing.html
 ---
 
 <h2 id="overview">Overview</h2>

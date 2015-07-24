@@ -6,6 +6,7 @@ title: Developer's Roadmap
 menu_title: Developer's Roadmap
 menu_order: 1
 github_link: extension-dev-guide/developers_roadmap.md
+redirect_from: /guides/v1.0/extension-dev-guide/developers_roadmap.html
 
 ---
 

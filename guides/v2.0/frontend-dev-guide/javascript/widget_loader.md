@@ -6,6 +6,7 @@ title: Loader widget
 menu_order: 6
 menu_title: Loader widget
 github_link: frontend-dev-guide/javascript/widget_loader.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_loader.html
 ---
 
 <h2>Overview</h2>

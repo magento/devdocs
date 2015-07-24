@@ -5,6 +5,7 @@ subgroup: D_CSS
 title: Magento UI library
 menu_order: 4
 github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
+redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/theme-ui-lib.html
 ---
 
 <h2 id="fedg_using-ui-lib_overview">Overview</h2>

@@ -7,6 +7,7 @@ menu_title: Continue with your installation
 menu_node: parent
 menu_order: 1
 github_link: install-gde/continue.md
+redirect_from: /guides/v1.0/install-gde/continue.html
 ---
 
 ## Let's get started!

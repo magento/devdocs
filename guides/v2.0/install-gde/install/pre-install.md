@@ -7,6 +7,7 @@ menu_title: Ways to install and upgrade the Magento software
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/pre-install.md
+redirect_from: /guides/v1.0/install-gde/install/pre-install.html
 ---
 
 #### Contents

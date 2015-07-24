@@ -7,6 +7,7 @@ menu_title: Introduction
 menu_order: 1
 menu_node: parent
 github_link: config-guide/bk-config-guide.md
+redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 ---
 
 <h2 id="configuration">Configure the Magento application</h2>

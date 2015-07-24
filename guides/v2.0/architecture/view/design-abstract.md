@@ -6,6 +6,7 @@ title: Design abstractions
 menu_title: Design abstractions
 menu_order: 
 github_link: architecture/view/design-abstract.md
+redirect_from: /guides/v1.0/architecture/view/design-abstract.html
 ---
 
 <h2 id="m2devgde-design-abstract-intro">Introduction</h2>

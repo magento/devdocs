@@ -7,6 +7,7 @@ menu_title: Error after logging in to the Magento Admin
 menu_node: 
 menu_order: 10
 github_link: install-gde/install/composer-clone.md
+redirect_from: /guides/v1.0/install-gde/install/composer-clone.html
 ---
 
 

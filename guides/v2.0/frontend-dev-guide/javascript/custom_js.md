@@ -6,6 +6,7 @@ title: Use custom JavaScript
 menu_order: 3
 menu_title: Use custom JavaScript
 github_link: frontend-dev-guide/javascript/custom_js.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/custom_js.html
 ---
 
 <h2 id="custom_js_overview">Overview</h2>

@@ -6,6 +6,7 @@ menu_title: Highlights
 menu_order: 1
 menu_node: 
 github_link: release-notes/bk-release-notes.md
+redirect_from: /guides/v1.0/release-notes/bk-release-notes.html
 ---
 
 <h2 id="highlights">Highlights</h2>

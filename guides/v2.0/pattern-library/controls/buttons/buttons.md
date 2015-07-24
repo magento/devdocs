@@ -7,6 +7,7 @@ menu_title: Buttons
 menu_order: 1
 menu_node: 
 github_link: pattern-library/controls/buttons/buttons.md
+redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---
 <h2> Buttons </h2>
 

@@ -6,6 +6,7 @@ title: Locate JavaScript components
 menu_title: Locate JavaScript components
 menu_order: 4
 github_link: frontend-dev-guide/javascript/js_debug.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/js_debug.html
 ---
 
 <h2 id="js_debug_overview">Overview</h2>

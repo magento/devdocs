@@ -6,6 +6,7 @@ title: Override a layout
 menu_title: Override a layout
 menu_order: 5
 github_link: frontend-dev-guide/layouts/layout-override.md
+redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 ---
 
 <h2 id="fedg_layout_override_overview">Overview</h2>

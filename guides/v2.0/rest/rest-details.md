@@ -7,6 +7,7 @@ menu_title: REST API Details
 menu_order: 3
 menu_node: 
 github_link: rest/rest-details.md
+redirect_from: /guides/v1.0/rest/rest-details.html
 ---
 
 <h2>REST API details</h2>

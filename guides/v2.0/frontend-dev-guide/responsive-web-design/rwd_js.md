@@ -6,6 +6,7 @@ title: JavaScript in Magento responsive design
 menu_title: JavaScript in Magento responsive design
 menu_order: 3
 github_link: frontend-dev-guide/responsive-web-design/rwd_js.md
+redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
 ---
 
 <h2>Overview</h2>

@@ -7,6 +7,7 @@ menu_title: Enable an HTML profiler (MAGE_PROFILER)
 menu_order: 7
 menu_node: 
 github_link: config-guide/bootstrap/mage-profiler.md
+redirect_from: /guides/v1.0/config-guide/bootstrap/mage-profiler.html
 ---
 
 #### Contents

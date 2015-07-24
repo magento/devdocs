@@ -6,6 +6,7 @@ menu_title: Changes in 0.74-beta1 (Developer RC)
 menu_node: 
 menu_order: 500
 github_link: release-notes/changes_devrc.md
+redirect_from: /guides/v1.0/release-notes/changes_devrc.html
 ---
 
 <h2 id="changes-contents">Contents</h2>

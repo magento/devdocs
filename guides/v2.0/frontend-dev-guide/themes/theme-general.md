@@ -7,6 +7,7 @@ menu_title: Themes
 menu_order: 1
 menu_node: parent
 github_link: frontend-dev-guide/themes/theme-general.md
+redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-general.html
 ---
 
 <h2 id="theme-gen-overview">Overview</h2>

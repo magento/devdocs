@@ -6,7 +6,8 @@ title: Install the Magento software using the command line
 menu_title: Install the Magento software using the command line 
 menu_node: 
 menu_order: 4
-github_link: install-gde/install/cli/install-cli-install.md
+github_link: install-gde/install/install-cli-install.md
+redirect_from: /guides/v1.0/install-gde/install/install-cli-install.html
 ---
 
   

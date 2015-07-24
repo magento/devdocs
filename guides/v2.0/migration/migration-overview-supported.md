@@ -7,6 +7,7 @@ menu_title: Versions supported
 menu_node: 
 menu_order: 2
 github_link: migration/migration-overview-supported.md
+redirect_from: /guides/v1.0/migration/migration-overview-supported.html
 ---
 
 <h2 id="migrate-overview-versions">Supported versions</h2>

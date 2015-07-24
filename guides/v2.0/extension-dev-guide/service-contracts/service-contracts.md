@@ -6,6 +6,7 @@ title: Service contracts
 menu_title: Service contracts
 menu_order: 2
 github_link: extension-dev-guide/service-contracts/service-contracts.md
+redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html
 ---
 
 <h2 id="overview">Overview</h2>

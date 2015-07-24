@@ -6,6 +6,7 @@ title: JavaScript coding standard
 menu_title: JavaScript coding standard
 menu_order: 3
 github_link: coding-standards/code-standard-javascript.md
+redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
 ---
 
 The JavaScript coding standard, based on the <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>, defines Magento requirements for code formatting and style for teams that develop Magento JavaScript and jQuery code.

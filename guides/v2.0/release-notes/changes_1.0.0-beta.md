@@ -6,6 +6,7 @@ menu_title: Changes in 1.0.0-beta (Merchant Beta)
 menu_node: 
 menu_order: 3
 github_link: release-notes/changes_1.0.0-beta.md
+redirect_from: /guides/v1.0/release-notes/changes_1.0.0-beta.html
 ---
 
 <h2 id="changes-contents">Contents</h2>

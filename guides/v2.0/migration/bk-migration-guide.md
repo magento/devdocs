@@ -7,6 +7,7 @@ menu_title: Overview
 menu_node: parent
 menu_order: 1
 github_link: migration/bk-migration-guide.md
+redirect_from: /guides/v1.0/migration/bk-migration-guide.html
 ---
 
 <h2 id="migrate-overview">Overview</h2>
