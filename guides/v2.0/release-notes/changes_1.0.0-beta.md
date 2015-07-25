@@ -116,7 +116,11 @@ Among the improvements we made:
 <em>Magento EE only</em>. Magento Enterprise Edition supports Universal Analytics, the new standard for Google Analytics. With this update, merchants can define more custom dimensions and metrics for tracking, incorporate offline and mobile app interactions, and gain access to ongoing feature updates that will only be available on Universal Analytics. -->
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
-Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
+<em>Magento EE only</em>. Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
+
+To configure product attribute swatches, start the Magento Admin and click **Stores** > **Configuration**. All options are in the CATALOG group; for example, CATALOG > **Catalog** > **Storefront** has the option **Swatches per Product**.
+
+To set up attribute swatches for a product, go to **Products** > <create or edit a product> > BASIC SETTINGS > **Product Details ** > Configurations > **Create Configuration**.
 
 <h3 id="1.0.0-beta-changes-emails">Transactional emails</h3>
 Emails designed to display on all types of devices (desktop, tablet, mobile) to inform customers about store-related activities (for example, sales, promotions, new stock, and so on).
