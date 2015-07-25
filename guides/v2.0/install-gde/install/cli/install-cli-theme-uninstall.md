@@ -7,7 +7,9 @@ menu_title: Uninstall themes
 menu_node: 
 menu_order: 200
 github_link: install-gde/install/install-cli-theme-uninstall.md
-redirect_from: /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
+redirect_from:
+	-  /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
+	-  /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html
 ---
 
   

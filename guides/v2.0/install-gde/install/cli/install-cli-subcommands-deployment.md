@@ -7,7 +7,9 @@ menu_title: Create or update the deployment configuration
 menu_node: 
 menu_order: 9
 github_link: install-gde/install/install-cli-subcommands-deployment.md
-redirect_from: /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
+redirect_from:
+	-  /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
+	-  /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
 ---
 
 
