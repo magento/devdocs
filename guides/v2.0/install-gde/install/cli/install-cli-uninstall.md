@@ -8,8 +8,8 @@ menu_node:
 menu_order: 5
 github_link: install-gde/install/install-cli-uninstall.md
 redirect_from:
-	-  /guides/v1.0/install-gde/install/install-cli-uninstall.html
-	-  /guides/v2.0/install-gde/install/install-cli-uninstall.html
+  -  /guides/v1.0/install-gde/install/install-cli-uninstall.html
+  -  /guides/v2.0/install-gde/install/install-cli-uninstall.html
 ---
 
   

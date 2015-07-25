@@ -8,8 +8,8 @@ menu_node:
 menu_order: 3
 github_link: install-gde/trouble/tshoot_mod_access_compat.md
 redirect_from:
-	-  /guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html
-	-  /guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html
+  -  /guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html
+  -  /guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html
 ---
 
 

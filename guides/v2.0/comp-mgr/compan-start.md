@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: A_Introduction
+subgroup: C_UseCompMan
 title: Access the Component Manager
 menu_title: Access the Component Manager
 menu_node: parent
@@ -25,6 +25,7 @@ To access the Component Manager:
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
 	The following page displays.
-	<img src="{{ site.baseurl }}common/images/cman_initial-page.png">
+	<img src="{{ site.baseurl }}common/images/cman_upgr_initial-page.png">
 3.	Click **Component Manager**.
+	To upgrade Magento, see TBD.
 4. 	Continue with TBD.

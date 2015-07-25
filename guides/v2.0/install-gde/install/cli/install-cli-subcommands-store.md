@@ -8,8 +8,8 @@ menu_node:
 menu_order: 20
 github_link: install-gde/install/install-cli-subcommands-store.md
 redirect_from:
-	-  /guides/v1.0/install-gde/install/install-cli-subcommands-store.html
-	-  /guides/v2.0/install-gde/install/install-cli-subcommands-store.html
+  -  /guides/v1.0/install-gde/install/install-cli-subcommands-store.html
+  -  /guides/v2.0/install-gde/install/install-cli-subcommands-store.html
 ---
 
   

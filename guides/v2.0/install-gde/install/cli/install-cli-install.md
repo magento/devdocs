@@ -8,8 +8,8 @@ menu_node:
 menu_order: 4
 github_link: install-gde/install/install-cli-install.md
 redirect_from:
-	-  /guides/v1.0/install-gde/install/install-cli-install.html
-	-  /guides/v2.0/install-gde/install/install-cli-install.html
+  -  /guides/v1.0/install-gde/install/install-cli-install.html
+  -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
   

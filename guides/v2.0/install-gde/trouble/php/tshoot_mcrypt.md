@@ -8,8 +8,8 @@ menu_node:
 menu_order: 5
 github_link: install-gde/trouble/tshoot_mcrypt.md
 redirect_from:
-	-  /guides/v1.0/install-gde/trouble/tshoot_mcrypt.html
-	-  /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html
+  -  /guides/v1.0/install-gde/trouble/tshoot_mcrypt.html
+  -  /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html
 ---
 
 <h2 id="trouble-php-mycrypt">The PHP mcrypt extension is not installed properly</h2>

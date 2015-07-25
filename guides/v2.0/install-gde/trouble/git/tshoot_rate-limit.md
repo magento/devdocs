@@ -8,8 +8,8 @@ menu_node:
 menu_order: 199
 github_link: install-gde/trouble/tshoot_rate-limit.md
 redirect_from:
-	-  /guides/v1.0/install-gde/trouble/tshoot_rate-limit.html
-	-  /guides/v2.0/install-gde/trouble/tshoot_rate-limit.html
+  -  /guides/v1.0/install-gde/trouble/tshoot_rate-limit.html
+  -  /guides/v2.0/install-gde/trouble/tshoot_rate-limit.html
 ---
 
 <h2 id="install-trouble-pdo">You reach the GitHub API rate limit</h2>

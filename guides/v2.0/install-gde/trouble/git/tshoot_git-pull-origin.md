@@ -8,8 +8,8 @@ menu_node:
 menu_order: 10
 github_link: install-gde/trouble/tshoot_git-pull-origin.md
 redirect_from:
-	-  /guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html
-	-  /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
+  -  /guides/v1.0/install-gde/trouble/tshoot_git-pull-origin.html
+  -  /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
 ---
 
 <h2 id="install-trouble-git">git pull origin develop fails when updating the Magento software</h2>
