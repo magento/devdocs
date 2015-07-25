@@ -20,6 +20,9 @@ mage2000url: "https://github.com/magento/magento2/blob/develop/"
 m1xgdeurl: "/guides/m1x/"
 m1xgithuburl: "http://github.com/magento/devdocs/blob/develop/guides/m1x/"
 
+# Use the following to create redirects for topics that have moved or
+# been renamed. Resource: https://github.com/jekyll/jekyll-redirect-from
+# For examples, see almost any topic in this project
 gems:
   - jekyll-redirect-from
 
