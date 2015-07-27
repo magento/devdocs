@@ -11,7 +11,7 @@ github_link: extension-dev-guide/validate.md
 ---
 
 ##{{page.menu_title}}
+After your module is built, you should test it. Read through the Definition of Done to confirm that your module and coding practice is compliant with Magento.
 
-
-* [Testing]()
-* [Definition of Done]()
+* [__Definition of Done__]({{ site.gdeurl }}/contributor-guide/contributing_dod.html)
+* [__Testing__](test-module.html)
