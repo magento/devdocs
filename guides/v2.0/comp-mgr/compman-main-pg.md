@@ -48,6 +48,13 @@ To choose wither to upgrade, enable, or disable components:
 				<p>The right column displays available actions for each component. For more information, see TBD.</p></td>
 	</tr>
 	<tr>
+		<td><p>Actions</p></td>
+		<td><img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
+			<p>A component has one or more of the following actions available from the <strong>Actions</strong> list:</p>
+			<ul><li>Enable</li>
+				<li>Disable</li>
+				<li>Update</li></ul>
+	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
 			<p><img src="{{ site.baseurl }}common/images/cman_page_number.png" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
@@ -55,8 +62,21 @@ To choose wither to upgrade, enable, or disable components:
 	</tr>
 	</tbody>
 	</table>
-3.	See one of the following sections for other things you can do on this page:
 
-	*	TBD
-	*	TBD
-	*	TBD
+<h2 id="compman-access-sync">Update a component</h2>
+To see if any of your components can be updated, click **Sync**.
+
+<img src="{{ site.baseurl }}common/images/cman_comp-status-info.png" alt="An info icon means there is an update available"> displays in the left column of each component that you can update. 
+
+The following figure shows an example.
+
+<img src="{{ site.baseurl }}common/images/cman_component-needs-update.png" alt="Example showing components that need updating">
+
+See <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+
+<h2 id="compman-access-enable">Enable or disable a component</h2>
+To enable a component, click **Enable** or **Disable** from the **Actions** list and see <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+
+
+
+
