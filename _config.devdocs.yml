@@ -30,3 +30,4 @@ gems:
 # Build settings
 markdown: kramdown
 highlighter: pygments
+exclude: [bin, _config.yml, Gemfile, Gemfile.lock, README.md]
