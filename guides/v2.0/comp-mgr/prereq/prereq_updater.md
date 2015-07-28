@@ -9,6 +9,8 @@ menu_node:
 github_link: comp-mgr/prereq/prereq_updater.md
 ---
 
+TBD: add composer install in update dir
+
 #### Contents
 
 *	<a href="#compman-updater-over">Overview of the updater</a>
