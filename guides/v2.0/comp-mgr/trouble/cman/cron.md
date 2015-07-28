@@ -41,10 +41,31 @@ To verify whether or not your crontab is set up:
 
 		no crontab for apache
 
+	See one of the following sections for a solution to your issue.
+
 <h3 id="trouble-cron-none">Solution: crontab not set up</h3>
 If the web server user has no configured cron job, see TBD.
 
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
+Try running each command manually because the command might display helpful error messages.
+
+**Run the setup application cron job**
+
+TBD
+
+**Run the updater cron job**
+
+1.	Change to the `<your Magento install dir>/update` directory.
+2.	Enter the following command:
+
+		php cron.php
+
+	Errors similar to the following indicate you have not yet run `composer install` to update dependencies for the updater application:
+
+		PHP Warning:  require_once(/var/www/html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /var/www/html/magento2/update/app/bootstrap.php on line 13
+		PHP Fatal error:  require_once(): Failed opening required '/var/www/html/magento2/update/vendor/autoload.php' (include_path='.:/usr/share/pear:/usr/share/php') in /var/www/html/magento2ce/update/app/bootstrap.php on line 13
+
+	If that's the case, see TBD.
 
 
 

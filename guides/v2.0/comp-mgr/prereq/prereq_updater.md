@@ -37,6 +37,7 @@ See one of the following section:
 
 *	<a href="#compman-clone-ssh">Clone with SSH</a>
 *	<a href="#compman-clone-https">Clone with HTTPS</a>
+*	<a href="#compman-clone-composer">Update installation dependencies</a>
 *	<a href="#compman-copy">Copy the files</a>
 
 <h3 id="compman-clone-ssh">Clone with SSH</h3>
@@ -73,7 +74,7 @@ Permission denied (publickey).
 fatal: The remote end hung up unexpectedly</pre>
 	</div>
 
-4.	Continue with <a href="#compman-copy">Copy the files</a>.
+4.	Continue with <a href="#compman-clone-composer">Update installation dependencies</a>.
 
 <h3 id="compman-clone-https">Clone with HTTPS</h3>
 To clone the Magento 2 Updater repository using the HTTPS protocol:
@@ -105,6 +106,16 @@ To clone the Magento 2 Updater repository using the HTTPS protocol:
 3.	Wait for the repository to clone on your server.
 
 4.	Continue with the next section.
+
+<h3 id="compman-clone-composer">Update installation dependencies</h3>
+The updater application has dependencies specified in its `composer.json` file. Before you continue, resolve those dependencies as follows:
+
+1.	Change to the directory to which you cloned the updater application.
+2.	As a user with permissions to write to the directory, enter
+
+		composer install
+
+	Wait for dependencies to resolve and continue with the next section.
 
 <h3 id="compman-copy">Copy the files</h3>
 As a user with privileges to write files to the Magento file system, enter the following command:
