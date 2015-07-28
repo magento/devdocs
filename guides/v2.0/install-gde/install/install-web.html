@@ -521,7 +521,11 @@
 
 <p>If the installation failed, click <strong>Previous</strong> to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting</a>.</p>
 
-<p>You can also run the installer again.</p>
+<div class="bs-callout bs-callout-warning">
+    <p>If the installation fails with the error <code>MySQL server has gone away</code>, see <a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during Setup Wizard installation</a>.</p>
+</div>
+
+<p>You can also <a href="#instgde-install-runagain">run the installer again</a>.</p>
 
 <h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
 <p>The Setup Wizard creates a log file, named <code>install.log</code>, that you might find useful in debugging issues or in verifying the actions performed by the wizard.</p>
@@ -958,6 +962,10 @@
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during Setup Wizard installation</a></li>
 						
 								
 							
