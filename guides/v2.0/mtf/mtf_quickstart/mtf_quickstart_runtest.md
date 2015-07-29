@@ -9,23 +9,38 @@ github_link: mtf/mtf_quickstart/mtf_quickstart_testrun.md
 redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_testrun.html
 ---
 <h2 id="mtf_quickstart_testrun">Test run</h2>
-All tests classified by categories in corresponding directories in <code>&lt;magento_root&gt;/dev/tests/functional/tests/app/Magento</code>.
+All tests classified by categories in corresponding directories in `<magento_root>/dev/tests/functional/tests/app/Magento`.
 
-For running tests MTF uses PHPUnit. It is located in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/bin</code> directory.
+MTF uses PHPUnit, which is located in `<magento_root>/dev/tests/functional/vendor/bin` directory.
 
+Be sure that your system is ready for test run.
+
+- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_preinstall.html">Magento is ready for tests</a>
+- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_install.html">The Magento Testing Framework is installed</a>
+- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_quickstart_config.html">The Magento Testing Framework is configured</a>
+- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_quickstart_environmemt.html">Environment is ready to test run</a>
 
 <h3 id="mtf_quickstart_testrun_all">Run all tests</h3>
 
-1.    Open terminal.
-1.    Enter <code>phpunit</code>.
+Enter in terminal:
+
+    phpunit
+
+This command will run all tests from `<magento_root>/dev/tests/functional/tests/app/Magento/`.
 
 <h3 id="mtf_quickstart_testrun_one">Run particular test</h3>
 
-1.    Open terminal.
-1.    Enter <code>phpunit --filter &lt;name of test&gt;</code>.
+Enter in terminal
+
+    phpunit --filter <name of test>
 
 Name of test is the name of PHP file with test.
 
-Example: <code>phpunit --filter CreateCategoryEntityTest</code> runs <code>CreateCategoryEntityTest.php</code> from <code>&lt;magento_root&gt;/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category</code>. Test checks creating of new category.
+Example:
 
+Let's check creating of new category. For this we should run `<magento_root>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Category/CreateCategoryEntityTest.php`. To run this test enter the following script in your terminal:
 
+    phpunit --filter CreateCategoryEntityTest
+
+<h2 id="mtf_install_pre">Next Steps</h2>
+<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">&lt;&lt; Prepare environment for test </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_logs.html"> See logs for failed tests &gt;&gt;</a>
