@@ -28,19 +28,20 @@ Two types of updates are available.
 
 <h3 id="mtf_update_install">Install a new version of the Magento Testing Framework</h3>
 
-Step 1.    To avoid conflicts with the previous version, remove directory <code>&lt;magento_root&gt;/dev/tests/functional/generate</code>.
-     
-    
-Step 2.    Remove file <code>&lt;magento_root&gt;/dev/tests/functional/composer.lock</code>. 
- 
+Step 1.    To avoid conflicts with the previous version, remove directory `<magento_root>/dev/tests/functional/generate`.
+
+
+Step 2.    Remove file `<magento_root>/dev/tests/functional/composer.lock`.
+
 <div class="bs-callout bs-callout-info" id="info">
   <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
 </div>
-   
+
 Step 3.    <a href="{{ site.gdeurl }}mtf/mtf_installation/mtf_install.html">Perform and check installation.</a>
 
 <h3 id="mtf_update_depend">Update components from dependencies in <code>composer.json</code></h3>
 
-1.    Open a command prompt.
-1.    Change working directory to <code>&lt;magento_root&gt;/dev/tests/functional/</code>.
-1.    Enter <code>composer update</code>.
+Enter in terminal:
+
+    cd <magento_root>/dev/tests/functional/
+    composer update

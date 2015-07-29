@@ -10,28 +10,36 @@ redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html
 ---
 <h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 
-<h3 id="mtf_quickstart_env_selenium">Run Selenium server</h3>
-Selenium server downloaded during  <a href="{{site.gdeurl }}mtf/mtf_installation/mtf_install.html">MTF installation</a> in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/netwing/selenium-server-standalone</code> directory.
+<h3 id="mtf_quickstart_env_selenium">Run the Selenium Server</h3>
+The Selenium Server is located in `<magento_root>/dev/tests/functional/vendor/netwing/selenium-server-standalone` directory. If you cannot find this directory, please <a href="{{site.gdeurl}}mtf/mtf_installation/mtf_install.html">check MTF installation<a>.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Specific versions of Selenium are compatible with specific versions of browsers. You might need to manually download and update Selenium to match your browser version. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a></p>
+  <p>Specific versions of the Selenium Server are compatible with specific versions of browsers. You might need to manually download and update the Selenium Server to match your browser version. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a></p>
 </div>
 
-1. Open terminal.
-1. Enter <code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar</code>.
+Enter in terminal:
+
+    java -jar <path_to_selenium_directory>/selenium-server.jar
 
 <h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non default browser</h3>
-If the Selenium Server does not work directly with your browser, you should download corresponding [WebDriver][], and run the Selenium Server with additional argument.
+
+If the Selenium Server does not work directly with your browser, you should download the corresponding [WebDriver][], and run the Selenium Server with an additional argument.
 
 Example for Google Chrome:
-<code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar -Dwebdriver.chrome.driver=&lt;path_to_chrome_driver&gt;/chromedriver.exe</code>.
+
+    java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.driver=<path_to_chrome_driver>/chromedriver.exe
 
 <h3 id="mtf_quickstart_env_generator">Run generator</h3>
 
 Generator generates fixtures, repositories and page objects. Once MTF is initialized, all classes will be pre-generated to facilitate creating and running the tests.
 
-1.  Open terminal.
-1.  Enter <code>cd &lt;magento_root&gt;/dev/tests/functional/utils</code>.
-1.  Enter <code>php generate.php</code>.
+Enter in terminal:
+
+    cd <magento_root>/dev/tests/functional/utils
+    php generate.php
+
+<h2 id="mtf_install_pre">Next Steps</h2>
+<a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html">&lt;&lt; Adjust configuration </a> | <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_runtest.html"> Test run &gt;&gt;</a>
+
 
 [WebDriver]: http://docs.seleniumhq.org/about/platforms.jsp

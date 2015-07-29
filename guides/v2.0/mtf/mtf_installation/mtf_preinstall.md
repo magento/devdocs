@@ -16,7 +16,7 @@ To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk
 
 <h3 id="mtf_install_pre_adj-magento">2. Adjust Magento application preferences</h3>
 
--    Log in to the Magento Admin as an administrator. Example of Magento Admin URL: <code>http://magento.example.com/admin_1sgfym</code>.
+-    Log in to the Magento Admin as an administrator. Example of Magento Admin URL: `http://magento.example.com/admin_1sgfym`.
 -    On the vertical navigation bar click **Stores &gt; Configuration &gt; Advanced &gt; Admin &gt; Security**.
 -    Set **Add Secret Key to URLs** to **No**. This setting allows test to open pages using direct URLs and assures correct cURL requests.
 -    Go back to the vertical navigation bar of Magento Admin page.
@@ -29,8 +29,7 @@ To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk
 <a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">More details about PHP verification, installation and configuration</a>.
 
 <div class="bs-callout bs-callout-warning">
-    <p>In <code>php.ini</code> file, directive <code>extension=php_openssl.dll</code> shall be enabled.</p>
-<p> To be sure, find text <code>extension=php_openssl.dll</code>. If it starts from <code>;</code>, then directive disabled. To enable it, delete <code>;</code>.</p>
+    <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out</p>
 </div>
 
 <h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_installation/mtf_install.html">Perform and check installation</a>
