@@ -191,7 +191,7 @@
 
 <p>Step 1.    To avoid conflicts with the previous version, remove directory <code>&lt;magento_root&gt;/dev/tests/functional/generate</code>.</p>
 
-<p>Step 2.    Remove file <code>&lt;magento_root&gt;/dev/tests/functional/composer.lock</code>. </p>
+<p>Step 2.    Remove file <code>&lt;magento_root&gt;/dev/tests/functional/composer.lock</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
@@ -201,11 +201,11 @@
 
 <h3 id="mtf_update_depend">Update components from dependencies in <code>composer.json</code></h3>
 
-<ol>
-  <li>Open a command prompt.</li>
-  <li>Change working directory to <code>&lt;magento_root&gt;/dev/tests/functional/</code>.</li>
-  <li>Enter <code>composer update</code>.</li>
-</ol>
+<p>Enter in terminal:</p>
+
+<pre><code>cd &lt;magento_root&gt;/dev/tests/functional/
+composer update
+</code></pre>
 
 
 		</div>
