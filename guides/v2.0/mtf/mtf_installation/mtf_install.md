@@ -8,13 +8,13 @@ menu_order: 2
 github_link: mtf/mtf_installation/mtf_install.md
 redirect_from: /guides/v1.0/mtf/mtf_installation/mtf_install.html
 ---
+
 <h3 id="mtf_install_pre_mtf-check">Check if the Magento Testing Framework has been already installed</h3>
 
 1. Find directory `<magento_root>/dev/tests/functional/`.
-1. Find there `vendor` directory. If the directory exists, you already have the Magento Testing Framework installed in `vendor/magento/mtf`.
+1. Find the `vendor` directory. If the directory exists, you already have the Magento Testing Framework installed in `vendor/magento/mtf`.
 
 <h3 id="mtf_install_pre_mtf-check">Check pre-installation conditions</h3>
-
 Be sure that you met all <a href="{{site.gdeurl}}mtf/mtf_installation/mtf_preinstall.html">pre-installation conditions</a>.
 
 <h2 id="mtf_install_pre">Perform installation</h2>
@@ -38,7 +38,8 @@ The Magento Testing Framework requires Composer, which downloads libraries defin
 And run from this directory <code>php composer.phar install</code>.</p>
 </div>
 
-<h2 id="mtf_install_pre">Check installation</h2>
+
+<h2 id="mtf_install_pre">Check the installation</h2>
 
 <h3 id="mtf_install_pre">Find the Magento Testing Framework directory</h3>
 
@@ -56,3 +57,4 @@ Find the `mtf` directory.
 Open `<magento_root>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the MTF you installed.
 
 <h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust MTF configuration </a>
+
