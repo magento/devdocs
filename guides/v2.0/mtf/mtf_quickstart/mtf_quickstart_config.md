@@ -18,14 +18,14 @@ Find `phpunit.xml` in `<magento_root>/dev/tests/functional`, and open it in edit
   <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
 </div>
 
-<h4 id="mtf_quickstart_config_phpunitxml_frontend">Set URL for Magento Store Front under test</h4>
+<h4 id="mtf_quickstart_config_phpunitxml_frontend">Set URL for Magento storefront under test</h4>
 
 Find `<php>` element.
-For `name="app_frontend_url"` set `value` that is your actual URL for Magento Store Front under test.
+For `name="app_frontend_url"` set `value` that is your actual URL for Magento storefront under test.
 
-<h4 id="mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin Front under test</h4>
+<h4 id="mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin URL under test</h4>
 
-For `name="app_backend_url"` set `value` that is your actual URL for Magento Admin Front under test.
+For `name="app_backend_url"` set `value` that is your actual URL for Magento Admin URL under test.
 
 Example:
 `<env name="app_backend_url" value="http://example.com/magento2/admin"/>`.
@@ -35,13 +35,13 @@ Find `<php>` element.
 
 For `<env name="basedir"` set `value="<full_path_to_directory>" />` (that is directory for error logs). For example, `<env name="basedir" value="C:\magento2ce\dev\tests\functional\var\log" />`.
 
-For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that is file with credentials for Magento Modules, if required). For example, `<env name="credentials_file_path" value="C:\magento2ce\dev\tests\functional\credentials.xml" />`.
+For `name="credentials_file_path" ` set `value="<full_path_to_directory>"` (that is file with credentials for Magento modules, if required). For example, `<env name="credentials_file_path" value="C:\magento2ce\dev\tests\functional\credentials.xml" />`.
 
 <h3 id="mtf_quickstart_config_configxml">2. Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
 Find `config.xml` in `<magento_root>/dev/tests/functional/etc`, and open it in editor.
 
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
-In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento Admin Front.
+In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento Admin URL.
 
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set browser that MTF will use for tests</h4>
 The default browser is **Mozilla Firefox**.
@@ -58,7 +58,7 @@ Copy `<server>` element from `<magento_root>/dev/tests/functional/vendor/magento
 Enter actual data in `<browserName>` and `<browser>` attributes.
 
 
-<h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to work with Magento Modules that requires credentials</h3>
+<h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</h3>
 
 Find `credentials.xml` in `<magento_root>/dev/tests/functional`, and open it in editor.
 
@@ -66,10 +66,10 @@ Find `credentials.xml` in `<magento_root>/dev/tests/functional`, and open it in 
   <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>
 </div>
 
-<h4 id="mtf_quickstart_config_credentialsxml-set">Set credentials for Magento Modules under test</h4>
+<h4 id="mtf_quickstart_config_credentialsxml-set">Set credentials for Magento modules under test</h4>
 Open `credentials.xml`.
 
-Find block of elements for the Magento Module you want to test.
+Find block of elements for the Magento module you want to test.
 
 Enter actual data in `value` attribute of corresponding `field` element.
 

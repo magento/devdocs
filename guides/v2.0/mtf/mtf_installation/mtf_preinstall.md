@@ -26,10 +26,11 @@ To install the Magento application, see <a href="{{ site.gdeurl }}install-gde/bk
 <h3 id="mtf_install_pre_tools">3. Check if all required software installed and configured</h3>
 
 <h4 id="mtf_install_pre_tools_apache">PHP</h4>
-<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">More details about PHP verification, installation and configuration</a>.
+
+For more details about PHP verification, installation and configuration (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">Ubuntu</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html">CentOS</a>).
 
 <div class="bs-callout bs-callout-warning">
-    <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out</p>
+    <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
 </div>
 
 <h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_installation/mtf_install.html">Perform and check installation</a>
