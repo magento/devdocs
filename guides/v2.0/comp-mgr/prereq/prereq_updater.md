@@ -23,7 +23,7 @@ You can set up the updater in any of the following ways:
 
 *	By creating a Composer project as discussed in TBD.
 
-	If you already created a Composer project, you can skip this section and continue with <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron jobs</a> or <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Access the Component Manager</a>.
+	If you already created a Composer project, you can skip this section and continue with <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron jobs</a> or <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>.
 
 *	By cloning the updater GitHub project and copying the files to `<your Magento install dir>/update`
 
@@ -131,4 +131,4 @@ For example, if you cloned the updater to `/var/www/html/magento2-updater` and M
 #### Next steps
 
 *	<a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron jobs</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Access the Component Manager</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>

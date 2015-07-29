@@ -46,4 +46,4 @@ If you're not sure, enter `ps aux | egrep '(apache|httpd)'`
 #### Next steps
 
 *	<a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron jobs</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Access the Component Manager</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>

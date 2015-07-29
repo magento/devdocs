@@ -2,8 +2,8 @@
 layout: default 
 group: compman
 subgroup: C_UseCompMan
-title: Access the Component Manager
-menu_title: Access the Component Manager
+title: Run the Component Manager
+menu_title: Run the Component Manager
 menu_node: parent
 menu_order: 1
 github_link: comp-mgr/compman-start.md
@@ -15,7 +15,7 @@ github_link: comp-mgr/compman-start.md
 TBD
 
 <h2 id="compman-access">Start the Component Manager from the Magento Admin</h2>
-To access the Component Manager:
+To run the Component Manager:
 
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
