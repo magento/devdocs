@@ -2,18 +2,18 @@
 layout: default
 group: install
 subgroup: Z_Troubleshooting
-title: Error 'MySQL server has gone away' during Setup Wizard installation
-menu_title: Error 'MySQL server has gone away' during Setup Wizard installation
+title: Error 'MySQL server has gone away' during installation
+menu_title: Error 'MySQL server has gone away' during installation
 menu_node: 
 menu_order: 25 
 github_link: install-gde/trouble/tshoot_mysql_table-open-cache.md
 ---
 
-<h2 id="install-trouble-mysql-gone-away">'MySQL server has gone away' during Setup Wizard installation</h2>
+<h2 id="install-trouble-mysql-gone-away">'MySQL server has gone away' during installation</h2>
 
 ### Details
 
-During the Setup Wizard installation, the following message displays: 
+During installation, the following message displays: 
 
 	MySQL server has gone away
 

@@ -293,7 +293,8 @@ The following table discusses the meanings of installation option names and valu
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p></span>
+  <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+  	</span>
 </div>
 
 <h4 id="install-cli-example">Sample localhost installations</h4>
