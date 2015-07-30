@@ -1,6 +1,6 @@
 ---
 layout: m1x
-title: How to Use the Solr Search Engine With Magento Enterprise Edition (EE)
+title: How to Install and Configure the Solr Search Engine With Magento Enterprise Edition (EE) 1.x
 ---
 
 
@@ -150,15 +150,14 @@ title: How to Use the Solr Search Engine With Magento Enterprise Edition (EE)
 </tr>
 </tbody>
 </table>
-<p class="kb-notes"><strong>Note</strong>: Magento EE does not support Solr 4.x.<!--<ul class="level1"> <li>Solr 1.4 is an old release and has limited support. <a href="http://wiki.apache.org/solr/Solr1.4" target="_blank">Click here</a> to view the wiki.</li> --></p>
-<!-- <li></li></ul> -->
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Magento EE does not support Solr 4.x.</div>
 
 <h3><a name="overview-solr"></a>More Information About the Solr Solution</h3>
 <p>Solr runs as a standalone full-text search server in a servlet container such as Jetty (which is used by the Solr example configuration) and Tomcat.</p>
 <p>Solr uses the Lucene Java search library for full-text indexing and search. Your applications interact with Solr using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> (in JSON, <a href="http://wiki.apache.org/solr/UpdateXmlMessages" target="_blank">XML</a>, CSV, or binary formats) to index documents and using <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">HTTP GET</a> to retrieve search results back as <a href="http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29" target="_blank">JSON</a>, XML, or a variety of other formats (Python, Ruby, <a href="http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29" target="_blank">PHP</a>, <a href="http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29" target="_blank">CSV</a>, binary, and so on). If you're a programmer, try the <a href="http://lucene.apache.org/solr/api-3_6_2/doc-files/tutorial.html" target="_blank">Solr tutorial</a>. Whether you're a programmer or not, read the <a href="http://wiki.apache.org/solr/FAQ" target="_blank">Solr FAQ</a>.</p>
 <p>No programming is required to implement Solr as discussed in this guide.</p>
 <p>Solr's powerful external configuration allows it to be tailored to almost any type of application without Java coding, and it has an extensive plug-in architecture when more advanced customization is required. Solr is highly scalable, providing distributed search and index replication. </p>
-<p class="kb-notes"><strong>Important</strong>: Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin Panel. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin Panel. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</span></div>
 <p>In this guide, you'll use the example configuration provided with Solr and Magento's provided Solr configuration to implement a simple, quick integration with Solr.</p>
 <p>Some reasons to use Solr with Magento include:</p>
 <ul class="level1">
@@ -245,7 +244,7 @@ Saving to: `apache-solr-3.6.2.tgz'
 
 <h3><a name="config-solr-copy-config-files"></a>Copying the Magento Solr Configuration and Starting Solr</h3>
 <p>Magento comes packaged with a sample Solr configuration you can use and customize. To get started, you'll copy the Magento configuration to Solr, replacing any existing files. After that you can start Solr and begin configuring Magento to work with it.</p>
-<p class="kb-notes"><strong>Note</strong>: The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</p></li>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The example Solr configuration is <em>not</em> intended to be used in a production site. It's for testing and development only. It's simple to use which makes it a great way for you to learn more about Solr.</div></li>
 <p>To copy the Magento Solr configuration:</p>
 <ol><li>As a user with <tt>root</tt> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:<br><br>
 <pre>cd [your Solr install dir]/example/solr/conf
@@ -263,7 +262,7 @@ Change it to:<br />
 
 <li>As a user with <tt>root</tt> privileges, enter the following command to start Solr:<br><br>
 <pre>java -jar [your Solr install dir]/example/start.jar</pre><br />
-<p class="kb-notes"><strong>Note</strong>: This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Scripting Solr Startup and Shutdown</a>.</p></li></ol>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in <a href="#solr-script">Scripting Solr Startup and Shutdown</a>.</div>
 
 <h3><a name="config-solr-magento"></a>Configuring Magento to Work With Solr</h3>
 <p>This section discusses how to configure Magento EE to use the Solr search engine.</p>
@@ -365,7 +364,7 @@ The button changes as follows.<br />
 
 <h2><a name="solr-config-tweaks"></a>Basic Solr Configuration</h2>
 <p>This section discusses how to configure Magento to work with Solr using options in the Admin Panel. Although additional Solr customization is possible, it is beyond the scope of this guide.</p>
-<p class="kb-notes"><strong>Important</strong>: Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin Panel. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin Panel. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</span></div>
 <p>To configure Magento to work with Solr:</p>
 <ol><li>Start the Magento Admin Panel and log in as an administrator.</li>
 <li>Click <strong>System</strong> > <strong>Configuration</strong>.</li>
@@ -422,7 +421,7 @@ The button changes as follows.<br />
  <td class="confluenceTd"><p><em>Recommendations</em> display terms related to a requested word or phrase on the search results page.</p>
   <p>This functionality is not based on third party engine functionality, but is implemented as part of the <tt>Enterprise_Search</tt> module and can be shown with the Solr search suggestions block.</p>
   <p>By default, Magento uses the <tt>Enterprise_Search_Model_Adapter_HttpStream</tt> module for recommendations. If you install the <a href="http://pecl.php.net/package/solr" target="_blank">Apache Solr PHP extension</a>, Magento automatically uses the <tt>Enterprise_Search_Model_Adapter_PhpExtension</tt> adapter instead. Both adapters function in the same way with no difference in performance. However, the <tt>PhpExtension</tt> adapter is not tested by Magento so you must thoroughly test any modifications you make to it before deploying it in a production environment.</p>
-  <p><p class="kb-notes"><strong>Note</strong>: Enabling recommendations negatively affects performance because they result in more complex queries to Solr and more database calls.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: Enabling recommendations negatively affects performance because they result in more complex queries to Solr and more database calls.</div>
   </td>
 </tr>
 <tr>
@@ -459,7 +458,7 @@ For example, on CentOS:
 
 <h2><a name="solr-script"></a>Scripting Solr Startup and Shutdown</h2>
 <p>In a production environment, you should start and stop Solr using a script.</p>
-<p class="kb-notes"><strong>Note</strong>: You must perform all tasks discussed in this section as a user with <tt>root</tt> privileges.</p>
+<div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: You must perform all tasks discussed in this section as a user with <tt>root</tt> privileges.</div>
 <p>Create a script named <tt>/etc/init.d/solr</tt> with options similar to the following:</p>
 <pre>#!/bin/sh
  
@@ -512,7 +511,7 @@ esac</pre>
   <td class="confluenceTd"><p>Security parameters used to prevent malicious attempts to stop Jetty.</p>
   <p>For <tt>-DSTOP.PORT=</tt>, specify any unused port.</p>
   <p>For <tt>-DSTOP.KEY=</tt>, specify a string. If you omit a value for <tt>-DSTOP.KEY=</tt>, Jetty generates a random key you must enter to stop Jetty.</p> 
-  <p>For more information, see <a href="http://docs.codehaus.org/display/JETTY/Securing+Jetty">Securing Jetty</a>.</p></td>
+  <p>For more information, see <a href="https://wiki.eclipse.org/Jetty/Howto/Configure_SSL" target="_blank">Securing Jetty</a>.</p></td>
 </tr>
 <tr>
   <td class="confluenceTd"><em>path-to-solr-log-file</em></td>
