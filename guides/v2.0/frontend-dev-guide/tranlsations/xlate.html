@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Cascading style sheets (CSS)</title>
+	<title>Translations overview</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/css-topics/css-overview.html">
+	<link rel="canonical" href="//guides/v2.0/frontend-dev-guide/tranlsations/xlate.html">
 
 </head>	
 <body>
@@ -156,9 +156,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Cascading style sheets (CSS)</h1>
+		<h1 class="page-heading">Translations overview</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/css-topics/css-overview.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/frontend-dev-guide/translations/xlate.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -167,62 +167,163 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="overview">Overview</h2>
-
-<p>Magento 2 incorporates <a href="http://lesscss.org/" target="_blank">LESS</a>, a CSS pre-processor that simplifies the management of complex CSS files.
-To define styles of a Magento store, you can use both - CSS and LESS stylesheets.</p>
-
-<p>Magento application provides a built-in LESS UI library, which you can optionally extend. </p>
-
-<p>To customize storefront styles, you need to <a href="/guides/v2.0/frontend-dev-guide/themes/theme-create.html" target="_blank">create a custom design theme</a>. Then you can use one of the following approaches:</p>
+		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li>If your theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from the default Blank or any other theme, you can override the default LESS files; for example to <a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars" target="_blank">change the values of the variables</a> used in the default files. </li>
-  <li>Create your own LESS files using the built-in LESS preprocessor. </li>
-  <li>Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.</li>
+  <li><a href="#m2devgde-xlate-intro">Overview of translations</a></li>
+  <li><a href="#m2devgde-xlate-translating">Manually translate words and phrases</a></li>
+  <li><a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a></li>
+  <li><a href="#m2devgde-xlate-languagepack">Language packages</a></li>
 </ul>
 
-<h2 id="css_walk">Change styles: walkthrough</h2>
+<h2 id="m2devgde-xlate-intro">Overview of translations</h2>
+<p>The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.</p>
 
-<p>Here is a simple illustration of changing styles using the first approach: changing the color of the buttons of a certain class.
-In the default Blank theme, the buttons of the <code>.action.primary</code> class, so called <em>primary</em> buttons, are blue. The following image illustrates this:</p>
+<h3 id="terms-used">Terms used</h3>
+<p>A <em>translation dictionary</em> is a comma-separated value (.csv) file with at least two columns: the original phrase in the <code>en_US</code> locale and a translation of that phrase in an another locale. Sample translation from English (<code>en_US</code>) to German (<code>de_DE</code>):</p>
 
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/css_over1.png" alt="The default view of a product page, with the orange Add to Cart button" />
+<pre><code>"Add to Cart","Zum Warenkobrn hinzufügen"
+"Add to Compare","Hinzufügen um zu vergleichen"
+"Add to Wishlist","Zum Wunschzettel hinzufügen"
+"Additional Product Info","Zusätzliche Angaben zum Produkt"
+"Address","Adresse"
+"Address %1 of %2","Adresse %1 von %2"
+</code></pre>
+
+<p>A <em>language package</em> is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. <a href="#m2devgde-xlate-languagepack">More information about language packages</a>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>To create a language package, the .csv file requires additional columns that specify the themes or modules in which the translations were found. For more information, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate a translation dictionary</a>.</p>
 </div>
 
-<p>OrangeCo wants to change the color of the primary buttons to orange. To achieve this, they do the following:</p>
+<h3 id="benefits">Benefits</h3>
+<p>Benefits include:</p>
+
+<ul>
+  <li>
+    <p>Two types of language packages:</p>
+
+    <ul>
+      <li>Module and theme packages. Included in the <code>i18n</code> directory of a module or theme, the Magento application auto-discovers these packages.</li>
+      <li>
+        <p>An entire dictionary in one directory. </p>
+
+        <p>This is intended to be used and distributed as a standalone component (similar to modules and themes).</p>
+      </li>
+    </ul>
+  </li>
+  <li>You can use the ready-to-use language packages prepared by other users or you can create your own.</li>
+  <li>You can create localizations based on existing, or parent, translations using <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework">language inheritance</a>. Inheritance means (among other things) that if you missed or omitted localizing some phrases or terms, parent translations are used.</li>
+  <li>You can customize your translations even further by creating more than one version of a translation for the same language.</li>
+</ul>
+
+<p>Depending on your needs, you can use the existing <a href="#m2devgde-xlate-languagepack">language packages</a> or <a href="#m2devgde-xlate-translating">translate Magento by yourself</a>.</p>
+
+<h3 id="changes-in-magento-2">Changes in Magento 2</h3>
+<p>Changes made:</p>
+
+<ul>
+  <li>The language package (<code>i18n</code> directory) can now be moved and saved to any directory of your extension.</li>
+  <li>The phrases for translations are enabled in the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.</li>
+</ul>
+
+<h3 id="more-information">More information</h3>
+<p>See one of the following sections for more information:</p>
+
+<ul>
+  <li><a href="#m2devgde-xlate-translating">Manually translate words and phrases</a></li>
+  <li><a href="#m2devgde-xlate-dictionaries">Translation dictionaries</a></li>
+  <li><a href="#m2devgde-xlate-languagepack">Language packages</a></li>
+</ul>
+
+<h2 id="m2devgde-xlate-translating">Manually translate words and phrases</h2>
+<p>Translating the names, titles and phrases used in Magento involves the following steps:</p>
 
 <ol>
-  <li>Create a new Orange theme, which inherits from the default Blank theme.</li>
-  <li>In the Orange theme directory add the overriding <code>app/design/frontend/OrangeCo/orange/web/css/source/_theme.less</code> file with the following code:</li>
+  <li>Generate a dictionary of your instance using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">translation dictionary tool</a>.</li>
+  <li>Translate the terms.</li>
+  <li>If desired, package your translations in a <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack">language package</a>.</li>
 </ol>
-<pre>
-//  Primary button
-@button-primary-color: @color-white;
-@button-primary-color-hover: @color-white;
-@button-primary-background: @color-orange-red1;
-@button-primary-background-hover: @color-orange-red4;
-@button-primary-border: 1px solid @color-orange-red2;
-@button-primary-border-hover: 1px solid @color-orange-red2;
-</pre>
 
-<p>When OrangeCo <a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies their theme</a>, the primary buttons will look like on the following image:</p>
-
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/css_over2.png" alt="The customized view of a product page, with the grey Add to Cart button" />
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
 </div>
 
-<h2 id="css_topics">What's in this chapter</h2>
-<p>Other topics of this chapter describe the following:</p>
+<p>Anyone can submit translations on the storefront using the Text Editor. Changes made in the Text Editor are not recorded in an instance’s dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.</p>
+
+<h2 id="m2devgde-xlate-dictionaries">Translation dictionaries</h2>
+<p>Magento translates words and phrases when all of the following conditions are met:</p>
 
 <ul>
-  <li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-themes.html" target="_blank">Including CSS</a>: how stylesheets are organized and included to be used for store pages in the Magento application. </li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS Preprocessing</a>: how stylesheets are preprocessed and compiled</li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI Library</a>: how to use the Magento styles library in your custom themes</li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/css-topics/using-fonts.html" target="_blank">Using Custom Fonts</a>: how to add custom fonts </li>
-  <li><a href="/guides/v2.0/frontend-dev-guide/css-topics/css-practice.html" target="_blank">Customizing styles illustration</a>: how to change a theme’s color scheme using Magento UI library. </li>
+  <li>The Magento code base has the necessary translation dictionaries for a language</li>
+  <li>This language is configured by the store administrator to be used in specified scope (that is, storefront)</li>
 </ul>
+
+<p>In a dictionary, every phrase is used only once even if belongs to different modules or themes. The only exception to this is when a duplicate phrase belongs to one or more modules and a themes at the same time.</p>
+
+<p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in module and theme directories similar to the following:</p>
+
+<pre><code>app/code/Magento/Checkout/i18n/pt_BR.csv
+app/design/frontend/Magento/demo/i18n/pt_BR.csv
+</code></pre>
+
+<p>Assembling the preceding <code>pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
+
+<h3 id="m2devgde-xlate-generatortool">The dictionary generator tool</h3>
+<p><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">More information about the dictionary generator tool</a>.</p>
+
+<h2 id="m2devgde-xlate-languagepack">Language packages</h2>
+<p>Magento enables you to create the following types of language packages:</p>
+
+<ul>
+  <li>
+    <p>A set of .csv files for modules and themes. These packages files are intended to be deployed in modules. For example:</p>
+
+    <pre><code>__/app
+ |__/code
+ | |__/Magento
+ |   |__/Catalog
+ |   | |__/i18n
+ |   |   |-- pt_BR.csv
+ |   |__/Checkout
+ |   | |__/i18n
+ |   |   |-- pt_BR.csv
+ |   |__/Customer
+ |     |__/i18n
+ |       |-- pt_BR.csv
+ |__/design
+   |__/frontend
+     |__/Magento
+       |__/demo
+         |__/i18n
+           |-- pt_BR.csv
+</code></pre>
+  </li>
+  <li>
+    <p>Language packages that contain a entire dictionary in one directory. </p>
+
+    <p>You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento’s modularity principles on purpose; that is, so that a system integrator can translations variations provided by extensions. </p>
+  </li>
+</ul>
+
+<p>In addition to the <code>.csv</code> file that contains the language dictionary, the language package contains meta-information:</p>
+
+<ul>
+  <li>
+    <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined locale </p>
+
+    <p><a href="https://github.com/magento/magento2/blob/develop/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a></p>
+  </li>
+  <li>
+    <p><code>language.xml</code>, in which you declare a language package.</p>
+
+    <p><a href="https://github.com/magento/magento2/blob/develop/app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a></p>
+  </li>
+</ul>
+
+<h4 id="next-step">Next step</h4>
+
+<p>To create translation dictionaries and language packages, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and packages</a>.</p>
 
 
 
@@ -449,7 +550,7 @@ In the default Blank theme, the buttons of the <code>.action.primary</code> clas
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
 									
 								
 								
@@ -539,7 +640,7 @@ In the default Blank theme, the buttons of the <code>.action.primary</code> clas
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/tranlsations/xlate.html">Translations</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/frontend-dev-guide/tranlsations/xlate.html">Translations</a></li>
 									
 								
 								
@@ -715,8 +816,8 @@ In the default Blank theme, the buttons of the <code>.action.primary</code> clas
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-topics/css-overview.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/css-topics/css-overview.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/tranlsations/xlate.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/frontend-dev-guide/tranlsations/xlate.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
