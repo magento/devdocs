@@ -203,7 +203,7 @@
 For example, using a browser debug tool, you can define that the minicart block css class is <code>minicart-wrapper</code>.</p>
 <p><img src="/common/images/theme_debug4.png" alt="Firebug displaying html" /></p>
 
-<p>A search through the app directory for occurrences of “minicart-wrapper” in .phtml files returns the <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> template.</p>
+<p>A search through the app directory for occurrences of “minicart-wrapper” in <code>.phtml</code> files returns the <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> template.</p>
 
 <p>Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to Customizing Theme Template.
 <!-- ADDLINK --></p>
@@ -223,7 +223,7 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 <p>Example:</p>
 
-<p>Let’s say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the blank theme by Magento is applied for the store view.</p>
+<p>Let’s say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the store view.</p>
 
 <p>Using the Template Hints we determine that the template is <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code>, and in the path, we see that it belongs to the <code>Magento_Checkout</code> module.</p>
 
@@ -231,7 +231,7 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 <ol>
   <li>Check the <code>app/design/frontend/Magento/blank/Magento_Checkout/</code>layout. To locate the required layout, search this directory for occurrences of the template name, “ minicart.phtml “. No matching file is found, so we proceed to the next fallback level, which is the parent theme layouts.</li>
-  <li>We can find the info about parent theme in a theme configuration file theme.xml, the parent theme name is specified there in the <code>&lt;parent&gt;&lt;/parent&gt;</code> node. In the <code>app/design/frontend/Magento/blank/theme.xml</code> there’s no <code>&lt;parent&gt;</code> node, which means the blank theme has no parents. So we should search on the next fallback level which is the module layouts.</li>
+  <li>We can find the info about parent theme in a theme configuration file theme.xml, the parent theme name is specified there in the <code>&lt;parent&gt;&lt;/parent&gt;</code> node. In the <code>app/design/frontend/Magento/blank/theme.xml</code> there’s no <code>&lt;parent&gt;</code> node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.</li>
   <li>The Magento_Checkout layouts are located in <code>app/code/Magento/Checkout/view/frontend/layout/</code>. After searching this directory for occurrences of “<code>minicart.phtml</code>”, we define that the layout we are looking for is <code>app/code/Magento/Checkout/view/frontend/layout/default.xml</code>.</li>
 </ol>
 
@@ -251,7 +251,7 @@ After you find the class name, use text search in the theme and module styles di
 
 <p>Example:</p>
 
-<p>Let’s find the file defining on the CSS classes used for displaying the mini shopping cart on the storefront, when the blank theme by Magento is applied for the store view.</p>
+<p>Let’s find the file defining on the CSS classes used for displaying the mini shopping cart on the storefront, when the Blank theme by Magento is applied for the store view.</p>
 
 <p>In the mini shopping cart template <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code> the top level element has <code>minicart-wrapper</code> class.</p>
 
