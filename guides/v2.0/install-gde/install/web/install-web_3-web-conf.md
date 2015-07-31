@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_wiz 
-subgroup: A_Introduction
+subgroup: Wizard
 title: Step 3. Web Configuration
 menu_title: Step 3. Web Configuration
 menu_node: 

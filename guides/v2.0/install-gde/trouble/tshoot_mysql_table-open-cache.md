@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_trouble
 subgroup: Z_Troubleshooting
 title: Error 'MySQL server has gone away' during installation
 menu_title: Error 'MySQL server has gone away' during installation

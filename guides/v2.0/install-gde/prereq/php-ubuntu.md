@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_pre
 subgroup: Prerequisites
 title: PHP 5.5 or 5.6&mdash;Ubuntu
 menu_title: PHP 5.5 or 5.6&mdash;Ubuntu

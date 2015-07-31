@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_wiz 
-subgroup: A_Introduction
+subgroup: Wizard
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node: 

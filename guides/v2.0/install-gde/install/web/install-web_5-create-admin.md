@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_wiz 
-subgroup: A_Introduction
+subgroup: Wizard
 title: Step 5. Create Admin Account
 menu_title: Step 5. Create Admin Account
 menu_node: 
