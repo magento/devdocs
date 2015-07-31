@@ -289,7 +289,7 @@ The message `Success` displays to indicate a successful installation.
 
 If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>.
 
-You can also run the installer again.
+You can also <a href="#instgde-install-runagain">run the installer again</a>.
 
 <h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
 The Setup Wizard creates a log file, named `install.log`, that you might find useful in debugging issues or in verifying the actions performed by the wizard.
