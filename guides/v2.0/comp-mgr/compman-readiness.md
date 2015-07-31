@@ -2,8 +2,8 @@
 layout: default 
 group: compman
 subgroup: C_UseCompMan
-title: Readiness check
-menu_title: Readiness check
+title: Step 1. Readiness check
+menu_title: Step 1. Readiness check
 menu_node: 
 menu_order: 5
 github_link: comp-mgr/compman-readiness.md

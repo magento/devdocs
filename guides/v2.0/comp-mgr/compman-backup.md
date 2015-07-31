@@ -2,8 +2,8 @@
 layout: default 
 group: compman
 subgroup: C_UseCompMan
-title: Back up the file system and database
-menu_title: Back up the file system and database
+title: Step 2. Back up the file system and database
+menu_title: Step 2. Back up the file system and database
 menu_node: 
 menu_order: 7
 github_link: comp-mgr/compman-backup.md
@@ -24,10 +24,13 @@ The following figure shows an example of backing up everything.
 To back up:
 
 1.	Select the check box of each item to back up and click **Create Backup**.
+
+	(If you choose not to back up, clear all check boxes and click **Next**).
 2. 	Wait while backups are created.
 
-The following page displays to confirm a successful backup. If errors display, see TBD.
+The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.
 
 <img src="{{ site.baseurl }}common/images/cman_backup-success.png" alt="A page displays to confirm your backup was a success">
 
-
+#### Next step
+<a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>.

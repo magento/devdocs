@@ -9,6 +9,7 @@ menu_node:
 github_link: comp-mgr/prereq/prereq_cron.md
 ---
 
+## Set up cron jobs
 To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.
 
 Enable the cron jobs as <a href="http://ss64.com/bash/crontab.html" target="_blank">crontabs</a> for the web server user because that user runs the Component Manager and System Upgrade. In this topic, it's assumed that the web server user name is `apache` for CentOS and `www-data` for Ubuntu.
