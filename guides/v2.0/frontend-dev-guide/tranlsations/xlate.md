@@ -1,13 +1,15 @@
 ---
-layout: default
-group: 
-subgroup: 
-title: Translation
-menu_title: Translation
-menu_order: 
-menu_node: 
-github_link: architecture/behavior/xlate.md
-redirect_from: /guides/v1.0/architecture/behavior/xlate.html
+layout: default  
+group: fedg
+subgroup: G_Translate
+title: Translations overview
+menu_title: Translations
+menu_order: 1
+menu_node: parent
+github_link: frontend-dev-guide/translations/xlate.md
+redirect_from: 
+  - /guides/v1.0/architecture/behavior/xlate.html
+  - /guides/v2.0/architecture/behavior/xlate.html
 ---
 
 #### Contents
