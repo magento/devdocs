@@ -6,7 +6,9 @@ title: PHP Developer's Guide
 menu_title: Indexing
 menu_order: 8
 github_link: architecture/index-cache/indexing.md
-redirect_from: /guides/v1.0/architecture/index-cache/indexing.html
+redirect_from: 
+  -/guides/v1.0/architecture/index-cache/indexing.html
+  -/guides/v2.0/architecture/index-cache/indexing.html
 ---
 
 <h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>

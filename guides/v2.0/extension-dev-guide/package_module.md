@@ -107,13 +107,3 @@ Prerequisite: git must be set up on your machine.
 
 All packages on the private packaging repository can now be referenced within the `require` field.
 
-<h2 id="test">Test your module</h2>
-Test your module by deploying a Magento Community Edition and adding the module to the project's <code>composer.json</code>. Marshall the module into the <code>app/code</code> directory.
-
-{% highlight JSON %}
-"require": {
-    "magento/magento-composer-installer": "*",
-    "magento/product-community-edition": "2.0.0",
-    "foovendor/module-one": "0.1.1"
-},
-{% endhighlight %}

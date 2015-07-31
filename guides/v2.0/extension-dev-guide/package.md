@@ -12,6 +12,6 @@ github_link: extension-dev-guide/package.md
 
 ##{{page.menu_title}}
 
-Use Composer to package your module.
+Use [Composer](https://getcomposer.org/) to package your module.
 
 * [__Using Composer to package a Magento 2 module__](package_module.html)
