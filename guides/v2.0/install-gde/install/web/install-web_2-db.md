@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_wiz 
-subgroup: A_Introduction
+subgroup: Wizard
 title: Step 2. Add a Database
 menu_title: Step 2. Add a Database
 menu_node: 

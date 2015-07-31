@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install 
+group: install_cli
 subgroup: T_Command-line installation
 title: Display or change the Admin URI
 menu_title: Display or change the Admin URI

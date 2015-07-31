@@ -1,7 +1,7 @@
 ---
 layout: default 
-group: install 
-subgroup: S_Installation
+group: install_wiz
+subgroup: Wizard
 title: Setup Wizard installation
 menu_title: Setup Wizard installation
 menu_node: parent

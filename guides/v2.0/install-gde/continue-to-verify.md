@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_wiz 
-subgroup: W_continue
+subgroup: X_continue
 title: Continue to verify, sample data, or troubleshooting
 menu_title: Continue to verify, sample data, or troubleshooting
 menu_node: parent

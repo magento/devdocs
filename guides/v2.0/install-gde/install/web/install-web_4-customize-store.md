@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: install_wiz 
-subgroup: A_Introduction
+subgroup: Wizard
 title: Step 4. Customize Your Store
 menu_title: Step 4. Customize Your Store
 menu_node: 

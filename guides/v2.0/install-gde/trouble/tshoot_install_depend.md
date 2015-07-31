@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_trouble
 subgroup: Z_Troubleshooting
 title: Installation dependencies not met
 menu_title: Installation dependencies not met

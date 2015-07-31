@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_trouble
 subgroup: Z_Troubleshooting
 title: GitHub API rate limit
 menu_title: GitHub API rate limit
