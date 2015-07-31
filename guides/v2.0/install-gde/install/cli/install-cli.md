@@ -1,13 +1,15 @@
 ---
 layout: default
-group: install 
+group: install_cli
 subgroup: T_Command-line installation
-title: Command line installation
-menu_title: Command line installation
+title: Install the Magento software using the command line
+menu_title: Install the Magento software using the command line
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/install-cli.md
-redirect_from: /guides/v1.0/install-gde/install/install-cli.html
+redirect_from:
+  -  /guides/v1.0/install-gde/install/install-cli.html
+  -  /guides/v2.0/install-gde/install/install-cli.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
@@ -37,5 +39,5 @@ This topic discusses installing the Magento software using the CLI. For informat
 
 #### Next steps 
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Install the Magento software using the command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html">Get started with the command-line installation</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Install the Magento software using the command line</a>

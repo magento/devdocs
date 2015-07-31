@@ -1,13 +1,15 @@
 ---
 layout: default
-group: install 
+group: install_cli 
 subgroup: T_Command-line installation
 title: Install the Magento software using the command line 
 menu_title: Install the Magento software using the command line 
 menu_node: 
 menu_order: 4
 github_link: install-gde/install/install-cli-install.md
-redirect_from: /guides/v1.0/install-gde/install/install-cli-install.html
+redirect_from:
+  -  /guides/v1.0/install-gde/install/install-cli-install.html
+  -  /guides/v2.0/install-gde/install/install-cli-install.html
 ---
 
   
@@ -18,7 +20,7 @@ See one of the following sections:
 *	<a href="#instgde-install-cli-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-cli-magento">Install the Magento software from the command line</a>
 
-See also <a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
+See also <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
 <div class="bs-callout bs-callout-warning">
     <p>Because of database changes in the Merchant Beta release (1.0.0-beta), you <em>must</em> uninstall the Magento software and reinstall it. Details are provided in <a href="{{ site.gdeurl }}install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a>.</p>
@@ -33,7 +35,7 @@ Before you begin, make sure that:
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
 4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.
-5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line installation</a>.
+5.	Review the information discussed in <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line installation</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -235,15 +237,15 @@ The following table discusses the meanings of installation option names and valu
 	<!-- <tr> 
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
+		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
 		<td>No</td>
 	</tr>
 	<tr>
 		<td>disable_modules=&lt;list>}</td>
 		<td><p>Disable modules that are installed and enabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
-		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
+		<p>To enable and disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+		<p>For important information about module dependencies, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr> -->
 	<tr>

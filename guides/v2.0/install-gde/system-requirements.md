@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_pre
 subgroup: Getting Started
 title: System requirements
 menu_title: Magento system requirements

@@ -1,13 +1,15 @@
 ---
 layout: default
-group: install 
+group: install_cli 
 subgroup: T_Command-line installation
 title: Configure the store
 menu_title: Configure the store
 menu_node: 
 menu_order: 20
 github_link: install-gde/install/install-cli-subcommands-store.md
-redirect_from: /guides/v1.0/install-gde/install/install-cli-subcommands-store.html
+redirect_from:
+  -  /guides/v1.0/install-gde/install/install-cli-subcommands-store.html
+  -  /guides/v2.0/install-gde/install/install-cli-subcommands-store.html
 ---
 
   
@@ -22,13 +24,13 @@ See one of the following sections:
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-cli-subcommands-store-prereq">Prerequisites</h2>
-Before you run this command, you must do all of the following *or* you must <a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">install the Magento software</a>:
+Before you run this command, you must do all of the following *or* you must <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">install the Magento software</a>:
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
 
 <h2 id="instgde-cli-storeconfig">Configure the store</h2>
 Command usage:
@@ -102,16 +104,16 @@ where the following table defines parameters and values.
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-install.html">Installing the Magento software using the command line</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-mods.html">Uninstall modules</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-theme-uninstall.html">Uninstall themes</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall-langpk.html">Uninstall language packages</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
-*	<a href="{{ site.gdeurl }}install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-admin.html">Create a Magento administrator</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a>
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a>
