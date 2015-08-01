@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: ZZ_Troubleshooting
-title: Troubleshoot backups
-menu_title: Troubleshoot backups
+title: Troubleshoot backup
+menu_title: Troubleshoot backup
 menu_node: 
 menu_order: 20
 github_link: comp-mgr/trouble/cman/tshoot_backup.md
@@ -14,6 +14,7 @@ A backup can fail for any of the following reasons:
 
 *	<a href="#trouble-backup-space">Insufficient disk space</a>
 *	<a href="#trouble-backup-os">An operating system error</a>
+*	<a href="#trouble-backup-all">All tests fail</a>
 
 <h3 id="trouble-backup-space">Insufficient disk space</h3>
 If the backup failed because of insufficient disk space, you should typically free up disk space by moving some files to another storage device or drive. However, there might be other ways to resolve the issue. See one of the following resources for tips:
@@ -28,3 +29,8 @@ Unfortunately, we can't recommend anything specific because of the variety of er
 *	Contact your system administrator
 *	Search public forums like <a href="http://unix.stackexchange.com" target="_blank">stackexchange</a> or <a href="http://stackoverflow.com" target="_blank">stackoverflow</a>
 *	Open a <a href="https://github.com/magento/magento2/issues" target="_blank">GitHub issue</a> and we'll try to help
+
+<h3 id="trouble-backup-all">All tests fail</h3>
+If all backup tests fail, it's possible the web server user doesn't have sufficient privileges and ownership of the Magento file system. For example, another user might own the files or the files might be read-only.
+
+Pay particular attention to file system permissions and ownership of the `<your Magento install dir>/var` directory and subdirectories. For more information, see <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system permissions and ownership</a>.

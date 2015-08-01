@@ -8,8 +8,6 @@ menu_node:
 menu_order: 5
 github_link: comp-mgr/trouble/cman/cron.md
 ---
-<!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
-<!-- Referring file: TBD owned by Ogres -->
 
 <h2 id="trouble-cron">Troubleshoot cron</h2>
 If the cron readiness check fails, first determine whether a cron job is set up or not.
@@ -44,14 +42,18 @@ To verify whether or not your crontab is set up:
 	See one of the following sections for a solution to your issue.
 
 <h3 id="trouble-cron-none">Solution: crontab not set up</h3>
-If the web server user has no configured cron job, see TBD.
+If the web server user has no configured cron job, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Set up cron jobs</a>.
 
 <h3 id="trouble-cron-errors">Solution: cron running with errors</h3>
-Try running each command manually because the command might display ha elpful error messages.
+Try running each command manually because the command might display helpful error messages.
 
 **Run the setup application cron job**
 
-TBD
+See <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-group">Configure and run cron</a>.
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>You must run cron at least <em>twice</em> for the job to execute.</p>
+</div>
 
 **Run the updater cron job**
 

@@ -44,15 +44,15 @@ To choose wither to upgrade, enable, or disable components:
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li></ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>
-				<p>The right column displays available actions for each component. For more information, see TBD.</p></td>
+				<p>The right column displays available actions for each component. </p></td>
 	</tr>
 	<tr>
 		<td><p>Actions</p></td>
 		<td><img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
 			<p>A component has one or more of the following actions available from the <strong>Actions</strong> list:</p>
-			<ul><li>Enable</li>
-				<li>Disable</li>
-				<li>Update</li></ul>
+			<ul><li><a href="#compman-access-enable">Enable</a></li>
+				<li><a href="#compman-access-enable">Disable</a></li>
+				<li><a href="#compman-access-sync">Update</a></li></ul>
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>

@@ -18,12 +18,17 @@ To start, click either **Start Readiness Check** or **Next** on the Magento Comp
 
 <img src="{{ site.baseurl }}common/images/cman_update_readiness.png" alt="The readiness check enables you to find out if your server and environment are ready to proceed">
 
-### Success
-The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with TBD.
+See one of the following:
+
+*	<a href="#compman-readiness-success">Success</a>
+*	<a href="#compman-readiness-fail">Failure</a>
+
+<h3 id="compman-readiness-success">Success</h3>
+The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with <a href="{{ site.gdeurl }}comp-mgr/compman-backup.html">Backup</a>.
 
 <img src="{{ site.baseurl }}common/images/cman_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step">
 
-### Failure
+<h3 id="compman-readiness-fail">Failure</h3>
 Messages similar to the following display if any readiness check fails. 
 
 <img src="{{ site.baseurl }}common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue">
