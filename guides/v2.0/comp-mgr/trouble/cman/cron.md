@@ -65,7 +65,7 @@ TBD
 		PHP Warning:  require_once(/var/www/html/magento2/update/vendor/autoload.php): failed to open stream: No such file or directory in /var/www/html/magento2/update/app/bootstrap.php on line 13
 		PHP Fatal error:  require_once(): Failed opening required '/var/www/html/magento2/update/vendor/autoload.php' (include_path='.:/usr/share/pear:/usr/share/php') in /var/www/html/magento2ce/update/app/bootstrap.php on line 13
 
-	If that's the case, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron jobs</a>.
+	If that's the case, see <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Set up cron jobs</a>.
 
 
 

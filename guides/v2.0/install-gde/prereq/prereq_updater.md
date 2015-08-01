@@ -1,12 +1,12 @@
 ---
 layout: default
-group: compman
-subgroup: B_prereq
+group: install_pre
+subgroup: S_Integrator
 title: Set up the updater
 menu_title: Set up the updater
 menu_order: 10
 menu_node: 
-github_link: comp-mgr/prereq/prereq_updater.md
+github_link: install-gde/prereq/prereq_updater.md
 ---
 
 #### Contents
@@ -15,15 +15,7 @@ github_link: comp-mgr/prereq/prereq_updater.md
 *	<a href="#compman-updater-clone">Cloning the updater repository</a>
 
 <h2 id="compman-updater-over">Overview of the updater</h2>
-The updater synchronizes with Magento Connect and coordinates updating components and upgrading the Magento software.
-
-You can set up the updater in any of the following ways:
-
-*	By creating a Composer project as discussed in TBD.
-
-	If you already created a Composer project, you can skip this section and continue with <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron jobs</a> or <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>.
-
-*	By cloning the updater GitHub project and copying the files to `<your Magento install dir>/update`
+The updater synchronizes with Magento Connect for updating components and upgrading the Magento software. Contributing developers must clone the updater GitHub repository and copy the files to `<your Magento install dir>/update`
 
 <h2 id="compman-updater-clone">Cloning the updater repository</h2>
 You can clone the Magento 2 Updater repository using either SSH or HTTPS protocols:
@@ -126,7 +118,6 @@ For example, if you cloned the updater to `/var/www/html/magento2-updater` and M
 	mkdir -p /var/www/html/magento2/update
 	cp -R /var/www/html/magento2-updater/* /var/www/html/magento2/update
 
-#### Next steps
+#### Next step
 
-*	<a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_cron.html">Set up cron jobs</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>
+*	<a href="{{ site.gdeurl }}install-gde/continue-to-install.html">Installation options</a>

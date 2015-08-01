@@ -2,8 +2,8 @@
 layout: default 
 group: compman
 subgroup: C_UseCompMan
-title: Component management options
-menu_title: Component management options
+title: Manage your components
+menu_title: Manage your components
 menu_node: 
 menu_order: 2
 github_link: comp-mgr/compman-main-pg.md
@@ -19,8 +19,7 @@ github_link: comp-mgr/compman-main-pg.md
 <h2 id="compman-access">Component Management options</h2>
 To choose wither to upgrade, enable, or disable components:
 
-1.	Start with <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>.
-	A page similar to the following displays:
+1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:
 	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available">
 2.	You have the following options:
 	<table>
@@ -72,7 +71,11 @@ The following figure shows an example.
 
 <img src="{{ site.baseurl }}common/images/cman_component-needs-update.png" alt="Example showing components that need updating">
 
-See <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+To update the component, click **Update** from the **Actions** list. A sample follows.
+
+<img src="{{ site.baseurl }}common/images/cman_actions_update.png" alt="Click Update from the Actions menu">
+
+Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
 <h2 id="compman-access-enable">Enable or disable a component</h2>
 To enable a component, click **Enable** or **Disable** from the **Actions** list and see <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.

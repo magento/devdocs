@@ -34,5 +34,5 @@ In the event of failure, see one of the following sections:
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP version check failure</a>
-*	PHP settings check failure (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html#instgde-prereq-timezone">Ubuntu</a>, <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone">CentOS</a>)
+*	<a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a>

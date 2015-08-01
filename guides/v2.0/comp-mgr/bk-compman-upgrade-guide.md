@@ -20,9 +20,9 @@ Magento provides two applications you can use after installing the Magento appli
 	*	Themes
 	*	Language packages
 
-*	<a href="{{ site.gdeurl }}comp-mgr/upgrade-start.html">System Upgrade</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">System Upgrade</a>
 
 	Upgrade the Magento core modules.
 
 ### Next step
-Complete the tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq_compman-updater.html">Prerequisites</a>.
+Complete the tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a>.
