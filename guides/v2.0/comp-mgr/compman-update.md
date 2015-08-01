@@ -9,7 +9,7 @@ menu_order: 10
 github_link: comp-mgr/compman-update.md
 ---
 
-## Upate your components
+## Update your components
 After backing up, your components are updated. The following figure shows an example.
 
 <img src="{{ site.baserl }}common/images/cman_update-step.png" alt="Click update to complete the task">
