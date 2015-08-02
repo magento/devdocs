@@ -26,8 +26,8 @@ To get started:
 
 		composer create-project magento/product-community-edition --stability="beta"
 
-	This command creates the project defined in <a href="http://packages.magento.com/#!/community" target="_blank">package.magento.com</a> and downloads dependencies for it. The project is in a directory named `product-community-edition`.
+	This command creates the project defined in <a href="http://packages.magento.com/#!/community" target="_blank">packages.magento.com</a> and downloads dependencies for it. The project is in a directory named `product-community-edition`.
 
-4.	Rename the directory `product-community-edition` if necessary to match the docroot directory defined in your virtual host.
+4.	If necessary, rename the directory `product-community-edition` to match the docroot directory defined in your virtual host.
 
 4.	Continue with <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.
