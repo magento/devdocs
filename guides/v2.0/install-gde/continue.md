@@ -13,14 +13,14 @@ redirect_from: /guides/v1.0/install-gde/continue.html
 ## Let's get started!
 This Installation Guide helps you install the Magento software on a server that doesn't have Magento installede already. (Not sure? Go <a href="{{ site.gdeurl }}install-gde/basics/basics_magento-installed.html">here</a> first.)
 
-If Magento *is* installed and you want to manage components or perform an upgrade, see the following guides instead:
+<!-- If Magento *is* installed and you want to manage components or perform an upgrade, see the following guides instead:
 
 *	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-guide.html">Component Manager Guide</a>
 
 	A Magento *component* is an extension, language package, or theme. The Component Manager installs, uninstalls, updates, enables, or disables components.
 *	<a href="{{ site.gdeurl }}upgrade/bk-upgrade-guide.html">Upgrade Guide</a>
 
-	Upgrade the Magento software or components.
+	Upgrade the Magento software or components. -->
 
 ## High-level installation roadmap
 
