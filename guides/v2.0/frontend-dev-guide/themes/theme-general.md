@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-general.html
 ---
 
 <h2 id="theme-gen-overview">Overview</h2>
-A theme is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images.
+A *theme* is a component of Magento application which provides a consistent look and feel (visual design) for entire application area (for example, storefront or Magento admin) using a combination of custom templates, layouts, styles or images.
 
 Themes are designed to override or customize view layer resources, provided initially by modules or libraries.<!--ADDLINK to Fallback--> Themes are implemented by different vendors (frontend developers) and intended to be distributed as additional packages for Magento system similar to other components.
 
