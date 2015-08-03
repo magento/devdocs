@@ -17,7 +17,7 @@ github_link: comp-mgr/compman-main-pg.md
 *	<a href="#compman-access-enable">Enable or disable a component</a>
 
 <h2 id="compman-access">Component Management options</h2>
-To choose wither to upgrade, enable, or disable components:
+To choose whether to upgrade, enable, or disable components:
 
 1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:
 	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available">

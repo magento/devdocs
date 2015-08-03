@@ -16,13 +16,13 @@ Magento provides two applications you can use after installing the Magento appli
 
 	Updates *components*, which can be any of the following:
 
-	*	Modules
-	*	Themes
-	*	Language packages
+	*	Modules (extend Magento capabilities)
+	*	Themes (change the look and feel of your storefront and Admin)
+	*	Language packages (localize the storefront and Admin)
 
 *	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">System Upgrade</a>
 
-	Upgrade the Magento core modules.
+	Upgrade the Magento core modules as well as components.
 
 ### Next step
 Complete the tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a>.
