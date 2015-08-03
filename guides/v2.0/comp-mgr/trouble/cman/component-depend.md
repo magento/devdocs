@@ -2,8 +2,8 @@
 layout: default
 group: compman
 subgroup: ZZ_Troubleshooting
-title: Troubleshoot component dependencies
-menu_title: Troubleshoot component dependencies
+title: Resolve component dependencies
+menu_title: Resolve component dependencies
 menu_node: 
 menu_order: 5
 github_link: comp-mgr/trouble/cman/component-depend.md

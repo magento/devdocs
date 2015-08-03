@@ -19,7 +19,7 @@ Before you can use the Component Manager and System Upgrade, you must do all of 
 	The updater synchronizes with Magento Connect and gets the latest versions of all available components. The updater works for both the Component Manager and System Upgrade.
 *	<a href="#compman-prereq-cron">Set up cron jobs</a>
 
-	Cron scans for component and core module updates every minute.
+	Cron should scan for component and core module updates every minute.
 
 <h2 id="compman-prereq-cron">Set up cron jobs</h2>
 To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.
