@@ -19,7 +19,6 @@ redirect_from: /guides/v1.0/install-gde/install/sample-data.html
 *	<a href="#instgde-install-sample-intro">Introduction to Magento sample data</a>
 *	<a href="#instgde-install-sample-enable-before">Enable sample data before you install the Magento software</a>
 *	<a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>
-*	<a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>
  
 
 <h2 id="instgde-prereq-sample-intro">Introduction to Magento sample data</h2>
@@ -29,12 +28,6 @@ Sample data is versioned like Magento code. Before you begin, you can either:
 
 *	Find the exact version you want at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.
 *	Install the latest version using Composer <a href="https://getcomposer.org/doc/01-basic-usage.md#next-significant-release-tilde-and-caret-operators-" target="_blank">next significant release syntax</a>.
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento 2 versions 0.74.0-beta9 and later require you to install only one sample data package instead of two. This package is currently named <code>"magento/sample-data": "0.74.0-beta9"</code>. Be sure to confirm the current version at <a href="http://packages.magento.com/#magento/sample-data" target="_blank">packages.magento.com</a>.</p>
-<p>If you're installing sample data for an earlier version, see <a href="#installgde-install-sample-old">Sample data for earlier Magento versions</a>.</p></span>
-</div>
 
 <h2 id="instgde-install-sample-enable-before">Enable sample data before you install the Magento software</h2>
 This section discusses how to install optional sample data *before* you install the Magento software. If you've already installed, see <a href="#instgde-install-sample-enable-after">Enable sample data after you install the Magento software</a>.
@@ -62,5 +55,4 @@ For example,
 	/var/www/magento2/bin/magento setup:upgrade
 	/var/www/magento2/bin/magento sampledata:install admin
 
-<h2 id="installgde-install-sample-old">Sample data for earlier Magento versions</h2>
-{% include install/sample-data-note.html %}
+
