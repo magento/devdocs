@@ -1,22 +1,11 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Accordion widget
 menu_order: 1
 menu_title: Accordion widget
-github_link: frontend-dev-guide/javascript/widget_accordion.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_accordion.html
----
-
----
-layout: default
-group: fedg
-subgroup: Javascript
-title: JavaScript initialization
-menu_title: JavaScript initialization
-menu_order: 2
-github_link: frontend-dev-guide/javascript/js_init.md
+github_link: javascript-dev-guide/widgets/widget_accordion.md
 ---
 
 <h2>Overview</h2>
