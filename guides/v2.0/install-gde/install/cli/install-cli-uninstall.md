@@ -38,7 +38,7 @@ You might do this in an development environment especially to get all the latest
 
 To update the Magento software:
 
-2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
+2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">web server user</a>).
 3. Save any changes you made to `composer.json` because the following steps will overwrite it:
 
 		cd <your Magento install dir>
@@ -81,7 +81,7 @@ This section discusses how to uninstall and then reinstall the Magento software 
 
 To reinstall the Magento software:
 
-2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
+2.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">web server user</a>).
 3.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
@@ -132,7 +132,7 @@ To determine the versions:
 <h3 id="instgde-install-magento-updatebeta11-how">How to update the Magento software</h3>
 To update the Magento software to 0.42.0-beta11 or later from version beta10 or earlier:
 
-1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).
+1.	Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">web server user</a>).
 
 2.	Change to the following directory:
 

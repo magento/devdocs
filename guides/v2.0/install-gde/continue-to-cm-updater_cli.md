@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install_cli
+group: 
 subgroup: Z_continue
 title: Continue to upgrading components
 menu_title: Continue to upgrading components

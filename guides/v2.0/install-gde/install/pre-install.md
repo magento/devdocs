@@ -49,15 +49,7 @@ Before you start your installation, take a moment to figure out which type of us
 			<th>Get started link</th>
 		</tr>
 		
-	<tr>
-		<td><p>Merchant</p></td>
-		<td><p>Very little technical expertise, limited if any access to the Magento server.</p></td>
-		<td><ol><li>Download a compressed file that contains the Magento software.</li>
-			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
-			<li>Installs the Magento software.</li></ol>
-		</td>
-		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/merch_install.html">Merchants start here</a></p></td>
-	</tr>
+	
 	<tr>
 		<td><p>Contributing developer</p></td>
 		<td><p>Wants to contribute to the Magento codebase, highly technical, has their own Magento development server, understands Composer and GitHub.</p></td>
@@ -76,6 +68,15 @@ Before you start your installation, take a moment to figure out which type of us
 		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/integrator_install.html">System integrators start here</a></p></td>
 	</td>
 
+	</tr>
+	<tr>
+		<td><p>Merchant</p></td>
+		<td><p>Very little technical expertise, limited if any access to the Magento server.</p></td>
+		<td><ol><li>Download a compressed file that contains the Magento software.</li>
+			<li>Extracts it on the Magento server or asks a network administrator or hosting provider to do so.</li>
+			<li>Installs the Magento software.</li></ol>
+		</td>
+		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/merch_install.html">Merchants start here</a></p></td>
 	</tr>
 	</tbody>
 </table>

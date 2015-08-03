@@ -42,7 +42,7 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Install Magento in a different database instance
 
 <h2 id="instgde-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.</li>
+<ol><li>Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to</a>, the web server user.</li>
 <li>Change to the following directory:<br>
 <pre>cd &lt;your Magento install dir>/bin</pre>
 Examples:

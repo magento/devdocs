@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_trouble
-subgroup: Z_Troubleshooting
+subgroup: GitHub issues
 title: git pull origin develop fails when updating the Magento software
 menu_title: git pull origin develop fails when updating the Magento software
 menu_node:
