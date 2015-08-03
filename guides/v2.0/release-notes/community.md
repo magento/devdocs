@@ -6,6 +6,7 @@ menu_title: Community requests
 menu_node: 
 menu_order: 9
 github_link: release-notes/community.md
+redirect_from: /guides/v1.0/release-notes/community.html
 ---
 
 <h2 id="comm-req">Community requests</h2>

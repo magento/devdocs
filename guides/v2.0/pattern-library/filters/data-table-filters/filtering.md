@@ -7,6 +7,7 @@ menu_title: Filters
 menu_order: 1
 menu_node:
 github_link: pattern-library/filters/data-table-filters/filtering.md
+redirect_from: /guides/v1.0/pattern-library/filters/data-table-filters/filtering.html
 ---
 
 <h2>Filters</h2>

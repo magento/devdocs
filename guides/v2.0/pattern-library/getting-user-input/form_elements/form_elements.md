@@ -7,6 +7,7 @@ menu_title: Form Elements
 menu_order: 1
 menu_node:
 github_link: pattern-library/getting-user-input/form_elements/form_elements.md
+redirect_from: /guides/v1.0/pattern-library/getting-user-input/form_elements/form_elements.html
 ---
 
 <h2> Form Elements </h2>

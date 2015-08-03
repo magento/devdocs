@@ -6,6 +6,7 @@ title: Firefox REST client
 menu_title: Firefox REST client
 menu_order: 3
 github_link: get-started/gs-rest-ff-client.md
+redirect_from: /guides/v1.0/get-started/gs-rest-ff-client.html
 ---
 
 This topic discusses how to use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/" target="_blank">Firefox REST Client</a> browser add-on to send a REST call that creates a new Magento customer.

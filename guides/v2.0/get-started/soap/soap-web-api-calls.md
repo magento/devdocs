@@ -6,6 +6,7 @@ title: Consuming Services via SOAP
 menu_title: Consuming Services
 menu_order: 2
 github_link: rest/soap/soap-web-api-calls.md
+redirect_from: /guides/v1.0/rest/soap/soap-web-api-calls.html
 
 ---
 

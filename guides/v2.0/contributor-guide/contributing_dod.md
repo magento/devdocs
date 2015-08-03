@@ -7,6 +7,7 @@ menu_title: Magento Definition of Done
 menu_order: 1
 menu_node: parent
 github_link: contributor-guide/contributing_dod.md
+redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

@@ -7,19 +7,16 @@ menu_title: Generate data for performance testing
 menu_node: 
 menu_order: 600
 github_link: config-guide/cli/config-cli-subcommands-perf-data.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 ---
 
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-perf-overview">Overview of performance testing data</a>
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-perf-prof">About profiles</a>
 *	<a href="#config-cli-perf-run">Run the data generator</a>
-
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-perf-overview">Overview of performance testing data</h2>
 To use the Magento performance toolkit or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
@@ -31,6 +28,10 @@ The following figure shows how a product displays on the storefront using the sm
 <p><img src="{{ site.baseurl }}common/images/config_generate-data.png" alt="Sample storefront with generated data"></p>
 
 This gives you an idea about what the data looks like.
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-perf-prof">About profiles</h2>
 The following table provides details about the data generator profiles (small, medium, large, and extra large).

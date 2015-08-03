@@ -6,6 +6,7 @@ title: Libraries
 menu_title: Libraries
 menu_order: 
 github_link: architecture/arch_libraries.md
+redirect_from: /guides/v1.0/architecture/arch_libraries.html
 ---
 
 <h2 id="m2arch-libraries-overview">Overview</h2>

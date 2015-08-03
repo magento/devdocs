@@ -6,6 +6,7 @@ title: Session-based authentication
 menu_title: Session-based authentication
 menu_order: 3
 github_link: get-started/authentication/gs-authentication-session.md
+redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-session.html
 ---
 
 <p>As a customer, you log in to the Magento storefront with your customer credentials. As an admin, you log in to the Magento Admin with your admin credentials.</p>

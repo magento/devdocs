@@ -6,6 +6,7 @@ menu_title: Changes in 0.74-beta10
 menu_node: 
 menu_order: 100
 github_link: release-notes/changes_074-beta10.md
+redirect_from: /guides/v1.0/release-notes/changes_074-beta10.html
 ---
 
 <h2 id="changes-contents">Contents</h2>

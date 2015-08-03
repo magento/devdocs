@@ -7,19 +7,15 @@ menu_title: Multi-tenant compiler
 menu_node: 
 menu_order: 10
 github_link: config-guide/cli/config-cli-subcommands-compiler-multi.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-multi.html
 ---
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
 *	<a href="#config-cli-subcommands-multi">Overview of the multi-tenant compiler</a>
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a>
-
-
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 This section discusses the basics of code compilation (which is also referred to as *code generation*).
@@ -68,6 +64,10 @@ Naming Rules for auto-generated classes for a module:
     <p>Failure to follow the preceding naming convention results in exceptions.</p>
 </div> -->
 
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
 Command options:

@@ -7,18 +7,16 @@ menu_title: Convert layout XML files
 menu_node: 
 menu_order: 500
 github_link: config-guide/cli/config-cli-subcommands-layout-xml.md
+redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-layout-xml.html
 ---
 
 
 #### Contents
 
-*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-xml-overview">Overview of layout XML conversion</a>
+*	<a href="#config-cli-before">First steps</a>
 *	<a href="#config-cli-xml-run">Convert layout XML files</a>
 
-<h2 id="config-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
 When XML schema are updated, you should update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet. This command enables you to perform these updates.
@@ -27,6 +25,10 @@ For more information about layout XML files, see:
 
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a>
 *	<a href="{{ site.gdeurl }}frontend-dev-guide/layouts/layout-types.html">Layout file types</a>
+
+<h2 id="config-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="config-cli-xml-run">Convert layout XML files</h2>
 Command options:

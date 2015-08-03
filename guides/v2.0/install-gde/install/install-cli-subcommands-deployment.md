@@ -7,6 +7,7 @@ menu_title: Create or update the deployment configuration
 menu_node: 
 menu_order: 9
 github_link: install-gde/install/install-cli-subcommands-deployment.md
+redirect_from: /guides/v1.0/install-gde/install/install-cli-subcommands-deployment.html
 ---
 
 
@@ -51,8 +52,8 @@ The following table discusses the meanings of installation parameters and values
 		
 	<tr>
 		<td><p>--backend-frontname</p></td>
-		<td><p>Path to access the Magento Admin. This path is appended to the base URL. Default is <code>admin</code>. 
-For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
+		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin.</p>
+			<p>To prevent exploits, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>

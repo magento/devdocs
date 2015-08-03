@@ -6,6 +6,7 @@ title: Create a Module
 menu_title: Create a Module
 menu_order: 2
 github_link: extension-dev-guide/create_module.md
+redirect_from: /guides/v1.0/extension-dev-guide/create_module.html
 ---
 
 <h2 id="create-module-overview">Overview</h2>

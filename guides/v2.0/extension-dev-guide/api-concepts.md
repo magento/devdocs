@@ -6,6 +6,7 @@ title: Programming concepts
 menu_title: Programming concepts
 menu_order: 1
 github_link: extension-dev-guide/api-concepts.md
+redirect_from: /guides/v1.0/extension-dev-guide/api-concepts.html
 ---
 
 <h2 id="public-interface">What is a public interface?</h2>

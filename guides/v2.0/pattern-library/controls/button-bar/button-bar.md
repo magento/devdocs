@@ -7,6 +7,7 @@ menu_title: Button Bar
 menu_order: 2
 menu_node: 
 github_link: pattern-library/controls/button-bar/button-bar.md
+redirect_from: /guides/v1.0/pattern-library/controls/button-bar/button-bar.html
 ---
 
 

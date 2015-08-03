@@ -7,6 +7,7 @@ menu_title: Install the Magento software using the command line
 menu_node: 
 menu_order: 4
 github_link: install-gde/install/install-cli-install.md
+redirect_from: /guides/v1.0/install-gde/install/install-cli-install.html
 ---
 
   
@@ -119,8 +120,10 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--backend-frontname</p></td>
-		<td><p>Path to access the Magento Admin. This path is appended to base URL. Default is <code>admin</code>. 
-For example, if Base URL is http://www.example.com and Admin Path is <code>admin</code>, the Admin Panel's URL is <code>http://www.example.com/admin</code>&mdash;provided you configured your web server for server rewrites.</p></td>
+		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
+			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
+			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{ site.gdeurl }}install-gde/install/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
+			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -288,7 +291,8 @@ For example, if Base URL is http://www.example.com and Admin Path is <code>admin
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p></span>
+  <p>To enable or disable modules after installing Magento, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
+  	</span>
 </div>
 
 <h4 id="install-cli-example">Sample localhost installations</h4>
@@ -299,7 +303,7 @@ The following example installs Magento with the following options:
 
 *	The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
 
-	Your storefront URL is `http://127.0.0.1` and you can access the Magento Admin at `http://127.0.0.1/admin`
+	Your storefront URL is `http://127.0.0.1`
 
 *	The database server is on the same host as the web server.
 
@@ -319,12 +323,20 @@ The following example installs Magento with the following options:
 *	Default currency is U.S. dollars
 *	Default time zone is U.S. Central (America/Chicago)
 
-		php bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
-		--backend-frontname=admin \
+		magento setup:install --base-url=http://127.0.0.1/magento2/ \
 		--db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 		--admin-user=admin --admin-password=admin123 --language=en_US \
 		--currency=USD --timezone=America/Chicago --use-sample-data --use-rewrites=1
+
+Messages similar to the following display to indicate a successful installation:
+
+	Post installation file permissions check...
+	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+	[Progress: 274 / 274]
+	[SUCCESS]: Magento installation complete.
+	[SUCCESS]: Admin Panel URI: /admin_puu71q
+
 
 **Example 2** (with additional options)
 
@@ -332,7 +344,7 @@ The following example installs Magento with the following options:
 
 *	The Magento software is installed in the `magento2` directory relative to the web server docroot on `localhost` and the path to the Magento Admin is `admin`; therefore:
 
-	Your storefront URL is `http://127.0.0.1` and you can access the Magento Admin at `http://127.0.0.1/admin`
+	Your storefront URL is `http://127.0.0.1`
 
 *	The database server is on the same host as the web server.
 
@@ -352,13 +364,21 @@ The following example installs Magento with the following options:
 *	Session data is saved in the database
 *	Uses server rewrites
 
-		php bin/magento setup:install --base-url=http://127.0.0.1/magento2/ \
-		--backend-frontname=admin --db-host=localhost --db-name=magento \
+		magento setup:install --base-url=http://127.0.0.1/magento2/ \
+		--db-host=localhost --db-name=magento \
 		--db-user=magento --db-password=magento \
 		--admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
 		--admin-user=admin --admin-password=admin123 --language=en_US \
 		--currency=USD --timezone=America/Chicago --cleanup-database \
 		--sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
+
+Messages similar to the following display to indicate a successful installation:
+
+	Post installation file permissions check...
+	For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+	[Progress: 274 / 274]
+	[SUCCESS]: Magento installation complete.
+	[SUCCESS]: Admin Panel URI: /admin_puu71q
 
 
 <div class="bs-callout bs-callout-info" id="info">

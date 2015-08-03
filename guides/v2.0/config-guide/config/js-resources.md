@@ -7,6 +7,7 @@ menu_title: JavaScript resources
 menu_order: 1
 menu_node: parent
 github_link: config-guide/config/js-resources.md
+redirect_from: /guides/v1.0/config-guide/config/js-resources.html
 ---
 
 <h2 id="m2devgde-js-resources-intro">Overview</h2>

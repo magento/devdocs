@@ -7,6 +7,7 @@ menu_title: Data migration tool
 menu_node: parent
 menu_order: 3
 github_link: migration/migration-tool.md
+redirect_from: /guides/v1.0/migration/migration-tool.html
 ---
 
   

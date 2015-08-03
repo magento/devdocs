@@ -6,6 +6,7 @@ title: Magento Area
 menu_title: Magento Area
 menu_order: 
 github_link: architecture/archi_perspectives/area_intro.md
+redirect_from: /guides/v1.0/architecture/archi_perspectives/area_intro.html
 ---
 
 

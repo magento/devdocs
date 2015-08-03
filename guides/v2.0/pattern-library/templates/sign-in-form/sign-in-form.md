@@ -7,6 +7,7 @@ menu_title: Sign In Form
 menu_order: 2
 menu_node: 
 github_link: pattern-library/templates/sign-in-form/sign-in-form.md
+redirect_from: /guides/v1.0/pattern-library/templates/sign-in-form/sign-in-form.html
 ---
 
 <h2> Sign In Form </h2>

@@ -7,6 +7,7 @@ menu_title: What operating system is my server running?
 menu_node: 
 menu_order: 2
 github_link: install-gde/basics/basics_os-version.md
+redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
 ---
  
  

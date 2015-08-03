@@ -7,6 +7,7 @@ menu_title: Get started with the command-line installation
 menu_node: 
 menu_order: 2
 github_link: install-gde/install/install-cli-subcommands.md
+redirect_from: /guides/v1.0/install-gde/install/install-cli-subcommands.html
 ---
 
   

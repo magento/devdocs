@@ -6,6 +6,7 @@ title: Module relationships
 menu_title: Module relationships
 menu_order: 
 github_link: architecture/modules/mod_relationships.md
+redirect_from: /guides/v1.0/architecture/modules/mod_relationships.html
 ---
 
 <h2 id="m2arch-module-relationships-overview">Overview</h2>

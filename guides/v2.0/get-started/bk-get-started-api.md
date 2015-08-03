@@ -8,12 +8,13 @@ menu_order: 1
 menu_node: parent
 
 github_link: get-started/bk-get-started-api.md
+redirect_from: /guides/v1.0/get-started/bk-get-started-api.html
 ---
 <h2 id="whatare">What are the Magento web APIs?</h2>
 
 The Magento web API framework provides integrators and developers the means to use web services that communicate with the Magento system. Key features include:
 
-* Support for both <a href="{{ site.gdeurl }}/rest/bk-rest.html">REST</a> (Representational State Transfer) and <a href="{{ site.gdeurl }}/soap/bk-soap.html">SOAP</a> (Simple Object Access Protocol). In Magento 2, the web API coversage is the same for both REST and SOAP.
+* Support for both <a href="{{ site.gdeurl }}/rest/bk-rest.html">REST</a> (Representational State Transfer) and <a href="{{ site.gdeurl }}/soap/bk-soap.html">SOAP</a> (Simple Object Access Protocol). In Magento 2, the web API coverage is the same for both REST and SOAP.
 
 * Three types of <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">authentication</a>:
 	* Third-party applications authenticate with <a href="{{ site.gdeurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth 1.0a</a>.

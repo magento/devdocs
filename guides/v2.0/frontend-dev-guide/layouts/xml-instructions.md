@@ -6,6 +6,7 @@ title: Layout instructions
 menu_title: Layout instructions
 menu_order: 2
 github_link: frontend-dev-guide/layouts/xml-instructions.md
+redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html
 ---
 <head>
 	<style>

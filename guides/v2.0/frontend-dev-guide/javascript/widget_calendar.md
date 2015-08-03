@@ -6,6 +6,7 @@ title: Calendar widget
 menu_title: Calendar widget
 menu_order: 2
 github_link: frontend-dev-guide/javascript/widget_calendar.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
 ---
 
 <h2 id="fedg_jquery-widget_calendar-overview">Overview</h2>

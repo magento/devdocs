@@ -6,6 +6,7 @@ title: EAV and extension attributes
 menu_title: Attributes
 menu_order: 4
 github_link: extension-dev-guide/attributes.md
+redirect_from: /guides/v1.0/extension-dev-guide/attributes.html
 
 ---
 

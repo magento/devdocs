@@ -5,6 +5,7 @@ subgroup: D_CSS
 title: Using custom fonts
 menu_order: 6
 github_link: frontend-dev-guide/css-topics/using-fonts.md
+redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/using-fonts.html
 ---
 <h2>Overview</h2>
 The Magento application contains a set of built-in fonts, but you can easily include custom fonts. This topic describes how to include a locally stored custom font in your Magento theme.

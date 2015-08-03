@@ -6,6 +6,7 @@ title: QuickSearch widget
 menu_order: 10
 menu_title: QuickSearch widget
 github_link: frontend-dev-guide/javascript/widget_quickSearch.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
 ---
 
 <h2>Overview</h2>

@@ -6,6 +6,7 @@ title: Collapsible widget
 menu_order: 3
 menu_title: Collapsible widget
 github_link: frontend-dev-guide/javascript/widget_collapsible.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html
 ---
 
 <h2>Overview</h2>

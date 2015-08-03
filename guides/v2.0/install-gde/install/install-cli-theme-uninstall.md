@@ -7,6 +7,7 @@ menu_title: Uninstall themes
 menu_node: 
 menu_order: 200
 github_link: install-gde/install/install-cli-theme-uninstall.md
+redirect_from: /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
 ---
 
   
@@ -14,14 +15,10 @@ github_link: install-gde/install/install-cli-theme-uninstall.md
 
 See one of the following sections:
 
-*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-install-magento-prereq">Prerequisite</a>
 *	<a href="#instgde-install-uninst-theme-over">Overview of uninstalling themes</a>
+*	<a href="#instgde-cli-before">First steps</a>
 *	<a href="#instgde-install-uninst-theme-uninst">Uninstall themes</a>
-
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
-In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-install-uninst-theme-prereq">Prerequisite</h2>
 Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of `<your Magento install dir>/app/design/<area name>`. You must specify the path to the theme starting with the area, which is either `frontend` (for storefront themes) or `adminhtml` (for Magento Admin themes).
@@ -39,6 +36,10 @@ This command uninstalls *only* themes that are specified in `composer.json`; in 
 *	Removing theme code from the file system.
 
 	<a href="{{ site.gdeurl }}frontend-dev-guide/themes/theme-inherit.html">More information about theme inheritance</a>.
+
+<h2 id="instgde-cli-before">First steps</h2>
+{% include install/first-steps-cli.html %}
+In addition to the command arguments discussed here, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 <h2 id="instgde-install-uninst-theme-uninst">Uninstall themes</h2>
 Command usage:

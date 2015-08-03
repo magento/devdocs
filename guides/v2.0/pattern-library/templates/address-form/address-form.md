@@ -7,6 +7,7 @@ menu_title: Address Form
 menu_order: 1
 menu_node: 
 github_link: pattern-library/templates/address-form/address-form.md
+redirect_from: /guides/v1.0/pattern-library/templates/address-form/address-form.html
 ---
 
 <h2> Address Form </h2>

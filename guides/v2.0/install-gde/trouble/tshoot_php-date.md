@@ -7,6 +7,7 @@ menu_title: During installation, PHP date warning
 menu_node: 
 menu_order: 20
 github_link: install-gde/trouble/tshoot_php-date.md
+redirect_from: /guides/v1.0/install-gde/trouble/tshoot_php-date.html
 ---
 
 <h2 id="install-trouble-php-date">During installation, PHP date warning</h2>

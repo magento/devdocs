@@ -6,6 +6,7 @@ title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
 github_link: coding-standards/code-standard-demarcation.md
+redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 ---
 
 <p>Magento core developers must follow the Magento code demarcation standard.</p>

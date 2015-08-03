@@ -6,6 +6,7 @@ menu_title: Changes in this release
 menu_node: 
 menu_order: 3
 github_link: release-notes/changes.md
+redirect_from: /guides/v1.0/release-notes/changes.html
 ---
 
 <h2 id="changes-contents">Contents</h2>

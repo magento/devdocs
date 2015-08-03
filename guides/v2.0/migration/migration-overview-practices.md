@@ -7,6 +7,7 @@ menu_title: Best practices
 menu_node: 
 menu_order: 1
 github_link: migration/migration-overview-practices.md
+redirect_from: /guides/v1.0/migration/migration-overview-practices.html
 ---
 
 <h2 id="migrate-overview-benchmarking">Best practices and benchmarking</h2>
@@ -16,7 +17,7 @@ This section provides our best information about how to speed up and simplify yo
 
 * Migrate data from a replicated Magento 1 database instance
 * Remove outdated and redundant data from your Magento 1 database (for example, you could remove logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, and so on)
-* To avoid any unexpected issues or conflicts please follow steps described in <a href="{{ site.gdeurl }}migration/migration-migrate.html">General Rules for Successfull Migration</a>
+* To avoid any unexpected issues or conflicts please follow steps described in <a href="{{ site.gdeurl }}migration/migration-migrate.html">General Rules for Successful Migration</a>
 
 
 <h3>Benchmarking estimates</h3>

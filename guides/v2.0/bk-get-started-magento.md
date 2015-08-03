@@ -6,6 +6,7 @@ menu_title: Getting started with Magento
 menu_order: 1
 menu_node: 
 github_link: bk-get-started-magento.md
+redirect_from: /guides/v1.0/bk-get-started-magento.html
 ---
 
 <h2 id="highlights">Getting started with Magento</h2>

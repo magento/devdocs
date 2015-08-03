@@ -6,6 +6,7 @@ menu_title: Issues fixed since last release
 menu_node: 
 menu_order: 4
 github_link: release-notes/issues-fixed.md
+redirect_from: /guides/v1.0/release-notes/issues-fixed.html
 ---
 
 <h2 id="fixed">Issues fixed since last release</h2>

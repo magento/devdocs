@@ -7,6 +7,7 @@ menu_order: 1
 menu_node: parent
 
 github_link: get-started/rest_front.md
+redirect_from: /guides/v1.0/get-started/rest_front.html
 ---
 
 The Magento REST API defines a set of functions that a developer can use to perform requests and receive responses. These interactions are performed using the HTTP protocol. 

@@ -7,6 +7,7 @@ menu_title: Optional Magento sample data
 menu_node: parent
 menu_order: 1 
 github_link: install-gde/install/sample-data.md
+redirect_from: /guides/v1.0/install-gde/install/sample-data.html
 --- 
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->

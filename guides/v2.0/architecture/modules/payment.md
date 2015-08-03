@@ -6,6 +6,7 @@ title: Payment modules
 menu_title: Payment modules
 menu_order: 
 github_link: architecture/modules/payment.md
+redirect_from: /guides/v1.0/architecture/modules/payment.html
 ---
 
 <h2 id="m2devgde-cache-intro">Overview</h2>

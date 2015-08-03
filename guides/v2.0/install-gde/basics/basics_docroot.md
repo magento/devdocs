@@ -7,6 +7,7 @@ menu_title: What is a docroot?
 menu_node: 
 menu_order: 200
 github_link: install-gde/basics/basics_docroot.md
+redirect_from: /guides/v1.0/install-gde/basics/basics_docroot.html
 ---
 
 The web server document root (often referred to as the *docroot*) is the web server's root directory; in other words, all pages it delivers are located in this directory and subdirectories of it. The path to your web server's docroot depends on:

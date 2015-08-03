@@ -7,6 +7,7 @@ menu_title: Setup Wizard installation
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/install-web.md
+redirect_from: /guides/v1.0/install-gde/install/install-web.html
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
@@ -19,7 +20,8 @@ See one of the following sections:
 
 *	<a href="#instgde-install-prereq">Before you start your installation</a>
 *	<a href="#instgde-install-magento-web">Running the Setup Wizard</a>
-*	<a href="#instgde-install-reinstall">Reinstalling the Magento software</a>
+*	<a href="#instgde-install-runagain">Running the Setup Wizard again</a>
+*	<a href="#instgde-install-reinstall">Updating or reinstalling the Magento software</a>
 
 This section discusses how to install the Magento software using a web-based wizard interface. To install Magento from the command line, see <a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Install Magento software using the command line</a>.
 
@@ -57,6 +59,7 @@ See one of the following sections for more information:
 *	<a href="#instgde-install-magento-web-step0">Getting started</a>
 *	<a href="#instgde-install-magento-web-step1">Step 1: Readiness Check</a>
 *	<a href="#instgde-install-magento-web-step2">Step 2: Add a Database</a>
+*	<a href="#instgde-install-magento-web-step3">Step 3: Web Configuration</a>
 *	<a href="#instgde-install-magento-web-step4">Step 4: Customize Your Store</a>
 *	<a href="#instgde-install-magento-web-step5">Step 5: Create Admin Account</a>
 *	<a href="#instgde-install-magento-web-step6">Step 6: Install</a>
@@ -103,7 +106,7 @@ To install the Magento software using the Setup Wizard:
 		</tr>
 	<tr>
 		<td>Database Server Host</td>
-		<td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address.</td>
+		<td>If the web server and database server are located on the same host, enter <tt>localhost</tt>. If the database server is located on a different host, enter its fully qualified host name or IP address. If your database server listens on a non-default port, add it to the host name. For example, <code>localhost:5678</code>.</td>
 	</tr>
 	<tr>
 		<td>Database Server Username</td>
@@ -144,8 +147,11 @@ To install the Magento software using the Setup Wizard:
 		<p>For example, if your storefront host name is <tt>http://www.example.com</tt>, enter <tt>http://www.example.com/</tt></p></td>
 	</tr>
 	<tr>
-		<td>Magento Admin Address </td>
-		<td>Enter the relative URL by which to access the Magento Admin.</td>
+		<td>Magento Admin Address</td>
+		<td><p>Path to access the Magento Admin. Initially, a random value displays.</p>
+			<p>We recommend a random URL for security purposes. A random URL is harder for hackers or malicious software to exploit.</p>
+			<p>After the installation completes, we recommend you bookmark the Magento Admin URL so you don't forget it. You can display this value at any time using the TBD command.</p>
+			<p>If you choose to enter another value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URL can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only.</p></td>
 	</tr>
 	</tbody>
 	</table>
@@ -283,7 +289,7 @@ The message `Success` displays to indicate a successful installation.
 
 If the installation failed, click **Previous** to review the information you entered, make sure the Magento server and database host are still reachable, or see <a href="{{ site.gdeurl }}install-gde/trouble/tshoot.html">Troubleshooting</a>.
 
-You can also run the installer again.
+You can also <a href="#instgde-install-runagain">run the installer again</a>.
 
 <h3 id="instgde-install-magento-web-log">Viewing the installation log</h3>
 The Setup Wizard creates a log file, named `install.log`, that you might find useful in debugging issues or in verifying the actions performed by the wizard.
@@ -305,6 +311,11 @@ The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-tem
 The value of `sys_temp_dir` determines where `install.log` is located. If the value is commented out, PHP uses that value as its default. 
 
 A typical default value is `/tmp`. If that's the case, the log is `/tmp/install.log`.
+
+<h2 id="instgde-install-runagain">Running the Setup Wizard again</h2>
+You can optionally run the Setup Wizard after a successful installation to change values (for example, if you change your database password).
+
+To do so, log in to the Magento Admin as an administrator and click **System** > Tools > **Web Setup Wizard**.
 
 <h2 id="instgde-install-reinstall">Updating or reinstalling the Magento software</h2>
 You can reinstall the Magento software in an development environment especially to get all the latest code changes:

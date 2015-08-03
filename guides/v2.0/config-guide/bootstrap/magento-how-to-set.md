@@ -7,6 +7,7 @@ menu_title: Set the value of bootstrap parameters
 menu_order: 2
 menu_node: 
 github_link: config-guide/bootstrap/magento-how-to-set.md
+redirect_from: /guides/v1.0/config-guide/bootstrap/magento-how-to-set.html
 ---
 
 #### Contents

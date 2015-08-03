@@ -6,6 +6,7 @@ title: Module dependencies
 menu_title: Module dependencies
 menu_order: 
 github_link: architecture/modules/mod_depend.md
+redirect_from: /guides/v1.0/architecture/modules/mod_depend.html
 ---
 
 <h2 id="m2devgde-moddep-intro"> Introduction</h2>

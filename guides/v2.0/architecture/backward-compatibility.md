@@ -6,6 +6,7 @@ title: Backward compatibility
 menu_title: Backward compatibility
 menu_order: 
 github_link: extension-dev-guide/backward-compatibility.md
+redirect_from: /guides/v1.0/extension-dev-guide/backward-compatibility.html
 ---
 <h2>Backward compatibility</h2>
 

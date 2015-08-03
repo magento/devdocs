@@ -7,11 +7,12 @@ menu_title: List of REST APIs
 menu_order: 2
 menu_node: 
 github_link: rest/list.md
+redirect_from: /guides/v1.0/rest/list.html
 ---
 
 <h2 id="list">List of REST APIs</h2>
 
-Updated June 29, 2015. Additions since the last update are marked with asterisks (*).
+Updated July 30, 2015. Additions since the last update are marked with asterisks (*).
 
 <h3>Magento/Backend</h3>
 
@@ -89,9 +90,9 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
     GET    /V1/products/links/types
     GET    /V1/products/links/:type/attributes
     GET    /V1/products/:sku/links/:type
-    POST   /V1/products/:sku/links/:type
+    * POST   /V1/products/:sku/links
     DELETE /V1/products/:sku/links/:type/:linkedProductSku
-    PUT    /V1/products/:sku/links/:link_type
+    * PUT    /V1/products/:sku/links
     GET    /V1/categories/:categoryId/products
     POST   /V1/categories/:categoryId/products
     PUT    /V1/categories/:categoryId/products
@@ -103,6 +104,15 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/stockItems/:productSku
     GET    /V1/stockItems/lowStock/
     GET    /V1/stockStatuses/:productSku
+    
+<h3>Magento/Checkout</h3>
+    * POST   /V1/carts/:cartId/shipping-information
+    * POST   /V1/carts/mine/shipping-information
+    * POST   /V1/guest-carts/:cartId/payment-information
+    * POST   /V1/carts/mine/payment-information
+    * POST   /V1/guest-carts/:cartId/set-payment-information
+    * POST   /V1/carts/mine/set-payment-information
+
 
 <h3>Magento/CheckoutAgreements</h3>
 
@@ -110,16 +120,16 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
 
 <h3>Magento/Cms</h3>
 
-    * GET    /V1/cmsPage/:pageId
-    * GET    /V1/cmsPage/search
-    * POST   /V1/cmsPage
-    * PUT    /V1/cmsPage/:id
-    * DELETE /V1/cmsPage/:pageId
-    * GET    /V1/cmsBlock/:blockId
-    * GET    /V1/cmsBlock/search
-    * POST   /V1/cmsBlock
-    * PUT    /V1/cmsBlock/:id
-    * DELETE /V1/cmsBlock/:blockId
+    GET    /V1/cmsPage/:pageId
+    GET    /V1/cmsPage/search
+    POST   /V1/cmsPage
+    PUT    /V1/cmsPage/:id
+    DELETE /V1/cmsPage/:pageId
+    GET    /V1/cmsBlock/:blockId
+    GET    /V1/cmsBlock/search
+    POST   /V1/cmsBlock
+    PUT    /V1/cmsBlock/:id
+    DELETE /V1/cmsBlock/:blockId
 
 <h3>Magento/ConfigurableProduct</h3>
 
@@ -200,6 +210,15 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
     GET    /V1/carts/:cartId/gift-message/:itemId
     POST   /V1/carts/:cartId/gift-message
     POST   /V1/carts/:cartId/gift-message/:itemId
+    * GET    /V1/carts/mine/gift-message
+    * GET    /V1/carts/mine/gift-message/:itemId
+    * POST   /V1/carts/mine/gift-message
+    * POST   /V1/carts/mine/gift-message/:itemId
+    * GET    /V1/guest-carts/:cartId/gift-message
+    * GET    /V1/guest-carts/:cartId/gift-message/:itemId
+    * POST   /V1/guest-carts/:cartId/gift-message
+    * POST   /V1/guest-carts/:cartId/gift-message/:itemId
+
 
 <h3>Magento/Integration</h3>
 
@@ -226,9 +245,12 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
     PUT    /V1/carts/mine/selected-shipping-method
     GET    /V1/carts/mine/selected-shipping-method
     GET    /V1/carts/mine/shipping-methods
+    * POST   /V1/carts/mine/estimate-shipping-methods
+    * POST   /V1/carts/mine/estimate-shipping-methods-by-address-id
     PUT    /V1/guest-carts/:cartId/selected-shipping-method
     GET    /V1/guest-carts/:cartId/selected-shipping-method
     GET    /V1/guest-carts/:cartId/shipping-methods
+    * POST   /V1/guest-carts/:cartId/estimate-shipping-methods
     GET    /V1/carts/:cartId/items
     POST   /V1/carts/items
     PUT    /V1/carts/items/:itemId
@@ -254,7 +276,6 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
     POST   /V1/carts/:cartId/billing-address
     GET    /V1/guest-carts/:cartId/billing-address
     POST   /V1/guest-carts/:cartId/billing-address
-    * POST   /V1/guest-carts/:cartId/addresses
     GET    /V1/carts/mine/billing-address
     POST   /V1/carts/mine/billing-address
     GET    /V1/carts/:cartId/coupons
@@ -272,13 +293,12 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
     POST   /V1/guest-carts/:cartId/shipping-address
     GET    /V1/carts/mine/shipping-address
     POST   /V1/carts/mine/shipping-address
-    * POST   /V1/carts/mine/addresses
     PUT    /V1/carts/:cartId/order
     GET    /V1/carts/:cartId/totals
-    * PUT    /V1/guest-carts/:cartId/collect-totals
+    PUT    /V1/guest-carts/:cartId/collect-totals
     GET    /V1/guest-carts/:cartId/totals
     GET    /V1/carts/mine/totals
-    * PUT    /V1/carts/mine/collect-totals
+    PUT    /V1/carts/mine/collect-totals
 
 <h3>Magento/Sales</h3>
 
@@ -320,6 +340,10 @@ Updated June 29, 2015. Additions since the last update are marked with asterisks
     POST   /V1/orders/
     GET    /V1/transactions/:id
     GET    /V1/transactions
+
+<h3>Magento/Search</h3>
+    * GET    /V1/search
+
 
 <h3>Magento/Tax</h3>
 

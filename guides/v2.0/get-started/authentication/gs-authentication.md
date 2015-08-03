@@ -7,6 +7,7 @@ menu_title: Authentication
 menu_order: 1
 menu_node: parent
 github_link: get-started/authentication/gs-authentication.md
+redirect_from: /guides/v1.0/get-started/authentication/gs-authentication.html
 ---
 
 <h2 id="overview-authenticate">Web API authentication overview</h2>

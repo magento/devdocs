@@ -6,6 +6,7 @@ title: List widget
 menu_order: 4 
 menu_title: List widget
 github_link: frontend-dev-guide/javascript/widget_list.md
+redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_list.html
 ---
 <h2>Overview</h2>
 
