@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install_pre
-subgroup: S_Integrator
+subgroup: Prerequisites
 title: Set up the updater
 menu_title: Set up the updater
 menu_order: 10

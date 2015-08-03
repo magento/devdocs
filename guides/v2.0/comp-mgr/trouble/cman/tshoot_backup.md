@@ -20,7 +20,7 @@ A backup can fail for any of the following reasons:
 If the backup failed because of insufficient disk space, you should typically free up disk space by moving some files to another storage device or drive. However, there might be other ways to resolve the issue. See one of the following resources for tips:
 
 *	<a href="http://www.cyberciti.biz/datacenter/linux-unix-bsd-osx-cannot-write-to-hard-disk" target="_blank">8 Tips to Solve Linux & Unix Systems Hard Disk Problems Like Disk Full Or Can’t Write to the Disk</a>
-*	<a href="http://serverfault.com/questions/315181/df-says-disk-is-full-but-it-is-not" target="_blank">serverfault</a>
+*	<a href="http://serverfault.com/questions/315181/df-says-disk-is-full-but-it-is-not" target="_blank">serverfault: df says disk is full, but it is not</a>
 *	<a href="http://unix.stackexchange.com/questions/125429/tracking-down-where-disk-space-has-gone-on-linux" target="_blank">unix.stackexchange.com: Tracking down where disk space has gone on Linux? </a>
 
 <h3 id="trouble-backup-os">Operating system error</h3>
