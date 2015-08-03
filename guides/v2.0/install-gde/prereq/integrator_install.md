@@ -10,7 +10,24 @@ github_link: install-gde/prereq/integrator_install.md
 ---
 
 
-## TO DO
-What I'm currently calling the *SI installation* is starting with `composer create-project` and getting the Composer repository.
+## System integration installation
+As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade (*not released yet*.)
 
-This topic covers the Composer repository and other unique tasks.
+To do so, you start by creating a Composer project, which installs each component so it can be centrally managed after installation.
+
+{% include install/composer-overview.html %}
+
+## Create a Composer project
+To get started:
+
+1.	Log in to your Magento server as, or switch to, a user who has privileges to write to the web server docroot.
+2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
+3.	Enter the following command:
+
+		composer create-project magento/product-community-edition --stability="beta"
+
+	This command creates the project defined in <a href="http://packages.magento.com/#!/community" target="_blank">packages.magento.com</a> and downloads dependencies for it. The project is in a directory named `product-community-edition`.
+
+4.	If necessary, rename the directory `product-community-edition` to match the docroot directory defined in your virtual host.
+
+4.	Continue with <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.

@@ -19,8 +19,9 @@ Now that you've installed prerequisites and taken the first steps (merchant, sys
 *	Using the web-based <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don't have access to the Magento server)
 *	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>, which gives you more control but requires more experience and also access to the Magento server
 
-## Already installed the Magento software?
+<!-- ## Already installed the Magento software?
 You might want to manage Magento components or to upgrade:
 
 *	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-guide.html">Component Manager Guide</a>
 *	<a href="{{ site.gdeurl }}upgrade/bk-upgrade-guide.html">Upgrade Guide</a>
+ -->

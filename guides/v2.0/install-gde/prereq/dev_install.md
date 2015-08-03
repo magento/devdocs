@@ -10,20 +10,10 @@ github_link: install-gde/prereq/dev_install.md
 ---
 
 
-## TO DO
-Developer installation is the one that starts with cloning the Magento GitHub repository (i.e., the current installation). (TBD)
+## Contributing developer installation
+As a contributing developer, you start by cloning the Magento 2 GitHub repository. You use Composer to manage your components.
 
+{% include install/composer-overview.html %}
 
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
-
-We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.
-
-Composer provides you with the following advantages:
-
-*	Enables you to reuse third-party libraries without bundling them with source code
-*	Component-based architecture with robust dependency management
-*	Manages dependencies to reduce extension conflicts and compatibility issues
-*	Versioned dependencies
-*	<a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a>
-*	Supports PHP Framework Interoperability standard
-
+#### Next step
+<a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.

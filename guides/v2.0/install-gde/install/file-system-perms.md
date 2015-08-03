@@ -46,11 +46,11 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 
 3.	Set ownership:
 
-	<code>chown -R [your web server user name] .</code>
+		chown -R [your web server user name] .
 
 	Typical examples:
 
-	CentOS: <code>chown -R apache .</code>
+	CentOS: `chown -R apache .`
 
 	Ubuntu: `chown -R www-data .`
 
@@ -63,5 +63,8 @@ Assuming the web server user owns the Magento 2 file system, use the following s
 		sudo find . -type d -exec chmod 700 {} \; && sudo find . -type f -exec chmod 600 {} \; && sudo chmod +x bin/magento
 
 #### Next step
+Install the Magento software:
 
-After completing the tasks discussed on this page, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html">Update installation dependencies</a>.
+*	Using the web-based <a href="{{ site.gdeurl }}install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don't have access to the Magento server)
+*	<a href="{{ site.gdeurl }}install-gde/install/cli/install-cli.html">Command line</a>, which gives you more control but requires more experience and also access to the Magento server
+
