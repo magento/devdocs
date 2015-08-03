@@ -38,7 +38,7 @@ Before you begin, make sure that:
 1.	Your system meets the requirements discussed in <a href="{{ site.gdeurl }}install-gde/system-requirements.html">Magento System Requirements</a>.
 2.	You completed all prerequisite tasks discussed in <a href="{{ site.gdeurl }}install-gde/prereq/prereq-overview.html">Prerequisites</a>.
 3.	You installed Composer and cloned the Magento GitHub repository as discussed in <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento GitHub repository</a>.
-4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.
+4.	After you log in to the Magento server, switch to the web server user as discussed in <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Switching to the Apache user</a>.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -302,7 +302,7 @@ The Setup Wizard uses the <a href="http://php.net/manual/en/function.sys-get-tem
 
 	If you don't know where `php.ini` is located:
 
-	1.	Log in as or switch to the <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>.
+	1.	Log in as or switch to the <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">web server user</a>.
 	2.	Create <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> in the web server's docroot.
 	3.	Access `phpinfo.php` in a web browser.
 

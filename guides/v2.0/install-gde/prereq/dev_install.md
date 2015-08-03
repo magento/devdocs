@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: T_Developer
-title: Developer installation first steps
-menu_title: Developer installation first steps
+title: Contributing developer installation first steps
+menu_title: Contributing developer installation first steps
 menu_order: 1
 menu_node: parent
 github_link: install-gde/prereq/dev_install.md

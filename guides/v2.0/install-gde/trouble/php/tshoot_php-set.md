@@ -13,4 +13,4 @@ github_link: install-gde/trouble/trouble/php/tshoot_php-set.md
 <!-- Referring file: TBD owned by Ogres -->
 
 <h2 id="trouble-php-set">PHP settings errors</h2>
-
+See <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
