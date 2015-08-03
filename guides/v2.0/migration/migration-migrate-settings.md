@@ -2,8 +2,8 @@
 layout: default
 group:  migration
 subgroup: Migrate using data migration tool
-title: Migrate Settnigs
-menu_title: Migrate Settnigs
+title: Migrate Settings
+menu_title: Migrate Settings
 menu_node:
 menu_order: 1
 github_link: migration/migration-migrate-settings.md
