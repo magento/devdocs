@@ -32,3 +32,8 @@ p.q 	{
 	clear: both;
 }
 
+/* SRJ - align horz line */
+#divcentered {
+	align: center;
+	padding-left: 60px;
+}
