@@ -26,6 +26,10 @@ To back up:
 1.	Select the check box of each item to back up and click **Create Backup**.
 
 	(If you choose not to back up, clear all check boxes and click **Next**).
+
+	<div class="bs-callout bs-callout-info" id="info">
+  <p>We strongly recommend you <em>do</em> back up in the event of issues with the update.</p>
+</div>
 2. 	Wait while backups are created.
 
 The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.
