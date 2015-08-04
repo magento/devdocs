@@ -14,8 +14,6 @@ Your theme might contain the strings, not present in the default themes. To ensu
 
 This topic describes how to add the theme strings to a dictionary.
 
-The module dictionary is stored in the `app/code/<Vendor>/<module>/i18n` directory.
-
 <p class="q">Need to think about a case when the theme is created not in the default language at once</p>
 
 <h2 id="add_strings">Add your theme strings to a dictionary</h2>
