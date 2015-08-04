@@ -20,7 +20,7 @@ During or after installation, a  message similar to the following displays:
 
 ### Solution
 
-This is commonly caused by a different instance of PHP being used by the command line compared to the web server. In particular, `mysql.sock` might be misconfigured if this is the case.
+This is commonly caused by a different instance of PHP being used by the PHP command line compared to the web server. In particular, `mysql.sock` might be misconfigured if this is the case.
 
 To determine whether or not you're using one instance of PHP:
 
@@ -29,10 +29,12 @@ To determine whether or not you're using one instance of PHP:
 
 		php -i | grep 'php.ini'
 	
-	Note where `php.ini` is located.
+	This determines the settings used by the PHP command-line interface (CLI). Note where `php.ini` is located.
 
 3.	If you haven't already done so, set up a <a href="{{ site.gdeurl }}install-gde/prereq/optional.html#install-optional-phpinfo">phpinfo.php</a> on your web server.
 4.	Compare the value of **Loaded Configuration File** from `phpinfo.php` with the one from `php -i`. 
 
-	`phpinfo.php` shows the `php.ini` file used by your web server. If it's different from what's in PHP's `php.ini`, consult the documentation provided with your web server.
+	`phpinfo.php` shows the `php.ini` file used by your web server. If it's different from what's in PHP's `php.ini`, you must make *all* PHP settings consistent for both the PHP CLI and the web server.
+
+	For additional details, consult the documentation provided with your web server.
 
