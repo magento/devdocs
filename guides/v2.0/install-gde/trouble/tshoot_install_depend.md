@@ -1,7 +1,7 @@
 ---
 layout: default
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: Access issues
 title: Installation dependencies not met
 menu_title: Installation dependencies not met
 menu_node: 

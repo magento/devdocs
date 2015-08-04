@@ -1,11 +1,11 @@
 ---
 layout: default
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: Z_Other issues
 title: Cannot run 'composer install'
 menu_title: Cannot run 'composer install'
 menu_node: 
-menu_order: 7
+menu_order: 1
 github_link: install-gde/trouble/tshoot_composer-install.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_composer-install.html
 ---

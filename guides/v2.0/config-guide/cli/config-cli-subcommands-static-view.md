@@ -45,7 +45,7 @@ Static view files deployment is affected by Magento modes as follows:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the command as the web server user. For more information, see <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">Switching to the Apache user</a>.</p></span>
+  <p>Static view files must be owned by the web server user; otherwise, Magento might have issues accessing the files. One way to do this in a development system is to run the command as the web server user. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">Switching to the Apache user</a>.</p></span>
 </div>
 
 <h2 id="config-cli-before">First steps</h2>
@@ -55,7 +55,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
 To deploy static view files:
 
-1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to</a>, the web server user.
 
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
@@ -138,7 +138,7 @@ Use the following steps:
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-cli.html">Command line</a>
 	*	<a href="{{ site.gdeurl }}install-gde/install/install-web.html">Setup wizard</a>
 
-1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a>, the web server user.
+1.	Log in to the Magento server as, or <a href="{{ site.gdeurl }}install-gde/prereq/apache-user.html">switch to</a>, the web server user.
 
 	In a more secure environment, you should make the web server user the owner of the files after running the tool.
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
