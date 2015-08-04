@@ -32,10 +32,12 @@ For example:
 
 <h3 id="add_strings_email">Strings added in email templates</h3>
 
-To make sure the strings of an email template are added to the dictionary, use the `{{trans "<your_string>"}}` directive. 
-For example, 
+To make sure the strings of an email template are added to the dictionary, use the `{% raw %}{{trans "<your_string>"}}{% endraw %}` directive. 
+For example: 
 
-	{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+    {% raw %}
+    {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+    {% endraw %}
 
 <p class="q">Are the strings from the email templates added to the module dictionary?</p>
 
