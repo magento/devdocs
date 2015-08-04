@@ -16,7 +16,7 @@ The readiness check makes sure your server and environment are set up correctly 
 <h2 id="compman-readiness-start">Start the readiness check</h2>
 To start, click either **Start Readiness Check** or **Next** on the Magento Component Manager page. A sample follows.
 
-<img src="{{ site.baseurl }}common/images/cman_update_readiness.png" alt="The readiness check enables you to find out if your server and environment are ready to proceed">
+<img src="{{ site.baseurl }}common/images/cman_update_readiness.png" width="650px" alt="The readiness check enables you to find out if your server and environment are ready to proceed">
 
 See one of the following:
 
@@ -26,7 +26,7 @@ See one of the following:
 <h3 id="compman-readiness-success">Success</h3>
 The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with <a href="{{ site.gdeurl }}comp-mgr/compman-backup.html">Backup</a>.
 
-<img src="{{ site.baseurl }}common/images/cman_readiness-success.png" alt="If all readiness checks pass, click Next and continue with the next step">
+<img src="{{ site.baseurl }}common/images/cman_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
 
 <h3 id="compman-readiness-fail">Failure</h3>
 Messages similar to the following display if any readiness check fails. 

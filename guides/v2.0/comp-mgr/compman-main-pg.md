@@ -20,7 +20,7 @@ github_link: comp-mgr/compman-main-pg.md
 To choose whether to upgrade, enable, or disable components:
 
 1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:
-	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available">
+	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available">
 2.	You have the following options:
 	<table>
 	<tbody>
@@ -56,8 +56,8 @@ To choose whether to upgrade, enable, or disable components:
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
-			<p><img src="{{ site.baseurl }}common/images/cman_page_number.png" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
-			<p><img src="{{ site.baseurl }}common/images/cman_page_move.png" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
+			<p><img src="{{ site.baseurl }}common/images/cman_page_number.png" width="100px" alt="Specify number of items to display on page">Specify the number of items to display on a page.</p>
+			<p><img src="{{ site.baseurl }}common/images/cman_page_move.png" width="100px" alt="Move back and forward or specify a page number">From left to right, move back one page, go to a specific page, or move forward one page.</p></td>
 	</tr>
 	</tbody>
 	</table>
@@ -69,7 +69,7 @@ To see if any of your components can be updated, click **Sync**.
 
 The following figure shows an example.
 
-<img src="{{ site.baseurl }}common/images/cman_component-needs-update.png" alt="Example showing components that need updating">
+<img src="{{ site.baseurl }}common/images/cman_component-needs-update.png" width="650px" alt="Example showing components that need updating">
 
 To update the component, click **Update** from the **Actions** list. A sample follows.
 

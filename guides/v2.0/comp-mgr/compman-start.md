@@ -25,7 +25,7 @@ To run the Component Manager:
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
 	The following page displays.
-	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" alt="Specify whether to manage components or upgrade Magento">
+	<img src="{{ site.baseurl }}common/images/cman_upgr_initial.png" width="650px" alt="Specify whether to manage components or upgrade Magento">
 3.	Click **Component Manager**.
 
 	To upgrade Magento, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.

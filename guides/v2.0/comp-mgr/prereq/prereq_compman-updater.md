@@ -12,14 +12,13 @@ github_link: comp-mgr/prereq/prereq_compman-updater.md
 <h2 id="compman-prereq-overview">Prerequisites for the Component Manager and System Upgrade</h2>
 Before you can use the Component Manager and System Upgrade, you must do all of the following:
 
-*	*Contributing developers only*. Set up the Magento updater application
-
-	This is required only if you are a contributing developer; that is, you cloned the Magento 2 GitHub repository. Contributing developers already cloned the updater repository as part of installation; to review, see <a href="{{ site.gdeurl }}install-gde/prereq/prereq_updater.html">Set up the updater</a>.
-
-	The updater synchronizes with Magento Connect and gets the latest versions of all available components. The updater works for both the Component Manager and System Upgrade.
 *	<a href="#compman-prereq-cron">Set up cron jobs</a>
 
 	Cron should scan for component and core module updates every minute.
+
+*	*Contributing developers only*. Set up the Magento updater application
+
+	This is required only if you are a contributing developer; that is, you cloned the Magento 2 GitHub repository. Contributing developers already cloned the updater repository as part of installation; to review, see <a href="{{ site.gdeurl }}install-gde/prereq/prereq_updater.html">Set up the updater</a>.
 
 <h2 id="compman-prereq-cron">Set up cron jobs</h2>
 To enable the updater to work for both the Component Manager and System Upgrade, you must configure two cron jobs. Each cron job should run every minute.
