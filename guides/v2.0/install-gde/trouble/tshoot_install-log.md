@@ -1,7 +1,7 @@
 ---
 layout: default 
-group: install
-subgroup: Z_Troubleshooting
+group: install_trouble
+subgroup: Errors during installation
 title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
 menu_node: 
