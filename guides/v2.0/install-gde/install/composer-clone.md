@@ -78,7 +78,9 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 	Need help locating the docroot? Click <a href="{{ site.gdeurl }}install-gde/basics/basics_docroot.html">here.
 
-2.	Enter the following command:
+2.	Enter `git clone` and paste the value you obtained from step 1.
+
+	An example follows:
 
 		git clone git@github.com:magento/magento2.git
 
@@ -113,9 +115,11 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 	Typically, for Ubuntu, it's `/var/www` and for CentOS it's `/var/www/html`.
 
-2.	Enter the following command:
+2.	Enter `git clone` and paste the value you obtained from step 1.
 
-		git clone https://<your GitHub user name>:<your password>@github.com/magento/magento2.git
+	An example follows
+
+		git clone https://github.com/magento/magento2.git
 
 3.	Wait for the repository to clone on your server.
 
