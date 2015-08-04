@@ -18,7 +18,7 @@ This topic describes how to add the theme strings to a dictionary.
 
 <h2 id="add_strings">Add your theme strings to a dictionary</h2>
 
-If your theme design implies adding new strings, they are typically added in templates: `.phtml`, `.html` (email) templates or `.js`. The following paragraphs describe how to add strings in each of these template so that they get added to the dictionary. 
+If your theme design implies adding new strings, they are typically added in templates. The following paragraphs describe how to add strings in each of these template so that they get added to the dictionary. 
 
 <h3 id="add_strings_phtml">Strings added in <code>.phtml</code> templates</h3>
 
@@ -39,6 +39,22 @@ For example:
     {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
     {% endraw %}
 
+<p class="q">Can variables be added instead of strings in email templates?</p>
 <p class="q">Are the strings from the email templates added to the module dictionary?</p>
 
-<h3 id="add_strings_js">Strings added in a `.js` template (Knockout JS templates) </h3>
+<h3 id="add_strings_js">Strings added in Knockout JS templates</h3>
+
+Knockout's custom binding i18n must be used to mark translatable text in the next cases:
+
+a) static text
+
+<span data-bind="i18n: 'Sign In'"></span>
+b) variables
+
+<span data-bind="i18n: label"></span>
+c) virtual elements
+
+<!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+
+<h3 id="add_strings_js">Strings added in .js files</h3>
+To enable the translation functi
