@@ -178,7 +178,7 @@
 
 <ol>
   <li><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install the Composer software</a>.</li>
-  <li><a href="#install-update-depend-apache">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.</li>
+  <li><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Switch to the Apache user</a> so Composer writes files to the web server docroot as the correct user.</li>
   <li>
     <p>Run the <a href="#install-composer-install"><code>composer install</code> command</a> from your Magento root directory (for example, <code>/var/www/magento2/</code>).</p>
 
@@ -186,92 +186,13 @@
   </li>
 </ol>
 
-<h2 id="install-update-depend-apache">Switching to the Apache user</h2>
-
-<p>For the installation to work properly, all files written by Composer <em>must</em> be owned by the web server user. There are at least two ways to do this:</p>
-
-<ul>
-  <li>Run Composer as the web server user as discussed in this section</li>
-  <li>Run Composer as another user and change file ownership afterward (more secure)</li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>We suggest running Composer in a web server shell in a development environment <em>only</em>. In a more secure environment, you should change ownership to the web server user after you run Composer.</p></span>
-</div>
-
-<p>In the discussion that follows, it’s assumed that the CentOS web server user is <code>apache</code> and the Ubuntu web server user is <code>www-data</code>.</p>
-
-<h3 id="install-update-depend-apache-ubuntu">Ubuntu</h3>
-
-<p>To switch to the web server user on Ubuntu:</p>
-
-<ol>
-  <li>
-    <p>Enter the following command:</p>
-
-    <pre><code>su www-data
-</code></pre>
-  </li>
-  <li>
-    <p>If a password prompt displays but you don’t know the user’s password, continue with the next step; otherwise, continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.</p>
-  </li>
-  <li>
-    <p>To enable the <code>www-data</code> user’s shell and to set a password, enter the following commands in the order shown:</p>
-
-    <pre><code>sudo chsh -s /bin/bash www-data &amp;&amp; sudo passwd www-data
-</code></pre>
-  </li>
-  <li>
-    <p>Run the following command again and enter the user’s password:</p>
-
-    <pre><code>su www-data
-</code></pre>
-  </li>
-  <li>
-    <p>Continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.</p>
-  </li>
-</ol>
-
-<h3 id="install-update-depend-apache-centos">CentOS</h3>
-
-<p>To switch to the web server user on CentOS:</p>
-
-<ol>
-  <li>
-    <p>Enter the following command:</p>
-
-    <pre><code>su - apache
-</code></pre>
-
-    <p>If you don’t know the user’s password or if the following error displays, continue with the next step; otherwise, continue with <a href="#install-composer-install">Running Composer to update dependencies</a>.</p>
-
-    <pre><code>This account is currently not available.
-</code></pre>
-  </li>
-  <li>
-    <p>To give <code>apache</code> a valid shell account so you can switch to it, enter the following command:</p>
-
-    <pre><code>sudo chsh -s /bin/bash apache &amp;&amp; sudo passwd apache
-</code></pre>
-  </li>
-  <li>
-    <p>Run the following command again; this time, it should work:</p>
-
-    <pre><code>su - apache
-</code></pre>
-  </li>
-  <li>
-    <p>Continue with the next section.</p>
-  </li>
-</ol>
+<p>For you to be able to run the Magento application, make sure you perform all tasks as a user with privileges to write to the web server docroot. One way to do this is to log in as or switch to the <a href="/guides/v2.0/install-gde/prereq/apache-user.html">web server user</a>.</p>
 
 <h2 id="install-composer-install">Running Composer to update dependencies</h2>
-
-<p>After you completed the tasks discussed in the preceding section, update dependencies as follows:</p>
+<p>Update installation dependencies as follows:</p>
 
 <ol>
-  <li>Log in to your Magento server as the web server user or <a href="#install-update-depend-apache">switch to that user</a>.</li>
+  <li>Log in to your Magento server as the web server user or <a href="/guides/v2.0/install-gde/prereq/apache-user.html">switch to that user</a>.</li>
   <li>
     <p>Change to the Magento installation directory and run <code>composer install</code>. Examples:</p>
 
@@ -303,12 +224,7 @@
 </ol>
 
 <h4 id="next-step">Next step</h4>
-
-<ul>
-  <li><a href="/guides/v2.0/install-gde/install/sample-data.html">Enable optional Magento sample data</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
-  <li><a href="/guides/v2.0/install-gde/install/install-cli.html">Install the Magento software using the command line</a></li>
-</ul>
+<p><a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></p>
 
 
 		</div>
@@ -346,6 +262,31 @@
 					
 					
 					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
 					
 					
 						
@@ -407,6 +348,10 @@
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Switch to the Apache user</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
 						
 								
@@ -431,7 +376,82 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Pre-installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Ways to install <!-- and upgrade  -->the Magento software</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
 									
 								
 								
@@ -464,7 +484,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
 									
 								
 								
@@ -489,88 +509,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-cli.html">Command line installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-adminurl.html">Display or change the Admin URI</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Continue to installing the Magento software</a></li>
 									
 								
 								
@@ -585,147 +524,24 @@
 						
 
 					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/sample-data.html">Optional Magento sample data</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			

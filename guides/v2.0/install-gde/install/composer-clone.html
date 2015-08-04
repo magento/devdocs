@@ -175,28 +175,10 @@
 <h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#instgde-overview-composer">Composer and Magento</a></li>
   <li><a href="#instgde-prereq-compose-install">Install Composer</a></li>
   <li><a href="#instgde-prereq-compose-clone">Clone the Magento repository</a></li>
   <li><a href="#instgde-prereq-compose-access">Set file system permissions and ownership</a></li>
 </ul>
-
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
-
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento system, extensions, and their dependencies.</p>
-
-<p>Composer provides you with the following advantages:</p>
-
-<ul>
-  <li>Enables you to reuse third-party libraries without bundling them with source code</li>
-  <li>Component-based architecture with robust dependency management</li>
-  <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-  <li>Versioned dependencies</li>
-  <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-  <li>Supports PHP Framework Interoperability standard</li>
-</ul>
-
-<p>We’ll have more information soon on how developers can use Composer to package extensions to distribute to Magento merchants and to other developers.</p>
 
 <h2 id="instgde-prereq-compose-install">Install Composer</h2>
 
@@ -270,7 +252,9 @@ mv composer.phar /usr/local/bin/composer</pre>
     <p>Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here.</a></p>
   </li>
   <li>
-    <p>Enter the following command:</p>
+    <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+
+    <p>An example follows:</p>
 
     <pre><code>git clone git@github.com:magento/magento2.git
 </code></pre>
@@ -314,9 +298,11 @@ fatal: The remote end hung up unexpectedly</pre>
     <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
   </li>
   <li>
-    <p>Enter the following command:</p>
+    <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
 
-    <pre><code>git clone https://&lt;your GitHub user name&gt;:&lt;your password&gt;@github.com/magento/magento2.git
+    <p>An example follows</p>
+
+    <pre><code>git clone https://github.com/magento/magento2.git
 </code></pre>
   </li>
   <li>
@@ -328,73 +314,35 @@ fatal: The remote end hung up unexpectedly</pre>
 </ol>
 
 <h2 id="instgde-prereq-compose-access">Set file system permissions and ownership</h2>
-
-<p>After the clone is complete, set ownership of all Magento files and directories and make sure they are writable by that user.</p>
-
+<p>After you copy the Magento software to your server, set ownership of all Magento files and directories and make sure they are writable by that user.</p>
 <p>Typically, Magento files and directories should be owned by the web server user; however, the choice of user is up to you. The important thing is that the owner of the Magento file system must have write access to all files and directories.</p>
-
 <p>We recommend setting the permissions as follows:</p>
-
-<ul>
-  <li>
-    <p>All directories have 700 permissions <code>(drwx------)</code>.</p>
-
-    <p>700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</p>
-  </li>
-  <li>
-    <p>All files have 600 permissions <code>(-rw-------)</code>.</p>
-
-    <p>600 permissions mean the owner can read and write but other users have no permissions.</p>
-  </li>
-</ul>
-
+<ul><li>All directories have 700 permissions <code>(drwx------)</code><br />
+	700 permissions give full control (that is, read/write/execute) to the owner and no permissions to anyone else.</li>
+<li>All files have 600 permissions <code>(-rw-------)</code><br />
+	600 permissions mean the owner can read and write but other users have no permissions.</li></ul>
 <p>Assuming the web server user owns the Magento 2 file system, use the following steps:</p>
-
-<ol>
-  <li>
-    <p>Change to the Magento directory:</p>
-
-    <pre><code>cd &lt;web server docroot&gt;/&lt;magento2 clone dir&gt;
-</code></pre>
-
-    <p>Cloning the Magento 2 GitHub repository creates a directory, typically <code>magento2</code>, under your web server’s docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p>
-
-    <p>Examples:</p>
-
-    <ul>
-      <li>Ubuntu: <code>/var/www/magento2</code></li>
-      <li>CentOS: <code>/var/www/html/magento2</code></li>
-    </ul>
-  </li>
-  <li>
-    <p>Find the web server user:</p>
-
-    <p>Ubuntu: <code>ps -ef | grep apache2</code></p>
-
-    <p>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code></p>
-  </li>
-  <li>
-    <p>Set ownership:</p>
-
-    <p><code>chown -R [your web server user name] .</code></p>
-
-    <p>Typical examples:</p>
-
-    <p>CentOS: <code>chown -R apache .</code></p>
-
-    <p>Ubuntu: <code>chown -R www-data .</code></p>
-  </li>
-  <li>
-    <p>Set permissions:</p>
-
-    <pre><code>find . -type d -exec chmod 700 {} \; &amp;&amp; find . -type f -exec chmod 600 {} \; &amp;&amp; chmod +x bin/magento
-</code></pre>
-
-    <p>If you must enter the commands as <code>sudo</code>, use:</p>
-
-    <pre><code>sudo find . -type d -exec chmod 700 {} \; &amp;&amp; sudo find . -type f -exec chmod 600 {} \; &amp;&amp; sudo chmod +x bin/magento
-</code></pre>
-  </li>
+<ol><li>Change to the Magento directory:<br />
+<pre>cd &lt;web server docroot&gt;/&lt;magento2 dir&gt;</pre>
+&lt;magento2 dir&gt; is typically named <code>magento2</code> and it's located under your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.<br />
+Examples:<br />
+<ul><li>Ubuntu: <code>/var/www/magento2</code></li>
+<li>CentOS: <code>/var/www/html/magento2</code></li></ul>
+</li>
+<li>Find the web server user name:<br />
+<ul><li>Ubuntu: <code>ps -ef | grep apache2</code></li>
+<li>CentOS: <code>grep User /etc/httpd/conf/httpd.conf</code></li></ul>
+</li>
+<li>Set ownership:<br />
+<code>chown -R &lt;your web server user name&gt; .</code><br />
+Typical examples:<br />
+<ul><li>CentOS: <code>chown -R apache .</code></li>
+<li>Ubuntu: <code>chown -R www-data .</code></li></ul>
+</li>
+<li>Set permissions:<br />
+<pre>find . -type d -exec chmod 700 {} \; &amp;&amp; find . -type f -exec chmod 600 {} \; &amp;&amp; chmod +x bin/magento</pre>
+	If you must enter the commands as <code>sudo</code>, use:<br />
+<pre>sudo find . -type d -exec chmod 700 {} \; &amp;&amp; sudo find . -type f -exec chmod 600 {} \; &amp;&amp; sudo chmod +x bin/magento</pre></li>
 </ol>
 
 <h4 id="next-step">Next step</h4>
@@ -437,6 +385,31 @@ fatal: The remote end hung up unexpectedly</pre>
 					
 					
 					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
 					
 					
 						
@@ -498,6 +471,10 @@ fatal: The remote end hung up unexpectedly</pre>
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Switch to the Apache user</a></li>
+						
+								
+							
 									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
 						
 								
@@ -522,7 +499,82 @@ fatal: The remote end hung up unexpectedly</pre>
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Pre-installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Ways to install <!-- and upgrade  -->the Magento software</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
 									
 								
 								
@@ -555,7 +607,7 @@ fatal: The remote end hung up unexpectedly</pre>
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-web.html">Setup Wizard installation</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
 									
 								
 								
@@ -580,88 +632,7 @@ fatal: The remote end hung up unexpectedly</pre>
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-cli.html">Command line installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands.html">Get started with the command-line installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-install.html">Install the Magento software using the command line</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-adminurl.html">Display or change the Admin URI</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html">Update, reinstall, uninstall Magento</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-store.html">Configure the store</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-subcommands-admin.html">Create a Magento administrator</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-backup.html">Back up the file system, media, and database</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Continue to installing the Magento software</a></li>
 									
 								
 								
@@ -676,147 +647,24 @@ fatal: The remote end hung up unexpectedly</pre>
 						
 
 					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/sample-data.html">Optional Magento sample data</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/trouble/tshoot.html">Troubleshooting suggestions</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_no-styles.html">After installing, images and stylesheets do not load; only text displays, no graphics</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_access-browser.html">Cannot access Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html">503 (Service Unavailable) errors accessing Magento software in a web browser</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_admin.html">Error after logging in to the Magento Admin</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_composer-install.html">Cannot run 'composer install'</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">git pull origin develop fails when updating the Magento software</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install_depend.html">Installation dependencies not met</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_clone.html">Cannot clone the Magento GitHub repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_php-date.html">During installation, PHP date warning</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_pdo.html">During installation, fatal PDO error displays</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mcrypt.html">The PHP mcrypt extension is not installed properly</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_mysql_table-open-cache.html">Error 'MySQL server has gone away' during installation</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_wrong-mysql.html">During installation, Reflection Exception error</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_rate-limit.html">GitHub API rate limit</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_install-log.html">Installation fails; cannot create install.log</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
 
 
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
 				
 			
 			
