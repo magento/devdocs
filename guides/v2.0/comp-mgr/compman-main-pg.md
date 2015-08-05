@@ -78,8 +78,12 @@ To update the component, click **Update** from the **Actions** list. A sample fo
 Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
 <h2 id="compman-access-enable">Enable or disable a component</h2>
-To enable a component, click **Enable** or **Disable** from the **Actions** list and see <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Enable and disable are not supported at this time.</p>
+ </div>
 
+<!-- To enable a component, click **Enable** or **Disable** from the **Actions** list and see <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+ -->
 
 
 
