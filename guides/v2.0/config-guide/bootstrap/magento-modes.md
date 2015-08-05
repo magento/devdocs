@@ -54,7 +54,7 @@ In developer mode:
 *	An exception is thrown in the error handler, rather than being logged
 *	An exception is thrown when an event subscriber cannot be invoked
 
-For more information, see <a href="#mode-specify">Specify a mode</a>.
+For more information, see <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.
 
 <h2 id="mode-default">Default mode</h2>
 As its name implies, default mode is how the Magento software operates if no other mode is specified.
@@ -65,7 +65,7 @@ In default mode:
 *	Static view files are cached
 *	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being cached rather than materialized. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
-For more information, see <a href="#mode-specify">Specify a mode</a>.
+For more information, see <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.
 
 <h2 id="mode-production">Production mode</h2>
 You should run the Magento software in production mode when it's deployed to a production server. After optimizing the server environment (database, web server, and so on), you should run the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html">static view files deployment tool</a> to write static view files to the Magento `pub/static` directory.

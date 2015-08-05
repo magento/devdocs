@@ -109,14 +109,15 @@ Among the improvements we made:
 
 *	Third-party hosted payment page that redirects to a page on an entirely different domain for payment entry
 *	Easiest level of PCI compliance SAQ-A or SAQ A-EP depending on selected payment method
+*	<img src="{{ site.baseurl }}common/images/5485_Magento_Documentation_EE_Only_4pt_r1v2.png">Added the CyberSource and Worldpay payment processors
 *	<em>CE and EE</em>: Added the Braintree, PayPal, and Authorize.net payment processors
-*	<em>EE only</em>: Added the CyberSource and Worldpay payment processors
 
 <!-- <h3 id="1.0.0-beta-changes-goog">Google Tag Manager and Universal Analytics</h3>
 <em>Magento EE only</em>. Magento Enterprise Edition supports Universal Analytics, the new standard for Google Analytics. With this update, merchants can define more custom dimensions and metrics for tracking, incorporate offline and mobile app interactions, and gain access to ongoing feature updates that will only be available on Universal Analytics. -->
 
 <h3 id="1.0.0-beta-changes-swatch">Product attribute swatches</h3>
-<em>Magento EE only</em>. Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
+<img src="{{ site.baseurl }}common/images/5485_Magento_Documentation_EE_Only_6pt_r1v2.png"><br>
+Swatches provide an alternate way to display the selection of options for configurable products. Rather than choosing an option from a list, customers can make their selection by clicking a swatch. Product attribute swatches can be used on the product page, product list, and in layered navigation.
 
 To configure product attribute swatches, start the Magento Admin and click **Stores** > **Configuration**. All options are in the CATALOG group; for example, CATALOG > **Catalog** > **Storefront** has the option **Swatches per Product**.
 

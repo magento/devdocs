@@ -1,7 +1,7 @@
 ---
 layout: default 
-group: install 
-subgroup: T_Installation
+group: install_pre 
+subgroup: B_Installation
 title: Merchant Beta&mdash;uninstall and reinstall
 menu_title: Merchant Beta&mdash;uninstall and reinstall
 menu_node: parent
