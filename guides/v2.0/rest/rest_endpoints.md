@@ -5,7 +5,7 @@ subgroup: A_rest
 title: REST Schema Endpoints
 menu_title: Endpoints
 menu_order: 3
-github_link: rest/schema-endpoints.md
+github_link: rest/rest_endpoints.md
 
 ---
 
