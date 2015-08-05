@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>REST Reference</title>
+	<title>REST Schema Endpoints</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/rest/bk-rest.html">
+	<link rel="canonical" href="//guides/v2.0/rest/rest_endpoints.html">
 
 </head>	
 <body>
@@ -146,9 +146,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">REST Reference</h1>
+		<h1 class="page-heading">REST Schema Endpoints</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/rest/bk-rest.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/rest/rest_endpoints.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -157,7 +157,205 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The format and content of the REST Reference is still being developed. Until this information is available, Magento will periodically publish unprocessed documentation generated from the code.</p>
+		<h2 id="rest-schema-endpoint-format">REST Schema Endpoint Format</h2>
+<p>To specify one or more services:</p>
+
+<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;?schema=1&amp;services=&lt;serviceName1,serviceName2,..&gt;</code></p>
+
+<p>To specify all services:</p>
+
+<p><code>http://&lt;magento_host&gt;/rest/&lt;store_code&gt;?schema=1&amp;services=all</code></p>
+
+<h2 id="list-of-service-names-per-module">List of Service Names per Module</h2>
+
+<h3 id="backend">Backend</h3>
+<p>backendModuleServiceV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=backendModuleServiceV1</code></p>
+
+<h3 id="bundle">Bundle</h3>
+<p>bundleProductLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=bundleProductLinkManagementV1</code></p>
+
+<p>bundleProductOptionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=bundleProductOptionRepositoryV1</code></p>
+
+<p>bundleProductOptionTypeListV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=bundleProductOptionTypeListV1</code></p>
+
+<p>bundleProductOptionManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=bundleProductOptionManagementV1</code></p>
+
+<h3 id="catalog">Catalog</h3>
+<p>catalogProductRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductRepositoryV1</code></p>
+
+<p>catalogProductAttributeTypesListV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductAttributeTypesListV1</code></p>
+
+<p>catalogProductAttributeRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductAttributeRepositoryV1</code></p>
+
+<p>catalogCategoryAttributeRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogCategoryAttributeRepositoryV1</code></p>
+
+<p>catalogCategoryAttributeOptionManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogCategoryAttributeOptionManagementV1</code></p>
+
+<p>catalogProductTypeListV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductTypeListV1</code></p>
+
+<p>catalogAttributeSetRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogAttributeSetRepositoryV1</code></p>
+
+<p>catalogAttributeSetManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogAttributeSetManagementV1</code></p>
+
+<p>catalogProductAttributeManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductAttributeManagementV1</code></p>
+
+<p>catalogProductAttributeGroupRepositoryV1: <code>http://mahgento.rest/soap/default?schema=1&amp;services=catalogProductAttributeGroupRepositoryV1</code></p>
+
+<p>catalogProductAttributeOptionManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductAttributeOptionManagementV1</code></p>
+
+<p>catalogProductMediaAttributeManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductMediaAttributeManagementV1</code></p>
+
+<p>catalogProductAttributeMediaGalleryManagementV1: <code>http://&lt;magento_host&gt;/soap/default?wsdl&amp;services=catalogProductAttributeMediaGalleryManagementV1</code></p>
+
+<p>catalogProductGroupPriceManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductGroupPriceManagementV1</code></p>
+
+<p>catalogProductTierPriceManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductTierPriceManagementV1</code></p>
+
+<p>catalogCategoryRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogCategoryRepositoryV1</code></p>
+
+<p>catalogCategoryManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogCategoryManagementV1</code></p>
+
+<p>catalogProductCustomOptionTypeListV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductCustomOptionTypeListV1</code></p>
+
+<p>catalogProductCustomOptionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductCustomOptionRepositoryV1</code></p>
+
+<p>catalogProductLinkTypeListV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductLinkTypeListV1</code></p>
+
+<p>catalogProductLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductLinkManagementV1</code></p>
+
+<p>catalogProductLinkRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogProductLinkRepositoryV1</code></p>
+
+<p>catalogCategoryLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogCategoryLinkManagementV1</code></p>
+
+<p>catalogCategoryLinkRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogCategoryLinkRepositoryV1</code></p>
+
+<p>catalogInventoryStockRegistryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=catalogInventoryStockRegistryV1</code></p>
+
+<h3 id="checkout">Checkout</h3>
+<p>checkoutAgreementsCheckoutAgreementsRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=checkoutAgreementsCheckoutAgreementsRepositoryV1</code></p>
+
+<h3 id="configurable">Configurable</h3>
+<p>configurableProductLinkManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=configurableProductLinkManagementV1</code></p>
+
+<p>configurableProductConfigurableProductManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=configurableProductConfigurableProductManagementV1</code></p>
+
+<p>configurableProductOptionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=configurableProductOptionRepositoryV1</code></p>
+
+<h3 id="customer">Customer</h3>
+<p>customerGroupRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=customerGroupRepositoryV1</code></p>
+
+<p>customerGroupManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=customerGroupManagementV1</code></p>
+
+<p>customerCustomerMetadataV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=customerCustomerMetadataV1</code></p>
+
+<p>customerAddressMetadataV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=customerAddressMetadataV1</code></p>
+
+<p>customerCustomerRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=customerCustomerRepositoryV1</code></p>
+
+<p>customerAccountManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=customerAccountManagementV1</code></p>
+
+<p>customerAddressRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=customerAddressRepositoryV1</code></p>
+
+<h3 id="downloadable">Downloadable</h3>
+<p>downloadableLinkRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=downloadableLinkRepositoryV1</code></p>
+
+<p>downloadableSampleRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=downloadableSampleRepositoryV1</code></p>
+
+<h3 id="eav">Eav</h3>
+<p>eavAttributeSetRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=eavAttributeSetRepositoryV1</code></p>
+
+<p>eavAttributeSetManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=eavAttributeSetManagementV1</code></p>
+
+<h3 id="gift-message">Gift Message</h3>
+<p>giftMessageCartRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=giftMessageCartRepositoryV1</code></p>
+
+<p>giftMessageItemRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=giftMessageItemRepositoryV1</code></p>
+
+<h3 id="integration">Integration</h3>
+<p>integrationAdminTokenServiceV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=integrationAdminTokenServiceV1</code></p>
+
+<p>integrationCustomerTokenServiceV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=integrationCustomerTokenServiceV1</code></p>
+
+<h3 id="quote">Quote</h3>
+<p>quoteCartRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteCartRepositoryV1</code></p>
+
+<p>quoteCartManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteCartManagementV1</code></p>
+
+<p>quoteGuestCartRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestCartRepositoryV1</code></p>
+
+<p>quoteGuestCartManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestCartManagementV1</code></p>
+
+<p>quoteShippingMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteShippingMethodManagementV1</code></p>
+
+<p>quoteGuestShippingMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestShippingMethodManagementV1</code></p>
+
+<p>quoteCartItemRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteCartItemRepositoryV1</code></p>
+
+<p>quoteGuestCartItemRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestCartItemRepositoryV1</code></p>
+
+<p>quotePaymentMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quotePaymentMethodManagementV1</code></p>
+
+<p>quoteGuestPaymentMethodManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestPaymentMethodManagementV1</code></p>
+
+<p>quoteBillingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteBillingAddressManagementV1</code></p>
+
+<p>quoteGuestBillingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestBillingAddressManagementV1</code></p>
+
+<p>quoteGuestAddressDetailsManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestAddressDetailsManagementV1</code></p>
+
+<p>quoteCouponManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteCouponManagementV1</code></p>
+
+<p>quoteGuestCouponManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestCouponManagementV1</code></p>
+
+<p>quoteShippingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteShippingAddressManagementV1</code></p>
+
+<p>quoteGuestShippingAddressManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestShippingAddressManagementV1</code></p>
+
+<p>quoteAddressDetailsManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteAddressDetailsManagementV1</code></p>
+
+<p>quoteCartTotalRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteCartTotalRepositoryV1</code></p>
+
+<p>quoteGuestCartTotalManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestCartTotalManagementV1</code></p>
+
+<p>quoteGuestCartTotalRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteGuestCartTotalRepositoryV1</code></p>
+
+<p>quoteCartTotalManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=quoteCartTotalManagementV1</code></p>
+
+<h3 id="sales">Sales</h3>
+<p>salesOrderRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesOrderRepositoryV1</code></p>
+
+<p>salesOrderManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesOrderManagementV1</code></p>
+
+<p>salesOrderAddressRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesOrderAddressRepositoryV1</code></p>
+
+<p>salesInvoiceRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesInvoiceRepositoryV1</code></p>
+
+<p>salesInvoiceManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesInvoiceManagementV1</code></p>
+
+<p>salesInvoiceCommentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesInvoiceCommentRepositoryV1</code></p>
+
+<p>salesCreditmemoManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesCreditmemoManagementV1</code></p>
+
+<p>salesCreditmemoRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesCreditmemoRepositoryV1</code></p>
+
+<p>salesCreditmemoCommentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesCreditmemoCommentRepositoryV1</code></p>
+
+<p>salesShipmentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesShipmentRepositoryV1</code></p>
+
+<p>salesShipmentManagementV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesShipmentManagementV1</code></p>
+
+<p>salesShipmentCommentRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesShipmentCommentRepositoryV1</code></p>
+
+<p>salesShipmentTrackRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesShipmentTrackRepositoryV1</code></p>
+
+<p>salesTransactionRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=salesTransactionRepositoryV1</code></p>
+
+<h3 id="tax">Tax</h3>
+<p>taxTaxRateRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=taxTaxRateRepositoryV1</code></p>
+
+<p>taxTaxRuleRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=taxTaxRuleRepositoryV1</code></p>
+
+<p>taxTaxClassRepositoryV1: <code>http://&lt;magento_host&gt;/rest/default?schema=1&amp;services=taxTaxClassRepositoryV1</code></p>
 
 
 		</div>
@@ -254,7 +452,7 @@
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
 									
 								
 								
@@ -271,7 +469,7 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/rest/rest_endpoints.html">Endpoints</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/rest/rest_endpoints.html">Endpoints</a></li>
 						
 								
 								
@@ -393,8 +591,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/rest/bk-rest.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/rest/bk-rest.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/rest/rest_endpoints.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/rest/rest_endpoints.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
