@@ -6,6 +6,9 @@ title: Navigation widget
 menu_order: 9
 menu_title: Navigation widget
 github_link: javascript-dev-guide/widgets/widget_navigation.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html
 ---
 
 <h2>Overview</h2>

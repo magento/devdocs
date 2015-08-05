@@ -6,6 +6,9 @@ title: Tabs widget
 menu_title: Tabs widget
 menu_order: 11
 github_link: javascript-dev-guide/widgets/widget_tabs.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 <h2 id="fedg_tabs-widget_overview">Overview</h2>

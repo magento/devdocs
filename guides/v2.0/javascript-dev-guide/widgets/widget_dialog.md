@@ -6,6 +6,9 @@ title: DropdownDialog widget
 menu_order: 4
 menu_title: DropdownDialog widget
 github_link: javascript-dev-guide/widgets/widget_dialog.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 <h2>Overview</h2>
 Magento dropdownDialog widget is a customization of the standard <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog</a>. As extra functionality it implements the following:

@@ -6,6 +6,9 @@ title: Menu widget
 menu_order: 7
 menu_title: Menu widget
 github_link: javascript-dev-guide/widgets/widget_menu.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_menu.html
 ---
 <h2>Overview</h2>
 
