@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Tabs widget
 menu_title: Tabs widget
 menu_order: 11
-github_link: frontend-dev-guide/javascript/widget_tabs.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
+github_link: javascript-dev-guide/widgets/widget_tabs.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 <h2 id="fedg_tabs-widget_overview">Overview</h2>
@@ -17,7 +19,7 @@ The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js" tar
 
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
-For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 
 <h2 id="fedg_tabs_options">Options</h2>

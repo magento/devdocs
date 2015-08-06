@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: DropdownDialog widget
 menu_order: 4
 menu_title: DropdownDialog widget
-github_link: frontend-dev-guide/javascript/widget_dialog.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
+github_link: javascript-dev-guide/widgets/widget_dialog.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 <h2>Overview</h2>
 Magento dropdownDialog widget is a customization of the standard <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog</a>. As extra functionality it implements the following:
@@ -20,7 +22,7 @@ The dropdownDialog widget source is located in <a href="{{site.mage2000url}}lib/
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="dialog_options">Options</h2>
  

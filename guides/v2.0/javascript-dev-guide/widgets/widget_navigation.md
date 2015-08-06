@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Navigation widget
 menu_order: 9
 menu_title: Navigation widget
-github_link: frontend-dev-guide/javascript/widget_navigation.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html
+github_link: javascript-dev-guide/widgets/widget_navigation.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html
 ---
 
 <h2>Overview</h2>
@@ -20,7 +22,7 @@ Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/
 The navigation widget source is <a href="{{site.mage2000url}}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
 
 <h2 id="navigation_init">Initialize the navigation widget</h2>
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="navigation_options">Options</h2>
 The navigation widget has the following options:

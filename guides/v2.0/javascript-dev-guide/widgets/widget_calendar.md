@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Calendar widget
 menu_title: Calendar widget
 menu_order: 2
-github_link: frontend-dev-guide/javascript/widget_calendar.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
+github_link: javascript-dev-guide/widgets/widget_calendar.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
 ---
 
 <h2 id="fedg_jquery-widget_calendar-overview">Overview</h2>
@@ -21,7 +23,7 @@ The Calendar widget is a customized jQuery <a href="http://api.jQueryui.com/date
 
 <h2 id="fedg_calendar_init">Initialize the calendar widget</h2>
 
-For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html">Initialize JavaScript</a> topic.
+For information about how to initilize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="fedg_calendar_config">Configure the calendar widget</h2>
 
