@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Quick Start
+subgroup: C_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: Adjust configuration
 menu_order: 1

@@ -5,7 +5,6 @@ subgroup: A_Introduction
 title: Introduction to Magento Testing Framework
 menu_title: INTRODUCTION
 menu_node: parent
-menu_order: 1
 github_link: mtf/mtf_introduction.md
 redirect_from: /guides/v1.0/mtf/mtf_introduction.html
 ---
@@ -68,14 +67,14 @@ Relative to your software development lifecycle, the MTF can help you:
 1.    As Magento developer I want to cover implemented functionality with new tests (for example, added attribute on Customer Form, extended Search functionality, added tags for Products etc).
 
 1.    As a software engineer I want to perform regression testing before release to be confident that Magento works as expected with new functionality.
-    
+
 <h3 id="mtf_intro_scope_non-func-test">Non-functional testing</h3>
 
 MTF works with tests from `<magento_root>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
-- <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a> 
+- <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-test.html">How to run tests from command line.</a>
 
 - <a href="{{ site.gdeurl }}extension-dev-guide/test/test_js-unit.html">More information about JavaScript unit tests.</a>
 

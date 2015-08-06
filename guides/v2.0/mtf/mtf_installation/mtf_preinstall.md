@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Installation
+subgroup: B_Installation
 title: Installation of the Magento Testing Framework
 menu_title: Check pre-installation conditions
 menu_order: 1
@@ -32,4 +32,3 @@ For more details about PHP verification, installation and configuration (<a href
 <div class="bs-callout bs-callout-warning">
     <p>In <code>php.ini</code> file, make sure <code>extension=php_openssl.dll</code> is not commented out.</p>
 </div>
-

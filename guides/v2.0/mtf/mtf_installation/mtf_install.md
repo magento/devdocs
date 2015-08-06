@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Installation
+subgroup: B_Installation
 title: Installation of the Magento Testing Framework
 menu_title: Perform and check installation
 menu_order: 2
@@ -22,7 +22,7 @@ Be sure that you met all <a href="{{site.gdeurl}}mtf/mtf_installation/mtf_preins
 The Magento Testing Framework requires Composer, which downloads libraries defined in `<magento_root>/dev/tests/functional/composer.json`.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>If you're not sure if Composer is installed, see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>.</p>
+  <p>If you're not sure, that Composer is installed, see <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>.</p>
 </div>
 
 1.    <a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">Open a command prompt</a>.
@@ -57,4 +57,3 @@ Find the `mtf` directory.
 Open `<magento_root>/dev/tests/functional/vendor/magento/mtf/CHANGELOG.md`. The latest version in `CHANGELOG.md` is version of the MTF you installed.
 
 <h2 id="mtf_install_pre">Next Steps</h2> <a href="{{ site.gdeurl }}mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust MTF configuration </a>
-
