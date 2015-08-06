@@ -28,13 +28,11 @@ To back up:
 	(If you choose not to back up, clear all check boxes and click **Next**).
 
 	<div class="bs-callout bs-callout-info" id="info">
-  <p>We strongly recommend you <em>do</em> back up in the event of issues with the update.</p>
-</div>
+      <p>We strongly recommend you <em>do</em> back up in the event of issues.</p>
+    </div>
+
 2. 	Wait while backups are created.
 
 The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.
-
-<img src="{{ site.baseurl }}common/images/cman_backup-success.png" alt="A page displays to confirm your backup was a success">
-
-#### Next step
-<a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>.
+<img src="{{ site.baseurl }}common/images/cman_backup-success.png" alt="A page displays to confirm your backup was a success"><br>
+3.	<a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>.

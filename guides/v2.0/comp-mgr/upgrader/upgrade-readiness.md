@@ -33,11 +33,11 @@ Messages similar to the following display if any readiness check fails.
 
 <img src="{{ site.baseurl }}common/images/upgr_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue">
 
-<!-- In the event of failure, see one of the following sections:
+In the event of failure, see one of the following sections:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/updater.html">Updater check failure</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP version check failure</a>
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a>
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a> -->
+*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a>

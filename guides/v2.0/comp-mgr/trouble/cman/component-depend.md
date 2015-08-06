@@ -19,6 +19,12 @@ We suggest you try the following solutions in the order shown:
 <h3 id="trouble-depend-conflict">Conflicting dependencies</h3>
 The message `We found conflicting component dependencies` displays if Composer cannot determine which components to install or update. To resolve component dependency issues, you should be a technical person who thoroughly understands how Composer works.
 
+See one of the following sections for more information:
+
+*	<a href="#trouble-depend-conflict-cman">Component Manager dependency conflicts</a>
+*	<a href="#trouble-depend-conflict-upgr">System Upgrade conflicts</a>
+
+<h4 id="trouble-depend-conflict-cman">Component Manager dependency conflicts</h4>
 Following is a sample failure message:
 
 	We found conflicting component dependencies. 
@@ -35,13 +41,16 @@ Typically, component dependency conflicts result from someone manually editing t
 
 Edit `composer.json` to make any of these changes and try the readiness check again.
 
+<h4 id="trouble-depend-conflict-upgr">System Upgrade dependency conflicts</h4>
+TBD, not sure if this should be a separate section or not.
+
 <h3 id="trouble-depend-permission">File system permissions issues</h3>
 If the web server user doesn't have permissions to write to directories on the Magento file system, a message similar to the following displays:
 
 	file_put_contents(/var/www/html/magento2ce/var/composer_home/cache/repo/https---
 	packagist.org/provider-doctrine$instantiator.json): failed to open stream: Permission denied
 
-Make sure you set file system permissions as discussed in <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions<a> or contact your system administrator.
+Make sure you set file system permissions as discussed in <a href="{{ site.gdeurl }}install-gde/install/file-system-perms.html">Set file system ownership and permissions</a> or contact your system administrator.
 
 <h3 id="trouble-depend-state">The Component Dependency Check status never changes</h3>
 In some cases, the status of the Component Dependency Check doesn't change, even after you try to correct issues. In that case, you can either delete or rename files named `<your Magento install dir>/var/.update_cronjob_status` and `<your Magento install dir>/var/.setup_cronjob_status` and try running the Component Manager again.
