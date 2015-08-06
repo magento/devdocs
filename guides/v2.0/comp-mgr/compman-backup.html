@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Contributing developer installation first steps</title>
+	<title>Step 2. Back up the file system and database</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/prereq/dev_install.html">
+	<link rel="canonical" href="//guides/v2.0/comp-mgr/compman-backup.html">
 
 </head>	
 <body>
@@ -148,9 +148,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Contributing developer installation first steps</h1>
+		<h1 class="page-heading">Step 2. Back up the file system and database</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/prereq/dev_install.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/comp-mgr/compman-backup.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -159,21 +159,40 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="contributing-developer-installation">Contributing developer installation</h2>
-<p>As a contributing developer, you start by cloning the Magento 2 GitHub repository. You use Composer to manage your components.</p>
+		<p>After you pass all readiness checks, you can back up:</p>
 
-<h2 id="instgde-overview-composer">Composer and Magento</h2>
-<p>We now use <a href="https://getcomposer.org/" target="_blank">Composer</a> to install the Magento software. Composer enables us to manage the Magento components and their dependencies.</p>
-<p>Composer provides you with the following advantages:</p>
-<ul><li>Enables you to reuse third-party libraries without bundling them with source code</li>
-<li>Component-based architecture with robust dependency management</li>
-<li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
-<li>Versioned dependencies</li>
-<li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
-<li>Supports PHP Framework Interoperability standard</li></ul>
+<ul>
+  <li>The Magento 2 file system (excluding <code>var</code> and <code>pub/static</code> directories)</li>
+  <li>The <code>pub/media</code> directory</li>
+  <li>The Magento 2 database</li>
+</ul>
 
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.</p>
+<p>Backups are stored in the <code>var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+
+<p>The following figure shows an example of backing up everything.</p>
+
+<p><img src="/common/images/cman_create-backup.png" alt="You can back up the Magento 2 file system, media directory, and database" /></p>
+
+<p>To back up:</p>
+
+<ol>
+  <li>
+    <p>Select the check box of each item to back up and click <strong>Create Backup</strong>.</p>
+
+    <p>(If you choose not to back up, clear all check boxes and click <strong>Next</strong>).</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  <p>We strongly recommend you <em>do</em> back up in the event of issues.</p>
+</div>
+  </li>
+  <li>
+    <p>Wait while backups are created.</p>
+  </li>
+</ol>
+
+<p>The following page displays to confirm a successful backup. If errors display, see <a href="/guides/v2.0/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.
+<img src="/common/images/cman_backup-success.png" alt="A page displays to confirm your backup was a success" /><br />
+3.	<a href="/guides/v2.0/comp-mgr/compman-update.html">Step 3. Update components</a>.</p>
 
 
 		</div>
@@ -207,6 +226,66 @@
 			
 				
 				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
 					
 					
 					
@@ -222,249 +301,18 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a></li>
-									
 								
+								
+							
+									<li class=""><span class="nav-header">C_UseCompMan</span></li>
 								
 								
 							
 								
 								
-								
-								
 							
-							
+									<li class="level-2  active "><a href="/guides/v2.0/comp-mgr/compman-backup.html">Step 2. Back up the file system and database</a></li>
 						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/system-requirements.html">Magento system requirements</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/apache-user.html">Switch to the Apache user</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/security.html">Security-related prerequisites</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/prereq/optional.html">Optional software</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/pre-install.html">Ways to install <!-- and upgrade  -->the Magento software</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/merch_install.html">Merchant installation first steps</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/integrator_install.html">System Integrator installation first steps</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/install-gde/prereq/dev_install.html">Contributing developer installation first steps</a></li>
-									
-								
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a></li>
-									
-								
-								
-								
-							
-								
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Continue to installing the Magento software</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
@@ -475,66 +323,6 @@
 					
 
 
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
-				
-			
-			
-				
 				
 			
 			
@@ -641,8 +429,8 @@
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/dev_install.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/dev_install.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/comp-mgr/compman-backup.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/comp-mgr/compman-backup.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
