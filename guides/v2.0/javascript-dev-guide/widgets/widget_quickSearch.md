@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: QuickSearch widget
 menu_order: 10
 menu_title: QuickSearch widget
-github_link: frontend-dev-guide/javascript/widget_quickSearch.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
+github_link: javascript-dev-guide/widgets/widget_quickSearch.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
 ---
 
 <h2>Overview</h2>

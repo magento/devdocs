@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Menu widget
 menu_order: 7
 menu_title: Menu widget
-github_link: frontend-dev-guide/javascript/widget_menu.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_menu.html
+github_link: javascript-dev-guide/widgets/widget_menu.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_menu.html
 ---
 <h2>Overview</h2>
 
