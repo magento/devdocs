@@ -31,7 +31,7 @@ To choose whether to upgrade, enable, or disable components:
 	<tr>
 		<td><p>Magento Connect Account section</p></td>
 		<td><p>Shows when you last synchronized with your Magento Connect account. To get the latest information about available component versions, you must synchronize with Connect.</p>
-			<p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</td>
+			<p>Last Sync shows the last time you synchronized and Sync Status shows whether or not you're currently synchronized.</p></td>
 	</tr>
 	<tr>
 		<td><p>Sync button</p></td>

@@ -29,4 +29,4 @@ To run the Component Manager:
 3.	Click **Component Manager**.
 
 	To upgrade Magento, see <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Run System Upgrade</a>.
-4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-main-pg.html">Component management options</a>.
+4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-main-pg.html">Manage your components</a>.
