@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Calendar widget
 menu_title: Calendar widget
 menu_order: 2
-github_link: frontend-dev-guide/javascript/widget_calendar.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
+github_link: javascript-dev-guide/widgets/widget_calendar.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html
 ---
 
 <h2 id="fedg_jquery-widget_calendar-overview">Overview</h2>
