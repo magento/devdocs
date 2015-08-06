@@ -12,7 +12,7 @@ github_link: comp-mgr/compman-update.md
 ## Update your components
 After backing up, your components are updated. The following figure shows an example.
 
-<img src="{{ site.baserl }}common/images/cman_update-step.png" alt="Click update to complete the task">
+<img src="{{ site.baseurl }}common/images/cman_update-step.png" alt="Click update to complete the task">
 
 To complete the update, click **Update**. If successful, messages similar to the following display in the Console Log:
 
