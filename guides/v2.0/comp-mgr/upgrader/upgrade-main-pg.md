@@ -80,4 +80,4 @@ To upgrade components:
 
 		<img src="{{ site.baseurl }}common/images/upgr_comp_no.png" alt="Do not upgrade this component">
 
-
+3.	Click **Next** and continue with TBD.
