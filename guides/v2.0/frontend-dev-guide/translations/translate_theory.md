@@ -42,9 +42,9 @@ For example:
 <p class="q">Can variables be added instead of strings in email templates?</p>
 <p class="q">Are the strings from the email templates added to the module dictionary?</p>
 
-<h3 id="add_strings_js">Strings added in Knockout JS templates</h3>
+<h3 id="add_strings_js">Strings added in Knockout templates</h3>
 
-Knockout's custom binding i18n must be used to mark translatable text in the next cases:
+To ensure that the text you add in .html template for a Knockout component, mark Knockout's custom binding i18n must be used to mark translatable text in the next cases:
 
 a) static text
 
