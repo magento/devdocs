@@ -44,17 +44,18 @@ For example:
 
 <h3 id="add_strings_js">Strings added in Knockout templates</h3>
 
-To ensure that the text you add in .html template for a Knockout component, mark Knockout's custom binding i18n must be used to mark translatable text in the next cases:
+To ensure that the text you add in `.html` templates for a Knockout component will be added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how i18n is used for different cases of adding a text:
 
-a) static text
+- when a string is added in the scope of an HTML element, for example the *'Sign In'* string:
+	<span data-bind="i18n: 'Sign In'"></span>
 
-<span data-bind="i18n: 'Sign In'"></span>
-b) variables
-
-<span data-bind="i18n: label"></span>
-c) virtual elements
+- when a string is added with no binding in the scope of an HTML elementthe virtual elements:
 
 <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+
+- when a variable is added, for example the `label` variable:
+	<span data-bind="i18n: label"></span>
+
 
 <h3 id="add_strings_js">Strings added in .js files</h3>
 To enable the translation functi
