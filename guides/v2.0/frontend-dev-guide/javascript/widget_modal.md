@@ -39,7 +39,7 @@ $('#modal_content').modal({
 });
 </pre>
 
-For details about how to initialize the widget in a` .phtml` template, refer to the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize the widget in a` .phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="modal_options">Options</h2>
 The modal widget has the following options:
