@@ -2,8 +2,8 @@
 layout: default 
 group: compman
 subgroup: D_UseUpgrade
-title: Upgrade your components
-menu_title: Upgrade your components
+title: Select versions to upgrade
+menu_title: Select versions to upgrade
 menu_node: 
 menu_order: 5
 github_link: comp-mgr/upgrader/upgrade-main-pg.md
@@ -80,4 +80,4 @@ To upgrade components:
 
 		<img src="{{ site.baseurl }}common/images/upgr_comp_no.png" alt="Do not upgrade this component">
 
-3.	Click **Next** and continue with TBD.
+3.	Click **Next** and continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a>

@@ -24,20 +24,20 @@ See one of the following:
 *	<a href="#compman-readiness-fail">Failure</a>
 
 <h3 id="compman-readiness-success">Success</h3>
-The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with <a href="{{ site.gdeurl }}comp-mgr/compman-backup.html">Backup</a>.
+The following figure shows an example of a successful readiness check. If all tests passed, click **Next** and continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-backup.html">Step 3. Backup</a>.
 
-<img src="{{ site.baseurl }}common/images/cman_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
+<img src="{{ site.baseurl }}common/images/upgr_readiness-success.png" width="700px" alt="If all readiness checks pass, click Next and continue with the next step">
 
 <h3 id="compman-readiness-fail">Failure</h3>
 Messages similar to the following display if any readiness check fails. 
 
-<img src="{{ site.baseurl }}common/images/cman_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue">
+<img src="{{ site.baseurl }}common/images/upgr_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue">
 
-In the event of failure, see one of the following sections:
+<!-- In the event of failure, see one of the following sections:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/updater.html">Updater check failure</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
 *	<a href="{{ site.gdeurl }}comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
 *	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP version check failure</a>
 *	<a href="{{ site.gdeurl }}release-notes/known-issues.html#known-devbeta-xdebug">PHP settings check failure</a>
-*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a>
+*	<a href="{{ site.gdeurl }}install-gde/system-requirements.html">PHP extensions check failure</a> -->

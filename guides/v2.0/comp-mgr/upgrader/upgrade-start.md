@@ -31,4 +31,4 @@ To run the Component Manager:
 
 	To update components only, see <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Run the Component Manager</a>.
 
-4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Upgrade your components</a>.
+4. 	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-main-pg.html">Select versions to upgrade</a>.
