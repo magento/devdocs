@@ -22,7 +22,7 @@ The dropdownDialog widget source is located in <a href="{{site.mage2000url}}lib/
 
 <h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
 
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
+For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
 <h2 id="dialog_options">Options</h2>
  
