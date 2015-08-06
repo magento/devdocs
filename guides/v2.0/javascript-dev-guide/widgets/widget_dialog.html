@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>DropdownDialog widget</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a>
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">DropdownDialog widget</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2>Overview</h2>
+<p>Magento dropdownDialog widget is a customization of the standard <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog</a>. As extra functionality it implements the following:</p>
+<ul>
+<li>triggering event for opening</li>
+<li>delaying to automatically close the drop-down on mouse out</li>
+<li>clicking outside the area closes the drop-down</li>
+</ul>
+
+<p>The dropdownDialog widget source is located in <a href="https://github.com/magento/magento2/blob/develop/lib/web/mage/dropdown.js" target="_blank">lib/web/mage/dropdown.js</a>.</p>
+
+<h2 id="dialog_init">Initialize the dropdownDialog widget</h2>
+
+<p>For information about how to initialize a widget in a JS component or <code>.phtml</code> template, see the <a href="/guides/v2.0/frontend-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.</p>
+
+<h2 id="dialog_options">Options</h2>
+
+<p>Magento customized Dialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">Query UI Dialog widget</a> options, plus several custom options:</p>
+<ul>
+<li><a href="#d_autoPosition">autoPosition</a></li>
+<li><a href="#d_autoSize">autoSize</a></li>
+<li><a href="#d_closeOnClickOutside">closeOnClickOutside</a></li>
+<li><a href="#d_closeOnMouseLeave">closeOnMouseLeave</a></li>
+<li><a href="#d_createTitleBar">createTitleBar</a></li>
+<li><a href="#d_defaultDialogClass">defaultDialogClass</a></li>
+<li><a href="#d_dialogContentClass">dialogContentClass</a></li>
+<li><a href="#d_parentClass">parentClass</a></li>
+<li><a href="#d_triggerClass">triggerClass</a></li>
+<li><a href="#d_triggerEvent">triggerEvent</a></li>
+<li><a href="#d_triggerTarget">triggerTarget</a></li>
+</ul>
+
+<p>Description of each option follows.</p>
+
+<h3 id="#d_autoPosition"><code>autoPosition</code></h3>
+<p>Specifies if the <a href="http://api.jqueryui.com/dialog/#option-position" target="_blank"><code>position</code></a> option is used for calculating the drop-down offset. </p>
+
+<p>If set to <code>false</code> (default value), then <code>position</code> rules are not used and the drop-down is positioned under the element for which the widget is initialized. Otherwise the drop-down offset is calculated using the <code>position</code> rules.  </p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>false</code></p>
+
+<h3 id="#d_autoSize"><code>autoSize</code></h3>
+
+<p>Specifies if the size of the drop-down is defined by widget options (<a href="http://api.jqueryui.com/dialog/#option-height" target="_blank">height</a>, <a href="http://api.jqueryui.com/dialog/#option-width" target="_blank">width</a>, <a href="http://api.jqueryui.com/dialog/#option-minHeight" target="_blank">minHeight</a>, <a href="http://api.jqueryui.com/dialog/#option-minWidth" target="_blank">minWidth</a>).</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>false</code></p>
+
+<h3 id="#d_closeOnMouseLeave"><code>closeOnMouseLeave</code></h3>
+<p>Specifies if the drop-down is closed when mouse pointer is moved out.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>true</code></p>
+
+<h3 id="#d_closeOnClickOutside"><code>closeOnClickOutside</code></h3>
+<p>Specifies if the drop-down is closed on mouse click outside the drop-down.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>true</code></p>
+
+<h3 id="#d_createTitleBar"><code>createTitleBar</code></h3>
+<p>Defines if the <a href="http://api.jqueryui.com/dialog/#option-title" target="_blank">title</a> option is used for displaying the title bar.</p>
+
+<p><strong>Type</strong>: Boolean</p>
+
+<p><strong>Default value</strong>: <code>false</code></p>
+
+<h3 id="#d_defaultDialogClass"><code>defaultDialogClass</code></h3>
+<p>Class that is added to the drop-down, when it gets initialized.</p>
+
+<p><strong>Type</strong>: String</p>
+
+<p><strong>Default value</strong>: <code>mage-dropdown-dialog</code></p>
+
+<h3 id="#d_dialogContentClass"><code>dialogContentClass</code></h3>
+<p>Class that is added/removed on drop-down content when it gets opened/closed.</p>
+
+<p><strong>Type</strong>: String</p>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h3 id="#d_parentClass"><code>parentClass</code></h3>
+<p>Class that is added/removed for the dropdown parent, when the drop-down gets opened/closed.</p>
+
+<p><strong>Type</strong>: String</p>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h3 id="#d_triggerClass"><code>triggerClass</code></h3>
+<p>Class that is added/removed on the trigger element when the drop-down gets opened/closed.</p>
+
+<p><strong>Type</strong>: String</p>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h3 id="#d_triggerEvent"><code>triggerEvent</code></h3>
+<p>Name of the event that triggers the <code>open()</code> function for drop-down.</p>
+
+<p><strong>Type</strong>: String</p>
+
+<p><strong>Default value</strong>: <code>click</code></p>
+
+<h3 id="#d_triggerTarget"><code>triggerTarget</code></h3>
+<p>Element that triggers the drop-down.</p>
+
+<p><strong>Type</strong>: </p>
+
+<ul>
+  <li>String</li>
+  <li>jQuery object</li>
+</ul>
+
+<p><strong>Default value</strong>: <code>null</code></p>
+
+<h3 id="#d_timeout"><code>timeout</code></h3>
+<p>The number of milliseconds until the dropdown is closed after mouse pointer moves out.</p>
+
+<p><strong>Type</strong>: Number</p>
+
+<p><strong>Default value</strong>: 500</p>
+
+<h2 id="dialog_methods">Methods</h2>
+<p>Magento customized dropdownDialog widget has default <a href="http://api.jqueryui.com/dialog/" target="_blank">Query UI Dialog widget</a> methods, though some of them are customized. </p>
+
+<p>Customized public methods:</p>
+<ul>
+<li><a href="#d_open">open()</a></li>
+<li><a href="#d_close">close()</a></li>
+</ul>
+
+<h3 id="#d_open"><code>open()</code></h3>
+<p>Beside default functionality, this method calls the <code>_mouseLeave()</code> and <code>_mouseEnter()</code> functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the <code>&lt;body&gt;</code> element.</p>
+
+<h3 id="#d_close"><code>close()</code></h3>
+<p>Beside default functionality, this method removes the classes from trigger and drop-down parent and clears the timeout if the latter exists.</p>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/javascript-dev-guide/javascript/js_overview.html">JavaScript</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/custom_js.html">Use custom JavaScript</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_debug.html">Locate JavaScript components</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/javascript-dev-guide/widgets/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_accordion.html">Accordion widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_calendar.html">Calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_collapsible.html">Collapsible widget</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">DropdownDialog widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">List widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_loader.html">Loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_menu.html">Menu widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">Modal widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_navigation.html">Navigation widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_quickSearch.html">QuickSearch widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_tabs.html">Tabs widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://magento.com/legal/licensing" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2015 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>

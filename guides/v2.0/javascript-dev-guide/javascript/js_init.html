@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>JavaScript initialization</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/javascript/js_init.html">
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a>
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+   </div>
+</div>
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">JavaScript initialization</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/javascript-dev-guide/javascript/js_init.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2 id="js_init_overview">Overview</h2>
+
+<p>This topic talks about how to initialize a JavaScript component in the Magento 2 application. It covers initializing JavaScript components in a <code>.phtml</code> template and jQuery widget initialization in a JS script.</p>
+
+<h2 id="init_phtml">Initialize a JS component in a PHTML template</h2>
+<p>In Magento 2, there are two ways to initialize a JS component in a <code>.phtml</code> template: using the <code>data-mage-init</code> attribute and using the <code>&lt;script&gt;</code> tag. Both ways are described in the following sections.
+<!-- ADDLINK for JS component--></p>
+
+<h3 id="data_mage_init">Initialization using <code>data-mage-init</code></h3>
+
+<p>Use the <code>data-mage-init</code> attribute to initialize a JS component on a certain HTML element. The following code sample is an illustration. Here a JS component is initialized on the <code>&lt;nav/&gt;</code> element:</p>
+<pre>
+&lt;nav data-mage-init='{ &quot;&lt;component_name&gt;&quot;: {...} }'&gt;&lt;/nav&gt;
+</pre>
+
+<p>When initialized on a certain element, the script is called only for this particular element. It is not automatically initialized for other elements of this type on the page. </p>
+
+<h4 id="init_process">How the JS initialization using <code>data-mage-init</code> is processed</h4>
+
+<p>On DOM ready, the <code>data-mage-init</code> attribute is parsed to extract components’ names and configuration to be applied to the element. 
+Depending on the type of the JS component initialized, processing is performed as follows:</p>
+<ul>
+
+<li>If an object is returned, the initializer tries to find the <code>&lt;component_name&gt;</code> key. If the corresponding value is a function, the initializer passes the <code>config</code> and <code>element</code> values to this function.
+
+For example:
+<pre>
+return {
+    '&lt;component_name&gt;': function(config, element) { ... }
+};
+</pre>
+</li>
+<li>If a function is returned, the initializer passes the <code>config</code> and <code>element</code> values to this function. 
+
+For example:
+
+<pre>
+return function(config, element) { ... };
+</pre>
+
+</li>
+<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
+
+For example:
+<pre>
+$.fn.&lt;component_name&gt; = function() { ... };
+return;
+</pre>
+</li>
+
+<li>If none of the previous cases is true, the component is executed with no further processing. 
+Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
+</ul>
+
+<h3 id="init_script">Initialization using <code>&lt;script&gt;</code></h3>
+<p>To initialize a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the <code>&lt;script type=&quot;text/x-magento-init&quot;&gt;</code> tag. An illustration follows:</p>
+
+<pre>
+&lt;script type=&quot;text/x-magento-init&quot;&gt;
+    // components initialized on the element defined by selector
+	&quot;&lt;element_selector&gt;&quot;: {
+		&quot;&lt;js_component1&gt;&quot;: ...,
+		&quot;&lt;js_component2&gt;&quot;: ...
+    },
+    // components initialized without binding to an element
+    &quot;*&quot;: {
+        &quot;&lt;js_component3&quot;&gt;: ...
+    }
+&lt;/script&gt;
+</pre>
+
+<p>Where:</p>
+<ul>
+<li><code>&lt;element_selector&gt;</code> is a selector for the element on which the following JS components are initialized.</li>
+<li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
+<li><code>&lt;js_component3&gt;</code> is the JS component initialized with no binding to an element.</li> 
+</ul>
+
+<p>The following is an illustration of widget initialization using <code>&lt;script&gt;</code>. Here the accordion and navigation widgets are initialized on the element with the <code>#main-container</code> selector, and the <code>pageCache</code> script is initialized with no binding to any element.</p>
+
+<pre>
+&lt;script type=&quot;text/x-magento-init&quot;&gt;
+    &quot;#main-container&quot;: {
+        &quot;navigation&quot;: &lt;?php echo $block-&gt;getNavigationConfig(); ?&gt;,
+        &quot;accordion&quot;: &lt;?php echo $block-&gt;getNavigationAccordionConfig(); ?&gt;
+    },
+    &quot;*&quot;: {
+        &quot;pageCache&quot;: &lt;?php echo $block-&gt;getPageCacheConfig(); ?&gt;
+    }
+&lt;/script&gt;
+</pre>
+
+<h2 id="widget_init">Widget initialization in JS</h2>
+
+<p>To initialize a widget in JS code, use a notation similar to the following (the <a href="/guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html" target="_blank">accordion</a> widget is initialized on the <code>#main-container</code> element as illustration):</p>
+
+<pre>
+$("#main-container").accordion();
+</pre>
+
+<p>To initialize a widget with options, use notation similar to the following:</p>
+
+<pre>
+$("#main-container").accordion({
+    header : "#title-1"
+    content : "#content-1",
+    trigger : "#trigger-1,
+    ajaxUrlElement: "a"
+ });
+</pre>
+
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+							
+								<li class=""><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">Introduction</a></li>
+				
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/javascript-dev-guide/javascript/js_overview.html">JavaScript</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a></li>
+						
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html">JavaScript initialization</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/custom_js.html">Use custom JavaScript</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_debug.html">Locate JavaScript components</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/js_practice.html">Customizing JavaScript illustration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/javascript-dev-guide/widgets/jquery-widgets-about.html">Magento jQuery widgets</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_accordion.html">Accordion widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_calendar.html">Calendar widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_collapsible.html">Collapsible widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_dialog.html">DropdownDialog widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_list.html">List widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_loader.html">Loader widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_menu.html">Menu widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">Modal widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_navigation.html">Navigation widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_quickSearch.html">QuickSearch widget</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_tabs.html">Tabs widget</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/javascript/js_init.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/javascript-dev-guide/javascript/js_init.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://magento.com/legal/licensing" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2015 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+</body>
+</html>
