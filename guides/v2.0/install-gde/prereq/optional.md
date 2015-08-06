@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: install_pre
 subgroup: Prerequisites
 title: Optional software
 menu_title: Optional software

@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 1_Introduction
-title: PHP Developer Guide
-menu_title: Developer Roadmap
+title: Module guide
+menu_title: Developer roadmap
 menu_order: 2
 github_link: extension-dev-guide/developers_roadmap.md
 redirect_from: /guides/v1.0/extension-dev-guide/developers_roadmap.html

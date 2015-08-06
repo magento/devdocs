@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 3_Build
-title: PHP Developer Guide
-menu_title: Create a Module
+title: Module guide
+menu_title: Create a module
 menu_order: 2
 github_link: extension-dev-guide/create_module.md
 redirect_from: /guides/v1.0/extension-dev-guide/create_module.html

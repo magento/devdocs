@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 1_Introduction
-title: PHP Developer Guide
+title: Module guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
@@ -47,10 +47,6 @@ An *extension* is a module&#8212;or modules&#8212;plus any themes and/or languag
 
 
 
-
-<h2 id="api-concepts">How to</h2>
-
-<a href="{{ site.gdeurl }}extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
 
 <h2 id="m2arch-related">Related topic</h2>
 

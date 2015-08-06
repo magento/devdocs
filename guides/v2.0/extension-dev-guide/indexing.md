@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development 
-title: PHP Developer's Guide
+title: Module guide
 menu_title: Indexing
 menu_order: 8
 github_link: architecture/index-cache/indexing.md

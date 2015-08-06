@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development
-title: PHP Developer Guide
-menu_title: Magento Plug-ins
+title: Module guide
+menu_title: Magento plug-ins
 menu_order: 6
 github_link: extension-dev-guide/plugins.md
 redirect_from: 

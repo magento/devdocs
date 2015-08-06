@@ -2,8 +2,8 @@
 layout: default
 group: extension-dev-guide
 subgroup: 2_Prepare
-title: PHP Developer Guide
-menu_title: Composer Integration
+title: Module guide
+menu_title: Composer integration
 menu_order: 2
 github_link: extension-dev-guide/composer-integration.md
 redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
