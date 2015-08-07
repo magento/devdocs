@@ -18,7 +18,7 @@ github_link: comp-mgr/upgrader/upgrade-main-pg.md
 <h2 id="upgrade-access">System upgrade options</h2>
 To choose which components to upgrade:
 
-1.	After you <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:
+1.	After you <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">run System Upgrade</a>, a page similar to the following displays:<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_step1-mock.png" width="750px" alt="System Upgrade automatically checks for core module updates and third-party modules if you wish">
 2.	You have the following options:
 	<table>

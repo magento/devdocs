@@ -19,7 +19,7 @@ github_link: comp-mgr/compman-main-pg.md
 <h2 id="compman-access">Component Management options</h2>
 To choose whether to upgrade, enable, or disable components:
 
-1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:
+1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available">
 2.	You have the following options:
 	<table>
@@ -40,7 +40,7 @@ To choose whether to upgrade, enable, or disable components:
 	<tr>
 		<td><p>List of components</p></td>
 		<td><p>For each component, one of the following status indicators displays in the left column:</p>
-			<ul><li><img src="{{ site.baseurl }}common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current last time you synchronized with Connect.</li>
+			<ul><li><img src="{{ site.baseurl }}common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current the last time you synchronized with Connect.</li>
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
 				<!-- <li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> --></ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>

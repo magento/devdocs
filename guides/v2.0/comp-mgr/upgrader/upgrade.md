@@ -12,11 +12,11 @@ github_link: comp-mgr/upgrader/upgrade.md
 ## Update your components
 After backing up, your components are updated. The following figure shows an example.
 
-<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" alt="Click upgrade to complete the task">
+<img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="350px" alt="Click upgrade to complete the task">
 
 To complete the update, click **Upgrade**. If the upgrade is successful, a page similar to the following displays.
 
-<img src="{{ site.baseurl }}common/images/upgr_success.png" alt="Your upgrade was successful">
+<img src="{{ site.baseurl }}common/images/upgr_success.png" width="200px" alt="Your upgrade was successful">
 
 Messages similar to the following display in the Console Log:
 

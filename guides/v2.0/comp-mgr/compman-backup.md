@@ -19,7 +19,7 @@ Backups are stored in the `var/backups` directory and can be restored at any tim
 
 The following figure shows an example of backing up everything.
 
-<img src="{{ site.baseurl }}common/images/cman_create-backup.png" alt="You can back up the Magento 2 file system, media directory, and database">
+<img src="{{ site.baseurl }}common/images/cman_create-backup.png" width="650px" alt="You can back up the Magento 2 file system, media directory, and database">
 
 To back up:
 
@@ -33,6 +33,6 @@ To back up:
 
 2. 	Wait while backups are created.
 
-The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.
-<img src="{{ site.baseurl }}common/images/cman_backup-success.png" alt="A page displays to confirm your backup was a success"><br>
+The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.<br><br>
+<img src="{{ site.baseurl }}common/images/cman_backup-success.png" width="650px" alt="A page displays to confirm your backup was a success"><br><br>
 3.	<a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>.
