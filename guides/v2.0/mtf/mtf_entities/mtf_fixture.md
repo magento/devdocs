@@ -27,7 +27,7 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 Fixture in MTF is a list of properties of the Magento entity under test.
 
-Fixture is represented as XML file. It is located in `Fixture` directory, that is in correspondent module in `<magento_root>/dev/tests/functional/tests/app/Magento/functional`. For example for `Widget`:
+Fixture is represented as XML file. It is located in `Fixture` directory, that is in corresponding module in `<magento_root>/dev/tests/functional/tests/app/Magento/functional`. For example for `Widget`:
 
 -  `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
 
@@ -275,51 +275,7 @@ It is located in `Fixture` directory of corresponding module. That contains subd
 
 Let's see our data source file `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
-<pre>
-<?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-namespace Magento\Widget\Test\Fixture\Widget;
-use Magento\Mtf\Fixture\FixtureFactory;
-use Magento\Mtf\Fixture\DataSource;
-use Magento\Mtf\Repository\RepositoryFactory;
-/**
- * Prepare Layout Updates for widget.
- */
-class LayoutUpdates extends DataSource
-{
-    /**
-     * @constructor
-     * @param RepositoryFactory $repositoryFactory
-     * @param FixtureFactory $fixtureFactory
-     * @param array $params
-     * @param array $data
-     */
-    public function __construct(
-        RepositoryFactory $repositoryFactory,
-        FixtureFactory $fixtureFactory,
-        array $params,
-        array $data = []
-    ) {
-        $this->params = $params;
-        if (isset($data['dataset']) && isset($this->params['repository'])) {
-            $this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);
-            foreach ($this->data as $index => $layouts) {
-                if (isset($layouts['entities'])) {
-                    $explodeValue = explode('::', $layouts['entities']);
-                    $fixture = $fixtureFactory->createByCode($explodeValue[0], ['dataset' => $explodeValue[1]]);
-                    $fixture->persist();
-                    $this->data[$index]['entities'] = $fixture;
-                }
-            }
-        } else {
-            $this->data = $data;
-        }
-    }
-}
-</pre>
+<script src="https://gist.github.com/dshevtsov/908bd242c01aded95308.js"></script>
 
 To apply changes run in your terminal:
 
@@ -365,7 +321,7 @@ To apply changes run in your terminal:
 
 <h2 id="mtf_fixture_extend">Extend fixture</h2>
 
-Let's assume that you want to add fixture PHP class based on our `Widget.xml` fixture to another Magento entity.
+Let's assume that you want to add new fixture based on our `Widget.xml` fixture to another Magento entity.
 
 To do that you should supplement your `Widget.xml` code with `extends` attribute in `<fixture>` node. As you already know `extends` value stores a link to the class from which you want to extend your fixture.
 
