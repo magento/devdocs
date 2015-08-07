@@ -49,13 +49,23 @@ To ensure that the text you add in `.html` templates for a Knockout component wi
 - when a string is added in the scope of an HTML element, for example the *'Sign In'* string:
 	<span data-bind="i18n: 'Sign In'"></span>
 
-- when a string is added with no binding in the scope of an HTML elementthe virtual elements:
+- when a string is added with no binding to an HTML element:
 
-<!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+	<!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
 
-- when a variable is added, for example the `label` variable:
+- when a variable is added. For example the `label` variable:
 	<span data-bind="i18n: label"></span>
 
 
 <h3 id="add_strings_js">Strings added in .js files</h3>
-To enable the translation functi
+To ensure that the text you add in a .js file will be added to the dictionary, you need to take the following steps:
+1. Connect the `mage/translate` library:
+
+	define (['jquery', 'mage/translate'], 
+	function ($) { ...
+
+2. Use the library when adding the string:
+
+	$.mage.__('<string>')
+
+<p class="q">What about variables in JS?</p>
