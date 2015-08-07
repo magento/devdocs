@@ -15,7 +15,7 @@ You can follow the same approach when customizing Magento Javacsript, or <a href
 For information about how JS resources are located and configured, see the <a href="{{site.gdeurl}}/config-guide/config/js-resources.html" target="_blank"> JavaScript resources</a> topic in the Configuration Guide.
 
 <h2 id="#js_contents">What's in this book</h2>
-Topics of this chapter describe the following:
+Topics of this book describe the following:
 
 - [JavaScript initialization]({{site.gdeurl}}frontend-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
 - [Use custom JavaScript]({{site.gdeurl}}frontend-dev-guide/javascript/custom_js.html): how to extend or replace default JavaScript components/widgets.
