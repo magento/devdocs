@@ -31,7 +31,7 @@ The following figure shows an example of a successful readiness check. If all te
 <h3 id="compman-readiness-fail">Failure</h3>
 Messages similar to the following display if any readiness check fails. 
 
-<img src="{{ site.baseurl }}common/images/upgr_readiness-fail-ex.png" alt="You must resolve all readiness check failures before you continue">
+<img src="{{ site.baseurl }}common/images/upgr_readiness-fail.png" alt="You must resolve all readiness check failures before you continue">
 
 In the event of failure, see one of the following sections:
 

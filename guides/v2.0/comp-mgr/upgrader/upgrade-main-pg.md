@@ -2,8 +2,8 @@
 layout: default 
 group: compman
 subgroup: D_UseUpgrade
-title: Select versions to upgrade
-menu_title: Select versions to upgrade
+title: Step 1. Select versions to upgrade
+menu_title: Step 1. Select versions to upgrade
 menu_node: 
 menu_order: 5
 github_link: comp-mgr/upgrader/upgrade-main-pg.md
