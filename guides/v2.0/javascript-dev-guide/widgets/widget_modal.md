@@ -1,12 +1,14 @@
 ---
 layout: default
-group: javascript
-subgroup: JQuery widget details
+group: jsdg
+subgroup: Widgets
 title: Modal widget
 menu_order: 8
 menu_title: Modal widget
-github_link: frontend-dev-guide/javascript/widget_modal.md
-redirect_from: /guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
+github_link: javascript-dev-guide/widgets/widget_modal.md
+redirect_from:
+  - guides/v2.0/frontend-dev-guide/javascript/widget_modal.html
+  - guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
 <h2 id="modal_overview">Overview</h2>
@@ -39,7 +41,7 @@ $('#modal_content').modal({
 });
 </pre>
 
-For details about how to initialize the widget in a` .phtml` template, refer to the <a href="{{site.baseurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize the widget in a` .phtml` template, refer to the <a href="{{site.gdeurl}}frontend-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
 
 <h2 id="modal_options">Options</h2>
 The modal widget has the following options:
