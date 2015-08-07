@@ -62,7 +62,7 @@ To upgrade components:
 
 1.	From the **Magento Core Components** list, click the core component version to which to upgrade.
 
-	For example, to upgrade to the lastest version, click the one with **(latest)** in the name as the following figure shows.
+	For example, to upgrade to the latest version, click the one with **(latest)** in the name as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/upgr_step1_core-ver.png" alt="Select the version of Magento core components to which to upgrade">
 
