@@ -47,25 +47,37 @@ For example:
 To ensure that the text you add in `.html` templates for a Knockout component will be added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how i18n is used for different cases of adding a text:
 
 - when a string is added in the scope of an HTML element, for example the *'Sign In'* string:
-	<span data-bind="i18n: 'Sign In'"></span>
+ 
+{% highlight HTML%}
+    <span data-bind="i18n: 'Sign In'"></span>
+{% endhighlight HTML%}
 
 - when a string is added with no binding to an HTML element:
 
-	<!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+{% highlight HTML%}
+    <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
+{% endhighlight HTML%}	
 
 - when a variable is added. For example the `label` variable:
-	<span data-bind="i18n: label"></span>
-
+	
+{% highlight HTML%}
+    <span data-bind="i18n: label"></span>
+{% endhighlight HTML%}
 
 <h3 id="add_strings_js">Strings added in .js files</h3>
 To ensure that the text you add in a .js file will be added to the dictionary, you need to take the following steps:
-1. Connect the `mage/translate` library:
 
+1. Link the `mage/translate` library:
+
+{% highlight js%}
 	define (['jquery', 'mage/translate'], 
 	function ($) { ...
+{% endhighlight js%}
 
 2. Use the library when adding the string:
 
+{% highlight js%}
 	$.mage.__('<string>')
+{% endhighlight js%}
 
 <p class="q">What about variables in JS?</p>
