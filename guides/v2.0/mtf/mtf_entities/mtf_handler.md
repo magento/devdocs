@@ -8,7 +8,7 @@ menu_order: 3
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
-<h2 id=`mtf_handler_overview`>Handler overview</h2>
+<h2 id="mtf_handler_overview">Handler overview</h2>
 
 We will use handler to setup preconditions and prepare initial testing environment for particular test.
 

@@ -8,7 +8,7 @@ menu_order: 5
 github_link: mtf/mtf_entities/mtf_typified_element.md
 ---
 
-<h2 id=`mtf_typified-element_overview`>Typified element overview</h2>
+<h2 id="mtf_typified-element_overview">Typified element overview</h2>
 
 Typified element is custom atomic element of user interface.
 This element have specific logic.

@@ -8,7 +8,7 @@ menu_order: 7
 github_link: mtf/mtf_entities/mtf_constraint.md
 ---
 
-<h2 id=mtf_constraint_overview>Constraint overview</h2>
+<h2 id="mtf_constraint_overview">Constraint overview</h2>
 The MTF constraint serves for performing assertions after test execution.
 Each constraint name must be unique within application and placed in the module to which the constraint belongs.
 Constraints run automatically after test flow has been finished.
