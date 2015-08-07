@@ -18,17 +18,17 @@ This topic describes how to add the theme strings to a dictionary.
 
 <h2 id="add_strings">Add your theme strings to a dictionary</h2>
 
-If your theme design implies adding new strings, they are typically added in templates. The following paragraphs describe how to add strings in each of these template so that they get added to the dictionary. 
+If your theme design implies adding new strings, they are typically added in templates. The following paragraphs describe how to add strings in each of these templates so that they get added to the dictionary. 
 
 <h3 id="add_strings_phtml">Strings added in <code>.phtml</code> templates</h3>
 
-To add your new string to a dictionary, use the `__('<your_string>')` construction when echoing a string in a template.
-
-<p class="q">Is it a method or smth?</p>
+To add your new string to a dictionary, use the `__('<your_string>')` method when echoing a string in a template.
 
 For example:
 
+{% highlight HTML%}
 	<h3><?php echo __('Create Backup') ?></h3>
+{% endhighlight HTML%}
 
 <h3 id="add_strings_email">Strings added in email templates</h3>
 
