@@ -14,7 +14,11 @@ After backing up, your components are updated. The following figure shows an exa
 
 <img src="{{ site.baseurl }}common/images/upgr_upgrade.png" alt="Click upgrade to complete the task">
 
-To complete the update, click **Upgrade**. If successful, messages similar to the following display in the Console Log:
+To complete the update, click **Upgrade**. If the upgrade is successful, a page similar to the following displays.
+
+<img src="{{ site.baseurl }}common/images/upgr_success.png" alt="Your upgrade was successful">
+
+Messages similar to the following display in the Console Log:
 
 	[2015-08-06 11:26:02 CDT] Job "update {"require":[{"name":"magento/product-community-edition","version":"1.2.0"},
 	{"name":"3rdp/a","version":"1.1.0"},{"name":"3rdp/b","version":"1.1.0"}]}" has been started

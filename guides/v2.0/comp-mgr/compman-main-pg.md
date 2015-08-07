@@ -42,7 +42,7 @@ To choose whether to upgrade, enable, or disable components:
 		<td><p>For each component, one of the following status indicators displays in the left column:</p>
 			<ul><li><img src="{{ site.baseurl }}common/images/cman_comp-status-green.png" alt="A green icon means that the component is enabled and is current as of the last sync">Green, which means the component is enabled and its status was current last time you synchronized with Connect.</li>
 				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-info.png" alt="An info icon means there is an update available">An update is available.</li>
-				<li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li></ul>
+				<!-- <li><img src="{{ site.baseurl }}common/images/cman_comp-status-red.png" alt="A red icon means the component is disabled">The component is disabled.</li> --></ul>
 				<p>Middle columns display information about the component we obtained from its Composer package.</p>
 				<p>The right column displays available actions for each component. </p></td>
 	</tr>

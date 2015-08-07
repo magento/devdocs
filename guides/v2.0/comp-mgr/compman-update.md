@@ -14,7 +14,11 @@ After backing up, your components are updated. The following figure shows an exa
 
 <img src="{{ site.baseurl }}common/images/cman_update-step.png" alt="Click update to complete the task">
 
-To complete the update, click **Update**. If successful, messages similar to the following display in the Console Log:
+To complete the update, click **Update**. If successful, a page similar to the following displays.
+
+<img src="{{ site.baseurl }}common/images/cman_update-success.png" alt="Your component update was successful">
+
+Messages similar to the following display in the Console Log:
 
 	[2015-07-31 19:41:02 CDT] Job "update {"require":[{"name":"magento/sample-module-updater-wizard","version":"3.0.0.0"}]}" has been started
 	[2015-07-31 19:41:02 CDT] Starting composer update...
