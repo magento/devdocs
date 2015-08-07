@@ -15,9 +15,9 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 - <a href="#mtf_fixture_read">Read and update new fixture</a>
 
-- <a href="#mtf_fixture_repositoy">Add repository</a>
+- <a href="#mtf_fixture_repositoy">Add repository to the fixture field</a>
 
-- <a href="#mtf_fixture_source">Add data source</a>
+- <a href="#mtf_fixture_source">Add data source to the fixture field</a>
 
 - <a href="#mtf_fixture_merge">Merge fixtures</a>
 
@@ -36,7 +36,7 @@ You will need fixture:
 - as test data for particular set
 - as pre-condition for the test
 
-In this chapter we will create a new fixture, add and modify something in it, considering different use cases.
+In this chapter we will create a new fixture and modify it, considering different use cases.
 
 To apply any changes of the fixture, you should run generate tool:
 
@@ -58,6 +58,10 @@ Magento has a special tool that will generate automatically your fixture, with p
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>Please note that generateFixtureXml tool does not replace existing XML fixture. For example, if you already have <code>Widget.xml</code> fixture, you cannot create new one with the same name.</p>
+</div>
+
+<div class="bs-callout bs-callout-warning">
+<p>To work with generateFixtureXml tool, <a href="{{site.gdeurl}}/install-gde/bk-install-guide.html">Magento must be installed.</a></p>
 </div>
 
 In the table below see `generateFixtureXml` arguments.
@@ -140,7 +144,7 @@ Let's look closer at fixture structure.
 
 | `<field>` attribute | Semantics                                                                                                                                                        |           Value            | Required/optional |
 |:--------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------:|:-----------------:|
-| `name`              | Field name                                                                                                                                                       |           string           |     required      |
+| `name`              | Field name.                                                                                                                                                      |           string           |     required      |
 | `is_required`       | Specifies whether field is required on the form.                                                                                                                 | 1 - required, 0 - optional |     optional      |
 | `group`             | Tab name that contains field (for example, `title` field is placed on 'Storefront properties' tab on widget creation page).                                      |           string           |     optional      |
 | `source`            | Class that prepares field data for the use (see Data Source).                                                                                                    |           string           |     optional      |
@@ -197,17 +201,17 @@ To apply changes run in your terminal:
     cd <magento_root>/dev/tests/functional/utils
     php generate.php
 
-<h2 id="mtf_fixture_repositoy">Add repository</h2>
+<h2 id="mtf_fixture_repositoy">Add repository to the fixture field </h2>
 
-Now we have new fixture for the widget creation process. All fields are defined and ready to take test data. Let's assume that we are not focused on layout updates functionality and want to use pre-defined data.
+Now we have new fixture for Widget. All fields are defined and ready to take test data. Let's assume that we are not focused on layout updates functionality and want to use pre-defined data.
 
-For this goal you can add link to repository, where all test data already defined.
+For this goal you can add link to repository, where all test data have been already defined.
 
-{% highlight php%}
+{% highlight xml%}
 
 <field name="layout_updates" repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates" group="storefront_properties" />
 
-{% endhighlight php%}
+{% endhighlight xml%}
 
 Repository is located in `Repository` directory of corresponding module. That contains subdirectory with the name of fixture, and repository XML file in it with the name of fixture field.
 
@@ -223,7 +227,8 @@ Bellow is the code of `LayoutUpdates.xml`. There two datasets defined. Which of 
  * See COPYING.txt for license details.
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
     <repository class="Magento\Widget\Test\Repository\Widget\LayoutUpdates">
         <dataset name="all_pages">
             <field name="0" xsi:type="array">
@@ -250,13 +255,13 @@ To apply changes run in your terminal:
     cd <magento_root>/dev/tests/functional/utils
     php generate.php
 
-<h2 id="mtf_fixture_source">Add data source</h2>
+<h2 id="mtf_fixture_source">Add data source to the fixture field</h2>
 
 Our new field `layout_updates` is complex and contains different elements and logic, depending on type of layout chosen.
 
 ![Layout update subelements]({{ site.baseurl }}common/images/mtf_layout_update.jpg)
 
-For these needs you can use data source, that serves for additional processing of the field (for example, parsing, creation or deletion of new field).
+For these needs you can use data source, that serves for additional processing of the field (for example, parsing or creation of new field).
 
 All data source logic is defined in PHP file. Link to it must be specified in `source` attribute of the field.
 
@@ -270,66 +275,18 @@ It is located in `Fixture` directory of corresponding module. That contains subd
 
 Let's see our data source file `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
-{% highlight PHP %}
-
-<?php
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-namespace Magento\Widget\Test\Fixture\Widget;
-use Magento\Mtf\Fixture\FixtureFactory;
-use Magento\Mtf\Fixture\DataSource;
-use Magento\Mtf\Repository\RepositoryFactory;
-/**
- * Prepare Layout Updates for widget.
- */
-class LayoutUpdates extends DataSource
-{
-    /**
-      * @constructor
-      * @param RepositoryFactory $repositoryFactory
-      * @param FixtureFactory $fixtureFactory
-      * @param array $params
-      * @param array $data
-    */
-    public function __construct(
-        RepositoryFactory $repositoryFactory,
-        FixtureFactory $fixtureFactory,
-        array $params,
-        array $data = []
-    ) {
-        $this->params = $params;
-        if (isset($data['dataset']) && isset($this->params['repository'])) {
-            $this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);
-            foreach ($this->data as $index => $layouts) {
-                if (isset($layouts['entities'])) {
-                    $explodeValue = explode('::', $layouts['entities']);
-                    $fixture = $fixtureFactory->createByCode($explodeValue[0], ['dataset' => $explodeValue[1]]);
-                    $fixture->persist();
-                    $this->data[$index]['entities'] = $fixture;
-                }
-            }
-        } else {
-            $this->data = $data;
-        }
-    }
-}
-
-{% endhighlight PHP %}
+<script src="https://gist.github.com/anonymous/337509a991f11020fe47.js"></script>
 
 To apply changes run in your terminal:
 
     cd <magento_root>/dev/tests/functional/utils
     php generate.php
-
-You should mention repository in data source class to use it for fixture field.
-
-{% highlight php %}
-
-$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);
-
-{% endhighlight php %}
+    
+<div class="bs-callout bs-callout-warning">
+<p>You should mention repository in data source class to use it for fixture field.<br/>
+Example<br/>
+<code>$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);</code></p>
+</div>
 
 <h2 id="mtf_fixture_merge">Merge fixtures</h2>
 
@@ -346,7 +303,8 @@ We can create file that adds field `new_field` to our widget fixture.
  * See COPYING.txt for license details.
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
     <fixture name="widget">
         <field name="new_field" is_required="0" group="storefront_properties" />
     </fixture>
@@ -376,13 +334,13 @@ To do that you should supplement your `Widget.xml` code with `extends` attribute
  * See COPYING.txt for license details.
  */
  -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/fixture.xsd">
     <fixture name="adWidget"
              repository_class="Magento\AdWidget\Test\Repository\AdWidget"
              handler_interface="Magento\AdWidget\Test\Handler\AdWidget\AdWidgetInterface"
              class="Magento\AdWidget\Test\Fixture\AdWidget"
-             extends="\Magento\Widget\Test\Fixture\Widget"
-            >
+             extends="\Magento\Widget\Test\Fixture\Widget">
         <field name="custom_field" repository="Magento\AdWidget\Test\Repository\AdWidget\CustomField" group="storefront_properties" />
     </fixture>
 </config>
@@ -395,3 +353,4 @@ To generate your new fixture PHP class, run in your terminal:
 
     cd <magento_root>/dev/tests/functional/utils
     php generate.php
+
