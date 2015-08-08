@@ -28,6 +28,11 @@ To choose which components to upgrade:
 		<th>Meaning</th>
 	</tr>
 	<tr>
+		<td><p>Try Again, Next</p></td>
+		<td><p>Click <strong>Try Again</strong> to search for upgrades again. You can do this if something recently changed.</p>
+			<p>Click <strong>Next</strong> to continue to the readiness check after making selections on this page.</p></td>
+	</tr>
+	<tr>
 		<td><p>Magento Core Components list</p></td>
 		<td><p>Displays available core component versions for upgrade.</p>
 			<p><strong>(current)</strong> indicates the version you currently have.</p>
