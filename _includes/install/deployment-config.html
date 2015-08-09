@@ -1,6 +1,6 @@
-<p>Magento's deployment configuration consists of the following files:</p>
-<ul><li><code>&lt;your Magento install dir>/app/etc/config.php</code>, which contains the list of modules</li>
-	<li><code>&lt;your Magento install dir>/app/etc/env.php</code>, which contains environment settings, such as:
+<p>Magento's deployment configuration contains the module and environmental configuration for your installation. This is held within the following files:</p>
+<ul><li><code>&lt;base dir>/app/etc/config.php</code>, which contains the list of installed modules</li>
+	<li><code>&lt;base dir>/app/etc/env.php</code>, which contains environment settings, such as:
 		<ul><li>Database credentials and connection settings</li>
 			<li>Cache storage settings</li>
 			<li>Enabled cache types</li>
@@ -13,7 +13,7 @@
 <p>Together, they are referred to as Magento's <em>deployment configuration</em> because they are created during installation and have information required to start Magento.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The deployment configuration replaces <code>local.xml</code> in earlier Magento versions. The deployment configuration contains a declarative array of configuration values.</p>
+  <p>Magento 1.x - The deployment configuration replaces <code>local.xml</code>.</p>
 </div>
 
 <p>Unlike other <a href="{{ site.gdeurl }}config-guide/config/config-files.html">module configuration files</a>, Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files (although <code>config.php</code> and <code>env.php</code> are merged with each other), and cannot be extended.</p>
