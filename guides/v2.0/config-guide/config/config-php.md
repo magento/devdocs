@@ -27,7 +27,7 @@ On the top level of this array are *configuration segments*. A segment has arbit
 
 On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules' configuration files, with the exception of disabled modules. 
 
-The following sections discusses the structure and contents of the deployment configuratin&mdash;`config.php` and `env.php`.
+The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
 
 * <a href="#config-php-contents-config-php">Managing Installed Modules</a>
 * <a href="#config-php-contents-env-php">Environmental Configuration</a>
