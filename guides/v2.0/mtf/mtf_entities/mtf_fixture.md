@@ -269,7 +269,11 @@ It is located in `Fixture` directory of corresponding module. That contains subd
 
 {% highlight xml%}
 
-<field name="layout_updates" is_required="0" repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates" source="Magento\Widget\Test\Fixture\Widget\LayoutUpdates" group="storefront_properties" />
+<field name="layout_updates"
+       is_required="0"
+       repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates"
+       source="Magento\Widget\Test\Fixture\Widget\LayoutUpdates"
+       group="storefront_properties" />
 
 {% endhighlight xml%}
 
@@ -284,7 +288,8 @@ To apply changes run in your terminal:
     
 <div class="bs-callout bs-callout-warning">
 <p>You should mention repository in data source class to use it for fixture field.<br/>
-Example<br/>
+<br/>
+Example from <code>LayoutUpdates.php</code><br/>
 <code>$this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);</code></p>
 </div>
 

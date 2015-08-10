@@ -5,8 +5,8 @@ subgroup: C_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: Test run
 menu_order: 3
-github_link: mtf/mtf_quickstart/mtf_quickstart_testrun.md
-redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_testrun.html
+github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
+redirect_from: /guides/v1.0/mtf/mtf_quickstart/mtf_quickstart_runtest.html
 ---
 <h2 id="mtf_quickstart_testrun">Test run</h2>
 All tests classified by categories in corresponding directories in `<magento_root>/dev/tests/functional/tests/app/Magento`.
@@ -15,10 +15,10 @@ MTF uses PHPUnit, which is located in `<magento_root>/dev/tests/functional/vendo
 
 Be sure that your system is ready for test run.
 
-- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_preinstall.html">Magento is ready for tests</a>
-- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_install.html">The Magento Testing Framework is installed</a>
-- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_quickstart_config.html">The Magento Testing Framework is configured</a>
-- <a href="{{site.gdeurl}}/mtf/mtf_installation/mtf_quickstart_environmemt.html">Environment is ready to test run</a>
+- <a href="{{site.gdeurl}}mtf/mtf_installation.html#mtf_install_pre">Magento is ready for tests</a>
+- <a href="{{site.gdeurl}}mtf/mtf_installation.html#mtf_install_check">The Magento Testing Framework is installed</a>
+- <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html">The Magento Testing Framework is configured</a>
+- <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Environment is ready to test run</a>
 
 <h3 id="mtf_quickstart_testrun_all">Run all tests</h3>
 

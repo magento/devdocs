@@ -84,7 +84,7 @@ For other tests please see the following topics:
 <h2 id="mtf_intro_github-link">MTF on GitHub</h2>
 
 Follow the MTF project and contribute on GitHub
-<https://github.com/magento/mtf>
+<https://github.com/magento/mtf>.
 
 
 [Selenium Standalone Server]: http://www.seleniumhq.org/download/
