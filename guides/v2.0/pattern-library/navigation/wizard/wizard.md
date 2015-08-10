@@ -116,18 +116,7 @@ In the last step, next button is disabled.
 <img src="img/Variation1.3.png">
 
 
-<h4>2. Process with Save Functionality in Last Step (i.e. Add Synonyms in Search flow)</h4>
-
-A user is going through a flow that can be saved
-
-In the first step, back button is disabled, and next button is enabled.
-<img src="img/Variation2.1.png">
-
-In the last step, back button is enabled, and the 'Next' button is replaced with 'Save' button.
-<img src="img/Variation2.2.png">
-
-
-<h4>3. Process with Save Functionality at Any Step</h4>
+<h4>2. Process with Save Functionality at Any Step</h4>
 
 In the first step, back button is disabled, and next button is enabled. Save button is present so the user who only need to edit specific step, can 'Save' right after they are done editing.
 <img src="img/Variation3.1.png">
@@ -141,9 +130,9 @@ Any other steps, Save button is present. Both 'Back' and 'Next' buttons are enab
 <img src="img/Variation3.3.png">
 
 
-<h4>4. Process with many steps that cannot fit in the given section</h4>
+<h4>3. Process with many steps that cannot fit in the given section</h4>
 
-It is not recommended to have too many steps for a wizard. But if a use case arise, please follow this truncation rule if not all steps in the navigation can be visible at once. This case may happen based on multiple reasons such as screen size changes, too many buttons, or simply too many steps.
+It is not recommended to have too many steps for a wizard. But if a use case arise such that your extension will have many steps that cannot fit the available space, please follow this truncation rule if not all steps in the navigation can be visible at once. This case may happen based on multiple reasons such as screen size changes, too many buttons, or simply too many steps.
 
 (for specific styling of this variation, refer to the link to .psd files in Assets.)
 
