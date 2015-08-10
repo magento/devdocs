@@ -39,7 +39,9 @@ Browse the Design Pattern Library here:
 
 ####Getting User Input
 <a href="getting-user-input/form_elements/form_elements.html">Form Elements</a><br>
-<a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a>
+<a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a><br>
+<a href="getting-user-input/image_uploader/image_uploader.html">Date and Time Selector</a>
+
 
 ####Navigation
 <a href="navigation/links/links.html">Links</a><br>
