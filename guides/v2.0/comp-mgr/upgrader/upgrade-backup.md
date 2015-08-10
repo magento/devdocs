@@ -33,7 +33,7 @@ To back up:
 
 2. 	Wait while backups are created.
 
-	The following page displays to confirm a successful backup. 
+	The following page displays to confirm a successful backup.<br><br>
 	<img src="{{ site.baseurl }}common/images/upgr_backup-success.png" width="650px" alt="A page displays to confirm your backup was a success"><br>
 3.	Continue with <a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a>
 

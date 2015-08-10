@@ -73,13 +73,13 @@ To upgrade components:
 
 2.	For each third-party component:
 
-	*	If you *do* want to upgrade it, change **Upgrade** to **Yes** and click the version from the **Update Version** list.
+	*	If you *do* want to upgrade it, set **Upgrade** to **Yes** and click the version from the **Update Version** list.
 
 		A sample follows.
 
 		<img src="{{ site.baseurl }}common/images/upgr_comp_yes.png" alt="Upgrade this component">
 
-	*	If you *do not* want to upgrade it, change **Upgrade** to **No**.
+	*	If you *do not* want to upgrade it, set **Upgrade** to **No**.
 
 		A sample follows.
 
