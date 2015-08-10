@@ -14,7 +14,6 @@ redirect_from: /guides/v1.0/config-guide/config/config-php.html
 
 *  <a href="#config-php-overview">What is the Magento deployment configuration?</a>
 *  <a href="#config-php-contents">config.php and env.php contents</a>
-* <a href="#config-php-upgrade">Updating to build 0.74-beta10</a>
 
 <h2 id="config-php-overview">What is the Magento deployment configuration?</h2>
 {% include install/deployment-config.html %}
@@ -30,17 +29,14 @@ On the next hierarchy level, items in each segment are ordered according to the 
 
 The following sections discusses the structure and contents of `config.php` and `env.php`.
 
-* <a href="#config-php-contents-config-php">config.php contents</a>
-* <a href="#config-php-contents-env-php">env.php contents</a>
+* <a href="#config-php-contents-config-php">Managing Installed Modules</a>
+* <a href="#config-php-contents-env-php">Environmental Configuration</a>
 
-<h3 id="config-php-contents-config-php">config.php contents</h3>
-Starting with build 0.74-beta10, `config.php` contains the list of modules only.
+<h3 id="config-php-contents-config-php">Managing Installed Modules</h3>
 
-Disabled modules are not recognized by Magento; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not display in the storefront or Admin and don't affect routing. The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
+The `config.php` lists the installed modules. You can manipulate this file to enable/disable/install/uninstall core & third party modules/extensions.  It is recommend you do not directly manipulate `config.php` but manage via the `bin/magento` CLI script.
 
-The value `1` or `0` indicates whether a module is enabled or disabled. 
-
-A snippet follows:
+Here is a snippet of `config.php`:
 
 {% highlight PHP %}
 <?php
@@ -61,8 +57,12 @@ return array (
 ); ?>
 {% endhighlight %}
 
-<h3 id="config-php-contents-env-php">env.php contents</h3>
-`env.php` was introduced in build 0.74-beta10; before that build, `config.php` contained this data in addition to the list of enabled modules. The following table provides details about each `env.php` segment and its structure.
+The value `1` or `0` indicates whether a module is enabled or disabled. 
+
+Disabled modules are not recognized by Magento; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not display in the storefront or Admin and don't affect routing. The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
+
+<h3 id="config-php-contents-env-php">Environmental Configuration</h3>
+The following table provides details about each `env.php` segment and its structure.
 
 <table>
   <tbody>
@@ -133,9 +133,6 @@ return array (
     </tr>
   </tbody>
 </table>
-
-<h2 id="config-php-upgrade">Updating to build 0.74-beta10</h2>
-{% include install/deployment-config_upgrade.html %}
 
 #### Related topic
 
