@@ -162,15 +162,14 @@
 		<h4 id="contents">Contents</h4>
 
 <ul>
-  <li><a href="#config-php-overview">What is the Magento deployment configuration?</a></li>
-  <li><a href="#config-php-contents">config.php and env.php contents</a></li>
-  <li><a href="#config-php-upgrade">Updating to build 0.74-beta10</a></li>
+  <li><a href="#config-php-overview">Purpose of the deployment configuration</a></li>
+  <li><a href="#config-php-contents">Details about the deployment configuration</a></li>
 </ul>
 
-<h2 id="config-php-overview">What is the Magento deployment configuration?</h2>
-<p>Magento's deployment configuration consists of the following files:</p>
-<ul><li><code>&lt;your Magento install dir&gt;/app/etc/config.php</code>, which contains the list of modules</li>
-	<li><code>&lt;your Magento install dir&gt;/app/etc/env.php</code>, which contains environment settings, such as:
+<h2 id="config-php-overview">Purpose of the deployment configuration</h2>
+<p>Magento's deployment configuration consists of the module and environmental configuration for your installation. Magento's deployment configuration is divided between:</p>
+<ul><li><code>&lt;base dir&gt;/app/etc/config.php</code>, which contains the list of installed modules</li>
+	<li><code>&lt;base dir&gt;/app/etc/env.php</code>, which contains environment settings, such as:
 		<ul><li>Database credentials and connection settings</li>
 			<li>Cache storage settings</li>
 			<li>Enabled cache types</li>
@@ -180,38 +179,43 @@
 		</li>
 	</ul>
 
-<p>Together, they are referred to as Magento's <em>deployment configuration</em> because they are created during installation and have information required to start Magento.</p>
+<p>Together, they are referred to as Magento's <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The deployment configuration replaces <code>local.xml</code> in earlier Magento versions. The deployment configuration contains a declarative array of configuration values.</p>
+  <p>The Magento 2 deployment configuration replaces <code>local.xml</code> in Magento 1.x.</p>
 </div>
 
-<p>Unlike other <a href="/guides/v2.0/config-guide/config/config-files.html">module configuration files</a>, Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files (although <code>config.php</code> and <code>env.php</code> are merged with each other), and cannot be extended.</p>
+<p>Unlike other <a href="/guides/v2.0/config-guide/config/config-files.html">module configuration files</a>, Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code>config.php</code> and <code>env.php</code> are merged with each other, however.)</p>
 
-<h2 id="config-php-contents">config.php and env.php contents</h2>
-<p><code>config.php</code> and <code>env.php</code> are PHP files that return a multi-dimensional associative array. </p>
+<h2 id="config-php-contents">Details about the deployment configuration</h2>
+<p><code>config.php</code> and <code>env.php</code> are PHP files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
 
-<p>On the first hierarchy level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished from each other by an arbitrary key—both the key and its value are defined by the Magento framework. </p>
+<p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework. </p>
 
 <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
 
 <p>On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules’ configuration files, with the exception of disabled modules. </p>
 
-<p>The following sections discusses the structure and contents of <code>config.php</code> and <code>env.php</code>.</p>
+<p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
 
 <ul>
-  <li><a href="#config-php-contents-config-php">config.php contents</a></li>
-  <li><a href="#config-php-contents-env-php">env.php contents</a></li>
+  <li><a href="#config-php-contents-config-php">Managing Installed Modules</a></li>
+  <li><a href="#config-php-contents-env-php">Environmental Configuration</a></li>
 </ul>
 
-<h3 id="config-php-contents-config-php">config.php contents</h3>
-<p>Starting with build 0.74-beta10, <code>config.php</code> contains the list of modules only.</p>
+<h3 id="config-php-contents-config-php">Managing Installed Modules</h3>
+<p><code>config.php</code> lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).</p>
 
-<p>Disabled modules are not recognized by Magento; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not display in the storefront or Admin and don’t affect routing. The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
+<p>Examples:</p>
 
-<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled. </p>
+<ul>
+  <li>Uninstall components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a> </li>
+  <li>Enable or disable components: <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
+  <li>Component Manager: coming soon</li>
+  <li>System Upgrade: coming soon</li>
+</ul>
 
-<p>A snippet follows:</p>
+<p><code>config.php</code> snippet:</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
@@ -230,8 +234,14 @@
   <span class="p">),</span>
 <span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<h3 id="config-php-contents-env-php">env.php contents</h3>
-<p><code>env.php</code> was introduced in build 0.74-beta10; before that build, <code>config.php</code> contained this data in addition to the list of enabled modules. The following table provides details about each <code>env.php</code> segment and its structure.</p>
+<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled. </p>
+
+<p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the storefront or Admin and don’t affect routing. </p>
+
+<p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
+
+<h3 id="config-php-contents-env-php">Environmental Configuration</h3>
+<p>The following table provides details about each <code>env.php</code> segment and its structure.</p>
 
 <table>
   <tbody>
@@ -303,51 +313,7 @@
   </tbody>
 </table>
 
-<h2 id="config-php-upgrade">Updating to build 0.74-beta10</h2>
-<p>Magento 2 release 0.74-beta10 for the first time splits Magento's <a href="/guides/v2.0/config-guide/config/config-php.html">deployment configuration</a> into two files:</p>
-<ul><li><code>&lt;your Magento install dir&gt;/app/etc/config.php</code></li>
-	<li><code>&lt;your Magento install dir&gt;/app/etc/env.php</code></li></ul>
-
-<p>As a result of this change, you must take action when upgrading from an earlier release. Your decision is basically do you want to keep your existing Magento 2 installation?</p>
-
-<h4>No, I do not want to keep my existing installation</h4>
-<p><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall" target="_blank">Uninstall</a> the Magento 2 software and <a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-reinstall" target="_blank">reinstall it</a>.</p>
-
-<h4>Yes, I want to keep my existing installation</h4>
-<p>To do this, you must manually update the deployment configuration as follows:</p>
-<ol><li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">web server user</a>).</li>
-    <li><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html#instgde-install-magento-update" target="_blank">Update the Magento software</a> to release 0.74-beta10 or later.</li>
-	<li>Change to the <code>&lt;your Magento install dir&gt;/app/etc</code> directory.</li>
-	<li>Enter the following commands in the order shown:<br />
-		<pre>cp config.php env.php
-vim env.php</pre></li>
-			<li>Delete the module list from <code>env.php</code>. The module list looks similar to the following:<br />
-				<pre>return array (
-  'modules' =&gt;
-  array (
-    'Magento_Store' =&gt; 1,
-    'Magento_Directory' =&gt; 1,
-    'Magento_Backend' =&gt; 1,
-    'Magento_Backup' =&gt; 1,
-    'Magento_Theme' =&gt; 1,
-    'Magento_CacheInvalidate' =&gt; 1,
-    'Magento_Eav' =&gt; 1,
-    'Magento_Customer' =&gt; 1,
-    'Magento_CatalogImportExport' =&gt; 1,
-    'Magento_Indexer' =&gt; 1,
-    'Magento_Cms' =&gt; 1,
-    'Magento_Search' =&gt; 1,
-    'Magento_Catalog' =&gt; 1,
-   ... more
-  ),</pre></li>
-  <li>Save your changes to <code>env.php</code> and exit the text editor.</li>
-  <li>Open <code>config.php</code> in a text editor.</li>
-  <li>Delete from <code>config.php</code> everything <em>except</em> the module list.</li>
-  <li>Save your changes to <code>config.php</code> and exit the text editor.</li>
-</ol>
-
 <h4 id="related-topic">Related topic</h4>
-
 <p><a href="/guides/v2.0/config-guide/config/config-files.html">Module configuration files</a></p>
 
 
