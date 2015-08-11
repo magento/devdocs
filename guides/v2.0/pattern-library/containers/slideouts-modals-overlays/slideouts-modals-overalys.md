@@ -219,3 +219,14 @@ When field level validation is triggered resulting message should appear and per
 <img src="img/overlay7.jpg">
 (Data-table with Confirmation Message)<br>
 
+
+<h3 id="assets">Assets</h3>
+
+<a href="src/Slide-out-Panels.psd">Download Slide-out Panels PSD source</a>
+
+<a href="src/Modal.psd">Download Modal PSD source</a>
+
+
+
+
+
