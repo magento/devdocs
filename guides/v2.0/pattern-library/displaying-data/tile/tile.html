@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/pattern-library/navigation/wizard/wizard.html">
+	<link rel="canonical" href="//guides/v2.0/pattern-library/displaying-data/tile/tile.html">
 
 </head>	
 <body>
@@ -150,7 +150,7 @@
 	<div class="container">
 		<h1 class="page-heading">Magento Admin Pattern Library</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/pattern-library/navigation/wizard/wizard.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/pattern-library/displaying-data/data-table-filters/tile.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -159,145 +159,111 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2> Wizard </h2>
+		<h2>Tile</h2>
 
-<h3> Contents </h3>
-
+<h3>Contents</h3>
 <ul>
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#when-to-use">When to Use</a></li>
-  <li><a href="#when-not-to-use">When Not to Use</a></li>
-  <li><a href="#how-to-use">How to Use</a></li>
-  <li><a href="#structure">Structure</a></li>
-  <li><a href="#style">Style</a></li>
-  <li><a href="#interaction-and-behavior">Interaction and Behavior</a></li>
-  <li><a href="#variations">Variations</a></li>
+  <li><a href="#overview"> Overview</a></li>
+  <li><a href="#tiles">Use of Tiles</a></li>
+  <li><a href="#draganddrop">Drag and Drop</a></li>
+  <li><a href="#remove">Removing Tiles</a></li>
+  <li><a href="#herocheckbox">Hero Product Checkbox and Link</a></li>
+  <li><a href="#position">Advancing Position</a></li>
+  <li><a href="#numerical">Numerical Input</a></li>
+  <li><a href="#selection">Multi-selection and Selection Indicators</a></li>
+  <li><a href="#heroproduct">Hero Product Section</a></li>
+  <li><a href="#styling">Styling and Spacing</a></li>
   <li><a href="#assets">Assets</a></li>
 </ul>
 
 <h3 id="overview">Overview</h3>
+<p>This article contains examples of the Tile pattern used in the Admin with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.</p>
 
-<p>Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.</p>
-
-<p>For solutions not described in this article or for further information, please contact the Magento UX Design Team.</p>
-
-<h3 id="when-to-use">When to Use</h3>
+<h2>Functional Behavior</h2>
 <ul>
-  <li>Use this pattern when the user needs to go through a process to accomplish a task that is complex and contains several steps. </li>
-</ul>
+	<li>Drag and Drop</li>
+	<li>Remove</li>
+	<li>Hero Product checkbox and link</li>
+	<li>Advance position left and right</li>
+	<li>Numerical input box</li>
+	<li>Multi selection</li>
+	<li>Hero Product Section</li>
 
-<h3 id="when-not-to-use">When Not to Use</h3>
-<ul>
-  <li>The wizard bar should not co-exist with a button bar. Only one can be present per page/modal.</li>
-  <li>Be careful when using this pattern. Wizard is a bad choice when users are experts and/or the task is done often, because Wizard has negative effect on efficiency and user control.</li>
-</ul>
 
-<h3 id="how-to-use">How to Use</h3>
-<ul>
-  <li>Break up a task into logical, titled steps.</li>
-  <li>Keep the number of steps at the minimum.</li>
-  <li>Remove or hide unnecessary interface elements that are not necessary for completing the task.</li>
-  <li>If possible, allow some freedom for the experts.</li>
-  <li>Show a sequence map of all the steps in the Wizard at the top of each page.</li>
-  <li>Show a summary on the last page (if necessary).</li>
-</ul>
+<h3 id="tiles">Use of Tiles</h3>
+Tiles will be needed anytime there is a grid view option available. Tiles are a visual representation of the data table and are easily scan-able.
+<br />
+<br />
+<img src="img/tile01.jpg" />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-<h3 id="structure">Structure</h3>
-<p>The whole structure must be responsive and fluid.</p>
+<h3 id="draganddrop">Drag and Drop</h3>
+The gripper handle in the top left corner of the tile is used when the capability of dragging and dropping is needed. When an item is dragged out and moved to a desired location, the drop area is highlighted to show the acceptable region. Once dropped, the pick-up area disappears. If an item cannot be dropped into a specific location-the drop area will not be shown. Drag and drop functionality can only be used on a single page, the user cannot drag and drop across multiple pages. 
 
-<p><img src="img/structure-wizard.jpg" /></p>
+<h3 id="remove">Removing Tiles</h3>
+The X in the top right corner of the tile will remove the tile from the category but not delete it from the actual product catalog. When a tile is selected to be removed, the user is prompted with a 1-2 second alert stating, “This product is now being removed from the category.”
+<br />
+<br />
 
-<p><strong>1. Wizard Title</strong>
-This would be the page/modal title</p>
+<h3 id="herocheckbox">Hero Product Checkbox and Link</h3>
+To make a product a Hero Product, the user must select the checkbox and/or the Hero Product link to promote the tile to the top of the category. When the checkbox and/or Hero Product link is selected, a 1-2 second alert stating “This product is now a hero product” will appear and fade away. (The user has the option to opt out of these alerts.) Once a tile becomes a “Hero” a 1px yellow stroke highlights the tile at the top of the category.
+<br />
+<br />
+<img src="img/tile02.jpg" />
+<br />
+<br />
 
-<p><strong>2. Wizard Progress</strong>
-Placement is always on the most left. The width is fluid, depending on the screen size. Must be in one line. The width can go as long to reach the buttons. But if there is not enough room, see <strong>Variation 4</strong> at the bottom of this document.</p>
+<h3 id="herocheckbox">Removing Hero Product Checkbox and Link</h3>
+To remove a product from the hero space, the user must deselect the checkbox and/or click the Hero Product link. When the checkbox and/or Hero Product link is selected, a 1-2 second alert stating, “This product is being removed” will appear and fade away. (The user has the option to opt out of these alerts.) Once selected, the tile will move to the first position in the category.
+<br />
+<br />
+<img src="img/tile03.jpg" />
+<br />
+<br />
 
-<p><strong>3. Action Buttons and Links</strong>
-The additional links and buttons needed must be between the Wizard Progress and Next &amp; Back buttons.</p>
+<h3 id="position">Advancing Position</h3>
+The user has the ability to advance a tile to the first position in the category and/or the last position in a category by selecting either the move first position icon, move up one icon, move down one icon or move last position icon. These icons help a user quickly move products around in a category and across multiple pages.
+<br />
+<br />
+<img src="img/tile04.jpg" width="200px" />
+<br />
+<br />
 
-<p><strong>4. Next &amp; Back buttons</strong>
-These buttons must be present at all time and in every step of the wizard. If the button is not needed, it can be disabled. Placement is fixed at the most right of the whole container.</p>
+<h3 id="numerical">Numerical Input</h3>
+Clicking in the input field will allow the user to manually enter a numeric order and have the tile move to the position entered. If a tile is already in the chosen position, the tile will then move one space to the right and the new numeric value entered will take the position. Once the user enters a numeric value, using the keyboard and hitting return will move the tile to the entered position.
+<br />
+<br />
+<img src="img/tile05.jpg" width="200px" />
+<br />
+<br />
 
-<p><strong>5. Step Labels</strong>
-These labels are optional. Although long labels are not recommended, it is possible. The labels can flow to the next line but only two lines permitted. Any extra text are not shown but the ‘…’ will be use to indicate that the label has extra text. </p>
+<h3 id="selection">Multi-selection and Selection Indicators</h3>
+The user can select multiple tiles at one time by keyboard command (SHIFT and COMMAND) and selecting individual tiles. When tiles are dropped in the desired location, the tiles will be arranged according to how they were selected. (The first tile selected will be the first tile in the dropped position and all other tiles selected will arrange according to selection.)
 
-<p><strong>6. Current Step Title</strong>
-This should always be in the format “Step #: Step Label”. </p>
+<h3 id="heroproduct">Hero Product Section</h3>
+Once a tile becomes a “Hero” a 1px yellow stroke highlights the tile at the top of the category. The user can have infinite hero products in a category. When there is more than one product highlighted in the hero space at the top of the category, the user can drag and drop tiles within the highlighted hero space. (Ex: A user can drag and drop the first hero tile to the last hero position as long as it is on the same page) The advance position icons and numeric input field are not active while a tile is in the hero position. To activate the advance position and numeric input field, the user must remove the tile from the hero space.
+<br />
+<br />
+<img src="img/tile06.jpg" />
+<br />
+<br />
 
-<h3 id="style">Style</h3>
-<p>Refer to below for basic styling. The special cases of styling can be found under variations.
-<img src="img/wizard-pattern-styles.jpg" /></p>
-
-<h3 id="interaction-and-behavior">Interaction and Behavior</h3>
-
-<p><strong>Content Behavior</strong>
-User navigate between steps of the wizard by clicking ‘Back’ or ‘Next’ button.
-The ‘Back’ or ‘Next’ buttons should only change/refreshes the content area, not the whole page. </p>
-
-<p><strong>Fillings Animation</strong>
-No animation</p>
-
-<p><strong>Back Buttons behavior</strong>
-In every first step, back button is disabled. In all other steps, back button becomes enabled.</p>
-
-<p><strong>Next Buttons behavior</strong>
-If next button exist in the very last step, it should always be disabled. (Note: refer to variations section of this document, some cases may not have next button in last step.</p>
-
-<p>If a step required that the user complete the steps before proceeding, next button maybe disabled for that step.</p>
-
-<p><strong>Visited States behavior</strong>
-If the user is creating a new flow using wizard, the future steps can be disabled. But if a user is EDITING an existing flow using wizard, all steps in the progress-bar will be accessible. The visited states does NOT behave like a visited link. The system should remember if the flow have been visited before even though the visitation is not from the same browser session.</p>
-
-<p><strong>Other Navigation</strong> (besides back and next buttons)
-<img src="img/wizard-pattern-behavior.jpg" /></p>
-
-<h3 id="variations"> Variations </h3>
-
-<h4>1. Basic Process (i.e. Deploy tool)</h4>
-
-<p>In the first step, back button is disabled. 
-<img src="img/Variation1.1.png" /></p>
-
-<p><img src="img/Variation1.2.png" /></p>
-
-<p>In the last step, next button is disabled.</p>
-
-<p><img src="img/Variation1.3.png" /></p>
-
-<h4>2. Process with Save Functionality at Any Step</h4>
-
-<p>In the first step, back button is disabled, and next button is enabled. Save button is present so the user who only need to edit specific step, can ‘Save’ right after they are done editing.
-<img src="img/Variation3.1.png" /></p>
-
-<p>Any other steps, Save button is present. Both ‘Back’ and ‘Next’ buttons are enabled.
-<img src="img/Variation3.2.png" /></p>
-
-<p>‘Next’ button becomes disabled. The user will use ‘Save’ button for saving.
-<img src="img/Variation3.3.png" /></p>
-
-<h4>3. Process with many steps that cannot fit in the given section</h4>
-
-<p>It is not recommended to have too many steps for a wizard. But if a use case arise such that your extension will have many steps that cannot fit the available space, please follow this truncation rule if not all steps in the navigation can be visible at once. This case may happen based on multiple reasons such as screen size changes, too many buttons, or simply too many steps.</p>
-
-<p>(for specific styling of this variation, refer to the link to .psd files in Assets.)</p>
-
-<p><img src="img/Variation4.png" /></p>
+<h3 id="styling">Stlying and Spacing</h3>
+For specific details concerning styling including fonts, colors and effects and spacing and padding, please refer to the source PSD files and exports located on Box or contact the Magento Product Design and User Experience team.
+<br />
+<br />
+<img src="img/tile07.jpg" />
+<br />
+<br />
 
 <h3 id="assets">Assets</h3>
-
-<p>Please reach out to the Magento UX Design team if you need anything else.</p>
-
-<p><a href="src/wizard-pattern-styles.psd">Download Wizard Style - PSD source</a></p>
-
-<p><a href="src/Variation1.psd">Download Variation 1 - PSD source</a></p>
-
-<p><a href="src/Variation2.psd">Download Variation 2 - PSD source</a></p>
-
-<p><a href="src/Variation3.psd">Download Variation 3 - PSD source</a></p>
-
-<p><a href="src/Variation3.psd">Download Variation 4 - PSD source</a></p>
-
+Download <a href="src/tile-pattern-styles.zip">ZIP</a> of PhotoShop source files.
+</ul>
 
 
 		</div>
@@ -434,7 +400,7 @@ If the user is creating a new flow using wizard, the future steps can be disable
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/pattern-library/displaying-data/tile/tile.html">Tile</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/pattern-library/displaying-data/tile/tile.html">Tile</a></li>
 						
 								
 								
@@ -566,7 +532,7 @@ If the user is creating a new flow using wizard, the future steps can be disable
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/pattern-library/navigation/wizard/wizard.html">Wizard</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/pattern-library/navigation/wizard/wizard.html">Wizard</a></li>
 						
 								
 								
@@ -782,8 +748,8 @@ If the user is creating a new flow using wizard, the future steps can be disable
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/navigation/wizard/wizard.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/navigation/wizard/wizard.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/displaying-data/tile/tile.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/displaying-data/tile/tile.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
