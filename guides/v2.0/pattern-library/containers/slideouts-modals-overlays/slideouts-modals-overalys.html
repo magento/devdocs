@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/pattern-library/navigation/wizard/wizard.html">
+	<link rel="canonical" href="//guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html">
 
 </head>	
 <body>
@@ -150,7 +150,7 @@
 	<div class="container">
 		<h1 class="page-heading">Magento Admin Pattern Library</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/pattern-library/navigation/wizard/wizard.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/contentContainer.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -159,144 +159,232 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2> Wizard </h2>
+		<h2> Slide-out Panels, Modal Windows, and Overlays</h2>
 
 <h3> Contents </h3>
 
 <ul>
   <li><a href="#overview">Overview</a></li>
-  <li><a href="#when-to-use">When to Use</a></li>
-  <li><a href="#when-not-to-use">When Not to Use</a></li>
-  <li><a href="#how-to-use">How to Use</a></li>
-  <li><a href="#structure">Structure</a></li>
-  <li><a href="#style">Style</a></li>
-  <li><a href="#interaction-and-behavior">Interaction and Behavior</a></li>
-  <li><a href="#variations">Variations</a></li>
+  <li><a href="#slideouts">Slide Out</a></li>
+  <li><a href="#modals">Modals</a></li>
+  <li><a href="#overlays">Overlays</a></li>
   <li><a href="#assets">Assets</a></li>
 </ul>
 
 <h3 id="overview">Overview</h3>
 
-<p>Within the Magento application, it is often necessary to guide a user step-by-step through completing a process. By using a wizard, user can complete a task easier because the user can just follow a preplanned, step-by-step path to accomplish his/her goal. It also increases the chances that the task gets completed successfully.</p>
+<p>Within the Magento application it is often necessary to focus the user’s attention on some particular bit of content or isolated action, process or sub-process. A “Slide-out Panel”, “Modal Window” or “Overlay” is an effective way to achieve this. These are triggered by a particular user action causing their current task to be interrupted. The user must then take some required action to be returned to their primary task and continue (in most cases). The active state of any of overlays should occupy the topmost level of the z-index.</p>
 
-<p>For solutions not described in this article or for further information, please contact the Magento UX Design Team.</p>
+<p>For solutions not described in this article or for further information, please contact the Magento UX Design team.</p>
 
-<h3 id="when-to-use">When to Use</h3>
+<p><strong>Use of Slide-out Panels (aka “Slideouts”)</strong></p>
+
+<p>Slide-out panels should be used for tertiary actions or sub-processes related to the user’s primary path. These panels allow for greater content and/or more complex interactions thus behaving much like an additional webpage while maintaining a contextual connection to the primary task.  </p>
+
+<p><strong>Use of Modal Windows (aka “Modals”)</strong></p>
+
+<p>Modal windows are best used to focus attention either on some particular content (such as a video), or to confirm an action or decision (such as “Do you wish to delete the selected files”). Typically modals should be used when the information presented is more concise and the interactions are less complex (than that used in slideouts). </p>
+
+<p><strong>Use of Modal Overlay</strong></p>
+
+<p>Overlays, for the purposes of this document, generally refer to any content that appears over the primary page when triggered. Overlays also refer more specifically to those containers used to present actions, navigation, filtering options, tooltips and contextual help, messages, etc.  See examples below.</p>
+
+<h3 id="slideouts">Slide-out</h3>
+<p><strong>Behavior and Animation</strong></p>
+
+<p>When the slideout is triggered (by an action taken on the “parent page”), the panel will appear to slide into position in the viewport from right-to-left. The panel should be attached to the top of the browser and match the length of the parent page. In its final position, the panel should not fully obscure the parent page, leaving a portion of the lower parent page in view. The lower parent page is disabled when the slideout is active. This is achieved by covering the parent page with a transparent shade. The page-over-page appearance will help focus the user’s attention on the active sub-task while providing context of this “interruption” to the primary task.
+<br /></p>
+
+<p><img src="img/slideout-panel1.png" />
+<br /></p>
+
+<p>(Example of panel animation)
+<br />
+<br />
+<strong>Anatomy of Slideout</strong></p>
+
+<p>The active panel should include the following elements:</p>
+
 <ul>
-  <li>Use this pattern when the user needs to go through a process to accomplish a task that is complex and contains several steps. </li>
+  <li>
+    <p>Content container (Panel)</p>
+  </li>
+  <li>
+    <p>A Page title</p>
+  </li>
+  <li>
+    <p>Close control “X” (ESC-key via keyboard)</p>
+  </li>
+  <li>
+    <p>Button bar for actions, including a “Cancel” (ESC-key is Cancel via keyboard)</p>
+  </li>
+  <li>
+    <p>Page content</p>
+  </li>
+  <li>
+    <p>“Shade” to disable lower level page</p>
+  </li>
 </ul>
 
-<h3 id="when-not-to-use">When Not to Use</h3>
+<p><br />
+<img src="img/slideout-panel2.png" /><br /></p>
+
+<p>(Example of active panel positioned over “parent”)
+<br />
+<br /></p>
+
+<p><strong>Cancel and Close controls</strong></p>
+
+<p>The close control ( X ) and the “Cancel” link/button will cancel the sub-process, close the panel and return the user to their primary path. The ESC-key via keyboard will close/cancel the upper-most open panel. </p>
+
+<p><img src="img/slideout-panel3.png" /><br /></p>
+
+<p>(Close and cancel controls)
+<br /></p>
+
+<p><strong>Passive Close</strong></p>
+
+<p>The user may also click or tap in the “alley” (shaded area) to the left of the active panel to cancel/close the panel. This passive control allows the user to drill down to the desired level without the need to close each panel via the cancel or close controls.</p>
+
+<p><img src="img/slideout-panel4.png" /><br />
+<br /></p>
+
+<p>When two panels are open (one over the other), only the topmost is active. Clicking or tapping the in the “alley” (on the edge of the lower panel) the top active panel closes, making the panel underneath active. 
+<br /></p>
+
+<p><img src="img/slideout-panel5.png" /><br /></p>
+
+<p>(Passive close “zone” - one level down)
+<br /></p>
+
+<p>Clicking or tapping the “alley” that represents the parent page (lowest level) will slide each panel out of view, closing them, and return the user to the parent page. It is recommended that no more than two panels be used in any given “task flow”. 
+<br /></p>
+
+<p><img src="img/slideout-panel6.png" /><br /></p>
+
+<p>(Passive close “zone” - two levels down)
+<br />
+<br />
+<strong>Slideouts and Page-grids</strong></p>
+
+<p>In its final position the panel does not snap to the page-grid of the parent page, but rather should respect some distance from the left edge of the browser. This distance provides an “alley” that creates a page-over-page metaphor. This distance should be some % of the viewport, rather than a fixed pixel width, to accommodate for variations in browser widths.<br />
+<br />
+<img src="img/slideout-panel7.png" /><br /></p>
+
+<p>(Panel position in relation to browser edge)
+<br />
+<br />
+A 12-column page-grid is nested inside the content area of the slideout panel, with an additional 15px of padding added to the left edge.</p>
+
+<p><img src="img/slideout-panel8.png" /><br /></p>
+
+<p>(Nested page-grid with additional padding)</p>
+
+<p><br />
+This method of nesting a 12-column page-grid inside the slideout panel is repeated with each subsequent panel. This is done so that the panels can easily accommodate established page templates used in the Magento framework. With each additional panel, the position of the active panel should indent to create the page-over-page metaphor and allow a zone(s) for the passive close interaction mentioned above.</p>
+
+<p><img src="img/slideout-panel9.png" /><br /></p>
+
+<h3 id="modals">Modals</h3>
+
+<p><strong>Behavior and Animation</strong></p>
+
+<p>When an action is taken that triggers a modal, the modal window should appear center-aligned in the user’s browser window. The modal should appear to fade in or grow from the center of the screen. The timing of this animation should be set to about 0.3s (see an <a href="http://tympanus.net/Development/ModalWindowEffects/"> example of the animation here </a>, refer to “FADE IN &amp; SCALE” option). When the modal is triggered, the parent page should become disabled and shaded while the modal is active. 
+<br /></p>
+
+<p><img src="img/modal1.png" /><br />
+(Example of a Confirmation Modal)
+<br />
+<br />
+<strong>Anatomy of a Modal</strong></p>
+
+<p>The active modal should include the following elements:</p>
+
 <ul>
-  <li>The wizard bar should not co-exist with a button bar. Only one can be present per page/modal.</li>
-  <li>Be careful when using this pattern. Wizard is a bad choice when users are experts and/or the task is done often, because Wizard has negative effect on efficiency and user control.</li>
+  <li>
+    <p>Content container (Modal Window)</p>
+  </li>
+  <li>
+    <p>A Title</p>
+  </li>
+  <li>
+    <p>Close control “X” (ESC-key via keyboard)</p>
+  </li>
+  <li>
+    <p>Page content</p>
+  </li>
+  <li>
+    <p>Call to action(s), including “Cancel” (ESC-key is Cancel via keyboard)</p>
+  </li>
+  <li>
+    <p>“Shade” to disable lower level page</p>
+  </li>
 </ul>
 
-<h3 id="how-to-use">How to Use</h3>
-<ul>
-  <li>Break up a task into logical, titled steps.</li>
-  <li>Keep the number of steps at the minimum.</li>
-  <li>Remove or hide unnecessary interface elements that are not necessary for completing the task.</li>
-  <li>If possible, allow some freedom for the experts.</li>
-  <li>Show a sequence map of all the steps in the Wizard at the top of each page.</li>
-  <li>Show a summary on the last page (if necessary).</li>
-</ul>
+<p><strong>Cancel and Close controls</strong></p>
 
-<h3 id="structure">Structure</h3>
-<p>The whole structure must be responsive and fluid.</p>
+<p>Every modal should include a close control ( X ) in the upper right corner as well as a “Cancel” link or button.  Additionally, if the user clicks or taps the shaded area outside of the modal container the modal will cancel and close. The ESC-key via keyboard will close/cancel the active modal window.</p>
 
-<p><img src="img/structure-wizard.jpg" /></p>
+<p><br />
+<img src="img/modal3.png" /><br /></p>
 
-<p><strong>1. Wizard Title</strong>
-This would be the page/modal title</p>
+<p>(Modal “Cancel” and “Close” controls)
+<br />
+<br />
+<strong>Modal Dimensions</strong></p>
 
-<p><strong>2. Wizard Progress</strong>
-Placement is always on the most left. The width is fluid, depending on the screen size. Must be in one line. The width can go as long to reach the buttons. But if there is not enough room, see <strong>Variation 4</strong> at the bottom of this document.</p>
+<p>The modal should be center-aligned in the user’s browser window and be 75% of the viewport width. The content within the modal window should flex accordingly to the width of the browser window and the modal width. </p>
 
-<p><strong>3. Action Buttons and Links</strong>
-The additional links and buttons needed must be between the Wizard Progress and Next &amp; Back buttons.</p>
+<p><img src="img/modal4.png" /><br /></p>
 
-<p><strong>4. Next &amp; Back buttons</strong>
-These buttons must be present at all time and in every step of the wizard. If the button is not needed, it can be disabled. Placement is fixed at the most right of the whole container.</p>
+<p>The distance of the modal to the top of the browser should have a fixed distance and NOT be percentage-based. This will insure that the “title” and top “close control” will be visible if the modal window is taller than the viewport. Within the content area of the modal window itself there should be 30px padding.
+<br /></p>
 
-<p><strong>5. Step Labels</strong>
-These labels are optional. Although long labels are not recommended, it is possible. The labels can flow to the next line but only two lines permitted. Any extra text are not shown but the ‘…’ will be use to indicate that the label has extra text. </p>
+<p><img src="img/modal5.png" /><br /></p>
 
-<p><strong>6. Current Step Title</strong>
-This should always be in the format “Step #: Step Label”. </p>
+<p>(Placement and Padding of Modal)<br /></p>
 
-<h3 id="style">Style</h3>
-<p>Refer to below for basic styling. The special cases of styling can be found under variations.
-<img src="img/wizard-pattern-styles.jpg" /></p>
+<p><img src="img/modal6.png" /><br /></p>
 
-<h3 id="interaction-and-behavior">Interaction and Behavior</h3>
+<p>(Sample of progress bar in modal)<br /></p>
 
-<p><strong>Content Behavior</strong>
-User navigate between steps of the wizard by clicking ‘Back’ or ‘Next’ button.
-The ‘Back’ or ‘Next’ buttons should only change/refreshes the content area, not the whole page. </p>
+<h3 id="overlays">Overlays</h3>
 
-<p><strong>Fillings Animation</strong>
-No animation</p>
+<p><strong>Drop downs</strong></p>
 
-<p><strong>Back Buttons behavior</strong>
-In every first step, back button is disabled. In all other steps, back button becomes enabled.</p>
+<p>Drop down overlays behave just as drop down form elements do. A button or control toggles the drop down opened and closed. Selecting an option from the expanded list selects that option and closes the overlay.</p>
 
-<p><strong>Next Buttons behavior</strong>
-If next button exist in the very last step, it should always be disabled. (Note: refer to variations section of this document, some cases may not have next button in last step.</p>
+<p><img src="img/overlay1.jpg" />
+(Examples of drop down overlays)<br /></p>
 
-<p>If a step required that the user complete the steps before proceeding, next button maybe disabled for that step.</p>
+<p><strong>Flyouts</strong></p>
 
-<p><strong>Visited States behavior</strong>
-If the user is creating a new flow using wizard, the future steps can be disabled. But if a user is EDITING an existing flow using wizard, all steps in the progress-bar will be accessible. The visited states does NOT behave like a visited link. The system should remember if the flow have been visited before even though the visitation is not from the same browser session.</p>
+<p>Flyouts are overlays that typically emerge from a link, menu heading, or other control. They are somewhat different than drop downs in that they create a sort of “tab” around the control that triggered them.</p>
 
-<p><strong>Other Navigation</strong> (besides back and next buttons)
-<img src="img/wizard-pattern-behavior.jpg" /></p>
+<p><img src="img/overlay2.jpg" />
+(Data-table Filtering Flyout)<br /></p>
 
-<h3 id="variations"> Variations </h3>
+<p><img src="img/overlay3.jpg" />
+(Data-table In-line Editing Flyout)<br /></p>
 
-<h4>1. Basic Process (i.e. Deploy tool)</h4>
+<p><img src="img/overlay4.jpg" />
+(Sub-menu Navigation Flyout)<br /></p>
 
-<p>In the first step, back button is disabled. 
-<img src="img/Variation1.1.png" /></p>
+<p><strong>Contextual Help</strong></p>
 
-<p><img src="img/Variation1.2.png" /></p>
+<p>Contextual Help is similar to a “tooltip” element, except that it is revealed by clicking or tapping a control and dismissed by tapping again, or by opening another Contextual Help element on the page.</p>
 
-<p>In the last step, next button is disabled.</p>
+<p><img src="img/overlay5.jpg" />
+(Example of Contextual Help)<br /></p>
 
-<p><img src="img/Variation1.3.png" /></p>
+<p><strong>Alerts and Messages</strong></p>
 
-<h4>2. Process with Save Functionality at Any Step</h4>
-
-<p>In the first step, back button is disabled, and next button is enabled. Save button is present so the user who only need to edit specific step, can ‘Save’ right after they are done editing.
-<img src="img/Variation3.1.png" /></p>
-
-<p>Any other steps, Save button is present. Both ‘Back’ and ‘Next’ buttons are enabled.
-<img src="img/Variation3.2.png" /></p>
-
-<p>‘Next’ button becomes disabled. The user will use ‘Save’ button for saving.
-<img src="img/Variation3.3.png" /></p>
-
-<h4>3. Process with many steps that cannot fit in the given section</h4>
-
-<p>It is not recommended to have too many steps for a wizard. But if a use case arise such that your extension will have many steps that cannot fit the available space, please follow this truncation rule if not all steps in the navigation can be visible at once. This case may happen based on multiple reasons such as screen size changes, too many buttons, or simply too many steps.</p>
-
-<p>(for specific styling of this variation, refer to the link to .psd files in Assets.)</p>
-
-<p><img src="img/Variation4.png" /></p>
-
-<h3 id="assets">Assets</h3>
-
-<p>Please reach out to the Magento UX Design team if you need anything else.</p>
-
-<p><a href="src/wizard-pattern-styles.psd">Download Wizard Style - PSD source</a></p>
-
-<p><a href="src/Variation1.psd">Download Variation 1 - PSD source</a></p>
-
-<p><a href="src/Variation2.psd">Download Variation 2 - PSD source</a></p>
-
-<p><a href="src/Variation3.psd">Download Variation 3 - PSD source</a></p>
-
-<p><a href="src/Variation3.psd">Download Variation 4 - PSD source</a></p>
+<p>Within the Magento application it is often necessary and helpful to provide feedback to the user as to the success or failure of an action or process. This feedback may come in the form of client-side validation or server-side validation. 
+<img src="img/overlay6.jpg" />
+(Field Level Validation message)<br />
+When field level validation is triggered resulting message should appear and persist until the user has taken an action to correct the error (for example, clicks into the form field to re-type an incorrect password). 
+<img src="img/overlay7.jpg" />
+(Data-table with Confirmation Message)<br /></p>
 
 
 
@@ -370,7 +458,7 @@ If the user is creating a new flow using wizard, the future steps can be disable
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html">Slide-out, Modals, and Overlays</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html">Slide-out, Modals, and Overlays</a></li>
 						
 								
 								
@@ -570,7 +658,7 @@ If the user is creating a new flow using wizard, the future steps can be disable
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/pattern-library/navigation/wizard/wizard.html">Wizard</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/pattern-library/navigation/wizard/wizard.html">Wizard</a></li>
 						
 								
 								
@@ -786,8 +874,8 @@ If the user is creating a new flow using wizard, the future steps can be disable
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/navigation/wizard/wizard.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/navigation/wizard/wizard.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
