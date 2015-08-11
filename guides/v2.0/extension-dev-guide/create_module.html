@@ -174,6 +174,7 @@
 <ol>
   <li>Build the file structure for the module, with the appropriate “building block” directories</li>
   <li>Create the <code>module.xml</code> file, with a namespace and name for the new module </li>
+  <li>Install the module</li>
 </ol>
 
 <p>In subsequent topics, we will discuss which configuration files are needed for your new module. The required configuration files depend on how you plan to use the module: will it be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call?</p>
@@ -214,7 +215,7 @@
 <p>Minimal declaration sample:</p>
 
 <pre><code>&lt;config&gt;
-   &lt;module name="Vendor_ModuleName" schema_version="2.0.0" setup_version="2.0.0"&gt;
+   &lt;module name="Vendor_ModuleName" setup_version="2.0.0"&gt;
    &lt;/module&gt;
 &lt;/config&gt;
 </code></pre>
@@ -223,6 +224,17 @@
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
   <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them!</p>
  </div>
+
+<h2 id="install-module">Install Module</h2>
+<p>The last step is to install the module.</p>
+
+<ol>
+  <li>Disable the Cache under System-&gt;Cache Management</li>
+  <li>In base directory run bin/magento setup:upgrade</li>
+  <li>Check under Stores-&gt;Configuration-&gt;Advanced-&gt;Advanced that the module is present</li>
+</ol>
+
+<p>Your module is now installed.</p>
 
 
 		</div>
