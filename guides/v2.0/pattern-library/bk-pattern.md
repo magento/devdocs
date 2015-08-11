@@ -30,6 +30,7 @@ Browse the Design Pattern Library here:
 <a href="controls/button-bar/button-bar.html">Button Bar</a>
 
 ####Displaying and Dealing with Data
+<a href="displaying-data/tile/tile.html">Tile</a>
 <a href="filters/data-table-filters/filtering.html">Filters</a>
 
 
