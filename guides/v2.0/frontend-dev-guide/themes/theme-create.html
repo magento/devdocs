@@ -275,10 +275,15 @@ app/design/frontend/
   <li>
     <p>Configure all storefront product image sizes in <code>view.xml</code>.
 For example, you can make the category grid view product images square by specifying a size of 250 x 250 pixels, here is how the corresponding configuration would look like:</p>
-
-    <script src="https://gist.github.com/xcomSteveJohnson/6bd0d569248e5a925a10.js"></script>
   </li>
 </ol>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml">...
+    <span class="nt">&lt;image</span> <span class="na">id=</span><span class="s">&quot;category_page_grid&quot;</span> <span class="na">type=</span><span class="s">&quot;small_image&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;width&gt;</span>250<span class="nt">&lt;/width&gt;</span>
+        <span class="nt">&lt;height&gt;</span>250<span class="nt">&lt;/height&gt;</span>
+    <span class="nt">&lt;/image&gt;</span>
+...</code></pre></div>
 
 <h2 id="fedg_theme_how-to_static">Create directories for static files</h2>
 
