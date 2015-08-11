@@ -44,7 +44,7 @@ This article contains examples of the Tile pattern used in the Admin with functi
 Tiles will be needed anytime there is a grid view option available. Tiles are a visual representation of the data table and are easily scan-able.
 <br />
 <br />
-<img src="img/Tile01.jpg">
+<img src="img/Tile00.jpg">
 <br />
 <br />
 <br />
