@@ -336,7 +336,7 @@ In order to support the translation of content, all strings in emails are output
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
 
-Please note, that variable assignment must not contain spaces. Exception: a method call can contain spaces if it is enclosed in brackets.
+Please note, that variable assignment must not contain spaces. 
 
 Correct:
 
@@ -344,16 +344,17 @@ Correct:
     {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
     {% endraw %}
 
-Also correct:
-
-    {% raw %}
-    {{trans "Thank you for your order from %store_name." store_name="$store.getFrontendName(a, b)"}}
-    {% endraw %}
-
 Incorrect:
     {% raw %}
-    {{trans &quot;Thank you for your order from %store_name.&quot; store_name = $store.getFrontendName()}}
+    {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
 {% endraw %}
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>
+Exception: argument value can contain spaces if it is enclosed in brackets.
+</p>
+</div>
+
 
 <h2 id="supported-clients">Supported email clients and devices</h2>
 
