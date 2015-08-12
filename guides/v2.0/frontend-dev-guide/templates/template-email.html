@@ -542,6 +542,24 @@ Make note of this path because you will need it later when you configure this ne
 
 <p>The <code>trans</code> directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the <code>fr_FR</code> locale, the emails are translated to French.</p>
 
+<p>Please note, that variable assignment must not contain spaces. </p>
+
+<p>Correct:</p>
+
+<pre><code>{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+</code></pre>
+
+<p>Incorrect:</p>
+
+<pre><code>{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
+</code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>
+Exception: argument value can contain spaces if it is enclosed in brackets.
+</p>
+</div>
+
 <h2 id="supported-clients">Supported email clients and devices</h2>
 
 <p>We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.</p>
