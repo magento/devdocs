@@ -7,7 +7,6 @@ menu_title: Wizard
 menu_order: 2
 menu_node: 
 github_link: pattern-library/navigation/wizard/wizard.md
-redirect_from: 
 ---
 
 <h2> Wizard </h2>
