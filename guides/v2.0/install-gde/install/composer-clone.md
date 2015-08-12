@@ -46,6 +46,12 @@ To install Composer:
 	For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
+We recommend you clone the master branch because it's more stable; however, the choice is up to you.
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We're aware of issues with installing <a href="{{ site.gdeurl }}install-gde/install/sample-data.html">optional sample data</a> after cloning the develop branch. If you plan to use sample data, clone the <em>master</em> branch.</p>
+</div>
+
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 
 *	Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.
@@ -82,7 +88,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 	An example follows:
 
-		git clone git@github.com:magento/magento2.git
+		git clone -b master git@github.com:magento/magento2.git
 
 3.	Wait for the repository to clone on your server.
 
@@ -119,7 +125,7 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 	An example follows
 
-		git clone https://github.com/magento/magento2.git
+		git clone -b master https://github.com/magento/magento2.git
 
 3.	Wait for the repository to clone on your server.
 
