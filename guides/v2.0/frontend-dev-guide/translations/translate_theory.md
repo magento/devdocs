@@ -53,8 +53,6 @@ For example:
     {% endraw %}
 
 Custom email templates <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-email.html#customize-email-admin" target="_blank">added using the Admin panel</a>, are not stored in the file system, and their stings are not added to the dictionary.
-</p>
-</div>
 
 <h2 id="add_strings_ui_html">Strings added in UI components' templates</h2>
 
