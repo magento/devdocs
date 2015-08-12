@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/translations/translate_theory.md
 
 ## Overview ##
 
-Your custom theme might contain new strings, not present in the default themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of a theme are added to the translation <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run. 
+Your custom theme might contain new strings that are not present in the default themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of a theme are added to the translation <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run. 
 Then when a new language package is created and used to translate a store view, all theme strings are translated as well.
 
 This topic describes how to add theme strings in a way that they get collected by the i18n tool and are added to the dictionary.
@@ -34,10 +34,10 @@ For example:
 	<h3><?php echo __('Create Backup') ?></h3>
 {% endhighlight html+php %}
 
-If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
+If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use syntax similar to the following:
 
 {% highlight html+php%}
-    sprintf('Hello %s', $yourVariable);
+    sprintf(__('Hello %s'), $yourVariable);
 {% endhighlight html+php%}
 
 In this example, the <i>'Hello %s'</i> string is added to the dictionary when the i18n tool is run.
