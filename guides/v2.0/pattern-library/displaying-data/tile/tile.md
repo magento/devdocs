@@ -7,7 +7,6 @@ menu_title: Tile
 menu_order: 1
 menu_node:
 github_link: pattern-library/displaying-data/tile/tile.md
-redirect_from: 
 ---
 
 <h2>Tile</h2>
