@@ -336,7 +336,7 @@ In order to support the translation of content, all strings in emails are output
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
 
-Please note, that variable assignment must not contain spaces. Exception: a method call can contain spaces if it is enclosed in bracketes.
+Please note, that variable assignment must not contain spaces. Exception: a method call can contain spaces if it is enclosed in brackets.
 
 Correct:
 
