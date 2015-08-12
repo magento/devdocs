@@ -336,6 +336,30 @@ In order to support the translation of content, all strings in emails are output
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
 
+<div class="bs-callout bs-callout-info" id="info">
+<p>
+
+Please note, that variable assignment must not contain spaces. Exception: the method call can contain spaces if it is enclosed in bracketes.
+
+Correct:
+<code>
+{{trans &quot;Thank you for your order from %store_name.&quot; store_name=$store.getFrontendName()}}
+</code>
+
+<pre>
+    {{trans &quot;Thank you for your order from %store_name.&quot; store_name=&quot;$store.getFrontendName(a, b)&quot;}}
+</pre>
+
+Incorrect:
+<pre>
+    {{trans &quot;Thank you for your order from %store_name.&quot; store_name = $store.getFrontendName()}}
+</pre>
+
+
+
+</p>
+</div>
+
 <h2 id="supported-clients">Supported email clients and devices</h2>
 
 We tested responsive emails using a combination of real devices and <a href="http://litmus.com/" target="_blank">Litmus</a>. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
