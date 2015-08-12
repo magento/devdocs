@@ -10,10 +10,10 @@ github_link: frontend-dev-guide/themes/theme-config.md
 
 ## Overview ##
 
-<p class="q">Are there only two configuration files, theme.xml and view.xml?</p>
+<p class="q">Are there only two configuration files, theme.xml and view.xml? yes</p>
 
 <h2 id="view_xml">view.xml</h2>
-The properties of product images used in catalog on the storefront are stored in a `view.xml` configuration file. It's conventional location for a theme is:
+The properties of product images used on the storefront are stored in a `view.xml` configuration file. It's conventional location for a theme is:
 
 	app/design/frontend/<Vendor>/<theme>/etc/view.xml
 
@@ -56,7 +56,8 @@ Where the `id` and `types` values can be the following:
         string
       </td>
       <td colspan="1">
-        Unique image identifier (name).
+        Unique image identifier. <p>
+Can have any value, but in default Magento themes <code>id</code>'s are meaningful and describe the location of an image. <p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>. <p><code>id</code>'s are used in <code>.phtml</code> templates for defining what images are displayed in a certain location on a certain page.
       </td>
     </tr>
     <tr>
@@ -77,14 +78,16 @@ Where the `id` and `types` values can be the following:
 <li><code>swatch_image</code></li>
 <li><code>swatch_thumb</code></li>
 </ul>
+
+These types correspond to the image Roles specified in Magento Admin when adding product images:
+<img>
+<p class="q">add screenshot</p>
+
       </td>
     </tr>
 </tbody>
 </table>
 
-<p class="q">how "id"s are defined?</p>
-
-<p class="q">more details about each 'type' value?</p>
 
 Image properties are defined by the corresponding elements, for example:
 
@@ -148,7 +151,7 @@ integer
 boolean
       </td>
       <td colspan="1">
-True by default.
+If set to true, images which are smaller than required by the configuration, are not enlarged. Default value: true.
       </td>
       <td colspan="1">
         Optional
@@ -164,7 +167,7 @@ True by default.
 boolean
       </td>
       <td colspan="1">
-Maintain aspect ratio. True by default.True by default.
+If set to true, proportions of images are not changed even if required by the configuration. Default value: true.
       </td>
       <td colspan="1">
         Optional
@@ -180,7 +183,7 @@ Maintain aspect ratio. True by default.True by default.
 boolean
       </td>
       <td colspan="1">
-Show white border around the image. True by default.
+If set to true, images are not cropped. Default value: true. Applied only if <code>aspect_ratio</code> is set to true.
       </td>
       <td colspan="1">
         Optional
@@ -196,7 +199,7 @@ Show white border around the image. True by default.
 boolean
       </td>
       <td colspan="1">
-True by default.
+Is set to true, the transparent background of the images is saved. If is set to false, images have the white background (by default). You can set the color for the background using the <code>background</code> parameter. True by default.
       </td>
       <td colspan="1">
         Optional
@@ -212,7 +215,7 @@ True by default.
 array
       </td>
       <td colspan="1">
-Array of RGB values. 255, 255, 255 by default.
+The color for the images background. Not applied to images with transparency, if <code>transparency</code> is set to true.
       </td>
       <td colspan="1">
         Optional
@@ -221,4 +224,5 @@ Array of RGB values. 255, 255, 255 by default.
 </tbody>
 </table>
 
-<p class="q">better description for certain properties?</p>
+
+<p class="q">Update Create a theme topic with a link!!</p>

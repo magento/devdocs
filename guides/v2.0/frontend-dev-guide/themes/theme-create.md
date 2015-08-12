@@ -121,6 +121,8 @@ For example, you can make the category grid view product images square by specif
 ...
 {% endhighlight XML%}
 
+For details about images configuration in view.xml see the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-config.html" target="_blank">Configure images properties</a> topic.
+
 <h2 id="fedg_theme_how-to_static">Create directories for static files</h2>
 
 Your theme will likely contain several types of static files: styles, fonts, JavaScript and images.
