@@ -23,7 +23,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-i18n.html
 <h2 id="config-cli-xlate-overview">Overview of translations</h2>
 Magento translations enable you to customize and localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and maintain and reduced amount of code coupling and duplication.
 
-For more information, see <a href="{{ site.gdeurl }}architecture/behavior/xlate.html">Translation</a>.
+For more information, see <a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html">Translation</a>.
 
 This topic discusses how to generate translation dictionaries and language packages.
 
@@ -34,7 +34,7 @@ In addition to the command arguments discussed here, see <a href="{{ site.gdeurl
 <h2 id="config-cli-subcommands-xlate-dict">Generate a translation dictionary</h2>
 See one of the following sections:
 
-*	<a href="{{ site.gdeurl }}architecture/behavior/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
+*	<a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries">About translation dictionaries</a>
 *	<a href="#config-cli-subcommands-xlate-dict-dict">Work with translation dictionaries</a>
 
 <h3 id="config-cli-subcommands-xlate-dict-dict">Working with translation dictionaries</h3>
@@ -113,7 +113,7 @@ Use the following guidelines when translating words and phrases:
     	"Buy %1 for %2 (%3 incl. tax) each","Compre %1 por %2 (%3 incl. imposto) cada"
 
 <h2 id="config-cli-subcommands-xlate-pack">Create a language package</h2>
-<a href="{{ site.gdeurl }}architecture/behavior/xlate.html#m2devgde-xlate-languagepack">More information about language packages</a>.
+<a href="{{ site.gdeurl }}frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">More information about language packages</a>.
 
 To create a language package, you must perform the tasks discussed in the following sections:
 

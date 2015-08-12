@@ -22,14 +22,16 @@ Patterns are captured in articles that dictate visual design, spatial relationsh
 Browse the Design Pattern Library here:
 
 ####Container
+<a href="containers/staticContentContainer/contentContainer.html">Static Content Container</a><br>
+<a href="containers/slideouts-modals-overlays/slideouts-modals-overalys.html">Slide-out Panels, Modal Windows, and Overlays</a>
 
-<a href="containers/staticContentContainer/contentContainer.html">Static Content Container</a>
 
 ####Controls
 <a href="controls/buttons/buttons.html">Buttons</a><br>
 <a href="controls/button-bar/button-bar.html">Button Bar</a>
 
 ####Displaying and Dealing with Data
+<a href="displaying-data/tile/tile.html">Tile</a><br>
 <a href="filters/data-table-filters/filtering.html">Filters</a>
 
 
@@ -38,10 +40,14 @@ Browse the Design Pattern Library here:
 
 
 ####Getting User Input
-<a href="getting-user-input/form_elements/form_elements.html">Form Elements</a>
+<a href="getting-user-input/form_elements/form_elements.html">Form Elements</a><br>
+<a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a><br>
+<a href="getting-user-input/image_uploader/image_uploader.html">Date and Time Selector</a>
+
 
 ####Navigation
 <a href="navigation/links/links.html">Links</a><br>
+<a href="navigation/wizard/wizard.html">Wizard</a><br>
 
 
 ####Templates
