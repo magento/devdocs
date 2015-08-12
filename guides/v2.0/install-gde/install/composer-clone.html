@@ -204,6 +204,12 @@ mv composer.phar /usr/local/bin/composer</pre>
 </ol>
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
+<p>We recommend you clone the master branch because it’s more stable; however, the choice is up to you.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We're aware of issues with installing <a href="/guides/v2.0/install-gde/install/sample-data.html">optional sample data</a> after cloning the develop branch. If you plan to use sample data, clone the <em>master</em> branch.</p>
+</div>
+
 <p>You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:</p>
 
 <ul>
@@ -248,7 +254,7 @@ mv composer.phar /usr/local/bin/composer</pre>
 
     <p>An example follows:</p>
 
-    <pre><code>git clone git@github.com:magento/magento2.git
+    <pre><code>git clone -b master git@github.com:magento/magento2.git
 </code></pre>
   </li>
   <li>
@@ -294,7 +300,7 @@ fatal: The remote end hung up unexpectedly</pre>
 
     <p>An example follows</p>
 
-    <pre><code>git clone https://github.com/magento/magento2.git
+    <pre><code>git clone -b master https://github.com/magento/magento2.git
 </code></pre>
   </li>
   <li>
