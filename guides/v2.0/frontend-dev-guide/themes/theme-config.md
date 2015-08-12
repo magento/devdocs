@@ -10,6 +10,8 @@ github_link: frontend-dev-guide/themes/theme-config.md
 
 ## Overview ##
 
+<p class="q">Are there only two configuration files, theme.xml and view.xml?</p>
+
 <h2 id="view_xml">view.xml</h2>
 The properties of product images used in catalog on the storefront are stored in a `view.xml` configuration file. It's conventional location for a theme is:
 
@@ -21,19 +23,19 @@ Catalog image properties are configured in the scope of `<images module="Magento
 
 
 {% highlight xml %}
-	<images module="Magento_Catalog">
-	...
-	<images/>
+<images module="Magento_Catalog">
+...
+<images/>
 {% endhighlight xml %}
 
 Image properties are configured for each image type defined by the `id` and `type` attributes of the `<image>` element:
 
 {% highlight xml %}
-	<images module="Magento_Catalog">
-	    <image id="unique_image_id" type="image_type">
-         ...
-        </image>
-	<images/>
+<images module="Magento_Catalog">
+	<image id="unique_image_id" type="image_type">
+	...
+	</image>
+<images/>
 {% endhighlight xml %}
 
 Where the `id` and `types` values can be the following:
@@ -79,6 +81,10 @@ Where the `id` and `types` values can be the following:
     </tr>
 </tbody>
 </table>
+
+<p class="q">how "id"s are defined?</p>
+
+<p class="q">more details about each 'type' value?</p>
 
 Image properties are defined by the corresponding elements, for example:
 
@@ -214,3 +220,5 @@ Array of RGB values. 255, 255, 255 by default.
     </tr>
 </tbody>
 </table>
+
+<p class="q">better description for certain properties?</p>
