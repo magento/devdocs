@@ -42,7 +42,7 @@ p.q 	{
 /*FIX for table font sizes TDD*/
 
 
-.main-container TABLE a, .main-container TABLE p, .main-container TABLE LI, .main-container TABLE OL, .main-container TABLE UL, .main-container TABLE PRE, 
+.main-container TABLE a, .main-container TABLE p, .main-container TABLE LI, .main-container TABLE OL, .main-container TABLE UL, .main-container TABLE PRE 
 	{font-size: 1em;
 	}
 
