@@ -146,7 +146,7 @@ outline:none
 /*FIX for table font sizes TDD*/
 
 
-.main-container TABLE a, .main-container TABLE p, .main-container TABLE LI, .main-container TABLE OL, .main-container TABLE UL
+.main-container TABLE a, .main-container TABLE p, .main-container TABLE LI, .main-container TABLE OL, .main-container TABLE UL, .main-container TABLE PRE, 
 	{font-size: 1em;
 	}
 }
@@ -154,6 +154,25 @@ outline:none
 tr td {vertical-align: initial;
 	font-size: .9em;
 }
+
+
+/* FIX for table line breaks TDD*/
+
+.main-container TABLE TR, .main-container TABLE TD, .main-container TABLE TD TT
+	{word-wrap:break-word;
+
+	}
+
+/* FIX for table width TDD*/
+
+TABLE {
+    table-layout: fixed;
+    max-width: 99%;
+    width: 99%;
+}
+
+
+
 
 
 
