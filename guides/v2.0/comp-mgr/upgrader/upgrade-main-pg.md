@@ -41,8 +41,8 @@ To choose which components to upgrade:
 	<tr>
 		<td><p>Other Components button</p></td>
 		<td><p>Enables you to search for upgrades for third-party components.</p>
-			<p>To search for available component updates, click <strong>Yes</strong>.</p>
-			<p>To search only for Magento core component upgrades, click <strong>No</strong>.</td>
+			<ul><li>To search for available component updates, click <strong>Yes</strong>.</li>
+			<li>To search only for Magento core component upgrades, click <strong>No</strong>.</li></ul></td>
 	</tr>
 	<tr>
 		<td><p>Pagination</p></td>
