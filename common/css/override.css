@@ -45,8 +45,7 @@ p.q 	{
 .main-container TABLE a, .main-container TABLE p, .main-container TABLE LI, .main-container TABLE OL, .main-container TABLE UL
 	{font-size: 1em;
 	}
-}
 
 tr td {vertical-align: initial;
 	font-size: .9em;
-}
+	}
