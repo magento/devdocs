@@ -2,25 +2,24 @@
 layout: default
 group: fedg
 subgroup: A_Themes
-title: Theme configuration files
-menu_title: Theme configuration files
+title: Configure images properties for a theme
+menu_title: Configure images properties for a theme
 menu_order: 4
-github_link: frontend-dev-guide/themes/theme-config.md
+github_link: frontend-dev-guide/themes/theme-images.md
 ---
 
 ## Overview ##
 
-<p class="q">Are there only two configuration files, theme.xml and view.xml? yes</p>
-
-<h2 id="view_xml">view.xml</h2>
-The properties of product images used on the storefront are stored in a `view.xml` configuration file. It's conventional location for a theme is:
-
-	app/design/frontend/<Vendor>/<theme>/etc/view.xml
+The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what proporties are available and how to configure them.
 
 <h3 id="view_xml_structure">Configuring image properties in view.xml</h3>
 
-Catalog image properties are configured in the scope of `<images module="Magento_Catalog">` element:
+The conventional location of `view.xml` for a theme is:
+{% raw %}
+	app/design/frontend/<Vendor>/<theme>/etc/view.xml
+{% endraw %}
 
+In a `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 
 {% highlight xml %}
 <images module="Magento_Catalog">
@@ -38,7 +37,9 @@ Image properties are configured for each image type defined by the `id` and `typ
 <images/>
 {% endhighlight xml %}
 
-Where the `id` and `types` values can be the following:
+Each combination of `id` and `type` is unique. 
+<p>
+The following table describes the attributes in details:
 <table>
   <tbody>
     <tr>
@@ -56,8 +57,8 @@ Where the `id` and `types` values can be the following:
         string
       </td>
       <td colspan="1">
-        Unique image identifier. <p>
-Can have any value, but in default Magento themes <code>id</code>'s are meaningful and describe the location of an image. <p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>. <p><code>id</code>'s are used in <code>.phtml</code> templates for defining what images are displayed in a certain location on a certain page.
+        <p>Unique image identifier.</p> <p>
+Can have any value, but in default Magento themes <code>id</code>'s are meaningful and describe the location of an image. </p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>.</p> <p>For each <code>id</code> <code>id</code>'s are used in <code>.phtml</code> templates for defining what images are displayed in a certain location on a certain page.</p>
       </td>
     </tr>
     <tr>
@@ -72,23 +73,21 @@ Can have any value, but in default Magento themes <code>id</code>'s are meaningf
       <td colspan="1">
         Image type. Allowed values:
 <ul>
-<li><code>thumbnail</code></li>
-<li><code>small_image</code></li>
-<li><code>image</code></li>
-<li><code>swatch_image</code></li>
-<li><code>swatch_thumb</code></li>
+<li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
+<li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
+<li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
+<li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the Magento Admin. </li>
+<li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
 </ul>
 
-These types correspond to the image Roles specified in Magento Admin when adding product images:
-<img>
-<p class="q">add screenshot</p>
+The following picture illustrates how image roles for product images are specified in the Magento Admin:
+<img src="{{site.baseurl}}common/images/fdg_theme_bck.png" alt="Setting image role in Magento Admin">
 
       </td>
     </tr>
 </tbody>
 </table>
-
-
+</p>
 Image properties are defined by the corresponding elements, for example:
 
 {% highlight xml %}
@@ -99,6 +98,8 @@ Image properties are defined by the corresponding elements, for example:
     </image>
 </images>
 {% endhighlight xml %}
+
+<br>
 
 The following table contains the list of all properties which can be configured:
 <table>
@@ -119,7 +120,7 @@ The following table contains the list of all properties which can be configured:
 integer
       </td>
       <td colspan="1">
- Image width
+ Image width in pixels.
       </td>
       <td colspan="1">
         Optional
@@ -135,7 +136,7 @@ integer
 integer
       </td>
       <td colspan="1">
- Image height
+ Image height in pixels.
       </td>
       <td colspan="1">
         Optional
@@ -151,7 +152,7 @@ integer
 boolean
       </td>
       <td colspan="1">
-If set to true, images which are smaller than required by the configuration, are not enlarged. Default value: true.
+If set to <code>true</code>, then images which are smaller than required by the configuration, are not enlarged. Default value: <code>true</code>.
       </td>
       <td colspan="1">
         Optional
@@ -164,10 +165,10 @@ If set to true, images which are smaller than required by the configuration, are
         </code>
       </td>
       <td colspan="1">
-boolean
+booleans
       </td>
       <td colspan="1">
-If set to true, proportions of images are not changed even if required by the configuration. Default value: true.
+If set to <code>true</code>, proportions of images are not changed even if required by the configuration. Default value: <code>true</code>.
       </td>
       <td colspan="1">
         Optional
@@ -183,7 +184,7 @@ If set to true, proportions of images are not changed even if required by the co
 boolean
       </td>
       <td colspan="1">
-If set to true, images are not cropped. Default value: true. Applied only if <code>aspect_ratio</code> is set to true.
+If set to <code>true</code>, images are not cropped. Default value: <code>true</code>. Applied only if <code>aspect_ratio</code> is set to <code>true</code>.
       </td>
       <td colspan="1">
         Optional
@@ -199,7 +200,7 @@ If set to true, images are not cropped. Default value: true. Applied only if <co
 boolean
       </td>
       <td colspan="1">
-Is set to true, the transparent background of the images is saved. If is set to false, images have the white background (by default). You can set the color for the background using the <code>background</code> parameter. True by default.
+Is set to <code>true</code>, the transparent background of images is saved. If is set to <code>false</code>, images have the white background (by default). You can set the color for the background using the <code>background</code> parameter. Default value: <code>true</code>.
       </td>
       <td colspan="1">
         Optional
@@ -215,7 +216,7 @@ Is set to true, the transparent background of the images is saved. If is set to 
 array
       </td>
       <td colspan="1">
-The color for the images background. Not applied to images with transparency, if <code>transparency</code> is set to true.
+The color for the images background. Not applied to images with transparency, if <code>transparency</code> is set to <code>true</code>.
       </td>
       <td colspan="1">
         Optional
@@ -224,5 +225,3 @@ The color for the images background. Not applied to images with transparency, if
 </tbody>
 </table>
 
-
-<p class="q">Update Create a theme topic with a link!!</p>
