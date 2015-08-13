@@ -74,7 +74,24 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
       </tr>
       <tr class="even">
          <td>before</td>
-         <td>Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td><p>Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+<li>four</li>
+<li>five</li>
+</ul>
+
+<ol>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+<li>four</li>
+<li>five</li>
+</ol>
+
+         </td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
