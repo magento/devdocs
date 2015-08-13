@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/translations/translate_theory.md
 
 ## Overview ##
 
-Your custom theme might contain new strings that are not present in the default themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of a theme are added to the translation <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run. 
+Your custom theme might contain new strings that are not present in the Magento out of the box themes. To ensure that your theme is displayed correctly with any language applied on a store view, you need to make sure that the unique strings of your theme are added to the translation <a href="{{site.gdeurl}}frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> when the <a href="{{site.gdeurl}}config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict" target="_blank">i18n tool</a> is run. 
 Then when a new language package is created and used to translate a store view, all theme strings are translated as well.
 
 This topic describes how to add theme strings in a way that they get collected by the i18n tool and are added to the dictionary.
@@ -24,9 +24,9 @@ This topic describes how to add theme strings in a way that they get collected b
 - [Strings added in `.js` files](#add_strings_js)
 
 
-<h2 id="add_strings_phtml">Strings added in <code>.phtml</code> templates</h2>
+<h2 id="add_strings_phtml">Strings added in .phtml templates</h2>
 
-To ensure that your new string is added to a dictionary and translated, use the `__('<your_string>')` method when ouputting a string in a <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">.phtml template</a>.
+To ensure that your new string is added to the dictionary and translated, use the `__('<your_string>')` method when outputting a string in a <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-overview.html" target="_blank">.phtml template</a>.
 
 For example:
 
@@ -34,10 +34,10 @@ For example:
 	<h3><?php echo __('Create Backup') ?></h3>
 {% endhighlight html+php %}
 
-If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use syntax similar to the following:
+If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
 
 {% highlight html+php%}
-    sprintf(__('Hello %s'), $yourVariable);
+    <h3><?php echo sprintf(__('Hello %s'), $yourVariable) ?></h3>
 {% endhighlight html+php%}
 
 In this example, the <i>'Hello %s'</i> string is added to the dictionary when the i18n tool is run.
@@ -45,12 +45,7 @@ In this example, the <i>'Hello %s'</i> string is added to the dictionary when th
 <h2 id="add_strings_email">Strings added in email templates</h2>
 
 If your theme contains <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-email.html#customize-email-theme" target="_blank">custom email templates</a>, their strings can be added to the dictionary as well. 
-To make sure the strings of an email template are added to the dictionary, use the `{% raw %}{{trans "<your_string>"}}{% endraw %}` directive. 
-For example: 
-
-    {% raw %}
-    {{trans "Your Shipment #%shipment_id for Order #%order_id" shipment_id=$shipment.increment_id order_id=$order.increment_id}}
-    {% endraw %}
+To make sure the strings of an email template are added to the dictionary, use the  {% raw %} {{trans}}  {% endraw %} <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-email.html#localization" target="_blank">directive</a>. 
 
 Custom email templates <a href="{{site.gdeurl}}frontend-dev-guide/templates/template-email.html#customize-email-admin" target="_blank">added using the Admin panel</a>, are not stored in the file system, and their stings are not added to the dictionary.
 
@@ -58,7 +53,7 @@ Custom email templates <a href="{{site.gdeurl}}frontend-dev-guide/templates/temp
 
 To ensure that the text you add in `.html` templates of UI components is added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how it should be used for different cases of adding a text:
 
-- when a string is added in the scope of an HTML element, for example the *'Sign In'* string:
+- when a string is added in the scope of an HTML element:
  
 {% highlight HTML%}
     <span data-bind="i18n: 'Sign In'"></span>
@@ -80,20 +75,19 @@ To ensure that the text you add in UI components configuration `.xml` files is a
 
 In this example, the *Delete* string is added to the dictionary when the i18n tool is run.
 
-<h2 id="add_strings_js">Strings added in <code>.js</code> files</h2>
+<h2 id="add_strings_js">Strings added in .js files</h2>
 To ensure that the text you add in a <code>.js</code> file is collected by the i18n tool and added to the dictionary, take the following steps:
 <ol>
 <li>Link the <code>mage/translate</code> library:
 
 {% highlight js%}
-	define (['jquery', 'mage/translate'], 
-	function ($) { ...
+	define (['jquery', 'mage/translate'], function ($) {...});
 {% endhighlight js%}
 </li>
 <li>Use the <code>$.mage.__('')</code> function when adding a string:
 
 {% highlight js%}
-	$.mage.__('<string>')
+	$.mage.__('<string>');
 {% endhighlight js%}
 
 If your string contains a variable, to add a placeholder for this variable to the string stored in the dictionary, use the syntax similar to the following:
