@@ -23,6 +23,7 @@ The main steps to create a module are:
 
 1. Build the file structure for the module, with the appropriate "building block" directories
 2. Create the `module.xml` file, with a namespace and name for the new module 
+3. Install the module
 
 In subsequent topics, we will discuss which configuration files are needed for your new module. The required configuration files depend on how you plan to use the module: will it be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call?
 
@@ -61,7 +62,7 @@ A module declares itself (i.e. defines its name and existence) in the `module.xm
 Minimal declaration sample:
 
 	<config>
-       <module name="Vendor_ModuleName" schema_version="2.0.0" setup_version="2.0.0">
+       <module name="Vendor_ModuleName" setup_version="2.0.0">
        </module>
 	</config>
 
@@ -69,3 +70,12 @@ Minimal declaration sample:
   <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
   <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them!</p>
  </div>
+
+<h2 id="install-module">Install Module</h2>
+The last step is to install the module.
+ 
+ 1. Disable the Cache under System->Cache Management
+ 2. In base directory run bin/magento setup:upgrade
+ 3. Check under Stores->Configuration->Advanced->Advanced that the module is present
+ 
+Your module is now installed.
