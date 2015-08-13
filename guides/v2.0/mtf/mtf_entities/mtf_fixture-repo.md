@@ -7,11 +7,11 @@ menu_title: Fixture Repository
 menu_order: 2
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
-<h2 id="mtf_repository_overview">Repository overview</h2>
+<h2 id="mtf_repository_overview">Fixture repository overview</h2>
 
-Repository stores pre-defined data for the fixture.
-It contain only data sets with fields data that are used in test.
-Repositories are stored in `Repository` directory within the module they belong to.
+The repository stores pre-defined data for the fixture.
+It contain only data sets with fields data that are used in the test.
+Repositories are stored in the `Repository` directory in the module to which they belong.
 Reference to the repository is placed in fixture XML file in attribute named `repository`.
 
-From this topic you will know how to create, use and merge a repository.
+In this topic you will learn how to create, use and merge a repository.

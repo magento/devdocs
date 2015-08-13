@@ -18,4 +18,4 @@ Block may have the following features:
 - Block can contain other blocks.
 - Block can be used in several pages and blocks.
 
-In this topic we will create new block and explore its structure. You will know about renders, form mapping and merging pages.
+In this topic we will create new block and explore its structure. You will learn about renders, form mapping, and merging pages.
