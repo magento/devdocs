@@ -19,12 +19,6 @@ We suggest you try the following solutions in the order shown:
 <h3 id="trouble-depend-conflict">Conflicting dependencies</h3>
 The message `We found conflicting component dependencies` displays if Composer cannot determine which components to install or update. To resolve component dependency issues, you should be a technical person who thoroughly understands how Composer works.
 
-See one of the following sections for more information:
-
-*	<a href="#trouble-depend-conflict-cman">Component Manager dependency conflicts</a>
-*	<a href="#trouble-depend-conflict-upgr">System Upgrade conflicts</a>
-
-<h4 id="trouble-depend-conflict-cman">Component Manager dependency conflicts</h4>
 Following is a sample failure message:
 
 	We found conflicting component dependencies. 
@@ -40,9 +34,6 @@ Following is a sample failure message:
 Typically, component dependency conflicts result from someone manually editing the Magento 2 `composer.json` file. In the preceding example, the installed package, `magento/sample-data version 0.74.0-beta15`, cannot be upgraded to `1.0.0.0-beta`. However, 0.74.0-beta15 *can* be upgraded to `0.74.0-beta15` first or directly to `1.0.0.0-beta`.
 
 Edit `composer.json` to make any of these changes and try the readiness check again.
-
-<h4 id="trouble-depend-conflict-upgr">System Upgrade dependency conflicts</h4>
-TBD, not sure if this should be a separate section or not.
 
 <h3 id="trouble-depend-permission">File system permissions issues</h3>
 If the web server user doesn't have permissions to write to directories on the Magento file system, a message similar to the following displays:
