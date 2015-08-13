@@ -17,7 +17,7 @@ This section discusses how to start System Upgrade, which upgrades the version o
 Before continuing, complete all tasks discussed in <a href="{{ site.gdeurl }}comp-mgr/prereq/prereq_compman-updater.html">Prerequisites</a>.
 
 <h2 id="compman-access">Start System Upgrade from the Magento Admin</h2>
-To run the Component Manager:
+To run System Upgrade:
 
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
