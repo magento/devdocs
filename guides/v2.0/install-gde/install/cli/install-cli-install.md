@@ -109,6 +109,32 @@ The following table discusses the meanings of installation option names and valu
 			<th>Required?</th>
 		</tr>
 		<tr>
+		<td><p>--admin-firstname</p></td>
+		<td><p>Magento administrator user's first name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-lastname</p></td>
+		<td><p>Magento administrator user's last name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-email</p></td>
+		<td><p>Magento administrator user's e-mail address.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-user</p></td>
+		<td><p>Magento administrator user name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-password</p></td>
+		<td><p>Magento administrator user password.</p>
+			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+		<tr>
 		<td><p>--base-url</p></td>
 		<td><p>Base URL to use to access your Magento Admin and storefront in any of the following formats:</p>
 		<ul><li><code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.</p>
@@ -118,7 +144,7 @@ The following table discusses the meanings of installation option names and valu
 		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the host name <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>
 
 		</td>
-		<td><p>Yes</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--backend-frontname</p></td>
@@ -162,46 +188,21 @@ The following table discusses the meanings of installation option names and valu
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<tr>
-		<td><p>--admin-firstname</p></td>
-		<td><p>Magento administrator user's first name.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-lastname</p></td>
-		<td><p>Magento administrator user's last name.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-email</p></td>
-		<td><p>Magento administrator user's e-mail address.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-user</p></td>
-		<td><p>Magento administrator user name.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-password</p></td>
-		<td><p>Magento administrator user password.</p>
-			<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
+	
 	<tr>
 		<td><p>--language</p></td>
 		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
-		<td><p>Yes</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--currency</p></td>
 		<td><p>Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering <code>magento info:currency:list</code> from the <code>bin</code> directory.)</p></td>
-		<td><p>Yes</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--timezone</p></td>
 		<td><p>Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering <code>magento info:timezone:list</code> from the <code>bin</code> directory.)</p></td>
-		<td><p>Yes</p></td>
+		<td><p>No</p></td>
 	</tr>
 	<tr>
 		<td><p>--use-rewrites</p></td>
@@ -217,8 +218,8 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--base-url-secure</p></td>
-		<td><p><code>1</code> means SSL is preferred in Magento URLs designed to use it (for example, the checkout page). Make sure your web server supports SSL before you select this option.</p>
-		<p><code>0</code> means SSL is not used. This is the default.</p></td>
+		<td><p>Secure base URL to use to access your Magento Admin and storefront in the following format:</p>
+		<p><code>https://&lt;host or ip>/&lt;your Magento install dir>/</code></p></td>
 		<td><p>No</p></td>
 	</tr>
 
