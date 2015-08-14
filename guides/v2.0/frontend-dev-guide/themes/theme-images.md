@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/themes/theme-images.md
 
 ## Overview ##
 
-The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what proporties are available and how to configure them.
+The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 
 <h3 id="view_xml_structure">Configuring image properties in view.xml</h3>
 
@@ -37,7 +37,6 @@ Image properties are configured for each image type defined by the `id` and `typ
 <images/>
 {% endhighlight xml %}
 
-Each combination of `id` and `type` is unique. 
 <p>
 The following table describes the attributes in details:
 <table>
@@ -48,30 +47,30 @@ The following table describes the attributes in details:
       <th>Description</th>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           id
         </code>
       </td>
-      <td colspan="1">
+      <td>
         string
       </td>
-      <td colspan="1">
-        <p>Unique image identifier.</p> <p>
-Can have any value, but in default Magento themes <code>id</code>'s are meaningful and describe the location of an image. </p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>.</p> <p>For each <code>id</code> <code>id</code>'s are used in <code>.phtml</code> templates for defining what images are displayed in a certain location on a certain page.</p>
+      <td>
+        <p>Unique in the scope of theme image identifier.</p> <p>
+Can have any value, but in default Magento themes <code>id</code>'s are meaningful and describe the location of an image. </p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           type
         </code>
       </td>
-      <td colspan="1">
+      <td>
         string
       </td>
-      <td colspan="1">
-        Image type. Allowed values:
+      <td>
+        The type of the image with the specified <code>id</code>. Allowed values:
 <ul>
 <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
 <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
@@ -111,114 +110,114 @@ The following table contains the list of all properties which can be configured:
       <th>Required</th>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           width
         </code>
       </td>
-      <td colspan="1">
+      <td>
 integer
       </td>
-      <td colspan="1">
+      <td>
  Image width in pixels.
       </td>
-      <td colspan="1">
+      <td>
         Optional
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           height
         </code>
       </td>
-      <td colspan="1">
+      <td>
 integer
       </td>
-      <td colspan="1">
+      <td>
  Image height in pixels.
       </td>
-      <td colspan="1">
+      <td>
         Optional
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           constrain
         </code>
       </td>
-      <td colspan="1">
+      <td>
 boolean
       </td>
-      <td colspan="1">
+      <td>
 If set to <code>true</code>, then images which are smaller than required by the configuration, are not enlarged. Default value: <code>true</code>.
       </td>
-      <td colspan="1">
+      <td>
         Optional
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           aspect_ratio
         </code>
       </td>
-      <td colspan="1">
-booleans
+      <td>
+boolean
       </td>
-      <td colspan="1">
+      <td>
 If set to <code>true</code>, proportions of images are not changed even if required by the configuration. Default value: <code>true</code>.
       </td>
-      <td colspan="1">
+      <td>
         Optional
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           frame
         </code>
       </td>
-      <td colspan="1">
+      <td>
 boolean
       </td>
-      <td colspan="1">
+      <td>
 If set to <code>true</code>, images are not cropped. Default value: <code>true</code>. Applied only if <code>aspect_ratio</code> is set to <code>true</code>.
       </td>
-      <td colspan="1">
+      <td>
         Optional
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           transparency
         </code>
       </td>
-      <td colspan="1">
+      <td>
 boolean
       </td>
-      <td colspan="1">
+      <td>
 Is set to <code>true</code>, the transparent background of images is saved. If is set to <code>false</code>, images have the white background (by default). You can set the color for the background using the <code>background</code> parameter. Default value: <code>true</code>.
       </td>
-      <td colspan="1">
+      <td>
         Optional
       </td>
     </tr>
     <tr>
-      <td colspan="1">
+      <td>
         <code>
           background
         </code>
       </td>
-      <td colspan="1">
+      <td>
 array
       </td>
-      <td colspan="1">
+      <td>
 The color for the images background. Not applied to images with transparency, if <code>transparency</code> is set to <code>true</code>.
       </td>
-      <td colspan="1">
+      <td>
         Optional
       </td>
     </tr>
