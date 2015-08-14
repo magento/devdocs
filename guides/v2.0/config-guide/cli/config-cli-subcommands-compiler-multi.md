@@ -18,9 +18,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-mul
 *	<a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a>
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
-This section discusses the basics of code compilation (which is also referred to as *code generation*).
-
-{% include install/cli_code-generation.html %}
+{% include config/cli_code-generation.html %}
 
 <h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
 Use this command if you have multiple *tenants*, which means more than one independent Magento application. In other words:
