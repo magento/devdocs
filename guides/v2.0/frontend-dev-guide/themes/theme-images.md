@@ -40,7 +40,7 @@ Image properties are configured for each image type defined by the `id` and `typ
 {% endhighlight xml %}
 
 <br>
-The following table describes the attributes in details:
+The following table describes the attributes in detail:
 <table>
   <tbody>
     <tr>
@@ -59,7 +59,7 @@ The following table describes the attributes in details:
       </td>
       <td>
         <p>Image identifier. Unique in the scope of theme.</p> <p>
-Can have any value, but in out of the box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
+Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <code>cart_cross_sell_products</code>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
       </td>
     </tr>
     <tr>
@@ -153,7 +153,7 @@ integer
 boolean
       </td>
       <td>
-If set to <code>true</code>, then images which are smaller than required by the configuration, are not enlarged. Default value: <code>true</code>.
+If set to <code>true</code>, images that are smaller than required by the configuration, are not enlarged. Default value: <code>true</code>.
       </td>
       <td>
         Optional
@@ -201,7 +201,7 @@ If set to <code>true</code>, images are not cropped. Default value: <code>true</
 boolean
       </td>
       <td>
-Is set to <code>true</code>, the transparent background of images is saved. If is set to <code>false</code>, images have the white background (by default). You can set the color for the background using the <code>background</code> parameter. Default value: <code>true</code>.
+If set to <code>true</code>, the transparent background of images is saved. If is set to <code>false</code>, images have the white background (by default). You can set the color for the background using the <code>background</code> parameter. Default value: <code>true</code>.
       </td>
       <td>
         Optional
