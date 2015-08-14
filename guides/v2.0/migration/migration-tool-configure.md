@@ -120,6 +120,26 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 	<td>Setting migration configuration file that specifies rules required for migrating the <code>core_config_data</code> table.</td>
 </tr>
 
+<tr>
+	<td>customer-attribute-groups.xml</td>
+	<td>Contains list of attributes that are used in Customer Attributes Step.</td>
+</tr>
+
+<tr>
+	<td>customer-document-groups.xml</td>
+	<td>Contains list of tables that are used in Customer Attributes Step.</td>
+</tr>
+
+<tr>
+	<td>map-customer.xml</td>
+	<td>Map file that is used in Customer Attributes Step.</td>
+</tr>
+
+<tr>
+	<td>order-grids-document-groups.xml</td>
+	<td>Contains list of tables that are used in OrderGrids Step.</td>
+</tr>
+
 </tbody>
 </table>
 
