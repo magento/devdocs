@@ -12,14 +12,16 @@ github_link: frontend-dev-guide/themes/theme-images.md
 
 The properties of product images used on the storefront are stored in the `view.xml` configuration file. This topic provides all details about what properties are available and how to configure them.
 
-<h3 id="view_xml_structure">Configuring image properties in view.xml</h3>
+<h2 id="view_xml_structure">Configure image properties in view.xml</h2>
 
 The conventional location of `view.xml` for a theme is:
 {% raw %}
 	app/design/frontend/<Vendor>/<theme>/etc/view.xml
 {% endraw %}
 
-In a `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
+For example, here is the path view.xml of the Magento Blank theme: <a href="{{site.mage2000url}}app/design/frontend/Magento/blank/etc/view.xml" target="_blank"><code>app/design/frontend/Magento/blank/etc/view.xml</code></a>.
+
+In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
 
 {% highlight xml %}
 <images module="Magento_Catalog">
@@ -37,7 +39,7 @@ Image properties are configured for each image type defined by the `id` and `typ
 <images/>
 {% endhighlight xml %}
 
-<p>
+<br>
 The following table describes the attributes in details:
 <table>
   <tbody>
@@ -56,8 +58,8 @@ The following table describes the attributes in details:
         string
       </td>
       <td>
-        <p>Unique in the scope of theme image identifier.</p> <p>
-Can have any value, but in default Magento themes <code>id</code>'s are meaningful and describe the location of an image. </p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
+        <p>Image identifier. Unique in the scope of theme.</p> <p>
+Can have any value, but in out of the box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of cross-sell products displayed in a shopping card is <i>"cart_cross_sell_products"</i>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
       </td>
     </tr>
     <tr>
@@ -70,7 +72,7 @@ Can have any value, but in default Magento themes <code>id</code>'s are meaningf
         string
       </td>
       <td>
-        The type of the image with the specified <code>id</code>. Allowed values:
+        The type of the images defined by the specified <code>id</code>. Allowed values:
 <ul>
 <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
 <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
@@ -86,14 +88,14 @@ The following picture illustrates how image roles for product images are specifi
     </tr>
 </tbody>
 </table>
-</p>
+
 Image properties are defined by the corresponding elements, for example:
 
 {% highlight xml %}
 <images module="Magento_Catalog">
     <image id="unique_image_id" type="image">
-        <width>100</width>
-        <height>100</height>
+        <width>100</width> <!-- Image width in px --> 
+        <height>100</height> <!-- Image height in px -->
     </image>
 </images>
 {% endhighlight xml %}
