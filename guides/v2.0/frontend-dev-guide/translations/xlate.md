@@ -23,7 +23,7 @@ redirect_from:
 <h2 id="m2devgde-xlate-intro">Overview of translations</h2>
 The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.
 
-### Terms used
+<h3 id="translate_terms">Terms used</h3>
 A *translation dictionary* is a comma-separated value (.csv) file with at least two columns: the original phrase in the `en_US` locale and a translation of that phrase in an another locale. Sample translation from English (`en_US`) to German (`de_DE`):
 
 	"Add to Cart","Zum Warenkobrn hinzufügen"
