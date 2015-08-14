@@ -169,7 +169,15 @@
 </ul>
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
-<p>This section discusses the basics of code compilation (which is also referred to as <em>code generation</em>).</p>
+<p>This section discusses the basics of code compilation.</p>
+<p>Code compilation consists of all of the following in no particular order:</p>
+<ul><li>Application code generation (factories, proxies, and so on)</li>
+<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
+<li>Interceptor generation (that is, optimized code generation of interceptors)</li>
+<li>Interception cache generation</li>
+<li>Repositories code generation (that is, generated code for APIs)</li>
+<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
+<p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/develop/setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p>
 
 <h3>Why generate code?</h3>
 <p>In brief, you can generate code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/Resource/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
@@ -181,7 +189,7 @@
 <span class="o">...</span>
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>The first constructor parameter has a type of <code>\Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 GitHub. The Magento application <em>generates</em> this class as because its name uses recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
+<p>The first constructor parameter has a type of <code>\Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 GitHub. The Magento application <em>generates</em> this class as because its name uses a recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
 <p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug through the code.</p>
 
 <h4>When is code generated?</h4>
