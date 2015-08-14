@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Update
+subgroup: U_Update
 title: Update the Magento Testing Framework
 menu_title: UPDATE
 menu_order: 4
@@ -37,7 +37,7 @@ Step 2.    Remove file `<magento_root>/dev/tests/functional/composer.lock`.
   <p><b>Why:</b> Composer reads dependencies from <code>composer.lock</code> instead of reading <code>composer.json</code>. File <code>composer.lock</code> currently is not maintained.</p>
 </div>
 
-Step 3.    <a href="{{ site.gdeurl }}mtf/mtf_installation/mtf_install.html">Perform and check installation.</a>
+Step 3.    <a href="{{ site.gdeurl }}mtf/mtf_installation.html#mtf_install_perform">Perform and check installation.</a>
 
 <h3 id="mtf_update_depend">Update components from dependencies in <code>composer.json</code></h3>
 
