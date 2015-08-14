@@ -14,7 +14,7 @@ github_link: mtf/mtf_entities/mtf_fixture-repo.md
 
 - <a href="#mtf_repository_create">Create repository for entire fixture</a>
 
-- <a id="mtf_repository_create-field"> Create repository for fixture field</a>
+- <a href="mtf_repository_create-field"> Create repository for fixture field</a>
 
 <h2 id="mtf_repository_overview">Repository overview</h2>
 
@@ -186,10 +186,14 @@ XML structure of this repository is the same as in entire fixture repository.
 
 Assume that we want to create datasets of Layout Updates field for the following cases:
 
-![all_pages repository view on GUI](
-  
-  
-  common/images/mtf_repository_layout-allpages.png)
+
+
+
+![all_pages dataset view on GUI]({{ site.baseurl }}common/images/mtf_repository_layout-allpages.png)
+
+![on_category dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-oncategory.png)
+
+![layout_for_cms_page_link dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-for-cms-page-link.png)
 
 {% highlight xml %}
 
