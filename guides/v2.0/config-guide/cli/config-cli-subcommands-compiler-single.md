@@ -20,9 +20,7 @@ redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-compiler-sin
 
 
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
-This section discusses the basics of code compilation (which is also referred to as *code generation*).
-
-{% include install/cli_code-generation.html %}
+{% include config/cli_code-generation.html %}
 
 <h2 id="config-cli-subcommands-single-overview">Overview of the single-tenant compiler</h2>
 Use this command if you have one website and store. If you have multiple websites and stores, use the <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-multi.html">multi-tenant compiler</a> instead.
