@@ -258,9 +258,9 @@ app/design/frontend/
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
-<p>If product image sizes of your theme differ from those of the parent theme, you need to add a <code>view.xml</code> file which contains configuration of all product image sizes used on the storefront.</p>
+<p>Product images sizes and other properties used on the storefront are configured in a <code>view.xml</code> configuration file. It is required for a theme, but is optional if exists in the parent theme.</p>
 
-<p>Use the following steps:</p>
+<p>If product images sizes of your theme differ from those of the parent theme, or in case your theme does not inherit from any theme, add <code>view.xml</code> using the following steps:</p>
 
 <ol>
   <li>
@@ -284,6 +284,8 @@ For example, you can make the category grid view product images square by specif
         <span class="nt">&lt;height&gt;</span>250<span class="nt">&lt;/height&gt;</span>
     <span class="nt">&lt;/image&gt;</span>
 ...</code></pre></div>
+
+<p>For details about images configuration in <code>view.xml</code>, see the <a href="/guides/v2.0/frontend-dev-guide/themes/theme-images.html" target="_blank">Configure images properties for a theme</a> topic.</p>
 
 <h2 id="fedg_theme_how-to_static">Create directories for static files</h2>
 
@@ -480,6 +482,10 @@ Related topics:
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-apply.html">Apply and configure a theme in Admin</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
 						
 								
 							
