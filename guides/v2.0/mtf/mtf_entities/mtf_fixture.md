@@ -27,7 +27,7 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 An MTF fixture is a list of properties of the Magento entity under test.
 
-Fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `<magento_root>/dev/tests/functional/tests/app/Magento/functional`. Good example for `Widget`:
+A fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `<magento_root>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
 
 -  `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
 
@@ -76,7 +76,7 @@ In the following table see `generateFixtureXml` arguments.
 
 This tool creates a new fixture using data from a database table you specified using the `--entity_type` argument.
 
-Below is the generated Widget fixture located in `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
+Following is the generated Widget fixture located in `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
 {% highlight xml%}
 
@@ -355,9 +355,9 @@ To do that you should supplement your `Widget.xml` code with `extends` attribute
 
 {% endhighlight xml %}
 
-In this example you will create new fixture PHP class AdWidget that extends Widget fixture. It will create same fixture, and add field `custom_field`.
+In this example you will create a new fixture PHP class AdWidget that extends Widget fixture. It creates a fixture with the same name, and a field named `custom_field`.
 
-To generate your new fixture PHP class, run in your terminal:
+To generate your new fixture PHP class, enter the following commands:
 
     cd <magento_root>/dev/tests/functional/utils
     php generate.php

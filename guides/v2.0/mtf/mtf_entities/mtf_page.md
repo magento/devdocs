@@ -11,7 +11,7 @@ github_link: mtf/mtf_entities/mtf_page.md
 <h2 id="mtf_page_overview">Page overview</h2>
 
 A page object is a class that serves as an interface to the Magento page under test.
-Page serves as containers for the blocks.
+A page serves as containers for blocks.
 To improve the process of working with page elements the mechanism of pages and blocks was implemented in the MTF.
 Test uses the methods of the blocks of page object class, when it need to interact with Magento page.
 The benefit is that if the UI changes, the tests don’t need to be changed.

@@ -13,7 +13,7 @@ Block is the area of user interface aimed to perform concrete functionality, for
 
 The block object pattern is used in the MTF to avoid unnecessary duplication of code and makes tests easier to support.
 
-Block may have the following features:
+A block can have the following features:
 
 - Block can contain other blocks.
 - Block can be used in several pages and blocks.

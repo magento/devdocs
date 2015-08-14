@@ -13,4 +13,4 @@ The MTF constraint serves for performing assertions after test execution.
 Each constraint name must be unique within application and placed in the module to which the constraint belongs.
 Constraints run automatically after test flow has been finished.
 
-This section will tell you more about constraints. We will create new constraint and know how to use it.
+This section will discusses constraints. We will create new constraint and learn how to use it.
