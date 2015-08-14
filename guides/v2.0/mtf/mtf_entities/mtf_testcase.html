@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Quick start with the Magento Testing Framework</title>
+	<title>Entities of the Magento Testing Framework</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">
+	<link rel="canonical" href="//guides/v2.0/mtf/mtf_entities/mtf_testcase.html">
 
 </head>	
 <body>
@@ -148,9 +148,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Quick start with the Magento Testing Framework</h1>
+		<h1 class="page-heading">Entities of the Magento Testing Framework</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/mtf/mtf_entities/mtf_testcase.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -159,72 +159,17 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="mtf_quickstart_config">Adjust configuration</h2>
+		<h2 id="mtf_testcase_overview">Test case overview</h2>
 
-<h3 id="mtf_quickstart_config_phpunitxml">1. Edit <code>phpunit.xml</code> to configure PHPUnit</h3>
+<p>The Magento Testing Framework supports two types of functional tests:</p>
 
-<p>Find <code>phpunit.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional</code>, and open it in editor.</p>
+<ul>
+  <li>Injectable: the main type of MTF test, that uses XML data set files as inputs.</li>
+  <li>Scenario: supports Magento modularity and enables you to inject one step into another test.
+<a href="/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Learn more about Scenario Test.</a></li>
+</ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
-</div>
-
-<h4 id="mtf_quickstart_config_phpunitxml_frontend">Set URL for Magento storefront under test</h4>
-
-<p>Find <code>&lt;php&gt;</code> element.
-For <code>name="app_frontend_url"</code> set <code>value</code> that is your actual URL for Magento storefront under test.</p>
-
-<h4 id="mtf_quickstart_config_phpunitxml_backend">Set URL for Magento Admin URL under test</h4>
-
-<p>For <code>name="app_backend_url"</code> set <code>value</code> that is your actual URL for Magento Admin URL under test.</p>
-
-<p>Example:
-<code>&lt;env name="app_backend_url" value="http://example.com/magento2/admin"/&gt;</code>.</p>
-
-<h4 id="mtf_quickstart_config_phpunitxml_win-credent">Windows only! Set full path for <code>basedir</code> and <code>credentials_file_path</code> parameters</h4>
-<p>Find <code>&lt;php&gt;</code> element.</p>
-
-<p>For <code>&lt;env name="basedir"</code> set <code>value="&lt;full_path_to_directory&gt;" /&gt;</code> (that is directory for error logs). For example, <code>&lt;env name="basedir" value="C:\magento2ce\dev\tests\functional\var\log" /&gt;</code>.</p>
-
-<p>For <code>name="credentials_file_path" </code> set <code>value="&lt;full_path_to_directory&gt;"</code> (that is file with credentials for Magento modules, if required). For example, <code>&lt;env name="credentials_file_path" value="C:\magento2ce\dev\tests\functional\credentials.xml" /&gt;</code>.</p>
-
-<h3 id="mtf_quickstart_config_configxml">2. Edit <code>config.xml</code> to configure Magento Testing Framework</h3>
-<p>Find <code>config.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional/etc</code>, and open it in editor.</p>
-
-<h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
-<p>In <code>&lt;application&gt;</code> element find elements <code>&lt;backendLogin&gt;</code> and <code>&lt;backendPassword&gt;</code>. Change content of these elements to your actual credentials for Magento Admin URL.</p>
-
-<h4 id="mtf_quickstart_config_configxml_credent-backend">Set browser that MTF will use for tests</h4>
-<p>The default browser is <strong>Mozilla Firefox</strong>.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Default settings are specified in
-   <code>&lt;magento_root&gt;/dev/tests/functional/vendor/magento/mtf/etc/config.xml&gt;</code>. Do not change this file.</p>
-</div>
-
-<p>If you want to use another browser for tests you have to specify it in <code>config.xml</code>.</p>
-
-<p>Copy <code>&lt;server&gt;</code> element from <code>&lt;magento_root&gt;/dev/tests/functional/vendor/magento/mtf/etc/config.xml&gt;</code> and paste it in <code>&lt;magento_root&gt;/dev/tests/functional/config.xml</code> after <code>&lt;install&gt;</code> element.</p>
-
-<p>Enter actual data in <code>&lt;browserName&gt;</code> and <code>&lt;browser&gt;</code> attributes.</p>
-
-<h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</h3>
-
-<p>Find <code>credentials.xml</code> in <code>&lt;magento_root&gt;/dev/tests/functional</code>, and open it in editor.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>
-</div>
-
-<h4 id="mtf_quickstart_config_credentialsxml-set">Set credentials for Magento modules under test</h4>
-<p>Open <code>credentials.xml</code>.</p>
-
-<p>Find block of elements for the Magento module you want to test.</p>
-
-<p>Enter actual data in <code>value</code> attribute of corresponding <code>field</code> element.</p>
-
-<h2 id="mtf_install_pre">Next Steps</h2>
-<p><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_environmemt.html">Prepare environment for test run</a></p>
+<p>In this topic we will create new test case step by step.</p>
 
 
 		</div>
@@ -404,7 +349,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 								
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
 						
 								
 							
@@ -477,7 +422,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
 						
 								
 							
@@ -637,8 +582,8 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_entities/mtf_testcase.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/mtf/mtf_entities/mtf_testcase.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
