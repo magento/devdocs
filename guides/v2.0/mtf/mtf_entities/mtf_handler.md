@@ -12,4 +12,4 @@ github_link: mtf/mtf_entities/mtf_handler.md
 
 We will use handler to set up preconditions and prepare the initial testing environment for particular tests.
 
-This topic discusses types of handlers in the MTF, as well as how to create and use a handler.
+This topic will discuss types of handlers in the MTF, as well as how to create and use a handler.
