@@ -377,7 +377,7 @@ $this-&gt;progress-&gt;finish();</code></pre></div>
 
 <h3 id="integrity-check">Integrity check</h3>
 
-<p>Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible.</p>
+<p>Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible. In case when fields have different datatypes (e.g. the same field has decimal datatype in Magento 1 and integer in Magento 2), a warning message will be shown (except when it was covered in Map file).</p>
 
 <h3 id="data-transfer">Data Transfer</h3>
 
@@ -439,7 +439,7 @@ $this-&gt;progress-&gt;finish();</code></pre></div>
 
 <h3 id="data-migration-mode">Data migration mode</h3>
 
-<p>In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.</p>
+<p>In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.</p>
 
 <h4 id="map-step">Map Step</h4>
 
@@ -512,7 +512,7 @@ $this-&gt;progress-&gt;finish();</code></pre></div>
 
 <ul>
   <li>
-    <p><em>ignore</em> - document or field marked with this option will be ignored and not transferred to destination document</p>
+    <p><em>ignore</em> - document, field or datatype marked with this option will be ignored</p>
   </li>
   <li>
     <p><em>rename</em> - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name</p>
@@ -624,6 +624,7 @@ $this-&gt;progress-&gt;finish();</code></pre></div>
 <pre><code>$this-&gt;logger-&gt;info("Some information message");
 $this-&gt;logger-&gt;debug("Some debug message");
 $this-&gt;logger-&gt;error("Message about error operation");
+$this-&gt;logger-&gt;warning("Some warning message");
 </code></pre>
 
 <p>There is a possibility to customize where log information should be written. You can do that by adding handler to logger using pushHandler() method of the logger. Each handler should implement \Monolog\Handler\HandlerInterface interface. As for now there are two handlers:</p>
