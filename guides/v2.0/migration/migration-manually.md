@@ -14,6 +14,7 @@ redirect_from: /guides/v1.0/migration/migration-manually.html
 <h2>Data that needs to be migrated manually</h2>
 
 There are three types of data that need to be manually migrated:
+
 * Media
 * Storefront design
 * ACLs

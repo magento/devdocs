@@ -221,7 +221,7 @@ $this->progress->finish();
 
 ###Integrity check
 
-Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible.
+Each step has to check that the structure of data source (Magento 1 by default) and the structure of data destination (Magento 2) are compatible. If not - an error will be shown with entities that are not compatible. In case when fields have different datatypes (e.g. the same field has decimal datatype in Magento 1 and integer in Magento 2), a warning message will be shown (except when it was covered in Map file).
 
 ###Data Transfer
 
@@ -281,7 +281,7 @@ Under node <code>&lt;value&gt;</code> there are rules that work with 'value' col
 
 ###Data migration mode
 
-In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
+In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
 
 ####Map Step
 
@@ -349,7 +349,7 @@ Areas:
 
 Options:
 
-* *ignore* - document or field marked with this option will be ignored and not transferred to destination document
+* *ignore* - document, field or datatype marked with this option will be ignored
 
 * *rename* - describes name relations between documents with the different name. In a case when destination document name is not the same with the source document - you can use rename option to set source document name similar to destination table name
 
@@ -451,6 +451,7 @@ After that you can use this class for logging of some events:
 <pre><code>$this->logger->info("Some information message");
 $this->logger->debug("Some debug message");
 $this->logger->error("Message about error operation");
+$this->logger->warning("Some warning message");
 </code></pre>
 
 There is a possibility to customize where log information should be written. You can do that by adding handler to logger using pushHandler() method of the logger. Each handler should implement \Monolog\Handler\HandlerInterface interface. As for now there are two handlers:
