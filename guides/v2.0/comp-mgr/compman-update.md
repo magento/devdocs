@@ -1,11 +1,11 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
+subgroup: Component Manager Update
 title: Step 3. Update your components
 menu_title: Step 3. Update your components
 menu_node: 
-menu_order: 10
+menu_order: 1
 github_link: comp-mgr/compman-update.md
 ---
 

@@ -1,11 +1,11 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
-title: (Uninstall) Step 3. Data Option
-menu_title: (Uninstall) Step 3. Data Option
+subgroup: Component Manager Uninstall
+title: Step 3. Data Option
+menu_title: Step 3. Data Option
 menu_node: 
-menu_order: 11
+menu_order: 1
 github_link: comp-mgr/compman-uninst-data.md
 ---
 
@@ -18,4 +18,6 @@ If the component has no data to remove, the following message displays.
 
 If the module has data to remove, a page similar to the following displays.
 
+<p class="q">TBD, sample data module does not allow me to uninstall or update it</p>
 
+Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a>.
