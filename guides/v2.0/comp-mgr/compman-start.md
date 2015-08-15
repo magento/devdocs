@@ -10,7 +10,7 @@ github_link: comp-mgr/compman-start.md
 ---
 
 <h2 id="compman-overview">Overview of the Component Manager</h2>
-This section discusses how to start the Component Manager, which updates Magento components:
+This section discusses how to start the Component Manager, which updates or uninstalls Magento components:
 
 *	Modules (extend Magento capabilities)
 *	Themes (change the look and feel of your storefront and Admin)

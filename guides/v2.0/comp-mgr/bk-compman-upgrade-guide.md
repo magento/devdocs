@@ -14,7 +14,7 @@ Magento provides two applications you can use after installing the Magento appli
 
 *	<a href="{{ site.gdeurl }}comp-mgr/compman-start.html">Component Manager</a>
 
-	Updates *components*, which can be any of the following:
+	Updates or uninstalls *components*, which can be any of the following:
 
 	*	Modules (extend Magento capabilities)
 	*	Themes (change the look and feel of your storefront and Admin)

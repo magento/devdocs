@@ -17,7 +17,7 @@ github_link: comp-mgr/compman-main-pg.md
 *	<a href="#compman-access-enable">Enable or disable a component</a>
 
 <h2 id="compman-access">Component Management options</h2>
-To choose whether to upgrade, enable, or disable components:
+To choose whether to upgrade or uninstall components:
 
 1.	After you <a href="{{ site.gdeurl }}comp-mgr/compman-start.html">run the Component Manager</a>, a page similar to the following displays:<br><br>
 	<img src="{{ site.baseurl }}common/images/cman_initial-page.png" width="750px" alt="The Component Manager page enables you to synchronize with Magento Connect to see if updates are available">
@@ -54,9 +54,8 @@ To choose whether to upgrade, enable, or disable components:
 		<td><p>Actions</p></td>
 		<td><img src="{{ site.baseurl }}common/images/cman_actions.png" alt="You can enable, disable, or update components">
 			<p>A component has one or more of the following actions available from the <strong>Actions</strong> list:</p>
-			<ul><li><a href="#compman-access-enable">Enable</a></li>
-				<li><a href="#compman-access-enable">Disable</a></li>
-				<li><a href="#compman-access-sync">Update</a></li></ul>
+			<ul><li><a href="#compman-access-sync">Update a component</a></li>
+				<li><a href="#compman-uninst">Uninstall a component</a></li></ul>
 	<tr>
 		<td><p>Pagination</p></td>
 		<td><p>Enables you to:</p>
@@ -81,13 +80,13 @@ To update the component, click **Update** from the **Actions** list. A sample fo
 
 Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
 
-<h2 id="compman-access-enable">Enable or disable a component</h2>
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Enable and disable are not supported at this time.</p>
- </div>
+<h2 id="compman-uninst">Uninstall a component</h2>
+To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
-<!-- To enable a component, click **Enable** or **Disable** from the **Actions** list and see <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
- -->
+<img src="{{ site.baseurl }}common/images/cman_uninstall1.png" alt="Uninstall a component">
+
+Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
+
 
 
 

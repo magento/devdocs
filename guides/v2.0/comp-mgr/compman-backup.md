@@ -31,7 +31,10 @@ To back up:
       <p>We strongly recommend you <em>do</em> back up in the event of issues.</p>
     </div>
 
-2. 	Wait while backups are created and continue with <a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>
+2. 	Wait while backups are created and continue with any of the following:
+
+	*	Updating components: <a href="{{ site.gdeurl }}comp-mgr/compman-update.html">Step 3. Update components</a>
+	*	Uninstalling components: <a href="{{ site.gdeurl }}comp-mgr/compman-uninst-data.html">Step 3. Data Option</a>
 
 The following page displays to confirm a successful backup. If errors display, see <a href="{{ site.gdeurl }}comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a>.<br><br>
 <img src="{{ site.baseurl }}common/images/cman_backup-success.png" width="650px" alt="A page displays to confirm your backup was a success">
