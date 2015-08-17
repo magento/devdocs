@@ -20,5 +20,4 @@ To view the documentation for specific services, use
 
 `http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`
 
-See [REST schema endpoints](http://{{ site.gdeurl }}/rest/rest_endpoints.html) for a list of available servies.
-
+See <a href="{{ site.gdeurl }}/rest/rest_endpoints.html">"REST schema endpoints:</a> for a list of available servies.
