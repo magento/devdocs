@@ -25,7 +25,7 @@ To enable template hints:
 
 3. In the **Debug** tab, set **Template Path Hints** to **Yes**.
 4. To save the changes, click **Save Config** in the upper-right corner.
-<p><img src="{{ site.baseurl }}common/images/theme_debug1.png" alt="Enabling template hints"></p>
+<p><img src="{{ site.baseurl }}common/images/fdg_debug_theme.jpg" alt="Enabling template hints"></p>
 
 Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.
 
