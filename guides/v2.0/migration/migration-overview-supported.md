@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/migration/migration-overview-supported.html
 <h2 id="migrate-overview-versions">Supported versions</h2>
 We support the following versions for migration:
 
-*	Enterprise Edition (EE) version 1.13.0.0 1.13.0.1 1.13.0.2 1.13.1.0 1.14.0.0 1.14.0.1 1.14.1.0 
+*	Enterprise Edition (EE) version 1.11.0.0 1.11.0.1 1.11.0.2 1.11.1.0 1.11.2.0 1.13.0.0 1.13.0.1 1.13.0.2 1.13.1.0 1.14.0.0 1.14.0.1 1.14.1.0 
 *	Community Edition (CE) version 1.9.1.0 
 
 We also plan to support:
