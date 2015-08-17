@@ -17,8 +17,8 @@ This topic introduces the high-level workflow for a developer who wants to creat
 <h2 id="developer_roadmap_resources">Developer Resources</h2>
 There are several resources that you might want to take a look at as you consider your workflow:
 
-1. See the <a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team
-2. Magento 2 Developer's Hub, at <a href="http://magento.com/developers/magento2">magento.com/developers/magento2</a>
+1. See the <a href="https://github.com/magento/magento2-samples">Sample extensions</a> created by the Magento 2 Core team.
+2. Magento 2 Developers Hub, at <a href="http://magento.com/developers/magento2">magento.com/developers/magento2</a>.
 3. The <a href="{{ site.baseurl }}index.html">Magento 2 Documentation Library</a>, with Guides such as Coding Standards, Frontend Developers Guide, Installation and Configuration, and other documents about issues like our backwards compatibility policy, versioning, and using Magento APIs.
 
 
