@@ -24,7 +24,7 @@ Enter in terminal:
 
 If the Selenium Server does not work directly with your browser, find the corresponding [WebDriver][].
 
-<a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser">In <code>config.xml</code> set browser that MTF will use for tests</a>
+In `config.xml` <a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> set browser that MTF will use for tests</a>.
 
 Run the Selenium Server with an additional argument.
 
