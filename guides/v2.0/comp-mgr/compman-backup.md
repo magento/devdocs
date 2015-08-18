@@ -17,13 +17,13 @@ After you pass all readiness checks, you can back up:
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
-The following figure shows an example of backing up everything.
-
-<img src="{{ site.baseurl }}common/images/cman_create-backup.png" width="650px" alt="You can back up the Magento 2 file system, media directory, and database">
-
 To back up:
 
 1.	Select the check box of each item to back up and click **Create Backup**.
+
+	The following figure shows an example of backing up everything.
+
+	<img src="{{ site.baseurl }}common/images/cman_create-backup.png" width="650px" alt="You can back up the Magento 2 file system, media directory, and database">
 
 	(If you choose not to back up, clear all check boxes and click **Next**).
 

@@ -9,15 +9,22 @@ menu_order: 1
 github_link: comp-mgr/compman-uninst-data.md
 ---
 
-## Data options
+## Data option
 After backing up, you have the choice of removing component data from the Magento 2 database.
 
 If the component has no data to remove, the following message displays.
 
 	The selected component has no data to remove.
 
-If the module has data to remove, a page similar to the following displays.
+If the component has data to remove, a page similar to the following displays.
 
-<p class="q">TBD, sample data module does not allow me to uninstall or update it</p>
+<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally component component database data">
 
-Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a>.
+Click one of the following:
+
+*	**Keep data**: Click to keep the component's data in the database.
+*	**Remove data**: Click to remove component's data from the database. 
+
+	You can click **Back** to back up the database first if you did not do so already.
+
+Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-uninst-final.html">Step 4. Uninstall</a>

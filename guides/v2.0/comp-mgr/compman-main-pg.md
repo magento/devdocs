@@ -83,7 +83,7 @@ Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readine
 <h2 id="compman-uninst">Uninstall a component</h2>
 To uninstall a component, click **Uninstall** from the **Actions** list as the following figure shows.
 
-<img src="{{ site.baseurl }}common/images/cman_uninstall1.png" alt="Uninstall a component">
+<img src="{{ site.baseurl }}common/images/cman_uninstall1.png" width="650px" alt="Uninstall a component">
 
 Continue with <a href="{{ site.gdeurl }}comp-mgr/compman-readiness.html">Readiness check</a>.
 

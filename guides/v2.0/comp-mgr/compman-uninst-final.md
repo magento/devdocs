@@ -10,13 +10,13 @@ github_link: comp-mgr/compman-uninst-final.md
 ---
 
 ## Finishing the uninstallation
-After backing up, to uninstall your component, click **Uninstall** as the following figure shows.
+To uninstall your component, click **Uninstall** as the following figure shows.
 
-<img src="{{ site.baseurl }}common/images/cman_uninst2.png" alt="Click Uninstall">
+<img src="{{ site.baseurl }}common/images/cman_uninst2.png" width="300px" alt="Click Uninstall">
 
 If successful, a page similar to the following displays.
 
-<img src="{{ site.baseurl }}common/images/cman_uninst-success.png" alt="Your component was successfully uninstalled">
+<img src="{{ site.baseurl }}common/images/cman_uninst-success.png" width="250px" alt="Your component was successfully uninstalled">
 
 Messages similar to the following display in the Console Log:
 
