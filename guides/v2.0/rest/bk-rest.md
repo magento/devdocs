@@ -14,10 +14,7 @@ The REST API documentation provided on [Devdocs](http://devdocs.magento.com) des
 
 Use the following link to view the REST documentation:
 
-`http://<magento_host>/rest/<store_code>/schema`
+`http://<magento_host>/swagger`
 
-To view the documentation for specific services, use
 
-`http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`
-
-See <a href="{{ site.gdeurl }}/rest/rest_endpoints.html">REST schema endpoints</a> for a list of available servies.
+See <a href="{{ site.gdeurl }}/rest/rest_endpoints.html">REST schema endpoints</a> for a list of available services.
