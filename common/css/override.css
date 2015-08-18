@@ -19,7 +19,24 @@ code {
 	color: #000;
 }
 
-/* SRJ - reviewer question */
+
+/* TDD code format in headers */
+
+
+H1 CODE, H2 CODE, H3 CODE, H4 CODE, H5 CODE {
+    padding: 2px 4px; 
+     color: #828080; 
+     background-color: transparent;
+     border: 0px solid #e1e1e8; 
+     white-space: nowrap;
+     font-size: 1em;
+     /* */
+}
+
+
+
+
+/* SRJ - reviewer question 
 
 p.q 	{
 	font-size: 15pt;
@@ -38,6 +55,103 @@ p.q 	{
 	padding-left: 60px;
 }
 
+
+/* TDD - Alternate menu appearance */
+
+.nav-main #subnav-wrap #subnav ul li a {
+    font: 1em 'Open Sans',sans-serif;
+    font-weight: 600;
+    text-transform: none;
+    padding: 11px 15px;
+    outline: 0;
+    background: none repeat scroll 0 0 #31302b;
+}
+
+
+/* TDD- Add permanent left-hand margin*/
+
+.page-intro{
+    width: 100%;
+    max-width: 100%;
+}
+
+.page-intro .container {
+  left: 20px;
+}
+
+
+.sidebar .sidebar-wrapper {
+    padding: 12px 11px;
+}
+
+.sidebar {
+    width: 310px;
+    position: absolute;
+    left: 0;
+    top: 129px;
+}
+
+
+.home-section {
+    padding: 40px 0 0 20px;
+}
+
+
+.container {
+    margin-right: 0;
+    margin-left: 0; 
+}
+
+/*Give "Edit page on Github a little space on the right"  */
+.page-intro .improve-page {
+  right: 39px;
+    
+}
+
+#gl-wrapper {
+   width: inherit !important;
+    position: relative;
+}
+.content {
+ 
+    overflow: hidden;
+    margin: 0rem 0 0 0;
+    padding: 0 0 0 0;
+    position: relative;
+    left: 310px;
+    top: 38px;
+    float: none;
+    width: 70%;
+    margin-right: auto;
+}
+
+.sidebar {
+    width: 310px;
+    position: absolute;
+    left: 0;
+    top: 129px;
+    
+}
+
+
+.sidebar-wrapper {
+  padding: 12px 0px 0px 20px;
+}
+
+.nav-main #global-nav{
+
+max-width: none;
+margin: 0 0 0 66px;
+}
+
+ .nav-main #subnav-wrap #subnav  {
+    max-width: none;
+margin: 0 0 0 66px;
+}
+
+#footer-wrap {
+    padding-left: 66px;
+}
 
 /*FIX for table font sizes TDD*/
 

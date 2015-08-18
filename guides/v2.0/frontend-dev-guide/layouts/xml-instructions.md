@@ -14,6 +14,9 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html
    </style>
 </head>
 
+
+<h2>Add a  <code>.phtml</code> template</h2>
+
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
 
