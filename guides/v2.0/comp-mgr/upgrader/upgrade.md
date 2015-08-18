@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: D_UseUpgrade
+subgroup: Y_UseUpgrade
 title: Step 4. Upgrade
 menu_title: Step 4. Upgrade
 menu_node: 

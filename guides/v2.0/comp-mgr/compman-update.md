@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: C_UseCompMan
+subgroup: Update
 title: Step 3. Update your components
 menu_title: Step 3. Update your components
 menu_node: 

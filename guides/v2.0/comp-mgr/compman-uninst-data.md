@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: Component Manager Uninstall
+subgroup: Uninstall
 title: Step 3. Data Option
 menu_title: Step 3. Data Option
 menu_node: 

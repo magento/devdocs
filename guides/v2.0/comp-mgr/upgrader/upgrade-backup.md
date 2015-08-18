@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: D_UseUpgrade
+subgroup: Y_UseUpgrade
 title: Step 3. Back up the file system and database
 menu_title: Step 3. Back up the file system and database
 menu_node: 

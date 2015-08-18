@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: D_UseUpgrade
+subgroup: Y_UseUpgrade
 title: Run System Upgrade
 menu_title: Run System Upgrade
 menu_node: parent

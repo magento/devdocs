@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: Component Manager Uninstall
+subgroup: Uninstall
 title: Step 4. Uninstall
 menu_title: Step 4. Uninstall
 menu_node: 
@@ -9,7 +9,7 @@ menu_order: 10
 github_link: comp-mgr/compman-uninst-final.md
 ---
 
-## Finishing the uninstallation
+## Finish the uninstallation
 To uninstall your component, click **Uninstall** as the following figure shows.
 
 <img src="{{ site.baseurl }}common/images/cman_uninst2.png" width="300px" alt="Click Uninstall">

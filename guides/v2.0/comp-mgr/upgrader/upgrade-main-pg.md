@@ -1,7 +1,7 @@
 ---
 layout: default 
 group: compman
-subgroup: D_UseUpgrade
+subgroup: Y_UseUpgrade
 title: Step 1. Select versions to upgrade
 menu_title: Step 1. Select versions to upgrade
 menu_node: 
