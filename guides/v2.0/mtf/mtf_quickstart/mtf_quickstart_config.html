@@ -194,7 +194,7 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
 <p>In <code>&lt;application&gt;</code> element find elements <code>&lt;backendLogin&gt;</code> and <code>&lt;backendPassword&gt;</code>. Change content of these elements to your actual credentials for Magento Admin URL.</p>
 
-<h4 id="mtf_quickstart_config_configxml_credent-backend">Set browser that MTF will use for tests</h4>
+<h4 id="mtf_quickstart_config_configxml_browser">Set browser that MTF will use for tests</h4>
 <p>The default browser is <strong>Mozilla Firefox</strong>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -207,6 +207,23 @@ For <code>name="app_frontend_url"</code> set <code>value</code> that is your act
 <p>Copy <code>&lt;server&gt;</code> element from <code>&lt;magento_root&gt;/dev/tests/functional/vendor/magento/mtf/etc/config.xml&gt;</code> and paste it in <code>&lt;magento_root&gt;/dev/tests/functional/config.xml</code> after <code>&lt;install&gt;</code> element.</p>
 
 <p>Enter actual data in <code>&lt;browserName&gt;</code> and <code>&lt;browser&gt;</code> attributes.</p>
+
+<p>Example for Google Chrome:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;server&gt;</span>
+<span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selenium&quot;</span>
+      <span class="na">type=</span><span class="s">&quot;default&quot;</span>
+      <span class="na">browser=</span><span class="s">&quot;Google Chrome&quot;</span>
+      <span class="na">browserName=</span><span class="s">&quot;chrome&quot;</span>
+      <span class="na">host=</span><span class="s">&quot;localhost&quot;</span>
+      <span class="na">port=</span><span class="s">&quot;4444&quot;</span>
+      <span class="na">seleniumServerRequestsTimeout=</span><span class="s">&quot;90&quot;</span>
+      <span class="na">sessionStrategy=</span><span class="s">&quot;shared&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;desiredCapabilities&gt;</span>
+        <span class="nt">&lt;platform&gt;</span>ANY<span class="nt">&lt;/platform&gt;</span>
+    <span class="nt">&lt;/desiredCapabilities&gt;</span>
+<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/server&gt;</span></code></pre></div>
 
 <h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</h3>
 

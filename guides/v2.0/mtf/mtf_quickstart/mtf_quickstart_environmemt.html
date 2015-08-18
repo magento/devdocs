@@ -162,11 +162,10 @@
 		<h2 id="mtf_quickstart_config">Prepare environment for test run</h2>
 
 <h3 id="mtf_quickstart_env_selenium">Run the Selenium Server</h3>
-<p>The Selenium Server is located in <code>&lt;magento_root&gt;/dev/tests/functional/vendor/netwing/selenium-server-standalone</code> directory. If you cannot find this directory, please <a href="/guides/v2.0/mtf/mtf_installation.html#mtf_install_check">check MTF installation</a>.</p>
+<p>The Selenium Server will drive a browser to execute your tests.
+You can download the Selenium Server from <a href="http://www.seleniumhq.org/download/">Selenium project website</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Specific versions of the Selenium Server are compatible with specific versions of browsers. You might need to manually download and update the Selenium Server to match your browser version. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a></p>
-</div>
+<p>Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a></p>
 
 <p>Enter in terminal:</p>
 
@@ -175,7 +174,11 @@
 
 <h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non default browser</h3>
 
-<p>If the Selenium Server does not work directly with your browser, you should download the corresponding <a href="http://docs.seleniumhq.org/about/platforms.jsp">WebDriver</a>, and run the Selenium Server with an additional argument.</p>
+<p>If the Selenium Server does not work directly with your browser, find the corresponding <a href="http://docs.seleniumhq.org/about/platforms.jsp">WebDriver</a>.</p>
+
+<p>In <code>config.xml</code> <a href="/guides/v2.0/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> set browser that MTF will use for tests</a>.</p>
+
+<p>Run the Selenium Server with an additional argument.</p>
 
 <p>Example for Google Chrome:</p>
 
