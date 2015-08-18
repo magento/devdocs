@@ -99,9 +99,9 @@ Example of a theme `composer.json`:
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
-If product image sizes of your theme differ from those of the parent theme, you need to add a `view.xml` file which contains configuration of all product image sizes used on the storefront.
+Product images sizes and other properties used on the storefront are configured in a `view.xml` configuration file. It is required for a theme, but is optional if exists in the parent theme.
 
-Use the following steps:
+If product images sizes of your theme differ from those of the parent theme, or in case your theme does not inherit from any theme, add `view.xml` using the following steps:
 
 1.	Log in to your Magento server as a user with permissions to create directories and files in the Magento installation directory. (Typically, this is the web server user.)
 
@@ -120,6 +120,8 @@ For example, you can make the category grid view product images square by specif
     </image>
 ...
 {% endhighlight XML%}
+
+For details about images configuration in `view.xml`, see the <a href="{{site.gdeurl}}frontend-dev-guide/themes/theme-images.html" target="_blank">Configure images properties for a theme</a> topic.
 
 <h2 id="fedg_theme_how-to_static">Create directories for static files</h2>
 

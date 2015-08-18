@@ -131,7 +131,7 @@ Let's have a closer look at each particular sub-directory.
           /etc/view.xml
         </code>
       </td>
-      <td colspan="1">optional</td>
+      <td colspan="1">required for a theme, but optional if exists in the parent theme</td>
       <td colspan="1">
         This file contains images configuration for all storefront product images and thumbnails.
       </td>
