@@ -12,199 +12,199 @@ github_link: rest/rest_endpoints.md
 ## REST Schema Endpoint Format
 To specify one or more services:
 
-`http://<magento_host>/rest/<store_code>?schema=1&services=<serviceName1,serviceName2,..>`
+`http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`
 
 To specify all services:
 
-`http://<magento_host>/rest/<store_code>?schema=1&services=all`
+`http://<magento_host>/rest/<store_code>/schema`
 
 ## List of Service Names per Module
 
 ### Backend
-backendModuleServiceV1: `http://<magento_host>/rest/default?schema=1&services=backendModuleServiceV1`
+backendModuleServiceV1: `http://<magento_host>/rest/<store_code>/schema&services=backendModuleServiceV1`
 
 ### Bundle
-bundleProductLinkManagementV1: `http://<magento_host>/rest/default?schema=1&services=bundleProductLinkManagementV1`
+bundleProductLinkManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=bundleProductLinkManagementV1`
 
-bundleProductOptionRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=bundleProductOptionRepositoryV1`
+bundleProductOptionRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=bundleProductOptionRepositoryV1`
 
-bundleProductOptionTypeListV1: `http://<magento_host>/rest/default?schema=1&services=bundleProductOptionTypeListV1`
+bundleProductOptionTypeListV1: `http://<magento_host>/rest/<store_code>/schema&services=bundleProductOptionTypeListV1`
 
-bundleProductOptionManagementV1: `http://<magento_host>/rest/default?schema=1&services=bundleProductOptionManagementV1`
+bundleProductOptionManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=bundleProductOptionManagementV1`
 
 ### Catalog
-catalogProductRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductRepositoryV1`
+catalogProductRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductRepositoryV1`
 
-catalogProductAttributeTypesListV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductAttributeTypesListV1`
+catalogProductAttributeTypesListV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductAttributeTypesListV1`
 
-catalogProductAttributeRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductAttributeRepositoryV1`
+catalogProductAttributeRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductAttributeRepositoryV1`
 
-catalogCategoryAttributeRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogCategoryAttributeRepositoryV1`
+catalogCategoryAttributeRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogCategoryAttributeRepositoryV1`
 
-catalogCategoryAttributeOptionManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogCategoryAttributeOptionManagementV1`
+catalogCategoryAttributeOptionManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogCategoryAttributeOptionManagementV1`
 
-catalogProductTypeListV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductTypeListV1`
+catalogProductTypeListV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductTypeListV1`
 
-catalogAttributeSetRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogAttributeSetRepositoryV1`
+catalogAttributeSetRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogAttributeSetRepositoryV1`
 
-catalogAttributeSetManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogAttributeSetManagementV1`
+catalogAttributeSetManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogAttributeSetManagementV1`
 
-catalogProductAttributeManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductAttributeManagementV1`
+catalogProductAttributeManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductAttributeManagementV1`
 
-catalogProductAttributeGroupRepositoryV1: `http://mahgento.rest/soap/default?schema=1&services=catalogProductAttributeGroupRepositoryV1`
+catalogProductAttributeGroupRepositoryV1: `http://mahgento.rest/soap/<store_code>/schema&services=catalogProductAttributeGroupRepositoryV1`
 
-catalogProductAttributeOptionManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductAttributeOptionManagementV1`
+catalogProductAttributeOptionManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductAttributeOptionManagementV1`
 
-catalogProductMediaAttributeManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductMediaAttributeManagementV1`
+catalogProductMediaAttributeManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductMediaAttributeManagementV1`
 
-catalogProductAttributeMediaGalleryManagementV1: `http://<magento_host>/soap/default?wsdl&services=catalogProductAttributeMediaGalleryManagementV1`
+catalogProductAttributeMediaGalleryManagementV1: `http://<magento_host>/soap/<store_code>?wsdl&services=catalogProductAttributeMediaGalleryManagementV1`
 
-catalogProductGroupPriceManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductGroupPriceManagementV1`
+catalogProductGroupPriceManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductGroupPriceManagementV1`
 
-catalogProductTierPriceManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductTierPriceManagementV1`
+catalogProductTierPriceManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductTierPriceManagementV1`
 
-catalogCategoryRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogCategoryRepositoryV1`
+catalogCategoryRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogCategoryRepositoryV1`
 
-catalogCategoryManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogCategoryManagementV1`
+catalogCategoryManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogCategoryManagementV1`
 
-catalogProductCustomOptionTypeListV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductCustomOptionTypeListV1`
+catalogProductCustomOptionTypeListV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductCustomOptionTypeListV1`
 
-catalogProductCustomOptionRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductCustomOptionRepositoryV1`
+catalogProductCustomOptionRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductCustomOptionRepositoryV1`
 
-catalogProductLinkTypeListV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductLinkTypeListV1`
+catalogProductLinkTypeListV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductLinkTypeListV1`
 
-catalogProductLinkManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductLinkManagementV1`
+catalogProductLinkManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductLinkManagementV1`
 
-catalogProductLinkRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogProductLinkRepositoryV1`
+catalogProductLinkRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogProductLinkRepositoryV1`
 
-catalogCategoryLinkManagementV1: `http://<magento_host>/rest/default?schema=1&services=catalogCategoryLinkManagementV1`
+catalogCategoryLinkManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogCategoryLinkManagementV1`
 
-catalogCategoryLinkRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=catalogCategoryLinkRepositoryV1`
+catalogCategoryLinkRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogCategoryLinkRepositoryV1`
 
-catalogInventoryStockRegistryV1: `http://<magento_host>/rest/default?schema=1&services=catalogInventoryStockRegistryV1`
+catalogInventoryStockRegistryV1: `http://<magento_host>/rest/<store_code>/schema&services=catalogInventoryStockRegistryV1`
 
 ### Checkout
-checkoutAgreementsCheckoutAgreementsRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=checkoutAgreementsCheckoutAgreementsRepositoryV1`
+checkoutAgreementsCheckoutAgreementsRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=checkoutAgreementsCheckoutAgreementsRepositoryV1`
 
 ### Configurable
-configurableProductLinkManagementV1: `http://<magento_host>/rest/default?schema=1&services=configurableProductLinkManagementV1`
+configurableProductLinkManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=configurableProductLinkManagementV1`
 
-configurableProductConfigurableProductManagementV1: `http://<magento_host>/rest/default?schema=1&services=configurableProductConfigurableProductManagementV1`
+configurableProductConfigurableProductManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=configurableProductConfigurableProductManagementV1`
 
-configurableProductOptionRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=configurableProductOptionRepositoryV1`
+configurableProductOptionRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=configurableProductOptionRepositoryV1`
 
 ### Customer
-customerGroupRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=customerGroupRepositoryV1`
+customerGroupRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=customerGroupRepositoryV1`
 
-customerGroupManagementV1: `http://<magento_host>/rest/default?schema=1&services=customerGroupManagementV1`
+customerGroupManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=customerGroupManagementV1`
 
-customerCustomerMetadataV1: `http://<magento_host>/rest/default?schema=1&services=customerCustomerMetadataV1`
+customerCustomerMetadataV1: `http://<magento_host>/rest/<store_code>/schema&services=customerCustomerMetadataV1`
 
-customerAddressMetadataV1: `http://<magento_host>/rest/default?schema=1&services=customerAddressMetadataV1`
+customerAddressMetadataV1: `http://<magento_host>/rest/<store_code>/schema&services=customerAddressMetadataV1`
 
-customerCustomerRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=customerCustomerRepositoryV1`
+customerCustomerRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=customerCustomerRepositoryV1`
 
-customerAccountManagementV1: `http://<magento_host>/rest/default?schema=1&services=customerAccountManagementV1`
+customerAccountManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=customerAccountManagementV1`
 
-customerAddressRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=customerAddressRepositoryV1`
+customerAddressRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=customerAddressRepositoryV1`
 
 ### Downloadable
-downloadableLinkRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=downloadableLinkRepositoryV1`
+downloadableLinkRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=downloadableLinkRepositoryV1`
 
-downloadableSampleRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=downloadableSampleRepositoryV1`
+downloadableSampleRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=downloadableSampleRepositoryV1`
 
 ### Eav
-eavAttributeSetRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=eavAttributeSetRepositoryV1`
+eavAttributeSetRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=eavAttributeSetRepositoryV1`
 
-eavAttributeSetManagementV1: `http://<magento_host>/rest/default?schema=1&services=eavAttributeSetManagementV1`
+eavAttributeSetManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=eavAttributeSetManagementV1`
 
 ### Gift Message
-giftMessageCartRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=giftMessageCartRepositoryV1`
+giftMessageCartRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=giftMessageCartRepositoryV1`
 
-giftMessageItemRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=giftMessageItemRepositoryV1`
+giftMessageItemRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=giftMessageItemRepositoryV1`
 
 ### Integration
-integrationAdminTokenServiceV1: `http://<magento_host>/rest/default?schema=1&services=integrationAdminTokenServiceV1`
+integrationAdminTokenServiceV1: `http://<magento_host>/rest/<store_code>/schema&services=integrationAdminTokenServiceV1`
 
-integrationCustomerTokenServiceV1: `http://<magento_host>/rest/default?schema=1&services=integrationCustomerTokenServiceV1`
+integrationCustomerTokenServiceV1: `http://<magento_host>/rest/<store_code>/schema&services=integrationCustomerTokenServiceV1`
 
 ### Quote
-quoteCartRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=quoteCartRepositoryV1`
+quoteCartRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteCartRepositoryV1`
 
-quoteCartManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteCartManagementV1`
+quoteCartManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteCartManagementV1`
 
-quoteGuestCartRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestCartRepositoryV1`
+quoteGuestCartRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestCartRepositoryV1`
 
-quoteGuestCartManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestCartManagementV1`
+quoteGuestCartManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestCartManagementV1`
 
-quoteShippingMethodManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteShippingMethodManagementV1`
+quoteShippingMethodManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteShippingMethodManagementV1`
 
-quoteGuestShippingMethodManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestShippingMethodManagementV1`
+quoteGuestShippingMethodManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestShippingMethodManagementV1`
 
-quoteCartItemRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=quoteCartItemRepositoryV1`
+quoteCartItemRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteCartItemRepositoryV1`
 
-quoteGuestCartItemRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestCartItemRepositoryV1`
+quoteGuestCartItemRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestCartItemRepositoryV1`
 
-quotePaymentMethodManagementV1: `http://<magento_host>/rest/default?schema=1&services=quotePaymentMethodManagementV1`
+quotePaymentMethodManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quotePaymentMethodManagementV1`
 
-quoteGuestPaymentMethodManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestPaymentMethodManagementV1`
+quoteGuestPaymentMethodManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestPaymentMethodManagementV1`
 
-quoteBillingAddressManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteBillingAddressManagementV1`
+quoteBillingAddressManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteBillingAddressManagementV1`
 
-quoteGuestBillingAddressManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestBillingAddressManagementV1`
+quoteGuestBillingAddressManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestBillingAddressManagementV1`
 
-quoteGuestAddressDetailsManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestAddressDetailsManagementV1`
+quoteGuestAddressDetailsManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestAddressDetailsManagementV1`
 
-quoteCouponManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteCouponManagementV1`
+quoteCouponManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteCouponManagementV1`
 
-quoteGuestCouponManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestCouponManagementV1`
+quoteGuestCouponManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestCouponManagementV1`
 
-quoteShippingAddressManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteShippingAddressManagementV1`
+quoteShippingAddressManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteShippingAddressManagementV1`
 
-quoteGuestShippingAddressManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestShippingAddressManagementV1`
+quoteGuestShippingAddressManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestShippingAddressManagementV1`
 
-quoteAddressDetailsManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteAddressDetailsManagementV1`
+quoteAddressDetailsManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteAddressDetailsManagementV1`
 
-quoteCartTotalRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=quoteCartTotalRepositoryV1`
+quoteCartTotalRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteCartTotalRepositoryV1`
 
-quoteGuestCartTotalManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestCartTotalManagementV1`
+quoteGuestCartTotalManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestCartTotalManagementV1`
 
-quoteGuestCartTotalRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=quoteGuestCartTotalRepositoryV1`
+quoteGuestCartTotalRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteGuestCartTotalRepositoryV1`
 
-quoteCartTotalManagementV1: `http://<magento_host>/rest/default?schema=1&services=quoteCartTotalManagementV1`
+quoteCartTotalManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=quoteCartTotalManagementV1`
 
 ### Sales
-salesOrderRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesOrderRepositoryV1`
+salesOrderRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesOrderRepositoryV1`
 
-salesOrderManagementV1: `http://<magento_host>/rest/default?schema=1&services=salesOrderManagementV1`
+salesOrderManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=salesOrderManagementV1`
 
-salesOrderAddressRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesOrderAddressRepositoryV1`
+salesOrderAddressRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesOrderAddressRepositoryV1`
 
-salesInvoiceRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesInvoiceRepositoryV1`
+salesInvoiceRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesInvoiceRepositoryV1`
 
-salesInvoiceManagementV1: `http://<magento_host>/rest/default?schema=1&services=salesInvoiceManagementV1`
+salesInvoiceManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=salesInvoiceManagementV1`
 
-salesInvoiceCommentRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesInvoiceCommentRepositoryV1`
+salesInvoiceCommentRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesInvoiceCommentRepositoryV1`
 
-salesCreditmemoManagementV1: `http://<magento_host>/rest/default?schema=1&services=salesCreditmemoManagementV1`
+salesCreditmemoManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=salesCreditmemoManagementV1`
 
-salesCreditmemoRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesCreditmemoRepositoryV1`
+salesCreditmemoRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesCreditmemoRepositoryV1`
 
-salesCreditmemoCommentRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesCreditmemoCommentRepositoryV1`
+salesCreditmemoCommentRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesCreditmemoCommentRepositoryV1`
 
-salesShipmentRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesShipmentRepositoryV1`
+salesShipmentRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesShipmentRepositoryV1`
 
-salesShipmentManagementV1: `http://<magento_host>/rest/default?schema=1&services=salesShipmentManagementV1`
+salesShipmentManagementV1: `http://<magento_host>/rest/<store_code>/schema&services=salesShipmentManagementV1`
 
-salesShipmentCommentRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesShipmentCommentRepositoryV1`
+salesShipmentCommentRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesShipmentCommentRepositoryV1`
 
-salesShipmentTrackRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesShipmentTrackRepositoryV1`
+salesShipmentTrackRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesShipmentTrackRepositoryV1`
 
-salesTransactionRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=salesTransactionRepositoryV1`
+salesTransactionRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=salesTransactionRepositoryV1`
 
 ### Tax
-taxTaxRateRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=taxTaxRateRepositoryV1`
+taxTaxRateRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=taxTaxRateRepositoryV1`
 
-taxTaxRuleRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=taxTaxRuleRepositoryV1`
+taxTaxRuleRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=taxTaxRuleRepositoryV1`
 
-taxTaxClassRepositoryV1: `http://<magento_host>/rest/default?schema=1&services=taxTaxClassRepositoryV1`
+taxTaxClassRepositoryV1: `http://<magento_host>/rest/<store_code>/schema&services=taxTaxClassRepositoryV1`

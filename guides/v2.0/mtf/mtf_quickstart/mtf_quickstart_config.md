@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mtf-guide
-subgroup: Quick Start
+subgroup: C_Quickstart
 title: Quick start with the Magento Testing Framework
 menu_title: Adjust configuration
 menu_order: 1
@@ -43,7 +43,7 @@ Find `config.xml` in `<magento_root>/dev/tests/functional/etc`, and open it in e
 <h4 id="mtf_quickstart_config_configxml_credent-backend">Set credentials for Magento Admin under test</h4>
 In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento Admin URL.
 
-<h4 id="mtf_quickstart_config_configxml_credent-backend">Set browser that MTF will use for tests</h4>
+<h4 id="mtf_quickstart_config_configxml_browser">Set browser that MTF will use for tests</h4>
 The default browser is **Mozilla Firefox**.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -56,6 +56,27 @@ If you want to use another browser for tests you have to specify it in `config.x
 Copy `<server>` element from `<magento_root>/dev/tests/functional/vendor/magento/mtf/etc/config.xml>` and paste it in `<magento_root>/dev/tests/functional/config.xml` after `<install>` element.
 
 Enter actual data in `<browserName>` and `<browser>` attributes.
+
+Example for Google Chrome:
+
+{% highlight xml %}
+
+<server>
+<item name="selenium"
+      type="default"
+      browser="Google Chrome"
+      browserName="chrome"
+      host="localhost"
+      port="4444"
+      seleniumServerRequestsTimeout="90"
+      sessionStrategy="shared">
+    <desiredCapabilities>
+        <platform>ANY</platform>
+    </desiredCapabilities>
+</item>
+</server>
+
+{% endhighlight %}
 
 
 <h3 id="mtf_quickstart_config_credentialsxml">3. Edit <code>credentials.xml</code> to work with Magento modules that requires credentials</h3>
