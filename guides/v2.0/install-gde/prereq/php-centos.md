@@ -20,7 +20,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/php-centos.html
 *	<a href="#centos-verify-php">Verify PHP is installed</a>
 *	<a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a>
 *	<a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a>
-*	<a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a>
+*	<a href="#instgde-prereq-timezone">Set PHP configuration options</a>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -103,7 +103,7 @@ To upgrade to PHP 5.5:
 
 3.	Continue with the next section.
 
-<h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
+<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
 
 Before you install Magento, you might need to set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
@@ -136,8 +136,8 @@ To set your time zone and memory limit:
 
 2.	Change `memory_limit` to:
 
-		memory_limit = 512M or more for normal operation
-		memory_limit = 2G or more for testing
+	`memory_limit = 512M` or more for normal operation
+	`memory_limit = 2G` or more for testing
 
 3.	Save your changes and exit the text editor.
 
