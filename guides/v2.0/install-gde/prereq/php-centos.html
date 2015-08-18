@@ -170,7 +170,7 @@
   <li><a href="#centos-verify-php">Verify PHP is installed</a></li>
   <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS</a></li>
   <li><a href="#instgde-prereq-php55-install-centos">PHP 5.5 on CentOS</a></li>
-  <li><a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a></li>
+  <li><a href="#instgde-prereq-timezone">Set PHP configuration options</a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -278,7 +278,7 @@ yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php5
   </li>
 </ol>
 
-<h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
+<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
 
 <p>Before you install Magento, you might need to set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
 
@@ -321,9 +321,8 @@ yum -y install php55w-xml php55w-mcrypt php55w-gd php55w-devel php55w-mysql php5
   <li>
     <p>Change <code>memory_limit</code> to:</p>
 
-    <pre><code>memory_limit = 512M or more for normal operation
-memory_limit = 2G or more for testing
-</code></pre>
+    <p><code>memory_limit = 512M</code> or more for normal operation
+<code>memory_limit = 2G</code> or more for testing</p>
   </li>
   <li>
     <p>Save your changes and exit the text editor.</p>

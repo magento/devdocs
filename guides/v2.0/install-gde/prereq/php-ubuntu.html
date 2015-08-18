@@ -171,7 +171,7 @@
   <li><a href="#instgde-prereq-php56-install-ubuntu">PHP 5.6 on Ubuntu 14</a></li>
   <li><a href="#instgde-prereq-php56-install-ubuntu12">PHP 5.6 on Ubuntu 12</a></li>
   <li><a href="#instgde-prereq-php55-install-ubuntu">PHP 5.5 on Ubuntu 14 or Ubuntu 12</a></li>
-  <li><a href="#instgde-prereq-timezone">Setting the PHP timezone and memory limit</a></li>
+  <li><a href="#instgde-prereq-timezone">Set PHP configuration options</a></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -361,22 +361,33 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
   </li>
 </ol>
 
-<h2 id="instgde-prereq-timezone">Setting the PHP timezone and memory limit</h2>
+<h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
+<p>This section discusses how to:</p>
 
-<p>Before you install Magento, you might need to set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
+<ul>
+  <li>
+    <p>Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:</p>
 
-<p><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings.</code> [more messages follow]</p>
+    <pre><code>PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
+</code></pre>
+  </li>
+  <li>Increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</li>
+  <li>
+    <p>Set <code>always_populate_raw_post_data = -1</code></p>
 
-<p>We also recommend you increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.</p>
+    <p><a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank">always_populate_raw_post_data</a> is deprecated in PHP 5.6. This setting causes PHP to always populate <code>$HTTP_RAW_POST_DATA</code> with raw POST data. Failure to set this properly in PHP 5.6 results in errors when connecting to the database.</p>
+  </li>
+</ul>
 
-<p>To set your time zone and memory limit:</p>
+<p>To set PHP options:</p>
 
 <ol>
   <li>Locate your server’s time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.</li>
   <li>
     <p>Locate <code>php.ini</code> by entering the following command:</p>
 
-    <p><code>php -i | grep "Loaded Configuration File"</code></p>
+    <pre><code>php -i | grep "Loaded Configuration File"
+</code></pre>
 
     <p>Typical locations follow:</p>
 
@@ -390,7 +401,8 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
   <li>
     <p>Locate the following setting and uncomment it if necessary:</p>
 
-    <p><code>date.timezone =</code></p>
+    <pre><code>date.timezone =
+</code></pre>
   </li>
   <li>
     <p>Add the time zone setting you found in step 1.</p>
@@ -403,12 +415,19 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
     <p><code>memory_limit = 2G</code> or more for testing</p>
   </li>
   <li>
+    <p><em>Required for PHP 5.6, recommended for PHP 5.5</em>. Locate <code>always_populate_raw_post_data</code>, uncomment it if necessary, and set it as follows:</p>
+
+    <pre><code>always_populate_raw_post_data = -1
+</code></pre>
+  </li>
+  <li>
     <p>Save your changes and exit the text editor.</p>
   </li>
   <li>
     <p>Restart Apache:</p>
 
-    <p><code>service apache2 restart</code></p>
+    <pre><code>service apache2 restart
+</code></pre>
   </li>
 </ol>
 
