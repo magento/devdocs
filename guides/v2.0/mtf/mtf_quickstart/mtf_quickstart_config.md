@@ -61,6 +61,7 @@ Example for Google Chrome:
 
 {% highlight xml %}
 
+<server>
 <item name="selenium"
       type="default"
       browser="Google Chrome"
