@@ -22,7 +22,11 @@ Enter in terminal:
 
 <h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non default browser</h3>
 
-If the Selenium Server does not work directly with your browser, find the corresponding [WebDriver][], and run the Selenium Server with an additional argument.
+If the Selenium Server does not work directly with your browser, find the corresponding [WebDriver][].
+
+<a href="{{site.gdeurl}}mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser">In <code>config.xml</code> set browser that MTF will use for tests</a>
+
+Run the Selenium Server with an additional argument.
 
 Example for Google Chrome:
 
