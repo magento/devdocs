@@ -181,11 +181,9 @@ In Widget fixture code above there are fields with links for repositories. Let's
 
 Therefore, we should create `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`.
 
-XML structure of this repository is the same as in entire fixture repository.
+The XML structure of this repository is the same as a <a href="#mtf_repository_create">repository for the entire fixture</a>.
 
-Assume that we want to create datasets of Layout Updates field for the following cases:
-
-
+Assume that we want to fill out automatically the Layout Update block for the following cases shown on the pictures (name of datasets have orange font, fields defined in repository are highlighted in orange):
 
 
 ![all_pages dataset view on GUI]({{ site.baseurl }}common/images/mtf_repository_layout-allpages.png)
@@ -193,6 +191,8 @@ Assume that we want to create datasets of Layout Updates field for the following
 ![on_category dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-oncategory.png)
 
 ![layout_for_cms_page_link dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-for-cms-page-link.png)
+
+You can do his using the following repository code:
 
 {% highlight xml %}
 
@@ -226,6 +226,9 @@ Assume that we want to create datasets of Layout Updates field for the following
 </config>
 
 {% endhighlight %}
+
+
+
 
 Конфигурационный репозиторий
 
