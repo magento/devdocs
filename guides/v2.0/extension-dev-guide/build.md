@@ -17,7 +17,7 @@ Building your module involves laying out the file structure, creating the necess
 
 * [Create your module](create_module.html)
 * [Build the file structure](create_module.html#create-module-file-structure)
-* [Create necessary configuration files](required-configuration-files.html)
+* [Define your configuration files](required-configuration-files.html)
 
 The following topics will be added in upcoming sprints:
 
@@ -25,3 +25,4 @@ The following topics will be added in upcoming sprints:
 * __Build API data interfaces__
 * __Build API service interfaces__
 * __Add any frontend you need__
+* __Enable your module
