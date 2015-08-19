@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 1_Introduction
-title: Module guide
+title: PHP developers guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent

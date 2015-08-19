@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development
-title: Module guide
+title: PHP developers guide
 menu_title: Routing
 menu_order: 7
 github_link: extension-dev-guide/routing.md
