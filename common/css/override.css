@@ -17,6 +17,8 @@ code {
 	border-radius: 3px;
 	padding: 3px;
 	color: #000;
+    word-wrap: break-word;
+    white-space: inherit;
 }
 
 
@@ -99,8 +101,11 @@ p.q 	{
 
 .container {
     margin-right: 0;
-    margin-left: 0; 
+    margin-left: 0;
 }
+
+
+
 
 /*Give "Edit page on Github a little space on the right"  */
 .page-intro .improve-page {
@@ -153,6 +158,11 @@ margin: 0 0 0 66px;
     padding-left: 66px;
 }
 
+
+#footer-wrap #copyright .nav {
+    padding-right: 85px;
+}
+
 /*FIX for table font sizes TDD*/
 
 
@@ -167,7 +177,7 @@ tr td {vertical-align: initial;
 
 /* FIX for table line breaks TDD*/
 
-.main-container TABLE TR, .main-container TABLE TD, .main-container TABLE TD TT
+.main-container TABLE TR, .main-container TABLE TD, .main-container TABLE TD TT, .main-container TABLE TD CODE, .main-container TABLE TD PRE
 	{word-wrap:break-word;
 	}
 
