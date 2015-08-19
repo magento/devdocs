@@ -72,39 +72,17 @@ p.q 	{
 
 /* TDD- Add permanent left-hand margin*/
 
-.page-intro{
-    width: 100%;
-    max-width: 100%;
-}
-
-.page-intro .container {
-  left: 20px;
-}
-
-
-.sidebar .sidebar-wrapper {
-    padding: 12px 11px;
+.content {
+    width: 75%;
 }
 
 .sidebar {
-    width: 310px;
-    position: absolute;
-    left: 0;
-    top: 129px;
+    margin-left: 2%
 }
 
-
-.home-section {
-    padding: 40px 0 0 20px;
+.page-intro {
+    padding-left: 2%;
 }
-
-
-.container {
-    margin-right: 0;
-    margin-left: 0;
-}
-
-
 
 
 /*Give "Edit page on Github a little space on the right"  */
@@ -113,54 +91,14 @@ p.q 	{
     
 }
 
-#gl-wrapper {
-   width: inherit !important;
-    position: relative;
-}
-.content {
- 
-    overflow: hidden;
-    margin: 0rem 0 0 0;
-    padding: 0 0 0 0;
-    position: relative;
-    left: 310px;
-    top: 38px;
-    float: none;
-    width: 70%;
-    margin-right: auto;
-}
-
-.sidebar {
-    width: 310px;
-    position: absolute;
-    left: 0;
-    top: 129px;
-    
-}
-
-
-.sidebar-wrapper {
-  padding: 12px 0px 0px 20px;
-}
-
-.nav-main #global-nav{
-
-max-width: none;
-margin: 0 0 0 66px;
-}
-
- .nav-main #subnav-wrap #subnav  {
-    max-width: none;
-margin: 0 0 0 66px;
-}
-
-#footer-wrap {
+@media (min-width: 1130px){
+    .nav-main #global-nav {
     padding-left: 66px;
-}
+    }
 
-
-#footer-wrap #copyright .nav {
-    padding-right: 85px;
+ .nav-main #subnav-wrap #subnav {
+    padding-left: 66px;
+    }
 }
 
 /*FIX for table font sizes TDD*/
