@@ -190,7 +190,6 @@ To change the page wireframe, modify the <a href="/guides/v2.0/frontend-dev-guid
   <li><a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a></li>
   <li><a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_rem"><code>&lt;remove&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a></li>
   <li><a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a></li>
@@ -452,10 +451,12 @@ Example:
 
 To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
-<h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove&gt;</h3>
-Enables you to ignore some layout tags when generating a layout.
-<p><b>Details:</b> Removal works even if the <code>&lt;remove&gt;</code> tag occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a <code>&lt;remove&gt;</code> tag, the named elements are not generated.</p>
-<p>However, it is possible to create a new element after the layout is generated using <code>Mage_Core_Model_Layout::createElement()</code> or <code>createBlock()</code>.</p>
+<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock&gt; and &lt;referenceContainer&gt;</h3>
+<p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
+<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
+
+To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <table>
    <tbody>
       <tr>
@@ -465,33 +466,37 @@ Enables you to ignore some layout tags when generating a layout.
          <th>Required?</th>
       </tr>
       <tr class="even">
-         <td>name</td>
-         <td>Name of a block to remove.</td>
-         <td>block name</td>
-         <td>yes</td>
+         <td>remove</td>
+         <td>Allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.</td>
+         <td>block/container name</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>display</td>
+         <td>Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation.</td>
+         <td>block/container name</td>
+         <td>no</td>
       </tr>
    </tbody>
 </table>
-<p>If a <code>&lt;remove&gt;</code> tag has the <code>name</code> attribute <code>[specified_name]</code>, the following tags are ignored:</p>
-<ul>
-   <li><code>&lt;block class="Magento\Module\Block\Class" name="name.specified"/&gt;</code></li>
-   <li><code>&lt;container name="name.specified"/&gt;</code></li>
-   <li><code>&lt;referenceBlock name="name.specified"&gt;...</code></li>
-   <li><code>&lt;move element="name.specified" destination="name.destination"/&gt;</code></li>
-   <li><code>&lt;move element="name.element" destination="name.specified"/&gt;</code></li>
-</ul>
-<p><b>Example:</b></p>
 
-Removing the `report.bugs` block:
-<pre>
-&lt;remove&nbsp;name=&quot;report.bugs&quot;/&gt;
-</pre>
+* remove attribute is optional and its default value is false.
 
-<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock&gt; and &lt;referenceContainer&gt;</h3>
-<p>Updates in <code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code> are applied to the corresponding <code>&lt;block&gt;</code> or <code>&lt;container&gt;</code>.</p>
-<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"&gt;</code>, you're targeting the block <code>&lt;block name="right"&gt;</code>.</p>
+    This implementation allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.
+    
+    Example: 
+    
+    <pre>&lt;referenceBlock name="block.name" remove="true" /&gt;</pre>
 
-To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+* display attribute is optional and its default value is true.
+
+    You are always able to overwrite this value in your layout.
+    In situation when remove value is true, the display attribute is ignored.
+    
+    Example: 
+    
+    <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
+
 
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move&gt;</h3>
 Sets the declared block or container element as a child of another element in the specified order.
