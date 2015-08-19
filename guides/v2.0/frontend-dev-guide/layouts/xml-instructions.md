@@ -328,7 +328,8 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
    </tbody>
 </table>
 
-* remove attribute is optional and its default value is false.
+<ul>
+<li>remove attribute is optional and its default value is false.</li>
 
     This implementation allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.
     
@@ -336,7 +337,7 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
     
     <pre>&lt;referenceBlock name="block.name" remove="true" /&gt;</pre>
 
-* display attribute is optional and its default value is true.
+<li>display attribute is optional and its default value is true.</li>
 
     You are always able to overwrite this value in your layout.
     In situation when remove value is true, the display attribute is ignored.
@@ -344,7 +345,7 @@ To pass parameters to a block use the <a href="#argument">`<argument></argument>
     Example: 
     
     <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
-
+</ul>  
 
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 Sets the declared block or container element as a child of another element in the specified order.
