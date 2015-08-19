@@ -920,25 +920,25 @@ The configuration of the component can include:
 
 * editorConfig - is responsible for general editor configuration
 
-    component
+  * component
     
-    enabled - is Inline Edit enabled
+  * enabled - is Inline Edit enabled
     
-    selectProvider - column name, by which rows will be selected/deselected
+  * selectProvider - column name, by which rows will be selected/deselected
     
-    columnsProvider - provides columns
+  * columnsProvider - provides columns
     
-    dataProvider - provides data, which will be edited
+  * dataProvider - provides data, which will be edited
     
-    indexField - column name, by which edited rows will be indexed
+  * indexField - column name, by which edited rows will be indexed
     
-    bulkConfig - in current implementation on cms_pages, includes Bulk Edit component as a plugin
+  * bulkConfig - in current implementation on cms_pages, includes Bulk Edit component as a plugin
     
-    clientConfig - is responsible for editor communication with backend
+  * clientConfig - is responsible for editor communication with backend
     
-    viewConfig - is responsible for editor UI
+  * viewConfig - is responsible for editor UI
     
-    templates - the templates for child components, example will be provided below and marked as *.
+  * templates - the templates for child components, example will be provided below and marked as *.
    
 With configuration above, the Inline Edit will be enabled. But it also must start editing in response to some user action, for example when clicking somewhere on the row.
 
@@ -1004,11 +1004,36 @@ The configuration for the specific column editor can include:
 
 * validation
 
-    validation rules, required-entry here as just an example of possible rules
+  * validation rules, required-entry here as just an example of possible rules
 
 Additional examples:
- * - Example of the templates configuration
- ** - Example of the editor type configuraion
+ * - Example of the templates configuration (fieldTmpl for the edited cell, and rowTmpl for the whole edited row)
+{% highlight xml %}
+<columns name="cms_page_columns">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="editorConfig" xsi:type="array">
+                ..
+                <item name="templates" xsi:type="array">
+                    <item name="record" xsi:type="array">
+                        <item name="fieldTmpl" xsi:type="string">ui/grid/editing/field</item>
+                        <item name="rowTmpl" xsi:type="string">ui/grid/editing/row</item>
+                    </item>
+                </item>
+            </item>
+            ..
+        </item>
+    </argument>
+..
+</columns>
+{% endhighlight %}
+ ** - Example of the editor type configuraion - let's add a colorpicker type, for example, as addition to the existed types (which extend form/element/abstract)
+{% highlight xml%}
+<item name="editor" xsi:type="array">
+    <item name="component" xsi:type="string">Magento_Ui/js/form/element/colorpicker</item>
+    <item name="template" xsi:type="string">ui/form/element/colorpicker</item>
+</item>
+{% endhighlight %}
  
 ####Inline Edit JS Component Structure
 
