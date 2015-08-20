@@ -6,12 +6,11 @@ title: Layout instructions
 menu_title: Layout instructions
 menu_order: 2
 github_link: frontend-dev-guide/layouts/xml-instructions.md
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html
 ---
 <head>
-	<style>
-		table tr td, table tr th {border: 1px solid #ABABAB}
-	</style>
+   <style>
+      table tr td, table tr th {border: 1px solid #ABABAB}
+   </style>
 </head>
 
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
@@ -23,9 +22,9 @@ To change the page wireframe, modify the <a href="{{site.gdeurl}}frontend-dev-gu
 Use layout instructions to:
 
 
-*	move a page element to another parent element
-*	add content
-*	remove a page element
+*  move a page element to another parent element
+*  add content
+*  remove a page element
 <p></p>
 
 The basic set of instructions is the same for all types of layout files. This article describes these basic instructions; for details about how they are used in particular layout file type, please refer to the <a href="{{site.gdeurl}}frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a> article.
@@ -35,6 +34,17 @@ The basic set of instructions is the same for all types of layout files. This ar
 
 Use the following layout instructions to customize your layout:
 
+<<<<<<< HEAD
+*  <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
+*  <a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
+*  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_rem"><code>&lt;remove></code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
+*  <a href="#argument"><code>&lt;argument&gt;</code></a>
+=======
 *	<a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
 *	<a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
@@ -43,6 +53,7 @@ Use the following layout instructions to customize your layout:
 *	<a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
 *	<a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *	<a href="#argument"><code>&lt;argument&gt;</code></a>
+>>>>>>> a589bab039b1103cc1c8d9e26953a2aeaefc80ab
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
@@ -114,7 +125,7 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
       </tr>
       <tr class="odd">
          <td>cacheable</td>
-         <td>Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic.	</td>
+         <td>Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. </td>
          <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
@@ -455,18 +466,18 @@ Used to pass an argument.
 To pass multiple arguments use the following construction:
 <pre>
 &lt;arguments&gt;
-	&lt;argument&gt;&lt;/argument&gt;
-	&lt;argument&gt;&lt;/argument&gt;
-	...
+   &lt;argument&gt;&lt;/argument&gt;
+   &lt;argument&gt;&lt;/argument&gt;
+   ...
 &lt;/arguments&gt;
 </pre>
 
 To pass an argument that is an array use the following construction:
 <pre>
 &lt;argument&gt;
-	&lt;item&gt;&lt;/item&gt;
-	&lt;item&gt;&lt;/item&gt;
-	...
+   &lt;item&gt;&lt;/item&gt;
+   &lt;item&gt;&lt;/item&gt;
+   ...
 &lt;/argument&gt;
 </pre>
 

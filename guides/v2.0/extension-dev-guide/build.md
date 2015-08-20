@@ -25,4 +25,4 @@ The following topics will be added in upcoming sprints:
 * __Build API data interfaces__
 * __Build API service interfaces__
 * __Add any frontend you need__
-* __Enable your module
+* __Enable your module__
