@@ -83,6 +83,9 @@ p.q 	{
     padding-left: 2%;
 }
 
+.home-section {
+    padding: 40px 0 0 2%;
+}
 
 /*Give "Edit page on Github a little space on the right"  */
 .page-intro .improve-page {
