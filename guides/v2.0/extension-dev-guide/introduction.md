@@ -2,13 +2,14 @@
 layout: default
 group: 
 subgroup: 
-title: PHP Developer Guide Introduction
+title: PHP developer guide
 menu_title: Introduction
 menu_order: 1
 github_link: extension-dev-guide/introduction.md
 redirect_from: /guides/v1.0/extension-dev-guide/introduction.html
 
 ---
+##{{page.menu_title}}
 
 
 This guide is for developers that or are building a new module from scratch for custom extension of Magento functionality. This guide is also for those who want to create an extension for Magento Connect, although it does not cover the publishing process.
