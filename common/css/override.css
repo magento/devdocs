@@ -19,6 +19,7 @@ code {
 	color: #000;
     word-wrap: break-word;
     white-space: inherit;
+    font-size: inherit;
 }
 
 
@@ -141,6 +142,8 @@ tr td {vertical-align: initial;
 	font-size: .9em;
 	}
 
+
+td code, td pre {font-size: .9em}
 
 /* FIX for table line breaks TDD*/
 
