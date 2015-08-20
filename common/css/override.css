@@ -101,6 +101,17 @@ p.q 	{
     }
 }
 
+/* Adjust footer padding TDD */
+
+#footer-wrap {
+   
+    padding-left: 2%;
+}
+
+#footer-wrap #copyright {
+    padding-right: 5%;
+}
+
 /*FIX for table font sizes TDD*/
 
 
