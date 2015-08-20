@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 2_Prepare
-title: PHP developers guide
+title: PHP developer guide
 menu_title: Prepare
 menu_order: 1
 menu_node: parent

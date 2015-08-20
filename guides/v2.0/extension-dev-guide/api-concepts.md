@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development
-title: PHP developers guide
+title: PHP developer guide
 menu_title: Public interfaces & APIs
 menu_order: 3
 github_link: extension-dev-guide/api-concepts.md

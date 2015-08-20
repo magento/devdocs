@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development
-title: Module guide
+title: PHP developer guide
 menu_title: Configure services as web APIs
 menu_order: 9
 github_link: extension-dev-guide/service-contracts/service-to-web-service.md

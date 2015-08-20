@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 6_Module Development
-title: PHP developers guide
+title: PHP developer guide
 menu_title: Dependency injection
 menu_order: 5
 github_link: extension-dev-guide/depend-inj.md

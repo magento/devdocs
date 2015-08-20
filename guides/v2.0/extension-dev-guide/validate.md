@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 4_Validate
-title: PHP developers guide
+title: PHP developer guide
 menu_title: Validate
 menu_order: 1
 menu_node: parent
