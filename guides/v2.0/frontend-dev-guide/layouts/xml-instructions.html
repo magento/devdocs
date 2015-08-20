@@ -85,7 +85,7 @@
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
 			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
-               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
 
                <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
@@ -166,9 +166,9 @@
 		<div class="content-wrap">
 		
 		<head>
-	<style>
-		table tr td, table tr th {border: 1px solid #ABABAB}
-	</style>
+   <style>
+      table tr td, table tr th {border: 1px solid #ABABAB}
+   </style>
 </head>
 
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
@@ -191,16 +191,26 @@ To change the page wireframe, modify the <a href="/guides/v2.0/frontend-dev-guid
 
 <p>Use the following layout instructions to customize your layout:</p>
 
-<ul>
-  <li><a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a></li>
-  <li><a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a></li>
-  <li><a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a></li>
-  <li><a href="#argument"><code>&lt;argument&gt;</code></a></li>
-</ul>
+<p>«««&lt; HEAD
+*  <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a>
+*  <a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
+*  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_rem"><code>&lt;remove&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a>
+*  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
+*  <a href="#argument"><code>&lt;argument&gt;</code></a>
+=======
+*	<a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block&gt;</code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container&gt;</code></a>
+*	<a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
+*	<a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action&gt;</code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock&gt;</code> and <code>&lt;referenceContainer&gt;</code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move&gt;</code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
+*	<a href="#argument"><code>&lt;argument&gt;</code></a>
+»»»&gt; a589bab039b1103cc1c8d9e26953a2aeaefc80ab</p>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block&gt;</h3>
 
@@ -272,7 +282,7 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
       </tr>
       <tr class="odd">
          <td>cacheable</td>
-         <td>Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic.	</td>
+         <td>Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. </td>
          <td><code>true</code> or <code>false</code></td>
          <td>no</td>
       </tr>
@@ -613,18 +623,18 @@ Used to pass an argument.
 To pass multiple arguments use the following construction:
 <pre>
 &lt;arguments&gt;
-	&lt;argument&gt;&lt;/argument&gt;
-	&lt;argument&gt;&lt;/argument&gt;
-	...
+   &lt;argument&gt;&lt;/argument&gt;
+   &lt;argument&gt;&lt;/argument&gt;
+   ...
 &lt;/arguments&gt;
 </pre>
 
 To pass an argument that is an array use the following construction:
 <pre>
 &lt;argument&gt;
-	&lt;item&gt;&lt;/item&gt;
-	&lt;item&gt;&lt;/item&gt;
-	...
+   &lt;item&gt;&lt;/item&gt;
+   &lt;item&gt;&lt;/item&gt;
+   ...
 &lt;/argument&gt;
 </pre>
 
@@ -1208,6 +1218,18 @@ $cssClass&nbsp;=&nbsp;$this-&gt;getCssClass()&nbsp;?&nbsp;'&nbsp;'&nbsp;.&nbsp;$
 <!-- Docs scripts (just in case) -->
 <script src="/js/app-min.js"></script>
 
+
+<!--Google Analytics-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66243208-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </body>
 </html>
