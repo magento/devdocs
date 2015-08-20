@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Continue to installing the Magento software</title>
+	<title>Important notes about Merchant Beta</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/continue-to-install.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/install/merch-beta-notes.html">
 
 </head>	
 <body>
@@ -148,9 +148,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Continue to installing the Magento software</h1>
+		<h1 class="page-heading">Important notes about Merchant Beta</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/continue-to-install.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/install-composer-clear-cache.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -159,23 +159,50 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="before-you-continue">Before you continue</h2>
-<p>Did you remember to set file system ownership and permissions? If not, <a href="/guides/v2.0/install-gde/install/file-system-perms.html">go back</a> and do that now.</p>
-
-<h2 id="installation-options-command-line-or-setup-wizard">Installation options: command line or Setup Wizard</h2>
-<p>Now that you’ve installed prerequisites and taken the first steps (merchant, system integrator, or developer), you’re ready to install the Magento software in any of the following ways:</p>
+		<p>We want you to be aware of the following important notes about the Merchant Beta release:</p>
 
 <ul>
-  <li>Using the web-based <a href="/guides/v2.0/install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don’t have access to the Magento server)</li>
-  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a>, which gives you more control but requires more experience and also access to the Magento server</li>
+  <li><a href="#merchbeta-inst">You must uninstall and reinstall the Magento software</a></li>
+  <li><a href="#merchbeta-cache">You might need to clear your local Composer cache</a></li>
 </ul>
 
-<!-- ## Already installed the Magento software?
-You might want to manage Magento components or to upgrade:
+<h2 id="merchbeta-inst">You must uninstall and reinstall the Magento software
+<p>The Magento 2 Merchant Beta release (1.0.0-beta) includes a schema update that requires you to uninstall the Magento software and reinstall it.</p>
+<p>The reason is that all modules in Merchant Beta are version 2.0.0. The update affected <em>all</em> data and schemas in the Magento 2 database.</p>
+<p>To update to the Merchant Beta release:</p>
+<ol><li><a href="/guides/v2.0/install-gde/install/install-cli-backup.html">Back up</a> your Magento 2 database, file system, and media files.</li>
+  <li><a href="/guides/v2.0/install-gde/install/install-cli-uninstall.html#instgde-install-uninstall">Uninstall</a> the Magento software.</li>
+  <li>Upgrade the Magento 2 codebase as follows:
+  	<ol><li>Log in to your Magento server as a user with permissions to modify files in the Magento file system (for example, the web server user).</li>
+  		<li>Change to the <code>&lt;your Magento install dir&gt;</code> directory.</li>
+  		<li>Save a copy of <code>composer.json</code>.</li>
+  		<li>Update your local repository to get the latest code:
+  			<pre>git pull origin develop</pre>
+  		<div class="bs-callout bs-callout-info" id="info">
+		<span class="glyphicon-class">
+  			<p>If <code>git pull origin develop</code> fails, see <a href="/guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+		</div></li>
+  			<li>Diff and merge your saved copy of <code>composer.json</code> with new <code>composer.json</code> provided with Merchant Beta.</li>
+  			<li>Enter <code>composer update</code>.</li>
+  			<li>Clear <code>var</code> directory contents:
+  				<pre>rm -rf var/generation/* var/cache/*</pre></li>
+  			</ol>
+  </li>
+  <li>Install the Magento 2 software from the <a href="/guides/v2.0/install-gde/install/install-cli-install.html">command line</a> or <a href="/guides/v2.0/install-gde/install/install-web.html">Setup Wizard</a>.</li>
+  <li><a href="/guides/v2.0/install-gde/install/verify.html">Verify</a> the installation.</li></ol>
 
-*	<a href="/guides/v2.0/comp-mgr/bk-compman-guide.html">Component Manager Guide</a>
-*	<a href="/guides/v2.0/upgrade/bk-upgrade-guide.html">Upgrade Guide</a>
- -->
+<h2 id="merchbeta-cache">You might need to clear your local Composer cache</h2>
+<p>We introduced a change on <a href="http://packages.magento.com/" target="_blank">packages.magento.com</a> that had the unintended result of causing errors with certain Magento packages.</p>
+<p>This affects <em>only</em> users who used <code>composer create-project</code> to create their Magento project between the dates of August 13 and August 17, 2015.</p>
+<p>A user reported one symptom on <a href="https://github.com/magento/magento2/issues/1680" target="_blank">GitHub</a> about an error that occurred during the installation:</p>
+<pre>[UnexpectedValueException]
+The checksum verification of the file failed (downloaded from https://packages.magento.com/_packages/magento_framework-1.0.0-beta.zip)</pre>
+<p>The cause is a conflict between packages on <code>packages.magento.com</code> compared to the local Composer cache. To resolve the issue, clear your Composer cache as follows:</p>
+<ol><li>Log in to your Magento server as a user with permissions to run <code>composer</code> in the Magento installation directory.</li>
+	<li><code>cd &lt;your Magento install dir&gt;</code></li>
+	<li>Enter <code>composer clear-cache</code></li></ol>
+
+</h2>
 
 
 		</div>
@@ -224,7 +251,7 @@ You might want to manage Magento components or to upgrade:
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/merch-beta-notes.html">Important notes about Merchant Beta</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/install-gde/install/merch-beta-notes.html">Important notes about Merchant Beta</a></li>
 									
 								
 								
@@ -460,7 +487,7 @@ You might want to manage Magento components or to upgrade:
 							
 								
 								
-									<li class="  active "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Continue to installing the Magento software</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/continue-to-install.html">Continue to installing the Magento software</a></li>
 									
 								
 								
@@ -643,8 +670,8 @@ You might want to manage Magento components or to upgrade:
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/continue-to-install.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/continue-to-install.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/merch-beta-notes.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/install/merch-beta-notes.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

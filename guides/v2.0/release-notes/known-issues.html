@@ -167,6 +167,7 @@
 <!-- *   <a href="#known-devbeta-sampledata">Magento sample data is available only if you edit composer.json</a>
  -->
 <ul>
+  <li><a href="known-composer-clear-cache">You might need to clear your Composer cache</a></li>
   <li><a href="#known-devrc-php">Known issue with timezone in certain PHP versions</a></li>
   <li><a href="#known-devbeta-xdebug">Known issue with xdebug</a></li>
   <li><a href="#known-devbeta-storefront-err">Access errors</a></li>
@@ -178,6 +179,17 @@
 <!-- <h3 id="known-issue-sample">Issue installing optional sample data</h3> -->
 <!-- https://jira.corp.x.com/browse/MAGETWO-32879 -->
 <!-- Errors display when you attempt to install optional Magento sample data. We are working on this issue and expect a resolution in the near future. -->
+
+<h3 id="known-composer-clear-cache">You might need to clear your Composer cache</h3>
+<p>We introduced a change on <a href="http://packages.magento.com/" target="_blank">packages.magento.com</a> that had the unintended result of causing errors with certain Magento packages.</p>
+<p>This affects <em>only</em> users who used <code>composer create-project</code> to create their Magento project between the dates of August 13 and August 17, 2015.</p>
+<p>A user reported one symptom on <a href="https://github.com/magento/magento2/issues/1680" target="_blank">GitHub</a> about an error that occurred during the installation:</p>
+<pre>[UnexpectedValueException]
+The checksum verification of the file failed (downloaded from https://packages.magento.com/_packages/magento_framework-1.0.0-beta.zip)</pre>
+<p>The cause is a conflict between packages on <code>packages.magento.com</code> compared to the local Composer cache. To resolve the issue, clear your Composer cache as follows:</p>
+<ol><li>Log in to your Magento server as a user with permissions to run <code>composer</code> in the Magento installation directory.</li>
+	<li><code>cd &lt;your Magento install dir&gt;</code></li>
+	<li>Enter <code>composer clear-cache</code></li></ol>
 
 <h3 id="known-devrc-php">Known issue with timezone in certain PHP versions</h3>
 <p>This issue affects builds <em>earlier than</em> 0.74-beta10 only. If you have a later build, you can ignore this issue.</p>

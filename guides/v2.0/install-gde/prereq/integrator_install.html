@@ -159,7 +159,14 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="system-integration-installation-first-steps">System integration installation first steps</h2>
+		<h4 id="contents">Contents</h4>
+<ul>
+  <li><a href="#integrator-first-over">System integration installation first steps</a></li>
+  <li><a href="#integrator-first-composer">Create a Composer project</a></li>
+  <li><a href="#integrator-first-issue">Known issue: you might need to clear your Composer cache</a></li>
+</ul>
+
+<h2 id="integrator-first-over">System integration installation first steps</h2>
 <p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade (<em>not released yet</em>.)</p>
 
 <p>To do so, you start by creating a Composer project, which installs each component so it can be centrally managed after installation.</p>
@@ -174,7 +181,7 @@
 <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
 <li>Supports PHP Framework Interoperability standard</li></ul>
 
-<h2 id="create-a-composer-project">Create a Composer project</h2>
+<h2 id="integrator-first-composer">Create a Composer project</h2>
 <p>To get started:</p>
 
 <ol>
@@ -192,6 +199,18 @@
   </li>
   <li>Continue with <a href="/guides/v2.0/install-gde/install/file-system-perms.html">Set file system ownership and permissions</a>.</li>
 </ol>
+
+<h2 id="integrator-first-issue">Known issue: you might need to clear your Composer cache</h2>
+<p>We introduced a change on <a href="http://packages.magento.com/" target="_blank">packages.magento.com</a> that had the unintended result of causing errors with certain Magento packages.</p>
+<p>This affects <em>only</em> users who used <code>composer create-project</code> to create their Magento project between the dates of August 13 and August 17, 2015.</p>
+<p>A user reported one symptom on <a href="https://github.com/magento/magento2/issues/1680" target="_blank">GitHub</a> about an error that occurred during the installation:</p>
+<pre>[UnexpectedValueException]
+The checksum verification of the file failed (downloaded from https://packages.magento.com/_packages/magento_framework-1.0.0-beta.zip)</pre>
+<p>The cause is a conflict between packages on <code>packages.magento.com</code> compared to the local Composer cache. To resolve the issue, clear your Composer cache as follows:</p>
+<ol><li>Log in to your Magento server as a user with permissions to run <code>composer</code> in the Magento installation directory.</li>
+	<li><code>cd &lt;your Magento install dir&gt;</code></li>
+	<li>Enter <code>composer clear-cache</code></li></ol>
+
 
 
 		</div>
@@ -240,7 +259,7 @@
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/install-merchbeta.html">Merchant Beta&mdash;uninstall and reinstall</a></li>
+									<li class=" "><a class="nav-header" href="/guides/v2.0/install-gde/install/merch-beta-notes.html">Important notes about Merchant Beta</a></li>
 									
 								
 								
