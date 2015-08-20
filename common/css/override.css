@@ -27,12 +27,11 @@ code {
 
 H1 CODE, H2 CODE, H3 CODE, H4 CODE, H5 CODE {
     padding: 2px 4px; 
-     color: #828080; 
+     color: #000; 
      background-color: transparent;
      border: 0px solid #e1e1e8; 
      white-space: nowrap;
      font-size: 1em;
-     /* */
 }
 
 
