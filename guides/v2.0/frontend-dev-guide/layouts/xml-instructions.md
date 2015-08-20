@@ -6,14 +6,12 @@ title: Layout instructions
 menu_title: Layout instructions
 menu_order: 2
 github_link: frontend-dev-guide/layouts/xml-instructions.md
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html
 ---
 <head>
    <style>
       table tr td, table tr th {border: 1px solid #ABABAB}
    </style>
 </head>
-
 
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
@@ -75,9 +73,7 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
       </tr>
       <tr class="even">
          <td>before</td>
-         <td>Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.
-
-         </td>
+         <td>Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
