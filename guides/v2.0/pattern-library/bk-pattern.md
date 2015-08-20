@@ -23,8 +23,8 @@ Browse the Design Pattern Library here:
 
 ####Container
 <a href="containers/staticContentContainer/contentContainer.html">Static Content Container</a><br>
-<a href="containers/slideouts-modals-overlays/slideouts-modals-overalys.html">Slide-out Panels, Modal Windows, and Overlays</a>
-
+<a href="containers/slideouts-modals-overlays/slideouts-modals-overalys.html">Slide-out Panels, Modal Windows, and Overlays</a><br>
+<a href="containers/tabs/tabs.html">Tabs</a><br>
 
 ####Controls
 <a href="controls/buttons/buttons.html">Buttons</a><br>
@@ -44,6 +44,9 @@ Browse the Design Pattern Library here:
 <a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a><br>
 <a href="getting-user-input/image_uploader/image_uploader.html">Date and Time Selector</a>
 
+
+####Graphics
+<a href="graphics/iconography/iconography.html">Iconography</a><br>
 
 ####Navigation
 <a href="navigation/links/links.html">Links</a><br>
