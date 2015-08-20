@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>EAV and extension attributes</title>
+	<title>PHP developer guide</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
 	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/attributes.html">
+
+
 
 </head>	
 <body>
@@ -83,7 +85,8 @@
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
 			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
-               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>
+
                <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
@@ -108,8 +111,11 @@
             </ul>
          </li>
       </ul>
-   </div>
-</div>
+
+
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
 
 	
 </header>	
@@ -148,7 +154,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">EAV and extension attributes</h1>
+		<h1 class="page-heading">PHP developer guide</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/attributes.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -159,11 +165,13 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:</p>
+		<h2 id="eav-and-extension-attributes">EAV and extension attributes</h2>
+
+<p>Magento provides two types of attributes that integrators can use to extend the functionality provided out-of-the-box:</p>
 
 <ul>
   <li>
-    <p>Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed on the GUI. See the merchant documentation for information about information about managing custom attributes.</p>
+    <p>Custom and EAV (Entity-Attribute-Value) attributes. Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the admin panel, and these attributes can be displayed. See the merchant documentation for information about information about managing custom attributes.</p>
 
     <p>Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The <code>Customer</code> and <code>Catalog</code> modules have the primary models that use EAV attributes. Other modules, such as <code>ConfigurableProduct</code>, <code>GiftMessage</code>, and <code>Tax</code>, use the EAV functionality for <code>Catalog</code>.</p>
   </li>
@@ -197,7 +205,7 @@
 
 <p>In this case, when <code>getCustomAttributes()</code> is called, the system returns only custom attributes that are not in this list.</p>
 
-<p>The <code>Customer</code> module does not have treat its EAV attributes in a special manner. As a result, the <code>getCustomAttributes()</code> method returns all EAV attributes.</p>
+<p>The <code>Customer</code> module does not treat its EAV attributes in a special manner. As a result, the <code>getCustomAttributes()</code> method returns all EAV attributes.</p>
 
 <h2 id="extension">Extension attributes</h2>
 
@@ -301,7 +309,7 @@
 
 <p>Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See <a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Web API authentication overview</a> for general information about authentication in Magento.</p>
 
-<p>The following <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogInventory/etc/extension_attributes.xml">code sample</a> defines <code>stock_item</code> as an extension attribute of the <code>CatalogInventory</code> module. <code>CatalogInventory</code> is treated as a “3rd-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.</p>
+<p>The following <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/CatalogInventory/etc/extension_attributes.xml">code sample</a> defines <code>stock_item</code> as an extension attribute of the <code>CatalogInventory</code> module. <code>CatalogInventory</code> is treated as a “third-party extension”. Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.</p>
 
 <div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
@@ -313,7 +321,7 @@
     <span class="nt">&lt;/extension_attributes&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></div>
 
-<p>In this example, the <code>stock_item</code> attribute is restricted to only the users who have the <code>Magento_CatalogInventory::cataloginventory</code> permission. As a result, an anonymous or unauthenticated user issuing a <code>GET http://&lt;MAGENTO_BASE_URL&gt;/rest/V1/products/&lt;sku&gt;</code> request will receive product information similar to the following:</p>
+<p>In this example, the <code>stock_item</code> attribute is restricted to only the users who have the <code>Magento_CatalogInventory::cataloginventory</code> permission. As a result, an anonymous or unauthenticated user issuing a <code>GET http://&lt;magento_base_url&gt;/rest/V1/products/&lt;sku&gt;</code> request will receive product information similar to the following:</p>
 
 <pre><code>{
   "sku": “tshirt1”,
@@ -412,6 +420,10 @@
 							
 								
 								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer roadmap</a></li>
+						
+								
 								
 								
 							
@@ -429,21 +441,140 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/prepare.html">Prepare</a></li>
+									
 								
-								
-							
-									<li class=""><span class="nav-header">Concepts</span></li>
-								
-								
-							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/build.html">Build</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/package.html">Package</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
 						
 								
 							
@@ -451,121 +582,28 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer Integration</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
 						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Fundamentals</span></li>
-								
-								
-							
-								
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/attributes.html">Attributes</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
 						
 								
-								
-								
 							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">How to</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a Module</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package an extension</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/template_create_req_config_files.html">Create the required config files (template)</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/architecture/index-cache/indexing.html">Indexing</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								

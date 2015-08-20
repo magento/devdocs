@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Package an extension</title>
+	<title>PHP developer guide</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
 	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/package_module.html">
+
+
 
 </head>	
 <body>
@@ -83,7 +85,8 @@
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
 			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
-               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">Extension Developer Guide</a>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a>
+
                <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
                <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
                <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
@@ -108,8 +111,11 @@
             </ul>
          </li>
       </ul>
-   </div>
-</div>
+
+
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
 
 	
 </header>	
@@ -148,7 +154,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Package an extension</h1>
+		<h1 class="page-heading">PHP developer guide</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/extension-dev-guide/package_module.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -159,18 +165,20 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<p>The Magento system uses Composer packages to distribute, install, and upgrade extensions in an application instance.</p>
+		<h2 id="package-a-module">Package a module</h2>
 
-<p>To package an extension, you must:</p>
+<p>The Magento system uses Composer packages to distribute, install, and upgrade modules in an application instance.</p>
+
+<p>To package an module, you must:</p>
 
 <ul>
   <li>Create a Magento Composer file (<code>composer.json</code>).</li>
-  <li>Package and publish the extension. </li>
+  <li>Package and publish the module. </li>
 </ul>
 
 <h2 id="composer">Create a Magento Composer file</h2>
 
-<p>The Magento <code>composer.json</code> file defines the name, requirements, version, and other basic information about the extension. This file must be placed in the root directory of the extension.</p>
+<p>The Magento <code>composer.json</code> file defines the name, requirements, version, and other basic information about the module. This file must be placed in the root directory of the module.</p>
 
 <p>The <code>composer.json</code> uses <a href="https://getcomposer.org/doc/04-schema.md">Composer’s generic schema</a>, with the following restrictions:</p>
 
@@ -186,7 +194,7 @@
 </tr>
 <tr>
 <td><code>type</code> </td>
-<td>For extensions, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
+<td>For modules, this value must be set to <code>magento2-module</code>. Other possible types are <code>magento2-component</code>, <code>magento2-theme</code>, <code>magento2-language</code>, and <code>magento2-library</code></td>
 </tr>
 <tr>
 <td><code>extra-&gt;map</code>  </td>
@@ -216,22 +224,22 @@
     <span class="p">}</span>
 <span class="p">}</span></code></pre></div>
 
-<h2 id="packaging">Package and publish an extension</h2>
+<h2 id="packaging">Package and publish an module</h2>
 
-<p>After you have created the extension’s <code>composer.json</code> file in the root directory of the extension, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.</p>
+<p>After you have created the module’s <code>composer.json</code> file in the root directory of the module, Composer can recognize your package as compatible with its deployment strategy. Such packages can be published to a code repository (GitHub, SVN, etc.), packagist.org, or on your own private package repository.</p>
 
 <h3 id="hosting">Hosting on GitHub and Packagist</h3>
 <p>Prerequisite: git must be set up on your machine.</p>
 
 <ol>
-  <li>Navigate to your extension directory, with the <code>composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details. </li>
-  <li>When you have committed and pushed your extension to your GitHub repository, you can either:
+  <li>Navigate to your module directory, with the <code>composer.json</code> file in the root, and make it a new git repository. See the <a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">GitHub documentation</a> for details. </li>
+  <li>When you have committed and pushed your module to your GitHub repository, you can either:
     <ul>
       <li>Use <a href="https://getcomposer.org/doc/05-repositories.md#vcs">Composer to refer to it directly</a>, or </li>
       <li>Use the following steps to refer to the package through Packagist.
         <ol>
           <li>Register an account at <a href="https://packagist.org/">packagist.org</a>.</li>
-          <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the extension’s <code>composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code>vendor/extension</code> without any additional repository information, as is required solely using GitHub.</li>
+          <li>Click the Submit Package button and paste your GitHub repository link. Packagist automatically gathers the information from the module’s <code>composer.json</code> file and link it to the GitHub repository, allowing you to reference the package as <code>vendor/module</code> without any additional repository information, as is required solely using GitHub.</li>
         </ol>
       </li>
     </ul>
@@ -258,14 +266,6 @@
 
 <p>All packages on the private packaging repository can now be referenced within the <code>require</code> field.</p>
 
-<h2 id="test">Test your extension</h2>
-<p>Test your extension by deploying a Magento Community Edition and adding the extension to the project’s <code>composer.json</code>. Marshall the extension into the <code>app/code</code> directory.</p>
-
-<div class="highlight"><pre><code class="language-json" data-lang="json"><span class="s2">&quot;require&quot;</span><span class="err">:</span> <span class="p">{</span>
-    <span class="nt">&quot;magento/magento-composer-installer&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;magento/product-community-edition&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.0&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;foovendor/module-one&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1.1&quot;</span>
-<span class="p">}</span><span class="err">,</span></code></pre></div>
 
 
 		</div>
@@ -326,6 +326,10 @@
 							
 								
 								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer roadmap</a></li>
+						
+								
 								
 								
 							
@@ -343,21 +347,140 @@
 							
 								
 								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/prepare.html">Prepare</a></li>
+									
 								
-								
-							
-									<li class=""><span class="nav-header">Concepts</span></li>
-								
-								
-							
 								
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Programming concepts</a></li>
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer integration</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/build.html">Build</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a module</a></li>
 						
 								
 							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/required-configuration-files.html">Define your configuration files</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/package.html">Package</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package a module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/validate.html">Validate</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/test-module.html">Test your module</a></li>
+						
+								
+								
+								
+							
+							
+						
+
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class=" "><a class="nav-header" href="/guides/v2.0/extension-dev-guide/module-development.html">Module development</a></li>
+									
+								
+								
+								
+							
+								
+								
+							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/api-concepts.html">Public interfaces & APIs</a></li>
 						
 								
 							
@@ -365,121 +488,28 @@
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/composer-integration.html">Composer Integration</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/attributes.html">EAV and extension attributes</a></li>
 						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">Fundamentals</span></li>
-								
-								
-							
-								
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Plug-ins</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/attributes.html">Attributes</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/plugins.html">Magento plug-ins</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/routing.html">Routing</a></li>
 						
 								
-								
-								
 							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-								
-								
-							
-									<li class=""><span class="nav-header">How to</span></li>
-								
-								
-							
-								
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/developers_roadmap.html">Developer's Roadmap</a></li>
-						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/create_module.html">Create a Module</a></li>
-						
-								
-							
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/package_module.html">Package an extension</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/indexing.html">Indexing</a></li>
 						
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
 						
-								
-							
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/template_create_req_config_files.html">Create the required config files (template)</a></li>
-						
-								
-								
-								
-							
-							
-						
-
-					
-					
-						
-						
-						
-						
-							
-														
-							
-								
-								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/architecture/index-cache/indexing.html">Indexing</a></li>
-									
-								
-								
-								
-							
-								
 								
 								
 								
