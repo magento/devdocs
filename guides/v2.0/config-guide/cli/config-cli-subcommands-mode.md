@@ -11,7 +11,9 @@ github_link: config-guide/cli/config-cli-subcommands-mode.md
 
 
 #### Contents
-TBD
+*	<a href="#config-mode-over">Overview of setting Magento modes</a>
+*	<a href="#config-mode-prod">Change to production mode</a>
+*	<a href="#config-mode-dev">Change to developer mode</a>
 
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
 To improve security, we added a command that switches <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. In doing so, we set file permissions and ownership appropriately.
