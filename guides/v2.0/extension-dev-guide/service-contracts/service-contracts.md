@@ -1,15 +1,16 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Concepts
-title: Service contracts
+subgroup: 6_Module Development
+title: PHP developer guide
 menu_title: Service contracts
 menu_order: 2
 github_link: extension-dev-guide/service-contracts/service-contracts.md
 redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html
 ---
+##{{page.menu_title}}
 
-<h2 id="overview">Overview</h2>
+
 <p>Magento is a modular system that enables third-party developers to customize and overwrite core parts of its framework. This flexibility, however, comes at a price.</p>
 <p>Business logic tends to leak across the layers of the Magento system, which manifests as duplicated and inconsistent code.</p>
 <p>Merchants might be reluctant to upgrade Magento because customized extensions that they have purchased might not be compatible with new versions of Magento.
