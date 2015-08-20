@@ -34,6 +34,7 @@ The basic set of instructions is the same for all types of layout files. This ar
 
 Use the following layout instructions to customize your layout:
 
+<<<<<<< HEAD
 *  <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
 *  <a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
@@ -43,6 +44,16 @@ Use the following layout instructions to customize your layout:
 *  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
+=======
+*	<a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
+*	<a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
+*	<a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
+*	<a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
+*	<a href="#argument"><code>&lt;argument&gt;</code></a>
+>>>>>>> a589bab039b1103cc1c8d9e26953a2aeaefc80ab
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
@@ -73,7 +84,24 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
       </tr>
       <tr class="even">
          <td>before</td>
-         <td>Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
+         <td><p>Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+<li>four</li>
+<li>five</li>
+</ul>
+
+<ol>
+<li>one</li>
+<li>two</li>
+<li>three</li>
+<li>four</li>
+<li>five</li>
+</ol>
+
+         </td>
          <td>Possible values: element name or dash (-)</td>
          <td>no</td>
       </tr>
@@ -299,10 +327,12 @@ Example:
 
 To pass parameters, use the <a href="#argument"><code>&lt;argument&gt;&lt;/argument&gt;</code></a> instruction.
 
-<h3 id="fedg_layout_xml-instruc_ex_rem">&lt;remove></h3>
-Enables you to ignore some layout tags when generating a layout.
-<p><b>Details:</b> Removal works even if the <code>&lt;remove></code> tag occurs in the layout before the referenced element because it is executed after all element declarations are processed. This means that regardless of how many elements with the referenced name are declared in layout XML, if there is a <code>&lt;remove></code> tag, the named elements are not generated.</p>
-<p>However, it is possible to create a new element after the layout is generated using <code>Mage_Core_Model_Layout::createElement()</code> or <code>createBlock()</code>.</p>
+<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></h3>
+<p>Updates in <code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code> are applied to the corresponding <code>&lt;block></code> or <code>&lt;container></code>.</p>
+<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"></code>, you're targeting the block <code>&lt;block name="right"></code>.</p>
+
+To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+
 <table>
    <tbody>
       <tr>
@@ -312,33 +342,38 @@ Enables you to ignore some layout tags when generating a layout.
          <th>Required?</th>
       </tr>
       <tr class="even">
-         <td>name</td>
-         <td>Name of a block to remove.</td>
-         <td>block name</td>
-         <td>yes</td>
+         <td>remove</td>
+         <td>Allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.</td>
+         <td>block/container name</td>
+         <td>no</td>
+      </tr>
+      <tr class="even">
+         <td>display</td>
+         <td>Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation.</td>
+         <td>block/container name</td>
+         <td>no</td>
       </tr>
    </tbody>
 </table>
-<p>If a <code>&lt;remove></code> tag has the <code>name</code> attribute <code>[specified_name]</code>, the following tags are ignored:</p>
+
 <ul>
-   <li><code>&lt;block class="Magento\Module\Block\Class" name="name.specified"/></code></li>
-   <li><code>&lt;container name="name.specified"/></code></li>
-   <li><code>&lt;referenceBlock name="name.specified">...</referenceBlock></code></li>
-   <li><code>&lt;move element="name.specified" destination="name.destination"/></code></li>
-   <li><code>&lt;move element="name.element" destination="name.specified"/></code></li>
-</ul>
-<p><b>Example:</b></p>
+<li>remove attribute is optional and its default value is false.</li>
 
-Removing the `report.bugs` block:
-<pre>
-&lt;remove&nbsp;name=&quot;report.bugs&quot;/&gt;
-</pre>
+    This implementation allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.
+    
+    Example: 
+    
+    <pre>&lt;referenceBlock name="block.name" remove="true" /&gt;</pre>
 
-<h3 id="fedg_layout_xml-instruc_ex_ref">&lt;referenceBlock> and &lt;referenceContainer></h3>
-<p>Updates in <code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code> are applied to the corresponding <code>&lt;block></code> or <code>&lt;container></code>.</p>
-<p>For example, if you make a reference by <code>&lt;referenceBlock name="right"></code>, you're targeting the block <code>&lt;block name="right"></code>.</p>
+<li>display attribute is optional and its default value is true.</li>
 
-To pass parameters to a block use the <a href="#argument">`<argument></argument>`</a> instruction.
+    You are always able to overwrite this value in your layout.
+    In situation when remove value is true, the display attribute is ignored.
+    
+    Example: 
+    
+    <pre>&lt;referenceContainer name="container.name" display="false" /&gt;</pre>
+</ul>  
 
 <h3 id="fedg_layout_xml-instruc_ex_mv">&lt;move></h3>
 Sets the declared block or container element as a child of another element in the specified order.
