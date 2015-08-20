@@ -120,6 +120,10 @@ p.q 	{
     }
 }
 
+.nav-main #subnav-wrap #subnav {
+    height: 42px;
+}
+
 /* Adjust footer padding TDD */
 
 #footer-wrap {
