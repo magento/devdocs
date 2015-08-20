@@ -19,4 +19,4 @@ We want you to be aware of the following important notes about the Merchant Beta
 {% include install/schema-change_merchbeta.html %}
 
 <h2 id="merchbeta-cache">You might need to clear your local Composer cache</h2>
-{% include update/composer-clear-cache.html %}
+{% include install/composer-clear-cache.html %}
