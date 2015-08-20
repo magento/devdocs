@@ -57,6 +57,7 @@ We set the following permissions on these directories and subdirectories:
 
 Ownership is set to `<apache user>:<TBD group>`
 
+
 <h3 id="config-mode-over-clear">Cleared directories</h3>
 We also clear the following directories when you switch modes:
 
@@ -66,14 +67,71 @@ We also clear the following directories when you switch modes:
 	var/view_preprocessed
 	pub/static
 	
+<h2 id="config-mode-prod">Change to production mode</h2>
+There are two commands to change to production mode:
 
+<table>
+	<tbody>
+		<tr>
+			<th>Command</th>
+			<th>Meaning</th>
+		</tr>
+		<td><p>magento setup:mode:to-production</p></td>
+		<td><p>Performs the following tasks in the order shown:</p>
+			<ol><li>Puts your storefront in maintenance mode</li>
+			<li>Clears the contents of the <code>var/view_preprocessed</code>, <code>var/generation</code>, and <code>var/di</code> directories</li>
+			<li>Sets file permissions and ownership as discussed in <a href="#config-mode-over-dirs">Permissions and ownership</a></li>
+			<li>Generates static view files</li>
+			<li>Generates classes</li>
+			<li>Processes LESS and SASS files</li>
+			<li>Takes your storefront out of maintenance mode</li></ol></td>
+	</tr>
+	<tr>
+		<td>magento setup:mode:to-production-minimal</td>
+		<td>Sets file permissions and ownership as discussed in <a href="#config-mode-over-dirs">Permissions and ownership</a> only</td>
+	</tr>
+</tbody>
+</table>
 
+For example, to enable production mode, enter
 
+	magento setup:mode:to-production
 
+Following is a summary of messages that display:
 
+	Enabled maintenance mode
+	Requested languages: en_US
+	=== frontend -> Magento/luma -> en_US ===
 
+	... more ...
 
+	=== frontend -> Magento/blank -> en_US ===
 
+	... more ...
+
+	=== adminhtml -> Magento/backend -> en_US ===
+
+	... more ...
+
+	=== Minify templates ===
+
+	... more ...
+
+	Gathering css/styles-m.less sources.
+	Successfully processed LESS and/or SASS files
+	Generated classes:
+        Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
+        Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory
+        Magento\Sales\Api\Data\CreditmemoCommentSearchResultInterfaceFactory
+        Magento\Sales\Api\Data\CreditmemoComment\Repository
+        Magento\Sales\Api\Data\CreditmemoItemInterfacePersistor
+
+        ... more ...
+
+<h2 id="config-mode-dev">Change to developer mode</h2>
+Enter the following command to change to developer mode:
+
+	magento setup:mode:to-develop
 
 
 #### Related topics
