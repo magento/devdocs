@@ -17,6 +17,9 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html
 
 <h2>Add a  <code>.phtml</code> template</h2>
 
+<p><code>Hello, <a href="#">this is a link</a> inside a code tag.</code></p>
+<p>Hello, <a href="#">this is a <code>code tag</code> inside a link.</a></p>
+
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
 

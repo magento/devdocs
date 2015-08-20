@@ -22,6 +22,12 @@ code {
 }
 
 
+a code {
+    color: inherit;
+    font-size: inherit;
+}
+
+
 /* TDD code format in headers */
 
 
@@ -34,8 +40,15 @@ H1 CODE, H2 CODE, H3 CODE, H4 CODE, H5 CODE {
      font-size: 1em;
 }
 
+.main-container a {
+    font-size: 1em;
+}
 
 
+/*reset font size */
+.main-container {
+    font-size: 16px;
+}
 
 /* SRJ - reviewer question 
 
@@ -113,6 +126,9 @@ p.q 	{
 #footer-wrap #copyright {
     padding-right: 5%;
 }
+
+
+
 
 /*FIX for table font sizes TDD*/
 
