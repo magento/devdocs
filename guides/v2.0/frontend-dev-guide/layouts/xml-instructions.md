@@ -15,11 +15,6 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-instructions.html
 </head>
 
 
-<h2>Add a  <code>.phtml</code> template</h2>
-
-<p><code>Hello, <a href="#">this is a link</a> inside a code tag.</code></p>
-<p>Hello, <a href="#">this is a <code>code tag</code> inside a link.</a></p>
-
 <h2 id="fedg_layout_xml-instruc_overview">Overview</h2>
 
 
@@ -81,22 +76,6 @@ Blocks employ templates to generate HTML. Examples of blocks include a category 
       <tr class="even">
          <td>before</td>
          <td>Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.
-<ul>
-<li>one</li>
-<li>two</li>
-<li>three</li>
-<li>four</li>
-<li>five</li>
-</ul>
-
-<ol>
-<li>one</li>
-<li>two</li>
-<li>three</li>
-<li>four</li>
-<li>five</li>
-</ol>
-<p>This is a sentence in a P tag.</p>
 
          </td>
          <td>Possible values: element name or dash (-)</td>
