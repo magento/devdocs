@@ -126,34 +126,7 @@ See one of the following sections:
     <p>Apache 2.2 has a known issue with relative rewrites and VirtualDocumentRoot (as opposed to DocumentRoot). The bug affects the Magento <code>pub/media/.htaccess</code> and <code>pub/static/.htaccess</code>files. You must replace the <code>../</code> portion of the <code>RewriteRule</code> with the complete path relative to the effective document root. For more information about the issue, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=26052#c40" target="_blank">Apache bug 26052</a>.</p></span>
     </div>
 
-<h4 id="apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</h4>
-Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.4, which is supported by the default Ubuntu 14 repository.
-
-1.	Enter the following command:
-
-	<pre>a2enmod rewrite</pre>
-
-2.	Specify the type of directives that can be used in <code>.htaccess</code>.
-
-	For guidelines, see the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html" target="_blank">Apache 2.4 documentation</a>.
-
-	Note that in Apache 2.4, the server's default site configuration file is <code>/etc/apache2/sites-available/000-default.conf</code>
-
-	For example, you can add the following to the bottom of <code>000-default.conf</code>:
-
-		<Directory "/var/www/html">
-		AllowOverride <value from Apache site>
-		</Directory>
-
-	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<ul><li>If you upgraded from an earlier Apache version, first look for <code>&lt;Directory "/var/www/html"></code> or <code>&lt;Directory "/var/www"></code> in <code>000-default.conf</code>.</li>
-		<li>You must change the value of <code>AllowOverride</code> in the directive for the directory to which you expect to install the Magento software. For example, to install in the web server docroot, edit the directive in <code>&lt;Directory /var/www></code>.</li></span>
-	</div>
-
-3.	Restart Apache:
-
-	<pre>service apache2 restart</pre>
+{% include install/allowoverrides24.html %}
 
 Next steps:
 

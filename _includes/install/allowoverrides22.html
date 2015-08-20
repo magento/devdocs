@@ -1,0 +1,24 @@
+<h4 id="apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</h4>
+<p>Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.2, which is supported by the default Ubuntu 12 repository.</p>
+<ol><li>Open the following file for editing.
+<pre>vim /etc/apache2/sites-available/default</pre></li>
+<li>Locate the following block.
+<pre>&lt;Directory /var/www/>
+Options Indexes FollowSymLinks MultiViews
+AllowOverride None
+Order allow,deny
+Allow from all
+&lt;Directory></pre></li>
+<li>Change the value of `AllowOverride` to `&lt;value from Apache site>`.
+<pre>&lt;Directory /var/www/>
+Options Indexes FollowSymLinks MultiViews
+AllowOverride &lt;value from Apache site>
+Order allow,deny
+Allow from all
+&lt;Directory></pre></li>
+<li>Save the file and exit the text editor.</li>
+<li>Configure Apache to use the <code>mod_rewrite</code> module.</li>
+<pre>cd /etc/apache2/mods-enabled
+ln -s ../mods-available/rewrite.load</pre>
+<li>Restart Apache.
+<pre>service apache2 restart</pre></li>
