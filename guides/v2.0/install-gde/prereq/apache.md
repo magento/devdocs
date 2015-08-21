@@ -73,7 +73,7 @@ The result displays similar to the following:
 	Server version: Apache/2.2.22 (Ubuntu)
 	Server built:   Jul 22 2014 14:35:32
 
-Now you must <a href="#install-ubuntu-apache-rewrites">enable Apache rewrites</a>.
+{% include install/allowoverrides22.html %}
 
 <h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
 To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
@@ -104,71 +104,7 @@ To upgrade to Apache 2.4:
 		Server version: Apache/2.4.10 (Ubuntu)
 		Server built:   Jul 22 2014 22:46:25
 
-3.	<a href="#apache-rewrites2.4">Enable Apache rewrites</a>.
-
-<h3 id="install-ubuntu-apache-rewrites">Enabling Apache rewrites</h3>
-Ubuntu 12 (which natively supports Apache 2.2) is different from Ubuntu 14 (which natively supports Apache 2.4).
-
-It's very important you choose a value for `AllowOverride` that is suited to your deployment. You can use `AllowOverride All` in development but it might not be desirable in production.
-
-More information about `AllowOverride`:
-
-*	<a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache 2.2</a>
-*	<a href="http://httpd.apache.org/docs/current/mod/core.html#allowoverride" target="_blank">Apache 2.4</a>
-
-See one of the following sections:
-
-*	<a href="#apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</a>
-*	<a href="#apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</a>
-
-    <div class="bs-callout bs-callout-info" id="info">
-    <span class="glyphicon-class">
-    <p>Apache 2.2 has a known issue with relative rewrites and VirtualDocumentRoot (as opposed to DocumentRoot). The bug affects the Magento <code>pub/media/.htaccess</code> and <code>pub/static/.htaccess</code>files. You must replace the <code>../</code> portion of the <code>RewriteRule</code> with the complete path relative to the effective document root. For more information about the issue, see <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=26052#c40" target="_blank">Apache bug 26052</a>.</p></span>
-    </div>
-
 {% include install/allowoverrides24.html %}
-
-Next steps:
-
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{ site.gdeurl }}install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
-*	Start your installation by going to <a href="{{ site.gdeurl }}install-gde/install/composer-clone.html">Install Composer and clone the Magento repository</a>.
-
-<h4 id="apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</h4>
-Use this section to enable Apache rewrites and specify <code>.htaccess</code> if you use Apache 2.2, which is supported by the default Ubuntu 12 repository.
-
-1.	Open the following file for editing.
-
-		vim /etc/apache2/sites-available/default
-
-2.	Locate the following block.
-
-		<Directory /var/www/>
-			Options Indexes FollowSymLinks MultiViews
-			AllowOverride None
-			Order allow,deny
-			Allow from all
-		<Directory>
-
-3.	Change the value of `AllowOverride` to `<value from Apache site>`.
-
-		<Directory /var/www/>
-			Options Indexes FollowSymLinks MultiViews
-			AllowOverride <value from Apache site>
-			Order allow,deny
-			Allow from all
-		<Directory>
-
-4.	Save the file and exit the text editor.
-
-5.	Configure Apache to use the <code>mod_rewrite</code> module.
-
-		cd /etc/apache2/mods-enabled
-		ln -s ../mods-available/rewrite.load
-
-6.	Restart Apache.
-
-	<pre>service apache2 restart</pre>
 
 Next steps:
 
@@ -187,23 +123,7 @@ Install Apache 2 if you haven't already done so.
 
 	yum -y install httpd
 
-<h3 id="apache-rewrites">Enabling Apache Rewrites</h3>
-
-1.	Open <code>httpd.conf</code> for editing.
-
-	<pre>vim /etc/httpd/conf/httpd.conf</pre>
-
-2.	Locate the block that starts with:
-
-	<pre>&lt;Directory /var/www/html></pre>
-
-3.	In that block, change the value of `AllowOverride` to one of the values documented on the <a href="http://httpd.apache.org/docs/2.2/mod/core.html#allowoverride" target="_blank">Apache site</a>.
-
-4.	Save your changes to <code>httpd.conf</code> and exit the text editor.
-
-5.	Restart Apache.
-
-	<pre>service httpd restart</pre>
+{% include install/allowoverrides22.html %}
 
 Next steps:
 
