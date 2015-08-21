@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>UI Library Components</title>
+	<meta name="description" content="Magento 2 Developer's Guide">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/common/css/override.css" />
+	<link rel="canonical" href="//guides/v2.0/ui-library/ui-library-component.html">
+
+
+
+</head>	
+<body>
+
+<header id="nav-main" class="nav-main">
+
+	<!--Top Navigation-->
+	<nav role="navigation">
+		<!-- <div class="menu-btn">
+			<a class="menu-trigger menu-icon" href="#"></a>
+		</div> -->
+			
+		<div id="global-nav">
+			<div class="main-site-name">
+				<a class="logo pull-left" href="/"> </a>
+				<div class="sub-site-name">
+					<a href="/"><span>Developer Documentation (2.0)</span></a>
+				</div>
+			</div>
+			
+			<div class="right-header">
+				<!--
+				<div class="sales-login">
+					<ul class="menu nav">
+						<li class="first last leaf"><a href="https://www.magentocommerce.com/products/customer/account/login">My Account</a></li>
+					</ul>
+				</div>
+				
+				
+				<div class="head-search" id="head-search">
+					<div id="sb-search" class="sb-search">
+						<form action="http://www.magentocommerce.com/search/results/">
+							<span class="sb-icon-search btn btn-search"></span>
+							<input name="q" class="sb-search-input" placeholder="Search docs" type="search" style="display: none;" id="search" />
+							<span class="sb-search-submit btn btn-search"></span>
+						</form>
+					</div>
+				</div><!-- #head-search --> 
+				
+			</div>
+			
+		</div><!-- #global-nav -->
+	</nav>
+
+	<!--Sub Navigation-->
+<div id="subnav-wrap">
+   <div id="subnav">
+      <ul class="menu nav">
+         <li class="first expanded">
+            <a href="/guides/v2.0/bk-get-started-magento.html">Get Started</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/release-notes/bk-release-notes.html">Release Notes</a></li>
+               <li class="leaf"><a href="/guides/v2.0/architecture/bk-architecture.html">Magento Architecture</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="/guides/v2.0/install-gde/bk-install-guide.html">System Administrator</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/install-gde/bk-install-guide.html">Installation Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/migration/bk-migration-guide.html">Migration Guide</a></li>
+            </ul>
+         </li>
+         <li class="first expanded">
+            <a href="#">Developers</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+			   <li class="first leaf"><a href="/guides/v2.0/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+
+               <li class="leaf"><a href="/guides/v2.0/mtf/mtf_introduction.html">Magento Testing Framework Guide</a></li>
+               <li class="leaf"><a href="/guides/v2.0/pattern-library/bk-pattern.html">Magento Admin Pattern Library</a></li>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="first leaf"><a href="/guides/v2.0/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+               <li class="leaf"><a href="/guides/v2.0/rest/bk-rest.html">REST Reference</a></li>
+               <li class="leaf"><a href="/guides/v2.0/soap/bk-soap.html">SOAP Reference</a>
+               <div id="divcentered"><img src="/common/images/horiz-line.png"></div></li>
+               <li class="leaf"><a href="/guides/v2.0/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+
+
+            </ul>
+         </li>   
+    
+         
+         
+         
+         
+         <li class="first expanded">
+            <a href="/guides/v2.0/contributor-guide/contributing.html">Contributor</a>
+            <ul class="menu nav">
+               <li class="first leaf"><a href="/guides/v2.0/contributor-guide/contributing.html">Contributor Guide</a></li>
+            </ul>
+         </li>
+      </ul>
+
+
+
+   </div> <!--End subnav -->
+</div><!--End subnav-wrap -->
+
+	
+</header>	
+
+
+<div id="gl-wrapper">
+	
+	<!-- #sidemenu -->
+	<div id="sidemenu" style="display:none;">
+		<a class="menu-trigger menu-close" href="#" title=""></a>
+		<div class="h8 site-title">Our Sites</div>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://go.magento.com/" title="Small Business Storefront">Magento Go</a><span class="description">Small Business Storefront</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+	<!-- /#sidemenu -->
+	
+	<!-- /.main-container -->
+	<div id="gl-container" class="main-container">
+		<a id="main-content"></a>
+		<div class="pane-content">
+			<div class="node node-panel">
+
+
+
+
+
+
+<!-- page-header -->
+<section class="page-intro">
+	<div class="container">
+		<h1 class="page-heading">UI Library Components</h1>
+			
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/uilibrary/ui-library-components.md" target="_blank">Edit this page on GitHub</a>
+		
+	</div>
+</section>
+
+<div class="container">
+	<section class="content">
+		<div class="content-wrap">
+		
+		<h2>Contents</h2>
+
+<ul>
+  <li><a href="#general">Overview of UI Library</a></li>
+  <li><a href="#listing">Listing/Grid component</a>
+    <ul>
+      <li><a href="#search">Grid search indexing</a></li>
+    </ul>
+  </li>
+  <li><a href="#secondary">Listing/Grid secondary components</a>
+    <ul>
+      <li><a href="#filter">Filter component</a></li>
+      <li><a href="#pagination">Pagination component</a></li>
+      <li><a href="#massaction">MassAction component</a></li>
+      <li><a href="#treemass">TreeMassAction component</a></li>
+      <li><a href="#column">Column component</a></li>
+      <li><a href="#uiselect">UI-select component</a></li>
+      <li><a href="#inlineedit">Inline Edit component</a></li>
+      <li><a href="#bookmark">Bookmark component</a></li>
+    </ul>
+  </li>
+  <li><a href="#form">Form component</a>
+    <ul>
+      <li><a href="#field">Field component</a> <!-- (Field Type)--></li>
+      <li><a href="#fieldset">Fieldset component</a></li>
+    </ul>
+  </li>
+  <li><a href="#export">ExportButton component</a></li>
+  <li><a href="#container">Container component</a></li>
+  <li><a href="#example">definition.xml</a></li>
+</ul>
+
+<h2 id="general">General</h2>
+
+<p>Magento UI components Library is designed for simple and flexible UI rendering. It allows to configure the page manipulating the UI library components.</p>
+
+<p>Magento UI components  Library is implemented as a usual module and can be found under Magento\UI namespace.</p>
+
+<p>Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.</p>
+
+<h3 id="general-structure">General structure</h3>
+<p>In Magento 2 there are basic and secondary UI components. Basic components are UI Library Listing component and UI Library Form component. Secondary components are extensions of basic components  </p>
+
+<h3>Using UI library component in layout file</h3>
+
+<p>Using UI Library component is as simple as adding the following code to the appropriate layout section:</p>
+
+<p><code>&lt;ui_component name="some_ui_component_instance_name"/&gt;</code></p>
+
+<p>All UI Library components have base declaration in <a href="#example"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>.</p>
+
+<p>Any module can introduce its own set of custom components or modify initial configuration for existing components in a common to Magento way.</p>
+
+<p>UI components configuration reader searches through all active modules and read files:</p>
+
+<p><a href="#example"><code>app/code/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/etc/definition.xml</code></a></p>
+
+<p>And concrete instances of the components each in separate XML configuration file:</p>
+
+<p><code>app/code/&lt;vendor&gt;/&lt;module&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
+
+<p>A single XSD is shared between all components (both definitions and instance configurations):</p>
+
+<p><code>app/code/Magento/Ui/etc/ui_definition.xsd</code></p>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>You can configure component and all filter types in the following ways:</p>
+
+<ul>
+  <li>Globally: using any module’s <a href="#example"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file will be applied to all component’s instances</li>
+  <li>Locally: using concrete component instance configuration, such as <code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
+</ul>
+
+<h2 id="listing">UI Library Listing/Grid Component</h2>
+
+<p>Listing is a basic component responsible for rendering grids, lists and tiles, providing filtering, pagination, sorting and other features.</p>
+
+<p>The following components extend the functionality of UI Library Listing component:</p>
+
+<p>Filters
+Pagination
+Mass Actions
+Column
+Bookmark</p>
+
+<h4 id="integration">Integration</h4>
+
+<p>Example configuration of Listing Component instance:</p>
+
+<p>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</p>
+
+<pre>
+&lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;
+    &lt;argument name="context" xsi:type="configurableObject"&gt;
+        &lt;argument name="class" xsi:type="string"&gt;Magento\Framework\View\Element\UiComponent\Context&lt;/argument&gt;
+        &lt;argument name="namespace" xsi:type="string"&gt;cms_page_listing&lt;/argument&gt;
+    &lt;/argument&gt;
+    &lt;argument name="data" xsi:type="array"&gt;
+        &lt;item name="js_config" xsi:type="array"&gt;
+            &lt;item name="config" xsi:type="array"&gt;
+                &lt;item name="provider" xsi:type="string"&gt;cms_page_listing.cms_page_listing_data_source&lt;/item&gt;
+            &lt;/item&gt;
+            &lt;item name="deps" xsi:type="string"&gt;cms_page_listing.cms_page_listing_data_source&lt;/item&gt;
+        &lt;/item&gt;
+        &lt;item name="spinner" xsi:type="string"&gt;cms_page_columns&lt;/item&gt;
+        &lt;item name="buttons" xsi:type="array"&gt;
+            &lt;item name="add" xsi:type="array"&gt;
+                &lt;item name="name" xsi:type="string"&gt;add&lt;/item&gt;
+                &lt;item name="label" xsi:type="string" translate="true"&gt;Add New Page&lt;/item&gt;
+                &lt;item name="class" xsi:type="string"&gt;primary&lt;/item&gt;
+                &lt;item name="url" xsi:type="string"&gt;*/*/new&lt;/item&gt;
+            &lt;/item&gt;
+        &lt;/item&gt;
+    &lt;/argument&gt;
+&lt;/listing&gt;
+</pre>
+
+<h4 id="data-source">Data Source</h4>
+
+<p>The listing component requires the data source to be properly configured and associated with it:</p>
+
+<p><code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+
+<pre>
+&lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;
+    &lt;dataSource name="cms_page_listing_data_source"&gt;
+        &lt;argument name="dataProvider" xsi:type="configurableObject"&gt;
+            &lt;argument name="class" xsi:type="string"&gt;Magento\Cms\Model\Page\DataProvider&lt;/argument&gt;
+            &lt;argument name="primaryFieldName" xsi:type="string"&gt;block_id&lt;/argument&gt;
+            &lt;argument name="requestFieldName" xsi:type="string"&gt;id&lt;/argument&gt;
+            &lt;argument name="meta" xsi:type="array"&gt;
+                &lt;item name="cms_block" xsi:type="array"&gt;
+                    &lt;item name="config" xsi:type="array"&gt;
+                        &lt;item name="label" xsi:type="string" translate="true"&gt;CMS Block&lt;/item&gt;
+                    &lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/argument&gt;
+        &lt;/argument&gt;
+        &lt;argument name="data" xsi:type="array"&gt;
+            &lt;item name="js_config" xsi:type="array"&gt;
+                &lt;item name="component" xsi:type="string"&gt;Magento_Ui/js/grid/provider&lt;/item&gt;
+            &lt;/item&gt;
+            &lt;item name="config" xsi:type="array"&gt;
+                &lt;item name="update_url" xsi:type="string"&gt;mui/index/render&lt;/item&gt;
+            &lt;/item&gt;
+        &lt;/argument&gt;
+    &lt;/dataSource&gt;
+&lt;/listing&gt;
+</pre>
+
+<p>Data Source is another UI Component that provides data in specific format which is shared among all UI Components.</p>
+
+<h3 id="search">Grid search indexing</h3>
+
+<p>You should index data for the performance reasons. Indexing is a process of “materializing” complex data in needed scopes to avoid problems of reading it.</p>
+
+<p>Index data can be always re-created from the original data using certain algorithm.</p>
+
+<h4 id="declarative-markup">Declarative markup</h4>
+
+<p>You can extend the current indexer declaration with an optional &lt;fieldset&gt; element.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../Indexer/etc/indexer.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;indexer</span> <span class="na">id=</span><span class="s">&quot;some_grid&quot;</span> <span class="na">view_id=</span><span class="s">&quot;some_grid&quot;</span>
+             <span class="na">class=</span><span class="s">&quot;Magento\Framework\Indexer\Action\Base&quot;</span>
+             <span class="na">primary=</span><span class="s">&quot;first&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;title</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Catalog Search<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;description</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Rebuild Catalog product fulltext search index<span class="nt">&lt;/description&gt;</span>
+        <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;first&quot;</span> <span class="na">source=</span><span class="s">&quot;MagentoModule\ServiceClassOrRepositoryClass&quot;</span> <span class="na">provider=</span><span class="s">&quot;?Magento\Indexer\Model\Fieldset\ProductFieldset&quot;</span><span class="nt">&gt;</span>
+            <span class="c">&lt;!-- @provider -&gt; Dynamic fields resolver --&gt;</span>
+            <span class="c">&lt;!-- @source -&gt; source from old declaration --&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;title_alias&quot;</span>  <span class="na">origin=</span><span class="s">&quot;?title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;searchable&quot;</span> <span class="na">dataType=</span><span class="s">&quot;?type_alias&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;filter</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\Search\Index\Filter\LowercaseFilter&quot;</span><span class="nt">/&gt;</span>
+            <span class="nt">&lt;/field&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;identifier&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;filterable&quot;</span> <span class="na">handler=</span><span class="s">&quot;Magento\Framework\Search\Index\Handler&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+        <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;second&quot;</span> <span class="na">source=</span><span class="s">&quot;MagentoModule\ServiceClassOrRepositoryClass&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;reference</span> <span class="na">fieldset=</span><span class="s">&quot;first&quot;</span>  <span class="na">from=</span><span class="s">&quot;id_field&quot;</span> <span class="na">to=</span><span class="s">&quot;second_entity_id&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;reference</span> <span class="na">fieldset=</span><span class="s">&quot;first&quot;</span> <span class="na">from=</span><span class="s">&quot;id_field2&quot;</span> <span class="na">to=</span><span class="s">&quot;second_entity_id2&quot;</span> <span class="nt">/&gt;</span>
+            <span class="c">&lt;!-- reference -&gt; from=&quot;field from primary fieldset&quot; to=&quot;field from current fieldset&quot; --&gt;</span>
+            <span class="c">&lt;!-- first we need parse references (from field) after that execute fieldset handlers --&gt;</span>
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;filterable&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+ 
+        <span class="nt">&lt;saveHandler</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\Indexer\SaveHandler\Grid&quot;</span> <span class="nt">/&gt;</span><span class="c">&lt;!-- optional --&gt;&lt;!-- indexer put api --&gt;</span>
+        <span class="nt">&lt;structure</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\Indexer\GridStructure&quot;</span> <span class="nt">/&gt;</span><span class="c">&lt;!-- optional --&gt;&lt;!-- creating flat table for index (or in other index database) --&gt;</span>
+    <span class="nt">&lt;/indexer&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></div>
+
+<p>Where:</p>
+
+<ul>
+  <li>fieldset - container for field nodes, which specifies handler for processing nested field nodes.</li>
+  <li>field - concrete field processor.</li>
+  <li>filter - any optional pre-processing of data before getting to index.</li>
+</ul>
+
+<h2 id="secondary">UI Library Listing/Grid Secondary Components</h2>
+
+<h3 id="filter">UI Library Filter Component</h3>
+
+<p>The filter component must be declared as a child to the listing component.
+All column filters are declared as children to the filter component.</p>
+
+<p>The filter component is responsible for rendering filters UI and applying filtering criteria to collection.</p>
+
+<p>Currently the following filter types are supported:</p>
+
+<ul>
+  <li>input filter</li>
+  <li>date filter</li>
+  <li>select filter</li>
+  <li>range filter</li>
+</ul>
+
+<p>Example:
+<code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+
+<pre>
+&lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;
+    &lt;container name="page_listing_top"&gt;
+        &lt;filters name="listing_filters"&gt;
+            &lt;argument name="data" xsi:type="array"&gt;
+                &lt;item name="config" xsi:type="array"&gt;
+                    &lt;item name="dataScope" xsi:type="string"&gt;params.filters&lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/argument&gt;
+            &lt;filterRange name="page_id"&gt;
+                &lt;argument name="data" xsi:type="array"&gt;
+                    &lt;item name="config" xsi:type="array"&gt;
+                        &lt;item name="dataScope" xsi:type="string"&gt;page_id&lt;/item&gt;
+                        &lt;item name="label" xsi:type="string" translate="true"&gt;ID&lt;/item&gt;
+                    &lt;/item&gt;
+                &lt;/argument&gt;
+                &lt;filterInput name="from"&gt;...&lt;/filterInput&gt;
+                &lt;filterInput name="to"&gt;...&lt;/filterInput&gt;
+            &lt;/filterRange&gt;
+            &lt;filterInput name="title"&gt;...&lt;/filterInput&gt;
+            &lt;filterInput name="identifier"&gt;...&lt;/filterInput&gt;
+            &lt;filterSelect name="page_layout"&gt;...&lt;/filterSelect&gt;
+            &lt;filterSelect name="store_id"&gt;...&lt;/filterSelect&gt;
+            &lt;filterSelect name="is_active"&gt;...&lt;/filterSelect&gt;
+            &lt;filterRange name="creation_time" class="Magento\Ui\Component\Filters\Type\DateRange"&gt;...&lt;/filterRange&gt;
+            &lt;filterRange name="update_time" class="Magento\Ui\Component\Filters\Type\DateRange"&gt;...&lt;/filterRange&gt;
+        &lt;/filters&gt;
+    &lt;/container&gt;
+&lt;/listing&gt;
+</pre>
+
+<h3 id="pagination">UI Library Pagination Component</h3>
+
+<p>The UI library pagination component is a plugin for the listing component. Responsible for rendering pagination UI and applying pagination criteria to collection.</p>
+
+<p>You can configure pagination in several ways:</p>
+
+<ul>
+  <li>Globally: using any module’s <a href="#example"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file are applied to all component’s instances.</li>
+  <li>Locally: using concrete component instance configuration, such as <code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></li>
+</ul>
+
+<p>To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.</p>
+
+<p>Example:</p>
+
+<p><code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+
+<pre>
+&lt;listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Ui/etc/ui_configuration.xsd"&gt;
+    &lt;container name="page_listing_top"&gt;
+        &lt;paging name="listing_paging"&gt;
+            &lt;argument name="data" xsi:type="array"&gt;
+                &lt;item name="config" xsi:type="array"&gt;
+                    &lt;item name="options" xsi:type="array"&gt;
+                        &lt;item name="20" xsi:type="array"&gt;
+                            &lt;item name="value" xsi:type="number"&gt;20&lt;/item&gt;
+                            &lt;item name="label" xsi:type="string" translate="true"&gt;20&lt;/item&gt;
+                        &lt;/item&gt;
+                        &lt;item name="30" xsi:type="array"&gt;
+                            &lt;item name="value" xsi:type="number"&gt;30&lt;/item&gt;
+                            &lt;item name="label" xsi:type="string" translate="true"&gt;30&lt;/item&gt;
+                        &lt;/item&gt;
+                        &lt;item name="50" xsi:type="array"&gt;
+                            &lt;item name="value" xsi:type="number"&gt;50&lt;/item&gt;
+                            &lt;item name="label" xsi:type="string" translate="true"&gt;50&lt;/item&gt;
+                        &lt;/item&gt;
+                        &lt;item name="100" xsi:type="array"&gt;
+                            &lt;item name="value" xsi:type="number"&gt;100&lt;/item&gt;
+                            &lt;item name="label" xsi:type="string" translate="true"&gt;100&lt;/item&gt;
+                        &lt;/item&gt;
+                        &lt;item name="200" xsi:type="array"&gt;
+                            &lt;item name="value" xsi:type="number"&gt;200&lt;/item&gt;
+                            &lt;item name="label" xsi:type="string" translate="true"&gt;200&lt;/item&gt;
+                        &lt;/item&gt;
+                    &lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/argument&gt;
+        &lt;/paging&gt;
+    &lt;/container&gt;
+&lt;/listing&gt;
+</pre>
+
+<h3 id="massaction">UI Library MassAction Component</h3>
+
+<h3 id="massaction-js-component-structure">MassAction JS component structure</h3>
+
+<p>MassActions component adds ability to be selectable (by attaching it’s template to each item in Listing) to items in Listing and creates actions to perform with selected items (for example: ‘Delete’, ‘Update attributes’ and so on).</p>
+
+<p>“Select all” functionality is improved in Magento 2. Instead of creating a list of all selected items they are now flagged and list is created only for excluded elements.</p>
+
+<h4 id="component-elements-classes-files">Component Elements (classes, files)</h4>
+
+<p>The following are the component elements:</p>
+
+<ul>
+  <li>Constructor <code>app\code\Magento\Ui\view\base\web\js\grid\massactions.js</code></li>
+  <li>Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\actions.html</code></li>
+</ul>
+
+<h4 id="dependencies-on-other-components">Dependencies on Other Components</h4>
+
+<p>Dependency on the following components:</p>
+
+<ul>
+  <li>Collapsible: <code>app\code\Magento\Ui\view\base\web\js\lib\collapsible.js</code></li>
+  <li>Modal window with confirmation: <code>app\code\Magento\Ui\view\base\web\js\modal\confirm.js</code></li>
+  <li>Modal window with alert: <code>app\code\Magento\Ui\view\base\web\js\modal\alert.js</code></li>
+</ul>
+
+<h4 id="component-options">Component Options</h4>
+
+<p>The following options are available:</p>
+
+<ul>
+  <li>noItemsMsg - message that is displayed if user tries to apply action without any selected items</li>
+  <li>selectProvider - option that defines the component with selections data</li>
+  <li>actions - array that contains initially available actions</li>
+</ul>
+
+<h5>Methods and Events</h5>
+
+<p>The following API methods are available:</p>
+
+<ul>
+  <li>getAction - returns action instance found by the provided identifier</li>
+  <li>addAction - adds new action to the actions</li>
+  <li>applyAction - applies specified as identifier action</li>
+  <li>getSelections - returns object with current selections</li>
+</ul>
+
+<h4 id="example-of-configuration-modifications">Example of configuration modifications:</h4>
+
+<ul>
+  <li>Redefining the link to the template</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">massaction</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;listing_massaction&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;template&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">massactions</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/massaction&gt;</span></code></pre></div>
+
+<ul>
+  <li>Specifying action with confirmation</li>
+</ul>
+
+<pre>
+&lt;massaction name="listing_massaction"&gt;
+    &lt;argument name="data" xsi:type="array"&gt;
+        ...
+        &lt;item name="config" xsi:type="array"&gt;
+            &lt;item name="actions" xsi:type="array"&gt;
+                &lt;item name="edit" xsi:type="array"&gt;
+                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
+                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
+                    &lt;item name="confirm" xsi:type="array"&gt;
+                        &lt;item name="title" xsi:type="string" translate="true"&gt;Edit items&lt;/item&gt;
+                        &lt;item name="message" xsi:type="string" translate="true"&gt;Are you sure you wan't to edit selected items?&lt;/item&gt;
+                    &lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/item&gt;
+        &lt;/item&gt;
+    &lt;/argument&gt;
+&lt;/massaction&gt;
+</pre>
+
+<ul>
+  <li>Action with a custom callback</li>
+</ul>
+
+<p>Callback is provided by another component.</p>
+
+<pre>
+&lt;massaction name="listing_massaction"&gt;
+    &lt;argument name="data" xsi:type="array"&gt;
+        ...
+        &lt;item name="config" xsi:type="array"&gt;
+            &lt;item name="actions" xsi:type="array"&gt;
+                &lt;item name="edit" xsi:type="array"&gt;
+                    &lt;item name="type" xsi:type="string"&gt;edit&lt;/item&gt;
+                    &lt;item name="label" xsi:type="string" translate="true"&gt;Edit&lt;/item&gt;
+                    &lt;item name="callback" xsi:type="array"&gt;
+                        &lt;item name="provider" xsi:type="string"&gt;cms_page_listing.inline_editing&lt;/item&gt;
+                        &lt;item name="target" xsi:type="string"&gt;startEdit&lt;/item&gt;
+                    &lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/item&gt;
+        &lt;/item&gt;
+    &lt;/argument&gt;
+&lt;/massaction&gt;
+</pre>
+
+<ul>
+  <li>Instance replacement: one instance of a component</li>
+</ul>
+
+<p>Redefine link to constructor.</p>
+
+<pre>
+&lt;massaction name="listing_massaction"&gt;
+    &lt;argument name="data" xsi:type="array"&gt;
+        &lt;item name="js_config" xsi:type="array"&gt;
+            &lt;item name="component" xsi:type="string"&gt;Magento_Products/js/grid/massactions&lt;/item&gt;
+        &lt;/item&gt;
+    &lt;/argument&gt;
+&lt;/massaction&gt;
+</pre>
+
+<h3 id="treemass">UI Library TreeMassAction Component</h3>
+
+<p>TreeMassAction Component is extension to MassAction component that provides nested sub-menu.</p>
+
+<h4 id="php-implementation-of-treemassaction">PHP Implementation of TreeMassAction</h4>
+
+<p>To enable Massaction Component for your Listing instance it should be declared as a child.</p>
+
+<p>Example:
+<code>app/code/Magento/Catalog/view/adminhtml/ui_component/product_listing.xml</code></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_listing.product_listing.product_columns.ids<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;displayArea&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>bottom<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;delete&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;confirm&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete items<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete selected items?<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>delete<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product/massDelete<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;status&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>status<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Change status<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>enable<span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Enable<span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product/massEnable<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;1&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>disable<span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Disable<span class="nt">&lt;/item&gt;</span>
+                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product/massDisable<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;attributes&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>attributes<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Update attributes<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product_action_attribute/edit<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;indexField&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/massaction&gt;</span>
+<span class="nt">&lt;/listing&gt;</span></code></pre></div>
+
+<h4 id="configuration-1">Configuration</h4>
+<p>Component can be configured in two ways:</p>
+
+<ul>
+  <li>Globally: using any module’s <a href="#example"><code>view/*/ui_component/etc/definition.xml</code></a> file. All settings declared in this file are applied to all component’s instances</li>
+  <li>Locally: using concrete component instance configuration, such as <code>app/code/Magento/Catalog/view/adminhtml/ui_component/product_listing.xml</code></li>
+</ul>
+
+<h4 id="treemassaction-js-component-structure">TreeMassAction JS Component Structure</h4>
+
+<h4 id="component-elements-classes-files-etc">Component Elements (classes, files, etc)</h4>
+
+<p>The following are the component elements:</p>
+
+<ul>
+  <li>Constructor <code>app\code\Magento\Ui\view\base\web\js\grid\tree-massactions.js</code></li>
+  <li>Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\tree-massactions.html</code></li>
+  <li>Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\submenu.html</code></li>
+</ul>
+
+<h4 id="dependencies-on-other-components-1">Dependencies on Other Components</h4>
+
+<p>Dependency on the following component:</p>
+
+<ul>
+  <li>Collapsible: <code>app\code\Magento\Ui\view\base\web\js\grid\massactions.js</code></li>
+</ul>
+
+<h4 id="component-options-1">Component Options</h4>
+
+<p>The following options are available:</p>
+
+<ul>
+  <li>noItemsMsg - message which will be show if user tries to apply action without any selected items</li>
+  <li>selectProvider - option which defines the component with selections data</li>
+  <li>actions - array which contains initially available actions</li>
+</ul>
+
+<h4 id="methods-and-events">Methods and Events</h4>
+
+<p>The following api methods are available:</p>
+
+<ul>
+  <li>getAction - returns action instance found by the provided identifier</li>
+  <li>applyAction - applies specified as identifier action</li>
+  <li>hideSubmenus - hide specified actions and nested submenu</li>
+</ul>
+
+<h4 id="how-to-configure-already-used-in-code-treemassaction-component">How to Configure Already Used in Code TreeMassAction Component</h4>
+
+<p><code>app\code\Magento\Catalog\view\adminhtml\ui_component\product_listing.xml</code></p>
+
+<p>Current implementation:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_listing.product_listing.product_columns.ids<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;displayArea&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>bottom<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;delete&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;confirm&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete items<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete selected items?<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>delete<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Delete<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product/massDelete<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;status&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>status<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Change status<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>enable<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Enable<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product/massEnable<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;1&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>disable<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Disable<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product/massDisable<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;attributes&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>attributes<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Update attributes<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>catalog/product_action_attribute/edit<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;indexField&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+
+<p>Example of configuration modifications:</p>
+
+<ul>
+  <li>Redefining the link to the template</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        ...
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product/grid/columns/massactions<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+
+<ul>
+  <li>Specifying action with confirmation</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        ...
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;confirm&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit items<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;message&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Are you sure you wan&#39;t to edit selected items?<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+
+<ul>
+  <li>Action with a custom callback</li>
+</ul>
+
+<p>Callback is provided by another component.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        ...
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;actions&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;type&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>edit<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Edit<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;callback&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_listing.inline_editing<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;target&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>startEdit<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+
+<h4 id="instance-replacement-one-instance-of-a-component">Instance Replacement: One Instance of a Component</h4>
+
+<p>Redefine link to constructor:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;massaction</span> <span class="na">name=</span><span class="s">&quot;listing_massaction&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Products/js/grid/tree-massactions<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/massaction&gt;</span></code></pre></div>
+
+<h3 id="column">UI Library Column Component</h3>
+
+<p>The Column component is a collection of columns and it provides an interface for such actions as showing and hiding columns. The interface contains the following information:</p>
+
+<ul>
+  <li>Total number of all available columns in a grid</li>
+  <li>Number of columns currently active/displayed</li>
+</ul>
+
+<p>Another task of the Column component is to provide data about column state to the admin.</p>
+
+<p>There is no need to duplicate information about the columns to be displayed in the Column component. You must define the append to element on every column child element and reference the parent using the appends.
+Another way to give access to the child element is to give a link to it when defining the column container.</p>
+
+<h4 id="ui-library-multiselect-component">UI Library Multiselect Component</h4>
+
+<p>The Multiselect component is used to provide check box interface for a specific listing or a specific data set. The component is an extension for Column component and allows selecting either a collection of items or all items from the given set.</p>
+
+<p>The Multiselect component which stores the information about the number of selected items in its template shares this data with the following components:</p>
+
+<ul>
+  <li>Pagination</li>
+  <li>MassAction</li>
+</ul>
+
+<p>When making any actions which affect the item selection, like filtering, the number of selected items in the Multiselect component is flushed as currently collection contains only one item and knows nothing about the general set of data.</p>
+
+<p>Multiselect is a child of the Grid component and is rendered in its view. Like any component, it can hold the sort order value which influences the order of all its child elements.</p>
+
+<p>When you specify the <code>after</code> or <code>before</code> property in the Multiselect component, it references any existing component in the parent container and renders it in that specified position.</p>
+
+<h4 id="multiselect-js-component-structure">Multiselect JS Component Structure</h4>
+
+<p>The Multiselect component is implemented in the class <code>app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js.</code></p>
+
+<p>Templates used by this component are:</p>
+
+<ul>
+  <li><code>app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html</code> - The template defines every specific field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.</li>
+  <li><code>app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html</code> - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.</li>
+</ul>
+
+<p>The component provides the following options:</p>
+
+<ul>
+  <li>header template option</li>
+  <li>body template option</li>
+</ul>
+
+<p>Code samples available in the default configuration:</p>
+
+<p><code>headerTmpl: 'ui/grid/columns/multiselect'</code></p>
+
+<p><code>bodyTmpl: 'ui/grid/cells/multiselect'</code></p>
+
+<ul>
+  <li>
+    <p>imports option</p>
+
+    <p>The option defines from where the component receives its data.</p>
+  </li>
+  <li>
+    <p>actions option</p>
+
+    <p>You can modify the default actions by, for example, renaming their frontend labels.</p>
+  </li>
+  <li>
+    <p>indexField option</p>
+
+    <p>This option allows specifying which field represents record identifier.</p>
+  </li>
+</ul>
+
+<h4 id="methods-and-events-1">Methods and Events</h4>
+
+<p>No events are generated. Any other component that can retrieve access to this component and its properties can get data and track its changes using subscription.</p>
+
+<h4 id="how-to-configure-multiselect-component-already-used-in-code">How to configure Multiselect Component already used in code</h4>
+
+<p>Sample of code where component configurations are performed:</p>
+
+<p>Current implementation:</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Ui</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+                <span class="o">&lt;</span><span class="err">/item&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;indexField&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">page_id</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;appendTo&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;&lt;</span><span class="err">/item&gt;</span>
+                <span class="o">&lt;</span><span class="err">/item&gt;</span>
+            <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+        <span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+
+<p>Example of configuration modifications:</p>
+
+<ul>
+  <li>Redefining the link to the template</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;headerTmpl&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+
+<ul>
+  <li>Redefining the name of the property which represents record identifier</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;indexField&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product_id</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+
+<ul>
+  <li>Redefining a property data source</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;imports&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="o">&gt;</span><span class="nx">products_prodvider</span><span class="o">:</span><span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+            <span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+
+<h4 id="how-to-add-a-new-library-component">How to add a new library component</h4>
+
+<p>Instance Replacement: One Instance of a Component</p>
+
+<ul>
+  <li>Redefine the link to constructor:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Products</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></div>
+
+<h3 id="uiselect">UI-select component</h3>
+
+<p>The UI-select component is used to provide check box interface for a specific listing or a specific data set. The component allows selecting a collection of items.</p>
+
+<p>The UI-select component has extended from the Abstract component.</p>
+
+<p>Example integration:</p>
+
+<p><code>app/code/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml</code></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;filterSelect</span> <span class="na">name=</span><span class="s">&quot;uiSelect&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;optionsProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Cms\Model\Page\Source\PageLayout<span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/filters/elements/ui-select<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;dataScope&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>uiSelect<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/filterSelect&gt;</span>
+<span class="nt">&lt;/listing&gt;</span></code></pre></div>
+
+<h4 id="configuration-2">Configuration</h4>
+
+<p>The following configuration can be passed in arguments:</p>
+
+<ul>
+  <li>Link to any of the following templates</li>
+  <li>Link to the constructor</li>
+  <li>Label to ui-select</li>
+  <li>Default caption</li>
+  <li>Caption if selected more then one elements</li>
+</ul>
+
+<h4 id="navigation">Navigation</h4>
+
+<p>The UI-select component supports keyboard navigation.</p>
+
+<p>Navigation keys:</p>
+
+<ul>
+  <li>Enter key: if focus on the caption - a list of options opens, if focus on the some option - selected or unselected current option</li>
+  <li>Space key: copy ‘Enter key’ functionality</li>
+  <li>Escape key: closes the list of options</li>
+  <li>PageUp key: sets focus to previous option</li>
+  <li>PageDown key: sets focus to next option</li>
+</ul>
+
+<h4 id="ui-select-js-component-structure">UI-select JS component structure</h4>
+
+<ul>
+  <li>
+    <p>Component elements</p>
+
+    <p>The Ui-select component is implemented in the class <code>app\code\Magento\Ui\view\base\web\js\form\element\ui-select.js</code></p>
+
+    <p>Templates used by this component are:</p>
+
+    <p><code>app\code\Magento\Ui\view\base\web\templates\grid\filters\elements\ui-select.html</code></p>
+  </li>
+  <li>
+    <p>Dependencies on Other Components</p>
+
+    <p>Abstract</p>
+
+    <p>uiLayout</p>
+  </li>
+  <li>
+    <p>imports option</p>
+
+    <p>The option defines from where the component receives its data.</p>
+
+    <p>Code samples available in the default configuration:</p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">imports</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="s1">&#39;${ $.optionsConfig.name }:options&#39;</span>
+    <span class="p">}</span></code></pre></div>
+
+<ul>
+  <li>
+    <p>actions option</p>
+
+    <p>You can modify the default actions by renaming their storefront labels</p>
+
+    <p>Code samples available in the default configuration:</p>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">actions</span><span class="o">:</span> <span class="p">[{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;selectAll&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Select all&#39;</span><span class="p">)</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;deselectAll&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Deselect all&#39;</span><span class="p">)</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;selectPage&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Select all on this page&#39;</span><span class="p">)</span>
+                <span class="p">},</span> <span class="p">{</span>
+                    <span class="nx">value</span><span class="o">:</span> <span class="s1">&#39;deselectPage&#39;</span><span class="p">,</span>
+                    <span class="nx">label</span><span class="o">:</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Deselect all on this page&#39;</span><span class="p">)</span>
+                <span class="p">}],</span></code></pre></div>
+
+<h3 id="inlineedit">Inline Edit component</h3>
+
+<p>The Inline Edit component is used to provide the ability of inline editing. </p>
+
+<h4 id="related-ui-components">Related UI Components</h4>
+
+<p>The Bulk Edit component uses the Inline Edit component.
+The Listing component can use the Inline Edit if it is configured and enabled.</p>
+
+<h4 id="implementation-of-inline-edit">Implementation of Inline Edit</h4>
+
+<p>Currently Inline Edit is not presented in definition.xml. It is used as a plugin for the Listing component. It can be configured in <a href="#example">definitions.xml</a> if necessary.</p>
+
+<p>To enable Inline Edit component for the grid, it is declared as a plugin for Listing component:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns.ids<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;enabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;indexField&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>entity_id<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            ..
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+..
+<span class="nt">&lt;/columns&gt;</span></code></pre></div>
+
+<p>The configuration of the component can include:</p>
+
+<ul>
+  <li>
+    <p>editorConfig - is responsible for general editor configuration</p>
+
+    <ul>
+      <li>
+        <p>component</p>
+      </li>
+      <li>
+        <p>enabled - is Inline Edit enabled</p>
+      </li>
+      <li>
+        <p>selectProvider - column name, by which rows will be selected/deselected</p>
+      </li>
+      <li>
+        <p>columnsProvider - provides columns</p>
+      </li>
+      <li>
+        <p>dataProvider - provides data, which will be edited</p>
+      </li>
+      <li>
+        <p>indexField - column name, by which edited rows will be indexed</p>
+      </li>
+      <li>
+        <p>bulkConfig - in current implementation on cms_pages, includes Bulk Edit component as a plugin</p>
+      </li>
+      <li>
+        <p>clientConfig - is responsible for editor communication with backend</p>
+      </li>
+      <li>
+        <p>viewConfig - is responsible for editor UI</p>
+      </li>
+      <li>
+        <p>templates - the templates for child components, example will be provided below and marked as *.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>With configuration above, the Inline Edit will be enabled. But it also must start editing in response to some user action, for example when clicking somewhere on the row.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;childDefaults&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;fieldAction&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;provider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms_page_listing.cms_page_listing.cms_page_columns_editor<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;target&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>startEdit<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;params&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;0&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>${ $.$data.rowIndex }<span class="nt">&lt;/item&gt;</span>
+                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;1&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+                ..
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/column&gt;</span></code></pre></div>
+
+<p>Note that this is not the configuration of the Inline Edit itself, but the configuration of the Column component, to interact with the Inline Edit.</p>
+
+<p>With the above configuration, the Inline Edit will be enabled, but all row cells will be read-only during the Inline edit. To make specific column editable, next configuration can be used:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorType&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validation&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;required-entry&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            ..
+        <span class="nt">&lt;/item&gt;</span>
+    ..
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/column&gt;</span></code></pre></div>
+
+<p>Or as a short alternative:</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;column</span> <span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>text<span class="nt">&lt;/item&gt;</span>
+            ..
+        <span class="nt">&lt;/item&gt;</span>
+        ..
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/column&gt;</span></code></pre></div>
+
+<p>The configuration for the specific column editor can include:</p>
+
+<ul>
+  <li>
+    <p>editorType - type of the editor. Possible values: same as primitives (text, select, date), can also provide new type (see example marked as **)</p>
+  </li>
+  <li>
+    <p>validation</p>
+
+    <ul>
+      <li>validation rules, required-entry here as just an example of possible rules</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Additional examples:
+ * - Example of the templates configuration (fieldTmpl for the edited cell, and rowTmpl for the whole edited row)</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;columns</span> <span class="na">name=</span><span class="s">&quot;cms_page_columns&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editorConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                ..
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;templates&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;record&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;fieldTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/editing/field<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;rowTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/editing/row<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            ..
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+..
+<span class="nt">&lt;/columns&gt;</span></code></pre></div>
+
+<p>** - Example of the editor type configuraion - let’s add a colorpicker type, for example, as addition to the existed types (which extend form/element/abstract)</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;editor&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/colorpicker<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/item&gt;</span></code></pre></div>
+
+<h4 id="inline-edit-js-component-structure">Inline Edit JS Component Structure</h4>
+
+<p>Component elements:</p>
+
+<ul>
+  <li>Editor Component: <code>app\code\Magento\Ui\view\base\web\js\grid\editing\editor.js</code></li>
+  <li>Client Component: <code>app\code\Magento\Ui\view\base\web\js\grid\editing\editor-view.js</code></li>
+  <li>View Component: <code>app\code\Magento\Ui\view\base\web\js\grid\editing\client.js</code></li>
+  <li>Record Component (used by Editor to create a record associated with a row data): <code>app\code\Magento\Ui\view\base\web\js\grid\editing\record.js</code></li>
+  <li>row Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\editing\row.html</code></li>
+  <li>row buttons Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\editing\row-buttons.html</code></li>
+  <li>header buttons Template: <code>app\code\Magento\Ui\view\base\web\templates\grid\editing\header-buttons.html</code></li>
+</ul>
+
+<p>Dependencies on other components:</p>
+
+<ul>
+  <li>columns collection</li>
+  <li>dataProvider of the listing</li>
+  <li>multiselect component, which provides information on selected rows.</li>
+</ul>
+
+<p>Currently the Inline Edit component is configured on the cms pages as a plugin for the Listing, its configuration is included into Listing and Column components configuration (described in the above examples).</p>
+
+<h3 id="bookmark">UI Library Bookmark component</h3>
+
+<p>Bookmark Component is responsible for storing active and changed states of data grids. It includes state of filters, columns position, applied sorting, pagination, and so on.</p>
+
+<p>Bookmark Component use DB as persistence storage for grid`s state.</p>
+
+<table>
+<tbody>
+<tr>
+    <th>Field name</th>
+    <th>Type</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td>(PK) bookmark_id</td>
+    <td>int(10)</td>
+    <td>Bookmark identifier</td>
+</tr>
+<tr>
+    <td>(UX1) user_id</td>
+    <td>int(10)</td>
+    <td>User Id</td>
+</tr>
+<tr>
+    <td>(UX1) namespace</td>
+    <td>varchar(255)</td>
+    <td>Bookmark namespace</td>
+</tr>
+<tr>
+    <td>(UX1) identifier</td>
+    <td>varchar(255)</td>
+    <td>Bookmark identifier</td>
+</tr>
+<tr>
+    <td>current</td>
+    <td>smallint(6)</td>
+    <td>Mark current bookmark per user, namespace and identifier</td>
+</tr>
+<tr>
+    <td>title</td>
+    <td>varchar(255)</td>
+    <td>Bookmark title</td>
+</tr>
+<tr>
+    <td>config</td>
+    <td>longtext</td>
+    <td>Bookmark config (JSON config for Js Bookmark component)</td>
+</tr>
+<tr>
+    <td>created_at</td>
+    <td>datetime</td>
+    <td>Bookmark created at time</td>
+</tr>
+<tr>
+    <td>updated_at</td>
+    <td>datetime</td>
+    <td>Bookmark updated at time</td>
+</tr>
+</tbody>
+</table>
+
+<p>PK - increment Id</p>
+
+<p>UX1 - unique key</p>
+
+<h4 id="bookmarks-js-component-structure">Bookmarks JS Component Structure</h4>
+
+<p>Bookmark component consists of</p>
+
+<ul>
+  <li>
+    <p>Collection of bookmarks located at <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\bookmarks.js</code></p>
+
+    <p>Template for collection at <code>app\code\Magento\Ui\view\base\web\templates\grid\controls\bookmarks\bookmarks.html</code></p>
+  </li>
+  <li>
+    <p>Child elements which represent a separate view located at <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\view.js</code></p>
+
+    <p>Template for child element at <code>app\code\Magento\Ui\view\base\web\templates\grid\controls\bookmarks\view.html</code></p>
+  </li>
+</ul>
+
+<p>Bookmarks use <code>app\code\Magento\Ui\view\base\web\js\grid\controls\bookmarks\storage.js</code>
+custom data storage which allows saving bookmark state externally (saved bookmarks are available on any device and in any browser).</p>
+
+<p>The Bookmark component provides the following options:</p>
+
+<ul>
+  <li>template option</li>
+  <li>component option</li>
+</ul>
+
+<pre>
+templates: {
+    view: {
+        component: 'Magento_Ui/js/grid/controls/bookmarks/view'
+        template: 'path/to/template'
+    },
+    newView: {
+        label: 'New View',
+        index: '${ Date.now() }'
+    }
+}
+</pre>
+
+<ul>
+  <li>storageConfig option</li>
+</ul>
+
+<pre>
+storageConfig: {
+    saveUrl: 'path/to/save',
+    deleteUrl: 'path/to/delete',
+    namespace: 'namespace'
+}
+</pre>
+
+<h2 id="form">Form Component</h2>
+
+<p>This topic is planned for the near future.</p>
+
+<h2 id="export">UI Library ExportButton Component</h2>
+
+<p>ExportButton Component is responsible for export grid data to specified data format (cvs, xml, and so on).</p>
+
+<p>To enable ExportButton Component add exportButton element with specified selectProvider item to listing configuration file.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">&quot;export_button&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>{select_provider_path}<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/exportButton&gt;</span></code></pre></div>
+
+<p>Example: <code>Magento/Sales/view/adminhtml/ui_component/sales_order_grid.xml</code></p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;listing</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;listing_top&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;exportButton</span> <span class="na">name=</span><span class="s">&quot;export_button&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;selectProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sales_order_grid.sales_order_grid.sales_order_columns.ids<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/exportButton&gt;</span>
+    <span class="nt">&lt;/container&gt;</span>
+<span class="nt">&lt;/listing&gt;</span></code></pre></div>
+
+<p>By default Magento allows CSV and Excel XML export data formats.</p>
+
+<h4 id="how-to-add-new-export-format">How to add new export format</h4>
+
+<p>To add new export format:</p>
+
+<ul>
+  <li>Add configuration data to ExportButton definition <a href="#example"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a></li>
+  <li>Add controller for new format processing <code>\Magento\Ui\Controller\Adminhtml\Export\GridToFoo</code></li>
+  <li>Add converter <code>\Magento\Ui\Model\Export\ConvertToFoo</code></li>
+</ul>
+
+<h2 id="container">Container Component</h2>
+
+<p>This topic is planned for the near future.</p>
+
+<h2 id="example">definition.xml</h2>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c"> * Copyright © 2015 Magento. All rights reserved.</span>
+<span class="c"> * See COPYING.txt for license details.</span>
+<span class="c"> */</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;components</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../etc/ui_definition.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dataSource</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\DataSource&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;listing</span> <span class="na">sorting=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Listing&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>templates/listing/default<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;save_parameters_in_session&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;client_root&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>mui/index/render<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>uiComponent<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/listing&gt;</span>
+
+    <span class="nt">&lt;paging</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Paging&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>templates/paging/default<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/paging<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/paging&gt;</span>
+
+    <span class="nt">&lt;filters</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Filters&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/filters/filters<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/filters&gt;</span>
+    <span class="nt">&lt;filterSelect</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Filters\Type\Select&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>ui/grid/filters/elements/select<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/filterSelect&gt;</span>
+    <span class="nt">&lt;filterRange</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Filters\Type\Range&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/filters/group<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/filterRange&gt;</span>
+    <span class="nt">&lt;filterInput</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Filters\Type\Input&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/filters/elements/input<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/filterInput&gt;</span>
+    <span class="nt">&lt;filterDate</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Filters\Type\Date&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/grid/filters/elements/date<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/filterDate&gt;</span>
+
+    <span class="nt">&lt;container</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Container&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>uiComponent<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>templates/container/default<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/container&gt;</span>
+    <span class="nt">&lt;massaction</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\MassAction&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>templates/listingcontainer/massaction/default<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/massactions<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/massaction&gt;</span>
+    <span class="nt">&lt;actions</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Control\Action&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/columns/actions<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/actions&gt;</span>
+
+
+
+
+    <span class="nt">&lt;columns</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Listing\Columns&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/grid/listing<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/columns&gt;</span>
+    <span class="nt">&lt;column</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Listing\Columns\Column&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;state_prefix&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>columns<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/column&gt;</span>
+
+
+    <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/form<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>templates/form/default<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Fieldset&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/components/fieldset<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;field</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Field&quot;</span><span class="nt">/&gt;</span>
+
+    <span class="c">&lt;!-- Form elements --&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\Input&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/abstract<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/field<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/input&gt;</span>
+    <span class="nt">&lt;checkbox</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\Checkbox&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/boolean<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/checkbox<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/checkbox&gt;</span>
+    <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\Select&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/select<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/select<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/select&gt;</span>
+    <span class="nt">&lt;multiselect</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\Select&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/multiselect<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/multiselect<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/multiselect<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/multiselect&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\Textarea&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/textarea<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/textarea<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/textarea&gt;</span>
+    <span class="nt">&lt;multiline</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\Multiline&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/components/group<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/multiline&gt;</span>
+    <span class="c">&lt;!-- Form elements --&gt;</span>
+
+    <span class="c">&lt;!-- Form element data types --&gt;</span>
+    <span class="nt">&lt;text</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\DataType\Text&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/text<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/text&gt;</span>
+    <span class="nt">&lt;number</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\DataType\Number&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;price</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\DataType\Price&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;image</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\DataType\Media&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/media<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/image&gt;</span>
+    <span class="nt">&lt;date</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\DataType\Date&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/element/date<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/date<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/date&gt;</span>
+    <span class="nt">&lt;boolean</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\DataType\Boolean&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/boolean&gt;</span>
+    <span class="nt">&lt;email</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form\Element\DataType\Email&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;extends&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>input<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;elementTmpl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/form/element/email<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;addbefore&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>@email:<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/email&gt;</span>
+    <span class="c">&lt;!-- Form element data types --&gt;</span>
+
+
+    <span class="nt">&lt;tab</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Layout\Tabs\Tab&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>templates/layout/tabs/tab/default<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/components/area<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/tab&gt;</span>
+    <span class="c">&lt;!-- navigation --&gt;</span>
+    <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Layout\Tabs\Nav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>ui/tab<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;js_config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento_Ui/js/form/components/tab_group<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/nav&gt;</span>
+    <span class="c">&lt;!-- bookmark --&gt;</span>
+    <span class="nt">&lt;bookmark</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Bookmark&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/bookmark&gt;</span>
+<span class="nt">&lt;/components&gt;</span></code></pre></div>
+
+
+		</div>
+	</section>
+<!-- /main content -->
+
+<!-- sidebar -->
+<aside class="sidebar">
+	<div class="sidebar-wrapper">
+
+		<ul role="navigation">
+		
+		
+		
+		
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+			
+			
+				
+				
+					
+					
+					
+					
+					
+					
+						
+						
+						
+						
+							
+														
+							
+								
+								
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/ui-library/ui-library-component.html">UI Library Components</a></li>
+									
+								
+								
+								
+							
+								
+								
+								
+								
+							
+							
+						
+
+					
+
+
+				
+			
+			
+		
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+</div> <!-- container -->
+
+
+		</div>
+		</div>
+	</div>
+
+
+</div>
+<!-- -->
+
+
+<!-- #footer-wrap -->
+<div id="footer-wrap">
+<footer class="footer container">
+	<div class="row-fluid">
+		<div class="span3 footer-menu" id="magento-sites">
+		<h4>OUR SITES</h4>
+		<ul class="menu nav">
+			<li class="first leaf"><a href="http://magento.com/" title="Magento&#039;s Corporate Site" class="active">Magento</a><span class="description">Magento's Corporate Site</span></li>
+			<li class="leaf"><a href="http://enterprise.magento.com" title="Enterprise-Class Platform">Enterprise Edition</a><span class="description">Enterprise-Class Platform</span></li>
+			<li class="leaf"><a href="http://www.magentocommerce.com/magento-connect/" title="Extensions Marketplace">Connect</a><span class="description">Extensions Marketplace</span></li>
+			<li class="leaf"><a href="http://magento.com/resources/technical" title="Resources for Developers">Developers</a><span class="description">Resources for Developers</span></li>
+			<li class="leaf"><a href="http://magento.com/partners/overview" title="Resources for Partners">Partners</a><span class="description">Resources for Partners</span></li>
+			<li class="leaf"><a href="http://magento.com/training/overview" title="Courses and Developer Certification">Training</a><span class="description">Courses and Developer Certification</span></li>
+			<li class="last leaf"><a href="http://imagine2015.magento.com/" title="Annual Conference">Imagine</a><span class="description">Annual Conference</span></li>
+		</ul>
+	</div>
+
+	<div class="span8 offset1" id="magento-com">
+		<div class="intro-paragraph">
+              <a href="http://magento.com/"><img src="/i/logo-gl-footer.png" id="logo" alt="Magento an ebay inc company"></a>
+              <h3>eCommerce platform, solutions and services<br /> to help grow your business.</h3>
+          </div>
+          <div class="row-fluid">
+            <div class="span3">
+              <h4>LEARN MORE</h4>
+              <ul class="menu nav"><li class="first leaf"><a href="http://magento.com/company/overview" title="">Company</a></li><li class="leaf"><a href="http://magento.com/company/careers" title="">Careers</a></li><li class="leaf"><a href="http://www.magentocommerce.com/company/press-releases" title="">Press Room</a></li><li class="last leaf"><a href="http://magento.com/sitemap" title="">Site Map</a></li></ul>              <div id="social-network">
+                <h4>Connect</h4>
+                <ul>
+                  <li><a href="http://www.facebook.com/magento" target="_blank" class="btn-facebook">Magento Facebook</a></li>
+                  <li><a href="https://twitter.com/magento" target="_blank" class="btn-twitter">Magento Twitter</a></li>
+                  <li><a href="http://www.youtube.com/user/magentocommerce/featured" target="_blank" class="btn-youtube">Magento Youtube</a></li>
+                  <li><a href="http://www.linkedin.com/groups?home=&amp;gid=146360&amp;trk=anet_ug_hm" target="_blank" class="btn-lnkdn">Magento Linkedin</a></li>
+                </ul> 
+              </div>
+            </div>
+            <div class="span7 offset2">
+              <div class="contact-us">
+                <h4>Get in touch</h4>
+                <p>We'd like to hear from you! Call us,<br /> send us an email or talk to sales.</p>
+                <a href="http://www.magentocommerce.com/company/contact-us/" class="btn outline">Contact Us</a>
+              </div>
+                            <div id="newsletter">
+                <h4>GET THE LATEST NEWS</h4>
+                <p>See Magento in the news, find press releases<br /> and resources for media.</p>
+                <div class="hold-form">
+                <div id="nws-notsubscribed">
+                    <div id="sb-email" class="sb-email">
+                        <form method="post" enctype="application/x-www-form-urlencoded" action="http://info2.magento.com/index.php/leadCapture/save" id="mktForm_1182" class="mktform" name="mktForm_1182">
+                            <input class="fValidate['email'] input-topbg sb-email-input" name="Email" id="Email" placeholder="Email Address" />
+                            <button type="submit" class="sb-icon-submit btn outline" onclick="return validationEmail(jQuery('form #Email').val());">
+                                Submit
+                            </button>
+                            <span class="sb-icon-email btn outline">
+                                Sign Up
+                            </span>
+                            <span style="display:none;">
+                              <input type="text" name="_marketo_comments" value="" />
+                            </span><input type="hidden" name="lpId" value="-1" />
+                            <input type="hidden" name="subId" value="36" />
+                            <input type="hidden" name="kw" value="" />
+                            <input type="hidden" name="cr" value="" />
+                            <input type="hidden" name="searchstr" value="" />
+                            <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
+                            <input type="hidden" name="formid" value="1182" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/ui-library/ui-library-component.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/ui-library/ui-library-component.html" />
+                            <input type="hidden" name="_mkt_disp" value="return" />
+                            <input type="hidden" name="_mkt_trk" value="" />
+                        </form>
+                    </div>
+                </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+              <div class="email-invalid hide">
+                <p>Please submit a valid email.</p>
+              </div>
+              <div class="email-ty hide">
+                <p>Thank you for submitting your email.</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </footer>
+  <div id="copyright">
+    <div class="container">
+      <div class="pull-right"><ul class="menu nav"><li class="first leaf"><a href="http://magento.com/legal/terms/privacy" title="">Privacy Policy</a></li><li class="leaf"><a href="http://magento.com/legal/terms" title="">Terms of service</a></li><li class="last leaf"><a href="http://magento.com/legal/licensing" title="">License/Trademark FAQ</a></li></ul></div>
+      <span class="pull-left">&copy; 2015 Magento, Inc. All rights reserved.</span>
+    </div>
+  </div>
+</div>
+<!-- /#footer-wrap -->
+
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<script src="/js/classie.js"></script>
+<script src="/js/uislideform.js"></script>
+<script type="text/javascript">
+  new UISlideform(document.getElementById('sb-email'), 'email');
+  
+  (function($) {
+    window.validationEmail = function(email) {
+      $('#Emailemail_msg').fadeOut('slow');
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if (!emailReg.test(email)) {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else if (email == '' || typeof email == 'undefined') {
+        $('.email-invalid').fadeIn('slow');
+      }
+      else {
+        $('.email-invalid').fadeOut('slow');
+        $('#mktForm_1182').submit();
+      }
+      return false;
+    }
+  })(jQuery);
+
+  (function() {
+    var didInit = false;
+    function initMunchkin() {
+      if(didInit === false) {
+        didInit = true;
+        Munchkin.init('318-XBX-392', {cookieAnon: false});
+      }
+    }
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = '//munchkin.marketo.net/munchkin.js';
+    s.onreadystatechange = function() {
+      if (this.readyState == 'complete' || this.readyState == 'loaded') {
+        initMunchkin();
+      }
+    };
+    s.onload = initMunchkin;
+    document.getElementsByTagName('head')[0].appendChild(s);
+  })();
+</script>
+
+<!-- Docs scripts (just in case) -->
+<script src="/js/app-min.js"></script>
+
+
+<!--Google Analytics-->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-66243208-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
