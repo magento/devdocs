@@ -14,7 +14,7 @@ github_link: pattern-library/displaying-data/datatable/datatable.md
 <h3>Contents</h3> 
 * <a href="#overview">Overview</a>
 * <a href="#datatable">Data-table</a>
-* <a href="#pagination">Pagination</a>
+* <a href="#pagination">Pagination</a><
 * <a href="#massactions">Mass Actions</a>
 * <a href="#message">Messaging and Confirmation</a>
 * <a href="#tablecontrol">Table Control</a>
@@ -23,7 +23,6 @@ github_link: pattern-library/displaying-data/datatable/datatable.md
 * <a href="#filters">Filters</a>
 * <a href="#datatableviews">Data Table Views</a>
 * <a href="#selectall">Select All</a>
-* <a href="#selecting">Selecting</a>
 * <a href="#editing">Editing</a>
 * <a href="#misc">Miscellaneous Features</a>
 * <a href="#interactions">Interactions</a>
@@ -46,7 +45,7 @@ Data-table requirements for Magento 2 include:
 	<li>Functional parity with the existing Magento application</li>
 </ul>
 
-<h3 id="datatable">Data-table</h3>
+<h2 id="datatable">Data-table</h2>
 This specification defines the following features for the data-table:
 <ul>
 	<li>Positioning of elements to allow for a more intuitive user experience</li>
@@ -67,7 +66,7 @@ This specification defines the following features for the data-table:
 <br />
 <br />
 
-<h2>Data-table Visual Architecture</h2>
+<h3>Data-table Visual Architecture</h3>
 The data-table will contain the following elements where applicable and as needed:
 <ul>
 	<li>Pagination controls</li>
@@ -82,18 +81,22 @@ The data-table will contain the following elements where applicable and as neede
 The data-table will be designed in such a way that any of the above controls can be removed, collapsing the table gracefully.
 <br />
 <img src="img/datatable02.jpg">
+<br />
+<br />
+<br />
+<br />
 <img src="img/datatable03.jpg">
 <br />
 
-<h3 id="pagination">Pagination</h3>
+<h2 id="pagination">Pagination</h2>
 Pagination controls allow the user to easily page through and organize data. Pagination controls will contain the following:
 <ul>
 	<li>Drop-down select for number of items per page	
 	<ul>
-		<il>Increments TBD</il>
-		<il>Custom field for user-defined increments</il>
+		<li>Increments TBD</li>
+		<li>Custom field for user-defined increments</li>
 	</ul>
-	</il>
+	</li>
 	<li>Page number (skip to) field and action button</li>
 	<li>‘Next’ button</li>
 	<li>‘Previous’ button when applicable</li>
@@ -102,7 +105,7 @@ Pagination controls allow the user to easily page through and organize data. Pag
 <img src="img/datatable04.jpg">
 <br />
 
-<h2>Pagination Rules</h2>
+<h3>Pagination Rules</h3>
 <ul>
 	<li>The pagination controls will only be present if the number of table items exceeds the lowest increment
 		for number of items per page.</li>
@@ -110,53 +113,76 @@ Pagination controls allow the user to easily page through and organize data. Pag
 	<li>The ‘Next’ button should be disabled when viewing the last page of results.</li>
 	<li>The ‘Skip to’ field will allow only numeric values.</li>
 	<li>‘Skip to’ will be instantiated once the value is changed and [Return] or [Tab] is clicked.</li>
-	<li>A custom number of items per page can be set by selecting the “Custom” link
-		which will allow users to specify a number. This number can be edited.</li>
+	<li>A custom number of items per page can be set by selecting the “Custom” link which will allow users to specify a 
+		number. This number can be edited.</li>
 </ul>
 <br />
 <br />
 <img src="img/datatable05.jpg">
+<br />
+<br />
 <img src="img/datatable06.jpg">
+<br />
+<br />
 <img src="img/datatable07.jpg">
 <br />
 <br />
 <br />
-<br />
 
-<h3 id="massactions">Mass Actions</h3>
+<h2 id="massactions">Mass Actions</h2>
 A common theme across the existing Magento user experience includes mass actions that can be taken. This is a convention used on both data-table and non-data-table pages. Not all pages have these action buttons. This document will not attempt to capture all actions that appear here or how they might be redesigned for Magento 2. This document will make note that these actions exist on many of the data-table pages and will use the area directly above the table to indicate placement of such action buttons where they might be needed.
+<br />
+<br />
 <br />
 <img src="img/datatable08.jpg">
 <br />
+<br />
+<br />
 Actions will be positioned above the table . Each table  will have it’s own set of actions, some table s will have no actions. This new proposal removes the submit button which is currently visible next to the “Actions” drop down selector. In the event that any confirmations are needed for actions, modal dialogs will be used.
+<br />
+<br />
 <br />
 <img src="img/datatable09.jpg">
 <br />
+<br />
+<br />
 
-<h2>Single Actions</h2>
+<h3>Single Actions</h3>
 These actions will appear within the data area of the table where applicable. When this action column is applicable, it will always appear on the far right of the table . Single actions will allow users to take action on a record within the table . In most cases, no more than one action will appear here. In the event that additional actions are needed, they will appear in the form of a drop down. These actions are specific to the single record in which they are associated. In the event that a user selects multiple items in the table, these actions will be disabled or hidden.
 <br />
+<br />
+<br />
 <img src="img/datatable10.jpg">
+<br />
+<br />
 <br />
 
 <h3 id="message">Messaging and Confirmation</h3>
 There are times when an action needs to be confirmed. In these cases, the user’s task will be interrupted with a message asking the user to confirm the operation before proceeding. This message is presented via a modal dialog.
 <br />
+<br />
+<br />
 <img src="img/datatable11.jpg">
+<br />
+<br />
 <br />
 
 Once an action is taken, success/fail messaging should appear as an overlay which fades away. Certain actions may  require that an Undo action be provided. This experience should be the same whether a single file is being deleted via the “actions” button for that record or 1 or more files have been selected via a checkbox and deleted via the mass actions delete.
 <br />
+<br />
+<br />
 <img src="img/datatable12.jpg">
 <br />
+<br />
+<br />
 
-<h3 id="tablecontrol">Table Control</h3>
+<h2 id="tablecontrol">Table Control</h2>
 This section will cover the ability to set column visibility, save view state, and search. Filters will be covered in the following section.
 
-<h2>Keyword Search</h2>
+<h3>Keyword Search</h3>
 A keyword search will allow users to search on the data that has been loaded into the table  being viewed. This search is a part of the table, and is separate from the global record search in the page header. It will allow for exact phrases(using quotations) and the following boolean operators:
 
-<h2>Placement and Behavior</h2>
+<h3>Placement and Behavior</h3>
 The keyword search function and table controls will be:
 <ul>
 	<li>Displayed above the table</li>
@@ -164,23 +190,35 @@ The keyword search function and table controls will be:
 	<li>Remain visibly persistent as the table scrolls</li>
 </ul>
 
-<h3 id="stickyheaders">Sticky Headers and Controls</h3>
+<h2 id="stickyheaders">Sticky Headers and Controls</h2>
 As the table  scrolls, the table controls will dynamically condense to a single row. All functionality of the controls will remain available.
+<br />
+<br />
 <br />
 <img src="img/datatable13.jpg">
 <br />
+<br />
+<br />
 The persistent header will reactivate when you scroll back up:
+<br />
+<br />
 <br />
 <img src="img/datatable14.jpg">
 <br />
+<br />
+<br />
 
-<h2>Multiple Data-tables on Page</h2>
+<h3>Multiple Data-tables on Page</h3>
 The header will stick to the first table until the user scrolls past the bottom of that table . The header will have the same behavior for each subsequent data-table.
+<br />
+<br />
 <br />
 <img src="img/datatable15.jpg">
 <br />
+<br />
+<br />
 
-<h2>Interactions</h2>
+<h3>Interactions</h3>
 The data-table will reset to the top of the table  when the user:
 <ul>
 	<li>Submits a search query</li>
@@ -197,71 +235,115 @@ The data-table will remain in the current viewport when the user:
 	<li>Edits cells in-line</li>
 </ul>
 
-<h2>Sticky First Column</h2>
+<h3>Sticky First Column</h3>
 The table can be scrolled horizontally. And to keep the row identifiable, the checkbox column and first column will be sticky. In creating the grid, the first column must always be an identifiable attribute such as name.
+<br />
+<br />
 <br />
 <img src="img/datatable16.jpg">
 <br />
+<br />
+<br />
 If there are more columns than can be shown in one view, the vertical scroll bar should appear for navigating to the rest of the column options as seen in the image below. Only 6 options should be shown per each vertical column, we should ensure that the all area of panel will be visible above the page fold.
 <br />
+<br />
+<br />
 <img src="img/datatable17.jpg">
+<br />
+<br />
 <br />
 In the example below, the first column is “Name” rather than “Customer ID.”
 This horizontal scroll should still work with page scroll and sticky header.
 <br />
+<br />
+<br />
 <img src="img/datatable18.jpg">
 <br />
+<br />
+<br />
 
-<h3 id="search">Search</h3>
+<h2 id="search">Search</h2>
 When the user enters a keyword in the search field and submits the query (by clicking the spyglass icon), the table will display only records that contain the designated keyword. The search term is displayed as a “chip” below the search field (and inline with any additional filters that were applied). In this layout, additional search terms can be paired with the initial term to further refine the results. Each time a term is submitted, the data is filtered, the term is displayed as a “chip” and the search field returns to it’s initial state (it does not retain the term entered my the user).
 <br />
+<br />
+<br />
 <img src="img/datatable19.jpg">
+<br />
+<br />
 <img src="img/datatable20.jpg">
 <br />
-<h2>Autocomplete</h2>
+<br />
+<br />
+<h3>Autocomplete</h3>
 As text is added to the search field, the system will suggest terms and phrases based on data contained in the table being searched against.
 <ul>
 	<li>No more than 5 suggestions should be displayed at a time</li>
 </ul>
 <br />
+<br />
+<br />
 <img src="img/datatable21.jpg">
 <br />
+<br />
+<br />
 
-<h2>Search/Filter Tags</h2>
+<h3>Search/Filter Tags</h3>
 Once a search term or filter is applied and results are loaded into the table, the terms or parameters used to filter by are displayed in the minified version of the “filter chip(s)”. If the user removes all the tags, the filters row would disappear.
+<br />
+<br />
 <br />
 <img src="img/datatable22.jpg">
 <br />
+<br />
+<br />
 
-<h2>Error Checking/Validation</h2>
+<h3>Error Checking/Validation</h3>
 There will be no form validation or error checking for search queries since any combination of characters may be searched. Messaging will display in the data area when no results can be returned.
+<br />
+<br />
 <br />
 <img src="img/datatable23.jpg">
 <br />
+<br />
+<br />
 
-<h2>User Flow</h2>
+<h3>User Flow</h3>
 Upon conducting a query, a result set is returned based on the above rules. Once results are loaded, the keyword search field will be empty, and a chip for the keyword will appear. If a user clears the chip, the table will then refresh, reloading data based on any filters that are applied.
 
-<h2>Columns</h2>
+<h3>Columns</h3>
 The user will be able to select which columns are visible from here. Settings will also be contained in a panel that can be activated by clicking on the columns action. Users will also have the ability to cancel out of this prompt, as well as reset (restore) the table back to it’s default column view. These settings will be ‘sticky’ per table, so users returning to any particular table will see the table the way it was last configured. 
 <br />
+<br />
+<br />
 <img src="img/datatable24.jpg">
+<br />
+<br />
 <img src="img/datatable25.jpg">
 <br />
+<br />
+<br />
 
-<h2>Custom Views</h2>
+<h3>Custom Views</h3>
 Custom views allow the user to save the state of a table. When a view is saved, the table settings will be stored. These settings include column visibility and position, as well as any filter or search that has been applied to the table. Saving a ‘view’ will be done via a dropdown control. Saved views will be available per table.
+<br />
+<br />
 <br />
 <img src="img/datatable26.jpg">
 <br />
+<br />
+<br />
 
-<h2>Editing Saved Views</h2>
+<h3>Editing Saved Views</h3>
 Views can be named or deleted by clicking an edit icon. Refer to “Adding a custom value to drop down list” above for more detailed behavior.
+<br />
+<br />
 <br />
 <img src="img/datatable27.jpg">
 <br />
+<br />
+<br />
 
-<h3 id="filters">Filters</h3>
+<h2 id="filters">Filters</h2>
 Users may filter specific columns within the table by selecting the Filter icon in the first row of the data table. This will open a dropdown containing the filters. An input option for each column that is visible in the table is presented that the user may filter the data by. Users enter criteria and click the “Apply” button, which will refresh the table to display only the results that match the filter criteria. Not all columns may be filtered (such as columns containing “check boxes” and “actions”). This filtering approach will support the following:
 This filtering approach will support the following:
 <ul>
@@ -273,72 +355,114 @@ This filtering approach will support the following:
 
 Examples:
 <br />
+<br />
+<br />
 <img src="img/datatable28.jpg">
+<br />
+<br />
+<br />
 <img src="img/datatable29.jpg">
+<br />
+<br />
+<br />
 <img src="img/datatable30.jpg">
 <br />
+<br />
+<br />
 Step 1: User click on Filters icon in the data table.
-<br>
+<br />
+<br />
+<br />
 <img src="img/datatable31.jpg">
 <br />
+<br />
+<br />
 Step 2: Filter dropdown expands. User adds filters. User clicks Apply Filters.
-<br>
+<br />
+<br />
+<br />
 <img src="img/datatable32.jpg">
+<br />
+<br />
 <br />
 Step 3: Filter tags are shown and filters are applied.
 When the filters are applied and the table refreshes, the Active Filters row reveals only the ‘filter tags’. If all of the filter tags are removed the filter row disappear.
-<br>
+<br/ >
+<br />
+<br />
 <img src="img/datatable33.jpg">
+<br />
+<br />
 <br />
 
 Example: User is editing filters.
-<br>
+<br />
+<br />
+<br />
 <img src="img/datatable34.jpg">
+<br />
+<br />
 <br />
 
 
-<h2>Quick Filters</h2>
+<h3>Quick Filters</h3>
 In some instances, pre-determined “quick filters” may be present in the form of links. These are filter shortcuts of common filtering attributes to assist users who may not readily consider filtering the table for results. Quick Filters are perhaps most useful for extracting ‘reports’ from tables.  These filters are elevated above the ‘advanced filters’.
 
 Step 1: Starting state. User click on a quick filter link.
 <br />
+<br />
+<br />
 <img src="img/datatable35.jpg">
+<br />
+<br />
 <br />
 Step 2: Quick filter is applied.
 Once user click on the quick filters, that quick filter is shown as a chip. The user can add additional quick filters.
 <br />
+<br />
+<br />
 <img src="img/datatable36.jpg">
+<br />
+<br />
 <br />
 Example: Quick filters and active filters are present.
 <br />
+<br />
+<br />
 <img src="img/datatable37.jpg">
 <br />
+<br />
+<br />
 
-<h3 class="datatableviews">Data Table Views</h3>
+<h2 class="datatableviews">Data Table Views</h2>
 The data-table will support up to 30 columns, with up to 8 being visible by default. While there will be a default view for each data-table in the system, users will have the ability to show, hide, drag and change the order of columns. This interaction will include the ability to resize the width of columns.
 <ul>
 	<li>The only columns which cannot be moved are the checkbox(select) column and the action column. The select column will always appear on the far left while the action column will appear on the far right of the table </li>
 </ul>
 
-<h2>View Stickiness</h2>
+<h3>View Stickiness</h3>
 As a user rearranges, adds, and resizes the columns of a particular table , it’s view state should be saved so that when a user leaves and the returns to the table , it will appear the way the user last viewed it.
-
+<br />
 The following parameters will be saved:
 <ul>
 	<li>Columns displayed</li>
 	<li>Column arrangement</li>
 	<li>Column width</li>
 	<li>Number of items per page </li>
-</ul>	
+</ul>
+<br />
+<br />	
 
-<h2>Resetting the View</h2>
+<h3>Resetting the View</h3>
 This will be handled by the ‘Reset’ function in the settings drop down button. A modal dialog should appear, allowing the user to confirm the reset.
 
-<h3 class="selectall">Select All</h3>
+<h2 class="selectall">Select All</h2>
 This feature will allow users to make bulk selections to items within any given data-table. Because users may be dealing with many “pages” of data, this function needs to be specific in respect to what is being selected. Thus a drop down will be used to allow for multiple options for selecting records.
 <br />
 <br />
+<br />
 <img src="img/datatable38.jpg">
+<br />
 <br />
 <br />
 This drop down will include the following:
@@ -350,21 +474,25 @@ This drop down will include the following:
 </ul>	
 This drop down only needs to appear where more than one page of data is available. In cases where only one page of data is available, only a checkbox allowing the user to select or deselect all is necessary. Options in the drop down select should be dynamic. For instance, deselect options should not be displayed if nothing is selected.
 
-<h2>Number of Records</h2>
+<h3>Number of Records</h3>
 The total number of records loaded into the table  will display above the column headers.
+<br />
 <br />
 <br />
 <img src="img/datatable39.jpg">
 <br />
 <br />
+<br />
 As items are selected on the gird, a count for the number of items selected should be displayed next to the total count. This will give the user confidence that records are selected though they may not be on the current page view.
+<br />
 <br />
 <br />
 <img src="img/datatable40.jpg">
 <br />
 <br />
+<br />
 
-<h3 class="selecting">Selecting</h3>
+<h2 class="selecting">Select All</h2>
 For tables which require a select column:
 <ul>
 	<li>The select column will always be the first column appearing on the left side of 
@@ -376,19 +504,23 @@ For tables which require a select column:
 </ul>	
 <br />
 <br />
+<br />
 <img src="img/datatable41.jpg">
 <br />
 <br />
+<br />
 
-<h2>Toggle Switches</h2>
+<h3>Toggle Switches</h3>
 Some data-tables will be used to display “settings” content. In these instances a checkbox is not ideal for the experience, as it can be confusing to the user when pre-selected settings are displayed. Switches make the action and intent more clear to the user for these tasks. Therefore, if switches are present, checkboxes should not; the two should never be used in the same table. Since switches replace the functionality of checkboxes they should be the first column of the data-table. 
+<br />
 <br />
 <br />
 <img src="img/datatable42.jpg">
 <br />
 <br />
+<br />
 
-<h3 class="editing">Editing</h3>
+<h2 class="editing">Editing</h2>
 Single item and multiple item edits are explained below.
 <strong>Note: Not all data-tables will allow for inline editing.</strong>
 
@@ -404,6 +536,7 @@ Single item and multiple item edits are explained below.
 </ul>
 <br />
 <br />
+<br />
 <img src="img/datatable43.jpg">
 <br />	
 <br />
@@ -411,15 +544,18 @@ Single item and multiple item edits are explained below.
 <img src="img/datatable44.jpg">
 <br />
 <br />
+<br />
 Inline editing may require error handling on some fields. This should be done using real-time field validation.
 Some fields may allow for only a specific set of values. In these instances, a select or multi-select interaction should be used.
+<br />
 <br />
 <br />
 <img src="img/datatable45.jpg">
 <br />
 <br />
+<br />
 
-<h3 class="misc">Miscellaneous Features</h3>
+<h2 class="misc">Miscellaneous Features</h2>
 This section will outline additional features which may be needed for some but not all tables in Magento.
 
 <h2>Drag and Drop Columns</h2>
@@ -428,25 +564,31 @@ Some data-tables will allow users to arrange columns in a customized order. A us
 When dropped on an area that is not highlighted (or off target of the highlighted area) the column will return to it’s original position. If the user wishes to maintain this position for future viewing, they must set a “Saved View”, otherwise the default column order will prevail for following sessions.
 <br />
 <br />
+<br />
 <img src="img/datatable46.jpg">
 <br />
 <br />
+<br />
 
-<h2>Drag and Drop Rows</h2>
+<h3>Drag and Drop Rows</h3>
 Some data-tables will allow users to specify an order for the records within the table. If a position has been assigned to a record, the position number will display in the ‘Position’ column. Changing position order should always shift the greater numbers in an ascending fashion, and lesser numbers in a descending fashion. E.G., if position 5 is changed to 10, the previous position 10 would become position 11, shifting all ascending records up. Position 6 through 9 would then shift down in the same manner. 6 would become 5, 7 would become 6, so on and so forth. If the ‘Position’ column is sorted, users can drag and drop single or multiple(once selected) to a different position on the table.
 
 <strong>NOTE: Inline editing functionality should not be available for tables that require drag and drop functionality for table rows.</strong>
-<h1>Single rows may be arranged via drag and drop.</h1>
+<h3>Single rows may be arranged via drag and drop.</h3>
+<br />
 <br />
 <br />
 <img src="img/datatable47.jpg">
 <br />
 <br />
+<br />
 
-<h1>Multiple rows may also be arranged via drag and drop.</h1>
+<h3>Multiple rows may also be arranged via drag and drop.</h3>
+<br />
 <br />
 <br />
 <img src="img/datatable48.jpg">
+<br />
 <br />
 <br />
 
@@ -454,28 +596,34 @@ Some data-tables will allow users to specify an order for the records within the
 In cases where an image is associated with the data, as in the case of a product, the data-table will display a thumbnail view of the primary or default image (typically the first image in a series of image). By default the thumbnail image will appear to the far left of the table (after select checkboxes when present). The thumbnail image is a ‘clickable target’ independent of the typical click behavior of the row.
 <br />
 <br />
+<br />
 <img src="img/datatable49.jpg">
+<br />
 <br />
 <br />
 When the thumbnail is clicked a modal is presented over the data-table to provide a larger, more detailed view of the image. This modal should contain a heading that corresponds to the associated product name; a close control for the modal; a hyperlink that redirects the user to the details page.
 <br />
 <br />
+<br />
 <img src="img/datatable50.jpg">
 <br />
 <br />
+<br />
 
-<h1>Parent-Child relationships</h1>
+<h3>Parent-Child relationships</h3>
 The data-table will support parent-child relationships. Parent and child records will be delineated via style and/or iconography. Parent nodes will be expandable/collapsable.
+<br />
 <br />
 <br />
 <img src="img/datatable51.jpg">
 <br />
 <br />
+<br />
 
-<h3 class="interactions">Interactions</h3>
+<h2 class="interactions">Interactions</h2>
 General interaction should follow standard web conventions. Interaction around dragging and resizing columns will utilize the cursor to indicate when an area can be dragged or resized.
 
-<h2>Viewport Considerations</h2>
+<h3>Viewport Considerations</h3>
 <ul>
 	<li>The default data-table will display within a 1024px screen resolution without the need for horizontal 
 		scrolling.</li>
@@ -490,7 +638,7 @@ General interaction should follow standard web conventions. Interaction around d
 <br />
 <br />
 
-<h2>Column Headers</h2>
+<h3>Column Headers</h3>
 <ul>
 	<li>Clicking on a column header sorts the data ascending/descending./li>
 	<li>Column headers are draggable and can be re-sized.</li>
@@ -501,7 +649,7 @@ General interaction should follow standard web conventions. Interaction around d
 	<li>Can be resized by dragging the edge of the column.</li>
 </ul>	
 
-<h2>Cursors</h2>
+<h3>Cursors</h3>
 Cursors will be used to indicate which actions the user can take in any particular situation. While cursors may differ slightly depending on operating system and browser, the below cursors are examples of what should be used per standard web conventions:
 <br />
 <br />
@@ -509,10 +657,10 @@ Cursors will be used to indicate which actions the user can take in any particul
 <br />
 <br />
 
-<h3 class="summary">Summary</h3>
+<h2 class="summary">Summary</h2>
 This specification proposes a new version of Magento’s administration data-table. Features of the existing data-table have been analyzed to best represent the existing functions of the data-table.
 
-<h2>Backwards Compatibility</h2>
+<h3>Backwards Compatibility</h3>
 This new version of the data-table will fully support the existing Magento data-table functionality. Where this document may not be explicit, it should be assumed that any existing function of the table  will be supported with this new version.
 
 
