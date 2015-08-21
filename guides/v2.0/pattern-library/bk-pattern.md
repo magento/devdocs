@@ -32,7 +32,8 @@ Browse the Design Pattern Library here:
 
 ####Displaying and Dealing with Data
 <a href="displaying-data/tile/tile.html">Tile</a><br>
-<a href="filters/data-table-filters/filtering.html">Filters</a>
+<a href="filters/data-table-filters/filtering.html">Filters</a><br>
+<a href="displaying-data/datatable/datatable.html">Data Table</a><br>
 
 
 ####Feedback to User
