@@ -213,10 +213,10 @@ catalogsearch_fulltext                   Catalog Search
 
 <p>Command options:</p>
 
-<pre><code>magento indexer:status &lt;indexer&gt;
+<pre><code>magento indexer:status [indexer]
 </code></pre>
 
-<p>where <code>&lt;indexer&gt;</code> is either <code>--all</code> to display the status of all indexers, or a space-separated list of indexers.</p>
+<p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to view status of all indexers.</p>
 
 <p>To view the list of indexers, enter</p>
 
@@ -225,7 +225,7 @@ catalogsearch_fulltext                   Catalog Search
 
 <p>A sample follows:</p>
 
-<pre><code>magento indexer:status --all
+<pre><code>magento indexer:status
 </code></pre>
 
 <p>Sample result:</p>
@@ -247,10 +247,10 @@ Catalog Search:                                    Reindex required
 
 <p>Command options:</p>
 
-<pre><code>magento reindex &lt;indexer&gt;
+<pre><code>magento reindex [indexer]
 </code></pre>
 
-<p>where <code>&lt;indexer&gt;</code> is either <code>--all</code> to reindex all indexers, or a space-separated list of indexers.</p>
+<p>where <code>[indexer]</code> is a space-separated list of indexers. Omit <code>[indexer]</code> to reindex all indexers.</p>
 
 <p>To view the list of indexers, enter</p>
 
@@ -259,7 +259,7 @@ Catalog Search:                                    Reindex required
 
 <p>A sample follows:</p>
 
-<pre><code>magento indexer:reindex --all
+<pre><code>magento indexer:reindex
 </code></pre>
 
 <p>Sample result:</p>
@@ -292,14 +292,14 @@ Catalog Search index has been rebuilt successfully in &lt;time&gt;
 <h3 id="config-cli-subcommands-index-conf-show">Display the current configuration</h3>
 <p>To view the current indexer configuration, enter</p>
 
-<pre><code>magento indexer:show-mode &lt;indexer&gt; [--all]
+<pre><code>magento indexer:show-mode [indexer]
 </code></pre>
 
-<p>where <code>&lt;indexer&gt;</code> is either <code>--all</code> to display the configuration of all indexers, or a space-separated list of indexers.</p>
+<p>where <code>[indexer]</code> is a space-separated list of indexers or omit <code>[indexer]</code> to show all indexers’ modes.</p>
 
 <p>For example, to show the mode of all indexers:</p>
 
-<pre><code>magento indexer:show-mode --all
+<pre><code>magento indexer:show-mode 
 </code></pre>
 
 <p>Sample result:</p>
@@ -317,14 +317,14 @@ Catalog Search:                                    Update on Save
 <h3 id="config-cli-subcommands-index-conf-set">Configure indexers</h3>
 <p>To specify the indexer configuration, enter</p>
 
-<pre><code>magento indexer:set-mode {realtime|schedule} &lt;indexer&gt;
+<pre><code>magento indexer:set-mode {realtime|schedule} [indexer]
 </code></pre>
 
 <p>where</p>
 
 <p><code>realtime</code> sets the selected indexers to update on save.
 <code>schedule</code> sets the specified indexers to save according to the cron schedule.
-<code>indexer</code> is either <code>--all</code> to display the status of all indexers, or a space-separated list of indexers.</p>
+<code>indexer</code> is a space-separated list of indexers or omit <code>indexer</code> to configure all indexers the same way.</p>
 
 <p>To view the list of indexers, enter</p>
 

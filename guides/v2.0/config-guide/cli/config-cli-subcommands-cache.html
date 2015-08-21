@@ -300,13 +300,13 @@ bash shell example for CentOS:<br />
 
 <p>Command options:</p>
 
-<pre><code>magento cache:enable [--all] [type] ... [type]
-magento cache:disable [--all] [type] ... [type] 
+<pre><code>magento cache:enable [type] ... [type]
+magento cache:disable [type] ... [type] 
 </code></pre>
 
 <p>where</p>
 
-<p><code>--all</code> enables or disables all cache types at the same time.</p>
+<p>omitting <code>[type]</code> enables or disables all cache types at the same time.</p>
 
 <p><code>type</code> is a space-separated list of cache types.</p>
 
@@ -352,13 +352,13 @@ magento cache:disable [--all] [type] ... [type]
 
 <p>Command usage:</p>
 
-<pre><code>magento cache:clean [--all] [type] ... [type]
-magento cache:flush [--all] [type] ... [type]
+<pre><code>magento cache:clean [type] ... [type]
+magento cache:flush [type] ... [type]
 </code></pre>
 
 <p>where</p>
 
-<p><code>--all</code> cleans or flushes all cache types at the same time.</p>
+<p>omitting `[type] cleans or flushes all cache types at the same time.</p>
 
 <p><code>type</code> is a space-separated list of cache types.</p>
 
@@ -366,7 +366,7 @@ magento cache:flush [--all] [type] ... [type]
  -->
 <p>For example, to flush all cache types, enter</p>
 
-<pre><code>magento cache:flush --all
+<pre><code>magento cache:flush 
 </code></pre>
 
 <p>Sample result:</p>
