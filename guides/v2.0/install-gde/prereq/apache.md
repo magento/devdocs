@@ -16,6 +16,7 @@ redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 
 *	<a href="#apache-support">Apache versions supported</a>
 *	<a href="#apache-help-beginner">Help if you're just starting out</a>
+*	<a href="#apache-help-rewrite">Important: Apache rewrites and .htaccess</a>
 *	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
 *	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 *	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
@@ -32,6 +33,16 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
 *	<a href="{{ site.gdeurl }}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
 
+<h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
+This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>.
+
+Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.
+
+<div class="bs-callout bs-callout-info" id="info">
+	<span class="glyphicon-class">
+	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>
+</div>
+
 <h2 id="install-prereq-apache-verify">Verify the Apache version</h2>
 To verify the Apache version you're currently running, enter:
 
@@ -46,10 +57,6 @@ The result displays similar to the following:
 	*	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
 	*	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
 *	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use PHP 5.6, see the next section
-*	If Apache is installed and it's the correct version, make sure Apache rewrites are enabled:
-
-	*	<a href="#apache-rewrites2.4">Enabling Apache Rewrites for Apache 2.4</a>
-	*	<a href="#apache-rewrites2.2">Enabling Apache Rewrites for Apache 2.2</a>
 
 <h2 id="install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</h2>
 The following sections discusses how to install or upgrade Apache:
@@ -92,7 +99,7 @@ To upgrade to Apache 2.4:
 
 	<div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
-	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a></p>.</span>
+	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p></span>
 	</div>
 
 3.	Verify the installation.

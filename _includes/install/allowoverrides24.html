@@ -1,5 +1,5 @@
-<h4 id="apache-rewrites2.4">Enable rewrites for Apache 2.4</h4>
-<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>.</p>
+<h3 id="apache-rewrites2.4">Enable rewrites and .htaccess for Apache 2.4</h3>
+<p>Use this section to enable Apache 2.4 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a></p>
 <p>Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.</p>
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -12,7 +12,7 @@
 	For example, you can add the following to the end of <code>000-default.conf</code>:</br>
 	<pre>
 &lt;Directory "/var/www/html">
-AllowOverride &lt;value from Apache site>
+	AlowOverride &lt;value from Apache site>
 &lt;/Directory></pre></li>
 <li>Restart Apache:
 	<pre>service apache2 restart</pre></li></ol>
