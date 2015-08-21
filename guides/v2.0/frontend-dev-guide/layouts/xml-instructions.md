@@ -34,7 +34,6 @@ The basic set of instructions is the same for all types of layout files. This ar
 
 Use the following layout instructions to customize your layout:
 
-<<<<<<< HEAD
 *  <a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
 *  <a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
@@ -44,16 +43,6 @@ Use the following layout instructions to customize your layout:
 *  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
-=======
-*	<a href="#fedg_layout_xml-instruc_ex_block"><code>&lt;block></code></a>
-*	<a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
-*	<a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
-*	<a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
-*	<a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
-*	<a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
-*	<a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
-*	<a href="#argument"><code>&lt;argument&gt;</code></a>
->>>>>>> a589bab039b1103cc1c8d9e26953a2aeaefc80ab
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
