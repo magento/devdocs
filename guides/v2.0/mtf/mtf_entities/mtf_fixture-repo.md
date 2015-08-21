@@ -26,7 +26,7 @@ In this topic you will learn how to create, use and merge a repository.
 
 <h2 id="mtf_repository_create">Create repository for entire fixture</h2>
 
-Let's create repository for the Widget fixture `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
+Let's create repository for the Widget fixture `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 <a href="{{site.gdeurl}}mtf/mtf_fixture.html">More details about fixtures</a>.
 
 Assume that we have the following fixture:
@@ -75,7 +75,7 @@ Assume that we have the following fixture:
 {% endhighlight %}
 
 Then, create repository XML file by the pass that specified in `repository_class` attribute. 
-In our case it is `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml`.
+In our case it is `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget.xml`.
 
 Let's see an example of repository content for our Widget fixture.
 
@@ -173,29 +173,52 @@ Let's look at repository structure.
 
 For this example if repository name in the test is not specified, then fields will be filled with data from `<dataset name="default">`. If repository name in the test is `cms_page_link`, then fields will be filled with data from `<dataset name="cms_page_link">`.
 
-<h2 id="mtf_repository_create-field"> Create repository for fixture field</h2>
+<h2 id="mtf_repository_create-field"> Create repository for the fixture field</h2>
 
 In Widget fixture code above there are fields with links for repositories. Let's see closer at field `layout` with `repository="Magento\Widget\Test\Repository\Widget\LayoutUpdates`.
 
 `repository` value tells us where to create repository XML file and what name to give it.
 
-Therefore, we should create `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`.
+Therefore, we should create `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Repository/Widget/LayoutUpdates.xml`.
 
 The XML structure of this repository is the same as a <a href="#mtf_repository_create">repository for the entire fixture</a>.
 
 Assume that we want to fill out automatically the Layout Update block for the following cases shown on the pictures (name of datasets have orange font, fields defined in repository are highlighted in orange):
 
+Case 1. **all_pages** dataset:
+
+* set **Display on** field (item name="page_group") to **All Pages** that is item of **Generic Pages**
+* set **Container** field (item name="block") to **Main content Area**
 
 ![all_pages dataset view on GUI]({{ site.baseurl }}common/images/mtf_repository_layout-allpages.png)
 
+Case 2. **on_category** dataset:
+
+* set **Display on** field (item name="page_group") to **Non-Anchor Categories** that is item of **Categories**
+* set **Categories** field (item name="for") to **Specific Categories**
+* set in a tree of categories the **Default Category** (item name="entities")
+* set **Container** field (item name="block") to **Main content Area**
+
 ![on_category dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-oncategory.png)
+
+Case 3. **for_cms_page_link** dataset:
+
+* set **Display on** field (item name="page_group") to **All Pages** that is item of **Generic Pages**
+* set **Container** field (item name="block") to **Main content Area**
+* set **Template** field (item name="template") to **CMS Page Link Block Template**
 
 ![layout_for_cms_page_link dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-for-cms-page-link.png)
 
-You can do his using the following repository code:
+The repository for these three cases could look as the following:
 
 {% highlight xml %}
-
+<?xml version="1.0" ?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
     <repository class="Magento\Widget\Test\Repository\Widget\LayoutUpdates">
@@ -226,6 +249,95 @@ You can do his using the following repository code:
 </config>
 
 {% endhighlight %}
+
+<h2 id="mtf_repository_config">Configuration repository</h2>
+
+Configuration repository is a repository for Config module.
+
+Its name is `ConfigData.xml`.
+
+It stores predefined data sets of configuration settings of Magento.
+
+|field items|semantics|
+|---|---|
+|`scope`|section of Magento configuration to which this field relates|
+|`scope_id`| website to which this field relates|
+|`label`|frontend representation |
+|`value`|value that will be passed to Magento field|
+
+Let's see the following example for `Authorizenet` module `magento2ce/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`:
+
+{% highlight xml %}
+
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/Magento/Mtf/Repository/etc/repository.xsd">
+    <repository class="Magento\Config\Test\Repository\ConfigData">
+        <dataset name="authorizenet">
+            <field name="payment/authorizenet/active" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string">Yes</item>
+                <item name="value" xsi:type="number">1</item>
+            </field>
+            <field name="payment/authorizenet/login" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string"/>
+                <item name="value" xsi:type="string">PAYMENT_AUTHORIZENET_LOGIN</item>
+            </field>
+            <field name="payment/authorizenet/trans_key" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string"/>
+                <item name="value" xsi:type="string">PAYMENT_AUTHORIZENET_TRANS_KEY</item>
+            </field>
+            <field name="payment/authorizenet/test" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string">No</item>
+                <item name="value" xsi:type="number">0</item>
+            </field>
+            <field name="payment/authorizenet/cgi_url" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string"/>
+                <item name="value" xsi:type="string">https://test.authorize.net/gateway/transact.dll</item>
+            </field>
+            <field name="payment/authorizenet/debug" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string">Yes</item>
+                <item name="value" xsi:type="number">1</item>
+            </field>
+            <field name="payment/authorizenet/useccv" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string">Yes</item>
+                <item name="value" xsi:type="number">1</item>
+            </field>
+        </dataset>
+        <dataset name="authorizenet_rollback">
+            <field name="payment/authorizenet/active" xsi:type="array">
+                <item name="scope" xsi:type="string">payment</item>
+                <item name="scope_id" xsi:type="number">1</item>
+                <item name="label" xsi:type="string">Yes</item>
+                <item name="value" xsi:type="number">0</item>
+            </field>
+        </dataset>
+    </repository>
+</config>
+
+{% endhighlight %}
+
+<h2 id="mtf_repository_merge">Merge of repositories</h2>
+
+
 
 
 

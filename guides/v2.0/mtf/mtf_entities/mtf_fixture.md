@@ -27,9 +27,9 @@ github_link: mtf/mtf_entities/mtf_fixture.md
 
 An MTF fixture is a list of properties of the Magento entity under test.
 
-A fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `<magento_root>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
+A fixture is represented as an XML file located in the `Fixture` directory that corresponds to a module in `magento2ce/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
 
--  `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
+-  `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
 
 You will need fixture:
 
@@ -40,20 +40,20 @@ In this chapter we will create a new fixture and modify it, considering differen
 
 To apply any changes of the fixture, you should run generate tool:
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php generate.php
 
 This tool creates PHP classes that are used by the test.
 
-You can check fixture PHP class in corresponding module in the `<magento_root>/dev/tests/functional/generated/Magento` directory.
+You can check fixture PHP class in corresponding module in the `magento2ce/dev/tests/functional/generated/Magento` directory.
 
 <h2 id="mtf_fixture_create">Create new fixture</h2>
 
 Let's imagine that we want to create new fixture to test our Widget module.
 
-Magento has a tool that automatically generates your fixture with parameters you indicated in arguments.  That is `generateFixtureXml.php,` located in `<magento_root>/dev/tests/functional/utils`.
+Magento has a tool that automatically generates your fixture with parameters you indicated in arguments.  That is `generateFixtureXml.php,` located in `magento2ce/dev/tests/functional/utils`.
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -76,7 +76,7 @@ In the following table see `generateFixtureXml` arguments.
 
 This tool creates a new fixture using data from a database table you specified using the `--entity_type` argument.
 
-Following is the generated Widget fixture located in `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
+Following is the generated Widget fixture located in `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
 
 {% highlight xml%}
 
@@ -111,7 +111,7 @@ Following is the generated Widget fixture located in `<magento_root>/dev/tests/f
 
 To generate PHP classes, enter the following commands in the order shown:
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php generate.php
 
 That's it!
@@ -137,7 +137,7 @@ The following table describes `<fixture>` attributes.
 | `type`                | Table type for the entity.     | `eav`, `flat`, `virtual`, `composite` | eav | optional   |
 | `entity_type`         | Database table name where the entity data is stored. Specify more than one database table as a comma-separted list (for example, `"eav_attribute, catalog_eav_attribute"`) and assign `type = "composite"`. |                string  |catalog_product   |   optional   |
 | `product_type`        | Type of product. Applicable only for product fixtures.   | string |simple  |   optional   |
-| `collection`          | Collection to generate data sets. It is taken from `<magento_root>/app/code/Magento`.   |  string | Magento\Catalog\Model\Resource\Product\Collection |   optional   |
+| `collection`          | Collection to generate data sets. It is taken from `magento2ce/app/code/Magento`.   |  string | Magento\Catalog\Model\Resource\Product\Collection |   optional   |
 | `identifier`          | Field used to create data set names in the repository.| string|sku| optional |
 | `repository_class`    | Reference to the repository class.   |  string |Magento\Catalog\Test\Repository\CatalogProductSimple |   optional   |
 | `handler_interface`   | Reference to the handler interface class.    |  string |Magento\Catalog\Test\Handler\CatalogProductSimple\CatalogProductSimpleInterface|   optional   |
@@ -201,7 +201,7 @@ Let's manually add a new field and `group` attribute to the `Widget.xml`. See wh
 
 To apply the changes, enter the following commands:
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php generate.php
 
 <h2 id="mtf_fixture_repositoy">Add a repository to the fixture field </h2>
@@ -255,7 +255,7 @@ Following is the code of `LayoutUpdates.xml`. It specifies two datasets that you
 
 To apply the changes, enter the following commands:
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php generate.php
 
 <h2 id="mtf_fixture_source">Add the data source to the fixture field</h2>
@@ -280,13 +280,13 @@ It is located in `Fixture` directory of corresponding module. That contains subd
 
 {% endhighlight xml%}
 
-Let's see our data source file `<magento_root>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
+Let's see our data source file `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget/LayoutUpdates.php`
 
 <script src="https://gist.github.com/dshevtsov/908bd242c01aded95308.js"></script>
 
 To apply the changes, enter the following commands:
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php generate.php
     
 <div class="bs-callout bs-callout-warning">
@@ -322,7 +322,7 @@ We can create file that adds field `new_field` to our widget fixture.
 
 To apply the changes, enter the following commands:
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php generate.php
 
 `new_field` has been added in fixture `Widget.php`.
@@ -359,6 +359,6 @@ In this example you will create a new fixture PHP class AdWidget that extends Wi
 
 To generate your new fixture PHP class, enter the following commands:
 
-    cd <magento_root>/dev/tests/functional/utils
+    cd magento2ce/dev/tests/functional/utils
     php generate.php
 
