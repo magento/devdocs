@@ -46,7 +46,8 @@ Use the following table to verify you have the correct prerequisites to install 
 		<td><p>Apache 2.2 or 2.4</p></td>
 		<td><p>Ubuntu: <code>apache2 -v</code></p>
 		<p>CentOS: <code>httpd -v</code></p></td>
-		<td><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></td>
+		<td><p><a href="{{ site.gdeurl }}install-gde/prereq/apache.html">Apache</a></p>
+			<p>(Don't forget to <a href="#apache-help-rewrite">enable rewrites and <code>.htaccess</code></a>!)</td>
 	</tr>
 	<tr>
 		<td><p>PHP 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
