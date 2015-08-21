@@ -5,7 +5,7 @@ email: mailto:DL-Magento-Doc-Feedback@ebay.com
 twitter_url: https://twitter.com/MagentoDevDocs
 description: > # this means to ignore newlines until "baseurl:"
   Magento 2 Developer Guide.
-baseurl: "http://github.corp.ebay.com/mfd-dev/devdocs_internal"
+baseurl: ""
 description: Magento 2 Developer's Guide
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
