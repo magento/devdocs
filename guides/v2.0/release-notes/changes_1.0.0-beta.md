@@ -185,6 +185,12 @@ This change also enables you to get a table prefix without injecting `Magento\Fr
 <h2 id="1.0.0-beta-incompat">Backward-incompatible changes</h2>
 This section discusses the backward-incompatible changes we made in this release.
 
+<h3 id="chnages_1.0.0-beta_unified-connection">Unified connection resolving</h3>
+
+We have unified interface and method for database connection retrieval. All read/write differentiating constants, connection suffixes and getter methods are now unified to retrieve resource connection instance by resource name with fallback to `default` connection.
+
+Old `getAdapter`, `getDbAdapter`, `_getReadAdapter`, `getConnectionAdapter` that are designed to retrieve database connection instance are unified to one method `getConnection()`. Old variables with **adapter** keyword inside that stored adapter instance pointer are renamed to `connection`.
+
 ### Magento_Captcha changes
 
 `/Magento/Captcha/Model/Checkout/Plugin/Validation` validation moved to `Magento/Captcha/Model/Customer/Plugin/AjaxLogin`
@@ -315,6 +321,7 @@ Removed:
 ### Framework changes
 *	We removed the method `getDefaultResult` from `\Magento\Framework\App\Action\AbstractAction`
 *	We removed `field_expr` support from `Magento\Framework\DB\Adapter\Pdo\Mysql::prepareSqlCondition()`
+* We reduced `Zend_Db_*` libraries dependencies. All code base is cleaned up from hardcoded external library class references.
 
 <h2 id="1.0.0-beta-feedback">Give us your feedback!</h2>
 The Magento developer documentation team loves feedback! Please provide feedback in any of the following ways:
