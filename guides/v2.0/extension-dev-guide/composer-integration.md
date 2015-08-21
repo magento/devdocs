@@ -1,17 +1,19 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: Concepts
-title: Composer Integration
-menu_title: Composer Integration
-menu_order: 4
+subgroup: 2_Prepare
+title: PHP developer guide
+menu_title: Composer integration
+menu_order: 2
 github_link: extension-dev-guide/composer-integration.md
 redirect_from: /guides/v1.0/extension-dev-guide/composer-integration.html
 
 ---
-<h2>Composer Integration</h2>
-[Composer](https://getcomposer.org/) manages dependencies in PHP. Magento 2 relies on this tool to package components and product editions. Each component or product edition may be presented as a Composer package and published to the Magento Connect repository. In addition, 
-some 3rd-party components that the Magento system uses may be actually not present in the code base. Instead, they will be listed as dependencies in the root `composer.json` file. 
+##{{page.menu_title}}
+
+
+[Composer](https://getcomposer.org/) is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions. <!-- Each component or product edition may be presented as a Composer package and published to Magento Connect. In addition, --> 
+Some third party components that the Magento system uses may be actually not present in the code base. Instead, they are listed as dependencies in the root `composer.json` file. 
  
 
 <h2>Overview of composer.json files</h2>
