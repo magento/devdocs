@@ -203,8 +203,8 @@
 		<td><p>Ubuntu: <code>apache2 -v</code></p>
 		<p>CentOS: <code>httpd -v</code></p></td>
 		<td><p><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></p>
-			<p>(Don't forget to <a href="#apache-help-rewrite">enable rewrites and <code>.htaccess</code></a>!)
-	
+			<p>(Don't forget to <a href="#apache-help-rewrite">enable rewrites and <code>.htaccess</code></a>!)</p></td>
+	</tr>
 	<tr>
 		<td><p>PHP 5.6.x or 5.5.x (PHP 5.4 is not supported)</p>
 			<p>See <a href="/guides/v2.0/release-notes/known-issues.html#known-devrc-php">Known issue with certain PHP versions</a></p></td>
@@ -215,30 +215,36 @@
 	<td><p><code>mysql -u &lt;root user name&gt; -p</code></p></td>
 	<td><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></td>
 	</tr>
-
-
+</tbody>
+</table>
 
 <h2>Step 2: Prepare to install</h2>
 
-After verifying your prerequisites, perform the following tasks in the order shown to prepare to install the Magento software.
+<p>After verifying your prerequisites, perform the following tasks in the order shown to prepare to install the Magento software.</p>
 
-1.	<a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a>
-2.	<a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Clone the Magento repository</a>
+<ol>
+  <li><a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-install">Install Composer</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/composer-clone.html#instgde-prereq-compose-clone">Clone the Magento repository</a></li>
+</ol>
 
 <h2>Step 3: Install and verify the installation</h2>
 
-1.	<a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>
-2.	Install Magento:
-	*	<a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
-	*	<a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install Magento software using the command line</a>
-2.	<a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a>
+<ol>
+  <li><a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+  <li>Install Magento:
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install Magento software using the command line</a></li>
+    </ul>
+  </li>
+  <li><a href="/guides/v2.0/install-gde/install/verify.html">Verify the installation</a></li>
+</ol>
 
 <h2>Required server permissions</h2>
 
-Unless otherwise noted, all commands in this guide must be entered as a user with `root` privileges or as a user with permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group&mdash;provided that group has sufficient privileges.
+<p>Unless otherwise noted, all commands in this guide must be entered as a user with <code>root</code> privileges or as a user with permission to write to the web server docroot. Depending on your system, that might mean you must use different user accounts or add users to the web server user group—provided that group has sufficient privileges.</p>
 
-Installing software on Linux typically requires `root` privileges. You should generally not install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. However, that is up to you.
-</p></td></tr></tbody></table>
+<p>Installing software on Linux typically requires <code>root</code> privileges. You should generally not install the Magento software in the web server docroot as the <code>root</code> user because the web server might not be able to interact with those files. However, that is up to you.</p>
 
 
 		</div>
