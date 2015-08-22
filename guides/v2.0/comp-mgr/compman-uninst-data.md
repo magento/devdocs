@@ -18,7 +18,7 @@ If the component has no data to remove, the following message displays.
 
 If the component has data to remove, a page similar to the following displays.
 
-<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally component component database data">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_uninstall-data.png" width="600px" alt="You can optionally component component database data">
 
 Click one of the following:
 
