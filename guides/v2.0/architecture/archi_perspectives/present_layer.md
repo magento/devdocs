@@ -36,7 +36,7 @@ One helpful way of understanding the Magento presentation layer components is by
 
 Each theme resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience. 
 
-For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see Frontend Developers Guide.
+For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the <a href="{{ site.gdeurl }}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>.
 
 
 

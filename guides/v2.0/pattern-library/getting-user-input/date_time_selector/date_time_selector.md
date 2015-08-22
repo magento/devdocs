@@ -201,7 +201,8 @@ The initial text field assumes the typical tab orders used in form field pattern
 **Date Picker Widget**
 <br>
 
-Reference:  <href a="http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker"> http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker </a>
+Reference:  <a href="http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker"> 
+http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker </a>
 <br>
 
 **General**
