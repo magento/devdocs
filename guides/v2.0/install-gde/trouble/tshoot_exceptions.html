@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Errors installing optional sample data</title>
+	<title>Exceptions during installation</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot_sample-data.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/trouble/tshoot_exceptions.html">
 
 
 
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Errors installing optional sample data</h1>
+		<h1 class="page-heading">Exceptions during installation</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_sample-data.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/trouble/tshoot_access-browser.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -165,39 +165,33 @@
 	<section class="content">
 		<div class="content-wrap">
 		
-		<h2 id="install-trouble-sample">Errors installing optional sample data</h2>
+		<h2 id="install-trouble-except">Exceptions display during installation</h2>
 
-<h3 id="symptom">Symptom</h3>
+<h3 id="symptom-exceptions-display-during-installation-users-have-reported-a-variety-of-exceptions-including-the-following">Symptom: Exceptions display during installation. Users have reported a variety of exceptions, including the following:</h3>
 
-<p>During installation of optional sample data, a  message similar to the following displays: </p>
+<pre><code>Module 'Magento_Indexer':
+Running recurring..
+[ERROR] exception 'Exception' with message 'Recoverable Error: Argument 1 passed to Magento\Indexer\Model\Config\Data::__construct() must be an instance of Magento\Framework\Indexer\Config\Reader, instance of Magento\Indexer\Model\Config\Reader given, called in /home/magento2_dev/
+public_html/var/generation/Magento/Indexer/Model/Config/Data/Interceptor.php on line 14 and defined in /home/magento2_dev/public_html/
+app/code/Magento/Indexer/Model/Config/Data.php on line 22' in /home/magento2_dev/public_html/lib/internal/Magento/Framework/App/ErrorHandler.php:67
+Stack trace:
+#0 /home/magento2_dev/public_html/app/code/Magento/Indexer/Model/Config/Data.php(22): Magento\Framework\App\ErrorHandler-&gt;handler(4096, 
+'Argument 1 pass...', '/home/magento2...', 22, Array)
+#1 /home/magento2_dev/public_html/var/generation/Magento/Indexer/Model/Config/Data/Interceptor.php(14): Magento\Indexer\Model\Config\Data-&gt;
+__construct(Object(Magento\Indexer\Model\Config\Reader), Object(Magento\Framework\App\Cache\Type\Config), Object(Magento\Indexer\Model\Resource\Indexer\State\Collection), 'indexer_config')
+#2 /home/magento2_dev/public_html/lib/internal/Magento/Framework/ObjectManager/Factory/AbstractFactory.php(103): Magento\Indexer\Model\Config\Data\Interceptor-&gt;__construct(Object(Magento\Indexer\Model\Config\Reader), Object(Magento\Framework\App\Cache\Type\Config), 
+Object(Magento\Indexer\Model\Resource\Indexer\State\Collection), 'indexer_config')
 
-<pre><code>PHP Fatal error: Call to undefined method Magento\Catalog\Model\Resource\Product\Interceptor::getWriteConnection() in /var/www/magento2/app/code/Magento/SampleData/Module/Catalog/Setup/Product/Gallery.php on line 144
+... more ...
 </code></pre>
 
 <h4 id="solution">Solution</h4>
+<p>Clear the <code>&lt;your Magento install dir&gt;/var/generation</code> and other directories under <code>var</code> as follows:</p>
 
-<p>During sample data installation, disable SELinux using a resource such as:</p>
-
-<ul>
-  <li><a href="http://www.crypt.gen.nz/selinux/disable_selinux.html#DIS2" target="_blank">crypt.gen.nz</a></li>
-  <li><a href="https://www.centos.org/docs/5/html/5.1/Deployment_Guide/sec-sel-enable-disable.html" target="_blank">CentOS documentation</a></li>
-</ul>
-
-<h3 id="symptom-1">Symptom</h3>
-<p>Other errors display, such as:</p>
-
-<pre><code>[Magento\Setup\SampleDataException] Error during sample data installation: Class Magento\Sales\Model\Service\OrderFactory does not exist
+<pre><code>rm -rf &lt;your Magento install dir&gt;/var/generation/* &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/cache/* 
 </code></pre>
 
-<h4 id="solution-1">Solution</h4>
-
-<p>There are known issues with using sample data with the Magento 2 develop branch. Use the master branch instead. You can switch to the master branch as follows:</p>
-
-<pre><code>cd &lt;your Magento install dir&gt;
-git checkout master
-git pull origin master
-</code></pre>
-
+<p>After clearing the directories, try the installation again.</p>
 
 
 		</div>
@@ -373,7 +367,7 @@ git pull origin master
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/tshoot_exceptions.html">Exceptions during installation</a></li>
 						
 								
 							
@@ -423,7 +417,7 @@ git pull origin master
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/install-gde/trouble/tshoot_sample-data.html">Errors installing optional sample data</a></li>
 						
 								
 							
@@ -642,8 +636,8 @@ git pull origin master
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_sample-data.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_sample-data.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_exceptions.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/install-gde/trouble/tshoot_exceptions.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
