@@ -23,7 +23,7 @@ Developer mode uses a less restrictive set of permissions than does production m
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a> is intended for internal development on a system already secured behind a firewall; also, the system doesn't need to handle internet traffic
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a> servers handle internet traffic, process payments, and so on
 
-	As the name implies, production mode is for deploying your Magento storefront to production to start taking orders.
+	As the name implies, you change to production mode before you deploy your Magento storefront to production and start taking orders.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -40,7 +40,7 @@ Changing modes affects permissions and ownership the following subdirectories in
 <h4 id="config-mode-over-dirs-perm">Permissions</h4>
 We set the following permissions on these directories and subdirectories:
 
-<table style="width:300px">
+<table style="width:350px">
 	<tbody>
 		<tr>
 			<td />
@@ -64,7 +64,7 @@ We set the following permissions on these directories and subdirectories:
 
 640 permissions give read-write permissions to the owner, read-only to the group, and no permissions to anybody else.
 
-770 permissions give full control `(-rwx------)` to the owner and group and no permissions to anyone else.
+770 permissions give full control (read, write, execute) to the owner and group and no permissions to anyone else.
 
 750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.
 
@@ -79,19 +79,27 @@ For more information about UNIX permissions, see:
 We recommend the following:
 
 *	The directories and files in the Magento file system should be *owned* by a user other than the web server user but must be *writable* by the web server user. 
-*	The directories and files under `pub/static` should have 770 permissions.
+*	The directories and files under `pub/static` should have 770 permissions, which give the owner and the group full control.
 
 The easiest way to do that is to run this command as a user in the same group as the web server user.
 
-egrep -i '^user|^group' /etc/httpd/conf/httpd.conf
+To find the web server user's group:
 
-sudo /usr/sbin/usermod -a -G apache <username>
+*	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
 
-We need to document that the pub/static directory should give write permission to the server and to whatever user runs commands on CLI. A recommendation that would encapsulate that as well as help maintain security is, give "770" permission to pub/static.
+	Typically, the user and group name are both `apache`
+*	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
+	Typically, the user name and the group name are both `www-data`
 
+To add a user to the web server's group (assuming the typical CentOS and Ubuntu group names), enter the following command as a user with `root` privileges:
 
-Ownership is set to `<apache user>:<TBD group>`
+*	CentOS: `usermod -a -G apache <username>`
+*	Ubuntu: `useradd -G www-data <username>`
+
+For example, to add the user `deborah` to the `apache` group on CentOS:
+
+	usermod -a -G apache deborah
 
 <h3 id="config-mode-over-clear">Cleared directories</h3>
 We also clear the following directories when you switch modes:
