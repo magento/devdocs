@@ -2,8 +2,8 @@
 layout: default
 group: install_cli 
 subgroup: T_Command-line installation
-title: Create a Magento administrator
-menu_title: Create a Magento administrator
+title: Create or unlock a Magento administrator account
+menu_title: Create or unlock a Magento administrator account
 menu_node: 
 menu_order: 50
 github_link: install-gde/install/cli/install-cli-subcommands-admin.md
@@ -11,12 +11,12 @@ github_link: install-gde/install/cli/install-cli-subcommands-admin.md
 
   
 <h4>Contents</h4>
-
 See one of the following sections:
 
 *	<a href="#instgde-install-cli-first">First steps</a>
 *	<a href="#instgde-cli-admin-prereq">Prerequisites</a>
 *	<a href="#instgde-cli-admin">Create an administrator</a>
+*	<a href="#instgde-cli-admin-unlock">Unlock an administrator account</a>
 
 
 <h2 id="instgde-cli-before">First steps</h2>
@@ -39,8 +39,6 @@ Before you can use this command, you must do all of the following:
 Command usage:
 
 	magento admin:user:create [--<parameter_name>=<value>, ...]
-
-
 
 where the following table defines parameters and values.
 
@@ -83,6 +81,13 @@ where the following table defines parameters and values.
 
 	</tbody>
 </table>
+
+<h2 id="instgde-cli-admin-unlock">Unlock an administrator account</h2>
+Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
+
+	magento admin:user:unlock {user name}
+
+You must specify the administrator's user name.
 
 #### Related topics
 
