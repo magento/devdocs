@@ -38,6 +38,11 @@ This topic discusses how to enable Apache 2.2 rewrites and specify a setting for
 
 Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache.
 
+For more information, see:
+
+*	<a href="#apache-rewrites2.2">Apache 2.2 instructions</a>
+*	<a href="#apache-rewrites2.4">Apache 2.4 instructions</a>
+
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
 	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>

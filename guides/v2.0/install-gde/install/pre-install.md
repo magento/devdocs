@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Q_Pre-installation
-title: Ways to install <!-- and upgrade  -->the Magento software
-menu_title: Ways to install <!-- and upgrade  -->the Magento software
+title: Your install or upgrade path
+menu_title: Your install or upgrade path
 menu_node: parent
 menu_order: 1
 github_link: install-gde/install/pre-install.md
@@ -13,8 +13,7 @@ redirect_from: /guides/v1.0/install-gde/install/pre-install.html
 #### Contents
 
 *	<a href="#install-overview-all">Overview of installing, managing, and upgrading Magento</a>
-*	<a href="#install-overview-audience">Identifying yourself as a user type</a>
-*	<a href="#install-overview-start">Get started installing, managing, or upgrading</a>
+*	<a href="#install-overview-audience">Identify yourself and get started</a>
 
 <h2 id="install-overview-all">Overview of installing, managing, and upgrading Magento</h2>
 The Magento software enables you to install, manage, and upgrade the core software itself and any *component* you installed. A component can be:
@@ -26,15 +25,15 @@ The Magento software enables you to install, manage, and upgrade the core softwa
 You can think of it as a three-step process&mdash;where steps 2 and 3 are interchangeable:
 
 1.	Install the Magento software
-2.	Add, remove, update, enable, or disable any component
-3.	Upgrade the Magento software or components to a newer version
+2.	Install, uninstall, update, enable, or disable any component (<em>available soon</em>)
+3.	Upgrade the Magento software or components to a newer version (<em>available soon</em>)
 
-This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
+<!-- This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
 
 *	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
-*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a> -->
 
-<h2 id="install-overview-audience">Identifying yourself as a user type</h2>
+<h2 id="install-overview-audience">Identify yourself and get started</h2>
 Before you start your installation, take a moment to figure out which type of user you are. It's important because the installation procedure is very different for each type:
 
 <table>
