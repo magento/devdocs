@@ -16,7 +16,7 @@ github_link: config-guide/cli/config-cli-subcommands-mode.md
 *	<a href="#config-mode-dev">Change to developer mode</a>
 
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
-To improve security and ease-of-use, we added commands that switch <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. In doing so, we set file permissions and ownership appropriately.
+To improve security and ease-of-use, we added commands that switch <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.
 
 Developer mode uses a less restrictive set of permissions than does production mode for the following reasons:
 
@@ -30,6 +30,15 @@ Developer mode uses a less restrictive set of permissions than does production m
   <p>Unlike other Magento modes, developer and production modes are set in <code>env.php</code>.</p></span>
 </div>
 
+<h3 id="config-mode-over-clear">Cleared directories</h3>
+We clear the following directories when you change modes:
+
+	var/cache
+	var/di
+	var/generation
+	var/view_preprocessed
+	pub/static
+	
 <h3 id="config-mode-over-dirs">Permissions and ownership</h3>
 Changing modes affects permissions and ownership the following subdirectories in your Magento installation:
 
@@ -74,7 +83,6 @@ For more information about UNIX permissions, see:
 *	<a href="http://permissions-calculator.org/" target="_blank">Unix Permissions Calculator</a>
 *	<a href="http://unix.stackexchange.com/questions/39710/how-to-get-permission-number-by-string-rw-r-r" target="_blank">Article on unix.stackexchange</a>
 
-
 <h4 id="config-mode-over-dirs-own">Ownership</h4>
 We recommend the following:
 
@@ -92,7 +100,7 @@ To find the web server user's group:
 
 	Typically, the user name and the group name are both `www-data`
 
-To add a user to the web server's group (assuming the typical CentOS and Ubuntu group names), enter the following command as a user with `root` privileges:
+To add a user to the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
 *	CentOS: `usermod -a -G apache <username>`
 *	Ubuntu: `useradd -G www-data <username>`
@@ -101,19 +109,12 @@ For example, to add the user `deborah` to the `apache` group on CentOS:
 
 	usermod -a -G apache deborah
 
-<h3 id="config-mode-over-clear">Cleared directories</h3>
-We also clear the following directories when you switch modes:
-
-	var/cache
-	var/di
-	var/generation
-	var/view_preprocessed
-	pub/static
-	
 <h2 id="config-mode-prod">Change to production mode</h2>
 There are two commands to change to production mode:
 
 <table>
+	<col width="40%">
+  	<col width="60%">
 	<tbody>
 		<tr>
 			<th>Command</th>
