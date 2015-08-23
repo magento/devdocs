@@ -87,7 +87,10 @@ Use this command to unlock the account of an administrator that was locked, typi
 
 	magento admin:user:unlock {user name}
 
-You must specify the administrator's user name.
+You must specify the administrator's user name. Example:
+
+	magento admin:user:unlock admin
+	The user account "admin" has been unlocked
 
 #### Related topics
 
