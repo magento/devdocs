@@ -9,14 +9,12 @@
 <ul><li>Ubuntu: <code>vim /etc/apache2/sites-available/default</code></li>
 <li>CentOS: <code>vim /etc/httpd/conf/httpd.conf</code></li></ul>
 </li>
-<li>Locate the following block.
-<pre>&lt;Directory /var/www/>
-	Options Indexes FollowSymLinks MultiViews
-	AllowOverride None
-	Order allow,deny
-	Allow from all
-&lt;Directory></pre></li>
-<li>Change the value of <code>AllowOverride</code> to <code>&lt;value from Apache site></code>.
+<li>Locate the block that starts with:
+<ul><li>Ubuntu 12: <code>&lt;Directory /var/www/></code></li>
+	<li>Ubuntu 14 or CentOS: <code>&lt;Directory /var/www/html></code><br></li></ul>
+</li>
+<li>Change the value of <code>AllowOverride</code> to <code>&lt;value from Apache site></code>.<br>
+	An example for Ubuntu 12 follows.<br>
 <pre>&lt;Directory /var/www/>
 	Options Indexes FollowSymLinks MultiViews
 	AllowOverride &lt;value from Apache site>
