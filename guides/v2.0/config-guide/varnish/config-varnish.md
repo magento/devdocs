@@ -54,7 +54,7 @@ To modify the Varnish system configuration:
 
 		VARNISH_LISTEN_PORT=80
 
-3.	Comment out the following:
+3.	If necessary, comment out the following:
 
 		## Alternative 1, Minimal configuration, no VCL
 		#DAEMON_OPTS="-a :6081 \
@@ -74,7 +74,47 @@ To modify the Varnish system configuration:
 4.	Save your changes to `/etc/sysconfig/varnish` and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
+Magento provides sample configurations for Varnish 3 and 4 you can use in place of the `default.vcl` provided with Varnish.
 
+To use Magento's samples:
+
+1.	As a user with `root` privileges, back up `default.vcl`:
+
+		cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
+
+2.	Open `/etc/varnish/default.vcl` in a text editor.
+3.	Remove all contents from `default.vcl`.
+4.	Replace its contents with one of the following:
+
+	*	Varnish 3: <a href="https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/PageCache/etc/varnish3.vcl" target="_blank">https://github.com/magento/magento2/blob/develop/app/code/Magento/PageCache/etc/varnish3.vcl</a>
+	*	Varnish 4: <a href="https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/PageCache/etc/varnish4.vcl" target="_blank">https://github.com/magento/magento2/blob/develop/app/code/Magento/PageCache/etc/varnish4.vcl</a>
+
+5.	In the `backend default` stanza, replace `/* {{ host }} */` and `/* {{ port }} */` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. 
+
+	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a>
+
+6.	In the `acl purge` stanza, replace `/* {{ ips }} */` with the fully qualified host name, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="_blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.
+
+	<div class="bs-callout bs-callout-info" id="info">
+  		<p>Each line must end with a semicolon; otherwise, Varnish will not start.</p>
+	</div>
+
+	<a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="_blank">More information</a>
+
+6.	Save your changes to `default.vcl` and exit the text editor.
+7.	Restart Varnish and Apache:
+
+		service varnish restart
+
+	Ubuntu: `service apache2 restart`
+	
+	CentOS: `service httpd restart`
+
+If Varnish fails to start, try running it from the command line as follows:
+
+	varnishd -d -f /etc/varnish/default.vcl
+
+This should display error messages.
 
 #### Related topics
 
