@@ -5,7 +5,7 @@ subgroup: 6_Module Development
 title: PHP developer guide
 menu_title: Indexing
 menu_order: 8
-github_link: architecture/index-cache/indexing.md
+github_link: extension-dev-guide/indexing.md
 redirect_from: 
   -/guides/v1.0/architecture/index-cache/indexing.html
   -/guides/v2.0/architecture/index-cache/indexing.html
@@ -182,32 +182,7 @@ Out of the box the Magento system has the following indexers implemented:
 </tbody></table>
 
 <h2 id="m2devgde-indexing-commandline">Running indexers from the command line</h2>
-
-To run indexers from the command line, change to `<your_Magento_install_dir>/dev/shell` and format the command as follows:
-
-<pre>
-Usage:  php -f indexer.php -- [options]
-
-  --status &lt;indexer>            Show Indexer(s) Status
-  --mode &lt;indexer>              Show Indexer(s) Index Mode
-  --mode-realtime &lt;indexer>     Set index mode type "Update on Save"
-  --mode-schedule &lt;indexer>     Set index mode type "Update by
-                                Schedule"
-  --reindex &lt;indexer>           Reindex Data
-  info                          Show allowed indexers
-  reindexall                    Reindex Data by all indexers
-  help                          This help
-</pre>
-
-`<indexer>` refers to one of the method names in the preceding table.
-
-For example, to reindex the product price indexer, enter the following command:
-
-	 php -f indexer.php -- --reindex catalog_product_price
-
-Messages similar to the following display:
-
-	Product Price index has been rebuilt successfully in [time]
+To run indexers from the command line, see <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>.
 
 <h2 id="m2devgde-indexing-custom">Adding a custom indexer</h2>
 
