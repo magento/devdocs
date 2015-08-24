@@ -5,7 +5,7 @@ subgroup: 6_Module Development
 title: PHP developer guide
 menu_title: Indexing
 menu_order: 8
-github_link: architecture/index-cache/indexing.md
+github_link: extension-dev-guide/indexing.md
 redirect_from: 
   -/guides/v1.0/architecture/index-cache/indexing.html
   -/guides/v2.0/architecture/index-cache/indexing.html
