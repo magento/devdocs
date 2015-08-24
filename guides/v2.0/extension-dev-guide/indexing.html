@@ -344,34 +344,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 </tbody></table>
 
 <h2 id="m2devgde-indexing-commandline">Running indexers from the command line</h2>
-
-<p>To run indexers from the command line, change to <code>&lt;your_Magento_install_dir&gt;/dev/shell</code> and format the command as follows:</p>
-
-<pre>
-Usage:  php -f indexer.php -- [options]
-
-  --status &lt;indexer&gt;            Show Indexer(s) Status
-  --mode &lt;indexer&gt;              Show Indexer(s) Index Mode
-  --mode-realtime &lt;indexer&gt;     Set index mode type "Update on Save"
-  --mode-schedule &lt;indexer&gt;     Set index mode type "Update by
-                                Schedule"
-  --reindex &lt;indexer&gt;           Reindex Data
-  info                          Show allowed indexers
-  reindexall                    Reindex Data by all indexers
-  help                          This help
-</pre>
-
-<p><code>&lt;indexer&gt;</code> refers to one of the method names in the preceding table.</p>
-
-<p>For example, to reindex the product price indexer, enter the following command:</p>
-
-<pre><code> php -f indexer.php -- --reindex catalog_product_price
-</code></pre>
-
-<p>Messages similar to the following display:</p>
-
-<pre><code>Product Price index has been rebuilt successfully in [time]
-</code></pre>
+<p>To run indexers from the command line, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>.</p>
 
 <h2 id="m2devgde-indexing-custom">Adding a custom indexer</h2>
 
