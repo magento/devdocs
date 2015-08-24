@@ -6,7 +6,7 @@ title: PHP settings errors
 menu_title: PHP settings errors
 menu_node:
 menu_order: 1
-github_link: install-gde/trouble/trouble/php/tshoot_php-set.md
+github_link: install-gde/trouble/php/tshoot_php-set.md
 ---
 
 <!-- This topic is referred to from Magento 2 code! Don't change the URL without informing engineering! -->
