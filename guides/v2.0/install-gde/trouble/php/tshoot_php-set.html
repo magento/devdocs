@@ -171,6 +171,32 @@
 <h2 id="trouble-php-set">PHP settings errors</h2>
 <p>See <a href="/guides/v2.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.</p>
 
+<h3>asp-tags should be disabled (Parse error: syntax error, unexpected 'data' (T_STRING))</h3>
+
+<p><a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" rel="nofollow" target="_blank">asp-tags</a> on php.ini should be always disabled for correct work of Magento 2 software. Multiple templates have syntaxis for support abstract level on templates (use different templates engines like Twig etc.) wraped in &lt;% %&gt; tags, like this <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml">template</a> for display product image:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">&lt;a class=&quot;product photo&lt;% if (typeof data.hasImg !== &#39;undefined&#39;) { %&gt; placeholder&lt;% } %&gt;&quot; href=&quot;&lt;%- data.large %&gt;&quot;&gt;</span>
+<span class="x">            &lt;span class=&quot;img photo container&quot;&gt;</span>
+<span class="x">                &lt;img</span>
+<span class="x">                    data-role=&quot;zoom-image&quot;</span>
+<span class="x">                    class=&quot;photo image&quot;</span>
+<span class="x">                    itemprop=&quot;image&quot;</span>
+<span class="x">                    &lt;% if (!data.fullSizeMode) { %&gt;</span>
+<span class="x">                    data-large=&quot;&lt;%- data.large %&gt;&quot; src=&quot;&lt;%- data.medium %&gt;&quot;</span>
+<span class="x">                    &lt;% } else { %&gt;</span>
+<span class="x">                    src=&quot;&lt;%- data.large %&gt;&quot;</span>
+<span class="x">                    &lt;% } %&gt;</span>
+<span class="x">                    alt=&quot;&lt;%- data.title %&gt;&quot;/&gt;</span>
+<span class="x">            &lt;/span&gt;</span>
+<span class="x">        &lt;/a&gt;</span></code></pre></div>
+
+<p>If asp-tags is enabled you will get error like “Parse error: syntax error, unexpected ‘data’ (T_STRING)…” because php trying to proccess this code as native php code which not can works for sure and should be processed by Magento template engine core instead.</p>
+
+<p>So always turn off asp-tags in php.ini :</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">asp_tags = Off</span></code></pre></div>
+
+
 
 		</div>
 	</section>
