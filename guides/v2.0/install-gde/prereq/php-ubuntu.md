@@ -167,53 +167,7 @@ To install PHP 5.5 on Ubuntu 14 or Ubuntu 12 14:
 3.	Set the PHP timezone and memory limit as discussed in the next section.
 
 <h2 id="instgde-prereq-timezone">Set PHP configuration options</h2>
-This section discusses how to:
-
-*	Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
-
-		PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
-
-*	Increase the PHP memory limit to at least 512MB for normal operation or 2GB for testing.
-*	Set `always_populate_raw_post_data = -1`
-
-	<a href="http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data" target="_blank">always_populate_raw_post_data</a> is deprecated in PHP 5.6. This setting causes PHP to always populate `$HTTP_RAW_POST_DATA` with raw POST data. Failure to set this properly in PHP 5.6 results in errors when connecting to the database.
-
-To set PHP options:
-
-1.	Locate your server's time zone in the available <a href="http://php.net/manual/en/timezones.php" target="_blank">time zone settings</a>.
-2.	Locate `php.ini` by entering the following command:
-
-		php -i | grep "Loaded Configuration File"
-
-	Typical locations follow:
-
-	Ubuntu: `/etc/php5/cli/php.ini`
-
-	CentOS: `/etc/php.ini`
-
-3.	Open `php.ini` in a text editor.
-
-4.	Locate the following setting and uncomment it if necessary:
-
-		date.timezone =
-
-5.	Add the time zone setting you found in step 1.
-
-2.	Change `memory_limit` to:
-
-	`memory_limit = 512M` or more for normal operation
-
-	`memory_limit = 2G` or more for testing
-
-6.	*Required for PHP 5.6, recommended for PHP 5.5*. Locate `always_populate_raw_post_data`, uncomment it if necessary, and set it as follows:
-
-		always_populate_raw_post_data = -1
-
-3.	Save your changes and exit the text editor.
-
-4.	Restart Apache:
-
-		service apache2 restart
+{% include install/php-config.html %}
 
 
 #### Related topics
