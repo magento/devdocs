@@ -51,10 +51,7 @@ Use `ExtensibleDataInterface` to implement extension attributes. In your code, y
 
 Most likely, you'll want to extend interfaces defined in the `Api/Data` directory of an Magento module. 
 
-
-
 <h3 id="declare">Declare extension attributes</h3>
-
 
 You must create an `<Module>/etc/extension_attributes.xml` file to define the extension attributes for a module:
 
@@ -130,8 +127,6 @@ where:
 
 </table>
 
-
-
 <h3 id="search">Searching extension attributes</h3>
 
 The system uses a join directive to add external attributes to a collection and to make the collection filterable. The `join` element in the `extension_attributes.xml` file defines which object fields and the database table/column to use as the source of a search. 
@@ -201,6 +196,25 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
     }
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
+
+<h3>ExtensionInterfaces</h3>
+
+An `ExtensionInterface` will be empty if no extension attributes have been added. In the following example, in an unmodified installation, `CustomerExtensionInterface` will be generated, but will be empty:
+
+
+`interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
+{
+}`
+
+However, if an extension similar to the following has been defined, the interface will not be empty.
+
+{% highlight XML %}
+
+<extension_attributes for=“Magento\Customer\Api\Data\CustomerInterface">
+    <attribute code=“attributeName" type=“Magento\Some\Type[]" />
+</extension_attributes>
+{% endhighlight %}
+
 
 <h2 id="related">Related topics</h2>
 <a href="{{ site.gdeurl }}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
