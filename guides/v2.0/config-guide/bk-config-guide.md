@@ -11,6 +11,7 @@ redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 ---
 
 <h2 id="configuration">Configure the Magento application</h2>
+Hello
 You can configure the Magento application in any of the following ways:
 
 *  Using a <a href="{{ site.gdeurl }}config-guide/cli/config-cli.html">command-line utility</a> (for example, enable or disable cache types, run indexers, set up translations, and so on)
