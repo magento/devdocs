@@ -59,7 +59,7 @@ H1 CODE, H2 CODE, H3 CODE, H4 CODE, H5 CODE {
 p.q 	{
 	font-size: 15pt;
 	color: red;
-	display: none; 
+	display: none;
 	}
 
 /* SRJ - fix Firefox bug */
@@ -72,8 +72,6 @@ p.q 	{
 	align: center;
 	padding-left: 60px;
 }
-
-<<<<<<< HEAD
 
 /* TDD - Alternate menu appearance */
 
@@ -175,5 +173,3 @@ TABLE {
     max-width: 99%;
     width: 99%;
 }
-=======
->>>>>>> a589bab039b1103cc1c8d9e26953a2aeaefc80ab
