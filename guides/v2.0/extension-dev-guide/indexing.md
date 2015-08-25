@@ -7,8 +7,8 @@ menu_title: Indexing
 menu_order: 8
 github_link: extension-dev-guide/indexing.md
 redirect_from: 
-  -/guides/v1.0/architecture/index-cache/indexing.html
-  -/guides/v2.0/architecture/index-cache/indexing.html
+  - /guides/v1.0/architecture/index-cache/indexing.html
+  - /guides/v2.0/architecture/index-cache/indexing.html
 ---
 
 <h2 id="m2devgde-indexing-intro">Introduction to indexing</h2>
