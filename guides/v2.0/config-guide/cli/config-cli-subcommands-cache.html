@@ -339,14 +339,14 @@ magento cache:disable [type] ... [type]
 
 <ul>
   <li>
-    <p>Cleaning a cache type deletes all items from enabled cache types only.</p>
+    <p>Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.</p>
 
     <p>Disabled cache types are not cleaned.</p>
   </li>
   <li>
-    <p>Flushing a cache type purges the cache storage.</p>
+    <p>Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.</p>
 
-    <p>All cache types that use the specified storage are flushed.</p>
+    <p>Flush cache types if you’ve already tried cleaning the cache and you’re still having issues that you cannot isolate.</p>
   </li>
 </ul>
 
