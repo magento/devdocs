@@ -18,6 +18,8 @@ github_link: config-guide/cli/config-cli-subcommands-mode.md
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
 To improve security and ease-of-use, we added a command that switches <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.
 
+Production mode also has better performance because static view files are populated in the `pub/static` directory and because of code compilation.
+
 Developer mode uses a less restrictive set of permissions than does production mode for the following reasons:
 
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a> is intended for internal development on a system already secured behind a firewall; also, the system doesn't need to handle internet traffic
@@ -102,6 +104,9 @@ For more information about UNIX permissions, see:
 We recommend the following:
 
 *	The directories and files in the Magento file system should be *owned* by a user other than the web server user but must be *writable* by the web server user. 
+
+	Exceptions: `var/di`, `var/generation`, and `var/preprocessed`
+
 *	The directories and files under `pub/static` should have 770 permissions, which give the owner and the group full control.
 
 The easiest way to do that is to run this command as a user in the same group as the web server user.
