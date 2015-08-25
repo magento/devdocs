@@ -12,8 +12,7 @@ github_link: config-guide/cli/config-cli-subcommands-mode.md
 
 #### Contents
 *	<a href="#config-mode-over">Overview of setting Magento modes</a>
-*	<a href="#config-mode-prod">Change to production mode</a>
-*	<a href="#config-mode-dev">Change to developer mode</a>
+*	<a href="#config-mode">Change modes</a>
 
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
 To improve security and ease-of-use, we added commands that switch <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.
@@ -109,74 +108,69 @@ For example, to add the user `deborah` to the `apache` group on CentOS:
 
 	usermod -a -G apache deborah
 
-<h2 id="config-mode-prod">Change to production mode</h2>
-There are two commands to change to production mode:
+<h2 id="config-mode">Change modes</h2>
+Command usage:
 
-<table>
-	<col width="40%">
-  	<col width="60%">
-	<tbody>
-		<tr>
-			<th>Command</th>
-			<th>Meaning</th>
-		</tr>
-		<td><p>magento setup:mode:to-production</p></td>
-		<td><p>Performs the following tasks in the order shown:</p>
-			<ol><li>Puts your server in maintenance mode</li>
-			<li>Clears the contents of the <code>var/view_preprocessed</code>, <code>var/generation</code>, and <code>var/di</code> directories</li>
-			<li>Sets file permissions and ownership as discussed in <a href="#config-mode-over-dirs">Permissions and ownership</a></li>
-			<li>Generates <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">static view files</a></li>
-			<li>Generates classes</li>
-			<li>Processes LESS and SASS files</li>
-			<li>Takes your server out of maintenance mode</li></ol></td>
-	</tr>
-	<tr>
-		<td>magento setup:mode:to-production-minimal</td>
-		<td>Sets file permissions and ownership as discussed in <a href="#config-mode-over-dirs">Permissions and ownership</a> only</td>
-	</tr>
-</tbody>
-</table>
+	magento setup:mode:switch [mode]
 
-For example, to enable production mode, enter
+where `[mode]` is an optional parameter with a value that can be either `developer` or `production`. Omit `[mode]` to display the current mode.
 
-	magento setup:mode:to-production
+Examples follow.
+
+### Change to production mode
+
+	magento setup:mode:switch production
 
 Following is a summary of messages that display:
 
 	Enabled maintenance mode
 	Requested languages: en_US
 	=== frontend -> Magento/luma -> en_US ===
-
 	... more ...
+	Successful: 1884 files; errors: 0
+	---
 
 	=== frontend -> Magento/blank -> en_US ===
-
 	... more ...
+	Successful: 1828 files; errors: 0
+	---
 
 	=== adminhtml -> Magento/backend -> en_US ===
-
 	... more ...
+	---
 
 	=== Minify templates ===
-
 	... more ...
+	Successful: 897 files modified
+	---
 
+	New version of deployed files: 1440461332
 	Gathering css/styles-m.less sources.
 	Successfully processed LESS and/or SASS files
-	Generated classes:
-        Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
-        Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory
-        Magento\Sales\Api\Data\CreditmemoCommentSearchResultInterfaceFactory
-        Magento\Sales\Api\Data\CreditmemoComment\Repository
-        Magento\Sales\Api\Data\CreditmemoItemInterfacePersistor
+	Compilation was started.
+	... more ...
+	Repositories code generation... 1/6 [====>-----------------------]  16% 13 secs 293.8 MiB
+	Service data attributes generation... 1/6 [====>-----------------------]  16% 13 secs 293.8 MiB
+	Service data attributes generation... 2/6 [=========>------------------]  33% 14 secs 293.8 MiB
+	Application code generator... 2/6 [=========>------------------]  33% 14 secs 293.8 MiB
+	Application code generator... 3/6 [==============>-------------]  50% 30 secs 310.8 MiB
+	Interceptors generation... 3/6 [==============>-------------]  50% 30 secs 310.8 MiB
+	Interceptors generation... 4/6 [==================>---------]  66% 48 secs 347.2 MiB
+	Area configuration aggregation... 4/6 [==================>---------]  66% 48 secs 347.2 MiB
+	Area configuration aggregation... 5/6 [=======================>----]  83% 2 mins 414.0 MiB
+	Interception cache generation... 5/6 [=======================>----]  83% 2 mins 414.0 MiB
+	Interception cache generation... 6/6 [============================] 100% 2 mins 369.8 MiB
+	Generated code and dependency injection configuration successfully.
+	Disabled maintenance mode
+	Switched to production mode.
 
-        ... more ...
+### Change to developer mode
 
-<h2 id="config-mode-dev">Change to developer mode</h2>
-Enter the following command to change to developer mode:
+	magento setup:mode:switch developer
 
-	magento setup:mode:to-develop
+The following message displays:
 
+	Switched to developer mode.
 
 #### Related topics
 
