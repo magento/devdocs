@@ -116,6 +116,134 @@ If Varnish fails to start, try running it from the command line as follows:
 
 This should display error messages.
 
+<h2 id="config-varnish-verify">Verify Varnish is working</h2>
+The following sections discuss how you can verify that Varnish is working but *without* configuring Magento to use it. You should try this before you configure Magento.
+
+You must perform these tasks as a user with `root` privileges to the machine on which Varnish is installed.
+
+Perform the tasks discussed in the following sections in the order shown:
+
+*	TBD
+*	TBD
+
+<h3 id="config-varnish-verify-netstat">netstat</h3>
+Log in to the Varnish server and enter the following command:
+
+	netstat -tulpn
+
+Look for the following output in particualr:
+
+	tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      32614/varnishd
+	tcp        0      0 127.0.0.1:58484             0.0.0.0:*                   LISTEN      32604/varnishd
+	tcp        0      0 :::8080                     :::*                        LISTEN      26822/httpd
+	tcp        0      0 ::1:48509                   :::*                        LISTEN      32604/varnishd
+
+The preceding show Varnish running on port 80 and Apache running on port 8080.
+
+If you don't see output for `varnishd`, TBD.
+
+<a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a>
+
+<h3 id="config-varnish-verify-headers">HTTP response headers</h3>
+Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
+
+Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{ site.gdeurl }}#">`magento deploy:mode:set`</a> command.
+
+#### Set Magento for developer mode
+To set Magento for developer mode using its `.htaccess` file:
+
+1.	Log in to the Magento server as, or switch to, a user who has permissions to modify files in the Magento file system.
+2.	Open `<your Magento install dir>/.htaccess` in a text editor.
+3.	Uncomment the following line:
+
+		SetEnv MAGE_MODE developer
+4.	Save your changes to `.htaccess` and exit the text editor.
+
+#### Look at the Varnish log
+TBD
+
+#### Look at HTML response headers
+There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers, or a browser's developer mode.
+
+The following example uses `curl`. You don't have to log in to the Magento server to run this command.
+
+	curl -I -v --location-trusted '<your Magento base URL>'
+
+For example,
+
+	curl -I -v --location-trusted 'http://192.0.2.55/magento2'
+
+Following is a summary of messages that display. The important header is `X-Magento-Cache-Debug: HIT`, which lets you know the page is served from cache.
+
+	* STATE: INIT => CONNECT handle 0x600056550; line 1028 (connection #-5000)
+	* STATE: CONNECT => WAITCONNECT handle 0x600056550; line 1076 (connection #0)
+	* Connected to 192.0.2.55 (192.0.2.55) port 80 (#0)
+	* STATE: WAITCONNECT => DO handle 0x600056550; line 1195 (connection #0)
+	> HEAD /magento2 HTTP/1.1
+	> User-Agent: curl/7.37.1
+	> Host: 192.0.2.55
+	> Accept: */*
+	... more ...
+
+	HTTP/1.1 200 OK
+	< Date: Tue, 25 Aug 2015 20:45:52 GMT
+	Date: Tue, 25 Aug 2015 20:45:52 GMT	
+	< X-Magento-Cache-Debug: HIT
+	X-Magento-Cache-Debug: HIT
+	< X-Frame-Options: SAMEORIGIN
+	X-Frame-Options: SAMEORIGIN
+	< Content-Type: text/html; charset=UTF-8
+	Content-Type: text/html; charset=UTF-8
+	< Pragma: no-cache
+	... more ...
+	<
+	* STATE: PERFORM => DONE handle 0x600056550; line 1590 (connection #0)
+	* Connection #0 to host 192.0.2.55 left intact
+	* Expire cleared
+
+<h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>
+To configure Magento to use Varnish:
+
+1.	Log in to the Magento Admin as an administrator.
+2.	Click **Stores** > **Configuration** > ADVANCED > **System** > **Full Page Cache**
+3.	From the **Caching Application** list, click **Varnish Caching**
+4.	Enter a value in the **TTL for public content** field.
+5.	Expand **Varnish Configuration** and enter the following information:
+
+	<table>
+	<col width="40%">
+  	<col width="30%">
+	<tbody>
+		<tr>
+			<th>Field</th>
+			<th>Description</th>
+		</tr>
+	<tr>
+		<td>Access list</td>
+		<td><p>Enter the fully qualified host name, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="_blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
+			<p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="_blank">More information</a></p></td>
+	</tr>	
+	<tr>
+		<td>Backend host</td>
+		<td><p>Enter the fully qualified host name or IP address and listen port of the Varnish <code>backend</code> or <code>origin server</code>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
+		<p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a></p></td>
+	</tr>
+	<tr>
+		<td>Backend port</td>
+		<td>Origin server's listen port.</td>
+	</tr>
+	
+	</tbody>
+	</table>
+
+6.	Click **Save Config**.
+7.	Click one of the export buttons to create a <code>default.vcl</code> you can use with Varnish.
+
+	For example, if you have Varnish 4, click **Export VCL for Varnish 4**
+8.	Replace your existing <code>default.vcl</code> with the one you just exported.
+9.	Restart Varnish and your web server.
+
+
 #### Related topics
 
  *  <a href="{{ site.gdeurl }}config-guide/config/config-create.html">Create or extend configuration types</a>
