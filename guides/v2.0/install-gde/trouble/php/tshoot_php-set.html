@@ -169,33 +169,46 @@
 <!-- Referring file: TBD owned by Ogres -->
 
 <h2 id="trouble-php-set">PHP settings errors</h2>
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#trouble-php-xdebug">xdebug maximum function nesting level error</a></li>
+  <li><a href="#trouble-php-asptags">Errors display when you access a PHTML template</a></li>
+</ul>
+
+<h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
+
 <p>See <a href="/guides/v2.0/install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.</p>
 
-<h3>asp-tags should be disabled (Parse error: syntax error, unexpected 'data' (T_STRING))</h3>
+<h3 id="trouble-php-asptags">Errors display when you access a PHTML template</h3>
+<p>Error text is typically:</p>
 
-<p><a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" rel="nofollow" target="_blank">asp-tags</a> on php.ini should be always disabled for correct work of Magento 2 software. Multiple templates have syntaxis for support abstract level on templates (use different templates engines like Twig etc.) wraped in &lt;% %&gt; tags, like this <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml">template</a> for display product image:</p>
+<pre><code>Parse error: syntax error, unexpected 'data' (T_STRING)
+</code></pre>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">&lt;a class=&quot;product photo&lt;% if (typeof data.hasImg !== &#39;undefined&#39;) { %&gt; placeholder&lt;% } %&gt;&quot; href=&quot;&lt;%- data.large %&gt;&quot;&gt;</span>
-<span class="x">            &lt;span class=&quot;img photo container&quot;&gt;</span>
-<span class="x">                &lt;img</span>
-<span class="x">                    data-role=&quot;zoom-image&quot;</span>
-<span class="x">                    class=&quot;photo image&quot;</span>
-<span class="x">                    itemprop=&quot;image&quot;</span>
-<span class="x">                    &lt;% if (!data.fullSizeMode) { %&gt;</span>
-<span class="x">                    data-large=&quot;&lt;%- data.large %&gt;&quot; src=&quot;&lt;%- data.medium %&gt;&quot;</span>
-<span class="x">                    &lt;% } else { %&gt;</span>
-<span class="x">                    src=&quot;&lt;%- data.large %&gt;&quot;</span>
-<span class="x">                    &lt;% } %&gt;</span>
-<span class="x">                    alt=&quot;&lt;%- data.title %&gt;&quot;/&gt;</span>
-<span class="x">            &lt;/span&gt;</span>
-<span class="x">        &lt;/a&gt;</span></code></pre></div>
+<h4 id="solution-set-codeasptags--offcode-in-codephpinicode">Solution: Set <code>asp_tags = off</code> in <code>php.ini</code></h4>
+<p>Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wraped in <code>&lt;% %&gt;</code> tags, like this <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:</p>
 
-<p>If asp-tags is enabled you will get error like “Parse error: syntax error, unexpected ‘data’ (T_STRING)…” because php trying to proccess this code as native php code which not can works for sure and should be processed by Magento template engine core instead.</p>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="o">&lt;</span><span class="nx">a</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;product photo&lt;% if (typeof data.hasImg !== &#39;undefined&#39;) { %&gt; placeholder&lt;% } %&gt;&quot;</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;img photo container&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">img</span>
+          <span class="nx">data</span><span class="o">-</span><span class="nx">role</span><span class="o">=</span><span class="s2">&quot;zoom-image&quot;</span>
+          <span class="nx">class</span><span class="o">=</span><span class="s2">&quot;photo image&quot;</span>
+          <span class="nx">itemprop</span><span class="o">=</span><span class="s2">&quot;image&quot;</span>
+          <span class="o">&lt;%</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="o">.</span><span class="nx">fullSizeMode</span><span class="p">)</span> <span class="p">{</span> <span class="o">%&gt;</span>
+            <span class="nx">data</span><span class="o">-</span><span class="nx">large</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.medium %&gt;&quot;</span>
+          <span class="o">&lt;%</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="o">%&gt;</span>
+          <span class="nx">src</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.large %&gt;&quot;</span>
+          <span class="o">&lt;%</span> <span class="p">}</span> <span class="o">%&gt;</span>
+          <span class="nx">alt</span><span class="o">=</span><span class="s2">&quot;&lt;%- data.title %&gt;&quot;</span><span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">span</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
-<p>So always turn off asp-tags in php.ini :</p>
+<p>More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. </p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">asp_tags = Off</span></code></pre></div>
-
+<p>Edit <code>php.ini</code> and set <code>asp_tags = off</code>. For more information, see <a href="/guides/v2.0/install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.</p>
 
 
 		</div>
