@@ -80,7 +80,8 @@ where
 	</tr>
 <tr>
 	<td>page_cache</td>
-	<td>Specify the segment name to use a particular segment or a default shortcut for all other caches.</td>
+	<td><p>Specify the segment name to use a particular segment or a default shortcut for all other caches.</p>
+		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code>.</td>
 </tr>
 <tr>
 	<td>server</td>
