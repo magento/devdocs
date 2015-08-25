@@ -136,9 +136,14 @@ A message similar to the following displays:
 <h2 id="config-mode">Change modes</h2>
 Command usage:
 
-	magento deploy:mode:set {mode}
+	magento deploy:mode:set {mode} [-s|--skip-compilation]
 
-where `{mode}` can be either `developer` or `production`. 
+where 
+
+`{mode}` is required; it can be either `developer` or `production`
+
+`--skip-compilation` is an optional parameter you can use to skip <a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.
+
 
 Examples follow.
 
