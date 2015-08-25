@@ -18,7 +18,7 @@ After you have built the module and are ready to enable it in your Magento envir
 
 
 
-The general order of operation for the setup:upgrade operation is:
+The general order of operation for the `setup:upgrade` operation is:
 
 42. __Schema creation/updates__.
 42. __Schema installation__.
