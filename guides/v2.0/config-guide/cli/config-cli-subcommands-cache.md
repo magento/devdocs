@@ -178,9 +178,9 @@ Command usage:
 
 where
 
-omitting `[type] cleans or flushes all cache types at the same time.
+`[type]` is a space-separated list of cache types. Omitting `[type]` cleans or flushes all cache types at the same time.
 
-`type` is a space-separated list of cache types.
+
 
 <!-- `--bootstrap=` is a URL-encoded associative array of Magento <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview">application bootstrap parameters</a> and values.
  -->
