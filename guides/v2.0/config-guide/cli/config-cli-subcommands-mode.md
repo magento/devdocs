@@ -12,6 +12,7 @@ github_link: config-guide/cli/config-cli-subcommands-mode.md
 
 #### Contents
 *	<a href="#config-mode-over">Overview of setting Magento modes</a>
+*	<a href="#config-mode-show">Display the current mode</a>
 *	<a href="#config-mode">Change modes</a>
 
 <h2 id="config-mode-over">Overview of setting Magento modes</h2>
@@ -123,23 +124,23 @@ For example, to add the user `deborah` to the `apache` group on CentOS:
 
 	usermod -a -G apache deborah
 
-<h2 id="config-mode">Change modes</h2>
+<h2 id="config-mode-show">Display the current mode</h2>
 Command usage:
-
-	magento deploy:mode:show
-	magento deploy:mode:set {mode}
-
-where `{mode}` can be either `developer` or `production`. 
-
-Examples follow.
-
-### Display the current mode
 
 	magento deploy:mode:show
 
 A message similar to the following displays:
 
 	Current application mode: developer.
+
+<h2 id="config-mode">Change modes</h2>
+Command usage:
+
+	magento deploy:mode:set {mode}
+
+where `{mode}` can be either `developer` or `production`. 
+
+Examples follow.
 
 ### Change to production mode
 
@@ -185,7 +186,7 @@ Generated classes:
 	Enabled production mode.
 
 ### Change to developer mode
-Use the following steps:
+When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:
 
 1.	If you're changing from production mode to developer mode, delete the contents of the `var/generation` and `var/di` directories:
 
