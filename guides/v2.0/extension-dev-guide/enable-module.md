@@ -13,11 +13,10 @@ github_link: extension-dev-guide/enable-module.md
 
 After you have built the module and are ready to enable it in your Magento environment, enter the following at the command line:
 
-    php -f bin/magento module:enable --clear-static-content Module_Name
-    php -f bin/magento setup:upgrade
+    bin/magento module:enable --clear-static-content Module_Name
+    bin/magento setup:upgrade
 
 
-The `-f` flag (parse and execute file) is optional.
 
 The general order of operation for the setup:upgrade operation is:
 
