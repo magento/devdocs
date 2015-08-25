@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Multi-tenant compiler</title>
+	<title>Configure Redis</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/redis/config-redis.html">
 
 
 
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Multi-tenant compiler</h1>
+		<h1 class="page-heading">Configure Redis</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/config/redis/config-redis.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,222 +166,142 @@
 		<div class="content-wrap">
 		
 		<h4 id="contents">Contents</h4>
-
 <ul>
-  <li><a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a></li>
-  <li><a href="#config-cli-subcommands-multi">Overview of the multi-tenant compiler</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a></li>
+  <li><a href="#config-redis-over">Overview of the Redis solution</a></li>
+  <li><a href="#config-redis-install">Install Redis</a></li>
+  <li><a href="#config-redis-config">Configure Magento to use Redis</a></li>
+  <li><a href="#config-redis-info">For more information</a></li>
 </ul>
 
-<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
-<p>This section discusses the basics of code compilation.</p>
-<p>Code compilation consists of all of the following in no particular order:</p>
-<ul><li>Application code generation (factories, proxies, and so on)</li>
-<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
-<li>Interceptor generation (that is, optimized code generation of interceptors)</li>
-<li>Interception cache generation</li>
-<li>Repositories code generation (that is, generated code for APIs)</li>
-<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/develop/setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p>
+<h2 id="config-redis-over">Overview of the Redis solution</h2>
+<p><a href="http://redis.io/" target="_blank">Redis</a> is an optional backend cache solution to replace <a href="http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html" target="_blank">Zend_Cache_Backend_File</a>, which is used in Magento 2 by default.</p>
 
-<h3>Why generate code?</h3>
-<p>In brief, you can generate code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/Resource/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
-
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="o">...</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">\Magento\Customer\Model\AddressFactory</span> <span class="nv">$addressFactory</span><span class="p">,</span>
-<span class="o">...</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>The first constructor parameter has a type of <code>\Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 GitHub. The Magento application <em>generates</em> this class as because its name uses a recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
-<p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug through the code.</p>
-
-<h4>When is code generated?</h4>
-<p>Provided the Magento application is <em>not</em> set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
-<p>You can also use the compiler discussed in this topic to generate code at any time.</p>
-
-<h4>Proxies and factories</h4>
-<ul><li>A <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-mod-type-fact">Factory</a> class creates instances of a type; for example, a generated <code>\Magento\Customer\Model\AddressFactory</code> creates new instances of <code>\Magento\Customer\Model\Address</code>. The code in <code>AddressFactory</code> has some specific code for the <code>Address</code> type.</li>
-<li>In more complex code generation, you can designate a <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">Proxy</a> to be generated for a type.<br />
- Generally, a proxy must have an implementation of all the declared public methods of the original class.
-The method implementation could be delegating to another object in memory, or the method could make a network call to another object on a different machine. All the Proxy methods in a class usually do the same thing (for example, they all delegate to another object or they all make a network call) except they need a slight difference to call a specific method.<br />
-As a practical example, you can see the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated StoreManager Proxy class.</li></ul>
-
-<h4>Why should you regenerate code?</h4>
-<p>Suppose a Customer or Proxy class for a Customer class is generated. The Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it will not be re-generated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.</p>
-<p>Rarely, if the code generator implementation itself is changed, you must regenerate all the classes.</p>
-
-<h3>Advantages of generating code</h3>
-<p>Generating code assures you of the following:</p>
-
-<ul><li>The code is correct.<br />
-You won’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon. You don’t have to write tests for the generated code. </li>
-<li>Code generation writes the boilerplate code to enable you to write the more challenging and interesting code.</li>
-    <li>Consistency in implementation. <br />
-    All generated Factories work the same way. After you learn know how one Factory works, you should know how they all work.</li>
-    <li>You can change the implementation for all generated code. <br />
-    If you discover a better way of implementing a Proxy, you can do it across the board. If you want the code generator to use a PHP <code>__call</code> magic method or if you want to real methods, you only need to change the generator. Code maintenance is reduced.</li></ul>
-
-<h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
-<p>Use this command if you have multiple <em>tenants</em>, which means more than one independent Magento application. In other words:</p>
+<h3 id="issues-with-zendcachebackendfile">Issues with <code>Zend_Cache_Backend_File</code></h3>
 
 <ul>
-  <li>There is one Magento 2 code base instance</li>
-  <li>There is one database instance per tenant</li>
-  <li>Independent configurations in the Magneto Admin per tenant</li>
-  <li>The storefronts are independent of each other</li>
+  <li>
+    <p>The <code>core_cache_tag</code> table constantly grows. If a Magento instance has multiple web sites and web stores with large catalogs, the table can grow to 15 million records in less than a day. Insertion into <code>core_cache_tag</code> leads to issues with MySQL server, including performance degradation. </p>
+
+    <p>(A <em>tag</em> is an identifier that classifies different types of Magento cache objects.)</p>
+  </li>
+  <li>
+    <p>The TwoLevels backend is more difficult to maintain because two services are required to make it work which makes it difficult to analyze cache content when necessary.<br />
+Further, memcached itself has limitations such as a maximum object size and fixed bucket sizes which also contribute to difficult maintenance.</p>
+  </li>
+  <li>
+    <p>The <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend TwoLevels backend</a> does not scale well because using the database as part of the cache backend adds additional load to the master database server. Additionally, there is no reliable method for <code>memcached</code> replication.</p>
+  </li>
 </ul>
 
-<p>If you do not have multiple tenants, use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">single-tenant compiler</a> instead.</p>
+<h3 id="why-redis-is-better">Why Redis is better</h3>
+<p>Advantages of Redis include:</p>
 
-<p>This command generates the following:</p>
-<ul><li>Non-existent classes such as factories declared in the code under <code>app/code</code>.</li>
-<li>Interceptors for classes that have plug-ins declared in declared in <code>di.xml</code>.</li>
-<li>The <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a> configuration for the object manager.</li></ul>
-<p>Generated code and the dependency injection configuration is written to the <code>&lt;your Magento install dir&gt;/var/generation</code> and <code>&lt;your Magento install dir&gt;/var/di</code> directories, respectively.</p>
-<p>If <code>&lt;your Magento install dir&gt;/var/di/definitions.php</code> exists, it is used by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>; otherwise, the much slower <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. (This class uses the reflection-based the definition builder.) </p>
-<p>Runtime definition compilation is fine in a development environment but you should use the compiler in a production environment.</p>
+<ul>
+  <li>
+    <p>Redis can also be used for PHP session storage, making it possible to completely replace <code>memcached</code> with Redis.</p>
+  </li>
+  <li>
+    <p>The Redis backend works by indexing tags in files so that tag operations do not require a full scan of every cache file. </p>
+  </li>
+  <li>
+    <p>The metadata and the cache record are stored in the same file rather than separate files resulting in fewer inodes and fewer file stat, read, write, lock, and unlink operations. Also, the original hashed directory structure had very poor distribution due to the <code>adler32</code> hashing algorithm and prefixes. The multi-level nested directories have been dropped in favor of single-level nesting made from multiple characters.</p>
+  </li>
+  <li>
+    <p>The backend supports tag-based cache cleanup without <code>foreach</code> loops. </p>
+  </li>
+  <li>
+    <p>Redis supports on-disk save and master/slave replication. </p>
 
-<!-- The multi-tenant compiler does the following:
+    <p>This is a highly requested feature that is not supported by <code>memcached</code>. Replication avoids a single point of failure and provides high  availability.</p>
+  </li>
+</ul>
 
-*	Generates factories declared in `<your Magento install dir>/app/code`
-*	Generates proxies declared in `di.xml` files
-*	Generates interceptors for all classes that have plug-ins declared in the `di.xml` configuration
-*	Automatically compiles definitions for all modules and `<your Magento install dir>/lib/internal/Magento` directories.
-*	Compiles class inheritance implementation relations to increase performance of configuration inheritance
-*	Compiles plug-in definitions (that is, the list of declared public methods)
+<h2 id="config-redis-install">Install Redis</h2>
+<p>Installing and configuring the Redis software is beyond the scope of this guide. Consult resources such as:</p>
 
-<div class="bs-callout bs-callout-warning">
-    <p>The multi-tenant compiler does not analyze usage of auto-generated factory classes in files that are located in the <code>lib/internal/Magento</code> directory structure because use of auto-generated factory classes on the library level is prohibited. If you need to use a factory on the library level, please generate the class manually.</p>
-</div>
+<ul>
+  <li><a href="http://redis.io/download" target="_blank">Download Redis page</a></li>
+  <li><a href="http://redis.io/topics/quickstart" target="_blank">Redis quick start</a></li>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-redis" target="_blank">digitalocean</a></li>
+  <li><a href="http://redis.io/documentation" target="_blank">Redis documentation page</a></li>
+</ul>
 
-### Tips
+<h2 id="config-redis-config">Configure Magento to use Redis</h2>
+<p>Following is a sample configuration to add to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
 
-*	The only place where you can declare proxy is `di.xml`. It's better to use a type for virtualType or as an instance of the type parameter.
-*	The only place where factory classes can be declared is in a `__construct` of PHP classes located under `app/code`.
-
-### Naming rules
-Naming Rules for auto-generated classes for a module:
-
-*	Proxy classes: `VendorName\ModuleName\ModelName\Proxy`
-*	Factory classes: `VendorName\ModuleName\ModelName\NameFactory`
-
-<div class="bs-callout bs-callout-warning">
-    <p>Failure to follow the preceding naming convention results in exceptions.</p>
-</div> -->
-
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
-</div>
-
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
-
-<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
-<p>Command options:</p>
-
-<pre><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
-filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
+<pre><code>'cache' =&gt; [
+	'frontend' =&gt; [
+		'page_cache' =&gt; [
+			'backend' =&gt; 'Cm_Cache_Backend_Redis',
+			'backend_options' =&gt; [
+				'server' =&gt; '127.0.0.1', 
+				'port' =&gt; '6379',
+				'persistent' =&gt; '', 
+				'database' =&gt; 0, 
+				'password' =&gt; '', 
+				'force_standalone' =&gt; 0, 
+				'connect_retries' =&gt; 1, 
+	],
 </code></pre>
 
-<p>The following table discusses the meanings of this command’s parameters and values. </p>
+<p>where</p>
 
 <table>
-	<col width="25%" />
-	<col width="65%" />
-	<col width="10%" />
-	<tbody>
-		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-		
+<tbody>
 	<tr>
-		<td><p>--serializer</p></td>
-		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
-		<td><p>No</p></td>
+		<th>Parameter</th>
+		<th>Meaning</th>
 	</tr>
-	<tr>
-		<td><p>--extra-classes-file</p></td>
-		<td><p>Specify the absolute file system path to proxies and factories that are not declared in the dependency injection or code..</p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--generation</p></td>
-		<td><p>Absolute file system path to a directory for generated classes. Default is <code>&lt;your Magento install dir&gt;/var/generation</code></p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--di</p></td>
-		<td><p>Absolute file system path to a directory to generate the object manager configuration. Default is <code>&lt;your Magento install dir&gt;/var/di</code></p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--exclude-pattern</p></td>
-		<td><p>Regular expression that enables you to exclude paths from compilation. Default is <code>#[\\/]m1[\\/]#i)</code></p></td>
-		<td><p>No</p></td>
-	</tr>
-	
-	</tbody>
-</table>
+<tr>
+	<td>page_cache</td>
+	<td><p>Specify the segment name to use a particular segment or a default shortcut for all other caches.</p>
+		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code>.
 
-<p>For example, to run the compiler and specify the <code>igbinary</code> serializer:</p>
+<tr>
+	<td>server</td>
+	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or a an absolute path to a UNIX socket.</td>
+</tr>
+<tr>
+	<td>port</td>
+	<td>Redis server listen port</td>
+</tr>
+<tr>
+	<td>persistent</td>
+	<td>Specify a unique string to enable persistent connections. For example, <code>sess-db0</code>.
 
-<pre><code>magento setup:di:compile-multi-tenant --serializer=igbinary
-</code></pre>
+		Note that there are <a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">known issues phpredis and php-fpm</a>.</td>
+</tr>
+<tr>
+	<td>database</td>
+	<td>Unique Redis database number, which is recommended to protect against data loss.</td>
+</tr>
+<tr>
+	<td>password</td>
+	<td>Specifies a password if your Redis server requires authentication.</td>
+</tr>
+<tr>
+	<td>force_standalone</td>
+	<td>Use <code>0</code> for phpredis or <code>1</code> for standalone PHP</td>
+</tr>
+<tr>
+	<td>connect_retries</td>
+	<td>Reduces errors due to random connection failures. Specify <code>1</code> to not retry after the first failure.</td>
+</tr>
 
-<p>Messages similar to the following display:</p>
 
-<pre><code>Generated classes:
-    Magento\Rss\Controller\Adminhtml\Feed\Interceptor
-    Magento\Quote\Model\Quote\Config\Interceptor
-    Magento\Checkout\Block\Cart\Shipping\Interceptor
-    Magento\Framework\View\Layout\Interceptor
-    Magento\Integration\Service\V1\Integration\Interceptor
-    Magento\Catalog\Block\Product\Compare\ListCompare\Interceptor
-    Magento\Framework\View\TemplateEngineFactory\Interceptor
-    Magento\Catalog\Model\Product\Attribute\Backend\Price\Interceptor
-    Magento\Catalog\Api\ProductRepositoryInterface\Interceptor
-    Magento\Catalog\Model\Product\Interceptor
-    Magento\Quote\Model\Quote\Item\ToOrderItem\Interceptor
-    Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper\Interceptor
-    Magento\Catalog\Model\Product\CartConfiguration\Interceptor
-    Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
-    Magento\Catalog\Model\Product\Type\Interceptor
-    ... more messages ...
-    On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. 
-    For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
-    (example command: "chown -R www-data:www-data &lt;MAGENTO_ROOT&gt;/var" where MAGENTO_ROOT is the Magento root directory).
-</code></pre>
 
-<h4 id="related-topics">Related topics</h4>
+<h2 id="config-redis-info">For more information</h2>
+You can find more information about configuring Redis from the following:
 
-<ul>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
-</ul>
+*	<a href="http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/" target="_blank">David Alger</a>
+*	<a href="http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/" target="_blank">TechyTalk</a>
+*	<a href="http://info2.magento.com/rs/magentoenterprise/images/MagentoECG-UsingRedisasaCacheBackendinMagento.pdf" target="_blank">Magento Expert Consulting Group (ECG) article <em>written for Magento 1.x</em>
+
+#### Related topics
+
+ *  <a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="/guides/v2.0/config-guide/config/config-php.html">Magento's deployment configuration</a>
+</a></p></td></tr></tbody></table>
 
 
 		</div>
@@ -553,7 +473,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
 						
 								
 							
@@ -693,7 +613,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 							
 								
 								
-									<li class=" "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									<li class="  active "><a class="nav-header" href="/guides/v2.0/config-guide/redis/config-redis.html">Configure Redis</a></li>
 									
 								
 								
@@ -856,8 +776,8 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>
