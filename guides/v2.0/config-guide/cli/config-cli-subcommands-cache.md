@@ -130,12 +130,12 @@ This command enables you to enable or disable all cache types or only the ones y
 
 Command options:
 
-	magento cache:enable [--all] [type] ... [type]
-	magento cache:disable [--all] [type] ... [type] 
+	magento cache:enable [type] ... [type]
+	magento cache:disable [type] ... [type] 
 
 where
 
-`--all` enables or disables all cache types at the same time.
+omitting `[type]` enables or disables all cache types at the same time.
 
 `type` is a space-separated list of cache types.
 
@@ -173,12 +173,12 @@ To purge out-of-date items from the cache, you can *clean* or *flush* cache type
 
 Command usage:
 
-	magento cache:clean [--all] [type] ... [type]
-	magento cache:flush [--all] [type] ... [type]
+	magento cache:clean [type] ... [type]
+	magento cache:flush [type] ... [type]
 
 where
 
-`--all` cleans or flushes all cache types at the same time.
+omitting `[type] cleans or flushes all cache types at the same time.
 
 `type` is a space-separated list of cache types.
 
@@ -186,7 +186,7 @@ where
  -->
 For example, to flush all cache types, enter
 
-	magento cache:flush --all
+	magento cache:flush 
 
 Sample result:
 
