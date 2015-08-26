@@ -406,6 +406,19 @@ Swatches provide an alternate way to display the selection of options for config
 <h2 id="1.0.0-beta-incompat">Backward-incompatible changes</h2>
 <p>This section discusses the backward-incompatible changes we made in this release.</p>
 
+<h3 id="chnages_1.0.0-beta_unified-connection">Unified connection resolving</h3>
+
+<p>We simplified how you retrieve data from the database as follows:</p>
+
+<ul>
+  <li>
+    <p>All read/write differentiating constants, connection suffixes, and getter methods are now retrieve the resource connection instance by resource name with a fallback to the <code>default</code> connection.</p>
+  </li>
+  <li>
+    <p>The earlier <code>getAdapter</code>, <code>getDbAdapter</code>, <code>_getReadAdapter</code>, <code>getConnectionAdapter</code> that retrieved database connection instances have been unified to one method <code>getConnection()</code>. Old variables with the <code>adapter</code> keyword in their stored adapter instance pointer are renamed to <code>connection</code>.</p>
+  </li>
+</ul>
+
 <h3 id="magentocaptcha-changes">Magento_Captcha changes</h3>
 
 <p><code>/Magento/Captcha/Model/Checkout/Plugin/Validation</code> validation moved to <code>Magento/Captcha/Model/Customer/Plugin/AjaxLogin</code></p>
@@ -556,6 +569,7 @@ Swatches provide an alternate way to display the selection of options for config
 <ul>
   <li>We removed the method <code>getDefaultResult</code> from <code>\Magento\Framework\App\Action\AbstractAction</code></li>
   <li>We removed <code>field_expr</code> support from <code>Magento\Framework\DB\Adapter\Pdo\Mysql::prepareSqlCondition()</code></li>
+  <li>We reduced <code>Zend_Db_*</code> libraries dependencies. All code base is cleaned up from hardcoded external library class references.</li>
 </ul>
 
 <h2 id="1.0.0-beta-feedback">Give us your feedback!</h2>
