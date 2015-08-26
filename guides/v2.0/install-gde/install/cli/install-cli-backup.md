@@ -102,7 +102,7 @@ This section discusses how to roll back to a backup you made previously. You mus
 
 To find the name of your backups, enter:
 
-	ls <your Magento install dir>/var/backups
+	magento info:backups:list
 
 The first string in the backup file name is the timestamp.
 
