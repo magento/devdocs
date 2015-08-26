@@ -310,6 +310,31 @@ To configure Magento to use Varnish:
 8.	Replace your existing <code>default.vcl</code> with the one you just exported.
 9.	Restart Varnish and your web server.
 
+<h2 id="config-varnish-final-verify">Final verification</h2>
+Now that you're using the `default.vcl` generated for you by Magento, you can check HTTP response headers again and you can also make sure pages are not being cached on the Magento file system.
+
+<h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>
+Use `curl` or another utility to view HTTP response headers when you visit any Magento page in a web browser.
+
+For example,
+
+	curl -I -v --location-trusted 'http://192TBD/magento2'
+
+Important headers:
+
+	X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
+	Age: 0
+	X-Magento-Cache-Debug: MISS
+
+<div class="bs-callout bs-callout-info" id="info">
+	<p>This is also an acceptable verification: <code>X-Magento-Cache-Debug: HIT</code>.</p>
+</div>
+
+<h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
+The final step to make sure Varnish is working properly is to make sure the `<your Magento install dir>/var/page_cache` directory is empty even after you access several Magento pages.
+
+If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
+
 
 #### Related topics
 
