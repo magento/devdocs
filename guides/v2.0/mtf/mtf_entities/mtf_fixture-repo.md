@@ -13,7 +13,13 @@ github_link: mtf/mtf_entities/mtf_fixture-repo.md
 
 - <a href="#mtf_repository_create">Create repository for entire fixture</a>
 
-- <a href="mtf_repository_create-field"> Create repository for fixture field</a>
+- <a href="#mtf_repository_create-field"> Create repository for the fixture field</a>
+
+- <a href="#mtf_repository_config">Configuration repository</a>
+
+- <a href="#mtf_repository_merge">Merge of repositories</a>
+
+- <a href="#mtf_repository_credent_iso">Credentials and %isolation% in repository</a>
 
 <h2 id="mtf_repository_overview">Repository overview</h2>
 
@@ -27,7 +33,7 @@ In this topic you will learn how to create, use and merge a repository.
 <h2 id="mtf_repository_create">Create repository for entire fixture</h2>
 
 Let's create repository for the Widget fixture `magento2ce/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`.
-<a href="{{site.gdeurl}}mtf/mtf_fixture.html">More details about fixtures</a>.
+<a href="{{site.gdeurl}}mtf/mtf_entities/mtf_fixture.html">More details about fixtures</a>.
 
 Assume that we have the following fixture:
 
@@ -209,7 +215,7 @@ Case 3. **for_cms_page_link** dataset:
 
 ![layout_for_cms_page_link dataset view on GUI]({{site.baseurl}}common/images/mtf_repository_layout-for-cms-page-link.png)
 
-The repository for these three cases could look as the following:
+The repository for these cases looks as the following:
 
 {% highlight xml %}
 <?xml version="1.0" ?>
@@ -250,13 +256,15 @@ The repository for these three cases could look as the following:
 
 {% endhighlight %}
 
+Name of data set will show which case to use in the test.
+
 <h2 id="mtf_repository_config">Configuration repository</h2>
 
 Configuration repository is a repository for Config module.
 
 Its name is `ConfigData.xml`.
 
-It stores predefined data sets of configuration settings of Magento.
+It stores predefined data sets of the Magento configuration settings.
 
 |field items|semantics|
 |---|---|
@@ -265,7 +273,9 @@ It stores predefined data sets of configuration settings of Magento.
 |`label`|frontend representation |
 |`value`|value that will be passed to Magento field|
 
-Let's see the following example for `Authorizenet` module `magento2ce/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`:
+Let's see the following example for `Authorizenet` module `magento2ce/dev/tests/functional/tests/app/Magento/Authorizenet/Test/Repository/ConfigData.xml`.
+
+Path to the `Authorizenet` UI form in Admin is STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post):
 
 {% highlight xml %}
 
@@ -326,7 +336,7 @@ Let's see the following example for `Authorizenet` module `magento2ce/dev/tests/
             <field name="payment/authorizenet/active" xsi:type="array">
                 <item name="scope" xsi:type="string">payment</item>
                 <item name="scope_id" xsi:type="number">1</item>
-                <item name="label" xsi:type="string">Yes</item>
+                <item name="label" xsi:type="string">No</item>
                 <item name="value" xsi:type="number">0</item>
             </field>
         </dataset>
@@ -335,27 +345,156 @@ Let's see the following example for `Authorizenet` module `magento2ce/dev/tests/
 
 {% endhighlight %}
 
+It contains two datasets `authorizenet` that covers 7 fields, and `authorizenet_rollback` that covers one field.
+
+Semantics of the field attributes:
+
+|`field` attribute|Semantics|Value|
+|---|---|---|---|
+|`name`| Path to the Magento UI element | Example: `payment/authorizenet/active`. |
+|`xsi:type`|Type of the field content| `array` |
+
+Each field contains 4 items:
+
+|Item name|Semantics|
+|---|---|
+|scope|Magento configuration section|
+|scope_id|Identifier from configuration table in Magento |
+|label|Selector option in the drop-down menu| 
+|value|Value of the field|
+
+Let's see `authorizenet` data set in action. Fields defined in repository are in orange. Other fields has default values.
+
+![authorizenet dataset view on GUI]({{site.baseurl}}common/images/mtf_repo_config_ex.png)
+
+
 <h2 id="mtf_repository_merge">Merge of repositories</h2>
 
+The MTF enables you to split data sets between different modules. Configuration repository is a good example.
 
+`Config` module doesn't have `Repository` directory itself, only `Fixture`. Instead of this, modules that require configuration adjustment stores `ConfigData.xml` in their `Repository`. All `ConfigData.xml` repositories have reference to the `Config` repository class. See example on the following picture:
 
+<a href="{{site.baseurl}}common/images/mtf_repo_merge_ex.png"><img src="{{site.baseurl}}common/images/mtf_repo_merge_ex.png" /></a>
 
+As you can see, `ConfigData.xml` of the `Authorizenet` module and `ConfigData.xml` of the `Backend` module have same reference to the repository class, that is `Magento\Config\Test\Repository\ConfigData`.
 
+`ConfigData.php` will be generated in `magento2ce/dev/tests/functional/generated/Magento/Config/Test/Repository`. This PHP repository will contain repository data sets from all Magento modules that have `ConfigData.xml` repository.
 
-Конфигурационный репозиторий
+To run generator, enter the following commands:
 
-Конфигурация представлена фикстурой.
+    cd magento2ce/dev/tests/functional/utils
+    php generate.php
 
-Если репозиториев нет в модуле репозиторий, они могут быть разбросаны по модулям и мерджиться по класу, указанному в атрибуте repository.
+You can merge repositories of any other module, not only `Config`.
 
-Для мерджа приветси пример репозитория конфига.
+<h2 id="mtf_repository_credentials">Credentials and %isolation% in repository</h2>
 
-Credentials всегда подтягивается для фикстур неявно. Заменяет данные в репозитории. Доступ к данным имеет только фикстура.
+Credentials are stored in `magento2ce/dev/tests/functional/credentials.xml`.
 
-Конфигурационные репо отличаются только именем, другой подход к формированию, имя это путь.
-Конфигурационые репо мерджатся.
-Конфигурационны репо это те что для модуля Config.
-Как пример использовать виджет репозиторий для фикстуры и лейаут апдейт для поля.
-Для примера мерджа использовать конфигурационные репозитории, они использованы в вики.
-Креденшалз неявно подставляются к каждой фикстуре.
-В репозитроии используется плейсхолдер. Значение подхватывается из крденшалз во время теста в целях безопасности.
+A template for credentials you can find in `magento2ce/dev/tests/functional/credentials.xml.dist`.
+
+Credentials always should stay invisible for security reasons. The MTF implicitly pastes credentials during test run only. 
+There are two ways to paste credentials:
+
+- using path. If field in repository has `name` that matches field `path` in `credentials.xml`, then value of this field will be substituted to the value from `credential.xml` during the test.
+- using placeholder. If field in repository has value wrapped in `% %` that matches the value of field `replace` attribute in `credentials.xml`, then value of this field will be substituted to the value from `credential.xml` during the test.
+
+<h3 id="mtf_repo_credent_path">Example with substitution by <code>path</code></h3>
+
+Assume, that you have the following credentials in `credentials.xml`.
+
+{%highlight xml%}
+
+<field path="carriers/ups/password" value="strong_password" />
+<field path="carriers/ups/username" value="my_name" />
+<field path="carriers/ups/access_license_number" value="20150825" />
+<field path="carriers/ups/shipper_number" value="321852741789" />
+
+{%endhighlight%}
+
+In repository these fields can be defined as:
+
+{%highlight xml%}
+
+<field name="carriers/ups/password" xsi:type="array">
+    <item name="scope" xsi:type="string">carriers</item>
+    <item name="scope_id" xsi:type="number">1</item>
+    <item name="label" xsi:type="string"/>
+    <item name="value" xsi:type="string">CARRIERS_UPS_PASSWORD</item>
+</field>
+<field name="carriers/ups/username" xsi:type="array">
+    <item name="scope" xsi:type="string">carriers</item>
+    <item name="scope_id" xsi:type="number">1</item>
+    <item name="label" xsi:type="string"/>
+    <item name="value" xsi:type="string">CARRIERS_UPS_USERNAME</item>
+</field>
+<field name="carriers/ups/access_license_number" xsi:type="array">
+    <item name="scope" xsi:type="string">carriers</item>
+    <item name="scope_id" xsi:type="number">1</item>
+    <item name="label" xsi:type="string"/>
+    <item name="value" xsi:type="string">CARRIERS_UPS_ACCESS_LICENSE_NUMBER</item>
+</field>
+<field name="carriers/ups/shipper_number" xsi:type="array">
+    <item name="scope" xsi:type="string">carriers</item>
+    <item name="scope_id" xsi:type="number">1</item>
+    <item name="label" xsi:type="string"/>
+    <item name="value" xsi:type="string">CARRIERS_UPS_SHIPPER_NUMBER</item>
+</field>
+
+{%endhighlight%}
+
+When test is run, these fields will be filled with values from `credentials.xml`.
+
+<h3 id="mtf_repo_credent_replace">Example with replacement by <code>replace</code></h3>
+
+For example, you have the following credentials in `credentials.xml`:
+
+{%highlight xml%}
+
+<field replace="carriers_dhl_id_eu" value="123654987" />
+<field replace="carriers_dhl_password_eu" value="my_dh1_pas$worD" />
+<field replace="carriers_dhl_account_eu" value="8521236987452" />
+
+{%endhighlight%}
+
+Then you should define repository fields as the following:
+
+{%highlight xml%}
+
+<field name="carriers/dhl/id" xsi:type="array">
+    <item name="scope" xsi:type="string">carriers</item>
+    <item name="scope_id" xsi:type="number">1</item>
+    <item name="label" xsi:type="string"/>
+    <item name="value" xsi:type="string">%carriers_dhl_id_eu%</item>
+</field>
+<field name="carriers/dhl/password" xsi:type="array">
+    <item name="scope" xsi:type="string">carriers</item>
+    <item name="scope_id" xsi:type="number">1</item>
+    <item name="label" xsi:type="string"/>
+    <item name="value" xsi:type="string">%carriers_dhl_password_eu%</item>
+</field>
+<field name="carriers/dhl/account" xsi:type="array">
+    <item name="scope" xsi:type="string">carriers</item>
+    <item name="scope_id" xsi:type="number">1</item>
+    <item name="label" xsi:type="string"/>
+    <item name="value" xsi:type="string">%carriers_dhl_account_eu%</item>
+</field>
+
+{%endhighlight%}
+
+When test is run, credentials from `credentials.xml` will be transfered to defined fields.
+
+<h3 id="mtf_repo_isolation"><code>%isolation%</code> placeholder</h3>
+
+You can use `%isolation%` placeholder in repository fields where you want to put a random value.
+
+Some examples:
+
+{%highlight xml%}
+<field name="title" xsi:type="string">Cms Page Link %isolation%</field>
+<field name="sku" xsi:type="string">sku_simple_product_%isolation%</field>
+<field name="url_key" xsi:type="string">simple-product-%isolation%</field>
+
+{%endhighlight%}
+
+In PHP repository (after `generate.php` run) `%isolation%` will be replaced with [mt_rand()](http://php.net/manual/en/function.mt-rand.php) function.
