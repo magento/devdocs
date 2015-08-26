@@ -12,8 +12,10 @@ github_link: config-guide/config/redis/config-varnish.md
 
 #### Contents
 *	<a href="#config-varnish-over">Overview of the Varnish solution</a>
+*	<a href="#config-varnish-process">Process overview</a>
 *	<a href="#config-varnish-install">Install Varnish</a>
-*	<a href="#config-varnish-config">Configure Magento to use Varnish</a>
+*	<a href="#config-varnish-config-var">Configure Varnish</a>
+*	<a href="#config-varnish-magento">Configure Magento to use Varnish</a>
 
 <h2 id="config-varnish-over">Overview of the Varnish solution</h2>
 <a href="https://www.varnish-cache.org/" target="_blank">Varnish Cache</a> is an open source web application accelerator (also referred to as an *HTTP accelerator* or *caching HTTP reverse proxy*). Varnish stores (or caches) files or fragments of files in memory; this enables Varnish to reduce the response time and network bandwidth consumption on future, equivalent requests. Unlike other servers like Apache and nginx, Varnish was designed for use exclusively with the HTTP protocol.
@@ -26,13 +28,44 @@ For more information about Varnish, see:
 *	<a href="https://www.varnish-cache.org/about" target="_blank">About Varnish</a>
 *	<a href="https://www.varnish-software.com/book/4.0/chapters/Introduction.html#what-is-varnish" target="_blank">Introduction to Varnish</a>
 
+<div class="bs-callout bs-callout-info" id="info">
+	<ul><li>Except where noted, you must enter all commands discussed in this topic as a user with <code>root</code> privileges.</li>
+		<li>This topic is written for Varnish on CentOS. If you're setting up Varnish on Ubuntu, some commands are likely different. Consult Varnish documentation for more information.</li></ul>
+</div>
+
+<h2 id="config-varnish-issues">Known issues</h2>
+TBD
+
+<h2 id="config-varnish-process">Process overview</h2>
+TBD, say what is going to happen:
+
+1.	Install Varnish software
+2.	Minimal config
+3.	Make sure it works
+4.	Configure Magento, replace default.vcl
+5.	Be amazed
+
 <h2 id="config-varnish-install">Install Varnish</h2>
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
 
 *	<a href="https://www.varnish-cache.org/docs" target="_blank">Varnish installation guides</a>
 *	<a href="http://www.tecmint.com/install-varnish-cache-web-accelerator" target="_blank">How to install Varnish (Tecmint)</a>
+*	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">wiki</a>
 
-<h2 id="config-varnish-config">Configure Magento to use Varnish</h2>
+<h2 id="config-varnish-version">Confirm your Varnish version</h2>
+Enter the following command to display the version of Varnish you're running:
+
+	varnishd -V
+
+A sample follows:
+
+	varnishd (varnish-4.0.3 revision b8c4a34)
+	Copyright (c) 2006 Verdens Gang AS
+	Copyright (c) 2006-2014 Varnish Software AS
+
+Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
+
+<h2 id="config-varnish-config-var">Configure Varnish</h2>
 The following sections discuss how to configure your web server and Magento to use Varnish:
 
 *	TBD
@@ -44,12 +77,17 @@ Configure your web server to listen on a port other than the default port 80 bec
 
 In the sections that follow, use use port 8080 as an example.
 
-Consult the documentation provided with your web server for details.
+To change the Apache 2.2 listen port:
+
+1.	Open `/etc/httpd/conf/httpd.conf` in a text editor.
+2.	Locate the `Listen` directive.
+3.	Change the value of the listen port to `8080`. (You can use any value you want.)
+4.	Save your changes to `httpd.conf` and exit the text editor.
 
 <h3 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h3>
 To modify the Varnish system configuration:
 
-1.	As a user with `root` privileges, open `/etc/sysconfig/varnish` in a text editor.
+1.	Open `/etc/sysconfig/varnish` in a text editor.
 2.	Set the Varnish listen port to 80:
 
 		VARNISH_LISTEN_PORT=80
@@ -74,41 +112,41 @@ To modify the Varnish system configuration:
 4.	Save your changes to `/etc/sysconfig/varnish` and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
-Magento provides sample configurations for Varnish 3 and 4 you can use in place of the `default.vcl` provided with Varnish.
+This section discusses how to provide minimal configuration so Varnish caches pages and you can verify it works before you configure Magento to use it.
 
-To use Magento's samples:
+To minimally configure Varnish:
 
-1.	As a user with `root` privileges, back up `default.vcl`:
+1.	Back up `default.vcl`:
 
 		cp /etc/varnish/default.vcl /etc/varnish/default.vcl.bak
 
 2.	Open `/etc/varnish/default.vcl` in a text editor.
-3.	Remove all contents from `default.vcl`.
-4.	Replace its contents with one of the following:
+3.	Locate the following stanza:
 
-	*	Varnish 3: <a href="https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/PageCache/etc/varnish3.vcl" target="_blank">https://github.com/magento/magento2/blob/develop/app/code/Magento/PageCache/etc/varnish3.vcl</a>
-	*	Varnish 4: <a href="https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/PageCache/etc/varnish4.vcl" target="_blank">https://github.com/magento/magento2/blob/develop/app/code/Magento/PageCache/etc/varnish4.vcl</a>
+		backend default {
+  			.host = "127.0.0.1";
+  			.port = "80";
+		}
 
-5.	In the `backend default` stanza, replace `/* {{ host }} */` and `/* {{ port }} */` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. 
+4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. 
 
 	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a>
+5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
 
-6.	In the `acl purge` stanza, replace `/* {{ ips }} */` with the fully qualified host name, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="_blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.
+	Example: Varnish and Apache are both installed on host TBD and Apache is listening on port 8080:
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Each line must end with a semicolon; otherwise, Varnish will not start.</p>
-	</div>
+		backend default {
+  			.host = "192.0.2.55"; 
+  			.port = "8080";
+		}		
+		
+7.	Save your changes to `default.vcl` and exit the text editor.
+8.	Restart Apache:
 
-	<a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="_blank">More information</a>
+		service httpd restart
+8.	Restart Varnish:
 
-6.	Save your changes to `default.vcl` and exit the text editor.
-7.	Restart Varnish and Apache:
-
-		service varnish restart
-
-	Ubuntu: `service apache2 restart`
-	
-	CentOS: `service httpd restart`
+		service varnish start
 
 If Varnish fails to start, try running it from the command line as follows:
 
@@ -125,6 +163,27 @@ Perform the tasks discussed in the following sections in the order shown:
 
 *	TBD
 *	TBD
+
+<h3 id="config-varnish-verify-start">Start Varnish</h3>
+Enter `service varnish start`
+
+If Varnish fails to start as a service, start it from the command line as follows:
+
+1. Start the Varnish CLI:
+
+		varnishd -d -f /etc/varnish/default.vcl
+
+2.	Start the Varnish child process:
+
+	When prompted, enter `start`
+
+	The following messages display to confirm a successful start:
+
+		child (29805) Started
+		200 0
+
+		Child (29805) said
+		Child (29805) said Child starts
 
 <h3 id="config-varnish-verify-netstat">netstat</h3>
 Log in to the Varnish server and enter the following command:
@@ -144,6 +203,9 @@ If you don't see output for `varnishd`, TBD.
 
 <a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a>
 
+<h3 id="config-varnish-install">Install the Magento 2 software</h3>
+Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use port 80 (for Varnish) rathern than port 8080 (for Apache) because Varnish receives all incoming HTTP requests.
+
 <h3 id="config-varnish-verify-headers">HTTP response headers</h3>
 Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
 
@@ -160,7 +222,24 @@ To set Magento for developer mode using its `.htaccess` file:
 4.	Save your changes to `.htaccess` and exit the text editor.
 
 #### Look at the Varnish log
-TBD
+Enter the following command on the Varnish server:
+
+	varnishlog
+
+In a web browser, go to any Magento 2 page.
+
+A long list of resonse headers display. Look for headers like the following:
+
+	14 RxHeader     b Server: Apache/2.2.15 (CentOS)
+   	14 RxHeader     b X-Powered-By: PHP/5.6.12
+   	14 RxHeader     b Expires: Mon, 25 Aug 2014 11:43:12 GMT
+   	14 RxHeader     b Cache-Control: max-age=0, must-revalidate, no-cache, no-store
+   	14 RxHeader     b Pragma: no-cache
+  	14 RxHeader     b Set-Cookie: X-Magento-Vary=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/
+   	14 RxHeader     b X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
+  	14 RxHeader     b X-Magento-Cache-Debug: MISS
+
+If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
 There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers, or a browser's developer mode.
@@ -173,33 +252,58 @@ For example,
 
 	curl -I -v --location-trusted 'http://192.0.2.55/magento2'
 
-Following is a summary of messages that display. The important header is `X-Magento-Cache-Debug: HIT`, which lets you know the page is served from cache.
+Following is a summary of messages that display.
 
 	* STATE: INIT => CONNECT handle 0x600056550; line 1028 (connection #-5000)
+	* Hostname was NOT found in DNS cache
+	*   Trying 192.0.2.55...
 	* STATE: CONNECT => WAITCONNECT handle 0x600056550; line 1076 (connection #0)
-	* Connected to 192.0.2.55 (192.0.2.55) port 80 (#0)
+	* Connected to 10.249.151.10 (10.249.151.10) port 80 (#0)
 	* STATE: WAITCONNECT => DO handle 0x600056550; line 1195 (connection #0)
 	> HEAD /magento2 HTTP/1.1
 	> User-Agent: curl/7.37.1
-	> Host: 192.0.2.55
+	> Host: 10.249.151.10
 	> Accept: */*
 	... more ...
+	< Date: Tue, 25 Aug 2015 11:46:23 GMT
+	Date: Tue, 25 Aug 2015 11:46:23 GMT
+	< X-Varnish: 968761283
+	X-Varnish: 968761283
+	< Age: 0
+	Age: 0
+	< Via: 1.1 varnish
+	Via: 1.1 varnish
+	< Connection: keep-alive
+	Connection: keep-alive
 
-	HTTP/1.1 200 OK
-	< Date: Tue, 25 Aug 2015 20:45:52 GMT
-	Date: Tue, 25 Aug 2015 20:45:52 GMT	
+	... more ...
+
+	< Set-Cookie: X-Magento-Vary=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/
+	Set-Cookie: X-Magento-Vary=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/
 	< X-Magento-Cache-Debug: HIT
 	X-Magento-Cache-Debug: HIT
 	< X-Frame-Options: SAMEORIGIN
 	X-Frame-Options: SAMEORIGIN
 	< Content-Type: text/html; charset=UTF-8
 	Content-Type: text/html; charset=UTF-8
-	< Pragma: no-cache
-	... more ...
-	<
-	* STATE: PERFORM => DONE handle 0x600056550; line 1590 (connection #0)
-	* Connection #0 to host 192.0.2.55 left intact
-	* Expire cleared
+	< Content-Length: 19349
+	Content-Length: 19349
+	< Date: Tue, 25 Aug 2015 11:46:24 GMT
+	Date: Tue, 25 Aug 2015 11:46:24 GMT
+	< X-Varnish: 968761284
+	X-Varnish: 968761284
+	< Age: 0
+	Age: 0
+	< Via: 1.1 varnish
+	Via: 1.1 varnish
+	< Connection: keep-alive
+	Connection: keep-alive
+
+Important headers:
+
+	Via: 1.1 varnish
+	X-Magento-Cache-Debug: HIT
+	X-Varnish: 968761284
 
 <h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>
 To configure Magento to use Varnish:
@@ -240,6 +344,10 @@ To configure Magento to use Varnish:
 7.	Click one of the export buttons to create a <code>default.vcl</code> you can use with Varnish.
 
 	For example, if you have Varnish 4, click **Export VCL for Varnish 4**
+
+	The following figure shows an example.<br><br>
+	<img src="{{ site.baseurl }}common/images/config_varnish_admin.png" alt="Configure Magento to use Varnish in the Admin">
+
 8.	Replace your existing <code>default.vcl</code> with the one you just exported.
 9.	Restart Varnish and your web server.
 
