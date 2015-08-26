@@ -187,9 +187,11 @@ This section discusses the backward-incompatible changes we made in this release
 
 <h3 id="chnages_1.0.0-beta_unified-connection">Unified connection resolving</h3>
 
-We have unified interface and method for database connection retrieval. All read/write differentiating constants, connection suffixes and getter methods are now unified to retrieve resource connection instance by resource name with fallback to `default` connection.
+We simplified how you retrieve data from the database as follows:
 
-Old `getAdapter`, `getDbAdapter`, `_getReadAdapter`, `getConnectionAdapter` that are designed to retrieve database connection instance are unified to one method `getConnection()`. Old variables with **adapter** keyword inside that stored adapter instance pointer are renamed to `connection`.
+- All read/write differentiating constants, connection suffixes, and getter methods are now retrieve the resource connection instance by resource name with a fallback to the `default` connection.
+
+- The earlier `getAdapter`, `getDbAdapter`, `_getReadAdapter`, `getConnectionAdapter` that retrieved database connection instances have been unified to one method `getConnection()`. Old variables with the `adapter` keyword in their stored adapter instance pointer are renamed to `connection`.
 
 ### Magento_Captcha changes
 
