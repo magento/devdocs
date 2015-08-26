@@ -1,0 +1,33 @@
+---
+layout: default
+group: config-guide
+subgroup: Varnish
+title: Install Varnish
+menu_title: Install Varnish
+menu_order: 5
+menu_node: 
+github_link: config-guide/varnish/config-varnish-install.md
+---
+
+<h2 id="config-varnish-install">Install Varnish</h2>
+Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
+
+*	<a href="https://www.varnish-cache.org/docs" target="_blank">Varnish installation guides</a>
+*	<a href="http://www.tecmint.com/install-varnish-cache-web-accelerator" target="_blank">How to install Varnish (Tecmint)</a>
+*	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">installation wiki</a>
+
+<h2 id="config-varnish-version">Confirm your Varnish version</h2>
+Enter the following command to display the version of Varnish you're running:
+
+	varnishd -V
+
+A sample follows:
+
+	varnishd (varnish-4.0.3 revision b8c4a34)
+	Copyright (c) 2006 Verdens Gang AS
+	Copyright (c) 2006-2014 Varnish Software AS
+
+Make sure the version is at least 3.0.5 or any version of 4.x before continuing.
+
+### Next step
+<a href="{{ site.gdeurl }}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
