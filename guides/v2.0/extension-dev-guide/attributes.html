@@ -357,6 +357,20 @@
 
 <p>This only works for extension attributes (those attributes defined in an <code>extension_attributes.xml</code> file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict <code>custom_attributes</code>.</p>
 
+<h3>ExtensionInterfaces</h3>
+
+<p>An <code>ExtensionInterface</code> will be empty if no extension attributes have been added. In the following example, in an unmodified installation, <code>CustomerExtensionInterface</code> will be generated, but will be empty:</p>
+
+<p><code>interface CustomerExtensionInterface extends \Magento\Framework\Api\ExtensionAttributesInterface
+{
+}</code></p>
+
+<p>However, if an extension similar to the following has been defined, the interface will not be empty.</p>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">“Magento\Customer\Api\Data\CustomerInterface&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">“attributeName&quot;</span> <span class="na">type=</span><span class="s">“Magento\Some\Type[]&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/extension_attributes&gt;</span></code></pre></div>
+
 <h2 id="related">Related topics</h2>
 <p><a href="/guides/v2.0/get-started/authentication/gs-authentication.html">Web API authentication overview</a></p>
 
