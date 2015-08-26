@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Back up the file system, media, and database</title>
+	<title>Back up and roll back the file system, media, and database</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
@@ -154,7 +154,7 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Back up the file system, media, and database</h1>
+		<h1 class="page-heading">Back up and roll back the file system, media, and database</h1>
 			
 			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/install-gde/install/install-cli-backup.md" target="_blank">Edit this page on GitHub</a>
 		
@@ -172,7 +172,8 @@
 <ul>
   <li><a href="#instgde-cli-uninst-back-over">Overview of backup</a></li>
   <li><a href="#instgde-cli-before">First steps</a></li>
-  <li><a href="#instgde-cli-uninst-back">Backing up</a></li>
+  <li><a href="#instgde-cli-uninst-back">Back up</a></li>
+  <li><a href="#instgde-cli-uninst-roll">Roll back</a></li>
 </ul>
 
 <h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
@@ -185,6 +186,8 @@
 </ul>
 
 <p>Backups are stored in the <code>var/backups</code> directory and can be restored at any time using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.</p>
+
+<p>After backing up, you can <a href="#instgde-cli-uninst-roll">roll back</a> at a later time.</p>
 
 <h2 id="instgde-cli-before">First steps</h2>
 <ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
@@ -267,6 +270,33 @@ DB backup is starting...
 DB backup filename: 1434133011_db.gz (The archive can be uncompressed with 7-Zip on Windows systems)
 DB backup path: /var/www/html/magento2/var/backups/1434133011_db.gz
 [SUCCESS]: DB backup completed successfully.
+Disabling maintenance mode
+</code></pre>
+
+<h2 id="instgde-cli-uninst-roll">Roll back</h2>
+<p>This section discusses how to roll back to a backup you made previously. You must know the file name of the backup file to restore.</p>
+
+<p>To find the name of your backups, enter:</p>
+
+<pre><code>ls &lt;your Magento install dir&gt;/var/backups
+</code></pre>
+
+<p>The first string in the backup file name is the timestamp.</p>
+
+<p>To roll back to a previous backup, enter:</p>
+
+<pre><code>magento setup:rollback [-c|--code-file="&lt;name&gt;"] [-m|--media-file="&lt;name&gt;"] [-d|--db-file="&lt;name&gt;"]
+</code></pre>
+
+<p>For example, to restore a media backup named <code>1440611839_filesystem_media.tgz</code>, enter</p>
+
+<pre><code>magento setup:rollback -m 1440611839_filesystem_media.tgz
+</code></pre>
+
+<p>Messages similar to the following display:</p>
+
+<pre><code>[SUCCESS]: Media rollback completed successfully.
+Please set file permission of bin/magento to executable
 Disabling maintenance mode
 </code></pre>
 
@@ -453,7 +483,7 @@ Disabling maintenance mode
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up the file system, media, and database</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
 						
 								
 							
