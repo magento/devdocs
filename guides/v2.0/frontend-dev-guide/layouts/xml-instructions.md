@@ -38,7 +38,6 @@ Use the following layout instructions to customize your layout:
 *  <a href="#fedg_layout_xml-instruc_ex_cont"><code>&lt;container></code></a>
 *  <a href="#fedg_xml-instrux_before-after"><code>before</code> and <code>after</code> attributes</a>
 *  <a href="#fedg_layout_xml-instruc_ex_act"><code>&lt;action></code></a>
-*  <a href="#fedg_layout_xml-instruc_ex_rem"><code>&lt;remove></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceBlock></code> and <code>&lt;referenceContainer></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_mv"><code>&lt;move></code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
