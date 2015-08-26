@@ -36,7 +36,7 @@ searchCriteria[filterGroups][0][filters][0][condition_type]=like
 
 The system creates an array, as shown in the following pseudo-code.
 
-<code>
+<pre>
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -49,9 +49,9 @@ searchCriteria => [
       ]
     ]
   ] 
-</code>
+</pre>
 
-This example searches for products whose attributes are `size=Large` and `color=Red`.
+The following example searches for products whose attributes are `size=Large` and `color=Red`. The generated array follows.
 
 {% highlight html %}
 
@@ -64,7 +64,7 @@ searchCriteria[filter_groups][0][filters][1][value]=Red&
 searchCriteria[filter_groups][0][filters][1][condition_type]=eq
 {% endhighlight %}
 
-<code>
+<pre>
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -82,4 +82,4 @@ searchCriteria => [
       ]
     ]
   ] 
-</code>
+</pre>
