@@ -13,33 +13,42 @@ github_link: install-gde/trouble/php/tshoot_php-set.md
 <!-- Referring file: TBD owned by Ogres -->
 
 <h2 id="trouble-php-set">PHP settings errors</h2>
+See one of the following sections:
+
+*   <a href="#trouble-php-xdebug">xdebug maximum function nesting level error</a>
+*   <a href="#trouble-php-asptags">Errors display when you access a PHTML template</a>
+
+<h3 id="trouble-php-xdebug">xdebug maximum function nesting level error</h3>
+
 See <a href="{{ site.gdeurl }}install-gde/trouble/tshoot_xdebug.html">During installation, xdebug maximum function nesting level error</a>.
 
-<h3>asp-tags should be disabled (Parse error: syntax error, unexpected 'data' (T_STRING))</h3>
+<h3 id="trouble-php-asptags">Errors display when you access a PHTML template</h3>
+Error text is typically:
 
-<a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" rel="nofollow" target="_blank">asp-tags</a> on php.ini should be always disabled for correct work of Magento 2 software. Multiple templates have syntaxis for support abstract level on templates (use different templates engines like Twig etc.) wraped in <% %> tags, like this <a href="https://github.com/magento/magento2/blob/master/app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml">template</a> for display product image:
+    Parse error: syntax error, unexpected 'data' (T_STRING)
+
+#### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wraped in `<% %>` tags, like this <a href="{{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/view/base-image.phtml" target="_blank">template</a> for displaying a product image:
 
 {% highlight PHP %} 
+<?php
 <a class="product photo<% if (typeof data.hasImg !== 'undefined') { %> placeholder<% } %>" href="<%- data.large %>">
-            <span class="img photo container">
-                <img
-                    data-role="zoom-image"
-                    class="photo image"
-                    itemprop="image"
-                    <% if (!data.fullSizeMode) { %>
-                    data-large="<%- data.large %>" src="<%- data.medium %>"
-                    <% } else { %>
-                    src="<%- data.large %>"
-                    <% } %>
-                    alt="<%- data.title %>"/>
-            </span>
-        </a>
+    <span class="img photo container">
+        <img
+          data-role="zoom-image"
+          class="photo image"
+          itemprop="image"
+          <% if (!data.fullSizeMode) { %>
+            data-large="<%- data.large %>" src="<%- data.medium %>"
+          <% } else { %>
+          src="<%- data.large %>"
+          <% } %>
+          alt="<%- data.title %>"/>
+    </span>
+    </a>
+?>
 {% endhighlight %}
 
-If asp-tags is enabled you will get error like "Parse error: syntax error, unexpected 'data' (T_STRING)..." because php trying to proccess this code as native php code which not can works for sure and should be processed by Magento template engine core instead.
+More information about <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" target="_blank">asp_tags</a>. 
 
-So always turn off asp-tags in php.ini :
-
-{% highlight PHP %} 
-asp_tags = Off
-{% endhighlight %}
+Edit `php.ini` and set `asp_tags = off`. For more information, see <a href="{{ site.gdeurl }}install-gde/prereq/php-centos.html#instgde-prereq-timezone">Set PHP configuration options</a>.
