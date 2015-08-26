@@ -222,22 +222,26 @@ To set Magento for developer mode using its `.htaccess` file:
 4.	Save your changes to `.htaccess` and exit the text editor.
 
 #### Look at the Varnish log
-Enter the following command on the Varnish server:
+Make sure Varnish is running then enter the following command on the Varnish server:
 
 	varnishlog
 
 In a web browser, go to any Magento 2 page.
 
-A long list of resonse headers display. Look for headers like the following:
+A long list of response headers display. Look for headers like the following:
 
-	14 RxHeader     b Server: Apache/2.2.15 (CentOS)
-   	14 RxHeader     b X-Powered-By: PHP/5.6.12
-   	14 RxHeader     b Expires: Mon, 25 Aug 2014 11:43:12 GMT
-   	14 RxHeader     b Cache-Control: max-age=0, must-revalidate, no-cache, no-store
-   	14 RxHeader     b Pragma: no-cache
-  	14 RxHeader     b Set-Cookie: X-Magento-Vary=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/
-   	14 RxHeader     b X-Magento-Cache-Control: max-age=86400, public, s-maxage=86400
-  	14 RxHeader     b X-Magento-Cache-Debug: MISS
+	-   BereqHeader    X-Varnish: 3
+	-   VCL_call       BACKEND_FETCH
+	-   VCL_return     fetch
+	-   BackendOpen    17 default(10.249.151.10,,8080) 10.249.151.10 60914
+	-   Backend        17 default default(10.249.151.10,,8080)
+	-   Timestamp      Bereq: 1440449534.261791 0.000618 0.000618
+	-   ReqHeader      Host: 10.249.151.10
+	-   ReqHeader      Connection: keep-alive
+	-   ReqHeader      Content-Length: 86
+	-   ReqHeader      Cache-Control: max-age=0
+	-   ReqHeader      Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+	-   ReqHeader      Origin: http://10.249.151.10
 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
@@ -252,58 +256,13 @@ For example,
 
 	curl -I -v --location-trusted 'http://192.0.2.55/magento2'
 
-Following is a summary of messages that display.
+Look for headers like the following:
 
-	* STATE: INIT => CONNECT handle 0x600056550; line 1028 (connection #-5000)
-	* Hostname was NOT found in DNS cache
-	*   Trying 192.0.2.55...
-	* STATE: CONNECT => WAITCONNECT handle 0x600056550; line 1076 (connection #0)
-	* Connected to 10.249.151.10 (10.249.151.10) port 80 (#0)
-	* STATE: WAITCONNECT => DO handle 0x600056550; line 1195 (connection #0)
-	> HEAD /magento2 HTTP/1.1
-	> User-Agent: curl/7.37.1
-	> Host: 10.249.151.10
-	> Accept: */*
-	... more ...
-	< Date: Tue, 25 Aug 2015 11:46:23 GMT
-	Date: Tue, 25 Aug 2015 11:46:23 GMT
-	< X-Varnish: 968761283
-	X-Varnish: 968761283
-	< Age: 0
+	Content-Type: text/html; charset=iso-8859-1
+	X-Varnish: 15
 	Age: 0
-	< Via: 1.1 varnish
-	Via: 1.1 varnish
-	< Connection: keep-alive
-	Connection: keep-alive
-
-	... more ...
-
-	< Set-Cookie: X-Magento-Vary=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/
-	Set-Cookie: X-Magento-Vary=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; Max-Age=0; path=/
-	< X-Magento-Cache-Debug: HIT
+	Via: 1.1 varnish-v4
 	X-Magento-Cache-Debug: HIT
-	< X-Frame-Options: SAMEORIGIN
-	X-Frame-Options: SAMEORIGIN
-	< Content-Type: text/html; charset=UTF-8
-	Content-Type: text/html; charset=UTF-8
-	< Content-Length: 19349
-	Content-Length: 19349
-	< Date: Tue, 25 Aug 2015 11:46:24 GMT
-	Date: Tue, 25 Aug 2015 11:46:24 GMT
-	< X-Varnish: 968761284
-	X-Varnish: 968761284
-	< Age: 0
-	Age: 0
-	< Via: 1.1 varnish
-	Via: 1.1 varnish
-	< Connection: keep-alive
-	Connection: keep-alive
-
-Important headers:
-
-	Via: 1.1 varnish
-	X-Magento-Cache-Debug: HIT
-	X-Varnish: 968761284
 
 <h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>
 To configure Magento to use Varnish:
