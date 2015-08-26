@@ -2,8 +2,8 @@
 layout: default
 group: install_cli 
 subgroup: T_Command-line installation
-title: Back up the file system, media, and database
-menu_title: Back up the file system, media, and database
+title: Back up and roll back the file system, media, and database
+menu_title: Back up and roll back the file system, media, and database
 menu_node: 
 menu_order: 100
 github_link: install-gde/install/install-cli-backup.md
@@ -19,7 +19,8 @@ See one of the following sections:
 
 *	<a href="#instgde-cli-uninst-back-over">Overview of backup</a>
 *	<a href="#instgde-cli-before">First steps</a>
-*	<a href="#instgde-cli-uninst-back">Backing up</a>
+*	<a href="#instgde-cli-uninst-back">Back up</a>
+*	<a href="#instgde-cli-uninst-roll">Roll back</a>
 
 <h2 id="instgde-cli-uninst-back-over">Overview of backup</h2>
 This command enables you to back up:
@@ -29,6 +30,8 @@ This command enables you to back up:
 *	The Magento 2 database
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
+
+After backing up, you can <a href="#instgde-cli-uninst-roll">roll back</a> at a later time.
 
 <h2 id="instgde-cli-before">First steps</h2>
 {% include install/first-steps-cli.html %}
@@ -94,7 +97,28 @@ Messages similar to the following display:
 	[SUCCESS]: DB backup completed successfully.
 	Disabling maintenance mode
 
+<h2 id="instgde-cli-uninst-roll">Roll back</h2>
+This section discusses how to roll back to a backup you made previously. You must know the file name of the backup file to restore.
 
+To find the name of your backups, enter:
+
+	ls <your Magento install dir>/var/backups
+
+The first string in the backup file name is the timestamp.
+
+To roll back to a previous backup, enter:
+
+	magento setup:rollback [-c|--code-file="<name>"] [-m|--media-file="<name>"] [-d|--db-file="<name>"]
+
+For example, to restore a media backup named `1440611839_filesystem_media.tgz`, enter
+
+	magento setup:rollback -m 1440611839_filesystem_media.tgz
+
+Messages similar to the following display:
+
+	[SUCCESS]: Media rollback completed successfully.
+	Please set file permission of bin/magento to executable
+	Disabling maintenance mode
 
 #### Related topics
 
