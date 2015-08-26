@@ -16,9 +16,9 @@ POST, PUT, and DELETE requests to the REST Web API require the service method pa
 For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the URL of the GET request. The basic pattern for specifying the criteria is 
 
 {% highlight html %}
-`searchCriteria[filter_groups][<index>][filters][<index>][field=<field_name>]`
-`searchCriteria[filter_groups][<index>][filters][<index>][value=<search_value>]`
-`searchCriteria[filter_groups][<index>][filters][<index>][condition_type=<operator>]`
+searchCriteria[filter_groups][<index>][filters][<index>][field=<field_name>]
+searchCriteria[filter_groups][<index>][filters][<index>][value=<search_value>]
+searchCriteria[filter_groups][<index>][filters][<index>][condition_type=<operator>]
 {% endhighlight %}
 
 `condition_type` is optional if the operator is `eq` (equals).
@@ -27,18 +27,16 @@ For example, the following query finds all users whose first name starts with "J
 
 {% highlight html %}
 
-`GET http://<magento_host>/rest/V1/customers/search?`
-
-`searchCriteria[filterGroups][0][filters][0][field]=firstname&`
-`searchCriteria[filterGroups][0][filters][0][value]=Jo%25&`
-`searchCriteria[filterGroups][0][filters][0][condition_type]=like`
+GET http://<magento_host>/rest/V1/customers/search?
+searchCriteria[filterGroups][0][filters][0][field]=firstname&
+searchCriteria[filterGroups][0][filters][0][value]=Jo%25&
+searchCriteria[filterGroups][0][filters][0][condition_type]=like
 
 {% endhighlight %}
 
-The system creates an array :
+The system creates an array, as shown in the following pseudo-code.
 
-{% highlight PHP %}
-<?php
+<code>
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -50,24 +48,23 @@ searchCriteria => [
          ]
       ]
     ]
-  ] ?>
-{% endhighlight %}
+  ] 
+</code>
 
 This example searches for products whose attributes are `size=Large` and `color=Red`.
 
 {% highlight html %}
 
-`GET http://<magento_host>/rest/V1/products?`
-`searchCriteria[filter_groups][0][filters][0][field]=size&`
-`searchCriteria[filter_groups][0][filters][0][value]=Large&`
-`searchCriteria[filter_groups][0][filters][0][condition_type]=eq&`
-`searchCriteria[filter_groups][0][filters][1][field]=color&`
-`searchCriteria[filter_groups][0][filters][1][value]=Red&`
-`searchCriteria[filter_groups][0][filters][1][condition_type]=eq`
+GET http://<magento_host>/rest/V1/products?`
+searchCriteria[filter_groups][0][filters][0][field]=size&
+searchCriteria[filter_groups][0][filters][0][value]=Large&
+searchCriteria[filter_groups][0][filters][0][condition_type]=eq&
+searchCriteria[filter_groups][0][filters][1][field]=color&
+searchCriteria[filter_groups][0][filters][1][value]=Red&
+searchCriteria[filter_groups][0][filters][1][condition_type]=eq
 {% endhighlight %}
 
-{% highlight PHP %}
-<?php
+<code>
 searchCriteria => [
   'filterGroups' => [
     0 => [
@@ -84,5 +81,5 @@ searchCriteria => [
          ]
       ]
     ]
-  ] ?>
-{% endhighlight %}
+  ] 
+</code>
