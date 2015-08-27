@@ -600,7 +600,9 @@ All column filters are declared as children to the filter component.</p>
 
 <h3 id="treemass">UI Library TreeMassAction Component</h3>
 
-<p>TreeMassAction Component is extension to MassAction component that provides nested sub-menu.</p>
+<p>TreeMassAction Component is extension to MassAction component that provides nested sub-menu. </p>
+
+<p>The TreeMassAction JS component is used by the TwoStepMassAction component.</p>
 
 <h4 id="php-implementation-of-treemassaction">PHP Implementation of TreeMassAction</h4>
 
@@ -687,7 +689,7 @@ All column filters are declared as children to the filter component.</p>
 <p>The following options are available:</p>
 
 <ul>
-  <li>noItemsMsg - message which will be show if user tries to apply action without any selected items</li>
+  <li>noItemsMsg - message which will be shown if user tries to apply action without any selected items</li>
   <li>selectProvider - option which defines the component with selections data</li>
   <li>actions - array which contains initially available actions</li>
 </ul>
@@ -1144,15 +1146,24 @@ The Listing component can use the Inline Edit if it is configured and enabled.</
         <p>bulkConfig - in current implementation on cms_pages, includes Bulk Edit component as a plugin</p>
       </li>
       <li>
-        <p>clientConfig - is responsible for editor communication with backend</p>
-      </li>
-      <li>
-        <p>viewConfig - is responsible for editor UI</p>
-      </li>
-      <li>
-        <p>templates - the templates for child components, example will be provided below and marked as *.</p>
+        <p>clientConfig - is responsible for editor communication with backend. Contains nodes with url’s where requests for storing and validating data are sent:</p>
       </li>
     </ul>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;clientConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;saveUrl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>cms/page/inlineEdit<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validateUrl&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>/path/to<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;validateBeforeSave&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/item&gt;</span></code></pre></div>
+
+<ul>
+  <li>
+    <p>viewConfig - is responsible for editor UI</p>
+  </li>
+  <li>
+    <p>templates - the templates for child components, example will be provided below and marked as *.</p>
   </li>
 </ul>
 
@@ -1708,6 +1719,7 @@ storageConfig: {
         <span class="nt">&lt;/argument&gt;</span>
     <span class="nt">&lt;/bookmark&gt;</span>
 <span class="nt">&lt;/components&gt;</span></code></pre></div>
+
 
 
 		</div>
