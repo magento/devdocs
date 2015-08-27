@@ -178,9 +178,9 @@
 
 <p>The following sections provide additional details about each of these criteria: </p>
 
-<h3>Functional Backwards Compatibility</h3>
+<h3>Functional Backward Compatibility</h3>
 
-<p>Existing product features and functionality must be retained during any changes to the code. If backwards incompatible functional changes are made, the documentation should explain the justification and provide the “business value”. </p>
+<p>Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the “business value”. </p>
 
 <p>For more information, see <a href="/guides/v2.0/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</p>
 
@@ -203,9 +203,9 @@
 <th><u>Became in Magento 2.x</u></th>
 </tr>
 <tr>
-<th>description</th>
-<th>example</th>	
-<th>example</th>
+<td>description</td>
+<td>example</td>	
+<td>example</td>
 </tr>
 </table>
 
@@ -230,10 +230,11 @@ Added/updated functionality should be covered by a functional autotest(s) relate
   <li>modified legacy code:</li>
 </ul>
 
-<p>New and modified code MUST BE covered if it changes the system’s behaviour, and MAY BE covered if it does not change system’s behaviour (class/method renamed, class moved, other minor changes)</p>
+<p>New and modified code MUST BE covered if it changes the system’s behavior, and MAY BE covered if it does not change system’s behavior (class/method renamed, class moved, other minor changes)</p>
 
-<p>In cases where it is impossible to cover – replace with integration tests
-It is not necessary to cover classes created by auto-generation and methods that don’t have any business logic.</p>
+<p>In cases where it is impossible to cover, replace with integration tests.</p>
+
+<p>It is not necessary to cover classes created by auto-generation and methods that don’t have any business logic.</p>
 
 <h5>Integration Tests</h5>
 
@@ -242,9 +243,14 @@ It is not necessary to cover classes created by auto-generation and methods that
 <ul>
   <li>Must cover code that interacts with operating system environment, database or any other 3rd-party system directly</li>
   <li>Must cover code in “Model” layer that interacts with database indirectly</li>
-  <li>Must be used as alternative of unit tests in legacy code in the following cases:
-** If it is impossible to cover due to high code coupling
-** If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification</li>
+  <li>
+    <p>Must be used as alternative of unit tests in legacy code in the following cases:</p>
+
+    <ul>
+      <li>If it is impossible to cover due to high code coupling</li>
+      <li>If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification</li>
+    </ul>
+  </li>
 </ul>
 
 <h5>Integrity Tests</h5>
@@ -252,7 +258,7 @@ It is not necessary to cover classes created by auto-generation and methods that
 <p>Code to cover: </p>
 
 <ul>
-  <li>must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.</li>
+  <li>Must cover any code which introduces convention in scope of a particular implementation, violation of which would lead to runtime error.</li>
 </ul>
 
 <p>Expected code coverage: must cover all files applicable to this convention.</p>
@@ -264,8 +270,11 @@ Scan for declarations of templates and invoke “fallback” mechanism to ensure
 
 <p><strong>Static Code Analysis</strong></p>
 
-<p>Code to cover: 
-* must cover all new code files (or whatever qualifies as “new”).</p>
+<p>Code to cover: </p>
+
+<ul>
+  <li>must cover all new code files (or whatever qualifies as “new”).</li>
+</ul>
 
 <p>Expected code coverage: must cover all applicable files in entire code base.</p>
 
@@ -274,7 +283,7 @@ Scan for declarations of templates and invoke “fallback” mechanism to ensure
 <p>Code to cover: </p>
 
 <ul>
-  <li>must cover any formal backwards-incompatible changes on code level. For more information, see 
+  <li>Must cover any formal backwards-incompatible changes on code level. For more information, see 
 <a href="/guides/v2.0/architecture/backward-compatibility.html">Magento’s backward compatibility policy</a>.</li>
 </ul>
 
@@ -283,8 +292,8 @@ Scan for declarations of templates and invoke “fallback” mechanism to ensure
 <p>Expected code coverage:</p>
 
 <ul>
-  <li>must cover majority of occurrences of the backwards-incompatible change</li>
-  <li>should cover 100% of occurrences</li>
+  <li>Must cover majority of occurrences of the backwards-incompatible change</li>
+  <li>Should cover 100% of occurrences</li>
 </ul>
 
 <p>Not all changes can be covered. For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.</p>
@@ -297,10 +306,10 @@ Added/updated functionality should be covered by a functional Zephyr test(s) rel
 <p>A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:</p>
 
 <ul>
-  <li>there are no unauthorized backwards incompatible functional changes </li>
-  <li>all changes are documented properly </li>
-  <li>all changes are covered with automated tests</li>
-  <li>determine if code changes caused any failure in continuous integration builds.</li>
+  <li>There are no unauthorized backward-incompatible functional changes </li>
+  <li>All changes are documented properly </li>
+  <li>All changes are covered with automated tests</li>
+  <li>Determine if code changes caused any failure in continuous integration builds.</li>
 </ul>
 
 <p>The work cannot be considered as complete unless all the criteria are verified.</p>
@@ -361,6 +370,10 @@ Added/updated functionality should be covered by a functional Zephyr test(s) rel
 								
 							
 								
+								
+							
+									<li class="level-2  active "><a href="/guides/v2.0/contributor-guide/contributing_dod.html">Magento Definition of Done</a></li>
+						
 								
 								
 								
