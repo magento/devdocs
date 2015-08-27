@@ -27,7 +27,7 @@ Important headers:
 	X-Magento-Cache-Debug: MISS
 
 <div class="bs-callout bs-callout-info" id="info">
-	<p>This is also an acceptable verification: <code>X-Magento-Cache-Debug: HIT</code>.</p>
+	<p>This value is also acceptable: <code>X-Magento-Cache-Debug: HIT</code></p>
 </div>
 
 <h3 id="config-varnish-final-response">Check page load times</h3>
@@ -54,7 +54,7 @@ For example, to use the Chrome inspector:
 	You can view HTTP headers which are discussed in more detail in <a href="#config-varnish-final-verify-headers">Verify HTTP response headers</a>.
 
 <h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
-The final step to make sure Varnish is working properly is to make sure the `<your Magento install dir>/var/page_cache` directory is empty even after you access several Magento pages.
+The final step to make sure Varnish is working properly is to make sure the `<your Magento install dir>/var/page_cache` directory is empty even after you access several cacheable Magento pages.
 
 If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
 

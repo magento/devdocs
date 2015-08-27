@@ -33,7 +33,7 @@ To configure Magento to use Varnish:
 	</tr>	
 	<tr>
 		<td>Backend host</td>
-		<td><p>Enter the fully qualified host name or IP address and listen port of the Varnish <code>backend</code> or <code>origin server</code>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
+		<td><p>Enter the fully qualified host name or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
 		<p><a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a></p></td>
 	</tr>
 	<tr>

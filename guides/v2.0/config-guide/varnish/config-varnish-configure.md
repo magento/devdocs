@@ -23,13 +23,13 @@ The following sections discuss how to configure your web server and Magento to u
 <h2 id="config-varnish-config-web">Configure your web server</h2>
 Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server. 
 
-In the sections that follow, use use port 8080 as an example.
+In the sections that follow, we use port 8080 as an example.
 
 To change the Apache 2.2 listen port:
 
 1.	Open `/etc/httpd/conf/httpd.conf` in a text editor.
 2.	Locate the `Listen` directive.
-3.	Change the value of the listen port to `8080`. (You can use any value you want.)
+3.	Change the value of the listen port to `8080`. (You can use any available listen port.)
 4.	Save your changes to `httpd.conf` and exit the text editor.
 
 <h2 id="config-varnish-config-sysvcl">Modify the Varnish system configuration</h2>
@@ -60,7 +60,7 @@ To modify the Varnish system configuration:
 4.	Save your changes to `/etc/sysconfig/varnish` and exit the text editor.
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
-This section discusses how to provide minimal configuration so Varnish caches pages and you can verify it works before you configure Magento to use it.
+This section discusses how to provide minimal configuration so Varnish caches Magento pages. You can then verify Varnish works before you configure Magento to use Varnish.
 
 To minimally configure Varnish:
 
@@ -72,8 +72,8 @@ To minimally configure Varnish:
 3.	Locate the following stanza:
 
 		backend default {
-  			.host = "127.0.0.1";
-  			.port = "80";
+	      .host = "127.0.0.1";
+	      .port = "80";
 		}
 
 4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. 
@@ -84,8 +84,8 @@ To minimally configure Varnish:
 	Example: Varnish and Apache are both installed on host 192.0.2.55 and Apache is listening on port 8080:
 
 		backend default {
-  			.host = "192.0.2.55"; 
-  			.port = "8080";
+	      .host = "192.0.2.55"; 
+	      .port = "8080";
 		}		
 		
 7.	Save your changes to `default.vcl` and exit the text editor.
@@ -104,8 +104,6 @@ This should display error messages.
 
 <h2 id="config-varnish-verify">Verify Varnish is working</h2>
 The following sections discuss how you can verify that Varnish is working but *without* configuring Magento to use it. You should try this before you configure Magento.
-
-You must perform these tasks as a user with `root` privileges to the machine on which Varnish is installed.
 
 Perform the tasks discussed in the following sections in the order shown:
 
@@ -145,7 +143,7 @@ Look for the following output in particualr:
 	tcp        0      0 :::8080                     :::*                        LISTEN      26822/httpd
 	tcp        0      0 ::1:48509                   :::*                        LISTEN      32604/varnishd
 
-The preceding show Varnish running on port 80 and Apache running on port 8080.
+The preceding shows Varnish running on port 80 and Apache running on port 8080.
 
 If you don't see output for `varnishd`, make sure Varnish is running.
 
@@ -194,9 +192,9 @@ A long list of response headers display. Look for headers like the following:
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
-There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers, or a browser's developer mode.
+There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers, or a browser inspector.
 
-The following example uses `curl`. You don't have to log in to the Magento server to run this command.
+The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 
 	curl -I -v --location-trusted '<your Magento base URL>'
 
