@@ -136,7 +136,7 @@ Log in to the Varnish server and enter the following command:
 
 	netstat -tulpn
 
-Look for the following output in particualr:
+Look for the following output in particular:
 
 	tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      32614/varnishd
 	tcp        0      0 127.0.0.1:58484             0.0.0.0:*                   LISTEN      32604/varnishd
@@ -150,7 +150,7 @@ If you don't see output for `varnishd`, make sure Varnish is running.
 <a href="http://tldp.org/LDP/nag2/x-087-2-iface.netstat.html" target="_blank">More information about netstat options</a>
 
 <h2 id="config-varnish-install">Install the Magento 2 software</h2>
-Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use port 80 (for Varnish) rathern than port 8080 (for Apache) because Varnish receives all incoming HTTP requests.
+Install the Magento 2 software if you haven't already done so. When prompted for a Base URL, use port 80 (for Varnish) rather than port 8080 (for Apache) because Varnish receives all incoming HTTP requests.
 
 <h2 id="config-varnish-verify-headers">HTTP response headers</h2>
 Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
