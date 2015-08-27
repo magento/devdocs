@@ -16,13 +16,23 @@ After you have built the module and are ready to enable it in your Magento envir
     bin/magento module:enable --clear-static-content Module_Name
     bin/magento setup:upgrade
 
-
+where `Module_Name` is the name of the module you are enabling.
 
 The general order of operation for the `setup:upgrade` operation is:
 
-42. __Schema creation/updates__.
-42. __Schema installation__.
-42. __Schema post-updates__ &#8212; handles any additional updates if installation of subsequent modules makes that necessary.
-42. __Data install/update__ &#8212; installs the data. Taken from `setup/InstallData.php`.
+42. __Schema install/upgrade__.
+42. __Schema post-upgrade__ &#8212; handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.
+42. __Data install/upgrade__ &#8212; installs the data. Taken from `setup/InstallData.php`.
+
+
+
+##Disable a module
+
+To disable a module, enter the following at the command line:
+
+    bin/magento module:disable --clear-static-content Module_Name
+
+
+For more on enabling and disabling modules, see [enable or disable modules]({{ site.gdeurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
 
 
