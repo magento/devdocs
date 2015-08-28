@@ -61,8 +61,7 @@ A module declares itself (i.e. defines its name and existence) in the `module.xm
 Minimal declaration sample:
 
 	<config>
-       <module name="Vendor_ModuleName" setup_version="2.0.0">
-       </module>
+       <module name="Vendor_ModuleName" setup_version="2.0.0"/>
 	</config>
 
 <div class="bs-callout bs-callout-info" id="info">
