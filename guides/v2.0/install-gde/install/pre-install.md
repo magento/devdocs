@@ -18,7 +18,7 @@ redirect_from: /guides/v1.0/install-gde/install/pre-install.html
 <h2 id="install-overview-all">Overview of installing, managing, and upgrading Magento</h2>
 The Magento software enables you to install, manage, and upgrade the core software itself and any *component* you installed. A component can be:
 
-*	An extension (code that modifies or enhances Magento behavior in some way)
+*	An module (code that extends the Magento application in some way)
 *	A language package (used to localize your Admin or storefront)
 *	A theme (used to change the look of your Admin or storefront)
 
@@ -28,10 +28,10 @@ You can think of it as a three-step process&mdash;where steps 2 and 3 are interc
 2.	Install, uninstall, update, enable, or disable any component (<em>available soon</em>)
 3.	Upgrade the Magento software or components to a newer version (<em>available soon</em>)
 
-<!-- This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
+This guide discusses installation. After you install Magento, you can manage components and upgrade as discussed in the following guides:
 
-*	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-guide.html">Component Manager Guide</a>
-*	<a href="{{ site.gdeurl }}upgrade/bk-upgrade-guide.html">Upgrade Guide</a> -->
+*	<a href="{{ site.gdeurl }}comp-mgr/bk-compman-upgrade-guide.html">Component Manager Guide</a>
+*	<a href="{{ site.gdeurl }}comp-mgr/upgrader/upgrade-start.html">Upgrade Guide</a>
 
 <h2 id="install-overview-audience">Identify yourself and get started</h2>
 Before you start your installation, take a moment to figure out which type of user you are. It's important because the installation procedure is very different for each type:
@@ -80,9 +80,9 @@ Before you start your installation, take a moment to figure out which type of us
 	</tbody>
 </table>
 
-<!-- #### Related topics
+#### Related topics
 After you finish installing the Magento software, you can:
 
 *	<a href="{{ site.gdeurl" }}comp-mgr/bk-compman-guide.html">Manage components</a>
-*	<a href="{{ site.gdeurl }}upgrade/bk-upgrade-guide.html">Upgrade</a> -->
+*	<a href="{{ site.gdeurl }}upgrade/bk-upgrade-guide.html">Upgrade</a>
 

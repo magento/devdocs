@@ -54,7 +54,7 @@ Minimal declaration sample:
 php -f bin/magento module:enable Vendor_ModuleName 
 # Update the database
 php -f bin/magento setup:upgrade</code></pre>
-<p>For more information, see <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
+<p>For more information, see <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.</p>
 </div>
 
 
@@ -70,7 +70,7 @@ For 'How To' topics such as instructions for adding modules, extending modules, 
 * <a href="{{ site.gdeurl }}architecture/modules/mod_depend.html">Module dependencies</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_relationships.html">Module relationships</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_and_areas.html">Modules and areas</a>
-* <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
+* <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">Module enable, disable</a>
 * <a href="{{ site.gdeurl }}architecture/modules/mod_conventions.html">Module location and naming conventions</a>
 * <a href="{{ site.gdeurl }}architecture/arch_libraries.html">Libraries</a>
 * <a href="{{ site.gdeurl }}architecture/arch_themes.html">Themes</a>

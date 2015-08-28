@@ -105,7 +105,7 @@ See <a href="{{ site.gdeurl }}/install-gde/install/sample-data.html">Enable opti
 
 <h2 id="admin">Improvements to the Magento Admin and Setup Wizard</h2>
 *	You can enable or disable modules when you install the Magento 2 software using either the <a href="{{ site.gdeurl }}install-gde/install/install-web.html#instgde-install-magento-web-step4
-">Setup Wizard</a> or <a href="{{ site.gdeurl }}install-gde/install/install-cli-subcommands-enable.html">command line</a>.
+">Setup Wizard</a> or <a href="{{ site.gdeurl }}install-gde/install/cli/install-cli-subcommands-enable.html">command line</a>.
 *    Compressed and resized images
 *    Added new base styles for the Admin re-design
 *    Added WAI-ARIA attributes are to the Search Autocomplete on the storefront
