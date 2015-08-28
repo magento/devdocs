@@ -1,3 +1,15 @@
+/* allow images/media to gracefully resize according to their enclosing tag */
+
+img, 
+embed,
+object,
+video  {
+    max-width: 100%;    
+} 
+
+
+
+
 /* SRJ - code/pre overrides so text and background colors match */
 
 pre {
@@ -88,7 +100,8 @@ p.q 	{
 /* TDD- Add permanent left-hand margin*/
 
 .content {
-    width: 75%;
+    width: 69%;
+    padding-right: 7%
 }
 
 
