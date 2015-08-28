@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Multi-tenant compiler</title>
+	<title>Set the Magento mode</title>
 	<meta name="description" content="Magento 2 Developer's Guide">
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/common/css/override.css" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">
 
 
 
@@ -154,9 +154,9 @@
 <!-- page-header -->
 <section class="page-intro">
 	<div class="container">
-		<h1 class="page-heading">Multi-tenant compiler</h1>
+		<h1 class="page-heading">Set the Magento mode</h1>
 			
-			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.md" target="_blank">Edit this page on GitHub</a>
+			<a class="improve-page" href="http://github.com/magento/devdocs/blob/develop/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.md" target="_blank">Edit this page on GitHub</a>
 		
 	</div>
 </section>
@@ -166,205 +166,244 @@
 		<div class="content-wrap">
 		
 		<h4 id="contents">Contents</h4>
-
 <ul>
-  <li><a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a></li>
-  <li><a href="#config-cli-subcommands-multi">Overview of the multi-tenant compiler</a></li>
-  <li><a href="#config-cli-before">First steps</a></li>
-  <li><a href="#config-cli-subcommands-run">Run the multi-tenant compiler</a></li>
+  <li><a href="#config-mode-over">Overview of setting Magento modes</a></li>
+  <li><a href="#config-mode-show">Display the current mode</a></li>
+  <li><a href="#config-mode">Change modes</a></li>
 </ul>
 
-<h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
-<p>This section discusses the basics of code compilation.</p>
-<p>Code compilation consists of all of the following in no particular order:</p>
-<ul><li>Application code generation (factories, proxies, and so on)</li>
-<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
-<li>Interceptor generation (that is, optimized code generation of interceptors)</li>
-<li>Interception cache generation</li>
-<li>Repositories code generation (that is, generated code for APIs)</li>
-<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="https://github.com/magento/magento2/blob/develop/setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p>
+<h2 id="config-mode-over">Overview of setting Magento modes</h2>
+<p>To improve security and ease-of-use, we added a command that switches <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Magento modes</a> from developer to production and vice versa. When doing so, we set file permissions and ownership appropriately.</p>
 
-<h3>Why generate code?</h3>
-<p>In brief, you can generate code to create non-existent classes. As an example, look at the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/Resource/AddressRepository.php" target="_blank">\Magento\Customer\Model\Resource\AddressRepository</a> constructor. A snippet follows:</p>
+<p>Production mode also has better performance because static view files are populated in the <code>pub/static</code> directory and because of code compilation.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="o">...</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
-        <span class="nx">\Magento\Customer\Model\AddressFactory</span> <span class="nv">$addressFactory</span><span class="p">,</span>
-<span class="o">...</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
-
-<p>The first constructor parameter has a type of <code>\Magento\Customer\Model\AddressFactory</code>. However, this class does not exist in <code>\Magento\Customer\Model</code> in the Magento 2 GitHub. The Magento application <em>generates</em> this class as because its name uses a recognized convention (in this case, because the name ends with <code>Factory</code>).</p>
-<p>Unlike some other languages or libraries, you can look at the generated code on the file system to see what really happens and still debug through the code.</p>
-
-<h4>When is code generated?</h4>
-<p>Provided the Magento application is <em>not</em> set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>, code is generated when the Magento application cannot find a class when executing code.</p>
-<p>You can also use the compiler discussed in this topic to generate code at any time.</p>
-
-<h4>Proxies and factories</h4>
-<ul><li>A <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-mod-type-fact">Factory</a> class creates instances of a type; for example, a generated <code>\Magento\Customer\Model\AddressFactory</code> creates new instances of <code>\Magento\Customer\Model\Address</code>. The code in <code>AddressFactory</code> has some specific code for the <code>Address</code> type.</li>
-<li>In more complex code generation, you can designate a <a href="/guides/v2.0/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">Proxy</a> to be generated for a type.<br />
- Generally, a proxy must have an implementation of all the declared public methods of the original class.
-The method implementation could be delegating to another object in memory, or the method could make a network call to another object on a different machine. All the Proxy methods in a class usually do the same thing (for example, they all delegate to another object or they all make a network call) except they need a slight difference to call a specific method.<br />
-As a practical example, you can see the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Model/StoreManager.php" target="_blank">StoreManager</a> class and then see the generated StoreManager Proxy class.</li></ul>
-
-<h4>Why should you regenerate code?</h4>
-<p>Suppose a Customer or Proxy class for a Customer class is generated. The Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it will not be re-generated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.</p>
-<p>Rarely, if the code generator implementation itself is changed, you must regenerate all the classes.</p>
-
-<h3>Advantages of generating code</h3>
-<p>Generating code assures you of the following:</p>
-
-<ul><li>The code is correct.<br />
-You won’t have to worry that the generated code is delegating to the wrong method or forgetting a semicolon. You don’t have to write tests for the generated code. </li>
-<li>Code generation writes the boilerplate code to enable you to write the more challenging and interesting code.</li>
-    <li>Consistency in implementation. <br />
-    All generated Factories work the same way. After you learn know how one Factory works, you should know how they all work.</li>
-    <li>You can change the implementation for all generated code. <br />
-    If you discover a better way of implementing a Proxy, you can do it across the board. If you want the code generator to use a PHP <code>__call</code> magic method or if you want to real methods, you only need to change the generator. Code maintenance is reduced.</li></ul>
-
-<h2 id="config-cli-subcommands-multi">Overview of the multi-tenant compiler</h2>
-<p>Use this command if you have multiple <em>tenants</em>, which means more than one independent Magento application. In other words:</p>
+<p>Developer mode uses a less restrictive set of permissions than does production mode for the following reasons:</p>
 
 <ul>
-  <li>There is one Magento 2 code base instance</li>
-  <li>There is one database instance per tenant</li>
-  <li>Independent configurations in the Magneto Admin per tenant</li>
-  <li>The storefronts are independent of each other</li>
+  <li><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-developer">Developer mode</a> is intended for internal development on a system already secured behind a firewall; also, the system doesn’t need to handle internet traffic</li>
+  <li>
+    <p><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">Production mode</a> servers handle internet traffic, process payments, and so on</p>
+
+    <p>As the name implies, you change to production mode before you deploy your Magento storefront to production and start taking orders.</p>
+  </li>
 </ul>
 
-<p>If you do not have multiple tenants, use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">single-tenant compiler</a> instead.</p>
-
-<p>This command generates the following:</p>
-<ul><li>Non-existent classes such as factories declared in the code under <code>app/code</code>.</li>
-<li>Interceptors for classes that have plug-ins declared in declared in <code>di.xml</code>.</li>
-<li>The <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a> configuration for the object manager.</li></ul>
-<p>Generated code and the dependency injection configuration is written to the <code>&lt;your Magento install dir&gt;/var/generation</code> and <code>&lt;your Magento install dir&gt;/var/di</code> directories, respectively.</p>
-<p>If <code>&lt;your Magento install dir&gt;/var/di/definitions.php</code> exists, it is used by <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Compiled.php" target="_blank">Magento\Framework\ObjectManager\Definition\Compiled</a>; otherwise, the much slower <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/ObjectManager/Definition/Runtime.php" target="_blank">Magento\Framework\ObjectManager\Definition\Runtime</a> is used. (This class uses the reflection-based the definition builder.) </p>
-<p>Runtime definition compilation is fine in a development environment but you should use the compiler in a production environment.</p>
-
-<!-- The multi-tenant compiler does the following:
-
-*	Generates factories declared in `<your Magento install dir>/app/code`
-*	Generates proxies declared in `di.xml` files
-*	Generates interceptors for all classes that have plug-ins declared in the `di.xml` configuration
-*	Automatically compiles definitions for all modules and `<your Magento install dir>/lib/internal/Magento` directories.
-*	Compiles class inheritance implementation relations to increase performance of configuration inheritance
-*	Compiles plug-in definitions (that is, the list of declared public methods)
-
-<div class="bs-callout bs-callout-warning">
-    <p>The multi-tenant compiler does not analyze usage of auto-generated factory classes in files that are located in the <code>lib/internal/Magento</code> directory structure because use of auto-generated factory classes on the library level is prohibited. If you need to use a factory on the library level, please generate the class manually.</p>
-</div>
-
-### Tips
-
-*	The only place where you can declare proxy is `di.xml`. It's better to use a type for virtualType or as an instance of the type parameter.
-*	The only place where factory classes can be declared is in a `__construct` of PHP classes located under `app/code`.
-
-### Naming rules
-Naming Rules for auto-generated classes for a module:
-
-*	Proxy classes: `VendorName\ModuleName\ModelName\Proxy`
-*	Factory classes: `VendorName\ModuleName\ModelName\NameFactory`
-
-<div class="bs-callout bs-callout-warning">
-    <p>Failure to follow the preceding naming convention results in exceptions.</p>
-</div> -->
-
-<h2 id="config-cli-before">First steps</h2>
-<ol><li>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.0/install-gde/install/prepare-install.html#install-update-depend-apache">switch to</a> the web server user.</li>
-<li>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.<br />
-Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.<br />
-bash shell example for CentOS:<br />
-<pre>export PATH=$PATH:/var/www/html/magento2/bin</pre></li></ol>
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.0/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+  <p>Unlike other Magento modes, developer and production modes are set in <code>env.php</code>.</p></span>
 </div>
 
-<p>In addition to the command arguments discussed here, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.</p>
+<p>When you change modes, we do the following:</p>
 
-<h2 id="config-cli-subcommands-run">Run the multi-tenant compiler</h2>
-<p>Command options:</p>
+<ul>
+  <li>Change to production mode: Clear directories and set permissions on files and directories</li>
+  <li>
+    <p>Change to developer mode: Clear directories only; we don’t set specific permissions on files.</p>
 
-<pre><code>magento setup:di:compile-multi-tenant [--serializer="{serialize|igbinary}"] [--extra-classes-file="&lt;path&gt;"] [--generation="&lt;path and 
-filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&gt;"]
+    <p>When you generate classes or generate static files, they have 777 (world-writeable permissions) and are owned by the user who runs this command.</p>
+  </li>
+</ul>
+
+<h3 id="config-mode-over-clear">Cleared directories</h3>
+<p>We clear the the contents of following directories when you change modes:</p>
+
+<pre><code>var/cache
+var/di
+var/generation
+var/view_preprocessed
+pub/static
 </code></pre>
 
-<p>The following table discusses the meanings of this command’s parameters and values. </p>
+<p>Exceptions:</p>
 
-<table>
-	<col width="25%" />
-	<col width="65%" />
-	<col width="10%" />
+<ul>
+  <li><code>.htaccess</code> files are not removed</li>
+  <li>A file that specifies the version of static content is not removed from <code>pub/static</code></li>
+</ul>
+
+<h3 id="config-mode-over-dirs">Permissions and ownership for production mode</h3>
+<p>Changing modes affects permissions and ownership the following subdirectories in your Magento installation:</p>
+
+<pre><code>var/view_preprocessed
+var/generation
+var/di
+</code></pre>
+
+<h4 id="config-mode-over-dirs-perm">Permissions for production mode</h4>
+<p>When you change to production mode, we set the following permissions on these directories and subdirectories:</p>
+
+<ul>
+  <li>Directories: 750</li>
+  <li>Files: 640</li>
+</ul>
+
+<!-- <table style="width:350px">
 	<tbody>
 		<tr>
-			<th>Parameter</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-		
-	<tr>
-		<td><p>--serializer</p></td>
-		<td><p>Specify either <code>serialize</code> or <a href="https://github.com/phadej/igbinary" target="_blank">igbinary</a>. Default is <code>serialize</code>.</p></td>
-		<td><p>No</p></td>
+			<td />
+		<td>Developer</td>
+		<td>Production</td>
 	</tr>
 	<tr>
-		<td><p>--extra-classes-file</p></td>
-		<td><p>Specify the absolute file system path to proxies and factories that are not declared in the dependency injection or code..</p></td>
-		<td><p>No</p></td>
+		<td>File</td>
+		<td>660</td>
+		<td>640</td>
 	</tr>
 	<tr>
-		<td><p>--generation</p></td>
-		<td><p>Absolute file system path to a directory for generated classes. Default is <code>&lt;your Magento install dir&gt;/var/generation</code></p></td>
-		<td><p>No</p></td>
+		<td>Directory</td>
+		<td>770</td>
+		<td>750</td>
 	</tr>
-	<tr>
-		<td><p>--di</p></td>
-		<td><p>Absolute file system path to a directory to generate the object manager configuration. Default is <code>&lt;your Magento install dir&gt;/var/di</code></p></td>
-		<td><p>No</p></td>
-	</tr>
-	<tr>
-		<td><p>--exclude-pattern</p></td>
-		<td><p>Regular expression that enables you to exclude paths from compilation. Default is <code>#[\\/]m1[\\/]#i)</code></p></td>
-		<td><p>No</p></td>
-	</tr>
-	
-	</tbody>
-</table>
+</tbody>
+</table> -->
 
-<p>For example, to run the compiler and specify the <code>igbinary</code> serializer:</p>
+<!-- 660 permissions give read-write permissions to the owner and group and no permissions to anyone else.
+ -->
+<!-- 640 permissions give read-write permissions to the owner, read-only to the group, and no permissions to anybody else.
 
-<pre><code>magento setup:di:compile-multi-tenant --serializer=igbinary
+770 permissions give full control (read, write, execute) to the owner and group and no permissions to anyone else. -->
+
+<p>750 permissions give full control to the owner, read and execute permissions to the group, and no permissions to anyone else.</p>
+
+<p>For more information about UNIX permissions, see:</p>
+
+<ul>
+  <li><a href="http://www.statslab.cam.ac.uk/~eva/unixinfo/perms.html" target="_blank">UNIX File Permissions</a></li>
+  <li><a href="http://permissions-calculator.org/" target="_blank">Unix Permissions Calculator</a></li>
+  <li><a href="http://unix.stackexchange.com/questions/39710/how-to-get-permission-number-by-string-rw-r-r" target="_blank">Article on unix.stackexchange</a></li>
+</ul>
+
+<h4 id="config-mode-over-dirs-own">Ownership for production mode</h4>
+<p>We recommend the following:</p>
+
+<ul>
+  <li>
+    <p>The directories and files in the Magento file system should be <em>owned</em> by a user other than the web server user but must be <em>writable</em> by the web server user. </p>
+
+    <p>Exceptions: <code>var/di</code>, <code>var/generation</code>, and <code>var/preprocessed</code></p>
+  </li>
+  <li>
+    <p>The directories and files under <code>pub/static</code> should have 770 permissions, which give the owner and the group full control.</p>
+  </li>
+</ul>
+
+<p>The easiest way to do that is to run this command as a user in the same group as the web server user.</p>
+
+<p>To find the web server user’s group:</p>
+
+<ul>
+  <li>
+    <p>CentOS: <code>egrep -i '^user|^group' /etc/httpd/conf/httpd.conf</code></p>
+
+    <p>Typically, the user and group name are both <code>apache</code></p>
+  </li>
+  <li>
+    <p>Ubuntu: <code>ps aux | grep apache</code> to find the apache user, then <code>groups &lt;apache user&gt;</code> to find the group</p>
+
+    <p>Typically, the user name and the group name are both <code>www-data</code></p>
+  </li>
+</ul>
+
+<p>To add a user to the web server’s group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
+
+<ul>
+  <li>CentOS: <code>usermod -a -G apache &lt;username&gt;</code></li>
+  <li>Ubuntu: <code>useradd -G www-data &lt;username&gt;</code></li>
+</ul>
+
+<p>For example, to add the user <code>deborah</code> to the <code>apache</code> group on CentOS:</p>
+
+<pre><code>usermod -a -G apache deborah
 </code></pre>
 
-<p>Messages similar to the following display:</p>
+<h2 id="config-mode-show">Display the current mode</h2>
+<p>Command usage:</p>
 
-<pre><code>Generated classes:
-    Magento\Rss\Controller\Adminhtml\Feed\Interceptor
-    Magento\Quote\Model\Quote\Config\Interceptor
-    Magento\Checkout\Block\Cart\Shipping\Interceptor
-    Magento\Framework\View\Layout\Interceptor
-    Magento\Integration\Service\V1\Integration\Interceptor
-    Magento\Catalog\Block\Product\Compare\ListCompare\Interceptor
-    Magento\Framework\View\TemplateEngineFactory\Interceptor
-    Magento\Catalog\Model\Product\Attribute\Backend\Price\Interceptor
-    Magento\Catalog\Api\ProductRepositoryInterface\Interceptor
-    Magento\Catalog\Model\Product\Interceptor
-    Magento\Quote\Model\Quote\Item\ToOrderItem\Interceptor
-    Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper\Interceptor
-    Magento\Catalog\Model\Product\CartConfiguration\Interceptor
-    Magento\Catalog\Model\Product\TypeTransitionManager\Interceptor
-    Magento\Catalog\Model\Product\Type\Interceptor
-    ... more messages ...
-    On *nix systems, verify the Magento application has permissions to modify files created by the compiler in the "var" directory. 
-    For instance, if you run the Magento application using Apache, the owner of the files in the "var" directory should be the Apache user 
-    (example command: "chown -R www-data:www-data &lt;MAGENTO_ROOT&gt;/var" where MAGENTO_ROOT is the Magento root directory).
+<pre><code>magento deploy:mode:show
 </code></pre>
+
+<p>A message similar to the following displays:</p>
+
+<pre><code>Current application mode: developer.
+</code></pre>
+
+<h2 id="config-mode">Change modes</h2>
+<p>Command usage:</p>
+
+<pre><code>magento deploy:mode:set {mode} [-s|--skip-compilation]
+</code></pre>
+
+<p>where </p>
+
+<p><code>{mode}</code> is required; it can be either <code>developer</code> or <code>production</code></p>
+
+<p><code>--skip-compilation</code> is an optional parameter you can use to skip <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html#config-cli-subcommands-single-overview">code compilation</a> when you change to production mode.</p>
+
+<p>Examples follow.</p>
+
+<h3 id="change-to-production-mode">Change to production mode</h3>
+
+<pre><code>magento deploy:mode:set production
+</code></pre>
+
+<p>Following is a summary of messages that display:</p>
+
+<pre><code>Enabled maintenance mode
+Requested languages: en_US
+=== frontend -&gt; Magento/luma -&gt; en_US ===
+... more ...
+Successful: 1884 files; errors: 0
+---
+
+=== frontend -&gt; Magento/blank -&gt; en_US ===
+... more ...
+Successful: 1828 files; errors: 0
+---
+
+=== adminhtml -&gt; Magento/backend -&gt; en_US ===
+... more ...
+---
+
+=== Minify templates ===
+... more ...
+Successful: 897 files modified
+---
+
+New version of deployed files: 1440461332
+Static content deployment complete Gathering css/styles-m.less sources. Successfully processed LESS and/or SASS files CSS deployment complete Generated classes:
+    Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
+    Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory
+    Magento\Sales\Api\Data\CreditmemoCommentSearchResultInterfaceFactory
+    Magento\Sales\Api\Data\CreditmemoComment\Repository
+    Magento\Sales\Api\Data\CreditmemoItemInterfacePersistor
+    ... more ...
+Compilation complete
+Disabled maintenance mode
+Enabled production mode.
+</code></pre>
+
+<h3 id="change-to-developer-mode">Change to developer mode</h3>
+<p>When you change from production to developer mode, you should clear generated classes and Object Manager entities like proxies to prevent unexpected errors. After doing so, you can change modes. Use the following steps:</p>
+
+<ol>
+  <li>
+    <p>If you’re changing from production mode to developer mode, delete the contents of the <code>var/generation</code> and <code>var/di</code> directories:</p>
+
+    <pre><code>rm -rf &lt;your Magento install dir&gt;/var/di/* &lt;your Magento install dir&gt;/var/generation/* 
+</code></pre>
+  </li>
+  <li>
+    <p>Set the mode:</p>
+
+    <pre><code>magento deploy:mode:set developer
+</code></pre>
+
+    <p>The following message displays:</p>
+
+    <pre><code>Switched to developer mode.
+</code></pre>
+  </li>
+</ol>
 
 <h4 id="related-topics">Related topics</h4>
 
@@ -373,9 +412,9 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-log.html">Clean the logs</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
-  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-less-sass.html">Create LESS from CSS</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-test.html">Run tests</a></li>
@@ -553,7 +592,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 						
 								
 							
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html">Multi-tenant compiler</a></li>
 						
 								
 							
@@ -561,7 +600,7 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
 						
 								
 							
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
 						
 								
 							
@@ -860,8 +899,8 @@ filename&gt;"] [--di="&lt;path and filename&gt;"] [--exclude-pattern="&lt;regex&
                             <input type="hidden" name="searchstr" value="" />
                             <input type="hidden" name="lpurl" value="https://info2.magento.com/lp/magentoenterprise/CustomerNewsletterSubscription.html?cr={creative}&kw={keyword}">
                             <input type="hidden" name="formid" value="1182" />
-                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html" />
-                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-multi.html" />
+                            <input type="hidden" name="returnURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html" />
+                            <input type="hidden" name="retURL" value="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html" />
                             <input type="hidden" name="_mkt_disp" value="return" />
                             <input type="hidden" name="_mkt_trk" value="" />
                         </form>

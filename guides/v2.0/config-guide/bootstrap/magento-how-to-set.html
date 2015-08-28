@@ -190,10 +190,6 @@
 		<td>Specifies custom directory and URL paths</td>
 	</tr>	
 	<tr>
-		<td><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">MAGE_MODE</a></td>
-		<td>Sets the mode (default, developer, production)</td>
-	</tr>
-	<tr>
 		<td><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
 		<td>Enables an HTML profiler</td>
 	</tr>
@@ -204,7 +200,8 @@
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Not all bootstrap parameters are documented at this time.</p></span>
+  <ul><li>Not all bootstrap parameters are documented at this time.</li>
+  	<li>You now set the Magento mode (developer, default, production) using the <a href="/guides/v2.0/config-guide/config-guide/cli/config-cli-subcommands-mode.html">magento application</a> command.</li></ul></span>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
@@ -213,16 +210,16 @@
 <h3 id="config-bootparam-mode">Set the mode using an environment variable</h3>
 <p>You can specify Magento bootstrap variables as system-wide environment variables, which enables all processes to use them.</p>
 
-<p>For example, you can use the <code>MAGE_MODE</code> system environment variable to specify a mode as follows:</p>
+<p>For example, you can use the <code>MAGE_PROFILER</code> system environment variable to specify a mode as follows:</p>
 
-<pre><code>MAGE_MODE={developer|default|production}
+<pre><code>MAGE_PROFILER={firebug|csv|&lt;custom value&gt;}
 </code></pre>
 
 <p>Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
 
 <p>bash shell example for CentOS:</p>
 
-<pre><code>export MAGE_MODE=developer
+<pre><code>export MAGE_PROFILER=firebug
 </code></pre>
 
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
@@ -257,15 +254,15 @@
 
     <p>For example, to specify a <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:</p>
 
-    <pre><code>#   SetEnv MAGE_MODE developer
+    <pre><code>#   SetEnv MAGE_PROFILER firebug
 </code></pre>
   </li>
   <li>
-    <p>Set the value of <code>MAGE_MODE</code> to any of the following:</p>
+    <p>Set the value of <code>MAGE_PROFiLER</code> to any of the following:</p>
 
-    <pre><code>developer
-default
-production
+    <pre><code>firebug
+csv
+&lt;custom value&gt;
 </code></pre>
   </li>
   <li>
@@ -309,7 +306,7 @@ production
 
     <p>For example,</p>
 
-    <pre><code>SetEnv "MAGE_MODE" "developer"
+    <pre><code>SetEnv "MAGE_PROFILER" "firebug"
 </code></pre>
   </li>
   <li>Save your changes and exit the text editor.</li>
@@ -349,7 +346,7 @@ production
 
     <p>For example,</p>
 
-    <pre><code>SetEnv "MAGE_MODE" "developer"
+    <pre><code>SetEnv "MAGE_PROFILER" "firebug"
 </code></pre>
   </li>
   <li>
@@ -368,7 +365,7 @@ production
 
 <ul>
   <li><a href="/guides/v2.0/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
-  <li><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
+  <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
   <li><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
 </ul>
 
@@ -547,6 +544,10 @@ production
 								
 							
 									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-compiler-single.html">Single-tenant compiler</a></li>
+						
+								
+							
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
 						
 								
 							
