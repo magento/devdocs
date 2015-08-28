@@ -33,10 +33,6 @@ The following table discusses the bootstrap parameters you can set:
 		<td>Specifies custom directory and URL paths</td>
 	</tr>	
 	<tr>
-		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">MAGE_MODE</a></td>
-		<td>Sets the mode (default, developer, production)</td>
-	</tr>
-	<tr>
 		<td><a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">MAGE_PROFILER</a></td>
 		<td>Enables an HTML profiler</td>
 	</tr>
@@ -47,7 +43,8 @@ The following table discusses the bootstrap parameters you can set:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Not all bootstrap parameters are documented at this time.</p></span>
+  <ul><li>Not all bootstrap parameters are documented at this time.</li>
+  	<li>You now set the Magento mode (developer, default, production) using the <a href="{{ site.gdeurl }}config-guide/config-guide/cli/config-cli-subcommands-mode.html">magento application</a> command.</li></ul></span>
 </div>
 
 <h2 id="mode-specify-var">Specifying a parameter value using an environment variable</h2>
@@ -56,15 +53,15 @@ This section discusses how to set the values of bootstrap parameters using envir
 <h3 id="config-bootparam-mode">Set the mode using an environment variable</h3>
 You can specify Magento bootstrap variables as system-wide environment variables, which enables all processes to use them.
 
-For example, you can use the `MAGE_MODE` system environment variable to specify a mode as follows:
+For example, you can use the `MAGE_PROFILER` system environment variable to specify a mode as follows:
 
-	MAGE_MODE={developer|default|production}
+	MAGE_PROFILER={firebug|csv|<custom value>}
 
 Set the variable using a shell-specific command. Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.
 
 bash shell example for CentOS:
 
-	export MAGE_MODE=developer
+	export MAGE_PROFILER=firebug
 
 <h2 id="mode-specify-web">Specifying a parameter value</h2>
 This section discusses how to specify the mode for either Apache or nginx.
@@ -92,13 +89,13 @@ To set a variable:
 
 	For example, to specify a <a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">mode</a>, uncomment the following:
 
-		#   SetEnv MAGE_MODE developer
+		#   SetEnv MAGE_PROFILER firebug
 
-2.	Set the value of `MAGE_MODE` to any of the following:
+2.	Set the value of `MAGE_PROFiLER` to any of the following:
 
-		developer
-		default
-		production
+		firebug
+		csv
+		<custom value>
 
 2.	Save your changes to `.htaccess`; you don't need to restart Apache for the change to take effect.
 
@@ -130,7 +127,7 @@ To set a Magento bootstrap variable using your web server's environment:
 
 	For example,
 
-		SetEnv "MAGE_MODE" "developer"
+		SetEnv "MAGE_PROFILER" "firebug"
 
 3.	Save your changes and exit the text editor.
 4.	Enable your virtual host if you haven't already done so:
@@ -158,7 +155,7 @@ To set a Magento bootstrap variable using your web server's environment:
 
 	For example,
 
-		SetEnv "MAGE_MODE" "developer"
+		SetEnv "MAGE_PROFILER" "firebug"
 
 3.	Save your changes and exit the text editor.
 
@@ -170,5 +167,5 @@ After setting the mode, restart the web server:
 #### Related topics
 
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a>
-*	<a href="{{ site.gdeurl }}config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a>
+*	<a href="{{ site.gdeurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
 *	<a href="{{ site.gdeurl }}config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a>
