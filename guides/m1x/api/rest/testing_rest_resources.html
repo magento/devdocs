@@ -1,8 +1,7 @@
-<?php
-    $title = 'Magento API - REST - Testing REST Resources';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
-
+---
+layout: m1x
+title: Resting REST Resources
+---
 <p>Three steps are required for utilizing REST API resources:</p>
 <ul>
 	<li><a href="http://www.magentocommerce.com/api/rest/authentication/oauth_authentication.html" title="OAuth Authentication">Authenticate the user</a> (receive the access token for further steps);</li>
@@ -38,9 +37,9 @@
 <ol>
 	<li>Open the REST Client.</li>
 	<li>From the Authentication drop-down, select <b>OAuth</b>.<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619336.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test1.png" style="border: 1px solid black"/></li>
 	<li>In the OAuth window, on the Signature for the request tab, fill in the following fields:<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619337.png" style="border: 1px solid black"/></span>
+<img src="{{ site.baseurl }}common/images/m1x/29221106/35619337.png" style="border: 1px solid black"/>
 	<ul>
 		<li><b>Consumer key</b>: Enter the <b>Key</b> value provided when you created the consumer in Magento Admin Panel.</li>
 		<li><b>Consumer secret</b>: Enter the <b>Secret</b> value provided when you created the consumer in Magento Admin Panel.</li>
@@ -57,12 +56,12 @@
 	<li>Leave the <b>Realm</b>, <b>oAuth Nonce</b>, and <b>oAuth Timestemp</b> values set by default.</li>
 	<li>Click <b>Save</b>. You are prompted whether you want to save entered data. Click <b>Yes</b>.<br/>
 <b>NOTE</b>: Click the header with authorization data and click <b>Auto refresh</b> in the opened pop-up in order to generate new values for oauth_nonce, oauth_timestamp, and oauth_signature at each request.<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619540.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test3.png" style="border: 1px solid black"/></span></li>
 	<li>From the <b>Headers</b> drop-down, select <b>Custom Header</b>.<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619339.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test4.png" style="border: 1px solid black"/></span></li>
 	<li>In the <b>Request Header</b> window, enter "Content-Type" in the <b>Name</b> field and "text/xml" in the <b>Value</b> field (if you want to use the XML data format). To use the JSON request data format, enter application/json instead of the text/xml value.</li>
 	<li>Click <b>Okay</b>.<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619338.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test5.png" style="border: 1px solid black"/></span></li>
 </ol>
 
 
@@ -74,7 +73,7 @@
 	<li>From the <b>Method</b> drop-down list, select the <b>GET</b> option.</li>
 	<li>In the <b>URL</b> field, enter the following URL: <a href="http://magentohost/api/rest/products">http://magentohost/api/rest/products</a>. You can limit the number of products returned in the response. To set the limit to 4, enter the following URL: <a href="http://magentohost/api/rest/products?limit=4">http://magentohost/api/rest/products?limit=4</a></li>
 	<li>Click <b>Send</b>. Information about all products will be displayed in the response body. Example is as follows:<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619409.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test6.png" style="border: 1px solid black"/></span></li>
 </ol>
 
 
@@ -83,17 +82,17 @@
 
 <ol>
 	<li>Open the Advanced REST Client Application.<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619370.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test7.png" style="border: 1px solid black"/></span></li>
 	<li>In the <b>Headers</b> box, select the <b>Form</b> tab.</li>
 	<li>In the first field, start typing <em>authorization</em>. An <b>Authorization</b> popup appears. Click it.<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619371.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test8.png" style="border: 1px solid black"/></span></li>
 	<li>When you click the fields next to the Authorization header, the <b>Construct</b> link appears. Click it to configure OAuth authentication.</li>
 	<li>The Authorization window opens. Select the OAuth tab.<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619375.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test9.png" style="border: 1px solid black"/></span></li>
 	<li>In the <b>Type</b> group of options, select the <b>Signed Request</b> option.</li>
 	<li>In the <b>signature method</b> group of options, select which method will be used for signatures (HMAC-SHA1 or  PLAINTEXT).</li>
 	<li>Fill in the following data:<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619376.png" style="border: 1px solid black"/></span>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test10.png" style="border: 1px solid black"/></span>
 	<ul>
 		<li><b>Consumer key</b>: Enter the <b>Key</b> value provided when you created the consumer in Magento Admin Panel.</li>
 		<li><b>Consumer secret</b>: Enter the <b>Secret</b> value provided when you created the consumer in Magento Admin Panel.</li>
@@ -115,7 +114,7 @@
 	<li>In the <b>Method</b> group of options, select the <b>GET</b> option.</li>
 	<li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/customers">http://magentohost/api/rest/customers</a>.</li>
 	<li>Click <b>Send request</b>. Information about all customers will be displayed in the response body. Note that only Admin type of the user can retrieve the list of customers. Example is as follows:<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619388.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test11.png" style="border: 1px solid black"/></span></li>
 </ol>
 
 
@@ -126,9 +125,5 @@
 	<li>In the URL field, enter the following URL: <a href="http://magentohost/api/rest/customers/:id/addresses">http://magentohost/api/rest/customers/:id/addresses</a> where the ":id" value is the customer ID in the system.</li>
 	<li>In the <b>Body</b> table, on the <b>Raw input</b> tab, enter the data required for customer address creation.</li>
 	<li>Click <b>Send request</b>. If the address is created, the 200 OK HTTP status code will be returned. Example is as follows:<br/>
-<span class="image-wrap" style=""><img src="attachments/29221106/35619452.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_test12.png" style="border: 1px solid black"/></span></li>
 </ol>
-
-
-			    
-<?php include(__ROOT__ . 'footer.php'); ?>
