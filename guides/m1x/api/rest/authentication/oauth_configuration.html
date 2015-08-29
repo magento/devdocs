@@ -1,10 +1,10 @@
-<?php
-    $title = 'Magento API - REST - OAuth Configuration';
-    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
-?>
+---
+layout: m1x
+title: OAuth Configuration
+---
 
 				    
-<div class="navigation-block">
+<div class="toc"> <h4 class="toc">Table of Contents</h4>
 <ul>
     <li><a href='#OAuthConfiguration-WorkingwithConsumers'>Working with Consumers</a>
     <ul>
@@ -53,7 +53,7 @@
 	<li>On the Magento Admin Panel menu, select <b>System</b> &gt; <b>Web Services</b> &gt; <b>REST - OAuth Consumers</b>.</li>
 	<li>On the OAuth Consumers page, click <b>Add New</b> in the top right corner to add a new consumer.</li>
 	<li>The New Consumer page opens. The <b>Key</b> and <b>Secret</b> fields are filled automatically and cannot be edited. These values are generated automatically and will be used to identify the Consumer in Magento.<br/>
-<span class="image-wrap" style=""><img src="attachments/29211569/30737051.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_oauth_config1.png" style="border: 1px solid black"/></li>
 	<li>Fill in the following fields:
 	<ul>
 		<li><b>Name</b>: Enter the name of the application to be registered. This field is required.</li>
@@ -174,7 +174,7 @@ To search for a consumer, perform the following steps:</p>
 <ol>
 	<li>On the frontend, click <b>My Account</b> and then select the <b>My Applications</b> tab on the left.</li>
 	<li>On the My Applications page, the list of registered applications will be displayed.<br/>
-<span class="image-wrap" style=""><img src="attachments/29211569/30737052.png" style="border: 1px solid black"/></span></li>
+<span class="image-wrap" style=""><img src="{{ site.baseurl }}common/images/m1x/rest_oauth-config2.png" style="border: 1px solid black"/></span></li>
 </ol>
 
 
@@ -220,7 +220,7 @@ To set the email template, perform the following steps:</p>
 <ol>
 	<li>On the Admin Panel menu, select <b>System</b> &gt; <b>Configuration</b>.</li>
 	<li>Select <b>Services</b> &gt; <b>OAuth</b> on the left.<br/>
-<span class="image-wrap" style=""><img src="attachments/29211569/29136592.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_oauth-config3.png" style="border: 1px solid black"/></li>
 	<li>In the <b>Email</b> panel, from the <b>Token Status Change Email Template</b> drop-down list, select the required template and click <b>Save Config</b> in the top right corner.</li>
 	<li>The template is saved.</li>
 </ol>
@@ -248,7 +248,7 @@ To configure cleanup, perform the following steps:</p>
 <ol>
 	<li>On the Admin Panel menu, select <b>System</b> &gt; <b>Configuration</b>.</li>
 	<li>Select <b>Services</b> &gt; <b>OAuth</b> on the left.<br/>
-<span class="image-wrap" style=""><img src="attachments/29211569/29136592.png" style="border: 1px solid black"/></span></li>
+<img src="{{ site.baseurl }}common/images/m1x/rest_oauth-config4.png" style="border: 1px solid black"/></li>
 	<li>In the <b>Cleanup Statistics</b> panel, you can set the following values:
 	<ul>
 		<li><b>Cleanup Probability</b>: Define the threshold of OAuth requests after which the cleanup will be performed. Only temporary credentials will be removed. Enter 0 to disable the cleanup.</li>
@@ -261,4 +261,4 @@ To configure cleanup, perform the following steps:</p>
 
 				    					    <br/>
                         				    
- <?php include(__ROOT__ . 'footer.php'); ?>                   			    
+                			    
