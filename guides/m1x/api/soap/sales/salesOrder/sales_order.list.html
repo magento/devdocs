@@ -1,0 +1,553 @@
+<?php
+    $title = 'Magento API - SOAP - sales_order.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="sales_order.list-Module%3AMageSales"></a>Module: Mage_Sales</h2>
+
+
+<h4><a name="sales_order.list-Resource%3Asalesorder"></a>Resource: sales_order</h4>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>order</li>
+</ul>
+
+
+<h5><a name="sales_order.list-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>sales_order.list (SOAP V1)</li>
+	<li>salesOrderList (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the list of orders. Additional filters can be applied.</p>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>order.list</li>
+	<li>salesOrderList (SOAP V2 method name)</li>
+</ul>
+
+
+
+<p><b>Arguments</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> filters </td>
+<td class='confluenceTd'> Array of filters for the list of sales orders (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of salesOrderEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>salesOrderEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Increment ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Parent ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date of creation </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date of updating </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the order is active </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> discount_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Discount amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> subtotal <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Subtotal sum </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> grand_total <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Grand total sum </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> total_paid <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Total paid </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> total_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Total refunded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> total_qty_ordered <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Total quantity ordered </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> total_canceled <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Total canceled </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> total_invoiced <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Total invoiced </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> total_online_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Total online refunded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> total_offline_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Total offline refunded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_tax_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base tax amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_shipping_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base shipping amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_discount_amount <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base discount amount </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_subtotal <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base subtotal </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_grand_total <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base grand total </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_total_paid <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base total paid </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_total_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base total refunded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_total_qty_ordered <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base total quantity ordered </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_total_canceled <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base total canceled </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_total_invoiced <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base total invoiced </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_total_online_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base total online refunded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_total_offline_refunded <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base total offline refunded </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> billing_address_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Billing address ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> billing_firstname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> First name in the billing address </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> billing_lastname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Last name in the billing address </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_address_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping address ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_firstname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> First name in the shipping address </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_lastname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Last name in the shipping address </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> billing_name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Billing name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_to_base_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store to base rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_to_order_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store to order rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_to_global_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base to global rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_to_order_rate <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base to order rate </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> weight <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Weight </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> remote_ip <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Remote IP </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order status </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> state <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order state </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> applied_rule_ids <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Applied rule IDs </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> global_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Global currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> base_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Base currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> order_currency_code <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order currency code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_method <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping method </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> shipping_description <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shipping description </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_email <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Email address of the customer </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_firstname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer first name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_lastname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer last name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> quote_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Shopping cart ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> is_virtual <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the product is a virtual one </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_group_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer group ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_note_notify <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer notification </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_is_guest <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the customer is a guest </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> email_sent <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the email notification is sent </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> order_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Order ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gift_message_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift message ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gift_message <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift message </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="sales_order.list-Examples"></a>Examples</h4>
+
+<h5><a name="sales_order.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'order.list');
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="sales_order.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$params = array(array(
+            'filter' =&gt; array(
+                array(
+                    'key' =&gt; 'status',
+                    'value' =&gt; 'pending'
+                ),
+                array(
+                    'key' =&gt; 'created_at',
+                    'value' =&gt; '2001-11-25 12:12:07',
+                )
+            ),
+            'complex_filter' =&gt; array(
+                array(
+                    'key' =&gt; 'order_id',
+                    'value' =&gt; array(
+                        'key' =&gt; 'in',
+                        'value' =&gt; '12,23'
+                    ),
+                ),
+                array(
+                    'key' =&gt; 'protect_code',
+                    'value' =&gt; array(
+                        'key' =&gt; 'eq',
+                        'value' =&gt; 'ebb2a0'
+                    ),
+                ),
+            )
+        ));
+
+$result = $client-&gt;__call('salesOrderList', $params);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="sales_order.list-RequestExampleSOAPV2%28SimpleFilter%29"></a>Request Example SOAP V2 (Simple Filter)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+// If some stuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+$filter = array('filter' =&gt; array(array('key' =&gt; 'status', 'value' =&gt; 'closed')));
+$result = $client-&gt;salesOrderList($session, $filter);
+
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="sales_order.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;salesOrderList((object)array('sessionId' =&gt; $sessionId-&gt;result, 'filters' =&gt; null));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="sales_order.list-XMLSOAPV2Example"></a>XML SOAP V2 Example</h5>
+<div class="code panel" style="border-width: 1px;"><div class="codeHeader panelHeader" style="border-bottom-width: 1px;"><b>SOAP "v2" XML Request</b></div><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: html/xml; gutter: false">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="urn:Magento"
+                   xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+                   SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns1:salesOrderList&gt;
+            &lt;sessionId xsi:type="xsd:string"&gt;abbc417256a3ffb93d130a77a2fd3665&lt;/sessionId&gt;
+            &lt;filters xsi:type="ns1:filters"&gt;
+                &lt;filter SOAP-ENC:arrayType="ns1:associativeEntity[2]" xsi:type="ns1:associativeArray"&gt;
+                    &lt;item xsi:type="ns1:associativeEntity"&gt;
+                        &lt;key xsi:type="xsd:string"&gt;status&lt;/key&gt;
+                        &lt;value xsi:type="xsd:string"&gt;pending&lt;/value&gt;
+                    &lt;/item&gt;
+                    &lt;item xsi:type="ns1:associativeEntity"&gt;
+                        &lt;key xsi:type="xsd:string"&gt;created_at&lt;/key&gt;
+                        &lt;value xsi:type="xsd:string"&gt;2011-11-29 15:41:11&lt;/value&gt;
+                    &lt;/item&gt;
+                &lt;/filter&gt;
+                &lt;complex_filter SOAP-ENC:arrayType="ns1:complexFilter[2]" xsi:type="ns1:complexFilterArray"&gt;
+                    &lt;item xsi:type="ns1:complexFilter"&gt;
+                        &lt;key xsi:type="xsd:string"&gt;order_id&lt;/key&gt;
+                        &lt;value xsi:type="ns1:associativeEntity"&gt;
+                            &lt;key xsi:type="xsd:string"&gt;in&lt;/key&gt;
+                            &lt;value xsi:type="xsd:string"&gt;Array&lt;/value&gt;
+                        &lt;/value&gt;
+                    &lt;/item&gt;
+                    &lt;item xsi:type="ns1:complexFilter"&gt;
+                        &lt;key xsi:type="xsd:string"&gt;protect_code&lt;/key&gt;
+                        &lt;value xsi:type="ns1:associativeEntity"&gt;
+                            &lt;key xsi:type="xsd:string"&gt;in&lt;/key&gt;
+                            &lt;value xsi:type="xsd:string"&gt;a4ffa8&lt;/value&gt;
+                        &lt;/value&gt;
+                    &lt;/item&gt;
+                &lt;/complex_filter&gt;
+            &lt;/filters&gt;
+        &lt;/ns1:salesOrderList&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

@@ -1,0 +1,211 @@
+<?php
+    $title = 'Magento API - SOAP - Product Attribute Set';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+				    
+				    <h2><a name="MAPI-ProductAttributeSets-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+<p>The Mage_Catalog module allows you to manage categories and products.</p>
+
+<h4><a name="MAPI-ProductAttributeSets-ProductAttributeSets"></a>Product Attribute Sets</h4>
+
+<p>Allows you to retrieve product attribute sets.</p>
+
+<p><b>Resource Name</b>: catalog_product_attribute_set</p>
+
+<p><b>Aliases</b>:</p>
+<ul>
+	<li>product_attribute_set</li>
+</ul>
+
+
+<p><b>Methods</b>:</p>
+<ul>
+	<li><a href="product_attribute_set.list.html" title="product_attribute_set.list">product_attribute_set.list</a><font color="#000000">&nbsp;&#45; Retrieve the list of product attribute sets</font></li>
+	<li><font color="#000000"><a href="product_attribute_set.attributeAdd.html" title="product_attribute_set.attributeAdd">product_attribute_set.attributeAdd</a></font> <font color="#000000">&#45; Add an attribute to the attribute set</font></li>
+	<li><font color="#000000"><a href="product_attribute_set.attributeRemove.html" title="product_attribute_set.attributeRemove">product_attribute_set.attributeRemove</a></font> <font color="#000000">&#45; Remove an attribute from an attribute set</font></li>
+	<li><a href="product_attribute_set.create.html" title="product_attribute_set.create">product_attribute_set.create</a> &#45; Create a new attribute set</li>
+	<li><a href="product_attribute_set.groupAdd.html" title="product_attribute_set.groupAdd">product_attribute_set.groupAdd</a> &#45; Add a new group for attributes in the attribute set</li>
+	<li><a href="product_attribute_set.groupRemove.html" title="product_attribute_set.groupRemove">product_attribute_set.groupRemove</a> &#45; Remove a group of attributes from an attribute set</li>
+	<li><a href="product_attribute_set.groupRename.html" title="product_attribute_set.groupRename">product_attribute_set.groupRename</a> &#45; Rename a group of attributes in an attribute set</li>
+	<li><a href="product_attribute_set.remove.html" title="product_attribute_set.remove">product_attribute_set.remove</a> &#45; Remove an attribute set</li>
+</ul>
+
+
+<h5><a name="MAPI-ProductAttributeSets-Faults%3A"></a>Faults:</h5>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 100 </td>
+<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Invalid data given. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 102 </td>
+<td class='confluenceTd'> Error while creating attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 103 </td>
+<td class='confluenceTd'> Error while removing attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 105 </td>
+<td class='confluenceTd'> Unable to remove attribute set as it has related goods. Use forceProductsRemove parameter to remove attribute set with all goods. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 106 </td>
+<td class='confluenceTd'> Attribute with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 107 </td>
+<td class='confluenceTd'> Error while adding attribute to attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 108 </td>
+<td class='confluenceTd'> Attribute group with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 109 </td>
+<td class='confluenceTd'> Requested attribute is already in requested attribute set. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 110 </td>
+<td class='confluenceTd'> Error while removing attribute from attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 111 </td>
+<td class='confluenceTd'> Requested attribute is not in requested attribute set. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 112 </td>
+<td class='confluenceTd'> Requested group exist already in requested attribute set. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 113 </td>
+<td class='confluenceTd'> Error while adding group to attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 114 </td>
+<td class='confluenceTd'> Error while renaming group. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 115 </td>
+<td class='confluenceTd'> Error while removing group from attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 116 </td>
+<td class='confluenceTd'> Group can not be removed as it contains system attributes. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 117 </td>
+<td class='confluenceTd'> Group can not be removed as it contains attributes, used in configurable products. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h5><a name="MAPI-ProductAttributeSets-Example%3A"></a>Example:</h5>
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+echo "&lt;pre&gt;";
+// create new set
+$setName = "New Test Set";
+$skeletonId = 4;
+
+$setId = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.create",
+    array(
+         $setName,
+         $skeletonId
+    )
+);
+
+// Get list
+$setList = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.list"
+);
+echo "Set list:\n";
+print_r($setList);
+
+// create group
+$groupName = "Test Group";
+$groupId = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.groupAdd",
+    array(
+         $setId,
+         $groupName
+    )
+);
+
+// rename group
+$newGroupName = "New Test Group";
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.groupRename",
+    array(
+         $groupId,
+         $newGroupName
+    )
+);
+
+// add attribute
+$attributeId = 83;
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.attributeAdd",
+    array(
+         $attributeId,
+         $setId
+    )
+);
+
+//remove attribute
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.attributeRemove",
+    array(
+         $attributeId,
+         $setId
+    )
+);
+
+// remove group
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.groupRemove",
+    array(
+         $groupId
+    )
+);
+
+// remove set
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.remove",
+    array(
+         $setId
+    )
+);</pre>
+		</div>
+</div></div>
+
+				    
+<?php include(__ROOT__ . 'footer.php'); ?>                    			    

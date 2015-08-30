@@ -1,0 +1,106 @@
+<?php
+    $title = 'Magento API - SOAP - customer.delete';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="customer.delete-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+
+<p>Allows you to export/import customers from/to Magento</p>
+
+<h3><a name="customer.delete-Resource%3Acustomer"></a>Resource: customer</h3>
+
+
+<h4><a name="customer.delete-Method%3A"></a>Method:</h4>
+
+<ul>
+	<li>customer.delete (SOAP V1)</li>
+	<li>customerCustomerDelete (SOAP V2)</li>
+</ul>
+
+
+<p>Delete the required customer.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> customerId </td>
+<td class='confluenceTd'> Customer ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the customer is deleted </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="customer.delete-Examples"></a>Examples</h4>
+
+<h5><a name="customer.delete-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'customer.delete', '2');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="customer.delete-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;customerCustomerDelete($sessionId, '2');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer.delete-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;customerCustomerDelete((object)array('sessionId' =&gt; $sessionId-&gt;result, 'customerId' =&gt; '2'));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

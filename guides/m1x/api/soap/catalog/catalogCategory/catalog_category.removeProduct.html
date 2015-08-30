@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css">
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
+
+	<title>Remove Product</title>
+</head>
+<body>
+	<a name="top"></a>
+	<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+	<h1>Remove Product</h1>
+
+	<div id="content">
+		<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x/api/soap/catalog/catalogCategory/catalog_category.removeProduct.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
+
+
+<h2><a name="catalog_category.removeProduct-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+<p>The Mage_Catalog module allows you to manage categories and products.</p>
+
+<h4><a name="catalog_category.removeProduct-ResourceName%3Acatalogcategory"></a>Resource Name: catalog_category</h4>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>category</li>
+</ul>
+
+
+<h5><a name="catalog_category.removeProduct-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>catalog_category.removeProduct (SOAP V1)</li>
+	<li>catalogCategoryRemoveProduct (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to remove the product assignment from the category.</p>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>category.removeProduct</li>
+</ul>
+
+
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> categoryId </td>
+<td class='confluenceTd'> Category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> productId </td>
+<td class='confluenceTd'> ID or SKU of the product to be removed from the category </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> identifierType </td>
+<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the product is removed from the category </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="catalog_category.removeProduct-Examples"></a>Examples</h4>
+
+<h5><a name="catalog_category.removeProduct-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'catalog_category.removeProduct', array('categoryId' =&gt; '4', 'product' =&gt; '3'));
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_category.removeProduct-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogCategoryRemoveProduct($sessionId, '4', '3');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="catalog_category.removeProduct-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogCategoryRemoveProduct((object)array('sessionId' =&gt; $sessionId-&gt;result, 'categoryId' =&gt; '4', 'productId' =&gt; '3'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
+
+	</div>
+</body>
+</html>

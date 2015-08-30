@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" type="text/css" href="/common/css/stylesheet.css">
+	<link rel="stylesheet" href="/common/css/stylesheet-fonts.css" type="text/css">
+	<link rel="icon" href="/common/css/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/common/css/favicon.ico" type="image/x-icon">
+
+	<title>Category Tree</title>
+</head>
+<body>
+	<a name="top"></a>
+	<img src="/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+	<h1>Category Tree</h1>
+
+	<div id="content">
+		<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x/api/soap/catalog/catalogCategory/catalog_category.tree.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
+
+
+
+<h2><a name="catalog_category.tree-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+<p>The Mage_Catalog module allows you to manage categories and products.</p>
+
+<h4><a name="catalog_category.tree-ResourceName%3Acatalogcategory"></a>Resource Name: catalog_category</h4>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>category</li>
+</ul>
+
+
+<h5><a name="catalog_category.tree-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>catalog_category.tree (SOAP V1)</li>
+	<li>catalogCategoryTree (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the hierarchical tree of categories.</p>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>category.tree</li>
+</ul>
+
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> parentId </td>
+<td class='confluenceTd'> ID of the parent category (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> storeView </td>
+<td class='confluenceTd'> Store view (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> tree </td>
+<td class='confluenceTd'> Array of catalogCategoryTree </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<p>The <b>catalogCategoryTree</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> category_id </td>
+<td class='confluenceTd'> Category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Parent category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category position </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> level <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category level </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> children <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of CatalogCategoryEntities </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogCategoryEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> category_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> parent_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Parent category ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> defines whether the category is active </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> position <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category position </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> level <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Category level </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> children <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of CatalogCategoryEntities </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="catalog_category.tree-Examples"></a>Examples</h4>
+
+<h5><a name="catalog_category.tree-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'catalog_category.tree');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_category.tree-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogCategoryTree($sessionId);
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_category.tree-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogCategoryTree((object)array('sessionId' =&gt; $sessionId-&gt;result, 'parentId' =&gt; '15'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_category.tree-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  'category_id' =&gt; string '1' (length=1)
+  'parent_id' =&gt; string '0' (length=1)
+  'name' =&gt; string 'Root Catalog' (length=12)
+  'is_active' =&gt; null
+  'position' =&gt; string '0' (length=1)
+  'level' =&gt; string '0' (length=1)
+  'children' =&gt;
+    array
+      0 =&gt;
+        array
+          'category_id' =&gt; string '2' (length=1)
+          'parent_id' =&gt; string '1' (length=1)
+          'name' =&gt; string 'Default Category' (length=16)
+          'is_active' =&gt; string '1' (length=1)
+          'position' =&gt; string '1' (length=1)
+          'level' =&gt; string '1' (length=1)
+          'children' =&gt;
+            array
+              ...
+      1 =&gt;
+        array
+          'category_id' =&gt; string '3' (length=1)
+          'parent_id' =&gt; string '1' (length=1)
+          'name' =&gt; string 'root_category' (length=13)
+          'is_active' =&gt; string '1' (length=1)
+          'position' =&gt; string '2' (length=1)
+          'level' =&gt; string '1' (length=1)
+          'children' =&gt;
+            array
+              ...</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
+
+	</div>
+</body>
+</html>
