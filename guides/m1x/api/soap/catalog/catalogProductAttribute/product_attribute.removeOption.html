@@ -1,0 +1,126 @@
+<?php
+    $title = 'Magento API - SOAP - product_attribute.removeOption';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+				    
+				    <h3><a name="product_attribute.removeOption-Module%3AProductAttributesAPI"></a>Module: Product Attributes API</h3>
+
+<h4><a name="product_attribute.removeOption-Resource%3Aproductattribute"></a>Resource: product_attribute</h4>
+
+
+<h5><a name="product_attribute.removeOption-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_attribute.removeOption (SOAP V1)</li>
+	<li>catalogProductAttributeRemoveOption (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to remove the option for an attribute.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> attribute </td>
+<td class='confluenceTd'> Attribute code or ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> optionId </td>
+<td class='confluenceTd'> Option ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the option is removed </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Requested attribute not found. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Incorrect attribute type. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 109 </td>
+<td class='confluenceTd'> Unable to remove option. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="product_attribute.removeOption-Examples"></a>Examples</h4>
+
+<h5><a name="product_attribute.removeOption-RequestexampleSOAPV1"></a>Request example SOAP V1</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$attributeCode = "2";
+$optionId = 11; // Existing option ID
+
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute.removeOption",
+    array(
+         $attributeCode,
+         $optionId
+    )
+);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_attribute.removeOption-RequestexampleSOAPV2"></a>Request example SOAP V2</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductAttributeRemoveOption($sessionId, '2', '11');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+				    
+<?php include(__ROOT__ . 'footer.php'); ?>                    			    

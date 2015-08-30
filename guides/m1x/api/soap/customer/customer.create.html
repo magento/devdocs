@@ -1,0 +1,195 @@
+<?php
+    $title = 'Magento API - SOAP - customer.create';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="customer.create-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+
+<p>Allows you to export/import customers from/to Magento.</p>
+
+<h3><a name="customer.create-Resource%3Acustomer"></a>Resource: customer</h3>
+
+<h4><a name="customer.create-Method%3A"></a>Method:</h4>
+
+<ul>
+	<li>customer.create (SOAP V1)</li>
+	<li>customerCustomerCreate (SOAP V2)</li>
+</ul>
+
+
+<p>Create a new customer.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> customerData </td>
+<td class='confluenceTd'> Array of customerCustomerEntityToCreate <br class="atl-forced-newline" /> </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> ID of the created customer </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>customerCustomerEntityToCreate</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> email </td>
+<td class='confluenceTd'> Customer email </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> firstname </td>
+<td class='confluenceTd'> Customer first name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> lastname </td>
+<td class='confluenceTd'> Customer last name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> password </td>
+<td class='confluenceTd'> Customer password </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> website_id </td>
+<td class='confluenceTd'> Website ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> store_id </td>
+<td class='confluenceTd'> Store ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> group_id </td>
+<td class='confluenceTd'> Group ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> prefix </td>
+<td class='confluenceTd'> Customer prefix (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> suffix </td>
+<td class='confluenceTd'> Customer suffix (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> dob </td>
+<td class='confluenceTd'> Customer date of birth (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> taxvat </td>
+<td class='confluenceTd'> Customer tax/VAT number (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> gender </td>
+<td class='confluenceTd'> Customer gender: 1 - Male, 2 - Female (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> middlename </td>
+<td class='confluenceTd'> Customer middle name/initial (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="customer.create-Examples"></a>Examples</h4>
+
+<h5><a name="customer.create-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+ult = $client-&gt;call($session, 'customer.create', array(array('email' =&gt; 'customer-mail@example.org', 'firstname' =&gt; 'Dough', 'lastname' =&gt; 'Deeks', 'password' =&gt; 'password', 'website_id' =&gt; 1, 'store_id' =&gt; 1, 'group_id' =&gt; 1)));
+$result = $client-&gt;call($session,'customer.create',array(array('email' =&gt; 'mail@example.org', 'firstname' =&gt; 'Dough', 'lastname' =&gt; 'Deeks', 'password' =&gt; 'password', 'website_id' =&gt; 1, 'store_id' =&gt; 1, 'group_id' =&gt; 1)));
+
+var_dump ($result);
+var_dump ($result); // If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="customer.create-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+// If some stuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+$result = $client-&gt;customerCustomerCreate($session, array('email' =&gt; 'customer-mail@example.org', 'firstname' =&gt; 'Dough', 'lastname' =&gt; 'Deeks', 'password' =&gt; 'password', 'website_id' =&gt; 1, 'store_id' =&gt; 1, 'group_id' =&gt; 1));
+
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="customer.create-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;customerCustomerCreate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'customerData' =&gt; ((object)array(
+'email' =&gt; 'customer-mail@example.org',
+'firstname' =&gt; 'John',
+'lastname' =&gt; 'Dou',
+'password' =&gt; '123123',
+'website_id' =&gt; '0',
+'group_id' =&gt; '1'
+))));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

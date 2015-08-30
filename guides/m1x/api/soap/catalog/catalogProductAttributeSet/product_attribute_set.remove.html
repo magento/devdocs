@@ -1,0 +1,137 @@
+<?php
+    $title = 'Magento API - SOAP - product_attribute_set.remove';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_attribute_set.remove-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
+
+<h4><a name="product_attribute_set.remove-Resource%3Aproductattributeset"></a>Resource: product_attribute_set</h4>
+
+
+<h5><a name="product_attribute_set.remove-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_attribute_set.remove (SOAP V1)</li>
+	<li>catalogProductAttributeSetRemove (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to remove an existing attribute set.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> attributeSetId </td>
+<td class='confluenceTd'> Attribute set ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> forceProductsRemove </td>
+<td class='confluenceTd'> Force product remove flag (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean\int </td>
+<td class='confluenceTd'> isRemoved </td>
+<td class='confluenceTd'> True (1) if the attribute set is removed </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 103 </td>
+<td class='confluenceTd'> Error while removing attribute set. Details in error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Attribute set with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 105 </td>
+<td class='confluenceTd'> Unable to remove attribute set as it has related goods. Use forceProductsRemove parameter to remove attribute set with all goods. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="product_attribute_set.remove-Examples"></a>Examples</h4>
+
+<h5><a name="product_attribute_set.remove-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$setId = 5;
+
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.remove",
+    array(
+         $setId
+    )
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_attribute_set.remove-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductAttributeSetRemove($sessionId, '5');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_attribute_set.remove-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductAttributeSetRemove((object)array('sessionId' =&gt; $sessionId-&gt;result, 'attributeSetId' =&gt; '5'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

@@ -1,0 +1,361 @@
+<?php
+    $title = 'Magento API - SOAP - product_downloadable_link.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_downloadable_link.list-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+
+
+<h4><a name="product_downloadable_link.list-Resource%3Aproductdownloadablelink"></a>Resource: product_downloadable_link</h4>
+
+
+<h5><a name="product_downloadable_link.list-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_downloadable_link.list (SOAP V1)</li>
+	<li>catalogProductDownloadableLinkList (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve a list of links of a downloadable product.</p>
+
+<p><b>Arguments</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> productId </td>
+<td class='confluenceTd'> Product ID or SKU </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> store </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> identifierType </td>
+<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the request </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of catalogProductDownloadableLinkListEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductDownloadableLinkListEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> links </td>
+<td class='confluenceTd'> Array of catalogProductDownloadableLinkEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> samples </td>
+<td class='confluenceTd'> Array of catalogProductDownloadableLinkSampleEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductDownloadableLinkEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> link_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Link ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Link title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Downloadable link price value&nbsp; <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> number_of_downloads <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Maximum number of possible downloads </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_unlimited <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the number of downloads is unlimited </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_shareable <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the link is shareable </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> link_url <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Link URL address </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> link_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Type of the link data source. Can have one of the following values: "file" or "url" <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sample_file <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sample file name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sample_url <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sample URL </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sample_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Type of sample data source. Can have one of the following values: "file" or "url" <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Link sort order </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> file_save <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of catalogProductDownloadableLinkFileInfoEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> sample_file_save <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of catalogProductDownloadableLinkFileInfoEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductDownloadableLinkSampleEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sample_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sample ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sample_file <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sample file name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sample_url <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sample URL </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sample_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sample type. Can have one of the following values: "file" or "url" </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sort order </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> default_title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Default title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store_title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Sample title </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductDownloadableLinkFileInfoEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> file <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> File </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> File name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> size <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> File size </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Status </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<p><b>Faults:</b><br/>
+<em>No Faults</em></p>
+
+<h4><a name="product_downloadable_link.list-Examples"></a>Examples</h4>
+
+<h5><a name="product_downloadable_link.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$downloadableProductId = '5';
+
+$resultList = $proxy-&gt;call(
+    $sessionId,
+    'product_downloadable_link.list',
+    array($downloadableProductId)
+);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_downloadable_link.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductDownloadableLinkList($sessionId, '5', null, 'sku');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_downloadable_link.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductDownloadableLinkList((object)array('sessionId' =&gt; $sessionId-&gt;result, 'productId' =&gt; '5'));
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="product_downloadable_link.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">array
+  'links' =&gt;
+    array
+      0 =&gt;
+        array
+          'link_id' =&gt; string '1' (length=1)
+          'title' =&gt; string 'link 1' (length=11)
+          'price' =&gt; string '30.0000' (length=7)
+          'number_of_downloads' =&gt; string '0' (length=1)
+          'is_shareable' =&gt; string '1' (length=1)
+          'link_url' =&gt; null
+          'link_type' =&gt; string 'file' (length=4)
+          'sample_file' =&gt; string '/s/o/software.jpg' (length=17)
+          'sample_url' =&gt; null
+          'sample_type' =&gt; string 'file' (length=4)
+          'sort_order' =&gt; string '1' (length=1)
+          'file_save' =&gt;
+            array
+              ...
+          'sample_file_save' =&gt;
+            array
+              ...
+          'is_unlimited' =&gt; int 1
+  'samples' =&gt;
+    array
+      0 =&gt;
+        array
+          'sample_id' =&gt; string '1' (length=1)
+          'product_id' =&gt; string '5' (length=1)
+          'sample_url' =&gt; null
+          'sample_file' =&gt; string '/s/o/software.jpg' (length=17)
+          'sample_type' =&gt; string 'file' (length=4)
+          'sort_order' =&gt; string '2' (length=1)
+          'default_title' =&gt; string 'Sample 1' (length=8)
+          'store_title' =&gt; string 'Sample 1' (length=8)
+          'title' =&gt; string 'Sample 1' (length=8)</pre>
+		</div>
+</div></div>
+
+				    
+<?php include(__ROOT__ . 'footer.php'); ?>

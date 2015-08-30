@@ -1,0 +1,69 @@
+<?php
+    $title = 'Magento API - SOAP - Product Custom Option';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+				    
+				    <h2><a name="MAPI-ProductCustomOption-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+
+<h4><a name="MAPI-ProductCustomOption-Resource%3Acatalogproductcustomoption"></a>Resource: catalog_product_custom_option</h4>
+
+<p><b>Aliases</b>: product_custom_option</p>
+
+<h5><a name="MAPI-ProductCustomOption-Methods%3A"></a>Methods:</h5>
+
+
+<ul>
+	<li><a href="product_custom_option.add.html" title="product_custom_option.add">product_custom_option.add</a> &#45; Add a new custom option to a product</li>
+	<li><a href="product_custom_option.update.html" title="product_custom_option.update">product_custom_option.update</a> <b>&#45;&nbsp;</b> Update the product custom option</li>
+	<li><a href="product_custom_option.types.html" title="product_custom_option.types">product_custom_option.types</a> <b>&#45;&nbsp;</b> Get the list of available custom option types</li>
+	<li><a href="product_custom_option.list.html" title="product_custom_option.list">product_custom_option.list</a> <b>&#45;&nbsp;</b> Retrieve the list of product custom options</li>
+	<li><a href="product_custom_option.info.html" title="product_custom_option.info">product_custom_option.info</a> <b>&#45;&nbsp;</b> Get full information about the custom option in a product</li>
+	<li><a href="product_custom_option.remove.html" title="product_custom_option.remove">product_custom_option.remove</a> <b>&#45;&nbsp;</b> Remove the custom option</li>
+</ul>
+
+
+
+
+<h5><a name="MAPI-ProductCustomOption-Faults%3A"></a>Faults:</h5>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Product with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 102 </td>
+<td class='confluenceTd'> Provided data is invalid. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 103 </td>
+<td class='confluenceTd'> Error while saving an option. Details are in the error message. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 104 </td>
+<td class='confluenceTd'> Store with requested code/id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 105 </td>
+<td class='confluenceTd'> Option with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 106 </td>
+<td class='confluenceTd'> Invalid option type provided. Call 'types' to get list of allowed option types. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 107 </td>
+<td class='confluenceTd'> Error while deleting an option. Details are in the error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+				    
+<?php include(__ROOT__ . 'footer.php'); ?>                    			    

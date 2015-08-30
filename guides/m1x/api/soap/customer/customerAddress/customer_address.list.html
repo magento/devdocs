@@ -1,0 +1,262 @@
+<?php
+    $title = 'Magento API - SOAP - customer_address.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="customer_address.list-Module%3AMageCustomer"></a>Module: Mage_Customer</h2>
+
+
+<h3><a name="customer_address.list-Resource%3Acustomeraddress"></a>Resource: customer_address</h3>
+
+
+<h4><a name="customer_address.list-Method%3A"></a>Method:</h4>
+
+<ul>
+	<li>customer_address.list (SOAP V1)</li>
+	<li>customerAddressList (SOAP V2)</li>
+</ul>
+
+
+<p>Retrieve the list of customer addresses.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> customerId </td>
+<td class='confluenceTd'> Customer ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of customerAddressEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>customerAddressEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> customer_address_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> ID of the customer address </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> created_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date when the address was created </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> updated_at <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date when the address was updated </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> increment_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Increment ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> city <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> City </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> company <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Name of the company </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> country_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> ID of the country </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> fax <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Fax </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> firstname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer first name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> lastname <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer last name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> middlename <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer middle name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> postcode <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer postcode </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> prefix <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer prefix </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> region <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Name of the region </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> region_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Region ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> street <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Name of the street </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> suffix <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer suffix </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> telephone <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Telephone number </td>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> is_default_billing <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> True if the address is the default one for billing </td>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> is_default_shipping <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> True if the address is the default one for shipping </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="customer_address.list-Examples"></a>Examples</h4>
+
+<h5><a name="customer_address.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'customer_address.list', '2');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer_address.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;customerAddressList($sessionId, '2');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer_address.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;customerAddressList((object)array('sessionId' =&gt; $sessionId-&gt;result, 'customerId' =&gt; '2'));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="customer_address.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">array
+  0 =&gt;
+    array
+      'customer_address_id' =&gt; string '2' (length=1)
+      'created_at' =&gt; string '2012-03-29 13:20:08' (length=19)
+      'updated_at' =&gt; string '2012-03-29 13:39:29' (length=19)
+      'city' =&gt; string 'Las Vegas' (length=9)
+      'country_id' =&gt; string 'US' (length=2)
+      'firstname' =&gt; string 'johny' (length=5)
+      'lastname' =&gt; string 'doe' (length=3)
+      'postcode' =&gt; string '89032' (length=5)
+      'region' =&gt; string 'Nevada' (length=6)
+      'region_id' =&gt; string '39' (length=2)
+      'street' =&gt; string '3406 Hiney Road' (length=15)
+      'telephone' =&gt; string '702-283-9556' (length=12)
+      'is_default_billing' =&gt; boolean false
+      'is_default_shipping' =&gt; boolean true
+  1 =&gt;
+    array
+      'customer_address_id' =&gt; string '3' (length=1)
+      'created_at' =&gt; string '2012-03-29 13:39:29' (length=19)
+      'updated_at' =&gt; string '2012-03-29 13:39:29' (length=19)
+      'city' =&gt; string 'Corpus Christi' (length=14)
+      'country_id' =&gt; string 'US' (length=2)
+      'firstname' =&gt; string 'johny' (length=5)
+      'lastname' =&gt; string 'doe' (length=3)
+      'postcode' =&gt; string '78476' (length=5)
+      'region' =&gt; string 'Texas' (length=5)
+      'region_id' =&gt; string '57' (length=2)
+      'street' =&gt; string '3672 Boone Street' (length=17)
+      'telephone' =&gt; string '361-280-8488' (length=12)
+      'vat_id' =&gt; string 'GB999 9999 73' (length=13)
+      'is_default_billing' =&gt; boolean false
+      'is_default_shipping' =&gt; boolean false</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

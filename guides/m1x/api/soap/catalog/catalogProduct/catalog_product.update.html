@@ -1,0 +1,490 @@
+---
+layout: m1x
+title: Product Update
+---
+<p><a href="{{ site.m1xgithuburl }}api/soap/catalog/catalogProduct/catalog_product.update.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+
+<h2><a name="catalog_product.update-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+
+<h4><a name="catalog_product.update-Resource%3Acatalogproduct"></a>Resource: catalog_product</h4>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>product</li>
+</ul>
+
+
+<h5><a name="catalog_product.update-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>catalog_product.update (SOAP V1)</li>
+	<li>catalogProductUpdate (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to update the required product. Note that you should specify only those parameters which you want to be updated.</p>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>product.update</li>
+</ul>
+
+<p><strong>Note:</strong></p>
+<p>Although the API accepts up to four digits of precision for all price arguments, Magento strongly recommends you pass in two digits to reduce inaccuracy in the tax calculation process. (That is, use a price like 12.35 and not 12.3487).</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> product\productId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> productData <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of catalogProductCreateEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> storeView <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> identifierType <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the product is updated </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductCreateEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString </td>
+<td class='confluenceTd'> categories <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of categories </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> websites <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of websites </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> name <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product name </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> description <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product description </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> short_description <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product short description </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> weight <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product weight </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> status <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product status </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> url_key <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> A relative URL path that can be entered in place of the target path </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> url_path <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> URL path </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> visibility <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product visibility on the frontend </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> category_ids <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of category IDs </td>
+</tr>
+<tr>
+<td class='confluenceTd'> ArrayOfString <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> website_ids <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of website IDs </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> has_options <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the product has options </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> gift_message_available <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the gift message is available for the product </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> special_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product special price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> special_from_date <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date starting from which the special price will be applied to the product </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> special_to_date <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date till which the special price will be applied to the product </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> tax_class_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tax class ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> tier_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of catalogProductTierPriceEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> meta_title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Meta title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> meta_keyword <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Meta keyword </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> meta_description <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Meta description </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> custom_design <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom design </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> custom_layout_update <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom layout update </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> options_container <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Options container </td>
+</tr>
+<tr>
+<td class='confluenceTd'> associativeArray <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> additional_attributes <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of catalogProductAdditionalAttributesEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> stock_data <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Array of catalogInventoryStockItemUpdateEntity <br class="atl-forced-newline" /> </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Notes</b>: The "websites" and "website_ids" or "categories" and "category_ids" parameters are interchangeable. In other words, you can specify an array of website IDs (int) and then you don't need to specify the array of website codes (string) and vice versa.</p>
+
+<p>The <b>catalogProductTierPriceEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> customer_group_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer group ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> website <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Website </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Quantity of items to which the price will be applied </td>
+</tr>
+<tr>
+<td class='confluenceTd'> double </td>
+<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Price that each item will cost </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogInventoryStockItemUpdateEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Quantity of items </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> is_in_stock <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the item is in stock </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> manage_stock <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Manage stock </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> use_config_manage_stock <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Use config manage stock </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> min_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Minimum quantity for items to be in stock </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> use_config_min_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Use config settings flag (value defined in the Inventory System Configuration) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> min_sale_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Minimum quantity allowed in the shopping cart </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> use_config_min_sale_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Use config settings flag </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> max_sale_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Maximum quantity allowed in the shopping cart </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> use_config_max_sale_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Use config settings flag </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> is_qty_decimal <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the quantity is decimal </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> backorders <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Backorders status </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> use_config_backorders <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Use config settings flag (for backorders) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> notify_stock_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Stock quantity below which a notification will appear </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> use_config_notify_stock_qty <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Use config settings flag (for stock quantity) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductAdditionalAttributesEntity</b> content is as follows:</p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+</tr>
+<tr>
+<td class='confluenceTd'> associativeMultiArray </td>
+<td class='confluenceTd'> multi_data </td>
+</tr>
+<tr>
+<td class='confluenceTd'> associativeArray </td>
+<td class='confluenceTd'> single_data </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>Single Data: array of attributes with only single value<br/>
+Multi Data: array of attributes which could contain several values</p>
+
+<p><b>Faults:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 100 </td>
+<td class='confluenceTd'> Requested store view not found. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Product not exists. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 102 </td>
+<td class='confluenceTd'> Invalid data given. Details in error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="catalog_product.update-Examples"></a>Examples</h4>
+
+<h5><a name="catalog_product.update-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If some stuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+$result = $client-&gt;call($session, 'catalog_product.update', array('product_sku', array(
+    'categories' =&gt; array(2),
+    'websites' =&gt; array(1),
+    'name' =&gt; 'Product name new 2',
+    'description' =&gt; 'Product description',
+    'short_description' =&gt; 'Product short description',
+    'weight' =&gt; '10',
+    'status' =&gt; '1',
+    'url_key' =&gt; 'product-url-key',
+    'url_path' =&gt; 'product-url-path',
+    'visibility' =&gt; '4',
+    'price' =&gt; '100',
+    'tax_class_id' =&gt; 1,
+    'meta_title' =&gt; 'Product meta title',
+    'meta_keyword' =&gt; 'Product meta keyword',
+    'meta_description' =&gt; 'Product meta description'
+)));
+
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_product.update-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+// If some stuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+$result = $client-&gt;catalogProductUpdate($session, 'product_sku', array(
+    'categories' =&gt; array(2),
+    'websites' =&gt; array(1),
+    'name' =&gt; 'Product name new',
+    'description' =&gt; 'Product description',
+    'short_description' =&gt; 'Product short description',
+    'weight' =&gt; '10',
+    'status' =&gt; '1',
+    'url_key' =&gt; 'product-url-key',
+    'url_path' =&gt; 'product-url-path',
+    'visibility' =&gt; '4',
+    'price' =&gt; '100',
+    'tax_class_id' =&gt; 1,
+    'meta_title' =&gt; 'Product meta title',
+    'meta_keyword' =&gt; 'Product meta keyword',
+    'meta_description' =&gt; 'Product meta description'
+));
+
+var_dump ($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="catalog_product.update-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductUpdate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'productId' =&gt; '1',
+'productData' =&gt; ((object)array(
+    'name' =&gt; 'Product name updated',
+    'status' =&gt; '1',
+))));
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

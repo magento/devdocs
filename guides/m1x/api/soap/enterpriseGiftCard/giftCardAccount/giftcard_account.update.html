@@ -1,0 +1,184 @@
+<?php
+    $title = 'Magento API - SOAP - giftcard_account.update';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="giftcard_account.update-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+
+<h4><a name="giftcard_account.update-Resource%3Agiftcardaccount"></a>Resource: giftcard_account</h4>
+
+
+<h5><a name="giftcard_account.update-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>giftcard_account.update (SOAP V1)</li>
+	<li>giftcardAccountUpdate (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to update the required gift card account.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> giftcardAccountId </td>
+<td class='confluenceTd'> Gift card account ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> giftcardData </td>
+<td class='confluenceTd'> Array of giftcardAccountEntityToUpdate </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True is the gift card account is updated </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>giftcardAccountEntityToUpdate</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> is_active <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the gift card account is active </td>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> is_redeemable <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Defines whether the gift card account is redeemable </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> store_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store view ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> double </td>
+<td class='confluenceTd'> balance <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Gift card account initial balance </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> date_expires <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Expiration date in the YYYY-MM-DD format </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 102 </td>
+<td class='confluenceTd'> Unable to save data. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="giftcard_account.update-Examples"></a>Examples</h4>
+
+<h5><a name="giftcard_account.update-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$giftcardId = 1;
+$giftcardToUpdate = array(
+    "balance" =&gt; 700
+);
+
+$result = $proxy-&gt;call(
+    $sessionId,
+    "giftcard_account.update",
+    array(
+         $giftcardId,
+         $giftcardToUpdate
+    )
+);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="giftcard_account.update-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); 
+ 
+$result = $proxy-&gt;giftcardAccountUpdate($sessionId, '3', array(
+'date_expires' =&gt; null, 
+'store_id' =&gt; '2', 
+'balance' =&gt; '700', 
+'is_active' =&gt; TRUE, 
+'is_redeemable' =&gt; TRUE));   
+
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="giftcard_account.update-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;giftcardAccountUpdate((object)array('sessionId' =&gt; $sessionId-&gt;result, 'giftcardAccountId' =&gt; '3', 'giftcardData' =&gt; array(
+'balance' =&gt; '700',
+'is_active' =&gt; TRUE,
+'is_redeemable' =&gt; TRUE,
+'store_id' =&gt; '2',
+'date_expires' =&gt; null)));   
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

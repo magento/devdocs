@@ -1,0 +1,133 @@
+<?php
+    $title = 'Magento API - SOAP - product_attribute_set.groupRename';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_attribute_set.groupRename-Module%3AProductAttributeSetAPI"></a>Module: Product Attribute Set API</h3>
+
+<h4><a name="product_attribute_set.groupRename-Resource%3Aproductattributeset"></a>Resource: product_attribute_set</h4>
+
+
+<h5><a name="product_attribute_set.groupRename-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_attribute_set.groupRename (SOAP V1)</li>
+	<li>catalogProductAttributeSetGroupRename (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to rename a group in the attribute set.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> groupId </td>
+<td class='confluenceTd'> ID of the group that will be renamed </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> groupName </td>
+<td class='confluenceTd'> New name for the group </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean\int </td>
+<td class='confluenceTd'> True (1) if the group is renamed </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 108 </td>
+<td class='confluenceTd'> Attribute group with requested id does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 114 </td>
+<td class='confluenceTd'> Error while renaming group. Details in error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="product_attribute_set.groupRename-Examples"></a>Examples</h4>
+
+<h5><a name="product_attribute_set.groupRename-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$groupId = 100;
+$groupName = "New Group";
+
+echo "Renaming group...";
+$result = $proxy-&gt;call(
+    $sessionId,
+    "product_attribute_set.groupRename",
+    array(
+         $groupId,
+         $groupName
+    )
+);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_attribute_set.groupRename-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductAttributeSetGroupRename($sessionId, '100', 'New Group');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_attribute_set.groupRename-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductAttributeSetGroupRename((object)array('sessionId' =&gt; $sessionId-&gt;result, 'groupId' =&gt; '100', 'groupName' =&gt; 'New Group'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

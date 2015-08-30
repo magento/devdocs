@@ -1,0 +1,50 @@
+<?php
+    $title = 'Magento API - SOAP - Store Credit';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+				    
+				    <h2><a name="CustomerBalance-Module%3AEnterpriseCustomerBalance"></a>Module: Enterprise_CustomerBalance</h2>
+
+<p>Allows you to operate with customer virtual balance.</p>
+
+
+<h4><a name="CustomerBalance-Resource%3Aenterprisecustomerbalance"></a>Resource:enterprise_customerbalance</h4>
+
+<p><b>Aliases</b>: storecredit</p>
+
+<h5><a name="CustomerBalance-Methods%3A"></a>Methods:</h5>
+
+
+<ul>
+	<li><a href="storecredit.balance.html" title="storecredit.balance">storecredit.balance</a> &#45; Retrieve the customer store credit balance information</li>
+	<li><a href="storecredit.history.html" title="storecredit.history">storecredit.history</a> &#45; Retrieve the customer store credit history information</li>
+</ul>
+
+
+
+<h5><a name="CustomerBalance-Faults%3A"></a>Faults:</h5>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> <font color="#333333">Fault Code</font> </th>
+<th class='confluenceTh'> <font color="#333333">Fault Message</font> </th>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="#333333">100</font> </td>
+<td class='confluenceTd'> <font color="#333333">Provided data is invalid.</font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="#333333">101</font> </td>
+<td class='confluenceTd'> <font color="#333333">No balance found with requested parameters.</font> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> <font color="#333333">102</font> </td>
+<td class='confluenceTd'> <font color="#333333">No history found with requested parameters.</font> </td>
+</tr>
+</tbody></table>
+</div>
+
+
+				    
+<?php include(__ROOT__ . 'footer.php'); ?>                    			    

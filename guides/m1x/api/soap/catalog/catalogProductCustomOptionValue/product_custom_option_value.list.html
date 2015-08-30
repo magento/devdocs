@@ -1,0 +1,201 @@
+<?php
+    $title = 'Magento API - SOAP - product_custom_option_value.list';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_custom_option_value.list-Module%3AComplexProductAPI"></a>Module: Complex Product API</h3>
+
+
+<h4><a name="product_custom_option_value.list-Resource%3Aproductcustomoptionvalue"></a>Resource: product_custom_option_value</h4>
+
+
+<h5><a name="product_custom_option_value.list-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>product_custom_option_value.list (SOAP V1)</li>
+	<li>catalogProductCustomOptionValueList (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to retrieve the list of product custom option values. Note that the method is available only for the option <b>Select</b> Input Type.</p>
+
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> optionId </td>
+<td class='confluenceTd'> Option ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> store </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of catalogProductCustomOptionValueList </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductCustomOptionValueListEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> value_id </td>
+<td class='confluenceTd'> Custom option value ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> title <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option value title </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value price <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> price_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Price type. Possible values: "fixed" or "percent" <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sku <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Custom option value SKU <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> sort_order <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Option value sort order (optional) <br class="atl-forced-newline" /> </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Provided data is invalid. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 102 </td>
+<td class='confluenceTd'> Error while adding an option value. Details are in the error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+<h4><a name="product_custom_option_value.list-Examples"></a>Examples</h4>
+
+<h5><a name="product_custom_option_value.list-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'product_custom_option_value.list', '3');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="product_custom_option_value.list-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductCustomOptionValueList($sessionId, '3');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_custom_option_value.list-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductCustomOptionValueList((object)array('sessionId' =&gt; $sessionId-&gt;result, 'optionId' =&gt; '3'));
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_custom_option_value.list-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  0 =&gt;
+    array
+      'value_id' =&gt; string '1' (length=1)
+      'title' =&gt; string 'monoblock' (length=9)
+      'price' =&gt; string '139.9900' (length=8)
+      'price_type' =&gt; string 'fixed' (length=5)
+      'sku' =&gt; string 'monoblock' (length=9)
+      'sort_order' =&gt; string '0' (length=1)
+  1 =&gt;
+    array
+      'value_id' =&gt; string '2' (length=1)
+      'title' =&gt; string 'slider' (length=6)
+      'price' =&gt; string '239.9900' (length=8)
+      'price_type' =&gt; string 'fixed' (length=5)
+      'sku' =&gt; string 'slider' (length=6)
+      'sort_order' =&gt; string '0' (length=1)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
