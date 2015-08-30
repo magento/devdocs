@@ -1,0 +1,183 @@
+<?php
+    $title = 'Magento API - SOAP - catalog_product_tag.add';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="product_tag.add-Module%3ATagApi"></a>Module: Tag Api</h3>
+
+<h4><a name="product_tag.add-Resource%3Acatalogproducttag"></a>Resource: catalog_product_tag</h4>
+
+<p><b>Aliases</b>: product_tag</p>
+
+
+<h5><a name="product_tag.add-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>catalog_product_tag.add (SOAP V1)</li>
+	<li>catalogProductTagAdd (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to add one or more tags to a product.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> data </td>
+<td class='confluenceTd'> Array of catalogProductTagAddEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Associative array of added tags with the tag name as a key and the tag ID as a value </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductTagAddEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> tag <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Tag to be added (can contain several tags separated with white spaces). A tag that contains several words should be enclosed in single quotes. <br class="atl-forced-newline" /> </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> product_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> customer_id <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Customer ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> store <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store ID </td>
+</tr>
+</tbody></table>
+</div>
+
+<p><b>Faults:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 101 </td>
+<td class='confluenceTd'> Requested store does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 102 </td>
+<td class='confluenceTd'> Requested product does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 103 </td>
+<td class='confluenceTd'> Requested customer does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 105 </td>
+<td class='confluenceTd'> Provided data is invalid. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 106 </td>
+<td class='confluenceTd'> Error while saving tag. Details in error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="product_tag.add-Examples"></a>Examples</h4>
+
+<h5><a name="product_tag.add-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+$data = array('product_id' =&gt; 2, 'store' =&gt; 'default', 'customer_id' =&gt; 10002, 'tag' =&gt; "First 'Second tag' Third");
+echo "Adding Tag... ";
+$addResult = $proxy-&gt;call(
+    $sessionId,
+    "product_tag.add",
+    array($data)
+);
+echo ((count($addResult) == 3) ? "Done!" : "Fail!");
+echo "&lt;br /&gt;";
+print_r($addResult);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_tag.add-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$result = $proxy-&gt;catalogProductTagAdd($sessionId, array(
+'tag' =&gt; 'album',
+'product_id' =&gt; '3',
+'customer_id' =&gt; '1',
+'store' =&gt; '0'
+));
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="product_tag.add-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductTagAdd((object)array('sessionId' =&gt; $sessionId-&gt;result, 'data' =&gt; ((object)array(
+'tag' =&gt; 'album',
+'product_id' =&gt; '3',
+'customer_id' =&gt; '1',
+'store' =&gt; '0'
+))));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

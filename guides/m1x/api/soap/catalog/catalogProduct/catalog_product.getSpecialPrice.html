@@ -1,0 +1,167 @@
+<?php
+    $title = 'Magento API - SOAP - catalog_product.getSpecialPrice';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="catalog_product.getSpecialPrice-Module%3AMageCatalog"></a>Module: Mage_Catalog</h2>
+
+
+<h4><a name="catalog_product.getSpecialPrice-Resource%3Acatalogproduct"></a>Resource: catalog_product</h4>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>product</li>
+</ul>
+
+
+<h5><a name="catalog_product.getSpecialPrice-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>catalog_product.getSpecialPrice (SOAP V1)</li>
+	<li>catalogProductGetSpecialPrice (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to get the product special price data.</p>
+
+<p><b>Aliases:</b></p>
+<ul>
+	<li>product.getSpecialPrice</li>
+</ul>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> product\productId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product ID or SKU </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> storeView <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Store view ID or code </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> identifierType </td>
+<td class='confluenceTd'> Defines whether the product ID or SKU is passed in the 'product' parameter </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Returns</b>:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> result </td>
+<td class='confluenceTd'> Array of catalogProductReturnEntity </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>catalogProductReturnEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> special_price <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Product special price </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> special_from_date <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date starting from which the special price is applied to the product </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> special_to_date <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Date till which the special price is applied to the product </td>
+</tr>
+</tbody></table>
+</div>
+
+
+
+
+<h4><a name="catalog_product.getSpecialPrice-Examples"></a>Examples</h4>
+
+<h5><a name="catalog_product.getSpecialPrice-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$client = new SoapClient('http://magentohost/api/soap/?wsdl');
+
+// If somestuff requires api authentification,
+// then get a session token
+$session = $client-&gt;login('apiUser', 'apiKey');
+
+$result = $client-&gt;call($session, 'catalog_product.getSpecialPrice', '1');
+var_dump($result);
+
+// If you don't need the session anymore
+//$client-&gt;endSession($session);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_product.getSpecialPrice-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;catalogProductGetSpecialPrice($sessionId, '1');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="catalog_product.getSpecialPrice-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl');
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey'));
+
+$result = $proxy-&gt;catalogProductGetSpecialPrice((object)array('sessionId' =&gt; $sessionId-&gt;result, 'productId' =&gt; '1'));
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="catalog_product.getSpecialPrice-ResponseExampleSOAPV1"></a>Response Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: java; gutter: false">array
+  'special_price' =&gt; string '139.9900' (length=8)
+  'special_from_date' =&gt; string '2012-03-28 00:00:00' (length=19)
+  'special_to_date' =&gt; string '2012-03-31 00:00:00' (length=19)</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

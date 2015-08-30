@@ -2,6 +2,9 @@
 layout: m1x
 title: Authentication
 ---
+<p><a href="{{ site.m1xgithuburl }}api/rest/authentication/oauth_authentication.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+
+
 
 <div class="toc"> <h4 class="toc">Table of Contents</h4>
 <ul>

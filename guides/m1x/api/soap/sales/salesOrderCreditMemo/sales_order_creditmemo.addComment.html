@@ -1,0 +1,134 @@
+<?php
+    $title = 'Magento API - SOAP - order_creditmemo.addComment';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="order_creditmemo.addComment-Module%3AOrderCreditMemoAPI"></a>Module: Order Credit Memo API</h3>
+
+<h4><a name="order_creditmemo.addComment-Resource%3Asalesordercreditmemo"></a>Resource: sales_order_creditmemo</h4>
+
+<p><b>Aliases</b>: order_creditmemo</p>
+
+<h5><a name="order_creditmemo.addComment-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>order_creditmemo.addComment (SOAP V1)</li>
+	<li>salesOrderCreditmemoAddComment (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to add a new comment to an existing credit memo. Email notification can be sent to the user email.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> creditmemoIncrementId </td>
+<td class='confluenceTd'> Credit memo increment ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> comment </td>
+<td class='confluenceTd'> Comment text (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> notifyCustomer </td>
+<td class='confluenceTd'> Notify customer by email flag (optional) </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> includeComment </td>
+<td class='confluenceTd'> Include comment text into the email notification (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean\int </td>
+<td class='confluenceTd'> True (1) if the comment is added to the credit memo </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 100 </td>
+<td class='confluenceTd'> Requested credit memo does not exist. </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 102 </td>
+<td class='confluenceTd'> Invalid data given. Details in error message. </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="order_creditmemo.addComment-Examples"></a>Examples</h4>
+
+<h5><a name="order_creditmemo.addComment-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+$creditmemoIncrementId = '200000001'; //increment id of existing credit memo
+$commentText = "Credit memo comment successfully added";
+
+$isCommentAdded = $proxy-&gt;call($sessionId, 'order_creditmemo.addComment', array($creditmemoIncrementId, $commentText, true));</pre>
+		</div>
+</div></div>
+
+<h5><a name="order_creditmemo.addComment-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;salesOrderCreditmemoAddComment($sessionId, '200000001');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+<h5><a name="order_creditmemo.addComment-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;salesOrderCreditmemoAddComment((object)array('sessionId' =&gt; $sessionId-&gt;result, 'creditmemoIncrementId' =&gt; '200000001', 'comment' =&gt; 'credit memo comment', 'notifyCustomer' =&gt; 1, 'includeComment' =&gt; 1));   
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>

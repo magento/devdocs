@@ -1,0 +1,202 @@
+<?php
+    $title = 'Magento API - SOAP - cart_payment.method';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h2><a name="cart_payment.method-MageCheckout"></a>Mage_Checkout</h2>
+
+
+<h3><a name="cart_payment.method-Module%3AShoppingCartAPI"></a>Module: Shopping Cart API</h3>
+
+<h4><a name="cart_payment.method-Resource%3Acartpayment"></a>Resource: cart_payment</h4>
+
+<h5><a name="cart_payment.method-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>cart_payment.method (SOAP V1)</li>
+	<li>shoppingCartPaymentMethod (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to set a payment method for a shopping cart (quote).</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> int </td>
+<td class='confluenceTd'> quoteId </td>
+<td class='confluenceTd'> Shopping cart ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> array </td>
+<td class='confluenceTd'> paymentData </td>
+<td class='confluenceTd'> Array of shoppingCartPaymentMethodEntity </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> store </td>
+<td class='confluenceTd'> Store view ID or code (optional) </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True on success </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p>The <b>shoppingCartPaymentMethodEntity</b> content is as follows:</p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> po_number <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Purchase order number </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> method <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Payment method </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> cc_cid <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit card CID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> cc_owner <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit card owner </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> cc_number <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit card number </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> cc_type <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit card type </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> cc_exp_year <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit card expiration year </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> cc_exp_month <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Credit card expiration month </td>
+</tr>
+</tbody></table>
+</div>
+
+<p><b>Faults:</b><br/>
+<em>No Faults.</em></p>
+
+<h4><a name="cart_payment.method-Examples"></a>Examples</h4>
+
+<h5><a name="cart_payment.method-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$shoppingCartId = $proxy-&gt;call( $sessionId, 'cart.create', array( 'magento_store' ) );
+
+$paymentMethod = array(
+	“method” =&gt; “checkmo”
+);
+
+$resultPaymentMethod = $proxy-&gt;call(
+	$sessionId,
+	“cart_payment.method”,
+	array(
+		$shoppingCartId,
+		$paymentMethod
+	)
+);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="cart_payment.method-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); 
+ 
+$result = $proxy-&gt;shoppingCartPaymentMethod($sessionId, 10, array(
+'po_number' =&gt; null,
+'method' =&gt; 'checkmo',
+'cc_cid' =&gt; null,
+'cc_owner' =&gt; null,
+'cc_number' =&gt; null,
+'cc_type' =&gt; null,
+'cc_exp_year' =&gt; null,
+'cc_exp_month' =&gt; null
+));  
+ 
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+
+<h5><a name="cart_payment.method-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;shoppingCartPaymentMethod((object)array('sessionId' =&gt; $sessionId-&gt;result, 'quoteId' =&gt; 10, 'paymentData' =&gt; array(
+'po_number' =&gt; null,
+'method' =&gt; 'checkmo',
+'cc_cid' =&gt; null,
+'cc_owner' =&gt; null,
+'cc_number' =&gt; null,
+'cc_type' =&gt; null,
+'cc_exp_year' =&gt; null,
+'cc_exp_month' =&gt; null
+)));  
+ 
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+
+<?php include(__ROOT__ . 'footer.php'); ?>

@@ -1,0 +1,128 @@
+<?php
+    $title = 'Magento API - SOAP - giftcard_account.remove';
+    include($_SERVER['DOCUMENT_ROOT'] . '/api/header.php');
+?>
+
+				    <h3><a name="giftcard_account.remove-Module%3AGiftCardAPI"></a>Module: GiftCard API</h3>
+
+<h4><a name="giftcard_account.remove-Resource%3Agiftcardaccount"></a>Resource: giftcard_account</h4>
+
+
+<h5><a name="giftcard_account.remove-Method%3A"></a>Method:</h5>
+
+<ul>
+	<li>giftcard_account.remove (SOAP V1)</li>
+	<li>giftcardAccountRemove (SOAP V2)</li>
+</ul>
+
+
+<p>Allows you to remove the specified gift card account.</p>
+
+<p><b>Arguments:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Name </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> sessionId <br class="atl-forced-newline" /> </td>
+<td class='confluenceTd'> Session ID </td>
+</tr>
+<tr>
+<td class='confluenceTd'> string </td>
+<td class='confluenceTd'> giftcardAccountId </td>
+<td class='confluenceTd'> Gift card account ID </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Return:</b></p>
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Type </th>
+<th class='confluenceTh'> Description </th>
+</tr>
+<tr>
+<td class='confluenceTd'> boolean </td>
+<td class='confluenceTd'> True if the gift card account is removed </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<p><b>Faults:</b></p>
+
+<div class='table-wrap'>
+<table class='confluenceTable'><tbody>
+<tr>
+<th class='confluenceTh'> Fault Code </th>
+<th class='confluenceTh'> Fault Message </th>
+</tr>
+<tr>
+<td class='confluenceTd'> 106 </td>
+<td class='confluenceTd'> Gift card account with requested id does not exist </td>
+</tr>
+<tr>
+<td class='confluenceTd'> 107 </td>
+<td class='confluenceTd'> Error occurs while deleting gift card </td>
+</tr>
+</tbody></table>
+</div>
+
+
+<h4><a name="giftcard_account.remove-Examples"></a>Examples</h4>
+
+<h5><a name="giftcard_account.remove-RequestExampleSOAPV1"></a>Request Example SOAP V1</h5>
+
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/soap/?wsdl');
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey');
+
+$giftcardId = 2;
+$result = $proxy-&gt;call(
+    $sessionId,
+    "giftcard_account.remove",
+    array(
+         $giftcardId
+    )
+);</pre>
+		</div>
+</div></div>
+
+
+<h5><a name="giftcard_account.remove-RequestExampleSOAPV2"></a>Request Example SOAP V2</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); // TODO : change url
+$sessionId = $proxy-&gt;login('apiUser', 'apiKey'); // TODO : change login and pwd if necessary
+
+$result = $proxy-&gt;giftcardAccountRemove($sessionId, '2');
+var_dump($result);</pre>
+		</div>
+</div></div>
+
+
+
+<h5><a name="giftcard_account.remove-RequestExampleSOAPV2%28WSIComplianceMode%29"></a>Request Example SOAP V2 (WS-I Compliance Mode)</h5>
+
+<div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
+<div id="root">
+		<pre class="theme: Default; brush: php; gutter: false">$proxy = new SoapClient('http://magentohost/api/v2_soap/?wsdl'); 
+
+$sessionId = $proxy-&gt;login((object)array('username' =&gt; 'apiUser', 'apiKey' =&gt; 'apiKey')); 
+ 
+$result = $proxy-&gt;giftcardAccountRemove((object)array('sessionId' =&gt; $sessionId-&gt;result, 'giftcardAccountId' =&gt; '2'));   
+
+var_dump($result-&gt;result);</pre>
+		</div>
+</div></div>
+
+<?php include(__ROOT__ . 'footer.php'); ?>
