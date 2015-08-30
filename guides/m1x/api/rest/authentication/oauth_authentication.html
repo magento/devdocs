@@ -16,31 +16,34 @@
 	<h1>Authentication</h1>
 
 	<div id="content">
-		<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x/api/rest/authentication/oauth_authentication.md" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px" /></a></p>
+		<p><a href="https://github.com/magento/devdocs/blob/develop/guides/m1x/api/rest/authentication/oauth_authentication.html" target="_blank">Edit this page on GitHub <img src="/common/images/github_icon.png" height="15px"></a></p>
+
+
 
 <div class="toc"> <h4 class="toc">Table of Contents</h4>
 <ul>
-    <li><a href="#OAuthAuthentication-Introduction"><strong>Introduction</strong></a></li>
-    <li><a href="#OAuthAuthentication-UsingOAuth">Using OAuth</a></li>
-    <li><a href="#OAuthAuthentication-WhyDoYouNeedOAuth%3F">Why Do You Need OAuth?</a></li>
-    <li><a href="#OAuthAuthentication-OAuthDefinitions">OAuth Definitions</a></li>
-    <li><a href="#OAuthAuthentication-OAuthProcess">OAuth Process</a></li>
+    <li><a href='#OAuthAuthentication-Introduction'><strong>Introduction</strong></a></li>
+    <li><a href='#OAuthAuthentication-UsingOAuth'>Using OAuth</a></li>
+    <li><a href='#OAuthAuthentication-WhyDoYouNeedOAuth%3F'>Why Do You Need OAuth?</a></li>
+    <li><a href='#OAuthAuthentication-OAuthDefinitions'>OAuth Definitions</a></li>
+    <li><a href='#OAuthAuthentication-OAuthProcess'>OAuth Process</a></li>
 <ul>
-    <li><a href="#OAuthAuthentication-RegisteringanApplication">Registering an Application</a></li>
-    <li><a href="#OAuthAuthentication-AuthenticationEndpoints">Authentication Endpoints</a></li>
+    <li><a href='#OAuthAuthentication-RegisteringanApplication'>Registering an Application</a></li>
+    <li><a href='#OAuthAuthentication-AuthenticationEndpoints'>Authentication Endpoints</a></li>
 <ul>
-    <li><a href="#OAuthAuthentication-GettinganUnauthorizedRequestToken">Getting an Unauthorized Request Token</a></li>
-    <li><a href="#OAuthAuthentication-UserAuthorization">User Authorization</a></li>
-    <li><a href="#OAuthAuthentication-GettinganAccessToken">Getting an Access Token</a></li>
+    <li><a href='#OAuthAuthentication-GettinganUnauthorizedRequestToken'>Getting an Unauthorized Request Token</a></li>
+    <li><a href='#OAuthAuthentication-UserAuthorization'>User Authorization</a></li>
+    <li><a href='#OAuthAuthentication-GettinganAccessToken'>Getting an Access Token</a></li>
 </ul>
 </ul>
-    <li><a href="#OAuthAuthentication-OAuthErrorCodes">OAuth Error Codes</a></li>
-    <li><a href="#OAuthAuthentication-PHPExamples">PHP Examples</a></li>
+    <li><a href='#OAuthAuthentication-OAuthErrorCodes'>OAuth Error Codes</a></li>
+    <li><a href='#OAuthAuthentication-PHPExamples'>PHP Examples</a></li>
 <ul>
-    <li><a href="#OAuthAuthentication-RetrievethelistofproductsforAdminuserwithOAuthauthentication">Retrieve the list of products for Admin user with OAuth authentication</a></li>
-    <li><a href="#OAuthAuthentication-RetrievethelistofproductsforCustomeruserwithOAuthauthentication">Retrieve the list of products for Customer user with OAuth authentication</a></li>
+    <li><a href='#OAuthAuthentication-RetrievethelistofproductsforAdminuserwithOAuthauthentication'>Retrieve the list of products for Admin user with OAuth authentication</a></li>
+    <li><a href='#OAuthAuthentication-RetrievethelistofproductsforCustomeruserwithOAuthauthentication'>Retrieve the list of products for Customer user with OAuth authentication</a></li>
 </ul>
 </ul></div>
+
 
 <h2><a name="OAuthAuthentication-Introduction"></a>Introduction</h2>
 
@@ -52,13 +55,13 @@
 
 <table width="100%">
     <tr>
-        <td align="left">
+        <td  align="left" >
             <table>
                 <caption align="bottom">
                                     </caption>
                 <tr>
                     <td>
-                        <img src="/common/images/m1x/rest_oauth1.png" alt="" />
+                        <img src="/common/images/m1x/rest_oauth1.png" alt=""/>
                     </td>
                 </tr>
             </table>
@@ -66,7 +69,9 @@
     </tr>
 </table>
 
+
 <p>To learn more about OAuth, you can visit the official <a href="http://oauth.net/">OAuth</a> site.</p>
+
 
 <h2><a name="OAuthAuthentication-UsingOAuth"></a>Using OAuth</h2>
 
@@ -86,9 +91,11 @@
 	<li>Orders</li>
 	<li>Customers</li>
 	<li>Customer Addresses</li>
-	<li>Categories<br />
+	<li>Categories<br/>
 and a lot more</li>
 </ul>
+
+
 
 <h2><a name="OAuthAuthentication-OAuthDefinitions"></a>OAuth Definitions</h2>
 
@@ -102,6 +109,8 @@ and a lot more</li>
 	<li><b>Access Token</b> &#45; A value used by the Consumer to call Magento APIs on behalf of the User.</li>
 </ul>
 
+
+
 <h2><a name="OAuthAuthentication-OAuthProcess"></a>OAuth Process</h2>
 
 <p>The OAuth process consists of several steps:</p>
@@ -111,15 +120,19 @@ and a lot more</li>
 	<li>Getting an Access Token by exchanging the Request Token for it.</li>
 </ul>
 
+
+
+
+
 <table width="100%">
     <tr>
-        <td align="left">
+        <td  align="left" >
             <table>
                 <caption align="bottom">
                                     </caption>
                 <tr>
                     <td>
-                        &lt;img `src="/common/images/m1x/rest_oauth2.png" alt=""/&gt;
+                        <img `src="/common/images/m1x/rest_oauth2.png" alt=""/>
                     </td>
                 </tr>
             </table>
@@ -127,7 +140,9 @@ and a lot more</li>
     </tr>
 </table>
 
+
 <p>The application that requires access to data is known as the Consumer and Magento is the Service Provider.</p>
+
 
 <h3><a name="OAuthAuthentication-RegisteringanApplication"></a>Registering an Application</h3>
 
@@ -148,11 +163,15 @@ and a lot more</li>
 	<li><b>/oauth/token</b> &#45; this endpoint is used for retrieving the Access Token.</li>
 </ul>
 
+
 <p>Also, the simple form can be used for authentication. To use a simple form, add the /simple endpoint to the authentication endpoint. For example: /oauth/authorize/simple</p>
+
 
 <h4><a name="OAuthAuthentication-GettinganUnauthorizedRequestToken"></a>Getting an Unauthorized Request Token</h4>
 
 <p>The first step to authenticate the user is to retrieve a Request Token from Magento. This is a temporary token that will be exchanged for the Access Token.</p>
+
+
 
 <table><tbody>
 <tr>
@@ -176,7 +195,8 @@ and a lot more</li>
 <td> oauth_token=4cqw0r7vo0s5goyyqnjb72sqj3vxwr0h&amp;oauth_token_secret=rig3x3j5a9z5j6d4ubjwyf9f1l21itrr&amp;oauth_callback_confirmed=true </td>
 </tr>
 </tbody></table>
-<p>&lt;/div&gt;</p>
+</div>
+
 
 <p>The following request parameters should be present in the Authorization header:</p>
 <ul>
@@ -189,6 +209,7 @@ and a lot more</li>
 	<li>oauth_version - OAuth version.</li>
 </ul>
 
+
 <h4><a name="OAuthAuthentication-UserAuthorization"></a>User Authorization</h4>
 
 <p>The second step is to request user authorization. After receiving the Request Token from Magento, the application provides an authorization page to the user. The only required parameter for this step is the Request Token (oauth_token value) received from the previous step. The endpoint is followed by an oauth_token parameter with the value set to the oauth_token value.</p>
@@ -198,6 +219,9 @@ and a lot more</li>
 	<li>oauth_token - the Request Token value.</li>
 	<li>oauth_verifier - a verification code that is tied to the Request Token.</li>
 </ul>
+
+
+
 
 <table><tbody>
 <tr>
@@ -217,11 +241,15 @@ and a lot more</li>
 <td> /callback?oauth_token=tz2kmxyf3lagl3o95xnox9ia15k6mpt3&amp;oauth_verifier=cbwwh03alr5huiz5c76wi4l21zf05eb0 </td>
 </tr>
 </tbody></table>
-<p>&lt;/div&gt;</p>
+</div>
+
+
 
 <h4><a name="OAuthAuthentication-GettinganAccessToken"></a>Getting an Access Token</h4>
 
 <p>The final third authentication step. After the application access is authorized, the application needs to exchange the Request Token for an Access Token. For this step, you will need the Request Token (the oauth_token and oauth_token_secret values) and the oauth_verifier value from the previous step.</p>
+
+
 
 <table><tbody>
 <tr>
@@ -245,7 +273,8 @@ and a lot more</li>
 <td> oauth_token=0lnuajnuzeei2o8xcddii5us77xnb6v0&amp;oauth_token_secret=1c6d2hycnir5ygf39fycs6zhtaagx8pd </td>
 </tr>
 </tbody></table>
-<p>&lt;/div&gt;</p>
+</div>
+
 
 <p>The following components should be present in the Authorization header:</p>
 <ul>
@@ -259,15 +288,21 @@ and a lot more</li>
 	<li>oauth_version - OAuth version.</li>
 </ul>
 
+
+
 <p>The response will contain the following response parameters:</p>
 <ul>
 	<li>oauth_token - the Access Token that provides access to protected resources.</li>
 	<li>oauth_token_secret - the secret that is associated with the Access Token.</li>
 </ul>
 
+
+
+
 <h2><a name="OAuthAuthentication-OAuthErrorCodes"></a>OAuth Error Codes</h2>
 
 <p>When the third-party application performs invalid requests to Magento, the following errors related to OAuth can occur:</p>
+
 
 <table><tbody>
 <tr>
@@ -355,14 +390,16 @@ and a lot more</li>
 <td> This error is used if the confirmation string does not correspond to the token. </td>
 </tr>
 </tbody></table>
-<p>&lt;/div&gt;</p>
+</div>
+
+
+
 
 <h2><a name="OAuthAuthentication-PHPExamples"></a>PHP Examples</h2>
 
 <h3><a name="OAuthAuthentication-RetrievethelistofproductsforAdminuserwithOAuthauthentication"></a>Retrieve the list of products for Admin user with OAuth authentication</h3>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
-
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="sd">/**</span>
@@ -421,7 +458,6 @@ and a lot more</li>
 <span class="p">}</span></code></pre></div>
 
 
-
 <h3><a name="OAuthAuthentication-RetrievethelistofproductsforCustomeruserwithOAuthauthentication"></a>Retrieve the list of products for Customer user with OAuth authentication</h3>
 
 <div class="code panel" style="border-width: 1px;"><div class="codeContent panelContent">
@@ -446,43 +482,42 @@ $consumerKey = 'yourconsumerkey';
 $consumerSecret = 'yourconsumersecret';
 
 session_start();
-if (!isset($_GET['oauth_token']) &amp;&amp; isset($_SESSION['state']) &amp;&amp; $_SESSION['state'] == 1) {
+if (!isset($_GET['oauth_token']) && isset($_SESSION['state']) && $_SESSION['state'] == 1) {
     $_SESSION['state'] = 0;
 }
 try {
     $authType = ($_SESSION['state'] == 2) ? OAUTH_AUTH_TYPE_AUTHORIZATION : OAUTH_AUTH_TYPE_URI;
     $oauthClient = new OAuth($consumerKey, $consumerSecret, OAUTH_SIG_METHOD_HMACSHA1, $authType);
-    $oauthClient-&gt;enableDebug();
+    $oauthClient->enableDebug();
 
-    if (!isset($_GET['oauth_token']) &amp;&amp; !$_SESSION['state']) {
-        $requestToken = $oauthClient-&gt;getRequestToken($temporaryCredentialsRequestUrl);
+    if (!isset($_GET['oauth_token']) && !$_SESSION['state']) {
+        $requestToken = $oauthClient->getRequestToken($temporaryCredentialsRequestUrl);
         $_SESSION['secret'] = $requestToken['oauth_token_secret'];
         $_SESSION['state'] = 1;
         header('Location: ' . $customerAuthorizationUrl . '?oauth_token=' . $requestToken['oauth_token']);
         exit;
     } else if ($_SESSION['state'] == 1) {
-        $oauthClient-&gt;setToken($_GET['oauth_token'], $_SESSION['secret']);
-        $accessToken = $oauthClient-&gt;getAccessToken($accessTokenRequestUrl);
+        $oauthClient->setToken($_GET['oauth_token'], $_SESSION['secret']);
+        $accessToken = $oauthClient->getAccessToken($accessTokenRequestUrl);
         $_SESSION['state'] = 2;
         $_SESSION['token'] = $accessToken['oauth_token'];
         $_SESSION['secret'] = $accessToken['oauth_token_secret'];
         header('Location: ' . $callbackUrl);
         exit;
     } else {
-        $oauthClient-&gt;setToken($_SESSION['token'], $_SESSION['secret']);
+        $oauthClient->setToken($_SESSION['token'], $_SESSION['secret']);
 
         $resourceUrl = "$apiUrl/products";
-        $oauthClient-&gt;fetch($resourceUrl, array(), 'GET', array('Content-Type' =&gt; 'application/json'));
-        $productsList = json_decode($oauthClient-&gt;getLastResponse());
+        $oauthClient->fetch($resourceUrl, array(), 'GET', array('Content-Type' => 'application/json'));
+        $productsList = json_decode($oauthClient->getLastResponse());
         print_r($productsList);
     }
 } catch (OAuthException $e) {
-    print_r($e-&gt;getMessage());
+    print_r($e->getMessage());
     echo "&lt;br/&gt;";
-    print_r($e-&gt;lastResponse);
+    print_r($e->lastResponse);
 }</pre>
 
-</div></div></div></div></div>
 
 	</div>
 </body>
