@@ -2,7 +2,7 @@
 layout: m1x
 title: OAuth Configuration
 ---
-<p><a href="{{ site.m1xgithuburl }}api/rest/autnentication/oauth_configuration.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
+<p><a href="{{ site.m1xgithuburl }}api/rest/authentication/oauth_configuration.md" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}common/images/github_icon.png" height="15px"></a></p>
 
 
 				    
